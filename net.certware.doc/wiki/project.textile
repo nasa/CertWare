@@ -1,0 +1,49 @@
+h1{color:red}. CertWare Project Notes
+
+{toc:style=disc|maxLevel=3}
+
+h2. Version History
+
+h3. Version 1.0.0
+
+* Established basic target definition including Equinox and RCP.  
+
+
+h2. Documentation
+
+
+h3. Models
+
+* *Argument model*.  
+
+
+h3. Analysis Tools
+
+
+h3. Workbench Views
+
+* <b>Project Summary View</b> in @com.kt.codehawk.project.views@.  Provides verification statistics.  Added to C/C++ perspective as perspective extension.
+* <b>Project History View</b> in @com.kt.codehawk.project.history.views@.  Provides a tree/table display of the project history records file.  Refreshes on file, folder and project selections.
+
+h3. Plugins Summary
+
+* @net.certware.doc@ General project to contain various documentation files including the wiki.
+
+h3. File Names
+
+
+h3. Implementation Features
+
+
+h2. Design and Implementation Notes
+
+* Platform trace debugging features turned on for the @xxx@ plugin.
+
+h2. Update Site Publishing
+
+
+h2. Glossary
+
+{glossary:style=disc}
+
+
