@@ -4,12 +4,11 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010 Object Management Group (ARM metamodel)&#xA;Copyright (c) 2010 Kestrel Technology LLC (generated models) "
     modelDirectory="/net.certware.argument.arm/src" editDirectory="/net.certware.argument.arm.edit/src"
     editorDirectory="/net.certware.argument.arm.editor/src" modelPluginID="net.certware.argument.arm"
-    modelName="arm" modelPluginClass="" editPluginClass="net.certware.argument.arm.edit.provider.ARMEditPlugin"
-    editorPluginClass="net.certware.argument.arm.editor.presentation.ARMEditorPlugin"
-    nonNLSMarkers="true" testSuiteClass="net.certware.argument.arm.tests.ARMAllTests"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" editPluginID="net.certware.argument.arm.edit"
-    editorPluginID="net.certware.argument.arm.editor" colorProviders="true" fontProviders="true"
-    classNamePattern="">
+    modelName="arm" modelPluginClass="" editPluginClass="net.certware.argument.arm.edit.ARMEditPlugin"
+    editorPluginClass="net.certware.argument.arm.editor.ARMEditorPlugin" nonNLSMarkers="true"
+    testSuiteClass="net.certware.argument.arm.tests.ARMAllTests" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" editPluginID="net.certware.argument.arm.edit" editorPluginID="net.certware.argument.arm.editor"
+    colorProviders="true" fontProviders="true" classNamePattern="">
   <foreignModel>arm.ecore</foreignModel>
   <genPackages prefix="Arm" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       multipleEditorPages="false" ecorePackage="arm.ecore#/">
