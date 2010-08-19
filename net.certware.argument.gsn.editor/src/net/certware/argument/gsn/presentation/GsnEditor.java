@@ -1,5 +1,5 @@
 /**
- * Copyright (c) Kestrel Technology LLC
+ * Copyright (c) 2010 Kestrel Technology LLC
  */
 package net.certware.argument.gsn.presentation;
 
@@ -146,7 +146,9 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import net.certware.argument.gsn.provider.GsnItemProviderAdapterFactory;
 
-import net.certware.argument.arm.edit.provider.ArmItemProviderAdapterFactory;
+import net.certware.argument.arm.provider.ArmItemProviderAdapterFactory;
+
+import net.certware.argument.gsn.editor.presentation.GsnEditorPlugin;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
@@ -165,7 +167,7 @@ public class GsnEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.

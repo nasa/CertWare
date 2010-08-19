@@ -1,5 +1,5 @@
 /**
- * Copyright (c) Kestrel Technology LLC
+ * Copyright (c) 2010 Kestrel Technology LLC
  */
 package net.certware.argument.gsn.provider;
 
@@ -40,7 +40,7 @@ public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.

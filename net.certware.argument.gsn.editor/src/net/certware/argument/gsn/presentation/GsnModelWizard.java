@@ -1,5 +1,5 @@
 /**
- * Copyright (c) Kestrel Technology LLC
+ * Copyright (c) 2010 Kestrel Technology LLC
  */
 package net.certware.argument.gsn.presentation;
 
@@ -72,8 +72,10 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 
 import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
-import net.certware.argument.gsn.provider.GsnEditPlugin;
+import net.certware.argument.gsn.edit.provider.GsnEditPlugin;
 
+
+import net.certware.argument.gsn.editor.presentation.GsnEditorPlugin;
 
 import org.eclipse.core.runtime.Path;
 
@@ -98,7 +100,7 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 	/**
 	 * The supported extensions for created files.

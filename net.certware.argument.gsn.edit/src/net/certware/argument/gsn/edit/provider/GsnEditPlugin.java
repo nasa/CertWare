@@ -1,38 +1,36 @@
 /**
- * Copyright (c) Kestrel Technology LLC
+ * Copyright (c) 2010 Kestrel Technology LLC
  */
-package net.certware.argument.gsn.presentation;
+package net.certware.argument.gsn.edit.provider;
 
-import net.certware.argument.arm.edit.ARMEditPlugin;
+import net.certware.argument.arm.provider.ArmEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
-
-import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the gsn editor plugin.
+ * This is the central singleton for the gsn edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class GsnEditorPlugin extends EMFPlugin {
+public final class GsnEditPlugin extends EMFPlugin {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Kestrel Technology LLC"; //$NON-NLS-1$
-	
+	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final GsnEditorPlugin INSTANCE = new GsnEditorPlugin();
-	
+	public static final GsnEditPlugin INSTANCE = new GsnEditPlugin();
+
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -47,11 +45,11 @@ public final class GsnEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GsnEditorPlugin() {
+	public GsnEditPlugin() {
 		super
-			(new ResourceLocator [] {
-				ARMEditPlugin.INSTANCE,
-			});
+		  (new ResourceLocator [] {
+		     ArmEditPlugin.INSTANCE,
+		   });
 	}
 
 	/**
@@ -65,7 +63,7 @@ public final class GsnEditorPlugin extends EMFPlugin {
 	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
-	
+
 	/**
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
@@ -76,14 +74,14 @@ public final class GsnEditorPlugin extends EMFPlugin {
 	public static Implementation getPlugin() {
 		return plugin;
 	}
-	
+
 	/**
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipseUIPlugin {
+	public static class Implementation extends EclipsePlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
@@ -92,7 +90,7 @@ public final class GsnEditorPlugin extends EMFPlugin {
 		 */
 		public Implementation() {
 			super();
-	
+
 			// Remember the static instance.
 			//
 			plugin = this;

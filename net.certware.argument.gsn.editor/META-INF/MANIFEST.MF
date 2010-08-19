@@ -1,14 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: CertWare Argument Editor GSN
+Bundle-Name: %pluginName
 Bundle-SymbolicName: net.certware.argument.gsn.editor;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
-Bundle-Activator: net.certware.argument.gsn.presentation.GsnEditorPlugin$Implementation
-Bundle-Vendor: Ketrel Technology LLC
+Bundle-Activator: net.certware.argument.gsn.editor.presentation.GsnEditorPlugin$Implementation
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: net.certware.argument.gsn.presentation
+Export-Package: net.certware.argument.gsn.editor.presentation,
+ net.certware.argument.gsn.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  net.certware.argument.gsn.edit;visibility:=reexport,

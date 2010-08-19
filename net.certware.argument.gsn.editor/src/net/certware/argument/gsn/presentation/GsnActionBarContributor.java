@@ -1,10 +1,12 @@
 /**
- * Copyright (c) Kestrel Technology LLC
+ * Copyright (c) 2010 Kestrel Technology LLC
  */
 package net.certware.argument.gsn.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
+import net.certware.argument.gsn.editor.presentation.GsnEditorPlugin;
 
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 
@@ -54,7 +56,7 @@ public class GsnActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 	/**
 	 * This keeps track of the active editor.

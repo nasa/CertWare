@@ -1,5 +1,5 @@
 /**
- * Copyright (c) Kestrel Technology LLC
+ * Copyright (c) 2010 Kestrel Technology LLC
  */
 package net.certware.argument.gsn.provider;
 
@@ -7,9 +7,11 @@ package net.certware.argument.gsn.provider;
 import java.util.Collection;
 import java.util.List;
 
-import net.certware.argument.arm.edit.provider.InformationElementItemProvider;
+import net.certware.argument.arm.provider.InformationElementItemProvider;
 
 import net.certware.argument.gsn.Justification;
+
+import net.certware.argument.gsn.edit.provider.GsnEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -44,7 +46,7 @@ public class JustificationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
