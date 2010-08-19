@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=pp
+ c64))
+Bundle-Vendor: %providerName
+Bundle-Localization: launcher.gtk.linux.ppc64
+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.2
+ .0)"
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.ppc64;sing
+ leton:=true
+Eclipse-BundleShape: dir
+Eclipse-SourceReferences: scm:cvs:pserver:dev.eclipse.org:/cvsroot/rt:
+ org.eclipse.equinox/framework/bundles/org.eclipse.equinox.launcher/fr
+ agments/org.eclipse.equinox.launcher.gtk.linux.ppc64;tag=v20100503
+Bundle-Version: 1.0.0.v20100503
+Bundle-ManifestVersion: 2
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: launcher.gtk.linux.ppc64.properties
+SHA1-Digest: c/TeopVRxqBab0s+QkQw1mIdLf8=
+
+Name: eclipse_1307.so
+SHA1-Digest: VvKOre0NnuAtzLY3Ccae19sAkNU=
+
+Name: about.html
+SHA1-Digest: a9lDHrGuLPkvHBUhsqWU+V2mhPw=
+
