@@ -18,6 +18,9 @@ h2. Documentation
 
 h3. Models
 
+* @ARM@ OMG argument metamodel and its Ecore implementation
+* @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
+* @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
 
 h3. Analysis Tools
 
@@ -42,6 +45,12 @@ h3. Plugins Summary
 
 h3. File Names
 
+h3. Target Platform
+
+* Eclipse Helios baseline
+* EGit, requiring JGit as well
+* Eclipse RCP delta pack for multi-platform exports.
+* EasyMock 3.0 for testing
 
 h3. Implementation Features
 

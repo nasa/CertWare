@@ -12,5 +12,6 @@
 <location id="org.eclipse.egit" path="${eclipse_home}" type="Feature"/>
 <location path="${workspace_loc}/net.certware.target/delta.pack/eclipse" type="Directory"/>
 <location id="org.eclipse.jgit" path="${eclipse_home}" type="Feature"/>
+<location path="${workspace_loc}/net.certware.target/testing" type="Directory"/>
 </locations>
 </target>
