@@ -3,12 +3,14 @@
 
 <target name="CertWare Target">
 <locations>
-<location path="${workspace_loc}/net.certware.target/delta.pack/eclipse" type="Directory"/>
 <location includeAllPlatforms="false" includeMode="slicer" type="InstallableUnit">
 <unit id="org.eclipse.rcp.sdk.id" version="3.6.0.I20100608-0911"/>
 <unit id="org.eclipse.sdk.ide" version="3.6.0.I20100608-0911"/>
 <unit id="org.eclipse.emf.sdk.feature.group" version="2.6.0.v20100614-1136"/>
 <repository location="http://download.eclipse.org/releases/helios/"/>
 </location>
+<location id="org.eclipse.egit" path="${eclipse_home}" type="Feature"/>
+<location path="${workspace_loc}/net.certware.target/delta.pack/eclipse" type="Directory"/>
+<location id="org.eclipse.jgit" path="${eclipse_home}" type="Feature"/>
 </locations>
 </target>

@@ -2,3 +2,8 @@ plugin
 mac
 wiki
 kestrel
+apache
+equinox
+plugins
+git
+ecore

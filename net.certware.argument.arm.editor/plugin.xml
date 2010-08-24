@@ -9,16 +9,13 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="net.certware.argument.arm.presentation.ArmModelWizardID"
-            name="%_UI_ArmModelWizard_label"
+            name="ARM Model"
             class="net.certware.argument.arm.presentation.ArmModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/ArmModelFile.gif">
-         <description>%_UI_ArmModelWizard_description</description>
+         <description>Creates a new ARM argument model.</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -26,7 +23,7 @@
    <extension point="org.eclipse.ui.editors">
       <editor
             id="net.certware.argument.arm.presentation.ArmEditorID"
-            name="%_UI_ArmEditor_label"
+            name="ARM Model Editor"
             icon="icons/full/obj16/ArmModelFile.gif"
             extensions="arm"
             class="net.certware.argument.arm.presentation.ArmEditor"

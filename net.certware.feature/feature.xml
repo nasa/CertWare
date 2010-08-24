@@ -30,7 +30,6 @@
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import feature="org.eclipse.emf" version="2.6.0.v20100614-1136"/>
-      <import plugin="org.eclipse.ui"/>
    </requires>
 
    <plugin
@@ -102,5 +101,11 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="net.certware.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>

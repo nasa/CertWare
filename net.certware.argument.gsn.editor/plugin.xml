@@ -8,16 +8,13 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="net.certware.argument.gsn.presentation.GsnModelWizardID"
-            name="%_UI_GsnModelWizard_label"
+            name="GSN Model"
             class="net.certware.argument.gsn.presentation.GsnModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/GsnModelFile.gif">
-         <description>%_UI_GsnModelWizard_description</description>
+         <description>Creates a new GSN argument model.</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -25,7 +22,7 @@
    <extension point="org.eclipse.ui.editors">
       <editor
             id="net.certware.argument.gsn.presentation.GsnEditorID"
-            name="%_UI_GsnEditor_label"
+            name="GSN Model Editor"
             icon="icons/full/obj16/GsnModelFile.gif"
             extensions="gsn"
             class="net.certware.argument.gsn.presentation.GsnEditor"
