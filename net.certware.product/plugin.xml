@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="CertWare"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            description="CertWare Application Workbench"
+            name="CertWare">
+         <property
+               name="windowImages"
+               value="icons/obj16/black_box_16.png,icons/obj32/black_box_32.png,icons/obj48/black_box_48.png,icons/obj64/black_box_64.png,icons/obj128/black_box_128.png">
+         </property>
+         <property
+               name="aboutText"
+               value="CertWare Desktop Application">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/obj128/black_box_128.png">
+         </property>
+         <property
+               name="appName"
+               value="CertWare">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
