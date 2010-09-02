@@ -1,11 +1,13 @@
-package net.certware.core.ui;
+package net.certware.export;
 
-import org.osgi.framework.BundleActivator;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.osgi.framework.BundleContext;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 
-public class Activator implements BundleActivator {
+public class Activator extends AbstractUIPlugin {
 
 	private static BundleContext context;
+	private static String PLUGIN_ID = "net.certware.export";
 
 	static BundleContext getContext() {
 		return context;
@@ -26,5 +28,14 @@ public class Activator implements BundleActivator {
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
 	}
-
+	
+   /**
+     * Returns an image descriptor for the image file at the given
+     * plug-in relative path
+     * @param path the path
+     * @return the image descriptor
+     */
+    public static ImageDescriptor getImageDescriptor(String path) {
+        return imageDescriptorFromPlugin(PLUGIN_ID, path);
+    }
 }

@@ -22,5 +22,13 @@
             name="CertWare">
       </category>
    </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="CertWare Platform UI Commands"
+            id="net.certware.core.ui.category"
+            name="CertWare Commands">
+      </category>
+   </extension>
 
 </plugin>

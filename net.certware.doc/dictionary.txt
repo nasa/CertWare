@@ -10,3 +10,9 @@ ecore
 metamodel
 helios
 multi
+mrb
+javadoc
+resizable
+throwable
+throwables
+enablements
