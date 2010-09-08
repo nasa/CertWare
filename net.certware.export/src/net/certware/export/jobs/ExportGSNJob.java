@@ -11,6 +11,7 @@ import javax.xml.bind.Marshaller;
 
 import net.certware.core.ui.log.CertWareLog;
 
+import org.docx4j.XmlUtils;
 import org.docx4j.convert.out.flatOpcXml.FlatOpcXmlCreator;
 import org.docx4j.jaxb.Context;
 import org.docx4j.jaxb.NamespacePrefixMapperUtils;
@@ -21,8 +22,16 @@ import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
 import org.docx4j.openpackaging.parts.PartName;
 import org.docx4j.openpackaging.parts.WordprocessingML.AlternativeFormatInputPart;
 import org.docx4j.relationships.Relationship;
+import org.docx4j.wml.BooleanDefaultTrue;
 import org.docx4j.wml.CTAltChunk;
+import org.docx4j.wml.ObjectFactory;
+import org.docx4j.wml.P;
+import org.docx4j.wml.PPr;
+import org.docx4j.wml.ParaRPr;
+import org.docx4j.wml.R;
+import org.docx4j.wml.RPr;
 import org.docx4j.wml.Tbl;
+import org.docx4j.wml.Text;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -61,13 +70,18 @@ public class ExportGSNJob extends AbstractExportJob {
 		IStatus rv = Status.OK_STATUS;
 		setSteps(4); // TODO set accurate count
 		
+		if ( node == null ) {
+			CertWareLog.logWarning("Node selection unavailable for export; export canceled");
+			monitor.setCanceled(true);
+			return Status.CANCEL_STATUS;
+		}
+		
 		// TODO produce code
 		System.err.println("producing node" + ' ' + node.toString());
 		
 		// test
 		try {
-			test();
-			System.err.println("Test returned normally");
+			rv = test();
 		} catch (JAXBException e) {
 			CertWareLog.logError("Exporting word document", e);
 		} catch (Docx4JException e) {
@@ -78,44 +92,38 @@ public class ExportGSNJob extends AbstractExportJob {
 		return rv;
 	}
 	
-	private void test() throws JAXBException, Docx4JException {
+	private IStatus test() throws JAXBException, Docx4JException {
 		boolean save = true;
+		ObjectFactory factory = new ObjectFactory();
 		
 		System.out.println( "Creating package..");
 		WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.createPackage();
 		
 		wordMLPackage.getMainDocumentPart().addStyledParagraphOfText("Title", "Hello world");
-
 		wordMLPackage.getMainDocumentPart().addParagraphOfText("from docx4j!");
 		
 		// To get bold text, you must set the run's rPr@w:b,
 	    // so you can't use the createParagraphOfText convenience method
-
-		//org.docx4j.wml.P p = wordMLPackage.getMainDocumentPart().createParagraphOfText("text");
+		// org.docx4j.wml.P p = wordMLPackage.getMainDocumentPart().createParagraphOfText("text");
 		
-		org.docx4j.wml.ObjectFactory factory = new org.docx4j.wml.ObjectFactory();
-		org.docx4j.wml.P  p = factory.createP();
-
-		org.docx4j.wml.Text  t = factory.createText();
+		P p = factory.createP();
+		R run = factory.createR();
+		Text  t = factory.createText();
 		t.setValue("text");
-
-		org.docx4j.wml.R  run = factory.createR();
 		run.getRunContent().add(t);		
-		
 		p.getParagraphContent().add(run);
 		
 		
-		org.docx4j.wml.RPr rpr = factory.createRPr();		
-		org.docx4j.wml.BooleanDefaultTrue b = new org.docx4j.wml.BooleanDefaultTrue();
+		RPr rpr = factory.createRPr();		
+		BooleanDefaultTrue b = new BooleanDefaultTrue();
 	    b.setVal(true);	    
 	    rpr.setB(b);
-	    
 		run.setRPr(rpr);
 		
 		// Optionally, set pPr/rPr@w:b		
-	    org.docx4j.wml.PPr ppr = factory.createPPr();	    
+	    PPr ppr = factory.createPPr();	    
 	    p.setPPr( ppr );
-	    org.docx4j.wml.ParaRPr paraRpr = factory.createParaRPr();
+	    ParaRPr paraRpr = factory.createParaRPr();
 	    ppr.setRPr(paraRpr);	    
 	    rpr.setB(b);
 	    
@@ -126,15 +134,12 @@ public class ExportGSNJob extends AbstractExportJob {
 	    // Here is an easier way:
 	    String str = "<w:p xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" ><w:r><w:rPr><w:b /></w:rPr><w:t>Bold, just at w:r level</w:t></w:r></w:p>";
 	    
-	    wordMLPackage.getMainDocumentPart().addObject(
-	    			org.docx4j.XmlUtils.unmarshalString(str) );
+	    wordMLPackage.getMainDocumentPart().addObject( XmlUtils.unmarshalString(str) );
 	    
 	    // Let's add a table
 	    int writableWidthTwips = wordMLPackage.getDocumentModel().getSections().get(0).getPageDimensions().getWritableWidthTwips();
 	    int cols = 3;
-	    int cellWidthTwips = new Double( 
-	    							Math.floor( (writableWidthTwips/cols ))
-	    								).intValue();
+	    int cellWidthTwips = new Double( Math.floor( (writableWidthTwips/cols )) ).intValue();
 	    
 	    Tbl tbl = TblFactory.createTable(3, 3, cellWidthTwips);
 	    wordMLPackage.getMainDocumentPart().addObject(tbl);
@@ -169,20 +174,19 @@ public class ExportGSNJob extends AbstractExportJob {
 			FlatOpcXmlCreator worker = new FlatOpcXmlCreator(wordMLPackage);
 			org.docx4j.xmlPackage.Package pkg = worker.get();
 	    	
-	    	// Now marshall it
+	    	// Now marshal it
 			JAXBContext jc = Context.jcXmlPackage;
 			Marshaller marshaller=jc.createMarshaller();
 			
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-			NamespacePrefixMapperUtils.setProperty(marshaller, 
-					NamespacePrefixMapperUtils.getPrefixMapper());			
+			NamespacePrefixMapperUtils.setProperty(marshaller, NamespacePrefixMapperUtils.getPrefixMapper());			
 			System.out.println( "\n\n OUTPUT " );
 			System.out.println( "====== \n\n " );	
 			marshaller.marshal(pkg, System.out);				
-			
 		}
 		
 		System.out.println("Done.");
 
+		return Status.OK_STATUS;
 	}
 }

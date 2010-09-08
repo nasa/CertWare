@@ -29,7 +29,7 @@ public class ExportSummaryWizard extends Wizard implements IExportWizard
   public void init(IWorkbench workbench, IStructuredSelection selection)
   {
     rep = new ExportSummaryPage(PAGE_NAME, selection);
-    rep.setDescription("Select a destination folder.  CertWare will export the case data to a Word document.");
+    rep.setDescription("Select a destination folder.  CertWare will export the case content to a Word document.");
     rep.setImageDescriptor(Activator.getImageDescriptor(BANNER));
     addPage(rep);
     
