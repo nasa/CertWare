@@ -17,3 +17,5 @@ throwable
 throwables
 enablements
 tabbed
+damus
+cdamus
