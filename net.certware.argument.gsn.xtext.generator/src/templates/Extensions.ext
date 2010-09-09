@@ -1,0 +1,4 @@
+import net::certware::argument::gsn::gsnDsl;
+
+sortedGreetings(Model this) :
+	this.greetings.sortBy(g|g.name.toLowerCase());
