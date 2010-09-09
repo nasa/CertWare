@@ -275,8 +275,8 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String createIntegerFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
+		return (Integer)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -293,8 +293,8 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String createBooleanFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
+		return (Boolean)super.createFromString(eDataType, initialValue);
 	}
 
 	/**

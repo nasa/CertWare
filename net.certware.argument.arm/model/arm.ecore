@@ -39,8 +39,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="AssertedChallenge" eSuperTypes="#//AssertedRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="ReasoningElement" abstract="true" eSuperTypes="#//ArgumentElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Claim" eSuperTypes="#//ReasoningElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumed" eType="#//Boolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBeSupported" eType="#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBeSupported" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EvidenceAssertion" eSuperTypes="#//Claim"/>
   <eClassifiers xsi:type="ecore:EClass" name="InformationElement" eSuperTypes="#//ArgumentElement"/>
@@ -55,6 +55,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="refersToArgument" eType="#//Argument"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.String"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="java.lang.Boolean"/>
 </ecore:EPackage>

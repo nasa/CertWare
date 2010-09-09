@@ -1294,7 +1294,7 @@ public interface ArmPackage extends EPackage {
 	 * The meta object id for the '<em>Integer</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.String
+	 * @see java.lang.Integer
 	 * @see net.certware.argument.arm.impl.ArmPackageImpl#getInteger()
 	 * @generated
 	 */
@@ -1304,7 +1304,7 @@ public interface ArmPackage extends EPackage {
 	 * The meta object id for the '<em>Boolean</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.String
+	 * @see java.lang.Boolean
 	 * @see net.certware.argument.arm.impl.ArmPackageImpl#getBoolean()
 	 * @generated
 	 */
@@ -1573,22 +1573,22 @@ public interface ArmPackage extends EPackage {
 	EClass getClaim();
 
 	/**
-	 * Returns the meta object for the attribute '{@link net.certware.argument.arm.Claim#getAssumed <em>Assumed</em>}'.
+	 * Returns the meta object for the attribute '{@link net.certware.argument.arm.Claim#isAssumed <em>Assumed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Assumed</em>'.
-	 * @see net.certware.argument.arm.Claim#getAssumed()
+	 * @see net.certware.argument.arm.Claim#isAssumed()
 	 * @see #getClaim()
 	 * @generated
 	 */
 	EAttribute getClaim_Assumed();
 
 	/**
-	 * Returns the meta object for the attribute '{@link net.certware.argument.arm.Claim#getToBeSupported <em>To Be Supported</em>}'.
+	 * Returns the meta object for the attribute '{@link net.certware.argument.arm.Claim#isToBeSupported <em>To Be Supported</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>To Be Supported</em>'.
-	 * @see net.certware.argument.arm.Claim#getToBeSupported()
+	 * @see net.certware.argument.arm.Claim#isToBeSupported()
 	 * @see #getClaim()
 	 * @generated
 	 */
@@ -1690,23 +1690,23 @@ public interface ArmPackage extends EPackage {
 	EDataType getString();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.String <em>Integer</em>}'.
+	 * Returns the meta object for data type '{@link java.lang.Integer <em>Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Integer</em>'.
-	 * @see java.lang.String
-	 * @model instanceClass="java.lang.String"
+	 * @see java.lang.Integer
+	 * @model instanceClass="java.lang.Integer"
 	 * @generated
 	 */
 	EDataType getInteger();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.String <em>Boolean</em>}'.
+	 * Returns the meta object for data type '{@link java.lang.Boolean <em>Boolean</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Boolean</em>'.
-	 * @see java.lang.String
-	 * @model instanceClass="java.lang.String"
+	 * @see java.lang.Boolean
+	 * @model instanceClass="java.lang.Boolean"
 	 * @generated
 	 */
 	EDataType getBoolean();
@@ -2063,7 +2063,7 @@ public interface ArmPackage extends EPackage {
 		 * The meta object literal for the '<em>Integer</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.String
+		 * @see java.lang.Integer
 		 * @see net.certware.argument.arm.impl.ArmPackageImpl#getInteger()
 		 * @generated
 		 */
@@ -2073,7 +2073,7 @@ public interface ArmPackage extends EPackage {
 		 * The meta object literal for the '<em>Boolean</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.String
+		 * @see java.lang.Boolean
 		 * @see net.certware.argument.arm.impl.ArmPackageImpl#getBoolean()
 		 * @generated
 		 */

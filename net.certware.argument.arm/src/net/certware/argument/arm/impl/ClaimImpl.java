@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.argument.arm.impl.ClaimImpl#getAssumed <em>Assumed</em>}</li>
- *   <li>{@link net.certware.argument.arm.impl.ClaimImpl#getToBeSupported <em>To Be Supported</em>}</li>
+ *   <li>{@link net.certware.argument.arm.impl.ClaimImpl#isAssumed <em>Assumed</em>}</li>
+ *   <li>{@link net.certware.argument.arm.impl.ClaimImpl#isToBeSupported <em>To Be Supported</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,44 +36,44 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 Kestrel Technology LLC (generated models) "; //$NON-NLS-1$
 
 	/**
-	 * The default value of the '{@link #getAssumed() <em>Assumed</em>}' attribute.
+	 * The default value of the '{@link #isAssumed() <em>Assumed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssumed()
+	 * @see #isAssumed()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ASSUMED_EDEFAULT = null;
+	protected static final boolean ASSUMED_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getAssumed() <em>Assumed</em>}' attribute.
+	 * The cached value of the '{@link #isAssumed() <em>Assumed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssumed()
+	 * @see #isAssumed()
 	 * @generated
 	 * @ordered
 	 */
-	protected String assumed = ASSUMED_EDEFAULT;
+	protected boolean assumed = ASSUMED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getToBeSupported() <em>To Be Supported</em>}' attribute.
+	 * The default value of the '{@link #isToBeSupported() <em>To Be Supported</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToBeSupported()
+	 * @see #isToBeSupported()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TO_BE_SUPPORTED_EDEFAULT = null;
+	protected static final boolean TO_BE_SUPPORTED_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getToBeSupported() <em>To Be Supported</em>}' attribute.
+	 * The cached value of the '{@link #isToBeSupported() <em>To Be Supported</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getToBeSupported()
+	 * @see #isToBeSupported()
 	 * @generated
 	 * @ordered
 	 */
-	protected String toBeSupported = TO_BE_SUPPORTED_EDEFAULT;
+	protected boolean toBeSupported = TO_BE_SUPPORTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,7 +99,7 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAssumed() {
+	public boolean isAssumed() {
 		return assumed;
 	}
 
@@ -108,8 +108,8 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssumed(String newAssumed) {
-		String oldAssumed = assumed;
+	public void setAssumed(boolean newAssumed) {
+		boolean oldAssumed = assumed;
 		assumed = newAssumed;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArmPackage.CLAIM__ASSUMED, oldAssumed, assumed));
@@ -120,7 +120,7 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getToBeSupported() {
+	public boolean isToBeSupported() {
 		return toBeSupported;
 	}
 
@@ -129,8 +129,8 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToBeSupported(String newToBeSupported) {
-		String oldToBeSupported = toBeSupported;
+	public void setToBeSupported(boolean newToBeSupported) {
+		boolean oldToBeSupported = toBeSupported;
 		toBeSupported = newToBeSupported;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArmPackage.CLAIM__TO_BE_SUPPORTED, oldToBeSupported, toBeSupported));
@@ -145,9 +145,9 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ArmPackage.CLAIM__ASSUMED:
-				return getAssumed();
+				return isAssumed();
 			case ArmPackage.CLAIM__TO_BE_SUPPORTED:
-				return getToBeSupported();
+				return isToBeSupported();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,10 +161,10 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ArmPackage.CLAIM__ASSUMED:
-				setAssumed((String)newValue);
+				setAssumed((Boolean)newValue);
 				return;
 			case ArmPackage.CLAIM__TO_BE_SUPPORTED:
-				setToBeSupported((String)newValue);
+				setToBeSupported((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -197,9 +197,9 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ArmPackage.CLAIM__ASSUMED:
-				return ASSUMED_EDEFAULT == null ? assumed != null : !ASSUMED_EDEFAULT.equals(assumed);
+				return assumed != ASSUMED_EDEFAULT;
 			case ArmPackage.CLAIM__TO_BE_SUPPORTED:
-				return TO_BE_SUPPORTED_EDEFAULT == null ? toBeSupported != null : !TO_BE_SUPPORTED_EDEFAULT.equals(toBeSupported);
+				return toBeSupported != TO_BE_SUPPORTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

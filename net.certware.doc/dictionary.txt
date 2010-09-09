@@ -16,3 +16,4 @@ resizable
 throwable
 throwables
 enablements
+tabbed

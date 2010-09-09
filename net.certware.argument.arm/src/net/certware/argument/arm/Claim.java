@@ -13,8 +13,8 @@ package net.certware.argument.arm;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.certware.argument.arm.Claim#getAssumed <em>Assumed</em>}</li>
- *   <li>{@link net.certware.argument.arm.Claim#getToBeSupported <em>To Be Supported</em>}</li>
+ *   <li>{@link net.certware.argument.arm.Claim#isAssumed <em>Assumed</em>}</li>
+ *   <li>{@link net.certware.argument.arm.Claim#isToBeSupported <em>To Be Supported</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,22 +39,22 @@ public interface Claim extends ReasoningElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assumed</em>' attribute.
-	 * @see #setAssumed(String)
+	 * @see #setAssumed(boolean)
 	 * @see net.certware.argument.arm.ArmPackage#getClaim_Assumed()
-	 * @model dataType="net.certware.argument.arm.Boolean"
+	 * @model
 	 * @generated
 	 */
-	String getAssumed();
+	boolean isAssumed();
 
 	/**
-	 * Sets the value of the '{@link net.certware.argument.arm.Claim#getAssumed <em>Assumed</em>}' attribute.
+	 * Sets the value of the '{@link net.certware.argument.arm.Claim#isAssumed <em>Assumed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Assumed</em>' attribute.
-	 * @see #getAssumed()
+	 * @see #isAssumed()
 	 * @generated
 	 */
-	void setAssumed(String value);
+	void setAssumed(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>To Be Supported</b></em>' attribute.
@@ -65,21 +65,21 @@ public interface Claim extends ReasoningElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To Be Supported</em>' attribute.
-	 * @see #setToBeSupported(String)
+	 * @see #setToBeSupported(boolean)
 	 * @see net.certware.argument.arm.ArmPackage#getClaim_ToBeSupported()
-	 * @model dataType="net.certware.argument.arm.Boolean"
+	 * @model
 	 * @generated
 	 */
-	String getToBeSupported();
+	boolean isToBeSupported();
 
 	/**
-	 * Sets the value of the '{@link net.certware.argument.arm.Claim#getToBeSupported <em>To Be Supported</em>}' attribute.
+	 * Sets the value of the '{@link net.certware.argument.arm.Claim#isToBeSupported <em>To Be Supported</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>To Be Supported</em>' attribute.
-	 * @see #getToBeSupported()
+	 * @see #isToBeSupported()
 	 * @generated
 	 */
-	void setToBeSupported(String value);
+	void setToBeSupported(boolean value);
 
 } // Claim
