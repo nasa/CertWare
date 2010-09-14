@@ -20,7 +20,6 @@
 
    <windowImages i16="/net.certware.product/icons/obj16/black_box_16.png" i32="/net.certware.product/icons/obj32/black_box_32.png" i48="/net.certware.product/icons/obj48/black_box_48.png" i64="/net.certware.product/icons/obj64/black_box_64.png" i128="/net.certware.product/icons/obj128/black_box_128.png"/>
 
-
    <launcher name="CertWare">
       <macosx icon="/net.certware.product/icons/black_box.icns"/>
       <solaris/>
@@ -29,7 +28,6 @@
          <bmp/>
       </win>
    </launcher>
-
 
    <vm>
    </vm>
@@ -49,6 +47,7 @@
       <plugin id="javax.servlet.jsp"/>
       <plugin id="javax.servlet.jsp.jstl"/>
       <plugin id="javax.transaction" fragment="true"/>
+      <plugin id="lpg.runtime.java"/>
       <plugin id="net.certware.argument.arm"/>
       <plugin id="net.certware.argument.arm.edit"/>
       <plugin id="net.certware.argument.arm.editor"/>
@@ -58,10 +57,13 @@
       <plugin id="net.certware.argument.gsn"/>
       <plugin id="net.certware.argument.gsn.edit"/>
       <plugin id="net.certware.argument.gsn.editor"/>
+      <plugin id="net.certware.argument.gsn.validator"/>
       <plugin id="net.certware.branding"/>
       <plugin id="net.certware.core"/>
       <plugin id="net.certware.core.ui"/>
+      <plugin id="net.certware.libs.doc"/>
       <plugin id="net.certware.product"/>
+      <plugin id="net.certware.update"/>
       <plugin id="org.apache.ant"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.lucene"/>
@@ -118,21 +120,31 @@
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.emf.edit"/>
       <plugin id="org.eclipse.emf.edit.ui"/>
+      <plugin id="org.eclipse.emf.eef.runtime"/>
+      <plugin id="org.eclipse.emf.validation"/>
+      <plugin id="org.eclipse.emf.validation.ocl"/>
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.common"/>
       <plugin id="org.eclipse.equinox.http.jetty"/>
       <plugin id="org.eclipse.equinox.http.servlet"/>
+      <plugin id="org.eclipse.equinox.p2.artifact.repository"/>
       <plugin id="org.eclipse.equinox.p2.core"/>
+      <plugin id="org.eclipse.equinox.p2.director"/>
       <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.jarprocessor"/>
       <plugin id="org.eclipse.equinox.p2.metadata"/>
       <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
+      <plugin id="org.eclipse.equinox.p2.operations"/>
       <plugin id="org.eclipse.equinox.p2.repository"/>
+      <plugin id="org.eclipse.equinox.p2.ui"/>
       <plugin id="org.eclipse.equinox.preferences"/>
       <plugin id="org.eclipse.equinox.registry"/>
       <plugin id="org.eclipse.equinox.security"/>
       <plugin id="org.eclipse.equinox.security.macosx" fragment="true"/>
+      <plugin id="org.eclipse.equinox.security.ui"/>
       <plugin id="org.eclipse.equinox.security.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.equinox.servletbridge.extensionbundle" fragment="true"/>
+      <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
       <plugin id="org.eclipse.help"/>
@@ -153,6 +165,8 @@
       <plugin id="org.eclipse.jsch.ui"/>
       <plugin id="org.eclipse.ltk.core.refactoring"/>
       <plugin id="org.eclipse.ltk.ui.refactoring"/>
+      <plugin id="org.eclipse.ocl"/>
+      <plugin id="org.eclipse.ocl.ecore"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.sdk"/>
@@ -201,10 +215,13 @@
       <plugin id="org.eclipse.update.core.linux" fragment="true"/>
       <plugin id="org.eclipse.update.core.win32" fragment="true"/>
       <plugin id="org.eclipse.update.ui"/>
+      <plugin id="org.eclipselabs.p2.rcpupdate.utils"/>
       <plugin id="org.hamcrest.core"/>
       <plugin id="org.junit"/>
       <plugin id="org.mortbay.jetty.server"/>
       <plugin id="org.mortbay.jetty.util"/>
+      <plugin id="org.sat4j.core"/>
+      <plugin id="org.sat4j.pb"/>
    </plugins>
 
    <configurations>

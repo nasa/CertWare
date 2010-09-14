@@ -8,6 +8,7 @@ package net.certware.export.handlers;
 import java.util.Collection;
 
 import net.certware.core.ui.log.CertWareLog;
+import net.certware.export.jobs.ExportARMJob;
 import net.certware.export.jobs.ExportGSNJob;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -23,11 +24,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * Handles the command to export a GSN model node (and its subordinates).
+ * Handles the command to export a ARM model node (and its subordinates).
  * @author mrb
  * @since 1.0
  */
-public class ExportGSNHandler extends AbstractHandler {
+public class ExportARMHandler extends AbstractHandler {
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
@@ -44,19 +45,19 @@ public class ExportGSNHandler extends AbstractHandler {
 				// determine the kind of selection
 				// use various job constructors according to selection
 				Collection collection = null;
-				ExportGSNJob job = null;
-				final String jobTitle = "Export GSN model elements";
+				ExportARMJob job = null;
+				final String jobTitle = "Export ARM model elements";
 
 				if ( iss.size() > 1 ) {
 					collection = iss.toList();
-					job = new ExportGSNJob(jobTitle, collection);
+					job = new ExportARMJob(jobTitle, collection);
 				} else {
 					if ( iss.getFirstElement() instanceof Resource )
-						job = new ExportGSNJob(jobTitle, (Resource)iss.getFirstElement());
+						job = new ExportARMJob(jobTitle, (Resource)iss.getFirstElement());
 					else if ( iss.getFirstElement() instanceof EObject )
-						job = new ExportGSNJob(jobTitle, (EObject)iss.getFirstElement());
+						job = new ExportARMJob(jobTitle, (EObject)iss.getFirstElement());
 					else {
-						CertWareLog.logWarning("Unknown selection for GSN export");
+						CertWareLog.logWarning("Unknown selection for ARM export");
 						return null;
 					}
 				}

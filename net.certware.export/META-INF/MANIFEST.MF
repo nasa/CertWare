@@ -33,4 +33,5 @@ Import-Package: net.certware.argument.arm,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.libs.doc;bundle-version="1.0.0",
  org.eclipse.jface,
- org.eclipse.ui
+ org.eclipse.ui,
+ net.certware.argument.gsn;bundle-version="1.0.0"

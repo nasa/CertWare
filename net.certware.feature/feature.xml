@@ -3,10 +3,11 @@
       id="net.certware.feature"
       label="CertWare Feature"
       version="0.1.0.qualifier"
-      provider-name="Ketrel Technology LLC">
+      provider-name="Ketrel Technology LLC"
+      plugin="net.certware.branding">
 
    <description url="http://www.certware.net">
-      [Enter Feature Description here.]
+      CertWare safety case development software.
    </description>
 
    <copyright url="http://www.certware.net/copyright">
@@ -29,7 +30,25 @@
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.eef.runtime" version="0.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.validation" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.validation.ocl" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="net.certware.core.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="net.certware.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="net.certware.libs.doc" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.core.commands"/>
+      <import plugin="org.eclipse.core.jobs"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.ui.ide.application" version="1.0.200" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf" version="2.6.0.v20100614-1136"/>
+      <import plugin="org.eclipselabs.p2.rcpupdate.utils"/>
    </requires>
 
    <plugin
@@ -104,6 +123,53 @@
 
    <plugin
          id="net.certware.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="net.certware.argument.gsn.validator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.core.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.export"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.product"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="net.certware.update"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.libs.doc"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

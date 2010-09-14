@@ -8,22 +8,10 @@
       <product
             application="org.eclipse.ui.ide.workbench"
             description="CertWare Application Workbench"
-            name="CertWare">
-         <property
-               name="windowImages"
-               value="icons/obj16/black_box_16.png,icons/obj32/black_box_32.png,icons/obj48/black_box_48.png,icons/obj64/black_box_64.png,icons/obj128/black_box_128.png">
-         </property>
-         <property
-               name="aboutText"
-               value="CertWare Desktop Application">
-         </property>
-         <property
-               name="aboutImage"
-               value="icons/obj128/black_box_128.png">
-         </property>
+            name="CertWareApp">
          <property
                name="appName"
-               value="CertWare">
+               value="CertWareApp">
          </property>
          <property
                name="preferenceCustomization"

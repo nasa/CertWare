@@ -5,44 +5,33 @@
  */
 package net.certware.export.jobs;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+import java.util.Collection;
 
-import net.certware.core.ui.log.CertWareLog;
+import net.certware.argument.arm.ArgumentElement;
+import net.certware.argument.arm.ArgumentLink;
+import net.certware.argument.arm.AssertedEvidence;
+import net.certware.argument.arm.AssertedRelationship;
+import net.certware.argument.arm.Claim;
+import net.certware.argument.arm.InformationElement;
+import net.certware.argument.arm.ModelElement;
+import net.certware.argument.arm.ReasoningElement;
+import net.certware.argument.gsn.Assumption;
+import net.certware.argument.gsn.Goal;
+import net.certware.argument.gsn.Justification;
+import net.certware.argument.gsn.Solution;
+import net.certware.argument.gsn.Strategy;
+import net.certware.argument.gsn.util.GsnSwitch;
 
-import org.docx4j.XmlUtils;
-import org.docx4j.convert.out.flatOpcXml.FlatOpcXmlCreator;
-import org.docx4j.jaxb.Context;
-import org.docx4j.jaxb.NamespacePrefixMapperUtils;
-import org.docx4j.model.table.TblFactory;
-import org.docx4j.openpackaging.contenttype.ContentType;
-import org.docx4j.openpackaging.exceptions.Docx4JException;
-import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
-import org.docx4j.openpackaging.parts.PartName;
-import org.docx4j.openpackaging.parts.WordprocessingML.AlternativeFormatInputPart;
-import org.docx4j.relationships.Relationship;
-import org.docx4j.wml.BooleanDefaultTrue;
-import org.docx4j.wml.CTAltChunk;
-import org.docx4j.wml.ObjectFactory;
-import org.docx4j.wml.P;
-import org.docx4j.wml.PPr;
-import org.docx4j.wml.ParaRPr;
-import org.docx4j.wml.R;
-import org.docx4j.wml.RPr;
-import org.docx4j.wml.Tbl;
-import org.docx4j.wml.Text;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
- * Exports a selected GSN model element to a document file.
+ * Exports GSN model elements to a document file.
+ * Uses ARM exporter as well for tree visitor.
  * @author mrb
  * @since 1.0
  */
-public class ExportGSNJob extends AbstractExportJob {
+public class ExportGSNJob extends ExportARMJob {
 
 	/**
 	 * Create the export job with a name.
@@ -58,135 +47,242 @@ public class ExportGSNJob extends AbstractExportJob {
 	 * @param node model element to export
 	 */
 	public ExportGSNJob(String name, EObject node) {
-		this(name);
-		this.node = node;
+		super(name,node);
+	}
+
+	/**
+	 * Create the export job with a collection of model nodes.
+	 * @param name job name
+	 * @param nodes model elements to export
+	 */
+	public ExportGSNJob(String name, Collection nodes ) {
+		super(name,nodes);
+	}
+
+	/**
+	 * Create the export job for a given model resource.
+	 * @param name job name
+	 * @param resource model resource to export all nodes
+	 */
+	public ExportGSNJob(String name, Resource resource ) {
+		super(name,resource);
 	}
 	
 	/**
-	 * Produces the export content.
-	 * @param monitor progress monitor
+	 * Visitor to pass to the model's tree iterator.
+	 * Overrides the case methods of the generated switch class.
 	 */
-	public IStatus produce(IProgressMonitor monitor) {
-		IStatus rv = Status.OK_STATUS;
-		setSteps(4); // TODO set accurate count
-		
-		if ( node == null ) {
-			CertWareLog.logWarning("Node selection unavailable for export; export canceled");
-			monitor.setCanceled(true);
-			return Status.CANCEL_STATUS;
+	public GsnSwitch<Boolean> visitor = new GsnSwitch<Boolean>() {
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Goal</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Goal</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseGoal(Goal goal) {
+			System.err.println("visiting goal " + goal);
+			return Boolean.TRUE;
 		}
-		
-		// TODO produce code
-		System.err.println("producing node" + ' ' + node.toString());
-		
-		// test
-		try {
-			rv = test();
-		} catch (JAXBException e) {
-			CertWareLog.logError("Exporting word document", e);
-		} catch (Docx4JException e) {
-			CertWareLog.logError("Exporting word document", e);
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Strategy</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Strategy</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseStrategy(Strategy strategy) {
+			System.err.println("visiting strategy " + strategy);
+			return Boolean.TRUE;
 		}
-		
-		cleanupJob(monitor,rv);
-		return rv;
-	}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Solution</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Solution</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseSolution(Solution solution) {
+			System.err.println("visiting solution " + solution);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Assumption</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Assumption</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssumption(Assumption assumption) {
+			System.err.println("visiting assumption " + assumption);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Context</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseContext(net.certware.argument.gsn.Context context) {
+			System.err.println("visiting context " + context);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Justification</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Justification</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseJustification(Justification justification) {
+			System.err.println("visiting justification " + justification);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseModelElement(ModelElement modelElement) {
+			System.err.println("visiting model element " + modelElement);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Argument Element</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Argument Element</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseArgumentElement(ArgumentElement argumentElement) {
+			System.err.println("visiting argument element " + argumentElement);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Reasoning Element</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Reasoning Element</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseReasoningElement(ReasoningElement object) {
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Claim</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Claim</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseClaim(Claim claim) {
+			System.err.println("visiting claim " + claim);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Argument Link</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Argument Link</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseArgumentLink(ArgumentLink argumentLink) {
+			System.err.println("visiting argument link " + argumentLink);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedRelationship(AssertedRelationship assertedRelationship) {
+			System.err.println("visiting asserted relationship " + assertedRelationship);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedEvidence(AssertedEvidence assertedEvidence) {
+			System.err.println("visiting asserted evidence " + assertedEvidence);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Information Element</em>'.
+		 * <!-- begin-user-doc -->
+		 * returning a non-null result will terminate the switch.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Information Element</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseInformationElement(InformationElement informationElement) {
+			System.err.println("visiting information element");
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+		 * <!-- begin-user-doc -->
+		 * defer to the superclass visitor for switch
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+		 */
+		public Boolean defaultCase(EObject object) {
+			if ( getVisitor().doSwitch(object) == Boolean.TRUE)
+				return Boolean.TRUE;
+			System.err.println("visiting unknown GSN object " + object);
+			return Boolean.FALSE;
+		}
+	};
 	
-	private IStatus test() throws JAXBException, Docx4JException {
-		boolean save = true;
-		ObjectFactory factory = new ObjectFactory();
-		
-		System.out.println( "Creating package..");
-		WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.createPackage();
-		
-		wordMLPackage.getMainDocumentPart().addStyledParagraphOfText("Title", "Hello world");
-		wordMLPackage.getMainDocumentPart().addParagraphOfText("from docx4j!");
-		
-		// To get bold text, you must set the run's rPr@w:b,
-	    // so you can't use the createParagraphOfText convenience method
-		// org.docx4j.wml.P p = wordMLPackage.getMainDocumentPart().createParagraphOfText("text");
-		
-		P p = factory.createP();
-		R run = factory.createR();
-		Text  t = factory.createText();
-		t.setValue("text");
-		run.getRunContent().add(t);		
-		p.getParagraphContent().add(run);
-		
-		
-		RPr rpr = factory.createRPr();		
-		BooleanDefaultTrue b = new BooleanDefaultTrue();
-	    b.setVal(true);	    
-	    rpr.setB(b);
-		run.setRPr(rpr);
-		
-		// Optionally, set pPr/rPr@w:b		
-	    PPr ppr = factory.createPPr();	    
-	    p.setPPr( ppr );
-	    ParaRPr paraRpr = factory.createParaRPr();
-	    ppr.setRPr(paraRpr);	    
-	    rpr.setB(b);
-	    
-	            
-	    wordMLPackage.getMainDocumentPart().addObject(p);
-	    
-	    
-	    // Here is an easier way:
-	    String str = "<w:p xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" ><w:r><w:rPr><w:b /></w:rPr><w:t>Bold, just at w:r level</w:t></w:r></w:p>";
-	    
-	    wordMLPackage.getMainDocumentPart().addObject( XmlUtils.unmarshalString(str) );
-	    
-	    // Let's add a table
-	    int writableWidthTwips = wordMLPackage.getDocumentModel().getSections().get(0).getPageDimensions().getWritableWidthTwips();
-	    int cols = 3;
-	    int cellWidthTwips = new Double( Math.floor( (writableWidthTwips/cols )) ).intValue();
-	    
-	    Tbl tbl = TblFactory.createTable(3, 3, cellWidthTwips);
-	    wordMLPackage.getMainDocumentPart().addObject(tbl);
-	    
-		
-	    // Add an altChunk
-	    // .. the part
-	    String html = "<html><head><title>Import me</title></head><body><p>Hello World!</p></body></html>";
-	    AlternativeFormatInputPart afiPart = new AlternativeFormatInputPart(new PartName("/hw.html") ); 
-	    afiPart.setBinaryData(html.getBytes());
-	    afiPart.setContentType(new ContentType("text/html"));
-	    Relationship altChunkRel = wordMLPackage.getMainDocumentPart().addTargetPart(afiPart);
-	    // .. the bit in document body
-	    CTAltChunk ac = Context.getWmlObjectFactory().createCTAltChunk();
-	    ac.setId(altChunkRel.getId() );
-	    wordMLPackage.getMainDocumentPart().addObject(ac);
-
-	    // .. content type
-	    wordMLPackage.getContentTypeManager().addDefaultContentType("html", "text/html");
-	    
-		//injectDocPropsCustomPart(wordMLPackage);
-		
-		String pathName = System.getProperty("user.dir") + "/ad.docx";
-	    System.err.println("Ready to write to" + ' ' + pathName);
-	    
-		// Now save it
-		if (save) {
-			System.out.println("Saved to" + ' ' + pathName);
-			wordMLPackage.save(new java.io.File(pathName) );
-		} else {
-		   	// Create a org.docx4j.wml.Package object
-			FlatOpcXmlCreator worker = new FlatOpcXmlCreator(wordMLPackage);
-			org.docx4j.xmlPackage.Package pkg = worker.get();
-	    	
-	    	// Now marshal it
-			JAXBContext jc = Context.jcXmlPackage;
-			Marshaller marshaller=jc.createMarshaller();
-			
-			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-			NamespacePrefixMapperUtils.setProperty(marshaller, NamespacePrefixMapperUtils.getPrefixMapper());			
-			System.out.println( "\n\n OUTPUT " );
-			System.out.println( "====== \n\n " );	
-			marshaller.marshal(pkg, System.out);				
-		}
-		
-		System.out.println("Done.");
-
-		return Status.OK_STATUS;
-	}
 }

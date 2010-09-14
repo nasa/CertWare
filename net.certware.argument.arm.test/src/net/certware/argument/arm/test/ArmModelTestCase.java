@@ -1,13 +1,8 @@
 package net.certware.argument.arm.test;
 
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-
 import junit.framework.TestCase;
 import net.certware.argument.arm.Argument;
 import net.certware.argument.arm.ArmFactory;
-
-import static org.easymock.EasyMock.*;
 
 /**
  * Unit testing various combinations of model elements.
