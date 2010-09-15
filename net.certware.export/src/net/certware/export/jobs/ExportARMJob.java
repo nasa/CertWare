@@ -104,13 +104,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseModelElement(ModelElement modelElement) {
 			System.err.println("visiting model element " + modelElement);
@@ -120,13 +118,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Tagged Value</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Tagged Value</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseTaggedValue(TaggedValue taggedValue) {
 			System.err.println("visiting tagged value " + taggedValue);
@@ -136,13 +132,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Argument</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Argument</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseArgument(Argument argument) {
 			System.err.println("visiting case argument " + argument);
@@ -152,13 +146,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Argument Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Argument Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseArgumentElement(ArgumentElement argumentElement) {
 			System.err.println("visiting argument element " + argumentElement);
@@ -168,13 +160,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Argument Link</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Argument Link</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseArgumentLink(ArgumentLink argumentLink) {
 			System.err.println("visiting argument link " + argumentLink);
@@ -184,13 +174,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedRelationship(AssertedRelationship assertedRelationship) {
 			System.err.println("visiting asserted relationship " + assertedRelationship);
@@ -200,13 +188,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Annotation</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAnnotation(Annotation annotation) {
 			System.err.println("visiting case annotation " + annotation);
@@ -216,13 +202,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Inference</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Inference</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedInference(AssertedInference assertedInference) {
 			System.err.println("visiting asserted inference " + assertedInference);
@@ -232,13 +216,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedEvidence(AssertedEvidence assertedEvidence) {
 			System.err.println("visiting asserted evidence " + assertedEvidence);
@@ -248,13 +230,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Context</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Context</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedContext(AssertedContext assertedContext) {
 			System.err.println("visiting asserted context " + assertedContext);
@@ -264,13 +244,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Counter Evidence</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Counter Evidence</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedCounterEvidence(AssertedCounterEvidence assertedCounterEvidence) {
 			System.err.println("visiting asserted counter evidence " + assertedCounterEvidence);
@@ -280,13 +258,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Challenge</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Challenge</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedChallenge(AssertedChallenge assertedChallenge) {
 			System.err.println("visiting asserted challenge " + assertedChallenge);
@@ -296,13 +272,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Reasoning Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Reasoning Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseReasoningElement(ReasoningElement reasoningElement) {
 			System.err.println("visiting reasoning element "+ reasoningElement);
@@ -312,13 +286,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Claim</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Claim</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseClaim(Claim claim) {
 			System.err.println("visiting claim " + claim);
@@ -328,13 +300,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Evidence Assertion</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Evidence Assertion</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseEvidenceAssertion(EvidenceAssertion evidenceAssertion) {
 			System.err.println("visiting evidence assertion " + evidenceAssertion);
@@ -344,13 +314,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Information Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Information Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseInformationElement(InformationElement informationElement) {
 			System.err.println("visiting information element " + informationElement);
@@ -360,13 +328,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Argument Reasoning</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Argument Reasoning</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseArgumentReasoning(ArgumentReasoning argumentReasoning) {
 			System.err.println("visiting argument reasoning " + argumentReasoning);
@@ -376,13 +342,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Citation Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Citation Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseCitationElement(CitationElement citationElement) {
 			System.err.println("visiting citation element " + citationElement);
@@ -392,13 +356,11 @@ public class ExportARMJob extends AbstractExportJob {
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
 		 * returning a non-null result will terminate the switch, but this is the last case anyway.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-		 * @generated
 		 */
 		public Boolean defaultCase(EObject object) {
 			System.err.println("ARM visiting unknown object " + object);
@@ -518,6 +480,8 @@ public class ExportARMJob extends AbstractExportJob {
 		} else {
 			monitor.subTask("Producing node content");
 			// iterates over a node and its children
+			// do the node itself, then its contents
+			visitor.doSwitch(getNode());
 			for ( Iterator<EObject> iter = EcoreUtil.getAllContents(getNode(), true); iter.hasNext(); ) {
 				EObject eObject = (EObject)iter.next();
 				visitor.doSwitch(eObject);
@@ -528,7 +492,7 @@ public class ExportARMJob extends AbstractExportJob {
 			}
 		}
 		
-		// TODO testing manual markup
+		// TODO testing manual mark-up
 		// To get bold text, you must set the run's rPr@w:b,
 	    // so you can't use the createParagraphOfText convenience method
 		// org.docx4j.wml.P p = wordMLPackage.getMainDocumentPart().createParagraphOfText("text");

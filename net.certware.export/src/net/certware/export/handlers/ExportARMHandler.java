@@ -9,7 +9,6 @@ import java.util.Collection;
 
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.export.jobs.ExportARMJob;
-import net.certware.export.jobs.ExportGSNJob;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;

@@ -20,3 +20,8 @@ tabbed
 damus
 cdamus
 marshalling
+bluetooth
+klaxon
+cutsets
+xtext
+genmodel
