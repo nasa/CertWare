@@ -40,7 +40,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReasoningElement" abstract="true" eSuperTypes="#//ArgumentElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Claim" eSuperTypes="#//ReasoningElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBeSupported" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBeSupported" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EvidenceAssertion" eSuperTypes="#//Claim"/>
   <eClassifiers xsi:type="ecore:EClass" name="InformationElement" eSuperTypes="#//ArgumentElement"/>
