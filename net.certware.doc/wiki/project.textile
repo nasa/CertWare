@@ -33,7 +33,17 @@ Exporting is done with @docx4j@ and a depth-first visitor pattern.  The visitor 
 h3. Analysis Tools
 
 
-h3. Workbench Views
+h3. Workbench
+
+h4. Editors
+
+h4. Views
+
+h4. Navigator Contributions
+
+* @net.certware.argument.arm.navigator@ Contributes content on model resource files and navigator filter.
+* @net.certware.argument.cae.navigator@ Contributes content on model resource files and navigator filter.
+* @net.certware.argument.gsn.navigator@ Contributes content on model resource files and navigator filter.
 
 
 
