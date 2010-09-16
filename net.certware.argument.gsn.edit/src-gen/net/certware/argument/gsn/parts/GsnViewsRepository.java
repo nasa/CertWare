@@ -49,6 +49,9 @@ public class GsnViewsRepository {
 		
 		public static String solution = "gsn::Goal::solution";
 		
+		
+		public static String subgoal = "gsn::Goal::subgoal";
+		
 	
 	}
 
@@ -68,6 +71,9 @@ public class GsnViewsRepository {
 		
 		
 		public static String isTagged = "gsn::Strategy::isTagged";
+		
+		
+		public static String goal = "gsn::Strategy::goal";
 		
 		
 		public static String justification = "gsn::Strategy::justification";

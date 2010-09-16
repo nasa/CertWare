@@ -98,6 +98,9 @@ public class GsnMessages extends NLS {
 	public static String GoalPropertiesEditionPart_SolutionLabel;
 
 	
+	public static String GoalPropertiesEditionPart_SubgoalLabel;
+
+	
 	public static String StrategyPropertiesEditionPart_IdentifierLabel;
 
 	
@@ -108,6 +111,9 @@ public class GsnMessages extends NLS {
 
 	
 	public static String StrategyPropertiesEditionPart_IsTaggedLabel;
+
+	
+	public static String StrategyPropertiesEditionPart_GoalLabel;
 
 	
 	public static String StrategyPropertiesEditionPart_JustificationLabel;

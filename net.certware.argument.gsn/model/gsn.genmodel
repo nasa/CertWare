@@ -15,9 +15,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/strategy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/assumption"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/context"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/solution"/>
+      <genFeatures children="true" createChild="true" propertyCategory="" propertySortChoices="true"
+          ecoreFeature="ecore:EReference gsn.ecore#//Goal/solution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/subgoal"/>
     </genClasses>
     <genClasses ecoreClass="gsn.ecore#//Strategy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/goal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/justification"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/solution"/>
     </genClasses>

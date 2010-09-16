@@ -165,13 +165,22 @@ public interface GsnPackage extends EPackage {
 	int GOAL__SOLUTION = ArmPackage.CLAIM_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Subgoal</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GOAL__SUBGOAL = ArmPackage.CLAIM_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Goal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GOAL_FEATURE_COUNT = ArmPackage.CLAIM_FEATURE_COUNT + 4;
+	int GOAL_FEATURE_COUNT = ArmPackage.CLAIM_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link net.certware.argument.gsn.impl.StrategyImpl <em>Strategy</em>}' class.
@@ -220,22 +229,31 @@ public interface GsnPackage extends EPackage {
 	int STRATEGY__IS_TAGGED = ArmPackage.REASONING_ELEMENT__IS_TAGGED;
 
 	/**
+	 * The feature id for the '<em><b>Goal</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__GOAL = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Justification</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY__JUSTIFICATION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 0;
+	int STRATEGY__JUSTIFICATION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Solution</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Solution</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY__SOLUTION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 1;
+	int STRATEGY__SOLUTION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Strategy</em>' class.
@@ -244,7 +262,7 @@ public interface GsnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 2;
+	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link net.certware.argument.gsn.impl.SolutionImpl <em>Solution</em>}' class.
@@ -558,6 +576,17 @@ public interface GsnPackage extends EPackage {
 	EReference getGoal_Solution();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Goal#getSubgoal <em>Subgoal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Subgoal</em>'.
+	 * @see net.certware.argument.gsn.Goal#getSubgoal()
+	 * @see #getGoal()
+	 * @generated
+	 */
+	EReference getGoal_Subgoal();
+
+	/**
 	 * Returns the meta object for class '{@link net.certware.argument.gsn.Strategy <em>Strategy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -566,6 +595,17 @@ public interface GsnPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getStrategy();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Strategy#getGoal <em>Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Goal</em>'.
+	 * @see net.certware.argument.gsn.Strategy#getGoal()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EReference getStrategy_Goal();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Strategy#getJustification <em>Justification</em>}'.
@@ -579,10 +619,10 @@ public interface GsnPackage extends EPackage {
 	EReference getStrategy_Justification();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Strategy#getSolution <em>Solution</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.gsn.Strategy#getSolution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Solution</em>'.
+	 * @return the meta object for the reference list '<em>Solution</em>'.
 	 * @see net.certware.argument.gsn.Strategy#getSolution()
 	 * @see #getStrategy()
 	 * @generated
@@ -716,6 +756,14 @@ public interface GsnPackage extends EPackage {
 		EReference GOAL__SOLUTION = eINSTANCE.getGoal_Solution();
 
 		/**
+		 * The meta object literal for the '<em><b>Subgoal</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GOAL__SUBGOAL = eINSTANCE.getGoal_Subgoal();
+
+		/**
 		 * The meta object literal for the '{@link net.certware.argument.gsn.impl.StrategyImpl <em>Strategy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -726,6 +774,14 @@ public interface GsnPackage extends EPackage {
 		EClass STRATEGY = eINSTANCE.getStrategy();
 
 		/**
+		 * The meta object literal for the '<em><b>Goal</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRATEGY__GOAL = eINSTANCE.getStrategy_Goal();
+
+		/**
 		 * The meta object literal for the '<em><b>Justification</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -734,7 +790,7 @@ public interface GsnPackage extends EPackage {
 		EReference STRATEGY__JUSTIFICATION = eINSTANCE.getStrategy_Justification();
 
 		/**
-		 * The meta object literal for the '<em><b>Solution</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Solution</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

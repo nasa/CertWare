@@ -7,6 +7,7 @@ import java.util.Collection;
 
 import net.certware.argument.arm.impl.ReasoningElementImpl;
 
+import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Justification;
 import net.certware.argument.gsn.Solution;
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link net.certware.argument.gsn.impl.StrategyImpl#getGoal <em>Goal</em>}</li>
  *   <li>{@link net.certware.argument.gsn.impl.StrategyImpl#getJustification <em>Justification</em>}</li>
  *   <li>{@link net.certware.argument.gsn.impl.StrategyImpl#getSolution <em>Solution</em>}</li>
  * </ul>
@@ -45,6 +48,16 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 	/**
+	 * The cached value of the '{@link #getGoal() <em>Goal</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoal()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Goal> goal;
+
+	/**
 	 * The cached value of the '{@link #getJustification() <em>Justification</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -55,7 +68,7 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	protected EList<Justification> justification;
 
 	/**
-	 * The cached value of the '{@link #getSolution() <em>Solution</em>}' containment reference list.
+	 * The cached value of the '{@link #getSolution() <em>Solution</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSolution()
@@ -88,6 +101,18 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Goal> getGoal() {
+		if (goal == null) {
+			goal = new EObjectContainmentEList<Goal>(Goal.class, this, GsnPackage.STRATEGY__GOAL);
+		}
+		return goal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Justification> getJustification() {
 		if (justification == null) {
 			justification = new EObjectContainmentEList<Justification>(Justification.class, this, GsnPackage.STRATEGY__JUSTIFICATION);
@@ -102,7 +127,7 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 */
 	public EList<Solution> getSolution() {
 		if (solution == null) {
-			solution = new EObjectContainmentEList<Solution>(Solution.class, this, GsnPackage.STRATEGY__SOLUTION);
+			solution = new EObjectResolvingEList<Solution>(Solution.class, this, GsnPackage.STRATEGY__SOLUTION);
 		}
 		return solution;
 	}
@@ -115,10 +140,10 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case GsnPackage.STRATEGY__GOAL:
+				return ((InternalEList<?>)getGoal()).basicRemove(otherEnd, msgs);
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 				return ((InternalEList<?>)getJustification()).basicRemove(otherEnd, msgs);
-			case GsnPackage.STRATEGY__SOLUTION:
-				return ((InternalEList<?>)getSolution()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -131,6 +156,8 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GsnPackage.STRATEGY__GOAL:
+				return getGoal();
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 				return getJustification();
 			case GsnPackage.STRATEGY__SOLUTION:
@@ -148,6 +175,10 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GsnPackage.STRATEGY__GOAL:
+				getGoal().clear();
+				getGoal().addAll((Collection<? extends Goal>)newValue);
+				return;
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 				getJustification().clear();
 				getJustification().addAll((Collection<? extends Justification>)newValue);
@@ -168,6 +199,9 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case GsnPackage.STRATEGY__GOAL:
+				getGoal().clear();
+				return;
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 				getJustification().clear();
 				return;
@@ -186,6 +220,8 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GsnPackage.STRATEGY__GOAL:
+				return goal != null && !goal.isEmpty();
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 				return justification != null && !justification.isEmpty();
 			case GsnPackage.STRATEGY__SOLUTION:

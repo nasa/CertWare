@@ -136,6 +136,78 @@ public interface StrategyPropertiesEditionPart {
 
 
 	/**
+	 * @return the goal to add
+	 * 
+	 */
+	public List getGoalToAdd();
+
+	/**
+	 * @return the goal to remove
+	 * 
+	 */
+	public List getGoalToRemove();
+
+	/**
+	 * @return the goal to move
+	 * 
+	 */
+	public List getGoalToMove();
+
+	/**
+	 * @return the goal to edit
+	 * 
+	 */
+	public Map getGoalToEdit();
+
+	/**
+	 * @return the current goal table
+	 * 
+	 */
+	public List getGoalTable();
+
+	/**
+	 * Init the goal
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initGoal(EObject current, EReference containingFeature, EReference feature);
+
+	/**
+	 * Update the goal
+	 * @param newValue the goal to update
+	 * 
+	 */
+	public void updateGoal(EObject newValue);
+
+	/**
+	 * Adds the given filter to the goal edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToGoal(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the goal edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToGoal(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the goal table
+	 * 
+	 */
+	public boolean isContainedInGoalTable(EObject element);
+
+
+	/**
 	 * @return the justification to add
 	 * 
 	 */
@@ -218,18 +290,6 @@ public interface StrategyPropertiesEditionPart {
 	 * 
 	 */
 	public List getSolutionToRemove();
-
-	/**
-	 * @return the solution to move
-	 * 
-	 */
-	public List getSolutionToMove();
-
-	/**
-	 * @return the solution to edit
-	 * 
-	 */
-	public Map getSolutionToEdit();
 
 	/**
 	 * @return the current solution table

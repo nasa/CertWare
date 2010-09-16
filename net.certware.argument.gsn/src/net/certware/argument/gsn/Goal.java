@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link net.certware.argument.gsn.Goal#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link net.certware.argument.gsn.Goal#getContext <em>Context</em>}</li>
  *   <li>{@link net.certware.argument.gsn.Goal#getSolution <em>Solution</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.Goal#getSubgoal <em>Subgoal</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,5 +98,21 @@ public interface Goal extends Claim {
 	 * @generated
 	 */
 	EList<Solution> getSolution();
+
+	/**
+	 * Returns the value of the '<em><b>Subgoal</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Goal}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Subgoal</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subgoal</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Subgoal()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Goal> getSubgoal();
 
 } // Goal

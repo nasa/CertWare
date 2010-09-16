@@ -9,9 +9,11 @@ h3. Version 1.0.0
 * Created ARM Ecore model, then GSN and CAE Ecore models depending on ARM package.
 * Established basic target definition including Equinox and RCP.  
 * Established basic feature definition and branding support.
+* Established basic extended editing properties sheets using EEF.  
 * Created Apache POI plugin library package for POI 3.6.
+* Created import/export plugin library package for docx4j.
 * Included EGit/JGit support in run configuration.  
-
+* Unit test fragments created for ARM and GSN models.
 
 h2. Documentation
 

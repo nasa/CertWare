@@ -451,6 +451,78 @@ public interface GoalPropertiesEditionPart {
 	public boolean isContainedInSolutionTable(EObject element);
 
 
+	/**
+	 * @return the subgoal to add
+	 * 
+	 */
+	public List getSubgoalToAdd();
+
+	/**
+	 * @return the subgoal to remove
+	 * 
+	 */
+	public List getSubgoalToRemove();
+
+	/**
+	 * @return the subgoal to move
+	 * 
+	 */
+	public List getSubgoalToMove();
+
+	/**
+	 * @return the subgoal to edit
+	 * 
+	 */
+	public Map getSubgoalToEdit();
+
+	/**
+	 * @return the current subgoal table
+	 * 
+	 */
+	public List getSubgoalTable();
+
+	/**
+	 * Init the subgoal
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initSubgoal(EObject current, EReference containingFeature, EReference feature);
+
+	/**
+	 * Update the subgoal
+	 * @param newValue the subgoal to update
+	 * 
+	 */
+	public void updateSubgoal(EObject newValue);
+
+	/**
+	 * Adds the given filter to the subgoal edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToSubgoal(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the subgoal edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToSubgoal(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the subgoal table
+	 * 
+	 */
+	public boolean isContainedInSubgoalTable(EObject element);
+
+
 
 
 

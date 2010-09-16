@@ -90,6 +90,7 @@ public class StrategyItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(GsnPackage.Literals.STRATEGY__GOAL);
 			childrenFeatures.add(GsnPackage.Literals.STRATEGY__JUSTIFICATION);
 			childrenFeatures.add(GsnPackage.Literals.STRATEGY__SOLUTION);
 		}
@@ -146,6 +147,7 @@ public class StrategyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Strategy.class)) {
+			case GsnPackage.STRATEGY__GOAL:
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 			case GsnPackage.STRATEGY__SOLUTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -164,6 +166,11 @@ public class StrategyItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.STRATEGY__GOAL,
+				 GsnFactory.eINSTANCE.createGoal()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -5,12 +5,15 @@ package net.certware.argument.gsn.parts.forms;
 
 // Start of user code for imports
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import net.certware.argument.arm.ArmFactory;
 import net.certware.argument.arm.TaggedValue;
+import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnFactory;
+import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Justification;
 import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.parts.GsnViewsRepository;
@@ -32,6 +35,8 @@ import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+import org.eclipse.emf.eef.runtime.ui.widgets.TabElementTreeSelectionDialog;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -63,11 +68,15 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 		protected ReferencesTable<? extends EObject> isTagged;
 		protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
 		protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil goalEditUtil;
+		protected ReferencesTable<? extends EObject> goal;
+		protected List<ViewerFilter> goalBusinessFilters = new ArrayList<ViewerFilter>();
+		protected List<ViewerFilter> goalFilters = new ArrayList<ViewerFilter>();
 	protected EMFListEditUtil justificationEditUtil;
 		protected ReferencesTable<? extends EObject> justification;
 		protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
 		protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil solutionEditUtil;
+	private EMFListEditUtil solutionEditUtil;
 		protected ReferencesTable<? extends EObject> solution;
 		protected List<ViewerFilter> solutionBusinessFilters = new ArrayList<ViewerFilter>();
 		protected List<ViewerFilter> solutionFilters = new ArrayList<ViewerFilter>();
@@ -132,8 +141,9 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 		createDescriptionText(widgetFactory, propertiesGroup);
 		createContentText(widgetFactory, propertiesGroup);
 		createIsTaggedTableComposition(widgetFactory, propertiesGroup);
+		createGoalTableComposition(widgetFactory, propertiesGroup);
 		createJustificationTableComposition(widgetFactory, propertiesGroup);
-		createSolutionTableComposition(widgetFactory, propertiesGroup);
+		createSolutionReferencesTable(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
 	}
 
@@ -338,6 +348,92 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * @param container
 	 * 
 	 */
+	protected void createGoalTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.goal = new ReferencesTable<Goal>(GsnMessages.StrategyPropertiesEditionPart_GoalLabel, new ReferencesTableListener<Goal>() {			
+			public void handleAdd() { addToGoal();}
+			public void handleEdit(Goal element) { editGoal(element); }
+			public void handleMove(Goal element, int oldIndex, int newIndex) { moveGoal(element, oldIndex, newIndex); }
+			public void handleRemove(Goal element) { removeFromGoal(element); }
+			public void navigateTo(Goal element) { }
+		});
+		this.goal.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.goal, GsnViewsRepository.FORM_KIND));
+		this.goal.createControls(parent, widgetFactory);
+		GridData goalData = new GridData(GridData.FILL_HORIZONTAL);
+		goalData.horizontalSpan = 3;
+		this.goal.setLayoutData(goalData);
+		this.goal.setLowerBound(0);
+		this.goal.setUpperBound(-1);
+	}
+
+	/**
+	 * 
+	 */
+	protected void moveGoal(Goal element, int oldIndex, int newIndex) {
+		EObject editedElement = goalEditUtil.foundCorrespondingEObject(element);
+		goalEditUtil.moveElement(element, oldIndex, newIndex);
+		goal.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	}
+
+	/**
+	 * 
+	 */
+	protected void addToGoal() {
+		// Start of user code addToGoal() method body
+				Goal eObject = GsnFactory.eINSTANCE.createGoal();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						goalEditUtil.addElement(propertiesEditionObject);
+						goal.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		
+		// End of user code
+
+	}
+
+	/**
+	 * 
+	 */
+	protected void removeFromGoal(Goal element) {
+		// Start of user code for the removeFromGoal() method body
+				EObject editedElement = goalEditUtil.foundCorrespondingEObject(element);
+				goalEditUtil.removeElement(element);
+				goal.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+		
+		// End of user code
+	}
+
+	/**
+	 * 
+	 */
+	protected void editGoal(Goal element) {
+		// Start of user code editGoal() method body
+				EObject editedElement = goalEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						goalEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						goal.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+	}
+
+	/**
+	 * @param container
+	 * 
+	 */
 	protected void createJustificationTableComposition(FormToolkit widgetFactory, Composite parent) {
 		this.justification = new ReferencesTable<Justification>(GsnMessages.StrategyPropertiesEditionPart_JustificationLabel, new ReferencesTableListener<Justification>() {			
 			public void handleAdd() { addToJustification();}
@@ -421,12 +517,27 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 	}
 
 	/**
-	 * @param container
 	 * 
 	 */
-	protected void createSolutionTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.solution = new ReferencesTable<Solution>(GsnMessages.StrategyPropertiesEditionPart_SolutionLabel, new ReferencesTableListener<Solution>() {			
-			public void handleAdd() { addToSolution();}
+	protected void createSolutionReferencesTable(FormToolkit widgetFactory, Composite parent) {
+		this.solution = new ReferencesTable<Solution>(GsnMessages.StrategyPropertiesEditionPart_SolutionLabel, new ReferencesTableListener<Solution>() {
+			public void handleAdd() {
+				TabElementTreeSelectionDialog<Solution> dialog = new TabElementTreeSelectionDialog<Solution>(resourceSet, solutionFilters, solutionBusinessFilters,
+				"Solution", GsnPackage.eINSTANCE.getSolution(), current.eResource()) {
+					@Override
+					public void process(IStructuredSelection selection) {
+						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
+							EObject elem = (EObject) iter.next();
+							if (!solutionEditUtil.getVirtualList().contains(elem))
+								solutionEditUtil.addElement(elem);
+							propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.solution,
+								PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
+						}
+						solution.refresh();
+					}
+				};
+				dialog.open();
+			}
 			public void handleEdit(Solution element) { editSolution(element); }
 			public void handleMove(Solution element, int oldIndex, int newIndex) { moveSolution(element, oldIndex, newIndex); }
 			public void handleRemove(Solution element) { removeFromSolution(element); }
@@ -437,8 +548,7 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 		GridData solutionData = new GridData(GridData.FILL_HORIZONTAL);
 		solutionData.horizontalSpan = 3;
 		this.solution.setLayoutData(solutionData);
-		this.solution.setLowerBound(0);
-		this.solution.setUpperBound(-1);
+		this.solution.disableMove();
 	}
 
 	/**
@@ -448,29 +558,7 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 		EObject editedElement = solutionEditUtil.foundCorrespondingEObject(element);
 		solutionEditUtil.moveElement(element, oldIndex, newIndex);
 		solution.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.solution, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToSolution() {
-		// Start of user code addToSolution() method body
-				Solution eObject = GsnFactory.eINSTANCE.createSolution();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						solutionEditUtil.addElement(propertiesEditionObject);
-						solution.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.solution, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartForm.this, GsnViewsRepository.Strategy.solution, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));
 	}
 
 	/**
@@ -707,6 +795,115 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 	/**
 	 * {@inheritDoc}
 	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToAdd()
+	 * 
+	 */
+	public List getGoalToAdd() {
+		return goalEditUtil.getElementsToAdd();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToRemove()
+	 * 
+	 */
+	public List getGoalToRemove() {
+		return goalEditUtil.getElementsToRemove();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToEdit()
+	 * 
+	 */
+	public Map getGoalToEdit() {
+		return goalEditUtil.getElementsToRefresh();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToMove()
+	 * 
+	 */
+	public List getGoalToMove() {
+		return goalEditUtil.getElementsToMove();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalTable()
+	 * 
+	 */
+	public List getGoalTable() {
+		return goalEditUtil.getVirtualList();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initGoal(EObject current, EReference containingFeature, EReference feature)
+	 */
+	public void initGoal(EObject current, EReference containingFeature, EReference feature) {
+		if (current.eResource() != null && current.eResource().getResourceSet() != null)
+			this.resourceSet = current.eResource().getResourceSet();
+		if (containingFeature != null)
+			goalEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+		else
+			goalEditUtil = new EMFListEditUtil(current, feature);
+		this.goal.setInput(goalEditUtil.getVirtualList());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateGoal(EObject newValue)
+	 * 
+	 */
+	public void updateGoal(EObject newValue) {
+		if(goalEditUtil != null){
+			goalEditUtil.reinit(newValue);
+			goal.refresh();
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterGoal(ViewerFilter filter)
+	 * 
+	 */
+	public void addFilterToGoal(ViewerFilter filter) {
+		goalFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterGoal(ViewerFilter filter)
+	 * 
+	 */
+	public void addBusinessFilterToGoal(ViewerFilter filter) {
+		goalBusinessFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInGoalTable(EObject element)
+	 * 
+	 */
+	public boolean isContainedInGoalTable(EObject element) {
+		return goalEditUtil.contains(element);
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationToAdd()
 	 * 
 	 */
@@ -836,32 +1033,13 @@ public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditio
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionToEdit()
-	 * 
-	 */
-	public Map getSolutionToEdit() {
-		return solutionEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionToMove()
-	 * 
-	 */
-	public List getSolutionToMove() {
-		return solutionEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
 	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionTable()
 	 * 
 	 */
 	public List getSolutionTable() {
 		return solutionEditUtil.getVirtualList();
 	}
+
 
 	/**
 	 * {@inheritDoc}

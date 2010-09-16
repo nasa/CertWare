@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getAssumption <em>Assumption</em>}</li>
  *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getContext <em>Context</em>}</li>
  *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getSolution <em>Solution</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getSubgoal <em>Subgoal</em>}</li>
  * </ul>
  * </p>
  *
@@ -87,6 +89,16 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 * @ordered
 	 */
 	protected EList<Solution> solution;
+
+	/**
+	 * The cached value of the '{@link #getSubgoal() <em>Subgoal</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubgoal()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Goal> subgoal;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,6 +172,18 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Goal> getSubgoal() {
+		if (subgoal == null) {
+			subgoal = new EObjectContainmentEList<Goal>(Goal.class, this, GsnPackage.GOAL__SUBGOAL);
+		}
+		return subgoal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -171,6 +195,8 @@ public class GoalImpl extends ClaimImpl implements Goal {
 				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
 			case GsnPackage.GOAL__SOLUTION:
 				return ((InternalEList<?>)getSolution()).basicRemove(otherEnd, msgs);
+			case GsnPackage.GOAL__SUBGOAL:
+				return ((InternalEList<?>)getSubgoal()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -191,6 +217,8 @@ public class GoalImpl extends ClaimImpl implements Goal {
 				return getContext();
 			case GsnPackage.GOAL__SOLUTION:
 				return getSolution();
+			case GsnPackage.GOAL__SUBGOAL:
+				return getSubgoal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,6 +248,10 @@ public class GoalImpl extends ClaimImpl implements Goal {
 				getSolution().clear();
 				getSolution().addAll((Collection<? extends Solution>)newValue);
 				return;
+			case GsnPackage.GOAL__SUBGOAL:
+				getSubgoal().clear();
+				getSubgoal().addAll((Collection<? extends Goal>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -244,6 +276,9 @@ public class GoalImpl extends ClaimImpl implements Goal {
 			case GsnPackage.GOAL__SOLUTION:
 				getSolution().clear();
 				return;
+			case GsnPackage.GOAL__SUBGOAL:
+				getSubgoal().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -264,6 +299,8 @@ public class GoalImpl extends ClaimImpl implements Goal {
 				return context != null && !context.isEmpty();
 			case GsnPackage.GOAL__SOLUTION:
 				return solution != null && !solution.isEmpty();
+			case GsnPackage.GOAL__SUBGOAL:
+				return subgoal != null && !subgoal.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

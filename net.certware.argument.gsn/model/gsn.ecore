@@ -12,12 +12,16 @@
         eType="#//Context" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="solution" upperBound="-1"
         eType="#//Solution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subgoal" upperBound="-1"
+        eType="#//Goal" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Strategy" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//ReasoningElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" upperBound="-1" eType="#//Goal"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="justification" upperBound="-1"
         eType="#//Justification" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="solution" upperBound="-1"
-        eType="#//Solution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solution" ordered="false"
+        unique="false" upperBound="-1" eType="#//Solution"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"

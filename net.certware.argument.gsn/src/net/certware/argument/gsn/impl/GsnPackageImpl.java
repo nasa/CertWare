@@ -190,6 +190,15 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getGoal_Subgoal() {
+		return (EReference)goalEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStrategy() {
 		return strategyEClass;
 	}
@@ -199,7 +208,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStrategy_Justification() {
+	public EReference getStrategy_Goal() {
 		return (EReference)strategyEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -208,8 +217,17 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStrategy_Solution() {
+	public EReference getStrategy_Justification() {
 		return (EReference)strategyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStrategy_Solution() {
+		return (EReference)strategyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -299,8 +317,10 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		createEReference(goalEClass, GOAL__ASSUMPTION);
 		createEReference(goalEClass, GOAL__CONTEXT);
 		createEReference(goalEClass, GOAL__SOLUTION);
+		createEReference(goalEClass, GOAL__SUBGOAL);
 
 		strategyEClass = createEClass(STRATEGY);
+		createEReference(strategyEClass, STRATEGY__GOAL);
 		createEReference(strategyEClass, STRATEGY__JUSTIFICATION);
 		createEReference(strategyEClass, STRATEGY__SOLUTION);
 
@@ -359,10 +379,12 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		initEReference(getGoal_Assumption(), this.getAssumption(), null, "assumption", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getGoal_Context(), this.getContext(), null, "context", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getGoal_Solution(), this.getSolution(), null, "solution", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getGoal_Subgoal(), this.getGoal(), null, "subgoal", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(strategyEClass, Strategy.class, "Strategy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getStrategy_Goal(), this.getGoal(), null, "goal", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_Justification(), this.getJustification(), null, "justification", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getStrategy_Solution(), this.getSolution(), null, "solution", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getStrategy_Solution(), this.getSolution(), null, "solution", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getSolution_Context(), this.getContext(), null, "context", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$

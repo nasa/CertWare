@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -74,8 +75,31 @@ public class GoalItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSolutionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Solution feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSolutionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Goal_solution_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Goal_solution_feature", "_UI_Goal_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.GOAL__SOLUTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -94,6 +118,7 @@ public class GoalItemProvider
 			childrenFeatures.add(GsnPackage.Literals.GOAL__ASSUMPTION);
 			childrenFeatures.add(GsnPackage.Literals.GOAL__CONTEXT);
 			childrenFeatures.add(GsnPackage.Literals.GOAL__SOLUTION);
+			childrenFeatures.add(GsnPackage.Literals.GOAL__SUBGOAL);
 		}
 		return childrenFeatures;
 	}
@@ -152,6 +177,7 @@ public class GoalItemProvider
 			case GsnPackage.GOAL__ASSUMPTION:
 			case GsnPackage.GOAL__CONTEXT:
 			case GsnPackage.GOAL__SOLUTION:
+			case GsnPackage.GOAL__SUBGOAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -188,6 +214,11 @@ public class GoalItemProvider
 			(createChildParameter
 				(GsnPackage.Literals.GOAL__SOLUTION,
 				 GsnFactory.eINSTANCE.createSolution()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.GOAL__SUBGOAL,
+				 GsnFactory.eINSTANCE.createGoal()));
 	}
 
 	/**
