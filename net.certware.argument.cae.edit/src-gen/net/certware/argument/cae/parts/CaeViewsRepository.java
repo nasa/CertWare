@@ -75,6 +75,9 @@ public class CaeViewsRepository {
 		
 		public static String evidence = "cae::Argument::evidence";
 		
+		
+		public static String claims = "cae::Argument::claims";
+		
 	
 	}
 

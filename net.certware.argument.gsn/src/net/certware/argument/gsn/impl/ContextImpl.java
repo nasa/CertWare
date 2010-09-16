@@ -4,7 +4,6 @@
 package net.certware.argument.gsn.impl;
 
 import net.certware.argument.arm.impl.InformationElementImpl;
-
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.GsnPackage;
 

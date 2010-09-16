@@ -18,6 +18,8 @@
         eType="#//Justification" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="evidence" upperBound="-1"
         eType="#//Evidence" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="claims" upperBound="-1"
+        eType="#//Claim" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Evidence" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"

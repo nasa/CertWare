@@ -116,6 +116,9 @@ public class CaeMessages extends NLS {
 	public static String ArgumentPropertiesEditionPart_EvidenceLabel;
 
 	
+	public static String ArgumentPropertiesEditionPart_ClaimsLabel;
+
+	
 	public static String EvidencePropertiesEditionPart_IdentifierLabel;
 
 	

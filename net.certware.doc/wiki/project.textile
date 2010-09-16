@@ -77,6 +77,8 @@ h2. Design and Implementation Notes
 h2. Unit Tests
 
 * @net.certware.argument.arm.test@ fragment contains tests for ARM models.  Includes two structural tests for examples provided in the OMG standard.
+* @net.certware.argument.gsn.test@ fragment contains tests for GSN models.  Includes one structural test for example provided in the OMG standard.
+* @net.certware.argument.cae.test@ fragment contains tests for CAE models.  Includes one structural test for example provided in the OMG standard.
 
 h2. Update Site Publishing
 

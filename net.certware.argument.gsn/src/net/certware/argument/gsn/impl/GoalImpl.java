@@ -6,7 +6,6 @@ package net.certware.argument.gsn.impl;
 import java.util.Collection;
 
 import net.certware.argument.arm.impl.ClaimImpl;
-
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
@@ -15,14 +14,10 @@ import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.Strategy;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**

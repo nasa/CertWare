@@ -4,7 +4,6 @@
 package net.certware.argument.gsn.impl;
 
 import net.certware.argument.arm.ArmPackage;
-
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
@@ -17,7 +16,6 @@ import net.certware.argument.gsn.Strategy;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

@@ -279,6 +279,78 @@ public interface ArgumentPropertiesEditionPart {
 	public boolean isContainedInEvidenceTable(EObject element);
 
 
+	/**
+	 * @return the claims to add
+	 * 
+	 */
+	public List getClaimsToAdd();
+
+	/**
+	 * @return the claims to remove
+	 * 
+	 */
+	public List getClaimsToRemove();
+
+	/**
+	 * @return the claims to move
+	 * 
+	 */
+	public List getClaimsToMove();
+
+	/**
+	 * @return the claims to edit
+	 * 
+	 */
+	public Map getClaimsToEdit();
+
+	/**
+	 * @return the current claims table
+	 * 
+	 */
+	public List getClaimsTable();
+
+	/**
+	 * Init the claims
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initClaims(EObject current, EReference containingFeature, EReference feature);
+
+	/**
+	 * Update the claims
+	 * @param newValue the claims to update
+	 * 
+	 */
+	public void updateClaims(EObject newValue);
+
+	/**
+	 * Adds the given filter to the claims edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToClaims(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the claims edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToClaims(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the claims table
+	 * 
+	 */
+	public boolean isContainedInClaimsTable(EObject element);
+
+
 
 
 

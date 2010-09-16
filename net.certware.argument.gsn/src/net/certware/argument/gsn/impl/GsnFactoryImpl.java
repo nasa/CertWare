@@ -3,14 +3,19 @@
  */
 package net.certware.argument.gsn.impl;
 
-import net.certware.argument.gsn.*;
+import net.certware.argument.gsn.Assumption;
+import net.certware.argument.gsn.Context;
+import net.certware.argument.gsn.Goal;
+import net.certware.argument.gsn.GsnFactory;
+import net.certware.argument.gsn.GsnPackage;
+import net.certware.argument.gsn.Justification;
+import net.certware.argument.gsn.Solution;
+import net.certware.argument.gsn.Strategy;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

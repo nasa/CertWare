@@ -238,13 +238,22 @@ public interface CaePackage extends EPackage {
 	int ARGUMENT__EVIDENCE = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Claims</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT__CLAIMS = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 2;
+	int ARGUMENT_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link net.certware.argument.cae.impl.EvidenceImpl <em>Evidence</em>}' class.
@@ -590,6 +599,17 @@ public interface CaePackage extends EPackage {
 	EReference getArgument_Evidence();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.cae.Argument#getClaims <em>Claims</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Claims</em>'.
+	 * @see net.certware.argument.cae.Argument#getClaims()
+	 * @see #getArgument()
+	 * @generated
+	 */
+	EReference getArgument_Claims();
+
+	/**
 	 * Returns the meta object for class '{@link net.certware.argument.cae.Evidence <em>Evidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -740,6 +760,14 @@ public interface CaePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARGUMENT__EVIDENCE = eINSTANCE.getArgument_Evidence();
+
+		/**
+		 * The meta object literal for the '<em><b>Claims</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT__CLAIMS = eINSTANCE.getArgument_Claims();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.argument.cae.impl.EvidenceImpl <em>Evidence</em>}' class.

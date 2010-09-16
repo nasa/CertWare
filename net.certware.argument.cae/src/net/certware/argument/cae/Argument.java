@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link net.certware.argument.cae.Argument#getJustification <em>Justification</em>}</li>
  *   <li>{@link net.certware.argument.cae.Argument#getEvidence <em>Evidence</em>}</li>
+ *   <li>{@link net.certware.argument.cae.Argument#getClaims <em>Claims</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,5 +64,21 @@ public interface Argument extends ReasoningElement {
 	 * @generated
 	 */
 	EList<Evidence> getEvidence();
+
+	/**
+	 * Returns the value of the '<em><b>Claims</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.cae.Claim}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Claims</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Claims</em>' containment reference list.
+	 * @see net.certware.argument.cae.CaePackage#getArgument_Claims()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Claim> getClaims();
 
 } // Argument

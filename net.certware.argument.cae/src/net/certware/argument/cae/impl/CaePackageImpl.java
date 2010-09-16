@@ -217,6 +217,15 @@ public class CaePackageImpl extends EPackageImpl implements CaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getArgument_Claims() {
+		return (EReference)argumentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEvidence() {
 		return evidenceEClass;
 	}
@@ -303,6 +312,7 @@ public class CaePackageImpl extends EPackageImpl implements CaePackage {
 		argumentEClass = createEClass(ARGUMENT);
 		createEReference(argumentEClass, ARGUMENT__JUSTIFICATION);
 		createEReference(argumentEClass, ARGUMENT__EVIDENCE);
+		createEReference(argumentEClass, ARGUMENT__CLAIMS);
 
 		evidenceEClass = createEClass(EVIDENCE);
 		createEReference(evidenceEClass, EVIDENCE__CONTEXT);
@@ -363,6 +373,7 @@ public class CaePackageImpl extends EPackageImpl implements CaePackage {
 		initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getArgument_Justification(), this.getJustification(), null, "justification", null, 0, -1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getArgument_Evidence(), this.getEvidence(), null, "evidence", null, 0, -1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getArgument_Claims(), this.getClaim(), null, "claims", null, 0, -1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(evidenceEClass, Evidence.class, "Evidence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getEvidence_Context(), this.getContext(), null, "context", null, 0, -1, Evidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$

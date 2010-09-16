@@ -11,6 +11,7 @@ import java.util.Map;
 import net.certware.argument.arm.ArmFactory;
 import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.cae.CaeFactory;
+import net.certware.argument.cae.Claim;
 import net.certware.argument.cae.Evidence;
 import net.certware.argument.cae.Justification;
 import net.certware.argument.cae.parts.ArgumentPropertiesEditionPart;
@@ -69,6 +70,10 @@ public class ArgumentPropertiesEditionPartImpl extends CompositePropertiesEditio
 	protected ReferencesTable<? extends EObject> evidence;
 	protected List<ViewerFilter> evidenceBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> evidenceFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil claimsEditUtil;
+	protected ReferencesTable<? extends EObject> claims;
+	protected List<ViewerFilter> claimsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -131,6 +136,7 @@ public class ArgumentPropertiesEditionPartImpl extends CompositePropertiesEditio
 		createIsTaggedAdvancedTableComposition(propertiesGroup);
 		createJustificationAdvancedTableComposition(propertiesGroup);
 		createEvidenceAdvancedTableComposition(propertiesGroup);
+		createClaimsAdvancedTableComposition(propertiesGroup);
 	}
 
 	
@@ -503,6 +509,88 @@ public class ArgumentPropertiesEditionPartImpl extends CompositePropertiesEditio
 						evidenceEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
 						evidence.refresh();
 						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.evidence, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		// End of user code
+	}
+
+	/**
+	 * @param container
+	 * 
+	 */
+	protected void createClaimsAdvancedTableComposition(Composite parent) {
+		this.claims = new ReferencesTable<Claim>(CaeMessages.ArgumentPropertiesEditionPart_ClaimsLabel, new ReferencesTableListener<Claim>() {			
+			public void handleAdd() { addToClaims();}
+			public void handleEdit(Claim element) { editClaims(element); }
+			public void handleMove(Claim element, int oldIndex, int newIndex) { moveClaims(element, oldIndex, newIndex); }
+			public void handleRemove(Claim element) { removeFromClaims(element); }
+			public void navigateTo(Claim element) { }
+		});
+		this.claims.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.claims, CaeViewsRepository.SWT_KIND));
+		this.claims.createControls(parent);
+		GridData claimsData = new GridData(GridData.FILL_HORIZONTAL);
+		claimsData.horizontalSpan = 3;
+		this.claims.setLayoutData(claimsData);
+		this.claims.setLowerBound(0);
+		this.claims.setUpperBound(-1);
+	}
+
+	/**
+	 *  
+	 */
+	protected void moveClaims(Claim element, int oldIndex, int newIndex) {
+		EObject editedElement = claimsEditUtil.foundCorrespondingEObject(element);
+		claimsEditUtil.moveElement(element, oldIndex, newIndex);
+		claims.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	}
+
+	/**
+	 *  
+	 */
+	protected void addToClaims() {
+		// Start of user code addToClaims() method body
+				Claim eObject = CaeFactory.eINSTANCE.createClaim();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						claimsEditUtil.addElement(propertiesEditionObject);
+						claims.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void removeFromClaims(Claim element) {
+		// Start of user code removeFromClaims() method body
+				EObject editedElement = claimsEditUtil.foundCorrespondingEObject(element);
+				claimsEditUtil.removeElement(element);
+				claims.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void editClaims(Claim element) {
+		// Start of user code editClaims() method body
+				EObject editedElement = claimsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						claimsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						claims.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
 					}
 				}
 		// End of user code
@@ -921,6 +1009,115 @@ public class ArgumentPropertiesEditionPartImpl extends CompositePropertiesEditio
 	 */
 	public boolean isContainedInEvidenceTable(EObject element) {
 		return evidenceEditUtil.contains(element);
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToAdd()
+	 * 
+	 */
+	public List getClaimsToAdd() {
+		return claimsEditUtil.getElementsToAdd();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToRemove()
+	 * 
+	 */
+	public List getClaimsToRemove() {
+		return claimsEditUtil.getElementsToRemove();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToEdit()
+	 * 
+	 */
+	public Map getClaimsToEdit() {
+		return claimsEditUtil.getElementsToRefresh();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToMove()
+	 * 
+	 */
+	public List getClaimsToMove() {
+		return claimsEditUtil.getElementsToMove();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsTable()
+	 * 
+	 */
+	public List getClaimsTable() {
+		return claimsEditUtil.getVirtualList();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#initClaims(EObject current, EReference containingFeature, EReference feature)
+	 */
+	public void initClaims(EObject current, EReference containingFeature, EReference feature) {
+		if (current.eResource() != null && current.eResource().getResourceSet() != null)
+			this.resourceSet = current.eResource().getResourceSet();
+		if (containingFeature != null)
+			claimsEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+		else
+			claimsEditUtil = new EMFListEditUtil(current, feature);
+		this.claims.setInput(claimsEditUtil.getVirtualList());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateClaims(EObject newValue)
+	 * 
+	 */
+	public void updateClaims(EObject newValue) {
+		if(claimsEditUtil != null){
+			claimsEditUtil.reinit(newValue);
+			claims.refresh();
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#addFilterClaims(ViewerFilter filter)
+	 * 
+	 */
+	public void addFilterToClaims(ViewerFilter filter) {
+		claimsFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#addBusinessFilterClaims(ViewerFilter filter)
+	 * 
+	 */
+	public void addBusinessFilterToClaims(ViewerFilter filter) {
+		claimsBusinessFilters.add(filter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#isContainedInClaimsTable(EObject element)
+	 * 
+	 */
+	public boolean isContainedInClaimsTable(EObject element) {
+		return claimsEditUtil.contains(element);
 	}
 
 

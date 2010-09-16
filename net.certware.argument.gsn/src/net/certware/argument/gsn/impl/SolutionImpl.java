@@ -6,23 +6,17 @@ package net.certware.argument.gsn.impl;
 import java.util.Collection;
 
 import net.certware.argument.arm.InformationElement;
-
 import net.certware.argument.arm.impl.AssertedEvidenceImpl;
-
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Solution;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

@@ -90,6 +90,7 @@ public class ArgumentItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(CaePackage.Literals.ARGUMENT__JUSTIFICATION);
 			childrenFeatures.add(CaePackage.Literals.ARGUMENT__EVIDENCE);
+			childrenFeatures.add(CaePackage.Literals.ARGUMENT__CLAIMS);
 		}
 		return childrenFeatures;
 	}
@@ -146,6 +147,7 @@ public class ArgumentItemProvider
 		switch (notification.getFeatureID(Argument.class)) {
 			case CaePackage.ARGUMENT__JUSTIFICATION:
 			case CaePackage.ARGUMENT__EVIDENCE:
+			case CaePackage.ARGUMENT__CLAIMS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -172,6 +174,11 @@ public class ArgumentItemProvider
 			(createChildParameter
 				(CaePackage.Literals.ARGUMENT__EVIDENCE,
 				 CaeFactory.eINSTANCE.createEvidence()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CaePackage.Literals.ARGUMENT__CLAIMS,
+				 CaeFactory.eINSTANCE.createClaim()));
 	}
 
 	/**

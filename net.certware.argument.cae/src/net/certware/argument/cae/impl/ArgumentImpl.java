@@ -9,6 +9,7 @@ import net.certware.argument.arm.impl.ReasoningElementImpl;
 
 import net.certware.argument.cae.Argument;
 import net.certware.argument.cae.CaePackage;
+import net.certware.argument.cae.Claim;
 import net.certware.argument.cae.Evidence;
 import net.certware.argument.cae.Justification;
 
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link net.certware.argument.cae.impl.ArgumentImpl#getJustification <em>Justification</em>}</li>
  *   <li>{@link net.certware.argument.cae.impl.ArgumentImpl#getEvidence <em>Evidence</em>}</li>
+ *   <li>{@link net.certware.argument.cae.impl.ArgumentImpl#getClaims <em>Claims</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +65,16 @@ public class ArgumentImpl extends ReasoningElementImpl implements Argument {
 	 * @ordered
 	 */
 	protected EList<Evidence> evidence;
+
+	/**
+	 * The cached value of the '{@link #getClaims() <em>Claims</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClaims()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Claim> claims;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,6 +124,18 @@ public class ArgumentImpl extends ReasoningElementImpl implements Argument {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Claim> getClaims() {
+		if (claims == null) {
+			claims = new EObjectContainmentEList<Claim>(Claim.class, this, CaePackage.ARGUMENT__CLAIMS);
+		}
+		return claims;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -119,6 +143,8 @@ public class ArgumentImpl extends ReasoningElementImpl implements Argument {
 				return ((InternalEList<?>)getJustification()).basicRemove(otherEnd, msgs);
 			case CaePackage.ARGUMENT__EVIDENCE:
 				return ((InternalEList<?>)getEvidence()).basicRemove(otherEnd, msgs);
+			case CaePackage.ARGUMENT__CLAIMS:
+				return ((InternalEList<?>)getClaims()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -135,6 +161,8 @@ public class ArgumentImpl extends ReasoningElementImpl implements Argument {
 				return getJustification();
 			case CaePackage.ARGUMENT__EVIDENCE:
 				return getEvidence();
+			case CaePackage.ARGUMENT__CLAIMS:
+				return getClaims();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,6 +184,10 @@ public class ArgumentImpl extends ReasoningElementImpl implements Argument {
 				getEvidence().clear();
 				getEvidence().addAll((Collection<? extends Evidence>)newValue);
 				return;
+			case CaePackage.ARGUMENT__CLAIMS:
+				getClaims().clear();
+				getClaims().addAll((Collection<? extends Claim>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -174,6 +206,9 @@ public class ArgumentImpl extends ReasoningElementImpl implements Argument {
 			case CaePackage.ARGUMENT__EVIDENCE:
 				getEvidence().clear();
 				return;
+			case CaePackage.ARGUMENT__CLAIMS:
+				getClaims().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,6 +225,8 @@ public class ArgumentImpl extends ReasoningElementImpl implements Argument {
 				return justification != null && !justification.isEmpty();
 			case CaePackage.ARGUMENT__EVIDENCE:
 				return evidence != null && !evidence.isEmpty();
+			case CaePackage.ARGUMENT__CLAIMS:
+				return claims != null && !claims.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

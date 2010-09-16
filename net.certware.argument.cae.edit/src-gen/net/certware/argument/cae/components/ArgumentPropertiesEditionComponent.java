@@ -12,6 +12,7 @@ import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.cae.Argument;
 import net.certware.argument.cae.CaePackage;
+import net.certware.argument.cae.Claim;
 import net.certware.argument.cae.Evidence;
 import net.certware.argument.cae.Justification;
 import net.certware.argument.cae.parts.ArgumentPropertiesEditionPart;
@@ -164,6 +165,9 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == CaePackage.eINSTANCE.getArgument_Evidence())) {
 			basePart.updateEvidence(argument);
 		}
+		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == CaePackage.eINSTANCE.getArgument_Claims())) {
+			basePart.updateClaims(argument);
+		}
 
 	}
 
@@ -247,6 +251,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 			basePart.initIsTagged(argument, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initJustification(argument, null, CaePackage.eINSTANCE.getArgument_Justification());
 			basePart.initEvidence(argument, null, CaePackage.eINSTANCE.getArgument_Evidence());
+			basePart.initClaims(argument, null, CaePackage.eINSTANCE.getArgument_Claims());
 			// init filters
 
 
@@ -299,6 +304,22 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 			
 			// End of user code
 
+			basePart.addFilterToClaims(new ViewerFilter() {
+
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof String && element.equals("")) || (element instanceof Claim); //$NON-NLS-1$ 
+				}
+
+			});
+			// Start of user code for additional businessfilters for claims
+			
+			// End of user code
+
 		}
 		// init values for referenced views
 
@@ -306,6 +327,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 
 		setInitializing(false);
 	}
+
 
 
 
@@ -391,6 +413,27 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 				cc.append(MoveCommand.create(editingDomain, argument, CaePackage.eINSTANCE.getEvidence(), moveElement.getElement(), moveElement.getIndex()));
 			}
+			List claimsToAddFromClaims = basePart.getClaimsToAdd();
+			for (Iterator iter = claimsToAddFromClaims.iterator(); iter.hasNext();)
+				cc.append(AddCommand.create(editingDomain, argument, CaePackage.eINSTANCE.getArgument_Claims(), iter.next()));
+			Map claimsToRefreshFromClaims = basePart.getClaimsToEdit();
+			for (Iterator iter = claimsToRefreshFromClaims.keySet().iterator(); iter.hasNext();) {
+				Claim nextElement = (Claim) iter.next();
+				Claim claims = (Claim) claimsToRefreshFromClaims.get(nextElement);
+				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
+					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+						cc.append(SetCommand.create(editingDomain, nextElement, feature, claims.eGet(feature)));
+					}
+				}
+			}
+			List claimsToRemoveFromClaims = basePart.getClaimsToRemove();
+			for (Iterator iter = claimsToRemoveFromClaims.iterator(); iter.hasNext();)
+				cc.append(DeleteCommand.create(editingDomain, iter.next()));
+			List claimsToMoveFromClaims = basePart.getClaimsToMove();
+			for (Iterator iter = claimsToMoveFromClaims.iterator(); iter.hasNext();){
+				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
+				cc.append(MoveCommand.create(editingDomain, argument, CaePackage.eINSTANCE.getClaim(), moveElement.getElement(), moveElement.getIndex()));
+			}
 
 		}
 		if (!cc.isEmpty())
@@ -417,6 +460,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 			argumentToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			argumentToUpdate.getJustification().addAll(basePart.getJustificationToAdd());
 			argumentToUpdate.getEvidence().addAll(basePart.getEvidenceToAdd());
+			argumentToUpdate.getClaims().addAll(basePart.getClaimsToAdd());
 
 			return argumentToUpdate;
 		}
@@ -497,6 +541,24 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
 				else if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, argument, CaePackage.eINSTANCE.getEvidence(), event.getNewValue(), event.getNewIndex()));
+			}
+			if (CaeViewsRepository.Argument.claims == event.getAffectedEditor()) {
+				if (PropertiesEditionEvent.SET == event.getKind()) {
+					Claim oldValue = (Claim)event.getOldValue();
+					Claim newValue = (Claim)event.getNewValue();
+					// TODO: Complete the argument update command
+					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
+						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
+						}
+					}
+				}
+				else if (PropertiesEditionEvent.ADD == event.getKind())
+					command.append(AddCommand.create(liveEditingDomain, argument, CaePackage.eINSTANCE.getArgument_Claims(), event.getNewValue()));
+				else if (PropertiesEditionEvent.REMOVE == event.getKind())
+					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
+				else if (PropertiesEditionEvent.MOVE == event.getKind())
+					command.append(MoveCommand.create(liveEditingDomain, argument, CaePackage.eINSTANCE.getClaim(), event.getNewValue(), event.getNewIndex()));
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
