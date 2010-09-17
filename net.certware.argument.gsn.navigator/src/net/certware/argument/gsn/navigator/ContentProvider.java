@@ -1,3 +1,8 @@
+// $codepro.audit.disable com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.alwaysOverridetoString.alwaysOverrideToString
+/**
+ * CertWare Project
+ * Copyright (c) 2010 Kestrel Technology LLC
+ */
 package net.certware.argument.gsn.navigator;
 
 import java.util.ArrayList;
@@ -17,12 +22,12 @@ import net.certware.argument.arm.ReasoningElement;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
-import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Justification;
 import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.Strategy;
 import net.certware.argument.gsn.util.GsnSwitch;
 import net.certware.core.ICertWareConstants;
+import net.certware.core.ui.log.CertWareLog;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -49,104 +54,174 @@ import org.eclipse.ui.progress.UIJob;
  * Provides model statistics as navigator content.
  * @author mrb
  * @since 1.0
+ * @version $Revision: 1.0 $
  */
 public class ContentProvider 
 implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor, ICertWareConstants {
-
+	/** initial capacity of tree map */
+	private static final int INITIAL_CAPACITY = 3;
+	/** load factor for tree map */
+	private static final float LOAD_FACTOR = 0.75f;
+	/** no children tree */
 	private static final Object[] NO_CHILDREN = new Object[0];
-	private final Map<IFile, TreeData[]> cachedModelMap = new HashMap<IFile, TreeData[]>();
+	/** cached model for refresh */
+	private final Map<IFile, TreeData[]> cachedModelMap = new HashMap<IFile, TreeData[]>(INITIAL_CAPACITY,LOAD_FACTOR);
+	/** tree viewer to update */
 	private StructuredViewer viewer;
+	/** goal node count */
+	protected int goalCount = 0;
+	/** strategy node count */
+	protected int strategyCount = 0;
+	/** solution node count */
+	protected int solutionCount = 0;
+	/** to-be-supported node count */
+	protected int toBeSupported = 0;
 
 
+	/**
+	 * Constructor adds resource change listener for post change events.
+	 */
 	public ContentProvider() {
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(this, IResourceChangeEvent.POST_CHANGE);
 	}
 
+	/**
+	 * Disposes of content provider, clears map, and removes resource change listener.
+	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
+	 */
 	@Override
 	public void dispose() {
 		cachedModelMap.clear();
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(this); 
 	}
 
+	/**
+	 * Responds to content input change for the provider.
+	 * @param aViewer structured content viewer
+	 * @param oldInput previous input model
+	 * @param newInput new input model
+	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(Viewer, Object, Object)
+	 */
 	@Override
 	public void inputChanged(Viewer aViewer, Object oldInput, Object newInput) {
-		if (oldInput != null && !oldInput.equals(newInput))
+		if (null != oldInput && !oldInput.equals(newInput)) {
 			cachedModelMap.clear();
+		}
 		viewer = (StructuredViewer) aViewer;
 	}
 
+	/**
+	 * Visitor for resource change deltas.
+	 * @param delta resource change delta
+	 * @return false for file type resource processing, true otherwise 
+	 * @see org.eclipse.core.resources.IResourceDeltaVisitor#visit(IResourceDelta)
+	 */
 	@Override
-	public boolean visit(IResourceDelta delta) throws CoreException {
-		IResource source = delta.getResource();
+	public boolean visit(IResourceDelta delta) {
+		final IResource source = delta.getResource();
 		switch (source.getType()) {
 		case IResource.ROOT:
 		case IResource.PROJECT:
 		case IResource.FOLDER:
 			return true;
 		case IResource.FILE:
-			final IFile file = (IFile) source;
+			final IFile file = (IFile) source; // $codepro.audit.disable localDeclaration
 			if ( ICertWareConstants.GSN_EXTENSION.equals(file.getFileExtension())) {
 				updateModel(file);
-				new UIJob("Update GSN resource content model in project explorer") {
+				new UIJob(Messages.ContentProvider_0) {
 					public IStatus runInUIThread(IProgressMonitor monitor) {
-						if (viewer != null ) // && ! viewer.getControl().isDisposed())
+						if (null != viewer ) { // && ! viewer.getControl().isDisposed())
 							viewer.refresh(file);
+						}
 						return Status.OK_STATUS;                        
 					}
 				}.schedule();
 			}
 			return false;
+		default:
+			break;
 		}
 		return false;
 	}
 
+	/**
+	 * Method resourceChanged.
+	 * @param event IResourceChangeEvent
+	 * @see org.eclipse.core.resources.IResourceChangeListener#resourceChanged(IResourceChangeEvent)
+	 */
 	@Override
 	public void resourceChanged(IResourceChangeEvent event) {
-		IResourceDelta delta = event.getDelta();
+		final IResourceDelta delta = event.getDelta();
 		try {
 			delta.accept(this);
 		} catch (CoreException e) { 
-			e.printStackTrace();
+			CertWareLog.logError(Messages.ContentProvider_1,e);
 		} 	
 	}
 
+	/**
+	 * Gets the input model children as elements.
+	 * @param inputElement input model whose children are returned
+	 * @return Object[] children
+	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(Object)
+	 */
 	@Override
 	public Object[] getElements(Object inputElement) {
 		return getChildren(inputElement);
 	}
 
+	/**
+	 * Gets the children of the given parent element.
+	 * @param parentElement parent element
+	 * @return Object[] of NO_CHILDREN if parent is a TreeData object, otherwise cached values if IFile object
+	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(Object)
+	 */
 	@Override
 	public Object[] getChildren(Object parentElement) {
 		Object[] children = null;
 		if ( parentElement instanceof TreeData ) {
 			children = NO_CHILDREN;
 		} else if (parentElement instanceof IFile) {
-			IFile modelFile = (IFile)parentElement;
+			final IFile modelFile = (IFile)parentElement;
 			if ( ICertWareConstants.GSN_EXTENSION.equals( modelFile.getFileExtension() ) ) {
-				children = (TreeData[])cachedModelMap.get(modelFile);
-				if ( children == null && updateModel(modelFile) != null ) {
-					children = (TreeData[])cachedModelMap.get(modelFile);
+				children = cachedModelMap.get(modelFile);
+				if ( null == children && null != updateModel(modelFile) ) {
+					children = cachedModelMap.get(modelFile);
 				}
 			}
 		}
-		return children != null ? children : NO_CHILDREN;
+		return (null != children) ? children : NO_CHILDREN;
 	}
 
+	/**
+	 * Gets the parent TreeData object if element is TreeData, otherwise null.
+	 * @param element TreeData element to find IFile
+	 * @return TreeData object IFile, otherwise null
+	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(Object)
+	 */
 	@Override
 	public Object getParent(Object element) {
 		if ( element instanceof TreeData ) {
-			TreeData td = (TreeData)element;
+			final TreeData td = (TreeData)element;
 			return td.getIfile();
 		}
 		return null;
 	}
 
+	/**
+	 * Method hasChildren.
+	 * @param element Object
+	 * @return boolean
+	 * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(Object)
+	 */
 	@Override
 	public boolean hasChildren(Object element) {
-		if ( element instanceof TreeData )
+		if ( element instanceof TreeData ) {
 			return false;
-		else if ( element instanceof IFile )
+		}
+		else if ( element instanceof IFile ) {
 			return ICertWareConstants.GSN_EXTENSION.equals(((IFile)element).getFileExtension());
+		}
 
 		return false;
 	}
@@ -154,20 +229,20 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	/**
 	 * Updates the navigator model from the project statistics in the resource model file.
 	 * @param modelFile input file
-	 * @return model resource processed from file
+	 * @return model resource processed from file 
 	 */
-	private synchronized Resource updateModel(IFile modelFile) {
+	private synchronized Resource updateModel(IFile modelFile) { // $codepro.audit.disable synchronizedMethod
 		if ( ICertWareConstants.GSN_EXTENSION.equals(modelFile.getFileExtension())) {
 
 			if (modelFile.exists()) {
-				@SuppressWarnings("unused") // uses side effect
-				GsnPackage gsnPackage = GsnPackage.eINSTANCE; 
-				ResourceSet resourceSet = new ResourceSetImpl();
-				Resource resource = resourceSet.getResource( 
+				// @SuppressWarnings("unused") // uses side effect
+				// final GsnPackage gsnPackage = GsnPackage.eINSTANCE; 
+				final ResourceSet resourceSet = new ResourceSetImpl();
+				final Resource resource = resourceSet.getResource( 
 						URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true), 
 						true);
 
-				if ( resource != null ) {
+				if ( null != resource ) {
 
 					setGoalCount(0);
 					setStrategyCount(0);
@@ -175,19 +250,19 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					setToBeSupported(0);
 
 					// visit the model, collect statistics
-					for ( Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) {
-						EObject eo = i.next();
+					for ( Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) { // $codepro.audit.disable variableShouldBeFinal
+						EObject eo = i.next(); // $codepro.audit.disable variableDeclaredInLoop
 						visitor.doSwitch(eo);
 					} // iterator
 
-					TreeData td;
-					List<TreeData> treeNodes = new ArrayList<TreeData>();
+					TreeData td = null; // $codepro.audit.disable localDeclaration
+					final List<TreeData> treeNodes = new ArrayList<TreeData>(); // $codepro.audit.disable localDeclaration
 
-					td = new TreeData(modelFile,"Goals",getGoalCount(),TreeData.COUNT_TYPE_CLOSED);
+					td = new TreeData(modelFile,Messages.ContentProvider_2,getGoalCount(),TreeData.COUNT_TYPE_CLOSED);
 					treeNodes.add(td);
-					td = new TreeData(modelFile,"Strategies",getStrategyCount(),TreeData.COUNT_TYPE_CLOSED);
+					td = new TreeData(modelFile,Messages.ContentProvider_3,getStrategyCount(),TreeData.COUNT_TYPE_CLOSED);
 					treeNodes.add(td);
-					td = new TreeData(modelFile,"Solutions",getSolutionCount(),TreeData.COUNT_TYPE_CLOSED);
+					td = new TreeData(modelFile,Messages.ContentProvider_4,getSolutionCount(),TreeData.COUNT_TYPE_CLOSED);
 					treeNodes.add(td);
 
 					/*
@@ -199,7 +274,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					*/
 
 					// populate array and model map
-					TreeData[] treeDataArray = (TreeData[])treeNodes.toArray(new TreeData[treeNodes.size()]);
+					final TreeData[] treeDataArray = treeNodes.toArray(new TreeData[treeNodes.size()]); // $codepro.audit.disable localDeclaration
 					cachedModelMap.put(modelFile, treeDataArray);
 					return resource;
 				} // model not null
@@ -209,82 +284,97 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		return null; 
 	} // method
 
-	protected int goalCount = 0;
-	protected int strategyCount = 0;
-	protected int solutionCount = 0;
-	protected int toBeSupported = 0;
-
 
 	/**
-	 * @return the goal count
+	 * Get the accumulated goal node count.
+	 * @return the goal count 
 	 */
 	public int getGoalCount() {
 		return goalCount;
 	}
 
 	/**
+	 * Sets the goal count value.
 	 * @param goalCount the goal count
 	 */
 	public void setGoalCount(int goalCount) {
 		this.goalCount = goalCount;
 	}
 
+	/**
+	 * Increments the goal node count by one.
+	 */
 	public void incrementGoalCount() {
-		this.goalCount += 1;
+		goalCount += 1;
 	}
 
 	/**
+	 * Get the accumulated strategy node count.
 	 * @return the strategy count
-	 */
+	 */ 
 	public int getStrategyCount() {
 		return strategyCount;
 	}
 
 	/**
+	 * Sets the strategy node count.
 	 * @param strategyCount new strategy count
 	 */
 	public void setStrategyCount(int strategyCount) {
 		this.strategyCount = strategyCount;
 	}
 
+	/**
+	 * Increments the strategy node count by one.
+	 */
 	public void incrementStrategyCount() {
-		this.strategyCount += 1;
+		strategyCount += 1;
 	}
 
 	/**
-	 * @return the solution count
+	 * Get the solution node count.
+	 * @return the solution count 
 	 */
 	public int getSolutionCount() {
 		return solutionCount;
 	}
 
 	/**
+	 * Sets the solution node count.
 	 * @param solutionCount new solution count
 	 */
 	public void setSolutionCount(int solutionCount) {
 		this.solutionCount = solutionCount;
 	}
 
+	/**
+	 * Increments the solution node count by one.
+	 */
 	public void incrementSolutionCount() {
-		this.solutionCount += 1;
+		solutionCount += 1;
 	}
 
 	/**
-	 * @return the toBeSupported
+	 * Get the number of nodes with to-be-supported flag set.
+	 * @return to-be-supported node count
 	 */
 	public int getToBeSupported() {
 		return toBeSupported;
 	}
 
 	/**
-	 * @param toBeSupported the toBeSupported to set
+	 * Sets the count of to-be-supported nodes.
+	 * @param toBeSupported the new node count
 	 */
 	public void setToBeSupported(int toBeSupported) {
 		this.toBeSupported = toBeSupported;
 	}
 
+	/**
+	 * Increments the to-be-supported node count by one.
+	 */
 	public void incrementToBeSupported() {
-		this.toBeSupported += 1;
+		toBeSupported += 1;
 	}
 	
 	/**
@@ -294,13 +384,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Goal</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Goal</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseGoal(Goal object) {
 			incrementGoalCount();
@@ -310,13 +397,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Strategy</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Strategy</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseStrategy(Strategy object) {
 			incrementStrategyCount();
@@ -326,32 +410,27 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Solution</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Solution</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseSolution(Solution object) {
 			incrementSolutionCount();
-			@SuppressWarnings("unused")
+			/*
 			InformationElement e = object.getEvidence();
 			// TODO whether to count to-be-supported somehow
+			 * */
 			return Boolean.TRUE;
 		}
 
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Assumption</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Assumption</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssumption(Assumption object) {
 			return Boolean.TRUE;
@@ -360,13 +439,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Context</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Context</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseContext(Context object) {
 			return Boolean.TRUE;
@@ -375,13 +451,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Justification</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Justification</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseJustification(Justification object) {
 			return Boolean.TRUE;
@@ -390,13 +463,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseModelElement(ModelElement object) {
 			return Boolean.TRUE;
@@ -405,13 +475,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Argument Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Argument Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseArgumentElement(ArgumentElement object) {
 			return Boolean.TRUE;
@@ -420,13 +487,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Reasoning Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Reasoning Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseReasoningElement(ReasoningElement object) {
 			return Boolean.TRUE;
@@ -435,13 +499,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Claim</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Claim</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseClaim(Claim object) {
 			return Boolean.TRUE;
@@ -450,13 +511,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Argument Link</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Argument Link</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseArgumentLink(ArgumentLink object) {
 			return Boolean.TRUE;
@@ -465,13 +523,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedRelationship(AssertedRelationship object) {
 			return Boolean.TRUE;
@@ -480,13 +535,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseAssertedEvidence(AssertedEvidence object) {
 			return Boolean.TRUE;
@@ -495,13 +547,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Information Element</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Information Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
 		 */
 		public Boolean caseInformationElement(InformationElement object) {
 			return Boolean.TRUE;
@@ -510,13 +559,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 		 * <!-- begin-user-doc -->
-		 * This implementation returns null;
-		 * returning a non-null result will terminate the switch, but this is the last case anyway.
 		 * <!-- end-user-doc -->
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-		 * @generated
 		 */
 		public Boolean defaultCase(EObject object) {
 			return Boolean.TRUE;
