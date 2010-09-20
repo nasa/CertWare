@@ -1,3 +1,7 @@
+/**
+ * CertWare Project
+ * Copyright (c) 2010 Kestrel Technology LLC
+ */
 package net.certware.export.wizards;
 
 import java.io.File;
@@ -6,7 +10,9 @@ import java.io.IOException;
 import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.cae.CaePackage;
 import net.certware.argument.gsn.GsnPackage;
-import net.certware.argument.gsn.presentation.GsnModelWizard;
+import net.certware.core.ICertWareConstants;
+import net.certware.core.ui.log.CertWareLog;
+import net.certware.export.jobs.ExportARMJob;
 import net.certware.export.jobs.ExportGSNJob;
 
 import org.eclipse.core.resources.IContainer;
@@ -27,10 +33,10 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * @author mrb
  * @see Copied here from Eclipse and modified for use in CertWare plugins.
  */
-public class FileSystemExporter {
+public class FileSystemExporter implements ICertWareConstants {
 
 	/** file extension for targets to Word documents */
-	protected static final String EXPORT_EXTENSION = "docx";
+	protected static final String EXPORT_EXTENSION = Messages.FileSystemExporter_0;
 
 	/**
 	 * Constructor initializes the packages.
@@ -45,7 +51,10 @@ public class FileSystemExporter {
 	 *  @param destinationPath location to which files will be written
 	 */
 	public void createFolder(IPath destinationPath) {
-		new File(destinationPath.toPortableString()).mkdir();
+		boolean rv = new File(destinationPath.toPortableString()).mkdir();
+		if ( rv == false ) {
+			CertWareLog.logWarning("Exporting path not created");
+		}
 	}
 
 	/**
@@ -53,8 +62,8 @@ public class FileSystemExporter {
 	 * @param resource the resource to write out to the file system
 	 * @param destinationPath location where the resource will be written
 	 * @param monitor progress monitor
-	 * @exception CoreException if the operation fails 
-	 * @exception IOException if an I/O error occurs when writing files
+	 * @throws CoreException if the operation fails
+	 * @throws IOException if an I/O error occurs when writing files
 	 */
 	public void write(IResource resource, IPath destinationPath, IProgressMonitor monitor)
 	throws CoreException, IOException {
@@ -67,14 +76,18 @@ public class FileSystemExporter {
 
 	/**
 	 * Exports the passed container's children
-	 * @param monitor 
+	 * @param folder destination container
+	 * @param destinationPath IPath
+	 * @param monitor progress monitor 
+	 * @throws CoreException 
+	 * @throws IOException
 	 */
 	protected void writeChildren(IContainer folder, IPath destinationPath, IProgressMonitor monitor)
 	throws CoreException, IOException {
 		if (folder.isAccessible()) {
-			IResource[] children = folder.members();
+			final IResource[] children = folder.members();
 			for (int i = 0; i < children.length; i++) {
-				IResource child = children[i];
+				IResource child = children[i]; // $codepro.audit.disable variableDeclaredInLoop
 				writeResource(child, destinationPath.append(child.getName()),monitor);
 			}
 		}
@@ -85,42 +98,52 @@ public class FileSystemExporter {
 	 * @param file selected file
 	 * @param destinationPath selected destination including original file name
 	 * @param monitor progress monitor for reporting work
-	 * @throws IOException
-	 * @throws CoreException
 	 */
 	@SuppressWarnings("unused")
 	protected void writeFile(IFile file, IPath destinationPath, IProgressMonitor monitor)
-	throws IOException, CoreException 
 	{
 		// IPath destinationWithoutExtension = destinationPath.removeFileExtension();
 		// leaving on the original extension because results files share common roots
 		// destination files change result.xvt and result.xbo into result.xvt.docx and result.xbo.docx 
-		IPath destinationWithExtension = destinationPath.addFileExtension(EXPORT_EXTENSION);
-		String destinationFile = destinationWithExtension.toPortableString();
+		final IPath destinationWithExtension = destinationPath.addFileExtension(EXPORT_EXTENSION);
+		final String destinationFile = destinationWithExtension.toPortableString(); // $codepro.audit.disable variableUsage
 
 		// if the file is the right type, open it and update the view
-		String extension = file.getFileExtension();
-		if ( extension == null )
+		final String extension = file.getFileExtension();
+		if ( null == extension ) {
 			return;
+		}
 
 		// create the generic document target
 		/*
     	WriteExcel excel = new WriteExcel();
     	excel.setDestinationFile(destinationFile);
 		 */
-		if ( GsnModelWizard.FILE_EXTENSIONS.contains(extension) ) {
+		if ( ICertWareConstants.GSN_EXTENSION.equals(extension)) {
  			// TODO pass the destination file
-			EObject eo = readModel(file);
-			ExportGSNJob ej = new ExportGSNJob("Export GSN model file",eo);
+			final EObject eo = readModel(file);
+			final ExportGSNJob ej = new ExportGSNJob(Messages.FileSystemExporter_1,eo);
 			ej.produce(monitor);
 			return;
 		}
+		if ( ICertWareConstants.ARM_EXTENSION.equals(extension)) {
+ 			// TODO pass the destination file
+			final EObject eo = readModel(file);
+			final ExportARMJob ej = new ExportARMJob(Messages.FileSystemExporter_2,eo);
+			ej.produce(monitor);
+			return;
+		}
+		
 		// TODO CAE export
-		// TODO ARM export
 	}
 
 	/**
-	 *  Writes the passed resource to the specified location recursively
+	 * Writes the passed resource to the specified location recursively.
+	 * @param resource resource selected to write
+	 * @param destinationPath destination path
+	 * @param monitor progress monitor
+	 * @throws CoreException 
+	 * @throws IOException 
 	 */
 	protected void writeResource(IResource resource, IPath destinationPath, IProgressMonitor monitor)
 	throws CoreException, IOException 
@@ -138,16 +161,21 @@ public class FileSystemExporter {
 	 */
 	@SuppressWarnings("unused")
 	public void init() {
-		GsnPackage gp = GsnPackage.eINSTANCE;
-		CaePackage cp = CaePackage.eINSTANCE;
-		ArmPackage ap = ArmPackage.eINSTANCE;
+		final GsnPackage gp = GsnPackage.eINSTANCE; // $codepro.audit.disable variableUsage
+		final CaePackage cp = CaePackage.eINSTANCE; // $codepro.audit.disable variableUsage
+		final ArmPackage ap = ArmPackage.eINSTANCE; // $codepro.audit.disable variableUsage
 	}
 
+	/**
+	 * Read the model using the EMF resource processing classes.
+	 * @param ifile file to read
+	 * @return the first EObject of the resource contents 
+	 */
 	public EObject readModel(final IFile ifile) {
 		// load the XML file through the EMF resource set implementation
-		ResourceSet resourceSet = new ResourceSetImpl();
-		Resource resource = resourceSet.getResource( URI.createPlatformResourceURI(ifile.getFullPath().toString(), true), true);
-		EObject documentRoot = (EObject)resource.getContents().get(0);
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Resource resource = resourceSet.getResource( URI.createPlatformResourceURI(ifile.getFullPath().toString(), true), true);
+		final EObject documentRoot = (EObject)resource.getContents().get(0);
 		return documentRoot;
 	}
 }

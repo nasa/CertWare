@@ -29,34 +29,40 @@ import org.eclipse.ui.handlers.HandlerUtil;
  */
 public class ExportGSNHandler extends AbstractHandler {
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.core.commands.IHandler#execute(org.eclipse.core.commands.ExecutionEvent)
+	/**
+	 * Method execute.
+	 * @param event execution event associated witt this job
+	 * @return always returns null
+	 * @throws ExecutionException
+	 * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// get the selection and ensure its from a GSN model element
 		// uses only the first element of a structured selection
-		ISelection iselection = HandlerUtil.getCurrentSelectionChecked(event);
+		final ISelection iselection = HandlerUtil.getCurrentSelectionChecked(event);
 		if ( iselection instanceof IStructuredSelection ) {
-			IStructuredSelection iss = (IStructuredSelection)iselection;
-			if (iss.getFirstElement() != null ) {
+			final IStructuredSelection iss = (IStructuredSelection)iselection;
+			if (null != iss.getFirstElement() ) {
 
 				// determine the kind of selection
 				// use various job constructors according to selection
 				Collection collection = null;
 				ExportGSNJob job = null;
-				final String jobTitle = "Export GSN model elements";
+				final String jobTitle = Messages.ExportGSNHandler_0;
 
 				if ( iss.size() > 1 ) {
 					collection = iss.toList();
 					job = new ExportGSNJob(jobTitle, collection);
 				} else {
-					if ( iss.getFirstElement() instanceof Resource )
+					if ( iss.getFirstElement() instanceof Resource ) {
 						job = new ExportGSNJob(jobTitle, (Resource)iss.getFirstElement());
-					else if ( iss.getFirstElement() instanceof EObject )
+					}
+					else if ( iss.getFirstElement() instanceof EObject ) {
 						job = new ExportGSNJob(jobTitle, (EObject)iss.getFirstElement());
+					}
 					else {
-						CertWareLog.logWarning("Unknown selection for GSN export");
+						CertWareLog.logWarning(Messages.ExportGSNHandler_1);
 						return null;
 					}
 				}
@@ -66,7 +72,7 @@ public class ExportGSNHandler extends AbstractHandler {
 
 				// perform the export using its job
 				job.addJobChangeListener(new JobChangeAdapter() {
-					public void done(IJobChangeEvent event) {
+					public void done(IJobChangeEvent event) { // $codepro.audit.disable emptyMethod
 						// job reports its own message; what else do we need?
 					}
 				});

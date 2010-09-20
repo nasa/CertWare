@@ -1,3 +1,8 @@
+/**
+ * CertWare Project
+ * Copyright (c) 2010 Kestrel Technology LLC
+ * Original source from IBM data transfer internal package
+ */
 package net.certware.export.wizards;
 
 import java.io.File;
@@ -5,6 +10,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+
+import net.certware.core.ui.log.CertWareLog;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IProject;
@@ -36,35 +43,36 @@ import org.eclipse.ui.dialogs.WizardExportResourcesPage;
  * Wizard page for selecting source files for export to destination file.
  * This class differs from its original data transfer internal class by the operation applied to the selections.
  * @author mrb
- * @see IBM file system export page from data transfer internal package
  */
-public class ExportSummaryPage extends  WizardExportResourcesPage implements Listener {
+public class ExportSummaryPage extends  WizardExportResourcesPage implements Listener { // $codepro.audit.disable declareDefaultConstructors
 
-    // widgets
+	/** destination name field widget */
     private Combo destinationNameField;
-
+    /** destination browse button widget */
     private Button destinationBrowseButton;
-
+    /** overwrite existing files check box widget */
     protected Button overwriteExistingFilesCheckbox;
-
+    /** create directory structure button widget */
     protected Button createDirectoryStructureButton;
-
+    /** create selection only button widget */
     protected Button createSelectionOnlyButton;
-
-    // dialog store id constants
+    /** store key for destination names */
     private static final String STORE_DESTINATION_NAMES_ID = "ExportSummaryPage.STORE_DESTINATION_NAMES_ID"; //$NON-NLS-1$
-
+    /** store key for overwrite exiting files */
     private static final String STORE_OVERWRITE_EXISTING_FILES_ID = "ExportSummaryPage.STORE_OVERWRITE_EXISTING_FILES_ID"; //$NON-NLS-1$
-
+    /** store key for create structure */
     private static final String STORE_CREATE_STRUCTURE_ID = "ExportSummaryPage.STORE_CREATE_STRUCTURE_ID"; //$NON-NLS-1$
-
-    //messages
-    private static final String SELECT_DESTINATION_MESSAGE = "Select destination";
-    private static final String SELECT_DESTINATION_TITLE = "Select Destination";
- 
-
+    /** select destination message */
+    private static final String SELECT_DESTINATION_MESSAGE = Messages.ExportSummaryPage_0;
+    /** dialog title for destination message */
+    private static final String SELECT_DESTINATION_TITLE = Messages.ExportSummaryPage_1;
+    /** empty directory names list */
+    private static final String[] EMPTY_DIRECTORY_NAMES = new String[0];
+    
     /**
-     *  Create an instance of this class
+     *  Create an instance of this class.
+     *  @param name wizard name
+     *  @param selection selection for wizard reference
      */
     protected ExportSummaryPage(String name, IStructuredSelection selection) {
         super(name, selection);
@@ -72,26 +80,29 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
     /**
      * Create an instance of this class.
-     *
-     * @param selection the selection
+     * @param selection selection for wizard reference
      */
     public ExportSummaryPage(IStructuredSelection selection) {
         this("fileSystemExportPage1", selection); //$NON-NLS-1$
-        setTitle("Export to Document");
-        setDescription("Translates the results file to a document file in the local file system.");
+        setTitle(Messages.ExportSummaryPage_2);
+        setDescription(Messages.ExportSummaryPage_3);
     }
 
     /**
      *  Add the passed value to self's destination widget's history
-     *  @param value java.lang.String
+     *  @param value destination name
      */
     protected void addDestinationItem(String value) {
         destinationNameField.add(value);
     }
 
-    /** (non-Javadoc)
+    /** 
+     * Create the control for the page.
+     * Calls super class then gives focus to the destination.
      * Method declared on IDialogPage.
-     */
+     * @param parent control parent
+    
+     * @see org.eclipse.jface.dialogs.IDialogPage#createControl(Composite) */
     public void createControl(Composite parent) {
         super.createControl(parent);
 
@@ -104,22 +115,21 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
     /**
      *  Create the export destination specification widgets
-     *
-     *  @param parent org.eclipse.swt.widgets.Composite
+     *  @param parent destination parent
      */
     protected void createDestinationGroup(Composite parent) {
 
-        Font font = parent.getFont();
+        final Font font = parent.getFont();
         // destination specification group
-        Composite destinationSelectionGroup = new Composite(parent, SWT.NONE);
-        GridLayout layout = new GridLayout();
-        layout.numColumns = 3;
+        final Composite destinationSelectionGroup = new Composite(parent, SWT.NONE);
+        final GridLayout layout = new GridLayout();
+        layout.numColumns = 3; // $codepro.audit.disable numericLiterals
         destinationSelectionGroup.setLayout(layout);
         destinationSelectionGroup.setLayoutData(new GridData(
                 GridData.HORIZONTAL_ALIGN_FILL | GridData.VERTICAL_ALIGN_FILL));
         destinationSelectionGroup.setFont(font);
 
-        Label destinationLabel = new Label(destinationSelectionGroup, SWT.NONE);
+        final Label destinationLabel = new Label(destinationSelectionGroup, SWT.NONE);
         destinationLabel.setText(getDestinationLabel());
         destinationLabel.setFont(font);
 
@@ -127,14 +137,14 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
         destinationNameField = new Combo(destinationSelectionGroup, SWT.SINGLE | SWT.BORDER);
         destinationNameField.addListener(SWT.Modify, this);
         destinationNameField.addListener(SWT.Selection, this);
-        GridData data = new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL);
+        final GridData data = new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL);
         data.widthHint = SIZING_TEXT_FIELD_WIDTH;
         destinationNameField.setLayoutData(data);
         destinationNameField.setFont(font);
 
         // destination browse button
         destinationBrowseButton = new Button(destinationSelectionGroup, SWT.PUSH);
-        destinationBrowseButton.setText("Browse...");
+        destinationBrowseButton.setText(Messages.ExportSummaryPage_4);
         destinationBrowseButton.addListener(SWT.Selection, this);
         destinationBrowseButton.setFont(font);
         setButtonLayoutData(destinationBrowseButton);
@@ -144,10 +154,11 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
     /**
      * Create the buttons in the options group.
+     * @param optionsGroup Group
      */
     protected void createOptionsGroupButtons(Group optionsGroup) {
 
-        Font font = optionsGroup.getFont();
+        final Font font = optionsGroup.getFont();
         createOverwriteExisting(optionsGroup, font);
 
         createDirectoryStructureOptions(optionsGroup, font);
@@ -156,19 +167,19 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     /**
      * Create the buttons for the group that determine if the entire or
      * selected directory structure should be created.
-     * @param optionsGroup
-     * @param font
+     * @param optionsGroup group for related options
+     * @param font text font for buttons
      */
     protected void createDirectoryStructureOptions(Composite optionsGroup, Font font) {
         // create directory structure radios
         createDirectoryStructureButton = new Button(optionsGroup, SWT.RADIO | SWT.LEFT);
-        createDirectoryStructureButton.setText("Create directory structure");
+        createDirectoryStructureButton.setText(Messages.ExportSummaryPage_5);
         createDirectoryStructureButton.setSelection(false);
         createDirectoryStructureButton.setFont(font);
 
         // create directory structure radios
         createSelectionOnlyButton = new Button(optionsGroup, SWT.RADIO | SWT.LEFT);
-        createSelectionOnlyButton.setText("Create selected directories");
+        createSelectionOnlyButton.setText(Messages.ExportSummaryPage_6);
         createSelectionOnlyButton.setSelection(true);
         createSelectionOnlyButton.setFont(font);
     }
@@ -176,31 +187,30 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     /**
      * Create the button for checking if we should ask if we are going to
      * overwrite existing files.
-     * @param optionsGroup
-     * @param font
+     * @param optionsGroup group for related options
+     * @param font buttons text font
      */
     protected void createOverwriteExisting(Group optionsGroup, Font font) {
-        // overwrite... checkbox
+        // overwrite... check box
         overwriteExistingFilesCheckbox = new Button(optionsGroup, SWT.CHECK | SWT.LEFT);
-        overwriteExistingFilesCheckbox.setText("Overwrite existing files");
+        overwriteExistingFilesCheckbox.setText(Messages.ExportSummaryPage_7);
         overwriteExistingFilesCheckbox.setFont(font);
     }
 
     /**
      * Attempts to ensure that the specified directory exists on the local file system.
      * Answers a boolean indicating success.
-     *
-     * @return boolean
-     * @param directory java.io.File
-     */
-    protected boolean ensureDirectoryExists(File directory) {
+     * @param directory directory to confirm
+    
+     * @return true if directory exists, or does not exist and user chooses to create it  */
+    protected boolean isExistingDirectory(File directory) {
         if (!directory.exists()) {
-            if (!queryYesNoQuestion("Create target directory?")) {
+            if (!queryYesNoQuestion(Messages.ExportSummaryPage_8)) {
                 return false;
             }
 
             if (!directory.mkdirs()) {
-                displayErrorDialog("Error creating directory");
+                displayErrorDialog(Messages.ExportSummaryPage_9);
                 giveFocusToDestination();
                 return false;
             }
@@ -211,26 +221,27 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
     /**
      *  If the target for export does not exist then attempt to create it.
-     *  Answer a boolean indicating whether the target exists (ie.- if it
-     *  either pre-existed or this method was able to create it)
-     *
-     *  @return boolean
-     */
-    protected boolean ensureTargetIsValid(File targetDirectory) {
+     *  Answer a boolean indicating whether the target exists (i.e.- if it either already exists
+     *  or this method was able to create it).
+     *  
+     * @param targetDirectory File
+    @return false if target is invalid or does not exist, true otherwise */
+    protected boolean isValidTarget(File targetDirectory) {
         if (targetDirectory.exists() && !targetDirectory.isDirectory()) {
-            displayErrorDialog("Target is invalid");
+            displayErrorDialog(Messages.ExportSummaryPage_10);
             giveFocusToDestination();
             return false;
         }
 
-        return ensureDirectoryExists(targetDirectory);
+        return isExistingDirectory(targetDirectory);
     }
 
     /**
      *  Set up and execute the passed Operation.  Answer a boolean indicating success.
-     *  @return boolean
-     */
-    protected boolean executeExportOperation(ExportResourceOperation op) {
+     *  @param op operation to perform for export
+     *  
+    @return true if successful */
+    protected boolean canExportOperation(ExportResourceOperation op) {
         op.setCreateLeadupStructure(createDirectoryStructureButton.getSelection());
         op.setOverwriteFiles(overwriteExistingFilesCheckbox.getSelection());
 
@@ -243,10 +254,10 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
             return false;
         }
 
-        IStatus status = op.getStatus();
+        final IStatus status = op.getStatus();
         if (!status.isOK()) {
             ErrorDialog.openError(getContainer().getShell(),
-              "Problems during export",
+              Messages.ExportSummaryPage_11,
                     null, // no special message
                     status);
             return false;
@@ -259,13 +270,13 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      *  The Finish button was pressed.  Try to do the required work now and answer
      *  a boolean indicating success.  If false is returned then the wizard will
      *  not close.
-     *  @return boolean
-     */
+     *  
+    @return boolean false if target invalid or export operation fails  */
     @SuppressWarnings("unchecked")
-    public boolean finish() {
+    public boolean finish() { // $codepro.audit.disable booleanMethodNamingConvention
       
-        List<IResource> resourcesToExport = getWhiteCheckedResources();
-        if (!ensureTargetIsValid(new File(getDestinationValue()))) {
+        final List<IResource> resourcesToExport = getWhiteCheckedResources();
+        if (!isValidTarget(new File(getDestinationValue()))) {
             return false;
         }
 
@@ -276,22 +287,22 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
         // about to invoke the operation so save our state
         saveWidgetValues();
 
-        return executeExportOperation(new ExportResourceOperation(null,
+        return canExportOperation(new ExportResourceOperation(null,
                 resourcesToExport, getDestinationValue(), this));
     }
 
     /**
      *  Answer the string to display in self as the destination type
-     *  @return java.lang.String
-     */
+     *  
+    @return java.lang.String */
     protected String getDestinationLabel() {
-        return "Export to directory";
+        return Messages.ExportSummaryPage_12;
     }
 
     /**
      *  Answer the contents of self's destination specification widget
-     *  @return java.lang.String
-     */
+     *  
+    @return java.lang.String */
     protected String getDestinationValue() {
         return destinationNameField.getText().trim();
     }
@@ -308,13 +319,13 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      *  to import from
      */
     protected void handleDestinationBrowseButtonPressed() {
-        DirectoryDialog dialog = new DirectoryDialog(getContainer().getShell(), SWT.SAVE);
+        final DirectoryDialog dialog = new DirectoryDialog(getContainer().getShell(), SWT.SAVE);
         dialog.setMessage(SELECT_DESTINATION_MESSAGE);
         dialog.setText(SELECT_DESTINATION_TITLE);
         dialog.setFilterPath(getDestinationValue());
-        String selectedDirectoryName = dialog.open();
+        final String selectedDirectoryName = dialog.open();
 
-        if (selectedDirectoryName != null) {
+        if (null != selectedDirectoryName) {
             setErrorMessage(null);
             setDestinationValue(selectedDirectoryName);
         }
@@ -322,12 +333,13 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
     /**
      * Handle all events and enablements for widgets in this page
-     * @param e Event
-     */
+     * @param e event to handle
+    
+     * @see org.eclipse.swt.widgets.Listener#handleEvent(Event) */
     public void handleEvent(Event e) {
-        Widget source = e.widget;
+        final Widget source = e.widget;
 
-        if (source == destinationBrowseButton) {
+        if (destinationBrowseButton.equals(source)) {
             handleDestinationBrowseButtonPressed();
         }
 
@@ -340,12 +352,12 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      */
     protected void internalSaveWidgetValues() {
         // update directory names history
-        IDialogSettings settings = getDialogSettings();
-        if (settings != null) {
+        final IDialogSettings settings = getDialogSettings();
+        if (null != settings) {
             String[] directoryNames = settings
                     .getArray(STORE_DESTINATION_NAMES_ID);
-            if (directoryNames == null) {
-                directoryNames = new String[0];
+            if (null == directoryNames) {
+                directoryNames = EMPTY_DIRECTORY_NAMES;
             }
 
             directoryNames = addToHistory(directoryNames, getDestinationValue());
@@ -366,11 +378,11 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      *  last time this wizard was used to completion.
      */
     protected void restoreWidgetValues() {
-        IDialogSettings settings = getDialogSettings();
-        if (settings != null) {
-            String[] directoryNames = settings
+        final IDialogSettings settings = getDialogSettings();
+        if (null != settings) {
+            final String[] directoryNames = settings
                     .getArray(STORE_DESTINATION_NAMES_ID);
-            if (directoryNames == null) {
+            if (null == directoryNames) {
                 return; // ie.- no settings stored
             }
 
@@ -395,6 +407,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      *  Set the contents of the receivers destination specification widget to
      *  the passed value
      *
+     * @param value String
      */
     protected void setDestinationValue(String value) {
         destinationNameField.setText(value);
@@ -403,25 +416,28 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     /**
      *  Answer a boolean indicating whether the receivers destination specification
      *  widgets currently all contain valid values.
-     */
+    
+     * @return boolean */
     protected boolean validateDestinationGroup() {
-        String destinationValue = getDestinationValue();
-        if (destinationValue.length() == 0) {
+        final String destinationValue = getDestinationValue();
+        if (0 == destinationValue.length()) {
             setMessage(destinationEmptyMessage());
             return false;
         }
 
-        String conflictingContainer = getConflictingContainerNameFor(destinationValue);
-        if (conflictingContainer == null) {
+        final String conflictingContainer = getConflictingContainerNameFor(destinationValue);
+        if (null == conflictingContainer) {
             // no error message, but warning may exists
-            String threatenedContainer = getOverlappingProjectName(destinationValue);
-            if(threatenedContainer == null)
+            final String threatenedContainer = getOverlappingProjectName(destinationValue);
+            if (null == threatenedContainer) {
                 setMessage(null);
-            else
-                setMessage("Potential conflicting container",  WARNING);
+            }
+            else {
+                setMessage(Messages.ExportSummaryPage_13,  WARNING);
+            }
             
         } else {
-            setErrorMessage("Conflicting container");
+            setErrorMessage(Messages.ExportSummaryPage_14);
             giveFocusToDestination();
             return false;
         }
@@ -433,13 +449,17 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      * (non-Javadoc)
      * @see org.eclipse.ui.dialogs.WizardDataTransferPage#validateSourceGroup()
      */
+    /**
+     * Method validateSourceGroup.
+    
+     * @return boolean */
     protected boolean validateSourceGroup() {
         // there must be some resources selected for Export
         boolean isValid = true;
         @SuppressWarnings("unchecked")
-		List<IResource> resourcesToExport = getWhiteCheckedResources();
-        if (resourcesToExport.size() == 0){
-            setErrorMessage("No files selected");
+		final List<IResource> resourcesToExport = getWhiteCheckedResources();
+        if (0 == resourcesToExport.size()){
+            setErrorMessage(Messages.ExportSummaryPage_15);
             isValid =  false;
         } else {
             setErrorMessage(null);
@@ -449,9 +469,10 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
     /**
      * Get the message used to denote an empty destination.
-     */
+    
+     * @return String */
     protected String destinationEmptyMessage() {
-        return "Empty destination";
+        return Messages.ExportSummaryPage_16;
     }
 
     /**
@@ -459,21 +480,23 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      * Returns null if there is no conflict.
      * 
      * @param targetDirectory the path of the directory to check.
-     * @return the conflicting container name or <code>null
-     */
+    
+     * @return the conflicting container name or <code>null */
     protected String getConflictingContainerNameFor(String targetDirectory) {
 
-        IPath rootPath = ResourcesPlugin.getWorkspace().getRoot().getLocation();
-        IPath testPath = new Path(targetDirectory);
+        final IPath rootPath = ResourcesPlugin.getWorkspace().getRoot().getLocation();
+        final IPath testPath = new Path(targetDirectory);
         // cannot export into workspace root
-        if(testPath.equals(rootPath))
+        if(testPath.equals(rootPath)) {
             return rootPath.lastSegment();
+        }
         
         //Are they the same?
         if(testPath.matchingFirstSegments(rootPath) == rootPath.segmentCount()){
-            String firstSegment = testPath.removeFirstSegments(rootPath.segmentCount()).segment(0);
-            if(!Character.isLetterOrDigit(firstSegment.charAt(0)))
+            final String firstSegment = testPath.removeFirstSegments(rootPath.segmentCount()).segment(0);
+            if(!Character.isLetterOrDigit(firstSegment.charAt(0))) {
                 return firstSegment;
+            }
         }
 
         return null;
@@ -484,20 +507,18 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      * Returns the name of a {@link IProject} with a location that includes
      * targetDirectory. Returns null if there is no such {@link IProject}.
      * @param targetDirectory the path of the directory to check.
-     * @return the overlapping project name or <code>null
-     */
+    
+     * @return the overlapping project name or <code>null */
     private String getOverlappingProjectName(String targetDirectory){
-        IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+        final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 //        IPath testPath = new Path(targetDirectory);
 //        IContainer[] containers = root.findContainersForLocation(testPath);
-        IContainer[] containers;
-        try
-        {
+        final IContainer[] containers;
+        try {
           containers = root.findContainersForLocationURI(new URI(targetDirectory));
         }
-        catch (URISyntaxException e)
-        {
-          e.printStackTrace();
+        catch (URISyntaxException e) {
+          CertWareLog.logError(Messages.ExportSummaryPage_17, e);
           return null;
         }
         

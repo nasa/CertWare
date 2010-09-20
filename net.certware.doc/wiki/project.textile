@@ -94,7 +94,8 @@ h3. Unit Tests
 
 h3. Automated Analysis
 
-Uses CodePro AnalytiX for manually-generated code with full rule set.  Follow the majority of rule recommendations including Javadoc.   
+* Uses CodePro AnalytiX for manually-generated code with full rule set.  Follow the majority of rule recommendations including Javadoc.
+* FindBugs used on all code including automatically-generated code with nearly full rule set.  Some style rules disabled.       
 
 h2. Update Site Publishing
 

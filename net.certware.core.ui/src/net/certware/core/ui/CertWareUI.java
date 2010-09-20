@@ -12,8 +12,10 @@ public class CertWareUI extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "net.certware.core.ui"; //$NON-NLS-1$
 	/** job icon path */
 	private static final String JOB_ICON = "icons/obj16/jobfamily.png";
-
+	/** plugin instance */
 	static private CertWareUI plugin;
+	/** bundle context reference */
+	private BundleContext context;
 	
 	/**
 	 * The constructor
@@ -21,9 +23,12 @@ public class CertWareUI extends AbstractUIPlugin {
 	public CertWareUI() {
 	}
 
-	private static BundleContext context;
 
-	static BundleContext getContext() {
+	/**
+	 * Returns the bundle context captured at start-up.
+	 * @return bundle context
+	 */
+	BundleContext getContext() {
 		return context;
 	}
 	
@@ -31,7 +36,7 @@ public class CertWareUI extends AbstractUIPlugin {
 	 * Starts the bundle and registers an icon for the job family.
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
-		CertWareUI.context = bundleContext;
+		context = bundleContext;
 
 		super.start(bundleContext);
 		plugin = this;

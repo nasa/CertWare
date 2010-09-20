@@ -11,18 +11,18 @@ import java.util.List;
  * Miscellaneous application-wide constants.
  * Intended to minimize the number of imported plugins.
  * @author mrb
-  */
+ */
 public interface ICertWareConstants {
 
 	/** file extension for the ARM model */
-	public static final String ARM_EXTENSION = "arm";
+	static final String ARM_EXTENSION = "arm"; //$NON-NLS-1$
 	/** file extension for the GSN model */
-	public static final String GSN_EXTENSION = "gsn";
+	static final String GSN_EXTENSION = "gsn"; //$NON-NLS-1$
 	/** file extension for the CAE model */
-	public static final String CAE_EXTENSION = "cae";
+	static final String CAE_EXTENSION = "cae"; //$NON-NLS-1$
 
 	/** a list of all application file extensions */
-	public static final List<String> FILE_EXTENSIONS = 
+	static final List<String> FILE_EXTENSIONS = 
 		Collections.unmodifiableList(Arrays.asList(ARM_EXTENSION,GSN_EXTENSION,CAE_EXTENSION));
 
 }

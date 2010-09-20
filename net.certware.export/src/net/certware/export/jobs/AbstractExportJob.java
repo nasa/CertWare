@@ -5,6 +5,7 @@
  */
 package net.certware.export.jobs;
 
+import java.text.MessageFormat;
 import java.util.Collection;
 
 import net.certware.core.ui.log.CertWareLog;
@@ -23,7 +24,7 @@ import org.eclipse.swt.widgets.Shell;
  * @author mrb
  * @since 1.0
  */
-abstract public class AbstractExportJob extends Job {
+public abstract class AbstractExportJob extends Job {
 
 	/** for exporting a single node and its descendants */  
 	protected EObject node = null;
@@ -34,13 +35,20 @@ abstract public class AbstractExportJob extends Job {
 	/** number of production steps for progress monitor */
 	protected int steps = 1;
 	/** previously-selected destination file name */
-	protected String previousFileName = "";
+	protected String previousFileName = Messages.AbstractExportJob_0;
+	
+	/**
+	 * Default constructor uses default job name.
+	 */
+	protected AbstractExportJob() {
+		super(Messages.AbstractExportJob_1);
+	}
 	
 	/**
 	 * Create the export job with a name.
 	 * @param name
 	 */
-	public AbstractExportJob(String name) {
+	protected AbstractExportJob(String name) {
 		super(name);
 	}
 
@@ -49,11 +57,11 @@ abstract public class AbstractExportJob extends Job {
 	 * @param name job name
 	 * @param node model element to export including its descendants
 	 */
-	public AbstractExportJob(String name, EObject node) {
+	protected AbstractExportJob(String name, EObject node) {
 		this(name);
 		this.node = node;
-		this.nodeCollection = null;
-		this.resource = null;
+		nodeCollection = null;
+		resource = null;
 	}
 	
 	/**
@@ -61,11 +69,11 @@ abstract public class AbstractExportJob extends Job {
 	 * @param name job name
 	 * @param nodes collection of nodes to export
 	 */
-	public AbstractExportJob(String name, Collection nodes) {
+	protected AbstractExportJob(String name, Collection nodes) {
 		this(name);
-		this.node = null;
-		this.nodeCollection = nodes;
-		this.resource = null;
+		node = null;
+		nodeCollection = nodes;
+		resource = null;
 	}
 	
 	/**
@@ -73,10 +81,10 @@ abstract public class AbstractExportJob extends Job {
 	 * @param name job name
 	 * @param resource model resource
 	 */
-	public AbstractExportJob(String name, Resource resource) {
+	protected AbstractExportJob(String name, Resource resource) {
 		this(name);
-		this.node = null;
-		this.nodeCollection = null;
+		node = null;
+		nodeCollection = null;
 		this.resource = resource;
 	}
 	
@@ -90,8 +98,8 @@ abstract public class AbstractExportJob extends Job {
 	
 	/**
 	 * Gets the number of steps for progress monitoring.
-	 * @return total progress monitoring steps
-	 */
+	
+	 * @return total progress monitoring steps */
 	public int getSteps() {
 		return steps;
 	}
@@ -99,26 +107,27 @@ abstract public class AbstractExportJob extends Job {
 	/**
 	 * Prompts the user for a destination file name.
 	 * @param shell shell for dialog
-	 * @return filename or null if canceled
-	 */
+	
+	 * @return filename or null if canceled */
 	public String promptFileName(Shell shell) {
 		String fileName = previousFileName;
-		FileDialog fsd = new FileDialog(shell,SWT.SAVE);
+		final FileDialog fsd = new FileDialog(shell,SWT.SAVE);
 		fsd.setOverwrite(true);
 		fsd.setFileName(fileName);
-		fsd.setFilterExtensions(new String[] {"*.docx"});
-		fsd.setText("Select document file...");
+		fsd.setFilterExtensions(new String[] {Messages.AbstractExportJob_2});
+		fsd.setText(Messages.AbstractExportJob_3);
 		fileName = fsd.open();
-		if ( fileName != null )
+		if ( null != fileName ) {
 			previousFileName = fileName;
+		}
 		return fileName;
 	}
 	
 	/**
 	 * Do the work of exporting while in the run method.
 	 * @param monitor progress monitor
-	 * @return status indication, passed on to run method return
-	 */
+	
+	 * @return status indication, passed on to run method return */
 	abstract IStatus produce(IProgressMonitor monitor);
 
 	
@@ -126,28 +135,36 @@ abstract public class AbstractExportJob extends Job {
 	 * Runs the job, starting the progress monitor and performing done after the
 	 * produce() method returns.
 	 * @param monitor progress monitor
-	 * @return same status value from produce() method
-	 * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor)
-	 */
+	
+	
+	 * @return same status value from produce() method * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor) */
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		// set some indicator of progress count
 		// increment the work accomplished in the produce() method
-		if ( resource != null )
+		if ( null != resource ) {
 			setSteps( resource.getContents().size() );
-		else if ( nodeCollection != null )
+		}
+		else if ( null != nodeCollection ) {
 			setSteps( nodeCollection.size() );
-		else
+		}
+		else {
 			setSteps( node.eContents().size() );
+		}
 
 		// begin the task and produce the content
 		monitor.beginTask( getName(), getSteps() );
-		IStatus rv = produce(monitor);
-		if ( monitor.isCanceled() == false )
+		final IStatus rv = produce(monitor);
+		if ( ! monitor.isCanceled() ) {
 			monitor.done();
+		}
 		return rv;
 	}
 
+	/**
+	 * Method getFileName.
+	 * @return returns the file name 
+	 */
 	public String getFileName() {
 		return previousFileName;
 	}
@@ -164,20 +181,22 @@ abstract public class AbstractExportJob extends Job {
 	
 	/**
 	 * Returns the model element intended for export.
-	 * @return node for export
+	 * @return node for export 
 	 */
 	public EObject getNode() {
 		return node;
 	}
 
 	/**
-	 * @return the nodeCollection
+	 * Get the node collection selected for export.
+	 * @return the nodeCollection 
 	 */
 	public Collection getNodeCollection() {
 		return nodeCollection;
 	}
 
 	/**
+	 * Sets the node collection for export.
 	 * @param nodeCollection the nodeCollection to set
 	 */
 	public void setNodeCollection(Collection nodeCollection) {
@@ -185,19 +204,20 @@ abstract public class AbstractExportJob extends Job {
 	}
 
 	/**
-	 * @return the resource
+	 * Gets the resource selected for export.
+	 * @return the resource 
 	 */
 	public Resource getResource() {
 		return resource;
 	}
 
 	/**
-	 * @param resource the resource to set
+	 * Sets the resource for export.
+	 * @param resource the resource to set for export
 	 */
 	public void setResource(Resource resource) {
 		this.resource = resource;
 	}
-
 
 	/**
 	 * Performs standard clean-up after job.
@@ -209,9 +229,9 @@ abstract public class AbstractExportJob extends Job {
 	public void cleanupJob(IProgressMonitor monitor, IStatus rv) {
 		monitor.done();
 		if ( rv.isOK() ) {
-			CertWareLog.logInfo(getName() + ' ' + "completed.");
+			CertWareLog.logInfo(MessageFormat.format(Messages.AbstractExportJob_4, getName(), Messages.AbstractExportJob_5));
 		} else {
-			CertWareLog.logWarning(getName() + ' ' + "not completed.");
+			CertWareLog.logInfo(MessageFormat.format(Messages.AbstractExportJob_6, getName(), Messages.AbstractExportJob_7));
 		}
 	}
 	
