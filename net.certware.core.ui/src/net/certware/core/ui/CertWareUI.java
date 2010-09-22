@@ -1,3 +1,7 @@
+/**
+ * CertWare Project
+ * Copyright (c) 2010 Kestrel Technology LLC
+ */
 package net.certware.core.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;

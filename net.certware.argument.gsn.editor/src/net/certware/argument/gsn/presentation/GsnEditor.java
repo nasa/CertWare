@@ -16,6 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import net.certware.argument.arm.provider.ArmItemProviderAdapterFactory;
+import net.certware.argument.gsn.editor.help.GsnEditorContextProvider;
 import net.certware.argument.gsn.editor.presentation.GsnEditorPlugin;
 import net.certware.argument.gsn.provider.GsnItemProviderAdapterFactory;
 
@@ -67,6 +68,7 @@ import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.eef.runtime.ui.notify.OpenWizardOnDoubleClick;
+import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -443,6 +445,9 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 				}
 			}
 		};
+
+		/** help system context provider reference */
+	private Object contextProvider = null;
 
 	/**
 	 * Handles activation of the editor or it's associated views.
@@ -1013,8 +1018,9 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * This is how the framework determines which interfaces we implement.
 	 * <!-- begin-user-doc -->
+	 * Added adapter for help system context provider.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@SuppressWarnings("rawtypes")
 	@Override
@@ -1027,6 +1033,11 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 		}
 		else if (key.equals(IGotoMarker.class)) {
 			return this;
+		}
+		else if (key.equals(IContextProvider.class)) {
+			if ( contextProvider == null )
+				contextProvider = new GsnEditorContextProvider(this);
+			return contextProvider;
 		}
 		else {
 			return super.getAdapter(key);

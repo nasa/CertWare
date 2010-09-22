@@ -18,4 +18,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide;visibility:=reexport,
  net.certware.argument.arm.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: net.certware.core.ui
+Import-Package: net.certware.core.ui,
+ net.certware.core.ui.help,
+ org.eclipse.help

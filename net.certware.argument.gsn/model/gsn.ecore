@@ -3,7 +3,15 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gsn"
     nsURI="http://www.certware.net/gsn" nsPrefix="gsn">
+  <eAnnotations source="gmf">
+    <details key="foo" value="gsn"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//Claim">
+    <eAnnotations source="gmf.diagram">
+      <details key="foo" value="gsn"/>
+      <details key="model.extension" value="gsn"/>
+      <details key="diagram.extension" value="gsnd"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="strategy" upperBound="-1"
         eType="#//Strategy" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" upperBound="-1"
@@ -16,6 +24,9 @@
         eType="#//Goal" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Strategy" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//ReasoningElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="goal" upperBound="-1" eType="#//Goal"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="justification" upperBound="-1"
@@ -24,12 +35,27 @@
         unique="false" upperBound="-1" eType="#//Solution"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
         eType="#//Context" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="evidence" lowerBound="1"
         eType="ecore:EClass ../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Justification" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Justification" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

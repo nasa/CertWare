@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Help
-Bundle-SymbolicName: net.certware.help
+Bundle-SymbolicName: net.certware.help;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: Kestrel Technology LLC

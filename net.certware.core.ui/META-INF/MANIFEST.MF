@@ -17,4 +17,5 @@ Require-Bundle: net.certware.core;bundle-version="1.0.0",
  org.eclipse.ui
 Export-Package: net.certware.core.ui,
  net.certware.core.ui.dialog,
+ net.certware.core.ui.help,
  net.certware.core.ui.log
