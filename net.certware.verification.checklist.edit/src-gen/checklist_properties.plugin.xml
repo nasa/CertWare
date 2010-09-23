@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 
-<!--
- CertWare Project
- Copyright (c) 2010 Kestrel Technology LLC
--->
-
-<plugin>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <wizard
-            id="net.certware.verification.checklist.presentation.ChecklistModelWizardID"
-            name="Verification Checklist Model"
-            class="net.certware.verification.checklist.presentation.ChecklistModelWizard"
-            category="net.certware.core.ui.newwizard.category"
-            icon="icons/full/obj16/ChecklistModelFile.gif">
-         <description>%_UI_ChecklistModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <editor
-            id="net.certware.verification.checklist.presentation.ChecklistEditorID"
-            name="%_UI_ChecklistEditor_label"
-            icon="icons/full/obj16/ChecklistModelFile.gif"
-            extensions="vcl"
-            class="net.certware.verification.checklist.presentation.ChecklistEditor"
-            contributorClass="net.certware.verification.checklist.presentation.ChecklistActionBarContributor">
-      </editor>
-   </extension>
+ <plugin>
 
   <!-- EEF extensions -->
   <extension
@@ -108,4 +80,4 @@
          </propertySection>
       </propertySections>
    </extension>
-</plugin>
+ </plugin>

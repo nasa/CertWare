@@ -52,6 +52,29 @@ public interface IHelpContext {
 	public static String GSN_EDITOR_DEFAULT = PREFIX + "gsn_editor_default_context"; //$NON-NLS-1$
 	
 	// CAE-related context IDs
+	/** CAE editor claim help context ID */
+	public static String CAE_EDITOR_CLAIM = PREFIX + "cae_editor_claim_context"; //$NON-NLS-1$
+	/** CAE editor argument help context ID */
+	public static String CAE_EDITOR_ARGUMENT = PREFIX + "cae_editor_argument_context"; //$NON-NLS-1$
+	/** CAE editor evidence help context ID */
+	public static String CAE_EDITOR_EVIDENCE = PREFIX + "cae_editor_evidence_context"; //$NON-NLS-1$
+	/** CAE editor assumption help context ID */
+	public static String CAE_EDITOR_ASSUMPTION = PREFIX + "cae_editor_assumption_context"; //$NON-NLS-1$
+	/** CAE editor context help context ID */
+	public static String CAE_EDITOR_CONTEXT = PREFIX + "cae_editor_context_context"; //$NON-NLS-1$
+	/** CAE editor justification help context ID */
+	public static String CAE_EDITOR_JUSTIFICATION = PREFIX + "cae_editor_justification_context"; //$NON-NLS-1$
+	
+	// VCL-related context IDs
+	/** VCL editor checklist context ID */
+	public static String VCL_EDITOR_CHECKLIST = PREFIX + "vcl_editor_checklist_context"; //$NON-NLS-1$
+	/** VCL editor category context ID */
+	public static String VCL_EDITOR_CATEGORY = PREFIX + "vcl_editor_category_context"; //$NON-NLS-1$
+	/** VCL editor item context ID */
+	public static String VCL_EDITOR_ITEM = PREFIX + "vcl_editor_item_context"; //$NON-NLS-1$
+	/** VCL editor choices context ID */
+	public static String VCL_EDITOR_CHOICES = PREFIX + "vcl_editor_choices_context"; //$NON-NLS-1$
+	
 	
 	// model agnostic context IDs
 	public static String EXPORT_WIZARD_PAGE = PREFIX + "export_wizard_page_context"; //$NON-NLS-1$ 

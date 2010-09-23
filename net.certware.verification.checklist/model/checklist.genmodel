@@ -9,7 +9,8 @@
     complianceLevel="6.0" colorProviders="true">
   <foreignModel>checklist.ecore</foreignModel>
   <genPackages prefix="Checklist" basePackage="net.certware.verification" resource="XMI"
-      disposableProviderFactory="true" fileExtensions="vcl" ecorePackage="checklist.ecore#/">
+      disposableProviderFactory="true" multipleEditorPages="false" fileExtensions="vcl"
+      ecorePackage="checklist.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="checklist.ecore#//Choices">
       <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/no"/>
       <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/yes"/>

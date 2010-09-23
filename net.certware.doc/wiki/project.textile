@@ -23,8 +23,9 @@ h3. Models
 * @ARM@ OMG argument metamodel and its Ecore implementation
 * @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
 * @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
+* @VCL@ A verification checklist generic metamodel.
 
-The EEF model initialization occurs from the original @*.genmodel@ files in the model plugins.  The EEF model artifacts are redirected to the @EMF.Edit@ plugins, where a @model@ folder was created to contain the EEF models.  In the @*.eefgen@ model created, check that the generation directory property points to a source folder (typically @src-gen@) and that the builder identifies this as a source folder (e.g. Build Path -> Use as Source Folder).  Be sure to add the @model@ folder and the @src-gen@ folders to the plugin's @build.properties@ selections as necessary.  Add @org.eclipse.emf.eef.runtime@ as a plugin dependency, and in its properties select the re-export dependency option so that the @EMF.editor@ project can see it.  In the @EMF.edit@ plugin expose all of the packages in the runtime tab.  In the @EMF.editor@ plugin add the three standard provider extensions to enable the EEF contributions (see the generated plugin fragment for the class name references), then add individual extensions for the tabbed property parts for example.  In the generated editor file make it implement the tabbed properties interface @org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor@ and implement the one method that returns the contributor ID as defined in the plugin extension. Change the @PropertySheetPage@ reference type to @TabbedPropertySheetPage@ and modify the @getPropertySheetPage()@ method to work with the tabbed property sheet.  Add the double-click listener on the selection viewer.    
+The EEF model initialization occurs from the original @*.genmodel@ files in the model plugins.  The EEF model artifacts are redirected to the @EMF.Edit@ plugins, where a @model@ folder was created to contain the EEF models.  In the @*.eefgen@ model created, check that the generation directory property points to a source folder (typically @src-gen@) and that the builder identifies this as a source folder (e.g. Build Path -> Use as Source Folder).  Be sure to add the @model@ folder and the @src-gen@ folders to the plugin's @build.properties@ selections as necessary.  Add @org.eclipse.emf.eef.runtime@ as a plugin dependency, and in its properties select the re-export dependency option so that the @EMF.editor@ project can see it.  Run the @eefgen@ to create the new packages. In the @EMF.edit@ plugin expose all of the packages in the runtime tab.  In the @EMF.editor@ plugin add the three standard provider extensions to enable the EEF contributions (see the generated plugin fragment for the class name references), then add individual extensions for the tabbed property parts for example.  In the generated editor file make it implement the tabbed properties interface @org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor@ and implement the one method that returns the contributor ID as defined in the plugin extension. Change the @PropertySheetPage@ reference type to @TabbedPropertySheetPage@ and modify the @getPropertySheetPage()@ method to work with the tabbed property sheet.  Add the double-click listener on the selection viewer.    
 
 The Xtext DSL initialization is done with the wizard for creating Xtext projects from Ecore files.  Choose the EPackage desired and any of its imports so that the complete grammar is generated, and choose an appropriate entry rule because the default is not satisfactory.  For example, to create the GSN DSL choose both GSN and ARM packages, and choose the Goal class as the entry rule.  Some string type manipulation may need to be done in the resulting grammar specification.  Run the MWE generator on the @mwe2@ file.  No other changes seem to be necessary from the resulting artifacts.  
 
@@ -44,8 +45,7 @@ h4. Navigator Contributions
 * @net.certware.argument.arm.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.argument.cae.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.argument.gsn.navigator@ Contributes content on model resource files and navigator filter.
-
-
+* @net.certware.verification.checklist.navigator@ Contributes content on verification checklist files and navigator filter.
 
 h3. Plugins Summary
 
@@ -71,7 +71,7 @@ h3. File Names
 * @*.arm@ ARM model files
 * @*.gsn@ GSN model files
 * @*.cae@ CAE model files
-* @*.checklist@ Verification checklist model files
+* @*.vcl@ Verification checklist model files
 
 h3. Target Platform
 

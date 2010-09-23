@@ -1,5 +1,6 @@
 package net.certware.verification.checklist.navigator;
 
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
@@ -15,37 +16,49 @@ import org.eclipse.ui.navigator.IDescriptionProvider;
  */
 public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 
+	/** image for checklist item count */
 	Image itemImage = null;
+	/** image for yes choice count */
 	Image yesResultImage = null;
+	/** image for no choice count */
 	Image noResultImage = null;
+	/** image for N/A choice count */
 	Image naResultImage = null;
 
+	/**
+	 * Constructor creates images.
+	 */
 	public LabelProvider() {
 
+		// platform images
 		itemImage = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_INFO_TSK);
 		noResultImage = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
 		naResultImage = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_WARN_TSK);
-		yesResultImage = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_INFO_TSK);
 
-		/*
-	    ImageDescriptor id = null;
-	    id = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "icons/obj16/safe.gif");
-	    if ( id != null ) 
-	      safeImage = id.createImage();
-		 */
+		// bundle images
+	    ImageDescriptor id = Activator.getImageDescriptor("icons/obj16/yesResult.gif");
+	    if ( id != null ) {
+	      yesResultImage = id.createImage();
+	    }
 	}
 
+	/**
+	 * Add a label provider listener.  Not used.
+	 * @param listener unused
+	 */
 	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
 
+	/**
+	 * Dispose of image resources if necessary.
+	 */
 	@Override
 	public void dispose() {
-		/*
-	    if ( safeImage != null )
-	        safeImage.dispose();
-		 */
+		if ( yesResultImage != null) {
+			yesResultImage.dispose();
+		}
 	}
 
 	@Override
