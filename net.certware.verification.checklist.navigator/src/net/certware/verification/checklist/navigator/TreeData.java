@@ -21,6 +21,8 @@ public class TreeData
 	public static final int COUNT_TYPE_NO_RESULT = 2;
 	/** key for not applicable result count */
 	public static final int COUNT_TYPE_NA_RESULT = 3;
+	/** key for unknown result count */
+	public static final int COUNT_TYPE_UNKNOWN_RESULT = 4;
 	/** reference resource file */
 	IFile ifile = null;
 	/** item description */

@@ -108,7 +108,7 @@ public class ItemImpl extends EObjectImpl implements Item {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Choices RESULT_EDEFAULT = Choices.NO;
+	protected static final Choices RESULT_EDEFAULT = Choices.UNKNOWN;
 
 	/**
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.

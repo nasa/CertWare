@@ -7,6 +7,7 @@ h2. Version History
 h3. Version 1.0.0
 
 * Created ARM Ecore model, then GSN and CAE Ecore models depending on ARM package.
+* Created VCL Ecore model.  
 * Established basic target definition including Equinox and RCP.  
 * Established basic feature definition and branding support.
 * Established basic extended editing properties sheets using EEF.  
@@ -14,6 +15,7 @@ h3. Version 1.0.0
 * Created import/export plugin library package for docx4j.
 * Included EGit/JGit support in run configuration.  
 * Unit test fragments created for ARM and GSN models.
+* Navigator content contributions and filters for ARM, GSN, CAE, and VCL models.
 
 h2. Documentation
 

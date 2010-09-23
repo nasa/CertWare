@@ -21,6 +21,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Choices implements Enumerator {
 	/**
+	 * The '<em><b>Unknown</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNKNOWN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNKNOWN(0, "unknown", "UNKNOWN"), /**
 	 * The '<em><b>No</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -28,7 +36,7 @@ public enum Choices implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NO(0, "no", "NO"), //$NON-NLS-1$ //$NON-NLS-2$
+	NO(1, "no", "NO"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Yes</b></em>' literal object.
@@ -38,7 +46,7 @@ public enum Choices implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	YES(1, "yes", "YES"), //$NON-NLS-1$ //$NON-NLS-2$
+	YES(2, "yes", "YES"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Not applicable</b></em>' literal object.
@@ -48,7 +56,7 @@ public enum Choices implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOT_APPLICABLE(2, "not_applicable", "NA"); //$NON-NLS-1$ //$NON-NLS-2$
+	NOT_APPLICABLE(3, "not_applicable", "NA"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,6 +64,21 @@ public enum Choices implements Enumerator {
 	 * @generated
 	 */
 	public static final String copyright = "CertWare Project\nCopyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+
+	/**
+	 * The '<em><b>Unknown</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Unknown</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UNKNOWN
+	 * @model name="unknown" literal="UNKNOWN"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNKNOWN_VALUE = 0;
 
 	/**
 	 * The '<em><b>No</b></em>' literal value.
@@ -70,7 +93,7 @@ public enum Choices implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NO_VALUE = 0;
+	public static final int NO_VALUE = 1;
 
 	/**
 	 * The '<em><b>Yes</b></em>' literal value.
@@ -85,7 +108,7 @@ public enum Choices implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int YES_VALUE = 1;
+	public static final int YES_VALUE = 2;
 
 	/**
 	 * The '<em><b>Not applicable</b></em>' literal value.
@@ -100,7 +123,7 @@ public enum Choices implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_APPLICABLE_VALUE = 2;
+	public static final int NOT_APPLICABLE_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Choices</b></em>' enumerators.
@@ -110,6 +133,7 @@ public enum Choices implements Enumerator {
 	 */
 	private static final Choices[] VALUES_ARRAY =
 		new Choices[] {
+			UNKNOWN,
 			NO,
 			YES,
 			NOT_APPLICABLE,
@@ -163,6 +187,7 @@ public enum Choices implements Enumerator {
 	 */
 	public static Choices get(int value) {
 		switch (value) {
+			case UNKNOWN_VALUE: return UNKNOWN;
 			case NO_VALUE: return NO;
 			case YES_VALUE: return YES;
 			case NOT_APPLICABLE_VALUE: return NOT_APPLICABLE;

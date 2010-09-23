@@ -66,6 +66,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	protected int noResultCount = 0;
 	/** N/A result count */
 	protected int naResultCount = 0;
+	/** unknown result count */
+	protected int unknownResultCount = 0;
 
 
 	/**
@@ -236,6 +238,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					setYesResultCount(0);
 					setNoResultCount(0);
 					setNaResultCount(0);
+					setUnknownResultCount(0);
 
 					// visit the model, collect statistics
 					for ( final Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) {
@@ -261,6 +264,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					}
 					if ( getNaResultCount() > 0 ) {
 						td = new TreeData(modelFile,Messages.ContentProvider_5,getNaResultCount(),TreeData.COUNT_TYPE_NA_RESULT);
+						treeNodes.add(td);
+					}
+					if ( getUnknownResultCount() > 0 ) {
+						td = new TreeData(modelFile,Messages.ContentProvider_6,getUnknownResultCount(),TreeData.COUNT_TYPE_UNKNOWN_RESULT);
 						treeNodes.add(td);
 					}
 
@@ -320,7 +327,9 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 			} else if ( choices.getValue() == Choices.NOT_APPLICABLE_VALUE ) {
 				incrementNaResultCount();
 			} else if ( choices.getValue() == Choices.YES_VALUE ) {
-				incrementYesResultCount();
+				incrementYesResultCount();	
+			} else if ( choices.getValue() == Choices.UNKNOWN_VALUE ) {
+				incrementUnknownResultCount();
 			}
 			return Boolean.TRUE;
 		}
@@ -420,5 +429,26 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	 */
 	public void incrementNaResultCount() {
 		naResultCount += 1;
+	}
+
+	/**
+	 * @return the unknownResultCount
+	 */
+	public int getUnknownResultCount() {
+		return unknownResultCount;
+	}
+
+	/**
+	 * @param unknownResultCount the unknownResultCount to set
+	 */
+	public void setUnknownResultCount(int unknownResultCount) {
+		this.unknownResultCount = unknownResultCount;
+	}
+	
+	/**
+	 * Increments the N/A choice unknown result by one.
+	 */
+	public void incrementUnknownResultCount() {
+		this.unknownResultCount += 1;
 	}
 }

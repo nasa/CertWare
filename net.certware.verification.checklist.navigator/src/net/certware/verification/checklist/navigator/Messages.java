@@ -10,6 +10,7 @@ public class Messages extends NLS {
 	public static String ContentProvider_3;
 	public static String ContentProvider_4;
 	public static String ContentProvider_5;
+	public static String ContentProvider_6;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

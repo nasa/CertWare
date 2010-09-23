@@ -14,7 +14,7 @@
             <navigatorContent
             activeByDefault="true"
             contentProvider="net.certware.verification.checklist.navigator.ContentProvider"
-            icon="icons/obj16/property.gif"
+            icon="icons/obj16/checklist.gif"
             id="net.certware.verification.checklist.navigator.navigatorContent"
             labelProvider="net.certware.verification.checklist.navigator.LabelProvider"
             name="VCL Model Conditions"

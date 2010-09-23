@@ -206,15 +206,18 @@ public class ItemItemProvider
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
+	 * Modified to return the item identifier plus description.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Item)object).getDescription();
+		Item item = (Item)object;
+		String label = item.getDescription();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Item_type") : //$NON-NLS-1$
-			getString("_UI_Item_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+			// getString("_UI_Item_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				item.getIdentifier() + ' ' + label;
 	}
 
 	/**

@@ -20,9 +20,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Choices">
-    <eLiterals name="no" literal="NO"/>
-    <eLiterals name="yes" value="1" literal="YES"/>
-    <eLiterals name="not_applicable" value="2" literal="NA"/>
+    <eLiterals name="unknown" literal="UNKNOWN"/>
+    <eLiterals name="no" value="1" literal="NO"/>
+    <eLiterals name="yes" value="2" literal="YES"/>
+    <eLiterals name="not_applicable" value="3" literal="NA"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Checklist">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

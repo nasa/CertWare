@@ -366,6 +366,7 @@ public class ChecklistPackageImpl extends EPackageImpl implements ChecklistPacka
 
 		// Initialize enums and add enum literals
 		initEEnum(choicesEEnum, Choices.class, "Choices"); //$NON-NLS-1$
+		addEEnumLiteral(choicesEEnum, Choices.UNKNOWN);
 		addEEnumLiteral(choicesEEnum, Choices.NO);
 		addEEnumLiteral(choicesEEnum, Choices.YES);
 		addEEnumLiteral(choicesEEnum, Choices.NOT_APPLICABLE);
