@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare EUROCONTROL Model Tests
+Bundle-SymbolicName: net.certware.argument.eur.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.argument.eur
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: junit.framework

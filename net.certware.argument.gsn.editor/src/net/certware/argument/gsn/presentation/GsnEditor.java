@@ -118,7 +118,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 
 /**
- * This is an example of a Gsn model editor.
+ * This is an example of a GSN model editor.
  * <!-- begin-user-doc -->
  * @implements ITabbedPropertySheetPageContributor
  * <!-- end-user-doc -->
@@ -447,7 +447,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 		};
 
 		/** help system context provider reference */
-	private Object contextProvider = null;
+		private Object contextProvider = null;
 
 	/**
 	 * Handles activation of the editor or it's associated views.

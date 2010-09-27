@@ -65,6 +65,24 @@ public interface IHelpContext {
 	/** CAE editor justification help context ID */
 	public static String CAE_EDITOR_JUSTIFICATION = PREFIX + "cae_editor_justification_context"; //$NON-NLS-1$
 	
+	// EUR-related context IDs
+	/** EUR editor argument help context ID */
+	public static String EUR_EDITOR_ARGUMENT = PREFIX + "eur_editor_argument_context"; //$NON-NLS-1$
+	/** EUR editor strategy help context ID */
+	public static String EUR_EDITOR_STRATEGY = PREFIX + "eur_editor_strategy_context"; //$NON-NLS-1$
+	/** EUR editor solution help context ID */
+	public static String EUR_EDITOR_SOLUTION = PREFIX + "eur_editor_solution_context"; //$NON-NLS-1$
+	/** EUR editor context help context ID */
+	public static String EUR_EDITOR_CONTEXT = PREFIX + "eur_editor_context_context"; //$NON-NLS-1$
+	/** EUR editor assumption help context ID */
+	public static String EUR_EDITOR_ASSUMPTION = PREFIX + "eur_editor_assumption_context"; //$NON-NLS-1$
+	/** EUR editor justification help context ID */
+	public static String EUR_EDITOR_JUSTIFICATION = PREFIX + "eur_editor_justification_context"; //$NON-NLS-1$
+	/** EUR editor criteria help context ID */
+	public static String EUR_EDITOR_CRITERIA = PREFIX + "eur_editor_criteria_context"; //$NON-NLS-1$
+	/** EUR editor default help context ID */
+	public static String EUR_EDITOR_DEFAULT = PREFIX + "eur_editor_default_context"; //$NON-NLS-1$
+		
 	// VCL-related context IDs
 	/** VCL editor checklist context ID */
 	public static String VCL_EDITOR_CHECKLIST = PREFIX + "vcl_editor_checklist_context"; //$NON-NLS-1$

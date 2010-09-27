@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010 Kestrel Technology LLC"
+    modelDirectory="/net.certware.argument.eur/src" modelPluginID="net.certware.argument.eur"
+    modelName="Eur" editPluginClass="net.certware.argument.eur.edit.provider.EurEditPlugin"
+    editorPluginClass="net.certware.argument.eur.editor.presentation.EurEditorPlugin"
+    testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+  <foreignModel>eur.ecore</foreignModel>
+  <genPackages prefix="Eur" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
+      generateExampleClass="false" multipleEditorPages="false" ecorePackage="eur.ecore#/">
+    <genClasses ecoreClass="eur.ecore#//Argument">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
+          propertyDescription="Strategies for fulfilling the argument" ecoreFeature="ecore:EReference eur.ecore#//Argument/strategy"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
+          propertyDescription="Assertion relied upon by the element" ecoreFeature="ecore:EReference eur.ecore#//Argument/assumption"/>
+      <genFeatures property="None" children="true" createChild="true" propertyDescription="Inputs or background information"
+          ecoreFeature="ecore:EReference eur.ecore#//Argument/context"/>
+      <genFeatures property="None" children="true" createChild="true" propertyDescription="Evidence for satisfaction of goals"
+          ecoreFeature="ecore:EReference eur.ecore#//Argument/solution"/>
+      <genFeatures property="None" children="true" createChild="true" propertyDescription="A requirement or target to be met or shown to be true"
+          ecoreFeature="ecore:EReference eur.ecore#//Argument/argument"/>
+      <genFeatures property="None" children="true" createChild="true" propertyDescription="Means by which satisfaction of element can be assessed or checked"
+          ecoreFeature="ecore:EReference eur.ecore#//Argument/criteria"/>
+    </genClasses>
+    <genClasses ecoreClass="eur.ecore#//Strategy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/argument"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/justification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/solution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/criteria"/>
+    </genClasses>
+    <genClasses ecoreClass="eur.ecore#//Solution">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Solution/context"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eur.ecore#//Solution/evidence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Solution/criteria"/>
+    </genClasses>
+    <genClasses ecoreClass="eur.ecore#//Assumption"/>
+    <genClasses ecoreClass="eur.ecore#//Context"/>
+    <genClasses ecoreClass="eur.ecore#//Justification"/>
+    <genClasses ecoreClass="eur.ecore#//Criteria"/>
+  </genPackages>
+</genmodel:GenModel>

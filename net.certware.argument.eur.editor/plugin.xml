@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 Kestrel Technology LLC
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.argument.eur.presentation.EurModelWizardID"
+            name="EUROCONTROL Model"
+            class="net.certware.argument.eur.presentation.EurModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/EurModelFile.gif">
+         <description>%_UI_EurModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.eur.presentation.EurEditorID"
+            name="%_UI_EurEditor_label"
+            icon="icons/full/obj16/EurModelFile.gif"
+            extensions="eur"
+            class="net.certware.argument.eur.presentation.EurEditor"
+            contributorClass="net.certware.argument.eur.presentation.EurActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -12,20 +12,20 @@
   <genPackages prefix="Gsn" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       generateExampleClass="false" multipleEditorPages="false" ecorePackage="gsn.ecore#/">
     <genClasses ecoreClass="gsn.ecore#//Goal">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/strategy"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/assumption"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/context"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/strategy"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/assumption"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/context"/>
       <genFeatures children="true" createChild="true" propertyCategory="" propertySortChoices="true"
           ecoreFeature="ecore:EReference gsn.ecore#//Goal/solution"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/subgoal"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Goal/subgoal"/>
     </genClasses>
     <genClasses ecoreClass="gsn.ecore#//Strategy">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/goal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/justification"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/solution"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/goal"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/justification"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/solution"/>
     </genClasses>
     <genClasses ecoreClass="gsn.ecore#//Solution">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Solution/context"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Solution/context"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//Solution/evidence"/>
     </genClasses>
     <genClasses ecoreClass="gsn.ecore#//Assumption"/>

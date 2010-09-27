@@ -1497,10 +1497,11 @@ public class ChecklistEditor
 	 * Returns whether the outline view should be presented to the user.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected boolean showOutlineView() {
-		return false;
+		// return false;
+		return true;
 	}
 
 	/** 

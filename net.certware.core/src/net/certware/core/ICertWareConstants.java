@@ -20,11 +20,13 @@ public interface ICertWareConstants {
 	static final String GSN_EXTENSION = "gsn"; //$NON-NLS-1$
 	/** file extension for the CAE model */
 	static final String CAE_EXTENSION = "cae"; //$NON-NLS-1$
+	/** file extension for the EUROCONTROL model */
+	static final String EUR_EXTENSION = "eur"; //$NON-NLS-1$
 	/** file extension for the verification checklist model */
 	static final String VCL_EXTENSION = "vcl"; //$NON-NLS-1$
 
 	/** a list of all application file extensions */
 	static final List<String> FILE_EXTENSIONS = 
-		Collections.unmodifiableList(Arrays.asList(ARM_EXTENSION,GSN_EXTENSION,CAE_EXTENSION,VCL_EXTENSION));
+		Collections.unmodifiableList(Arrays.asList(ARM_EXTENSION,GSN_EXTENSION,CAE_EXTENSION,EUR_EXTENSION,VCL_EXTENSION));
 
 }

@@ -6,7 +6,7 @@ h2. Version History
 
 h3. Version 1.0.0
 
-* Created ARM Ecore model, then GSN and CAE Ecore models depending on ARM package.
+* Created ARM Ecore model, then GSN, CAE, and EUR Ecore models each depending on ARM package.
 * Created VCL Ecore model.  
 * Established basic target definition including Equinox and RCP.  
 * Established basic feature definition and branding support.
@@ -15,7 +15,7 @@ h3. Version 1.0.0
 * Created import/export plugin library package for docx4j.
 * Included EGit/JGit support in run configuration.  
 * Unit test fragments created for ARM and GSN models.
-* Navigator content contributions and filters for ARM, GSN, CAE, and VCL models.
+* Navigator content contributions and filters for ARM, GSN, CAE, EUR, and VCL models.
 
 h2. Documentation
 
@@ -25,6 +25,7 @@ h3. Models
 * @ARM@ OMG argument metamodel and its Ecore implementation
 * @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
 * @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
+* @EUR@ A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
 * @VCL@ A verification checklist generic metamodel.
 
 The EEF model initialization occurs from the original @*.genmodel@ files in the model plugins.  The EEF model artifacts are redirected to the @EMF.Edit@ plugins, where a @model@ folder was created to contain the EEF models.  In the @*.eefgen@ model created, check that the generation directory property points to a source folder (typically @src-gen@) and that the builder identifies this as a source folder (e.g. Build Path -> Use as Source Folder).  Be sure to add the @model@ folder and the @src-gen@ folders to the plugin's @build.properties@ selections as necessary.  Add @org.eclipse.emf.eef.runtime@ as a plugin dependency, and in its properties select the re-export dependency option so that the @EMF.editor@ project can see it.  Run the @eefgen@ to create the new packages. In the @EMF.edit@ plugin expose all of the packages in the runtime tab.  In the @EMF.editor@ plugin add the three standard provider extensions to enable the EEF contributions (see the generated plugin fragment for the class name references), then add individual extensions for the tabbed property parts for example.  In the generated editor file make it implement the tabbed properties interface @org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor@ and implement the one method that returns the contributor ID as defined in the plugin extension. Change the @PropertySheetPage@ reference type to @TabbedPropertySheetPage@ and modify the @getPropertySheetPage()@ method to work with the tabbed property sheet.  Add the double-click listener on the selection viewer.    
@@ -47,6 +48,7 @@ h4. Navigator Contributions
 * @net.certware.argument.arm.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.argument.cae.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.argument.gsn.navigator@ Contributes content on model resource files and navigator filter.
+* @net.certware.argument.eur.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.verification.checklist.navigator@ Contributes content on verification checklist files and navigator filter.
 
 h3. Plugins Summary
@@ -55,6 +57,8 @@ h3. Plugins Summary
 * @net.certware.argument.cae.*@ Argument model and editor support for CAE (ASCAD), built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification. 
 * @net.certware.argument.gsn.*@ Argument model and editor support for GSN, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.    
+* @net.certware.argument.eur.*@ Argument model and editor support for EUROCONTROL notation, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* @net.certware.argument.eur.help@ Help content for EUROCONTROL models and related workbench contributions.    
 * @net.certware.branding@ Project branding plugin for feature definition.
 * @net.certware.core@ Core project content.
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  
@@ -68,11 +72,12 @@ h3. Plugins Summary
 * @net.certware.verification.checklist.*@ Verification model and editor support for generic checklists. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 
 
-h3. File Names
+h3. File Names and Extensions
 
 * @*.arm@ ARM model files
 * @*.gsn@ GSN model files
 * @*.cae@ CAE model files
+* @*.eur@ EUROCONTROL model files
 * @*.vcl@ Verification checklist model files
 
 h3. Target Platform
@@ -80,7 +85,7 @@ h3. Target Platform
 * Eclipse Helios baseline
 * EGit, requiring JGit as well
 * Eclipse RCP delta pack for multi-platform exports.
-* EasyMock 3.0 for testing
+* EasyMock 3.0 and JUnit 4.8.1 for testing
 
 h3. Implementation Features
 
@@ -106,6 +111,6 @@ h3. Automated Analysis
 
 h2. Update Site Publishing
 
-
+Not yet configured.
 
 
