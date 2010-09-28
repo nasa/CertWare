@@ -1,12 +1,20 @@
 package net.certware.argument.eur.test;
 
 
+import java.util.Iterator;
+
+import org.eclipse.emf.ecore.EObject;
+
+import net.certware.argument.arm.ModelElement;
 import net.certware.argument.eur.Argument;
 import net.certware.argument.eur.Assumption;
 import net.certware.argument.eur.Context;
 import net.certware.argument.eur.Criteria;
 import net.certware.argument.eur.EurFactory;
 import net.certware.argument.eur.Justification;
+import net.certware.argument.eur.Solution;
+import net.certware.argument.eur.Strategy;
+import net.certware.argument.eur.util.EurSwitch;
 import junit.framework.TestCase;
 
 
@@ -17,12 +25,16 @@ import junit.framework.TestCase;
  */
 public class EurPreliminarySafetyCaseTestCase extends TestCase {
 
+	/** top-level argument */
 	Argument argument0;
+	/** primary argument 1 */
 	Argument argument1;
+	/** primary argument 2 */
 	Argument argument2;
+	/** primary argument 3 */
 	Argument argument3;
+	/** primary argument 4 */
 	Argument argument4;
-	Argument argument5;
 
 	/**
 	 * Dispose of the claim.
@@ -33,11 +45,11 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		argument2 = null;
 		argument3 = null;
 		argument4 = null;
-		argument5 = null;
 	}
 	
 	/**
 	 * Populate the argument model.
+	 * Follows the figures of the EUROCONTROL ADS-B-NRA preliminary safety case document.
 	 */
 	public void setUp() {
 
@@ -87,21 +99,22 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		argument1.setIdentifier("Arg 1");
 		argument1.setDescription("Section 3.4");
 		argument1.setContent("ADS-B surveillance in NRAs for ATSs has been specified to be acceptably safe");
-		argument0.getArgument().add(argument1);
 		
 		argument2 = EurFactory.eINSTANCE.createArgument();
 		argument2.setIdentifier("Arg 2");
 		argument2.setContent("ADS-B surveillance in NRAs for ATSs has been implemented in accordance with the specification");
-		argument0.getArgument().add(argument2);
 		
 		argument3 = EurFactory.eINSTANCE.createArgument();
 		argument3.setIdentifier("Arg 3");
 		argument3.setContent("The transition to operational service of ADS-B surveillance in NRAs for ATSs will be acceptably safe");
-		argument0.getArgument().add(argument3);
 		
 		argument4 = EurFactory.eINSTANCE.createArgument();
 		argument4.setIdentifier("Arg 4");
 		argument4.setContent("The safety of ADS-B surveillance in NRAs for ATSs will continue to be demonstrated in operational service");
+
+		argument0.getArgument().add(argument1);
+		argument0.getArgument().add(argument2);
+		argument0.getArgument().add(argument3);
 		argument0.getArgument().add(argument4);
 		
 		// figure 3
@@ -109,16 +122,21 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		argument11.setIdentifier("Arg 1.1");
 		argument11.setDescription("Section 3.4.1");
 		argument11.setContent("ADS-B surveillance in NRAs for ATSs have been generically specified to be acceptably safe");
-		argument1.getArgument().add(argument11);
 
 		Argument argument12 = EurFactory.eINSTANCE.createArgument();
 		argument12.setIdentifier("Arg 1.2");
 		argument12.setContent("Sufficient guidance exists to enable complete, correct and consistent consideration of the local specification aspects");
-		argument1.getArgument().add(argument12);
-
+		Solution solution12 = EurFactory.eINSTANCE.createSolution();
+		solution12.setIdentifier("S12");
+		solution12.setContent("PSC NRA section 3.4.2");
+		argument12.getSolution().add(solution12);
+		
 		Argument argument13 = EurFactory.eINSTANCE.createArgument();
 		argument13.setIdentifier("Arg 1.3");
 		argument13.setContent("ADS-B surveillance in NRAs for ATSs have been locally specified to be acceptably safe");
+
+		argument1.getArgument().add(argument11);
+		argument1.getArgument().add(argument12);
 		argument1.getArgument().add(argument13);
 
 		// figure 4
@@ -188,18 +206,34 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		Argument argument1111 = EurFactory.eINSTANCE.createArgument();
 		argument1111.setIdentifier("Arg 1.1.1.1");
 		argument1111.setContent("The key surveillance data items of the reference radar-based service and ADS-B-NRA have been identified");
+		Solution solution1111 = EurFactory.eINSTANCE.createSolution();
+		solution1111.setIdentifier("S1111");
+		solution1111.setContent("PSC-NRA section 4.3");
+		argument1111.getSolution().add(solution1111);
 
 		Argument argument1112 = EurFactory.eINSTANCE.createArgument();
 		argument1112.setIdentifier("Arg 1.1.1.2");
 		argument1112.setContent("The differences between the reference radar-based service and ADS-B-NRA have been identified, understaood and recondiled to satisfy the safety criteria");
+		Solution solution1112 = EurFactory.eINSTANCE.createSolution();
+		solution1112.setIdentifier("S1112");
+		solution1112.setContent("PSC-NRA section 4.4");
+		argument1112.getSolution().add(solution1112);
 
 		Argument argument1113 = EurFactory.eINSTANCE.createArgument();
 		argument1113.setIdentifier("Arg 1.1.1.3");
 		argument1113.setContent("Performance for both the reference radar-based ATS and ADS-B-NRA have been described, understood and reconciled with the safety criteria");
+		Solution solution1113 = EurFactory.eINSTANCE.createSolution();
+		solution1113.setIdentifier("S1113");
+		solution1113.setContent("PSC-NRA section 4.5");
+		argument1113.getSolution().add(solution1113);
 
 		Argument argument1114 = EurFactory.eINSTANCE.createArgument();
 		argument1114.setIdentifier("Arg 1.1.1.4");
 		argument1114.setContent("The operational impact of ADS-B surveillance on adjacent sectors has been assessed and shown to be consistent with the safety criteria");
+		Solution solution1114 = EurFactory.eINSTANCE.createSolution();
+		solution1114.setIdentifier("S1114");
+		solution1114.setContent("PSC-NRA section 4.6");
+		argument1114.getSolution().add(solution1114);
 
 		argument111.getCriteria().add(criteria1);
 		argument111.getCriteria().add(criteria3);
@@ -211,35 +245,308 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		argument111.getArgument().add(argument1114);
 
 		// figure 6
-		// TODO continue here
+		Argument argument1121 = EurFactory.eINSTANCE.createArgument();
+		argument1121.setIdentifier("Arg 1.1.2.1");
+		argument1121.setContent("The boundaries of the system are clearly defined");
+		Solution solution1121 = EurFactory.eINSTANCE.createSolution();
+		solution1121.setIdentifier("S1121");
+		solution1121.setContent("PSC-NRA section 5.3");
+		argument1121.getSolution().add(solution1121);
+
+		Argument argument1122 = EurFactory.eINSTANCE.createArgument();
+		argument1122.setIdentifier("Arg 1.1.2.2");
+		argument1122.setContent("The Application fully describes how the system is intended to operate");
+		Solution solution1122 = EurFactory.eINSTANCE.createSolution();
+		solution1122.setIdentifier("S1122");
+		solution1122.setContent("PSC-NRA section 5.4");
+		argument1122.getSolution().add(solution1122);
+
+		Argument argument1123 = EurFactory.eINSTANCE.createArgument();
+		argument1123.setIdentifier("Arg 1.1.2.3");
+		argument1123.setContent("Everything necessary to achieve a safe implementation of the Application, related to equipment, people, procedures, airspace design, etc., has been specified as safety requirements or assumptions");
+		Solution solution1123 = EurFactory.eINSTANCE.createSolution();
+		solution1123.setIdentifier("S1123");
+		solution1123.setContent("PSC-NRA section 5.5");
+		argument1123.getSolution().add(solution1123);
+
+		Argument argument1124 = EurFactory.eINSTANCE.createArgument();
+		argument1124.setIdentifier("Arg 1.1.2.4");
+		argument1124.setContent("All safety requirements on, and assumptions about, external elements of the end-to-end system have been captured");
+		Solution solution1124 = EurFactory.eINSTANCE.createSolution();
+		solution1124.setIdentifier("S1124");
+		solution1124.setContent("PSC-NRA section 5.6");
+		argument1124.getSolution().add(solution1124);
+
+		argument112.getCriteria().add(criteria1);
+		argument112.getCriteria().add(criteria3);
+		argument112.getArgument().add(argument1121);
+		argument112.getArgument().add(argument1122);
+		argument112.getArgument().add(argument1123);
+		argument112.getArgument().add(argument1124);
 		
+		// figure 7
+		Argument argument1131 = EurFactory.eINSTANCE.createArgument();
+		argument1131.setIdentifier("Arg 1.1.3.1");
+		argument1131.setContent("Coherency of the ADS-B-NRA procedures");
+		Solution solution1131 = EurFactory.eINSTANCE.createSolution();
+		solution1131.setIdentifier("S1131");
+		solution1131.setContent("PSC-NRA section 6.3");
+		argument1131.getSolution().add(solution1131);
+		
+		Argument argument1132 = EurFactory.eINSTANCE.createArgument();
+		argument1132.setIdentifier("Arg 1.1.3.2");
+		argument1132.setContent("Coherency of the ADS-B-NRA human actions");
+		Solution solution1132 = EurFactory.eINSTANCE.createSolution();
+		solution1132.setIdentifier("S1132");
+		solution1132.setContent("PSC-NRA section 6.4");
+		argument1132.getSolution().add(solution1132);
+		
+		Argument argument1133 = EurFactory.eINSTANCE.createArgument();
+		argument1133.setIdentifier("Arg 1.1.3.3");
+		argument1133.setContent("Coherency of the ADS-B-NRA data over the full range of conditions to which the system is expected to be subjected in its operational environment");
+		Solution solution1133 = EurFactory.eINSTANCE.createSolution();
+		solution1133.setIdentifier("S1133");
+		solution1133.setContent("PSC-NRA section 6.5");
+		argument1133.getSolution().add(solution1133);
+		
+		Argument argument1134 = EurFactory.eINSTANCE.createArgument();
+		argument1134.setIdentifier("Arg 1.1.3.4");
+		argument1134.setContent("Absence of undefined states in ADS-B-NRA");
+		Solution solution1134 = EurFactory.eINSTANCE.createSolution();
+		solution1134.setIdentifier("S1134");
+		solution1134.setContent("PSC-NRA section 6.6");
+		argument1134.getSolution().add(solution1134);
+				
+		argument113.getCriteria().add(criteria1);
+		argument113.getCriteria().add(criteria3);
+		argument113.getArgument().add(argument1131);
+		argument113.getArgument().add(argument1132);
+		argument113.getArgument().add(argument1133);
+		argument113.getArgument().add(argument1134);
+
+		// figure 8
+		Argument argument1141 = EurFactory.eINSTANCE.createArgument();
+		argument1141.setIdentifier("Arg 1.1.4.1");
+		argument1141.setContent("The system can react safely to all reasonable foreseeable external failures - i.e. failures in its environment / adjacent systems");
+		Solution solution1141 = EurFactory.eINSTANCE.createSolution();
+		solution1141.setIdentifier("S1141");
+		solution1141.setContent("PSC-NRA section 7.3");
+		argument1141.getSolution().add(solution1141);
+				
+		Argument argument1142 = EurFactory.eINSTANCE.createArgument();
+		argument1142.setIdentifier("Arg 1.1.4.2");
+		argument1142.setContent("The system can react safely to all reasonably foreseeable abnormal conditions in its environment / adjacent systems");
+		Solution solution1142 = EurFactory.eINSTANCE.createSolution();
+		solution1142.setIdentifier("S1142");
+		solution1142.setContent("PSC-NRA section 7.4");
+		argument1142.getSolution().add(solution1142);
+				
+		argument114.getCriteria().add(criteria1); // different from figure, which seems inconsistent
+		argument114.getCriteria().add(criteria3);
+		argument114.getArgument().add(argument1141);
+		argument114.getArgument().add(argument1142);
+
+		// figure 9
+		Strategy strategy1 = EurFactory.eINSTANCE.createStrategy();
+		strategy1.setIdentifier("St001");
+		strategy1.setContent("Internal failure assessment is focused on separation ATS service");
+		
+		Assumption assumption5 = EurFactory.eINSTANCE.createAssumption();
+		assumption5.setIdentifier("A005");
+		assumption5.setContent("Separation service provided by ADS-B-NRA is the most dimensioning one");
+		strategy1.getAssumption().add(assumption5);
+		
+		argument115.getCriteria().add(criteria1); 
+		argument115.getCriteria().add(criteria2); 
+		argument115.getCriteria().add(criteria3);
+		argument115.getStrategy().add(strategy1);
+		
+		Argument argument1151 = EurFactory.eINSTANCE.createArgument();
+		argument1151.setIdentifier("Arg 1.1.5.1");
+		argument1151.setContent("All reasonable foreseeable hazards have been identified");
+		Solution solution1151 = EurFactory.eINSTANCE.createSolution();
+		solution1151.setIdentifier("S1151");
+		solution1151.setContent("PSC-NRA section 8.3");
+		argument1151.getSolution().add(solution1151);
+		
+		Argument argument1152 = EurFactory.eINSTANCE.createArgument();
+		argument1152.setIdentifier("Arg 1.1.5.2");
+		argument1152.setContent("The severity of the effects of each hazard has been correctly assessed, taking account of any mitigations that may be available");
+		Solution solution1152 = EurFactory.eINSTANCE.createSolution();
+		solution1152.setIdentifier("S1152");
+		solution1152.setContent("PSC-NRA section 8.4");
+		argument1152.getSolution().add(solution1152);
+		
+		Argument argument1153 = EurFactory.eINSTANCE.createArgument();
+		argument1153.setIdentifier("Arg 1.1.5.3");
+		argument1153.setContent("Safety objectives have been determined for each identified hazard");
+		Solution solution1153 = EurFactory.eINSTANCE.createSolution();
+		solution1153.setIdentifier("S1153");
+		solution1153.setContent("PSC-NRA section 8.5");
+		argument1153.getSolution().add(solution1153);
+		
+		Argument argument1154 = EurFactory.eINSTANCE.createArgument();
+		argument1154.setIdentifier("Arg 1.1.5.4");
+		argument1154.setContent("All reasonably foreseeable causes of each hazard have been identified");
+		Solution solution1154 = EurFactory.eINSTANCE.createSolution();
+		solution1154.setIdentifier("S1154");
+		solution1154.setContent("PSC-NRA section 8.6");
+		argument1154.getSolution().add(solution1154);
+		
+		Argument argument1155 = EurFactory.eINSTANCE.createArgument();
+		argument1155.setIdentifier("Arg 1.1.5.5");
+		argument1155.setContent("Safety requirements have been specified (or assumptions stated) for causes of each hazard, and for any available mitigations internal or external to the system, such that the system criteria are satisfied");
+		Solution solution1155 = EurFactory.eINSTANCE.createSolution();
+		solution1155.setIdentifier("S1155");
+		solution1155.setContent("PSC-NRA section 8.7");
+		argument1155.getSolution().add(solution1155);
+
+		strategy1.getArgument().add(argument1151);
+		strategy1.getArgument().add(argument1152);
+		strategy1.getArgument().add(argument1153);
+		strategy1.getArgument().add(argument1154);
+		strategy1.getArgument().add(argument1155);
+
+		// figure 10 is a functional system description with no argument notation
+		
+		// figure 11
+		Solution solution116 = EurFactory.eINSTANCE.createSolution();
+		solution116.setIdentifier("S116");
+		solution116.setContent("PSC ADS-B-NRA section 9.2");
+		argument116.getSolution().add(solution116);
+
+		// figure 12
+		Solution solution117 = EurFactory.eINSTANCE.createSolution();
+		solution117.setIdentifier("S117");
+		solution117.setContent("PSC ADS-B-NRA section 10.2");
+		argument117.getSolution().add(solution117);
+		
+		// done with example setup from figures
+
 	}
 	
-
+	/**
+	 * Tests the primary argument list connections.
+	 * @throws Exception
+	 */
 	public void testArgumentLists() throws Exception {
-		//assertEquals(1, toplevelClaim.getStrategy().size());
-		//assertEquals(2, toplevelClaim.getContext().size());
-		//assertTrue(toplevelClaim.getAssumption().isEmpty());
-		//assertTrue(toplevelClaim.getIsTagged().isEmpty());
+		assertEquals(4, argument0.getArgument().size());
+		assertEquals(3, argument1.getArgument().size());
+		assertEquals(0, argument2.getArgument().size());
+		assertEquals(0, argument3.getArgument().size());
+		assertEquals(0, argument4.getArgument().size());
+		assertFalse(argument0.getArgument().isEmpty());
+		assertFalse(argument1.getArgument().isEmpty());
+		assertTrue(argument2.getArgument().isEmpty());
+		assertTrue(argument3.getArgument().isEmpty());
+		assertTrue(argument4.getArgument().isEmpty());
 	}
 
-	public void testArgument() throws Exception {
-		//assertNull(toplevelClaim.getDescription());
-		//assertNull(toplevelClaim.getContent());
-		//assertEquals("Top-Level Claim",toplevelClaim.getIdentifier());
+	/**
+	 * Tests the primary argument list context lists.
+	 * @throws Exception
+	 */
+	public void testArgumentContextLists() throws Exception {
+		assertEquals(0, argument0.getContext().size());
+		assertEquals(0, argument1.getContext().size());
+		assertEquals(0, argument2.getContext().size());
+		assertEquals(0, argument3.getContext().size());
+		assertEquals(0, argument4.getContext().size());
+		assertTrue(argument0.getContext().isEmpty());
+		assertTrue(argument1.getContext().isEmpty());
+		assertTrue(argument2.getContext().isEmpty());
+		assertTrue(argument3.getContext().isEmpty());
+		assertTrue(argument4.getContext().isEmpty());
 	}
 
-	public void testSubclaims() throws Exception {
-		//Argument a = toplevelClaim.getStrategy().get(0);
-		//assertEquals(4,a.getClaims().size());
-		
-		/*
-		for ( Claim c : a.getClaims() ){
-			assertEquals(1,c.getContext().size());
-			assertNull(c.getDescription());
-			assertEquals(0,c.getAssumption().size());
-		}
-		*/
+	/**
+	 * Tests the context lists associated with criteria.
+	 * @throws Exception
+	 */
+	public void testCriteriaContextLists() throws Exception {
+		assertEquals(4, argument0.getCriteria().size() );
+		assertEquals(0, argument1.getCriteria().size() );
+		assertEquals(0, argument2.getCriteria().size() );
+		assertEquals(0, argument3.getCriteria().size() );
+		assertEquals(0, argument4.getCriteria().size() );
+		Criteria criteria0 = argument0.getCriteria().get(0);
+		Criteria criteria1 = argument0.getCriteria().get(1);
+		Criteria criteria2 = argument0.getCriteria().get(2);
+		Criteria criteria3 = argument0.getCriteria().get(3);
+		assertTrue(criteria0.getContext().isEmpty());
+		assertEquals(1, criteria1.getContext().size());
+		assertTrue(criteria2.getContext().isEmpty());
+		assertTrue(criteria3.getContext().isEmpty());
 	}
 	
+	/**
+	 * Tests the assumption lists associated with arguments.
+	 * @throws Exception
+	 */
+	public void testArgumentAssumptionLists() throws Exception {
+		Criteria criteria1 = argument0.getCriteria().get(1);
+		assertEquals(1,criteria1.getContext().size());
+		Context context1 = criteria1.getContext().get(0);
+		assertEquals(1,context1.getAssumption().size());
+	}
+		
+	/**
+	 * Tests some sub-argument lists.
+	 * @throws Exception
+	 */
+	public void testArgument1Children() throws Exception {
+		assertEquals(3,argument1.getArgument().size());
+		Argument argument11 = argument1.getArgument().get(0);
+		assertEquals(7,argument11.getArgument().size());
+	}
+	
+	/**
+	 * Tests the to-be-supported flags for all elements.
+	 * Iterates over all members and checks the supported flags.
+	 * @throws Exception
+	 */
+	public void testAllSupported() throws Exception {
+		
+		EurSwitch<Boolean> visitor = new EurSwitch<Boolean> () {
+			public Boolean caseArgument(Argument argument) {
+				assertFalse(argument.isToBeSupported());
+				return Boolean.TRUE;
+			}
+			
+			public Boolean defaultCase(EObject e) {
+				return Boolean.TRUE;
+			}
+		};
+
+		// visit the model, collect statistics
+		for ( final Iterator<EObject> i = argument0.eAllContents(); i.hasNext(); ) { 
+			EObject eo = i.next();
+			visitor.doSwitch(eo);
+		} 
+	}
+	
+	/**
+	 * Tests the tags for all elements.
+	 * Iterates over all members and checks the model element tags.
+	 * @throws Exception
+	 */
+	public void testAllTags() throws Exception {
+		EurSwitch<Boolean> visitor = new EurSwitch<Boolean> () {
+			public Boolean caseModelElement(ModelElement me) {
+				assertTrue(me.getIsTagged().isEmpty());
+				return Boolean.TRUE;
+			}
+			
+			public Boolean defaultCase(EObject e) {
+				return Boolean.TRUE;
+			}
+		};
+
+		// visit the model, collect statistics
+		for ( final Iterator<EObject> i = argument0.eAllContents(); i.hasNext(); ) { 
+			EObject eo = i.next();
+			visitor.doSwitch(eo);
+		} 
+		
+	}
 }

@@ -6,7 +6,7 @@ package net.certware.argument.cae.providers;
 import org.eclipse.osgi.util.NLS;
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class CaeMessages extends NLS {

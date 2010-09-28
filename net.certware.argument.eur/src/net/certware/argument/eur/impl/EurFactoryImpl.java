@@ -3,14 +3,20 @@
  */
 package net.certware.argument.eur.impl;
 
-import net.certware.argument.eur.*;
+import net.certware.argument.eur.Argument;
+import net.certware.argument.eur.Assumption;
+import net.certware.argument.eur.Context;
+import net.certware.argument.eur.Criteria;
+import net.certware.argument.eur.EurFactory;
+import net.certware.argument.eur.EurPackage;
+import net.certware.argument.eur.Justification;
+import net.certware.argument.eur.Solution;
+import net.certware.argument.eur.Strategy;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

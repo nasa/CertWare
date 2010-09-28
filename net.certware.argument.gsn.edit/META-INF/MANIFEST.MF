@@ -20,5 +20,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  net.certware.argument.arm;visibility:=reexport,
  net.certware.argument.arm.edit;visibility:=reexport,
- org.eclipse.emf.eef.runtime;bundle-version="0.8.0";visibility:=reexport
+ org.eclipse.emf.eef.runtime;bundle-version="0.8.1";visibility:=reexport
 Bundle-ActivationPolicy: lazy

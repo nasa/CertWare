@@ -6,7 +6,6 @@ package net.certware.argument.eur.impl;
 import java.util.Collection;
 
 import net.certware.argument.arm.impl.ClaimImpl;
-
 import net.certware.argument.eur.Argument;
 import net.certware.argument.eur.Assumption;
 import net.certware.argument.eur.Context;
@@ -17,13 +16,11 @@ import net.certware.argument.eur.Solution;
 import net.certware.argument.eur.Strategy;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -57,7 +54,7 @@ public class ArgumentImpl extends ClaimImpl implements Argument {
 	protected EList<Strategy> strategy;
 
 	/**
-	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' containment reference list.
+	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssumption()
@@ -67,7 +64,7 @@ public class ArgumentImpl extends ClaimImpl implements Argument {
 	protected EList<Assumption> assumption;
 
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContext()
@@ -97,7 +94,7 @@ public class ArgumentImpl extends ClaimImpl implements Argument {
 	protected EList<Argument> argument;
 
 	/**
-	 * The cached value of the '{@link #getCriteria() <em>Criteria</em>}' containment reference list.
+	 * The cached value of the '{@link #getCriteria() <em>Criteria</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCriteria()
@@ -154,7 +151,7 @@ public class ArgumentImpl extends ClaimImpl implements Argument {
 	 */
 	public EList<Assumption> getAssumption() {
 		if (assumption == null) {
-			assumption = new EObjectContainmentEList<Assumption>(Assumption.class, this, EurPackage.ARGUMENT__ASSUMPTION);
+			assumption = new EObjectResolvingEList<Assumption>(Assumption.class, this, EurPackage.ARGUMENT__ASSUMPTION);
 		}
 		return assumption;
 	}
@@ -166,7 +163,7 @@ public class ArgumentImpl extends ClaimImpl implements Argument {
 	 */
 	public EList<Context> getContext() {
 		if (context == null) {
-			context = new EObjectContainmentEList<Context>(Context.class, this, EurPackage.ARGUMENT__CONTEXT);
+			context = new EObjectResolvingEList<Context>(Context.class, this, EurPackage.ARGUMENT__CONTEXT);
 		}
 		return context;
 	}
@@ -202,7 +199,7 @@ public class ArgumentImpl extends ClaimImpl implements Argument {
 	 */
 	public EList<Criteria> getCriteria() {
 		if (criteria == null) {
-			criteria = new EObjectContainmentEList<Criteria>(Criteria.class, this, EurPackage.ARGUMENT__CRITERIA);
+			criteria = new EObjectResolvingEList<Criteria>(Criteria.class, this, EurPackage.ARGUMENT__CRITERIA);
 		}
 		return criteria;
 	}
@@ -229,16 +226,10 @@ public class ArgumentImpl extends ClaimImpl implements Argument {
 		switch (featureID) {
 			case EurPackage.ARGUMENT__STRATEGY:
 				return ((InternalEList<?>)getStrategy()).basicRemove(otherEnd, msgs);
-			case EurPackage.ARGUMENT__ASSUMPTION:
-				return ((InternalEList<?>)getAssumption()).basicRemove(otherEnd, msgs);
-			case EurPackage.ARGUMENT__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
 			case EurPackage.ARGUMENT__SOLUTION:
 				return ((InternalEList<?>)getSolution()).basicRemove(otherEnd, msgs);
 			case EurPackage.ARGUMENT__ARGUMENT:
 				return ((InternalEList<?>)getArgument()).basicRemove(otherEnd, msgs);
-			case EurPackage.ARGUMENT__CRITERIA:
-				return ((InternalEList<?>)getCriteria()).basicRemove(otherEnd, msgs);
 			case EurPackage.ARGUMENT__JUSTIFICATION:
 				return ((InternalEList<?>)getJustification()).basicRemove(otherEnd, msgs);
 		}

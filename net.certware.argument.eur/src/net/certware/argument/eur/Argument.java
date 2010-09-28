@@ -47,7 +47,7 @@ public interface Argument extends Claim {
 	EList<Strategy> getStrategy();
 
 	/**
-	 * Returns the value of the '<em><b>Assumption</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Assumption</b></em>' reference list.
 	 * The list contents are of type {@link net.certware.argument.eur.Assumption}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -55,15 +55,15 @@ public interface Argument extends Claim {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assumption</em>' containment reference list.
+	 * @return the value of the '<em>Assumption</em>' reference list.
 	 * @see net.certware.argument.eur.EurPackage#getArgument_Assumption()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Assumption> getAssumption();
 
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Context</b></em>' reference list.
 	 * The list contents are of type {@link net.certware.argument.eur.Context}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -71,9 +71,9 @@ public interface Argument extends Claim {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' containment reference list.
+	 * @return the value of the '<em>Context</em>' reference list.
 	 * @see net.certware.argument.eur.EurPackage#getArgument_Context()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Context> getContext();
@@ -111,7 +111,7 @@ public interface Argument extends Claim {
 	EList<Argument> getArgument();
 
 	/**
-	 * Returns the value of the '<em><b>Criteria</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Criteria</b></em>' reference list.
 	 * The list contents are of type {@link net.certware.argument.eur.Criteria}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -119,9 +119,9 @@ public interface Argument extends Claim {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Criteria</em>' containment reference list.
+	 * @return the value of the '<em>Criteria</em>' reference list.
 	 * @see net.certware.argument.eur.EurPackage#getArgument_Criteria()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Criteria> getCriteria();

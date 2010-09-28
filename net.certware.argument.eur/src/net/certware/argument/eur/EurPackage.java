@@ -131,7 +131,7 @@ public interface EurPackage extends EPackage {
 	int ARGUMENT__STRATEGY = ArmPackage.CLAIM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Assumption</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,7 +140,7 @@ public interface EurPackage extends EPackage {
 	int ARGUMENT__ASSUMPTION = ArmPackage.CLAIM_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Context</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -167,7 +167,7 @@ public interface EurPackage extends EPackage {
 	int ARGUMENT__ARGUMENT = ArmPackage.CLAIM_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Criteria</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Criteria</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -267,7 +267,7 @@ public interface EurPackage extends EPackage {
 	int STRATEGY__SOLUTION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Criteria</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Criteria</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -276,13 +276,22 @@ public interface EurPackage extends EPackage {
 	int STRATEGY__CRITERIA = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__ASSUMPTION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Strategy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 4;
+	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link net.certware.argument.eur.impl.SolutionImpl <em>Solution</em>}' class.
@@ -349,7 +358,7 @@ public interface EurPackage extends EPackage {
 	int SOLUTION__SOURCE = ArmPackage.ASSERTED_EVIDENCE__SOURCE;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Context</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -367,7 +376,7 @@ public interface EurPackage extends EPackage {
 	int SOLUTION__EVIDENCE = ArmPackage.ASSERTED_EVIDENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Criteria</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Criteria</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -486,7 +495,7 @@ public interface EurPackage extends EPackage {
 	int CONTEXT__IS_TAGGED = ArmPackage.INFORMATION_ELEMENT__IS_TAGGED;
 
 	/**
-	 * The feature id for the '<em><b>Assumption</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -605,7 +614,7 @@ public interface EurPackage extends EPackage {
 	int CRITERIA__IS_TAGGED = ArmPackage.INFORMATION_ELEMENT__IS_TAGGED;
 
 	/**
-	 * The feature id for the '<em><b>Context</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Context</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -614,7 +623,7 @@ public interface EurPackage extends EPackage {
 	int CRITERIA__CONTEXT = ArmPackage.INFORMATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Assumption</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -654,10 +663,10 @@ public interface EurPackage extends EPackage {
 	EReference getArgument_Strategy();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Argument#getAssumption <em>Assumption</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Argument#getAssumption <em>Assumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Assumption</em>'.
+	 * @return the meta object for the reference list '<em>Assumption</em>'.
 	 * @see net.certware.argument.eur.Argument#getAssumption()
 	 * @see #getArgument()
 	 * @generated
@@ -665,10 +674,10 @@ public interface EurPackage extends EPackage {
 	EReference getArgument_Assumption();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Argument#getContext <em>Context</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Argument#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Context</em>'.
+	 * @return the meta object for the reference list '<em>Context</em>'.
 	 * @see net.certware.argument.eur.Argument#getContext()
 	 * @see #getArgument()
 	 * @generated
@@ -698,10 +707,10 @@ public interface EurPackage extends EPackage {
 	EReference getArgument_Argument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Argument#getCriteria <em>Criteria</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Argument#getCriteria <em>Criteria</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Criteria</em>'.
+	 * @return the meta object for the reference list '<em>Criteria</em>'.
 	 * @see net.certware.argument.eur.Argument#getCriteria()
 	 * @see #getArgument()
 	 * @generated
@@ -763,15 +772,26 @@ public interface EurPackage extends EPackage {
 	EReference getStrategy_Solution();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Strategy#getCriteria <em>Criteria</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Strategy#getCriteria <em>Criteria</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Criteria</em>'.
+	 * @return the meta object for the reference list '<em>Criteria</em>'.
 	 * @see net.certware.argument.eur.Strategy#getCriteria()
 	 * @see #getStrategy()
 	 * @generated
 	 */
 	EReference getStrategy_Criteria();
+
+	/**
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Strategy#getAssumption <em>Assumption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Assumption</em>'.
+	 * @see net.certware.argument.eur.Strategy#getAssumption()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EReference getStrategy_Assumption();
 
 	/**
 	 * Returns the meta object for class '{@link net.certware.argument.eur.Solution <em>Solution</em>}'.
@@ -784,10 +804,10 @@ public interface EurPackage extends EPackage {
 	EClass getSolution();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Solution#getContext <em>Context</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Solution#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Context</em>'.
+	 * @return the meta object for the reference list '<em>Context</em>'.
 	 * @see net.certware.argument.eur.Solution#getContext()
 	 * @see #getSolution()
 	 * @generated
@@ -806,10 +826,10 @@ public interface EurPackage extends EPackage {
 	EReference getSolution_Evidence();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Solution#getCriteria <em>Criteria</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Solution#getCriteria <em>Criteria</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Criteria</em>'.
+	 * @return the meta object for the reference list '<em>Criteria</em>'.
 	 * @see net.certware.argument.eur.Solution#getCriteria()
 	 * @see #getSolution()
 	 * @generated
@@ -837,10 +857,10 @@ public interface EurPackage extends EPackage {
 	EClass getContext();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Context#getAssumption <em>Assumption</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Context#getAssumption <em>Assumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Assumption</em>'.
+	 * @return the meta object for the reference list '<em>Assumption</em>'.
 	 * @see net.certware.argument.eur.Context#getAssumption()
 	 * @see #getContext()
 	 * @generated
@@ -868,10 +888,10 @@ public interface EurPackage extends EPackage {
 	EClass getCriteria();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Criteria#getContext <em>Context</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Criteria#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Context</em>'.
+	 * @return the meta object for the reference list '<em>Context</em>'.
 	 * @see net.certware.argument.eur.Criteria#getContext()
 	 * @see #getCriteria()
 	 * @generated
@@ -879,10 +899,10 @@ public interface EurPackage extends EPackage {
 	EReference getCriteria_Context();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Criteria#getAssumption <em>Assumption</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Criteria#getAssumption <em>Assumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Assumption</em>'.
+	 * @return the meta object for the reference list '<em>Assumption</em>'.
 	 * @see net.certware.argument.eur.Criteria#getAssumption()
 	 * @see #getCriteria()
 	 * @generated
@@ -930,7 +950,7 @@ public interface EurPackage extends EPackage {
 		EReference ARGUMENT__STRATEGY = eINSTANCE.getArgument_Strategy();
 
 		/**
-		 * The meta object literal for the '<em><b>Assumption</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Assumption</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -938,7 +958,7 @@ public interface EurPackage extends EPackage {
 		EReference ARGUMENT__ASSUMPTION = eINSTANCE.getArgument_Assumption();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Context</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -962,7 +982,7 @@ public interface EurPackage extends EPackage {
 		EReference ARGUMENT__ARGUMENT = eINSTANCE.getArgument_Argument();
 
 		/**
-		 * The meta object literal for the '<em><b>Criteria</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Criteria</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1012,12 +1032,20 @@ public interface EurPackage extends EPackage {
 		EReference STRATEGY__SOLUTION = eINSTANCE.getStrategy_Solution();
 
 		/**
-		 * The meta object literal for the '<em><b>Criteria</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Criteria</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STRATEGY__CRITERIA = eINSTANCE.getStrategy_Criteria();
+
+		/**
+		 * The meta object literal for the '<em><b>Assumption</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRATEGY__ASSUMPTION = eINSTANCE.getStrategy_Assumption();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.argument.eur.impl.SolutionImpl <em>Solution</em>}' class.
@@ -1030,7 +1058,7 @@ public interface EurPackage extends EPackage {
 		EClass SOLUTION = eINSTANCE.getSolution();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Context</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1046,7 +1074,7 @@ public interface EurPackage extends EPackage {
 		EReference SOLUTION__EVIDENCE = eINSTANCE.getSolution_Evidence();
 
 		/**
-		 * The meta object literal for the '<em><b>Criteria</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Criteria</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1074,7 +1102,7 @@ public interface EurPackage extends EPackage {
 		EClass CONTEXT = eINSTANCE.getContext();
 
 		/**
-		 * The meta object literal for the '<em><b>Assumption</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Assumption</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1102,7 +1130,7 @@ public interface EurPackage extends EPackage {
 		EClass CRITERIA = eINSTANCE.getCriteria();
 
 		/**
-		 * The meta object literal for the '<em><b>Context</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Context</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1110,7 +1138,7 @@ public interface EurPackage extends EPackage {
 		EReference CRITERIA__CONTEXT = eINSTANCE.getCriteria_Context();
 
 		/**
-		 * The meta object literal for the '<em><b>Assumption</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Assumption</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -54,7 +54,9 @@ h4. Navigator Contributions
 h3. Plugins Summary
 
 * @net.certware.argument.arm.*@ Argument model and editor support for OMG ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.  
+* @net.certware.argument.arm.help@ Help content for ARM models and related workbench contributions.    
 * @net.certware.argument.cae.*@ Argument model and editor support for CAE (ASCAD), built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification. 
+* @net.certware.argument.cae.help@ Help content for CAE models and related workbench contributions.    
 * @net.certware.argument.gsn.*@ Argument model and editor support for GSN, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.    
 * @net.certware.argument.eur.*@ Argument model and editor support for EUROCONTROL notation, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.

@@ -16,6 +16,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import net.certware.argument.arm.editor.help.ArmEditorContextProvider;
 import net.certware.argument.arm.provider.ArmItemProviderAdapterFactory;
 
 import org.eclipse.core.resources.IFile;
@@ -66,6 +67,7 @@ import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.eef.runtime.ui.notify.OpenWizardOnDoubleClick;
+import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -1008,6 +1010,9 @@ public class ArmEditor
 		}
 	}
 
+	/** help system context provider reference */
+	private Object contextProvider = null;
+
 	/**
 	 * This is how the framework determines which interfaces we implement.
 	 * <!-- begin-user-doc -->
@@ -1025,6 +1030,11 @@ public class ArmEditor
 		}
 		else if (key.equals(IGotoMarker.class)) {
 			return this;
+		}
+		else if (key.equals(IContextProvider.class)) {
+			if ( contextProvider == null )
+				contextProvider = new ArmEditorContextProvider(this);
+			return contextProvider;
 		}
 		else {
 			return super.getAdapter(key);

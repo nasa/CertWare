@@ -6,26 +6,18 @@ package net.certware.argument.eur.impl;
 import java.util.Collection;
 
 import net.certware.argument.arm.InformationElement;
-
 import net.certware.argument.arm.impl.AssertedEvidenceImpl;
-
 import net.certware.argument.eur.Context;
 import net.certware.argument.eur.Criteria;
 import net.certware.argument.eur.EurPackage;
 import net.certware.argument.eur.Solution;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContext()
@@ -64,7 +56,7 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	protected InformationElement evidence;
 
 	/**
-	 * The cached value of the '{@link #getCriteria() <em>Criteria</em>}' containment reference list.
+	 * The cached value of the '{@link #getCriteria() <em>Criteria</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCriteria()
@@ -99,7 +91,7 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	 */
 	public EList<Context> getContext() {
 		if (context == null) {
-			context = new EObjectContainmentEList<Context>(Context.class, this, EurPackage.SOLUTION__CONTEXT);
+			context = new EObjectResolvingEList<Context>(Context.class, this, EurPackage.SOLUTION__CONTEXT);
 		}
 		return context;
 	}
@@ -149,25 +141,9 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	 */
 	public EList<Criteria> getCriteria() {
 		if (criteria == null) {
-			criteria = new EObjectContainmentEList<Criteria>(Criteria.class, this, EurPackage.SOLUTION__CRITERIA);
+			criteria = new EObjectResolvingEList<Criteria>(Criteria.class, this, EurPackage.SOLUTION__CRITERIA);
 		}
 		return criteria;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case EurPackage.SOLUTION__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
-			case EurPackage.SOLUTION__CRITERIA:
-				return ((InternalEList<?>)getCriteria()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

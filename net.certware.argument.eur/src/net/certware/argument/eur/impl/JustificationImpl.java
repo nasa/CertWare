@@ -4,7 +4,6 @@
 package net.certware.argument.eur.impl;
 
 import net.certware.argument.arm.impl.InformationElementImpl;
-
 import net.certware.argument.eur.EurPackage;
 import net.certware.argument.eur.Justification;
 

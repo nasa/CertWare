@@ -4,19 +4,16 @@
 package net.certware.argument.eur.impl;
 
 import java.util.Collection;
-import net.certware.argument.arm.impl.InformationElementImpl;
 
+import net.certware.argument.arm.impl.InformationElementImpl;
 import net.certware.argument.eur.Assumption;
 import net.certware.argument.eur.Context;
 import net.certware.argument.eur.Criteria;
 import net.certware.argument.eur.EurPackage;
 
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CriteriaImpl extends InformationElementImpl implements Criteria {
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContext()
@@ -43,7 +40,7 @@ public class CriteriaImpl extends InformationElementImpl implements Criteria {
 	 */
 	protected EList<Context> context;
 	/**
-	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' containment reference list.
+	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssumption()
@@ -78,7 +75,7 @@ public class CriteriaImpl extends InformationElementImpl implements Criteria {
 	 */
 	public EList<Context> getContext() {
 		if (context == null) {
-			context = new EObjectContainmentEList<Context>(Context.class, this, EurPackage.CRITERIA__CONTEXT);
+			context = new EObjectResolvingEList<Context>(Context.class, this, EurPackage.CRITERIA__CONTEXT);
 		}
 		return context;
 	}
@@ -90,25 +87,9 @@ public class CriteriaImpl extends InformationElementImpl implements Criteria {
 	 */
 	public EList<Assumption> getAssumption() {
 		if (assumption == null) {
-			assumption = new EObjectContainmentEList<Assumption>(Assumption.class, this, EurPackage.CRITERIA__ASSUMPTION);
+			assumption = new EObjectResolvingEList<Assumption>(Assumption.class, this, EurPackage.CRITERIA__ASSUMPTION);
 		}
 		return assumption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case EurPackage.CRITERIA__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
-			case EurPackage.CRITERIA__ASSUMPTION:
-				return ((InternalEList<?>)getAssumption()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

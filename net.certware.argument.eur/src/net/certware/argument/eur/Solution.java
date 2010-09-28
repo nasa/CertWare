@@ -28,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Solution extends AssertedEvidence {
 	/**
-	 * Returns the value of the '<em><b>Context</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Context</b></em>' reference list.
 	 * The list contents are of type {@link net.certware.argument.eur.Context}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -36,9 +36,9 @@ public interface Solution extends AssertedEvidence {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' containment reference list.
+	 * @return the value of the '<em>Context</em>' reference list.
 	 * @see net.certware.argument.eur.EurPackage#getSolution_Context()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Context> getContext();
@@ -70,7 +70,7 @@ public interface Solution extends AssertedEvidence {
 	void setEvidence(InformationElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Criteria</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Criteria</b></em>' reference list.
 	 * The list contents are of type {@link net.certware.argument.eur.Criteria}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -78,9 +78,9 @@ public interface Solution extends AssertedEvidence {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Criteria</em>' containment reference list.
+	 * @return the value of the '<em>Criteria</em>' reference list.
 	 * @see net.certware.argument.eur.EurPackage#getSolution_Criteria()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Criteria> getCriteria();

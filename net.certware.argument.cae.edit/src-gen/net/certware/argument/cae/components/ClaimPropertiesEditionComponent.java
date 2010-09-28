@@ -58,7 +58,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class ClaimPropertiesEditionComponent extends StandardPropertiesEditionComponent {

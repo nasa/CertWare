@@ -64,6 +64,8 @@ public interface IHelpContext {
 	public static String CAE_EDITOR_CONTEXT = PREFIX + "cae_editor_context_context"; //$NON-NLS-1$
 	/** CAE editor justification help context ID */
 	public static String CAE_EDITOR_JUSTIFICATION = PREFIX + "cae_editor_justification_context"; //$NON-NLS-1$
+	/** CAE editor default help context ID */
+	public static String CAE_EDITOR_DEFAULT = PREFIX + "cae_editor_default_context"; //$NON-NLS-1$
 	
 	// EUR-related context IDs
 	/** EUR editor argument help context ID */

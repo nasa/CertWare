@@ -16,8 +16,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import net.certware.argument.arm.provider.ArmItemProviderAdapterFactory;
+import net.certware.argument.cae.editor.help.CaeEditorContextProvider;
 import net.certware.argument.cae.provider.CaeItemProviderAdapterFactory;
 
+import org.eclipse.help.IContextProvider;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
@@ -65,6 +67,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
+import org.eclipse.emf.eef.runtime.ui.notify.OpenWizardOnDoubleClick;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -891,8 +894,9 @@ public class CaeEditor
 	/**
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
+	 * Added double-click listener.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void createPages() {
@@ -913,6 +917,9 @@ public class CaeEditor
 			selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider.ColorProvider(adapterFactory, selectionViewer));
 			selectionViewer.setInput(editingDomain.getResourceSet());
 			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+
+			// added for EEF tabbed properties
+			selectionViewer.addDoubleClickListener(new OpenWizardOnDoubleClick(editingDomain));
 
 			new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
@@ -1021,6 +1028,12 @@ public class CaeEditor
 		else if (key.equals(IGotoMarker.class)) {
 			return this;
 		}
+		else if (key.equals(IContextProvider.class)) {
+			if ( contextProvider == null )
+				contextProvider = new CaeEditorContextProvider(this);
+			return contextProvider;
+		}
+
 		else {
 			return super.getAdapter(key);
 		}
@@ -1524,4 +1537,8 @@ public class CaeEditor
 	public String getContributorId() {
 		return PROPERTY_CONTRIBUTOR;
 	}
+	
+	/** help system context provider reference */
+	private Object contextProvider = null;
+
 }

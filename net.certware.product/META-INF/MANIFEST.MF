@@ -4,4 +4,4 @@ Bundle-Name: CertWare Product
 Bundle-SymbolicName: net.certware.product;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Kestrel Technology LLC
-Require-Bundle: org.eclipse.ui.ide.application;bundle-version="1.0.200"
+Require-Bundle: org.eclipse.ui.ide.application

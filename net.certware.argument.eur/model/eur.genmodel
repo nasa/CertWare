@@ -15,20 +15,25 @@
           propertyDescription="Strategies for fulfilling the argument" ecoreFeature="ecore:EReference eur.ecore#//Argument/strategy"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
           propertyDescription="Assertion relied upon by the element" ecoreFeature="ecore:EReference eur.ecore#//Argument/assumption"/>
-      <genFeatures property="None" children="true" createChild="true" propertyDescription="Inputs or background information"
-          ecoreFeature="ecore:EReference eur.ecore#//Argument/context"/>
-      <genFeatures property="None" children="true" createChild="true" propertyDescription="Evidence for satisfaction of goals"
-          ecoreFeature="ecore:EReference eur.ecore#//Argument/solution"/>
-      <genFeatures property="None" children="true" createChild="true" propertyDescription="A requirement or target to be met or shown to be true"
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
+          propertyDescription="Inputs or background information" ecoreFeature="ecore:EReference eur.ecore#//Argument/context"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
+          propertyDescription="Evidence for satisfaction of goals" ecoreFeature="ecore:EReference eur.ecore#//Argument/solution"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
+          propertyDescription="A requirement or target to be met or shown to be true"
           ecoreFeature="ecore:EReference eur.ecore#//Argument/argument"/>
-      <genFeatures property="None" children="true" createChild="true" propertyDescription="Means by which satisfaction of element can be assessed or checked"
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
+          propertyDescription="Means by which satisfaction of element can be assessed or checked"
           ecoreFeature="ecore:EReference eur.ecore#//Argument/criteria"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Base"
+          propertyDescription="Rationale for the argument" ecoreFeature="ecore:EReference eur.ecore#//Argument/justification"/>
     </genClasses>
     <genClasses ecoreClass="eur.ecore#//Strategy">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/argument"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/justification"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/solution"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/criteria"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/assumption"/>
     </genClasses>
     <genClasses ecoreClass="eur.ecore#//Solution">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Solution/context"/>
@@ -36,8 +41,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Solution/criteria"/>
     </genClasses>
     <genClasses ecoreClass="eur.ecore#//Assumption"/>
-    <genClasses ecoreClass="eur.ecore#//Context"/>
+    <genClasses ecoreClass="eur.ecore#//Context">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Context/assumption"/>
+    </genClasses>
     <genClasses ecoreClass="eur.ecore#//Justification"/>
-    <genClasses ecoreClass="eur.ecore#//Criteria"/>
+    <genClasses ecoreClass="eur.ecore#//Criteria">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Criteria/context"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Criteria/assumption"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -26,6 +26,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
@@ -46,7 +47,7 @@ import org.eclipse.swt.widgets.Text;
 // End of user code	
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class ContextPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ContextPropertiesEditionPart {
@@ -160,6 +161,8 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 			}
 
 		});
+		EditingUtils.setID(identifier, CaeViewsRepository.Context.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Context.identifier, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -203,6 +206,8 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 			}
 
 		});
+		EditingUtils.setID(description, CaeViewsRepository.Context.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Context.description, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -246,6 +251,8 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 			}
 
 		});
+		EditingUtils.setID(content, CaeViewsRepository.Context.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Context.content, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -268,6 +275,8 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(CaeViewsRepository.Context.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**

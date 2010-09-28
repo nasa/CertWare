@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
 public interface Context extends InformationElement {
 
 	/**
-	 * Returns the value of the '<em><b>Assumption</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Assumption</b></em>' reference list.
 	 * The list contents are of type {@link net.certware.argument.eur.Assumption}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -33,9 +33,9 @@ public interface Context extends InformationElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assumption</em>' containment reference list.
+	 * @return the value of the '<em>Assumption</em>' reference list.
 	 * @see net.certware.argument.eur.EurPackage#getContext_Assumption()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Assumption> getAssumption();

@@ -30,6 +30,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
@@ -52,7 +53,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ArgumentPropertiesEditionPart {
@@ -177,6 +178,8 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 				}
 			}
 		});
+		EditingUtils.setID(identifier, CaeViewsRepository.Argument.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.identifier, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -214,6 +217,8 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 				}
 			}
 		});
+		EditingUtils.setID(description, CaeViewsRepository.Argument.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.description, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -251,6 +256,8 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 				}
 			}
 		});
+		EditingUtils.setID(content, CaeViewsRepository.Argument.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.content, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -273,6 +280,8 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(CaeViewsRepository.Argument.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -359,6 +368,8 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		this.justification.setLayoutData(justificationData);
 		this.justification.setLowerBound(0);
 		this.justification.setUpperBound(-1);
+		justification.setID(CaeViewsRepository.Argument.justification);
+		justification.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -445,6 +456,8 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		this.evidence.setLayoutData(evidenceData);
 		this.evidence.setLowerBound(0);
 		this.evidence.setUpperBound(-1);
+		evidence.setID(CaeViewsRepository.Argument.evidence);
+		evidence.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -531,6 +544,8 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		this.claims.setLayoutData(claimsData);
 		this.claims.setLowerBound(0);
 		this.claims.setUpperBound(-1);
+		claims.setID(CaeViewsRepository.Argument.claims);
+		claims.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**

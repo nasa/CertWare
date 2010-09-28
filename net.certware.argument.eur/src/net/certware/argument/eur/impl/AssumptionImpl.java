@@ -4,7 +4,6 @@
 package net.certware.argument.eur.impl;
 
 import net.certware.argument.arm.impl.InformationElementImpl;
-
 import net.certware.argument.eur.Assumption;
 import net.certware.argument.eur.EurPackage;
 

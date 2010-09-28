@@ -31,6 +31,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
@@ -52,7 +53,7 @@ import org.eclipse.swt.widgets.Text;
 // End of user code	
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ClaimPropertiesEditionPart {
@@ -190,6 +191,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 			}
 
 		});
+		EditingUtils.setID(identifier, CaeViewsRepository.Claim.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Claim.identifier, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -233,6 +236,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 			}
 
 		});
+		EditingUtils.setID(description, CaeViewsRepository.Claim.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Claim.description, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -276,6 +281,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 			}
 
 		});
+		EditingUtils.setID(content, CaeViewsRepository.Claim.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Claim.content, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -298,6 +305,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(CaeViewsRepository.Claim.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -368,6 +377,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 		GridData assumedData = new GridData(GridData.FILL_HORIZONTAL);
 		assumedData.horizontalSpan = 2;
 		assumed.setLayoutData(assumedData);
+		EditingUtils.setID(assumed, CaeViewsRepository.Claim.assumed);
+		EditingUtils.setEEFtype(assumed, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Claim.assumed, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -378,6 +389,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 		GridData toBeSupportedData = new GridData(GridData.FILL_HORIZONTAL);
 		toBeSupportedData.horizontalSpan = 2;
 		toBeSupported.setLayoutData(toBeSupportedData);
+		EditingUtils.setID(toBeSupported, CaeViewsRepository.Claim.toBeSupported);
+		EditingUtils.setEEFtype(toBeSupported, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Claim.toBeSupported, CaeViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -400,6 +413,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 		this.strategy.setLayoutData(strategyData);
 		this.strategy.setLowerBound(0);
 		this.strategy.setUpperBound(-1);
+		strategy.setID(CaeViewsRepository.Claim.strategy);
+		strategy.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -482,6 +497,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 		this.assumption.setLayoutData(assumptionData);
 		this.assumption.setLowerBound(0);
 		this.assumption.setUpperBound(-1);
+		assumption.setID(CaeViewsRepository.Claim.assumption);
+		assumption.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -564,6 +581,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 		this.context.setLayoutData(contextData);
 		this.context.setLowerBound(0);
 		this.context.setUpperBound(-1);
+		context.setID(CaeViewsRepository.Claim.context);
+		context.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -646,6 +665,8 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 		this.solution.setLayoutData(solutionData);
 		this.solution.setLowerBound(0);
 		this.solution.setUpperBound(-1);
+		solution.setID(CaeViewsRepository.Claim.solution);
+		solution.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
