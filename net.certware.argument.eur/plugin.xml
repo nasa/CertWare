@@ -9,7 +9,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.certware.net/gsn"
+            uri="http://www.certware.net/eur"
             class="net.certware.argument.eur.EurPackage"
             genModel="model/eur.genmodel"/>
    </extension>

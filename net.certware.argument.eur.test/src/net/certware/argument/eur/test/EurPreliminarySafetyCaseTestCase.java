@@ -1,10 +1,12 @@
 package net.certware.argument.eur.test;
 
 
+import java.io.File;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
-
+import junit.framework.TestCase;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.eur.Argument;
 import net.certware.argument.eur.Assumption;
@@ -15,7 +17,14 @@ import net.certware.argument.eur.Justification;
 import net.certware.argument.eur.Solution;
 import net.certware.argument.eur.Strategy;
 import net.certware.argument.eur.util.EurSwitch;
-import junit.framework.TestCase;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 
 /**
@@ -46,6 +55,12 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		argument3 = null;
 		argument4 = null;
 	}
+	
+	Assumption assumption1;
+	Assumption assumption2;
+	Assumption assumption5;
+	Context context1;
+	Context context3;
 	
 	/**
 	 * Populate the argument model.
@@ -80,12 +95,12 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		criteria3.setContent("Further reduced as far a reasonably practicable");
 		argument0.getCriteria().add(criteria3);
 		
-		Context context1 = EurFactory.eINSTANCE.createContext();
+		context1 = EurFactory.eINSTANCE.createContext();
 		context1.setIdentifier("C001");
 		context1.setContent("Reference service is radar-based surveillance, including separation service applying 5NM for en-route and 3NM for TMA in the operating environment");
 		criteria1.getContext().add(context1);
 		
-		Assumption assumption1 = EurFactory.eINSTANCE.createAssumption();
+		assumption1 = EurFactory.eINSTANCE.createAssumption();
 		assumption1.setIdentifier("A001");
 		assumption1.setContent("Reference service is tolerably safe");
 		context1.getAssumption().add(assumption1);
@@ -140,12 +155,12 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		argument1.getArgument().add(argument13);
 
 		// figure 4
-		Assumption assumption2 = EurFactory.eINSTANCE.createAssumption();
+		assumption2 = EurFactory.eINSTANCE.createAssumption();
 		assumption2.setIdentifier("A002");
 		assumption2.setContent("100% of aircraft are equipped and certified for ADS-B-NRA");
 		argument11.getAssumption().add(assumption2);
 		
-		Context context3 = EurFactory.eINSTANCE.createContext();
+		context3 = EurFactory.eINSTANCE.createContext();
 		context3.setIdentifier("C003");
 		context3.setContent("ADS-B-NRA application includes separation service applying 5NM for en-route and 3NM for TMA as outlined in section 2 herein");
 
@@ -351,7 +366,7 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		strategy1.setIdentifier("St001");
 		strategy1.setContent("Internal failure assessment is focused on separation ATS service");
 		
-		Assumption assumption5 = EurFactory.eINSTANCE.createAssumption();
+		assumption5 = EurFactory.eINSTANCE.createAssumption();
 		assumption5.setIdentifier("A005");
 		assumption5.setContent("Separation service provided by ADS-B-NRA is the most dimensioning one");
 		strategy1.getAssumption().add(assumption5);
@@ -422,8 +437,38 @@ public class EurPreliminarySafetyCaseTestCase extends TestCase {
 		argument117.getSolution().add(solution117);
 		
 		// done with example setup from figures
-
 	}
+
+	/**
+	 * Write the file, for convenience.
+	 * This method is here to produce an artifact to be used for other purposes.
+	 * @throws Exception
+	 */
+	public void testWriteFile() throws Exception {
+		String modelPath = System.getProperty("user.home",".") + File.separatorChar + "psc.eur"; //$NON-NLS-1$ //$NON-NLS-2$
+
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("eur", new XMIResourceFactoryImpl()); //$NON-NLS-1$
+		
+		URI fileURI = URI.createFileURI(modelPath);
+		Resource resource = resourceSet.createResource(fileURI);
+
+		// add all of the non-contained elements
+		resource.getContents().add(argument0);
+		resource.getContents().addAll(argument0.getCriteria());
+		resource.getContents().addAll(argument0.getAssumption());
+		resource.getContents().add(assumption1);
+		resource.getContents().add(assumption2);
+		resource.getContents().add(assumption5);
+		resource.getContents().add(context1);
+		resource.getContents().add(context3);
+
+		// save the contents of the resource to the file system.
+		Map<Object, Object> options = new HashMap<Object, Object>();
+		options.put(XMLResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
+		resource.save(options);
+	}
+
 	
 	/**
 	 * Tests the primary argument list connections.
