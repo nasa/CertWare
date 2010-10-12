@@ -244,9 +244,9 @@ public class ExceptionDetailsDialog extends AbstractDetailsDialog {
 		
 		Dictionary <String,String>bundleHeaders = plugin.getBundle().getHeaders();
 		String pluginId = plugin.getBundle().getSymbolicName();
-		String pluginVendor = (String)bundleHeaders.get("Bundle-Vendor");
-		String pluginName = (String)bundleHeaders.get("Bundle-Name");
-		String pluginVersion = (String)bundleHeaders.get("Bundle-Version");
+		String pluginVendor = bundleHeaders.get("Bundle-Vendor");
+		String pluginName = bundleHeaders.get("Bundle-Name");
+		String pluginVersion = bundleHeaders.get("Bundle-Version");
 		
 		new Label(composite, SWT.NONE).setText("Provider:");
 		new Label(composite, SWT.NONE).setText(pluginVendor);

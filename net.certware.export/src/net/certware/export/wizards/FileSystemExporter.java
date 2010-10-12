@@ -52,7 +52,7 @@ public class FileSystemExporter implements ICertWareConstants {
 	 */
 	public void createFolder(IPath destinationPath) {
 		boolean rv = new File(destinationPath.toPortableString()).mkdir();
-		if ( rv == false ) {
+		if ( !(rv) ) {
 			CertWareLog.logWarning("Exporting path not created");
 		}
 	}
@@ -175,7 +175,7 @@ public class FileSystemExporter implements ICertWareConstants {
 		// load the XML file through the EMF resource set implementation
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Resource resource = resourceSet.getResource( URI.createPlatformResourceURI(ifile.getFullPath().toString(), true), true);
-		final EObject documentRoot = (EObject)resource.getContents().get(0);
+		final EObject documentRoot = resource.getContents().get(0);
 		return documentRoot;
 	}
 }

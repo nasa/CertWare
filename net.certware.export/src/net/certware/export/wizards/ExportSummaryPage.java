@@ -247,7 +247,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
         try {
             getContainer().run(true, true, op);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e) { // $codepro.audit.disable logExceptions
             return false;
         } catch (InvocationTargetException e) {
             displayErrorDialog(e.getTargetException());

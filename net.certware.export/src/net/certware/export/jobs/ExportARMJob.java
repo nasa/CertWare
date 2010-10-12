@@ -405,7 +405,7 @@ public class ExportARMJob extends AbstractExportJob {
 			monitor.subTask(Messages.ExportARMJob_11);
 			// iterates over all nodes in the resource
 			for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getResource(), true); iter.hasNext(); ) {
-				EObject eObject = (EObject)iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+				EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
 				visitor.doSwitch(eObject);
 				monitor.worked(1);
 				if ( monitor.isCanceled() ) {
@@ -416,7 +416,7 @@ public class ExportARMJob extends AbstractExportJob {
 			monitor.subTask(Messages.ExportARMJob_12);
 			// iterates over the given collection
 			for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNodeCollection(), true); iter.hasNext(); ) {
-				EObject eObject = (EObject)iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+				EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
 				visitor.doSwitch(eObject);
 				monitor.worked(1);
 				if ( monitor.isCanceled() ) {
@@ -429,7 +429,7 @@ public class ExportARMJob extends AbstractExportJob {
 			// do the node itself, then its contents
 			visitor.doSwitch(getNode());
 			for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNode(), true); iter.hasNext(); ) {
-				EObject eObject = (EObject)iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+				EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
 				visitor.doSwitch(eObject);
 				monitor.worked(1);
 				if ( monitor.isCanceled() ) {

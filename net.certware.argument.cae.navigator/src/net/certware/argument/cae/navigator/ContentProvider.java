@@ -122,9 +122,9 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		} else if (parentElement instanceof IFile) {
 			IFile modelFile = (IFile)parentElement;
 			if ( ICertWareConstants.CAE_EXTENSION.equals( modelFile.getFileExtension() ) ) {
-				children = (TreeData[])cachedModelMap.get(modelFile);
+				children = cachedModelMap.get(modelFile);
 				if ( children == null && updateModel(modelFile) != null ) {
-					children = (TreeData[])cachedModelMap.get(modelFile);
+					children = cachedModelMap.get(modelFile);
 				}
 			}
 		}
@@ -196,7 +196,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					treeNodes.add(td);
 
 					// populate array and model map
-					TreeData[] treeDataArray = (TreeData[])treeNodes.toArray(new TreeData[treeNodes.size()]);
+					TreeData[] treeDataArray = treeNodes.toArray(new TreeData[treeNodes.size()]);
 					cachedModelMap.put(modelFile, treeDataArray);
 					return resource;
 				} // model not null

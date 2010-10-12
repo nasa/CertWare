@@ -26,7 +26,7 @@ public abstract class MarkerDetailsSection implements IMarkerDetailsSection
     String[] strings = s.split("\n");
     for ( int i = 0; i < strings.length; i++ ) {
       buffer.append("<li bindent=\"20\" style=\"image\"").append(' ');
-      buffer.append("value=").append('"').append(imageKey).append('"').append(">");
+      buffer.append("value=").append('"').append(imageKey).append('"').append('>');
       buffer.append(prefix).append(replaceHtmlEntities(strings[i]));
       buffer.append("</li>");
     }

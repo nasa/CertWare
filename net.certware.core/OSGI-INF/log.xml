@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="net.certware.core.log">
+  <implementation class="net.certware.core.LogUtility"/>
+  <reference
+    name="log"
+    interface="org.osgi.service.log.LogService"
+    cardinality="0..1"
+    policy="dynamic"
+    bind="bind"
+    unbind="unbind"/>    
+</scr:component>
