@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare CAE Navigator Test
+Bundle-SymbolicName: net.certware.argument.cae.navigator.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.argument.cae.navigator;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.easymock,
+ org.eclipse.swt,
+ org.eclipse.swt.widgets

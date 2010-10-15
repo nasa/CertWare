@@ -1,4 +1,4 @@
-package net.certware.argument.cae.test;
+package net.certware.argument.cae.test.example;
 
 import net.certware.argument.cae.Argument;
 import net.certware.argument.cae.CaeFactory;
