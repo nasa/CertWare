@@ -1,8 +1,12 @@
 package net.certware.argument.arm.navigator;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import org.eclipse.core.resources.IFile;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * The class <code>TreeDataTest</code> contains tests for the class <code>{@link TreeData}</code>.

@@ -30,5 +30,19 @@
             name="CertWare Commands">
       </category>
    </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="net.certware.core.ui.preferences.CorePreferencePage"
+            id="certware"
+            name="CertWare">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.certware.core.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
 
 </plugin>

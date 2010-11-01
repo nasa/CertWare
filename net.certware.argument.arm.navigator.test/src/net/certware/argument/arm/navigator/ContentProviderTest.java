@@ -1,5 +1,8 @@
 package net.certware.argument.arm.navigator;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import org.eclipse.core.internal.events.ResourceChangeEvent;
 import org.eclipse.core.internal.resources.mapping.ProposedResourceDelta;
 import org.eclipse.core.resources.IFile;
@@ -10,8 +13,9 @@ import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * The class <code>ContentProviderTest</code> contains tests for the class <code>{@link ContentProvider}</code>.

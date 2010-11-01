@@ -19,8 +19,11 @@ public class NavigatorFilter extends ViewerFilter implements ICertWareConstants 
 
 	/**
 	 * Filters based on matching file name extension.
-	 * @return false if file name extension matches, true otherwise
-	 */
+	
+	 * @param viewer Viewer
+	 * @param parentElement Object
+	 * @param element Object
+	 * @return false if file name extension matches, true otherwise */
 	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
 		

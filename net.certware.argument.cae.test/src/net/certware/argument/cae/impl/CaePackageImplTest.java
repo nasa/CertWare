@@ -1,11 +1,12 @@
 package net.certware.argument.cae.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EReference;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import net.certware.argument.cae.CaePackage;
-import net.certware.argument.cae.CaeFactory;
-import org.junit.*;
-import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * The class <code>CaePackageImplTest</code> contains tests for the class <code>{@link CaePackageImpl}</code>.

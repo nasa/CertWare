@@ -59,7 +59,6 @@ import org.eclipse.ui.progress.UIJob;
  * Provides model statistics as navigator content.
  * @author mrb
  * @since 1.0
- * @version $Revision: 1.0 $
  */
 public class ContentProvider 
 implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor, ICertWareConstants {
@@ -103,8 +102,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	 * @param aViewer tree viewer
 	 * @param oldInput previous input model
 	 * @param newInput new input model
-	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(Viewer, Object, Object)
-	 */
+	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(Viewer, Object, Object) 
+     */
 	@Override
 	public void inputChanged(Viewer aViewer, Object oldInput, Object newInput) {
 		if (null != oldInput && !oldInput.equals(newInput)) {
@@ -116,10 +115,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	/**
 	 * Visitor for the resource change delta.
 	 * @param delta resource change delta
-	 * @return false for file processing, true for other resource types 
-	 * @throws CoreException refreshing the viewer 
-	 * @see org.eclipse.core.resources.IResourceDeltaVisitor#visit(IResourceDelta)
-	 */
+	 * @return false for file processing, true for other resource types  
+     * @throws CoreException refreshing the viewer
+     * @see org.eclipse.core.resources.IResourceDeltaVisitor#visit(IResourceDelta)
+     */
 	@Override
 	public boolean visit(IResourceDelta delta) {
 		final IResource source = delta.getResource();
@@ -149,10 +148,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	}
 
 	/**
-	 * Method resourceChanged.
-	 * @param event IResourceChangeEvent
+	 * Resource change event handler.
+	 * @param event resource change event for delta
 	 * @see org.eclipse.core.resources.IResourceChangeListener#resourceChanged(IResourceChangeEvent)
-	 */
+     */
 	@Override
 	public void resourceChanged(IResourceChangeEvent event) {
 		final IResourceDelta delta = event.getDelta();
@@ -167,8 +166,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	 * Return the children elements of the input model.
 	 * @param inputElement input element
 	 * @return children of the input element
-	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(Object)
-	 */
+     * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(Object) 
+     */
 	@Override
 	public Object[] getElements(Object inputElement) {
 		return getChildren(inputElement);
@@ -178,8 +177,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	 * Gets the children of the parent if a TreeData object, otherwise caches model of IFile parent
 	 * @param parentElement parent element
 	 * @return children of cached IFile model, or NO_CHILDREN
-	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(Object)
-	 */
+     * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(Object) 
+     */
 	@Override
 	public Object[] getChildren(Object parentElement) {
 		Object[] children = null;
@@ -198,11 +197,11 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	}
 
 	/**
-	 * Method getParent.
-	 * @param element Object
-	 * @return Object
-	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(Object)
-	 */
+	 * Gets the tree data element's parent resource file.
+	 * @param element tree data element
+	 * @return element's ifile, or TRUE if element is not a tree data object
+     * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(Object)
+     */
 	@Override
 	public Object getParent(Object element) {
 		if ( element instanceof TreeData ) {
@@ -214,10 +213,10 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 
 	/**
 	 * Whether the element has children.
-	 * @param element Object
+	 * @param element object to test
 	 * @return true if element is an IFile matching extension, false otherwise
-	 * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(Object)
-	 */
+     * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(Object)
+     */
 	@Override
 	public boolean hasChildren(Object element) {
 		if ( element instanceof TreeData ) {
@@ -233,8 +232,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	/**
 	 * Updates the navigator model from the project statistics in the resource model file.
 	 * @param modelFile input file
-	 * @return project data from the document 
-	 */
+	 * @return project data from the document
+     */
 	private synchronized Argument updateModel(IFile modelFile) { // $codepro.audit.disable synchronizedMethod
 		if ( ICertWareConstants.ARM_EXTENSION.equals(modelFile.getFileExtension())) {
 			Argument model = ArmFactory.eINSTANCE.createArgument();
@@ -283,13 +282,15 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	} // method
 
 	/**
-	 * @return the elementCount
-	 */
+	 * Gets the element count.
+	 * @return the element count
+     */
 	public int getElementCount() {
 		return elementCount;
 	}
 
 	/**
+     * Sets the element count.
 	 * @param elementCount the elementCount to set
 	 */
 	public void setElementCount(int elementCount) {
@@ -304,14 +305,16 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	}
 
 	/**
-	 * @return the linkCount
+	 * Gets the link count.
+	 * @return the link count 
 	 */
 	public int getLinkCount() {
 		return linkCount;
 	}
 
 	/**
-	 * @param linkCount the linkCount to set
+	 * Sets the link count.
+	 * @param linkCount the link count to set
 	 */
 	public void setLinkCount(int linkCount) {
 		this.linkCount = linkCount;
@@ -325,14 +328,16 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	}
 
 	/**
-	 * @return the toBeSupported
+	 * Gets the to be supported flag.
+	 * @return the to be supported flag
 	 */
 	public int getToBeSupported() {
 		return toBeSupported;
 	}
 
 	/**
-	 * @param toBeSupported the toBeSupported to set
+	 * Sets the to be supported flag.
+	 * @param toBeSupported the flag value
 	 */
 	public void setToBeSupported(int toBeSupported) {
 		this.toBeSupported = toBeSupported;
@@ -403,6 +408,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Argument Element</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 * @generated NOT
 		 */
 		public Boolean caseArgumentElement(ArgumentElement object) {
 			incrementElementCount();
@@ -465,7 +471,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Inference</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
+		 * @generated NOT
 		 */
 		public Boolean caseAssertedInference(AssertedInference object) {
 			incrementLinkCount();
@@ -497,7 +503,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Asserted Context</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
+		 * @generated NOT
 		 */
 		public Boolean caseAssertedContext(AssertedContext object) {
 			incrementLinkCount();
@@ -578,7 +584,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		 * @param object the target of the switch.
 		 * @return the result of interpreting the object as an instance of '<em>Evidence Assertion</em>'.
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 * @generated
+		 * @generated NOT
 		 */
 		public Boolean caseEvidenceAssertion(EvidenceAssertion object) {
 			incrementElementCount();
@@ -647,6 +653,5 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		public Boolean defaultCase(EObject object) {
 			return Boolean.TRUE;
 		}
-
 	};
 }

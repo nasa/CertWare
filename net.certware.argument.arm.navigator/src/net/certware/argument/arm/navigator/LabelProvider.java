@@ -15,10 +15,16 @@ import org.eclipse.ui.navigator.IDescriptionProvider;
  */
 public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 
+	/** error image */
 	Image errorImage = null;
+	/** open image */
 	Image openImage = null;
+	/** closed image */
 	Image closedImage = null;
 
+	/**
+	 * Constructor gets images from shared images collection.
+	 */
 	public LabelProvider() {
 
 		errorImage = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
@@ -33,12 +39,19 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 		 */
 	}
 
+	/**
+	 * Add a label provider listener.
+	 * @param listener unused
+	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(ILabelProviderListener)
+	 */
 	@Override
 	public void addListener(ILabelProviderListener listener) {
-		// TODO Auto-generated method stub
-
 	}
 
+	/**
+	 * Dispose of resources.
+	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
+	 */
 	@Override
 	public void dispose() {
 		/*
@@ -47,16 +60,34 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 		 */
 	}
 
+	/**
+	 * Whether the element is a label property. 
+	 * @param element unused
+	 * @param property unused
+	 * @return always returns false
+	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(Object, String)
+	 */
 	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
+	/**
+	 * Remove a label provider listener.
+	 * @param listener unused
+	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(ILabelProviderListener)
+	 */
 	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
 
+	/**
+	 * Gets an element description for TreeData objects.
+	 * @param anElement object for description, only applicable for TreeData
+	 * @return node count string for tree data, otherwise null
+	 * @see org.eclipse.ui.navigator.IDescriptionProvider#getDescription(Object)
+	 */
 	@Override
 	public String getDescription(Object anElement) {
 	    if ( anElement instanceof TreeData ) {
@@ -66,6 +97,12 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 	      return null;
 	}
 
+	/**
+	 * Gets the image associated with and object.
+	 * @param element object for test, only applicable for TreeData
+	 * @return image based on type, or null
+	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(Object)
+	 */
 	@Override
 	public Image getImage(Object element) {
 		if ( element instanceof TreeData ) {
@@ -81,6 +118,12 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 		return null;
 	}
 
+	/**
+	 * Gets the text description of an element.
+	 * @param element object for test, only applicable for TreeData
+	 * @return element description and count, otherwise null
+	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(Object)
+	 */
 	@Override
 	public String getText(Object element) {
 		if ( element instanceof TreeData ) {
