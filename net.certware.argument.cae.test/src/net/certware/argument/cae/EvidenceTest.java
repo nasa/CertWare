@@ -1,9 +1,7 @@
 package net.certware.argument.cae;
 
-import org.eclipse.emf.common.util.EList;
-import net.certware.argument.arm.InformationElement;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
 
 /**
  * The class <code>EvidenceTest</code> contains tests for the class <code>{@link Evidence}</code>.

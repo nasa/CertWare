@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
  * @generatedBy CodePro at 10/13/10 4:49 PM
  * @author mrb
  */
+@SuppressWarnings("unused")
 public class ClaimTest {
 	/**
 	 * Perform pre-test initialization.

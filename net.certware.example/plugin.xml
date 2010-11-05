@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="net.certware.example" name="CertWare Examples" schema="schema/net.certware.example.exsd"/>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="net.certware.examples"
+            name="CertWare Examples"
+            parentCategory="org.eclipse.ui.Examples">
+      </category>
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.ui.Examples/net.certware.examples"
+            class="net.certware.example.wizards.PatternWizard"
+            hasPages="true"
+            icon="icons/obj16/extractor_obj.gif"
+            id="net.certware.example.wizards.PatternWizard"
+            name="Argument Pattern"
+            project="true">
+         <selection
+               class="org.eclipse.core.resources.IResource"
+               name="Container resource">
+         </selection>
+         <description>
+            Provides a list of argument pattern examples for installation in the workspace.
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

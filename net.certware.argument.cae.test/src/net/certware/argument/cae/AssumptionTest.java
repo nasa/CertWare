@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
  * @generatedBy CodePro at 10/13/10 4:48 PM
  * @author mrb
  */
+@SuppressWarnings("unused")
 public class AssumptionTest {
 	/**
 	 * Perform pre-test initialization.

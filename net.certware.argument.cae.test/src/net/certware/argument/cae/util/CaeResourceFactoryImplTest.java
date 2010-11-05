@@ -42,6 +42,7 @@ public class CaeResourceFactoryImplTest {
 	public void testCreateResource_1()
 		throws Exception {
 		CaeResourceFactoryImpl fixture = new CaeResourceFactoryImpl();
+		@SuppressWarnings("deprecation")
 		URI uri = URI.createDeviceURI("");
 
 		Resource result = fixture.createResource(uri);

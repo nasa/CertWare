@@ -8,6 +8,7 @@ h3. Version 1.0.0
 
 * Created ARM Ecore model, then GSN, CAE, and EUR Ecore models each depending on ARM package.
 * Created VCL Ecore model.  
+* Created argument pattern Ecore model. 
 * Established basic target definition including Equinox and RCP.  
 * Established basic feature definition and branding support.
 * Established basic extended editing properties sheets using EEF.  

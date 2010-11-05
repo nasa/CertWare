@@ -14,6 +14,7 @@ import org.junit.runners.Suite;
  * @generatedBy CodePro at 10/13/10 4:49 PM
  * @author mrb
  */
+@SuppressWarnings("unused")
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	CaePackageTest.class,
