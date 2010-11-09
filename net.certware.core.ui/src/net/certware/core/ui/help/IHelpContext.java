@@ -99,5 +99,7 @@ public interface IHelpContext {
 	// model agnostic context IDs
 	public static String EXPORT_WIZARD_PAGE = PREFIX + "export_wizard_page_context"; //$NON-NLS-1$ 
 	
+	// example contributions
+	public static String EXAMPLE_WIZARD_PAGE = PREFIX + "example_wizard_page_context"; //$NON-NLS-1$
 
 }

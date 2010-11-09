@@ -12,18 +12,14 @@
       <wizard
             canFinishEarly="false"
             category="org.eclipse.ui.Examples/net.certware.examples"
-            class="net.certware.example.wizards.PatternWizard"
+            class="net.certware.example.wizards.ExampleWizard"
             hasPages="true"
             icon="icons/obj16/extractor_obj.gif"
-            id="net.certware.example.wizards.PatternWizard"
-            name="Argument Pattern"
-            project="true">
-         <selection
-               class="org.eclipse.core.resources.IResource"
-               name="Container resource">
-         </selection>
+            id="net.certware.example.wizards.ExampleWizard"
+            name="Safety Case Example"
+            project="false">
          <description>
-            Provides a list of argument pattern examples for installation in the workspace.
+            Provides a list of safety case elements for installation in the workspace.
          </description>
       </wizard>
    </extension>
