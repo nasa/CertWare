@@ -1,7 +1,6 @@
 package net.certware.example.wizards;
 
 import net.certware.core.ui.help.IHelpContext;
-import net.certware.example.Activator;
 import net.certware.example.ExampleContributions;
 
 import org.eclipse.help.IContextProvider;
@@ -80,6 +79,7 @@ public class ExampleWizardPage extends WizardPage implements IHelpContext {
 	}
 
 
+	@SuppressWarnings("unused")
 	private void updateStatus(String message) {
 		setErrorMessage(message);
 		setPageComplete(message == null);

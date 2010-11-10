@@ -7,7 +7,7 @@ package net.certware.example.wizards;
  * @author mrb
  * @since 1.0
  */
-public class DocumentExamplePage extends ExamplePage
+public class ChecklistExamplePage extends ExamplePage
 {
 
 }

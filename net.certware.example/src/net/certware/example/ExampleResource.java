@@ -8,4 +8,12 @@ public class ExampleResource {
 		description = d;
 		structure = s;
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public String getStructure() {
+		return structure;
+	}
 }

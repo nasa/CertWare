@@ -1,11 +1,18 @@
 package net.certware.example;
 
+/**
+ * CertWare examples contribution interface.
+ * @author mrb
+ * @since 1.0
+ */
 public interface IExampleContribution {
-
+	/** extension point name space */
 	final String EXAMPLE_EXTENSION = "net.certware.example"; //$NON-NLS-1$
-	
+	/** extension point element key for patterns */
 	final String EXAMPLE_ELEMENT_PATTERN = "pattern"; //$NON-NLS-1$
+	/** extension point element key for documents */
 	final String EXAMPLE_ELEMENT_DOCUMENT = "document"; //$NON-NLS-1$
+	/** extension point element key for check lists */
 	final String EXAMPLE_ELEMENT_CHECKLIST = "checklist"; //$NON-NLS-1$
 
 	final String EXAMPLE_ATTR_APPLICABILITY = "applicability"; //$NON-NLS-1$

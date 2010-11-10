@@ -1,5 +1,7 @@
 package net.certware.example.wizards;
 
+import java.text.MessageFormat;
+
 import net.certware.example.Activator;
 import net.certware.example.Example;
 import net.certware.example.ExampleCategory;
@@ -108,13 +110,18 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	 */
 	class MasterContentProvider implements ITreeContentProvider 
 	{
+		/**
+		 * Gets the array of elements based on input.
+		 */
 		public Object[] getElements(Object inputElement) {
 
+			// individual example contributions
 			if (inputElement instanceof ExampleContributions) {
 				ExampleContributions input = (ExampleContributions) inputElement;
 				return input.getCategoriesArray();
 			}
 			
+			// example contribution categories
 			if ( inputElement instanceof ExampleCategory ) {
 				ExampleCategory input = (ExampleCategory) inputElement;
 				return input.getExamplesArray();
@@ -190,9 +197,16 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		 }
 	}
 
-
+	/**
+	 * Label provider class.
+	 */
 	class MasterLabelProvider implements  ILabelProvider 
 	{
+		/**
+		 * Get the category or example name as the label text.
+		 * @param obj object to label
+		 * @return category or example name
+		 */
 		public String getText(Object obj) {
 
 			if ( obj instanceof ExampleCategory ) {
@@ -202,13 +216,17 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 			
 			if ( obj instanceof Example ) {
 				Example e = (Example)obj;
-				return e.getName();
+				return MessageFormat.format("{0} {1}", e.getName(), e.getAuthor());
 			}
 
 			return obj.toString();
 		}
 
-		
+		/**
+		 * Get the image associated with the example type.
+		 * @param obj object to identify
+		 * @return image for category, document, pattern, or checklist type, or null
+		 */
 		public Image getImage(Object obj) {
 
 			if ( obj instanceof ExampleCategory ) {
@@ -230,25 +248,41 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 			return null;
 		}
 
-
+		/**
+		 * Not used.
+		 */
 		public void addListener(ILabelProviderListener listener)
 		{
 		}
 
+		/**
+		 * Not used.
+		 */
 		public void dispose()
 		{
 		}
 
+		/**
+		 * @return always returns false
+		 */
 		public boolean isLabelProperty(Object element, String property)
 		{
 			return false;
 		}
 
+		/**
+		 * Not used.
+		 */
 		public void removeListener(ILabelProviderListener listener)
 		{
 		}
 	}
 
+	/**
+	 * Creates the master part of the master-details block.
+	 * @param managedForm managed for for toolkit reference
+	 * @param parent composite parent for the part; we put a new composite on it
+	 */
 	protected void createMasterPart(final IManagedForm managedForm, Composite parent) 
 	{
 		// final ScrolledForm form = managedForm.getForm();
@@ -290,7 +324,10 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		viewer.expandAll();
 	}
 
-
+	/**
+	 * Create toolbar actions to change the layout from vertical to horizontal orientation.
+	 * @param managedForm form reference for toolbar manager
+	 */
 	protected void createToolBarActions(IManagedForm managedForm) {
 		final ScrolledForm form = managedForm.getForm();
 
@@ -320,11 +357,9 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 
 	protected void registerPages(DetailsPart detailsPart) {
 		// TODO do we need a category page?
-		/*
 		detailsPart.registerPage(ExamplePattern.class, new PatternExamplePage());
 		detailsPart.registerPage(ExampleChecklist.class, new ChecklistExamplePage());
 		detailsPart.registerPage(ExampleDocument.class, new DocumentExamplePage());
-		*/
 	}
 
 

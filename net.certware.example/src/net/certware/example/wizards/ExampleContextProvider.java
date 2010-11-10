@@ -15,6 +15,8 @@ public class ExampleContextProvider implements IContextProvider
   
   public IContext getContext(Object target)
   {
+	  //TODO add contexts for example items
+	  
    // ISelection selection = view.getViewSite().getSelectionProvider().getSelection();
     
     /*

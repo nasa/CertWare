@@ -1,7 +1,6 @@
 package net.certware.example;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -9,44 +8,25 @@ import org.osgi.framework.BundleContext;
  * @author mrb
  * @since 1.0
  */
-public class Activator extends AbstractUIPlugin implements BundleActivator, IExampleContribution {
+public class Activator extends AbstractUIPlugin implements IExampleContribution {
 
 	/** plugin id */
 	public static final String PLUGIN_ID = "net.certware.example"; //$NON-NLS-1$
-	/** bundle context */
-	private static BundleContext context;
-	/** default plugin reference */
-	static Activator defaultID = null;
+	static private Activator plugin;
 	
-	public Activator() {
-		super();
-		defaultID = this;
+
+	public void start(BundleContext context) throws Exception {
+		super.start(context);
+		plugin = this;
 	}
-	
-	static BundleContext getContext() {
-		return context;
+
+	public void stop(BundleContext context) throws Exception {
+		plugin = null;
+		super.stop(context);
 	}
 
 	public static Activator getDefault() {
-		return defaultID;
+		return plugin;
 	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
-	 */
-	public void start(BundleContext bundleContext) throws Exception {
-		Activator.context = bundleContext;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-	 */
-	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
-	}
-
-
 
 }

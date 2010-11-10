@@ -96,7 +96,64 @@ public class Example implements IExampleContribution {
 		}
 	}
 	
+	/**
+	 * Returns the example name.
+	 * @return example name
+	 */
 	public String getName() {
 		return name;
 	}
+	
+	/**
+	 * Returns the example author.
+	 * @return example author
+	 */
+	public String getAuthor() {
+		return author;
+	}
+	
+	/**
+	 * Returns the example version.
+	 * @return example version
+	 */
+	public String getVersion() {
+		return version;
+	}
+
+	public String getApplicability() {
+		return applicability;
+	}
+
+	public String getMotivation() {
+		return motivation;
+	}
+
+	public String getIntent() {
+		return intent;
+	}
+	
+	public String getConsequences() {
+		return consequences;
+	}
+	
+	public String getImplementation() {
+		return implementation;
+	}
+	
+	public IContributor getContributor() {
+		return contributor;
+	}
+	
+	public List<String> getRelatedPatterns() {
+		return relatedPatterns;
+	}
+	
+	public List<String> getRelatedDocuments() {
+		return relatedDocuments;
+	}
+	
+	public List<ExampleResource> getRelatedResources() {
+		return relatedResources;
+	}
+	
 }
