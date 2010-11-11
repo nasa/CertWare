@@ -7,7 +7,8 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 
 /**
- * Example artifact contributions.  Meant to support the examples extension point and wizard. 
+ * Example artifact contributions.  
+ * Meant to support the examples extension point and wizard. 
  * @author mrb
  * @since 1.0
  */

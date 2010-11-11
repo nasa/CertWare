@@ -14,7 +14,7 @@
             category="org.eclipse.ui.Examples/net.certware.examples"
             class="net.certware.example.wizards.ExampleWizard"
             hasPages="true"
-            icon="icons/obj16/extractor_obj.gif"
+            icon="icons/obj16/example.gif"
             id="net.certware.example.wizards.ExampleWizard"
             name="Safety Case Example"
             project="false">
@@ -22,6 +22,16 @@
             Provides a list of safety case elements for installation in the workspace.
          </description>
       </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contextProvider
+            class="net.certware.example.wizards.ExampleContextProvider">
+      </contextProvider>
+      <contexts
+            file="help/contexts.xml"
+            plugin="net.certware.core.ui">
+      </contexts>
    </extension>
 
 </plugin>

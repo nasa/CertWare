@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts>
+   <context id="example_wizard_page_context">
+      <description>CertWare examples wizard</description>
+      <topic href="html/concepts/example_patterns.html" label="Example Patterns"/>
+      <topic href="html/concepts/example_documents.html" label="Example Documents"/>
+   </context>
+</contexts>

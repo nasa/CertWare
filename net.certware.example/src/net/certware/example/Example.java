@@ -120,38 +120,74 @@ public class Example implements IExampleContribution {
 		return version;
 	}
 
+	/**
+	 * Returns the applicability field.
+	 * @return applicability field
+	 */
 	public String getApplicability() {
 		return applicability;
 	}
 
+	/**
+	 * Returns the motivation field.
+	 * @return motivation field
+	 */
 	public String getMotivation() {
 		return motivation;
 	}
 
+	/**
+	 * Returns the intent field.
+	 * @return intent field
+	 */
 	public String getIntent() {
 		return intent;
 	}
 	
+	/**
+	 * Returns the consequences field.
+	 * @return consequences field
+	 */
 	public String getConsequences() {
 		return consequences;
 	}
 	
+	/**
+	 * Returns the implementation field.
+	 * @return implementation field
+	 */
 	public String getImplementation() {
 		return implementation;
 	}
 	
+	/**
+	 * Returns the contributor field.
+	 * @return contributor field
+	 */
 	public IContributor getContributor() {
 		return contributor;
 	}
 	
+	/**
+	 * Returns the related patterns list.
+	 * @return related patterns list
+	 */
 	public List<String> getRelatedPatterns() {
 		return relatedPatterns;
 	}
 	
+	/**
+	 * Returns the related documents list.
+	 * @return related documents list
+	 */
 	public List<String> getRelatedDocuments() {
 		return relatedDocuments;
 	}
 	
+	/**
+	 * Returns the related resources list.
+	 * @return related resources list
+	 */
 	public List<ExampleResource> getRelatedResources() {
 		return relatedResources;
 	}

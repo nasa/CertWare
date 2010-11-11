@@ -14,17 +14,28 @@ public class Activator extends AbstractUIPlugin implements IExampleContribution 
 	public static final String PLUGIN_ID = "net.certware.example"; //$NON-NLS-1$
 	static private Activator plugin;
 	
-
+	/**
+	 * Start the bundle.
+	 * @param context bundle context
+	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
 	}
 
+	/**
+	 * Stop the bundle.
+	 * @param context bundle context
+	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
 	}
 
+	/**
+	 * Returns the reference to the plugin.
+	 * @return plugin reference
+	 */
 	public static Activator getDefault() {
 		return plugin;
 	}

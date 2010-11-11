@@ -11,11 +11,7 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ControlAdapter;
-import org.eclipse.swt.events.ControlEvent;
-import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.graphics.Font;
-import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
@@ -255,22 +251,6 @@ public class ExamplePage implements IDetailsPage
 			public void expansionStateChanging(ExpansionEvent e) {
 			}});
 		
-		/*
-		ControlListener cl = new ControlListener() {
-			@Override
-			public void controlMoved(ControlEvent e) {
-			}
-
-			@Override
-			public void controlResized(ControlEvent e) {
-				System.err.println("control event " + e);
-				Point p = originalParent.getSize();
-				System.err.println("Point is " + p);
-			}};
-		
-		
-		parent.addControlListener(cl);
-		*/
 	}
 
 	/**

@@ -64,7 +64,12 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	static final String VERTICAL_IMAGE = "icons/obj16/th_vertical.gif";
 	/** example contributions for the trees */
 	private ExampleContributions ec;
+	/** selected node in tree */
+	//private ISelection selectedNode = null;
+	/** containing wizard page, for access to buttons */
+	private ExampleWizardPage wizardPage;
 
+	
 	/**
 	 * Gets an image from the plugin.
 	 * @param path path to image file
@@ -82,11 +87,12 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	 * Creates the supporting images.
 	 * @param ec contributions class
 	 */
-	public ScrolledPropertiesBlock(ExampleContributions ec) {
+	public ScrolledPropertiesBlock(ExampleContributions ec, ExampleWizardPage wp) {
 		categoryImage = getImage(CATEGORY_IMAGE);
 		patternImage = getImage(PATTERN_IMAGE);
 		documentImage = getImage(DOCUMENT_IMAGE);
 		checklistImage = getImage(CHECKLIST_IMAGE);
+		wizardPage = wp;
 		this.ec = ec;
 	}
 
@@ -315,6 +321,7 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
 				managedForm.fireSelectionChanged(spart, event.getSelection());
+				wizardPage.setSelectedNode(event.getSelection());
 			}
 		});
 
@@ -355,8 +362,12 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		form.getToolBarManager().add(vaction);
 	}
 
+	/**
+	 * Adds the details pages for each master example type.
+	 * There are pages for the pattern, checklist, and document types.
+	 * There is no page for the branch category type.
+	 */
 	protected void registerPages(DetailsPart detailsPart) {
-		// TODO do we need a category page?
 		detailsPart.registerPage(ExamplePattern.class, new PatternExamplePage());
 		detailsPart.registerPage(ExampleChecklist.class, new ChecklistExamplePage());
 		detailsPart.registerPage(ExampleDocument.class, new DocumentExamplePage());

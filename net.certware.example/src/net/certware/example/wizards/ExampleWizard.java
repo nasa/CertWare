@@ -1,16 +1,25 @@
 package net.certware.example.wizards;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URL;
+import java.text.MessageFormat;
+import java.util.Enumeration;
 
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.example.Activator;
+import net.certware.example.Example;
 import net.certware.example.ExampleContributions;
+import net.certware.example.ExampleResource;
 
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -26,14 +35,24 @@ import org.eclipse.ui.IWorkbenchWizard;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
+ * A wizard to present a list of examples to the user for selection and copying to a workspace container.
+ * @author mrb
+ * @since 1.0
  */
 public class ExampleWizard extends Wizard implements INewWizard {
+	/** dialog height key */
 	private static final String EXAMPLE_WIZARD_HEIGHT = "EXAMPLE_WIZARD_HEIGHT";
+	/** dialog width key */
 	private static final String EXAMPLE_WIZARD_WIDTH = "EXAMPLE_WIZARD_WIDTH";
+	/** dialog title */
 	private static final String TITLE = "CertWare Examples";
+	/** wizard page */
 	private ExampleWizardPage page;
+	/** form toolkit */
 	private FormToolkit toolkit;
+	/** example contributions to host plugin */
 	private ExampleContributions ec;
+	/** target workspace container, a project or folder */
 	private IContainer targetContainer;
 	
 	/**
@@ -54,7 +73,7 @@ public class ExampleWizard extends Wizard implements INewWizard {
 	public void createPageControls(Composite pageContainer) {
 		super.createPageControls(pageContainer);
 		
-		// overriding this method so as to resize the dialog after the container exists
+		// overriding this method so as to resize the dialog when the container exists
 		setDialogSize();
 	}
 
@@ -104,14 +123,16 @@ public class ExampleWizard extends Wizard implements INewWizard {
 	 * using wizard as execution context.
 	 */
 	public boolean performFinish() {
-		// TODO find the page selection, then extract its resources from the selected bundle
 		
-		final String fileName = "mytest.wiz";
+		// find the selected example
+		final Example example = page.getSelectedExample(); 
+
+		// create a runnable to copy resources
 		IRunnableWithProgress op = new IRunnableWithProgress() {
 			public void run(IProgressMonitor monitor) throws InvocationTargetException {
 				try {
-					doFinish(fileName, monitor);
-				} catch (CoreException e) {
+					doFinish(example, targetContainer, monitor);
+				} catch (Exception e) {
 					throw new InvocationTargetException(e);
 				} finally {
 					monitor.done();
@@ -124,7 +145,8 @@ public class ExampleWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			Throwable realException = e.getTargetException();
-			MessageDialog.openError(getShell(), "Error", realException.getMessage());
+			String message = "Exception in wizard finish:" + ' ' + realException.getMessage();
+			MessageDialog.openError(getShell(), TITLE, message);
 			return false;
 		}
 
@@ -132,28 +154,94 @@ public class ExampleWizard extends Wizard implements INewWizard {
 	}
 	
 	/**
-	 * The worker method. It will find the container, create the
-	 * file if missing or just replace its contents, and open
-	 * the editor on the newly created file.
+	 * Finds the contribution in the bundle then copies it to the target container in the workspace.
+	 * @throws IOException for file access problems
+	 * @throw CoreException for resource problems
 	 */
-	private void doFinish(String fileName,IProgressMonitor monitor) throws CoreException {
-		// create a sample file
-		monitor.beginTask("Creating " + fileName, 2);
-		/*
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		IResource resource = root.findMember(new Path(containerName));
-		if (!resource.exists() || !(resource instanceof IContainer)) {
-			throwCoreException("Container \"" + containerName + "\" does not exist.");
-		}
-		IContainer container = (IContainer) resource;
-		*/
-		
-	}
+	private void doFinish(Example example, IContainer target, IProgressMonitor monitor) throws CoreException, IOException {
 
-	@SuppressWarnings("unused")
-	private void throwCoreException(String message) throws CoreException {
-		IStatus status = new Status(IStatus.ERROR, "net.certware.example", IStatus.OK, message, null);
-		throw new CoreException(status);
+		monitor.beginTask(MessageFormat.format("Copying resources from example {0}", 
+				example.getName()),
+				example.getRelatedResources().size() );
+		Activator examplePlugin = Activator.getDefault();
+
+		// for each resource found in the contributing example's resource list
+		for ( ExampleResource exampleResource : example.getRelatedResources() ) {
+			
+			monitor.subTask(exampleResource.getDescription());
+			
+			String structure = exampleResource.getStructure();
+			String subStructure = structure;
+			int lio = subStructure.lastIndexOf( IPath.SEPARATOR );
+			if ( lio > 0 )
+				subStructure = subStructure.substring(lio+1);
+
+			// find all entries in the bundle
+			// finding more specific matches seems not to work in the expected way
+			// scan all returned values and choose the last match
+			Enumeration<URL> e = examplePlugin.getBundle().findEntries("/","*", true);
+			URL matchedEntry = null;
+			while( e.hasMoreElements() ) {
+				URL entry = e.nextElement();
+				if ( entry.getFile().contains( structure ) ) {
+					matchedEntry = entry;
+				}
+			}
+
+			// if not found for some reason, skip
+			if ( matchedEntry == null ) {
+        	  String message = MessageFormat.format("Example file {0} not found in contribution", 
+        			  structure);
+        	  CertWareLog.logWarning(message);
+        	  continue;
+			}
+
+			// found entry
+			// trim any folder segments from the entry for the target
+	        String urlFile = matchedEntry.getFile();
+	        lio = urlFile.lastIndexOf(IPath.SEPARATOR);
+	        if ( lio > 0 )
+	          urlFile = urlFile.substring(lio+1);
+	        
+	        IPath targetPath = new Path(target.getFullPath().toString() + IPath.SEPARATOR + urlFile);
+	        IFile targetFile = ResourcesPlugin.getWorkspace().getRoot().getFile(targetPath);
+
+	        // open the bundle URL and pass it as input stream to workspace file
+	        // the resource copies the URL reference to the workspace
+	        if ( targetFile.exists() == false ) {
+	          try {
+	            InputStream is = matchedEntry.openStream();
+	            targetFile.create(is, true, monitor);
+	            is.close();
+	            String message = MessageFormat.format("Copied example resource {0} to {1}",
+	            		subStructure,
+	            		target.getName()
+	            		);
+	            CertWareLog.logInfo(message);
+	          } catch( IOException ioe ) {
+	        	  String message = MessageFormat.format("Copying file from {0} to {1}", 
+	        			  urlFile, 
+	        			  targetFile.toString());
+	        	  CertWareLog.logError(message,ioe);
+	        	  throw ioe;
+	          } catch( CoreException ce) {
+	        	  String message = MessageFormat.format("Copying file from {0} to {1}", 
+	        			  urlFile, 
+	        			  targetFile.toString());
+	        	  CertWareLog.logError(message,ce);
+	        	  throw ce;
+	          }
+	        } // does not exist
+	        else {
+	        	// already exists, do not overwrite
+	        	String message = MessageFormat.format(
+	        			"Example resource {0} already exists; overwrite not performed", 
+	        			targetFile.toString());
+	        	CertWareLog.logWarning(message);
+	        }
+	        
+			monitor.worked(1);
+		}
 	}
 
 	/**
@@ -163,14 +251,19 @@ public class ExampleWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 
 		if ( selection == null || (selection.getFirstElement() instanceof IContainer) == false) {
-			CertWareLog.logWarning("Wizard must have a container selection for examples");
+			String message = "Wizard must have a container selection for examples";
+			CertWareLog.logWarning(message);
+			MessageDialog.openWarning(getShell(), TITLE, message);
 			return;
 		}
 		
 		// target container destination for copying resources
 		targetContainer = (IContainer)selection.getFirstElement();
-		if ( targetContainer.exists() == false ) {
-			CertWareLog.logWarning("Wizard found target container does not exist");
+		if ( targetContainer.isAccessible() == false ) {
+			String message = MessageFormat.format("Wizard found target container is not accessible: {0}",
+					targetContainer.getName());
+			CertWareLog.logWarning(message);
+			MessageDialog.openWarning(getShell(), TITLE, message);
 			return;
 		}
 		
