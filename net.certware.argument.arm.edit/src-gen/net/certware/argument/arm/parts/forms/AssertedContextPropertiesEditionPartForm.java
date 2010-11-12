@@ -29,6 +29,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
@@ -173,6 +174,8 @@ public class AssertedContextPropertiesEditionPartForm extends CompositePropertie
 				}
 			}
 		});
+		EditingUtils.setID(identifier, ArmViewsRepository.AssertedContext.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.AssertedContext.identifier, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -210,6 +213,8 @@ public class AssertedContextPropertiesEditionPartForm extends CompositePropertie
 				}
 			}
 		});
+		EditingUtils.setID(description, ArmViewsRepository.AssertedContext.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.AssertedContext.description, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -247,6 +252,8 @@ public class AssertedContextPropertiesEditionPartForm extends CompositePropertie
 				}
 			}
 		});
+		EditingUtils.setID(content, ArmViewsRepository.AssertedContext.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.AssertedContext.content, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -269,6 +276,8 @@ public class AssertedContextPropertiesEditionPartForm extends CompositePropertie
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(ArmViewsRepository.AssertedContext.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -369,6 +378,8 @@ public class AssertedContextPropertiesEditionPartForm extends CompositePropertie
 		targetData.horizontalSpan = 3;
 		this.target.setLayoutData(targetData);
 		this.target.disableMove();
+		target.setID(ArmViewsRepository.AssertedContext.target);
+		target.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 	}
 
 	/**
@@ -443,6 +454,8 @@ public class AssertedContextPropertiesEditionPartForm extends CompositePropertie
 		sourceData.horizontalSpan = 3;
 		this.source.setLayoutData(sourceData);
 		this.source.disableMove();
+		source.setID(ArmViewsRepository.AssertedContext.source);
+		source.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 	}
 
 	/**

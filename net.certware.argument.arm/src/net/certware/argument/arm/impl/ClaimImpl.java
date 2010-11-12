@@ -63,7 +63,7 @@ public class ClaimImpl extends ReasoningElementImpl implements Claim {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean TO_BE_SUPPORTED_EDEFAULT = false;
+	protected static final boolean TO_BE_SUPPORTED_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isToBeSupported() <em>To Be Supported</em>}' attribute.

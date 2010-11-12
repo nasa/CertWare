@@ -19,7 +19,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/identifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/content"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arm.ecore#//ModelElement/isTagged"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference arm.ecore#//ModelElement/isTagged"/>
     </genClasses>
     <genClasses ecoreClass="arm.ecore#//TaggedValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//TaggedValue/key"/>

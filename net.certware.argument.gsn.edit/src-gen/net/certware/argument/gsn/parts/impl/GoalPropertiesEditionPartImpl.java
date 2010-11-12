@@ -32,6 +32,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
@@ -196,6 +197,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			}
 
 		});
+		EditingUtils.setID(identifier, GsnViewsRepository.Goal.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Goal.identifier, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -239,6 +242,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			}
 
 		});
+		EditingUtils.setID(description, GsnViewsRepository.Goal.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Goal.description, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -282,6 +287,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			}
 
 		});
+		EditingUtils.setID(content, GsnViewsRepository.Goal.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Goal.content, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -304,6 +311,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(GsnViewsRepository.Goal.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -374,6 +383,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		GridData assumedData = new GridData(GridData.FILL_HORIZONTAL);
 		assumedData.horizontalSpan = 2;
 		assumed.setLayoutData(assumedData);
+		EditingUtils.setID(assumed, GsnViewsRepository.Goal.assumed);
+		EditingUtils.setEEFtype(assumed, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Goal.assumed, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -384,6 +395,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		GridData toBeSupportedData = new GridData(GridData.FILL_HORIZONTAL);
 		toBeSupportedData.horizontalSpan = 2;
 		toBeSupported.setLayoutData(toBeSupportedData);
+		EditingUtils.setID(toBeSupported, GsnViewsRepository.Goal.toBeSupported);
+		EditingUtils.setEEFtype(toBeSupported, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Goal.toBeSupported, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -406,6 +419,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		this.strategy.setLayoutData(strategyData);
 		this.strategy.setLowerBound(0);
 		this.strategy.setUpperBound(-1);
+		strategy.setID(GsnViewsRepository.Goal.strategy);
+		strategy.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -488,6 +503,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		this.assumption.setLayoutData(assumptionData);
 		this.assumption.setLowerBound(0);
 		this.assumption.setUpperBound(-1);
+		assumption.setID(GsnViewsRepository.Goal.assumption);
+		assumption.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -570,6 +587,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		this.context.setLayoutData(contextData);
 		this.context.setLowerBound(0);
 		this.context.setUpperBound(-1);
+		context.setID(GsnViewsRepository.Goal.context);
+		context.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -652,6 +671,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		this.solution.setLayoutData(solutionData);
 		this.solution.setLowerBound(0);
 		this.solution.setUpperBound(-1);
+		solution.setID(GsnViewsRepository.Goal.solution);
+		solution.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -734,6 +755,8 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		this.subgoal.setLayoutData(subgoalData);
 		this.subgoal.setLowerBound(0);
 		this.subgoal.setUpperBound(-1);
+		subgoal.setID(GsnViewsRepository.Goal.subgoal);
+		subgoal.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**

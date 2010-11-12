@@ -14,6 +14,7 @@ import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import net.certware.argument.arm.editor.help.ArmEditorContextProvider;
@@ -66,6 +67,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
+import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.emf.eef.runtime.ui.notify.OpenWizardOnDoubleClick;
 import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.action.IMenuListener;
@@ -112,12 +114,13 @@ import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
+import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 
 /**
- * This is an example of a ARM model editor.
+ * This is an example of a Arm model editor.
  * <!-- begin-user-doc -->
  * @implements ITabbedPropertySheetPageContributor
  * <!-- end-user-doc -->
@@ -1030,11 +1033,6 @@ public class ArmEditor
 		}
 		else if (key.equals(IGotoMarker.class)) {
 			return this;
-		}
-		else if (key.equals(IContextProvider.class)) {
-			if ( contextProvider == null )
-				contextProvider = new ArmEditorContextProvider(this);
-			return contextProvider;
 		}
 		else {
 			return super.getAdapter(key);

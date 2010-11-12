@@ -33,6 +33,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.EObjectFlatComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
@@ -191,6 +192,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 			}
 
 		});
+		EditingUtils.setID(identifier, GsnViewsRepository.Solution.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.identifier, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -234,6 +237,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 			}
 
 		});
+		EditingUtils.setID(description, GsnViewsRepository.Solution.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.description, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -277,6 +282,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 			}
 
 		});
+		EditingUtils.setID(content, GsnViewsRepository.Solution.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.content, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -299,6 +306,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(GsnViewsRepository.Solution.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -396,6 +405,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 		targetData.horizontalSpan = 3;
 		this.target.setLayoutData(targetData);
 		this.target.disableMove();
+		target.setID(GsnViewsRepository.Solution.target);
+		target.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 	}
 
 	/**
@@ -475,6 +486,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 		sourceData.horizontalSpan = 3;
 		this.source.setLayoutData(sourceData);
 		this.source.disableMove();
+		source.setID(GsnViewsRepository.Solution.source);
+		source.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 	}
 
 	/**
@@ -539,6 +552,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 		this.context.setLayoutData(contextData);
 		this.context.setLowerBound(0);
 		this.context.setUpperBound(-1);
+		context.setID(GsnViewsRepository.Solution.context);
+		context.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -620,6 +635,7 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 		});
 		GridData evidenceData = new GridData(GridData.FILL_HORIZONTAL);
 		evidence.setLayoutData(evidenceData);
+		evidence.setID(GsnViewsRepository.Solution.evidence);
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.evidence, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 

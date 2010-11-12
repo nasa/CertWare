@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <pattern
+            applicability="This pattern should be applied whenever a software safety argument is required as part of a safety case."
+            author="Richard Hawkins"
+            consequences="Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. Firstly ‘Goal: sw contribution’ must be supported. The Software contribution safety argument pattern presented in this catalogue can be used to support this goal. In addition, an argument to support ‘Goal: contIdent’ must also be developed in module contIdent. This argument will be based on analysis performed at the system level, so in some cases a sufficient argument may exist at the system level which can be used to support this claim."
+            idp="net.certware.example.ssei.pattern.hlssap"
+            implementation="There are a number of different possible top goals for this pattern, as indicated by the public goals. The appropriate top level goal for the argument must be determined through consideration of the structure of any system safety argument which the software safety argu- ment supports. If the pattern is being used to support a system level safety argument, the top goal from this pattern may not actually appear at the top of the overall argument structure. Instead it will appear as a child-goal within the system safety argument. It is important that a stand alone software safety argument begins with the top goal ‘Goal: swSystem Safe’ to capture the overall objective of the argument and all the required contextual information."
+            intent="This pattern provides the high-level structure for a software safety argument. The pattern can either be used to create the high level structure of a ‘stand alone’ software safety argument considering just the software aspects of the system, or alternatively can be used to support claims relating to software aspects within a broader system safety argument."
+            name="High-Level Software Safety Argument Pattern"
+            version="08/06/09">
+         <resource
+               description="GSN pattern file"
+               structure="resources/HLSSAP.gsn">
+         </resource>
+         <resource
+               description="Pattern Guide"
+               structure="resources/HLSSAP.textile">
+         </resource>
+         <related_pattern
+               pattern_id="net.certware.example.ssei.pattern.scsap">
+         </related_pattern>
+      </pattern>
+      <pattern
+            applicability="This pattern should be applied as part of any hazard-directed software safety argument."
+            author="Richard Hawkins"
+            consequences="Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. ‘Goal: SSRIdentify’ must be supported. The DSSR identification software safety argument pattern presented in this catalog can be used to support this goal. ‘Goal: hazCont’ must be supported. The Hazardous contribution software safety argument pattern presented in this catalog can be used to support this goal. Finally ‘Goal: SSRnSat’ must be supported. As discussed, detailed guidance on the development of the argument to sup- port this goal will be the subject of future work."
+            idp="net.certware.example.ssei.pattern.scsap"
+            implementation="This pattern should be instantiated as part of a software safety argument. An instantiation of ‘Goal: SSRIdentify’ must be created for each identified software contribution to each system hazard. {tier n}, and {tier n+1} must be instantiated with the names of the relevant tier. Note that as the argument is developed over multiple tiers, {tier n} will refer to different tiers. {SSRn} is used to refer to a SSR at tier n, and should be instantiated with the SSR itself or a unique identifier for the SSR. Note that in this pattern the looping link represents a repeating pattern of argument, and would not appear in such a manner in an instantiated argument."
+            intent="This pattern provides the structure for arguments that the contributions made by software to system hazards are acceptably managed."
+            motivation="It is necessary to consider all of the ways in which errors may be introduced into the software which could lead to the software contribution. The software development process used will vary between different projects, however in all cases the software development is undertaken through varying levels of design. At each level the design must satisfy requirements of the higher level. These requirements may be explicitly captured as part of a requirements specification, or identified implicitly from the design itself. "
+            name="Software Contribution Safety Argument Pattern"
+            version="08/06/09">
+         <resource
+               description="GSN pattern file"
+               structure="resources/SCSAP.gsn">
+         </resource>
+         <resource
+               description="Pattern Guide"
+               structure="resources/SCSAP.textile">
+         </resource>
+         <resource
+               description="Figure 22"
+               structure="resources/SCSAP 22.png">
+         </resource>
+         <resource
+               description="Figure 23"
+               structure="resources/SCSAP 23.png">
+         </resource>
+         <related_pattern
+               pattern_id="net.certware.example.ssei.pattern.ssissap">
+         </related_pattern>
+      </pattern>
+      <pattern
+            applicability="This pattern should be applied as part of any hazard-directed software safety argument to provide a warrant for an argument that SSRs from one development tier are adequately addressed at the next tier."
+            author="Richard Hawkins"
+            consequences="Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. An instance of ‘Goal: SSRn’ must be supported for each SSR from {tier n-1}. An argument should be provided which demonstrates that one or more SSRs specified at {tier n} adequately capture the {tier n-1} SSR for the design at {tier n}. An instance of ‘Goal: designDecision’ must be supported for each design decision which was made to facilitate the satisfaction of SSRs at {tier n}. ‘Goal: HSFMdetect’ and ‘Goal: SSRprevent’, if created, must also be supported."
+            idp="net.certware.example.ssei.pattern.ssissap"
+            implementation="{tier n}, and {tier n-1} must be instantiated with the names of the relevant tier. This could for example be class design and high-level software design respectively."
+            intent="This pattern provides the structure for arguments that software safety requirements (SSRs) from a previous tier of development have been adequately captured at the next tier of development through the allocation, decomposition, apportionment or interpretation of the SSRs from the previous tier. This is achieved either through making design decisions which mitigate the SSR, or through the definition of additional SSRs."
+            motivation="(Not provided)"
+            name="SSR Identification Software Safety Argument Pattern"
+            version="08/06/09">
+         <resource
+               description="GSN pattern file"
+               structure="resources/SSISSAP.gsn">
+         </resource>
+         <resource
+               description="Pattern Guide"
+               structure="resources/SSISSAP.textile">
+         </resource>
+         <related_pattern
+               pattern_id="net.certware.example.ssei.pattern.scsap">
+         </related_pattern>
+      </pattern>
+      <pattern
+            applicability="This pattern should be applied as part of any hazard-directed software safety argument to provide a warrant for an argument that SSRs from one development tier are adequately addressed at the next tier."
+            author="Richard Hawkins"
+            consequences="Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. ‘Goal: deviations’ must be supported by an argument provided in a ‘deviations’ safety argument module. An instance of ‘Goal: HSFMaddress’ must be supported for each HSFM identified at {tier n}. ‘Goal: HSFMs’ must also be supported."
+            idp="net.certware.example.ssei.pattern.hcssap"
+            intent="This pattern provides the structure for arguments that potential hazardous failures at {tier n} are addressed through the definition of SSRs."
+            motivation="At each tier of software development it is possible to introduce errors into the software which could manifest themselves as hazardous failures. It is therefore important in the software safety argument to consider additional hazardous contributions at each tier. This goal claims that the SSRs defined at {tier n} are sufficient to address these additional hazardous software contributions."
+            name="Hazardous Contribution Software Safety Argument Pattern"
+            version="08/06/09">
+         <resource
+               description="GSN pattern file"
+               structure="resources/HCSSAP.gsn">
+         </resource>
+         <resource
+               description="Pattern Guide"
+               structure="resources/HCSSAP.textile">
+         </resource>
+         <related_pattern
+               pattern_id="net.certware.example.ssei.pattern.scsap">
+         </related_pattern>
+      </pattern>
+      <pattern
+            applicability="This pattern may be used in support of any software safety argument to justify any strategy for which it is felt such justification may be required to convince a reader that the strategy used provides sufficient confidence in the claim it is supporting. The argument pattern is used in context to the strategy to which it relates."
+            author="Richard Hawkins"
+            consequences="Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. ‘Goal: AssDe- fImpact’, ‘Goal: AssDeficitIdentity’ and ‘Goal: costDetermine’ must each be supported by arguments provided in separate safety argument modules. ‘Goal: Cost’, ‘Goal: ImpactNegligible’ and ‘Goal: AssDefEliminate’ must also be supported."
+            idp="net.certware.example.ssei.pattern.ajssap"
+            implementation="This pattern should be instantiated in context to a software safety argument."
+            intent="This pattern provides the structure for arguments that the software safety argument presented is sufficient. This is done by arguing that the impact of residual assurance deficits is acceptable. Section 3.2 considers assurance deficits in more detail. This argument pattern is instantiated in context to the main argument. It should be used at any point in the argument at which it is felt that a reader may require such justification that the presented argument is sufficient."
+            motivation="As discussed in detail in section 3.2, assurance deficits may be identified at any step in the construction of a software safety argument. This pattern provides a way of explicitly providing a justification for the acceptability of the argument based upon a consideration of the impact of those assurance deficits."
+            name="Argument Justification Software Safety Argument Pattern"
+            version="08/06/09">
+         <related_pattern
+               pattern_id="net.certware.example.ssei.pattern.scsap">
+         </related_pattern>
+         <resource
+               description="GSN pattern file"
+               structure="resources/AJSSAP.gsn">
+         </resource>
+         <resource
+               description="Pattern Guide"
+               structure="resources/AJSSAP.textile">
+         </resource>
+      </pattern>
+   </extension>
+
+</fragment>

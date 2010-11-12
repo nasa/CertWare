@@ -31,6 +31,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.EObjectFlatComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
@@ -177,6 +178,8 @@ public class ArgumentReasoningPropertiesEditionPartForm extends CompositePropert
 				}
 			}
 		});
+		EditingUtils.setID(identifier, ArmViewsRepository.ArgumentReasoning.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.ArgumentReasoning.identifier, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -214,6 +217,8 @@ public class ArgumentReasoningPropertiesEditionPartForm extends CompositePropert
 				}
 			}
 		});
+		EditingUtils.setID(description, ArmViewsRepository.ArgumentReasoning.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.ArgumentReasoning.description, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -251,6 +256,8 @@ public class ArgumentReasoningPropertiesEditionPartForm extends CompositePropert
 				}
 			}
 		});
+		EditingUtils.setID(content, ArmViewsRepository.ArgumentReasoning.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.ArgumentReasoning.content, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -273,6 +280,8 @@ public class ArgumentReasoningPropertiesEditionPartForm extends CompositePropert
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(ArmViewsRepository.ArgumentReasoning.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -373,6 +382,8 @@ public class ArgumentReasoningPropertiesEditionPartForm extends CompositePropert
 		describesData.horizontalSpan = 3;
 		this.describes.setLayoutData(describesData);
 		this.describes.disableMove();
+		describes.setID(ArmViewsRepository.ArgumentReasoning.describes);
+		describes.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 	}
 
 	/**
@@ -441,6 +452,7 @@ public class ArgumentReasoningPropertiesEditionPartForm extends CompositePropert
 			}
 
 		});
+		hasStructure.setID(ArmViewsRepository.ArgumentReasoning.hasStructure);
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.ArgumentReasoning.hasStructure, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 

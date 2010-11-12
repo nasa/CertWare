@@ -6,6 +6,7 @@ package net.certware.argument.gsn.impl;
 import java.util.Collection;
 
 import net.certware.argument.arm.impl.ReasoningElementImpl;
+import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Justification;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.argument.gsn.impl.StrategyImpl#getGoal <em>Goal</em>}</li>
  *   <li>{@link net.certware.argument.gsn.impl.StrategyImpl#getJustification <em>Justification</em>}</li>
  *   <li>{@link net.certware.argument.gsn.impl.StrategyImpl#getSolution <em>Solution</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.StrategyImpl#getContext <em>Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,6 +74,16 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 * @ordered
 	 */
 	protected EList<Solution> solution;
+
+	/**
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Context> context;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +145,18 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Context> getContext() {
+		if (context == null) {
+			context = new EObjectContainmentEList<Context>(Context.class, this, GsnPackage.STRATEGY__CONTEXT);
+		}
+		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -140,6 +164,8 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return ((InternalEList<?>)getGoal()).basicRemove(otherEnd, msgs);
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 				return ((InternalEList<?>)getJustification()).basicRemove(otherEnd, msgs);
+			case GsnPackage.STRATEGY__CONTEXT:
+				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -158,6 +184,8 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return getJustification();
 			case GsnPackage.STRATEGY__SOLUTION:
 				return getSolution();
+			case GsnPackage.STRATEGY__CONTEXT:
+				return getContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,6 +211,10 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				getSolution().clear();
 				getSolution().addAll((Collection<? extends Solution>)newValue);
 				return;
+			case GsnPackage.STRATEGY__CONTEXT:
+				getContext().clear();
+				getContext().addAll((Collection<? extends Context>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -204,6 +236,9 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 			case GsnPackage.STRATEGY__SOLUTION:
 				getSolution().clear();
 				return;
+			case GsnPackage.STRATEGY__CONTEXT:
+				getContext().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -222,6 +257,8 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return justification != null && !justification.isEmpty();
 			case GsnPackage.STRATEGY__SOLUTION:
 				return solution != null && !solution.isEmpty();
+			case GsnPackage.STRATEGY__CONTEXT:
+				return context != null && !context.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

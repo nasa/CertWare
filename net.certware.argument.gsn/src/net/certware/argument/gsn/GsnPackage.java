@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see net.certware.argument.gsn.GsnFactory
  * @model kind="package"
+ *        annotation="gmf foo='gsn'"
  * @generated
  */
 public interface GsnPackage extends EPackage {
@@ -256,13 +257,22 @@ public interface GsnPackage extends EPackage {
 	int STRATEGY__SOLUTION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Context</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__CONTEXT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Strategy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 3;
+	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link net.certware.argument.gsn.impl.SolutionImpl <em>Solution</em>}' class.
@@ -630,6 +640,17 @@ public interface GsnPackage extends EPackage {
 	EReference getStrategy_Solution();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Strategy#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Context</em>'.
+	 * @see net.certware.argument.gsn.Strategy#getContext()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EReference getStrategy_Context();
+
+	/**
 	 * Returns the meta object for class '{@link net.certware.argument.gsn.Solution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -796,6 +817,14 @@ public interface GsnPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRATEGY__SOLUTION = eINSTANCE.getStrategy_Solution();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRATEGY__CONTEXT = eINSTANCE.getStrategy_Context();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.argument.gsn.impl.SolutionImpl <em>Solution</em>}' class.

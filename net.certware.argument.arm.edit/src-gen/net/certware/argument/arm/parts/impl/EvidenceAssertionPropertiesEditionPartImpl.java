@@ -26,6 +26,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
@@ -165,6 +166,8 @@ public class EvidenceAssertionPropertiesEditionPartImpl extends CompositePropert
 			}
 
 		});
+		EditingUtils.setID(identifier, ArmViewsRepository.EvidenceAssertion.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.EvidenceAssertion.identifier, ArmViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -208,6 +211,8 @@ public class EvidenceAssertionPropertiesEditionPartImpl extends CompositePropert
 			}
 
 		});
+		EditingUtils.setID(description, ArmViewsRepository.EvidenceAssertion.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.EvidenceAssertion.description, ArmViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -251,6 +256,8 @@ public class EvidenceAssertionPropertiesEditionPartImpl extends CompositePropert
 			}
 
 		});
+		EditingUtils.setID(content, ArmViewsRepository.EvidenceAssertion.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.EvidenceAssertion.content, ArmViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -273,6 +280,8 @@ public class EvidenceAssertionPropertiesEditionPartImpl extends CompositePropert
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(ArmViewsRepository.EvidenceAssertion.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -343,6 +352,8 @@ public class EvidenceAssertionPropertiesEditionPartImpl extends CompositePropert
 		GridData assumedData = new GridData(GridData.FILL_HORIZONTAL);
 		assumedData.horizontalSpan = 2;
 		assumed.setLayoutData(assumedData);
+		EditingUtils.setID(assumed, ArmViewsRepository.EvidenceAssertion.assumed);
+		EditingUtils.setEEFtype(assumed, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.EvidenceAssertion.assumed, ArmViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -353,6 +364,8 @@ public class EvidenceAssertionPropertiesEditionPartImpl extends CompositePropert
 		GridData toBeSupportedData = new GridData(GridData.FILL_HORIZONTAL);
 		toBeSupportedData.horizontalSpan = 2;
 		toBeSupported.setLayoutData(toBeSupportedData);
+		EditingUtils.setID(toBeSupported, ArmViewsRepository.EvidenceAssertion.toBeSupported);
+		EditingUtils.setEEFtype(toBeSupported, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.EvidenceAssertion.toBeSupported, ArmViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 

@@ -28,6 +28,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.emf.eef.runtime.ui.widgets.EObjectFlatComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
@@ -169,6 +170,8 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 				}
 			}
 		});
+		EditingUtils.setID(identifier, ArmViewsRepository.CitationElement.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.CitationElement.identifier, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -206,6 +209,8 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 				}
 			}
 		});
+		EditingUtils.setID(description, ArmViewsRepository.CitationElement.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.CitationElement.description, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -243,6 +248,8 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 				}
 			}
 		});
+		EditingUtils.setID(content, ArmViewsRepository.CitationElement.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.CitationElement.content, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -265,6 +272,8 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(ArmViewsRepository.CitationElement.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -355,6 +364,7 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 			}
 
 		});
+		refersToArgumentElement.setID(ArmViewsRepository.CitationElement.refersToArgumentElement);
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.CitationElement.refersToArgumentElement, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -381,6 +391,7 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 			}
 
 		});
+		refersToArgument.setID(ArmViewsRepository.CitationElement.refersToArgument);
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.CitationElement.refersToArgument, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 

@@ -1,0 +1,72 @@
+h1. ARGUMENT JUSTIFICATION SAFETY ARGUMENT PATTERN EXAMPLE GUIDE
+
+From SSEI SoBP SSEI-BP-000001 section 4.3.5
+
+h2. APPLICABILITY
+
+This pattern may be used in support of any software safety argument to justify any strategy for which it is felt such justification may be required to convince a reader that the strategy used provides sufficient confidence in the claim it is supporting. The argument pattern is used in context to the strategy to which it relates.
+
+h2. INTENT
+
+This pattern provides the structure for arguments that the software safety argument presented is sufficient. This is done by arguing that the impact of residual assurance deficits is acceptable. Section 3.2 considers assurance deficits in more detail. This argument pattern is instantiated in context to the main argument. It should be used at any point in the argument at which it is felt that a reader may require such justification that the presented argument is sufficient.
+
+h2. MOTIVATION
+
+As discussed in detail in section 3.2, assurance deficits may be identified at any step in the construction of a software safety argument. This pattern provides a way of explicitly providing a justification for the acceptability of the argument based upon a consideration of the impact of those assurance deficits.
+
+h2. CONSEQUENCES
+
+Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. ‘Goal: AssDe- fImpact’, ‘Goal: AssDeficitIdentity’ and ‘Goal: costDetermine’ must each be supported by arguments provided in separate safety argument modules. ‘Goal: Cost’, ‘Goal: ImpactNegligible’ and ‘Goal: AssDefEliminate’ must also be supported.
+
+h2. IMPLEMENTATION
+
+This pattern should be instantiated in context to a software safety argument.
+
+h2. PARTICIPANTS
+
+h3. Goal: Justification 
+
+This is a public goal in a separate argument module which can be referenced from any other software safety argument modules using an away goal reference. The goal claims that the adopted argument is adequate.
+
+h3. Strat: Justification 
+
+To argue that the software safety argument is adequate, the assurance deficits are considered. Each assurance deficits is either considered potentially tolerable, intolerable or negligible. Section 3.2 provides more guidance on categorizing assurance deficits. To support this strategy, it is necessary to argue that the relevant assurance deficits have been correctly identified, and that the impact of those assurance deficits on the claimed risk position have been determined.
+
+h3. Goal: AssDeficitIdentify 
+
+This goal should be supported by an argument contained in a separate module (AssDeficitIdentify), which demonstrates that the assurance deficits which could challenge the claims at that point in the argument have been identified correctly. Section 3.2 provides more details on the identification of assurance deficits.
+
+h3. Goal: AssDefImpact 
+
+This goal should be supported by an argument contained in a separate module (AssDefImpact), which considers what the impact of each identified assurance deficit on the relevant claimed risk position of the overall software safety argument. Further details on determining the impact of assurance deficits is provide in Section 3.2.
+
+h3. Goal: AssDefTolerable 
+
+For all those assurance deficits whose impact is categorized as potentially tolerable, it must be argued that they are either ‘acceptable’, or that they are sufficiently addressed.
+
+h3. Goal: AssDefIntolerable 
+
+There must remain no residual assurance deficits in the argument whose impact is categorized as intolerable. It must therefore be argued that they are all sufficiently addressed.
+
+h3. Goal: AssDefNegligible 
+
+No further measures need be taken to address assurance deficits whose impact is categorized as negligible. An argument why the assurance deficit is considered negligible should however be provided.
+
+h3. Goal: AssDefAddress 
+
+An instance of this goal is created for each assurance deficit for which measures have been taken to address the deficit, an argument should be provided that those measure taken are sufficient. It should be argued either: that the measures taken have reduced the impact of the assurance deficit such that it can be considered tolerable and acceptable, that the measures taken have reduced the impact of the assurance deficit such that it can be considered negligible, or that the measures taken have eliminated the assurance deficit (the deficit no longer exists).
+
+h3. Goal: Cost 
+
+An instance of this goal is created for each assurance deficit whose impact is categorized as potentially tolerable. For such assurance deficits to be acceptable, it must be argued that the cost of taking further measures to address the assurance deficit is out of proportion to the impact that not addressing the assurance deficit would have on the claimed risk position of the overall software safety argument. Further details on determining the acceptability of residual assurance deficits is provided in Section 3.2.
+
+h3. Goal: costDetermine 
+
+Provides a warrant to the cost benefit analysis, by arguing that the costs of the available options for addressing the assurance deficit have been determined correctly. The goal should be supported by an argument provided in a separate argument module.
+
+
+h2. POSSIBLE PITFALLS
+
+In a top-down argument development, the impact and cost associated with assurance deficit may need to be estimated based on a prediction of the types of assurance deficits that are anticipated (such as a necessity to generate additional evidence). Although this may not be straightforward, it means that a number of alternative approaches to addressing assurance deficits (including design decisions) may be considered early in the development of the software.
+Accurately estimating the costs associated with addressing assurance deficits may be difficult in reality. It is felt that further work is required in this area.
+

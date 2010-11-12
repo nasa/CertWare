@@ -122,6 +122,9 @@ public class GsnMessages extends NLS {
 	public static String StrategyPropertiesEditionPart_SolutionLabel;
 
 	
+	public static String StrategyPropertiesEditionPart_ContextLabel;
+
+	
 	public static String SolutionPropertiesEditionPart_IdentifierLabel;
 
 	

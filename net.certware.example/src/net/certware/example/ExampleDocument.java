@@ -8,8 +8,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
  * @since 1.0
  */
 public class ExampleDocument extends Example {
-	/** document example ID */
-	String id;
 	
 	/**
 	 * Constructor gets the document example ID.

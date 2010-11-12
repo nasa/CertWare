@@ -26,6 +26,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
@@ -160,6 +161,8 @@ public class AssumptionPropertiesEditionPartImpl extends CompositePropertiesEdit
 			}
 
 		});
+		EditingUtils.setID(identifier, GsnViewsRepository.Assumption.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Assumption.identifier, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -203,6 +206,8 @@ public class AssumptionPropertiesEditionPartImpl extends CompositePropertiesEdit
 			}
 
 		});
+		EditingUtils.setID(description, GsnViewsRepository.Assumption.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Assumption.description, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -246,6 +251,8 @@ public class AssumptionPropertiesEditionPartImpl extends CompositePropertiesEdit
 			}
 
 		});
+		EditingUtils.setID(content, GsnViewsRepository.Assumption.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Assumption.content, GsnViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -268,6 +275,8 @@ public class AssumptionPropertiesEditionPartImpl extends CompositePropertiesEdit
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(GsnViewsRepository.Assumption.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**

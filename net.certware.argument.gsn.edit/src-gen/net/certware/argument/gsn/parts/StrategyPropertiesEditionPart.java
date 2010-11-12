@@ -339,6 +339,78 @@ public interface StrategyPropertiesEditionPart {
 	public boolean isContainedInSolutionTable(EObject element);
 
 
+	/**
+	 * @return the context to add
+	 * 
+	 */
+	public List getContextToAdd();
+
+	/**
+	 * @return the context to remove
+	 * 
+	 */
+	public List getContextToRemove();
+
+	/**
+	 * @return the context to move
+	 * 
+	 */
+	public List getContextToMove();
+
+	/**
+	 * @return the context to edit
+	 * 
+	 */
+	public Map getContextToEdit();
+
+	/**
+	 * @return the current context table
+	 * 
+	 */
+	public List getContextTable();
+
+	/**
+	 * Init the context
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initContext(EObject current, EReference containingFeature, EReference feature);
+
+	/**
+	 * Update the context
+	 * @param newValue the context to update
+	 * 
+	 */
+	public void updateContext(EObject newValue);
+
+	/**
+	 * Adds the given filter to the context edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToContext(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the context edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToContext(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the context table
+	 * 
+	 */
+	public boolean isContainedInContextTable(EObject element);
+
+
 
 
 

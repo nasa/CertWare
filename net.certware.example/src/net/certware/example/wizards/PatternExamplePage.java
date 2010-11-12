@@ -1,5 +1,7 @@
 package net.certware.example.wizards;
 
+import net.certware.example.ExampleContributions;
+
 
 
 /**
@@ -9,5 +11,9 @@ package net.certware.example.wizards;
  */
 public class PatternExamplePage extends ExamplePage
 {
+
+	public PatternExamplePage(ExampleContributions ec) {
+		super(ec);
+	}
 
 }

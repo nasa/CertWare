@@ -23,6 +23,7 @@
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/goal"/>
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/justification"/>
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/solution"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Strategy/context"/>
     </genClasses>
     <genClasses ecoreClass="gsn.ecore#//Solution">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Solution/context"/>

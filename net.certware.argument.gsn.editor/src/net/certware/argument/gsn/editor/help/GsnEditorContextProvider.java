@@ -20,6 +20,7 @@ import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.Strategy;
 import net.certware.argument.gsn.presentation.GsnEditor;
 import net.certware.argument.gsn.util.GsnSwitch;
+import net.certware.core.ui.help.IHelpContext;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.help.HelpSystem;
@@ -27,8 +28,6 @@ import org.eclipse.help.IContext;
 import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeSelection;
-
-import net.certware.core.ui.help.IHelpContext;
 
 /**
  * Help context provider for the GSN editor.

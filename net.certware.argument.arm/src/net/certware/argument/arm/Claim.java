@@ -58,6 +58,7 @@ public interface Claim extends ReasoningElement {
 
 	/**
 	 * Returns the value of the '<em><b>To Be Supported</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>To Be Supported</em>' attribute isn't clear,
@@ -67,7 +68,7 @@ public interface Claim extends ReasoningElement {
 	 * @return the value of the '<em>To Be Supported</em>' attribute.
 	 * @see #setToBeSupported(boolean)
 	 * @see net.certware.argument.arm.ArmPackage#getClaim_ToBeSupported()
-	 * @model
+	 * @model default="true"
 	 * @generated
 	 */
 	boolean isToBeSupported();

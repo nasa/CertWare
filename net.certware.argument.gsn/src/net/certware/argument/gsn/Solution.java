@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getSolution()
- * @model
+ * @model annotation="gmf.node label='identifier'"
  * @generated
  */
 public interface Solution extends AssertedEvidence {

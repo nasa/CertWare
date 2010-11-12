@@ -81,6 +81,9 @@ public class GsnViewsRepository {
 		
 		public static String solution = "gsn::Strategy::solution";
 		
+		
+		public static String context = "gsn::Strategy::context";
+		
 	
 	}
 

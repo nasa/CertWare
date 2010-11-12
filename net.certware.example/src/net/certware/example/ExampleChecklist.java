@@ -8,8 +8,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
  * @since 1.0
  */
 public class ExampleChecklist extends Example {
-	/** example id */
-	String id;
 	
 	/**
 	 * Constructor gets the checklist example ID.

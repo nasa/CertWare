@@ -43,13 +43,13 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 
 	/** category image */
-	static Image categoryImage = null;
+	Image categoryImage;
 	/** pattern image */
-	static Image patternImage = null;
+	Image patternImage = null;
 	/** document image */
-	static Image documentImage = null;
+	Image documentImage = null;
 	/** checklist image */
-	static Image checklistImage = null;
+	Image checklistImage = null;
 	/** category image path */
 	static final String CATEGORY_IMAGE = "icons/obj16/category.gif";
 	/** pattern image path */
@@ -222,7 +222,7 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 			
 			if ( obj instanceof Example ) {
 				Example e = (Example)obj;
-				return MessageFormat.format("{0} {1}", e.getName(), e.getAuthor());
+				return MessageFormat.format("{0} {1}", e.getName(), e.getVersion());
 			}
 
 			return obj.toString();
@@ -368,9 +368,9 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	 * There is no page for the branch category type.
 	 */
 	protected void registerPages(DetailsPart detailsPart) {
-		detailsPart.registerPage(ExamplePattern.class, new PatternExamplePage());
-		detailsPart.registerPage(ExampleChecklist.class, new ChecklistExamplePage());
-		detailsPart.registerPage(ExampleDocument.class, new DocumentExamplePage());
+		detailsPart.registerPage(ExamplePattern.class, new PatternExamplePage(ec));
+		detailsPart.registerPage(ExampleChecklist.class, new ChecklistExamplePage(ec));
+		detailsPart.registerPage(ExampleDocument.class, new DocumentExamplePage(ec));
 	}
 
 

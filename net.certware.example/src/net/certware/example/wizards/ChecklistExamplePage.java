@@ -1,5 +1,7 @@
 package net.certware.example.wizards;
 
+import net.certware.example.ExampleContributions;
+
 
 
 /**
@@ -9,5 +11,9 @@ package net.certware.example.wizards;
  */
 public class ChecklistExamplePage extends ExamplePage
 {
+
+	public ChecklistExamplePage(ExampleContributions ec) {
+		super(ec);
+	}
 
 }

@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getGoal()
- * @model
+ * @model annotation="gmf.diagram foo='gsn' model.extension='gsn' diagram.extension='gsnd'"
  * @generated
  */
 public interface Goal extends Claim {

@@ -1,0 +1,46 @@
+h1. HAZARDOUS CONTRIBUTION SAFETY ARGUMENT PATTERN EXAMPLE GUIDE
+
+From SSEI SoBP SSEI-BP-000001 section 4.3.4
+
+h2. APPLICABILITY
+
+This pattern should be applied as part of any hazard- directed software safety argument to provide a warrant for an argument that SSRs from one development tier are adequately addressed at the next tier.
+
+h2. INTENT
+
+This pattern provides the structure for arguments that potential hazardous failures at {tier n} are addressed through the definition of SSRs.
+
+h2. MOTIVATION
+
+At each tier of software development it is possible to introduce errors into the software which could manifest themselves as hazardous failures. It is therefore important in the software safety argument to consider additional hazardous contributions at each tier. This goal claims that the SSRs defined at {tier n} are sufficient to address these additional hazardous software contributions.
+
+h2. CONSEQUENCES
+
+Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. ‘Goal: deviations’ must be supported by an argument provided in a ‘deviations’ safety argument module. An instance of ‘Goal: HSFMaddress’ must be supported for each HSFM identified at {tier n}. ‘Goal: HSFMs’ must also be supported.
+
+h2. IMPLEMENTATION
+
+The techniques most appropriate to use to identify potential deviations from intended behaviour at each tier will vary. [SoBP] Appendix B provides some examples of the types of hazard and failure analysis techniques that may be used at some of the possible tiers.
+
+h2. PARTICIPANTS
+
+h3. Goal: hazCont 
+
+This is a public goal in a separate argument module which can be referenced from other software safety argument modules using an away goal reference. This claim is applicable wherever an argument is being presented over the tiers of the software development lifecycle. {tier n} refers to the current tier being considered in the argument. This goal claims that SSRs sufficient to address the potential hazardous contributions identified at {tier n} are identified. The goal is supported by demonstrating that hazardous software failure modes (HSFMs) (that is failure of the software which could contribute to a hazard at the system level) introduced at {tier n} are sufficiently identified, and that each of these HSFMs is addressed through the definition of one or more SSRs.
+
+h3. Strat: HSFMident 
+
+The HSFMs for {tier n} are identified by considering the potential deviations from intended behaviour that may occur at {tier n} as a result of an error introduced at that tier. Assurance is gained in this strategy through the provision of a warrant about the thoroughness and rigour of the deviation identification. This warrant is supported through ‘Goal: deviations’.
+
+h3. Goal: deviations 
+
+This goal must be supported by argument and evidence that the potential deviations from the intended behaviour at {tier n} have been sufficiently identified. There are various techniques avail- able for identifying deviations from intended behaviour in software designs (such as software HAZOP (25)). The particular technique which it is most appropriate to use will depend upon the tier being considered, and also upon the nature of the software design itself. Appendix B provides some examples of the types of hazard and failure analysis techniques that may be used at some of the possible tiers. This goal should be supported by an argument contained in a separate module (deviations)
+
+h3. Goal: HSFMaddress 
+
+An instance of this goal is created for each of the HSFMs identified at {tier n}. Each instance of this goal requires a supporting argument which demonstrates that the DSSRs derived are sufficient to mitigate that HSFM.
+
+h2. POSSIBLE PITFALLS
+
+None provided.
+

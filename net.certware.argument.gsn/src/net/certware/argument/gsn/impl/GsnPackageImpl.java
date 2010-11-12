@@ -233,6 +233,15 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getStrategy_Context() {
+		return (EReference)strategyEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSolution() {
 		return solutionEClass;
 	}
@@ -321,6 +330,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		createEReference(strategyEClass, STRATEGY__GOAL);
 		createEReference(strategyEClass, STRATEGY__JUSTIFICATION);
 		createEReference(strategyEClass, STRATEGY__SOLUTION);
+		createEReference(strategyEClass, STRATEGY__CONTEXT);
 
 		solutionEClass = createEClass(SOLUTION);
 		createEReference(solutionEClass, SOLUTION__CONTEXT);
@@ -383,6 +393,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		initEReference(getStrategy_Goal(), this.getGoal(), null, "goal", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_Justification(), this.getJustification(), null, "justification", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_Solution(), this.getSolution(), null, "solution", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getStrategy_Context(), this.getContext(), null, "context", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getSolution_Context(), this.getContext(), null, "context", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
@@ -396,6 +407,88 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// gmf
+		createGmfAnnotations();
+		// gmf.diagram
+		createGmf_1Annotations();
+		// gmf.node
+		createGmf_2Annotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmfAnnotations() {
+		String source = "gmf"; //$NON-NLS-1$		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "foo", "gsn" //$NON-NLS-1$ //$NON-NLS-2$
+		   });						
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.diagram</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_1Annotations() {
+		String source = "gmf.diagram"; //$NON-NLS-1$			
+		addAnnotation
+		  (goalEClass, 
+		   source, 
+		   new String[] {
+			 "foo", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
+			 "model.extension", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
+			 "diagram.extension", "gsnd" //$NON-NLS-1$ //$NON-NLS-2$
+		   });					
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.node</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations() {
+		String source = "gmf.node"; //$NON-NLS-1$				
+		addAnnotation
+		  (strategyEClass, 
+		   source, 
+		   new String[] {
+			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+		   });		
+		addAnnotation
+		  (solutionEClass, 
+		   source, 
+		   new String[] {
+			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+		   });		
+		addAnnotation
+		  (assumptionEClass, 
+		   source, 
+		   new String[] {
+			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+		   });		
+		addAnnotation
+		  (contextEClass, 
+		   source, 
+		   new String[] {
+			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+		   });		
+		addAnnotation
+		  (justificationEClass, 
+		   source, 
+		   new String[] {
+			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+		   });
 	}
 
 } //GsnPackageImpl

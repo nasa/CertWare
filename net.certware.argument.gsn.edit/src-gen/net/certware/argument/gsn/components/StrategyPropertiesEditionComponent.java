@@ -10,6 +10,7 @@ import java.util.Map;
 
 import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.TaggedValue;
+import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Justification;
@@ -169,6 +170,9 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 		}
 		if (GsnPackage.eINSTANCE.getStrategy_Solution().equals(msg.getFeature()))
 			basePart.updateSolution(strategy);
+		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_Context())) {
+			basePart.updateContext(strategy);
+		}
 
 	}
 
@@ -253,6 +257,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			basePart.initGoal(strategy, null, GsnPackage.eINSTANCE.getStrategy_Goal());
 			basePart.initJustification(strategy, null, GsnPackage.eINSTANCE.getStrategy_Justification());
 			basePart.initSolution(strategy, null, GsnPackage.eINSTANCE.getStrategy_Solution());
+			basePart.initContext(strategy, null, GsnPackage.eINSTANCE.getStrategy_Context());
 			// init filters
 
 
@@ -324,6 +329,22 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			
 			// End of user code
 
+			basePart.addFilterToContext(new ViewerFilter() {
+
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof String && element.equals("")) || (element instanceof Context); //$NON-NLS-1$ 
+				}
+
+			});
+			// Start of user code for additional businessfilters for context
+			
+			// End of user code
+
 		}
 		// init values for referenced views
 
@@ -331,6 +352,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 
 		setInitializing(false);
 	}
+
 
 
 
@@ -428,6 +450,27 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 			//	cc.append(MoveCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getSolution(), moveElement.getElement(), moveElement.getIndex()));
 			//}
+			List contextToAddFromContext = basePart.getContextToAdd();
+			for (Iterator iter = contextToAddFromContext.iterator(); iter.hasNext();)
+				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Context(), iter.next()));
+			Map contextToRefreshFromContext = basePart.getContextToEdit();
+			for (Iterator iter = contextToRefreshFromContext.keySet().iterator(); iter.hasNext();) {
+				Context nextElement = (Context) iter.next();
+				Context context = (Context) contextToRefreshFromContext.get(nextElement);
+				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
+					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+						cc.append(SetCommand.create(editingDomain, nextElement, feature, context.eGet(feature)));
+					}
+				}
+			}
+			List contextToRemoveFromContext = basePart.getContextToRemove();
+			for (Iterator iter = contextToRemoveFromContext.iterator(); iter.hasNext();)
+				cc.append(DeleteCommand.create(editingDomain, iter.next()));
+			List contextToMoveFromContext = basePart.getContextToMove();
+			for (Iterator iter = contextToMoveFromContext.iterator(); iter.hasNext();){
+				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
+				cc.append(MoveCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getContext(), moveElement.getElement(), moveElement.getIndex()));
+			}
 
 		}
 		if (!cc.isEmpty())
@@ -455,6 +498,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			strategyToUpdate.getGoal().addAll(basePart.getGoalToAdd());
 			strategyToUpdate.getJustification().addAll(basePart.getJustificationToAdd());
 			strategyToUpdate.getSolution().addAll(basePart.getSolutionToAdd());
+			strategyToUpdate.getContext().addAll(basePart.getContextToAdd());
 
 			return strategyToUpdate;
 		}
@@ -543,6 +587,24 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 					command.append(RemoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Solution(), event.getNewValue()));
 				if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Solution(), event.getNewValue(), event.getNewIndex()));
+			}
+			if (GsnViewsRepository.Strategy.context == event.getAffectedEditor()) {
+				if (PropertiesEditionEvent.SET == event.getKind()) {
+					Context oldValue = (Context)event.getOldValue();
+					Context newValue = (Context)event.getNewValue();
+					// TODO: Complete the strategy update command
+					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
+						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
+						}
+					}
+				}
+				else if (PropertiesEditionEvent.ADD == event.getKind())
+					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Context(), event.getNewValue()));
+				else if (PropertiesEditionEvent.REMOVE == event.getKind())
+					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
+				else if (PropertiesEditionEvent.MOVE == event.getKind())
+					command.append(MoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getContext(), event.getNewValue(), event.getNewIndex()));
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {

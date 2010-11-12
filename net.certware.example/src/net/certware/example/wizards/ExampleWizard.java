@@ -89,7 +89,7 @@ public class ExampleWizard extends Wizard implements INewWizard {
 				int h = ds.getInt(EXAMPLE_WIZARD_HEIGHT);
 				wc.getShell().setSize(w, h);
 			} catch( Exception e ) {
-				// ignored, usually missing keys on first use
+				CertWareLog.logWarning("Dialog settings not found for example wizard");
 			}
 			return;
 		}

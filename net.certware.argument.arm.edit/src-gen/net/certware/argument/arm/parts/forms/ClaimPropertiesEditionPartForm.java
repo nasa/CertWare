@@ -26,6 +26,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
@@ -165,6 +166,8 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 				}
 			}
 		});
+		EditingUtils.setID(identifier, ArmViewsRepository.Claim.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Claim.identifier, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -202,6 +205,8 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 				}
 			}
 		});
+		EditingUtils.setID(description, ArmViewsRepository.Claim.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Claim.description, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -239,6 +244,8 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 				}
 			}
 		});
+		EditingUtils.setID(content, ArmViewsRepository.Claim.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Claim.content, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -261,6 +268,8 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
+		isTagged.setID(ArmViewsRepository.Claim.isTagged);
+		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -348,6 +357,8 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 		GridData assumedData = new GridData(GridData.FILL_HORIZONTAL);
 		assumedData.horizontalSpan = 2;
 		assumed.setLayoutData(assumedData);
+		EditingUtils.setID(assumed, ArmViewsRepository.Claim.assumed);
+		EditingUtils.setEEFtype(assumed, "eef::Checkbox"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Claim.assumed, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -371,6 +382,8 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 		GridData toBeSupportedData = new GridData(GridData.FILL_HORIZONTAL);
 		toBeSupportedData.horizontalSpan = 2;
 		toBeSupported.setLayoutData(toBeSupportedData);
+		EditingUtils.setID(toBeSupported, ArmViewsRepository.Claim.toBeSupported);
+		EditingUtils.setEEFtype(toBeSupported, "eef::Checkbox"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Claim.toBeSupported, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 

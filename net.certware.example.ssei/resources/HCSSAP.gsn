@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="Goal: hazCont" description="" content="SSRs at {tier n} address the potential additional hazardous contribution identified at {tier n}">
+  <isTagged key="visibility" value="public"/>
+  <subgoal identifier="Goal: SSRderived" description="" content="SSRs sufficient to address identified HSFMs are defined">
+    <strategy identifier="Strat: SSRderived" description="" content="Argument over each {tier n} HSFM">
+      <goal identifier="Goal: HSFMaddress" description="" content="{HSFM} sufficiently addressed by one or more {SSRn}">
+        <isTagged key="multiplicity" value="0 to n"/>
+        <isTagged key="unsubstantiated" value="true"/>
+      </goal>
+    </strategy>
+    <context identifier="Con: HSFMs" description="" content="{{tier n} HSFMs}"/>
+  </subgoal>
+  <subgoal identifier="Goal: HSFMident" description="" content="HSFMs correctly identified at {tier n}">
+    <strategy identifier="Strat: HSFMident" description="" content="Argument over deviations from intended behavior at {tier n}">
+      <goal identifier="Goal: deviations_deviations" description="" content="Potential deviations from intended behavior are sufficiently identified at {tier n}">
+        <isTagged key="module" value="deviations"/>
+      </goal>
+      <goal identifier="Goal: HSFMs" description="" content="Those deviations at {tier n} which could result in hazardous behavior are identified as HSFMs">
+        <isTagged key="unsubstantiated" value="true"/>
+      </goal>
+      <context identifier="Con: deviations" description="" content="{{tier n} deviations}"/>
+    </strategy>
+    <context identifier="Con: HSFMs" description="" content="{{tier n} HSFMs}"/>
+  </subgoal>
+</gsn:Goal>

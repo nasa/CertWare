@@ -75,9 +75,79 @@ public class GoalItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addStrategyPropertyDescriptor(object);
+			addAssumptionPropertyDescriptor(object);
+			addContextPropertyDescriptor(object);
 			addSolutionPropertyDescriptor(object);
+			addSubgoalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Strategy feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStrategyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Goal_strategy_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Goal_strategy_feature", "_UI_Goal_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.GOAL__STRATEGY,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Assumption feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssumptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Goal_assumption_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Goal_assumption_feature", "_UI_Goal_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.GOAL__ASSUMPTION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Goal_context_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Goal_context_feature", "_UI_Goal_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.GOAL__CONTEXT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -97,6 +167,28 @@ public class GoalItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Subgoal feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubgoalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Goal_subgoal_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Goal_subgoal_feature", "_UI_Goal_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.GOAL__SUBGOAL,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

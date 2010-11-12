@@ -12,7 +12,7 @@ import net.certware.argument.arm.InformationElement;
  *
  *
  * @see net.certware.argument.gsn.GsnPackage#getAssumption()
- * @model
+ * @model annotation="gmf.node label='identifier'"
  * @generated
  */
 public interface Assumption extends InformationElement {

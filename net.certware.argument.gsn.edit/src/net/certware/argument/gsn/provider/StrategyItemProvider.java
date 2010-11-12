@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -74,8 +75,100 @@ public class StrategyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addGoalPropertyDescriptor(object);
+			addJustificationPropertyDescriptor(object);
+			addSolutionPropertyDescriptor(object);
+			addContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Goal feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGoalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategy_goal_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_goal_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.STRATEGY__GOAL,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Justification feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addJustificationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategy_justification_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_justification_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.STRATEGY__JUSTIFICATION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Solution feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSolutionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategy_solution_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_solution_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.STRATEGY__SOLUTION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategy_context_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_context_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.STRATEGY__CONTEXT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -93,6 +186,7 @@ public class StrategyItemProvider
 			childrenFeatures.add(GsnPackage.Literals.STRATEGY__GOAL);
 			childrenFeatures.add(GsnPackage.Literals.STRATEGY__JUSTIFICATION);
 			childrenFeatures.add(GsnPackage.Literals.STRATEGY__SOLUTION);
+			childrenFeatures.add(GsnPackage.Literals.STRATEGY__CONTEXT);
 		}
 		return childrenFeatures;
 	}
@@ -150,6 +244,7 @@ public class StrategyItemProvider
 			case GsnPackage.STRATEGY__GOAL:
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 			case GsnPackage.STRATEGY__SOLUTION:
+			case GsnPackage.STRATEGY__CONTEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -181,6 +276,11 @@ public class StrategyItemProvider
 			(createChildParameter
 				(GsnPackage.Literals.STRATEGY__SOLUTION,
 				 GsnFactory.eINSTANCE.createSolution()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.STRATEGY__CONTEXT,
+				 GsnFactory.eINSTANCE.createContext()));
 	}
 
 	/**

@@ -2,6 +2,8 @@ package net.certware.example.wizards;
 
 import net.certware.example.Activator;
 import net.certware.example.Example;
+import net.certware.example.ExampleCategory;
+import net.certware.example.ExampleContributions;
 import net.certware.example.ExampleResource;
 
 import org.eclipse.core.runtime.Path;
@@ -83,6 +85,16 @@ public class ExamplePage implements IDetailsPage
 	Section relatedPatternsSection = null;
 	/** input example to display */
 	Example example;
+	/** example contributions */
+	ExampleContributions exampleContributions;
+	
+	/**
+	 * Constructor saves the contributions for name search.
+	 * @param ec
+	 */
+	public ExamplePage(ExampleContributions ec) {
+		exampleContributions = ec;
+	}
 
 	/**
 	 * Creates the initial page structure before values available.
@@ -201,7 +213,7 @@ public class ExamplePage implements IDetailsPage
 		toolkit.createCompositeSeparator(relatedDocumentsSection);
 		relatedDocumentsClient = toolkit.createComposite(relatedDocumentsSection);
 		dcl = new TableWrapLayout();
-		dcl.numColumns = 2;
+		dcl.numColumns = 1;
 		relatedDocumentsClient.setLayout( dcl );
 		relatedDocumentsSection.setClient(relatedDocumentsClient);
 
@@ -213,7 +225,7 @@ public class ExamplePage implements IDetailsPage
 		toolkit.createCompositeSeparator(relatedPatternsSection);
 		relatedPatternsClient = toolkit.createComposite(relatedPatternsSection);
 		dcl = new TableWrapLayout();
-		dcl.numColumns = 2;
+		dcl.numColumns = 1;
 		relatedPatternsClient.setLayout( dcl );
 		relatedPatternsSection.setClient(relatedPatternsClient);
 
@@ -253,6 +265,24 @@ public class ExamplePage implements IDetailsPage
 		
 	}
 
+	/**
+	 * Find the example name associated with an ID.
+	 * @param id reference ID
+	 * @return example name if found, or returns back the ID if not found
+	 */
+	private String getNameForId(String id) {
+		
+		for ( ExampleCategory c : exampleContributions.getCategories()) {
+			for ( Example e : c.getExamples() ) {
+				if ( id.equals( e.getId() )) {
+					return e.getName();
+				}
+			}
+		}
+
+		return id;
+	}
+	
 	/**
 	 * Commit changes.  Unused.
 	 */
@@ -352,6 +382,22 @@ public class ExamplePage implements IDetailsPage
 				structure = structure.substring( lio + 1);
 			toolkit.createLabel(resourcesClient, structure );
 			toolkit.createLabel(resourcesClient, er.getDescription() );
+		}
+		
+		// display related documents
+		if ( example.getRelatedDocuments().size() > 0 ) {
+			toolkit.createLabel(relatedDocumentsClient, "Document").setFont(boldFont);
+		}
+		for ( String rd : example.getRelatedDocuments() ) {
+			toolkit.createLabel(relatedDocumentsClient, getNameForId(rd));
+		}
+
+		// display related patterns
+		if ( example.getRelatedPatterns().size() > 0 ) {
+			toolkit.createLabel(relatedPatternsClient, "Pattern").setFont(boldFont);
+		}
+		for ( String rp : example.getRelatedPatterns() ) {
+			toolkit.createLabel(relatedPatternsClient, getNameForId(rp));
 		}
 
 		// layout clients

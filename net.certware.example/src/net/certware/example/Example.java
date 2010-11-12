@@ -14,23 +14,23 @@ import org.eclipse.core.runtime.IContributor;
 public class Example implements IExampleContribution {
 
 	/** applicability of the pattern or document */
-	String applicability;
+	String applicability = "";
 	/** author of the pattern or document */
-	String author;
+	String author = "";
 	/** consequences of applying the pattern or document */
-	String consequences;
-	/** identifier of the pattern or document, not a generic attribute */
-	String id;
+	String consequences = "";
 	/** implementation hints for the pattern or document */
-	String implementation;
+	String implementation = "";
 	/** intention behind the pattern or document */
-	String intent;
+	String intent = "";
 	/** motivation for developing the pattern or document */
-	String motivation;
+	String motivation = "";
+	/** identifier */
+	String id = "";
 	/** name of the pattern or document */
-	String name;
+	String name = "";
 	/** version of the pattern or document */
-	String version;
+	String version = "";
 	/** contributor of the example, usually a plugin or fragment ID */
 	IContributor contributor;
 	/** related patterns, by pattern ID */
@@ -60,21 +60,21 @@ public class Example implements IExampleContribution {
 		// extension contributor
 		contributor = ce.getContributor();
 		
-		// generic example fields
-		applicability = ce.getAttribute(EXAMPLE_ATTR_APPLICABILITY);
-		author = ce.getAttribute(EXAMPLE_ATTR_AUTHOR);
-		consequences = ce.getAttribute(EXAMPLE_ATTR_CONSEQUENCES);
-		implementation = ce.getAttribute(EXAMPLE_ATTR_IMPLEMENTATION);
-		intent = ce.getAttribute(EXAMPLE_ATTR_INTENT);
-		motivation = ce.getAttribute(EXAMPLE_ATTR_MOTIVATION);
-		name = ce.getAttribute(EXAMPLE_ATTR_NAME);
-		version = ce.getAttribute(EXAMPLE_ATTR_VERSION);
+		// generic example fields; ids assigned by subclasses
+		applicability = safeAssignment(ce,EXAMPLE_ATTR_APPLICABILITY);
+		author = safeAssignment(ce,EXAMPLE_ATTR_AUTHOR);
+		consequences = safeAssignment(ce,EXAMPLE_ATTR_CONSEQUENCES);
+		implementation = safeAssignment(ce,EXAMPLE_ATTR_IMPLEMENTATION);
+		intent = safeAssignment(ce,EXAMPLE_ATTR_INTENT);
+		motivation = safeAssignment(ce,EXAMPLE_ATTR_MOTIVATION);
+		name = safeAssignment(ce,EXAMPLE_ATTR_NAME);
+		version = safeAssignment(ce,EXAMPLE_ATTR_VERSION);
 
 		// related patterns
 		IConfigurationElement[] patternChildren = ce.getChildren(EXAMPLE_ELEMENT_RELATED_PATTERN);
 		if ( patternChildren != null ) {
 			for ( IConfigurationElement pc : patternChildren ) {
-				relatedPatterns.add( new String(pc.getAttribute(EXAMPLE_ATTR_PATTERN_ID)));
+				relatedPatterns.add( pc.getAttribute(EXAMPLE_ATTR_PATTERN_ID));
 			}
 		}
 
@@ -82,7 +82,7 @@ public class Example implements IExampleContribution {
 		patternChildren = ce.getChildren(EXAMPLE_ELEMENT_RELATED_DOCUMENT);
 		if ( patternChildren != null ) {
 			for ( IConfigurationElement pc : patternChildren ) {
-				relatedDocuments.add( new String( pc.getAttribute(EXAMPLE_ATTR_DOCUMENT_ID) ));
+				relatedDocuments.add( pc.getAttribute(EXAMPLE_ATTR_DOCUMENT_ID) );
 			}
 		}
 		
@@ -94,6 +94,18 @@ public class Example implements IExampleContribution {
 														  pc.getAttribute(EXAMPLE_ATTR_STRUCTURE)));
 			}
 		}
+	}
+
+	/**
+	 * Ensures the string assignment does not return null.
+	 * @param ce configuration element
+	 * @param key attribute key
+	 * @return string from attribute or empty string
+	 */
+	private String safeAssignment(IConfigurationElement ce,String key) {
+		String s = ce.getAttribute(key);
+		if ( s == null ) s = "";
+		return s;
 	}
 	
 	/**
@@ -192,4 +204,11 @@ public class Example implements IExampleContribution {
 		return relatedResources;
 	}
 	
+	/**
+	 * Returns the example ID;
+	 * @return
+	 */
+	public String getId() {
+		return id;
+	}
 }

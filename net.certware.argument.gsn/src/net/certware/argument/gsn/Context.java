@@ -12,7 +12,7 @@ import net.certware.argument.arm.InformationElement;
  *
  *
  * @see net.certware.argument.gsn.GsnPackage#getContext()
- * @model
+ * @model annotation="gmf.node label='identifier'"
  * @generated
  */
 public interface Context extends InformationElement {

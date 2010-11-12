@@ -33,6 +33,8 @@
         eType="#//Justification" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="solution" ordered="false"
         unique="false" upperBound="-1" eType="#//Solution"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
+        eType="#//Context" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
     <eAnnotations source="gmf.node">

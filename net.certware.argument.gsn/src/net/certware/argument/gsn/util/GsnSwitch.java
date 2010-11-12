@@ -13,8 +13,13 @@ import net.certware.argument.arm.Claim;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.ReasoningElement;
-
-import net.certware.argument.gsn.*;
+import net.certware.argument.gsn.Assumption;
+import net.certware.argument.gsn.Context;
+import net.certware.argument.gsn.Goal;
+import net.certware.argument.gsn.GsnPackage;
+import net.certware.argument.gsn.Justification;
+import net.certware.argument.gsn.Solution;
+import net.certware.argument.gsn.Strategy;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;

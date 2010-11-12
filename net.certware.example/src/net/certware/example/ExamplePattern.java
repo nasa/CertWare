@@ -9,9 +9,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
  */
 public class ExamplePattern extends Example {
 
-	/** pattern example ID */
-	String id;
-
 	/**
 	 * Constructor gets the pattern example ID.
 	 * @param ce configuration element from plugin

@@ -18,11 +18,12 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link net.certware.argument.gsn.Strategy#getGoal <em>Goal</em>}</li>
  *   <li>{@link net.certware.argument.gsn.Strategy#getJustification <em>Justification</em>}</li>
  *   <li>{@link net.certware.argument.gsn.Strategy#getSolution <em>Solution</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.Strategy#getContext <em>Context</em>}</li>
  * </ul>
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getStrategy()
- * @model
+ * @model annotation="gmf.node label='identifier'"
  * @generated
  */
 public interface Strategy extends ReasoningElement {
@@ -80,5 +81,21 @@ public interface Strategy extends ReasoningElement {
 	 * @generated
 	 */
 	EList<Solution> getSolution();
+
+	/**
+	 * Returns the value of the '<em><b>Context</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Context}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getStrategy_Context()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Context> getContext();
 
 } // Strategy
