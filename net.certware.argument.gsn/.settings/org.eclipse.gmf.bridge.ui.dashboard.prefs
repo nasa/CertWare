@@ -1,7 +1,8 @@
-#Mon Sep 20 15:39:35 CDT 2010
+#Fri Nov 12 18:11:12 CST 2010
 eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/net.certware.argument.gsn/model/gsn.genmodel
 gmf_dashboard/domainModel=platform\:/resource/net.certware.argument.gsn/model/gsn.ecore
 gmf_dashboard/generationModel=platform\:/resource/net.certware.argument.gsn.diagram/model/gsn.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/net.certware.argument.gsn.diagram/model/gsn.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/net.certware.argument.gsn.diagram/model/gsn.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/net.certware.argument.gsn.diagram/model/gsn.gmftool
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/net.certware.argument.gsn/model/gsn.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/net.certware.argument.gsn/model/gsn.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/net.certware.argument.gsn/model/gsn.gmftool

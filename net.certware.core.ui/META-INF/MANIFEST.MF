@@ -15,7 +15,8 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.core;bundle-version="1.0.0",
  org.eclipse.ui.ide;bundle-version="3.6.0",
  org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.ui.cheatsheets
 Export-Package: net.certware.core.ui,
  net.certware.core.ui.dialog,
  net.certware.core.ui.help,

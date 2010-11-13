@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet
+      title="Assurance-Based Argument Construction">
+   <intro>
+   <description>
+   This cheat sheet mimics the SSEI SoBP table providing a summary of the techniques for assurance based argument construction. Further guidance on the use of these techniques is provided in SSEI SoBP Annex B. From SSEI-BP-000001.
+   </description>
+   </intro>
+   
+<item title="1. Identify goals to be supported">
+<description>
+<b>Purpose</b>
+<br/><br/>
+To clearly and unambiguously state the goals to be supported.
+<br/><br/>
+<b>Assurance Impact</b>
+<br/><br/>
+More - If in stating the goal, an attempt is made to claim more than it is actually possible to support with the available evidence, then the assurance that can be achieved in that goal will inevitably be low.
+<br/><br/>
+Less - The stated goal may claim less than is actually required to support the argument. Although in this case it may be easier to achieve higher confidence in the stated goal, this confidence will not result in the expected assurance in the parent goal, since the claim is insufficient to support the conclusion.
+<br/><br/>
+As Well As - A strategy or solution may be erroneously included in the claim. This can inadvertently constrain potential options for addressing assurance deficits.
+<br/><br/>
+Other Than - The claim made may not actually be that in which assurance is required. Assurance may be lost through failing to correctly capture the true intent of the claim.
+</description>
+</item>
+
+<item title="2. Define basis on which goals are stated">
+<description>
+<b>Purpose</b>
+<br/><br/>
+To clarify the scope of the claim, to provide definitions of terms used, to interpret the meaning of concepts.
+<br/><br/>
+<b>Assurance Impact</b>
+<br/><br/>
+None - Any claim is only true or false over a particular scope. If the scope of the claim is unclear, due to lack of context, then the level of truth or falsity of the claim becomes more difficult to determine. This increases the uncertainty associated with the assurance in that claim, and therefore makes it more difficult to determine the assurance.
+<br/><br/>
+More - The scope of the claim as defined by the context may be too narrow. The result of this is that although a certain level of assurance may be achieved over the scope defined by the context, the narrowness of the scope limits that in which confidence is achieved.
+<br/><br/>
+Less - The scope of the claim is too loosely defined. The effect of this would be similar to having no context at all, in that it leads to uncertainty, and a corresponding reduction in assurance.
+</description>
+</item>
+
+<item title="3. Identify strategy to support goals">
+<description>
+<b>Purpose</b>
+<br/><br/>
+To identify how a goal can be adequately supported.
+<br/><br/>
+<b>Assurance Impact</b>
+<br/><br/>      
+More, Less, Other Than - This step of the safety argument process is the most crucial for the assurance achieved since it is at this step that the decisions are made about which strategy should be adopted to support each claim. Assurance is lost at this step if the proposed strategy does not provide sufficient support to the goal. This could happen for two reasons.
+(a) Firstly the inductive gap may be too large. If this is the case, then even if the premises are believed, it doesn’t provide sufficient confidence in the truth of the conclusion.
+(b) Secondly the fundamental beliefs upon which the strategy is based may be open to question. In such a case the premises may not provide confidence in the conclusion.
+</description>
+</item>
+
+<item title="4. Define basis on which strategy is stated">
+<description>
+<b>Purpose 1</b>
+<br/>
+To identify any assumptions upon which the sufficiency of the strategy depends.
+<br/><br/>
+<b>Assurance Impact</b>
+<br/><br/>
+No, Less - It is inevitable that some assumptions will be made during the development of any safety argument, however these assumptions may not always be explicitly captured. Any assumptions that are left implicit introduce uncertainty, and reduce assurance.
+<br/><br/>
+More - All assumptions are, by definition, unsupported. The argument holds only on the basis that the assumptions are true. If there is a lack of confidence in the truth of the assumptions, then this will also result in a lack of confidence in the truth of the claim. It is therefore recommended, for any assumptions that may be open to any significant doubt, that an argument is presented, rather than an assumption.
+<br/><br/>
+Other Than - Assumptions may be stated which are not actually true. Any false assumptions undermine the whole basis upon which the argument is made.
+<br/><br/>
+<b>Purpose 2</b>
+<br/>To provide justification for why a particular strategy is being used.
+<br/><br/>
+<b>Assurance Impact</b>
+<br/><br/>
+No, Less - No justification is provided as to why the adopted strategy is sufficient. This can result in a loss of assurance, since there may be a lack of confidence in the sufficiency of that strategy. It is important, if it’s likely that the justification may be unclear, not to leave it implicit, but to explicitly record the justification in the argument.
+<br/><br/>
+More - Although not leading to a loss of assurance, it is important to note that providing an argument to justify the strategy chosen in each decomposition in the argument is not necessary. For many strategies, the justification will be obvious to the reader and may be left implicit.     
+</description>
+</item>
+
+<item title="5. Elaborate strategy">
+<description>
+<b>Purpose</b>
+Specify the goals that implement the chosen strategy.
+<br/><br/>
+<b>Assurance Impact</b>
+<br/><br/>
+Less, As Well As, Part Of - The strategy that is actually implemented does not fully and accurately reflect the one that was chosen. Assurance may be lost at this step, even though a chosen strategy may be considered acceptable.
+<br/><br/>      
+</description>
+</item>
+
+<item title="6. Identify basic solution">
+<description>
+<b>Purpose</b>
+Identify the solutions which provide adequate support to the goal.
+<br/><br/>
+<b>Assurance Impact</b>
+<br/><br/>
+Less - The solution provides less confidence in the goal being supported than is required. Assurance is lost at this step if it is unclear why the evidence gives confidence in the goal being supported. It may be unclear because:
+(a) there may be an inductive gap between the claim and the evidence (the nature of the evidence does not provide a compelling reason to believe the claim is true)
+(b) there is uncertainty about the trustworthiness of the evidence itself. Note that evidence which is untrustworthy will undermine assurance even in the situation where there is a deductive relationship between the claim and the evidence.
+<br/><br/>      
+Other than - Counter evidence is any evidence which undermines the confidence in the claim being made. The presence of counterevidence does not necessarily mean that the argument is inadequate. It simply means that the confidence in the claim may now be lower than it was before the counter evidence was identified. 
+<br/>
+It is necessary to determine the impact of the counter evidence on the claim’s assurance. In many cases it may still be possible to make a sufficiently compelling argument despite the identification of counter evidence, particularly where there are mitigations which limit the uncertainty caused by the counter evidence. 
+<br/>
+If counter-evidence isn’t correctly identified then the potential effect on the assurance of the argument cannot be determined. It is important to justify that there is sufficient confidence that relevant counter evidence has been identified.
+<br/><br/>      
+</description>
+</item>
+   
+</cheatsheet>

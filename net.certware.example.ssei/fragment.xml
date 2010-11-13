@@ -120,5 +120,18 @@
          </resource>
       </pattern>
    </extension>
+   <extension
+         point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <cheatsheet
+            category="net.certware.core.ui.cheatsheets"
+            composite="false"
+            contentFile="help/cheat/construction.xml"
+            id="net.certware.example.ssei.cheatsheet.construction"
+            name="Assurance-Based Argument Construction">
+         <description>
+            Provides easy reference to the assurance-based argument construction steps offered in the SSEI SoBP Section A.5.
+         </description>
+      </cheatsheet>
+   </extension>
 
 </fragment>

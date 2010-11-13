@@ -44,5 +44,12 @@
             class="net.certware.core.ui.preferences.PreferenceInitializer">
       </initializer>
    </extension>
+   <extension
+         point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <category
+            id="net.certware.core.ui.cheatsheets"
+            name="CertWare">
+      </category>
+   </extension>
 
 </plugin>
