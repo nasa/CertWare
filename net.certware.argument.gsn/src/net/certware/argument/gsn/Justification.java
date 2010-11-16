@@ -16,11 +16,5 @@ import net.certware.argument.arm.InformationElement;
  * @generated
  */
 public interface Justification extends InformationElement {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 } // Justification

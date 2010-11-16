@@ -16,13 +16,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
  */
 public class GsnResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

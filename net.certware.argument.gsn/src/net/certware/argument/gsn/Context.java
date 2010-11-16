@@ -12,15 +12,9 @@ import net.certware.argument.arm.InformationElement;
  *
  *
  * @see net.certware.argument.gsn.GsnPackage#getContext()
- * @model annotation="gmf.node label='identifier'"
+ * @model annotation="gmf.node label='identifier' phantom='true'"
  * @generated
  */
 public interface Context extends InformationElement {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 } // Context

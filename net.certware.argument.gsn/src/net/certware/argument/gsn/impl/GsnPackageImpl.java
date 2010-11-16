@@ -4,6 +4,7 @@
 package net.certware.argument.gsn.impl;
 
 import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.gsn.ArgumentDiagram;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
@@ -13,6 +14,7 @@ import net.certware.argument.gsn.Justification;
 import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.Strategy;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -30,14 +32,14 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	private EClass goalEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass goalEClass = null;
+	private EClass argumentDiagramEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,6 +199,33 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getArgumentDiagram() {
+		return argumentDiagramEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArgumentDiagram_Goals() {
+		return (EReference)argumentDiagramEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArgumentDiagram_Version() {
+		return (EAttribute)argumentDiagramEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStrategy() {
 		return strategyEClass;
 	}
@@ -326,6 +355,10 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		createEReference(goalEClass, GOAL__SOLUTION);
 		createEReference(goalEClass, GOAL__SUBGOAL);
 
+		argumentDiagramEClass = createEClass(ARGUMENT_DIAGRAM);
+		createEReference(argumentDiagramEClass, ARGUMENT_DIAGRAM__GOALS);
+		createEAttribute(argumentDiagramEClass, ARGUMENT_DIAGRAM__VERSION);
+
 		strategyEClass = createEClass(STRATEGY);
 		createEReference(strategyEClass, STRATEGY__GOAL);
 		createEReference(strategyEClass, STRATEGY__JUSTIFICATION);
@@ -389,6 +422,10 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		initEReference(getGoal_Solution(), this.getSolution(), null, "solution", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getGoal_Subgoal(), this.getGoal(), null, "subgoal", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
+		initEClass(argumentDiagramEClass, ArgumentDiagram.class, "ArgumentDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getArgumentDiagram_Goals(), this.getGoal(), null, "goals", null, 0, -1, ArgumentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getArgumentDiagram_Version(), ecorePackage.getEString(), "version", null, 0, 1, ArgumentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(strategyEClass, Strategy.class, "Strategy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getStrategy_Goal(), this.getGoal(), null, "goal", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_Justification(), this.getJustification(), null, "justification", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
@@ -411,10 +448,12 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		// Create annotations
 		// gmf
 		createGmfAnnotations();
-		// gmf.diagram
-		createGmf_1Annotations();
 		// gmf.node
+		createGmf_1Annotations();
+		// gmf.link
 		createGmf_2Annotations();
+		// gmf.diagram
+		createGmf_3Annotations();
 	}
 
 	/**
@@ -430,25 +469,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		   source, 
 		   new String[] {
 			 "foo", "gsn" //$NON-NLS-1$ //$NON-NLS-2$
-		   });						
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.diagram</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmf_1Annotations() {
-		String source = "gmf.diagram"; //$NON-NLS-1$			
-		addAnnotation
-		  (goalEClass, 
-		   source, 
-		   new String[] {
-			 "foo", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
-			 "model.extension", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
-			 "diagram.extension", "gsnd" //$NON-NLS-1$ //$NON-NLS-2$
-		   });					
+		   });										
 	}
 
 	/**
@@ -457,20 +478,36 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createGmf_2Annotations() {
-		String source = "gmf.node"; //$NON-NLS-1$				
+	protected void createGmf_1Annotations() {
+		String source = "gmf.node"; //$NON-NLS-1$			
+		addAnnotation
+		  (goalEClass, 
+		   source, 
+		   new String[] {
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.pattern", "Goal {0}", //$NON-NLS-1$ //$NON-NLS-2$
+			 "figure", "ellipse", //$NON-NLS-1$ //$NON-NLS-2$
+			 "border.color", "255,255,255", //$NON-NLS-1$ //$NON-NLS-2$
+			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
+			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Create a Goal node", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Provides a tool for creating goal nodes on the argument diagram canvas." //$NON-NLS-1$ //$NON-NLS-2$
+		   });				
 		addAnnotation
 		  (strategyEClass, 
 		   source, 
 		   new String[] {
-			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
-		   });		
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.pattern", "Strategy {0}", //$NON-NLS-1$ //$NON-NLS-2$
+			 "figure", "rounded", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "0,0,50" //$NON-NLS-1$ //$NON-NLS-2$
+		   });			
 		addAnnotation
 		  (solutionEClass, 
 		   source, 
 		   new String[] {
 			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
-		   });		
+		   });			
 		addAnnotation
 		  (assumptionEClass, 
 		   source, 
@@ -481,7 +518,8 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		  (contextEClass, 
 		   source, 
 		   new String[] {
-			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (justificationEClass, 
@@ -489,6 +527,52 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		   new String[] {
 			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
 		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.link</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations() {
+		String source = "gmf.link"; //$NON-NLS-1$				
+		addAnnotation
+		  (getGoal_Context(), 
+		   source, 
+		   new String[] {
+			 "label", "context" //$NON-NLS-1$ //$NON-NLS-2$
+		   });				
+		addAnnotation
+		  (getStrategy_Context(), 
+		   source, 
+		   new String[] {
+			 "label", "context" //$NON-NLS-1$ //$NON-NLS-2$
+		   });			
+		addAnnotation
+		  (getSolution_Context(), 
+		   source, 
+		   new String[] {
+			 "label", "context" //$NON-NLS-1$ //$NON-NLS-2$
+		   });			
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.diagram</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_3Annotations() {
+		String source = "gmf.diagram"; //$NON-NLS-1$					
+		addAnnotation
+		  (argumentDiagramEClass, 
+		   source, 
+		   new String[] {
+			 "foo", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
+			 "model.extension", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
+			 "diagram.extension", "gsnd" //$NON-NLS-1$ //$NON-NLS-2$
+		   });							
 	}
 
 } //GsnPackageImpl

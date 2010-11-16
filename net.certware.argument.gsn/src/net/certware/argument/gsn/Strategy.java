@@ -23,17 +23,10 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getStrategy()
- * @model annotation="gmf.node label='identifier'"
+ * @model annotation="gmf.node label='identifier' label.pattern='Strategy {0}' figure='rounded' color='0,0,50'"
  * @generated
  */
 public interface Strategy extends ReasoningElement {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * Returns the value of the '<em><b>Goal</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.argument.gsn.Goal}.
@@ -94,6 +87,7 @@ public interface Strategy extends ReasoningElement {
 	 * @return the value of the '<em>Context</em>' containment reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getStrategy_Context()
 	 * @model containment="true"
+	 *        annotation="gmf.link label='context'"
 	 * @generated
 	 */
 	EList<Context> getContext();

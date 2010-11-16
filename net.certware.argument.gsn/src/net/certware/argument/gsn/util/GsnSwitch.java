@@ -13,6 +13,7 @@ import net.certware.argument.arm.Claim;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.ReasoningElement;
+import net.certware.argument.gsn.*;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
@@ -38,13 +39,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public class GsnSwitch<T> {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -115,6 +109,12 @@ public class GsnSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GsnPackage.ARGUMENT_DIAGRAM: {
+				ArgumentDiagram argumentDiagram = (ArgumentDiagram)theEObject;
+				T result = caseArgumentDiagram(argumentDiagram);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GsnPackage.STRATEGY: {
 				Strategy strategy = (Strategy)theEObject;
 				T result = caseStrategy(strategy);
@@ -177,6 +177,21 @@ public class GsnSwitch<T> {
 	 * @generated
 	 */
 	public T caseGoal(Goal object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Argument Diagram</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Argument Diagram</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArgumentDiagram(ArgumentDiagram object) {
 		return null;
 	}
 

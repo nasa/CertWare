@@ -15,13 +15,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
  */
 public class GsnResourceImpl extends XMIResourceImpl {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

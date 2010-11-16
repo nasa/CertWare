@@ -24,17 +24,10 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getGoal()
- * @model annotation="gmf.diagram foo='gsn' model.extension='gsn' diagram.extension='gsnd'"
+ * @model annotation="gmf.node label='identifier' label.pattern='Goal {0}' figure='ellipse' border.color='255,255,255' border.width='2' border.style='solid' tool.name='Create a Goal node' tool.description='Provides a tool for creating goal nodes on the argument diagram canvas.'"
  * @generated
  */
 public interface Goal extends Claim {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * Returns the value of the '<em><b>Strategy</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.argument.gsn.Strategy}.
@@ -79,6 +72,7 @@ public interface Goal extends Claim {
 	 * @return the value of the '<em>Context</em>' containment reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Context()
 	 * @model containment="true"
+	 *        annotation="gmf.link label='context'"
 	 * @generated
 	 */
 	EList<Context> getContext();

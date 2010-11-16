@@ -11,6 +11,7 @@ import net.certware.argument.arm.Claim;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.ReasoningElement;
+import net.certware.argument.gsn.*;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
@@ -33,13 +34,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public class GsnAdapterFactory extends AdapterFactoryImpl {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -90,6 +84,10 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseGoal(Goal object) {
 				return createGoalAdapter();
+			}
+			@Override
+			public Adapter caseArgumentDiagram(ArgumentDiagram object) {
+				return createArgumentDiagramAdapter();
 			}
 			@Override
 			public Adapter caseStrategy(Strategy object) {
@@ -174,6 +172,20 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGoalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.argument.gsn.ArgumentDiagram <em>Argument Diagram</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.argument.gsn.ArgumentDiagram
+	 * @generated
+	 */
+	public Adapter createArgumentDiagramAdapter() {
 		return null;
 	}
 

@@ -39,13 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GoalImpl extends ClaimImpl implements Goal {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * The cached value of the '{@link #getStrategy() <em>Strategy</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

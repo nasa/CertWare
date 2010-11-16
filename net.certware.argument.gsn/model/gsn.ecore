@@ -7,25 +7,47 @@
     <details key="foo" value="gsn"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//Claim">
-    <eAnnotations source="gmf.diagram">
-      <details key="foo" value="gsn"/>
-      <details key="model.extension" value="gsn"/>
-      <details key="diagram.extension" value="gsnd"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Goal {0}"/>
+      <details key="figure" value="ellipse"/>
+      <details key="border.color" value="255,255,255"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="tool.name" value="Create a Goal node"/>
+      <details key="tool.description" value="Provides a tool for creating goal nodes on the argument diagram canvas."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="strategy" upperBound="-1"
         eType="#//Strategy" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" upperBound="-1"
         eType="#//Assumption" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
-        eType="#//Context" containment="true"/>
+        eType="#//Context" containment="true">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="context"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="solution" upperBound="-1"
         eType="#//Solution" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subgoal" upperBound="-1"
         eType="#//Goal" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentDiagram">
+    <eAnnotations source="gmf.diagram">
+      <details key="foo" value="gsn"/>
+      <details key="model.extension" value="gsn"/>
+      <details key="diagram.extension" value="gsnd"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goals" ordered="false"
+        upperBound="-1" eType="#//Goal" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Strategy" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//ReasoningElement">
     <eAnnotations source="gmf.node">
       <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Strategy {0}"/>
+      <details key="figure" value="rounded"/>
+      <details key="color" value="0,0,50"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="goal" upperBound="-1" eType="#//Goal"
         containment="true"/>
@@ -34,14 +56,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="solution" ordered="false"
         unique="false" upperBound="-1" eType="#//Solution"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
-        eType="#//Context" containment="true"/>
+        eType="#//Context" containment="true">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="context"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
     <eAnnotations source="gmf.node">
       <details key="label" value="identifier"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
-        eType="#//Context" containment="true"/>
+        eType="#//Context" containment="true">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="context"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="evidence" lowerBound="1"
         eType="ecore:EClass ../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
   </eClassifiers>
@@ -53,6 +83,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
     <eAnnotations source="gmf.node">
       <details key="label" value="identifier"/>
+      <details key="phantom" value="true"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Justification" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">

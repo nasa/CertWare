@@ -15,13 +15,6 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface GsnFactory extends EFactory {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -37,6 +30,15 @@ public interface GsnFactory extends EFactory {
 	 * @generated
 	 */
 	Goal createGoal();
+
+	/**
+	 * Returns a new object of class '<em>Argument Diagram</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Argument Diagram</em>'.
+	 * @generated
+	 */
+	ArgumentDiagram createArgumentDiagram();
 
 	/**
 	 * Returns a new object of class '<em>Strategy</em>'.

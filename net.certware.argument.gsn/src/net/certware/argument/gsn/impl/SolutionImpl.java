@@ -36,13 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

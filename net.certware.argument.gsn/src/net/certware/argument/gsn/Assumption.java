@@ -16,11 +16,5 @@ import net.certware.argument.arm.InformationElement;
  * @generated
  */
 public interface Assumption extends InformationElement {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 
 } // Assumption

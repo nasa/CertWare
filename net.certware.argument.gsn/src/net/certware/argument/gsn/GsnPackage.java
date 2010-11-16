@@ -5,6 +5,7 @@ package net.certware.argument.gsn;
 
 import net.certware.argument.arm.ArmPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -26,13 +27,6 @@ import org.eclipse.emf.ecore.EReference;
  * @generated
  */
 public interface GsnPackage extends EPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -184,6 +178,43 @@ public interface GsnPackage extends EPackage {
 	int GOAL_FEATURE_COUNT = ArmPackage.CLAIM_FEATURE_COUNT + 5;
 
 	/**
+	 * The meta object id for the '{@link net.certware.argument.gsn.impl.ArgumentDiagramImpl <em>Argument Diagram</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.argument.gsn.impl.ArgumentDiagramImpl
+	 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getArgumentDiagram()
+	 * @generated
+	 */
+	int ARGUMENT_DIAGRAM = 1;
+
+	/**
+	 * The feature id for the '<em><b>Goals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM__GOALS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM__VERSION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Argument Diagram</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link net.certware.argument.gsn.impl.StrategyImpl <em>Strategy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,7 +222,7 @@ public interface GsnPackage extends EPackage {
 	 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getStrategy()
 	 * @generated
 	 */
-	int STRATEGY = 1;
+	int STRATEGY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
@@ -282,7 +313,7 @@ public interface GsnPackage extends EPackage {
 	 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getSolution()
 	 * @generated
 	 */
-	int SOLUTION = 2;
+	int SOLUTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
@@ -373,7 +404,7 @@ public interface GsnPackage extends EPackage {
 	 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getAssumption()
 	 * @generated
 	 */
-	int ASSUMPTION = 3;
+	int ASSUMPTION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
@@ -428,7 +459,7 @@ public interface GsnPackage extends EPackage {
 	 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getContext()
 	 * @generated
 	 */
-	int CONTEXT = 4;
+	int CONTEXT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
@@ -483,7 +514,7 @@ public interface GsnPackage extends EPackage {
 	 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getJustification()
 	 * @generated
 	 */
-	int JUSTIFICATION = 5;
+	int JUSTIFICATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
@@ -595,6 +626,38 @@ public interface GsnPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGoal_Subgoal();
+
+	/**
+	 * Returns the meta object for class '{@link net.certware.argument.gsn.ArgumentDiagram <em>Argument Diagram</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Argument Diagram</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram
+	 * @generated
+	 */
+	EClass getArgumentDiagram();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.ArgumentDiagram#getGoals <em>Goals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Goals</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram#getGoals()
+	 * @see #getArgumentDiagram()
+	 * @generated
+	 */
+	EReference getArgumentDiagram_Goals();
+
+	/**
+	 * Returns the meta object for the attribute '{@link net.certware.argument.gsn.ArgumentDiagram#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram#getVersion()
+	 * @see #getArgumentDiagram()
+	 * @generated
+	 */
+	EAttribute getArgumentDiagram_Version();
 
 	/**
 	 * Returns the meta object for class '{@link net.certware.argument.gsn.Strategy <em>Strategy</em>}'.
@@ -783,6 +846,32 @@ public interface GsnPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GOAL__SUBGOAL = eINSTANCE.getGoal_Subgoal();
+
+		/**
+		 * The meta object literal for the '{@link net.certware.argument.gsn.impl.ArgumentDiagramImpl <em>Argument Diagram</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.argument.gsn.impl.ArgumentDiagramImpl
+		 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getArgumentDiagram()
+		 * @generated
+		 */
+		EClass ARGUMENT_DIAGRAM = eINSTANCE.getArgumentDiagram();
+
+		/**
+		 * The meta object literal for the '<em><b>Goals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT_DIAGRAM__GOALS = eINSTANCE.getArgumentDiagram_Goals();
+
+		/**
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARGUMENT_DIAGRAM__VERSION = eINSTANCE.getArgumentDiagram_Version();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.argument.gsn.impl.StrategyImpl <em>Strategy</em>}' class.

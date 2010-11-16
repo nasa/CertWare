@@ -27,13 +27,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Solution extends AssertedEvidence {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.argument.gsn.Context}.
 	 * <!-- begin-user-doc -->
@@ -45,6 +38,7 @@ public interface Solution extends AssertedEvidence {
 	 * @return the value of the '<em>Context</em>' containment reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getSolution_Context()
 	 * @model containment="true"
+	 *        annotation="gmf.link label='context'"
 	 * @generated
 	 */
 	EList<Context> getContext();
