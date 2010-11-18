@@ -87,7 +87,6 @@ public interface Strategy extends ReasoningElement {
 	 * @return the value of the '<em>Context</em>' containment reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getStrategy_Context()
 	 * @model containment="true"
-	 *        annotation="gmf.link label='context'"
 	 * @generated
 	 */
 	EList<Context> getContext();

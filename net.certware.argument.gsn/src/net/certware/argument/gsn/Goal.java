@@ -72,7 +72,6 @@ public interface Goal extends Claim {
 	 * @return the value of the '<em>Context</em>' containment reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Context()
 	 * @model containment="true"
-	 *        annotation="gmf.link label='context'"
 	 * @generated
 	 */
 	EList<Context> getContext();

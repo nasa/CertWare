@@ -7,21 +7,17 @@ package net.certware.argument.gsn.provider;
 import java.util.Collection;
 import java.util.List;
 
+import net.certware.argument.arm.ArmFactory;
 import net.certware.argument.arm.provider.AssertedEvidenceItemProvider;
-
 import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Solution;
-
 import net.certware.argument.gsn.edit.provider.GsnEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -48,13 +44,6 @@ public class SolutionItemProvider
 		IItemPropertySource,
 		IItemColorProvider {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,54 +64,8 @@ public class SolutionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContextPropertyDescriptor(object);
-			addEvidencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Context feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Solution_context_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Solution_context_feature", "_UI_Solution_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 GsnPackage.Literals.SOLUTION__CONTEXT,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Evidence feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEvidencePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Solution_evidence_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Solution_evidence_feature", "_UI_Solution_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 GsnPackage.Literals.SOLUTION__EVIDENCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -138,6 +81,7 @@ public class SolutionItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(GsnPackage.Literals.SOLUTION__CONTEXT);
+			childrenFeatures.add(GsnPackage.Literals.SOLUTION__EVIDENCE);
 		}
 		return childrenFeatures;
 	}
@@ -193,6 +137,7 @@ public class SolutionItemProvider
 
 		switch (notification.getFeatureID(Solution.class)) {
 			case GsnPackage.SOLUTION__CONTEXT:
+			case GsnPackage.SOLUTION__EVIDENCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -214,6 +159,49 @@ public class SolutionItemProvider
 			(createChildParameter
 				(GsnPackage.Literals.SOLUTION__CONTEXT,
 				 GsnFactory.eINSTANCE.createContext()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.SOLUTION__EVIDENCE,
+				 GsnFactory.eINSTANCE.createAssumption()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.SOLUTION__EVIDENCE,
+				 GsnFactory.eINSTANCE.createContext()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.SOLUTION__EVIDENCE,
+				 GsnFactory.eINSTANCE.createJustification()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.SOLUTION__EVIDENCE,
+				 ArmFactory.eINSTANCE.createInformationElement()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == GsnPackage.Literals.SOLUTION__CONTEXT ||
+			childFeature == GsnPackage.Literals.SOLUTION__EVIDENCE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2", //$NON-NLS-1$
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

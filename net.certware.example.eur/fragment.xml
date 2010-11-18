@@ -9,7 +9,7 @@
             consequences="Populate all of the leaf arguments down to the evidence."
             idp="net.certware.example.patterns.eur.psc"
             implementation="Re-populate for attributes of interest"
-            intent="Provides the basic preliminary safety case structure"
+            intent="Provides the basic preliminary safety case structure consisting of the top-level safety case argument for a typical application."
             motivation="Provides the example as implemented in the manual"
             name="EUROCONTROL Preliminary Safety Case"
             version="EUROCONTROL SCDM 2.1 2006">

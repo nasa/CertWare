@@ -7,8 +7,7 @@ package net.certware.argument.gsn.provider;
 import java.util.Collection;
 import java.util.List;
 
-import net.certware.argument.arm.provider.ClaimItemProvider;
-import net.certware.argument.gsn.Goal;
+import net.certware.argument.gsn.ArgumentDiagram;
 import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.edit.provider.GsnEditPlugin;
@@ -17,6 +16,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,16 +24,18 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link net.certware.argument.gsn.Goal} object.
+ * This is the item provider adapter for a {@link net.certware.argument.gsn.ArgumentDiagram} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GoalItemProvider
-	extends ClaimItemProvider
+public class ArgumentDiagramItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -47,7 +49,7 @@ public class GoalItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GoalItemProvider(AdapterFactory adapterFactory) {
+	public ArgumentDiagramItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,8 +64,31 @@ public class GoalItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addVersionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Version feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVersionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ArgumentDiagram_version_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArgumentDiagram_version_feature", "_UI_ArgumentDiagram_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 GsnPackage.Literals.ARGUMENT_DIAGRAM__VERSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -78,11 +103,12 @@ public class GoalItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__STRATEGY);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__ASSUMPTION);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__CONTEXT);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__SOLUTION);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__SUBGOAL);
+			childrenFeatures.add(GsnPackage.Literals.ARGUMENT_DIAGRAM__GOALS);
+			childrenFeatures.add(GsnPackage.Literals.ARGUMENT_DIAGRAM__STRATEGIES);
+			childrenFeatures.add(GsnPackage.Literals.ARGUMENT_DIAGRAM__ASSUMPTIONS);
+			childrenFeatures.add(GsnPackage.Literals.ARGUMENT_DIAGRAM__SOLUTIONS);
+			childrenFeatures.add(GsnPackage.Literals.ARGUMENT_DIAGRAM__CONTEXTS);
+			childrenFeatures.add(GsnPackage.Literals.ARGUMENT_DIAGRAM__JUSTIFICATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -101,14 +127,14 @@ public class GoalItemProvider
 	}
 
 	/**
-	 * This returns Goal.gif.
+	 * This returns ArgumentDiagram.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Goal")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArgumentDiagram")); //$NON-NLS-1$
 	}
 
 	/**
@@ -119,10 +145,10 @@ public class GoalItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Goal)object).getIdentifier();
+		String label = ((ArgumentDiagram)object).getVersion();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Goal_type") : //$NON-NLS-1$
-			getString("_UI_Goal_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+			getString("_UI_ArgumentDiagram_type") : //$NON-NLS-1$
+			getString("_UI_ArgumentDiagram_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -136,12 +162,16 @@ public class GoalItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Goal.class)) {
-			case GsnPackage.GOAL__STRATEGY:
-			case GsnPackage.GOAL__ASSUMPTION:
-			case GsnPackage.GOAL__CONTEXT:
-			case GsnPackage.GOAL__SOLUTION:
-			case GsnPackage.GOAL__SUBGOAL:
+		switch (notification.getFeatureID(ArgumentDiagram.class)) {
+			case GsnPackage.ARGUMENT_DIAGRAM__VERSION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case GsnPackage.ARGUMENT_DIAGRAM__GOALS:
+			case GsnPackage.ARGUMENT_DIAGRAM__STRATEGIES:
+			case GsnPackage.ARGUMENT_DIAGRAM__ASSUMPTIONS:
+			case GsnPackage.ARGUMENT_DIAGRAM__SOLUTIONS:
+			case GsnPackage.ARGUMENT_DIAGRAM__CONTEXTS:
+			case GsnPackage.ARGUMENT_DIAGRAM__JUSTIFICATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -161,28 +191,33 @@ public class GoalItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__STRATEGY,
+				(GsnPackage.Literals.ARGUMENT_DIAGRAM__GOALS,
+				 GsnFactory.eINSTANCE.createGoal()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.ARGUMENT_DIAGRAM__STRATEGIES,
 				 GsnFactory.eINSTANCE.createStrategy()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__ASSUMPTION,
+				(GsnPackage.Literals.ARGUMENT_DIAGRAM__ASSUMPTIONS,
 				 GsnFactory.eINSTANCE.createAssumption()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__CONTEXT,
-				 GsnFactory.eINSTANCE.createContext()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GsnPackage.Literals.GOAL__SOLUTION,
+				(GsnPackage.Literals.ARGUMENT_DIAGRAM__SOLUTIONS,
 				 GsnFactory.eINSTANCE.createSolution()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__SUBGOAL,
-				 GsnFactory.eINSTANCE.createGoal()));
+				(GsnPackage.Literals.ARGUMENT_DIAGRAM__CONTEXTS,
+				 GsnFactory.eINSTANCE.createContext()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.ARGUMENT_DIAGRAM__JUSTIFICATIONS,
+				 GsnFactory.eINSTANCE.createJustification()));
 	}
 
 	/**

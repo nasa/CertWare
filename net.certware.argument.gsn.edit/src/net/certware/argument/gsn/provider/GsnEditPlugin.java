@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2010 Kestrel Technology LLC
  */
-package net.certware.argument.gsn.edit.provider;
+package net.certware.argument.gsn.provider;
 
 import net.certware.argument.arm.provider.ArmEditPlugin;
 
@@ -15,13 +15,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
  * @generated
  */
 public final class GsnEditPlugin extends EMFPlugin {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->

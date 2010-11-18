@@ -197,13 +197,58 @@ public interface GsnPackage extends EPackage {
 	int ARGUMENT_DIAGRAM__GOALS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Strategies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM__STRATEGIES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Assumptions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM__ASSUMPTIONS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Solutions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM__SOLUTIONS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM__CONTEXTS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Justifications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT_DIAGRAM__JUSTIFICATIONS = 5;
+
+	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_DIAGRAM__VERSION = 1;
+	int ARGUMENT_DIAGRAM__VERSION = 6;
 
 	/**
 	 * The number of structural features of the '<em>Argument Diagram</em>' class.
@@ -212,7 +257,7 @@ public interface GsnPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_DIAGRAM_FEATURE_COUNT = 2;
+	int ARGUMENT_DIAGRAM_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link net.certware.argument.gsn.impl.StrategyImpl <em>Strategy</em>}' class.
@@ -649,6 +694,61 @@ public interface GsnPackage extends EPackage {
 	EReference getArgumentDiagram_Goals();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.ArgumentDiagram#getStrategies <em>Strategies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Strategies</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram#getStrategies()
+	 * @see #getArgumentDiagram()
+	 * @generated
+	 */
+	EReference getArgumentDiagram_Strategies();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.ArgumentDiagram#getSolutions <em>Solutions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Solutions</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram#getSolutions()
+	 * @see #getArgumentDiagram()
+	 * @generated
+	 */
+	EReference getArgumentDiagram_Solutions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.ArgumentDiagram#getAssumptions <em>Assumptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Assumptions</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram#getAssumptions()
+	 * @see #getArgumentDiagram()
+	 * @generated
+	 */
+	EReference getArgumentDiagram_Assumptions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.ArgumentDiagram#getContexts <em>Contexts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contexts</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram#getContexts()
+	 * @see #getArgumentDiagram()
+	 * @generated
+	 */
+	EReference getArgumentDiagram_Contexts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.ArgumentDiagram#getJustifications <em>Justifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Justifications</em>'.
+	 * @see net.certware.argument.gsn.ArgumentDiagram#getJustifications()
+	 * @see #getArgumentDiagram()
+	 * @generated
+	 */
+	EReference getArgumentDiagram_Justifications();
+
+	/**
 	 * Returns the meta object for the attribute '{@link net.certware.argument.gsn.ArgumentDiagram#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -864,6 +964,46 @@ public interface GsnPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARGUMENT_DIAGRAM__GOALS = eINSTANCE.getArgumentDiagram_Goals();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategies</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT_DIAGRAM__STRATEGIES = eINSTANCE.getArgumentDiagram_Strategies();
+
+		/**
+		 * The meta object literal for the '<em><b>Solutions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT_DIAGRAM__SOLUTIONS = eINSTANCE.getArgumentDiagram_Solutions();
+
+		/**
+		 * The meta object literal for the '<em><b>Assumptions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT_DIAGRAM__ASSUMPTIONS = eINSTANCE.getArgumentDiagram_Assumptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Contexts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT_DIAGRAM__CONTEXTS = eINSTANCE.getArgumentDiagram_Contexts();
+
+		/**
+		 * The meta object literal for the '<em><b>Justifications</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARGUMENT_DIAGRAM__JUSTIFICATIONS = eINSTANCE.getArgumentDiagram_Justifications();
 
 		/**
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.

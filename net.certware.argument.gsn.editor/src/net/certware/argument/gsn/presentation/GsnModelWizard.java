@@ -16,8 +16,8 @@ import java.util.StringTokenizer;
 
 import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
-import net.certware.argument.gsn.edit.provider.GsnEditPlugin;
 import net.certware.argument.gsn.editor.presentation.GsnEditorPlugin;
+import net.certware.argument.gsn.provider.GsnEditPlugin;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -70,13 +70,6 @@ import org.eclipse.ui.part.ISetSelectionTarget;
  * @generated
  */
 public class GsnModelWizard extends Wizard implements INewWizard {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->

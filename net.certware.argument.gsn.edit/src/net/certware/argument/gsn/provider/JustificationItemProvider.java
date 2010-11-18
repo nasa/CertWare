@@ -8,16 +8,12 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.argument.arm.provider.InformationElementItemProvider;
-
 import net.certware.argument.gsn.Justification;
-
 import net.certware.argument.gsn.edit.provider.GsnEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -41,13 +37,6 @@ public class JustificationItemProvider
 		IItemLabelProvider,
 		IItemPropertySource,
 		IItemColorProvider {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

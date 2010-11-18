@@ -11,7 +11,6 @@ import net.certware.argument.gsn.util.GsnAdapterFactory;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -35,13 +34,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -102,6 +94,29 @@ public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements 
 		}
 
 		return goalItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.argument.gsn.ArgumentDiagram} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArgumentDiagramItemProvider argumentDiagramItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.argument.gsn.ArgumentDiagram}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArgumentDiagramAdapter() {
+		if (argumentDiagramItemProvider == null) {
+			argumentDiagramItemProvider = new ArgumentDiagramItemProvider(this);
+		}
+
+		return argumentDiagramItemProvider;
 	}
 
 	/**
@@ -319,6 +334,7 @@ public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (goalItemProvider != null) goalItemProvider.dispose();
+		if (argumentDiagramItemProvider != null) argumentDiagramItemProvider.dispose();
 		if (strategyItemProvider != null) strategyItemProvider.dispose();
 		if (solutionItemProvider != null) solutionItemProvider.dispose();
 		if (assumptionItemProvider != null) assumptionItemProvider.dispose();

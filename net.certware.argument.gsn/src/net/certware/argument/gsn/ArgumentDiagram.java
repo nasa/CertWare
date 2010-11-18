@@ -16,6 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getGoals <em>Goals</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getStrategies <em>Strategies</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getAssumptions <em>Assumptions</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getSolutions <em>Solutions</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getContexts <em>Contexts</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getJustifications <em>Justifications</em>}</li>
  *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getVersion <em>Version</em>}</li>
  * </ul>
  * </p>
@@ -40,6 +45,86 @@ public interface ArgumentDiagram extends EObject {
 	 * @generated
 	 */
 	EList<Goal> getGoals();
+
+	/**
+	 * Returns the value of the '<em><b>Strategies</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Strategy}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Strategies</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Strategies</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getArgumentDiagram_Strategies()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Strategy> getStrategies();
+
+	/**
+	 * Returns the value of the '<em><b>Solutions</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Solution}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Solutions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Solutions</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getArgumentDiagram_Solutions()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Solution> getSolutions();
+
+	/**
+	 * Returns the value of the '<em><b>Assumptions</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Assumption}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Assumptions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assumptions</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getArgumentDiagram_Assumptions()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Assumption> getAssumptions();
+
+	/**
+	 * Returns the value of the '<em><b>Contexts</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Context}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contexts</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contexts</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getArgumentDiagram_Contexts()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Context> getContexts();
+
+	/**
+	 * Returns the value of the '<em><b>Justifications</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Justification}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Justifications</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Justifications</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getArgumentDiagram_Justifications()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Justification> getJustifications();
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.

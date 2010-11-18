@@ -47,13 +47,6 @@ public class GsnActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

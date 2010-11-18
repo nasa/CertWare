@@ -8,20 +8,15 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.argument.arm.provider.ReasoningElementItemProvider;
-
 import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Strategy;
-
 import net.certware.argument.gsn.edit.provider.GsnEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -48,13 +43,6 @@ public class StrategyItemProvider
 		IItemPropertySource,
 		IItemColorProvider {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
-
-	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,100 +63,8 @@ public class StrategyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGoalPropertyDescriptor(object);
-			addJustificationPropertyDescriptor(object);
-			addSolutionPropertyDescriptor(object);
-			addContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Goal feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGoalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Strategy_goal_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_goal_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 GsnPackage.Literals.STRATEGY__GOAL,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Justification feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addJustificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Strategy_justification_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_justification_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 GsnPackage.Literals.STRATEGY__JUSTIFICATION,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Solution feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSolutionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Strategy_solution_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_solution_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 GsnPackage.Literals.STRATEGY__SOLUTION,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Context feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Strategy_context_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_context_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 GsnPackage.Literals.STRATEGY__CONTEXT,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
