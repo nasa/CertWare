@@ -18,6 +18,7 @@ public class GsnPackagePropertiesEditionProvider extends ComposedPropertiesEditi
 	public GsnPackagePropertiesEditionProvider() {
 		super();
 		append(createGoalPropertiesEditionProvider());
+		append(createArgumentDiagramPropertiesEditionProvider());
 		append(createStrategyPropertiesEditionProvider());
 		append(createSolutionPropertiesEditionProvider());
 		append(createAssumptionPropertiesEditionProvider());
@@ -40,6 +41,23 @@ public class GsnPackagePropertiesEditionProvider extends ComposedPropertiesEditi
 		if (goalPropertiesEditionProvider == null)
 			goalPropertiesEditionProvider = new GoalPropertiesEditionProvider();
 		return goalPropertiesEditionProvider;
+	}
+
+	/**
+	 * This keeps track of the one PropertiesEditionProvider used for all
+	 * ArgumentDiagram instances.
+	 * 
+	 */
+	protected ArgumentDiagramPropertiesEditionProvider argumentDiagramPropertiesEditionProvider;
+
+	/**
+	 * This creates an PropertiesEditionProvider for a ArgumentDiagram
+	 * 
+	 */
+	public ArgumentDiagramPropertiesEditionProvider createArgumentDiagramPropertiesEditionProvider() {
+		if (argumentDiagramPropertiesEditionProvider == null)
+			argumentDiagramPropertiesEditionProvider = new ArgumentDiagramPropertiesEditionProvider();
+		return argumentDiagramPropertiesEditionProvider;
 	}
 
 	/**

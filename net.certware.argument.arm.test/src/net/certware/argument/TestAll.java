@@ -16,7 +16,6 @@ Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	net.certware.argument.arm.TestAll.class,
-})
+	net.certware.argument.arm.TestAll.class})
 public class TestAll {
 }

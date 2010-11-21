@@ -35,7 +35,6 @@ Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
 	InformationElementImplTest.class,
 	ArmFactoryImplTest.class,
 	AssertedCounterEvidenceImplTest.class,
-	AssertedInferenceImplTest.class,
-})
+	AssertedInferenceImplTest.class})
 public class TestAll {
 }

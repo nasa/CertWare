@@ -18,7 +18,6 @@ import org.junit.runners.Suite;
 	CaeResourceFactoryImplTest.class,
 	CaeResourceImplTest.class,
 	CaeAdapterFactoryTest.class,
-	CaeSwitchTest.class,
-})
+	CaeSwitchTest.class})
 public class TestAll {
 }

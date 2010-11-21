@@ -16,7 +16,6 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	ContentProviderTest.class,
-	LabelProviderTest.class,
-})
+	LabelProviderTest.class})
 public class TestAll {
 }

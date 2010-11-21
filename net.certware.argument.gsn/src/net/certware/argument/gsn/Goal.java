@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getGoal()
- * @model annotation="gmf.node label='identifier' label.pattern='Goal {0}' figure='ellipse' border.color='255,255,255' border.width='2' border.style='solid' tool.name='Create a Goal node' tool.description='Provides a tool for creating goal nodes on the argument diagram canvas.'"
+ * @model annotation="gmf.node label='identifier' label.pattern='Goal {0}' figure='ellipse' border.color='0,0,255' border.width='2' border.style='solid' tool.name='Goal' tool.description='Provides a tool for creating goal nodes on the argument diagram canvas.' phantom='true'"
  * @generated
  */
 public interface Goal extends Claim {
@@ -93,7 +93,7 @@ public interface Goal extends Claim {
 	EList<Solution> getSolution();
 
 	/**
-	 * Returns the value of the '<em><b>Subgoal</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Subgoal</b></em>' reference list.
 	 * The list contents are of type {@link net.certware.argument.gsn.Goal}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -101,9 +101,9 @@ public interface Goal extends Claim {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subgoal</em>' containment reference list.
+	 * @return the value of the '<em>Subgoal</em>' reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Subgoal()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Goal> getSubgoal();

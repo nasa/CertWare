@@ -18,7 +18,6 @@ import org.junit.runners.Suite;
 	ArmSwitchTest.class,
 	ArmResourceImplTest.class,
 	ArmAdapterFactoryTest.class,
-	ArmResourceFactoryImplTest.class,
-})
+	ArmResourceFactoryImplTest.class})
 public class TestAll {
 }

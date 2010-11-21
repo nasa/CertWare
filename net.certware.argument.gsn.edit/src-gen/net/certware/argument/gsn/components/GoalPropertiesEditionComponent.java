@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EContentAdapter;
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.command.MoveCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
@@ -45,6 +47,7 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
@@ -178,9 +181,8 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getGoal_Solution())) {
 			basePart.updateSolution(goal);
 		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getGoal_Subgoal())) {
+		if (GsnPackage.eINSTANCE.getGoal_Subgoal().equals(msg.getFeature()))
 			basePart.updateSubgoal(goal);
-		}
 
 	}
 
@@ -359,16 +361,19 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 
 			basePart.addFilterToSubgoal(new ViewerFilter() {
 
-					/**
-					 * {@inheritDoc}
-					 * 
-					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-					 */
-					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return (element instanceof String && element.equals("")) || (element instanceof Goal); //$NON-NLS-1$ 
+				/**
+				 * {@inheritDoc}
+				 * 
+				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+				 */
+				public boolean select(Viewer viewer, Object parentElement, Object element) {
+					if (element instanceof EObject)
+						return (!basePart.isContainedInSubgoalTable((EObject)element));
+					return element instanceof Resource;
 				}
 
 			});
+			basePart.addFilterToSubgoal(new EObjectFilter(GsnPackage.eINSTANCE.getGoal()));
 			// Start of user code for additional businessfilters for subgoal
 			
 			// End of user code
@@ -519,24 +524,14 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 			List subgoalToAddFromSubgoal = basePart.getSubgoalToAdd();
 			for (Iterator iter = subgoalToAddFromSubgoal.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, goal, GsnPackage.eINSTANCE.getGoal_Subgoal(), iter.next()));
-			Map subgoalToRefreshFromSubgoal = basePart.getSubgoalToEdit();
-			for (Iterator iter = subgoalToRefreshFromSubgoal.keySet().iterator(); iter.hasNext();) {
-				Goal nextElement = (Goal) iter.next();
-				Goal subgoal = (Goal) subgoalToRefreshFromSubgoal.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, subgoal.eGet(feature)));
-					}
-				}
-			}
 			List subgoalToRemoveFromSubgoal = basePart.getSubgoalToRemove();
 			for (Iterator iter = subgoalToRemoveFromSubgoal.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List subgoalToMoveFromSubgoal = basePart.getSubgoalToMove();
-			for (Iterator iter = subgoalToMoveFromSubgoal.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, goal, GsnPackage.eINSTANCE.getGoal(), moveElement.getElement(), moveElement.getIndex()));
-			}
+				cc.append(RemoveCommand.create(editingDomain, goal, GsnPackage.eINSTANCE.getGoal_Subgoal(), iter.next()));
+			//List subgoalToMoveFromSubgoal = basePart.getSubgoalToMove();
+			//for (Iterator iter = subgoalToMoveFromSubgoal.iterator(); iter.hasNext();){
+			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
+			//	cc.append(MoveCommand.create(editingDomain, goal, GsnPackage.eINSTANCE.getGoal(), moveElement.getElement(), moveElement.getIndex()));
+			//}
 
 		}
 		if (!cc.isEmpty())
@@ -694,22 +689,12 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 					command.append(MoveCommand.create(liveEditingDomain, goal, GsnPackage.eINSTANCE.getSolution(), event.getNewValue(), event.getNewIndex()));
 			}
 			if (GsnViewsRepository.Goal.subgoal == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					Goal oldValue = (Goal)event.getOldValue();
-					Goal newValue = (Goal)event.getNewValue();
-					// TODO: Complete the goal update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
+				if (PropertiesEditionEvent.ADD == event.getKind())
 					command.append(AddCommand.create(liveEditingDomain, goal, GsnPackage.eINSTANCE.getGoal_Subgoal(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, goal, GsnPackage.eINSTANCE.getGoal(), event.getNewValue(), event.getNewIndex()));
+				if (PropertiesEditionEvent.REMOVE == event.getKind())
+					command.append(RemoveCommand.create(liveEditingDomain, goal, GsnPackage.eINSTANCE.getGoal_Subgoal(), event.getNewValue()));
+				if (PropertiesEditionEvent.MOVE == event.getKind())
+					command.append(MoveCommand.create(liveEditingDomain, goal, GsnPackage.eINSTANCE.getGoal_Subgoal(), event.getNewValue(), event.getNewIndex()));
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {

@@ -26,7 +26,6 @@ import org.junit.runners.Suite;
 	ContextTest.class,
 	ClaimTest.class,
 	net.certware.argument.cae.impl.TestAll.class,
-	net.certware.argument.cae.util.TestAll.class,
-})
+	net.certware.argument.cae.util.TestAll.class})
 public class TestAll {
 }

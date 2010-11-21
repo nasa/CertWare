@@ -7,6 +7,7 @@ import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.gsn.ArgumentDiagram;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
+import net.certware.argument.gsn.Evidence;
 import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
@@ -75,6 +76,13 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * @generated
 	 */
 	private EClass justificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass evidenceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -370,6 +378,15 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEvidence() {
+		return evidenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GsnFactory getGsnFactory() {
 		return (GsnFactory)getEFactoryInstance();
 	}
@@ -424,6 +441,8 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		contextEClass = createEClass(CONTEXT);
 
 		justificationEClass = createEClass(JUSTIFICATION);
+
+		evidenceEClass = createEClass(EVIDENCE);
 	}
 
 	/**
@@ -463,6 +482,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		assumptionEClass.getESuperTypes().add(theArmPackage.getInformationElement());
 		contextEClass.getESuperTypes().add(theArmPackage.getInformationElement());
 		justificationEClass.getESuperTypes().add(theArmPackage.getInformationElement());
+		evidenceEClass.getESuperTypes().add(theArmPackage.getAssertedEvidence());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -470,7 +490,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		initEReference(getGoal_Assumption(), this.getAssumption(), null, "assumption", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getGoal_Context(), this.getContext(), null, "context", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getGoal_Solution(), this.getSolution(), null, "solution", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getGoal_Subgoal(), this.getGoal(), null, "subgoal", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getGoal_Subgoal(), this.getGoal(), null, "subgoal", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(argumentDiagramEClass, ArgumentDiagram.class, "ArgumentDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getArgumentDiagram_Goals(), this.getGoal(), null, "goals", null, 0, -1, ArgumentDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
@@ -484,18 +504,20 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		initEClass(strategyEClass, Strategy.class, "Strategy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getStrategy_Goal(), this.getGoal(), null, "goal", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_Justification(), this.getJustification(), null, "justification", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getStrategy_Solution(), this.getSolution(), null, "solution", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
+		initEReference(getStrategy_Solution(), this.getSolution(), null, "solution", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_Context(), this.getContext(), null, "context", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getSolution_Context(), this.getContext(), null, "context", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getSolution_Evidence(), theArmPackage.getInformationElement(), null, "evidence", null, 1, 1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSolution_Evidence(), this.getEvidence(), null, "evidence", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(assumptionEClass, Assumption.class, "Assumption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(justificationEClass, Justification.class, "Justification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(evidenceEClass, Evidence.class, "Evidence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);
@@ -505,8 +527,10 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		createGmfAnnotations();
 		// gmf.node
 		createGmf_1Annotations();
-		// gmf.diagram
+		// gmf.link
 		createGmf_2Annotations();
+		// gmf.diagram
+		createGmf_3Annotations();
 	}
 
 	/**
@@ -522,7 +546,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 		   source, 
 		   new String[] {
 			 "foo", "gsn" //$NON-NLS-1$ //$NON-NLS-2$
-		   });							
+		   });																		
 	}
 
 	/**
@@ -540,12 +564,13 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Goal {0}", //$NON-NLS-1$ //$NON-NLS-2$
 			 "figure", "ellipse", //$NON-NLS-1$ //$NON-NLS-2$
-			 "border.color", "255,255,255", //$NON-NLS-1$ //$NON-NLS-2$
+			 "border.color", "0,0,255", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
-			 "tool.name", "Create a Goal node", //$NON-NLS-1$ //$NON-NLS-2$
-			 "tool.description", "Provides a tool for creating goal nodes on the argument diagram canvas." //$NON-NLS-1$ //$NON-NLS-2$
-		   });			
+			 "tool.name", "Goal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Provides a tool for creating goal nodes on the argument diagram canvas.", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
+		   });							
 		addAnnotation
 		  (strategyEClass, 
 		   source, 
@@ -553,32 +578,104 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Strategy {0}", //$NON-NLS-1$ //$NON-NLS-2$
 			 "figure", "rounded", //$NON-NLS-1$ //$NON-NLS-2$
-			 "color", "0,0,50" //$NON-NLS-1$ //$NON-NLS-2$
-		   });		
+			 "color", "155,155,155", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
+		   });						
 		addAnnotation
 		  (solutionEClass, 
 		   source, 
 		   new String[] {
-			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
-		   });		
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
+		   });				
 		addAnnotation
 		  (assumptionEClass, 
 		   source, 
 		   new String[] {
-			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (contextEClass, 
 		   source, 
 		   new String[] {
-			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (justificationEClass, 
 		   source, 
 		   new String[] {
-			 "label", "identifier" //$NON-NLS-1$ //$NON-NLS-2$
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
+		   });		
+		addAnnotation
+		  (evidenceEClass, 
+		   source, 
+		   new String[] {
+			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "phantom", "true" //$NON-NLS-1$ //$NON-NLS-2$
 		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.link</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations() {
+		String source = "gmf.link"; //$NON-NLS-1$				
+		addAnnotation
+		  (getGoal_Strategy(), 
+		   source, 
+		   new String[] {
+		   });		
+		addAnnotation
+		  (getGoal_Assumption(), 
+		   source, 
+		   new String[] {
+		   });		
+		addAnnotation
+		  (getGoal_Context(), 
+		   source, 
+		   new String[] {
+		   });		
+		addAnnotation
+		  (getGoal_Solution(), 
+		   source, 
+		   new String[] {
+		   });				
+		addAnnotation
+		  (getStrategy_Goal(), 
+		   source, 
+		   new String[] {
+		   });		
+		addAnnotation
+		  (getStrategy_Justification(), 
+		   source, 
+		   new String[] {
+		   });		
+		addAnnotation
+		  (getStrategy_Solution(), 
+		   source, 
+		   new String[] {
+		   });		
+		addAnnotation
+		  (getStrategy_Context(), 
+		   source, 
+		   new String[] {
+		   });			
+		addAnnotation
+		  (getSolution_Context(), 
+		   source, 
+		   new String[] {
+		   });		
+		addAnnotation
+		  (getSolution_Evidence(), 
+		   source, 
+		   new String[] {
+		   });				
 	}
 
 	/**
@@ -587,8 +684,8 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createGmf_2Annotations() {
-		String source = "gmf.diagram"; //$NON-NLS-1$				
+	protected void createGmf_3Annotations() {
+		String source = "gmf.diagram"; //$NON-NLS-1$								
 		addAnnotation
 		  (argumentDiagramEClass, 
 		   source, 
@@ -596,7 +693,7 @@ public class GsnPackageImpl extends EPackageImpl implements GsnPackage {
 			 "foo", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
 			 "model.extension", "gsn", //$NON-NLS-1$ //$NON-NLS-2$
 			 "diagram.extension", "gsnd" //$NON-NLS-1$ //$NON-NLS-2$
-		   });					
+		   });												
 	}
 
 } //GsnPackageImpl

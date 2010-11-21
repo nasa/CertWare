@@ -70,6 +70,7 @@ public class GsnFactoryImpl extends EFactoryImpl implements GsnFactory {
 			case GsnPackage.ASSUMPTION: return createAssumption();
 			case GsnPackage.CONTEXT: return createContext();
 			case GsnPackage.JUSTIFICATION: return createJustification();
+			case GsnPackage.EVIDENCE: return createEvidence();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -143,6 +144,16 @@ public class GsnFactoryImpl extends EFactoryImpl implements GsnFactory {
 	public Justification createJustification() {
 		JustificationImpl justification = new JustificationImpl();
 		return justification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Evidence createEvidence() {
+		EvidenceImpl evidence = new EvidenceImpl();
+		return evidence;
 	}
 
 	/**

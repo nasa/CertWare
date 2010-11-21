@@ -15,3 +15,20 @@ Start of user code addToSolution() method body
 				}
 		
 		// End of user code
+
+Thu Nov 18 18:25:31 CST 2010
+================================================================================
+Start of user code addToSubgoal() method body
+				Goal eObject = GsnFactory.eINSTANCE.createGoal();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						subgoalEditUtil.addElement(propertiesEditionObject);
+						subgoal.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartImpl.this, GsnViewsRepository.Goal.subgoal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code

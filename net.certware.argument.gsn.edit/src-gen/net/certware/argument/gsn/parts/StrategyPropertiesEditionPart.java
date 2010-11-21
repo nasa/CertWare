@@ -292,6 +292,18 @@ public interface StrategyPropertiesEditionPart {
 	public List getSolutionToRemove();
 
 	/**
+	 * @return the solution to move
+	 * 
+	 */
+	public List getSolutionToMove();
+
+	/**
+	 * @return the solution to edit
+	 * 
+	 */
+	public Map getSolutionToEdit();
+
+	/**
 	 * @return the current solution table
 	 * 
 	 */

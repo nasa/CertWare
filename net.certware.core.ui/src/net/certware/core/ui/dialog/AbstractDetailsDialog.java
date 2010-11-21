@@ -19,7 +19,6 @@ import org.eclipse.swt.widgets.Shell;
  * Provides a details dialog class meant to be sub-classed for specific detail content.
  * Dialog provides a details button and grow-able details area. 
  * @author mrb
- * @see Building Commercial Quality Plug-ins
  */
 public abstract class AbstractDetailsDialog extends Dialog {
 

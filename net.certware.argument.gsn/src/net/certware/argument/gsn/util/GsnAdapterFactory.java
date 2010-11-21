@@ -110,6 +110,10 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 				return createJustificationAdapter();
 			}
 			@Override
+			public Adapter caseEvidence(Evidence object) {
+				return createEvidenceAdapter();
+			}
+			@Override
 			public Adapter caseModelElement(ModelElement object) {
 				return createModelElementAdapter();
 			}
@@ -256,6 +260,20 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createJustificationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.argument.gsn.Evidence <em>Evidence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.argument.gsn.Evidence
+	 * @generated
+	 */
+	public Adapter createEvidenceAdapter() {
 		return null;
 	}
 

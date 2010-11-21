@@ -4,12 +4,14 @@
 package net.certware.argument.gsn.providers;
 
 import net.certware.argument.gsn.parts.GsnViewsRepository;
+import net.certware.argument.gsn.parts.forms.ArgumentDiagramPropertiesEditionPartForm;
 import net.certware.argument.gsn.parts.forms.AssumptionPropertiesEditionPartForm;
 import net.certware.argument.gsn.parts.forms.ContextPropertiesEditionPartForm;
 import net.certware.argument.gsn.parts.forms.GoalPropertiesEditionPartForm;
 import net.certware.argument.gsn.parts.forms.JustificationPropertiesEditionPartForm;
 import net.certware.argument.gsn.parts.forms.SolutionPropertiesEditionPartForm;
 import net.certware.argument.gsn.parts.forms.StrategyPropertiesEditionPartForm;
+import net.certware.argument.gsn.parts.impl.ArgumentDiagramPropertiesEditionPartImpl;
 import net.certware.argument.gsn.parts.impl.AssumptionPropertiesEditionPartImpl;
 import net.certware.argument.gsn.parts.impl.ContextPropertiesEditionPartImpl;
 import net.certware.argument.gsn.parts.impl.GoalPropertiesEditionPartImpl;
@@ -48,6 +50,12 @@ public class GsnPropertiesEditionPartProvider implements IPropertiesEditionPartP
 				return new GoalPropertiesEditionPartImpl(component);
 			if (kind == GsnViewsRepository.FORM_KIND)
 				return new GoalPropertiesEditionPartForm(component);
+		}
+		if (key == GsnViewsRepository.ArgumentDiagram.class) {
+			if (kind == GsnViewsRepository.SWT_KIND)
+				return new ArgumentDiagramPropertiesEditionPartImpl(component);
+			if (kind == GsnViewsRepository.FORM_KIND)
+				return new ArgumentDiagramPropertiesEditionPartForm(component);
 		}
 		if (key == GsnViewsRepository.Strategy.class) {
 			if (kind == GsnViewsRepository.SWT_KIND)

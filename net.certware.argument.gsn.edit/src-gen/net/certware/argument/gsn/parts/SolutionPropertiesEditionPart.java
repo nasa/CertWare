@@ -9,8 +9,6 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -330,31 +328,49 @@ public interface SolutionPropertiesEditionPart {
 
 
 	/**
-	 * @return the evidence
+	 * @return the evidence to add
 	 * 
 	 */
-	public EObject getEvidence();
+	public List getEvidenceToAdd();
+
+	/**
+	 * @return the evidence to remove
+	 * 
+	 */
+	public List getEvidenceToRemove();
+
+	/**
+	 * @return the evidence to move
+	 * 
+	 */
+	public List getEvidenceToMove();
+
+	/**
+	 * @return the evidence to edit
+	 * 
+	 */
+	public Map getEvidenceToEdit();
+
+	/**
+	 * @return the current evidence table
+	 * 
+	 */
+	public List getEvidenceTable();
 
 	/**
 	 * Init the evidence
-	 * @param allResources the ResourceSet where the widget have to process
 	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
 	 */
-	public void initEvidence(ResourceSet allResources, EObject current);
+	public void initEvidence(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Defines a new evidence
-	 * @param newValue the new evidence to set
+	 * Update the evidence
+	 * @param newValue the evidence to update
 	 * 
 	 */
-	public void setEvidence(EObject newValue);
-
-	/**
-	 * Defines the button mode
-	 * @param newValue the new mode to set
-	 * 
-	 */
-	public void setEvidenceButtonMode(ButtonsModeEnum newValue);
+	public void updateEvidence(EObject newValue);
 
 	/**
 	 * Adds the given filter to the evidence edition editor.
@@ -375,6 +391,12 @@ public interface SolutionPropertiesEditionPart {
 	 * 
 	 */
 	public void addBusinessFilterToEvidence(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the evidence table
+	 * 
+	 */
+	public boolean isContainedInEvidenceTable(EObject element);
 
 
 

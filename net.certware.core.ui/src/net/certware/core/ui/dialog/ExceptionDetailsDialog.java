@@ -29,7 +29,6 @@ import org.eclipse.swt.widgets.Text;
 /**
  * Provides a dialog presenting the option to view exception details.
  * @author mrb
- * @see Building Commercial Quality Plug-ins
  */
 public class ExceptionDetailsDialog extends AbstractDetailsDialog {
 

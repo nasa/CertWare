@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * Helper class for exporting resources to the file system.
  * Originally part of the data transfer internal code.  
  * @author mrb
- * @see Copied here from Eclipse and modified for use in CertWare plugins.
+ * Copied here from Eclipse and modified for use in CertWare plugins.
  */
 public class FileSystemExporter implements ICertWareConstants {
 

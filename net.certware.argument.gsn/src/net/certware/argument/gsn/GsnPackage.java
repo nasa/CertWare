@@ -160,7 +160,7 @@ public interface GsnPackage extends EPackage {
 	int GOAL__SOLUTION = ArmPackage.CLAIM_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Subgoal</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Subgoal</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -324,7 +324,7 @@ public interface GsnPackage extends EPackage {
 	int STRATEGY__JUSTIFICATION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Solution</b></em>' reference list.
+	 * The feature id for the '<em><b>Solution</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -424,7 +424,7 @@ public interface GsnPackage extends EPackage {
 	int SOLUTION__CONTEXT = ArmPackage.ASSERTED_EVIDENCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Evidence</b></em>' reference.
+	 * The feature id for the '<em><b>Evidence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -608,6 +608,80 @@ public interface GsnPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link net.certware.argument.gsn.impl.EvidenceImpl <em>Evidence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.argument.gsn.impl.EvidenceImpl
+	 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getEvidence()
+	 * @generated
+	 */
+	int EVIDENCE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIDENCE__IDENTIFIER = ArmPackage.ASSERTED_EVIDENCE__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIDENCE__DESCRIPTION = ArmPackage.ASSERTED_EVIDENCE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIDENCE__CONTENT = ArmPackage.ASSERTED_EVIDENCE__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Is Tagged</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIDENCE__IS_TAGGED = ArmPackage.ASSERTED_EVIDENCE__IS_TAGGED;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIDENCE__TARGET = ArmPackage.ASSERTED_EVIDENCE__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIDENCE__SOURCE = ArmPackage.ASSERTED_EVIDENCE__SOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Evidence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVIDENCE_FEATURE_COUNT = ArmPackage.ASSERTED_EVIDENCE_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link net.certware.argument.gsn.Goal <em>Goal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -662,10 +736,10 @@ public interface GsnPackage extends EPackage {
 	EReference getGoal_Solution();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Goal#getSubgoal <em>Subgoal</em>}'.
+	 * Returns the meta object for the reference list '{@link net.certware.argument.gsn.Goal#getSubgoal <em>Subgoal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Subgoal</em>'.
+	 * @return the meta object for the reference list '<em>Subgoal</em>'.
 	 * @see net.certware.argument.gsn.Goal#getSubgoal()
 	 * @see #getGoal()
 	 * @generated
@@ -792,10 +866,10 @@ public interface GsnPackage extends EPackage {
 	EReference getStrategy_Justification();
 
 	/**
-	 * Returns the meta object for the reference list '{@link net.certware.argument.gsn.Strategy#getSolution <em>Solution</em>}'.
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Strategy#getSolution <em>Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Solution</em>'.
+	 * @return the meta object for the containment reference list '<em>Solution</em>'.
 	 * @see net.certware.argument.gsn.Strategy#getSolution()
 	 * @see #getStrategy()
 	 * @generated
@@ -835,10 +909,10 @@ public interface GsnPackage extends EPackage {
 	EReference getSolution_Context();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.argument.gsn.Solution#getEvidence <em>Evidence</em>}'.
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.gsn.Solution#getEvidence <em>Evidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Evidence</em>'.
+	 * @return the meta object for the containment reference list '<em>Evidence</em>'.
 	 * @see net.certware.argument.gsn.Solution#getEvidence()
 	 * @see #getSolution()
 	 * @generated
@@ -874,6 +948,16 @@ public interface GsnPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getJustification();
+
+	/**
+	 * Returns the meta object for class '{@link net.certware.argument.gsn.Evidence <em>Evidence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Evidence</em>'.
+	 * @see net.certware.argument.gsn.Evidence
+	 * @generated
+	 */
+	EClass getEvidence();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -940,7 +1024,7 @@ public interface GsnPackage extends EPackage {
 		EReference GOAL__SOLUTION = eINSTANCE.getGoal_Solution();
 
 		/**
-		 * The meta object literal for the '<em><b>Subgoal</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Subgoal</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1040,7 +1124,7 @@ public interface GsnPackage extends EPackage {
 		EReference STRATEGY__JUSTIFICATION = eINSTANCE.getStrategy_Justification();
 
 		/**
-		 * The meta object literal for the '<em><b>Solution</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Solution</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1074,7 +1158,7 @@ public interface GsnPackage extends EPackage {
 		EReference SOLUTION__CONTEXT = eINSTANCE.getSolution_Context();
 
 		/**
-		 * The meta object literal for the '<em><b>Evidence</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Evidence</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1110,6 +1194,16 @@ public interface GsnPackage extends EPackage {
 		 * @generated
 		 */
 		EClass JUSTIFICATION = eINSTANCE.getJustification();
+
+		/**
+		 * The meta object literal for the '{@link net.certware.argument.gsn.impl.EvidenceImpl <em>Evidence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.argument.gsn.impl.EvidenceImpl
+		 * @see net.certware.argument.gsn.impl.GsnPackageImpl#getEvidence()
+		 * @generated
+		 */
+		EClass EVIDENCE = eINSTANCE.getEvidence();
 
 	}
 

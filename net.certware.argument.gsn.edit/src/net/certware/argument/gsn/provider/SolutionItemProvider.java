@@ -163,45 +163,7 @@ public class SolutionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(GsnPackage.Literals.SOLUTION__EVIDENCE,
-				 GsnFactory.eINSTANCE.createAssumption()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GsnPackage.Literals.SOLUTION__EVIDENCE,
-				 GsnFactory.eINSTANCE.createContext()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GsnPackage.Literals.SOLUTION__EVIDENCE,
-				 GsnFactory.eINSTANCE.createJustification()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GsnPackage.Literals.SOLUTION__EVIDENCE,
-				 ArmFactory.eINSTANCE.createInformationElement()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == GsnPackage.Literals.SOLUTION__CONTEXT ||
-			childFeature == GsnPackage.Literals.SOLUTION__EVIDENCE;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2", //$NON-NLS-1$
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+				 GsnFactory.eINSTANCE.createEvidence()));
 	}
 
 	/**

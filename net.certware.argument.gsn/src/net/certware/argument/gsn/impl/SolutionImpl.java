@@ -8,6 +8,7 @@ import java.util.Collection;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.impl.AssertedEvidenceImpl;
 import net.certware.argument.gsn.Context;
+import net.certware.argument.gsn.Evidence;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Solution;
 
@@ -46,14 +47,14 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	protected EList<Context> context;
 
 	/**
-	 * The cached value of the '{@link #getEvidence() <em>Evidence</em>}' reference.
+	 * The cached value of the '{@link #getEvidence() <em>Evidence</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEvidence()
 	 * @generated
 	 * @ordered
 	 */
-	protected InformationElement evidence;
+	protected EList<Evidence> evidence;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,37 +92,11 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InformationElement getEvidence() {
-		if (evidence != null && evidence.eIsProxy()) {
-			InternalEObject oldEvidence = (InternalEObject)evidence;
-			evidence = (InformationElement)eResolveProxy(oldEvidence);
-			if (evidence != oldEvidence) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GsnPackage.SOLUTION__EVIDENCE, oldEvidence, evidence));
-			}
+	public EList<Evidence> getEvidence() {
+		if (evidence == null) {
+			evidence = new EObjectContainmentEList<Evidence>(Evidence.class, this, GsnPackage.SOLUTION__EVIDENCE);
 		}
 		return evidence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InformationElement basicGetEvidence() {
-		return evidence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEvidence(InformationElement newEvidence) {
-		InformationElement oldEvidence = evidence;
-		evidence = newEvidence;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GsnPackage.SOLUTION__EVIDENCE, oldEvidence, evidence));
 	}
 
 	/**
@@ -134,6 +109,8 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 		switch (featureID) {
 			case GsnPackage.SOLUTION__CONTEXT:
 				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+			case GsnPackage.SOLUTION__EVIDENCE:
+				return ((InternalEList<?>)getEvidence()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,8 +126,7 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 			case GsnPackage.SOLUTION__CONTEXT:
 				return getContext();
 			case GsnPackage.SOLUTION__EVIDENCE:
-				if (resolve) return getEvidence();
-				return basicGetEvidence();
+				return getEvidence();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,7 +145,8 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 				getContext().addAll((Collection<? extends Context>)newValue);
 				return;
 			case GsnPackage.SOLUTION__EVIDENCE:
-				setEvidence((InformationElement)newValue);
+				getEvidence().clear();
+				getEvidence().addAll((Collection<? extends Evidence>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,7 +164,7 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 				getContext().clear();
 				return;
 			case GsnPackage.SOLUTION__EVIDENCE:
-				setEvidence((InformationElement)null);
+				getEvidence().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,7 +181,7 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 			case GsnPackage.SOLUTION__CONTEXT:
 				return context != null && !context.isEmpty();
 			case GsnPackage.SOLUTION__EVIDENCE:
-				return evidence != null;
+				return evidence != null && !evidence.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

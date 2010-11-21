@@ -37,7 +37,6 @@ Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
 	ArmPackageTest.class,
 	AssertedRelationshipTest.class,
 	net.certware.argument.arm.impl.TestAll.class,
-	net.certware.argument.arm.util.TestAll.class,
-})
+	net.certware.argument.arm.util.TestAll.class})
 public class TestAll {
 }

@@ -22,7 +22,6 @@ import org.junit.runners.Suite;
 	EvidenceImplTest.class,
 	CaePackageImplTest.class,
 	JustificationImplTest.class,
-	AssumptionImplTest.class,
-})
+	AssumptionImplTest.class})
 public class TestAll {
 }

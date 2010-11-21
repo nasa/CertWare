@@ -235,6 +235,29 @@ public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.argument.gsn.Evidence} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EvidenceItemProvider evidenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.argument.gsn.Evidence}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEvidenceAdapter() {
+		if (evidenceItemProvider == null) {
+			evidenceItemProvider = new EvidenceItemProvider(this);
+		}
+
+		return evidenceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,6 +363,7 @@ public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements 
 		if (assumptionItemProvider != null) assumptionItemProvider.dispose();
 		if (contextItemProvider != null) contextItemProvider.dispose();
 		if (justificationItemProvider != null) justificationItemProvider.dispose();
+		if (evidenceItemProvider != null) evidenceItemProvider.dispose();
 	}
 
 }

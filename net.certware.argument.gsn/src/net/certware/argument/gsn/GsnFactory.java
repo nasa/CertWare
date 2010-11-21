@@ -86,6 +86,15 @@ public interface GsnFactory extends EFactory {
 	Justification createJustification();
 
 	/**
+	 * Returns a new object of class '<em>Evidence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Evidence</em>'.
+	 * @generated
+	 */
+	Evidence createEvidence();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

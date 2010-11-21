@@ -15,8 +15,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	NavigatorFilterTest.class,
-})
+	NavigatorFilterTest.class})
 public class TestAll {
 
 	/**

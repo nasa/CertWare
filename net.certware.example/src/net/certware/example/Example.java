@@ -206,7 +206,7 @@ public class Example implements IExampleContribution {
 	
 	/**
 	 * Returns the example ID;
-	 * @return
+	 * @return ID
 	 */
 	public String getId() {
 		return id;

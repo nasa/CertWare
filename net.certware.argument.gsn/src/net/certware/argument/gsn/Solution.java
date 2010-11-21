@@ -4,7 +4,6 @@
 package net.certware.argument.gsn;
 
 import net.certware.argument.arm.AssertedEvidence;
-import net.certware.argument.arm.InformationElement;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getSolution()
- * @model annotation="gmf.node label='identifier'"
+ * @model annotation="gmf.node label='identifier' phantom='true'"
  * @generated
  */
 public interface Solution extends AssertedEvidence {
@@ -43,29 +42,19 @@ public interface Solution extends AssertedEvidence {
 	EList<Context> getContext();
 
 	/**
-	 * Returns the value of the '<em><b>Evidence</b></em>' reference.
+	 * Returns the value of the '<em><b>Evidence</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Evidence}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Evidence</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Evidence</em>' reference.
-	 * @see #setEvidence(InformationElement)
+	 * @return the value of the '<em>Evidence</em>' containment reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getSolution_Evidence()
-	 * @model required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	InformationElement getEvidence();
-
-	/**
-	 * Sets the value of the '{@link net.certware.argument.gsn.Solution#getEvidence <em>Evidence</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Evidence</em>' reference.
-	 * @see #getEvidence()
-	 * @generated
-	 */
-	void setEvidence(InformationElement value);
+	EList<Evidence> getEvidence();
 
 } // Solution

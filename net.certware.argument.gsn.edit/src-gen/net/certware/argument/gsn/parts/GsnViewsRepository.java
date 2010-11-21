@@ -56,6 +56,35 @@ public class GsnViewsRepository {
 	}
 
 	/**
+	 * ArgumentDiagram view descriptor
+	 * 
+	 */
+	public static class ArgumentDiagram {
+		
+		public static String goals = "gsn::ArgumentDiagram::goals";
+		
+		
+		public static String strategies = "gsn::ArgumentDiagram::strategies";
+		
+		
+		public static String assumptions = "gsn::ArgumentDiagram::assumptions";
+		
+		
+		public static String solutions = "gsn::ArgumentDiagram::solutions";
+		
+		
+		public static String contexts = "gsn::ArgumentDiagram::contexts";
+		
+		
+		public static String justifications = "gsn::ArgumentDiagram::justifications";
+		
+		
+		public static String version = "gsn::ArgumentDiagram::version";
+		
+	
+	}
+
+	/**
 	 * Strategy view descriptor
 	 * 
 	 */

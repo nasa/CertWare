@@ -116,7 +116,6 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	 * Visitor for the resource change delta.
 	 * @param delta resource change delta
 	 * @return false for file processing, true for other resource types  
-     * @throws CoreException refreshing the viewer
      * @see org.eclipse.core.resources.IResourceDeltaVisitor#visit(IResourceDelta)
      */
 	@Override

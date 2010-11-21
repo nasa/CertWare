@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getStrategy()
- * @model annotation="gmf.node label='identifier' label.pattern='Strategy {0}' figure='rounded' color='0,0,50'"
+ * @model annotation="gmf.node label='identifier' label.pattern='Strategy {0}' figure='rounded' color='155,155,155' phantom='true'"
  * @generated
  */
 public interface Strategy extends ReasoningElement {
@@ -60,7 +60,7 @@ public interface Strategy extends ReasoningElement {
 	EList<Justification> getJustification();
 
 	/**
-	 * Returns the value of the '<em><b>Solution</b></em>' reference list.
+	 * Returns the value of the '<em><b>Solution</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.argument.gsn.Solution}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -68,9 +68,9 @@ public interface Strategy extends ReasoningElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Solution</em>' reference list.
+	 * @return the value of the '<em>Solution</em>' containment reference list.
 	 * @see net.certware.argument.gsn.GsnPackage#getStrategy_Solution()
-	 * @model ordered="false"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Solution> getSolution();

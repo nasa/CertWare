@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gsz"
+    nsURI="http://www.certware.net/gsz" nsPrefix="gsz">
+  <eAnnotations source="gmf">
+    <details key="foo" value="gsz"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentDiagram">
+    <eAnnotations source="gmf.diagram">
+      <details key="model.extension" value="gsz"/>
+      <details key="diagram.extension" value="gszd"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goals" ordered="false"
+        upperBound="-1" eType="#//Goal" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategies" ordered="false"
+        upperBound="-1" eType="#//Strategy" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="justifications" ordered="false"
+        upperBound="-1" eType="#//Justification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" ordered="false"
+        upperBound="-1" eType="#//Context" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumptions" ordered="false"
+        upperBound="-1" eType="#//Assumption" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solutions" ordered="false"
+        upperBound="-1" eType="#//Solution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evidence" ordered="false"
+        upperBound="-1" eType="#//Evidence" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//Claim">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Goal {0}"/>
+      <details key="figure" value="ellipse"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subGoals" upperBound="-1"
+        eType="#//Goal">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="sub-goal"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategies" upperBound="-1"
+        eType="#//Strategy">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="is solved by"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goalContexts" upperBound="-1"
+        eType="#//Context">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="in context"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="closedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumptions" upperBound="-1"
+        eType="#//Assumption">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="assumption"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="closedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goalSolutions" upperBound="-1"
+        eType="#//Solution">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="is solved by"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Strategy" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//ReasoningElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Strategy {0}"/>
+      <details key="figure" value="net.certware.argument.diagram.figures.ParallelogramFigure"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goals" upperBound="-1"
+        eType="#//Goal">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="label" value="is solved by"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="justifications" upperBound="-1"
+        eType="#//Justification">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="label" value="justification"/>
+        <details key="target.decoration" value="closedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategyContexts" upperBound="-1"
+        eType="#//Context">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="in context"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="closedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategySolutions" upperBound="-1"
+        eType="#//Solution">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="is solved by"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Justification" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Justification {0}"/>
+      <details key="figure" value="ellipse"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Context {0}"/>
+      <details key="figure" value="rounded"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Assumption {0}"/>
+      <details key="figure" value="ellipse"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Solution {0}"/>
+      <details key="figure" value="ellipse"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="border.width" value="2"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,100"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solutionEvidence" upperBound="-1"
+        eType="#//Evidence">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="label" value="evidence"/>
+        <details key="source.decoration" value="filledrhomb"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solutionContexts" upperBound="-1"
+        eType="#//Context">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="in context"/>
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="closedarrow"/>
+        <details key="style" value="solid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Evidence" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.icon" value="false"/>
+      <details key="label.pattern" value="Evidence {0}"/>
+      <details key="size" value="100,100"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

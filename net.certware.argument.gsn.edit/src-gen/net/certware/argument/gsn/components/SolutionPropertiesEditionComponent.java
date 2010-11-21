@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 import net.certware.argument.arm.ArmPackage;
-import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.gsn.Context;
+import net.certware.argument.gsn.Evidence;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.parts.GsnViewsRepository;
@@ -50,7 +50,6 @@ import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.widgets.Display;
@@ -169,8 +168,9 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getSolution_Context())) {
 			basePart.updateContext(solution);
 		}
-		if (GsnPackage.eINSTANCE.getSolution_Evidence().equals(msg.getFeature()) && basePart != null)
-			basePart.setEvidence((EObject)msg.getNewValue());
+		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getSolution_Evidence())) {
+			basePart.updateEvidence(solution);
+		}
 
 	}
 
@@ -255,10 +255,7 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 			basePart.initTarget(solution, null, ArmPackage.eINSTANCE.getArgumentLink_Target());
 			basePart.initSource(solution, null, ArmPackage.eINSTANCE.getArgumentLink_Source());
 			basePart.initContext(solution, null, GsnPackage.eINSTANCE.getSolution_Context());
-			// init part
-			basePart.initEvidence(allResource, solution.getEvidence());
-			// set the button mode
-			basePart.setEvidenceButtonMode(ButtonsModeEnum.BROWSE);
+			basePart.initEvidence(solution, null, GsnPackage.eINSTANCE.getSolution_Evidence());
 			// init filters
 
 
@@ -335,13 +332,13 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 
 			basePart.addFilterToEvidence(new ViewerFilter() {
 
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					return (element instanceof InformationElement);
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof String && element.equals("")) || (element instanceof Evidence); //$NON-NLS-1$ 
 				}
 
 			});
@@ -444,8 +441,26 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 				cc.append(MoveCommand.create(editingDomain, solution, GsnPackage.eINSTANCE.getContext(), moveElement.getElement(), moveElement.getIndex()));
 			}
-			if (solution.eGet(GsnPackage.eINSTANCE.getSolution_Evidence()) == null || !solution.eGet(GsnPackage.eINSTANCE.getSolution_Evidence()).equals(basePart.getEvidence())) {
-				cc.append(SetCommand.create(editingDomain, solution, GsnPackage.eINSTANCE.getSolution_Evidence(), basePart.getEvidence()));
+			List evidenceToAddFromEvidence = basePart.getEvidenceToAdd();
+			for (Iterator iter = evidenceToAddFromEvidence.iterator(); iter.hasNext();)
+				cc.append(AddCommand.create(editingDomain, solution, GsnPackage.eINSTANCE.getSolution_Evidence(), iter.next()));
+			Map evidenceToRefreshFromEvidence = basePart.getEvidenceToEdit();
+			for (Iterator iter = evidenceToRefreshFromEvidence.keySet().iterator(); iter.hasNext();) {
+				Evidence nextElement = (Evidence) iter.next();
+				Evidence evidence = (Evidence) evidenceToRefreshFromEvidence.get(nextElement);
+				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
+					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+						cc.append(SetCommand.create(editingDomain, nextElement, feature, evidence.eGet(feature)));
+					}
+				}
+			}
+			List evidenceToRemoveFromEvidence = basePart.getEvidenceToRemove();
+			for (Iterator iter = evidenceToRemoveFromEvidence.iterator(); iter.hasNext();)
+				cc.append(DeleteCommand.create(editingDomain, iter.next()));
+			List evidenceToMoveFromEvidence = basePart.getEvidenceToMove();
+			for (Iterator iter = evidenceToMoveFromEvidence.iterator(); iter.hasNext();){
+				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
+				cc.append(MoveCommand.create(editingDomain, solution, GsnPackage.eINSTANCE.getEvidence(), moveElement.getElement(), moveElement.getIndex()));
 			}
 
 		}
@@ -474,7 +489,7 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 			solutionToUpdate.getTarget().addAll(basePart.getTargetToAdd());
 			solutionToUpdate.getSource().addAll(basePart.getSourceToAdd());
 			solutionToUpdate.getContext().addAll(basePart.getContextToAdd());
-			solutionToUpdate.setEvidence((InformationElement)basePart.getEvidence());
+			solutionToUpdate.getEvidence().addAll(basePart.getEvidenceToAdd());
 
 			return solutionToUpdate;
 		}
@@ -554,8 +569,24 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 				else if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, solution, GsnPackage.eINSTANCE.getContext(), event.getNewValue(), event.getNewIndex()));
 			}
-			if (GsnViewsRepository.Solution.evidence == event.getAffectedEditor())
-				command.append(SetCommand.create(liveEditingDomain, solution, GsnPackage.eINSTANCE.getSolution_Evidence(), event.getNewValue()));
+			if (GsnViewsRepository.Solution.evidence == event.getAffectedEditor()) {
+				if (PropertiesEditionEvent.SET == event.getKind()) {
+					Evidence oldValue = (Evidence)event.getOldValue();
+					Evidence newValue = (Evidence)event.getNewValue();
+					// TODO: Complete the solution update command
+					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
+						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
+						}
+					}
+				}
+				else if (PropertiesEditionEvent.ADD == event.getKind())
+					command.append(AddCommand.create(liveEditingDomain, solution, GsnPackage.eINSTANCE.getSolution_Evidence(), event.getNewValue()));
+				else if (PropertiesEditionEvent.REMOVE == event.getKind())
+					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
+				else if (PropertiesEditionEvent.MOVE == event.getKind())
+					command.append(MoveCommand.create(liveEditingDomain, solution, GsnPackage.eINSTANCE.getEvidence(), event.getNewValue(), event.getNewIndex()));
+			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
 					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
@@ -571,16 +602,6 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 			}
 			super.firePropertiesChanged(event);
 		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.String, int)
-	 * 
-	 */
-	public boolean isRequired(String key, int kind) {
-		return key == GsnViewsRepository.Solution.evidence;
 	}
 
 	/**

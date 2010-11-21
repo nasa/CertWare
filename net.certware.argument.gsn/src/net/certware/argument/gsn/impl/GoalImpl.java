@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -79,7 +80,7 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	protected EList<Solution> solution;
 
 	/**
-	 * The cached value of the '{@link #getSubgoal() <em>Subgoal</em>}' containment reference list.
+	 * The cached value of the '{@link #getSubgoal() <em>Subgoal</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSubgoal()
@@ -162,7 +163,7 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 */
 	public EList<Goal> getSubgoal() {
 		if (subgoal == null) {
-			subgoal = new EObjectContainmentEList<Goal>(Goal.class, this, GsnPackage.GOAL__SUBGOAL);
+			subgoal = new EObjectResolvingEList<Goal>(Goal.class, this, GsnPackage.GOAL__SUBGOAL);
 		}
 		return subgoal;
 	}
@@ -183,8 +184,6 @@ public class GoalImpl extends ClaimImpl implements Goal {
 				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
 			case GsnPackage.GOAL__SOLUTION:
 				return ((InternalEList<?>)getSolution()).basicRemove(otherEnd, msgs);
-			case GsnPackage.GOAL__SUBGOAL:
-				return ((InternalEList<?>)getSubgoal()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

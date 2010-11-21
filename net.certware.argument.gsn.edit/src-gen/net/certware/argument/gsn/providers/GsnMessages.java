@@ -17,6 +17,9 @@ public class GsnMessages extends NLS {
 	public static String GoalPropertiesEditionPart_PropertiesGroupLabel;
 
 	
+	public static String ArgumentDiagramPropertiesEditionPart_PropertiesGroupLabel;
+
+	
 	public static String StrategyPropertiesEditionPart_PropertiesGroupLabel;
 
 	
@@ -36,6 +39,12 @@ public class GsnMessages extends NLS {
 
 	
 	public static String Goal_Part_Title;
+
+	
+	public static String ArgumentDiagram_ReadOnly;
+
+	
+	public static String ArgumentDiagram_Part_Title;
 
 	
 	public static String Strategy_ReadOnly;
@@ -99,6 +108,27 @@ public class GsnMessages extends NLS {
 
 	
 	public static String GoalPropertiesEditionPart_SubgoalLabel;
+
+	
+	public static String ArgumentDiagramPropertiesEditionPart_GoalsLabel;
+
+	
+	public static String ArgumentDiagramPropertiesEditionPart_StrategiesLabel;
+
+	
+	public static String ArgumentDiagramPropertiesEditionPart_AssumptionsLabel;
+
+	
+	public static String ArgumentDiagramPropertiesEditionPart_SolutionsLabel;
+
+	
+	public static String ArgumentDiagramPropertiesEditionPart_ContextsLabel;
+
+	
+	public static String ArgumentDiagramPropertiesEditionPart_JustificationsLabel;
+
+	
+	public static String ArgumentDiagramPropertiesEditionPart_VersionLabel;
 
 	
 	public static String StrategyPropertiesEditionPart_IdentifierLabel;

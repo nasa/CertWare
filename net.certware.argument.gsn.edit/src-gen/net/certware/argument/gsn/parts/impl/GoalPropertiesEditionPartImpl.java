@@ -5,6 +5,7 @@ package net.certware.argument.gsn.parts.impl;
 
 // Start of user code for imports
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,7 @@ import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnFactory;
+import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.Strategy;
 import net.certware.argument.gsn.parts.GoalPropertiesEditionPart;
@@ -36,6 +38,8 @@ import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.TabElementTreeSelectionDialog;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -154,7 +158,7 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		createAssumptionAdvancedTableComposition(propertiesGroup);
 		createContextAdvancedTableComposition(propertiesGroup);
 		createSolutionAdvancedTableComposition(propertiesGroup);
-		createSubgoalAdvancedTableComposition(propertiesGroup);
+		createSubgoalAdvancedReferencesTable(propertiesGroup);
 	}
 
 	
@@ -737,12 +741,28 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 	}
 
 	/**
-	 * @param container
 	 * 
 	 */
-	protected void createSubgoalAdvancedTableComposition(Composite parent) {
-		this.subgoal = new ReferencesTable<Goal>(GsnMessages.GoalPropertiesEditionPart_SubgoalLabel, new ReferencesTableListener<Goal>() {			
-			public void handleAdd() { addToSubgoal();}
+	protected void createSubgoalAdvancedReferencesTable(Composite parent) {
+		this.subgoal = new ReferencesTable<Goal>(GsnMessages.GoalPropertiesEditionPart_SubgoalLabel, new ReferencesTableListener<Goal>() {
+			public void handleAdd() {
+				TabElementTreeSelectionDialog<Goal> dialog = new TabElementTreeSelectionDialog<Goal>(resourceSet, subgoalFilters, subgoalBusinessFilters,
+				"Goal", GsnPackage.eINSTANCE.getGoal(), current.eResource()) {
+
+					public void process(IStructuredSelection selection) {
+						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
+							EObject elem = (EObject) iter.next();
+							if (!subgoalEditUtil.getVirtualList().contains(elem))
+								subgoalEditUtil.addElement(elem);
+							propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartImpl.this, GsnViewsRepository.Goal.subgoal,
+								PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
+						}
+						subgoal.refresh();
+					}
+
+				};
+				dialog.open();
+			}
 			public void handleEdit(Goal element) { editSubgoal(element); }
 			public void handleMove(Goal element, int oldIndex, int newIndex) { moveSubgoal(element, oldIndex, newIndex); }
 			public void handleRemove(Goal element) { removeFromSubgoal(element); }
@@ -753,58 +773,40 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		GridData subgoalData = new GridData(GridData.FILL_HORIZONTAL);
 		subgoalData.horizontalSpan = 3;
 		this.subgoal.setLayoutData(subgoalData);
-		this.subgoal.setLowerBound(0);
-		this.subgoal.setUpperBound(-1);
+		this.subgoal.disableMove();
 		subgoal.setID(GsnViewsRepository.Goal.subgoal);
-		subgoal.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		subgoal.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
 	}
 
 	/**
-	 *  
+	 * 
 	 */
 	protected void moveSubgoal(Goal element, int oldIndex, int newIndex) {
 		EObject editedElement = subgoalEditUtil.foundCorrespondingEObject(element);
 		subgoalEditUtil.moveElement(element, oldIndex, newIndex);
 		subgoal.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartImpl.this, GsnViewsRepository.Goal.subgoal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartImpl.this, GsnViewsRepository.Goal.subgoal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));
 	}
 
 	/**
-	 *  
-	 */
-	protected void addToSubgoal() {
-		// Start of user code addToSubgoal() method body
-				Goal eObject = GsnFactory.eINSTANCE.createGoal();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						subgoalEditUtil.addElement(propertiesEditionObject);
-						subgoal.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartImpl.this, GsnViewsRepository.Goal.subgoal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
+	 * 
 	 */
 	protected void removeFromSubgoal(Goal element) {
+
 		// Start of user code removeFromSubgoal() method body
 				EObject editedElement = subgoalEditUtil.foundCorrespondingEObject(element);
 				subgoalEditUtil.removeElement(element);
 				subgoal.refresh();
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartImpl.this, GsnViewsRepository.Goal.subgoal, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
 		// End of user code
+
 	}
 
 	/**
-	 *  
+	 * 
 	 */
 	protected void editSubgoal(Goal element) {
+
 		// Start of user code editSubgoal() method body
 				EObject editedElement = subgoalEditUtil.foundCorrespondingEObject(element);
 				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
@@ -818,6 +820,7 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 					}
 				}
 		// End of user code
+
 	}
 
 
@@ -1527,32 +1530,13 @@ public class GoalPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.GoalPropertiesEditionPart#getSubgoalToEdit()
-	 * 
-	 */
-	public Map getSubgoalToEdit() {
-		return subgoalEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.gsn.parts.GoalPropertiesEditionPart#getSubgoalToMove()
-	 * 
-	 */
-	public List getSubgoalToMove() {
-		return subgoalEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
 	 * @see net.certware.argument.gsn.parts.GoalPropertiesEditionPart#getSubgoalTable()
 	 * 
 	 */
 	public List getSubgoalTable() {
 		return subgoalEditUtil.getVirtualList();
 	}
+
 
 	/**
 	 * {@inheritDoc}

@@ -12,7 +12,7 @@ import net.certware.argument.arm.InformationElement;
  *
  *
  * @see net.certware.argument.gsn.GsnPackage#getJustification()
- * @model annotation="gmf.node label='identifier'"
+ * @model annotation="gmf.node label='identifier' phantom='true'"
  * @generated
  */
 public interface Justification extends InformationElement {

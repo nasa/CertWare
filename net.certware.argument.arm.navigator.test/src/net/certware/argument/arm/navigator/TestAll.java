@@ -20,7 +20,6 @@ import org.junit.runners.Suite;
 	ContentProviderTest.class,
 	TreeDataTest.class,
 	ActivatorTest.class,
-	net.certware.argument.arm.navigator.filters.TestAll.class,
-})
+	net.certware.argument.arm.navigator.filters.TestAll.class})
 public class TestAll {
 }

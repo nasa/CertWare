@@ -29,7 +29,7 @@ import org.eclipse.ui.dialogs.IOverwriteQuery;
 /**
  * Operation for exporting the contents of a resource to the local file system.
  * @author mrb
- * @see IBM original for data transfer internal use
+ * See IBM original for data transfer internal use
  * @since 1.0 
  */
 public class ExportResourceOperation implements IRunnableWithProgress { // $codepro.audit.disable declareDefaultConstructors

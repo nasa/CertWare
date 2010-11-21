@@ -64,6 +64,14 @@
          </propertySection>
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.ArgumentDiagram"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.ArgumentDiagram">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="net.certware.argument.gsn.section.Strategy"
                tab="Base">
              <input

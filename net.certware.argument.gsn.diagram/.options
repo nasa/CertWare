@@ -1,0 +1,7 @@
+# Tracing options for the net.certware.argument.gsn.diagram plug-in
+
+# Common issues
+net.certware.argument.gsn.diagram/debug=false
+
+# Visual IDs
+net.certware.argument.gsn.diagram/debug/visualID=false

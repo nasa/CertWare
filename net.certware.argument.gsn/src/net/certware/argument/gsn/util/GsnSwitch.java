@@ -161,6 +161,16 @@ public class GsnSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GsnPackage.EVIDENCE: {
+				Evidence evidence = (Evidence)theEObject;
+				T result = caseEvidence(evidence);
+				if (result == null) result = caseAssertedEvidence(evidence);
+				if (result == null) result = caseAssertedRelationship(evidence);
+				if (result == null) result = caseArgumentLink(evidence);
+				if (result == null) result = caseModelElement(evidence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -267,6 +277,21 @@ public class GsnSwitch<T> {
 	 * @generated
 	 */
 	public T caseJustification(Justification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Evidence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Evidence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEvidence(Evidence object) {
 		return null;
 	}
 

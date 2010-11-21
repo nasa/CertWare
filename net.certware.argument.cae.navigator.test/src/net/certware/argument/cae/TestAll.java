@@ -15,7 +15,6 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	net.certware.argument.cae.navigator.TestAll.class,
-})
+	net.certware.argument.cae.navigator.TestAll.class})
 public class TestAll {
 }

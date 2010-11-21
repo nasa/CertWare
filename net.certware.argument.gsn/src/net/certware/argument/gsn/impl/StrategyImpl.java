@@ -59,7 +59,7 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	protected EList<Justification> justification;
 
 	/**
-	 * The cached value of the '{@link #getSolution() <em>Solution</em>}' reference list.
+	 * The cached value of the '{@link #getSolution() <em>Solution</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSolution()
@@ -128,7 +128,7 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 */
 	public EList<Solution> getSolution() {
 		if (solution == null) {
-			solution = new EObjectResolvingEList<Solution>(Solution.class, this, GsnPackage.STRATEGY__SOLUTION);
+			solution = new EObjectContainmentEList<Solution>(Solution.class, this, GsnPackage.STRATEGY__SOLUTION);
 		}
 		return solution;
 	}
@@ -157,6 +157,8 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return ((InternalEList<?>)getGoal()).basicRemove(otherEnd, msgs);
 			case GsnPackage.STRATEGY__JUSTIFICATION:
 				return ((InternalEList<?>)getJustification()).basicRemove(otherEnd, msgs);
+			case GsnPackage.STRATEGY__SOLUTION:
+				return ((InternalEList<?>)getSolution()).basicRemove(otherEnd, msgs);
 			case GsnPackage.STRATEGY__CONTEXT:
 				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
 		}

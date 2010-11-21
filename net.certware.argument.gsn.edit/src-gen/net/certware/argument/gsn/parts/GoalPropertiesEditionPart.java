@@ -464,18 +464,6 @@ public interface GoalPropertiesEditionPart {
 	public List getSubgoalToRemove();
 
 	/**
-	 * @return the subgoal to move
-	 * 
-	 */
-	public List getSubgoalToMove();
-
-	/**
-	 * @return the subgoal to edit
-	 * 
-	 */
-	public Map getSubgoalToEdit();
-
-	/**
 	 * @return the current subgoal table
 	 * 
 	 */

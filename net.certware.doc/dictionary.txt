@@ -40,3 +40,4 @@ behaviour
 lifecycle
 rigour
 residual
+doclet
