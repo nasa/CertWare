@@ -224,7 +224,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="gsz.gmftool#//@palette/@tools.1/@tools.10"/>
+        href="gsz.gmftool#//@palette/@tools.1/@tools.4"/>
     <diagramLink
         href="gsz.gmfgraph#GoalSubGoals"/>
     <linkMetaFeature
@@ -240,7 +240,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="gsz.gmftool#//@palette/@tools.1/@tools.7"/>
+        href="gsz.gmftool#//@palette/@tools.1/@tools.3"/>
     <diagramLink
         href="gsz.gmfgraph#GoalStrategies"/>
     <linkMetaFeature
@@ -304,7 +304,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="gsz.gmftool#//@palette/@tools.1/@tools.3"/>
+        href="gsz.gmftool#//@palette/@tools.1/@tools.8"/>
     <diagramLink
         href="gsz.gmfgraph#StrategyGoals"/>
     <linkMetaFeature
@@ -320,7 +320,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="gsz.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="gsz.gmftool#//@palette/@tools.1/@tools.9"/>
     <diagramLink
         href="gsz.gmfgraph#StrategyJustifications"/>
     <linkMetaFeature
@@ -336,7 +336,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="gsz.gmftool#//@palette/@tools.1/@tools.8"/>
+        href="gsz.gmftool#//@palette/@tools.1/@tools.7"/>
     <diagramLink
         href="gsz.gmfgraph#StrategyStrategyContexts"/>
     <linkMetaFeature
@@ -352,7 +352,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="gsz.gmftool#//@palette/@tools.1/@tools.9"/>
+        href="gsz.gmftool#//@palette/@tools.1/@tools.10"/>
     <diagramLink
         href="gsz.gmfgraph#StrategyStrategySolutions"/>
     <linkMetaFeature

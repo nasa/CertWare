@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 Kestrel Technology LLC
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.certware.argument.gsz.presentation.GszModelWizardID"
+            name="%_UI_GszModelWizard_label"
+            class="net.certware.argument.gsz.presentation.GszModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GszModelFile.gif">
+         <description>%_UI_GszModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.gsz.presentation.GszEditorID"
+            name="%_UI_GszEditor_label"
+            icon="icons/full/obj16/GszModelFile.gif"
+            extensions="gsz"
+            class="net.certware.argument.gsz.presentation.GszEditor"
+            contributorClass="net.certware.argument.gsz.presentation.GszActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

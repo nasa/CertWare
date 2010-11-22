@@ -1,0 +1,89 @@
+context Goal {
+
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Goal ' + self.eClass().name + ' requires identifier'
+	}
+	
+	constraint HasContent {
+		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Goal ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Goal ' + self.identifier
+			do {
+				self.content := 'TBS';
+			}
+		}
+	}
+	
+	constraint NoContainsSelf {
+		guard : self.satisfies('HasIdentifier')
+		check : not self.subGoals.includes(self)
+		message: 'Goal ' + self.identifier + ' cannot include itself as a subgoal' 
+		fix {
+			title : 'Remove ' + self.identifier + ' from subgoals list'
+			do {
+				self.subGoals.remove(self);
+			}
+		}
+	}
+    
+	
+}
+
+/*
+context Sync {
+
+  constraint MustLinkSame {
+
+      check : self.source.eClass() = self.target.eClass()
+
+      message : 'Cannot synchronize a ' + self.source.eClass().name
+          + ' with a ' + self.target.eClass().name
+
+      fix {
+
+          title : 'Synchronize with another ' +
+              self.source.eClass().name
+
+          do {
+
+              var target := UserInput.choose('Select target',
+                  _Model.getAllOfType(self.source.eClass().name));
+
+              if (target.isDefined()) self.target := target;
+
+          }
+
+      }
+
+  }
+
+}
+
+context Folder {
+
+  critique NameStartsWithCapital {
+
+      guard : self.satisfies('HasName')
+
+      check : self.name.firstToUpperCase() = self.name
+
+      message : 'Folder ' + self.name +
+          ' should start with an upper-case letter'
+
+      fix {
+
+          title : 'Rename to ' + self.name.firstToUpperCase()
+
+          do {
+              self.name := self.name.firstToUpperCase();
+          }
+      }
+
+  }
+
+}
+*/
+

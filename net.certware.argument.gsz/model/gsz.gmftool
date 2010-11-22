@@ -11,66 +11,94 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Assumption"
-          description="Create new Assumption">
+          title="Assumption Node"
+          description="Creates an assumption node on the diagram canvas">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Context"
-          description="Create new Context">
+          title="Context Node"
+          description="Creates a context node on the diagram canvas">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Evidence"
-          description="Create new Evidence">
+          description="Creates an evidence entry on the diagram canvas">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rectangle.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rectangle.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Goal"
-          description="Create new Goal">
+          title="Goal Node"
+          description="Creates a goal node on the diagram canvas">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/ellipse.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/ellipse.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Justification"
-          description="Create new Justification">
+          title="Justification Node"
+          description="Creates a justification node on the diagram canvas">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Solution"
-          description="Create new Solution">
+          title="Solution Node"
+          description="Creates a solution node on the diagram canvas">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/circle.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/circle.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Strategy"
-          description="Create new Strategy">
+          title="Strategy Node"
+          description="Creates a strategy node on the diagram canvas">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/parallelogram.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/parallelogram.png"
+            bundle="net.certware.core.ui"/>
       </tools>
     </tools>
     <tools
@@ -79,102 +107,146 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Assumptions"
-          description="Create new Assumptions">
+          title="Goal with Assumption"
+          description="Links goal node with supporting assumption">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="GoalContexts"
-          description="Create new GoalContexts">
+          title="Goal with Context"
+          description="Links goal node with supporting context">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="GoalSolutions"
-          description="Create new GoalSolutions">
+          title="Goal with Solution"
+          description="Links goal node with supporting solution">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Goals"
-          description="Create new Goals">
+          title="Goal with Strategy"
+          description="Links goal node with supporting strategy">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Justifications"
-          description="Create new Justifications">
+          title="Goal with Sub-Goal"
+          description="Links goal node with a sub-goal">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="SolutionContexts"
-          description="Create new SolutionContexts">
+          title="Solution with Context"
+          description="Links solution node with supporting context">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="SolutionEvidence"
-          description="Create new SolutionEvidence">
+          title="Solution with Evidence"
+          description="Links solution node with supporting evidence">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Strategies"
-          description="Create new Strategies">
+          title="Strategy with Context"
+          description="Links strategy node with supporting context">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="StrategyContexts"
-          description="Create new StrategyContexts">
+          title="Strategy with Goal"
+          description="Links strategy node with goals invoked by the strategy">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="StrategySolutions"
-          description="Create new StrategySolutions">
+          title="Strategy with Justification"
+          description="Links strategy node with supporting justification">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="SubGoals"
-          description="Create new SubGoals">
+          title="Strategy with Solution"
+          description="Links strategy node with supporting solution">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
       </tools>
     </tools>
   </palette>

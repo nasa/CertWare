@@ -41,3 +41,6 @@ lifecycle
 rigour
 residual
 doclet
+eugenia
+metadata
+decorators
