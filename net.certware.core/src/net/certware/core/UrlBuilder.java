@@ -14,6 +14,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * URL builder for parameter strings.
+ * @author Eclipse Toast
+ * @since 1.0
+ */
 public class UrlBuilder {
 	private static class UrlParameter extends Object {
 		private String name;
@@ -46,6 +51,11 @@ public class UrlBuilder {
 	private String spec;
 	private List parameters;
 
+	/**
+	 * Creates the initial URL string by specification.
+	 * Creates an initial parameter list.
+	 * @param spec specification string, must not be null
+	 */
 	public UrlBuilder(String spec) {
 		super();
 		if (spec == null)
@@ -54,16 +64,31 @@ public class UrlBuilder {
 		parameters = new ArrayList(5);
 	}
 
+	/**
+	 * Adds a boolean valued parameter
+	 * @param name parameter name
+	 * @param value parameter value
+	 */
 	public void addParameter(String name, boolean value) {
 		String valueString = String.valueOf(value);
 		addParameter(name, valueString);
 	}
 
+	/**
+	 * Adds an integer valued parameter
+	 * @param name parameter name
+	 * @param value parameter value
+	 */
 	public void addParameter(String name, int value) {
 		String valueString = String.valueOf(value);
 		addParameter(name, valueString);
 	}
 
+	/**
+	 * Adds a string valued parameter
+	 * @param name parameter name
+	 * @param value parameter value
+	 */
 	public void addParameter(String name, String value) {
 		UrlParameter parameter = new UrlParameter(name, value);
 		addParameter(parameter);
@@ -75,6 +100,10 @@ public class UrlBuilder {
 		}
 	}
 
+	/**
+	 * Appends a path to the specification string
+	 * @param path path to add, inserting slash prefix if necessary
+	 */
 	public void appendPath(String path) {
 		// append to the spec, taking care of the slashes properly
 		if (!spec.endsWith("/"))
@@ -82,6 +111,11 @@ public class UrlBuilder {
 		spec += path;
 	}
 
+	/**
+	 * Gets the path given the URL as built.
+	 * @return path
+	 * @throws MalformedURLException
+	 */
 	public String getPath() throws MalformedURLException {
 		// remove protocol, host & port, return a path with leading / and without trailing /
 		String answer = toUrl().getFile();
@@ -124,6 +158,11 @@ public class UrlBuilder {
 		return value;
 	}
 
+	/**
+	 * Converts the URL to a string.
+	 * @return string value
+	 * @throws MalformedURLException
+	 */
 	public URL toUrl() throws MalformedURLException {
 		String value = toString();
 		URL url = new URL(value);

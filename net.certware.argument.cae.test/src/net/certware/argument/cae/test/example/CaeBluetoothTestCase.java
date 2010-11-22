@@ -94,6 +94,9 @@ public class CaeBluetoothTestCase extends TestCase {
 	}
 	
 
+	/**
+	 * @throws Exception
+	 */
 	public void testArgumentLists() throws Exception {
 		assertEquals(1, toplevelClaim.getStrategy().size());
 		assertEquals(2, toplevelClaim.getContext().size());
@@ -101,12 +104,18 @@ public class CaeBluetoothTestCase extends TestCase {
 		assertTrue(toplevelClaim.getIsTagged().isEmpty());
 	}
 
+	/**
+	 * @throws Exception
+	 */
 	public void testArgument() throws Exception {
 		assertNull(toplevelClaim.getDescription());
 		assertNull(toplevelClaim.getContent());
 		assertEquals("Top-Level Claim",toplevelClaim.getIdentifier());
 	}
 
+	/**
+	 * @throws Exception
+	 */
 	public void testSubclaims() throws Exception {
 		Argument a = toplevelClaim.getStrategy().get(0);
 		assertEquals(4,a.getClaims().size());

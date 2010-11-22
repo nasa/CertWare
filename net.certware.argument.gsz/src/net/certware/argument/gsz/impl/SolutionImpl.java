@@ -6,16 +6,13 @@ package net.certware.argument.gsz.impl;
 import java.util.Collection;
 
 import net.certware.argument.arm.impl.AssertedEvidenceImpl;
-
 import net.certware.argument.gsz.Context;
 import net.certware.argument.gsz.Evidence;
 import net.certware.argument.gsz.GszPackage;
 import net.certware.argument.gsz.Solution;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**

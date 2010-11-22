@@ -23,6 +23,7 @@ public class CaeResourceImplTest {
 	@Test
 	public void testCaeResourceImpl_1()
 		throws Exception {
+		@SuppressWarnings("deprecation")
 		URI uri = URI.createDeviceURI("");
 
 		CaeResourceImpl result = new CaeResourceImpl(uri);

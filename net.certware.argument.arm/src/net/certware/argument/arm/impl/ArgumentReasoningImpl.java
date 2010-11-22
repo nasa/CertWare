@@ -12,14 +12,10 @@ import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.AssertedInference;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -115,6 +111,7 @@ public class ArgumentReasoningImpl extends ReasoningElementImpl implements Argum
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public Argument basicGetHasStructure() {

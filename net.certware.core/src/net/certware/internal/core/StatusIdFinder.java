@@ -10,10 +10,17 @@
 package net.certware.internal.core;
 
 import net.certware.core.spi.IStatusIdFinder;
+
 import org.osgi.framework.Bundle;
 import org.osgi.service.packageadmin.PackageAdmin;
 
+/**
+ * Status ID finder service.
+ * @author Eclipse Toast
+ * @since 1.0
+ */
 public class StatusIdFinder implements IStatusIdFinder {
+	/** package administration */
 	private PackageAdmin packageAdmin;
 
 	protected void bind(PackageAdmin admin) {

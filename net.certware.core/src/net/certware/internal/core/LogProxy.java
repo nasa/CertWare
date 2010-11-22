@@ -19,6 +19,11 @@ import java.util.Date;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.LogService;
 
+/**
+ * Log proxy implementing the basic log service.
+ * @author Eclipse Toast
+ * @since 1.0
+ */
 public class LogProxy extends Object implements LogService {
 	private static final char DATE_DELIMETER = '-';
 	private static final int DEFAULT_BUFFER_SIZE = 5 * 1024; // 5K
@@ -202,10 +207,18 @@ public class LogProxy extends Object implements LogService {
 		}
 	}
 
+	/**
+	 * Gets the log.
+	 * @return log
+	 */
 	public LogService getLog() {
 		return log;
 	}
 
+	/**
+	 * Gets the log level.
+	 * @return log level
+	 */
 	public int getLogLevel() {
 		return logLevel;
 	}
@@ -267,6 +280,10 @@ public class LogProxy extends Object implements LogService {
 		this.consoleLog = consoleLog;
 	}
 
+	/**
+	 * Sets the log service.
+	 * @param log log service
+	 */
 	public void setLog(LogService log) {
 		if (equals(log) == true)
 			return; // Early return.
@@ -275,6 +292,10 @@ public class LogProxy extends Object implements LogService {
 		this.log = log;
 	}
 
+	/**
+	 * Sets the log level.
+	 * @param logLevel log level, checked
+	 */
 	public void setLogLevel(int logLevel) {
 		checkLevel(logLevel);
 		this.logLevel = logLevel;

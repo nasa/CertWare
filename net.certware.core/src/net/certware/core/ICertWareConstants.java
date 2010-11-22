@@ -29,16 +29,27 @@ public interface ICertWareConstants {
 	public static final List<String> FILE_EXTENSIONS = 
 		Collections.unmodifiableList(Arrays.asList(ARM_EXTENSION,GSN_EXTENSION,CAE_EXTENSION,EUR_EXTENSION,VCL_EXTENSION));
 	
+	/** backend configuration parameter tag */
 	public static final String CONFIG_PARAMETER = "config";	//$NON-NLS-1$
+	/** backend id parameter */
 	public static final String ID_PARAMETER = "id";	 //$NON-NLS-1$
+	/** backend content type  for plain */
 	public static final String CONTENT_TYPE_PLAIN = "text/plain"; //$NON-NLS-1$
+	/** backend content type for HTML */
 	public static final String CONTENT_TYPE_HTML = "text/html"; //$NON-NLS-1$
+	/** message for missing parameter */
 	public static final String MISSING_PARAMETER = "Missing parameter: ";
+	/** property ID tag */
 	public static final String ID_PROPERTY = "certware.id"; //$NON-NLS-1$
+	/** default ID tag */
 	public static final String ID_DEFAULT = "ABC123";
+	/** backend URL property */
 	public static final String BACK_END_URL_PROPERTY = "certware.backend.url";
+	/** backend URL default value */
 	public static final String BACK_END_URL_DEFAULT = "http://localhost:8080/certware";
+	/** backend servlet container default */
 	public static final String BACKEND_SERVLET_CONTAINER_DEFAULT = "";
+	/** backend servlet container property */
 	public static final String BACKEND_SERVLET_CONTAINER_PROPERTY = "certware.backend.servlet.container";
 
 }

@@ -8,11 +8,16 @@ import net.certware.history.Activator;
 /**
  * History preference page.
  * @author mrb
+ * @since 1.0
  */
 public class PreferencePage
 	extends FieldEditorPreferencePage
 	implements IWorkbenchPreferencePage {
 
+	/**
+	 * Preference page for history.
+	 * Sets the preference store, description, and image descriptor.
+	 */
 	public PreferencePage() {
 		super(GRID);
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());

@@ -4,7 +4,6 @@
 package net.certware.argument.gsz;
 
 import net.certware.argument.arm.AssertedEvidence;
-import net.certware.argument.arm.InformationElement;
 
 import org.eclipse.emf.common.util.EList;
 

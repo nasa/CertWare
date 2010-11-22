@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="net.certware.core.ui.category"
+            description="Writes the repository to standard output"
+            id="net.certware.history.egit.command.dump"
+            name="Dump Repository">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="net.certware.history.egit.handlers.DumpHandler"
+            commandId="net.certware.history.egit.command.dump">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="net.certware.history.egit.command.dump"
+            icon="icons/obj16/dump.gif">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="net.certware.history.egit.menus.history"
+               label="History"
+               mnemonic="H">
+            <command
+                  commandId="net.certware.history.egit.command.dump"
+                  label="Dump to console"
+                  mnemonic="D"
+                  tooltip="Dump history to console">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="net.certware.history.egit.toolbars.historyToolbar">
+            <command
+                  commandId="net.certware.history.egit.command.dump"
+                  label="Dump"
+                  tooltip="Dump history to console">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>

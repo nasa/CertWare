@@ -9,11 +9,15 @@
  *******************************************************************************/
 package net.certware.core;
 
+import net.certware.core.spi.IStatusIdFinder;
 import net.certware.internal.core.LogProxy;
 
-import net.certware.core.spi.IStatusIdFinder;
 import org.osgi.service.log.LogService;
 
+/**
+ * Log utility class, following example from Eclipse Toast.
+ * @author Eclipse Toast
+ */
 public final class LogUtility extends Object {
 	private static final String LOG_LEVEL_PROPERTY = "certware.logLevel";
 	private static final String TRACE_PROPERTY = "certware.trace";
@@ -66,6 +70,11 @@ public final class LogUtility extends Object {
 		return level;
 	}
 
+	/**
+	 * Finds the log status ID from the log utility.
+	 * @param object status ID
+	 * @return log status ID
+	 */
 	public static String getStatusId(Object object) {
 		LogUtility instance = LogUtility.getInstance();
 		return instance.findStatusId(object);
@@ -412,11 +421,18 @@ public final class LogUtility extends Object {
 	public static void setTracing(boolean tracing) {
 		LogUtility.TRACING = tracing;
 	}
-
+ 
+	/** log buffer */
 	private StringBuffer buffer;
+	/** log proxy */
 	private LogProxy proxy;
+	/** log status ID finder */
 	private IStatusIdFinder idFinder = null;
 
+	/**
+	 * Creates the log utility, sets the proxy, sets the log level to default, and
+	 * sets the default buffer size. 
+	 */
 	public LogUtility() {
 		super();
 		setProxy(new LogProxy());
@@ -424,6 +440,10 @@ public final class LogUtility extends Object {
 		setBuffer(new StringBuffer(LogUtility.DEFAULT_BUFFER_SIZE));
 	}
 
+	/**
+	 * Binds the log ID to this instance.
+	 * @param log log service ID
+	 */
 	public void bind(LogService log) {
 		getInstance().setLog(log);
 	}
@@ -535,10 +555,18 @@ public final class LogUtility extends Object {
 		this.proxy = proxy;
 	}
 
+	/**
+	 * Sets the status ID finder value.
+	 * @param value finder value
+	 */
 	public void setStatusIdFinder(IStatusIdFinder value) {
 		idFinder = value;
 	}
 
+	/**
+	 * Unbinds the log service by log ID.
+	 * @param log log ID to remove
+	 */
 	public void unbind(LogService log) {
 		LogUtility utility = getInstance();
 		LogService service = ((LogProxy) utility.getLog()).getLog();

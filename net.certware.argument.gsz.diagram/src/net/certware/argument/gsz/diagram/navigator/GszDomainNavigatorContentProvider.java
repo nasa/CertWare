@@ -67,6 +67,11 @@ public class GszDomainNavigatorContentProvider implements
 				.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 5808553989438628364L;
+
 			public Object get(Object key) {
 				if (!containsKey(key)) {
 					put(key, Boolean.TRUE);

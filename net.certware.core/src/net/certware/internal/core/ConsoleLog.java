@@ -25,6 +25,11 @@ import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.LogService;
 
+/**
+ * Console log implementing the basic log service.
+ * @author Eclipse Toast
+ * @since 1.0
+ */
 class ConsoleLog extends Object implements LogService {
 	private static final String LOG_LEVEL_DEBUG_VALUE = "DEBUG";
 	private static final String LOG_LEVEL_ERROR_VALUE = "ERROR";

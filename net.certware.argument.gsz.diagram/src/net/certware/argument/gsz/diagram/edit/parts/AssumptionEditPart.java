@@ -8,7 +8,6 @@ import net.certware.argument.gsz.diagram.edit.policies.AssumptionItemSemanticEdi
 import net.certware.argument.gsz.diagram.part.GszVisualIDRegistry;
 import net.certware.argument.gsz.diagram.providers.GszElementTypes;
 
-import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;

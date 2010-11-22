@@ -12,6 +12,10 @@ import net.certware.example.ExampleContributions;
 public class PatternExamplePage extends ExamplePage
 {
 
+	/**
+	 * Example page for patterns
+	 * @param ec example contributions
+	 */
 	public PatternExamplePage(ExampleContributions ec) {
 		super(ec);
 	}

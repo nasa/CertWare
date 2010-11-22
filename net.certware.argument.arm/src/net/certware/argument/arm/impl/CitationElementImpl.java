@@ -10,10 +10,8 @@ import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.CitationElement;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -97,6 +95,7 @@ public class CitationElementImpl extends ArgumentElementImpl implements Citation
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public ArgumentElement basicGetRefersToArgumentElement() {
@@ -135,6 +134,7 @@ public class CitationElementImpl extends ArgumentElementImpl implements Citation
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public Argument basicGetRefersToArgument() {

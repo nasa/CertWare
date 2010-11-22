@@ -51,6 +51,9 @@ import org.eclipse.ui.PlatformUI;
 public class ItemPropertiesEditionComponent extends StandardPropertiesEditionComponent {
 
 	
+	/**
+	 * 
+	 */
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	

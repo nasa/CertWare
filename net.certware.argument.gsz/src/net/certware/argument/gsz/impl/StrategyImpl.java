@@ -4,8 +4,8 @@
 package net.certware.argument.gsz.impl;
 
 import java.util.Collection;
-import net.certware.argument.arm.impl.ReasoningElementImpl;
 
+import net.certware.argument.arm.impl.ReasoningElementImpl;
 import net.certware.argument.gsz.Context;
 import net.certware.argument.gsz.Goal;
 import net.certware.argument.gsz.GszPackage;

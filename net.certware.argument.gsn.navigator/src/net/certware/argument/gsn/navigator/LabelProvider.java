@@ -19,6 +19,9 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 	Image openImage = null;
 	Image closedImage = null;
 
+	/**
+	 * Constructor creates the image references.
+	 */
 	public LabelProvider() {
 
 		errorImage = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK);

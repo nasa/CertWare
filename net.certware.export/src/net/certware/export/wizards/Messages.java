@@ -40,6 +40,9 @@ public class Messages extends NLS {
 	 * Field ExportResourceOperation_5.
 	 */
 	public static String ExportResourceOperation_5;
+	/**
+	 * Field ExportResourceOperation_6.
+	 */
 	public static String ExportResourceOperation_6;
 	/**
 	 * Field ExportSummaryPage_0.

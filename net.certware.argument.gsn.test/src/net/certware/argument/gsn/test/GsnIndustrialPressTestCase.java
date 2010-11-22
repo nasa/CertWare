@@ -94,6 +94,9 @@ public class GsnIndustrialPressTestCase extends TestCase {
 	}
 	
 
+	/**
+	 * @throws Exception
+	 */
 	public void testToplevelLists() throws Exception {
 		assertEquals(2, g1.getStrategy().size());
 		assertEquals(0, g1.getAssumption().size());
@@ -102,6 +105,9 @@ public class GsnIndustrialPressTestCase extends TestCase {
 		assertEquals(0, g1.getSolution().size());
 	}
 
+	/**
+	 * @throws Exception
+	 */
 	public void testStrategyLists() throws Exception {
 		Strategy s = g1.getStrategy().get(0);
 		assertEquals(3, s.getGoal().size() );
@@ -110,6 +116,9 @@ public class GsnIndustrialPressTestCase extends TestCase {
 		assertEquals(2, s.getGoal().size() );
 	}
 	
+	/**
+	 * @throws Exception
+	 */
 	public void testSupported() throws Exception { 
 		Goal g = g1.getStrategy().get(0).getGoal().get(0);
 		assertFalse(g.isToBeSupported());
@@ -121,6 +130,9 @@ public class GsnIndustrialPressTestCase extends TestCase {
 		assertTrue(g.isToBeSupported());
 	}
 	
+	/**
+	 * @throws Exception
+	 */
 	public void testArgument() throws Exception {
 		assertNull(g1.getContent());
 		assertNull(g1.getDescription());

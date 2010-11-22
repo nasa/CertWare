@@ -7,7 +7,6 @@ package net.certware.argument.gsz.provider;
 import java.util.Collection;
 import java.util.List;
 
-import net.certware.argument.arm.ArmFactory;
 import net.certware.argument.gsz.ArgumentDiagram;
 import net.certware.argument.gsz.GszFactory;
 import net.certware.argument.gsz.GszPackage;

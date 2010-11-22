@@ -4,15 +4,27 @@
  */
 package net.certware.argument.arm.impl;
 
-import net.certware.argument.arm.*;
+import net.certware.argument.arm.Annotation;
+import net.certware.argument.arm.Argument;
+import net.certware.argument.arm.ArgumentReasoning;
+import net.certware.argument.arm.ArmFactory;
+import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.arm.AssertedChallenge;
+import net.certware.argument.arm.AssertedContext;
+import net.certware.argument.arm.AssertedCounterEvidence;
+import net.certware.argument.arm.AssertedEvidence;
+import net.certware.argument.arm.AssertedInference;
+import net.certware.argument.arm.CitationElement;
+import net.certware.argument.arm.Claim;
+import net.certware.argument.arm.EvidenceAssertion;
+import net.certware.argument.arm.InformationElement;
+import net.certware.argument.arm.TaggedValue;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
@@ -33,6 +45,7 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public static ArmFactory init() {
@@ -255,6 +268,9 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param eDataType 
+	 * @param initialValue 
+	 * @return 
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
@@ -264,6 +280,9 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param eDataType 
+	 * @param instanceValue 
+	 * @return 
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -273,6 +292,9 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param eDataType 
+	 * @param initialValue 
+	 * @return 
 	 * @generated
 	 */
 	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
@@ -282,6 +304,9 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param eDataType 
+	 * @param instanceValue 
+	 * @return 
 	 * @generated
 	 */
 	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
@@ -291,6 +316,9 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param eDataType 
+	 * @param initialValue 
+	 * @return 
 	 * @generated
 	 */
 	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
@@ -300,6 +328,9 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param eDataType 
+	 * @param instanceValue 
+	 * @return 
 	 * @generated
 	 */
 	public String convertBooleanToString(EDataType eDataType, Object instanceValue) {
@@ -318,6 +349,7 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @deprecated
 	 * @generated
 	 */

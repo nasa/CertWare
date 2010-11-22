@@ -13,7 +13,6 @@ import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import net.certware.argument.arm.provider.ArmItemProviderAdapterFactory;
@@ -68,7 +67,6 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
-import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.emf.eef.runtime.ui.notify.OpenWizardOnDoubleClick;
 import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.action.IMenuListener;
@@ -115,7 +113,6 @@ import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
-import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
@@ -663,6 +660,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * This sets the selection into whichever viewer is active.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param collection 
 	 * @generated
 	 */
 	public void setSelectionToViewer(Collection<?> collection) {
@@ -705,6 +703,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @param adapterFactory 
 		 * @generated
 		 */
 		public ReverseAdapterFactoryContentProvider(AdapterFactory adapterFactory) {
@@ -760,6 +759,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * is the current one.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param viewer 
 	 * @generated
 	 */
 	public void setCurrentViewer(Viewer viewer) {
@@ -864,6 +864,9 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * and the specified exception (if any).
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param resource 
+	 * @param exception 
+	 * @return 
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
@@ -1044,6 +1047,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * This accesses a cached version of the content outliner.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public IContentOutlinePage getContentOutlinePage() {
@@ -1108,6 +1112,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * This accesses a cached version of the property sheet.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated NOT
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
@@ -1121,6 +1126,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * This deals with how we want selection in the outliner to affect the other views.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param selection 
 	 * @generated
 	 */
 	public void handleContentOutlineSelection(ISelection selection) {
@@ -1383,6 +1389,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param selection 
 	 * @generated
 	 */
 	public void setStatusLineManager(ISelection selection) {
@@ -1447,6 +1454,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public EditingDomainActionBarContributor getActionBarContributor() {
@@ -1456,6 +1464,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public IActionBars getActionBars() {
@@ -1465,6 +1474,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return 
 	 * @generated
 	 */
 	public AdapterFactory getAdapterFactory() {

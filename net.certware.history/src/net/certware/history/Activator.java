@@ -5,6 +5,11 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 
+/**
+ * Activator for the history plugin.
+ * @author mrb
+ * @since 1.0
+ */
 public class Activator extends AbstractUIPlugin {
 
 	/** plugin id */

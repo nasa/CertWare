@@ -451,6 +451,7 @@ public class CaeFactoryImplTest {
 	public void testGetPackage_1()
 		throws Exception {
 
+		@SuppressWarnings("deprecation")
 		CaePackage result = CaeFactoryImpl.getPackage();
 
 		// TODO: add additional test code here

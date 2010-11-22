@@ -38,8 +38,13 @@ import org.eclipse.jface.viewers.TreeSelection;
  */
 public class GsnEditorContextProvider implements IContextProvider {
 
+	/** reference editor part */
 	private GsnEditor editor;
 	
+	/**
+	 * Creates the context provider.
+	 * @param editor reference editor
+	 */
 	public GsnEditorContextProvider(GsnEditor editor) {
 		super();
 		this.editor = editor;

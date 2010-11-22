@@ -109,6 +109,7 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	public static void runNonUIValidation(View view) {
+		@SuppressWarnings("deprecation")
 		DiagramEditPart diagramEditPart = OffscreenEditPartFactory
 				.getInstance().createDiagramEditPart(view.getDiagram());
 		runValidation(diagramEditPart, view);

@@ -3,7 +3,6 @@
  */
 package net.certware.argument.gsz;
 
-import net.certware.argument.arm.InformationElement;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 

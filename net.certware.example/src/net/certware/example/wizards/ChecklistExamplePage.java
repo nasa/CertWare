@@ -12,6 +12,10 @@ import net.certware.example.ExampleContributions;
 public class ChecklistExamplePage extends ExamplePage
 {
 
+	/**
+	 * Example page for check lists.
+	 * @param ec example contributions
+	 */
 	public ChecklistExamplePage(ExampleContributions ec) {
 		super(ec);
 	}

@@ -8,16 +8,13 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.argument.arm.provider.ReasoningElementItemProvider;
-
 import net.certware.argument.gsz.GszFactory;
 import net.certware.argument.gsz.GszPackage;
 import net.certware.argument.gsz.Strategy;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;

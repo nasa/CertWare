@@ -4,7 +4,6 @@
 package net.certware.argument.gsz.impl;
 
 import net.certware.argument.arm.impl.InformationElementImpl;
-
 import net.certware.argument.gsz.Assumption;
 import net.certware.argument.gsz.GszPackage;
 

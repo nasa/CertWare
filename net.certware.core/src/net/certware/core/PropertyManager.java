@@ -13,29 +13,64 @@ import java.util.HashMap;
 import java.util.Map;
 
 import net.certware.internal.core.bundle.Activator;
+
 import org.osgi.framework.BundleContext;
 
+/**
+ * Property manager convenience class, based on Eclipse Toast model.
+ * @author Eclipse Toast
+ * @since 1.0
+ */
 public class PropertyManager {
+	
+	/** property manager instance */
 	private static final PropertyManager INSTANCE = new PropertyManager();
 
+	/**
+	 * Gets a boolean property.
+	 * @param property property key
+	 * @return boolean property value
+	 */
 	public static boolean getBooleanProperty(String property) {
 		return PropertyManager.INSTANCE.instanceGetBooleanProperty(property);
 	}
 
+	/**
+	 * Gets a boolean property with default value.
+	 * @param property property key
+	 * @param defaultValue default value if property not found
+	 * @return boolean property value
+	 */
 	public static boolean getBooleanProperty(String property, boolean defaultValue) {
 		return PropertyManager.INSTANCE.instanceGetBooleanProperty(property, defaultValue);
 	}
 
+	/**
+	 * Gets a string property.
+	 * @param property property key
+	 * @return string property value
+	 */
 	public static String getProperty(String property) {
 		return PropertyManager.INSTANCE.instanceGetProperty(property);
 	}
 
+	/**
+	 * Gets a string property with default value.
+	 * @param property property key
+	 * @param defaultValue default value if property not found
+	 * @return string property value
+	 */
 	public static String getProperty(String property, String defaultValue) {
 		return PropertyManager.INSTANCE.instanceGetProperty(property, defaultValue);
 	}
 
+	/** property cache */
 	private Map cache;
 
+	/**
+	 * Property manager private constructor.
+	 * Creates the initial cache.
+	 */
 	private PropertyManager() {
 		super();
 		cache = new HashMap(11);

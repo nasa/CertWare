@@ -12,6 +12,10 @@ import net.certware.example.ExampleContributions;
 public class DocumentExamplePage extends ExamplePage
 {
 
+	/**
+	 * Example page for documents.
+	 * @param ec example contributions
+	 */
 	public DocumentExamplePage(ExampleContributions ec) {
 		super(ec);
 	}

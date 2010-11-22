@@ -3,6 +3,11 @@ package net.certware.argument.gsn.navigator;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
+/**
+ * Activator for navigator plugin.
+ * @author mrb
+ * @since 1.0
+ */
 public class Activator implements BundleActivator {
 
 	private static BundleContext context;

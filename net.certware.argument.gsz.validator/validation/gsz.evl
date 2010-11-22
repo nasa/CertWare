@@ -1,10 +1,20 @@
+/**
+ * Validation rules and fixes for GSN models.
+ * Epsilon Validation Language
+ * @author mrb
+ */
+ 
+// goal nodes
 context Goal {
 
+	// must have an identifier
 	constraint HasIdentifier {
 		check : self.identifier.isDefined()
 		message : 'Goal ' + self.eClass().name + ' requires identifier'
 	}
 	
+	// must have content 
+	// fix sets content to TBS and sets the associated flag
 	constraint HasContent {
 		guard : self.satisfies('HasIdentifier')
 		check : self.content.isDefined()
@@ -13,10 +23,12 @@ context Goal {
 			title : 'Add TBS to Goal ' + self.identifier
 			do {
 				self.content := 'TBS';
+				self.toBeSupported := true;
 			}
 		}
 	}
 	
+	// the goal node cannot contain itself as a subgoal
 	constraint NoContainsSelf {
 		guard : self.satisfies('HasIdentifier')
 		check : not self.subGoals.includes(self)
@@ -28,62 +40,69 @@ context Goal {
 			}
 		}
 	}
-    
 	
-}
+	// the goal should have at least one solution or strategy
+	critique HasSolutions {
+		guard : self.satisfies('HasIdentifier')
+		check : (not self.goalSolutions.isEmpty()) or (not self.strategies.isEmpty())
+		message : 'Goal ' + self.identifier + ' has no solutions or strategies'
+		fix {
+			title : 'Set the to-be-supported flag as a reminder'
+			do {
+				self.toBeSupported := true;
+			}
+		}
+	}
+} // goal context
 
-/*
-context Sync {
 
-  constraint MustLinkSame {
+// solutions context
+context Solution {
 
-      check : self.source.eClass() = self.target.eClass()
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Solution ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// should have evidence contributions
+	critique HasEvidence {
+		check : not self.solutionEvidence.isEmpty()
+		message : 'Solution ' + self.identifier + ' requires evidence'
+	}
+	
+} // solution context
 
-      message : 'Cannot synchronize a ' + self.source.eClass().name
-          + ' with a ' + self.target.eClass().name
+// strategies context
+context Strategy {
 
-      fix {
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Strategy ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// must have content 
+	// fix sets content to TBS
+	constraint HasContent {
+		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Strategy ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Strategy ' + self.identifier
+			do {
+				self.content := 'TBS';
+			}
+		}
+	}
+	
+	// the strategy should have at least one solution or sub-goal
+	critique HasSolutions {
+		guard : self.satisfies('HasIdentifier')
+		check : (not self.strategySolutions.isEmpty()) or (not self.goals.isEmpty())
+		message : 'Strategy ' + self.identifier + ' has no solutions or goals'
+	}
+	
+} // strategy context
 
-          title : 'Synchronize with another ' +
-              self.source.eClass().name
-
-          do {
-
-              var target := UserInput.choose('Select target',
-                  _Model.getAllOfType(self.source.eClass().name));
-
-              if (target.isDefined()) self.target := target;
-
-          }
-
-      }
-
-  }
-
-}
-
-context Folder {
-
-  critique NameStartsWithCapital {
-
-      guard : self.satisfies('HasName')
-
-      check : self.name.firstToUpperCase() = self.name
-
-      message : 'Folder ' + self.name +
-          ' should start with an upper-case letter'
-
-      fix {
-
-          title : 'Rename to ' + self.name.firstToUpperCase()
-
-          do {
-              self.name := self.name.firstToUpperCase();
-          }
-      }
-
-  }
-
-}
-*/
 
