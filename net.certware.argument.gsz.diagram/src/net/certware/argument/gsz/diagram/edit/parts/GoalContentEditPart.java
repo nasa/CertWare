@@ -8,7 +8,6 @@ import net.certware.argument.gsz.diagram.part.GszVisualIDRegistry;
 import net.certware.argument.gsz.diagram.providers.GszElementTypes;
 import net.certware.argument.gsz.diagram.providers.GszParserProvider;
 
-import org.eclipse.draw2d.ConnectionLocator;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -20,14 +19,13 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gef.tools.DirectEditManager;
-import org.eclipse.gmf.runtime.common.ui.services.parser.CommonParserHint;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
@@ -49,13 +47,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class StrategyStrategyContextsExternalLabelEditPart extends
-		LabelEditPart implements ITextAwareEditPart {
+public class GoalContentEditPart extends CompartmentEditPart implements
+		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6008;
+	public static final int VISUAL_ID = 5002;
 
 	/**
 	 * @generated
@@ -80,17 +78,7 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	/**
 	 * @generated
 	 */
-	static {
-		registerSnapBackPosition(
-				GszVisualIDRegistry
-						.getType(net.certware.argument.gsz.diagram.edit.parts.StrategyStrategyContextsExternalLabelEditPart.VISUAL_ID),
-				new Point(0, 40));
-	}
-
-	/**
-	 * @generated
-	 */
-	public StrategyStrategyContextsExternalLabelEditPart(View view) {
+	public GoalContentEditPart(View view) {
 		super(view);
 	}
 
@@ -99,19 +87,12 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
-				new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
 				new GszTextSelectionEditPolicy());
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
+				new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
-				new ArgumentDiagramEditPart.LinkLabelDragPolicy());
-	}
-
-	/**
-	 * @generated
-	 */
-	public int getKeyPoint() {
-		return ConnectionLocator.MIDDLE;
+				new ArgumentDiagramEditPart.NodeLabelDragPolicy());
 	}
 
 	/**
@@ -161,7 +142,7 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	/**
 	 * @generated
 	 */
-	public void setLabel(IFigure figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -188,7 +169,7 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	 * @generated
 	 */
 	protected EObject getParserElement() {
-		return (View) getModel();
+		return resolveSemanticElement();
 	}
 
 	/**
@@ -246,7 +227,7 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
@@ -308,9 +289,12 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = GszParserProvider.getParser(
-					GszElementTypes.StrategyStrategyContexts_4008,
-					getParserElement(), CommonParserHint.DESCRIPTION);
+			parser = GszParserProvider
+					.getParser(
+							GszElementTypes.Goal_2001,
+							getParserElement(),
+							GszVisualIDRegistry
+									.getType(net.certware.argument.gsz.diagram.edit.parts.GoalContentEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -522,6 +506,22 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	/**
 	 * @generated
 	 */
+	protected void addNotationalListeners() {
+		super.addNotationalListeners();
+		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeNotationalListeners() {
+		super.removeNotationalListeners();
+		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
@@ -566,31 +566,8 @@ public class StrategyStrategyContextsExternalLabelEditPart extends
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		IFigure label = createFigurePrim();
-		defaultText = getLabelTextHelper(label);
-		return label;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure createFigurePrim() {
-		return new StrategyStrategyContextsExternalLabelFigure();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class StrategyStrategyContextsExternalLabelFigure extends
-			WrappingLabel {
-
-		/**
-		 * @generated
-		 */
-		public StrategyStrategyContextsExternalLabelFigure() {
-			this.setText("in context");
-		}
-
+		// Parent should assign one using setLabel() method
+		return null;
 	}
 
 }
