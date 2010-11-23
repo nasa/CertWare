@@ -166,6 +166,150 @@ public interface ArgumentDiagramPropertiesEditionPart {
 
 
 	/**
+	 * @return the justifications to add
+	 * 
+	 */
+	public List getJustificationsToAdd();
+
+	/**
+	 * @return the justifications to remove
+	 * 
+	 */
+	public List getJustificationsToRemove();
+
+	/**
+	 * @return the justifications to move
+	 * 
+	 */
+	public List getJustificationsToMove();
+
+	/**
+	 * @return the justifications to edit
+	 * 
+	 */
+	public Map getJustificationsToEdit();
+
+	/**
+	 * @return the current justifications table
+	 * 
+	 */
+	public List getJustificationsTable();
+
+	/**
+	 * Init the justifications
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initJustifications(EObject current, EReference containingFeature, EReference feature);
+
+	/**
+	 * Update the justifications
+	 * @param newValue the justifications to update
+	 * 
+	 */
+	public void updateJustifications(EObject newValue);
+
+	/**
+	 * Adds the given filter to the justifications edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToJustifications(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the justifications edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToJustifications(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the justifications table
+	 * 
+	 */
+	public boolean isContainedInJustificationsTable(EObject element);
+
+
+	/**
+	 * @return the contexts to add
+	 * 
+	 */
+	public List getContextsToAdd();
+
+	/**
+	 * @return the contexts to remove
+	 * 
+	 */
+	public List getContextsToRemove();
+
+	/**
+	 * @return the contexts to move
+	 * 
+	 */
+	public List getContextsToMove();
+
+	/**
+	 * @return the contexts to edit
+	 * 
+	 */
+	public Map getContextsToEdit();
+
+	/**
+	 * @return the current contexts table
+	 * 
+	 */
+	public List getContextsTable();
+
+	/**
+	 * Init the contexts
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initContexts(EObject current, EReference containingFeature, EReference feature);
+
+	/**
+	 * Update the contexts
+	 * @param newValue the contexts to update
+	 * 
+	 */
+	public void updateContexts(EObject newValue);
+
+	/**
+	 * Adds the given filter to the contexts edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToContexts(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the contexts edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToContexts(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the contexts table
+	 * 
+	 */
+	public boolean isContainedInContextsTable(EObject element);
+
+
+	/**
 	 * @return the assumptions to add
 	 * 
 	 */
@@ -310,147 +454,75 @@ public interface ArgumentDiagramPropertiesEditionPart {
 
 
 	/**
-	 * @return the contexts to add
+	 * @return the evidence to add
 	 * 
 	 */
-	public List getContextsToAdd();
+	public List getEvidenceToAdd();
 
 	/**
-	 * @return the contexts to remove
+	 * @return the evidence to remove
 	 * 
 	 */
-	public List getContextsToRemove();
+	public List getEvidenceToRemove();
 
 	/**
-	 * @return the contexts to move
+	 * @return the evidence to move
 	 * 
 	 */
-	public List getContextsToMove();
+	public List getEvidenceToMove();
 
 	/**
-	 * @return the contexts to edit
+	 * @return the evidence to edit
 	 * 
 	 */
-	public Map getContextsToEdit();
+	public Map getEvidenceToEdit();
 
 	/**
-	 * @return the current contexts table
+	 * @return the current evidence table
 	 * 
 	 */
-	public List getContextsTable();
+	public List getEvidenceTable();
 
 	/**
-	 * Init the contexts
+	 * Init the evidence
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContexts(EObject current, EReference containingFeature, EReference feature);
+	public void initEvidence(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the contexts
-	 * @param newValue the contexts to update
+	 * Update the evidence
+	 * @param newValue the evidence to update
 	 * 
 	 */
-	public void updateContexts(EObject newValue);
+	public void updateEvidence(EObject newValue);
 
 	/**
-	 * Adds the given filter to the contexts edition editor.
+	 * Adds the given filter to the evidence edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToContexts(ViewerFilter filter);
+	public void addFilterToEvidence(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the contexts edition editor.
+	 * Adds the given filter to the evidence edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToContexts(ViewerFilter filter);
+	public void addBusinessFilterToEvidence(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the contexts table
+	 * @return true if the given element is contained inside the evidence table
 	 * 
 	 */
-	public boolean isContainedInContextsTable(EObject element);
-
-
-	/**
-	 * @return the justifications to add
-	 * 
-	 */
-	public List getJustificationsToAdd();
-
-	/**
-	 * @return the justifications to remove
-	 * 
-	 */
-	public List getJustificationsToRemove();
-
-	/**
-	 * @return the justifications to move
-	 * 
-	 */
-	public List getJustificationsToMove();
-
-	/**
-	 * @return the justifications to edit
-	 * 
-	 */
-	public Map getJustificationsToEdit();
-
-	/**
-	 * @return the current justifications table
-	 * 
-	 */
-	public List getJustificationsTable();
-
-	/**
-	 * Init the justifications
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
-	 */
-	public void initJustifications(EObject current, EReference containingFeature, EReference feature);
-
-	/**
-	 * Update the justifications
-	 * @param newValue the justifications to update
-	 * 
-	 */
-	public void updateJustifications(EObject newValue);
-
-	/**
-	 * Adds the given filter to the justifications edition editor.
-	 * 
-	 * @param filter
-	 *            a viewer filter
-	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
-	 * 
-	 */
-	public void addFilterToJustifications(ViewerFilter filter);
-
-	/**
-	 * Adds the given filter to the justifications edition editor.
-	 * 
-	 * @param filter
-	 *            a viewer filter
-	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
-	 * 
-	 */
-	public void addBusinessFilterToJustifications(ViewerFilter filter);
-
-	/**
-	 * @return true if the given element is contained inside the justifications table
-	 * 
-	 */
-	public boolean isContainedInJustificationsTable(EObject element);
+	public boolean isContainedInEvidenceTable(EObject element);
 
 
 	/**

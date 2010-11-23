@@ -3,6 +3,7 @@
  */
 package net.certware.argument.gsz.impl;
 
+import net.certware.argument.gsz.*;
 import net.certware.argument.gsz.ArgumentDiagram;
 import net.certware.argument.gsz.Assumption;
 import net.certware.argument.gsz.Context;

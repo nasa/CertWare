@@ -78,10 +78,10 @@ public class StrategyItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(GsnPackage.Literals.STRATEGY__GOAL);
-			childrenFeatures.add(GsnPackage.Literals.STRATEGY__JUSTIFICATION);
-			childrenFeatures.add(GsnPackage.Literals.STRATEGY__SOLUTION);
-			childrenFeatures.add(GsnPackage.Literals.STRATEGY__CONTEXT);
+			childrenFeatures.add(GsnPackage.Literals.STRATEGY__GOALS);
+			childrenFeatures.add(GsnPackage.Literals.STRATEGY__JUSTIFICATIONS);
+			childrenFeatures.add(GsnPackage.Literals.STRATEGY__STRATEGY_CONTEXTS);
+			childrenFeatures.add(GsnPackage.Literals.STRATEGY__STRATEGY_SOLUTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -136,10 +136,10 @@ public class StrategyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Strategy.class)) {
-			case GsnPackage.STRATEGY__GOAL:
-			case GsnPackage.STRATEGY__JUSTIFICATION:
-			case GsnPackage.STRATEGY__SOLUTION:
-			case GsnPackage.STRATEGY__CONTEXT:
+			case GsnPackage.STRATEGY__GOALS:
+			case GsnPackage.STRATEGY__JUSTIFICATIONS:
+			case GsnPackage.STRATEGY__STRATEGY_CONTEXTS:
+			case GsnPackage.STRATEGY__STRATEGY_SOLUTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -159,23 +159,23 @@ public class StrategyItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.STRATEGY__GOAL,
+				(GsnPackage.Literals.STRATEGY__GOALS,
 				 GsnFactory.eINSTANCE.createGoal()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.STRATEGY__JUSTIFICATION,
+				(GsnPackage.Literals.STRATEGY__JUSTIFICATIONS,
 				 GsnFactory.eINSTANCE.createJustification()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.STRATEGY__SOLUTION,
-				 GsnFactory.eINSTANCE.createSolution()));
+				(GsnPackage.Literals.STRATEGY__STRATEGY_CONTEXTS,
+				 GsnFactory.eINSTANCE.createContext()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.STRATEGY__CONTEXT,
-				 GsnFactory.eINSTANCE.createContext()));
+				(GsnPackage.Literals.STRATEGY__STRATEGY_SOLUTIONS,
+				 GsnFactory.eINSTANCE.createSolution()));
 	}
 
 	/**

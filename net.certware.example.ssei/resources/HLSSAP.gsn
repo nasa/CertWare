@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="Goal: SwSystem Safe" description="" content="{software Y} is acceptably safe to operate within {system Z}">
   <isTagged key="visibility" value="public"/>
-  <context identifier="Con: operating context" description="" content="{Description of operating context of {system Z}}"/>
-  <context identifier="Con: system" description="" content="{Description of {system Z}}"/>
-  <context identifier="Con: Sw" description="" content="{Description of {software Y}}">
+  <goalContexts identifier="Con: operating context" description="" content="{Description of operating context of {system Z}}"/>
+  <goalContexts identifier="Con: system" description="" content="{Description of {system Z}}"/>
+  <goalContexts identifier="Con: Sw" description="" content="{Description of {software Y}}">
     <isTagged key="uninstantiated" value="true"/>
-  </context>
-  <subgoal identifier="Goal: swContributionAcc" description="" content="The contribution made by {software Y} to {system Z} hazards is acceptable">
+  </goalContexts>
+  <subGoals identifier="Goal: swContributionAcc" description="" content="The contribution made by {software Y} to {system Z} hazards is acceptable">
     <isTagged key="visibility" value="public"/>
-    <strategy identifier="Strat: swContributionAcc" description="" content="Agrument over each hazard to which {software Y} may contribute">
-      <goal identifier="Goal: Hazard" description="" content="Software contribution(s) to {Hazard} is acceptably managed.">
+    <strategies identifier="Strat: swContributionAcc" description="" content="Agrument over each hazard to which {software Y} may contribute">
+      <goals identifier="Goal: Hazard" description="" content="Software contribution(s) to {Hazard} is acceptably managed.">
         <isTagged key="multiplicity" value="zero or more"/>
         <isTagged key="visibility" value="public"/>
-        <strategy identifier="Strat: contMit" description="" content="Argument over each identified software contribution to {Hazard}">
-          <goal identifier="Goal: sw contribution" description="" content="{software contribution} to {Hazard} is acceptably managed">
+        <strategies identifier="Strat: contMit" description="" content="Argument over each identified software contribution to {Hazard}">
+          <goals identifier="Goal: sw contribution" description="" content="{software contribution} to {Hazard} is acceptably managed">
             <isTagged key="uninstantiated" value="true"/>
             <isTagged key="multiplicity" value="n"/>
-          </goal>
-          <goal identifier="Goal: contIdent_contIdent" description="" content="The ways in which {software Y} may contribute to {Hazard} are completely and correctly identified">
+          </goals>
+          <goals identifier="Goal: contIdent_contIdent" description="" content="The ways in which {software Y} may contribute to {Hazard} are completely and correctly identified">
             <isTagged key="module" value="contIdent"/>
-          </goal>
-          <context identifier="Con: contributions" description="" content="{Description of the ways in which {software Y} may contribute to {Hazard}">
+          </goals>
+          <strategyContexts identifier="Con: contributions" description="" content="{Description of the ways in which {software Y} may contribute to {Hazard}">
             <isTagged key="uninstantiated" value="true"/>
-          </context>
-        </strategy>
-        <context identifier="Con: safetyRqt" description="" content="Software contribution may in some cases be defined as an explicit safety requirement"/>
-      </goal>
-      <context identifier="Con: hazards" description="" content="{Description of hazards to which {software Y} may contribute.">
+          </strategyContexts>
+        </strategies>
+        <goalContexts identifier="Con: safetyRqt" description="" content="Software contribution may in some cases be defined as an explicit safety requirement"/>
+      </goals>
+      <strategyContexts identifier="Con: hazards" description="" content="{Description of hazards to which {software Y} may contribute.">
         <isTagged key="uninstantiated" value="true"/>
-      </context>
-    </strategy>
-    <assumption identifier="Ass: hazards" description="" content="All system hazards have been correctly identified"/>
-    <context identifier="Con: Sw" description="" content="{Description of {software Y}}">
+      </strategyContexts>
+    </strategies>
+    <assumptions identifier="Ass: hazards" description="" content="All system hazards have been correctly identified"/>
+    <goalContexts identifier="Con: Sw" description="" content="{Description of {software Y}}">
       <isTagged key="uninstantiated" value="true"/>
       <isTagged key="optional" value="true"/>
-    </context>
-  </subgoal>
+    </goalContexts>
+  </subGoals>
 </gsn:Goal>

@@ -44,7 +44,7 @@ h4. Running the EEF Tools
 
 The EEF model initialization occurs from the original @*.genmodel@ files in the model plugins.  
 # The EEF model artifacts are redirected to the @EMF.Edit@ plugins, where a @model@ folder was created to contain the EEF models.  
-# In the @*.eefgen@ model created, check that the generation directory property points to a source folder (typically @src-gen@) and that the builder identifies this as a source folder (e.g. Build Path -> Use as Source Folder).  
+# In the @*.eefgen@ model created, check that the generation directory property points to a source folder (typically @src-gen@) and that the builder identifies this as a source folder (e.g. @Build Path -> Use as Source Folder@).  
 # Be sure to add the @model@ folder and the @src-gen@ folders to the plugin's @build.properties@ selections as necessary.  
 # Add @org.eclipse.emf.eef.runtime@ as a plugin dependency, and in its properties select the re-export dependency option so that the @EMF.editor@ project can see it.  
 # Run the @eefgen@ to create the new packages. 
@@ -59,11 +59,11 @@ h4. Running the GMF Tools
 The graphical model editors we create with the Eclipse Eugenia tools for GMF.  Use the following steps:
 # Apply the Eugenia metadata annotations to the features in the desired Ecore metamodel files (e.g. add the tags to the @gsn.ecore@ file).
 # From the @genmodel@ editor and root model node, run the corresponding @genmodel@ file to create the basic EMF model, edit, and editor support source and plugins.  
-# From the explorer's context menu on the @ecore@ file run the "Eugenia -> Generate GMF tool, graph, and map models" command.  This will yield the @gmfgraph@, @gmfmap@, and @gmftool@ files next to the @ecore@ file.  Note of the @gmfmap@ file does not appear there is something wrong with the model structure or annotations although no error messages are produced.
-# From the explorer's context menu on the @gmfmap@ file run the "Create generator model command."  This will run the wizard to create the @gmfgen@ file.  Note that the "Load" buttons should be used on each page and that the notification that the @genmodel@ file is out of date seems to be spurious.
+# From the explorer's context menu on the @ecore@ file run the @Eugenia -> Generate GMF tool, graph, and map models@ command.  This will yield the @gmfgraph@, @gmfmap@, and @gmftool@ files next to the @ecore@ file.  Note of the @gmfmap@ file does not appear there is something wrong with the model structure or annotations although no error messages are produced.
+# From the explorer's context menu on the @gmfmap@ file run the @Create generator model command.@  This will run the wizard to create the @gmfgen@ file.  Note that the "Load" buttons should be used on each page and that the notification that the @genmodel@ file is out of date seems to be spurious.
 # Edit the @gmfgen@ model's edit part properties to set Validation Enabled and Validation Decorators to @true@.  
-# Edit the @gmfgen@ model's edit part properties to set the metamodel Display Name property to the diagram type, e.g. "GSN Diagram".  This value appears in the property sheet header when the argument canvas is selected.
-# From the explorer's context menu on the @gmfgen@ file run the "Create diagram code" command.  This will yield the @diagram@ plugin.  Ensure this new plugin is in the run configuration or deployment package.  
+# Edit the @gmfgen@ model's edit part properties to set the metamodel Display Name property to the diagram type, e.g. @GSN Argument Diagram@.  This value appears in the property sheet header when the argument canvas is selected.
+# From the explorer's context menu on the @gmfgen@ file run the @Create diagram code@ command.  This will yield the @diagram@ plugin.  Ensure this new plugin is in the run configuration or deployment package.  
 
 h4. Running the Xtext Tools
 

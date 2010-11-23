@@ -1,15 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: CertWare GSN Argument Validator
+Bundle-Name: CertWare GSN Validator
 Bundle-SymbolicName: net.certware.argument.gsn.validator;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.certware.argument.gsn.validator.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.eclipse.core.runtime,
- org.osgi.framework;version="1.3.0"
+Import-Package: org.osgi.framework;version="1.3.0"
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.emf.validation;bundle-version="1.4.0",
- org.eclipse.emf.validation.ocl;bundle-version="1.4.0",
- org.eclipse.ocl.ecore;bundle-version="3.0.0",
- net.certware.core.ui;bundle-version="1.0.0"
+Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.1",
+ org.eclipse.epsilon.evl.emf.validation;bundle-version="0.8.9"

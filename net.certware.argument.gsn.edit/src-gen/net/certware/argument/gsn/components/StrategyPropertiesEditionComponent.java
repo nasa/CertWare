@@ -160,17 +160,17 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
 			basePart.updateIsTagged(strategy);
 		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_Goal())) {
-			basePart.updateGoal(strategy);
+		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_Goals())) {
+			basePart.updateGoals(strategy);
 		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_Justification())) {
-			basePart.updateJustification(strategy);
+		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_Justifications())) {
+			basePart.updateJustifications(strategy);
 		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_Solution())) {
-			basePart.updateSolution(strategy);
+		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_StrategyContexts())) {
+			basePart.updateStrategyContexts(strategy);
 		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_Context())) {
-			basePart.updateContext(strategy);
+		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == GsnPackage.eINSTANCE.getStrategy_StrategySolutions())) {
+			basePart.updateStrategySolutions(strategy);
 		}
 
 	}
@@ -253,10 +253,10 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getContent()));
 
 			basePart.initIsTagged(strategy, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
-			basePart.initGoal(strategy, null, GsnPackage.eINSTANCE.getStrategy_Goal());
-			basePart.initJustification(strategy, null, GsnPackage.eINSTANCE.getStrategy_Justification());
-			basePart.initSolution(strategy, null, GsnPackage.eINSTANCE.getStrategy_Solution());
-			basePart.initContext(strategy, null, GsnPackage.eINSTANCE.getStrategy_Context());
+			basePart.initGoals(strategy, null, GsnPackage.eINSTANCE.getStrategy_Goals());
+			basePart.initJustifications(strategy, null, GsnPackage.eINSTANCE.getStrategy_Justifications());
+			basePart.initStrategyContexts(strategy, null, GsnPackage.eINSTANCE.getStrategy_StrategyContexts());
+			basePart.initStrategySolutions(strategy, null, GsnPackage.eINSTANCE.getStrategy_StrategySolutions());
 			// init filters
 
 
@@ -277,7 +277,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			
 			// End of user code
 
-			basePart.addFilterToGoal(new ViewerFilter() {
+			basePart.addFilterToGoals(new ViewerFilter() {
 
 					/**
 					 * {@inheritDoc}
@@ -289,11 +289,11 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				}
 
 			});
-			// Start of user code for additional businessfilters for goal
+			// Start of user code for additional businessfilters for goals
 			
 			// End of user code
 
-			basePart.addFilterToJustification(new ViewerFilter() {
+			basePart.addFilterToJustifications(new ViewerFilter() {
 
 					/**
 					 * {@inheritDoc}
@@ -305,27 +305,11 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				}
 
 			});
-			// Start of user code for additional businessfilters for justification
+			// Start of user code for additional businessfilters for justifications
 			
 			// End of user code
 
-			basePart.addFilterToSolution(new ViewerFilter() {
-
-					/**
-					 * {@inheritDoc}
-					 * 
-					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-					 */
-					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return (element instanceof String && element.equals("")) || (element instanceof Solution); //$NON-NLS-1$ 
-				}
-
-			});
-			// Start of user code for additional businessfilters for solution
-			
-			// End of user code
-
-			basePart.addFilterToContext(new ViewerFilter() {
+			basePart.addFilterToStrategyContexts(new ViewerFilter() {
 
 					/**
 					 * {@inheritDoc}
@@ -337,7 +321,23 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				}
 
 			});
-			// Start of user code for additional businessfilters for context
+			// Start of user code for additional businessfilters for strategyContexts
+			
+			// End of user code
+
+			basePart.addFilterToStrategySolutions(new ViewerFilter() {
+
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof String && element.equals("")) || (element instanceof Solution); //$NON-NLS-1$ 
+				}
+
+			});
+			// Start of user code for additional businessfilters for strategySolutions
 			
 			// End of user code
 
@@ -393,89 +393,89 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 				cc.append(MoveCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getTaggedValue(), moveElement.getElement(), moveElement.getIndex()));
 			}
-			List goalToAddFromGoal = basePart.getGoalToAdd();
-			for (Iterator iter = goalToAddFromGoal.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Goal(), iter.next()));
-			Map goalToRefreshFromGoal = basePart.getGoalToEdit();
-			for (Iterator iter = goalToRefreshFromGoal.keySet().iterator(); iter.hasNext();) {
+			List goalsToAddFromGoals = basePart.getGoalsToAdd();
+			for (Iterator iter = goalsToAddFromGoals.iterator(); iter.hasNext();)
+				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Goals(), iter.next()));
+			Map goalsToRefreshFromGoals = basePart.getGoalsToEdit();
+			for (Iterator iter = goalsToRefreshFromGoals.keySet().iterator(); iter.hasNext();) {
 				Goal nextElement = (Goal) iter.next();
-				Goal goal = (Goal) goalToRefreshFromGoal.get(nextElement);
+				Goal goals = (Goal) goalsToRefreshFromGoals.get(nextElement);
 				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
 					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, goal.eGet(feature)));
+						cc.append(SetCommand.create(editingDomain, nextElement, feature, goals.eGet(feature)));
 					}
 				}
 			}
-			List goalToRemoveFromGoal = basePart.getGoalToRemove();
-			for (Iterator iter = goalToRemoveFromGoal.iterator(); iter.hasNext();)
+			List goalsToRemoveFromGoals = basePart.getGoalsToRemove();
+			for (Iterator iter = goalsToRemoveFromGoals.iterator(); iter.hasNext();)
 				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List goalToMoveFromGoal = basePart.getGoalToMove();
-			for (Iterator iter = goalToMoveFromGoal.iterator(); iter.hasNext();){
+			List goalsToMoveFromGoals = basePart.getGoalsToMove();
+			for (Iterator iter = goalsToMoveFromGoals.iterator(); iter.hasNext();){
 				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 				cc.append(MoveCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getGoal(), moveElement.getElement(), moveElement.getIndex()));
 			}
-			List justificationToAddFromJustification = basePart.getJustificationToAdd();
-			for (Iterator iter = justificationToAddFromJustification.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Justification(), iter.next()));
-			Map justificationToRefreshFromJustification = basePart.getJustificationToEdit();
-			for (Iterator iter = justificationToRefreshFromJustification.keySet().iterator(); iter.hasNext();) {
+			List justificationsToAddFromJustifications = basePart.getJustificationsToAdd();
+			for (Iterator iter = justificationsToAddFromJustifications.iterator(); iter.hasNext();)
+				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Justifications(), iter.next()));
+			Map justificationsToRefreshFromJustifications = basePart.getJustificationsToEdit();
+			for (Iterator iter = justificationsToRefreshFromJustifications.keySet().iterator(); iter.hasNext();) {
 				Justification nextElement = (Justification) iter.next();
-				Justification justification = (Justification) justificationToRefreshFromJustification.get(nextElement);
+				Justification justifications = (Justification) justificationsToRefreshFromJustifications.get(nextElement);
 				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
 					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, justification.eGet(feature)));
+						cc.append(SetCommand.create(editingDomain, nextElement, feature, justifications.eGet(feature)));
 					}
 				}
 			}
-			List justificationToRemoveFromJustification = basePart.getJustificationToRemove();
-			for (Iterator iter = justificationToRemoveFromJustification.iterator(); iter.hasNext();)
+			List justificationsToRemoveFromJustifications = basePart.getJustificationsToRemove();
+			for (Iterator iter = justificationsToRemoveFromJustifications.iterator(); iter.hasNext();)
 				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List justificationToMoveFromJustification = basePart.getJustificationToMove();
-			for (Iterator iter = justificationToMoveFromJustification.iterator(); iter.hasNext();){
+			List justificationsToMoveFromJustifications = basePart.getJustificationsToMove();
+			for (Iterator iter = justificationsToMoveFromJustifications.iterator(); iter.hasNext();){
 				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 				cc.append(MoveCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getJustification(), moveElement.getElement(), moveElement.getIndex()));
 			}
-			List solutionToAddFromSolution = basePart.getSolutionToAdd();
-			for (Iterator iter = solutionToAddFromSolution.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Solution(), iter.next()));
-			Map solutionToRefreshFromSolution = basePart.getSolutionToEdit();
-			for (Iterator iter = solutionToRefreshFromSolution.keySet().iterator(); iter.hasNext();) {
-				Solution nextElement = (Solution) iter.next();
-				Solution solution = (Solution) solutionToRefreshFromSolution.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, solution.eGet(feature)));
-					}
-				}
-			}
-			List solutionToRemoveFromSolution = basePart.getSolutionToRemove();
-			for (Iterator iter = solutionToRemoveFromSolution.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List solutionToMoveFromSolution = basePart.getSolutionToMove();
-			for (Iterator iter = solutionToMoveFromSolution.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getSolution(), moveElement.getElement(), moveElement.getIndex()));
-			}
-			List contextToAddFromContext = basePart.getContextToAdd();
-			for (Iterator iter = contextToAddFromContext.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Context(), iter.next()));
-			Map contextToRefreshFromContext = basePart.getContextToEdit();
-			for (Iterator iter = contextToRefreshFromContext.keySet().iterator(); iter.hasNext();) {
+			List strategyContextsToAddFromStrategyContexts = basePart.getStrategyContextsToAdd();
+			for (Iterator iter = strategyContextsToAddFromStrategyContexts.iterator(); iter.hasNext();)
+				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_StrategyContexts(), iter.next()));
+			Map strategyContextsToRefreshFromStrategyContexts = basePart.getStrategyContextsToEdit();
+			for (Iterator iter = strategyContextsToRefreshFromStrategyContexts.keySet().iterator(); iter.hasNext();) {
 				Context nextElement = (Context) iter.next();
-				Context context = (Context) contextToRefreshFromContext.get(nextElement);
+				Context strategyContexts = (Context) strategyContextsToRefreshFromStrategyContexts.get(nextElement);
 				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
 					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, context.eGet(feature)));
+						cc.append(SetCommand.create(editingDomain, nextElement, feature, strategyContexts.eGet(feature)));
 					}
 				}
 			}
-			List contextToRemoveFromContext = basePart.getContextToRemove();
-			for (Iterator iter = contextToRemoveFromContext.iterator(); iter.hasNext();)
+			List strategyContextsToRemoveFromStrategyContexts = basePart.getStrategyContextsToRemove();
+			for (Iterator iter = strategyContextsToRemoveFromStrategyContexts.iterator(); iter.hasNext();)
 				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List contextToMoveFromContext = basePart.getContextToMove();
-			for (Iterator iter = contextToMoveFromContext.iterator(); iter.hasNext();){
+			List strategyContextsToMoveFromStrategyContexts = basePart.getStrategyContextsToMove();
+			for (Iterator iter = strategyContextsToMoveFromStrategyContexts.iterator(); iter.hasNext();){
 				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 				cc.append(MoveCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getContext(), moveElement.getElement(), moveElement.getIndex()));
+			}
+			List strategySolutionsToAddFromStrategySolutions = basePart.getStrategySolutionsToAdd();
+			for (Iterator iter = strategySolutionsToAddFromStrategySolutions.iterator(); iter.hasNext();)
+				cc.append(AddCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_StrategySolutions(), iter.next()));
+			Map strategySolutionsToRefreshFromStrategySolutions = basePart.getStrategySolutionsToEdit();
+			for (Iterator iter = strategySolutionsToRefreshFromStrategySolutions.keySet().iterator(); iter.hasNext();) {
+				Solution nextElement = (Solution) iter.next();
+				Solution strategySolutions = (Solution) strategySolutionsToRefreshFromStrategySolutions.get(nextElement);
+				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
+					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+						cc.append(SetCommand.create(editingDomain, nextElement, feature, strategySolutions.eGet(feature)));
+					}
+				}
+			}
+			List strategySolutionsToRemoveFromStrategySolutions = basePart.getStrategySolutionsToRemove();
+			for (Iterator iter = strategySolutionsToRemoveFromStrategySolutions.iterator(); iter.hasNext();)
+				cc.append(DeleteCommand.create(editingDomain, iter.next()));
+			List strategySolutionsToMoveFromStrategySolutions = basePart.getStrategySolutionsToMove();
+			for (Iterator iter = strategySolutionsToMoveFromStrategySolutions.iterator(); iter.hasNext();){
+				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
+				cc.append(MoveCommand.create(editingDomain, strategy, GsnPackage.eINSTANCE.getSolution(), moveElement.getElement(), moveElement.getIndex()));
 			}
 
 		}
@@ -501,10 +501,10 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			strategyToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 
 			strategyToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
-			strategyToUpdate.getGoal().addAll(basePart.getGoalToAdd());
-			strategyToUpdate.getJustification().addAll(basePart.getJustificationToAdd());
-			strategyToUpdate.getSolution().addAll(basePart.getSolutionToAdd());
-			strategyToUpdate.getContext().addAll(basePart.getContextToAdd());
+			strategyToUpdate.getGoals().addAll(basePart.getGoalsToAdd());
+			strategyToUpdate.getJustifications().addAll(basePart.getJustificationsToAdd());
+			strategyToUpdate.getStrategyContexts().addAll(basePart.getStrategyContextsToAdd());
+			strategyToUpdate.getStrategySolutions().addAll(basePart.getStrategySolutionsToAdd());
 
 			return strategyToUpdate;
 		}
@@ -550,7 +550,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				else if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, strategy, ArmPackage.eINSTANCE.getTaggedValue(), event.getNewValue(), event.getNewIndex()));
 			}
-			if (GsnViewsRepository.Strategy.goal == event.getAffectedEditor()) {
+			if (GsnViewsRepository.Strategy.goals == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
 					Goal oldValue = (Goal)event.getOldValue();
 					Goal newValue = (Goal)event.getNewValue();
@@ -562,13 +562,13 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 					}
 				}
 				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Goal(), event.getNewValue()));
+					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Goals(), event.getNewValue()));
 				else if (PropertiesEditionEvent.REMOVE == event.getKind())
 					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
 				else if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getGoal(), event.getNewValue(), event.getNewIndex()));
 			}
-			if (GsnViewsRepository.Strategy.justification == event.getAffectedEditor()) {
+			if (GsnViewsRepository.Strategy.justifications == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
 					Justification oldValue = (Justification)event.getOldValue();
 					Justification newValue = (Justification)event.getNewValue();
@@ -580,31 +580,13 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 					}
 				}
 				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Justification(), event.getNewValue()));
+					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Justifications(), event.getNewValue()));
 				else if (PropertiesEditionEvent.REMOVE == event.getKind())
 					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
 				else if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getJustification(), event.getNewValue(), event.getNewIndex()));
 			}
-			if (GsnViewsRepository.Strategy.solution == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					Solution oldValue = (Solution)event.getOldValue();
-					Solution newValue = (Solution)event.getNewValue();
-					// TODO: Complete the strategy update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Solution(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getSolution(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (GsnViewsRepository.Strategy.context == event.getAffectedEditor()) {
+			if (GsnViewsRepository.Strategy.strategyContexts == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
 					Context oldValue = (Context)event.getOldValue();
 					Context newValue = (Context)event.getNewValue();
@@ -616,11 +598,29 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 					}
 				}
 				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_Context(), event.getNewValue()));
+					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_StrategyContexts(), event.getNewValue()));
 				else if (PropertiesEditionEvent.REMOVE == event.getKind())
 					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
 				else if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getContext(), event.getNewValue(), event.getNewIndex()));
+			}
+			if (GsnViewsRepository.Strategy.strategySolutions == event.getAffectedEditor()) {
+				if (PropertiesEditionEvent.SET == event.getKind()) {
+					Solution oldValue = (Solution)event.getOldValue();
+					Solution newValue = (Solution)event.getNewValue();
+					// TODO: Complete the strategy update command
+					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
+						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
+							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
+						}
+					}
+				}
+				else if (PropertiesEditionEvent.ADD == event.getKind())
+					command.append(AddCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getStrategy_StrategySolutions(), event.getNewValue()));
+				else if (PropertiesEditionEvent.REMOVE == event.getKind())
+					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
+				else if (PropertiesEditionEvent.MOVE == event.getKind())
+					command.append(MoveCommand.create(liveEditingDomain, strategy, GsnPackage.eINSTANCE.getSolution(), event.getNewValue(), event.getNewIndex()));
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {

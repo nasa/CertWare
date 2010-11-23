@@ -1,0 +1,69 @@
+
+Tue Nov 23 09:49:51 CST 2010
+================================================================================
+Start of user code removeFromContext() method body
+				EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
+				contextEditUtil.removeElement(element);
+				context.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.context, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
+		// End of user code
+Start of user code editContext() method body
+				EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						contextEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						context.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.context, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		// End of user code
+Start of user code addToEvidence() method body
+				Evidence eObject = GsnFactory.eINSTANCE.createEvidence();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						evidenceEditUtil.addElement(propertiesEditionObject);
+						evidence.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code removeFromEvidence() method body
+				EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
+				evidenceEditUtil.removeElement(element);
+				evidence.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.evidence, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
+		// End of user code
+Start of user code addToContext() method body
+				Context eObject = GsnFactory.eINSTANCE.createContext();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						contextEditUtil.addElement(propertiesEditionObject);
+						context.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code editEvidence() method body
+				EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						evidenceEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						evidence.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.evidence, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		// End of user code

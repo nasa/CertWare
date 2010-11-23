@@ -164,351 +164,363 @@ public interface GoalPropertiesEditionPart {
 
 
 	/**
-	 * @return the strategy to add
+	 * @return the subGoals to add
 	 * 
 	 */
-	public List getStrategyToAdd();
+	public List getSubGoalsToAdd();
 
 	/**
-	 * @return the strategy to remove
+	 * @return the subGoals to remove
 	 * 
 	 */
-	public List getStrategyToRemove();
+	public List getSubGoalsToRemove();
 
 	/**
-	 * @return the strategy to move
+	 * @return the subGoals to move
 	 * 
 	 */
-	public List getStrategyToMove();
+	public List getSubGoalsToMove();
 
 	/**
-	 * @return the strategy to edit
+	 * @return the subGoals to edit
 	 * 
 	 */
-	public Map getStrategyToEdit();
+	public Map getSubGoalsToEdit();
 
 	/**
-	 * @return the current strategy table
+	 * @return the current subGoals table
 	 * 
 	 */
-	public List getStrategyTable();
+	public List getSubGoalsTable();
 
 	/**
-	 * Init the strategy
+	 * Init the subGoals
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initStrategy(EObject current, EReference containingFeature, EReference feature);
+	public void initSubGoals(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the strategy
-	 * @param newValue the strategy to update
+	 * Update the subGoals
+	 * @param newValue the subGoals to update
 	 * 
 	 */
-	public void updateStrategy(EObject newValue);
+	public void updateSubGoals(EObject newValue);
 
 	/**
-	 * Adds the given filter to the strategy edition editor.
+	 * Adds the given filter to the subGoals edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToStrategy(ViewerFilter filter);
+	public void addFilterToSubGoals(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the strategy edition editor.
+	 * Adds the given filter to the subGoals edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToStrategy(ViewerFilter filter);
+	public void addBusinessFilterToSubGoals(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the strategy table
+	 * @return true if the given element is contained inside the subGoals table
 	 * 
 	 */
-	public boolean isContainedInStrategyTable(EObject element);
+	public boolean isContainedInSubGoalsTable(EObject element);
 
 
 	/**
-	 * @return the assumption to add
+	 * @return the strategies to add
 	 * 
 	 */
-	public List getAssumptionToAdd();
+	public List getStrategiesToAdd();
 
 	/**
-	 * @return the assumption to remove
+	 * @return the strategies to remove
 	 * 
 	 */
-	public List getAssumptionToRemove();
+	public List getStrategiesToRemove();
 
 	/**
-	 * @return the assumption to move
+	 * @return the strategies to move
 	 * 
 	 */
-	public List getAssumptionToMove();
+	public List getStrategiesToMove();
 
 	/**
-	 * @return the assumption to edit
+	 * @return the strategies to edit
 	 * 
 	 */
-	public Map getAssumptionToEdit();
+	public Map getStrategiesToEdit();
 
 	/**
-	 * @return the current assumption table
+	 * @return the current strategies table
 	 * 
 	 */
-	public List getAssumptionTable();
+	public List getStrategiesTable();
 
 	/**
-	 * Init the assumption
+	 * Init the strategies
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initAssumption(EObject current, EReference containingFeature, EReference feature);
+	public void initStrategies(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the assumption
-	 * @param newValue the assumption to update
+	 * Update the strategies
+	 * @param newValue the strategies to update
 	 * 
 	 */
-	public void updateAssumption(EObject newValue);
+	public void updateStrategies(EObject newValue);
 
 	/**
-	 * Adds the given filter to the assumption edition editor.
+	 * Adds the given filter to the strategies edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToAssumption(ViewerFilter filter);
+	public void addFilterToStrategies(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the assumption edition editor.
+	 * Adds the given filter to the strategies edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToAssumption(ViewerFilter filter);
+	public void addBusinessFilterToStrategies(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the assumption table
+	 * @return true if the given element is contained inside the strategies table
 	 * 
 	 */
-	public boolean isContainedInAssumptionTable(EObject element);
+	public boolean isContainedInStrategiesTable(EObject element);
 
 
 	/**
-	 * @return the context to add
+	 * @return the goalContexts to add
 	 * 
 	 */
-	public List getContextToAdd();
+	public List getGoalContextsToAdd();
 
 	/**
-	 * @return the context to remove
+	 * @return the goalContexts to remove
 	 * 
 	 */
-	public List getContextToRemove();
+	public List getGoalContextsToRemove();
 
 	/**
-	 * @return the context to move
+	 * @return the goalContexts to move
 	 * 
 	 */
-	public List getContextToMove();
+	public List getGoalContextsToMove();
 
 	/**
-	 * @return the context to edit
+	 * @return the goalContexts to edit
 	 * 
 	 */
-	public Map getContextToEdit();
+	public Map getGoalContextsToEdit();
 
 	/**
-	 * @return the current context table
+	 * @return the current goalContexts table
 	 * 
 	 */
-	public List getContextTable();
+	public List getGoalContextsTable();
 
 	/**
-	 * Init the context
+	 * Init the goalContexts
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature);
+	public void initGoalContexts(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the context
-	 * @param newValue the context to update
+	 * Update the goalContexts
+	 * @param newValue the goalContexts to update
 	 * 
 	 */
-	public void updateContext(EObject newValue);
+	public void updateGoalContexts(EObject newValue);
 
 	/**
-	 * Adds the given filter to the context edition editor.
+	 * Adds the given filter to the goalContexts edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToContext(ViewerFilter filter);
+	public void addFilterToGoalContexts(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the context edition editor.
+	 * Adds the given filter to the goalContexts edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToContext(ViewerFilter filter);
+	public void addBusinessFilterToGoalContexts(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the context table
+	 * @return true if the given element is contained inside the goalContexts table
 	 * 
 	 */
-	public boolean isContainedInContextTable(EObject element);
+	public boolean isContainedInGoalContextsTable(EObject element);
 
 
 	/**
-	 * @return the solution to add
+	 * @return the assumptions to add
 	 * 
 	 */
-	public List getSolutionToAdd();
+	public List getAssumptionsToAdd();
 
 	/**
-	 * @return the solution to remove
+	 * @return the assumptions to remove
 	 * 
 	 */
-	public List getSolutionToRemove();
+	public List getAssumptionsToRemove();
 
 	/**
-	 * @return the solution to move
+	 * @return the assumptions to move
 	 * 
 	 */
-	public List getSolutionToMove();
+	public List getAssumptionsToMove();
 
 	/**
-	 * @return the solution to edit
+	 * @return the assumptions to edit
 	 * 
 	 */
-	public Map getSolutionToEdit();
+	public Map getAssumptionsToEdit();
 
 	/**
-	 * @return the current solution table
+	 * @return the current assumptions table
 	 * 
 	 */
-	public List getSolutionTable();
+	public List getAssumptionsTable();
 
 	/**
-	 * Init the solution
+	 * Init the assumptions
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initSolution(EObject current, EReference containingFeature, EReference feature);
+	public void initAssumptions(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the solution
-	 * @param newValue the solution to update
+	 * Update the assumptions
+	 * @param newValue the assumptions to update
 	 * 
 	 */
-	public void updateSolution(EObject newValue);
+	public void updateAssumptions(EObject newValue);
 
 	/**
-	 * Adds the given filter to the solution edition editor.
+	 * Adds the given filter to the assumptions edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToSolution(ViewerFilter filter);
+	public void addFilterToAssumptions(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the solution edition editor.
+	 * Adds the given filter to the assumptions edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToSolution(ViewerFilter filter);
+	public void addBusinessFilterToAssumptions(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the solution table
+	 * @return true if the given element is contained inside the assumptions table
 	 * 
 	 */
-	public boolean isContainedInSolutionTable(EObject element);
+	public boolean isContainedInAssumptionsTable(EObject element);
 
 
 	/**
-	 * @return the subgoal to add
+	 * @return the goalSolutions to add
 	 * 
 	 */
-	public List getSubgoalToAdd();
+	public List getGoalSolutionsToAdd();
 
 	/**
-	 * @return the subgoal to remove
+	 * @return the goalSolutions to remove
 	 * 
 	 */
-	public List getSubgoalToRemove();
+	public List getGoalSolutionsToRemove();
 
 	/**
-	 * @return the current subgoal table
+	 * @return the goalSolutions to move
 	 * 
 	 */
-	public List getSubgoalTable();
+	public List getGoalSolutionsToMove();
 
 	/**
-	 * Init the subgoal
+	 * @return the goalSolutions to edit
+	 * 
+	 */
+	public Map getGoalSolutionsToEdit();
+
+	/**
+	 * @return the current goalSolutions table
+	 * 
+	 */
+	public List getGoalSolutionsTable();
+
+	/**
+	 * Init the goalSolutions
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initSubgoal(EObject current, EReference containingFeature, EReference feature);
+	public void initGoalSolutions(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the subgoal
-	 * @param newValue the subgoal to update
+	 * Update the goalSolutions
+	 * @param newValue the goalSolutions to update
 	 * 
 	 */
-	public void updateSubgoal(EObject newValue);
+	public void updateGoalSolutions(EObject newValue);
 
 	/**
-	 * Adds the given filter to the subgoal edition editor.
+	 * Adds the given filter to the goalSolutions edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToSubgoal(ViewerFilter filter);
+	public void addFilterToGoalSolutions(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the subgoal edition editor.
+	 * Adds the given filter to the goalSolutions edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToSubgoal(ViewerFilter filter);
+	public void addBusinessFilterToGoalSolutions(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the subgoal table
+	 * @return true if the given element is contained inside the goalSolutions table
 	 * 
 	 */
-	public boolean isContainedInSubgoalTable(EObject element);
+	public boolean isContainedInGoalSolutionsTable(EObject element);
 
 
 

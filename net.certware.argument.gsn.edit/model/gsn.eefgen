@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.argument.gsn.edit/src-gen">
   <editionContexts basePackage="net.certware.argument" descriptorsGenericPropertiesViews="true">
-    <PropertiesEditionContext href="gsn.components#_dVH74fNzEd-NrJ0fdFnuvQ"/>
+    <PropertiesEditionContext href="gsn.components#_a8MscPczEd-YINFVNajjfg"/>
   </editionContexts>
   <viewsRepositories basePackage="net.certware.argument.gsn" swtViews="true" formViews="true">
-    <viewsRepository href="gsn.components#_dVJxRvNzEd-NrJ0fdFnuvQ"/>
+    <viewsRepository href="gsn.components#_a8NToPczEd-YINFVNajjfg"/>
   </viewsRepositories>
 </eef-gen:EEFGenModel>

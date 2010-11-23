@@ -15,97 +15,97 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.certware.argument.gsn.Goal#getStrategy <em>Strategy</em>}</li>
- *   <li>{@link net.certware.argument.gsn.Goal#getAssumption <em>Assumption</em>}</li>
- *   <li>{@link net.certware.argument.gsn.Goal#getContext <em>Context</em>}</li>
- *   <li>{@link net.certware.argument.gsn.Goal#getSolution <em>Solution</em>}</li>
- *   <li>{@link net.certware.argument.gsn.Goal#getSubgoal <em>Subgoal</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.Goal#getSubGoals <em>Sub Goals</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.Goal#getStrategies <em>Strategies</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.Goal#getGoalContexts <em>Goal Contexts</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.Goal#getAssumptions <em>Assumptions</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.Goal#getGoalSolutions <em>Goal Solutions</em>}</li>
  * </ul>
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getGoal()
- * @model annotation="gmf.node label='identifier' label.pattern='Goal {0}' figure='ellipse' border.color='0,0,255' border.width='2' border.style='solid' tool.name='Goal' tool.description='Provides a tool for creating goal nodes on the argument diagram canvas.' phantom='true'"
+ * @model
  * @generated
  */
 public interface Goal extends Claim {
 	/**
-	 * Returns the value of the '<em><b>Strategy</b></em>' containment reference list.
-	 * The list contents are of type {@link net.certware.argument.gsn.Strategy}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Strategy</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Strategy</em>' containment reference list.
-	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Strategy()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Strategy> getStrategy();
-
-	/**
-	 * Returns the value of the '<em><b>Assumption</b></em>' containment reference list.
-	 * The list contents are of type {@link net.certware.argument.gsn.Assumption}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Assumption</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assumption</em>' containment reference list.
-	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Assumption()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Assumption> getAssumption();
-
-	/**
-	 * Returns the value of the '<em><b>Context</b></em>' containment reference list.
-	 * The list contents are of type {@link net.certware.argument.gsn.Context}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Context</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context</em>' containment reference list.
-	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Context()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Context> getContext();
-
-	/**
-	 * Returns the value of the '<em><b>Solution</b></em>' containment reference list.
-	 * The list contents are of type {@link net.certware.argument.gsn.Solution}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Solution</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Solution</em>' containment reference list.
-	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Solution()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Solution> getSolution();
-
-	/**
-	 * Returns the value of the '<em><b>Subgoal</b></em>' reference list.
+	 * Returns the value of the '<em><b>Sub Goals</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.argument.gsn.Goal}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Subgoal</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Sub Goals</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subgoal</em>' reference list.
-	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Subgoal()
-	 * @model
+	 * @return the value of the '<em>Sub Goals</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getGoal_SubGoals()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Goal> getSubgoal();
+	EList<Goal> getSubGoals();
+
+	/**
+	 * Returns the value of the '<em><b>Strategies</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Strategy}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Strategies</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Strategies</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Strategies()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Strategy> getStrategies();
+
+	/**
+	 * Returns the value of the '<em><b>Goal Contexts</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Context}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Goal Contexts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal Contexts</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getGoal_GoalContexts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Context> getGoalContexts();
+
+	/**
+	 * Returns the value of the '<em><b>Assumptions</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Assumption}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Assumptions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assumptions</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getGoal_Assumptions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Assumption> getAssumptions();
+
+	/**
+	 * Returns the value of the '<em><b>Goal Solutions</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Solution}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Goal Solutions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal Solutions</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getGoal_GoalSolutions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Solution> getGoalSolutions();
 
 } // Goal

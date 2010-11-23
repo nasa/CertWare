@@ -78,8 +78,8 @@ public class SolutionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(GsnPackage.Literals.SOLUTION__CONTEXT);
-			childrenFeatures.add(GsnPackage.Literals.SOLUTION__EVIDENCE);
+			childrenFeatures.add(GsnPackage.Literals.SOLUTION__SOLUTION_EVIDENCE);
+			childrenFeatures.add(GsnPackage.Literals.SOLUTION__SOLUTION_CONTEXTS);
 		}
 		return childrenFeatures;
 	}
@@ -134,8 +134,8 @@ public class SolutionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Solution.class)) {
-			case GsnPackage.SOLUTION__CONTEXT:
-			case GsnPackage.SOLUTION__EVIDENCE:
+			case GsnPackage.SOLUTION__SOLUTION_EVIDENCE:
+			case GsnPackage.SOLUTION__SOLUTION_CONTEXTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,13 +155,13 @@ public class SolutionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.SOLUTION__CONTEXT,
-				 GsnFactory.eINSTANCE.createContext()));
+				(GsnPackage.Literals.SOLUTION__SOLUTION_EVIDENCE,
+				 GsnFactory.eINSTANCE.createEvidence()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.SOLUTION__EVIDENCE,
-				 GsnFactory.eINSTANCE.createEvidence()));
+				(GsnPackage.Literals.SOLUTION__SOLUTION_CONTEXTS,
+				 GsnFactory.eINSTANCE.createContext()));
 	}
 
 	/**

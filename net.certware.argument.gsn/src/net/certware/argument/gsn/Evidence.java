@@ -12,7 +12,7 @@ import net.certware.argument.arm.AssertedEvidence;
  *
  *
  * @see net.certware.argument.gsn.GsnPackage#getEvidence()
- * @model annotation="gmf.node label='identifier' phantom='true'"
+ * @model
  * @generated
  */
 public interface Evidence extends AssertedEvidence {

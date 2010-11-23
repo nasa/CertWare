@@ -4,7 +4,6 @@
 package net.certware.argument.gsn.impl;
 
 import net.certware.argument.arm.impl.AssertedEvidenceImpl;
-
 import net.certware.argument.gsn.Evidence;
 import net.certware.argument.gsn.GsnPackage;
 

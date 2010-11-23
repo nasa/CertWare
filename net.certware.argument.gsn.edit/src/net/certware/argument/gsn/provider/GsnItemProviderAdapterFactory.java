@@ -97,29 +97,6 @@ public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link net.certware.argument.gsn.ArgumentDiagram} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ArgumentDiagramItemProvider argumentDiagramItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link net.certware.argument.gsn.ArgumentDiagram}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createArgumentDiagramAdapter() {
-		if (argumentDiagramItemProvider == null) {
-			argumentDiagramItemProvider = new ArgumentDiagramItemProvider(this);
-		}
-
-		return argumentDiagramItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link net.certware.argument.gsn.Strategy} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,12 +334,11 @@ public class GsnItemProviderAdapterFactory extends GsnAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (goalItemProvider != null) goalItemProvider.dispose();
-		if (argumentDiagramItemProvider != null) argumentDiagramItemProvider.dispose();
 		if (strategyItemProvider != null) strategyItemProvider.dispose();
-		if (solutionItemProvider != null) solutionItemProvider.dispose();
-		if (assumptionItemProvider != null) assumptionItemProvider.dispose();
-		if (contextItemProvider != null) contextItemProvider.dispose();
 		if (justificationItemProvider != null) justificationItemProvider.dispose();
+		if (contextItemProvider != null) contextItemProvider.dispose();
+		if (assumptionItemProvider != null) assumptionItemProvider.dispose();
+		if (solutionItemProvider != null) solutionItemProvider.dispose();
 		if (evidenceItemProvider != null) evidenceItemProvider.dispose();
 	}
 

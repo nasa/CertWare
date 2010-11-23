@@ -2,87 +2,22 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         name="GSN Category Definition"
-         point="org.eclipse.emf.validation.constraintProviders">
-      <category
-            id="certware/ocl"
-            name="OCL Constraints">
-      </category>
+         point="org.eclipse.epsilon.evl.emf.validation">
+      <constraintsBinding
+            constraints="validation/gsn.evl"
+            namespaceURI="http://www.certware.net/gsn">
+      </constraintsBinding>
    </extension>
    <extension
-         id="oclProvider"
-         name="GSN Batch Model Constraint Providers"
-         point="org.eclipse.emf.validation.constraintProviders">
-      <constraintProvider
-            cache="true">
-         <package
-               namespaceUri="http://www.certware.net/gsn">
-         </package>
-         <description>
-            Batch mode constraints in OCL for GSN models.
-         </description>
-         <ocl path="constraints/gsn.ocl"/>
-      </constraintProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.validation.constraintProviders">
-      <constraintProvider
-            cache="true">
-         <package
-               namespaceUri="http://www.certware.net/gsn">
-         </package>
-         <constraints
-               categories="certware/ocl">
-            <constraint
-                  id="constraint_gsn_1"
-                  isEnabledByDefault="true"
-                  lang="OCL"
-                  mode="Live"
-                  name="Identifier Provided"
-                  severity="WARNING"
-                  statusCode="GSN_101">
-               <message>
-                  &quot;{0}&quot; must have an identifier.
-               </message>
-               <description>
-                  Ensures the goal nodes have identifiers.
-               </description>
-               <target
-                     class="Goal">
-                  <event
-                        name="Set">
-                     <feature
-                           name="identifier">
-                     </feature>
-                  </event>
-               </target>
-            </constraint>
-            <constraint
-                  id="constraint_gsn_2"
-                  isEnabledByDefault="true"
-                  lang="OCL"
-                  mode="Live"
-                  name="Content Provided"
-                  severity="ERROR"
-                  statusCode="GSN_102">
-               <message>
-                  &quot;{0}&quot; must have goal content.
-               </message>
-               <description>
-                  Ensures the goal nodes have content.
-               </description>
-               <target
-                     class="Goal">
-                  <event
-                        name="Set">
-                     <feature
-                           name="content">
-                     </feature>
-                  </event>
-               </target>
-            </constraint>
-         </constraints>
-      </constraintProvider>
+         point="org.eclipse.ui.ide.markerResolution">
+         <markerResolutionGenerator
+         	class = "org.eclipse.epsilon.evl.emf.validation.EvlMarkerResolutionGenerator"
+         	markerType = "net.certware.argument.gsn.diagram.diagnostic">
+         </markerResolutionGenerator>
+         <markerResolutionGenerator
+         	class = "org.eclipse.epsilon.evl.emf.validation.EvlMarkerResolutionGenerator"
+         	markerType = "org.eclipse.emf.ecore.diagnostic">
+         </markerResolutionGenerator>
    </extension>
 
 </plugin>

@@ -3,9 +3,9 @@
  */
 package net.certware.argument.gsn.impl;
 
-import net.certware.argument.gsn.*;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
+import net.certware.argument.gsn.Evidence;
 import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
@@ -64,12 +64,11 @@ public class GsnFactoryImpl extends EFactoryImpl implements GsnFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case GsnPackage.GOAL: return createGoal();
-			case GsnPackage.ARGUMENT_DIAGRAM: return createArgumentDiagram();
 			case GsnPackage.STRATEGY: return createStrategy();
-			case GsnPackage.SOLUTION: return createSolution();
-			case GsnPackage.ASSUMPTION: return createAssumption();
-			case GsnPackage.CONTEXT: return createContext();
 			case GsnPackage.JUSTIFICATION: return createJustification();
+			case GsnPackage.CONTEXT: return createContext();
+			case GsnPackage.ASSUMPTION: return createAssumption();
+			case GsnPackage.SOLUTION: return createSolution();
 			case GsnPackage.EVIDENCE: return createEvidence();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
@@ -84,16 +83,6 @@ public class GsnFactoryImpl extends EFactoryImpl implements GsnFactory {
 	public Goal createGoal() {
 		GoalImpl goal = new GoalImpl();
 		return goal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ArgumentDiagram createArgumentDiagram() {
-		ArgumentDiagramImpl argumentDiagram = new ArgumentDiagramImpl();
-		return argumentDiagram;
 	}
 
 	/**

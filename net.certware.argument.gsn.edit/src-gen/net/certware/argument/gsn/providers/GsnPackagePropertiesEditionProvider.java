@@ -18,12 +18,12 @@ public class GsnPackagePropertiesEditionProvider extends ComposedPropertiesEditi
 	public GsnPackagePropertiesEditionProvider() {
 		super();
 		append(createGoalPropertiesEditionProvider());
-		append(createArgumentDiagramPropertiesEditionProvider());
 		append(createStrategyPropertiesEditionProvider());
-		append(createSolutionPropertiesEditionProvider());
-		append(createAssumptionPropertiesEditionProvider());
-		append(createContextPropertiesEditionProvider());
 		append(createJustificationPropertiesEditionProvider());
+		append(createContextPropertiesEditionProvider());
+		append(createAssumptionPropertiesEditionProvider());
+		append(createSolutionPropertiesEditionProvider());
+		append(createEvidencePropertiesEditionProvider());
 	}
 
 	/**
@@ -45,23 +45,6 @@ public class GsnPackagePropertiesEditionProvider extends ComposedPropertiesEditi
 
 	/**
 	 * This keeps track of the one PropertiesEditionProvider used for all
-	 * ArgumentDiagram instances.
-	 * 
-	 */
-	protected ArgumentDiagramPropertiesEditionProvider argumentDiagramPropertiesEditionProvider;
-
-	/**
-	 * This creates an PropertiesEditionProvider for a ArgumentDiagram
-	 * 
-	 */
-	public ArgumentDiagramPropertiesEditionProvider createArgumentDiagramPropertiesEditionProvider() {
-		if (argumentDiagramPropertiesEditionProvider == null)
-			argumentDiagramPropertiesEditionProvider = new ArgumentDiagramPropertiesEditionProvider();
-		return argumentDiagramPropertiesEditionProvider;
-	}
-
-	/**
-	 * This keeps track of the one PropertiesEditionProvider used for all
 	 * Strategy instances.
 	 * 
 	 */
@@ -79,36 +62,19 @@ public class GsnPackagePropertiesEditionProvider extends ComposedPropertiesEditi
 
 	/**
 	 * This keeps track of the one PropertiesEditionProvider used for all
-	 * Solution instances.
+	 * Justification instances.
 	 * 
 	 */
-	protected SolutionPropertiesEditionProvider solutionPropertiesEditionProvider;
+	protected JustificationPropertiesEditionProvider justificationPropertiesEditionProvider;
 
 	/**
-	 * This creates an PropertiesEditionProvider for a Solution
+	 * This creates an PropertiesEditionProvider for a Justification
 	 * 
 	 */
-	public SolutionPropertiesEditionProvider createSolutionPropertiesEditionProvider() {
-		if (solutionPropertiesEditionProvider == null)
-			solutionPropertiesEditionProvider = new SolutionPropertiesEditionProvider();
-		return solutionPropertiesEditionProvider;
-	}
-
-	/**
-	 * This keeps track of the one PropertiesEditionProvider used for all
-	 * Assumption instances.
-	 * 
-	 */
-	protected AssumptionPropertiesEditionProvider assumptionPropertiesEditionProvider;
-
-	/**
-	 * This creates an PropertiesEditionProvider for a Assumption
-	 * 
-	 */
-	public AssumptionPropertiesEditionProvider createAssumptionPropertiesEditionProvider() {
-		if (assumptionPropertiesEditionProvider == null)
-			assumptionPropertiesEditionProvider = new AssumptionPropertiesEditionProvider();
-		return assumptionPropertiesEditionProvider;
+	public JustificationPropertiesEditionProvider createJustificationPropertiesEditionProvider() {
+		if (justificationPropertiesEditionProvider == null)
+			justificationPropertiesEditionProvider = new JustificationPropertiesEditionProvider();
+		return justificationPropertiesEditionProvider;
 	}
 
 	/**
@@ -130,19 +96,53 @@ public class GsnPackagePropertiesEditionProvider extends ComposedPropertiesEditi
 
 	/**
 	 * This keeps track of the one PropertiesEditionProvider used for all
-	 * Justification instances.
+	 * Assumption instances.
 	 * 
 	 */
-	protected JustificationPropertiesEditionProvider justificationPropertiesEditionProvider;
+	protected AssumptionPropertiesEditionProvider assumptionPropertiesEditionProvider;
 
 	/**
-	 * This creates an PropertiesEditionProvider for a Justification
+	 * This creates an PropertiesEditionProvider for a Assumption
 	 * 
 	 */
-	public JustificationPropertiesEditionProvider createJustificationPropertiesEditionProvider() {
-		if (justificationPropertiesEditionProvider == null)
-			justificationPropertiesEditionProvider = new JustificationPropertiesEditionProvider();
-		return justificationPropertiesEditionProvider;
+	public AssumptionPropertiesEditionProvider createAssumptionPropertiesEditionProvider() {
+		if (assumptionPropertiesEditionProvider == null)
+			assumptionPropertiesEditionProvider = new AssumptionPropertiesEditionProvider();
+		return assumptionPropertiesEditionProvider;
+	}
+
+	/**
+	 * This keeps track of the one PropertiesEditionProvider used for all
+	 * Solution instances.
+	 * 
+	 */
+	protected SolutionPropertiesEditionProvider solutionPropertiesEditionProvider;
+
+	/**
+	 * This creates an PropertiesEditionProvider for a Solution
+	 * 
+	 */
+	public SolutionPropertiesEditionProvider createSolutionPropertiesEditionProvider() {
+		if (solutionPropertiesEditionProvider == null)
+			solutionPropertiesEditionProvider = new SolutionPropertiesEditionProvider();
+		return solutionPropertiesEditionProvider;
+	}
+
+	/**
+	 * This keeps track of the one PropertiesEditionProvider used for all
+	 * Evidence instances.
+	 * 
+	 */
+	protected EvidencePropertiesEditionProvider evidencePropertiesEditionProvider;
+
+	/**
+	 * This creates an PropertiesEditionProvider for a Evidence
+	 * 
+	 */
+	public EvidencePropertiesEditionProvider createEvidencePropertiesEditionProvider() {
+		if (evidencePropertiesEditionProvider == null)
+			evidencePropertiesEditionProvider = new EvidencePropertiesEditionProvider();
+		return evidencePropertiesEditionProvider;
 	}
 
 }

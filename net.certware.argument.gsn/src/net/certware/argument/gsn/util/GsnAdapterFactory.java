@@ -11,9 +11,9 @@ import net.certware.argument.arm.Claim;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.ReasoningElement;
-import net.certware.argument.gsn.*;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
+import net.certware.argument.gsn.Evidence;
 import net.certware.argument.gsn.Goal;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.Justification;
@@ -86,28 +86,24 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 				return createGoalAdapter();
 			}
 			@Override
-			public Adapter caseArgumentDiagram(ArgumentDiagram object) {
-				return createArgumentDiagramAdapter();
-			}
-			@Override
 			public Adapter caseStrategy(Strategy object) {
 				return createStrategyAdapter();
 			}
 			@Override
-			public Adapter caseSolution(Solution object) {
-				return createSolutionAdapter();
-			}
-			@Override
-			public Adapter caseAssumption(Assumption object) {
-				return createAssumptionAdapter();
+			public Adapter caseJustification(Justification object) {
+				return createJustificationAdapter();
 			}
 			@Override
 			public Adapter caseContext(Context object) {
 				return createContextAdapter();
 			}
 			@Override
-			public Adapter caseJustification(Justification object) {
-				return createJustificationAdapter();
+			public Adapter caseAssumption(Assumption object) {
+				return createAssumptionAdapter();
+			}
+			@Override
+			public Adapter caseSolution(Solution object) {
+				return createSolutionAdapter();
 			}
 			@Override
 			public Adapter caseEvidence(Evidence object) {
@@ -130,6 +126,10 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 				return createClaimAdapter();
 			}
 			@Override
+			public Adapter caseInformationElement(InformationElement object) {
+				return createInformationElementAdapter();
+			}
+			@Override
 			public Adapter caseArgumentLink(ArgumentLink object) {
 				return createArgumentLinkAdapter();
 			}
@@ -140,10 +140,6 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAssertedEvidence(AssertedEvidence object) {
 				return createAssertedEvidenceAdapter();
-			}
-			@Override
-			public Adapter caseInformationElement(InformationElement object) {
-				return createInformationElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -176,20 +172,6 @@ public class GsnAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGoalAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link net.certware.argument.gsn.ArgumentDiagram <em>Argument Diagram</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see net.certware.argument.gsn.ArgumentDiagram
-	 * @generated
-	 */
-	public Adapter createArgumentDiagramAdapter() {
 		return null;
 	}
 

@@ -573,7 +573,8 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 		   source, 
 		   new String[] {
 			 "model.extension", "gsz", //$NON-NLS-1$ //$NON-NLS-2$
-			 "diagram.extension", "gszd" //$NON-NLS-1$ //$NON-NLS-2$
+			 "diagram.extension", "gszd", //$NON-NLS-1$ //$NON-NLS-2$
+			 "onefile", "false" //$NON-NLS-1$ //$NON-NLS-2$
 		   });																		
 	}
 
@@ -591,11 +592,19 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 		   new String[] {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Goal {0}", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.icon", "true", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.placement", "internal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.readonly", "false", //$NON-NLS-1$ //$NON-NLS-2$
 			 "figure", "ellipse", //$NON-NLS-1$ //$NON-NLS-2$
-			 "border.color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
-			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
-			 "size", "100,60" //$NON-NLS-1$ //$NON-NLS-2$
+			 "size", "100,60", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "250,250,250", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Goal Node", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Creates a goal node on the diagram canvas", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/ellipse.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/ellipse.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });							
 		addAnnotation
 		  (strategyEClass, 
@@ -603,11 +612,21 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 		   new String[] {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Strategy {0}", //$NON-NLS-1$ //$NON-NLS-2$
-			 "figure", "rectangle", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.icon", "true", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.placement", "internal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.readonly", "false", //$NON-NLS-1$ //$NON-NLS-2$
+			 "figure", "net.certware.argument.diagram.figures.ParallelogramFigure", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
-			 "size", "100,60" //$NON-NLS-1$ //$NON-NLS-2$
+			 "size", "100,60", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "250,250,250", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Strategy Node", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Creates a strategy node on the diagram canvas", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/parallelogram.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/parallelogram.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });						
 		addAnnotation
 		  (justificationEClass, 
@@ -619,7 +638,14 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "border.color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
-			 "size", "100,60" //$NON-NLS-1$ //$NON-NLS-2$
+			 "size", "100,60", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "250,250,250", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Justification Node", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Creates a justification node on the diagram canvas", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/rounded-rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/rounded-rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (contextEClass, 
@@ -627,11 +653,21 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 		   new String[] {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Context {0}", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.icon", "true", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.placement", "internal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.readonly", "false", //$NON-NLS-1$ //$NON-NLS-2$
 			 "figure", "rounded", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
-			 "size", "100,60" //$NON-NLS-1$ //$NON-NLS-2$
+			 "size", "100,60", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "250,250,250", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Context Node", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Creates a context node on the diagram canvas", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/rounded-rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/rounded-rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (assumptionEClass, 
@@ -639,11 +675,21 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 		   new String[] {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Assumption {0}", //$NON-NLS-1$ //$NON-NLS-2$
-			 "figure", "ellipse", //$NON-NLS-1$ //$NON-NLS-2$
+			 "figure", "rounded", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.icon", "true", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.placement", "internal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.readonly", "false", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
-			 "size", "100,60" //$NON-NLS-1$ //$NON-NLS-2$
+			 "size", "100,60", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "250,250,250", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Assumption Node", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Creates an assumption node on the diagram canvas", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/rounded-rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/rounded-rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (solutionEClass, 
@@ -652,18 +698,41 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Solution {0}", //$NON-NLS-1$ //$NON-NLS-2$
 			 "figure", "ellipse", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.icon", "true", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.placement", "internal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.readonly", "false", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.width", "2", //$NON-NLS-1$ //$NON-NLS-2$
 			 "border.style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
-			 "size", "100,100" //$NON-NLS-1$ //$NON-NLS-2$
+			 "size", "100,100", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "250,250,250", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Solution Node", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Creates a solution node on the diagram canvas", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/circle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/circle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });				
 		addAnnotation
 		  (evidenceEClass, 
 		   source, 
 		   new String[] {
 			 "label", "identifier", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.icon", "false", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label.pattern", "Evidence {0}", //$NON-NLS-1$ //$NON-NLS-2$
-			 "size", "100,100" //$NON-NLS-1$ //$NON-NLS-2$
+			 "size", "100,100", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.placement", "external", //$NON-NLS-1$ //$NON-NLS-2$
+			 "label.readonly", "false", //$NON-NLS-1$ //$NON-NLS-2$
+			 "border.color", "255,255,255", //$NON-NLS-1$ //$NON-NLS-2$
+			 "border.width", "0", //$NON-NLS-1$ //$NON-NLS-2$
+			 "border.style", "dash", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "255,255,255", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Evidence", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Creates an evidence entry on the diagram canvas", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/rectangle.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });
 	}
 
@@ -683,7 +752,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "filledclosedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Goal with Sub-Goal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links goal node with a sub-goal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getGoal_Strategies(), 
@@ -693,7 +768,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "filledclosedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Goal with Strategy", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links goal node with supporting strategy", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getGoal_GoalContexts(), 
@@ -703,7 +784,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "closedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Goal with Context", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links goal node with supporting context", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getGoal_Assumptions(), 
@@ -713,7 +800,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "closedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Goal with Assumption", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links goal node with supporting assumption", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getGoal_GoalSolutions(), 
@@ -723,7 +816,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "filledclosedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Goal with Solution", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links goal node with supporting solution", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });			
 		addAnnotation
 		  (getStrategy_Goals(), 
@@ -733,7 +832,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label", "is solved by", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "filledclosedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Strategy with Goal", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links strategy node with goals invoked by the strategy", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getStrategy_Justifications(), 
@@ -743,7 +848,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label", "justification", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "closedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Strategy with Justification", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links strategy node with supporting justification", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getStrategy_StrategyContexts(), 
@@ -753,7 +864,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "closedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Strategy with Context", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links strategy node with supporting context", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getStrategy_StrategySolutions(), 
@@ -763,7 +880,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "filledclosedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Strategy with Solution", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links strategy node with supporting solution", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });						
 		addAnnotation
 		  (getSolution_SolutionEvidence(), 
@@ -773,7 +896,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "label", "evidence", //$NON-NLS-1$ //$NON-NLS-2$
 			 "source.decoration", "filledrhomb", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Solution with Evidence", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links solution node with supporting evidence", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });		
 		addAnnotation
 		  (getSolution_SolutionContexts(), 
@@ -783,7 +912,13 @@ public class GszPackageImpl extends EPackageImpl implements GszPackage {
 			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
 			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
 			 "target.decoration", "closedarrow", //$NON-NLS-1$ //$NON-NLS-2$
-			 "style", "solid" //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Solution with Context", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links solution node with supporting context", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
 		   });	
 	}
 

@@ -75,14 +75,14 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 	protected ReferencesTable<? extends EObject> source;
 	protected List<ViewerFilter> sourceBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> sourceFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil contextEditUtil;
-	protected ReferencesTable<? extends EObject> context;
-	protected List<ViewerFilter> contextBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> contextFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil evidenceEditUtil;
-	protected ReferencesTable<? extends EObject> evidence;
-	protected List<ViewerFilter> evidenceBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> evidenceFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil solutionEvidenceEditUtil;
+	protected ReferencesTable<? extends EObject> solutionEvidence;
+	protected List<ViewerFilter> solutionEvidenceBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> solutionEvidenceFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil solutionContextsEditUtil;
+	protected ReferencesTable<? extends EObject> solutionContexts;
+	protected List<ViewerFilter> solutionContextsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> solutionContextsFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -145,8 +145,8 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 		createIsTaggedAdvancedTableComposition(propertiesGroup);
 		createTargetAdvancedReferencesTable(propertiesGroup);
 		createSourceAdvancedReferencesTable(propertiesGroup);
-		createContextAdvancedTableComposition(propertiesGroup);
-		createEvidenceAdvancedTableComposition(propertiesGroup);
+		createSolutionEvidenceAdvancedTableComposition(propertiesGroup);
+		createSolutionContextsAdvancedTableComposition(propertiesGroup);
 	}
 
 	
@@ -534,49 +534,49 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * @param container
 	 * 
 	 */
-	protected void createContextAdvancedTableComposition(Composite parent) {
-		this.context = new ReferencesTable<Context>(GsnMessages.SolutionPropertiesEditionPart_ContextLabel, new ReferencesTableListener<Context>() {			
-			public void handleAdd() { addToContext();}
-			public void handleEdit(Context element) { editContext(element); }
-			public void handleMove(Context element, int oldIndex, int newIndex) { moveContext(element, oldIndex, newIndex); }
-			public void handleRemove(Context element) { removeFromContext(element); }
-			public void navigateTo(Context element) { }
+	protected void createSolutionEvidenceAdvancedTableComposition(Composite parent) {
+		this.solutionEvidence = new ReferencesTable<Evidence>(GsnMessages.SolutionPropertiesEditionPart_SolutionEvidenceLabel, new ReferencesTableListener<Evidence>() {			
+			public void handleAdd() { addToSolutionEvidence();}
+			public void handleEdit(Evidence element) { editSolutionEvidence(element); }
+			public void handleMove(Evidence element, int oldIndex, int newIndex) { moveSolutionEvidence(element, oldIndex, newIndex); }
+			public void handleRemove(Evidence element) { removeFromSolutionEvidence(element); }
+			public void navigateTo(Evidence element) { }
 		});
-		this.context.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.context, GsnViewsRepository.SWT_KIND));
-		this.context.createControls(parent);
-		GridData contextData = new GridData(GridData.FILL_HORIZONTAL);
-		contextData.horizontalSpan = 3;
-		this.context.setLayoutData(contextData);
-		this.context.setLowerBound(0);
-		this.context.setUpperBound(-1);
-		context.setID(GsnViewsRepository.Solution.context);
-		context.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		this.solutionEvidence.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.solutionEvidence, GsnViewsRepository.SWT_KIND));
+		this.solutionEvidence.createControls(parent);
+		GridData solutionEvidenceData = new GridData(GridData.FILL_HORIZONTAL);
+		solutionEvidenceData.horizontalSpan = 3;
+		this.solutionEvidence.setLayoutData(solutionEvidenceData);
+		this.solutionEvidence.setLowerBound(0);
+		this.solutionEvidence.setUpperBound(-1);
+		solutionEvidence.setID(GsnViewsRepository.Solution.solutionEvidence);
+		solutionEvidence.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
 	 *  
 	 */
-	protected void moveContext(Context element, int oldIndex, int newIndex) {
-		EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
-		contextEditUtil.moveElement(element, oldIndex, newIndex);
-		context.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	protected void moveSolutionEvidence(Evidence element, int oldIndex, int newIndex) {
+		EObject editedElement = solutionEvidenceEditUtil.foundCorrespondingEObject(element);
+		solutionEvidenceEditUtil.moveElement(element, oldIndex, newIndex);
+		solutionEvidence.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionEvidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
 	}
 
 	/**
 	 *  
 	 */
-	protected void addToContext() {
-		// Start of user code addToContext() method body
-				Context eObject = GsnFactory.eINSTANCE.createContext();
+	protected void addToSolutionEvidence() {
+		// Start of user code addToSolutionEvidence() method body
+				Evidence eObject = GsnFactory.eINSTANCE.createEvidence();
 				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
 				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
 				if (editionPolicy != null) {
 					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
 					if (propertiesEditionObject != null) {
-						contextEditUtil.addElement(propertiesEditionObject);
-						context.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+						solutionEvidenceEditUtil.addElement(propertiesEditionObject);
+						solutionEvidence.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionEvidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
 					}
 				}
 		
@@ -586,31 +586,33 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 	/**
 	 *  
 	 */
-	protected void removeFromContext(Context element) {
-		// Start of user code removeFromContext() method body
-				EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
-				contextEditUtil.removeElement(element);
-				context.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.context, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
+	protected void removeFromSolutionEvidence(Evidence element) {
+		// Start of user code removeFromSolutionEvidence() method body
+				EObject editedElement = solutionEvidenceEditUtil.foundCorrespondingEObject(element);
+				solutionEvidenceEditUtil.removeElement(element);
+				solutionEvidence.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionEvidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+				
 		// End of user code
 	}
 
 	/**
 	 *  
 	 */
-	protected void editContext(Context element) {
-		// Start of user code editContext() method body
-				EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
+	protected void editSolutionEvidence(Evidence element) {
+		// Start of user code editSolutionEvidence() method body
+				EObject editedElement = solutionEvidenceEditUtil.foundCorrespondingEObject(element);
 				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(editedElement);
 				if (editionPolicy != null) {
 					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
 					if (propertiesEditionObject != null) {
-						contextEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						context.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.context, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+						solutionEvidenceEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						solutionEvidence.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionEvidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
 					}
 				}
+				
 		// End of user code
 	}
 
@@ -618,49 +620,49 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * @param container
 	 * 
 	 */
-	protected void createEvidenceAdvancedTableComposition(Composite parent) {
-		this.evidence = new ReferencesTable<Evidence>(GsnMessages.SolutionPropertiesEditionPart_EvidenceLabel, new ReferencesTableListener<Evidence>() {			
-			public void handleAdd() { addToEvidence();}
-			public void handleEdit(Evidence element) { editEvidence(element); }
-			public void handleMove(Evidence element, int oldIndex, int newIndex) { moveEvidence(element, oldIndex, newIndex); }
-			public void handleRemove(Evidence element) { removeFromEvidence(element); }
-			public void navigateTo(Evidence element) { }
+	protected void createSolutionContextsAdvancedTableComposition(Composite parent) {
+		this.solutionContexts = new ReferencesTable<Context>(GsnMessages.SolutionPropertiesEditionPart_SolutionContextsLabel, new ReferencesTableListener<Context>() {			
+			public void handleAdd() { addToSolutionContexts();}
+			public void handleEdit(Context element) { editSolutionContexts(element); }
+			public void handleMove(Context element, int oldIndex, int newIndex) { moveSolutionContexts(element, oldIndex, newIndex); }
+			public void handleRemove(Context element) { removeFromSolutionContexts(element); }
+			public void navigateTo(Context element) { }
 		});
-		this.evidence.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.evidence, GsnViewsRepository.SWT_KIND));
-		this.evidence.createControls(parent);
-		GridData evidenceData = new GridData(GridData.FILL_HORIZONTAL);
-		evidenceData.horizontalSpan = 3;
-		this.evidence.setLayoutData(evidenceData);
-		this.evidence.setLowerBound(0);
-		this.evidence.setUpperBound(-1);
-		evidence.setID(GsnViewsRepository.Solution.evidence);
-		evidence.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		this.solutionContexts.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Solution.solutionContexts, GsnViewsRepository.SWT_KIND));
+		this.solutionContexts.createControls(parent);
+		GridData solutionContextsData = new GridData(GridData.FILL_HORIZONTAL);
+		solutionContextsData.horizontalSpan = 3;
+		this.solutionContexts.setLayoutData(solutionContextsData);
+		this.solutionContexts.setLowerBound(0);
+		this.solutionContexts.setUpperBound(-1);
+		solutionContexts.setID(GsnViewsRepository.Solution.solutionContexts);
+		solutionContexts.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
 	 *  
 	 */
-	protected void moveEvidence(Evidence element, int oldIndex, int newIndex) {
-		EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
-		evidenceEditUtil.moveElement(element, oldIndex, newIndex);
-		evidence.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	protected void moveSolutionContexts(Context element, int oldIndex, int newIndex) {
+		EObject editedElement = solutionContextsEditUtil.foundCorrespondingEObject(element);
+		solutionContextsEditUtil.moveElement(element, oldIndex, newIndex);
+		solutionContexts.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
 	}
 
 	/**
 	 *  
 	 */
-	protected void addToEvidence() {
-		// Start of user code addToEvidence() method body
-				Evidence eObject = GsnFactory.eINSTANCE.createEvidence();
+	protected void addToSolutionContexts() {
+		// Start of user code addToSolutionContexts() method body
+				Context eObject = GsnFactory.eINSTANCE.createContext();
 				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
 				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
 				if (editionPolicy != null) {
 					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
 					if (propertiesEditionObject != null) {
-						evidenceEditUtil.addElement(propertiesEditionObject);
-						evidence.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+						solutionContextsEditUtil.addElement(propertiesEditionObject);
+						solutionContexts.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
 					}
 				}
 		
@@ -670,31 +672,33 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 	/**
 	 *  
 	 */
-	protected void removeFromEvidence(Evidence element) {
-		// Start of user code removeFromEvidence() method body
-				EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
-				evidenceEditUtil.removeElement(element);
-				evidence.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.evidence, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
+	protected void removeFromSolutionContexts(Context element) {
+		// Start of user code removeFromSolutionContexts() method body
+				EObject editedElement = solutionContextsEditUtil.foundCorrespondingEObject(element);
+				solutionContextsEditUtil.removeElement(element);
+				solutionContexts.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+				
 		// End of user code
 	}
 
 	/**
 	 *  
 	 */
-	protected void editEvidence(Evidence element) {
-		// Start of user code editEvidence() method body
-				EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
+	protected void editSolutionContexts(Context element) {
+		// Start of user code editSolutionContexts() method body
+				EObject editedElement = solutionContextsEditUtil.foundCorrespondingEObject(element);
 				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(editedElement);
 				if (editionPolicy != null) {
 					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
 					if (propertiesEditionObject != null) {
-						evidenceEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						evidence.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.evidence, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+						solutionContextsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						solutionContexts.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, GsnViewsRepository.Solution.solutionContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
 					}
 				}
+				
 		// End of user code
 	}
 
@@ -1079,218 +1083,218 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getContextToAdd()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionEvidenceToAdd()
 	 * 
 	 */
-	public List getContextToAdd() {
-		return contextEditUtil.getElementsToAdd();
+	public List getSolutionEvidenceToAdd() {
+		return solutionEvidenceEditUtil.getElementsToAdd();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getContextToRemove()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionEvidenceToRemove()
 	 * 
 	 */
-	public List getContextToRemove() {
-		return contextEditUtil.getElementsToRemove();
+	public List getSolutionEvidenceToRemove() {
+		return solutionEvidenceEditUtil.getElementsToRemove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getContextToEdit()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionEvidenceToEdit()
 	 * 
 	 */
-	public Map getContextToEdit() {
-		return contextEditUtil.getElementsToRefresh();
+	public Map getSolutionEvidenceToEdit() {
+		return solutionEvidenceEditUtil.getElementsToRefresh();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getContextToMove()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionEvidenceToMove()
 	 * 
 	 */
-	public List getContextToMove() {
-		return contextEditUtil.getElementsToMove();
+	public List getSolutionEvidenceToMove() {
+		return solutionEvidenceEditUtil.getElementsToMove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getContextTable()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionEvidenceTable()
 	 * 
 	 */
-	public List getContextTable() {
-		return contextEditUtil.getVirtualList();
+	public List getSolutionEvidenceTable() {
+		return solutionEvidenceEditUtil.getVirtualList();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#initContext(EObject current, EReference containingFeature, EReference feature)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#initSolutionEvidence(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature) {
+	public void initSolutionEvidence(EObject current, EReference containingFeature, EReference feature) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
 		if (containingFeature != null)
-			contextEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+			solutionEvidenceEditUtil = new EMFListEditUtil(current, containingFeature, feature);
 		else
-			contextEditUtil = new EMFListEditUtil(current, feature);
-		this.context.setInput(contextEditUtil.getVirtualList());
+			solutionEvidenceEditUtil = new EMFListEditUtil(current, feature);
+		this.solutionEvidence.setInput(solutionEvidenceEditUtil.getVirtualList());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#updateContext(EObject newValue)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#updateSolutionEvidence(EObject newValue)
 	 * 
 	 */
-	public void updateContext(EObject newValue) {
-		if(contextEditUtil != null){
-			contextEditUtil.reinit(newValue);
-			context.refresh();
+	public void updateSolutionEvidence(EObject newValue) {
+		if(solutionEvidenceEditUtil != null){
+			solutionEvidenceEditUtil.reinit(newValue);
+			solutionEvidence.refresh();
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addFilterContext(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addFilterSolutionEvidence(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToContext(ViewerFilter filter) {
-		contextFilters.add(filter);
+	public void addFilterToSolutionEvidence(ViewerFilter filter) {
+		solutionEvidenceFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addBusinessFilterContext(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addBusinessFilterSolutionEvidence(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToContext(ViewerFilter filter) {
-		contextBusinessFilters.add(filter);
+	public void addBusinessFilterToSolutionEvidence(ViewerFilter filter) {
+		solutionEvidenceBusinessFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#isContainedInContextTable(EObject element)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#isContainedInSolutionEvidenceTable(EObject element)
 	 * 
 	 */
-	public boolean isContainedInContextTable(EObject element) {
-		return contextEditUtil.contains(element);
+	public boolean isContainedInSolutionEvidenceTable(EObject element) {
+		return solutionEvidenceEditUtil.contains(element);
 	}
 
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getEvidenceToAdd()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionContextsToAdd()
 	 * 
 	 */
-	public List getEvidenceToAdd() {
-		return evidenceEditUtil.getElementsToAdd();
+	public List getSolutionContextsToAdd() {
+		return solutionContextsEditUtil.getElementsToAdd();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getEvidenceToRemove()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionContextsToRemove()
 	 * 
 	 */
-	public List getEvidenceToRemove() {
-		return evidenceEditUtil.getElementsToRemove();
+	public List getSolutionContextsToRemove() {
+		return solutionContextsEditUtil.getElementsToRemove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getEvidenceToEdit()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionContextsToEdit()
 	 * 
 	 */
-	public Map getEvidenceToEdit() {
-		return evidenceEditUtil.getElementsToRefresh();
+	public Map getSolutionContextsToEdit() {
+		return solutionContextsEditUtil.getElementsToRefresh();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getEvidenceToMove()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionContextsToMove()
 	 * 
 	 */
-	public List getEvidenceToMove() {
-		return evidenceEditUtil.getElementsToMove();
+	public List getSolutionContextsToMove() {
+		return solutionContextsEditUtil.getElementsToMove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getEvidenceTable()
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#getSolutionContextsTable()
 	 * 
 	 */
-	public List getEvidenceTable() {
-		return evidenceEditUtil.getVirtualList();
+	public List getSolutionContextsTable() {
+		return solutionContextsEditUtil.getVirtualList();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#initEvidence(EObject current, EReference containingFeature, EReference feature)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#initSolutionContexts(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initEvidence(EObject current, EReference containingFeature, EReference feature) {
+	public void initSolutionContexts(EObject current, EReference containingFeature, EReference feature) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
 		if (containingFeature != null)
-			evidenceEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+			solutionContextsEditUtil = new EMFListEditUtil(current, containingFeature, feature);
 		else
-			evidenceEditUtil = new EMFListEditUtil(current, feature);
-		this.evidence.setInput(evidenceEditUtil.getVirtualList());
+			solutionContextsEditUtil = new EMFListEditUtil(current, feature);
+		this.solutionContexts.setInput(solutionContextsEditUtil.getVirtualList());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#updateEvidence(EObject newValue)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#updateSolutionContexts(EObject newValue)
 	 * 
 	 */
-	public void updateEvidence(EObject newValue) {
-		if(evidenceEditUtil != null){
-			evidenceEditUtil.reinit(newValue);
-			evidence.refresh();
+	public void updateSolutionContexts(EObject newValue) {
+		if(solutionContextsEditUtil != null){
+			solutionContextsEditUtil.reinit(newValue);
+			solutionContexts.refresh();
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addFilterEvidence(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addFilterSolutionContexts(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToEvidence(ViewerFilter filter) {
-		evidenceFilters.add(filter);
+	public void addFilterToSolutionContexts(ViewerFilter filter) {
+		solutionContextsFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addBusinessFilterEvidence(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#addBusinessFilterSolutionContexts(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToEvidence(ViewerFilter filter) {
-		evidenceBusinessFilters.add(filter);
+	public void addBusinessFilterToSolutionContexts(ViewerFilter filter) {
+		solutionContextsBusinessFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#isContainedInEvidenceTable(EObject element)
+	 * @see net.certware.argument.gsn.parts.SolutionPropertiesEditionPart#isContainedInSolutionContextsTable(EObject element)
 	 * 
 	 */
-	public boolean isContainedInEvidenceTable(EObject element) {
-		return evidenceEditUtil.contains(element);
+	public boolean isContainedInSolutionContextsTable(EObject element) {
+		return solutionContextsEditUtil.contains(element);
 	}
 
 

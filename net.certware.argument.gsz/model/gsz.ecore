@@ -333,7 +333,6 @@
       <details key="size" value="100,100"/>
       <details key="label.placement" value="external"/>
       <details key="label.readonly" value="false"/>
-      <details key="label.icon" value="false"/>
       <details key="border.color" value="255,255,255"/>
       <details key="border.width" value="0"/>
       <details key="border.style" value="dash"/>

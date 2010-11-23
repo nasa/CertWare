@@ -32,15 +32,6 @@ public interface GsnFactory extends EFactory {
 	Goal createGoal();
 
 	/**
-	 * Returns a new object of class '<em>Argument Diagram</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Argument Diagram</em>'.
-	 * @generated
-	 */
-	ArgumentDiagram createArgumentDiagram();
-
-	/**
 	 * Returns a new object of class '<em>Strategy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

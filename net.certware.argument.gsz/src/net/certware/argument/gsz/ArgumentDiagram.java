@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see net.certware.argument.gsz.GszPackage#getArgumentDiagram()
- * @model annotation="gmf.diagram model.extension='gsz' diagram.extension='gszd'"
+ * @model annotation="gmf.diagram model.extension='gsz' diagram.extension='gszd' onefile='false'"
  * @generated
  */
 public interface ArgumentDiagram extends EObject {

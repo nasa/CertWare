@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see net.certware.argument.gsz.GszPackage#getGoal()
- * @model annotation="gmf.node label='identifier' label.pattern='Goal {0}' figure='ellipse' border.color='0,0,0' border.width='2' border.style='solid' size='100,60'"
+ * @model annotation="gmf.node label='identifier' label.pattern='Goal {0}' label.icon='true' label.placement='internal' label.readonly='false' figure='ellipse' border.style='solid' size='100,60' color='250,250,250' tool.name='Goal Node' tool.description='Creates a goal node on the diagram canvas' tool.small.path='icons/obj16/ellipse.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/ellipse.png' tool.large.bundle='net.certware.core.ui'"
  * @generated
  */
 public interface Goal extends Claim {
@@ -39,7 +39,7 @@ public interface Goal extends Claim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sub Goals</em>' reference list.
 	 * @see net.certware.argument.gsz.GszPackage#getGoal_SubGoals()
-	 * @model annotation="gmf.link label='sub-goal' width='1' color='0,0,0' target.decoration='filledclosedarrow' style='solid'"
+	 * @model annotation="gmf.link label='sub-goal' width='1' color='0,0,0' target.decoration='filledclosedarrow' style='solid' tool.name='Goal with Sub-Goal' tool.description='Links goal node with a sub-goal' tool.small.path='icons/obj16/connector.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/connector.png' tool.large.bundle='net.certware.core.ui'"
 	 * @generated
 	 */
 	EList<Goal> getSubGoals();
@@ -55,7 +55,7 @@ public interface Goal extends Claim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Strategies</em>' reference list.
 	 * @see net.certware.argument.gsz.GszPackage#getGoal_Strategies()
-	 * @model annotation="gmf.link label='is solved by' width='1' color='0,0,0' target.decoration='filledclosedarrow' style='solid'"
+	 * @model annotation="gmf.link label='is solved by' width='1' color='0,0,0' target.decoration='filledclosedarrow' style='solid' tool.name='Goal with Strategy' tool.description='Links goal node with supporting strategy' tool.small.path='icons/obj16/connector.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/connector.png' tool.large.bundle='net.certware.core.ui'"
 	 * @generated
 	 */
 	EList<Strategy> getStrategies();
@@ -71,7 +71,7 @@ public interface Goal extends Claim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Goal Contexts</em>' reference list.
 	 * @see net.certware.argument.gsz.GszPackage#getGoal_GoalContexts()
-	 * @model annotation="gmf.link label='in context' width='1' color='0,0,0' target.decoration='closedarrow' style='solid'"
+	 * @model annotation="gmf.link label='in context' width='1' color='0,0,0' target.decoration='closedarrow' style='solid' tool.name='Goal with Context' tool.description='Links goal node with supporting context' tool.small.path='icons/obj16/connector.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/connector.png' tool.large.bundle='net.certware.core.ui'"
 	 * @generated
 	 */
 	EList<Context> getGoalContexts();
@@ -87,7 +87,7 @@ public interface Goal extends Claim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assumptions</em>' reference list.
 	 * @see net.certware.argument.gsz.GszPackage#getGoal_Assumptions()
-	 * @model annotation="gmf.link label='assumption' width='1' color='0,0,0' target.decoration='closedarrow' style='solid'"
+	 * @model annotation="gmf.link label='assumption' width='1' color='0,0,0' target.decoration='closedarrow' style='solid' tool.name='Goal with Assumption' tool.description='Links goal node with supporting assumption' tool.small.path='icons/obj16/connector.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/connector.png' tool.large.bundle='net.certware.core.ui'"
 	 * @generated
 	 */
 	EList<Assumption> getAssumptions();
@@ -103,7 +103,7 @@ public interface Goal extends Claim {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Goal Solutions</em>' reference list.
 	 * @see net.certware.argument.gsz.GszPackage#getGoal_GoalSolutions()
-	 * @model annotation="gmf.link label='is solved by' width='1' color='0,0,0' target.decoration='filledclosedarrow' style='solid'"
+	 * @model annotation="gmf.link label='is solved by' width='1' color='0,0,0' target.decoration='filledclosedarrow' style='solid' tool.name='Goal with Solution' tool.description='Links goal node with supporting solution' tool.small.path='icons/obj16/connector.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/connector.png' tool.large.bundle='net.certware.core.ui'"
 	 * @generated
 	 */
 	EList<Solution> getGoalSolutions();

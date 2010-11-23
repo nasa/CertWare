@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<mreg:ModelRegistrySettings xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mreg="http://www.eclipse.org/ocl/1.0/ModelRegistry">
-  <resource name="constraints/gsn.ocl">
-    <entry accessor="GSN" kind="Model Name" uri="platform:/resource/net.certware.argument.gsn/model/gsn.ecore"/>
-  </resource>
-</mreg:ModelRegistrySettings>

@@ -293,8 +293,6 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @param pageId 
-		 * @param selection 
 		 * @generated
 		 */
 		public GsnModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
@@ -324,7 +322,6 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @return 
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -364,7 +361,6 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @param pageId 
 		 * @generated
 		 */
 		public GsnModelWizardInitialObjectCreationPage(String pageId) {
@@ -487,7 +483,6 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @return 
 		 * @generated
 		 */
 		public String getInitialObjectName() {
@@ -504,7 +499,6 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @return 
 		 * @generated
 		 */
 		public String getEncoding() {
@@ -603,7 +597,6 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 	 * Get the file from the page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public IFile getModelFile() {

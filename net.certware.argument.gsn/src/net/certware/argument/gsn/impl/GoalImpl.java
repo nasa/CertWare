@@ -18,7 +18,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -28,11 +27,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getStrategy <em>Strategy</em>}</li>
- *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getAssumption <em>Assumption</em>}</li>
- *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getContext <em>Context</em>}</li>
- *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getSolution <em>Solution</em>}</li>
- *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getSubgoal <em>Subgoal</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getSubGoals <em>Sub Goals</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getStrategies <em>Strategies</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getGoalContexts <em>Goal Contexts</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getAssumptions <em>Assumptions</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.GoalImpl#getGoalSolutions <em>Goal Solutions</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,54 +39,54 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GoalImpl extends ClaimImpl implements Goal {
 	/**
-	 * The cached value of the '{@link #getStrategy() <em>Strategy</em>}' containment reference list.
+	 * The cached value of the '{@link #getSubGoals() <em>Sub Goals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStrategy()
+	 * @see #getSubGoals()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Strategy> strategy;
+	protected EList<Goal> subGoals;
 
 	/**
-	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' containment reference list.
+	 * The cached value of the '{@link #getStrategies() <em>Strategies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssumption()
+	 * @see #getStrategies()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Assumption> assumption;
+	protected EList<Strategy> strategies;
 
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.
+	 * The cached value of the '{@link #getGoalContexts() <em>Goal Contexts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContext()
+	 * @see #getGoalContexts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Context> context;
+	protected EList<Context> goalContexts;
 
 	/**
-	 * The cached value of the '{@link #getSolution() <em>Solution</em>}' containment reference list.
+	 * The cached value of the '{@link #getAssumptions() <em>Assumptions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSolution()
+	 * @see #getAssumptions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Solution> solution;
+	protected EList<Assumption> assumptions;
 
 	/**
-	 * The cached value of the '{@link #getSubgoal() <em>Subgoal</em>}' reference list.
+	 * The cached value of the '{@link #getGoalSolutions() <em>Goal Solutions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubgoal()
+	 * @see #getGoalSolutions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Goal> subgoal;
+	protected EList<Solution> goalSolutions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,11 +112,11 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Strategy> getStrategy() {
-		if (strategy == null) {
-			strategy = new EObjectContainmentEList<Strategy>(Strategy.class, this, GsnPackage.GOAL__STRATEGY);
+	public EList<Goal> getSubGoals() {
+		if (subGoals == null) {
+			subGoals = new EObjectContainmentEList<Goal>(Goal.class, this, GsnPackage.GOAL__SUB_GOALS);
 		}
-		return strategy;
+		return subGoals;
 	}
 
 	/**
@@ -125,11 +124,11 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Assumption> getAssumption() {
-		if (assumption == null) {
-			assumption = new EObjectContainmentEList<Assumption>(Assumption.class, this, GsnPackage.GOAL__ASSUMPTION);
+	public EList<Strategy> getStrategies() {
+		if (strategies == null) {
+			strategies = new EObjectContainmentEList<Strategy>(Strategy.class, this, GsnPackage.GOAL__STRATEGIES);
 		}
-		return assumption;
+		return strategies;
 	}
 
 	/**
@@ -137,11 +136,11 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Context> getContext() {
-		if (context == null) {
-			context = new EObjectContainmentEList<Context>(Context.class, this, GsnPackage.GOAL__CONTEXT);
+	public EList<Context> getGoalContexts() {
+		if (goalContexts == null) {
+			goalContexts = new EObjectContainmentEList<Context>(Context.class, this, GsnPackage.GOAL__GOAL_CONTEXTS);
 		}
-		return context;
+		return goalContexts;
 	}
 
 	/**
@@ -149,11 +148,11 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Solution> getSolution() {
-		if (solution == null) {
-			solution = new EObjectContainmentEList<Solution>(Solution.class, this, GsnPackage.GOAL__SOLUTION);
+	public EList<Assumption> getAssumptions() {
+		if (assumptions == null) {
+			assumptions = new EObjectContainmentEList<Assumption>(Assumption.class, this, GsnPackage.GOAL__ASSUMPTIONS);
 		}
-		return solution;
+		return assumptions;
 	}
 
 	/**
@@ -161,11 +160,11 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Goal> getSubgoal() {
-		if (subgoal == null) {
-			subgoal = new EObjectResolvingEList<Goal>(Goal.class, this, GsnPackage.GOAL__SUBGOAL);
+	public EList<Solution> getGoalSolutions() {
+		if (goalSolutions == null) {
+			goalSolutions = new EObjectContainmentEList<Solution>(Solution.class, this, GsnPackage.GOAL__GOAL_SOLUTIONS);
 		}
-		return subgoal;
+		return goalSolutions;
 	}
 
 	/**
@@ -176,14 +175,16 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GsnPackage.GOAL__STRATEGY:
-				return ((InternalEList<?>)getStrategy()).basicRemove(otherEnd, msgs);
-			case GsnPackage.GOAL__ASSUMPTION:
-				return ((InternalEList<?>)getAssumption()).basicRemove(otherEnd, msgs);
-			case GsnPackage.GOAL__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
-			case GsnPackage.GOAL__SOLUTION:
-				return ((InternalEList<?>)getSolution()).basicRemove(otherEnd, msgs);
+			case GsnPackage.GOAL__SUB_GOALS:
+				return ((InternalEList<?>)getSubGoals()).basicRemove(otherEnd, msgs);
+			case GsnPackage.GOAL__STRATEGIES:
+				return ((InternalEList<?>)getStrategies()).basicRemove(otherEnd, msgs);
+			case GsnPackage.GOAL__GOAL_CONTEXTS:
+				return ((InternalEList<?>)getGoalContexts()).basicRemove(otherEnd, msgs);
+			case GsnPackage.GOAL__ASSUMPTIONS:
+				return ((InternalEList<?>)getAssumptions()).basicRemove(otherEnd, msgs);
+			case GsnPackage.GOAL__GOAL_SOLUTIONS:
+				return ((InternalEList<?>)getGoalSolutions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -196,16 +197,16 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GsnPackage.GOAL__STRATEGY:
-				return getStrategy();
-			case GsnPackage.GOAL__ASSUMPTION:
-				return getAssumption();
-			case GsnPackage.GOAL__CONTEXT:
-				return getContext();
-			case GsnPackage.GOAL__SOLUTION:
-				return getSolution();
-			case GsnPackage.GOAL__SUBGOAL:
-				return getSubgoal();
+			case GsnPackage.GOAL__SUB_GOALS:
+				return getSubGoals();
+			case GsnPackage.GOAL__STRATEGIES:
+				return getStrategies();
+			case GsnPackage.GOAL__GOAL_CONTEXTS:
+				return getGoalContexts();
+			case GsnPackage.GOAL__ASSUMPTIONS:
+				return getAssumptions();
+			case GsnPackage.GOAL__GOAL_SOLUTIONS:
+				return getGoalSolutions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,25 +220,25 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GsnPackage.GOAL__STRATEGY:
-				getStrategy().clear();
-				getStrategy().addAll((Collection<? extends Strategy>)newValue);
+			case GsnPackage.GOAL__SUB_GOALS:
+				getSubGoals().clear();
+				getSubGoals().addAll((Collection<? extends Goal>)newValue);
 				return;
-			case GsnPackage.GOAL__ASSUMPTION:
-				getAssumption().clear();
-				getAssumption().addAll((Collection<? extends Assumption>)newValue);
+			case GsnPackage.GOAL__STRATEGIES:
+				getStrategies().clear();
+				getStrategies().addAll((Collection<? extends Strategy>)newValue);
 				return;
-			case GsnPackage.GOAL__CONTEXT:
-				getContext().clear();
-				getContext().addAll((Collection<? extends Context>)newValue);
+			case GsnPackage.GOAL__GOAL_CONTEXTS:
+				getGoalContexts().clear();
+				getGoalContexts().addAll((Collection<? extends Context>)newValue);
 				return;
-			case GsnPackage.GOAL__SOLUTION:
-				getSolution().clear();
-				getSolution().addAll((Collection<? extends Solution>)newValue);
+			case GsnPackage.GOAL__ASSUMPTIONS:
+				getAssumptions().clear();
+				getAssumptions().addAll((Collection<? extends Assumption>)newValue);
 				return;
-			case GsnPackage.GOAL__SUBGOAL:
-				getSubgoal().clear();
-				getSubgoal().addAll((Collection<? extends Goal>)newValue);
+			case GsnPackage.GOAL__GOAL_SOLUTIONS:
+				getGoalSolutions().clear();
+				getGoalSolutions().addAll((Collection<? extends Solution>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,20 +252,20 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GsnPackage.GOAL__STRATEGY:
-				getStrategy().clear();
+			case GsnPackage.GOAL__SUB_GOALS:
+				getSubGoals().clear();
 				return;
-			case GsnPackage.GOAL__ASSUMPTION:
-				getAssumption().clear();
+			case GsnPackage.GOAL__STRATEGIES:
+				getStrategies().clear();
 				return;
-			case GsnPackage.GOAL__CONTEXT:
-				getContext().clear();
+			case GsnPackage.GOAL__GOAL_CONTEXTS:
+				getGoalContexts().clear();
 				return;
-			case GsnPackage.GOAL__SOLUTION:
-				getSolution().clear();
+			case GsnPackage.GOAL__ASSUMPTIONS:
+				getAssumptions().clear();
 				return;
-			case GsnPackage.GOAL__SUBGOAL:
-				getSubgoal().clear();
+			case GsnPackage.GOAL__GOAL_SOLUTIONS:
+				getGoalSolutions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -278,16 +279,16 @@ public class GoalImpl extends ClaimImpl implements Goal {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GsnPackage.GOAL__STRATEGY:
-				return strategy != null && !strategy.isEmpty();
-			case GsnPackage.GOAL__ASSUMPTION:
-				return assumption != null && !assumption.isEmpty();
-			case GsnPackage.GOAL__CONTEXT:
-				return context != null && !context.isEmpty();
-			case GsnPackage.GOAL__SOLUTION:
-				return solution != null && !solution.isEmpty();
-			case GsnPackage.GOAL__SUBGOAL:
-				return subgoal != null && !subgoal.isEmpty();
+			case GsnPackage.GOAL__SUB_GOALS:
+				return subGoals != null && !subGoals.isEmpty();
+			case GsnPackage.GOAL__STRATEGIES:
+				return strategies != null && !strategies.isEmpty();
+			case GsnPackage.GOAL__GOAL_CONTEXTS:
+				return goalContexts != null && !goalContexts.isEmpty();
+			case GsnPackage.GOAL__ASSUMPTIONS:
+				return assumptions != null && !assumptions.isEmpty();
+			case GsnPackage.GOAL__GOAL_SOLUTIONS:
+				return goalSolutions != null && !goalSolutions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

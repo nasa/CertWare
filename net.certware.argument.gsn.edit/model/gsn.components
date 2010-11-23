@@ -1,343 +1,337 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
-  <eef-components:PropertiesEditionContext xmi:id="_dVH74fNzEd-NrJ0fdFnuvQ" documentation="Edition Context for gsn GenPackage">
-    <categories xmi:id="_dVJxEPNzEd-NrJ0fdFnuvQ" name="gsn">
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_dVJxEfNzEd-NrJ0fdFnuvQ" name="Goal" views="_dVKYIfNzEd-NrJ0fdFnuvQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxEvNzEd-NrJ0fdFnuvQ" name="identifier" views="_dVKYI_NzEd-NrJ0fdFnuvQ">
+  <eef-components:PropertiesEditionContext xmi:id="_a8MscPczEd-YINFVNajjfg" documentation="Edition Context for gsn GenPackage">
+    <categories xmi:id="_a8MscfczEd-YINFVNajjfg" name="gsn">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_a8MscvczEd-YINFVNajjfg" name="Goal" views="_a8NTovczEd-YINFVNajjfg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8Msc_czEd-YINFVNajjfg" name="identifier" views="_a8NTpPczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxE_NzEd-NrJ0fdFnuvQ" name="description" views="_dVKYJPNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsdPczEd-YINFVNajjfg" name="description" views="_a8NTpfczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxFPNzEd-NrJ0fdFnuvQ" name="content" views="_dVKYJfNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsdfczEd-YINFVNajjfg" name="content" views="_a8NTpvczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxFfNzEd-NrJ0fdFnuvQ" name="isTagged" views="_dVKYJvNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsdvczEd-YINFVNajjfg" name="isTagged" views="_a8NTp_czEd-YINFVNajjfg">
           <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxFvNzEd-NrJ0fdFnuvQ" name="assumed" views="_dVKYJ_NzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8Msd_czEd-YINFVNajjfg" name="assumed" views="_a8NTqPczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//Claim/assumed"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxF_NzEd-NrJ0fdFnuvQ" name="toBeSupported" views="_dVKYKPNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsePczEd-YINFVNajjfg" name="toBeSupported" views="_a8NTqfczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//Claim/toBeSupported"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxGPNzEd-NrJ0fdFnuvQ" name="strategy" views="_dVKYKfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/strategy"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsefczEd-YINFVNajjfg" name="subGoals" views="_a8NTqvczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/subGoals"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxGfNzEd-NrJ0fdFnuvQ" name="assumption" views="_dVKYKvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/assumption"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsevczEd-YINFVNajjfg" name="strategies" views="_a8NTq_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/strategies"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxGvNzEd-NrJ0fdFnuvQ" name="context" views="_dVKYK_NzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/context"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8Mse_czEd-YINFVNajjfg" name="goalContexts" views="_a8NTrPczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/goalContexts"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxG_NzEd-NrJ0fdFnuvQ" name="solution" views="_dVKYLPNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/solution"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsfPczEd-YINFVNajjfg" name="assumptions" views="_a8NTrfczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/assumptions"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxHPNzEd-NrJ0fdFnuvQ" name="subgoal" views="_dVKYLfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/subgoal"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsffczEd-YINFVNajjfg" name="goalSolutions" views="_a8NTrvczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal/goalSolutions"/>
         </properties>
         <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Goal"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_dVJxHfNzEd-NrJ0fdFnuvQ" name="ArgumentDiagram" views="_dVKYLvNzEd-NrJ0fdFnuvQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxHvNzEd-NrJ0fdFnuvQ" name="goals" views="_dVKYMPNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram/goals"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxH_NzEd-NrJ0fdFnuvQ" name="strategies" views="_dVKYMfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram/strategies"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxIPNzEd-NrJ0fdFnuvQ" name="assumptions" views="_dVKYMvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram/assumptions"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxIfNzEd-NrJ0fdFnuvQ" name="solutions" views="_dVKYM_NzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram/solutions"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxIvNzEd-NrJ0fdFnuvQ" name="contexts" views="_dVKYNPNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram/contexts"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxI_NzEd-NrJ0fdFnuvQ" name="justifications" views="_dVKYNfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram/justifications"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxJPNzEd-NrJ0fdFnuvQ" name="version" views="_dVKYNvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram/version"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//ArgumentDiagram"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_dVJxJfNzEd-NrJ0fdFnuvQ" name="Strategy" views="_dVKYN_NzEd-NrJ0fdFnuvQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxJvNzEd-NrJ0fdFnuvQ" name="identifier" views="_dVKYOfNzEd-NrJ0fdFnuvQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_a8MsfvczEd-YINFVNajjfg" name="Strategy" views="_a8NTr_czEd-YINFVNajjfg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8Msf_czEd-YINFVNajjfg" name="identifier" views="_a8NTsfczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxJ_NzEd-NrJ0fdFnuvQ" name="description" views="_dVKYOvNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsgPczEd-YINFVNajjfg" name="description" views="_a8NTsvczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxKPNzEd-NrJ0fdFnuvQ" name="content" views="_dVKYO_NzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsgfczEd-YINFVNajjfg" name="content" views="_a8NTs_czEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxKfNzEd-NrJ0fdFnuvQ" name="isTagged" views="_dVKYPPNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MsgvczEd-YINFVNajjfg" name="isTagged" views="_a8NTtPczEd-YINFVNajjfg">
           <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxKvNzEd-NrJ0fdFnuvQ" name="goal" views="_dVKYPfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/goal"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8Msg_czEd-YINFVNajjfg" name="goals" views="_a8NTtfczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/goals"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxK_NzEd-NrJ0fdFnuvQ" name="justification" views="_dVKYPvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/justification"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MshPczEd-YINFVNajjfg" name="justifications" views="_a8NTtvczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/justifications"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxLPNzEd-NrJ0fdFnuvQ" name="solution" views="_dVKYP_NzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/solution"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8MshfczEd-YINFVNajjfg" name="strategyContexts" views="_a8NTt_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/strategyContexts"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxLfNzEd-NrJ0fdFnuvQ" name="context" views="_dVKYQPNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/context"/>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTgPczEd-YINFVNajjfg" name="strategySolutions" views="_a8NTuPczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy/strategySolutions"/>
         </properties>
         <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Strategy"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_dVJxLvNzEd-NrJ0fdFnuvQ" name="Solution" views="_dVKYQfNzEd-NrJ0fdFnuvQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxL_NzEd-NrJ0fdFnuvQ" name="identifier" views="_dVKYQ_NzEd-NrJ0fdFnuvQ">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_a8NTgfczEd-YINFVNajjfg" name="Justification" views="_a8NTufczEd-YINFVNajjfg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTgvczEd-YINFVNajjfg" name="identifier" views="_a8NTu_czEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxMPNzEd-NrJ0fdFnuvQ" name="description" views="_dVKYRPNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTg_czEd-YINFVNajjfg" name="description" views="_a8NTvPczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxMfNzEd-NrJ0fdFnuvQ" name="content" views="_dVKYRfNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NThPczEd-YINFVNajjfg" name="content" views="_a8NTvfczEd-YINFVNajjfg">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxMvNzEd-NrJ0fdFnuvQ" name="isTagged" views="_dVKYRvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxM_NzEd-NrJ0fdFnuvQ" name="target" views="_dVKYR_NzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ArgumentLink/target"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxNPNzEd-NrJ0fdFnuvQ" name="source" views="_dVKYSPNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ArgumentLink/source"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxNfNzEd-NrJ0fdFnuvQ" name="context" views="_dVKYSfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Solution/context"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxNvNzEd-NrJ0fdFnuvQ" name="evidence" views="_dVKYSvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Solution/evidence"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Solution"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_dVJxN_NzEd-NrJ0fdFnuvQ" name="Assumption" views="_dVKYS_NzEd-NrJ0fdFnuvQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxOPNzEd-NrJ0fdFnuvQ" name="identifier" views="_dVKYTfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxOfNzEd-NrJ0fdFnuvQ" name="description" views="_dVKYTvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxOvNzEd-NrJ0fdFnuvQ" name="content" views="_dVKYT_NzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxO_NzEd-NrJ0fdFnuvQ" name="isTagged" views="_dVKYUPNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Assumption"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_dVJxPPNzEd-NrJ0fdFnuvQ" name="Context" views="_dVKYUfNzEd-NrJ0fdFnuvQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxPfNzEd-NrJ0fdFnuvQ" name="identifier" views="_dVKYU_NzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxPvNzEd-NrJ0fdFnuvQ" name="description" views="_dVKYVPNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxP_NzEd-NrJ0fdFnuvQ" name="content" views="_dVKYVfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxQPNzEd-NrJ0fdFnuvQ" name="isTagged" views="_dVKYVvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
-        </properties>
-        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Context"/>
-      </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_dVJxQfNzEd-NrJ0fdFnuvQ" name="Justification" views="_dVKYV_NzEd-NrJ0fdFnuvQ">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxQvNzEd-NrJ0fdFnuvQ" name="identifier" views="_dVKYWfNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxQ_NzEd-NrJ0fdFnuvQ" name="description" views="_dVKYWvNzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxRPNzEd-NrJ0fdFnuvQ" name="content" views="_dVKYW_NzEd-NrJ0fdFnuvQ">
-          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
-        </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_dVJxRfNzEd-NrJ0fdFnuvQ" name="isTagged" views="_dVKYXPNzEd-NrJ0fdFnuvQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NThfczEd-YINFVNajjfg" name="isTagged" views="_a8NTvvczEd-YINFVNajjfg">
           <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
         </properties>
         <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Justification"/>
       </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_a8NThvczEd-YINFVNajjfg" name="Context" views="_a8NTv_czEd-YINFVNajjfg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTh_czEd-YINFVNajjfg" name="identifier" views="_a8NTwfczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTiPczEd-YINFVNajjfg" name="description" views="_a8NTwvczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTifczEd-YINFVNajjfg" name="content" views="_a8NTw_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTivczEd-YINFVNajjfg" name="isTagged" views="_a8NTxPczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Context"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_a8NTi_czEd-YINFVNajjfg" name="Assumption" views="_a8NTxfczEd-YINFVNajjfg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTjPczEd-YINFVNajjfg" name="identifier" views="_a8NTx_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTjfczEd-YINFVNajjfg" name="description" views="_a8NTyPczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTjvczEd-YINFVNajjfg" name="content" views="_a8NTyfczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTj_czEd-YINFVNajjfg" name="isTagged" views="_a8NTyvczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Assumption"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_a8NTkPczEd-YINFVNajjfg" name="Solution" views="_a8NTy_czEd-YINFVNajjfg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTkfczEd-YINFVNajjfg" name="identifier" views="_a8NTzfczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTkvczEd-YINFVNajjfg" name="description" views="_a8NTzvczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTk_czEd-YINFVNajjfg" name="content" views="_a8NTz_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTlPczEd-YINFVNajjfg" name="isTagged" views="_a8NT0PczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTlfczEd-YINFVNajjfg" name="target" views="_a8NT0fczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ArgumentLink/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTlvczEd-YINFVNajjfg" name="source" views="_a8NT0vczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ArgumentLink/source"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTl_czEd-YINFVNajjfg" name="solutionEvidence" views="_a8NT0_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Solution/solutionEvidence"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTmPczEd-YINFVNajjfg" name="solutionContexts" views="_a8NT1PczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Solution/solutionContexts"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Solution"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_a8NTmfczEd-YINFVNajjfg" name="Evidence" views="_a8NT1fczEd-YINFVNajjfg">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTmvczEd-YINFVNajjfg" name="identifier" views="_a8NT1_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTm_czEd-YINFVNajjfg" name="description" views="_a8NT2PczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTnPczEd-YINFVNajjfg" name="content" views="_a8NT2fczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTnfczEd-YINFVNajjfg" name="isTagged" views="_a8NT2vczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ModelElement/isTagged"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTnvczEd-YINFVNajjfg" name="target" views="_a8NT2_czEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ArgumentLink/target"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_a8NTn_czEd-YINFVNajjfg" name="source" views="_a8NT3PczEd-YINFVNajjfg">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm/model/arm.ecore#//ArgumentLink/source"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.ecore#//Evidence"/>
+      </bindings>
     </categories>
     <model href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.gsn/model/gsn.genmodel#//gsn"/>
   </eef-components:PropertiesEditionContext>
-  <eef-views:ViewsRepository xmi:id="_dVJxRvNzEd-NrJ0fdFnuvQ" documentation="Views repository for gsn GenPackage" name="gsn">
+  <eef-views:ViewsRepository xmi:id="_a8NToPczEd-YINFVNajjfg" documentation="Views repository for gsn GenPackage" name="gsn">
     <RepositoryKind>SWT</RepositoryKind>
     <RepositoryKind>Form</RepositoryKind>
-    <categories xmi:id="_dVKYIPNzEd-NrJ0fdFnuvQ" name="gsn">
-      <views xmi:id="_dVKYIfNzEd-NrJ0fdFnuvQ" name="Goal">
-        <elements xsi:type="eef-views:Container" xmi:id="_dVKYIvNzEd-NrJ0fdFnuvQ" name="properties">
+    <categories xmi:id="_a8NTofczEd-YINFVNajjfg" name="gsn">
+      <views xmi:id="_a8NTovczEd-YINFVNajjfg" name="Goal">
+        <elements xsi:type="eef-views:Container" xmi:id="_a8NTo_czEd-YINFVNajjfg" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYI_NzEd-NrJ0fdFnuvQ" name="identifier">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTpPczEd-YINFVNajjfg" name="identifier">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYJPNzEd-NrJ0fdFnuvQ" name="description">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTpfczEd-YINFVNajjfg" name="description">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYJfNzEd-NrJ0fdFnuvQ" name="content">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTpvczEd-YINFVNajjfg" name="content">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYJvNzEd-NrJ0fdFnuvQ" name="isTagged">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTp_czEd-YINFVNajjfg" name="isTagged">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYJ_NzEd-NrJ0fdFnuvQ" name="assumed">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTqPczEd-YINFVNajjfg" name="assumed">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYKPNzEd-NrJ0fdFnuvQ" name="toBeSupported">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTqfczEd-YINFVNajjfg" name="toBeSupported">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYKfNzEd-NrJ0fdFnuvQ" name="strategy">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTqvczEd-YINFVNajjfg" name="subGoals">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYKvNzEd-NrJ0fdFnuvQ" name="assumption">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTq_czEd-YINFVNajjfg" name="strategies">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYK_NzEd-NrJ0fdFnuvQ" name="context">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTrPczEd-YINFVNajjfg" name="goalContexts">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYLPNzEd-NrJ0fdFnuvQ" name="solution">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTrfczEd-YINFVNajjfg" name="assumptions">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYLfNzEd-NrJ0fdFnuvQ" name="subgoal">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTrvczEd-YINFVNajjfg" name="goalSolutions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_a8NTr_czEd-YINFVNajjfg" name="Strategy">
+        <elements xsi:type="eef-views:Container" xmi:id="_a8NTsPczEd-YINFVNajjfg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTsfczEd-YINFVNajjfg" name="identifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTsvczEd-YINFVNajjfg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTs_czEd-YINFVNajjfg" name="content">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTtPczEd-YINFVNajjfg" name="isTagged">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTtfczEd-YINFVNajjfg" name="goals">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTtvczEd-YINFVNajjfg" name="justifications">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTt_czEd-YINFVNajjfg" name="strategyContexts">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTuPczEd-YINFVNajjfg" name="strategySolutions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_a8NTufczEd-YINFVNajjfg" name="Justification">
+        <elements xsi:type="eef-views:Container" xmi:id="_a8NTuvczEd-YINFVNajjfg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTu_czEd-YINFVNajjfg" name="identifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTvPczEd-YINFVNajjfg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTvfczEd-YINFVNajjfg" name="content">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTvvczEd-YINFVNajjfg" name="isTagged">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_a8NTv_czEd-YINFVNajjfg" name="Context">
+        <elements xsi:type="eef-views:Container" xmi:id="_a8NTwPczEd-YINFVNajjfg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTwfczEd-YINFVNajjfg" name="identifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTwvczEd-YINFVNajjfg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTw_czEd-YINFVNajjfg" name="content">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTxPczEd-YINFVNajjfg" name="isTagged">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_a8NTxfczEd-YINFVNajjfg" name="Assumption">
+        <elements xsi:type="eef-views:Container" xmi:id="_a8NTxvczEd-YINFVNajjfg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTx_czEd-YINFVNajjfg" name="identifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTyPczEd-YINFVNajjfg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTyfczEd-YINFVNajjfg" name="content">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTyvczEd-YINFVNajjfg" name="isTagged">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_a8NTy_czEd-YINFVNajjfg" name="Solution">
+        <elements xsi:type="eef-views:Container" xmi:id="_a8NTzPczEd-YINFVNajjfg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTzfczEd-YINFVNajjfg" name="identifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTzvczEd-YINFVNajjfg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NTz_czEd-YINFVNajjfg" name="content">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT0PczEd-YINFVNajjfg" name="isTagged">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT0fczEd-YINFVNajjfg" name="target">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
           </elements>
-        </elements>
-      </views>
-      <views xmi:id="_dVKYLvNzEd-NrJ0fdFnuvQ" name="ArgumentDiagram">
-        <elements xsi:type="eef-views:Container" xmi:id="_dVKYL_NzEd-NrJ0fdFnuvQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYMPNzEd-NrJ0fdFnuvQ" name="goals">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYMfNzEd-NrJ0fdFnuvQ" name="strategies">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYMvNzEd-NrJ0fdFnuvQ" name="assumptions">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYM_NzEd-NrJ0fdFnuvQ" name="solutions">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYNPNzEd-NrJ0fdFnuvQ" name="contexts">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYNfNzEd-NrJ0fdFnuvQ" name="justifications">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYNvNzEd-NrJ0fdFnuvQ" name="version">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_dVKYN_NzEd-NrJ0fdFnuvQ" name="Strategy">
-        <elements xsi:type="eef-views:Container" xmi:id="_dVKYOPNzEd-NrJ0fdFnuvQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYOfNzEd-NrJ0fdFnuvQ" name="identifier">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYOvNzEd-NrJ0fdFnuvQ" name="description">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYO_NzEd-NrJ0fdFnuvQ" name="content">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYPPNzEd-NrJ0fdFnuvQ" name="isTagged">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYPfNzEd-NrJ0fdFnuvQ" name="goal">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYPvNzEd-NrJ0fdFnuvQ" name="justification">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYP_NzEd-NrJ0fdFnuvQ" name="solution">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYQPNzEd-NrJ0fdFnuvQ" name="context">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_dVKYQfNzEd-NrJ0fdFnuvQ" name="Solution">
-        <elements xsi:type="eef-views:Container" xmi:id="_dVKYQvNzEd-NrJ0fdFnuvQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYQ_NzEd-NrJ0fdFnuvQ" name="identifier">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYRPNzEd-NrJ0fdFnuvQ" name="description">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYRfNzEd-NrJ0fdFnuvQ" name="content">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYRvNzEd-NrJ0fdFnuvQ" name="isTagged">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYR_NzEd-NrJ0fdFnuvQ" name="target">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT0vczEd-YINFVNajjfg" name="source">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYSPNzEd-NrJ0fdFnuvQ" name="source">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT0_czEd-YINFVNajjfg" name="solutionEvidence">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT1PczEd-YINFVNajjfg" name="solutionContexts">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_a8NT1fczEd-YINFVNajjfg" name="Evidence">
+        <elements xsi:type="eef-views:Container" xmi:id="_a8NT1vczEd-YINFVNajjfg" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT1_czEd-YINFVNajjfg" name="identifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT2PczEd-YINFVNajjfg" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT2fczEd-YINFVNajjfg" name="content">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT2vczEd-YINFVNajjfg" name="isTagged">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT2_czEd-YINFVNajjfg" name="target">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYSfNzEd-NrJ0fdFnuvQ" name="context">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYSvNzEd-NrJ0fdFnuvQ" name="evidence">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_dVKYS_NzEd-NrJ0fdFnuvQ" name="Assumption">
-        <elements xsi:type="eef-views:Container" xmi:id="_dVKYTPNzEd-NrJ0fdFnuvQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYTfNzEd-NrJ0fdFnuvQ" name="identifier">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYTvNzEd-NrJ0fdFnuvQ" name="description">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYT_NzEd-NrJ0fdFnuvQ" name="content">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYUPNzEd-NrJ0fdFnuvQ" name="isTagged">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_dVKYUfNzEd-NrJ0fdFnuvQ" name="Context">
-        <elements xsi:type="eef-views:Container" xmi:id="_dVKYUvNzEd-NrJ0fdFnuvQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYU_NzEd-NrJ0fdFnuvQ" name="identifier">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYVPNzEd-NrJ0fdFnuvQ" name="description">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYVfNzEd-NrJ0fdFnuvQ" name="content">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYVvNzEd-NrJ0fdFnuvQ" name="isTagged">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-        </elements>
-      </views>
-      <views xmi:id="_dVKYV_NzEd-NrJ0fdFnuvQ" name="Justification">
-        <elements xsi:type="eef-views:Container" xmi:id="_dVKYWPNzEd-NrJ0fdFnuvQ" name="properties">
-          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYWfNzEd-NrJ0fdFnuvQ" name="identifier">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYWvNzEd-NrJ0fdFnuvQ" name="description">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYW_NzEd-NrJ0fdFnuvQ" name="content">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_dVKYXPNzEd-NrJ0fdFnuvQ" name="isTagged">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_a8NT3PczEd-YINFVNajjfg" name="source">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
           </elements>
         </elements>
       </views>

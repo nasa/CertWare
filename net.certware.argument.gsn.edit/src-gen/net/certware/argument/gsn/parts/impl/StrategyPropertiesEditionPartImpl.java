@@ -64,22 +64,22 @@ public class StrategyPropertiesEditionPartImpl extends CompositePropertiesEditio
 	protected ReferencesTable<? extends EObject> isTagged;
 	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil goalEditUtil;
-	protected ReferencesTable<? extends EObject> goal;
-	protected List<ViewerFilter> goalBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> goalFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil justificationEditUtil;
-	protected ReferencesTable<? extends EObject> justification;
-	protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil solutionEditUtil;
-	protected ReferencesTable<? extends EObject> solution;
-	protected List<ViewerFilter> solutionBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> solutionFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil contextEditUtil;
-	protected ReferencesTable<? extends EObject> context;
-	protected List<ViewerFilter> contextBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> contextFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil goalsEditUtil;
+	protected ReferencesTable<? extends EObject> goals;
+	protected List<ViewerFilter> goalsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> goalsFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil justificationsEditUtil;
+	protected ReferencesTable<? extends EObject> justifications;
+	protected List<ViewerFilter> justificationsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> justificationsFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil strategyContextsEditUtil;
+	protected ReferencesTable<? extends EObject> strategyContexts;
+	protected List<ViewerFilter> strategyContextsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> strategyContextsFilters = new ArrayList<ViewerFilter>();
+	protected EMFListEditUtil strategySolutionsEditUtil;
+	protected ReferencesTable<? extends EObject> strategySolutions;
+	protected List<ViewerFilter> strategySolutionsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> strategySolutionsFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -140,10 +140,10 @@ public class StrategyPropertiesEditionPartImpl extends CompositePropertiesEditio
 		createDescriptionText(propertiesGroup);
 		createContentText(propertiesGroup);
 		createIsTaggedAdvancedTableComposition(propertiesGroup);
-		createGoalAdvancedTableComposition(propertiesGroup);
-		createJustificationAdvancedTableComposition(propertiesGroup);
-		createSolutionAdvancedTableComposition(propertiesGroup);
-		createContextAdvancedTableComposition(propertiesGroup);
+		createGoalsAdvancedTableComposition(propertiesGroup);
+		createJustificationsAdvancedTableComposition(propertiesGroup);
+		createStrategyContextsAdvancedTableComposition(propertiesGroup);
+		createStrategySolutionsAdvancedTableComposition(propertiesGroup);
 	}
 
 	
@@ -369,49 +369,49 @@ public class StrategyPropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * @param container
 	 * 
 	 */
-	protected void createGoalAdvancedTableComposition(Composite parent) {
-		this.goal = new ReferencesTable<Goal>(GsnMessages.StrategyPropertiesEditionPart_GoalLabel, new ReferencesTableListener<Goal>() {			
-			public void handleAdd() { addToGoal();}
-			public void handleEdit(Goal element) { editGoal(element); }
-			public void handleMove(Goal element, int oldIndex, int newIndex) { moveGoal(element, oldIndex, newIndex); }
-			public void handleRemove(Goal element) { removeFromGoal(element); }
+	protected void createGoalsAdvancedTableComposition(Composite parent) {
+		this.goals = new ReferencesTable<Goal>(GsnMessages.StrategyPropertiesEditionPart_GoalsLabel, new ReferencesTableListener<Goal>() {			
+			public void handleAdd() { addToGoals();}
+			public void handleEdit(Goal element) { editGoals(element); }
+			public void handleMove(Goal element, int oldIndex, int newIndex) { moveGoals(element, oldIndex, newIndex); }
+			public void handleRemove(Goal element) { removeFromGoals(element); }
 			public void navigateTo(Goal element) { }
 		});
-		this.goal.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.goal, GsnViewsRepository.SWT_KIND));
-		this.goal.createControls(parent);
-		GridData goalData = new GridData(GridData.FILL_HORIZONTAL);
-		goalData.horizontalSpan = 3;
-		this.goal.setLayoutData(goalData);
-		this.goal.setLowerBound(0);
-		this.goal.setUpperBound(-1);
-		goal.setID(GsnViewsRepository.Strategy.goal);
-		goal.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		this.goals.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.goals, GsnViewsRepository.SWT_KIND));
+		this.goals.createControls(parent);
+		GridData goalsData = new GridData(GridData.FILL_HORIZONTAL);
+		goalsData.horizontalSpan = 3;
+		this.goals.setLayoutData(goalsData);
+		this.goals.setLowerBound(0);
+		this.goals.setUpperBound(-1);
+		goals.setID(GsnViewsRepository.Strategy.goals);
+		goals.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
 	 *  
 	 */
-	protected void moveGoal(Goal element, int oldIndex, int newIndex) {
-		EObject editedElement = goalEditUtil.foundCorrespondingEObject(element);
-		goalEditUtil.moveElement(element, oldIndex, newIndex);
-		goal.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	protected void moveGoals(Goal element, int oldIndex, int newIndex) {
+		EObject editedElement = goalsEditUtil.foundCorrespondingEObject(element);
+		goalsEditUtil.moveElement(element, oldIndex, newIndex);
+		goals.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goals, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
 	}
 
 	/**
 	 *  
 	 */
-	protected void addToGoal() {
-		// Start of user code addToGoal() method body
+	protected void addToGoals() {
+		// Start of user code addToGoals() method body
 				Goal eObject = GsnFactory.eINSTANCE.createGoal();
 				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
 				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
 				if (editionPolicy != null) {
 					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
 					if (propertiesEditionObject != null) {
-						goalEditUtil.addElement(propertiesEditionObject);
-						goal.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+						goalsEditUtil.addElement(propertiesEditionObject);
+						goals.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goals, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
 					}
 				}
 		
@@ -421,264 +421,12 @@ public class StrategyPropertiesEditionPartImpl extends CompositePropertiesEditio
 	/**
 	 *  
 	 */
-	protected void removeFromGoal(Goal element) {
-		// Start of user code removeFromGoal() method body
-				EObject editedElement = goalEditUtil.foundCorrespondingEObject(element);
-				goalEditUtil.removeElement(element);
-				goal.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void editGoal(Goal element) {
-		// Start of user code editGoal() method body
-				EObject editedElement = goalEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						goalEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						goal.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goal, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		// End of user code
-	}
-
-	/**
-	 * @param container
-	 * 
-	 */
-	protected void createJustificationAdvancedTableComposition(Composite parent) {
-		this.justification = new ReferencesTable<Justification>(GsnMessages.StrategyPropertiesEditionPart_JustificationLabel, new ReferencesTableListener<Justification>() {			
-			public void handleAdd() { addToJustification();}
-			public void handleEdit(Justification element) { editJustification(element); }
-			public void handleMove(Justification element, int oldIndex, int newIndex) { moveJustification(element, oldIndex, newIndex); }
-			public void handleRemove(Justification element) { removeFromJustification(element); }
-			public void navigateTo(Justification element) { }
-		});
-		this.justification.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.justification, GsnViewsRepository.SWT_KIND));
-		this.justification.createControls(parent);
-		GridData justificationData = new GridData(GridData.FILL_HORIZONTAL);
-		justificationData.horizontalSpan = 3;
-		this.justification.setLayoutData(justificationData);
-		this.justification.setLowerBound(0);
-		this.justification.setUpperBound(-1);
-		justification.setID(GsnViewsRepository.Strategy.justification);
-		justification.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 *  
-	 */
-	protected void moveJustification(Justification element, int oldIndex, int newIndex) {
-		EObject editedElement = justificationEditUtil.foundCorrespondingEObject(element);
-		justificationEditUtil.moveElement(element, oldIndex, newIndex);
-		justification.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 *  
-	 */
-	protected void addToJustification() {
-		// Start of user code addToJustification() method body
-				Justification eObject = GsnFactory.eINSTANCE.createJustification();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						justificationEditUtil.addElement(propertiesEditionObject);
-						justification.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void removeFromJustification(Justification element) {
-		// Start of user code removeFromJustification() method body
-				EObject editedElement = justificationEditUtil.foundCorrespondingEObject(element);
-				justificationEditUtil.removeElement(element);
-				justification.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justification, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void editJustification(Justification element) {
-		// Start of user code editJustification() method body
-				EObject editedElement = justificationEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						justificationEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						justification.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justification, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		// End of user code
-	}
-
-	/**
-	 * @param container
-	 * 
-	 */
-	protected void createSolutionAdvancedTableComposition(Composite parent) {
-		this.solution = new ReferencesTable<Solution>(GsnMessages.StrategyPropertiesEditionPart_SolutionLabel, new ReferencesTableListener<Solution>() {			
-			public void handleAdd() { addToSolution();}
-			public void handleEdit(Solution element) { editSolution(element); }
-			public void handleMove(Solution element, int oldIndex, int newIndex) { moveSolution(element, oldIndex, newIndex); }
-			public void handleRemove(Solution element) { removeFromSolution(element); }
-			public void navigateTo(Solution element) { }
-		});
-		this.solution.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.solution, GsnViewsRepository.SWT_KIND));
-		this.solution.createControls(parent);
-		GridData solutionData = new GridData(GridData.FILL_HORIZONTAL);
-		solutionData.horizontalSpan = 3;
-		this.solution.setLayoutData(solutionData);
-		this.solution.setLowerBound(0);
-		this.solution.setUpperBound(-1);
-		solution.setID(GsnViewsRepository.Strategy.solution);
-		solution.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 *  
-	 */
-	protected void moveSolution(Solution element, int oldIndex, int newIndex) {
-		EObject editedElement = solutionEditUtil.foundCorrespondingEObject(element);
-		solutionEditUtil.moveElement(element, oldIndex, newIndex);
-		solution.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.solution, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 *  
-	 */
-	protected void addToSolution() {
-		// Start of user code addToSolution() method body
-				Solution eObject = GsnFactory.eINSTANCE.createSolution();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						solutionEditUtil.addElement(propertiesEditionObject);
-						solution.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.solution, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void removeFromSolution(Solution element) {
-		// Start of user code removeFromSolution() method body
-				EObject editedElement = solutionEditUtil.foundCorrespondingEObject(element);
-				solutionEditUtil.removeElement(element);
-				solution.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.solution, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void editSolution(Solution element) {
-		// Start of user code editSolution() method body
-				EObject editedElement = solutionEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						solutionEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						solution.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.solution, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		// End of user code
-	}
-
-	/**
-	 * @param container
-	 * 
-	 */
-	protected void createContextAdvancedTableComposition(Composite parent) {
-		this.context = new ReferencesTable<Context>(GsnMessages.StrategyPropertiesEditionPart_ContextLabel, new ReferencesTableListener<Context>() {			
-			public void handleAdd() { addToContext();}
-			public void handleEdit(Context element) { editContext(element); }
-			public void handleMove(Context element, int oldIndex, int newIndex) { moveContext(element, oldIndex, newIndex); }
-			public void handleRemove(Context element) { removeFromContext(element); }
-			public void navigateTo(Context element) { }
-		});
-		this.context.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.context, GsnViewsRepository.SWT_KIND));
-		this.context.createControls(parent);
-		GridData contextData = new GridData(GridData.FILL_HORIZONTAL);
-		contextData.horizontalSpan = 3;
-		this.context.setLayoutData(contextData);
-		this.context.setLowerBound(0);
-		this.context.setUpperBound(-1);
-		context.setID(GsnViewsRepository.Strategy.context);
-		context.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 *  
-	 */
-	protected void moveContext(Context element, int oldIndex, int newIndex) {
-		EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
-		contextEditUtil.moveElement(element, oldIndex, newIndex);
-		context.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 *  
-	 */
-	protected void addToContext() {
-		// Start of user code addToContext() method body
-				Context eObject = GsnFactory.eINSTANCE.createContext();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						contextEditUtil.addElement(propertiesEditionObject);
-						context.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void removeFromContext(Context element) {
-		// Start of user code removeFromContext() method body
-				EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
-				contextEditUtil.removeElement(element);
-				context.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+	protected void removeFromGoals(Goal element) {
+		// Start of user code removeFromGoals() method body
+				EObject editedElement = goalsEditUtil.foundCorrespondingEObject(element);
+				goalsEditUtil.removeElement(element);
+				goals.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goals, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
 				
 		// End of user code
 	}
@@ -686,17 +434,275 @@ public class StrategyPropertiesEditionPartImpl extends CompositePropertiesEditio
 	/**
 	 *  
 	 */
-	protected void editContext(Context element) {
-		// Start of user code editContext() method body
-				EObject editedElement = contextEditUtil.foundCorrespondingEObject(element);
+	protected void editGoals(Goal element) {
+		// Start of user code editGoals() method body
+				EObject editedElement = goalsEditUtil.foundCorrespondingEObject(element);
 				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
 				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(editedElement);
 				if (editionPolicy != null) {
 					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
 					if (propertiesEditionObject != null) {
-						contextEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						context.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+						goalsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						goals.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.goals, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+				
+		// End of user code
+	}
+
+	/**
+	 * @param container
+	 * 
+	 */
+	protected void createJustificationsAdvancedTableComposition(Composite parent) {
+		this.justifications = new ReferencesTable<Justification>(GsnMessages.StrategyPropertiesEditionPart_JustificationsLabel, new ReferencesTableListener<Justification>() {			
+			public void handleAdd() { addToJustifications();}
+			public void handleEdit(Justification element) { editJustifications(element); }
+			public void handleMove(Justification element, int oldIndex, int newIndex) { moveJustifications(element, oldIndex, newIndex); }
+			public void handleRemove(Justification element) { removeFromJustifications(element); }
+			public void navigateTo(Justification element) { }
+		});
+		this.justifications.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.justifications, GsnViewsRepository.SWT_KIND));
+		this.justifications.createControls(parent);
+		GridData justificationsData = new GridData(GridData.FILL_HORIZONTAL);
+		justificationsData.horizontalSpan = 3;
+		this.justifications.setLayoutData(justificationsData);
+		this.justifications.setLowerBound(0);
+		this.justifications.setUpperBound(-1);
+		justifications.setID(GsnViewsRepository.Strategy.justifications);
+		justifications.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+	}
+
+	/**
+	 *  
+	 */
+	protected void moveJustifications(Justification element, int oldIndex, int newIndex) {
+		EObject editedElement = justificationsEditUtil.foundCorrespondingEObject(element);
+		justificationsEditUtil.moveElement(element, oldIndex, newIndex);
+		justifications.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justifications, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	}
+
+	/**
+	 *  
+	 */
+	protected void addToJustifications() {
+		// Start of user code addToJustifications() method body
+				Justification eObject = GsnFactory.eINSTANCE.createJustification();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						justificationsEditUtil.addElement(propertiesEditionObject);
+						justifications.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justifications, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void removeFromJustifications(Justification element) {
+		// Start of user code removeFromJustifications() method body
+				EObject editedElement = justificationsEditUtil.foundCorrespondingEObject(element);
+				justificationsEditUtil.removeElement(element);
+				justifications.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justifications, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+				
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void editJustifications(Justification element) {
+		// Start of user code editJustifications() method body
+				EObject editedElement = justificationsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						justificationsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						justifications.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.justifications, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+				
+		// End of user code
+	}
+
+	/**
+	 * @param container
+	 * 
+	 */
+	protected void createStrategyContextsAdvancedTableComposition(Composite parent) {
+		this.strategyContexts = new ReferencesTable<Context>(GsnMessages.StrategyPropertiesEditionPart_StrategyContextsLabel, new ReferencesTableListener<Context>() {			
+			public void handleAdd() { addToStrategyContexts();}
+			public void handleEdit(Context element) { editStrategyContexts(element); }
+			public void handleMove(Context element, int oldIndex, int newIndex) { moveStrategyContexts(element, oldIndex, newIndex); }
+			public void handleRemove(Context element) { removeFromStrategyContexts(element); }
+			public void navigateTo(Context element) { }
+		});
+		this.strategyContexts.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.strategyContexts, GsnViewsRepository.SWT_KIND));
+		this.strategyContexts.createControls(parent);
+		GridData strategyContextsData = new GridData(GridData.FILL_HORIZONTAL);
+		strategyContextsData.horizontalSpan = 3;
+		this.strategyContexts.setLayoutData(strategyContextsData);
+		this.strategyContexts.setLowerBound(0);
+		this.strategyContexts.setUpperBound(-1);
+		strategyContexts.setID(GsnViewsRepository.Strategy.strategyContexts);
+		strategyContexts.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+	}
+
+	/**
+	 *  
+	 */
+	protected void moveStrategyContexts(Context element, int oldIndex, int newIndex) {
+		EObject editedElement = strategyContextsEditUtil.foundCorrespondingEObject(element);
+		strategyContextsEditUtil.moveElement(element, oldIndex, newIndex);
+		strategyContexts.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategyContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	}
+
+	/**
+	 *  
+	 */
+	protected void addToStrategyContexts() {
+		// Start of user code addToStrategyContexts() method body
+				Context eObject = GsnFactory.eINSTANCE.createContext();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						strategyContextsEditUtil.addElement(propertiesEditionObject);
+						strategyContexts.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategyContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void removeFromStrategyContexts(Context element) {
+		// Start of user code removeFromStrategyContexts() method body
+				EObject editedElement = strategyContextsEditUtil.foundCorrespondingEObject(element);
+				strategyContextsEditUtil.removeElement(element);
+				strategyContexts.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategyContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+				
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void editStrategyContexts(Context element) {
+		// Start of user code editStrategyContexts() method body
+				EObject editedElement = strategyContextsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						strategyContextsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						strategyContexts.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategyContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+				
+		// End of user code
+	}
+
+	/**
+	 * @param container
+	 * 
+	 */
+	protected void createStrategySolutionsAdvancedTableComposition(Composite parent) {
+		this.strategySolutions = new ReferencesTable<Solution>(GsnMessages.StrategyPropertiesEditionPart_StrategySolutionsLabel, new ReferencesTableListener<Solution>() {			
+			public void handleAdd() { addToStrategySolutions();}
+			public void handleEdit(Solution element) { editStrategySolutions(element); }
+			public void handleMove(Solution element, int oldIndex, int newIndex) { moveStrategySolutions(element, oldIndex, newIndex); }
+			public void handleRemove(Solution element) { removeFromStrategySolutions(element); }
+			public void navigateTo(Solution element) { }
+		});
+		this.strategySolutions.setHelpText(propertiesEditionComponent.getHelpContent(GsnViewsRepository.Strategy.strategySolutions, GsnViewsRepository.SWT_KIND));
+		this.strategySolutions.createControls(parent);
+		GridData strategySolutionsData = new GridData(GridData.FILL_HORIZONTAL);
+		strategySolutionsData.horizontalSpan = 3;
+		this.strategySolutions.setLayoutData(strategySolutionsData);
+		this.strategySolutions.setLowerBound(0);
+		this.strategySolutions.setUpperBound(-1);
+		strategySolutions.setID(GsnViewsRepository.Strategy.strategySolutions);
+		strategySolutions.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+	}
+
+	/**
+	 *  
+	 */
+	protected void moveStrategySolutions(Solution element, int oldIndex, int newIndex) {
+		EObject editedElement = strategySolutionsEditUtil.foundCorrespondingEObject(element);
+		strategySolutionsEditUtil.moveElement(element, oldIndex, newIndex);
+		strategySolutions.refresh();
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategySolutions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
+	}
+
+	/**
+	 *  
+	 */
+	protected void addToStrategySolutions() {
+		// Start of user code addToStrategySolutions() method body
+				Solution eObject = GsnFactory.eINSTANCE.createSolution();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						strategySolutionsEditUtil.addElement(propertiesEditionObject);
+						strategySolutions.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategySolutions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void removeFromStrategySolutions(Solution element) {
+		// Start of user code removeFromStrategySolutions() method body
+				EObject editedElement = strategySolutionsEditUtil.foundCorrespondingEObject(element);
+				strategySolutionsEditUtil.removeElement(element);
+				strategySolutions.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategySolutions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+				
+		// End of user code
+	}
+
+	/**
+	 *  
+	 */
+	protected void editStrategySolutions(Solution element) {
+		// Start of user code editStrategySolutions() method body
+				EObject editedElement = strategySolutionsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						strategySolutionsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						strategySolutions.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(StrategyPropertiesEditionPartImpl.this, GsnViewsRepository.Strategy.strategySolutions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
 					}
 				}
 				
@@ -904,436 +910,436 @@ public class StrategyPropertiesEditionPartImpl extends CompositePropertiesEditio
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToAdd()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalsToAdd()
 	 * 
 	 */
-	public List getGoalToAdd() {
-		return goalEditUtil.getElementsToAdd();
+	public List getGoalsToAdd() {
+		return goalsEditUtil.getElementsToAdd();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToRemove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalsToRemove()
 	 * 
 	 */
-	public List getGoalToRemove() {
-		return goalEditUtil.getElementsToRemove();
+	public List getGoalsToRemove() {
+		return goalsEditUtil.getElementsToRemove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToEdit()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalsToEdit()
 	 * 
 	 */
-	public Map getGoalToEdit() {
-		return goalEditUtil.getElementsToRefresh();
+	public Map getGoalsToEdit() {
+		return goalsEditUtil.getElementsToRefresh();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalToMove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalsToMove()
 	 * 
 	 */
-	public List getGoalToMove() {
-		return goalEditUtil.getElementsToMove();
+	public List getGoalsToMove() {
+		return goalsEditUtil.getElementsToMove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalTable()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getGoalsTable()
 	 * 
 	 */
-	public List getGoalTable() {
-		return goalEditUtil.getVirtualList();
+	public List getGoalsTable() {
+		return goalsEditUtil.getVirtualList();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initGoal(EObject current, EReference containingFeature, EReference feature)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initGoals(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initGoal(EObject current, EReference containingFeature, EReference feature) {
+	public void initGoals(EObject current, EReference containingFeature, EReference feature) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
 		if (containingFeature != null)
-			goalEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+			goalsEditUtil = new EMFListEditUtil(current, containingFeature, feature);
 		else
-			goalEditUtil = new EMFListEditUtil(current, feature);
-		this.goal.setInput(goalEditUtil.getVirtualList());
+			goalsEditUtil = new EMFListEditUtil(current, feature);
+		this.goals.setInput(goalsEditUtil.getVirtualList());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateGoal(EObject newValue)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateGoals(EObject newValue)
 	 * 
 	 */
-	public void updateGoal(EObject newValue) {
-		if(goalEditUtil != null){
-			goalEditUtil.reinit(newValue);
-			goal.refresh();
+	public void updateGoals(EObject newValue) {
+		if(goalsEditUtil != null){
+			goalsEditUtil.reinit(newValue);
+			goals.refresh();
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterGoal(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterGoals(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToGoal(ViewerFilter filter) {
-		goalFilters.add(filter);
+	public void addFilterToGoals(ViewerFilter filter) {
+		goalsFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterGoal(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterGoals(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToGoal(ViewerFilter filter) {
-		goalBusinessFilters.add(filter);
+	public void addBusinessFilterToGoals(ViewerFilter filter) {
+		goalsBusinessFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInGoalTable(EObject element)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInGoalsTable(EObject element)
 	 * 
 	 */
-	public boolean isContainedInGoalTable(EObject element) {
-		return goalEditUtil.contains(element);
+	public boolean isContainedInGoalsTable(EObject element) {
+		return goalsEditUtil.contains(element);
 	}
 
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationToAdd()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationsToAdd()
 	 * 
 	 */
-	public List getJustificationToAdd() {
-		return justificationEditUtil.getElementsToAdd();
+	public List getJustificationsToAdd() {
+		return justificationsEditUtil.getElementsToAdd();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationToRemove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationsToRemove()
 	 * 
 	 */
-	public List getJustificationToRemove() {
-		return justificationEditUtil.getElementsToRemove();
+	public List getJustificationsToRemove() {
+		return justificationsEditUtil.getElementsToRemove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationToEdit()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationsToEdit()
 	 * 
 	 */
-	public Map getJustificationToEdit() {
-		return justificationEditUtil.getElementsToRefresh();
+	public Map getJustificationsToEdit() {
+		return justificationsEditUtil.getElementsToRefresh();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationToMove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationsToMove()
 	 * 
 	 */
-	public List getJustificationToMove() {
-		return justificationEditUtil.getElementsToMove();
+	public List getJustificationsToMove() {
+		return justificationsEditUtil.getElementsToMove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationTable()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getJustificationsTable()
 	 * 
 	 */
-	public List getJustificationTable() {
-		return justificationEditUtil.getVirtualList();
+	public List getJustificationsTable() {
+		return justificationsEditUtil.getVirtualList();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initJustification(EObject current, EReference containingFeature, EReference feature)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initJustifications(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initJustification(EObject current, EReference containingFeature, EReference feature) {
+	public void initJustifications(EObject current, EReference containingFeature, EReference feature) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
 		if (containingFeature != null)
-			justificationEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+			justificationsEditUtil = new EMFListEditUtil(current, containingFeature, feature);
 		else
-			justificationEditUtil = new EMFListEditUtil(current, feature);
-		this.justification.setInput(justificationEditUtil.getVirtualList());
+			justificationsEditUtil = new EMFListEditUtil(current, feature);
+		this.justifications.setInput(justificationsEditUtil.getVirtualList());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateJustification(EObject newValue)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateJustifications(EObject newValue)
 	 * 
 	 */
-	public void updateJustification(EObject newValue) {
-		if(justificationEditUtil != null){
-			justificationEditUtil.reinit(newValue);
-			justification.refresh();
+	public void updateJustifications(EObject newValue) {
+		if(justificationsEditUtil != null){
+			justificationsEditUtil.reinit(newValue);
+			justifications.refresh();
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterJustification(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterJustifications(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToJustification(ViewerFilter filter) {
-		justificationFilters.add(filter);
+	public void addFilterToJustifications(ViewerFilter filter) {
+		justificationsFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterJustification(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterJustifications(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToJustification(ViewerFilter filter) {
-		justificationBusinessFilters.add(filter);
+	public void addBusinessFilterToJustifications(ViewerFilter filter) {
+		justificationsBusinessFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInJustificationTable(EObject element)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInJustificationsTable(EObject element)
 	 * 
 	 */
-	public boolean isContainedInJustificationTable(EObject element) {
-		return justificationEditUtil.contains(element);
+	public boolean isContainedInJustificationsTable(EObject element) {
+		return justificationsEditUtil.contains(element);
 	}
 
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionToAdd()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategyContextsToAdd()
 	 * 
 	 */
-	public List getSolutionToAdd() {
-		return solutionEditUtil.getElementsToAdd();
+	public List getStrategyContextsToAdd() {
+		return strategyContextsEditUtil.getElementsToAdd();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionToRemove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategyContextsToRemove()
 	 * 
 	 */
-	public List getSolutionToRemove() {
-		return solutionEditUtil.getElementsToRemove();
+	public List getStrategyContextsToRemove() {
+		return strategyContextsEditUtil.getElementsToRemove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionToEdit()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategyContextsToEdit()
 	 * 
 	 */
-	public Map getSolutionToEdit() {
-		return solutionEditUtil.getElementsToRefresh();
+	public Map getStrategyContextsToEdit() {
+		return strategyContextsEditUtil.getElementsToRefresh();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionToMove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategyContextsToMove()
 	 * 
 	 */
-	public List getSolutionToMove() {
-		return solutionEditUtil.getElementsToMove();
+	public List getStrategyContextsToMove() {
+		return strategyContextsEditUtil.getElementsToMove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getSolutionTable()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategyContextsTable()
 	 * 
 	 */
-	public List getSolutionTable() {
-		return solutionEditUtil.getVirtualList();
+	public List getStrategyContextsTable() {
+		return strategyContextsEditUtil.getVirtualList();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initSolution(EObject current, EReference containingFeature, EReference feature)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initStrategyContexts(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initSolution(EObject current, EReference containingFeature, EReference feature) {
+	public void initStrategyContexts(EObject current, EReference containingFeature, EReference feature) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
 		if (containingFeature != null)
-			solutionEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+			strategyContextsEditUtil = new EMFListEditUtil(current, containingFeature, feature);
 		else
-			solutionEditUtil = new EMFListEditUtil(current, feature);
-		this.solution.setInput(solutionEditUtil.getVirtualList());
+			strategyContextsEditUtil = new EMFListEditUtil(current, feature);
+		this.strategyContexts.setInput(strategyContextsEditUtil.getVirtualList());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateSolution(EObject newValue)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateStrategyContexts(EObject newValue)
 	 * 
 	 */
-	public void updateSolution(EObject newValue) {
-		if(solutionEditUtil != null){
-			solutionEditUtil.reinit(newValue);
-			solution.refresh();
+	public void updateStrategyContexts(EObject newValue) {
+		if(strategyContextsEditUtil != null){
+			strategyContextsEditUtil.reinit(newValue);
+			strategyContexts.refresh();
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterSolution(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterStrategyContexts(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToSolution(ViewerFilter filter) {
-		solutionFilters.add(filter);
+	public void addFilterToStrategyContexts(ViewerFilter filter) {
+		strategyContextsFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterSolution(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterStrategyContexts(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToSolution(ViewerFilter filter) {
-		solutionBusinessFilters.add(filter);
+	public void addBusinessFilterToStrategyContexts(ViewerFilter filter) {
+		strategyContextsBusinessFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInSolutionTable(EObject element)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInStrategyContextsTable(EObject element)
 	 * 
 	 */
-	public boolean isContainedInSolutionTable(EObject element) {
-		return solutionEditUtil.contains(element);
+	public boolean isContainedInStrategyContextsTable(EObject element) {
+		return strategyContextsEditUtil.contains(element);
 	}
 
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getContextToAdd()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategySolutionsToAdd()
 	 * 
 	 */
-	public List getContextToAdd() {
-		return contextEditUtil.getElementsToAdd();
+	public List getStrategySolutionsToAdd() {
+		return strategySolutionsEditUtil.getElementsToAdd();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getContextToRemove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategySolutionsToRemove()
 	 * 
 	 */
-	public List getContextToRemove() {
-		return contextEditUtil.getElementsToRemove();
+	public List getStrategySolutionsToRemove() {
+		return strategySolutionsEditUtil.getElementsToRemove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getContextToEdit()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategySolutionsToEdit()
 	 * 
 	 */
-	public Map getContextToEdit() {
-		return contextEditUtil.getElementsToRefresh();
+	public Map getStrategySolutionsToEdit() {
+		return strategySolutionsEditUtil.getElementsToRefresh();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getContextToMove()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategySolutionsToMove()
 	 * 
 	 */
-	public List getContextToMove() {
-		return contextEditUtil.getElementsToMove();
+	public List getStrategySolutionsToMove() {
+		return strategySolutionsEditUtil.getElementsToMove();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getContextTable()
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#getStrategySolutionsTable()
 	 * 
 	 */
-	public List getContextTable() {
-		return contextEditUtil.getVirtualList();
+	public List getStrategySolutionsTable() {
+		return strategySolutionsEditUtil.getVirtualList();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initContext(EObject current, EReference containingFeature, EReference feature)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#initStrategySolutions(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature) {
+	public void initStrategySolutions(EObject current, EReference containingFeature, EReference feature) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
 		if (containingFeature != null)
-			contextEditUtil = new EMFListEditUtil(current, containingFeature, feature);
+			strategySolutionsEditUtil = new EMFListEditUtil(current, containingFeature, feature);
 		else
-			contextEditUtil = new EMFListEditUtil(current, feature);
-		this.context.setInput(contextEditUtil.getVirtualList());
+			strategySolutionsEditUtil = new EMFListEditUtil(current, feature);
+		this.strategySolutions.setInput(strategySolutionsEditUtil.getVirtualList());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateContext(EObject newValue)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#updateStrategySolutions(EObject newValue)
 	 * 
 	 */
-	public void updateContext(EObject newValue) {
-		if(contextEditUtil != null){
-			contextEditUtil.reinit(newValue);
-			context.refresh();
+	public void updateStrategySolutions(EObject newValue) {
+		if(strategySolutionsEditUtil != null){
+			strategySolutionsEditUtil.reinit(newValue);
+			strategySolutions.refresh();
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterContext(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addFilterStrategySolutions(ViewerFilter filter)
 	 * 
 	 */
-	public void addFilterToContext(ViewerFilter filter) {
-		contextFilters.add(filter);
+	public void addFilterToStrategySolutions(ViewerFilter filter) {
+		strategySolutionsFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterContext(ViewerFilter filter)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#addBusinessFilterStrategySolutions(ViewerFilter filter)
 	 * 
 	 */
-	public void addBusinessFilterToContext(ViewerFilter filter) {
-		contextBusinessFilters.add(filter);
+	public void addBusinessFilterToStrategySolutions(ViewerFilter filter) {
+		strategySolutionsBusinessFilters.add(filter);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInContextTable(EObject element)
+	 * @see net.certware.argument.gsn.parts.StrategyPropertiesEditionPart#isContainedInStrategySolutionsTable(EObject element)
 	 * 
 	 */
-	public boolean isContainedInContextTable(EObject element) {
-		return contextEditUtil.contains(element);
+	public boolean isContainedInStrategySolutionsTable(EObject element) {
+		return strategySolutionsEditUtil.contains(element);
 	}
 
 

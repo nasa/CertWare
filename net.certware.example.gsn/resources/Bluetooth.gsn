@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="Bluetooth secure" content="A Bluetooth enabled network provides adequate security">
-  <strategy identifier="Argue over vulnerabilities" description="" content="Argue for each security requirement identified in the security white paper">
-    <goal identifier="Availability" description="" content="A Bluetooth enabled network is adequately available [1] Section 1 para 3" assumed="true">
-      <context identifier="Definition: Availability" description="" content="The system is capable of providing requested services to authorized users, in an acceptable/defined time."/>
-    </goal>
-    <goal identifier="Confidentiality" description="" content="A Bluetooth enabled network provides adequate levels of confidentiality [1] Section 1 para 3" assumed="true">
-      <context identifier="Define: Confidentiality" description="" content="Unauthorized persons cannot intercept and understand information to which they are not entitled."/>
-    </goal>
-    <goal identifier="Integrity" description="" content="A Bluetooth enabled network provides adequate levels of integrity [1] Section 1 para 3" assumed="true">
-      <context identifier="Define: Integrity" description="" content="Services and data are provided to authorized users as intended and without corruption"/>
-    </goal>
-    <goal identifier="Access" description="" content="A Bluetooth enabled network provides adequate control for access to services and data [1] Section 1 para 3" assumed="true">
-      <context identifier="Definition: Access" description="" content="Only users permitted by the defined security policy have access to services and data."/>
-    </goal>
-  </strategy>
-  <context identifier="Context: security policy and scenario for use" description="" content="Definitions are required of the intended security policy and the scenario of use for the system, including what is regarded as 'adequate'"/>
-  <context identifier="References" description="" content="[1] Bluetooth Security White Paper 19/4/02"/>
+<gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="G1" description="" content="A bluetooth enabled network provides adequate security">
+  <strategies identifier="S1">
+    <goals identifier="Available" description="" content="A Bluetooth enabled network is adequately available">
+      <subGoals identifier="X1"/>
+      <goalContexts identifier="Definition"/>
+    </goals>
+    <goals identifier="Access" description="" content="A Bluetooth enabled network provides adequate control for access to services and data">
+      <goalContexts identifier="Definition" description="" content="Access - only users permitted by the defined security policy have access to services and data"/>
+    </goals>
+    <goals identifier="Integrity" description="" content="A Bluetooth enabled network provides adequate levels of integrity">
+      <goalContexts identifier="Definition" description="" content="Integrity - services and data are provided to authorized users as intended and without corruption"/>
+    </goals>
+    <goals identifier="Confidentiality" description="" content="A Bluetooth enabled network provides adequate levels of confidentiality">
+      <goalContexts identifier="Definition" description="" content="Confidentiality - Unauthorized persons cannot intercept and understand information to which they are not entitled"/>
+    </goals>
+  </strategies>
+  <strategies identifier="T2"/>
+  <goalContexts identifier="Context: security policy and scenario for use"/>
+  <goalContexts identifier="Reference"/>
 </gsn:Goal>

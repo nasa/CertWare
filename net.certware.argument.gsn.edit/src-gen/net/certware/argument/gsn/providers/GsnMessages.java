@@ -17,22 +17,22 @@ public class GsnMessages extends NLS {
 	public static String GoalPropertiesEditionPart_PropertiesGroupLabel;
 
 	
-	public static String ArgumentDiagramPropertiesEditionPart_PropertiesGroupLabel;
-
-	
 	public static String StrategyPropertiesEditionPart_PropertiesGroupLabel;
 
 	
-	public static String SolutionPropertiesEditionPart_PropertiesGroupLabel;
-
-	
-	public static String AssumptionPropertiesEditionPart_PropertiesGroupLabel;
+	public static String JustificationPropertiesEditionPart_PropertiesGroupLabel;
 
 	
 	public static String ContextPropertiesEditionPart_PropertiesGroupLabel;
 
 	
-	public static String JustificationPropertiesEditionPart_PropertiesGroupLabel;
+	public static String AssumptionPropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String SolutionPropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String EvidencePropertiesEditionPart_PropertiesGroupLabel;
 
 	
 	public static String Goal_ReadOnly;
@@ -41,28 +41,16 @@ public class GsnMessages extends NLS {
 	public static String Goal_Part_Title;
 
 	
-	public static String ArgumentDiagram_ReadOnly;
-
-	
-	public static String ArgumentDiagram_Part_Title;
-
-	
 	public static String Strategy_ReadOnly;
 
 	
 	public static String Strategy_Part_Title;
 
 	
-	public static String Solution_ReadOnly;
+	public static String Justification_ReadOnly;
 
 	
-	public static String Solution_Part_Title;
-
-	
-	public static String Assumption_ReadOnly;
-
-	
-	public static String Assumption_Part_Title;
+	public static String Justification_Part_Title;
 
 	
 	public static String Context_ReadOnly;
@@ -71,10 +59,22 @@ public class GsnMessages extends NLS {
 	public static String Context_Part_Title;
 
 	
-	public static String Justification_ReadOnly;
+	public static String Assumption_ReadOnly;
 
 	
-	public static String Justification_Part_Title;
+	public static String Assumption_Part_Title;
+
+	
+	public static String Solution_ReadOnly;
+
+	
+	public static String Solution_Part_Title;
+
+	
+	public static String Evidence_ReadOnly;
+
+	
+	public static String Evidence_Part_Title;
 
 	
 	public static String GoalPropertiesEditionPart_IdentifierLabel;
@@ -95,40 +95,19 @@ public class GsnMessages extends NLS {
 	public static String GoalPropertiesEditionPart_ToBeSupportedLabel;
 
 	
-	public static String GoalPropertiesEditionPart_StrategyLabel;
+	public static String GoalPropertiesEditionPart_SubGoalsLabel;
 
 	
-	public static String GoalPropertiesEditionPart_AssumptionLabel;
+	public static String GoalPropertiesEditionPart_StrategiesLabel;
 
 	
-	public static String GoalPropertiesEditionPart_ContextLabel;
+	public static String GoalPropertiesEditionPart_GoalContextsLabel;
 
 	
-	public static String GoalPropertiesEditionPart_SolutionLabel;
+	public static String GoalPropertiesEditionPart_AssumptionsLabel;
 
 	
-	public static String GoalPropertiesEditionPart_SubgoalLabel;
-
-	
-	public static String ArgumentDiagramPropertiesEditionPart_GoalsLabel;
-
-	
-	public static String ArgumentDiagramPropertiesEditionPart_StrategiesLabel;
-
-	
-	public static String ArgumentDiagramPropertiesEditionPart_AssumptionsLabel;
-
-	
-	public static String ArgumentDiagramPropertiesEditionPart_SolutionsLabel;
-
-	
-	public static String ArgumentDiagramPropertiesEditionPart_ContextsLabel;
-
-	
-	public static String ArgumentDiagramPropertiesEditionPart_JustificationsLabel;
-
-	
-	public static String ArgumentDiagramPropertiesEditionPart_VersionLabel;
+	public static String GoalPropertiesEditionPart_GoalSolutionsLabel;
 
 	
 	public static String StrategyPropertiesEditionPart_IdentifierLabel;
@@ -143,16 +122,52 @@ public class GsnMessages extends NLS {
 	public static String StrategyPropertiesEditionPart_IsTaggedLabel;
 
 	
-	public static String StrategyPropertiesEditionPart_GoalLabel;
+	public static String StrategyPropertiesEditionPart_GoalsLabel;
 
 	
-	public static String StrategyPropertiesEditionPart_JustificationLabel;
+	public static String StrategyPropertiesEditionPart_JustificationsLabel;
 
 	
-	public static String StrategyPropertiesEditionPart_SolutionLabel;
+	public static String StrategyPropertiesEditionPart_StrategyContextsLabel;
 
 	
-	public static String StrategyPropertiesEditionPart_ContextLabel;
+	public static String StrategyPropertiesEditionPart_StrategySolutionsLabel;
+
+	
+	public static String JustificationPropertiesEditionPart_IdentifierLabel;
+
+	
+	public static String JustificationPropertiesEditionPart_DescriptionLabel;
+
+	
+	public static String JustificationPropertiesEditionPart_ContentLabel;
+
+	
+	public static String JustificationPropertiesEditionPart_IsTaggedLabel;
+
+	
+	public static String ContextPropertiesEditionPart_IdentifierLabel;
+
+	
+	public static String ContextPropertiesEditionPart_DescriptionLabel;
+
+	
+	public static String ContextPropertiesEditionPart_ContentLabel;
+
+	
+	public static String ContextPropertiesEditionPart_IsTaggedLabel;
+
+	
+	public static String AssumptionPropertiesEditionPart_IdentifierLabel;
+
+	
+	public static String AssumptionPropertiesEditionPart_DescriptionLabel;
+
+	
+	public static String AssumptionPropertiesEditionPart_ContentLabel;
+
+	
+	public static String AssumptionPropertiesEditionPart_IsTaggedLabel;
 
 	
 	public static String SolutionPropertiesEditionPart_IdentifierLabel;
@@ -173,46 +188,28 @@ public class GsnMessages extends NLS {
 	public static String SolutionPropertiesEditionPart_SourceLabel;
 
 	
-	public static String SolutionPropertiesEditionPart_ContextLabel;
+	public static String SolutionPropertiesEditionPart_SolutionEvidenceLabel;
 
 	
-	public static String SolutionPropertiesEditionPart_EvidenceLabel;
+	public static String SolutionPropertiesEditionPart_SolutionContextsLabel;
 
 	
-	public static String AssumptionPropertiesEditionPart_IdentifierLabel;
+	public static String EvidencePropertiesEditionPart_IdentifierLabel;
 
 	
-	public static String AssumptionPropertiesEditionPart_DescriptionLabel;
+	public static String EvidencePropertiesEditionPart_DescriptionLabel;
 
 	
-	public static String AssumptionPropertiesEditionPart_ContentLabel;
+	public static String EvidencePropertiesEditionPart_ContentLabel;
 
 	
-	public static String AssumptionPropertiesEditionPart_IsTaggedLabel;
+	public static String EvidencePropertiesEditionPart_IsTaggedLabel;
 
 	
-	public static String ContextPropertiesEditionPart_IdentifierLabel;
+	public static String EvidencePropertiesEditionPart_TargetLabel;
 
 	
-	public static String ContextPropertiesEditionPart_DescriptionLabel;
-
-	
-	public static String ContextPropertiesEditionPart_ContentLabel;
-
-	
-	public static String ContextPropertiesEditionPart_IsTaggedLabel;
-
-	
-	public static String JustificationPropertiesEditionPart_IdentifierLabel;
-
-	
-	public static String JustificationPropertiesEditionPart_DescriptionLabel;
-
-	
-	public static String JustificationPropertiesEditionPart_ContentLabel;
-
-	
-	public static String JustificationPropertiesEditionPart_IsTaggedLabel;
+	public static String EvidencePropertiesEditionPart_SourceLabel;
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

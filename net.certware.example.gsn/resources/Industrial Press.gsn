@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="G1" description="" content="C/S Logic is fault free">
-  <strategy identifier="S1" description="" content="Argument by satisfaction of all C/S safety requirements">
-    <goal identifier="G3" description="" content="Press controls being 'jammed on' will cause press to halt">
-      <subgoal identifier="G7" description="" content="'Abort' transition of PLC state machine includes BUTTON_IN going FALSE">
-        <solution identifier="Sn2" description="" content="C/S State Machine"/>
-      </subgoal>
-    </goal>
-    <goal identifier="G4" description="" content="Release of controls prior to press passing physical PoNR will cause press operation to abort" toBeSupported="true"/>
-    <goal identifier="G2" description="" content="Press controls being 'jammed on' will cause press to halt">
-      <solution identifier="Sn1" description="" content="Black Box Test Results"/>
-      <subgoal identifier="G5" description="" content="'Failure 1' transition of PLC state machine includes BUTTON_IN remaining true">
-        <solution identifier="Sn2" description="" content="C/S State Machine"/>
-      </subgoal>
-    </goal>
-  </strategy>
-  <strategy identifier="S2" description="" content="Argument by omission of all identified software hazards">
-    <goal identifier="G8" description="" content="Unintended opening of press (after PoNR) can only occur as a result of component failure">
-      <solution identifier="Sn3" description="" content="Fault tree analysis cutsets for event 'Hand trapped in press due to command error'"/>
-      <solution identifier="Sn4" description="" content="Hazard directed test results"/>
-    </goal>
-    <goal identifier="G9" description="" content="Unitended closing of press can only occur as a result of component failure">
-      <solution identifier="Sn3" description="" content="Fault tree analysis cutsets for event 'Hand trapped in press due to command error'"/>
-      <solution identifier="Sn4" description="" content="Hazard directed test results"/>
-    </goal>
-    <justification identifier="C1" description="" content="Identified software hazards"/>
-  </strategy>
+  <strategies identifier="S1" description="" content="Argument by satisfaction of all C/S safety requirements">
+    <goals identifier="G3" description="" content="Press controls being 'jammed on' will cause press to halt">
+      <subGoals identifier="G7" description="" content="'Abort' transition of PLC state machine includes BUTTON_IN going FALSE">
+        <goalSolutions identifier="Sn2" description="" content="C/S State Machine"/>
+      </subGoals>
+    </goals>
+    <goals identifier="G4" description="" content="Release of controls prior to press passing physical PoNR will cause press operation to abort" toBeSupported="true"/>
+    <goals identifier="G2" description="" content="Press controls being 'jammed on' will cause press to halt">
+      <goalSolutions identifier="Sn1" description="" content="Black Box Test Results"/>
+      <subGoals identifier="G5" description="" content="'Failure 1' transition of PLC state machine includes BUTTON_IN remaining true">
+        <goalSolutions identifier="Sn2" description="" content="C/S State Machine"/>
+      </subGoals>
+    </goals>
+  </strategies>
+  <strategies identifier="S2" description="" content="Argument by omission of all identified software hazards">
+    <goals identifier="G8" description="" content="Unintended opening of press (after PoNR) can only occur as a result of component failure">
+      <goalSolutions identifier="Sn3" description="" content="Fault tree analysis cutsets for event 'Hand trapped in press due to command error'"/>
+      <goalSolutions identifier="Sn4" description="" content="Hazard directed test results"/>
+    </goals>
+    <goals identifier="G9" description="" content="Unintended closing of press can only occur as a result of component failure">
+      <goalSolutions identifier="Sn3" description="" content="Fault tree analysis cutsets for event 'Hand trapped in press due to command error'"/>
+      <goalSolutions identifier="Sn4" description="" content="Hazard directed test results"/>
+    </goals>
+    <justifications identifier="C1" description="" content="Identified software hazards"/>
+  </strategies>
 </gsn:Goal>

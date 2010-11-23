@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="Goal: Justification" description="" content="Adopted argument is adequate">
   <isTagged key="visibility" value="public"/>
-  <strategy identifier="Start: Justification" description="" content="Argument over assurance deficits">
-    <goal identifier="Goal: AssDeficitIdentify_AssDeficitIdentify" description="" content="Relevant assurance deficits have been correctly identified">
+  <strategies identifier="Start: Justification" description="" content="Argument over assurance deficits">
+    <goals identifier="Goal: AssDeficitIdentify_AssDeficitIdentify" description="" content="Relevant assurance deficits have been correctly identified">
       <isTagged key="module" value="AssDeficitIdentify"/>
       <isTagged key="comment" value="m+n+p=total number of identified assurance deficits"/>
-    </goal>
-    <goal identifier="Goal: AssDefImpact_AssDefImpact" description="" content="The impact of assurance deficits on the claimed risk position of the argument have been identified">
+    </goals>
+    <goals identifier="Goal: AssDefImpact_AssDefImpact" description="" content="The impact of assurance deficits on the claimed risk position of the argument have been identified">
       <isTagged key="module" value="AssDefImpact"/>
-    </goal>
-    <goal identifier="Goal: AssDefTolerable" description="" content="All assurance deficits whose impact is potentially 'tolerable' are acceptable or have been sufficiently addressed">
+    </goals>
+    <goals identifier="Goal: AssDefTolerable" description="" content="All assurance deficits whose impact is potentially 'tolerable' are acceptable or have been sufficiently addressed">
       <isTagged key="multiplicity" value="n = number of assurance deficits whose impact was initially considered potentially tolerable"/>
       <isTagged key="choice" value="1 of 2: Goal:Acceptable or Goal:AssDefAddress"/>
-      <subgoal identifier="Goal: Acceptable" description="" content="Potentially tolerable {assurance deficit} is acceptable">
-        <strategy identifier="Strat: AssDefTolerable" description="" content="Argument over an assessment of the associated costs and impact">
-          <goal identifier="Goal: Cost" description="" content="Cost of taking further measure to address {assurance deficit} is out of proportion to the impact of not doing so">
+      <subGoals identifier="Goal: Acceptable" description="" content="Potentially tolerable {assurance deficit} is acceptable">
+        <strategies identifier="Strat: AssDefTolerable" description="" content="Argument over an assessment of the associated costs and impact">
+          <goals identifier="Goal: Cost" description="" content="Cost of taking further measure to address {assurance deficit} is out of proportion to the impact of not doing so">
             <isTagged key="unsubstantiated" value="true"/>
-            <subgoal identifier="Goal: furtherMeasures_furtherMeasures" description="" content="Possible further measures have been considered">
+            <subGoals identifier="Goal: furtherMeasures_furtherMeasures" description="" content="Possible further measures have been considered">
               <isTagged key="module" value="furtherMeasures"/>
-            </subgoal>
-          </goal>
-          <goal identifier="Goal: costDetermine_costDetermine" description="" content="The cost of potential measures for addressing {assurance deficit} have been correctly determined">
+            </subGoals>
+          </goals>
+          <goals identifier="Goal: costDetermine_costDetermine" description="" content="The cost of potential measures for addressing {assurance deficit} have been correctly determined">
             <isTagged key="module" value="costDetermine"/>
             <isTagged key="uninstantiated" value="true"/>
-          </goal>
-        </strategy>
-      </subgoal>
-    </goal>
-    <goal identifier="Goal: AssDefIntolerable" description="" content="There are no assurance deficits whose impact is 'intolerable'">
-      <subgoal identifier="Goal: AssDefAddress" description="" content="{Assurance deficit} has been sufficiently addressed by the addditional measures taken">
+          </goals>
+        </strategies>
+      </subGoals>
+    </goals>
+    <goals identifier="Goal: AssDefIntolerable" description="" content="There are no assurance deficits whose impact is 'intolerable'">
+      <subGoals identifier="Goal: AssDefAddress" description="" content="{Assurance deficit} has been sufficiently addressed by the addditional measures taken">
         <isTagged key="uninstantiated" value="true"/>
         <isTagged key="choice" value="1 of 3: Goal: AssDefAccept, Goal: ImpactNegligible, Goal: AssDefEliminate"/>
         <isTagged key="multiplicity" value="m = number of assurance deficits whose impact was initially considered intolerable"/>
-        <context identifier="Con: MeasuresTaken" description="" content="{measures taken} to address {assurance deficit}">
+        <goalContexts identifier="Con: MeasuresTaken" description="" content="{measures taken} to address {assurance deficit}">
           <isTagged key="uninstantiated" value="true"/>
-        </context>
-        <subgoal identifier="Goal: AssDefAccept" description="" content="Impact of {assurance deficit} is tolerable and acceptable">
+        </goalContexts>
+        <subGoals identifier="Goal: AssDefAccept" description="" content="Impact of {assurance deficit} is tolerable and acceptable">
           <isTagged key="uninstantiated" value="true"/>
-          <subgoal identifier="Goal: ImpactTolerable" description="" content="Impact of {assurance deficit} has been shown to be potentially tolerable">
+          <subGoals identifier="Goal: ImpactTolerable" description="" content="Impact of {assurance deficit} has been shown to be potentially tolerable">
             <isTagged key="unsubstantiated" value="true"/>
-            <subgoal identifier="Goal: AssDefImpact_AssDefImpact" description="" content="The impact of assurance deficits on the claimed risk position of the argument have been determined">
+            <subGoals identifier="Goal: AssDefImpact_AssDefImpact" description="" content="The impact of assurance deficits on the claimed risk position of the argument have been determined">
               <isTagged key="module" value="AssDefImpact"/>
               <isTagged key="multiplicity" value="0 or 1"/>
-            </subgoal>
-          </subgoal>
-        </subgoal>
-        <subgoal identifier="Goal: AssDefEliminate" description="" content="{Assurance deficit} has been eliminated">
+            </subGoals>
+          </subGoals>
+        </subGoals>
+        <subGoals identifier="Goal: AssDefEliminate" description="" content="{Assurance deficit} has been eliminated">
           <isTagged key="unsubstantiated" value="true"/>
-        </subgoal>
-      </subgoal>
-    </goal>
-    <goal identifier="Goal: AssDefNegligible" description="" content="The impact of any remaining assurance deficits is negligible">
-      <subgoal identifier="Goal: ImpactNegligible" description="" content="Impact of {assurance deficit} has been shown to be negligible">
+        </subGoals>
+      </subGoals>
+    </goals>
+    <goals identifier="Goal: AssDefNegligible" description="" content="The impact of any remaining assurance deficits is negligible">
+      <subGoals identifier="Goal: ImpactNegligible" description="" content="Impact of {assurance deficit} has been shown to be negligible">
         <isTagged key="unsubstantiated" value="true"/>
-        <subgoal identifier="Goal: AssDefImpact_AssDefImpact" description="" content="The impact of assurance deficits on the claimed risk position of the argument have been determined">
+        <subGoals identifier="Goal: AssDefImpact_AssDefImpact" description="" content="The impact of assurance deficits on the claimed risk position of the argument have been determined">
           <isTagged key="module" value="AssDefImpact"/>
           <isTagged key="multiplicity" value="0 or 1"/>
-        </subgoal>
-      </subgoal>
-    </goal>
-  </strategy>
-  <context identifier="Con: Justification" description="" content="{Scope of argument to which the justification relates}">
+        </subGoals>
+      </subGoals>
+    </goals>
+  </strategies>
+  <goalContexts identifier="Con: Justification" description="" content="{Scope of argument to which the justification relates}">
     <isTagged key="uninstantiated" value="true"/>
-  </context>
+  </goalContexts>
 </gsn:Goal>

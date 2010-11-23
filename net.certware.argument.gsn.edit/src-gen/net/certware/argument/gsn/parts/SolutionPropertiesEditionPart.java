@@ -256,147 +256,147 @@ public interface SolutionPropertiesEditionPart {
 
 
 	/**
-	 * @return the context to add
+	 * @return the solutionEvidence to add
 	 * 
 	 */
-	public List getContextToAdd();
+	public List getSolutionEvidenceToAdd();
 
 	/**
-	 * @return the context to remove
+	 * @return the solutionEvidence to remove
 	 * 
 	 */
-	public List getContextToRemove();
+	public List getSolutionEvidenceToRemove();
 
 	/**
-	 * @return the context to move
+	 * @return the solutionEvidence to move
 	 * 
 	 */
-	public List getContextToMove();
+	public List getSolutionEvidenceToMove();
 
 	/**
-	 * @return the context to edit
+	 * @return the solutionEvidence to edit
 	 * 
 	 */
-	public Map getContextToEdit();
+	public Map getSolutionEvidenceToEdit();
 
 	/**
-	 * @return the current context table
+	 * @return the current solutionEvidence table
 	 * 
 	 */
-	public List getContextTable();
+	public List getSolutionEvidenceTable();
 
 	/**
-	 * Init the context
+	 * Init the solutionEvidence
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature);
+	public void initSolutionEvidence(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the context
-	 * @param newValue the context to update
+	 * Update the solutionEvidence
+	 * @param newValue the solutionEvidence to update
 	 * 
 	 */
-	public void updateContext(EObject newValue);
+	public void updateSolutionEvidence(EObject newValue);
 
 	/**
-	 * Adds the given filter to the context edition editor.
+	 * Adds the given filter to the solutionEvidence edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToContext(ViewerFilter filter);
+	public void addFilterToSolutionEvidence(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the context edition editor.
+	 * Adds the given filter to the solutionEvidence edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToContext(ViewerFilter filter);
+	public void addBusinessFilterToSolutionEvidence(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the context table
+	 * @return true if the given element is contained inside the solutionEvidence table
 	 * 
 	 */
-	public boolean isContainedInContextTable(EObject element);
+	public boolean isContainedInSolutionEvidenceTable(EObject element);
 
 
 	/**
-	 * @return the evidence to add
+	 * @return the solutionContexts to add
 	 * 
 	 */
-	public List getEvidenceToAdd();
+	public List getSolutionContextsToAdd();
 
 	/**
-	 * @return the evidence to remove
+	 * @return the solutionContexts to remove
 	 * 
 	 */
-	public List getEvidenceToRemove();
+	public List getSolutionContextsToRemove();
 
 	/**
-	 * @return the evidence to move
+	 * @return the solutionContexts to move
 	 * 
 	 */
-	public List getEvidenceToMove();
+	public List getSolutionContextsToMove();
 
 	/**
-	 * @return the evidence to edit
+	 * @return the solutionContexts to edit
 	 * 
 	 */
-	public Map getEvidenceToEdit();
+	public Map getSolutionContextsToEdit();
 
 	/**
-	 * @return the current evidence table
+	 * @return the current solutionContexts table
 	 * 
 	 */
-	public List getEvidenceTable();
+	public List getSolutionContextsTable();
 
 	/**
-	 * Init the evidence
+	 * Init the solutionContexts
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initEvidence(EObject current, EReference containingFeature, EReference feature);
+	public void initSolutionContexts(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the evidence
-	 * @param newValue the evidence to update
+	 * Update the solutionContexts
+	 * @param newValue the solutionContexts to update
 	 * 
 	 */
-	public void updateEvidence(EObject newValue);
+	public void updateSolutionContexts(EObject newValue);
 
 	/**
-	 * Adds the given filter to the evidence edition editor.
+	 * Adds the given filter to the solutionContexts edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToEvidence(ViewerFilter filter);
+	public void addFilterToSolutionContexts(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the evidence edition editor.
+	 * Adds the given filter to the solutionContexts edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToEvidence(ViewerFilter filter);
+	public void addBusinessFilterToSolutionContexts(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the evidence table
+	 * @return true if the given element is contained inside the solutionContexts table
 	 * 
 	 */
-	public boolean isContainedInEvidenceTable(EObject element);
+	public boolean isContainedInSolutionContextsTable(EObject element);
 
 
 

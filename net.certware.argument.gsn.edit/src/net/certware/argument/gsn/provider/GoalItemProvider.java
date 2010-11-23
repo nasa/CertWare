@@ -78,11 +78,11 @@ public class GoalItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__STRATEGY);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__ASSUMPTION);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__CONTEXT);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__SOLUTION);
-			childrenFeatures.add(GsnPackage.Literals.GOAL__SUBGOAL);
+			childrenFeatures.add(GsnPackage.Literals.GOAL__SUB_GOALS);
+			childrenFeatures.add(GsnPackage.Literals.GOAL__STRATEGIES);
+			childrenFeatures.add(GsnPackage.Literals.GOAL__GOAL_CONTEXTS);
+			childrenFeatures.add(GsnPackage.Literals.GOAL__ASSUMPTIONS);
+			childrenFeatures.add(GsnPackage.Literals.GOAL__GOAL_SOLUTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -137,11 +137,11 @@ public class GoalItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Goal.class)) {
-			case GsnPackage.GOAL__STRATEGY:
-			case GsnPackage.GOAL__ASSUMPTION:
-			case GsnPackage.GOAL__CONTEXT:
-			case GsnPackage.GOAL__SOLUTION:
-			case GsnPackage.GOAL__SUBGOAL:
+			case GsnPackage.GOAL__SUB_GOALS:
+			case GsnPackage.GOAL__STRATEGIES:
+			case GsnPackage.GOAL__GOAL_CONTEXTS:
+			case GsnPackage.GOAL__ASSUMPTIONS:
+			case GsnPackage.GOAL__GOAL_SOLUTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -161,28 +161,28 @@ public class GoalItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__STRATEGY,
+				(GsnPackage.Literals.GOAL__SUB_GOALS,
+				 GsnFactory.eINSTANCE.createGoal()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GsnPackage.Literals.GOAL__STRATEGIES,
 				 GsnFactory.eINSTANCE.createStrategy()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__ASSUMPTION,
-				 GsnFactory.eINSTANCE.createAssumption()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GsnPackage.Literals.GOAL__CONTEXT,
+				(GsnPackage.Literals.GOAL__GOAL_CONTEXTS,
 				 GsnFactory.eINSTANCE.createContext()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__SOLUTION,
-				 GsnFactory.eINSTANCE.createSolution()));
+				(GsnPackage.Literals.GOAL__ASSUMPTIONS,
+				 GsnFactory.eINSTANCE.createAssumption()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GsnPackage.Literals.GOAL__SUBGOAL,
-				 GsnFactory.eINSTANCE.createGoal()));
+				(GsnPackage.Literals.GOAL__GOAL_SOLUTIONS,
+				 GsnFactory.eINSTANCE.createSolution()));
 	}
 
 	/**

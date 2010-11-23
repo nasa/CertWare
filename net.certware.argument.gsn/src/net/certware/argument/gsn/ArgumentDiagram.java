@@ -4,7 +4,6 @@
 package net.certware.argument.gsn;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,16 +16,17 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getGoals <em>Goals</em>}</li>
  *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getStrategies <em>Strategies</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getJustifications <em>Justifications</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getContexts <em>Contexts</em>}</li>
  *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getAssumptions <em>Assumptions</em>}</li>
  *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getSolutions <em>Solutions</em>}</li>
- *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getContexts <em>Contexts</em>}</li>
- *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getJustifications <em>Justifications</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getEvidence <em>Evidence</em>}</li>
  *   <li>{@link net.certware.argument.gsn.ArgumentDiagram#getVersion <em>Version</em>}</li>
  * </ul>
  * </p>
  *
  * @see net.certware.argument.gsn.GsnPackage#getArgumentDiagram()
- * @model annotation="gmf.diagram foo='gsn' model.extension='gsn' diagram.extension='gsnd'"
+ * @model annotation="gmf.diagram model.extension='gsn' diagram.extension='gsnd' onefile='false'"
  * @generated
  */
 public interface ArgumentDiagram extends EObject {
@@ -77,6 +77,22 @@ public interface ArgumentDiagram extends EObject {
 	 * @generated
 	 */
 	EList<Solution> getSolutions();
+
+	/**
+	 * Returns the value of the '<em><b>Evidence</b></em>' containment reference list.
+	 * The list contents are of type {@link net.certware.argument.gsn.Evidence}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Evidence</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Evidence</em>' containment reference list.
+	 * @see net.certware.argument.gsn.GsnPackage#getArgumentDiagram_Evidence()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Evidence> getEvidence();
 
 	/**
 	 * Returns the value of the '<em><b>Assumptions</b></em>' containment reference list.

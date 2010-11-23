@@ -3,10 +3,20 @@ package net.certware.argument.gsn.validator;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
+/**
+ * Bundle activator for the validator contributions.
+ * @author mrb
+ * @since 1.0
+ */
 public class Activator implements BundleActivator {
 
+	// bundle context
 	private static BundleContext context;
 
+	/**
+	 * Returns the bundle context
+	 * @return bundle context
+	 */
 	static BundleContext getContext() {
 		return context;
 	}

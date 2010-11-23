@@ -660,7 +660,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * This sets the selection into whichever viewer is active.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param collection 
 	 * @generated
 	 */
 	public void setSelectionToViewer(Collection<?> collection) {
@@ -703,7 +702,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @param adapterFactory 
 		 * @generated
 		 */
 		public ReverseAdapterFactoryContentProvider(AdapterFactory adapterFactory) {
@@ -759,7 +757,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * is the current one.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param viewer 
 	 * @generated
 	 */
 	public void setCurrentViewer(Viewer viewer) {
@@ -864,9 +861,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * and the specified exception (if any).
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param resource 
-	 * @param exception 
-	 * @return 
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
@@ -1047,7 +1041,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * This accesses a cached version of the content outliner.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public IContentOutlinePage getContentOutlinePage() {
@@ -1126,7 +1119,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * This deals with how we want selection in the outliner to affect the other views.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param selection 
 	 * @generated
 	 */
 	public void handleContentOutlineSelection(ISelection selection) {
@@ -1389,7 +1381,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param selection 
 	 * @generated
 	 */
 	public void setStatusLineManager(ISelection selection) {
@@ -1454,7 +1445,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public EditingDomainActionBarContributor getActionBarContributor() {
@@ -1464,7 +1454,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public IActionBars getActionBars() {
@@ -1474,7 +1463,6 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public AdapterFactory getAdapterFactory() {

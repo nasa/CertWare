@@ -38,48 +38,19 @@ public class GsnViewsRepository {
 		public static String toBeSupported = "gsn::Goal::toBeSupported";
 		
 		
-		public static String strategy = "gsn::Goal::strategy";
+		public static String subGoals = "gsn::Goal::subGoals";
 		
 		
-		public static String assumption = "gsn::Goal::assumption";
+		public static String strategies = "gsn::Goal::strategies";
 		
 		
-		public static String context = "gsn::Goal::context";
+		public static String goalContexts = "gsn::Goal::goalContexts";
 		
 		
-		public static String solution = "gsn::Goal::solution";
+		public static String assumptions = "gsn::Goal::assumptions";
 		
 		
-		public static String subgoal = "gsn::Goal::subgoal";
-		
-	
-	}
-
-	/**
-	 * ArgumentDiagram view descriptor
-	 * 
-	 */
-	public static class ArgumentDiagram {
-		
-		public static String goals = "gsn::ArgumentDiagram::goals";
-		
-		
-		public static String strategies = "gsn::ArgumentDiagram::strategies";
-		
-		
-		public static String assumptions = "gsn::ArgumentDiagram::assumptions";
-		
-		
-		public static String solutions = "gsn::ArgumentDiagram::solutions";
-		
-		
-		public static String contexts = "gsn::ArgumentDiagram::contexts";
-		
-		
-		public static String justifications = "gsn::ArgumentDiagram::justifications";
-		
-		
-		public static String version = "gsn::ArgumentDiagram::version";
+		public static String goalSolutions = "gsn::Goal::goalSolutions";
 		
 	
 	}
@@ -102,16 +73,76 @@ public class GsnViewsRepository {
 		public static String isTagged = "gsn::Strategy::isTagged";
 		
 		
-		public static String goal = "gsn::Strategy::goal";
+		public static String goals = "gsn::Strategy::goals";
 		
 		
-		public static String justification = "gsn::Strategy::justification";
+		public static String justifications = "gsn::Strategy::justifications";
 		
 		
-		public static String solution = "gsn::Strategy::solution";
+		public static String strategyContexts = "gsn::Strategy::strategyContexts";
 		
 		
-		public static String context = "gsn::Strategy::context";
+		public static String strategySolutions = "gsn::Strategy::strategySolutions";
+		
+	
+	}
+
+	/**
+	 * Justification view descriptor
+	 * 
+	 */
+	public static class Justification {
+		
+		public static String identifier = "gsn::Justification::identifier";
+		
+		
+		public static String description = "gsn::Justification::description";
+		
+		
+		public static String content = "gsn::Justification::content";
+		
+		
+		public static String isTagged = "gsn::Justification::isTagged";
+		
+	
+	}
+
+	/**
+	 * Context view descriptor
+	 * 
+	 */
+	public static class Context {
+		
+		public static String identifier = "gsn::Context::identifier";
+		
+		
+		public static String description = "gsn::Context::description";
+		
+		
+		public static String content = "gsn::Context::content";
+		
+		
+		public static String isTagged = "gsn::Context::isTagged";
+		
+	
+	}
+
+	/**
+	 * Assumption view descriptor
+	 * 
+	 */
+	public static class Assumption {
+		
+		public static String identifier = "gsn::Assumption::identifier";
+		
+		
+		public static String description = "gsn::Assumption::description";
+		
+		
+		public static String content = "gsn::Assumption::content";
+		
+		
+		public static String isTagged = "gsn::Assumption::isTagged";
 		
 	
 	}
@@ -140,70 +171,36 @@ public class GsnViewsRepository {
 		public static String source = "gsn::Solution::source";
 		
 		
-		public static String context = "gsn::Solution::context";
+		public static String solutionEvidence = "gsn::Solution::solutionEvidence";
 		
 		
-		public static String evidence = "gsn::Solution::evidence";
-		
-	
-	}
-
-	/**
-	 * Assumption view descriptor
-	 * 
-	 */
-	public static class Assumption {
-		
-		public static String identifier = "gsn::Assumption::identifier";
-		
-		
-		public static String description = "gsn::Assumption::description";
-		
-		
-		public static String content = "gsn::Assumption::content";
-		
-		
-		public static String isTagged = "gsn::Assumption::isTagged";
+		public static String solutionContexts = "gsn::Solution::solutionContexts";
 		
 	
 	}
 
 	/**
-	 * Context view descriptor
+	 * Evidence view descriptor
 	 * 
 	 */
-	public static class Context {
+	public static class Evidence {
 		
-		public static String identifier = "gsn::Context::identifier";
-		
-		
-		public static String description = "gsn::Context::description";
+		public static String identifier = "gsn::Evidence::identifier";
 		
 		
-		public static String content = "gsn::Context::content";
+		public static String description = "gsn::Evidence::description";
 		
 		
-		public static String isTagged = "gsn::Context::isTagged";
-		
-	
-	}
-
-	/**
-	 * Justification view descriptor
-	 * 
-	 */
-	public static class Justification {
-		
-		public static String identifier = "gsn::Justification::identifier";
+		public static String content = "gsn::Evidence::content";
 		
 		
-		public static String description = "gsn::Justification::description";
+		public static String isTagged = "gsn::Evidence::isTagged";
 		
 		
-		public static String content = "gsn::Justification::content";
+		public static String target = "gsn::Evidence::target";
 		
 		
-		public static String isTagged = "gsn::Justification::isTagged";
+		public static String source = "gsn::Evidence::source";
 		
 	
 	}

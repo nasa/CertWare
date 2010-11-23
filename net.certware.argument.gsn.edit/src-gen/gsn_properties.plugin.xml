@@ -64,14 +64,6 @@
          </propertySection>
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="net.certware.argument.gsn.section.ArgumentDiagram"
-               tab="Base">
-             <input
-                    type="net.certware.argument.gsn.ArgumentDiagram">
-             </input>
-         </propertySection>
-         <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
                id="net.certware.argument.gsn.section.Strategy"
                tab="Base">
              <input
@@ -80,18 +72,10 @@
          </propertySection>
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="net.certware.argument.gsn.section.Solution"
+               id="net.certware.argument.gsn.section.Justification"
                tab="Base">
              <input
-                    type="net.certware.argument.gsn.Solution">
-             </input>
-         </propertySection>
-         <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="net.certware.argument.gsn.section.Assumption"
-               tab="Base">
-             <input
-                    type="net.certware.argument.gsn.Assumption">
+                    type="net.certware.argument.gsn.Justification">
              </input>
          </propertySection>
          <propertySection
@@ -104,10 +88,26 @@
          </propertySection>
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="net.certware.argument.gsn.section.Justification"
+               id="net.certware.argument.gsn.section.Assumption"
                tab="Base">
              <input
-                    type="net.certware.argument.gsn.Justification">
+                    type="net.certware.argument.gsn.Assumption">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Solution"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Solution">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Evidence"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Evidence">
              </input>
          </propertySection>
       </propertySections>

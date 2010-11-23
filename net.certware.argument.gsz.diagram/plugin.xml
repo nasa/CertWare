@@ -44,7 +44,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/GszDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="net.certware.core.ui.newwizard.category"
   	     class="net.certware.argument.gsz.diagram.part.GszCreationWizard"
   	     id="net.certware.argument.gsz.diagram.part.GszCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -213,7 +213,7 @@
       <viewProvider class="net.certware.argument.gsz.diagram.providers.GszViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="gsz"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2008,2005,2006,2007"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011"/>
       </viewProvider>
    </extension>
@@ -226,13 +226,13 @@
             <method name="getType()" value="gsz"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007"/>
+            <method name="getType()" value="2001,2002,2003,2008,2005,2006,2007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5004,5010,5005,5011,5006,5012,5007,5013,5008,5014,5009,5015"/>
+            <method name="getType()" value="5001,5002,5004,5010,5005,5011,5016,5017,5007,5013,5008,5014,5009,5015"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -249,11 +249,11 @@
          <object class="net.certware.argument.gsz.diagram.edit.parts.GoalEditPart" id="Goal_2001"/>
          <object class="net.certware.argument.gsz.diagram.edit.parts.SolutionEditPart" id="Solution_2002"/>
          <object class="net.certware.argument.gsz.diagram.edit.parts.EvidenceEditPart" id="Evidence_2003"/>
-         <object class="net.certware.argument.gsz.diagram.edit.parts.StrategyEditPart" id="Strategy_2004"/>
+         <object class="net.certware.argument.gsz.diagram.edit.parts.StrategyEditPart" id="Strategy_2008"/>
          <object class="net.certware.argument.gsz.diagram.edit.parts.JustificationEditPart" id="Justification_2005"/>
          <object class="net.certware.argument.gsz.diagram.edit.parts.ContextEditPart" id="Context_2006"/>
          <object class="net.certware.argument.gsz.diagram.edit.parts.AssumptionEditPart" id="Assumption_2007"/>
-         <context elements="ArgumentDiagram_1000,Goal_2001,Solution_2002,Evidence_2003,Strategy_2004,Justification_2005,Context_2006,Assumption_2007"/>
+         <context elements="ArgumentDiagram_1000,Goal_2001,Solution_2002,Evidence_2003,Strategy_2008,Justification_2005,Context_2006,Assumption_2007"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -315,12 +315,12 @@
       </metamodel>
       <metamodel nsURI="http://www.certware.net/gsz">
          <metamodelType
-               id="net.certware.argument.gsz.diagram.Strategy_2004"
-               name="%metatype.name.Strategy_2004"
+               id="net.certware.argument.gsz.diagram.Strategy_2008"
+               name="%metatype.name.Strategy_2008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Strategy"
                edithelper="net.certware.argument.gsz.diagram.edit.helpers.StrategyEditHelper">
-            <param name="semanticHint" value="2004"/>
+            <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.certware.net/gsz">
@@ -468,7 +468,7 @@
          <elementType ref="net.certware.argument.gsz.diagram.Goal_2001"/>
          <elementType ref="net.certware.argument.gsz.diagram.Solution_2002"/>
          <elementType ref="net.certware.argument.gsz.diagram.Evidence_2003"/>
-         <elementType ref="net.certware.argument.gsz.diagram.Strategy_2004"/>
+         <elementType ref="net.certware.argument.gsz.diagram.Strategy_2008"/>
          <elementType ref="net.certware.argument.gsz.diagram.Justification_2005"/>
          <elementType ref="net.certware.argument.gsz.diagram.Context_2006"/>
          <elementType ref="net.certware.argument.gsz.diagram.Assumption_2007"/>
@@ -663,8 +663,7 @@
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
       <persistent value="true"/>
-   </extension>
-<extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+   </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
       <decoratorProvider class="net.certware.argument.gsz.diagram.providers.GszValidationDecoratorProvider">
          <Priority name="Lowest"/>

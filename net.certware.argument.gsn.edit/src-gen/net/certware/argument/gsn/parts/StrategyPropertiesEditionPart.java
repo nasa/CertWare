@@ -136,291 +136,291 @@ public interface StrategyPropertiesEditionPart {
 
 
 	/**
-	 * @return the goal to add
+	 * @return the goals to add
 	 * 
 	 */
-	public List getGoalToAdd();
+	public List getGoalsToAdd();
 
 	/**
-	 * @return the goal to remove
+	 * @return the goals to remove
 	 * 
 	 */
-	public List getGoalToRemove();
+	public List getGoalsToRemove();
 
 	/**
-	 * @return the goal to move
+	 * @return the goals to move
 	 * 
 	 */
-	public List getGoalToMove();
+	public List getGoalsToMove();
 
 	/**
-	 * @return the goal to edit
+	 * @return the goals to edit
 	 * 
 	 */
-	public Map getGoalToEdit();
+	public Map getGoalsToEdit();
 
 	/**
-	 * @return the current goal table
+	 * @return the current goals table
 	 * 
 	 */
-	public List getGoalTable();
+	public List getGoalsTable();
 
 	/**
-	 * Init the goal
+	 * Init the goals
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initGoal(EObject current, EReference containingFeature, EReference feature);
+	public void initGoals(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the goal
-	 * @param newValue the goal to update
+	 * Update the goals
+	 * @param newValue the goals to update
 	 * 
 	 */
-	public void updateGoal(EObject newValue);
+	public void updateGoals(EObject newValue);
 
 	/**
-	 * Adds the given filter to the goal edition editor.
+	 * Adds the given filter to the goals edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToGoal(ViewerFilter filter);
+	public void addFilterToGoals(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the goal edition editor.
+	 * Adds the given filter to the goals edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToGoal(ViewerFilter filter);
+	public void addBusinessFilterToGoals(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the goal table
+	 * @return true if the given element is contained inside the goals table
 	 * 
 	 */
-	public boolean isContainedInGoalTable(EObject element);
+	public boolean isContainedInGoalsTable(EObject element);
 
 
 	/**
-	 * @return the justification to add
+	 * @return the justifications to add
 	 * 
 	 */
-	public List getJustificationToAdd();
+	public List getJustificationsToAdd();
 
 	/**
-	 * @return the justification to remove
+	 * @return the justifications to remove
 	 * 
 	 */
-	public List getJustificationToRemove();
+	public List getJustificationsToRemove();
 
 	/**
-	 * @return the justification to move
+	 * @return the justifications to move
 	 * 
 	 */
-	public List getJustificationToMove();
+	public List getJustificationsToMove();
 
 	/**
-	 * @return the justification to edit
+	 * @return the justifications to edit
 	 * 
 	 */
-	public Map getJustificationToEdit();
+	public Map getJustificationsToEdit();
 
 	/**
-	 * @return the current justification table
+	 * @return the current justifications table
 	 * 
 	 */
-	public List getJustificationTable();
+	public List getJustificationsTable();
 
 	/**
-	 * Init the justification
+	 * Init the justifications
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initJustification(EObject current, EReference containingFeature, EReference feature);
+	public void initJustifications(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the justification
-	 * @param newValue the justification to update
+	 * Update the justifications
+	 * @param newValue the justifications to update
 	 * 
 	 */
-	public void updateJustification(EObject newValue);
+	public void updateJustifications(EObject newValue);
 
 	/**
-	 * Adds the given filter to the justification edition editor.
+	 * Adds the given filter to the justifications edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToJustification(ViewerFilter filter);
+	public void addFilterToJustifications(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the justification edition editor.
+	 * Adds the given filter to the justifications edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToJustification(ViewerFilter filter);
+	public void addBusinessFilterToJustifications(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the justification table
+	 * @return true if the given element is contained inside the justifications table
 	 * 
 	 */
-	public boolean isContainedInJustificationTable(EObject element);
+	public boolean isContainedInJustificationsTable(EObject element);
 
 
 	/**
-	 * @return the solution to add
+	 * @return the strategyContexts to add
 	 * 
 	 */
-	public List getSolutionToAdd();
+	public List getStrategyContextsToAdd();
 
 	/**
-	 * @return the solution to remove
+	 * @return the strategyContexts to remove
 	 * 
 	 */
-	public List getSolutionToRemove();
+	public List getStrategyContextsToRemove();
 
 	/**
-	 * @return the solution to move
+	 * @return the strategyContexts to move
 	 * 
 	 */
-	public List getSolutionToMove();
+	public List getStrategyContextsToMove();
 
 	/**
-	 * @return the solution to edit
+	 * @return the strategyContexts to edit
 	 * 
 	 */
-	public Map getSolutionToEdit();
+	public Map getStrategyContextsToEdit();
 
 	/**
-	 * @return the current solution table
+	 * @return the current strategyContexts table
 	 * 
 	 */
-	public List getSolutionTable();
+	public List getStrategyContextsTable();
 
 	/**
-	 * Init the solution
+	 * Init the strategyContexts
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initSolution(EObject current, EReference containingFeature, EReference feature);
+	public void initStrategyContexts(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the solution
-	 * @param newValue the solution to update
+	 * Update the strategyContexts
+	 * @param newValue the strategyContexts to update
 	 * 
 	 */
-	public void updateSolution(EObject newValue);
+	public void updateStrategyContexts(EObject newValue);
 
 	/**
-	 * Adds the given filter to the solution edition editor.
+	 * Adds the given filter to the strategyContexts edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToSolution(ViewerFilter filter);
+	public void addFilterToStrategyContexts(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the solution edition editor.
+	 * Adds the given filter to the strategyContexts edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToSolution(ViewerFilter filter);
+	public void addBusinessFilterToStrategyContexts(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the solution table
+	 * @return true if the given element is contained inside the strategyContexts table
 	 * 
 	 */
-	public boolean isContainedInSolutionTable(EObject element);
+	public boolean isContainedInStrategyContextsTable(EObject element);
 
 
 	/**
-	 * @return the context to add
+	 * @return the strategySolutions to add
 	 * 
 	 */
-	public List getContextToAdd();
+	public List getStrategySolutionsToAdd();
 
 	/**
-	 * @return the context to remove
+	 * @return the strategySolutions to remove
 	 * 
 	 */
-	public List getContextToRemove();
+	public List getStrategySolutionsToRemove();
 
 	/**
-	 * @return the context to move
+	 * @return the strategySolutions to move
 	 * 
 	 */
-	public List getContextToMove();
+	public List getStrategySolutionsToMove();
 
 	/**
-	 * @return the context to edit
+	 * @return the strategySolutions to edit
 	 * 
 	 */
-	public Map getContextToEdit();
+	public Map getStrategySolutionsToEdit();
 
 	/**
-	 * @return the current context table
+	 * @return the current strategySolutions table
 	 * 
 	 */
-	public List getContextTable();
+	public List getStrategySolutionsTable();
 
 	/**
-	 * Init the context
+	 * Init the strategySolutions
 	 * @param current the current value
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature);
+	public void initStrategySolutions(EObject current, EReference containingFeature, EReference feature);
 
 	/**
-	 * Update the context
-	 * @param newValue the context to update
+	 * Update the strategySolutions
+	 * @param newValue the strategySolutions to update
 	 * 
 	 */
-	public void updateContext(EObject newValue);
+	public void updateStrategySolutions(EObject newValue);
 
 	/**
-	 * Adds the given filter to the context edition editor.
+	 * Adds the given filter to the strategySolutions edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addFilterToContext(ViewerFilter filter);
+	public void addFilterToStrategySolutions(ViewerFilter filter);
 
 	/**
-	 * Adds the given filter to the context edition editor.
+	 * Adds the given filter to the strategySolutions edition editor.
 	 * 
 	 * @param filter
 	 *            a viewer filter
 	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
 	 * 
 	 */
-	public void addBusinessFilterToContext(ViewerFilter filter);
+	public void addBusinessFilterToStrategySolutions(ViewerFilter filter);
 
 	/**
-	 * @return true if the given element is contained inside the context table
+	 * @return true if the given element is contained inside the strategySolutions table
 	 * 
 	 */
-	public boolean isContainedInContextTable(EObject element);
+	public boolean isContainedInStrategySolutionsTable(EObject element);
 
 
 

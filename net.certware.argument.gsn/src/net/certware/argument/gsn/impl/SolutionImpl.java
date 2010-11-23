@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.argument.gsn.impl.SolutionImpl#getContext <em>Context</em>}</li>
- *   <li>{@link net.certware.argument.gsn.impl.SolutionImpl#getEvidence <em>Evidence</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.SolutionImpl#getSolutionEvidence <em>Solution Evidence</em>}</li>
+ *   <li>{@link net.certware.argument.gsn.impl.SolutionImpl#getSolutionContexts <em>Solution Contexts</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +34,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	/**
-	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.
+	 * The cached value of the '{@link #getSolutionEvidence() <em>Solution Evidence</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContext()
+	 * @see #getSolutionEvidence()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Context> context;
+	protected EList<Evidence> solutionEvidence;
 
 	/**
-	 * The cached value of the '{@link #getEvidence() <em>Evidence</em>}' containment reference list.
+	 * The cached value of the '{@link #getSolutionContexts() <em>Solution Contexts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEvidence()
+	 * @see #getSolutionContexts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Evidence> evidence;
+	protected EList<Context> solutionContexts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,11 +77,11 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Context> getContext() {
-		if (context == null) {
-			context = new EObjectContainmentEList<Context>(Context.class, this, GsnPackage.SOLUTION__CONTEXT);
+	public EList<Evidence> getSolutionEvidence() {
+		if (solutionEvidence == null) {
+			solutionEvidence = new EObjectContainmentEList<Evidence>(Evidence.class, this, GsnPackage.SOLUTION__SOLUTION_EVIDENCE);
 		}
-		return context;
+		return solutionEvidence;
 	}
 
 	/**
@@ -89,11 +89,11 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Evidence> getEvidence() {
-		if (evidence == null) {
-			evidence = new EObjectContainmentEList<Evidence>(Evidence.class, this, GsnPackage.SOLUTION__EVIDENCE);
+	public EList<Context> getSolutionContexts() {
+		if (solutionContexts == null) {
+			solutionContexts = new EObjectContainmentEList<Context>(Context.class, this, GsnPackage.SOLUTION__SOLUTION_CONTEXTS);
 		}
-		return evidence;
+		return solutionContexts;
 	}
 
 	/**
@@ -104,10 +104,10 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GsnPackage.SOLUTION__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
-			case GsnPackage.SOLUTION__EVIDENCE:
-				return ((InternalEList<?>)getEvidence()).basicRemove(otherEnd, msgs);
+			case GsnPackage.SOLUTION__SOLUTION_EVIDENCE:
+				return ((InternalEList<?>)getSolutionEvidence()).basicRemove(otherEnd, msgs);
+			case GsnPackage.SOLUTION__SOLUTION_CONTEXTS:
+				return ((InternalEList<?>)getSolutionContexts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -120,10 +120,10 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GsnPackage.SOLUTION__CONTEXT:
-				return getContext();
-			case GsnPackage.SOLUTION__EVIDENCE:
-				return getEvidence();
+			case GsnPackage.SOLUTION__SOLUTION_EVIDENCE:
+				return getSolutionEvidence();
+			case GsnPackage.SOLUTION__SOLUTION_CONTEXTS:
+				return getSolutionContexts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -137,13 +137,13 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GsnPackage.SOLUTION__CONTEXT:
-				getContext().clear();
-				getContext().addAll((Collection<? extends Context>)newValue);
+			case GsnPackage.SOLUTION__SOLUTION_EVIDENCE:
+				getSolutionEvidence().clear();
+				getSolutionEvidence().addAll((Collection<? extends Evidence>)newValue);
 				return;
-			case GsnPackage.SOLUTION__EVIDENCE:
-				getEvidence().clear();
-				getEvidence().addAll((Collection<? extends Evidence>)newValue);
+			case GsnPackage.SOLUTION__SOLUTION_CONTEXTS:
+				getSolutionContexts().clear();
+				getSolutionContexts().addAll((Collection<? extends Context>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,11 +157,11 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GsnPackage.SOLUTION__CONTEXT:
-				getContext().clear();
+			case GsnPackage.SOLUTION__SOLUTION_EVIDENCE:
+				getSolutionEvidence().clear();
 				return;
-			case GsnPackage.SOLUTION__EVIDENCE:
-				getEvidence().clear();
+			case GsnPackage.SOLUTION__SOLUTION_CONTEXTS:
+				getSolutionContexts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -175,10 +175,10 @@ public class SolutionImpl extends AssertedEvidenceImpl implements Solution {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GsnPackage.SOLUTION__CONTEXT:
-				return context != null && !context.isEmpty();
-			case GsnPackage.SOLUTION__EVIDENCE:
-				return evidence != null && !evidence.isEmpty();
+			case GsnPackage.SOLUTION__SOLUTION_EVIDENCE:
+				return solutionEvidence != null && !solutionEvidence.isEmpty();
+			case GsnPackage.SOLUTION__SOLUTION_CONTEXTS:
+				return solutionContexts != null && !solutionContexts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

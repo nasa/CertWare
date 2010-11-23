@@ -64,32 +64,32 @@ public class GsnIndustrialPressTestCase extends TestCase {
 		sn4.setIdentifier("Sn4");
 
 		// assemble
-		g1.getStrategy().add(s1);
-		g1.getStrategy().add(s2);
+		g1.getStrategies().add(s1);
+		g1.getStrategies().add(s2);
 		
-		s2.getJustification().add(c1);
+		s2.getJustifications().add(c1);
 
-		s1.getGoal().add(g2);
-		s1.getGoal().add(g3);
-		s1.getGoal().add(g4);
+		s1.getGoals().add(g2);
+		s1.getGoals().add(g3);
+		s1.getGoals().add(g4);
 		
-		s2.getGoal().add(g8);
-		s2.getGoal().add(g9);
+		s2.getGoals().add(g8);
+		s2.getGoals().add(g9);
 		
-		g2.getSubgoal().add(g5);
+		g2.getSubGoals().add(g5);
 		
-		g3.getSubgoal().add(g7);
+		g3.getSubGoals().add(g7);
 		
-		g2.getSolution().add(sn1);
+		g2.getGoalSolutions().add(sn1);
 		
-		g5.getSolution().add(sn2);
-		g7.getSolution().add(sn2);
+		g5.getGoalSolutions().add(sn2);
+		g7.getGoalSolutions().add(sn2);
 		
-		g8.getSolution().add(sn3);
-		g9.getSolution().add(sn3);
+		g8.getGoalSolutions().add(sn3);
+		g9.getGoalSolutions().add(sn3);
 
-		g8.getSolution().add(sn4);
-		g9.getSolution().add(sn4);
+		g8.getGoalSolutions().add(sn4);
+		g9.getGoalSolutions().add(sn4);
 		
 	}
 	
@@ -98,35 +98,35 @@ public class GsnIndustrialPressTestCase extends TestCase {
 	 * @throws Exception
 	 */
 	public void testToplevelLists() throws Exception {
-		assertEquals(2, g1.getStrategy().size());
-		assertEquals(0, g1.getAssumption().size());
-		assertEquals(0, g1.getContext().size());
+		assertEquals(2, g1.getStrategies().size());
+		assertEquals(0, g1.getAssumptions().size());
+		assertEquals(0, g1.getGoalContexts().size());
 		assertEquals(0, g1.getIsTagged().size());
-		assertEquals(0, g1.getSolution().size());
+		assertEquals(0, g1.getGoalSolutions().size());
 	}
 
 	/**
 	 * @throws Exception
 	 */
 	public void testStrategyLists() throws Exception {
-		Strategy s = g1.getStrategy().get(0);
-		assertEquals(3, s.getGoal().size() );
+		Strategy s = g1.getStrategies().get(0);
+		assertEquals(3, s.getGoals().size() );
 		
-		s = g1.getStrategy().get(1);
-		assertEquals(2, s.getGoal().size() );
+		s = g1.getStrategies().get(1);
+		assertEquals(2, s.getGoals().size() );
 	}
 	
 	/**
 	 * @throws Exception
 	 */
 	public void testSupported() throws Exception { 
-		Goal g = g1.getStrategy().get(0).getGoal().get(0);
+		Goal g = g1.getStrategies().get(0).getGoals().get(0);
 		assertFalse(g.isToBeSupported());
 		
-		g = g1.getStrategy().get(0).getGoal().get(1);
+		g = g1.getStrategies().get(0).getGoals().get(1);
 		assertFalse(g.isToBeSupported());
 		
-		g = g1.getStrategy().get(0).getGoal().get(2);
+		g = g1.getStrategies().get(0).getGoals().get(2);
 		assertTrue(g.isToBeSupported());
 	}
 	

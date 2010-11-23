@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="Goal: SSRidentify" description="" content="SSRs from {tier n-1} have been adequately allocated, decomposed, apportioned and interpreted at {tier n}">
   <isTagged key="visibility" value="public"/>
-  <strategy identifier="Strat: SSRidentify" description="" content="Argument over the {tier n} design and the SSRs specified at {tier n}">
-    <goal identifier="Goal: SSRcapture" description="" content="SSRs at {tier n} adequately capture the SSRs from {tier n-1} for the {tier n} design">
-      <strategy identifier="Strat: SSRcapture" description="" content="Argument over each SSR from {tier n-1}">
-        <goal identifier="Goal: SSRn" description="" content="{SSRn-1} adequately captured by one or more {SSRn}">
+  <strategies identifier="Strat: SSRidentify" description="" content="Argument over the {tier n} design and the SSRs specified at {tier n}">
+    <goals identifier="Goal: SSRcapture" description="" content="SSRs at {tier n} adequately capture the SSRs from {tier n-1} for the {tier n} design">
+      <strategies identifier="Strat: SSRcapture" description="" content="Argument over each SSR from {tier n-1}">
+        <goals identifier="Goal: SSRn" description="" content="{SSRn-1} adequately captured by one or more {SSRn}">
           <isTagged key="unsubstantiated" value="true"/>
           <isTagged key="multiplicity" value="0 to n"/>
-        </goal>
-      </strategy>
-      <context identifier="con: tierNdesign" description="" content="{tier n} design"/>
-      <context identifier="con: SSRsN" description="" content="{SSRs identified for {tier n}}">
+        </goals>
+      </strategies>
+      <goalContexts identifier="con: tierNdesign" description="" content="{tier n} design"/>
+      <goalContexts identifier="con: SSRsN" description="" content="{SSRs identified for {tier n}}">
         <isTagged key="uninstantiated" value="true"/>
-      </context>
-    </goal>
-    <goal identifier="Goal: designDecisions" description="" content="Design decisions taken at {tier n} facilitate satisfaction of the SSRs from {tier n-1}">
+      </goalContexts>
+    </goals>
+    <goals identifier="Goal: designDecisions" description="" content="Design decisions taken at {tier n} facilitate satisfaction of the SSRs from {tier n-1}">
       <isTagged key="multiplicity" value="0 or 1"/>
-      <strategy identifier="Strat: designDecisions" description="" content="Argument over design decisions taken at {tier n}">
-        <goal identifier="Goal: designDecision" description="" content="{design decision} facilitates satisfaction of SSRs from {tier n-1}">
+      <strategies identifier="Strat: designDecisions" description="" content="Argument over design decisions taken at {tier n}">
+        <goals identifier="Goal: designDecision" description="" content="{design decision} facilitates satisfaction of SSRs from {tier n-1}">
           <isTagged key="unsubstantiated" value="true"/>
           <isTagged key="multiplicity" value="0 to n"/>
-          <context identifier="con: relevantSSRs" description="" content="SSRs relevant to {design decision} are {SSRs}">
+          <goalContexts identifier="con: relevantSSRs" description="" content="SSRs relevant to {design decision} are {SSRs}">
             <isTagged key="uninstantiated" value="true"/>
-          </context>
-        </goal>
-        <context identifier="Con: designDecisions" description="" content="Design decisions taken at {tier n}">
+          </goalContexts>
+        </goals>
+        <strategyContexts identifier="Con: designDecisions" description="" content="Design decisions taken at {tier n}">
           <isTagged key="uninstantiated" value="true"/>
-        </context>
-      </strategy>
-      <context identifier="con: tierNdesign" description="" content="{tier n} design"/>
-    </goal>
-  </strategy>
-  <context identifier="con: SSRsN-1" description="" content="{SSRs from {tier n-1}}">
+        </strategyContexts>
+      </strategies>
+      <goalContexts identifier="con: tierNdesign" description="" content="{tier n} design"/>
+    </goals>
+  </strategies>
+  <goalContexts identifier="con: SSRsN-1" description="" content="{SSRs from {tier n-1}}">
     <isTagged key="uninstantiated" value="true"/>
-  </context>
+  </goalContexts>
 </gsn:Goal>
