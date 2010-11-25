@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) Kestrel Technology LLC
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.certware.net/euz"
+            class="net.certware.argument.euz.EuzPackage"
+            genModel="model/euz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="euz"
+            class="net.certware.argument.euz.util.EuzResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

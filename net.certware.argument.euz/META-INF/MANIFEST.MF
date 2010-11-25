@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Argument Diagram EUROCONTROL Model
+Bundle-SymbolicName: net.certware.argument.euz;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ net.certware.argument.arm;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Export-Package: net.certware.argument.euz,
+ net.certware.argument.euz.impl,
+ net.certware.argument.euz.util

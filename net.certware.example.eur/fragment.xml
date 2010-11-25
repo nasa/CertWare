@@ -11,11 +11,30 @@
             implementation="Re-populate for attributes of interest"
             intent="Provides the basic preliminary safety case structure consisting of the top-level safety case argument for a typical application."
             motivation="Provides the example as implemented in the manual"
-            name="EUROCONTROL Preliminary Safety Case"
+            name="EUROCONTROL Preliminary Safety Case Model"
             version="EUROCONTROL SCDM 2.1 2006">
          <resource
                description="Preliminary safety case model file"
                structure="resources/PSC ADS-B-NRA.eur">
+         </resource>
+      </pattern>
+      <pattern
+            applicability="EUROCONTROL SCDM PSC"
+            author="EUROCONTROL"
+            consequences="Populate all of the leaf arguments down to the evidence."
+            idp="net.certware.example.patterns.eur.pscd"
+            implementation="Re-populate for attributes of interest"
+            intent="Provides the basic preliminary safety case structure consisting of the top-level safety case argument for a typical application."
+            motivation="Provides the example as implemented in the manual"
+            name="EUROCONTROL Preliminary Safety Case Diagram"
+            version="EUROCONTROL SCDM 2.1 2006">
+         <resource
+               description="Preliminary safety case diagram"
+               structure="resources/PSC ADS-B-NRA.euz_diagram">
+         </resource>
+         <resource
+               description="Preliminary safety case model"
+               structure="resources/PSC ADS-B-NRA.euz">
          </resource>
       </pattern>
    </extension>

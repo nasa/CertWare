@@ -52,3 +52,4 @@ proxy
 registry
 reorient
 editpart
+metamodels

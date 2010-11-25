@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+Copyright (c) 2010 Kestrel Technology LLC
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="euz_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="euz_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="net.certware.argument.euz.diagram.part.EuzDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/EuzDiagramFile.gif"
+         extensions="euz_diagram"
+         default="true"
+         class="net.certware.argument.euz.diagram.part.EuzDiagramEditor"
+         matchingStrategy="net.certware.argument.euz.diagram.part.EuzMatchingStrategy"
+         contributorClass="net.certware.argument.euz.diagram.part.EuzDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="net.certware.argument.euz.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/EuzDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="net.certware.argument.euz.diagram.part.EuzCreationWizard"
+  	     id="net.certware.argument.euz.diagram.part.EuzCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="net.certware.argument.euz.diagram.InitDiagram"
+            nameFilter="*.euz"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="net.certware.argument.euz.diagram.part.EuzInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="net.certware.argument.euz.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="EuzPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="net.certware.argument.euz.diagram.part.EuzDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="EuzPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="net.certware.argument.euz.diagram.part.EuzDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="EuzRender">
+         <Priority name="Lowest"/>
+         <ViewId id="net.certware.argument.euz.diagram.part.EuzDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="net.certware.argument.euz.diagram.providers.EuzMarkerNavigationProvider">
+         <MarkerType name="net.certware.argument.euz.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Euz Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="net.certware.argument.euz.diagram.providers.EuzValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="net.certware.argument.euz.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="net.certware.argument.euz.diagram.general"
+            name="%prefpage.net.certware.argument.euz.diagram.general"
+            class="net.certware.argument.euz.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="net.certware.argument.euz.diagram.appearance"
+            name="%prefpage.net.certware.argument.euz.diagram.appearance"
+            category="net.certware.argument.euz.diagram.general"
+            class="net.certware.argument.euz.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="net.certware.argument.euz.diagram.connections"
+            name="%prefpage.net.certware.argument.euz.diagram.connections"
+            category="net.certware.argument.euz.diagram.general"
+            class="net.certware.argument.euz.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="net.certware.argument.euz.diagram.printing"
+            name="%prefpage.net.certware.argument.euz.diagram.printing"
+            category="net.certware.argument.euz.diagram.general"
+            class="net.certware.argument.euz.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="net.certware.argument.euz.diagram.rulersAndGrid"
+            name="%prefpage.net.certware.argument.euz.diagram.rulersAndGrid"
+            category="net.certware.argument.euz.diagram.general"
+            class="net.certware.argument.euz.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="net.certware.argument.euz.diagram"
+            labelProvider="net.certware.argument.euz.diagram.sheet.EuzSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="net.certware.argument.euz.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="net.certware.argument.euz.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="net.certware.argument.euz.diagram.sheet.EuzPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="net.certware.argument.euz.diagram.navigator.EuzAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="net.certware.argument.euz.diagram.providers.EuzViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Euz"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4017,4007,4008,4009,4010,4011,4012,4013,4014,4015,4016"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="net.certware.argument.euz.diagram.providers.EuzEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Euz"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004,4005,4006,4017,4007,4008,4009,4010,4011,4012,4013,4014,4015,4016"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5002,5003,5004,5005,5006,5007,5008,5009,5010,5011,5012,5013,5014,5015,5016"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value=""/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="net.certware.argument.euz.diagram.providers.EuzModelingAssistantProvider">
+         <Priority name="Lowest"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.ArgumentDiagramEditPart" id="ArgumentDiagram_1000"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.ArgumentEditPart" id="Argument_2001"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.SolutionEditPart" id="Solution_2002"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.EvidenceEditPart" id="Evidence_2003"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.StrategyEditPart" id="Strategy_2004"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.AssumptionEditPart" id="Assumption_2005"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.JustificationEditPart" id="Justification_2006"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.ContextEditPart" id="Context_2007"/>
+         <object class="net.certware.argument.euz.diagram.edit.parts.CriteriaEditPart" id="Criteria_2008"/>
+         <context elements="ArgumentDiagram_1000,Argument_2001,Solution_2002,Evidence_2003,Strategy_2004,Assumption_2005,Justification_2006,Context_2007,Criteria_2008"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="net.certware.argument.euz.diagram.providers.EuzIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="net.certware.argument.euz.diagram.providers.EuzParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.ArgumentDiagram_1000"
+               name="%metatype.name.ArgumentDiagram_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ArgumentDiagram"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.ArgumentDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Argument_2001"
+               name="%metatype.name.Argument_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Argument"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.ArgumentEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Solution_2002"
+               name="%metatype.name.Solution_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Solution"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.SolutionEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Evidence_2003"
+               name="%metatype.name.Evidence_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Evidence"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.EvidenceEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Strategy_2004"
+               name="%metatype.name.Strategy_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Strategy"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.StrategyEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Assumption_2005"
+               name="%metatype.name.Assumption_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Assumption"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.AssumptionEditHelper">
+            <param name="semanticHint" value="2005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Justification_2006"
+               name="%metatype.name.Justification_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Justification"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.JustificationEditHelper">
+            <param name="semanticHint" value="2006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Context_2007"
+               name="%metatype.name.Context_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Context"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.ContextEditHelper">
+            <param name="semanticHint" value="2007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <metamodelType
+               id="net.certware.argument.euz.diagram.Criteria_2008"
+               name="%metatype.name.Criteria_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Criteria"
+               edithelper="net.certware.argument.euz.diagram.edit.helpers.CriteriaEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ArgumentArgumentStrategies_4001"
+               name="%metatype.name.ArgumentArgumentStrategies_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4001"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ArgumentArgumentAssumptions_4002"
+               name="%metatype.name.ArgumentArgumentAssumptions_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4002"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ArgumentArgumentContexts_4003"
+               name="%metatype.name.ArgumentArgumentContexts_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ArgumentArgumentSolutions_4004"
+               name="%metatype.name.ArgumentArgumentSolutions_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ArgumentArgumentCriteria_4005"
+               name="%metatype.name.ArgumentArgumentCriteria_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ArgumentArgumentJustifications_4006"
+               name="%metatype.name.ArgumentArgumentJustifications_4006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ArgumentSubArguments_4017"
+               name="%metatype.name.ArgumentSubArguments_4017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.ContextContextAssumptions_4007"
+               name="%metatype.name.ContextContextAssumptions_4007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.CriteriaCriteriaContexts_4008"
+               name="%metatype.name.CriteriaCriteriaContexts_4008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.CriteriaCriteriaAssumptions_4009"
+               name="%metatype.name.CriteriaCriteriaAssumptions_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4009"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.StrategyStrategyArguments_4010"
+               name="%metatype.name.StrategyStrategyArguments_4010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4010"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.StrategyStrategyJustifications_4011"
+               name="%metatype.name.StrategyStrategyJustifications_4011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4011"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.StrategyStrategyCriteria_4012"
+               name="%metatype.name.StrategyStrategyCriteria_4012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4012"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.StrategyStrategyAssumptions_4013"
+               name="%metatype.name.StrategyStrategyAssumptions_4013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4013"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.SolutionSolutionContexts_4014"
+               name="%metatype.name.SolutionSolutionContexts_4014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.SolutionSolutionEvidence_4015"
+               name="%metatype.name.SolutionSolutionEvidence_4015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4015"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/euz">
+         <specializationType
+               id="net.certware.argument.euz.diagram.SolutionSolutionCriteria_4016"
+               name="%metatype.name.SolutionSolutionCriteria_4016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4016"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="net.certware.argument.euz.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="net.certware.argument.euz.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="net.certware.argument.euz.diagram.TypeContext">
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentDiagram_1000"/>
+         <elementType ref="net.certware.argument.euz.diagram.Argument_2001"/>
+         <elementType ref="net.certware.argument.euz.diagram.Solution_2002"/>
+         <elementType ref="net.certware.argument.euz.diagram.Evidence_2003"/>
+         <elementType ref="net.certware.argument.euz.diagram.Strategy_2004"/>
+         <elementType ref="net.certware.argument.euz.diagram.Assumption_2005"/>
+         <elementType ref="net.certware.argument.euz.diagram.Justification_2006"/>
+         <elementType ref="net.certware.argument.euz.diagram.Context_2007"/>
+         <elementType ref="net.certware.argument.euz.diagram.Criteria_2008"/>
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentArgumentStrategies_4001"/>
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentArgumentAssumptions_4002"/>
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentArgumentContexts_4003"/>
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentArgumentSolutions_4004"/>
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentArgumentCriteria_4005"/>
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentArgumentJustifications_4006"/>
+         <elementType ref="net.certware.argument.euz.diagram.ArgumentSubArguments_4017"/>
+         <elementType ref="net.certware.argument.euz.diagram.ContextContextAssumptions_4007"/>
+         <elementType ref="net.certware.argument.euz.diagram.CriteriaCriteriaContexts_4008"/>
+         <elementType ref="net.certware.argument.euz.diagram.CriteriaCriteriaAssumptions_4009"/>
+         <elementType ref="net.certware.argument.euz.diagram.StrategyStrategyArguments_4010"/>
+         <elementType ref="net.certware.argument.euz.diagram.StrategyStrategyJustifications_4011"/>
+         <elementType ref="net.certware.argument.euz.diagram.StrategyStrategyCriteria_4012"/>
+         <elementType ref="net.certware.argument.euz.diagram.StrategyStrategyAssumptions_4013"/>
+         <elementType ref="net.certware.argument.euz.diagram.SolutionSolutionContexts_4014"/>
+         <elementType ref="net.certware.argument.euz.diagram.SolutionSolutionEvidence_4015"/>
+         <elementType ref="net.certware.argument.euz.diagram.SolutionSolutionCriteria_4016"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="net.certware.argument.euz.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="net.certware.argument.euz.diagram"
+           properties="isURIEditorInput"
+           class="net.certware.argument.euz.diagram.part.EuzUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="net.certware.argument.euz.diagram.resourceContent"/>
+			<contentExtension pattern="net.certware.argument.euz.diagram.domainResourceContent"/>
+            <contentExtension pattern="net.certware.argument.euz.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="net.certware.argument.euz.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="net.certware.argument.euz.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="net.certware.argument.euz.diagram.navigator.EuzNavigatorContentProvider" 
+            labelProvider="net.certware.argument.euz.diagram.navigator.EuzNavigatorLabelProvider"
+            icon="icons/obj16/EuzDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="euz_diagram"/>
+               </and>
+               <instanceof value="net.certware.argument.euz.diagram.navigator.EuzAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="net.certware.argument.euz.diagram.navigator.EuzAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="net.certware.argument.euz.diagram.navigatorSorter" 
+               class="net.certware.argument.euz.diagram.navigator.EuzNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="euz_diagram"/>
+                  </and>
+                  <instanceof value="net.certware.argument.euz.diagram.navigator.EuzAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="net.certware.argument.euz.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="net.certware.argument.euz.diagram.navigator.EuzDomainNavigatorContentProvider" 
+            labelProvider="net.certware.argument.euz.diagram.navigator.EuzDomainNavigatorLabelProvider"
+            icon="icons/obj16/EuzDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="euz"/>
+               </and>
+               <instanceof value="net.certware.argument.euz.diagram.navigator.EuzDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="net.certware.argument.euz.diagram.navigator.EuzDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="net.certware.argument.euz.diagram.navigatorActionProvider"
+            class="net.certware.argument.euz.diagram.navigator.EuzNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="net.certware.argument.euz.diagram.navigator.EuzAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="net.certware.argument.euz.diagram.navigatorLinkHelper"
+            class="net.certware.argument.euz.diagram.navigator.EuzNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="net.certware.argument.euz.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="net.certware.argument.euz.diagram.navigator.EuzAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="net.certware.argument.euz.diagram.part.EuzDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="net.certware.argument.euz.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="net.certware.argument.euz.diagram.updateDiagram"
+         contextId="net.certware.argument.euz.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="net.certware.argument.euz.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="net.certware.argument.euz.diagram.part.EuzDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="net.certware.argument.euz.diagram.edit.parts.ArgumentDiagramEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="net.certware.argument.euz.diagram.part.EuzDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="net.certware.argument.euz.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="net.certware.argument.euz.diagram.part.EuzDiagramEditorID"
+         defaultHandler="net.certware.argument.euz.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

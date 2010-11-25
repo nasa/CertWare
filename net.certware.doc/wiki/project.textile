@@ -8,18 +8,17 @@ h3. Version 1.0.0
 
 * Created ARM Ecore model for arguments, then GSN, CAE, and EUR Ecore models each depending on ARM package.
 * Created VCL Ecore model for check lists.
-* Created argument pattern Ecore model. 
 * Established basic target definition including Equinox and RCP.  
 * Established basic feature definition and branding support.
 * Established basic extended editing properties sheets using EEF.  
 * Created Apache POI plugin library package for POI 3.6.
 * Created import/export plugin library package for docx4j.
 * Included EGit/JGit support in run configuration.  
-* Unit test fragments created for ARM and GSN models.
+* Unit test fragments created for ARM, GSN, and EUROCONTROL models.
 * Navigator content contributions and filters for ARM, GSN, CAE, EUR, and VCL models.
 * Example wizard using example resources contributed as fragments.
 * Javadoc basic setup and Ant script saved. 
-* Graphical editor for GSN models.
+* Graphical argument editors for GSN and EUROCONTROL models.
 
 h2. Documentation
 
@@ -37,12 +36,14 @@ h3. Meta-Models
 * @ARM@ OMG argument metamodel and its Ecore implementation
 * @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
 * @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
+* @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
 * @EUR@ A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
+* @EUZ@ A diagram for EUROCONTROL notation derived from EUR and ARM metamodels. 
 * @VCL@ A verification checklist generic metamodel.
 
 h4. Running the EEF Tools
 
-The EEF model initialization occurs from the original @*.genmodel@ files in the model plugins.  
+We use the Eclipse Extended Editing Framework to provide better properties sheets for the EMF model editors.  The EEF model initialization occurs from the original @*.genmodel@ files in the model plugins.  
 # The EEF model artifacts are redirected to the @EMF.Edit@ plugins, where a @model@ folder was created to contain the EEF models.  
 # In the @*.eefgen@ model created, check that the generation directory property points to a source folder (typically @src-gen@) and that the builder identifies this as a source folder (e.g. @Build Path -> Use as Source Folder@).  
 # Be sure to add the @model@ folder and the @src-gen@ folders to the plugin's @build.properties@ selections as necessary.  
@@ -59,7 +60,7 @@ h4. Running the GMF Tools
 The graphical model editors we create with the Eclipse Eugenia tools for GMF.  Use the following steps:
 # Apply the Eugenia metadata annotations to the features in the desired Ecore metamodel files (e.g. add the tags to the @gsn.ecore@ file).
 # From the @genmodel@ editor and root model node, run the corresponding @genmodel@ file to create the basic EMF model, edit, and editor support source and plugins.  
-# From the explorer's context menu on the @ecore@ file run the @Eugenia -> Generate GMF tool, graph, and map models@ command.  This will yield the @gmfgraph@, @gmfmap@, and @gmftool@ files next to the @ecore@ file.  Note of the @gmfmap@ file does not appear there is something wrong with the model structure or annotations although no error messages are produced.
+# From the explorer's context menu on the @ecore@ file run the @Eugenia -> Generate GMF tool, graph, and map models@ command.  This will yield the @gmfgraph@, @gmfmap@, and @gmftool@ files next to the @ecore@ file.  Note of the @gmfmap@ file does not appear there is something wrong with the model structure or annotations although no error messages are produced; typical issues are container point-backs and nodes with identical tool names.
 # From the explorer's context menu on the @gmfmap@ file run the @Create generator model command.@  This will run the wizard to create the @gmfgen@ file.  Note that the "Load" buttons should be used on each page and that the notification that the @genmodel@ file is out of date seems to be spurious.
 # Edit the @gmfgen@ model's edit part properties to set Validation Enabled and Validation Decorators to @true@.  
 # Edit the @gmfgen@ model's edit part properties to set the metamodel Display Name property to the diagram type, e.g. @GSN Argument Diagram@.  This value appears in the property sheet header when the argument canvas is selected.

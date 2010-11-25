@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<euz:ArgumentDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:euz="http://www.certware.net/euz" version="ADS-B-NRA 1.0 Example">
+  <arguments identifier="Arg 0" content="Use of ADS-B surveillance in Non-Radar Areas for Air Traffic Services is acceptably safe" argumentCriteria="//@criteria.0 //@criteria.1 //@criteria.2 //@criteria.3" argumentJustifications="//@justifications.0" subArguments="//@arguments.1 //@arguments.2 //@arguments.3 //@arguments.4"/>
+  <arguments identifier="Arg 1" description="Section 3.4" content="ADS-B surveillance in NRAs for ATSs has been specified to be acceptably safe" subArguments="//@arguments.5 //@arguments.6 //@arguments.7"/>
+  <arguments identifier="Arg 2" description="" content="ADS-B surveillance in NRAs for ATSs has been implemented in accordance with the specification"/>
+  <arguments identifier="Arg 3" description="" content="The transition to operational service of ADS-B surveillance in NRAs for ATSs will be acceptably safe"/>
+  <arguments identifier="Arg 4" description="" content="The safety of ADS-B surveillance in NRAs for ATSs will continue to be demonstrated in operational service"/>
+  <arguments identifier="1.1" description="Section 3.4.1" content="ADS-B surveillance in NRAs for ATSs have been generically specified to be acceptably safe" argumentAssumptions="//@assumptions.0" argumentContexts="//@contexts.1" subArguments="//@arguments.8 //@arguments.11 //@arguments.9 //@arguments.12 //@arguments.10 //@arguments.13 //@arguments.14"/>
+  <arguments identifier="1.2" description="" content="Sufficient guidance exists to enable complete, correct and consistent consideration of the local specification aspects" argumentSolutions="//@solutions.0"/>
+  <arguments identifier="1.3" description="" content="ADS-B surveillance in NRAs for ATSs have been locally specified to be acceptably safe"/>
+  <arguments identifier="Arg 1.1.1" description="Section 4" content="ADS-B surveillance in NRAs for ATSs is intrinsically safe" argumentJustifications="//@justifications.1" subArguments="//@arguments.15 //@arguments.16 //@arguments.17 //@arguments.18"/>
+  <arguments identifier="Arg 1.1.2" description="Section 5" content="The corresponding System Design is complete" subArguments="//@arguments.19 //@arguments.20 //@arguments.21 //@arguments.22"/>
+  <arguments identifier="Arg 1.1.3" description="Section 6" content="The System Design functions correctly and coherently under all expected environment conditions" subArguments="//@arguments.26 //@arguments.25 //@arguments.24 //@arguments.23"/>
+  <arguments identifier="Arg 1.1.4" description="Section 7" content="The System Design is robust against external abnormalities" subArguments="//@arguments.28 //@arguments.27"/>
+  <arguments identifier="Arg 1.1.5" description="Section 8" content="All risks from internal system failure have been mitigated sufficiently" argumentStrategies="//@strategies.0"/>
+  <arguments identifier="Arg 1.1.6" description="Section 9" content="All requirements are realistic - i.e. are capable of being satisfied in a typical implementation of equipment, people and procedures" argumentSolutions="//@solutions.20"/>
+  <arguments identifier="Arg 1.1.7" description="Section 10" content="Approach and Methods used to obtain requirements allow to demonstrate that the application is acceptably safe" argumentSolutions="//@solutions.21"/>
+  <arguments identifier="Arg 1.1.1.1" description="" content="The key surveillance data items of the reference radar-based service and ADS-B-NRA have been identified" argumentSolutions="//@solutions.1"/>
+  <arguments identifier="Arg 1.1.1.2" description="" content="The differences between the reference radar-based service and ADS-B-NRA have been identified, understaood and recondiled to satisfy the safety criteria" argumentSolutions="//@solutions.2"/>
+  <arguments identifier="Arg 1.1.1.3" description="" content="Performance for both the reference radar-based ATS and ADS-B-NRA have been described, understood and reconciled with the safety criteria" argumentSolutions="//@solutions.3"/>
+  <arguments identifier="Arg 1.1.1.4" description="" content="The operational impact of ADS-B surveillance on adjacent sectors has been assessed and shown to be consistent with the safety criteria" argumentSolutions="//@solutions.4"/>
+  <arguments identifier="Arg 1.1.2.1" description="" content="The boundaries of the system are clearly defined" argumentSolutions="//@solutions.5"/>
+  <arguments identifier="Arg 1.1.2.2" description="" content="The Application fully describes how the system is intended to operate" argumentSolutions="//@solutions.6"/>
+  <arguments identifier="Arg 1.1.2.3" description="" content="Everything necessary to achieve a safe implementation of the Application, related to equipment, people, procedures, airspace design, etc., has been specified as safety requirements or assumptions" argumentSolutions="//@solutions.7"/>
+  <arguments identifier="Arg 1.1.2.4" description="" content="All safety requirements on, and assumptions about, external elements of the end-to-end system have been captured" argumentSolutions="//@solutions.8"/>
+  <arguments identifier="Arg 1.1.3.4" description="" content="Absence of undefined states in ADS-B-NRA" argumentSolutions="//@solutions.11"/>
+  <arguments identifier="Arg 1.1.3.3" description="" content="Coherency of the ADS-B-NRA data over the full range of conditions to which the system is expected to be subjected in its operational environment" argumentSolutions="//@solutions.9"/>
+  <arguments identifier="Arg 1.1.3.2" description="" content="Coherency of the ADS-B-NRA human actions" argumentSolutions="//@solutions.12"/>
+  <arguments identifier="Arg 1.1.3.1" description="" content="Coherency of the ADS-B-NRA procedures" argumentSolutions="//@solutions.10"/>
+  <arguments identifier="Arg 1.1.4.2" description="" content="The system can react safely to all reasonably foreseeable abnormal conditions in its environment / adjacent systems" argumentSolutions="//@solutions.14"/>
+  <arguments identifier="Arg 1.1.4.1" description="" content="The system can react safely to all reasonable foreseeable external failures - i.e. failures in its environment / adjacent systems" argumentSolutions="//@solutions.13"/>
+  <arguments identifier="Arg 1.1.5.4" description="" content="All reasonably foreseeable causes of each hazard have been identified" argumentSolutions="//@solutions.18"/>
+  <arguments identifier="Arg 1.1.5.5" description="" content="Safety requirements have been specified (or assumptions stated) for causes of each hazard, and for any available mitigations internal or external to the system, such that the system criteria are satisfied" argumentSolutions="//@solutions.19"/>
+  <arguments identifier="Arg 1.1.5.3" content="Safety objectives have been determined for each identified hazard" argumentSolutions="//@solutions.17"/>
+  <arguments identifier="Arg 1.1.5.2" description="" content="The severity of the effects of each hazard has been correctly assessed, taking account of any mitigations that may be available" argumentSolutions="//@solutions.15"/>
+  <arguments identifier="Arg 1.1.5.1" description="" content="All reasonable foreseeable hazards have been identified" argumentSolutions="//@solutions.16"/>
+  <strategies identifier="St001" description="" content="Internal failure assessment is focused on separation ATS service" strategyArguments="//@arguments.33 //@arguments.32 //@arguments.31 //@arguments.29 //@arguments.30"/>
+  <solutions identifier="S12" description="" content="PSC NRA section 3.4.2"/>
+  <solutions identifier="S111" description="" content="PSC-NRA section 4.3"/>
+  <solutions identifier="S1112" description="" content="PSC-NRA section 4.4"/>
+  <solutions identifier="S1113" description="" content="PSC-NRA section 4.5"/>
+  <solutions identifier="S1114" description="" content="PSC-NRA section 4.6"/>
+  <solutions identifier="S1121" description="" content="PSC-NRA section 5.3"/>
+  <solutions identifier="S1122" description="" content="PSC-NRA section 5.4"/>
+  <solutions identifier="S1123" description="" content="PSC-NRA section 5.5"/>
+  <solutions identifier="S1124" description="" content="PSC-NRA section 5.6"/>
+  <solutions identifier="S1133" description="" content="PSC-NRA section 6.5"/>
+  <solutions identifier="S1131" description="" content="PSC-NRA section 6.3"/>
+  <solutions identifier="S1134" description="" content="PSC-NRA section 6.6"/>
+  <solutions identifier="S1132" description="" content="PSC-NRA section 6.4"/>
+  <solutions identifier="S1141" description="" content="PSC-NRA section 7.3"/>
+  <solutions identifier="S1142" description="" content="PSC-NRA section 7.4"/>
+  <solutions identifier="S1152" description="" content="PSC-NRA section 8.4"/>
+  <solutions identifier="S1151" description="" content="PSC-NRA section 8.3"/>
+  <solutions identifier="S1153" description="" content="PSC-NRA section 8.5"/>
+  <solutions identifier="S1154" description="" content="PSC-NRA section 8.6"/>
+  <solutions identifier="S1155" description="" content="PSC-NRA section 8.7"/>
+  <solutions identifier="S116" description="" content="PSC ADS-B-NRA section 9.2"/>
+  <solutions identifier="S117" description="" content="PSC ADS-B-NRA section 10.2"/>
+  <assumptions identifier="A002" description="" content="100% of aircraft are equipped and certified for ADS-B-NRA"/>
+  <assumptions identifier="A001"/>
+  <justifications identifier="J001" description="" content="Introduction of ADS-B in current NRAs (operating environment) provides enhancement to ATS in a way similar to the introduction of secondary surveillance radar in terms of capacity, efficiency and safety aspects"/>
+  <justifications identifier="J002" description="" content="When working normally (success case) ABS-B-NRA does not introduction additional risk"/>
+  <contexts identifier="C001" contextAssumptions="//@assumptions.1"/>
+  <contexts identifier="C003" description="" content="ADS-B-NRA application includes separation service applying 5NM for en-route and 3NM for TMA as outlined in section 2 herein"/>
+  <criteria identifier="Cr000" content="Acceptably safe is defined as a combination of the following elements, concerning the risk of an accident or incident"/>
+  <criteria identifier="Cr001" content="No greater than for the Reference Service"/>
+  <criteria identifier="Cr002" content="Within an appropriate portion of the relevant target levels of safety"/>
+  <criteria identifier="Cr003" description="" content="Further reduced as far a reasonably practicable"/>
+</euz:ArgumentDiagram>

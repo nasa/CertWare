@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010 Kestrel Technology LLC"
+    modelDirectory="/net.certware.argument.euz/src" editDirectory="/net.certware.argument.euz.edit/src"
+    editorDirectory="/net.certware.argument.euz.editor/src" modelPluginID="net.certware.argument.euz"
+    modelName="Euz" editPluginClass="net.certware.argument.euz.edit.provider.EuzEditPlugin"
+    editorPluginClass="net.certware.argument.euz.editor.presentation.EuzEditorPlugin"
+    nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="net.certware.argument.euz.edit"
+    editorPluginID="net.certware.argument.euz.editor" colorProviders="true" language=""
+    usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+  <foreignModel>euz.ecore</foreignModel>
+  <genPackages prefix="Euz" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
+      generateExampleClass="false" multipleEditorPages="false" contentTypeIdentifier=""
+      ecorePackage="euz.ecore#_b7TYwPfSEd-ygqq5y8o0Pg">
+    <genClasses ecoreClass="euz.ecore#_b7TYw_fSEd-ygqq5y8o0Pg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute euz.ecore#_b7TYxPfSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7TYxvfSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7TYx_fSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7T_0PfSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7T_0ffSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7T_0vfSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7T_0_fSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7T_1PfSEd-ygqq5y8o0Pg"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference euz.ecore#_b7T_1ffSEd-ygqq5y8o0Pg"/>
+    </genClasses>
+    <genClasses ecoreClass="euz.ecore#_b7T_1vfSEd-ygqq5y8o0Pg">
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7Um4PfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference euz.ecore#_b7Um4ffSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7Um4vfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7Um4_fSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7Um5vfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7Um5_fSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference euz.ecore#//Argument/subArguments"/>
+    </genClasses>
+    <genClasses ecoreClass="euz.ecore#_b7V1A_fSEd-ygqq5y8o0Pg">
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7V1BffSEd-ygqq5y8o0Pg"/>
+    </genClasses>
+    <genClasses ecoreClass="euz.ecore#_b7V1CffSEd-ygqq5y8o0Pg">
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7WcEPfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7WcEvfSEd-ygqq5y8o0Pg"/>
+    </genClasses>
+    <genClasses ecoreClass="euz.ecore#_b7Um6PfSEd-ygqq5y8o0Pg">
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7VN8PfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7VN8vfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7VN9PfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7VN9ffSEd-ygqq5y8o0Pg"/>
+    </genClasses>
+    <genClasses ecoreClass="euz.ecore#_b7VN9vfSEd-ygqq5y8o0Pg">
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7VN-PfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7VN-ffSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference euz.ecore#_b7V1APfSEd-ygqq5y8o0Pg"/>
+    </genClasses>
+    <genClasses ecoreClass="euz.ecore#//Assumption"/>
+    <genClasses ecoreClass="euz.ecore#_b7V1B_fSEd-ygqq5y8o0Pg"/>
+    <genClasses ecoreClass="euz.ecore#_b7WcFPfSEd-ygqq5y8o0Pg"/>
+  </genPackages>
+</genmodel:GenModel>

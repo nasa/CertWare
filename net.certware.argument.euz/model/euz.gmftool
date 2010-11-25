@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="euzPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Objects"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument Node"
+          description="Creates an argument node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rectangle.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rectangle.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Assumption Node"
+          description="Creates an assumption node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Context Node"
+          description="Creates a context node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Criteria Node"
+          description="Creates a criteria node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Evidence Node"
+          description="Creates an evidence node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/circle.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/circle.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Justification Node"
+          description="Creates a justification node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/rounded-rectangle.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Solution Node"
+          description="Creates a solution node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/circle.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/circle.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Strategy Node"
+          description="Creates a strategy node on the diagram canvas">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/parallelogram.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/parallelogram.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Connections"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument with Assumption"
+          description="Links an argument with its assumption">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument with Context"
+          description="Links an argument with its context">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument with Criteria"
+          description="Links an argument with its criteria">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument with Justification"
+          description="Links an argument with its justification">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument with Solution"
+          description="Links an argument with its solution">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument with Strategy"
+          description="Links an argument with its strategy">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Argument with Sub-Argument"
+          description="Links an argument with its sub-argument">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Context with Assumption"
+          description="Links a context with its assumption">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Criteria with Assumption"
+          description="Links criteria with is assumption">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Criteria with Context"
+          description="Links criteria with its context">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Solution with Context"
+          description="Links a solution with its context">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Solution with Criteria"
+          description="Links a solution with its context">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Solution with Evidence"
+          description="Links a solution with its evidence">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Strategy with Argument"
+          description="Links a strategy with its argument">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Strategy with Assumption"
+          description="Links a strategy with its assumption">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Strategy with Criteria"
+          description="Links a strategy with its criteria">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Strategy with Justification"
+          description="Links and argument with its strategy">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

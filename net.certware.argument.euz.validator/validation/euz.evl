@@ -1,0 +1,128 @@
+/**
+ * Validation rules and fixes for EUROCONTROL models.
+ * Epsilon Validation Language
+ * @author mrb
+ */
+ 
+// argument nodes
+context Argument {
+
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Argument ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// must have content 
+	// fix sets content to TBS and sets the associated flag
+	constraint HasContent {
+		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Argument ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Argument ' + self.identifier
+			do {
+				self.content := 'TBS';
+				self.toBeSupported := true;
+			}
+		}
+	}
+	
+	// the argument node cannot contain itself as a sub-argument
+	// TODO sub-arguments references not yet used in the diagram model
+	/*
+	constraint NoContainsSelf {
+		guard : self.satisfies('HasIdentifier')
+		check : not self.subGoals.includes(self)
+		message: 'Goal ' + self.identifier + ' cannot include itself as a subgoal' 
+		fix {
+			title : 'Remove ' + self.identifier + ' from subgoals list'
+			do {
+				self.subGoals.remove(self);
+			}
+		}
+	}
+	*/
+	
+	// the argument should have at least one solution, strategy, or sub-argument
+	critique HasSolutions {
+		guard : self.satisfies('HasIdentifier')
+		check : (not self.argumentSolutions.isEmpty()) or (not self.argumentStrategies.isEmpty()) or (not self.subArguments.isEmpty())
+		message : 'Argument ' + self.identifier + ' has no solutions, strategies, or sub-arguments'
+		fix {
+			title : 'Set the to-be-supported flag as a reminder'
+			do {
+				self.toBeSupported := true;
+			}
+		}
+	}
+} // goal context
+
+
+// solutions context
+context Solution {
+
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Solution ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// should have evidence contributions
+	critique HasEvidence {
+		check : not self.solutionEvidence.isEmpty()
+		message : 'Solution ' + self.identifier + ' requires evidence'
+	}
+	
+} // solution context
+
+// strategies context
+context Strategy {
+
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Strategy ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// must have content 
+	// fix sets content to TBS
+	constraint HasContent {
+		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Strategy ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Strategy ' + self.identifier
+			do {
+				self.content := 'TBS';
+			}
+		}
+	}
+	
+	// the strategy should have at least one argument
+	critique HasSolutions {
+		guard : self.satisfies('HasIdentifier')
+		check : not self.strategyArguments.isEmpty()
+		message : 'Strategy ' + self.identifier + ' has no arguments'
+	}
+	
+} // strategy context
+
+// evidence context 
+context Evidence {
+	// must have content
+	// fix sets content to TBS
+	critique HasContent {
+		check : self.content.isDefined()
+		message : 'Evidence ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Evidence ' + self.identifier
+			do {
+				self.content := 'TBS';
+			}
+		}
+	}
+	
+}
+
+
