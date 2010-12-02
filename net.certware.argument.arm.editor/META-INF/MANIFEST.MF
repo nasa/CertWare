@@ -18,4 +18,5 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Import-Package: net.certware.core.ui,
  net.certware.core.ui.help,
+ org.eclipse.core.resources,
  org.eclipse.help

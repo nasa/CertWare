@@ -59,6 +59,7 @@ public class GszDomainNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("serial")
 	public GszDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
 				GszDiagramEditorPlugin.getInstance()

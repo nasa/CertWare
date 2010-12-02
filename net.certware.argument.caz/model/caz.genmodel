@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010 Kestrel Technology LLC"
+    modelDirectory="/net.certware.argument.caz/src" modelPluginID="net.certware.argument.caz"
+    modelName="Caz" nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" testsPluginID="net.certware.argument.caz.tests"
+    usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+  <foreignModel>caz.ecore</foreignModel>
+  <genPackages prefix="Caz" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
+      generateExampleClass="false" multipleEditorPages="false" ecorePackage="caz.ecore#_b7TYwPfSEd-ygqq5y8o0Pg">
+    <genClasses ecoreClass="caz.ecore#_b7TYw_fSEd-ygqq5y8o0Pg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute caz.ecore#_b7TYxPfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference caz.ecore#_b7TYxvfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference caz.ecore#//ArgumentDiagram/arguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference caz.ecore#_b7T_0ffSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference caz.ecore#_b7T_0vfSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference caz.ecore#_b7T_0_fSEd-ygqq5y8o0Pg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference caz.ecore#_b7T_1ffSEd-ygqq5y8o0Pg"/>
+    </genClasses>
+    <genClasses ecoreClass="caz.ecore#_b7T_1vfSEd-ygqq5y8o0Pg">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#_b7Um4PfSEd-ygqq5y8o0Pg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#_b7Um4ffSEd-ygqq5y8o0Pg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#_b7Um4vfSEd-ygqq5y8o0Pg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#_b7Um4_fSEd-ygqq5y8o0Pg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#//Claim/subClaims"/>
+    </genClasses>
+    <genClasses ecoreClass="caz.ecore#//Argument">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#//Argument/argumentJustification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#//Argument/argumentEvidence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#//Argument/argumentClaims"/>
+    </genClasses>
+    <genClasses ecoreClass="caz.ecore#_b7WcFPfSEd-ygqq5y8o0Pg">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#//Evidence/evidenceContexts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference caz.ecore#//Evidence/evidence"/>
+    </genClasses>
+    <genClasses ecoreClass="caz.ecore#//Assumption"/>
+    <genClasses ecoreClass="caz.ecore#_b7V1A_fSEd-ygqq5y8o0Pg"/>
+    <genClasses ecoreClass="caz.ecore#_b7V1B_fSEd-ygqq5y8o0Pg"/>
+  </genPackages>
+</genmodel:GenModel>

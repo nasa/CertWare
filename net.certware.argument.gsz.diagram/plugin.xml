@@ -658,7 +658,7 @@
       </MarkerNavigationProvider>
    </extension>
 
-<extension id="diagnostic" name="gsz Plugin problems" point="org.eclipse.core.resources.markers">
+<extension id="diagnostic" name="GSZ Diagram Problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -667,7 +667,7 @@
       <?gmfgen generated="true"?>
       <decoratorProvider class="net.certware.argument.gsz.diagram.providers.GszValidationDecoratorProvider">
          <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>

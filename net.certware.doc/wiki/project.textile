@@ -13,12 +13,12 @@ h3. Version 1.0.0
 * Established basic extended editing properties sheets using EEF.  
 * Created Apache POI plugin library package for POI 3.6.
 * Created import/export plugin library package for docx4j.
-* Included EGit/JGit support in run configuration.  
+* Included EGit/JGit support in run configuration.
 * Unit test fragments created for ARM, GSN, and EUROCONTROL models.
 * Navigator content contributions and filters for ARM, GSN, CAE, EUR, and VCL models.
 * Example wizard using example resources contributed as fragments.
 * Javadoc basic setup and Ant script saved. 
-* Graphical argument editors for GSN and EUROCONTROL models.
+* Graphical argument editors for CAE, GSN and EUROCONTROL models.
 
 h2. Documentation
 
@@ -35,6 +35,7 @@ h3. Meta-Models
 
 * @ARM@ OMG argument metamodel and its Ecore implementation
 * @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
+* @CAZ@ A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
 * @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
 * @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
 * @EUR@ A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
@@ -57,7 +58,7 @@ We use the Eclipse Extended Editing Framework to provide better properties sheet
 
 h4. Running the GMF Tools
 
-The graphical model editors we create with the Eclipse Eugenia tools for GMF.  Use the following steps:
+The graphical model editors we create with the Eclipse Epsilon Eugenia tools for GMF (0.8.9, later 0.9.0).  Use the following steps:
 # Apply the Eugenia metadata annotations to the features in the desired Ecore metamodel files (e.g. add the tags to the @gsn.ecore@ file).
 # From the @genmodel@ editor and root model node, run the corresponding @genmodel@ file to create the basic EMF model, edit, and editor support source and plugins.  
 # From the explorer's context menu on the @ecore@ file run the @Eugenia -> Generate GMF tool, graph, and map models@ command.  This will yield the @gmfgraph@, @gmfmap@, and @gmftool@ files next to the @ecore@ file.  Note of the @gmfmap@ file does not appear there is something wrong with the model structure or annotations although no error messages are produced; typical issues are container point-backs and nodes with identical tool names.
@@ -78,6 +79,8 @@ h3. Analysis Tools
 To be worked.
 
 h3. Workbench
+
+This section covers workbench editors, views, and common navigator contributions.
 
 h4. Editors
 
@@ -100,11 +103,14 @@ h3. Plugins Summary
 * @net.certware.argument.arm.*@ Argument model and editor support for OMG ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.  
 * @net.certware.argument.arm.help@ Help content for ARM models and related workbench contributions.    
 * @net.certware.argument.cae.*@ Argument model and editor support for CAE (ASCAD), built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification. 
-* @net.certware.argument.cae.help@ Help content for CAE models and related workbench contributions.    
+* @net.certware.argument.cae.help@ Help content for CAE models and related workbench contributions.
+* @net.certware.argument.caz.*@ Argument diagram graphical model equivalent for CAE models.    
 * @net.certware.argument.eur.*@ Argument model and editor support for EUROCONTROL notation, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.argument.eur.help@ Help content for EUROCONTROL models and related workbench contributions.    
+* @net.certware.argument.euz.*@ Argument diagram graphical model equivalent for EUROCONTROL models.    
 * @net.certware.argument.gsn.*@ Argument model and editor support for GSN, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
-* @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.    
+* @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.  
+* @net.certware.argument.gsz.*@ Argument diagram graphical model equivalent for GSN models.    
 * @net.certware.branding@ Project branding plugin for feature definition.
 * @net.certware.core@ Core project content.
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  
@@ -124,8 +130,11 @@ h3. File Names and Extensions
 
 * @*.arm@ ARM model files
 * @*.gsn@ GSN model files
+* @*.gsz@ and @*.gsz_diagram@ are GSN diagram model and diagram files
 * @*.cae@ CAE model files
+* @*.caz@ and @*.caz_diagram@ are CAE diagram model and diagram files
 * @*.eur@ EUROCONTROL model files
+* @*.euz@ and @*.euz_diagram@ are EUROCONTROL diagram model and diagram files
 * @*.vcl@ Verification checklist model files
 
 h3. Target Platform
@@ -139,6 +148,7 @@ h3. Implementation Features
 
 * EGit included in target platform and run configuration.  Provides Git distributed version control under the team menus.  
 * Eclipse Extended Editing Framework (EEF) included for better property specification in EMF-generated editors.  
+* Eclipse Graphical Modeling Framework (GEF) included for graphical editing of argument models.
 
 h2. Design and Implementation Notes
 

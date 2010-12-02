@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: net.certware.argument.caz.edit;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Activator: net.certware.argument.caz.provider.CazEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.argument.caz.provider
+Require-Bundle: org.eclipse.core.runtime,
+ net.certware.argument.caz;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ net.certware.argument.arm;visibility:=reexport,
+ net.certware.argument.arm.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

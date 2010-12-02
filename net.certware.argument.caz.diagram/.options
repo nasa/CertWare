@@ -1,0 +1,7 @@
+# Tracing options for the net.certware.argument.caz.diagram plug-in
+
+# Common issues
+net.certware.argument.caz.diagram/debug=false
+
+# Visual IDs
+net.certware.argument.caz.diagram/debug/visualID=false

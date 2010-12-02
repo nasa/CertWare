@@ -62,6 +62,7 @@ public class EuzDomainNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("serial")
 	public EuzDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
 				EuzDiagramEditorPlugin.getInstance()
