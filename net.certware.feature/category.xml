@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/net.certware.feature_1.0.0.qualifier.jar" id="net.certware.feature" version="1.0.0.qualifier">
+      <category name="certware_category"/>
+   </feature>
+   <category-def name="certware_category" label="CertWare">
+      <description>
+         Category definition for a CertWare feature for installation in existing Eclipse platform.
+      </description>
+   </category-def>
+</site>

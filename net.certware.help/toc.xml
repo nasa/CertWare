@@ -2,19 +2,19 @@
 <?NLS TYPE="org.eclipse.help.toc"?>
 
 <toc label="CertWare Help" topic="html/toc.html">
-   <topic label="Getting Started">
+   <topic href="html/gettingstarted/maintopic.html" label="Getting Started">
       <anchor id="gettingstarted"/>
    </topic>
-   <topic label="Concepts">
+   <topic href="html/concepts/maintopic.html" label="Concepts">
       <anchor id="concepts"/>
    </topic>
-   <topic label="Tasks">
+   <topic href="html/tasks/maintopic.html" label="Tasks">
       <anchor id="tasks"/>
    </topic>
-   <topic label="Reference">
+   <topic href="html/reference/maintopic.html" label="Reference">
       <anchor id="reference"/>
    </topic>
-   <topic label="Samples">
+   <topic href="html/samples/maintopic.html" label="Samples">
       <anchor id="samples"/>
    </topic>
    <anchor id="models"/>

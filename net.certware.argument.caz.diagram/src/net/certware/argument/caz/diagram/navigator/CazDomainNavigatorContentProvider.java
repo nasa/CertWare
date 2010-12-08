@@ -59,6 +59,7 @@ public class CazDomainNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("serial")
 	public CazDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
 				CazDiagramEditorPlugin.getInstance()

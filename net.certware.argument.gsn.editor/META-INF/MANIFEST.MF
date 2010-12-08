@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: net.certware.argument.gsn.editor;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: net.certware.argument.gsn.editor.presentation.GsnEditorPlugin$Implementation
 Bundle-Vendor: %providerName

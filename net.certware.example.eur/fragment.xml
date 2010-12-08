@@ -29,12 +29,12 @@
             name="EUROCONTROL Preliminary Safety Case Diagram"
             version="EUROCONTROL SCDM 2.1 2006">
          <resource
-               description="Preliminary safety case diagram"
-               structure="resources/PSC ADS-B-NRA.euz_diagram">
-         </resource>
-         <resource
                description="Preliminary safety case model"
                structure="resources/PSC ADS-B-NRA.euz">
+         </resource>
+         <resource
+               description="Preliminary safety case diagram"
+               structure="resources/PSC ADS-B-NRA.euz_diagram">
          </resource>
       </pattern>
    </extension>

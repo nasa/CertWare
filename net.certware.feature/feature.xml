@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="net.certware.feature"
-      label="CertWare Feature"
-      version="0.1.0.qualifier"
-      provider-name="Ketrel Technology LLC"
+      label="CertWare Safety Case Workbench"
+      version="1.0.1.qualifier"
+      provider-name="Kestrel Technology LLC"
       plugin="net.certware.branding">
 
    <description url="http://www.certware.net">
@@ -11,11 +11,11 @@
    </description>
 
    <copyright url="http://www.certware.net/copyright">
-      Copyright (c) 2010 Kestrel Technology LLC
+      Copyright to be determined.
    </copyright>
 
    <license url="http://www.certware.net/license">
-      [Enter License Description here.]
+      Unlicensed.
    </license>
 
    <url>
@@ -24,140 +24,416 @@
 
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.emf.eef.runtime" version="0.8.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.validation" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.validation.ocl" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="greaterOrEqual"/>
-      <import plugin="net.certware.core.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.osgi"/>
-      <import plugin="net.certware.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.6.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.ui.forms"/>
-      <import plugin="net.certware.libs.doc" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.core.commands"/>
       <import plugin="org.eclipse.core.jobs"/>
       <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.ui.ide.application" version="1.0.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.validation" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.core.commands"/>
       <import feature="org.eclipse.emf" version="2.6.0.v20100614-1136"/>
+      <import plugin="org.eclipse.help"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.epsilon.evl.emf.validation"/>
+      <import plugin="org.eclipse.osgi.services"/>
+      <import plugin="org.eclipse.ui.cheatsheets"/>
    </requires>
 
    <plugin
-         id="net.certware.argument.cae.editor"
+         id="net.certware.argument.arm"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.gsn"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.arm.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.gsn.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.arm"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.cae.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.cae"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.gsn.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.arm.editor"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.arm.help"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"/>
+
+   <plugin
+         id="net.certware.argument.arm.navigator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.cae"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.cae.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.cae.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.cae.help"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"/>
+
+   <plugin
+         id="net.certware.argument.cae.navigator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.caz"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.caz.diagram"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.caz.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.caz.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.caz.validator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.diagram.figures"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.eur"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.eur.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.eur.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.eur.help"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"/>
+
+   <plugin
+         id="net.certware.argument.eur.navigator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.euz"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.euz.diagram"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.euz.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.euz.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.euz.validator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsn"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsn.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsn.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsn.help"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"/>
+
+   <plugin
+         id="net.certware.argument.gsn.navigator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsn.validator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsz"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsz.diagram"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsz.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsz.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsz.validator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.branding"
          download-size="0"
          install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.help"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="net.certware.core"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.core.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
+
+   <plugin
+         id="net.certware.example"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.example.arm"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         fragment="true"/>
+
+   <plugin
+         id="net.certware.example.cae"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         fragment="true"/>
+
+   <plugin
+         id="net.certware.example.checklist"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         fragment="true"/>
+
+   <plugin
+         id="net.certware.example.eur"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.qualifier"
+         fragment="true"/>
+
+   <plugin
+         id="net.certware.example.gsn"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         fragment="true"/>
+
+   <plugin
+         id="net.certware.example.ssei"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         fragment="true"/>
 
    <plugin
          id="net.certware.export"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
-         id="net.certware.product"
+         id="net.certware.help"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="1.0.0.qualifier"/>
 
    <plugin
          id="net.certware.libs.doc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="1.0.0.qualifier"/>
+
+   <plugin
+         id="net.certware.verification.checklist"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.verification.checklist.edit"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.verification.checklist.editor"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.verification.checklist.navigator"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.qualifier"
+         unpack="false"/>
 
 </feature>

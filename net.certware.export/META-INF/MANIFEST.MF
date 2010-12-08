@@ -31,9 +31,9 @@ Import-Package: net.certware.argument.arm,
  org.eclipse.ui.dialogs,
  org.eclipse.ui.handlers,
  org.eclipse.ui.plugin,
- org.osgi.framework;version="1.3.0"
+ org.osgi.framework
 Bundle-ActivationPolicy: lazy
-Require-Bundle: net.certware.libs.doc;bundle-version="1.0.0",
+Require-Bundle: net.certware.libs.doc,
  org.eclipse.jface,
  org.eclipse.ui,
- net.certware.argument.gsn;bundle-version="1.0.0"
+ net.certware.argument.gsn

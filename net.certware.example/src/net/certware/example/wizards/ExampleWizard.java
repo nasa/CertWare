@@ -183,7 +183,11 @@ public class ExampleWizard extends Wizard implements INewWizard {
 			URL matchedEntry = null;
 			while( e.hasMoreElements() ) {
 				URL entry = e.nextElement();
-				if ( entry.getFile().contains( structure ) ) {
+				//if ( entry.getFile().contains( structure ) ) { // contribution sequence dependent
+				//matchedEntry = entry;
+				//}
+				
+				if ( entry.getFile().endsWith( structure ) ) {
 					matchedEntry = entry;
 				}
 			}

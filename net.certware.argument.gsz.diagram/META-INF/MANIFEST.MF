@@ -38,7 +38,7 @@ Require-Bundle: org.eclipse.core.runtime,
  net.certware.argument.arm;visibility:=reexport,
  net.certware.argument.arm.edit;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- net.certware.argument.diagram.figures;bundle-version="1.0.0",
+ net.certware.argument.diagram.figures,
  org.eclipse.emf.validation;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

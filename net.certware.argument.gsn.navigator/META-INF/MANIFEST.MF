@@ -25,6 +25,6 @@ Import-Package: net.certware.argument.arm,
  org.eclipse.swt.graphics,
  org.eclipse.ui,
  org.eclipse.ui.progress,
- org.osgi.framework;version="1.3.0"
+ org.osgi.framework
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.ui.navigator

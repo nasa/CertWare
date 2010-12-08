@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: net.certware.argument.arm.edit;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: net.certware.argument.arm.provider.ArmEditPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -17,5 +17,5 @@ Export-Package: net.certware.argument.arm.components,
 Require-Bundle: org.eclipse.core.runtime,
  net.certware.argument.arm;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- org.eclipse.emf.eef.runtime;bundle-version="0.8.1";visibility:=reexport
+ org.eclipse.emf.eef.runtime;visibility:=reexport
 Bundle-ActivationPolicy: lazy
