@@ -18,5 +18,6 @@ public class ExampleChecklist extends Example {
 		if ( ce != null ) {
 			id = ce.getAttribute(EXAMPLE_ATTR_IDC);
 		}
+		
 	}
 }

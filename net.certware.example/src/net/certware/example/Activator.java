@@ -12,6 +12,7 @@ public class Activator extends AbstractUIPlugin implements IExampleContribution 
 
 	/** plugin id */
 	public static final String PLUGIN_ID = "net.certware.example"; //$NON-NLS-1$
+	/** singleton reference */
 	static private Activator plugin;
 	
 	/**

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="gsnl"
+            id="net.certware.argument.gsn.GsnDsl"
+            name="GsnDsl Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.argument.gsn.GsnDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="net.certware.argument.gsn.GsnDsl.validate">
+         <activeWhen>
+            <reference
+                    definitionId="net.certware.argument.gsn.GsnDsl.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="net.certware.argument.gsn.GsnDsl.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="net.certware.argument.gsn.GsnDsl" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="net.certware.argument.gsn.GsnDsl"
+            name="GsnDsl">
+            <keywordReference id="net.certware.argument.gsn.ui.keyword_GsnDsl"/>
+        </page>
+        <page
+            category="net.certware.argument.gsn.GsnDsl"
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="net.certware.argument.gsn.GsnDsl.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="net.certware.argument.gsn.ui.keyword_GsnDsl"/>
+        </page>
+        <page
+            category="net.certware.argument.gsn.GsnDsl"
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="net.certware.argument.gsn.GsnDsl.templates"
+            name="Templates">
+            <keywordReference id="net.certware.argument.gsn.ui.keyword_GsnDsl"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="net.certware.argument.gsn.ui.keyword_GsnDsl"
+            label="GsnDsl"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="net.certware.argument.gsn.GsnDsl.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="net.certware.argument.gsn.GsnDsl.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="net.certware.argument.gsn.GsnDsl.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="net.certware.argument.gsn.GsnDsl.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.argument.gsn.GsnDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="gsnl">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="gsnl">
+        </resourceServiceProvider>
+    </extension>
+
+
+
+   <!-- quickfix marker resolution generator -->
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+      </markerResolutionGenerator>
+   </extension>
+
+</plugin>

@@ -45,5 +45,10 @@
 <location id="org.eclipse.epsilon.feature" path="${eclipse_home}" type="Feature"/>
 <location id="org.eclipse.epsilon.gmf.feature" path="${eclipse_home}" type="Feature"/>
 <location id="org.eclipse.epsilon.hutn.feature" path="${eclipse_home}" type="Feature"/>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.jetty.slf4jlogback.feature.group" version="7.1.6.v20100831"/>
+<unit id="org.eclipse.emf.mwe.sdk.feature.group" version="1.0.0.v201008251122"/>
+<repository location="http://download.eclipse.org/releases/helios/"/>
+</location>
 </locations>
 </target>

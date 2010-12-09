@@ -1,0 +1,111 @@
+module net.certware.argument.gsn.GsnDsl
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.xtext.generator.*
+import org.eclipse.xtext.ui.generator.*
+
+var grammarURI = "classpath:/net/certware/argument/gsn/GsnDsl.xtext"
+var file.extensions = "gsnl"
+var projectName = "net.certware.argument.gsn.dsl"
+var runtimeProject = "../${projectName}"
+
+Workflow {
+	bean = StandaloneSetup {
+		platformUri = "${runtimeProject}/.."
+		registerGeneratedEPackage = "net.certware.argument.gsn.GsnPackage"
+	}
+
+	component = DirectoryCleaner {
+		directory = "${runtimeProject}/src-gen"
+	}
+
+	component = DirectoryCleaner {
+		directory = "${runtimeProject}.ui/src-gen"
+	}
+
+	component = Generator {
+		pathRtProject = runtimeProject
+		pathUiProject = "${runtimeProject}.ui"
+		projectNameRt = projectName
+		projectNameUi = "${projectName}.ui"
+		language = {
+			uri = grammarURI
+			fileExtensions = file.extensions
+
+			// Java API to access grammar elements (required by several other fragments)
+			fragment = grammarAccess.GrammarAccessFragment {}
+
+			// generates Java API for the generated EPackages
+			// fragment = ecore.EcoreGeneratorFragment {
+			// 		referencedGenModels = "platform:/resource/net.certware.argument.gsn/model/gsn.genmodel"
+			// }
+
+			// the serialization component
+			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+
+			// a custom ResourceFactory for use with EMF 
+			fragment = resourceFactory.ResourceFactoryFragment {
+				fileExtensions = file.extensions
+			}
+
+			// the Antlr parser
+			fragment = parser.antlr.XtextAntlrGeneratorFragment {
+				options = {
+					classSplitting = true
+				}
+			}
+
+			// the Ecore2Xtext specific terminal converter
+			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment {}
+
+			// java-based API for validation 
+			fragment = validation.JavaValidatorFragment {
+			// composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+			// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				registerForImportedPackages = true
+			}
+
+			// scoping and exporting API
+			fragment = scoping.ImportURIScopingFragment {}
+			fragment = exporting.SimpleNamesFragment {}
+
+			// scoping and exporting API 
+
+			// fragment = scoping.ImportNamespacesScopingFragment {}
+			// fragment = exporting.QualifiedNamesFragment {}
+
+
+			// formatter API 
+			fragment = ecore2xtext.FormatterFragment {}
+
+			// labeling API 
+			fragment = labeling.LabelProviderFragment {}
+
+			// outline API 
+			fragment = outline.TransformerFragment {}
+			fragment = outline.OutlineNodeAdapterFactoryFragment {}
+
+			// java-based API for content assistance 
+			fragment = contentAssist.JavaBasedContentAssistFragment {}
+
+			// antlr parser generator tailored for content assist 
+			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {
+				options = {
+					classSplitting = true
+				}
+			}
+
+			fragment = builder.BuilderIntegrationFragment {}
+
+			// project wizard (optional) 
+
+			// fragment = projectWizard.SimpleProjectWizardFragment {
+			//		generatorProjectName = "${projectName}.generator" 
+			//		modelFileExtension = file.extensions
+			// }
+
+			// quickfix API 
+			fragment = quickfix.QuickfixProviderFragment {}
+		}
+	}
+}

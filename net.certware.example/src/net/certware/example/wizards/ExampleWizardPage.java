@@ -115,12 +115,15 @@ public class ExampleWizardPage extends WizardPage implements IHelpContext {
 			IStructuredSelection iss = (IStructuredSelection)selectedNode;
 			if ( iss.isEmpty() == false ) {
 				Object firstElement = iss.getFirstElement();
+				
 				if ( (firstElement instanceof ExampleCategory) == false ) {
 					setPageComplete(true);
-					setMessage("Select Finish to copy resources into workspace container",DialogPage.INFORMATION);
+					setMessage("Select Finish to copy resources into workspace container",
+							DialogPage.INFORMATION);
 					selectedExample = (Example)firstElement;
 					return;
 				}
+				
 			}
 		}
 

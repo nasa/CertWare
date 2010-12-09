@@ -1,5 +1,6 @@
 package net.certware.example.wizards;
 import net.certware.core.ui.help.IHelpContext;
+import net.certware.example.Activator;
 import net.certware.example.ExampleCategory;
 import net.certware.example.ExampleChecklist;
 import net.certware.example.ExampleDocument;
@@ -8,41 +9,52 @@ import net.certware.example.ExamplePattern;
 import org.eclipse.help.HelpSystem;
 import org.eclipse.help.IContext;
 import org.eclipse.help.IContextProvider;
+import org.eclipse.jface.viewers.TreeSelection;
 
 /**
  * Help context provider for examples.
  * @author mrb
  * @since 1.0
  */
-public class ExampleContextProvider implements IContextProvider
+public class ExampleContextProvider extends org.eclipse.help.AbstractContextProvider implements IContextProvider
 {
+	/** plugins array for interface */
+	private String[] plugins = { Activator.PLUGIN_ID };
+	
 	/**
-	 * Constructor empty.
+	 * Constructor defers to superclass.
 	 */
 	public ExampleContextProvider() {
+		super();
 	}
 
 	/**
 	 * Returns a help context based on target.
-	 * @param target focus
-	 * @return help context
+	 * @param target focus, expecting a tree selection
+	 * @return help context ID
 	 */
 	public IContext getContext(Object target)
 	{
-		//TODO add contexts for example items
-
-		/*
-    if (target instanceof TreeSelection) {
-        Object element = ((TreeSelection)selection).getFirstElement();
-        if (element instanceof Book) {
-            return HelpSystem.getContext("library.libraryBookId");
-        }
-    }
-		 */
+		if (target instanceof TreeSelection) {
+			Object element = ((TreeSelection)target).getFirstElement();
+			if (element instanceof ExampleDocument) {
+				return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_DOCUMENT);
+			}
+			if (element instanceof ExamplePattern) {
+				return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_PATTERN);
+			}
+			if (element instanceof ExampleChecklist) {
+				return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_CHECKLIST);
+			}
+		}
 
 		return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_PAGE);
 	}
 
+	/**
+	 * Gets the context change mask.
+	 * @return always returns NONE
+	 */
 	public int getContextChangeMask()
 	{
 		// dynamic context change reporting
@@ -73,8 +85,28 @@ public class ExampleContextProvider implements IContextProvider
 			return "\"checklist\" + ' ' + \"example\"";
 		}
 
-		return null;
+		return "example";
 
+	}
+
+	@Override
+	public IContext getContext(String id, String locale) {
+
+		if ( IHelpContext.EXAMPLE_WIZARD_CHECKLIST.equals(id))
+			return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_CHECKLIST,locale);
+		if ( IHelpContext.EXAMPLE_WIZARD_DOCUMENT.equals(id))
+			return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_DOCUMENT,locale);
+		if ( IHelpContext.EXAMPLE_WIZARD_PATTERN.equals(id))
+			return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_PATTERN,locale);
+		
+		return HelpSystem.getContext(IHelpContext.EXAMPLE_WIZARD_PAGE,locale);
+	}
+
+	@Override
+	public String[] getPlugins() {
+		// plugins list simply for this host plugin
+		// fragments can supply their own
+		return plugins;
 	}
 
 }

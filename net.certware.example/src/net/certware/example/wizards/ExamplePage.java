@@ -34,7 +34,7 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
  * @author mrb
  * @since 1.0
  */
-public class ExamplePage implements IDetailsPage
+public abstract class ExamplePage implements IDetailsPage
 {
 	/** dialog settings section key */
 	static final String EXAMPLE_PAGE_SETTINGS = "EXAMPLE_PAGE_SETTINGS";
@@ -407,8 +407,16 @@ public class ExamplePage implements IDetailsPage
 		relatedPatternsSection.getParent().layout(true,true);
 
 		mform.reflow(true);
+		
+		setHelpContext(detailsClient);
 	}
 
+	/**
+	 * Sets the help context ID.
+	 * @param c control for help system reference
+	 */
+	abstract void setHelpContext(Control c);
+	
 	/**
 	 * Refresh calls update.
 	 */

@@ -53,3 +53,5 @@ registry
 reorient
 editpart
 metamodels
+checklists
+workflow

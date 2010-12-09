@@ -142,9 +142,10 @@ Copyright (c) 2010 Kestrel Technology LLC
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
+            category="certware"
+            class="net.certware.argument.euz.diagram.preferences.DiagramGeneralPreferencePage"
             id="net.certware.argument.euz.diagram.general"
-            name="%prefpage.net.certware.argument.euz.diagram.general"
-            class="net.certware.argument.euz.diagram.preferences.DiagramGeneralPreferencePage">
+            name="%prefpage.net.certware.argument.euz.diagram.general">
       </page>
       <page
             id="net.certware.argument.euz.diagram.appearance"

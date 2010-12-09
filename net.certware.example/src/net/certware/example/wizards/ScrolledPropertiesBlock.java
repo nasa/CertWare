@@ -234,7 +234,6 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		 * @return image for category, document, pattern, or checklist type, or null
 		 */
 		public Image getImage(Object obj) {
-
 			if ( obj instanceof ExampleCategory ) {
 				return categoryImage;
 			}
