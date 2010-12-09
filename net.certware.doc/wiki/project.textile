@@ -14,6 +14,7 @@ _Bugs Fixed_:
 _Enhancements_:
 * Added CertWare category to diagram plug-in preference pages for improved navigation.
 * Added help context IDs for details pages on the examples wizard.
+* Added first draft of semi-formal proof editor, mapped to file extension @.sfp@.  
 _Commit_:
 * TBD
 

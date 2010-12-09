@@ -1,0 +1,17 @@
+RULE_ID=6
+RULE_STRING=4
+RULE_ANY_OTHER=10
+RULE_INT=5
+RULE_WS=9
+RULE_SL_COMMENT=8
+RULE_ML_COMMENT=7
+'epsilon'=17
+'('=13
+':'=12
+'Theorem'=11
+','=15
+'.'=20
+'hypothesis'=16
+')'=14
+'^'=19
+'->'=18
