@@ -1,6 +1,4 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.parts;
 
 // Start of user code for imports
@@ -11,7 +9,7 @@ package net.certware.argument.arm.parts;
 // End of user code
 
 /**
- * 
+ * @author
  * 
  */
 public interface TaggedValuePropertiesEditionPart {

@@ -1,12 +1,10 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.providers;
 
 import org.eclipse.emf.eef.runtime.impl.providers.ComposedPropertiesEditionProvider;
 
 /**
- * 
+ * @author
  * 
  */
 public class ArmPackagePropertiesEditionProvider extends ComposedPropertiesEditionProvider {

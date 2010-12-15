@@ -18,6 +18,7 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -151,6 +152,8 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			}
 
 		});
+		EditingUtils.setID(identifier, ChecklistViewsRepository.Item.identifier);
+		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.identifier, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -194,6 +197,8 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			}
 
 		});
+		EditingUtils.setID(description, ChecklistViewsRepository.Item.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.description, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -237,6 +242,8 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			}
 
 		});
+		EditingUtils.setID(reference, ChecklistViewsRepository.Item.reference);
+		EditingUtils.setEEFtype(reference, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.reference, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -248,6 +255,7 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		result.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
 		GridData resultData = new GridData(GridData.FILL_HORIZONTAL);
 		result.getCombo().setLayoutData(resultData);
+		result.setID(ChecklistViewsRepository.Item.result);
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.result, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -291,6 +299,8 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			}
 
 		});
+		EditingUtils.setID(comment, ChecklistViewsRepository.Item.comment);
+		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.comment, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 

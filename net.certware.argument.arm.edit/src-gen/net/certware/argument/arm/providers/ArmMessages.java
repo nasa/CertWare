@@ -1,12 +1,10 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.providers;
 
 import org.eclipse.osgi.util.NLS;
 
 /**
- * 
+ * @author
  * 
  */
 public class ArmMessages extends NLS {

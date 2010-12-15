@@ -1,6 +1,4 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.parts.impl;
 
 // Start of user code for imports
@@ -52,7 +50,7 @@ import org.eclipse.swt.widgets.Text;
 // End of user code	
 
 /**
- * 
+ * @author
  * 
  */
 public class AnnotationPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, AnnotationPropertiesEditionPart {

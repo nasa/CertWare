@@ -22,7 +22,7 @@ import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class CaePropertiesEditionPartProvider implements IPropertiesEditionPartProvider {

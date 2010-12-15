@@ -47,7 +47,7 @@ import org.eclipse.swt.widgets.Text;
 // End of user code	
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class JustificationPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, JustificationPropertiesEditionPart {

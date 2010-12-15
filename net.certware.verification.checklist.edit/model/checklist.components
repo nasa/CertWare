@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
-  <eef-components:PropertiesEditionContext xmi:id="_w82Y8cdLEd-9ocMQOjWG0w" documentation="Edition Context for checklist GenPackage">
-    <categories xmi:id="_w83AAMdLEd-9ocMQOjWG0w" name="checklist">
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_w83AAcdLEd-9ocMQOjWG0w" name="Category" views="_w83nGsdLEd-9ocMQOjWG0w">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83AAsdLEd-9ocMQOjWG0w" name="name" views="_w83nHMdLEd-9ocMQOjWG0w">
+  <eef-components:PropertiesEditionContext xmi:id="_y-9lQAhzEeCzO8JExYDW8g" documentation="Edition Context for checklist GenPackage">
+    <categories xmi:id="_y-9lQQhzEeCzO8JExYDW8g" name="checklist">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_y-9lQghzEeCzO8JExYDW8g" name="Category" views="_y-9lUwhzEeCzO8JExYDW8g">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lQwhzEeCzO8JExYDW8g" name="name" views="_y-9lVQhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Category/name"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83AA8dLEd-9ocMQOjWG0w" name="items" views="_w83nHcdLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lRAhzEeCzO8JExYDW8g" name="items" views="_y-9lVghzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Category/items"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83ABMdLEd-9ocMQOjWG0w" name="comment" views="_w83nHsdLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lRQhzEeCzO8JExYDW8g" name="comment" views="_y-9lVwhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Category/comment"/>
         </properties>
         <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Category"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_w83ABcdLEd-9ocMQOjWG0w" name="Item" views="_w83nH8dLEd-9ocMQOjWG0w">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83ABsdLEd-9ocMQOjWG0w" name="identifier" views="_w83nIcdLEd-9ocMQOjWG0w">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_y-9lRghzEeCzO8JExYDW8g" name="Item" views="_y-9lWAhzEeCzO8JExYDW8g">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lRwhzEeCzO8JExYDW8g" name="identifier" views="_y-9lWghzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Item/identifier"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83AB8dLEd-9ocMQOjWG0w" name="description" views="_w83nIsdLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lSAhzEeCzO8JExYDW8g" name="description" views="_y-9lWwhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Item/description"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83nEMdLEd-9ocMQOjWG0w" name="reference" views="_w83nI8dLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lSQhzEeCzO8JExYDW8g" name="reference" views="_y-9lXAhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Item/reference"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83nEcdLEd-9ocMQOjWG0w" name="result" views="_w83nJMdLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lSghzEeCzO8JExYDW8g" name="result" views="_y-9lXQhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Item/result"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83nEsdLEd-9ocMQOjWG0w" name="comment" views="_w83nJcdLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lSwhzEeCzO8JExYDW8g" name="comment" views="_y-9lXghzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Item/comment"/>
         </properties>
         <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Item"/>
       </bindings>
-      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_w83nE8dLEd-9ocMQOjWG0w" name="Checklist" views="_w83nJsdLEd-9ocMQOjWG0w">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83nFMdLEd-9ocMQOjWG0w" name="name" views="_w83nKMdLEd-9ocMQOjWG0w">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_y-9lTAhzEeCzO8JExYDW8g" name="Checklist" views="_y-9lXwhzEeCzO8JExYDW8g">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lTQhzEeCzO8JExYDW8g" name="name" views="_y-9lYQhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Checklist/name"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83nFcdLEd-9ocMQOjWG0w" name="version" views="_w83nKcdLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lTghzEeCzO8JExYDW8g" name="version" views="_y-9lYghzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Checklist/version"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83nFsdLEd-9ocMQOjWG0w" name="categories" views="_w83nKsdLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lTwhzEeCzO8JExYDW8g" name="categories" views="_y-9lYwhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Checklist/categories"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_w83nF8dLEd-9ocMQOjWG0w" name="comment" views="_w83nK8dLEd-9ocMQOjWG0w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y-9lUAhzEeCzO8JExYDW8g" name="comment" views="_y-9lZAhzEeCzO8JExYDW8g">
           <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Checklist/comment"/>
         </properties>
         <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.ecore#//Checklist"/>
@@ -50,57 +50,57 @@
     </categories>
     <model href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.verification.checklist/model/checklist.genmodel#//checklist"/>
   </eef-components:PropertiesEditionContext>
-  <eef-views:ViewsRepository xmi:id="_w83nGMdLEd-9ocMQOjWG0w" documentation="Views repository for checklist GenPackage" name="checklist">
+  <eef-views:ViewsRepository xmi:id="_y-9lUQhzEeCzO8JExYDW8g" documentation="Views repository for checklist GenPackage" name="checklist">
     <RepositoryKind>SWT</RepositoryKind>
     <RepositoryKind>Form</RepositoryKind>
-    <categories xmi:id="_w83nGcdLEd-9ocMQOjWG0w" name="checklist">
-      <views xmi:id="_w83nGsdLEd-9ocMQOjWG0w" name="Category">
-        <elements xsi:type="eef-views:Container" xmi:id="_w83nG8dLEd-9ocMQOjWG0w" name="properties">
+    <categories xmi:id="_y-9lUghzEeCzO8JExYDW8g" name="checklist">
+      <views xmi:id="_y-9lUwhzEeCzO8JExYDW8g" name="Category">
+        <elements xsi:type="eef-views:Container" xmi:id="_y-9lVAhzEeCzO8JExYDW8g" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nHMdLEd-9ocMQOjWG0w" name="name">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lVQhzEeCzO8JExYDW8g" name="name">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nHcdLEd-9ocMQOjWG0w" name="items">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lVghzEeCzO8JExYDW8g" name="items">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nHsdLEd-9ocMQOjWG0w" name="comment">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lVwhzEeCzO8JExYDW8g" name="comment">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_w83nH8dLEd-9ocMQOjWG0w" name="Item">
-        <elements xsi:type="eef-views:Container" xmi:id="_w83nIMdLEd-9ocMQOjWG0w" name="properties">
+      <views xmi:id="_y-9lWAhzEeCzO8JExYDW8g" name="Item">
+        <elements xsi:type="eef-views:Container" xmi:id="_y-9lWQhzEeCzO8JExYDW8g" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nIcdLEd-9ocMQOjWG0w" name="identifier">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lWghzEeCzO8JExYDW8g" name="identifier">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nIsdLEd-9ocMQOjWG0w" name="description">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lWwhzEeCzO8JExYDW8g" name="description">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nI8dLEd-9ocMQOjWG0w" name="reference">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lXAhzEeCzO8JExYDW8g" name="reference">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nJMdLEd-9ocMQOjWG0w" name="result">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lXQhzEeCzO8JExYDW8g" name="result">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nJcdLEd-9ocMQOjWG0w" name="comment">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lXghzEeCzO8JExYDW8g" name="comment">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>
       </views>
-      <views xmi:id="_w83nJsdLEd-9ocMQOjWG0w" name="Checklist">
-        <elements xsi:type="eef-views:Container" xmi:id="_w83nJ8dLEd-9ocMQOjWG0w" name="properties">
+      <views xmi:id="_y-9lXwhzEeCzO8JExYDW8g" name="Checklist">
+        <elements xsi:type="eef-views:Container" xmi:id="_y-9lYAhzEeCzO8JExYDW8g" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nKMdLEd-9ocMQOjWG0w" name="name">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lYQhzEeCzO8JExYDW8g" name="name">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nKcdLEd-9ocMQOjWG0w" name="version">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lYghzEeCzO8JExYDW8g" name="version">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nKsdLEd-9ocMQOjWG0w" name="categories">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lYwhzEeCzO8JExYDW8g" name="categories">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_w83nK8dLEd-9ocMQOjWG0w" name="comment">
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_y-9lZAhzEeCzO8JExYDW8g" name="comment">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>

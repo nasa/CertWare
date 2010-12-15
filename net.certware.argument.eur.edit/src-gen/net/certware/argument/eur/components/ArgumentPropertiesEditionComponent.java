@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.eur.components;
 
 // Start of user code for imports
@@ -58,7 +60,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditionComponent {

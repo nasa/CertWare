@@ -6,6 +6,15 @@ h1{color:red}. CertWare Implementation and Integration Notes
 
 h2. Version History
 
+h3. Version 1.0.3
+
+_Bugs Fixed_:
+* Reassigned GSZ creation wizard to CertWare new wizard category.
+* Fixed labels on EUZ plugin identities and branding plug-in. 
+_Enhancements_:
+_Commit_:
+* TBD
+
 h3. Version 1.0.2
 
 _Bugs Fixed_:

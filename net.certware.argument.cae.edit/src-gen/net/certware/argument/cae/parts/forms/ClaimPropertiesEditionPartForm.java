@@ -57,7 +57,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ClaimPropertiesEditionPart {

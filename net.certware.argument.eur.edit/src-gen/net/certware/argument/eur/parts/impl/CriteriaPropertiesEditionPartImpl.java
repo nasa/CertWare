@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.eur.parts.impl;
 
 // Start of user code for imports
@@ -51,7 +53,7 @@ import org.eclipse.swt.widgets.Text;
 // End of user code	
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class CriteriaPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, CriteriaPropertiesEditionPart {

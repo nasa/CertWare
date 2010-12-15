@@ -55,7 +55,7 @@ import org.eclipse.swt.widgets.Text;
 // End of user code	
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class EvidencePropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, EvidencePropertiesEditionPart {

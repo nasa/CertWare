@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.impl.providers.StandardPropertiesEditionPolicyProvider;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class CaePackagePropertiesEditionPolicyProvider extends StandardPropertiesEditionPolicyProvider {

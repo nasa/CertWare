@@ -26,6 +26,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
@@ -156,6 +157,8 @@ public class CategoryPropertiesEditionPartForm extends CompositePropertiesEditio
 				}
 			}
 		});
+		EditingUtils.setID(name, ChecklistViewsRepository.Category.name);
+		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Category.name, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -178,6 +181,8 @@ public class CategoryPropertiesEditionPartForm extends CompositePropertiesEditio
 		this.items.setLayoutData(itemsData);
 		this.items.setLowerBound(1);
 		this.items.setUpperBound(-1);
+		items.setID(ChecklistViewsRepository.Category.items);
+		items.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -279,6 +284,8 @@ public class CategoryPropertiesEditionPartForm extends CompositePropertiesEditio
 				}
 			}
 		});
+		EditingUtils.setID(comment, ChecklistViewsRepository.Category.comment);
+		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Category.comment, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 

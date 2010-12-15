@@ -47,7 +47,7 @@ import org.eclipse.swt.widgets.Text;
 // End of user code	
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ContextPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ContextPropertiesEditionPart {

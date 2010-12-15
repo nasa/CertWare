@@ -1,6 +1,4 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.parts;
 
 // Start of user code for imports
@@ -18,7 +16,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * 
+ * @author
  * 
  */
 public interface ArgumentReasoningPropertiesEditionPart {

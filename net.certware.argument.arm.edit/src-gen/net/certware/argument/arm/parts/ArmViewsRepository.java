@@ -1,10 +1,8 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.parts;
 
 /**
- * 
+ * @author
  * 
  */
 public class ArmViewsRepository {

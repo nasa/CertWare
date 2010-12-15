@@ -1,6 +1,4 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.components;
 
 // Start of user code for imports
@@ -58,7 +56,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * 
+ * @author
  * 
  */
 public class ArgumentReasoningPropertiesEditionComponent extends StandardPropertiesEditionComponent {

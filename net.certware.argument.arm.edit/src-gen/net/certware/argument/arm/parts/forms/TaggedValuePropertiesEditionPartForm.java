@@ -1,6 +1,4 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.parts.forms;
 
 // Start of user code for imports
@@ -33,7 +31,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * 
+ * @author
  * 
  */
 public class TaggedValuePropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, TaggedValuePropertiesEditionPart {

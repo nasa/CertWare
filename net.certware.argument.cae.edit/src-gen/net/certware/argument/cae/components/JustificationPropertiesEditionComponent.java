@@ -53,7 +53,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class JustificationPropertiesEditionComponent extends StandardPropertiesEditionComponent {

@@ -83,6 +83,16 @@
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="gszPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="net.certware.argument.gsz.diagram.part.GszDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="gszPresentationIDE">
          <Priority name="Lowest"/>
@@ -115,10 +125,9 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            category="certware"
-            class="net.certware.argument.gsz.diagram.preferences.DiagramGeneralPreferencePage"
             id="net.certware.argument.gsz.diagram.general"
-            name="%prefpage.net.certware.argument.gsz.diagram.general">
+            name="%prefpage.net.certware.argument.gsz.diagram.general"
+            class="net.certware.argument.gsz.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="net.certware.argument.gsz.diagram.appearance"
@@ -659,7 +668,7 @@
       </MarkerNavigationProvider>
    </extension>
 
-<extension id="diagnostic" name="GSZ Diagram Problems" point="org.eclipse.core.resources.markers">
+<extension id="diagnostic" name="CertWare GSN Diagram Plugin problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>

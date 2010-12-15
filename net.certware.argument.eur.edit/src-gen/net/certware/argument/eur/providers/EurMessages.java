@@ -1,10 +1,12 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.eur.providers;
 
 import org.eclipse.osgi.util.NLS;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class EurMessages extends NLS {
@@ -33,33 +35,44 @@ public class EurMessages extends NLS {
 	public static String CriteriaPropertiesEditionPart_PropertiesGroupLabel;
 
 	
+	public static String Argument_ReadOnly;
 
 	
 	public static String Argument_Part_Title;
 
 	
+	public static String Strategy_ReadOnly;
 
 	
 	public static String Strategy_Part_Title;
 
 	
+	public static String Solution_ReadOnly;
 
 	
 	public static String Solution_Part_Title;
 
 	
+	public static String Assumption_ReadOnly;
+
 	
 	public static String Assumption_Part_Title;
 
 	
+	public static String Context_ReadOnly;
 
+	
 	public static String Context_Part_Title;
 
 	
+	public static String Justification_ReadOnly;
 
+	
 	public static String Justification_Part_Title;
 
 	
+	public static String Criteria_ReadOnly;
+
 	
 	public static String Criteria_Part_Title;
 
@@ -214,7 +227,52 @@ public class EurMessages extends NLS {
 	public static String CriteriaPropertiesEditionPart_AssumptionLabel;
 
 	
+	public static String PropertiesEditionPart_DocumentationLabel;
 
+	
+	public static String PropertiesEditionPart_IntegerValueMessage;
+
+	
+	public static String PropertiesEditionPart_FloatValueMessage;
+
+	
+	public static String PropertiesEditionPart_ShortValueMessage;
+
+	
+	public static String PropertiesEditionPart_LongValueMessage;
+
+	
+	public static String PropertiesEditionPart_ByteValueMessage;
+
+	
+	public static String PropertiesEditionPart_BigIntegerValueMessage;
+
+	
+	public static String PropertiesEditionPart_BigDecimalValueMessage;
+
+	
+	public static String PropertiesEditionPart_DoubleValueMessage;
+
+	
+	public static String PropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String PropertiesEditionPart_RequiredFeatureMessage;
+
+	
+	public static String PropertiesEditionPart_AddTableViewerLabel;
+
+	
+	public static String PropertiesEditionPart_EditTableViewerLabel;
+
+	
+	public static String PropertiesEditionPart_RemoveTableViewerLabel;
+
+	
+	public static String PropertiesEditionPart_AddListViewerLabel;
+
+	
+	public static String PropertiesEditionPart_RemoveListViewerLabel;
 	
 	// Start of user code for additionnal NLS Constants
 	

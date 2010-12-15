@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.eur.providers;
 
 import net.certware.argument.eur.parts.EurViewsRepository;
@@ -22,7 +24,7 @@ import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class EurPropertiesEditionPartProvider implements IPropertiesEditionPartProvider {

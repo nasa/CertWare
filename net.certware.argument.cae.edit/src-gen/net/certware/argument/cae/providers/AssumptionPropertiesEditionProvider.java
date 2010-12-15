@@ -12,7 +12,7 @@ import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class AssumptionPropertiesEditionProvider implements IPropertiesEditionProvider {

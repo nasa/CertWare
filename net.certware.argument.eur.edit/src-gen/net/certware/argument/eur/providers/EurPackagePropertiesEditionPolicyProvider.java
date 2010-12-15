@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.eur.providers;
 
 import net.certware.argument.eur.EurPackage;
@@ -7,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.impl.providers.StandardPropertiesEditionPolicyProvider;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class EurPackagePropertiesEditionPolicyProvider extends StandardPropertiesEditionPolicyProvider {

@@ -1,8 +1,10 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.eur.parts;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class EurViewsRepository {

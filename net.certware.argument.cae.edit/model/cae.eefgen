@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.argument.cae.edit/src-gen" author="mrb" testsGenDirectory="/net.certware.argument.cae.test/src-gen">
-  <editionContexts basePackage="net.certware.argument" descriptorsGenericPropertiesViews="true" generateJunitTestCases="true">
-    <PropertiesEditionContext href="cae.components#_PYt-0csYEd-S8NSli1z9iA"/>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.argument.cae.edit/src-gen">
+  <editionContexts basePackage="net.certware.argument" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="cae.components#_3yhQUAhyEeCzO8JExYDW8g"/>
   </editionContexts>
   <viewsRepositories basePackage="net.certware.argument.cae" swtViews="true" formViews="true">
-    <viewsRepository href="cae.components#_PYvNCMsYEd-S8NSli1z9iA"/>
+    <viewsRepository href="cae.components#_3yh3iwhyEeCzO8JExYDW8g"/>
   </viewsRepositories>
 </eef-gen:EEFGenModel>

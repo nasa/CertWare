@@ -26,6 +26,7 @@ import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
@@ -158,6 +159,8 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 				}
 			}
 		});
+		EditingUtils.setID(name, ChecklistViewsRepository.Checklist.name);
+		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist.name, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -195,6 +198,8 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 				}
 			}
 		});
+		EditingUtils.setID(version, ChecklistViewsRepository.Checklist.version);
+		EditingUtils.setEEFtype(version, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist.version, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -217,6 +222,8 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		this.categories.setLayoutData(categoriesData);
 		this.categories.setLowerBound(1);
 		this.categories.setUpperBound(-1);
+		categories.setID(ChecklistViewsRepository.Checklist.categories);
+		categories.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 	}
 
 	/**
@@ -318,6 +325,8 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 				}
 			}
 		});
+		EditingUtils.setID(comment, ChecklistViewsRepository.Checklist.comment);
+		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist.comment, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 

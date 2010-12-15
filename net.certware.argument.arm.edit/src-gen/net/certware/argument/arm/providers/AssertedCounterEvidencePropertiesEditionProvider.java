@@ -1,6 +1,4 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.providers;
 
 import net.certware.argument.arm.ArmPackage;
@@ -12,7 +10,7 @@ import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider;
 
 /**
- * 
+ * @author
  * 
  */
 public class AssertedCounterEvidencePropertiesEditionProvider implements IPropertiesEditionProvider {

@@ -6,7 +6,7 @@ package net.certware.argument.cae.providers;
 import org.eclipse.emf.eef.runtime.impl.providers.ComposedPropertiesEditionProvider;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class CaePackagePropertiesEditionProvider extends ComposedPropertiesEditionProvider {

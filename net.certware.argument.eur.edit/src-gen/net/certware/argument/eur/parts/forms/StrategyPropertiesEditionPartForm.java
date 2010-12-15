@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.eur.parts.forms;
 
 // Start of user code for imports
@@ -57,7 +59,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class StrategyPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, StrategyPropertiesEditionPart {

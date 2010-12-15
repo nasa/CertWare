@@ -1,6 +1,4 @@
-/**
- * Generated with Acceleo
- */
+
 package net.certware.argument.arm.providers;
 
 import net.certware.argument.arm.parts.ArmViewsRepository;
@@ -36,7 +34,7 @@ import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
 /**
- * 
+ * @author
  * 
  */
 public class ArmPropertiesEditionPartProvider implements IPropertiesEditionPartProvider {
