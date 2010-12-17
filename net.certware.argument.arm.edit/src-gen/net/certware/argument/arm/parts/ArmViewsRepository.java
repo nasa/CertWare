@@ -18,10 +18,10 @@ public class ArmViewsRepository {
 	 */
 	public static class TaggedValue {
 		
-		public static String key = "arm::TaggedValue::key";
+		public static String key = "arm::TaggedValue::key"; //$NON-NLS-1$
 		
 		
-		public static String value = "arm::TaggedValue::value";
+		public static String value = "arm::TaggedValue::value"; //$NON-NLS-1$
 		
 	
 	}
@@ -32,25 +32,25 @@ public class ArmViewsRepository {
 	 */
 	public static class Argument {
 		
-		public static String identifier = "arm::Argument::identifier";
+		public static String identifier = "arm::Argument::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::Argument::description";
+		public static String description = "arm::Argument::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::Argument::content";
+		public static String content = "arm::Argument::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::Argument::isTagged";
+		public static String isTagged = "arm::Argument::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String containsArgumentElement = "arm::Argument::containsArgumentElement";
+		public static String containsArgumentElement = "arm::Argument::containsArgumentElement"; //$NON-NLS-1$
 		
 		
-		public static String containsArgumentLink = "arm::Argument::containsArgumentLink";
+		public static String containsArgumentLink = "arm::Argument::containsArgumentLink"; //$NON-NLS-1$
 		
 		
-		public static String containsArgument = "arm::Argument::containsArgument";
+		public static String containsArgument = "arm::Argument::containsArgument"; //$NON-NLS-1$
 		
 	
 	}
@@ -61,22 +61,22 @@ public class ArmViewsRepository {
 	 */
 	public static class Annotation {
 		
-		public static String identifier = "arm::Annotation::identifier";
+		public static String identifier = "arm::Annotation::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::Annotation::description";
+		public static String description = "arm::Annotation::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::Annotation::content";
+		public static String content = "arm::Annotation::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::Annotation::isTagged";
+		public static String isTagged = "arm::Annotation::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String target = "arm::Annotation::target";
+		public static String target = "arm::Annotation::target"; //$NON-NLS-1$
 		
 		
-		public static String source = "arm::Annotation::source";
+		public static String source = "arm::Annotation::source"; //$NON-NLS-1$
 		
 	
 	}
@@ -87,22 +87,22 @@ public class ArmViewsRepository {
 	 */
 	public static class AssertedInference {
 		
-		public static String identifier = "arm::AssertedInference::identifier";
+		public static String identifier = "arm::AssertedInference::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::AssertedInference::description";
+		public static String description = "arm::AssertedInference::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::AssertedInference::content";
+		public static String content = "arm::AssertedInference::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::AssertedInference::isTagged";
+		public static String isTagged = "arm::AssertedInference::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String target = "arm::AssertedInference::target";
+		public static String target = "arm::AssertedInference::target"; //$NON-NLS-1$
 		
 		
-		public static String source = "arm::AssertedInference::source";
+		public static String source = "arm::AssertedInference::source"; //$NON-NLS-1$
 		
 	
 	}
@@ -113,22 +113,22 @@ public class ArmViewsRepository {
 	 */
 	public static class AssertedEvidence {
 		
-		public static String identifier = "arm::AssertedEvidence::identifier";
+		public static String identifier = "arm::AssertedEvidence::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::AssertedEvidence::description";
+		public static String description = "arm::AssertedEvidence::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::AssertedEvidence::content";
+		public static String content = "arm::AssertedEvidence::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::AssertedEvidence::isTagged";
+		public static String isTagged = "arm::AssertedEvidence::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String target = "arm::AssertedEvidence::target";
+		public static String target = "arm::AssertedEvidence::target"; //$NON-NLS-1$
 		
 		
-		public static String source = "arm::AssertedEvidence::source";
+		public static String source = "arm::AssertedEvidence::source"; //$NON-NLS-1$
 		
 	
 	}
@@ -139,22 +139,22 @@ public class ArmViewsRepository {
 	 */
 	public static class AssertedContext {
 		
-		public static String identifier = "arm::AssertedContext::identifier";
+		public static String identifier = "arm::AssertedContext::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::AssertedContext::description";
+		public static String description = "arm::AssertedContext::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::AssertedContext::content";
+		public static String content = "arm::AssertedContext::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::AssertedContext::isTagged";
+		public static String isTagged = "arm::AssertedContext::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String target = "arm::AssertedContext::target";
+		public static String target = "arm::AssertedContext::target"; //$NON-NLS-1$
 		
 		
-		public static String source = "arm::AssertedContext::source";
+		public static String source = "arm::AssertedContext::source"; //$NON-NLS-1$
 		
 	
 	}
@@ -165,22 +165,22 @@ public class ArmViewsRepository {
 	 */
 	public static class AssertedCounterEvidence {
 		
-		public static String identifier = "arm::AssertedCounterEvidence::identifier";
+		public static String identifier = "arm::AssertedCounterEvidence::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::AssertedCounterEvidence::description";
+		public static String description = "arm::AssertedCounterEvidence::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::AssertedCounterEvidence::content";
+		public static String content = "arm::AssertedCounterEvidence::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::AssertedCounterEvidence::isTagged";
+		public static String isTagged = "arm::AssertedCounterEvidence::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String target = "arm::AssertedCounterEvidence::target";
+		public static String target = "arm::AssertedCounterEvidence::target"; //$NON-NLS-1$
 		
 		
-		public static String source = "arm::AssertedCounterEvidence::source";
+		public static String source = "arm::AssertedCounterEvidence::source"; //$NON-NLS-1$
 		
 	
 	}
@@ -191,22 +191,22 @@ public class ArmViewsRepository {
 	 */
 	public static class AssertedChallenge {
 		
-		public static String identifier = "arm::AssertedChallenge::identifier";
+		public static String identifier = "arm::AssertedChallenge::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::AssertedChallenge::description";
+		public static String description = "arm::AssertedChallenge::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::AssertedChallenge::content";
+		public static String content = "arm::AssertedChallenge::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::AssertedChallenge::isTagged";
+		public static String isTagged = "arm::AssertedChallenge::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String target = "arm::AssertedChallenge::target";
+		public static String target = "arm::AssertedChallenge::target"; //$NON-NLS-1$
 		
 		
-		public static String source = "arm::AssertedChallenge::source";
+		public static String source = "arm::AssertedChallenge::source"; //$NON-NLS-1$
 		
 	
 	}
@@ -217,22 +217,22 @@ public class ArmViewsRepository {
 	 */
 	public static class Claim {
 		
-		public static String identifier = "arm::Claim::identifier";
+		public static String identifier = "arm::Claim::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::Claim::description";
+		public static String description = "arm::Claim::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::Claim::content";
+		public static String content = "arm::Claim::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::Claim::isTagged";
+		public static String isTagged = "arm::Claim::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String assumed = "arm::Claim::assumed";
+		public static String assumed = "arm::Claim::assumed"; //$NON-NLS-1$
 		
 		
-		public static String toBeSupported = "arm::Claim::toBeSupported";
+		public static String toBeSupported = "arm::Claim::toBeSupported"; //$NON-NLS-1$
 		
 	
 	}
@@ -243,22 +243,22 @@ public class ArmViewsRepository {
 	 */
 	public static class EvidenceAssertion {
 		
-		public static String identifier = "arm::EvidenceAssertion::identifier";
+		public static String identifier = "arm::EvidenceAssertion::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::EvidenceAssertion::description";
+		public static String description = "arm::EvidenceAssertion::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::EvidenceAssertion::content";
+		public static String content = "arm::EvidenceAssertion::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::EvidenceAssertion::isTagged";
+		public static String isTagged = "arm::EvidenceAssertion::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String assumed = "arm::EvidenceAssertion::assumed";
+		public static String assumed = "arm::EvidenceAssertion::assumed"; //$NON-NLS-1$
 		
 		
-		public static String toBeSupported = "arm::EvidenceAssertion::toBeSupported";
+		public static String toBeSupported = "arm::EvidenceAssertion::toBeSupported"; //$NON-NLS-1$
 		
 	
 	}
@@ -269,16 +269,16 @@ public class ArmViewsRepository {
 	 */
 	public static class InformationElement {
 		
-		public static String identifier = "arm::InformationElement::identifier";
+		public static String identifier = "arm::InformationElement::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::InformationElement::description";
+		public static String description = "arm::InformationElement::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::InformationElement::content";
+		public static String content = "arm::InformationElement::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::InformationElement::isTagged";
+		public static String isTagged = "arm::InformationElement::isTagged"; //$NON-NLS-1$
 		
 	
 	}
@@ -289,22 +289,22 @@ public class ArmViewsRepository {
 	 */
 	public static class ArgumentReasoning {
 		
-		public static String identifier = "arm::ArgumentReasoning::identifier";
+		public static String identifier = "arm::ArgumentReasoning::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::ArgumentReasoning::description";
+		public static String description = "arm::ArgumentReasoning::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::ArgumentReasoning::content";
+		public static String content = "arm::ArgumentReasoning::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::ArgumentReasoning::isTagged";
+		public static String isTagged = "arm::ArgumentReasoning::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String describes = "arm::ArgumentReasoning::describes";
+		public static String describes = "arm::ArgumentReasoning::describes"; //$NON-NLS-1$
 		
 		
-		public static String hasStructure = "arm::ArgumentReasoning::hasStructure";
+		public static String hasStructure = "arm::ArgumentReasoning::hasStructure"; //$NON-NLS-1$
 		
 	
 	}
@@ -315,22 +315,22 @@ public class ArmViewsRepository {
 	 */
 	public static class CitationElement {
 		
-		public static String identifier = "arm::CitationElement::identifier";
+		public static String identifier = "arm::CitationElement::identifier"; //$NON-NLS-1$
 		
 		
-		public static String description = "arm::CitationElement::description";
+		public static String description = "arm::CitationElement::description"; //$NON-NLS-1$
 		
 		
-		public static String content = "arm::CitationElement::content";
+		public static String content = "arm::CitationElement::content"; //$NON-NLS-1$
 		
 		
-		public static String isTagged = "arm::CitationElement::isTagged";
+		public static String isTagged = "arm::CitationElement::isTagged"; //$NON-NLS-1$
 		
 		
-		public static String refersToArgumentElement = "arm::CitationElement::refersToArgumentElement";
+		public static String refersToArgumentElement = "arm::CitationElement::refersToArgumentElement"; //$NON-NLS-1$
 		
 		
-		public static String refersToArgument = "arm::CitationElement::refersToArgument";
+		public static String refersToArgument = "arm::CitationElement::refersToArgument"; //$NON-NLS-1$
 		
 	
 	}

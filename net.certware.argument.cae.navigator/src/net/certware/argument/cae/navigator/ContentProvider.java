@@ -118,7 +118,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 			final IFile file = (IFile) source;
 			if ( ICertWareConstants.CAE_EXTENSION.equals(file.getFileExtension())) {
 				updateModel(file);
-				new UIJob("Update CAE resource content model in project explorer") {
+				new UIJob(Messages.ContentProvider_0) {
 					public IStatus runInUIThread(IProgressMonitor monitor) {
 						if (viewer != null ) // && ! viewer.getControl().isDisposed())
 							viewer.refresh(file);
@@ -244,17 +244,17 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					TreeData td;
 					List<TreeData> treeNodes = new ArrayList<TreeData>();
 
-					td = new TreeData(modelFile,"Claims",getClaimCount(),TreeData.COUNT_TYPE_CLOSED);
+					td = new TreeData(modelFile,Messages.ContentProvider_1,getClaimCount(),TreeData.COUNT_TYPE_CLOSED);
 					treeNodes.add(td);
-					td = new TreeData(modelFile,"Arguments",getArgumentCount(),TreeData.COUNT_TYPE_CLOSED);
+					td = new TreeData(modelFile,Messages.ContentProvider_2,getArgumentCount(),TreeData.COUNT_TYPE_CLOSED);
 					treeNodes.add(td);
-					td = new TreeData(modelFile,"Evidence",getEvidenceCount(),TreeData.COUNT_TYPE_CLOSED);
+					td = new TreeData(modelFile,Messages.ContentProvider_3,getEvidenceCount(),TreeData.COUNT_TYPE_CLOSED);
 					treeNodes.add(td);
 
 					if ( getToBeSupported() > 0 )
-						td = new TreeData(modelFile,"Claims to be supported",getToBeSupported(),TreeData.COUNT_TYPE_OPEN);
+						td = new TreeData(modelFile,Messages.ContentProvider_4,getToBeSupported(),TreeData.COUNT_TYPE_OPEN);
 					else
-						td = new TreeData(modelFile,"All claims supported",-1,TreeData.COUNT_TYPE_CLOSED);
+						td = new TreeData(modelFile,Messages.ContentProvider_5,-1,TreeData.COUNT_TYPE_CLOSED);
 					treeNodes.add(td);
 
 					// populate array and model map

@@ -11,7 +11,7 @@
             default="true"
             extensions="sfp"
             id="net.certware.argument.sfp.SemiFormalProof"
-            name="SemiFormalProof Editor">
+            name="%editor.name">
         </editor>
     </extension>
     <extension
@@ -50,23 +50,24 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="net.certware.argument.sfp.SemiFormalProof"
-            name="SemiFormalProof">
+              category="certware"
+              class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="net.certware.argument.sfp.SemiFormalProof"
+              name="%page.name">
             <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
         </page>
         <page
             category="net.certware.argument.sfp.SemiFormalProof"
             class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="net.certware.argument.sfp.SemiFormalProof.coloring"
-            name="Syntax Coloring">
+            name="%page.name.0">
             <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
         </page>
         <page
             category="net.certware.argument.sfp.SemiFormalProof"
             class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="net.certware.argument.sfp.SemiFormalProof.templates"
-            name="Templates">
+            name="%page.name.1">
             <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
         </page>
     </extension>
@@ -74,14 +75,15 @@
         point="org.eclipse.ui.keywords">
         <keyword
             id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"
-            label="SemiFormalProof"/>
+            label="%keyword.label"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
-            description="Trigger expensive validation"
+            categoryId="net.certware.core.ui.category"
+            description="%command.description"
             id="net.certware.argument.sfp.SemiFormalProof.validate"
-            name="Validate">
+            name="%command.name">
       </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -90,7 +92,7 @@
              <command
                  commandId="net.certware.argument.sfp.SemiFormalProof.validate"
                  style="push"
-                 tooltip="Trigger expensive validation">
+                 tooltip="%command.tooltip">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
@@ -156,9 +158,10 @@
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
-			description="Open the quick outline."
-			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-			name="Quick Outline">
+        categoryId="net.certware.core.ui.category"
+        description="%command.description.0"
+        id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+        name="%command.name.0">
 		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
@@ -166,7 +169,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
 				style="push"
-				tooltip="Open Quick Outline">
+				tooltip="%command.tooltip.0">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened"/>
 				</visibleWhen>

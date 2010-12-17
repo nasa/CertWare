@@ -27,6 +27,9 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Justification extends EObject
 {
+	/** hypothesis keyword */
+	public static final String HYPOTHESIS = "hypothesis";
+	
   /**
    * Returns the value of the '<em><b>Numeral</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -10,16 +10,12 @@ import java.util.List;
 import net.certware.argument.euz.ArgumentDiagram;
 import net.certware.argument.euz.EuzFactory;
 import net.certware.argument.euz.EuzPackage;
-
 import net.certware.argument.euz.edit.provider.EuzEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;

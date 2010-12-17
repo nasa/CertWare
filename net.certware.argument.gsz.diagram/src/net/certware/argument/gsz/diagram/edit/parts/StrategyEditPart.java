@@ -359,20 +359,19 @@ public class StrategyEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureStrategyLabelFigure = new WrappingLabel();
 			fFigureStrategyLabelFigure.setText("Strategy");
-
+			fFigureStrategyLabelFigure.setTextWrap(true);
 			this.add(fFigureStrategyLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
-
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 			this.add(fFigureModelElementContentLabelFigure);
-
 		}
 
 		/**

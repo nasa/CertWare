@@ -1083,23 +1083,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleEntailment
-    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:523:1: ruleEntailment returns [EObject current=null] : ( () ( (lv_conjunction_1_0= ruleConjunction ) ) '->' ( (lv_id_3_0= ruleNumeral ) ) ) ;
+    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:523:1: ruleEntailment returns [EObject current=null] : ( () ( (lv_head_1_0= ruleConjunction ) ) '->' ( (lv_tail_3_0= ruleNumeral ) ) ) ;
     public final EObject ruleEntailment() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_conjunction_1_0 = null;
+        EObject lv_head_1_0 = null;
 
-        AntlrDatatypeRuleToken lv_id_3_0 = null;
+        AntlrDatatypeRuleToken lv_tail_3_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:528:6: ( ( () ( (lv_conjunction_1_0= ruleConjunction ) ) '->' ( (lv_id_3_0= ruleNumeral ) ) ) )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:529:1: ( () ( (lv_conjunction_1_0= ruleConjunction ) ) '->' ( (lv_id_3_0= ruleNumeral ) ) )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:528:6: ( ( () ( (lv_head_1_0= ruleConjunction ) ) '->' ( (lv_tail_3_0= ruleNumeral ) ) ) )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:529:1: ( () ( (lv_head_1_0= ruleConjunction ) ) '->' ( (lv_tail_3_0= ruleNumeral ) ) )
             {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:529:1: ( () ( (lv_conjunction_1_0= ruleConjunction ) ) '->' ( (lv_id_3_0= ruleNumeral ) ) )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:529:2: () ( (lv_conjunction_1_0= ruleConjunction ) ) '->' ( (lv_id_3_0= ruleNumeral ) )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:529:1: ( () ( (lv_head_1_0= ruleConjunction ) ) '->' ( (lv_tail_3_0= ruleNumeral ) ) )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:529:2: () ( (lv_head_1_0= ruleConjunction ) ) '->' ( (lv_tail_3_0= ruleNumeral ) )
             {
             // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:529:2: ()
             // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:530:5: 
@@ -1117,17 +1117,17 @@ public class InternalSemiFormalProofParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:540:2: ( (lv_conjunction_1_0= ruleConjunction ) )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:541:1: (lv_conjunction_1_0= ruleConjunction )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:540:2: ( (lv_head_1_0= ruleConjunction ) )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:541:1: (lv_head_1_0= ruleConjunction )
             {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:541:1: (lv_conjunction_1_0= ruleConjunction )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:542:3: lv_conjunction_1_0= ruleConjunction
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:541:1: (lv_head_1_0= ruleConjunction )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:542:3: lv_head_1_0= ruleConjunction
             {
              
-            	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getConjunctionConjunctionParserRuleCall_1_0(), currentNode); 
+            	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0(), currentNode); 
             	    
             pushFollow(FOLLOW_ruleConjunction_in_ruleEntailment881);
-            lv_conjunction_1_0=ruleConjunction();
+            lv_head_1_0=ruleConjunction();
             _fsp--;
 
 
@@ -1138,8 +1138,8 @@ public class InternalSemiFormalProofParser extends AbstractInternalAntlrParser {
             	        try {
             	       		set(
             	       			current, 
-            	       			"conjunction",
-            	        		lv_conjunction_1_0, 
+            	       			"head",
+            	        		lv_head_1_0, 
             	        		"Conjunction", 
             	        		currentNode);
             	        } catch (ValueConverterException vce) {
@@ -1157,17 +1157,17 @@ public class InternalSemiFormalProofParser extends AbstractInternalAntlrParser {
 
                     createLeafNode(grammarAccess.getEntailmentAccess().getHyphenMinusGreaterThanSignKeyword_2(), null); 
                 
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:568:1: ( (lv_id_3_0= ruleNumeral ) )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:569:1: (lv_id_3_0= ruleNumeral )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:568:1: ( (lv_tail_3_0= ruleNumeral ) )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:569:1: (lv_tail_3_0= ruleNumeral )
             {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:569:1: (lv_id_3_0= ruleNumeral )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:570:3: lv_id_3_0= ruleNumeral
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:569:1: (lv_tail_3_0= ruleNumeral )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:570:3: lv_tail_3_0= ruleNumeral
             {
              
-            	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0(), currentNode); 
+            	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0(), currentNode); 
             	    
             pushFollow(FOLLOW_ruleNumeral_in_ruleEntailment912);
-            lv_id_3_0=ruleNumeral();
+            lv_tail_3_0=ruleNumeral();
             _fsp--;
 
 
@@ -1178,8 +1178,8 @@ public class InternalSemiFormalProofParser extends AbstractInternalAntlrParser {
             	        try {
             	       		set(
             	       			current, 
-            	       			"id",
-            	        		lv_id_3_0, 
+            	       			"tail",
+            	        		lv_tail_3_0, 
             	        		"Numeral", 
             	        		currentNode);
             	        } catch (ValueConverterException vce) {

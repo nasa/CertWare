@@ -75,6 +75,8 @@
             editPattern="Goal {0}">
           <metaFeatures
               href="../../net.certware.argument.arm/model/arm.genmodel#//arm/ModelElement/identifier"/>
+          <editableMetaFeatures
+              href="../../net.certware.argument.arm/model/arm.genmodel#//arm/ModelElement/identifier"/>
         </modelFacet>
       </labels>
       <labels
@@ -92,6 +94,8 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
+              href="../../net.certware.argument.arm/model/arm.genmodel#//arm/ModelElement/content"/>
+          <editableMetaFeatures
               href="../../net.certware.argument.arm/model/arm.genmodel#//arm/ModelElement/content"/>
         </modelFacet>
       </labels>

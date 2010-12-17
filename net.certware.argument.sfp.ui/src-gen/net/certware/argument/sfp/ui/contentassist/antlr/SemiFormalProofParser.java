@@ -63,8 +63,8 @@ public class SemiFormalProofParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJustificationAccess().getAssertionAssignment_1(), "rule__Justification__AssertionAssignment_1");
 					put(grammarAccess.getJustificationAccess().getEntailmentAssignment_2(), "rule__Justification__EntailmentAssignment_2");
 					put(grammarAccess.getQuotedAssertionAccess().getTextAssignment_1(), "rule__QuotedAssertion__TextAssignment_1");
-					put(grammarAccess.getEntailmentAccess().getConjunctionAssignment_1(), "rule__Entailment__ConjunctionAssignment_1");
-					put(grammarAccess.getEntailmentAccess().getIdAssignment_3(), "rule__Entailment__IdAssignment_3");
+					put(grammarAccess.getEntailmentAccess().getHeadAssignment_1(), "rule__Entailment__HeadAssignment_1");
+					put(grammarAccess.getEntailmentAccess().getTailAssignment_3(), "rule__Entailment__TailAssignment_3");
 					put(grammarAccess.getConjunctionAccess().getLhsAssignment_0_1(), "rule__Conjunction__LhsAssignment_0_1");
 					put(grammarAccess.getConjunctionAccess().getRhsAssignment_0_3(), "rule__Conjunction__RhsAssignment_0_3");
 					put(grammarAccess.getConjunctionAccess().getLhsAssignment_1(), "rule__Conjunction__LhsAssignment_1");

@@ -135,7 +135,7 @@ public class CaeEditor
 	 */
 	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
 	/** property contributor ID as defined in the edit plugin extension */
-	public static final String PROPERTY_CONTRIBUTOR = "net.certware.argument.cae.properties";
+	public static final String PROPERTY_CONTRIBUTOR = "net.certware.argument.cae.properties"; //$NON-NLS-1$
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.

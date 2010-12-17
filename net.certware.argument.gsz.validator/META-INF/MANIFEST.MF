@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: CertWare GSN Validator
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: net.certware.argument.gsz.validator;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.certware.argument.gsz.validator.Activator
-Bundle-Vendor: Kestrel Technology LLC
+Bundle-Vendor: %Bundle-Vendor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.osgi.framework
 Bundle-ActivationPolicy: lazy

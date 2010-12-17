@@ -32,37 +32,23 @@ public class CaeMessages extends NLS {
 	public static String JustificationPropertiesEditionPart_PropertiesGroupLabel;
 
 	
-	public static String Claim_ReadOnly;
-
-	
 	public static String Claim_Part_Title;
 
 	
-	public static String Argument_ReadOnly;
 
-	
 	public static String Argument_Part_Title;
 
 	
-	public static String Evidence_ReadOnly;
 
-	
 	public static String Evidence_Part_Title;
 
 	
-	public static String Assumption_ReadOnly;
-
 	
 	public static String Assumption_Part_Title;
 
 	
-	public static String Context_ReadOnly;
 
-	
 	public static String Context_Part_Title;
-
-	
-	public static String Justification_ReadOnly;
 
 	
 	public static String Justification_Part_Title;
@@ -179,52 +165,6 @@ public class CaeMessages extends NLS {
 	public static String JustificationPropertiesEditionPart_IsTaggedLabel;
 
 	
-	public static String PropertiesEditionPart_DocumentationLabel;
-
-	
-	public static String PropertiesEditionPart_IntegerValueMessage;
-
-	
-	public static String PropertiesEditionPart_FloatValueMessage;
-
-	
-	public static String PropertiesEditionPart_ShortValueMessage;
-
-	
-	public static String PropertiesEditionPart_LongValueMessage;
-
-	
-	public static String PropertiesEditionPart_ByteValueMessage;
-
-	
-	public static String PropertiesEditionPart_BigIntegerValueMessage;
-
-	
-	public static String PropertiesEditionPart_BigDecimalValueMessage;
-
-	
-	public static String PropertiesEditionPart_DoubleValueMessage;
-
-	
-	public static String PropertiesEditionPart_PropertiesGroupLabel;
-
-	
-	public static String PropertiesEditionPart_RequiredFeatureMessage;
-
-	
-	public static String PropertiesEditionPart_AddTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_EditTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_RemoveTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_AddListViewerLabel;
-
-	
-	public static String PropertiesEditionPart_RemoveListViewerLabel;
 	
 	// Start of user code for additionnal NLS Constants
 	

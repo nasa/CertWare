@@ -3,14 +3,32 @@
 */
 package net.certware.argument.sfp.ui.outline;
 
+import net.certware.argument.sfp.semiFormalProof.Conjunction;
+import net.certware.argument.sfp.semiFormalProof.Entailment;
+import net.certware.argument.sfp.semiFormalProof.Justification;
+import net.certware.argument.sfp.semiFormalProof.Justifications;
+import net.certware.argument.sfp.semiFormalProof.Proof;
+import net.certware.argument.sfp.semiFormalProof.ProofSteps;
+import net.certware.argument.sfp.semiFormalProof.QuotedAssertion;
+import net.certware.argument.sfp.semiFormalProof.Statement;
+
 import org.eclipse.xtext.ui.editor.outline.actions.DefaultContentOutlineNodeAdapterFactory;
 
+@SuppressWarnings("deprecation")
 public class SemiFormalProofOutlineNodeAdapterFactory extends DefaultContentOutlineNodeAdapterFactory {
 
 	private static final Class<?>[] types = { 
 		// provide list of classes to adapt to, e.g.:
 		// Entity.class
 		// Service.class
+		Proof.class,
+		Justifications.class,
+		Justification.class,
+		QuotedAssertion.class,
+		Entailment.class,
+		Conjunction.class,
+		ProofSteps.class,
+		Statement.class
 	};
 
 	@Override

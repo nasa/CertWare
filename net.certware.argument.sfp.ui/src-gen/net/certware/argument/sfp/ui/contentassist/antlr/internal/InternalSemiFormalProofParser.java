@@ -2671,30 +2671,30 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1023:1: rule__Entailment__Group__1__Impl : ( ( rule__Entailment__ConjunctionAssignment_1 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1023:1: rule__Entailment__Group__1__Impl : ( ( rule__Entailment__HeadAssignment_1 ) ) ;
     public final void rule__Entailment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1027:1: ( ( ( rule__Entailment__ConjunctionAssignment_1 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:1: ( ( rule__Entailment__ConjunctionAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1027:1: ( ( ( rule__Entailment__HeadAssignment_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:1: ( ( rule__Entailment__HeadAssignment_1 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:1: ( ( rule__Entailment__ConjunctionAssignment_1 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1029:1: ( rule__Entailment__ConjunctionAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:1: ( ( rule__Entailment__HeadAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1029:1: ( rule__Entailment__HeadAssignment_1 )
             {
-             before(grammarAccess.getEntailmentAccess().getConjunctionAssignment_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1030:1: ( rule__Entailment__ConjunctionAssignment_1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1030:2: rule__Entailment__ConjunctionAssignment_1
+             before(grammarAccess.getEntailmentAccess().getHeadAssignment_1()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1030:1: ( rule__Entailment__HeadAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1030:2: rule__Entailment__HeadAssignment_1
             {
-            pushFollow(FOLLOW_rule__Entailment__ConjunctionAssignment_1_in_rule__Entailment__Group__1__Impl2048);
-            rule__Entailment__ConjunctionAssignment_1();
+            pushFollow(FOLLOW_rule__Entailment__HeadAssignment_1_in_rule__Entailment__Group__1__Impl2048);
+            rule__Entailment__HeadAssignment_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getEntailmentAccess().getConjunctionAssignment_1()); 
+             after(grammarAccess.getEntailmentAccess().getHeadAssignment_1()); 
 
             }
 
@@ -2822,30 +2822,30 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__3__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1082:1: rule__Entailment__Group__3__Impl : ( ( rule__Entailment__IdAssignment_3 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1082:1: rule__Entailment__Group__3__Impl : ( ( rule__Entailment__TailAssignment_3 ) ) ;
     public final void rule__Entailment__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1086:1: ( ( ( rule__Entailment__IdAssignment_3 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1087:1: ( ( rule__Entailment__IdAssignment_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1086:1: ( ( ( rule__Entailment__TailAssignment_3 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1087:1: ( ( rule__Entailment__TailAssignment_3 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1087:1: ( ( rule__Entailment__IdAssignment_3 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1088:1: ( rule__Entailment__IdAssignment_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1087:1: ( ( rule__Entailment__TailAssignment_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1088:1: ( rule__Entailment__TailAssignment_3 )
             {
-             before(grammarAccess.getEntailmentAccess().getIdAssignment_3()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1089:1: ( rule__Entailment__IdAssignment_3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1089:2: rule__Entailment__IdAssignment_3
+             before(grammarAccess.getEntailmentAccess().getTailAssignment_3()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1089:1: ( rule__Entailment__TailAssignment_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1089:2: rule__Entailment__TailAssignment_3
             {
-            pushFollow(FOLLOW_rule__Entailment__IdAssignment_3_in_rule__Entailment__Group__3__Impl2167);
-            rule__Entailment__IdAssignment_3();
+            pushFollow(FOLLOW_rule__Entailment__TailAssignment_3_in_rule__Entailment__Group__3__Impl2167);
+            rule__Entailment__TailAssignment_3();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getEntailmentAccess().getIdAssignment_3()); 
+             after(grammarAccess.getEntailmentAccess().getTailAssignment_3()); 
 
             }
 
@@ -4497,9 +4497,9 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     // $ANTLR end rule__QuotedAssertion__TextAssignment_1
 
 
-    // $ANTLR start rule__Entailment__ConjunctionAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1764:1: rule__Entailment__ConjunctionAssignment_1 : ( ruleConjunction ) ;
-    public final void rule__Entailment__ConjunctionAssignment_1() throws RecognitionException {
+    // $ANTLR start rule__Entailment__HeadAssignment_1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1764:1: rule__Entailment__HeadAssignment_1 : ( ruleConjunction ) ;
+    public final void rule__Entailment__HeadAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4510,12 +4510,12 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
             // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1769:1: ( ruleConjunction )
             // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1770:1: ruleConjunction
             {
-             before(grammarAccess.getEntailmentAccess().getConjunctionConjunctionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleConjunction_in_rule__Entailment__ConjunctionAssignment_13508);
+             before(grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleConjunction_in_rule__Entailment__HeadAssignment_13508);
             ruleConjunction();
             _fsp--;
 
-             after(grammarAccess.getEntailmentAccess().getConjunctionConjunctionParserRuleCall_1_0()); 
+             after(grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0()); 
 
             }
 
@@ -4534,12 +4534,12 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Entailment__ConjunctionAssignment_1
+    // $ANTLR end rule__Entailment__HeadAssignment_1
 
 
-    // $ANTLR start rule__Entailment__IdAssignment_3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1779:1: rule__Entailment__IdAssignment_3 : ( ruleNumeral ) ;
-    public final void rule__Entailment__IdAssignment_3() throws RecognitionException {
+    // $ANTLR start rule__Entailment__TailAssignment_3
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1779:1: rule__Entailment__TailAssignment_3 : ( ruleNumeral ) ;
+    public final void rule__Entailment__TailAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4550,12 +4550,12 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
             // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1784:1: ( ruleNumeral )
             // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1785:1: ruleNumeral
             {
-             before(grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleNumeral_in_rule__Entailment__IdAssignment_33539);
+             before(grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleNumeral_in_rule__Entailment__TailAssignment_33539);
             ruleNumeral();
             _fsp--;
 
-             after(grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0()); 
+             after(grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0()); 
 
             }
 
@@ -4574,7 +4574,7 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Entailment__IdAssignment_3
+    // $ANTLR end rule__Entailment__TailAssignment_3
 
 
     // $ANTLR start rule__Conjunction__LhsAssignment_0_1
@@ -5030,12 +5030,12 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_rule__Entailment__Group__1_in_rule__Entailment__Group__01960 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Entailment__Group__1__Impl_in_rule__Entailment__Group__12018 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_rule__Entailment__Group__2_in_rule__Entailment__Group__12021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__ConjunctionAssignment_1_in_rule__Entailment__Group__1__Impl2048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__HeadAssignment_1_in_rule__Entailment__Group__1__Impl2048 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Entailment__Group__2__Impl_in_rule__Entailment__Group__22078 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__Entailment__Group__3_in_rule__Entailment__Group__22081 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_rule__Entailment__Group__2__Impl2109 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Entailment__Group__3__Impl_in_rule__Entailment__Group__32140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__IdAssignment_3_in_rule__Entailment__Group__3__Impl2167 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__TailAssignment_3_in_rule__Entailment__Group__3__Impl2167 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Conjunction__Group_0__0__Impl_in_rule__Conjunction__Group_0__02205 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__Conjunction__Group_0__1_in_rule__Conjunction__Group_0__02208 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Conjunction__Group_0__1__Impl_in_rule__Conjunction__Group_0__12266 = new BitSet(new long[]{0x0000000000020000L});
@@ -5085,8 +5085,8 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_ruleQuotedAssertion_in_rule__Justification__AssertionAssignment_13415 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEntailment_in_rule__Justification__EntailmentAssignment_23446 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleText_in_rule__QuotedAssertion__TextAssignment_13477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConjunction_in_rule__Entailment__ConjunctionAssignment_13508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumeral_in_rule__Entailment__IdAssignment_33539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConjunction_in_rule__Entailment__HeadAssignment_13508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumeral_in_rule__Entailment__TailAssignment_33539 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_0_13570 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConjunction_in_rule__Conjunction__RhsAssignment_0_33601 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_13632 = new BitSet(new long[]{0x0000000000000002L});

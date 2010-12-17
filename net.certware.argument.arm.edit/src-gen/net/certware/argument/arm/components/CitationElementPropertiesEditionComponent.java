@@ -136,21 +136,21 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 			if (msg.getNewValue() != null) {
 				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setIdentifier("");
+				basePart.setIdentifier(Messages.CitationElementPropertiesEditionComponent_0);
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setDescription("");
+				basePart.setDescription(Messages.CitationElementPropertiesEditionComponent_1);
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setContent("");
+				basePart.setContent(Messages.CitationElementPropertiesEditionComponent_2);
 			}
 		}
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
@@ -434,7 +434,7 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgument(), event.getNewValue()));
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+					EEFRuntimePlugin.getDefault().logError(Messages.CitationElementPropertiesEditionComponent_3, null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

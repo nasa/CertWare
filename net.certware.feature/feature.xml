@@ -93,14 +93,14 @@
          id="net.certware.argument.arm"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.arm.edit"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
@@ -127,21 +127,21 @@
          id="net.certware.argument.cae"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.cae.edit"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.cae.editor"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
@@ -161,7 +161,7 @@
          id="net.certware.argument.caz"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
@@ -175,7 +175,7 @@
          id="net.certware.argument.caz.edit"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
@@ -203,14 +203,14 @@
          id="net.certware.argument.eur"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.eur.edit"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
@@ -244,7 +244,7 @@
          id="net.certware.argument.euz.diagram"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.2.qualifier"
          unpack="false"/>
 
    <plugin
@@ -272,14 +272,14 @@
          id="net.certware.argument.gsn"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.gsn.edit"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
@@ -320,7 +320,7 @@
          id="net.certware.argument.gsz.diagram"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
@@ -348,7 +348,7 @@
          id="net.certware.branding"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"/>
+         version="1.0.3.qualifier"/>
 
    <plugin
          id="net.certware.core"
@@ -436,14 +436,14 @@
          id="net.certware.verification.checklist"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.verification.checklist.edit"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.1.qualifier"
          unpack="false"/>
 
    <plugin

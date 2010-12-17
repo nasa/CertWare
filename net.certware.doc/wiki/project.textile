@@ -12,6 +12,10 @@ _Bugs Fixed_:
 * Reassigned GSZ creation wizard to CertWare new wizard category.
 * Fixed labels on EUZ plugin identities and branding plug-in. 
 _Enhancements_:
+* Expanded body text regions in graphical shapes.  
+* Added adapters for SFP outline view.
+* Added semi-formal proof plug-ins with SFP active parser editor.
+* Added semi-formal proof validation for graph cycles and entailment.
 _Commit_:
 * TBD
 
@@ -105,6 +109,24 @@ The graphical model editors we create with the Eclipse Epsilon Eugenia tools for
 # Edit the @gmfgen@ model's edit part properties to set Validation Enabled and Validation Decorators to @true@.  
 # Edit the @gmfgen@ model's edit part properties to set the metamodel Display Name property to the diagram type, e.g. @GSN Argument Diagram@.  This value appears in the property sheet header when the argument canvas is selected.
 # From the explorer's context menu on the @gmfgen@ file run the @Create diagram code@ command.  This will yield the @diagram@ plugin.  Ensure this new plugin is in the run configuration or deployment package.  
+
+Afterward some adjustments may be necessary if wrapped labels are wanted inside figures.  The default layout manager seems to work fine for the children items on a figure (e.g. two wrapped labels inside an ellipse).  But the default is to truncate these labels, and the default is to provide a skimpy editor for the labels.  To make the adjustments from the generated code:
+# In the @*diagram.edit.parts@ package edit the @createContents()@ method of @MyEditPart@ class's @MyFigure@ inner class.  For each @WrappedLabel@ child added in this method, set @setTextWrap(true)@ as in 			@fFigureContextLabelFigure.setTextWrap(true);@.  Set the @NOT@ flag on the generated tag.    
+# In the same package edit the @setManager@ method of the @MyXyzEditPart@ for the label requiring a better editor, where @Xyz@ is the label child name.  Replace the call to @TextDirectEditManager.getTextCellEditorClass(this)@ with one to @WrapTextCellEditor.class@.  Apply the quick fix to the include file to eliminate the two warnings as this refers to internal API.  Set the @NOT@ flag on the generated tag.  The resulting method should resemble:
+bc. 
+	/**
+	 * @generated NOT
+	 */
+	protected DirectEditManager getManager() {
+		if (manager == null) {
+			setManager(new TextDirectEditManager(this,
+			// TextDirectEditManager.getTextCellEditorClass(this),
+					WrapTextCellEditor.class,
+					GszEditPartFactory.getTextCellEditorLocator(this)));
+		}
+		return manager;
+	}
+	
 
 h4. Running the Xtext Tools
 

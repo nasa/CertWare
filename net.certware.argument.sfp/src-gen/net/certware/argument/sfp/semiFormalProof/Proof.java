@@ -105,4 +105,11 @@ public interface Proof extends EObject
    */
   void setProofSteps(ProofSteps value);
 
+  /**
+   * Finds a statement in the proof given its identifier string.
+   * @param id identifier to find using {@equalsIgnoreCase} matching.
+   * @return statement or null
+   */
+  Statement findStatement(String id);
+  
 } // Proof

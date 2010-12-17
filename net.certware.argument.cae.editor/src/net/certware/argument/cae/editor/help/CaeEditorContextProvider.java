@@ -90,7 +90,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 				return searchSwitch.doSwitch(eo);
 			}
 		}
-        return "\"claim\" + \"argument\" + \"evidence\" + \"notation\"";
+        return Messages.CaeEditorContextProvider_0;
 	}
 
 	
@@ -251,7 +251,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseArgument(Argument object) {
-			return "argument";
+			return Messages.CaeEditorContextProvider_1;
 		}
 
 		/**
@@ -261,7 +261,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseAssumption(Assumption object) {
-			return "assumption";
+			return Messages.CaeEditorContextProvider_2;
 		}
 
 		/**
@@ -271,7 +271,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseContext(Context object) {
-			return "context";
+			return Messages.CaeEditorContextProvider_3;
 		}
 
 		/**
@@ -281,7 +281,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseJustification(Justification object) {
-			return "justification";
+			return Messages.CaeEditorContextProvider_4;
 		}
 		
 		/**
@@ -291,7 +291,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseModelElement(ModelElement object) {
-			return "\"model\" + \"element\"";
+			return Messages.CaeEditorContextProvider_5;
 		}
 
 		/**
@@ -301,7 +301,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseArgumentElement(ArgumentElement object) {
-			return "\"argument\" + \"element\"";
+			return Messages.CaeEditorContextProvider_6;
 		}
 
 		/**
@@ -311,7 +311,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseReasoningElement(ReasoningElement object) {
-			return "\"reasoning\" + \"element\"";
+			return Messages.CaeEditorContextProvider_7;
 		}
 
 		/**
@@ -321,7 +321,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseClaim(Claim object) {
-			return "claim";
+			return Messages.CaeEditorContextProvider_8;
 		}
 
 		/**
@@ -331,7 +331,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseArgumentLink(ArgumentLink object) {
-			return "\"argument\" + \"link\"";
+			return Messages.CaeEditorContextProvider_9;
 		}
 
 		/**
@@ -341,7 +341,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseAssertedRelationship(AssertedRelationship object) {
-			return "\"asserted\" + \"relationship\"";
+			return Messages.CaeEditorContextProvider_10;
 		}
 
 		/**
@@ -351,7 +351,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseAssertedEvidence(AssertedEvidence object) {
-			return "\"asserted\" + \"evidence\"";
+			return Messages.CaeEditorContextProvider_11;
 		}
 
 		/**
@@ -361,7 +361,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseInformationElement(InformationElement object) {
-			return "\"information\" + \"element\"";
+			return Messages.CaeEditorContextProvider_12;
 		}
 
 		/**
@@ -371,7 +371,7 @@ public class CaeEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 		 */
 		public String defaultCase(EObject object) {
-			return "\"claim\" + \"argument\" + \"evidence\" + \"notation\"";
+			return Messages.CaeEditorContextProvider_13;
 		}
 
 	};

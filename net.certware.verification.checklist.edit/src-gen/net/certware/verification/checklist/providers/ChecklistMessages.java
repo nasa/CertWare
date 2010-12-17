@@ -23,21 +23,15 @@ public class ChecklistMessages extends NLS {
 	public static String ChecklistPropertiesEditionPart_PropertiesGroupLabel;
 
 	
-	public static String Category_ReadOnly;
 
-	
 	public static String Category_Part_Title;
 
 	
-	public static String Item_ReadOnly;
 
-	
 	public static String Item_Part_Title;
 
 	
-	public static String Checklist_ReadOnly;
 
-	
 	public static String Checklist_Part_Title;
 
 	
@@ -77,52 +71,6 @@ public class ChecklistMessages extends NLS {
 	public static String ChecklistPropertiesEditionPart_CommentLabel;
 
 	
-	public static String PropertiesEditionPart_DocumentationLabel;
-
-	
-	public static String PropertiesEditionPart_IntegerValueMessage;
-
-	
-	public static String PropertiesEditionPart_FloatValueMessage;
-
-	
-	public static String PropertiesEditionPart_ShortValueMessage;
-
-	
-	public static String PropertiesEditionPart_LongValueMessage;
-
-	
-	public static String PropertiesEditionPart_ByteValueMessage;
-
-	
-	public static String PropertiesEditionPart_BigIntegerValueMessage;
-
-	
-	public static String PropertiesEditionPart_BigDecimalValueMessage;
-
-	
-	public static String PropertiesEditionPart_DoubleValueMessage;
-
-	
-	public static String PropertiesEditionPart_PropertiesGroupLabel;
-
-	
-	public static String PropertiesEditionPart_RequiredFeatureMessage;
-
-	
-	public static String PropertiesEditionPart_AddTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_EditTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_RemoveTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_AddListViewerLabel;
-
-	
-	public static String PropertiesEditionPart_RemoveListViewerLabel;
 	
 	// Start of user code for additionnal NLS Constants
 	

@@ -20,12 +20,16 @@
             href="gsz.gmfgraph#GoalLabel"/>
         <features
             href="../../net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
+        <editableFeatures
+            href="../../net.certware.argument.arm/model/arm.ecore#//ModelElement/identifier"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="gsz.gmfgraph#ModelElementContentLabel"/>
         <features
+            href="../../net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
+        <editableFeatures
             href="../../net.certware.argument.arm/model/arm.ecore#//ModelElement/content"/>
       </labelMappings>
       <tool

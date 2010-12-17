@@ -219,36 +219,36 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Entailment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEntailmentAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cConjunctionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConjunctionConjunctionParserRuleCall_1_0 = (RuleCall)cConjunctionAssignment_1.eContents().get(0);
+		private final Assignment cHeadAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cHeadConjunctionParserRuleCall_1_0 = (RuleCall)cHeadAssignment_1.eContents().get(0);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cIdAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cIdNumeralParserRuleCall_3_0 = (RuleCall)cIdAssignment_3.eContents().get(0);
+		private final Assignment cTailAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTailNumeralParserRuleCall_3_0 = (RuleCall)cTailAssignment_3.eContents().get(0);
 		
 		//Entailment:
-		//	{Entailment} conjunction=Conjunction "->" id=Numeral;
+		//	{Entailment} head=Conjunction "->" tail=Numeral;
 		public ParserRule getRule() { return rule; }
 
-		//{Entailment} conjunction=Conjunction "->" id=Numeral
+		//{Entailment} head=Conjunction "->" tail=Numeral
 		public Group getGroup() { return cGroup; }
 
 		//{Entailment}
 		public Action getEntailmentAction_0() { return cEntailmentAction_0; }
 
-		//conjunction=Conjunction
-		public Assignment getConjunctionAssignment_1() { return cConjunctionAssignment_1; }
+		//head=Conjunction
+		public Assignment getHeadAssignment_1() { return cHeadAssignment_1; }
 
 		//Conjunction
-		public RuleCall getConjunctionConjunctionParserRuleCall_1_0() { return cConjunctionConjunctionParserRuleCall_1_0; }
+		public RuleCall getHeadConjunctionParserRuleCall_1_0() { return cHeadConjunctionParserRuleCall_1_0; }
 
 		//"->"
 		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
 
-		//id=Numeral
-		public Assignment getIdAssignment_3() { return cIdAssignment_3; }
+		//tail=Numeral
+		public Assignment getTailAssignment_3() { return cTailAssignment_3; }
 
 		//Numeral
-		public RuleCall getIdNumeralParserRuleCall_3_0() { return cIdNumeralParserRuleCall_3_0; }
+		public RuleCall getTailNumeralParserRuleCall_3_0() { return cTailNumeralParserRuleCall_3_0; }
 	}
 
 	public class ConjunctionElements extends AbstractParserRuleElementFinder {
@@ -496,7 +496,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Entailment:
-	//	{Entailment} conjunction=Conjunction "->" id=Numeral;
+	//	{Entailment} head=Conjunction "->" tail=Numeral;
 	public EntailmentElements getEntailmentAccess() {
 		return (pEntailment != null) ? pEntailment : (pEntailment = new EntailmentElements());
 	}

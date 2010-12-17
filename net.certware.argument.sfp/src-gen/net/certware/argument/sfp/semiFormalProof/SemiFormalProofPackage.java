@@ -236,22 +236,22 @@ public interface SemiFormalProofPackage extends EPackage
   int ENTAILMENT = 4;
 
   /**
-   * The feature id for the '<em><b>Conjunction</b></em>' containment reference.
+   * The feature id for the '<em><b>Head</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTAILMENT__CONJUNCTION = 0;
+  int ENTAILMENT__HEAD = 0;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Tail</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTAILMENT__ID = 1;
+  int ENTAILMENT__TAIL = 1;
 
   /**
    * The number of structural features of the '<em>Entailment</em>' class.
@@ -544,26 +544,26 @@ public interface SemiFormalProofPackage extends EPackage
   EClass getEntailment();
 
   /**
-   * Returns the meta object for the containment reference '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getConjunction <em>Conjunction</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getHead <em>Head</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Conjunction</em>'.
-   * @see net.certware.argument.sfp.semiFormalProof.Entailment#getConjunction()
+   * @return the meta object for the containment reference '<em>Head</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Entailment#getHead()
    * @see #getEntailment()
    * @generated
    */
-  EReference getEntailment_Conjunction();
+  EReference getEntailment_Head();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getTail <em>Tail</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see net.certware.argument.sfp.semiFormalProof.Entailment#getId()
+   * @return the meta object for the attribute '<em>Tail</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Entailment#getTail()
    * @see #getEntailment()
    * @generated
    */
-  EAttribute getEntailment_Id();
+  EAttribute getEntailment_Tail();
 
   /**
    * Returns the meta object for class '{@link net.certware.argument.sfp.semiFormalProof.Conjunction <em>Conjunction</em>}'.
@@ -826,20 +826,20 @@ public interface SemiFormalProofPackage extends EPackage
     EClass ENTAILMENT = eINSTANCE.getEntailment();
 
     /**
-     * The meta object literal for the '<em><b>Conjunction</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Head</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENTAILMENT__CONJUNCTION = eINSTANCE.getEntailment_Conjunction();
+    EReference ENTAILMENT__HEAD = eINSTANCE.getEntailment_Head();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tail</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENTAILMENT__ID = eINSTANCE.getEntailment_Id();
+    EAttribute ENTAILMENT__TAIL = eINSTANCE.getEntailment_Tail();
 
     /**
      * The meta object literal for the '{@link net.certware.argument.sfp.semiFormalProof.impl.ConjunctionImpl <em>Conjunction</em>}' class.

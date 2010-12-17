@@ -343,13 +343,13 @@ public class EvidenceEditPart extends AbstractBorderedShapeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
-
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 			this.add(fFigureModelElementContentLabelFigure);
 
 		}

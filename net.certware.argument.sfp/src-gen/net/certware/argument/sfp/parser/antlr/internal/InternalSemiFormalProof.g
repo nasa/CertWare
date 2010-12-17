@@ -540,9 +540,9 @@ ruleEntailment returns [EObject current=null]
 )(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getConjunctionConjunctionParserRuleCall_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0(), currentNode); 
 	    }
-		lv_conjunction_1_0=ruleConjunction		{
+		lv_head_1_0=ruleConjunction		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getEntailmentRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -550,8 +550,8 @@ ruleEntailment returns [EObject current=null]
 	        try {
 	       		set(
 	       			$current, 
-	       			"conjunction",
-	        		lv_conjunction_1_0, 
+	       			"head",
+	        		lv_head_1_0, 
 	        		"Conjunction", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -568,9 +568,9 @@ ruleEntailment returns [EObject current=null]
 (
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_id_3_0=ruleNumeral		{
+		lv_tail_3_0=ruleNumeral		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getEntailmentRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -578,8 +578,8 @@ ruleEntailment returns [EObject current=null]
 	        try {
 	       		set(
 	       			$current, 
-	       			"id",
-	        		lv_id_3_0, 
+	       			"tail",
+	        		lv_tail_3_0, 
 	        		"Numeral", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {

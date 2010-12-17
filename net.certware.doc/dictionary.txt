@@ -56,3 +56,8 @@ metamodels
 checklists
 workflow
 semi
+nachi
+digraph
+entailment
+entailments
+refactored

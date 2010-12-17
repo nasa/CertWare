@@ -320,17 +320,19 @@ public class ContextEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureContextLabelFigure = new WrappingLabel();
 			fFigureContextLabelFigure.setText("Context");
+			fFigureContextLabelFigure.setTextWrap(true);
 
 			this.add(fFigureContextLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

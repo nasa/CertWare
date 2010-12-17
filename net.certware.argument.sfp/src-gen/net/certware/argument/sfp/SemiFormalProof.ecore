@@ -27,9 +27,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entailment">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conjunction" eType="#//Conjunction"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//Conjunction"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conjunction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lhs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -939,11 +939,11 @@ protected class QuotedAssertion_TextAssignment_1 extends AssignmentToken  {
 /************ begin Rule Entailment ****************
  *
  * Entailment:
- * 	{Entailment} conjunction=Conjunction "->" id=Numeral;
+ * 	{Entailment} head=Conjunction "->" tail=Numeral;
  *
  **/
 
-// {Entailment} conjunction=Conjunction "->" id=Numeral
+// {Entailment} head=Conjunction "->" tail=Numeral
 protected class Entailment_Group extends GroupToken {
 	
 	public Entailment_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -958,7 +958,7 @@ protected class Entailment_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Entailment_IdAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Entailment_TailAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -998,16 +998,16 @@ protected class Entailment_EntailmentAction_0 extends ActionToken  {
 	}
 }
 
-// conjunction=Conjunction
-protected class Entailment_ConjunctionAssignment_1 extends AssignmentToken  {
+// head=Conjunction
+protected class Entailment_HeadAssignment_1 extends AssignmentToken  {
 	
-	public Entailment_ConjunctionAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Entailment_HeadAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getEntailmentAccess().getConjunctionAssignment_1();
+		return grammarAccess.getEntailmentAccess().getHeadAssignment_1();
 	}
 
     @Override
@@ -1020,13 +1020,13 @@ protected class Entailment_ConjunctionAssignment_1 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("conjunction",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("conjunction");
+		if((value = eObjectConsumer.getConsumable("head",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("head");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getConjunctionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getEntailmentAccess().getConjunctionConjunctionParserRuleCall_1_0(); 
+				element = grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1059,23 +1059,23 @@ protected class Entailment_HyphenMinusGreaterThanSignKeyword_2 extends KeywordTo
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Entailment_ConjunctionAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Entailment_HeadAssignment_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// id=Numeral
-protected class Entailment_IdAssignment_3 extends AssignmentToken  {
+// tail=Numeral
+protected class Entailment_TailAssignment_3 extends AssignmentToken  {
 	
-	public Entailment_IdAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Entailment_TailAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getEntailmentAccess().getIdAssignment_3();
+		return grammarAccess.getEntailmentAccess().getTailAssignment_3();
 	}
 
     @Override
@@ -1088,11 +1088,11 @@ protected class Entailment_IdAssignment_3 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("id",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("id");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0(), value, null)) {
+		if((value = eObjectConsumer.getConsumable("tail",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("tail");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0();
+			element = grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0();
 			return obj;
 		}
 		return null;

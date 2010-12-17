@@ -342,7 +342,7 @@ public class GoalEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
+	 * @generated 
 	 */
 	public class GoalFigure extends Ellipse {
 
@@ -369,17 +369,19 @@ public class GoalEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureGoalLabelFigure = new WrappingLabel();
 			fFigureGoalLabelFigure.setText("Goal");
-
+			fFigureGoalLabelFigure.setTextWrap(true);
+			
 			this.add(fFigureGoalLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

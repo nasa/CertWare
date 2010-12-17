@@ -365,7 +365,7 @@ public class EvidencePropertiesEditionPartForm extends CompositePropertiesEditio
 		this.target = new ReferencesTable<ModelElement>(CaeMessages.EvidencePropertiesEditionPart_TargetLabel, new ReferencesTableListener<ModelElement>() {
 			public void handleAdd() {
 				TabElementTreeSelectionDialog<ModelElement> dialog = new TabElementTreeSelectionDialog<ModelElement>(resourceSet, targetFilters, targetBusinessFilters,
-				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) {
+				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) { //$NON-NLS-1$
 					@Override
 					public void process(IStructuredSelection selection) {
 						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
@@ -441,7 +441,7 @@ public class EvidencePropertiesEditionPartForm extends CompositePropertiesEditio
 		this.source = new ReferencesTable<ModelElement>(CaeMessages.EvidencePropertiesEditionPart_SourceLabel, new ReferencesTableListener<ModelElement>() {
 			public void handleAdd() {
 				TabElementTreeSelectionDialog<ModelElement> dialog = new TabElementTreeSelectionDialog<ModelElement>(resourceSet, sourceFilters, sourceBusinessFilters,
-				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) {
+				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) { //$NON-NLS-1$
 					@Override
 					public void process(IStructuredSelection selection) {
 						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
@@ -605,7 +605,7 @@ public class EvidencePropertiesEditionPartForm extends CompositePropertiesEditio
 		this.evidence = new ReferencesTable<InformationElement>(CaeMessages.EvidencePropertiesEditionPart_EvidenceLabel, new ReferencesTableListener<InformationElement>() {
 			public void handleAdd() {
 				TabElementTreeSelectionDialog<InformationElement> dialog = new TabElementTreeSelectionDialog<InformationElement>(resourceSet, evidenceFilters, evidenceBusinessFilters,
-				"InformationElement", ArmPackage.eINSTANCE.getInformationElement(), current.eResource()) {
+				"InformationElement", ArmPackage.eINSTANCE.getInformationElement(), current.eResource()) { //$NON-NLS-1$
 					@Override
 					public void process(IStructuredSelection selection) {
 						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {

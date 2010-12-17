@@ -108,63 +108,63 @@ public class GszNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (GszVisualIDRegistry.getVisualID(view)) {
-		case AssumptionEditPart.VISUAL_ID:
+		case JustificationEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/gsz?Assumption", GszElementTypes.Assumption_2007); //$NON-NLS-1$
-		case StrategyGoalsEditPart.VISUAL_ID:
+					"Navigator?TopLevelNode?http://www.certware.net/gsz?Justification", GszElementTypes.Justification_2005); //$NON-NLS-1$
+		case StrategyEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Strategy?goals", GszElementTypes.StrategyGoals_4006); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.certware.net/gsz?Strategy", GszElementTypes.Strategy_2008); //$NON-NLS-1$
+		case EvidenceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/gsz?Evidence", GszElementTypes.Evidence_2003); //$NON-NLS-1$
+		case GoalGoalSolutionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Goal?goalSolutions", GszElementTypes.GoalGoalSolutions_4005); //$NON-NLS-1$
+		case SolutionSolutionContextsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Solution?solutionContexts", GszElementTypes.SolutionSolutionContexts_4011); //$NON-NLS-1$
 		case ContextEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/gsz?Context", GszElementTypes.Context_2006); //$NON-NLS-1$
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Strategy?strategyContexts", GszElementTypes.StrategyStrategyContexts_4008); //$NON-NLS-1$
+		case GoalAssumptionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Goal?assumptions", GszElementTypes.GoalAssumptions_4004); //$NON-NLS-1$
+		case GoalStrategiesEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Goal?strategies", GszElementTypes.GoalStrategies_4002); //$NON-NLS-1$
+		case StrategyJustificationsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Strategy?justifications", GszElementTypes.StrategyJustifications_4007); //$NON-NLS-1$
+		case ArgumentDiagramEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http://www.certware.net/gsz?ArgumentDiagram", GszElementTypes.ArgumentDiagram_1000); //$NON-NLS-1$
+		case AssumptionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/gsz?Assumption", GszElementTypes.Assumption_2007); //$NON-NLS-1$
+		case GoalSubGoalsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Goal?subGoals", GszElementTypes.GoalSubGoals_4001); //$NON-NLS-1$
+		case GoalGoalContextsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Goal?goalContexts", GszElementTypes.GoalGoalContexts_4003); //$NON-NLS-1$
+		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/gsz?Solution?solutionEvidence", GszElementTypes.SolutionSolutionEvidence_4010); //$NON-NLS-1$
 		case StrategyStrategySolutionsEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/gsz?Strategy?strategySolutions", GszElementTypes.StrategyStrategySolutions_4009); //$NON-NLS-1$
 		case GoalEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/gsz?Goal", GszElementTypes.Goal_2001); //$NON-NLS-1$
-		case EvidenceEditPart.VISUAL_ID:
+		case StrategyGoalsEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/gsz?Evidence", GszElementTypes.Evidence_2003); //$NON-NLS-1$
-		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Solution?solutionEvidence", GszElementTypes.SolutionSolutionEvidence_4010); //$NON-NLS-1$
-		case GoalGoalContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Goal?goalContexts", GszElementTypes.GoalGoalContexts_4003); //$NON-NLS-1$
+					"Navigator?Link?http://www.certware.net/gsz?Strategy?goals", GszElementTypes.StrategyGoals_4006); //$NON-NLS-1$
 		case SolutionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/gsz?Solution", GszElementTypes.Solution_2002); //$NON-NLS-1$
-		case GoalAssumptionsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Goal?assumptions", GszElementTypes.GoalAssumptions_4004); //$NON-NLS-1$
-		case StrategyJustificationsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Strategy?justifications", GszElementTypes.StrategyJustifications_4007); //$NON-NLS-1$
-		case JustificationEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/gsz?Justification", GszElementTypes.Justification_2005); //$NON-NLS-1$
-		case GoalSubGoalsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Goal?subGoals", GszElementTypes.GoalSubGoals_4001); //$NON-NLS-1$
-		case StrategyStrategyContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Strategy?strategyContexts", GszElementTypes.StrategyStrategyContexts_4008); //$NON-NLS-1$
-		case SolutionSolutionContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Solution?solutionContexts", GszElementTypes.SolutionSolutionContexts_4011); //$NON-NLS-1$
-		case ArgumentDiagramEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http://www.certware.net/gsz?ArgumentDiagram", GszElementTypes.ArgumentDiagram_1000); //$NON-NLS-1$
-		case GoalGoalSolutionsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Goal?goalSolutions", GszElementTypes.GoalGoalSolutions_4005); //$NON-NLS-1$
-		case GoalStrategiesEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/gsz?Goal?strategies", GszElementTypes.GoalStrategies_4002); //$NON-NLS-1$
-		case StrategyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/gsz?Strategy", GszElementTypes.Strategy_2008); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -217,44 +217,44 @@ public class GszNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (GszVisualIDRegistry.getVisualID(view)) {
-		case AssumptionEditPart.VISUAL_ID:
-			return getAssumption_2007Text(view);
-		case StrategyGoalsEditPart.VISUAL_ID:
-			return getStrategyGoals_4006Text(view);
+		case JustificationEditPart.VISUAL_ID:
+			return getJustification_2005Text(view);
+		case StrategyEditPart.VISUAL_ID:
+			return getStrategy_2008Text(view);
+		case EvidenceEditPart.VISUAL_ID:
+			return getEvidence_2003Text(view);
+		case GoalGoalSolutionsEditPart.VISUAL_ID:
+			return getGoalGoalSolutions_4005Text(view);
+		case SolutionSolutionContextsEditPart.VISUAL_ID:
+			return getSolutionSolutionContexts_4011Text(view);
 		case ContextEditPart.VISUAL_ID:
 			return getContext_2006Text(view);
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			return getStrategyStrategyContexts_4008Text(view);
+		case GoalAssumptionsEditPart.VISUAL_ID:
+			return getGoalAssumptions_4004Text(view);
+		case GoalStrategiesEditPart.VISUAL_ID:
+			return getGoalStrategies_4002Text(view);
+		case StrategyJustificationsEditPart.VISUAL_ID:
+			return getStrategyJustifications_4007Text(view);
+		case ArgumentDiagramEditPart.VISUAL_ID:
+			return getArgumentDiagram_1000Text(view);
+		case AssumptionEditPart.VISUAL_ID:
+			return getAssumption_2007Text(view);
+		case GoalSubGoalsEditPart.VISUAL_ID:
+			return getGoalSubGoals_4001Text(view);
+		case GoalGoalContextsEditPart.VISUAL_ID:
+			return getGoalGoalContexts_4003Text(view);
+		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
+			return getSolutionSolutionEvidence_4010Text(view);
 		case StrategyStrategySolutionsEditPart.VISUAL_ID:
 			return getStrategyStrategySolutions_4009Text(view);
 		case GoalEditPart.VISUAL_ID:
 			return getGoal_2001Text(view);
-		case EvidenceEditPart.VISUAL_ID:
-			return getEvidence_2003Text(view);
-		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
-			return getSolutionSolutionEvidence_4010Text(view);
-		case GoalGoalContextsEditPart.VISUAL_ID:
-			return getGoalGoalContexts_4003Text(view);
+		case StrategyGoalsEditPart.VISUAL_ID:
+			return getStrategyGoals_4006Text(view);
 		case SolutionEditPart.VISUAL_ID:
 			return getSolution_2002Text(view);
-		case GoalAssumptionsEditPart.VISUAL_ID:
-			return getGoalAssumptions_4004Text(view);
-		case StrategyJustificationsEditPart.VISUAL_ID:
-			return getStrategyJustifications_4007Text(view);
-		case JustificationEditPart.VISUAL_ID:
-			return getJustification_2005Text(view);
-		case GoalSubGoalsEditPart.VISUAL_ID:
-			return getGoalSubGoals_4001Text(view);
-		case StrategyStrategyContextsEditPart.VISUAL_ID:
-			return getStrategyStrategyContexts_4008Text(view);
-		case SolutionSolutionContextsEditPart.VISUAL_ID:
-			return getSolutionSolutionContexts_4011Text(view);
-		case ArgumentDiagramEditPart.VISUAL_ID:
-			return getArgumentDiagram_1000Text(view);
-		case GoalGoalSolutionsEditPart.VISUAL_ID:
-			return getGoalGoalSolutions_4005Text(view);
-		case GoalStrategiesEditPart.VISUAL_ID:
-			return getGoalStrategies_4002Text(view);
-		case StrategyEditPart.VISUAL_ID:
-			return getStrategy_2008Text(view);
 		}
 		return getUnknownElementText(view);
 	}

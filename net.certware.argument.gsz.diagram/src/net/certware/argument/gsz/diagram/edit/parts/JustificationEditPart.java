@@ -314,18 +314,18 @@ public class JustificationEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureJustificationLabelFigure = new WrappingLabel();
 			fFigureJustificationLabelFigure.setText("Justification");
-
+			fFigureJustificationLabelFigure.setTextWrap(true);
 			this.add(fFigureJustificationLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
-
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 			this.add(fFigureModelElementContentLabelFigure);
 
 		}

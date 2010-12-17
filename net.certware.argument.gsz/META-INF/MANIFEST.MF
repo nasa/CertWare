@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: CertWare GSN Argument Diagram Model
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: net.certware.argument.gsz;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Kestrel Technology LLC
+Bundle-Vendor: %Bundle-Vendor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.argument.gsz,
  net.certware.argument.gsz.impl,

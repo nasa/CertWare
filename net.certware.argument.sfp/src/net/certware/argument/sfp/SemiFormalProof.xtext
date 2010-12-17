@@ -27,7 +27,7 @@ QuotedAssertion : {QuotedAssertion}
 	text=Text;
 	
 Entailment : {Entailment}
-	conjunction=Conjunction '->' id=Numeral;
+	head=Conjunction '->' tail=Numeral;
 	 
 Conjunction : {Conjunction}
 	lhs=Numeral '^' rhs=Conjunction | lhs=Numeral;

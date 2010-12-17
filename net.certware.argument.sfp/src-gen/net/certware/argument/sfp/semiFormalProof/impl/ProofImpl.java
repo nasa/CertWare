@@ -9,6 +9,7 @@ import net.certware.argument.sfp.semiFormalProof.Justifications;
 import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.ProofSteps;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage;
+import net.certware.argument.sfp.semiFormalProof.Statement;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -335,6 +336,27 @@ public class ProofImpl extends MinimalEObjectImpl.Container implements Proof
     result.append(title);
     result.append(')');
     return result.toString();
+  }
+
+  /**
+   * Find a statement given its identifier string.
+   * Performs {@code equalsIgnoreCase} for matching identifier.
+   * @param id ID to find
+   * @return statement matching ID (first match), or null if ID not found
+   */
+  @Override
+  public Statement findStatement(String id) {
+
+	  ProofSteps proofSteps = getProofSteps();
+	  if ( proofSteps != null ) {
+		  for ( Statement s : proofSteps.getStatements() ) {
+			  if ( s.getId().equalsIgnoreCase(id)) {
+				  return s;
+			  }
+		  }
+	  }
+
+	  return null;
   }
 
 } //ProofImpl

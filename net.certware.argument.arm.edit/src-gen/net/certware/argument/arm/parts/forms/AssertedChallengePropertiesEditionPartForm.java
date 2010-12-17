@@ -350,7 +350,7 @@ public class AssertedChallengePropertiesEditionPartForm extends CompositePropert
 		this.target = new ReferencesTable<ModelElement>(ArmMessages.AssertedChallengePropertiesEditionPart_TargetLabel, new ReferencesTableListener<ModelElement>() {
 			public void handleAdd() {
 				TabElementTreeSelectionDialog<ModelElement> dialog = new TabElementTreeSelectionDialog<ModelElement>(resourceSet, targetFilters, targetBusinessFilters,
-				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) {
+				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) { //$NON-NLS-1$
 					@Override
 					public void process(IStructuredSelection selection) {
 						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
@@ -426,7 +426,7 @@ public class AssertedChallengePropertiesEditionPartForm extends CompositePropert
 		this.source = new ReferencesTable<ModelElement>(ArmMessages.AssertedChallengePropertiesEditionPart_SourceLabel, new ReferencesTableListener<ModelElement>() {
 			public void handleAdd() {
 				TabElementTreeSelectionDialog<ModelElement> dialog = new TabElementTreeSelectionDialog<ModelElement>(resourceSet, sourceFilters, sourceBusinessFilters,
-				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) {
+				"ModelElement", ArmPackage.eINSTANCE.getModelElement(), current.eResource()) { //$NON-NLS-1$
 					@Override
 					public void process(IStructuredSelection selection) {
 						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {

@@ -51,80 +51,61 @@ public class ArmMessages extends NLS {
 	public static String CitationElementPropertiesEditionPart_PropertiesGroupLabel;
 
 	
-	public static String TaggedValue_ReadOnly;
+	
 
 	
 	public static String TaggedValue_Part_Title;
 
 	
-	public static String Argument_ReadOnly;
 
 	
 	public static String Argument_Part_Title;
 
 	
-	public static String Annotation_ReadOnly;
 
 	
 	public static String Annotation_Part_Title;
 
 	
-	public static String AssertedInference_ReadOnly;
 
 	
 	public static String AssertedInference_Part_Title;
 
 	
-	public static String AssertedEvidence_ReadOnly;
 
 	
 	public static String AssertedEvidence_Part_Title;
 
-	
-	public static String AssertedContext_ReadOnly;
 
 	
 	public static String AssertedContext_Part_Title;
 
 	
-	public static String AssertedCounterEvidence_ReadOnly;
 
 	
 	public static String AssertedCounterEvidence_Part_Title;
 
 	
-	public static String AssertedChallenge_ReadOnly;
 
-	
 	public static String AssertedChallenge_Part_Title;
 
 	
-	public static String Claim_ReadOnly;
-
 	
 	public static String Claim_Part_Title;
 
 	
-	public static String EvidenceAssertion_ReadOnly;
-
 	
 	public static String EvidenceAssertion_Part_Title;
 
 	
-	public static String InformationElement_ReadOnly;
-
 	
 	public static String InformationElement_Part_Title;
 
 	
-	public static String ArgumentReasoning_ReadOnly;
-
 	
 	public static String ArgumentReasoning_Part_Title;
 
 	
-	public static String CitationElement_ReadOnly;
-
 	
 	public static String CitationElement_Part_Title;
 
@@ -347,53 +328,6 @@ public class ArmMessages extends NLS {
 	
 	public static String CitationElementPropertiesEditionPart_RefersToArgumentLabel;
 
-	
-	public static String PropertiesEditionPart_DocumentationLabel;
-
-	
-	public static String PropertiesEditionPart_IntegerValueMessage;
-
-	
-	public static String PropertiesEditionPart_FloatValueMessage;
-
-	
-	public static String PropertiesEditionPart_ShortValueMessage;
-
-	
-	public static String PropertiesEditionPart_LongValueMessage;
-
-	
-	public static String PropertiesEditionPart_ByteValueMessage;
-
-	
-	public static String PropertiesEditionPart_BigIntegerValueMessage;
-
-	
-	public static String PropertiesEditionPart_BigDecimalValueMessage;
-
-	
-	public static String PropertiesEditionPart_DoubleValueMessage;
-
-	
-	public static String PropertiesEditionPart_PropertiesGroupLabel;
-
-	
-	public static String PropertiesEditionPart_RequiredFeatureMessage;
-
-	
-	public static String PropertiesEditionPart_AddTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_EditTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_RemoveTableViewerLabel;
-
-	
-	public static String PropertiesEditionPart_AddListViewerLabel;
-
-	
-	public static String PropertiesEditionPart_RemoveListViewerLabel;
 	
 	// Start of user code for additionnal NLS Constants
 	

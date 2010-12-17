@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.EntailmentImpl#getConjunction <em>Conjunction</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.EntailmentImpl#getId <em>Id</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.EntailmentImpl#getHead <em>Head</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.EntailmentImpl#getTail <em>Tail</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,34 +35,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class EntailmentImpl extends MinimalEObjectImpl.Container implements Entailment
 {
   /**
-   * The cached value of the '{@link #getConjunction() <em>Conjunction</em>}' containment reference.
+   * The cached value of the '{@link #getHead() <em>Head</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConjunction()
+   * @see #getHead()
    * @generated
    * @ordered
    */
-  protected Conjunction conjunction;
+  protected Conjunction head;
 
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getTail() <em>Tail</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getTail()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String TAIL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getTail() <em>Tail</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getTail()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String tail = TAIL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,9 +90,9 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
    * <!-- end-user-doc -->
    * @generated
    */
-  public Conjunction getConjunction()
+  public Conjunction getHead()
   {
-    return conjunction;
+    return head;
   }
 
   /**
@@ -100,13 +100,13 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConjunction(Conjunction newConjunction, NotificationChain msgs)
+  public NotificationChain basicSetHead(Conjunction newHead, NotificationChain msgs)
   {
-    Conjunction oldConjunction = conjunction;
-    conjunction = newConjunction;
+    Conjunction oldHead = head;
+    head = newHead;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.ENTAILMENT__CONJUNCTION, oldConjunction, newConjunction);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.ENTAILMENT__HEAD, oldHead, newHead);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,20 +117,20 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setConjunction(Conjunction newConjunction)
+  public void setHead(Conjunction newHead)
   {
-    if (newConjunction != conjunction)
+    if (newHead != head)
     {
       NotificationChain msgs = null;
-      if (conjunction != null)
-        msgs = ((InternalEObject)conjunction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SemiFormalProofPackage.ENTAILMENT__CONJUNCTION, null, msgs);
-      if (newConjunction != null)
-        msgs = ((InternalEObject)newConjunction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SemiFormalProofPackage.ENTAILMENT__CONJUNCTION, null, msgs);
-      msgs = basicSetConjunction(newConjunction, msgs);
+      if (head != null)
+        msgs = ((InternalEObject)head).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SemiFormalProofPackage.ENTAILMENT__HEAD, null, msgs);
+      if (newHead != null)
+        msgs = ((InternalEObject)newHead).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SemiFormalProofPackage.ENTAILMENT__HEAD, null, msgs);
+      msgs = basicSetHead(newHead, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.ENTAILMENT__CONJUNCTION, newConjunction, newConjunction));
+      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.ENTAILMENT__HEAD, newHead, newHead));
   }
 
   /**
@@ -138,9 +138,9 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId()
+  public String getTail()
   {
-    return id;
+    return tail;
   }
 
   /**
@@ -148,12 +148,12 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId)
+  public void setTail(String newTail)
   {
-    String oldId = id;
-    id = newId;
+    String oldTail = tail;
+    tail = newTail;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.ENTAILMENT__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.ENTAILMENT__TAIL, oldTail, tail));
   }
 
   /**
@@ -166,8 +166,8 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
   {
     switch (featureID)
     {
-      case SemiFormalProofPackage.ENTAILMENT__CONJUNCTION:
-        return basicSetConjunction(null, msgs);
+      case SemiFormalProofPackage.ENTAILMENT__HEAD:
+        return basicSetHead(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -182,10 +182,10 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
   {
     switch (featureID)
     {
-      case SemiFormalProofPackage.ENTAILMENT__CONJUNCTION:
-        return getConjunction();
-      case SemiFormalProofPackage.ENTAILMENT__ID:
-        return getId();
+      case SemiFormalProofPackage.ENTAILMENT__HEAD:
+        return getHead();
+      case SemiFormalProofPackage.ENTAILMENT__TAIL:
+        return getTail();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -200,11 +200,11 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
   {
     switch (featureID)
     {
-      case SemiFormalProofPackage.ENTAILMENT__CONJUNCTION:
-        setConjunction((Conjunction)newValue);
+      case SemiFormalProofPackage.ENTAILMENT__HEAD:
+        setHead((Conjunction)newValue);
         return;
-      case SemiFormalProofPackage.ENTAILMENT__ID:
-        setId((String)newValue);
+      case SemiFormalProofPackage.ENTAILMENT__TAIL:
+        setTail((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,11 +220,11 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
   {
     switch (featureID)
     {
-      case SemiFormalProofPackage.ENTAILMENT__CONJUNCTION:
-        setConjunction((Conjunction)null);
+      case SemiFormalProofPackage.ENTAILMENT__HEAD:
+        setHead((Conjunction)null);
         return;
-      case SemiFormalProofPackage.ENTAILMENT__ID:
-        setId(ID_EDEFAULT);
+      case SemiFormalProofPackage.ENTAILMENT__TAIL:
+        setTail(TAIL_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -240,10 +240,10 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
   {
     switch (featureID)
     {
-      case SemiFormalProofPackage.ENTAILMENT__CONJUNCTION:
-        return conjunction != null;
-      case SemiFormalProofPackage.ENTAILMENT__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case SemiFormalProofPackage.ENTAILMENT__HEAD:
+        return head != null;
+      case SemiFormalProofPackage.ENTAILMENT__TAIL:
+        return TAIL_EDEFAULT == null ? tail != null : !TAIL_EDEFAULT.equals(tail);
     }
     return super.eIsSet(featureID);
   }
@@ -259,8 +259,8 @@ public class EntailmentImpl extends MinimalEObjectImpl.Container implements Enta
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (tail: ");
+    result.append(tail);
     result.append(')');
     return result.toString();
   }

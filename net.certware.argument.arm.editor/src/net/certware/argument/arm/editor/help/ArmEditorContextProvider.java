@@ -86,7 +86,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 				return searchSwitch.doSwitch(eo);
 			}
 		}
-        return "\"claim\" + \"argument\" + \"evidence\" + \"notation\"";
+        return Messages.ArmEditorContextProvider_0;
 	}
 
 	
@@ -207,7 +207,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseArgument(Argument object) {
-			return "argument";
+			return Messages.ArmEditorContextProvider_1;
 		}
 
 		/**
@@ -217,7 +217,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseModelElement(ModelElement object) {
-			return "\"model\" + \"element\"";
+			return Messages.ArmEditorContextProvider_2;
 		}
 
 		/**
@@ -227,7 +227,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseArgumentElement(ArgumentElement object) {
-			return "\"argument\" + \"element\"";
+			return Messages.ArmEditorContextProvider_3;
 		}
 
 		/**
@@ -237,7 +237,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseReasoningElement(ReasoningElement object) {
-			return "\"reasoning\" + \"element\"";
+			return Messages.ArmEditorContextProvider_4;
 		}
 
 		/**
@@ -247,7 +247,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseClaim(Claim object) {
-			return "claim";
+			return Messages.ArmEditorContextProvider_5;
 		}
 
 		/**
@@ -257,7 +257,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseArgumentLink(ArgumentLink object) {
-			return "\"argument\" + \"link\"";
+			return Messages.ArmEditorContextProvider_6;
 		}
 
 		/**
@@ -267,7 +267,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseAssertedRelationship(AssertedRelationship object) {
-			return "\"asserted\" + \"relationship\"";
+			return Messages.ArmEditorContextProvider_7;
 		}
 
 		/**
@@ -277,7 +277,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseAssertedEvidence(AssertedEvidence object) {
-			return "\"asserted\" + \"evidence\"";
+			return Messages.ArmEditorContextProvider_8;
 		}
 
 		/**
@@ -287,7 +287,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
 		public String caseInformationElement(InformationElement object) {
-			return "\"information\" + \"element\"";
+			return Messages.ArmEditorContextProvider_9;
 		}
 
 		/**
@@ -297,7 +297,7 @@ public class ArmEditorContextProvider implements IContextProvider {
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 		 */
 		public String defaultCase(EObject object) {
-			return "\"argument\" + \"notation\"";
+			return Messages.ArmEditorContextProvider_10;
 		}
 
 	};

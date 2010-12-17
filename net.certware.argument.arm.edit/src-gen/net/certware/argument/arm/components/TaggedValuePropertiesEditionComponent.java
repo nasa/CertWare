@@ -121,14 +121,14 @@ public class TaggedValuePropertiesEditionComponent extends StandardPropertiesEdi
 			if (msg.getNewValue() != null) {
 				basePart.setKey(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setKey("");
+				basePart.setKey(Messages.TaggedValuePropertiesEditionComponent_0);
 			}
 		}
 		if (ArmPackage.eINSTANCE.getTaggedValue_Value().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setValue(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setValue("");
+				basePart.setValue(Messages.TaggedValuePropertiesEditionComponent_1);
 			}
 		}
 
@@ -282,7 +282,7 @@ public class TaggedValuePropertiesEditionComponent extends StandardPropertiesEdi
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+					EEFRuntimePlugin.getDefault().logError(Messages.TaggedValuePropertiesEditionComponent_2, null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

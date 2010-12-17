@@ -316,18 +316,19 @@ public class AssumptionEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureAssumptionLabelFigure = new WrappingLabel();
 			fFigureAssumptionLabelFigure.setText("Assumption");
+			fFigureAssumptionLabelFigure.setTextWrap(true);
 
 			this.add(fFigureAssumptionLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
-
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 			this.add(fFigureModelElementContentLabelFigure);
 
 		}

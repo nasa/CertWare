@@ -1,23 +1,30 @@
 package net.certware.argument.diagram.figures;
 
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.RectangleFigure;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.draw2d.geometry.Rectangle;
 
 /**
- * Creates a square figure with a centered label.
- * @author epsilon
+ * Creates a square figure with expanded region text body.
+ * @author mrb
  */
-public class SquareFigure extends RectangleFigure {
-	
+public class SquareFigure extends ExpandedBodyRectangleFigure {
+
+	/** default margin width in pixels */
+	static final int DEFAULT_MARGIN = 5;
+
 	@Override
 	public void paint(Graphics graphics) {
-		// Fill shape and draw outline
+
+		Rectangle r = getBounds();
+		if ( r.width > r.height ) 
+			r.height = r.width;
+		else
+			r.width = r.height;
+
+		setBounds(r);
+
+		// setTextPositions(graphics,DEFAULT_MARGIN);
+
 		super.paint(graphics);
-		
-		// Move label to the center of the shape
-		WrappingLabel label = (WrappingLabel) getChildren().get(0);
-		LayoutUtil.moveToCenter(label, this, graphics);
-		label.paint(graphics);
 	}	
 }

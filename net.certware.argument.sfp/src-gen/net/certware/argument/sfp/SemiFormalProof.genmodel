@@ -28,8 +28,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//QuotedAssertion/text"/>
     </genClasses>
     <genClasses ecoreClass="SemiFormalProof.ecore#//Entailment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Entailment/conjunction"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Entailment/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Entailment/head"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Entailment/tail"/>
     </genClasses>
     <genClasses ecoreClass="SemiFormalProof.ecore#//Conjunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Conjunction/lhs"/>

@@ -5,6 +5,7 @@ package net.certware.argument.gsn.ui.outline;
 
 import org.eclipse.xtext.ui.editor.outline.actions.DefaultContentOutlineNodeAdapterFactory;
 
+@SuppressWarnings("deprecation")
 public class GsnDslOutlineNodeAdapterFactory extends DefaultContentOutlineNodeAdapterFactory {
 
 	private static final Class<?>[] types = { 

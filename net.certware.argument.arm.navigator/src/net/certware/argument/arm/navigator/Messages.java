@@ -27,14 +27,6 @@ public class Messages extends NLS {
 	 */
 	public static String ContentProvider_3;
 	/**
-	 * Field ContentProvider_4.
-	 */
-	public static String ContentProvider_4;
-	/**
-	 * Field ContentProvider_5.
-	 */
-	public static String ContentProvider_5;
-	/**
 	 * Field ContentProvider_6.
 	 */
 	public static String ContentProvider_6;
@@ -42,6 +34,7 @@ public class Messages extends NLS {
 	 * Field ContentProvider_7.
 	 */
 	public static String ContentProvider_7;
+	public static String LabelProvider_0;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

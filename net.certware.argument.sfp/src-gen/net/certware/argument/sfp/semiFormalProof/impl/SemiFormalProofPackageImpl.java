@@ -305,7 +305,7 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEntailment_Conjunction()
+  public EReference getEntailment_Head()
   {
     return (EReference)entailmentEClass.getEStructuralFeatures().get(0);
   }
@@ -315,7 +315,7 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEntailment_Id()
+  public EAttribute getEntailment_Tail()
   {
     return (EAttribute)entailmentEClass.getEStructuralFeatures().get(1);
   }
@@ -469,8 +469,8 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
     createEAttribute(quotedAssertionEClass, QUOTED_ASSERTION__TEXT);
 
     entailmentEClass = createEClass(ENTAILMENT);
-    createEReference(entailmentEClass, ENTAILMENT__CONJUNCTION);
-    createEAttribute(entailmentEClass, ENTAILMENT__ID);
+    createEReference(entailmentEClass, ENTAILMENT__HEAD);
+    createEAttribute(entailmentEClass, ENTAILMENT__TAIL);
 
     conjunctionEClass = createEClass(CONJUNCTION);
     createEAttribute(conjunctionEClass, CONJUNCTION__LHS);
@@ -536,8 +536,8 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
     initEAttribute(getQuotedAssertion_Text(), ecorePackage.getEString(), "text", null, 0, 1, QuotedAssertion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entailmentEClass, Entailment.class, "Entailment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntailment_Conjunction(), this.getConjunction(), null, "conjunction", null, 0, 1, Entailment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEntailment_Id(), ecorePackage.getEString(), "id", null, 0, 1, Entailment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntailment_Head(), this.getConjunction(), null, "head", null, 0, 1, Entailment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntailment_Tail(), ecorePackage.getEString(), "tail", null, 0, 1, Entailment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conjunctionEClass, Conjunction.class, "Conjunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConjunction_Lhs(), ecorePackage.getEString(), "lhs", null, 0, 1, Conjunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

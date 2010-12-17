@@ -49,7 +49,10 @@ public class GszParserProvider extends AbstractProvider implements
 		if (goalIdentifier_5001Parser == null) {
 			EAttribute[] features = new EAttribute[] { ArmPackage.eINSTANCE
 					.getModelElement_Identifier() };
-			MessageFormatParser parser = new MessageFormatParser(features);
+			EAttribute[] editableFeatures = new EAttribute[] { ArmPackage.eINSTANCE
+					.getModelElement_Identifier() };
+			MessageFormatParser parser = new MessageFormatParser(features,
+					editableFeatures);
 			parser.setViewPattern("Goal {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Goal {0}"); //$NON-NLS-1$
 			parser.setEditPattern("Goal {0}"); //$NON-NLS-1$
@@ -70,7 +73,10 @@ public class GszParserProvider extends AbstractProvider implements
 		if (goalContent_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { ArmPackage.eINSTANCE
 					.getModelElement_Content() };
-			MessageFormatParser parser = new MessageFormatParser(features);
+			EAttribute[] editableFeatures = new EAttribute[] { ArmPackage.eINSTANCE
+					.getModelElement_Content() };
+			MessageFormatParser parser = new MessageFormatParser(features,
+					editableFeatures);
 			goalContent_5002Parser = parser;
 		}
 		return goalContent_5002Parser;

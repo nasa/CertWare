@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.Entailment#getConjunction <em>Conjunction</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.Entailment#getId <em>Id</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.Entailment#getHead <em>Head</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.Entailment#getTail <em>Tail</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,55 +27,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Entailment extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Conjunction</b></em>' containment reference.
+   * Returns the value of the '<em><b>Head</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Conjunction</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Head</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Conjunction</em>' containment reference.
-   * @see #setConjunction(Conjunction)
-   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getEntailment_Conjunction()
+   * @return the value of the '<em>Head</em>' containment reference.
+   * @see #setHead(Conjunction)
+   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getEntailment_Head()
    * @model containment="true"
    * @generated
    */
-  Conjunction getConjunction();
+  Conjunction getHead();
 
   /**
-   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getConjunction <em>Conjunction</em>}' containment reference.
+   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getHead <em>Head</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Conjunction</em>' containment reference.
-   * @see #getConjunction()
+   * @param value the new value of the '<em>Head</em>' containment reference.
+   * @see #getHead()
    * @generated
    */
-  void setConjunction(Conjunction value);
+  void setHead(Conjunction value);
 
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Tail</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' attribute isn't clear,
+   * If the meaning of the '<em>Tail</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getEntailment_Id()
+   * @return the value of the '<em>Tail</em>' attribute.
+   * @see #setTail(String)
+   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getEntailment_Tail()
    * @model
    * @generated
    */
-  String getId();
+  String getTail();
 
   /**
-   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Entailment#getTail <em>Tail</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Tail</em>' attribute.
+   * @see #getTail()
    * @generated
    */
-  void setId(String value);
+  void setTail(String value);
 
 } // Entailment

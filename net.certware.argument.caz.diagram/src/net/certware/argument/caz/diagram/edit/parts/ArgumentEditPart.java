@@ -8,7 +8,6 @@ import net.certware.argument.caz.diagram.edit.policies.ArgumentItemSemanticEditP
 import net.certware.argument.caz.diagram.part.CazVisualIDRegistry;
 import net.certware.argument.caz.diagram.providers.CazElementTypes;
 
-import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RoundedRectangle;

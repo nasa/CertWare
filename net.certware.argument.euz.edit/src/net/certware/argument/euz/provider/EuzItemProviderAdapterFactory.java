@@ -11,7 +11,6 @@ import net.certware.argument.euz.util.EuzAdapterFactory;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;

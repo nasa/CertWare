@@ -87,7 +87,7 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 	public String getDescription(Object anElement) {
 	    if ( anElement instanceof TreeData ) {
 	        TreeData td = (TreeData)anElement;
-	        return "Node count:" + ' ' + getText(td);
+	        return Messages.LabelProvider_0 + ' ' + getText(td);
 	      }
 	      return null;
 	}

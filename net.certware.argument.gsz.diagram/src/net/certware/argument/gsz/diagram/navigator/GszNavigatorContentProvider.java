@@ -235,16 +235,16 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (GszVisualIDRegistry.getVisualID(view)) {
 
-		case AssumptionEditPart.VISUAL_ID: {
+		case JustificationEditPart.VISUAL_ID: {
 			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Assumption_2007_incominglinks,
+					Messages.NavigatorGroupName_Justification_2005_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					GszVisualIDRegistry
-							.getType(GoalAssumptionsEditPart.VISUAL_ID));
+							.getType(StrategyJustificationsEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			if (!incominglinks.isEmpty()) {
@@ -253,22 +253,114 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case StrategyGoalsEditPart.VISUAL_ID: {
+		case StrategyEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_Strategy_2008_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup outgoinglinks = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_Strategy_2008_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(GoalStrategiesEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(StrategyGoalsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(StrategyJustificationsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(StrategyStrategyContextsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(StrategyStrategySolutionsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case EvidenceEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_Evidence_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case GoalGoalSolutionsEditPart.VISUAL_ID: {
 			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyGoals_4006_target,
+					Messages.NavigatorGroupName_GoalGoalSolutions_4005_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyGoals_4006_source,
+					Messages.NavigatorGroupName_GoalGoalSolutions_4005_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
+					GszVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
+					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SolutionSolutionContextsEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			GszNavigatorGroup target = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionContexts_4011_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup source = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionContexts_4011_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
 			if (!target.isEmpty()) {
@@ -310,18 +402,18 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case StrategyStrategySolutionsEditPart.VISUAL_ID: {
+		case StrategyStrategyContextsEditPart.VISUAL_ID: {
 			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategySolutions_4009_target,
+					Messages.NavigatorGroupName_StrategyStrategyContexts_4008_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategySolutions_4009_source,
+					Messages.NavigatorGroupName_StrategyStrategyContexts_4008_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
+					GszVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
@@ -333,173 +425,6 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 			}
 			if (!source.isEmpty()) {
 				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case GoalEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Goal_2001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup outgoinglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Goal_2001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalSubGoalsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalSubGoalsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(GoalStrategiesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(GoalGoalContextsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(GoalAssumptionsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(GoalGoalSolutionsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(StrategyGoalsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case EvidenceEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Evidence_2003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case SolutionSolutionEvidenceEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionEvidence_4010_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionEvidence_4010_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case GoalGoalContextsEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalGoalContexts_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalGoalContexts_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case SolutionEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Solution_2002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup outgoinglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Solution_2002_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(GoalGoalSolutionsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(StrategyStrategySolutionsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(SolutionSolutionContextsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
@@ -516,6 +441,33 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					GszVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case GoalStrategiesEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			GszNavigatorGroup target = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_GoalStrategies_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup source = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_GoalStrategies_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
@@ -548,105 +500,6 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					GszVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case JustificationEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Justification_2005_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(StrategyJustificationsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case GoalSubGoalsEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalSubGoals_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalSubGoals_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case StrategyStrategyContextsEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyContexts_4008_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyContexts_4008_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case SolutionSolutionContextsEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionContexts_4011_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionContexts_4011_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
 			if (!target.isEmpty()) {
@@ -747,14 +600,113 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case GoalGoalSolutionsEditPart.VISUAL_ID: {
+		case AssumptionEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_Assumption_2007_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(GoalAssumptionsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case GoalSubGoalsEditPart.VISUAL_ID: {
 			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalGoalSolutions_4005_target,
+					Messages.NavigatorGroupName_GoalSubGoals_4001_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalGoalSolutions_4005_source,
+					Messages.NavigatorGroupName_GoalSubGoals_4001_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case GoalGoalContextsEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			GszNavigatorGroup target = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_GoalGoalContexts_4003_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup source = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_GoalGoalContexts_4003_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SolutionSolutionEvidenceEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			GszNavigatorGroup target = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionEvidence_4010_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup source = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionEvidence_4010_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case StrategyStrategySolutionsEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			GszNavigatorGroup target = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategySolutions_4009_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup source = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategySolutions_4009_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
@@ -762,34 +714,7 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case GoalStrategiesEditPart.VISUAL_ID: {
-			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			GszNavigatorGroup target = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalStrategies_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			GszNavigatorGroup source = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_GoalStrategies_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					GszVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
 			if (!target.isEmpty()) {
@@ -801,41 +726,116 @@ public class GszNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case StrategyEditPart.VISUAL_ID: {
+		case GoalEditPart.VISUAL_ID: {
 			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Strategy_2008_incominglinks,
+					Messages.NavigatorGroupName_Goal_2001_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			GszNavigatorGroup outgoinglinks = new GszNavigatorGroup(
-					Messages.NavigatorGroupName_Strategy_2008_outgoinglinks,
+					Messages.NavigatorGroupName_Goal_2001_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(GoalSubGoalsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(GoalSubGoalsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(GoalStrategiesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(GoalGoalContextsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(GoalAssumptionsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(GoalGoalSolutionsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(StrategyGoalsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case StrategyGoalsEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			GszNavigatorGroup target = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyGoals_4006_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup source = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyGoals_4006_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(GoalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					GszVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SolutionEditPart.VISUAL_ID: {
+			LinkedList<GszAbstractNavigatorItem> result = new LinkedList<GszAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			GszNavigatorGroup incominglinks = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_Solution_2002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			GszNavigatorGroup outgoinglinks = new GszNavigatorGroup(
+					Messages.NavigatorGroupName_Solution_2002_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					GszVisualIDRegistry
-							.getType(GoalStrategiesEditPart.VISUAL_ID));
+							.getType(GoalGoalSolutionsEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(StrategyGoalsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(StrategyJustificationsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					GszVisualIDRegistry
-							.getType(StrategyStrategyContextsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
+			connectedViews = getIncomingLinksByType(
 					Collections.singleton(sv),
 					GszVisualIDRegistry
 							.getType(StrategyStrategySolutionsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					GszVisualIDRegistry
+							.getType(SolutionSolutionContextsEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {

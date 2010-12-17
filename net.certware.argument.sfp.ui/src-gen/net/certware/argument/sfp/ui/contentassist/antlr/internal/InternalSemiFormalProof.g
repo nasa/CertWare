@@ -1026,9 +1026,9 @@ rule__Entailment__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getEntailmentAccess().getConjunctionAssignment_1()); }
-(rule__Entailment__ConjunctionAssignment_1)
-{ after(grammarAccess.getEntailmentAccess().getConjunctionAssignment_1()); }
+{ before(grammarAccess.getEntailmentAccess().getHeadAssignment_1()); }
+(rule__Entailment__HeadAssignment_1)
+{ after(grammarAccess.getEntailmentAccess().getHeadAssignment_1()); }
 )
 
 ;
@@ -1085,9 +1085,9 @@ rule__Entailment__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getEntailmentAccess().getIdAssignment_3()); }
-(rule__Entailment__IdAssignment_3)
-{ after(grammarAccess.getEntailmentAccess().getIdAssignment_3()); }
+{ before(grammarAccess.getEntailmentAccess().getTailAssignment_3()); }
+(rule__Entailment__TailAssignment_3)
+{ after(grammarAccess.getEntailmentAccess().getTailAssignment_3()); }
 )
 
 ;
@@ -1761,14 +1761,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Entailment__ConjunctionAssignment_1
+rule__Entailment__HeadAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntailmentAccess().getConjunctionConjunctionParserRuleCall_1_0()); }
-	ruleConjunction{ after(grammarAccess.getEntailmentAccess().getConjunctionConjunctionParserRuleCall_1_0()); }
+{ before(grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0()); }
+	ruleConjunction{ after(grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0()); }
 )
 
 ;
@@ -1776,14 +1776,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Entailment__IdAssignment_3
+rule__Entailment__TailAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0()); }
-	ruleNumeral{ after(grammarAccess.getEntailmentAccess().getIdNumeralParserRuleCall_3_0()); }
+{ before(grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0()); }
+	ruleNumeral{ after(grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0()); }
 )
 
 ;
