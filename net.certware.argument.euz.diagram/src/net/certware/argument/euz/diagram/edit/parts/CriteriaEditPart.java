@@ -360,17 +360,19 @@ public class CriteriaEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureCriteriaLabelFigure = new WrappingLabel();
 			fFigureCriteriaLabelFigure.setText("Criteria");
+			fFigureCriteriaLabelFigure.setTextWrap(true);
 
 			this.add(fFigureCriteriaLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

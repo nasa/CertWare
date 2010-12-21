@@ -13,10 +13,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Justifications">
     <eStructuralFeatures xsi:type="ecore:EReference" name="justifications" upperBound="-1"
         eType="#//Justification" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hypothesis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Justification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hypothesis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numeral" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assertion" eType="#//QuotedAssertion"
         containment="true"/>
@@ -39,12 +39,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="ProofSteps">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="statement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="justification" eType="#//Justifications"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validation" eType="#//Validation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Validation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//ValidationKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValidationKind">
+    <eLiterals name="UNKNOWN" literal="unknown"/>
+    <eLiterals name="VALID" value="1" literal="valid"/>
+    <eLiterals name="INVALID" value="2" literal="invalid"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -83,68 +83,46 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class JustificationsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Justifications");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cJustificationsAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Assignment cJustificationsAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final RuleCall cJustificationsJustificationParserRuleCall_0_1_0_0 = (RuleCall)cJustificationsAssignment_0_1_0.eContents().get(0);
-		private final Group cGroup_0_1_1 = (Group)cGroup_0_1.eContents().get(1);
-		private final Keyword cCommaKeyword_0_1_1_0 = (Keyword)cGroup_0_1_1.eContents().get(0);
-		private final Assignment cJustificationsAssignment_0_1_1_1 = (Assignment)cGroup_0_1_1.eContents().get(1);
-		private final RuleCall cJustificationsJustificationParserRuleCall_0_1_1_1_0 = (RuleCall)cJustificationsAssignment_0_1_1_1.eContents().get(0);
-		private final Assignment cHypothesisAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cHypothesisHypothesisKeyword_1_0 = (Keyword)cHypothesisAssignment_1.eContents().get(0);
-		private final Assignment cEpsilonAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cEpsilonEpsilonKeyword_2_0 = (Keyword)cEpsilonAssignment_2.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cJustificationsAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cJustificationsAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cJustificationsJustificationParserRuleCall_1_0_0 = (RuleCall)cJustificationsAssignment_1_0.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Keyword cCommaKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Assignment cJustificationsAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cJustificationsJustificationParserRuleCall_1_1_1_0 = (RuleCall)cJustificationsAssignment_1_1_1.eContents().get(0);
 		
 		//Justifications:
-		//	{Justifications} (justifications+=Justification ("," justifications+=Justification)*)? | hypothesis="hypothesis" |
-		//	epsilon="epsilon";
+		//	{Justifications} (justifications+=Justification ("," justifications+=Justification)*)?;
 		public ParserRule getRule() { return rule; }
 
-		//{Justifications} (justifications+=Justification ("," justifications+=Justification)*)? | hypothesis="hypothesis" |
-		//epsilon="epsilon"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
 		//{Justifications} (justifications+=Justification ("," justifications+=Justification)*)?
-		public Group getGroup_0() { return cGroup_0; }
+		public Group getGroup() { return cGroup; }
 
 		//{Justifications}
-		public Action getJustificationsAction_0_0() { return cJustificationsAction_0_0; }
+		public Action getJustificationsAction_0() { return cJustificationsAction_0; }
 
 		//(justifications+=Justification ("," justifications+=Justification)*)?
-		public Group getGroup_0_1() { return cGroup_0_1; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//justifications+=Justification
-		public Assignment getJustificationsAssignment_0_1_0() { return cJustificationsAssignment_0_1_0; }
+		public Assignment getJustificationsAssignment_1_0() { return cJustificationsAssignment_1_0; }
 
 		//Justification
-		public RuleCall getJustificationsJustificationParserRuleCall_0_1_0_0() { return cJustificationsJustificationParserRuleCall_0_1_0_0; }
+		public RuleCall getJustificationsJustificationParserRuleCall_1_0_0() { return cJustificationsJustificationParserRuleCall_1_0_0; }
 
 		//("," justifications+=Justification)*
-		public Group getGroup_0_1_1() { return cGroup_0_1_1; }
+		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//","
-		public Keyword getCommaKeyword_0_1_1_0() { return cCommaKeyword_0_1_1_0; }
+		public Keyword getCommaKeyword_1_1_0() { return cCommaKeyword_1_1_0; }
 
 		//justifications+=Justification
-		public Assignment getJustificationsAssignment_0_1_1_1() { return cJustificationsAssignment_0_1_1_1; }
+		public Assignment getJustificationsAssignment_1_1_1() { return cJustificationsAssignment_1_1_1; }
 
 		//Justification
-		public RuleCall getJustificationsJustificationParserRuleCall_0_1_1_1_0() { return cJustificationsJustificationParserRuleCall_0_1_1_1_0; }
-
-		//hypothesis="hypothesis"
-		public Assignment getHypothesisAssignment_1() { return cHypothesisAssignment_1; }
-
-		//"hypothesis"
-		public Keyword getHypothesisHypothesisKeyword_1_0() { return cHypothesisHypothesisKeyword_1_0; }
-
-		//epsilon="epsilon"
-		public Assignment getEpsilonAssignment_2() { return cEpsilonAssignment_2; }
-
-		//"epsilon"
-		public Keyword getEpsilonEpsilonKeyword_2_0() { return cEpsilonEpsilonKeyword_2_0; }
+		public RuleCall getJustificationsJustificationParserRuleCall_1_1_1_0() { return cJustificationsJustificationParserRuleCall_1_1_1_0; }
 	}
 
 	public class JustificationElements extends AbstractParserRuleElementFinder {
@@ -152,43 +130,61 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cJustificationAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cNumeralAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNumeralNumeralParserRuleCall_0_1_0 = (RuleCall)cNumeralAssignment_0_1.eContents().get(0);
-		private final Assignment cAssertionAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cAssertionQuotedAssertionParserRuleCall_1_0 = (RuleCall)cAssertionAssignment_1.eContents().get(0);
-		private final Assignment cEntailmentAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cEntailmentEntailmentParserRuleCall_2_0 = (RuleCall)cEntailmentAssignment_2.eContents().get(0);
+		private final Assignment cHypothesisAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Keyword cHypothesisHypothesisKeyword_0_1_0 = (Keyword)cHypothesisAssignment_0_1.eContents().get(0);
+		private final Assignment cEpsilonAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cEpsilonEpsilonKeyword_1_0 = (Keyword)cEpsilonAssignment_1.eContents().get(0);
+		private final Assignment cNumeralAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cNumeralNumeralParserRuleCall_2_0 = (RuleCall)cNumeralAssignment_2.eContents().get(0);
+		private final Assignment cAssertionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cAssertionQuotedAssertionParserRuleCall_3_0 = (RuleCall)cAssertionAssignment_3.eContents().get(0);
+		private final Assignment cEntailmentAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cEntailmentEntailmentParserRuleCall_4_0 = (RuleCall)cEntailmentAssignment_4.eContents().get(0);
 		
 		//Justification:
-		//	{Justification} numeral=Numeral | assertion=QuotedAssertion | entailment=Entailment;
+		//	{Justification} hypothesis?="hypothesis" | epsilon?="epsilon" | numeral=Numeral | assertion=QuotedAssertion |
+		//	entailment=Entailment;
 		public ParserRule getRule() { return rule; }
 
-		//{Justification} numeral=Numeral | assertion=QuotedAssertion | entailment=Entailment
+		//{Justification} hypothesis?="hypothesis" | epsilon?="epsilon" | numeral=Numeral | assertion=QuotedAssertion |
+		//entailment=Entailment
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{Justification} numeral=Numeral
+		//{Justification} hypothesis?="hypothesis"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{Justification}
 		public Action getJustificationAction_0_0() { return cJustificationAction_0_0; }
 
+		//hypothesis?="hypothesis"
+		public Assignment getHypothesisAssignment_0_1() { return cHypothesisAssignment_0_1; }
+
+		//"hypothesis"
+		public Keyword getHypothesisHypothesisKeyword_0_1_0() { return cHypothesisHypothesisKeyword_0_1_0; }
+
+		//epsilon?="epsilon"
+		public Assignment getEpsilonAssignment_1() { return cEpsilonAssignment_1; }
+
+		//"epsilon"
+		public Keyword getEpsilonEpsilonKeyword_1_0() { return cEpsilonEpsilonKeyword_1_0; }
+
 		//numeral=Numeral
-		public Assignment getNumeralAssignment_0_1() { return cNumeralAssignment_0_1; }
+		public Assignment getNumeralAssignment_2() { return cNumeralAssignment_2; }
 
 		//Numeral
-		public RuleCall getNumeralNumeralParserRuleCall_0_1_0() { return cNumeralNumeralParserRuleCall_0_1_0; }
+		public RuleCall getNumeralNumeralParserRuleCall_2_0() { return cNumeralNumeralParserRuleCall_2_0; }
 
 		//assertion=QuotedAssertion
-		public Assignment getAssertionAssignment_1() { return cAssertionAssignment_1; }
+		public Assignment getAssertionAssignment_3() { return cAssertionAssignment_3; }
 
 		//QuotedAssertion
-		public RuleCall getAssertionQuotedAssertionParserRuleCall_1_0() { return cAssertionQuotedAssertionParserRuleCall_1_0; }
+		public RuleCall getAssertionQuotedAssertionParserRuleCall_3_0() { return cAssertionQuotedAssertionParserRuleCall_3_0; }
 
 		//entailment=Entailment
-		public Assignment getEntailmentAssignment_2() { return cEntailmentAssignment_2; }
+		public Assignment getEntailmentAssignment_4() { return cEntailmentAssignment_4; }
 
 		//Entailment
-		public RuleCall getEntailmentEntailmentParserRuleCall_2_0() { return cEntailmentEntailmentParserRuleCall_2_0; }
+		public RuleCall getEntailmentEntailmentParserRuleCall_4_0() { return cEntailmentEntailmentParserRuleCall_4_0; }
 	}
 
 	public class QuotedAssertionElements extends AbstractParserRuleElementFinder {
@@ -325,10 +321,10 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEpsilonEpsilonKeyword_1_0 = (Keyword)cEpsilonAssignment_1.eContents().get(0);
 		
 		//ProofSteps:
-		//	{ProofSteps} (statements+=Statement statements+=Statement*)? | epsilon="epsilon";
+		//	{ProofSteps} (statements+=Statement statements+=Statement*)? | epsilon?="epsilon";
 		public ParserRule getRule() { return rule; }
 
-		//{ProofSteps} (statements+=Statement statements+=Statement*)? | epsilon="epsilon"
+		//{ProofSteps} (statements+=Statement statements+=Statement*)? | epsilon?="epsilon"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{ProofSteps} (statements+=Statement statements+=Statement*)?
@@ -352,7 +348,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		//Statement
 		public RuleCall getStatementsStatementParserRuleCall_0_1_1_0() { return cStatementsStatementParserRuleCall_0_1_1_0; }
 
-		//epsilon="epsilon"
+		//epsilon?="epsilon"
 		public Assignment getEpsilonAssignment_1() { return cEpsilonAssignment_1; }
 
 		//"epsilon"
@@ -372,12 +368,17 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cJustificationAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cJustificationJustificationsParserRuleCall_5_0 = (RuleCall)cJustificationAssignment_5.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cLeftCurlyBracketKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cValidationAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cValidationValidationParserRuleCall_7_1_0 = (RuleCall)cValidationAssignment_7_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
 		
-		//// end Statement:
-		//	{Statement} id=Numeral "." statement=Text "(" justification=Justifications ")";
+		//Statement:
+		//	{Statement} id=Numeral "." statement=Text "(" justification=Justifications ")" ("{" validation=Validation "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//{Statement} id=Numeral "." statement=Text "(" justification=Justifications ")"
+		//{Statement} id=Numeral "." statement=Text "(" justification=Justifications ")" ("{" validation=Validation "}")?
 		public Group getGroup() { return cGroup; }
 
 		//{Statement}
@@ -409,8 +410,100 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+
+		//("{" validation=Validation "}")?
+		public Group getGroup_7() { return cGroup_7; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_7_0() { return cLeftCurlyBracketKeyword_7_0; }
+
+		//validation=Validation
+		public Assignment getValidationAssignment_7_1() { return cValidationAssignment_7_1; }
+
+		//Validation
+		public RuleCall getValidationValidationParserRuleCall_7_1_0() { return cValidationValidationParserRuleCall_7_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7_2() { return cRightCurlyBracketKeyword_7_2; }
+	}
+
+	public class ValidationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Validation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cValidationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cAuthorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAuthorTextParserRuleCall_1_0 = (RuleCall)cAuthorAssignment_1.eContents().get(0);
+		private final Assignment cTimeStampAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTimeStampTextParserRuleCall_2_0 = (RuleCall)cTimeStampAssignment_2.eContents().get(0);
+		private final Assignment cStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStateValidationKindEnumRuleCall_3_0 = (RuleCall)cStateAssignment_3.eContents().get(0);
+		
+		//Validation:
+		//	{Validation} author=Text timeStamp=Text? state=ValidationKind;
+		public ParserRule getRule() { return rule; }
+
+		//{Validation} author=Text timeStamp=Text? state=ValidationKind
+		public Group getGroup() { return cGroup; }
+
+		//{Validation}
+		public Action getValidationAction_0() { return cValidationAction_0; }
+
+		//author=Text
+		public Assignment getAuthorAssignment_1() { return cAuthorAssignment_1; }
+
+		//Text
+		public RuleCall getAuthorTextParserRuleCall_1_0() { return cAuthorTextParserRuleCall_1_0; }
+
+		//timeStamp=Text?
+		public Assignment getTimeStampAssignment_2() { return cTimeStampAssignment_2; }
+
+		//Text
+		public RuleCall getTimeStampTextParserRuleCall_2_0() { return cTimeStampTextParserRuleCall_2_0; }
+
+		//state=ValidationKind
+		public Assignment getStateAssignment_3() { return cStateAssignment_3; }
+
+		//ValidationKind
+		public RuleCall getStateValidationKindEnumRuleCall_3_0() { return cStateValidationKindEnumRuleCall_3_0; }
 	}
 	
+	
+	public class ValidationKindElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ValidationKind");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cUNKNOWNEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cUNKNOWNUnknownKeyword_0_0 = (Keyword)cUNKNOWNEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cVALIDEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cVALIDValidKeyword_1_0 = (Keyword)cVALIDEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cINVALIDEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cINVALIDInvalidKeyword_2_0 = (Keyword)cINVALIDEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//// enumeration ordered so that value 0 is unknown
+		//// end enum ValidationKind:
+		//	UNKNOWN="unknown" | VALID="valid" | INVALID="invalid";
+		public EnumRule getRule() { return rule; }
+
+		//UNKNOWN="unknown" | VALID="valid" | INVALID="invalid"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//UNKNOWN="unknown"
+		public EnumLiteralDeclaration getUNKNOWNEnumLiteralDeclaration_0() { return cUNKNOWNEnumLiteralDeclaration_0; }
+
+		//"unknown"
+		public Keyword getUNKNOWNUnknownKeyword_0_0() { return cUNKNOWNUnknownKeyword_0_0; }
+
+		//VALID="valid"
+		public EnumLiteralDeclaration getVALIDEnumLiteralDeclaration_1() { return cVALIDEnumLiteralDeclaration_1; }
+
+		//"valid"
+		public Keyword getVALIDValidKeyword_1_0() { return cVALIDValidKeyword_1_0; }
+
+		//INVALID="invalid"
+		public EnumLiteralDeclaration getINVALIDEnumLiteralDeclaration_2() { return cINVALIDEnumLiteralDeclaration_2; }
+
+		//"invalid"
+		public Keyword getINVALIDInvalidKeyword_2_0() { return cINVALIDInvalidKeyword_2_0; }
+	}
 	
 	private ProofElements pProof;
 	private TextElements pText;
@@ -422,6 +515,8 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 	private NumeralElements pNumeral;
 	private ProofStepsElements pProofSteps;
 	private StatementElements pStatement;
+	private ValidationElements pValidation;
+	private ValidationKindElements unknownRuleValidationKind;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -465,8 +560,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Justifications:
-	//	{Justifications} (justifications+=Justification ("," justifications+=Justification)*)? | hypothesis="hypothesis" |
-	//	epsilon="epsilon";
+	//	{Justifications} (justifications+=Justification ("," justifications+=Justification)*)?;
 	public JustificationsElements getJustificationsAccess() {
 		return (pJustifications != null) ? pJustifications : (pJustifications = new JustificationsElements());
 	}
@@ -476,7 +570,8 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Justification:
-	//	{Justification} numeral=Numeral | assertion=QuotedAssertion | entailment=Entailment;
+	//	{Justification} hypothesis?="hypothesis" | epsilon?="epsilon" | numeral=Numeral | assertion=QuotedAssertion |
+	//	entailment=Entailment;
 	public JustificationElements getJustificationAccess() {
 		return (pJustification != null) ? pJustification : (pJustification = new JustificationElements());
 	}
@@ -526,7 +621,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProofSteps:
-	//	{ProofSteps} (statements+=Statement statements+=Statement*)? | epsilon="epsilon";
+	//	{ProofSteps} (statements+=Statement statements+=Statement*)? | epsilon?="epsilon";
 	public ProofStepsElements getProofStepsAccess() {
 		return (pProofSteps != null) ? pProofSteps : (pProofSteps = new ProofStepsElements());
 	}
@@ -535,14 +630,35 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		return getProofStepsAccess().getRule();
 	}
 
-	//// end Statement:
-	//	{Statement} id=Numeral "." statement=Text "(" justification=Justifications ")";
+	//Statement:
+	//	{Statement} id=Numeral "." statement=Text "(" justification=Justifications ")" ("{" validation=Validation "}")?;
 	public StatementElements getStatementAccess() {
 		return (pStatement != null) ? pStatement : (pStatement = new StatementElements());
 	}
 	
 	public ParserRule getStatementRule() {
 		return getStatementAccess().getRule();
+	}
+
+	//Validation:
+	//	{Validation} author=Text timeStamp=Text? state=ValidationKind;
+	public ValidationElements getValidationAccess() {
+		return (pValidation != null) ? pValidation : (pValidation = new ValidationElements());
+	}
+	
+	public ParserRule getValidationRule() {
+		return getValidationAccess().getRule();
+	}
+
+	//// enumeration ordered so that value 0 is unknown
+	//// end enum ValidationKind:
+	//	UNKNOWN="unknown" | VALID="valid" | INVALID="invalid";
+	public ValidationKindElements getValidationKindAccess() {
+		return (unknownRuleValidationKind != null) ? unknownRuleValidationKind : (unknownRuleValidationKind = new ValidationKindElements());
+	}
+	
+	public EnumRule getValidationKindRule() {
+		return getValidationKindAccess().getRule();
 	}
 
 	//terminal ID:

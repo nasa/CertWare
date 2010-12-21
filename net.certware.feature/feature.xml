@@ -46,6 +46,18 @@
          name="Eclipse Epsilon HUTN"
          search-location="both"/>
 
+   <includes
+         id="org.eclipse.egit"
+         version="0.0.0"
+         name="Eclipe EGit"
+         search-location="both"/>
+
+   <includes
+         id="org.eclipse.jgit"
+         version="0.0.0"
+         name="Eclipse JGit"
+         search-location="both"/>
+
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
@@ -55,19 +67,14 @@
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.help"/>
+      <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.core.jobs"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.emf.validation" version="1.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.ui.forms"/>
-      <import plugin="org.eclipse.core.commands"/>
-      <import feature="org.eclipse.emf" version="2.6.0.v20100614-1136"/>
-      <import plugin="org.eclipse.help"/>
-      <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.ui.views"/>
       <import plugin="org.eclipse.ui.navigator.resources"/>
@@ -83,10 +90,15 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
       <import plugin="org.eclipse.draw2d"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <import plugin="org.eclipse.emf.validation" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gef"/>
       <import plugin="org.eclipse.epsilon.evl.emf.validation"/>
       <import plugin="org.eclipse.osgi.services"/>
+      <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.ui.cheatsheets"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.core.commands"/>
+      <import feature="org.eclipse.emf" version="2.6.0.v20100614-1136"/>
    </requires>
 
    <plugin

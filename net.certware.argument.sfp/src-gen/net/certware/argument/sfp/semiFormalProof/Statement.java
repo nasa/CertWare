@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.Statement#getId <em>Id</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.Statement#getStatement <em>Statement</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.Statement#getJustification <em>Justification</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.Statement#getValidation <em>Validation</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,5 +105,31 @@ public interface Statement extends EObject
    * @generated
    */
   void setJustification(Justifications value);
+
+  /**
+   * Returns the value of the '<em><b>Validation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Validation</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Validation</em>' containment reference.
+   * @see #setValidation(Validation)
+   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getStatement_Validation()
+   * @model containment="true"
+   * @generated
+   */
+  Validation getValidation();
+
+  /**
+   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Statement#getValidation <em>Validation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Validation</em>' containment reference.
+   * @see #getValidation()
+   * @generated
+   */
+  void setValidation(Validation value);
 
 } // Statement

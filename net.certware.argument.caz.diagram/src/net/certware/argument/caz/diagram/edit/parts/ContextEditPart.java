@@ -11,7 +11,6 @@ import net.certware.argument.caz.diagram.providers.CazElementTypes;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -317,17 +316,19 @@ public class ContextEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureContextLabelFigure = new WrappingLabel();
 			fFigureContextLabelFigure.setText("Context");
+			fFigureContextLabelFigure.setTextWrap(true);
 
 			this.add(fFigureContextLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

@@ -11,7 +11,6 @@ import net.certware.argument.caz.diagram.providers.CazElementTypes;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -316,17 +315,19 @@ public class AssumptionEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureAssumptionLabelFigure = new WrappingLabel();
 			fFigureAssumptionLabelFigure.setText("Assumption");
+			fFigureAssumptionLabelFigure.setTextWrap(true);
 
 			this.add(fFigureAssumptionLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

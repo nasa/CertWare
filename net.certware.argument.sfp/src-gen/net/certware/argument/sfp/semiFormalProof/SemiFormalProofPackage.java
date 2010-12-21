@@ -7,6 +7,7 @@ package net.certware.argument.sfp.semiFormalProof;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -125,31 +126,13 @@ public interface SemiFormalProofPackage extends EPackage
   int JUSTIFICATIONS__JUSTIFICATIONS = 0;
 
   /**
-   * The feature id for the '<em><b>Hypothesis</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JUSTIFICATIONS__HYPOTHESIS = 1;
-
-  /**
-   * The feature id for the '<em><b>Epsilon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JUSTIFICATIONS__EPSILON = 2;
-
-  /**
    * The number of structural features of the '<em>Justifications</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JUSTIFICATIONS_FEATURE_COUNT = 3;
+  int JUSTIFICATIONS_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationImpl <em>Justification</em>}' class.
@@ -162,13 +145,31 @@ public interface SemiFormalProofPackage extends EPackage
   int JUSTIFICATION = 2;
 
   /**
+   * The feature id for the '<em><b>Hypothesis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JUSTIFICATION__HYPOTHESIS = 0;
+
+  /**
+   * The feature id for the '<em><b>Epsilon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JUSTIFICATION__EPSILON = 1;
+
+  /**
    * The feature id for the '<em><b>Numeral</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JUSTIFICATION__NUMERAL = 0;
+  int JUSTIFICATION__NUMERAL = 2;
 
   /**
    * The feature id for the '<em><b>Assertion</b></em>' containment reference.
@@ -177,7 +178,7 @@ public interface SemiFormalProofPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JUSTIFICATION__ASSERTION = 1;
+  int JUSTIFICATION__ASSERTION = 3;
 
   /**
    * The feature id for the '<em><b>Entailment</b></em>' containment reference.
@@ -186,7 +187,7 @@ public interface SemiFormalProofPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JUSTIFICATION__ENTAILMENT = 2;
+  int JUSTIFICATION__ENTAILMENT = 4;
 
   /**
    * The number of structural features of the '<em>Justification</em>' class.
@@ -195,7 +196,7 @@ public interface SemiFormalProofPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JUSTIFICATION_FEATURE_COUNT = 3;
+  int JUSTIFICATION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link net.certware.argument.sfp.semiFormalProof.impl.QuotedAssertionImpl <em>Quoted Assertion</em>}' class.
@@ -374,13 +375,78 @@ public interface SemiFormalProofPackage extends EPackage
   int STATEMENT__JUSTIFICATION = 2;
 
   /**
+   * The feature id for the '<em><b>Validation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__VALIDATION = 3;
+
+  /**
    * The number of structural features of the '<em>Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 3;
+  int STATEMENT_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link net.certware.argument.sfp.semiFormalProof.impl.ValidationImpl <em>Validation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.argument.sfp.semiFormalProof.impl.ValidationImpl
+   * @see net.certware.argument.sfp.semiFormalProof.impl.SemiFormalProofPackageImpl#getValidation()
+   * @generated
+   */
+  int VALIDATION = 8;
+
+  /**
+   * The feature id for the '<em><b>Author</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALIDATION__AUTHOR = 0;
+
+  /**
+   * The feature id for the '<em><b>Time Stamp</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALIDATION__TIME_STAMP = 1;
+
+  /**
+   * The feature id for the '<em><b>State</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALIDATION__STATE = 2;
+
+  /**
+   * The number of structural features of the '<em>Validation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALIDATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link net.certware.argument.sfp.semiFormalProof.ValidationKind <em>Validation Kind</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.argument.sfp.semiFormalProof.ValidationKind
+   * @see net.certware.argument.sfp.semiFormalProof.impl.SemiFormalProofPackageImpl#getValidationKind()
+   * @generated
+   */
+  int VALIDATION_KIND = 9;
 
 
   /**
@@ -448,28 +514,6 @@ public interface SemiFormalProofPackage extends EPackage
   EReference getJustifications_Justifications();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Justifications#getHypothesis <em>Hypothesis</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Hypothesis</em>'.
-   * @see net.certware.argument.sfp.semiFormalProof.Justifications#getHypothesis()
-   * @see #getJustifications()
-   * @generated
-   */
-  EAttribute getJustifications_Hypothesis();
-
-  /**
-   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Justifications#getEpsilon <em>Epsilon</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Epsilon</em>'.
-   * @see net.certware.argument.sfp.semiFormalProof.Justifications#getEpsilon()
-   * @see #getJustifications()
-   * @generated
-   */
-  EAttribute getJustifications_Epsilon();
-
-  /**
    * Returns the meta object for class '{@link net.certware.argument.sfp.semiFormalProof.Justification <em>Justification</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -478,6 +522,28 @@ public interface SemiFormalProofPackage extends EPackage
    * @generated
    */
   EClass getJustification();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Justification#isHypothesis <em>Hypothesis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Hypothesis</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Justification#isHypothesis()
+   * @see #getJustification()
+   * @generated
+   */
+  EAttribute getJustification_Hypothesis();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Justification#isEpsilon <em>Epsilon</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Epsilon</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Justification#isEpsilon()
+   * @see #getJustification()
+   * @generated
+   */
+  EAttribute getJustification_Epsilon();
 
   /**
    * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Justification#getNumeral <em>Numeral</em>}'.
@@ -619,11 +685,11 @@ public interface SemiFormalProofPackage extends EPackage
   EReference getProofSteps_Statements();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.ProofSteps#getEpsilon <em>Epsilon</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.ProofSteps#isEpsilon <em>Epsilon</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Epsilon</em>'.
-   * @see net.certware.argument.sfp.semiFormalProof.ProofSteps#getEpsilon()
+   * @see net.certware.argument.sfp.semiFormalProof.ProofSteps#isEpsilon()
    * @see #getProofSteps()
    * @generated
    */
@@ -671,6 +737,70 @@ public interface SemiFormalProofPackage extends EPackage
    * @generated
    */
   EReference getStatement_Justification();
+
+  /**
+   * Returns the meta object for the containment reference '{@link net.certware.argument.sfp.semiFormalProof.Statement#getValidation <em>Validation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Validation</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Statement#getValidation()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Validation();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.argument.sfp.semiFormalProof.Validation <em>Validation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Validation</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Validation
+   * @generated
+   */
+  EClass getValidation();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Validation#getAuthor <em>Author</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Author</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Validation#getAuthor()
+   * @see #getValidation()
+   * @generated
+   */
+  EAttribute getValidation_Author();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Validation#getTimeStamp <em>Time Stamp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Time Stamp</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Validation#getTimeStamp()
+   * @see #getValidation()
+   * @generated
+   */
+  EAttribute getValidation_TimeStamp();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.argument.sfp.semiFormalProof.Validation#getState <em>State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>State</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.Validation#getState()
+   * @see #getValidation()
+   * @generated
+   */
+  EAttribute getValidation_State();
+
+  /**
+   * Returns the meta object for enum '{@link net.certware.argument.sfp.semiFormalProof.ValidationKind <em>Validation Kind</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Validation Kind</em>'.
+   * @see net.certware.argument.sfp.semiFormalProof.ValidationKind
+   * @generated
+   */
+  EEnum getValidationKind();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -748,22 +878,6 @@ public interface SemiFormalProofPackage extends EPackage
     EReference JUSTIFICATIONS__JUSTIFICATIONS = eINSTANCE.getJustifications_Justifications();
 
     /**
-     * The meta object literal for the '<em><b>Hypothesis</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute JUSTIFICATIONS__HYPOTHESIS = eINSTANCE.getJustifications_Hypothesis();
-
-    /**
-     * The meta object literal for the '<em><b>Epsilon</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute JUSTIFICATIONS__EPSILON = eINSTANCE.getJustifications_Epsilon();
-
-    /**
      * The meta object literal for the '{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationImpl <em>Justification</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -772,6 +886,22 @@ public interface SemiFormalProofPackage extends EPackage
      * @generated
      */
     EClass JUSTIFICATION = eINSTANCE.getJustification();
+
+    /**
+     * The meta object literal for the '<em><b>Hypothesis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JUSTIFICATION__HYPOTHESIS = eINSTANCE.getJustification_Hypothesis();
+
+    /**
+     * The meta object literal for the '<em><b>Epsilon</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JUSTIFICATION__EPSILON = eINSTANCE.getJustification_Epsilon();
 
     /**
      * The meta object literal for the '<em><b>Numeral</b></em>' attribute feature.
@@ -926,6 +1056,58 @@ public interface SemiFormalProofPackage extends EPackage
      * @generated
      */
     EReference STATEMENT__JUSTIFICATION = eINSTANCE.getStatement_Justification();
+
+    /**
+     * The meta object literal for the '<em><b>Validation</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__VALIDATION = eINSTANCE.getStatement_Validation();
+
+    /**
+     * The meta object literal for the '{@link net.certware.argument.sfp.semiFormalProof.impl.ValidationImpl <em>Validation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.argument.sfp.semiFormalProof.impl.ValidationImpl
+     * @see net.certware.argument.sfp.semiFormalProof.impl.SemiFormalProofPackageImpl#getValidation()
+     * @generated
+     */
+    EClass VALIDATION = eINSTANCE.getValidation();
+
+    /**
+     * The meta object literal for the '<em><b>Author</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALIDATION__AUTHOR = eINSTANCE.getValidation_Author();
+
+    /**
+     * The meta object literal for the '<em><b>Time Stamp</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALIDATION__TIME_STAMP = eINSTANCE.getValidation_TimeStamp();
+
+    /**
+     * The meta object literal for the '<em><b>State</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALIDATION__STATE = eINSTANCE.getValidation_State();
+
+    /**
+     * The meta object literal for the '{@link net.certware.argument.sfp.semiFormalProof.ValidationKind <em>Validation Kind</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.argument.sfp.semiFormalProof.ValidationKind
+     * @see net.certware.argument.sfp.semiFormalProof.impl.SemiFormalProofPackageImpl#getValidationKind()
+     * @generated
+     */
+    EEnum VALIDATION_KIND = eINSTANCE.getValidationKind();
 
   }
 

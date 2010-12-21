@@ -6,9 +6,6 @@ package net.certware.argument.euz.diagram.edit.parts;
 import net.certware.argument.euz.diagram.edit.policies.StrategyStrategyAssumptionsItemSemanticEditPolicy;
 
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.PolygonDecoration;
-import org.eclipse.draw2d.RotatableDecoration;
-import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;

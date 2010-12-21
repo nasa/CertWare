@@ -60,6 +60,7 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * @generated
  */
+@SuppressWarnings("restriction")
 public class EuzDocumentProvider extends AbstractDocumentProvider implements
 		IDiagramDocumentProvider {
 

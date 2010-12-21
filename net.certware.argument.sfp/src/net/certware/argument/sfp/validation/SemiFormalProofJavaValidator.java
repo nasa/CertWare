@@ -3,15 +3,21 @@ package net.certware.argument.sfp.validation;
 import java.util.HashSet;
 import java.util.Set;
 
+import net.certware.argument.sfp.semiFormalProof.Entailment;
 import net.certware.argument.sfp.semiFormalProof.Justification;
+import net.certware.argument.sfp.semiFormalProof.Justifications;
 import net.certware.argument.sfp.semiFormalProof.Proof;
+import net.certware.argument.sfp.semiFormalProof.ProofSteps;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage;
 import net.certware.argument.sfp.semiFormalProof.Statement;
 import net.certware.argument.sfp.util.Graph;
 import net.certware.argument.sfp.util.GraphAlgs;
+import net.certware.argument.sfp.util.ProofUtil;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.validation.Check;
- 
+
 /**
  * Validation for the semi-formal proof model.
  * Uses the Xtext generated abstract validator and check annotations.
@@ -47,7 +53,145 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 					SemiFormalProofPackage.PROOF);
 		}
 	}
-	
+
+	/**
+	 * A proof step statement's justification cannot refer to itself.
+	 * Issues warning if statement ID is in the justification numeral list.
+	 * @param statement statement to validate
+	 */
+	@Check
+	public void statementJustificationRefersToSelf(Statement statement) {
+		if ( statement.getJustification() == null )
+			return;
+
+		Justifications justifications = statement.getJustification();
+		if ( justifications == null || justifications.getJustifications().isEmpty() )
+			return;
+
+		String id = statement.getId();
+		for ( Justification j : justifications.getJustifications() ) {
+			if ( id.equalsIgnoreCase(j.getNumeral())) {
+				warning(String.format("Statement %s justification refers to itself", id), 
+						SemiFormalProofPackage.JUSTIFICATION);
+			}
+		}
+	}
+
+	/**
+	 * Justification numerical reference must refer to a statement ID.
+	 * Issues error if statement ID not found in containing proof.
+	 * @param j justification to validate
+	 */
+	@Check
+	public void statementJustificationNumeralValid(Justification j) {
+
+		if ( j.getNumeral() != null ) {
+
+			Proof proof = (Proof)EcoreUtil.getRootContainer(j);
+			ProofSteps ps = proof.getProofSteps();
+
+			boolean found = false;
+			for ( Statement s : ps.getStatements() ) {
+				if ( s.getId().equalsIgnoreCase( j.getNumeral() )) {
+					found = true;
+					break;
+				}
+			}
+
+			if ( found == false ) {
+				error(String.format("Justification refers to missing statement %s",j.getNumeral()),
+						SemiFormalProofPackage.JUSTIFICATION__NUMERAL);
+			}
+		}
+	}
+
+	/**
+	 * Entailment tail must refer to valid statement ID.
+	 * Issues warning if tail ID not found in statement list.
+	 * @param entailment entailment to validate
+	 */
+	@Check
+	public void entailmentTailExists(Entailment entailment) {
+		String tail = entailment.getTail();
+		Proof proof = (Proof)EcoreUtil.getRootContainer(entailment);
+		if ( proof.getProofSteps() == null )
+			return;
+
+		boolean found = false;
+		for ( Statement s : proof.getProofSteps().getStatements() ) {
+			if ( tail.equalsIgnoreCase(s.getId() )) {
+				found = true;
+				break;
+			}
+		}
+
+		if ( found == false ) {
+			warning(String.format("Entailment tail refers to missing statement %s",tail),
+					SemiFormalProofPackage.ENTAILMENT__TAIL);
+		}
+	}
+
+	/**
+	 * Entailment head must refer to valid statement IDs.
+	 * Issues warning for each head ID not found in statement list.
+	 * @param entailment entailment to validate
+	 */
+	@Check
+	public void entailmentHeadExists(Entailment entailment) {
+		EList<String> heads = ProofUtil.getHeadList(entailment);
+		Proof proof = (Proof)EcoreUtil.getRootContainer(entailment);
+		if ( proof.getProofSteps() == null )
+			return;
+
+		boolean found = false;
+		for ( String id : heads ) {
+
+			for ( Statement s : proof.getProofSteps().getStatements() ) {
+				if ( id.equalsIgnoreCase(s.getId() )) {
+					found = true;
+					break;
+				}
+			}
+
+			if ( found == false ) {
+				warning(String.format("Entailment head refers to missing statement %s",id),
+						SemiFormalProofPackage.ENTAILMENT__HEAD);
+			}
+		}
+	}
+
+	/**
+	 * An entailment head or tail cannot include the statement of its declaration.
+	 * Issues warning if statement ID is in the entailment head or tail.
+	 * @param statement statement to validate
+	 */
+	@Check
+	public void statementWithinEntailment(Statement statement) {
+		if ( statement.getJustification() == null )
+			return;
+
+		Justifications justifications = statement.getJustification();
+		if ( justifications == null || justifications.getJustifications().isEmpty() )
+			return;
+
+		String id = statement.getId();
+		for ( Justification j : justifications.getJustifications() ) {
+			if ( j.getEntailment() == null ) {
+				continue;
+			}
+
+			Entailment e = j.getEntailment();
+			if ( ProofUtil.isTail(e,id) ) {
+				warning(String.format("Statement %s entailment tail refers to itself", id),
+						SemiFormalProofPackage.ENTAILMENT__TAIL);
+			}
+			if ( ProofUtil.isInHead(e,id) ) {
+				warning(String.format("Statement %s entailment head contains itself", id),
+						SemiFormalProofPackage.ENTAILMENT__HEAD);
+			}
+		}
+	}
+
 	/**
 	 * The proof step references must be acyclic.
 	 * Issues error if proof statement references contain cycles.
@@ -57,44 +201,44 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 	public void proofHasNoCycles(Proof proof) {
 		if ( proof == null || proof.getProofSteps() == null ) 
 			return;
-		if ( proof.getProofSteps().getStatements() == null )
+
+		EList<Statement> statements = proof.getProofSteps().getStatements();
+		if ( statements == null || statements.isEmpty() ) {
 			return;
-		
-		if ( proof.getProofSteps().getStatements().isEmpty() == false ) {
-			
-			// create a graph with number of vertices equal to statement list count
-			int statementCount = proof.getProofSteps().getStatements().size();
-			Graph graph = new Graph(statementCount,true);
-			
-			// load the graph edges according to justification references
-			for ( int i = 0; i < statementCount; i++ ) {
-				// get the statement from the statement list
-				Statement s = proof.getProofSteps().getStatements().get(i);
-				graph.insert(s);
-				// System.err.println("inserted statement " + s.getStatement());
+		}
+
+		// create a graph with number of vertices equal to statement list count
+		int statementCount = statements.size();
+		Graph graph = new Graph(statementCount,true);
+
+		// load the graph edges according to justification references
+		for ( Statement s : statements ) {
+			graph.insert(s);
+		}
+
+		// now search the graph for cycles
+		if ( graph.isClean() ) {
+			String result = graph.isAcyclic();
+			if ( result != null ) {
+				warning(String.format("%s %s", "Proof:", result),
+						SemiFormalProofPackage.PROOF__PROOF_STEPS);
+				return;
 			}
-			
-			// now search the graph for cycles
-			if ( graph.isClean() ) {
-				String message = new String();
-				if ( graph.isAcyclic(message) == false) {
-					warning(message,SemiFormalProofPackage.PROOF__PROOF_STEPS);
-					return;
-				}
-				
-				// no cycles, so now check the entailment structure
+
+			// acyclic, so now check the entailment structure by statement
+			for ( Statement s : statements ) {
 				Set context = new HashSet();
-				Statement s = proof.getProofSteps().getStatements().get(0);
 				GraphAlgs.checkEntailments(proof, s, context);
 				if ( context.isEmpty() == false ) {
-					warning("Proof steps are acyclic but ill-structured",
+					warning(String.format("Entailment invalid at statement %s context %s",
+							s.getId(),
+							context.toString()),
 							SemiFormalProofPackage.PROOF__PROOF_STEPS);
-				}
-
-			} else {
-				// System.err.println("Graph is unclean for validation of cycles");
-			}
-		}
+				} // if
+			} // for
+		} else {
+			// System.err.println("Graph is unclean for validation of cycles");
+		} // clean
 	}
-	
+
 }

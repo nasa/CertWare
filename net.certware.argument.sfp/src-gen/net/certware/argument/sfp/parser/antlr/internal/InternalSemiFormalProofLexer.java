@@ -14,9 +14,14 @@ import java.util.ArrayList;
 public class InternalSemiFormalProofLexer extends Lexer {
     public static final int RULE_ID=6;
     public static final int RULE_ANY_OTHER=10;
-    public static final int Tokens=21;
+    public static final int T25=25;
+    public static final int Tokens=26;
+    public static final int T24=24;
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
+    public static final int T23=23;
+    public static final int T22=22;
+    public static final int T21=21;
     public static final int T20=20;
     public static final int RULE_ML_COMMENT=7;
     public static final int RULE_STRING=4;
@@ -221,14 +226,107 @@ public class InternalSemiFormalProofLexer extends Lexer {
     }
     // $ANTLR end T20
 
+    // $ANTLR start T21
+    public final void mT21() throws RecognitionException {
+        try {
+            int _type = T21;
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:20:5: ( '{' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:20:7: '{'
+            {
+            match('{'); 
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T21
+
+    // $ANTLR start T22
+    public final void mT22() throws RecognitionException {
+        try {
+            int _type = T22;
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:21:5: ( '}' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:21:7: '}'
+            {
+            match('}'); 
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T22
+
+    // $ANTLR start T23
+    public final void mT23() throws RecognitionException {
+        try {
+            int _type = T23;
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:22:5: ( 'unknown' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:22:7: 'unknown'
+            {
+            match("unknown"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T23
+
+    // $ANTLR start T24
+    public final void mT24() throws RecognitionException {
+        try {
+            int _type = T24;
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:23:5: ( 'valid' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:23:7: 'valid'
+            {
+            match("valid"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T24
+
+    // $ANTLR start T25
+    public final void mT25() throws RecognitionException {
+        try {
+            int _type = T25;
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:24:5: ( 'invalid' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:24:7: 'invalid'
+            {
+            match("invalid"); 
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end T25
+
     // $ANTLR start RULE_ID
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:962:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:962:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1128:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1128:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:962:11: ( '^' )?
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1128:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -237,7 +335,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:962:11: '^'
+                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1128:11: '^'
                     {
                     match('^'); 
 
@@ -256,7 +354,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:962:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1128:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -304,10 +402,10 @@ public class InternalSemiFormalProofLexer extends Lexer {
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:964:10: ( ( '0' .. '9' )+ )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:964:12: ( '0' .. '9' )+
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1130:10: ( ( '0' .. '9' )+ )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1130:12: ( '0' .. '9' )+
             {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:964:12: ( '0' .. '9' )+
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1130:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -321,7 +419,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:964:13: '0' .. '9'
+            	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1130:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -351,10 +449,10 @@ public class InternalSemiFormalProofLexer extends Lexer {
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -366,16 +464,16 @@ public class InternalSemiFormalProofLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("966:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 6, 0, input);
+                    new NoViableAltException("1132:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 6, 0, input);
 
                 throw nvae;
             }
             switch (alt6) {
                 case 1 :
-                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -391,7 +489,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -408,7 +506,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -434,10 +532,10 @@ public class InternalSemiFormalProofLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -453,7 +551,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -470,7 +568,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:966:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1132:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -512,12 +610,12 @@ public class InternalSemiFormalProofLexer extends Lexer {
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:968:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:968:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1134:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1134:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:968:24: ( options {greedy=false; } : . )*
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1134:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -542,7 +640,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:968:52: .
+            	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1134:52: .
             	    {
             	    matchAny(); 
 
@@ -570,12 +668,12 @@ public class InternalSemiFormalProofLexer extends Lexer {
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -588,7 +686,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -609,7 +707,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
                 }
             } while (true);
 
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:40: ( ( '\\r' )? '\\n' )?
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -618,9 +716,9 @@ public class InternalSemiFormalProofLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:41: ( '\\r' )? '\\n'
+                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:41: ( '\\r' )? '\\n'
                     {
-                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:41: ( '\\r' )?
+                    // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -629,7 +727,7 @@ public class InternalSemiFormalProofLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:970:41: '\\r'
+                            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1136:41: '\\r'
                             {
                             match('\r'); 
 
@@ -659,10 +757,10 @@ public class InternalSemiFormalProofLexer extends Lexer {
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:972:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:972:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1138:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1138:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:972:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1138:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -715,8 +813,8 @@ public class InternalSemiFormalProofLexer extends Lexer {
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:974:16: ( . )
-            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:974:18: .
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1140:16: ( . )
+            // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1140:18: .
             {
             matchAny(); 
 
@@ -730,54 +828,54 @@ public class InternalSemiFormalProofLexer extends Lexer {
     // $ANTLR end RULE_ANY_OTHER
 
     public void mTokens() throws RecognitionException {
-        // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:8: ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=17;
+        // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:8: ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=22;
         int LA12_0 = input.LA(1);
 
         if ( (LA12_0=='T') ) {
             int LA12_1 = input.LA(2);
 
             if ( (LA12_1=='h') ) {
-                int LA12_18 = input.LA(3);
+                int LA12_23 = input.LA(3);
 
-                if ( (LA12_18=='e') ) {
-                    int LA12_34 = input.LA(4);
+                if ( (LA12_23=='e') ) {
+                    int LA12_44 = input.LA(4);
 
-                    if ( (LA12_34=='o') ) {
-                        int LA12_37 = input.LA(5);
+                    if ( (LA12_44=='o') ) {
+                        int LA12_50 = input.LA(5);
 
-                        if ( (LA12_37=='r') ) {
-                            int LA12_40 = input.LA(6);
+                        if ( (LA12_50=='r') ) {
+                            int LA12_56 = input.LA(6);
 
-                            if ( (LA12_40=='e') ) {
-                                int LA12_43 = input.LA(7);
+                            if ( (LA12_56=='e') ) {
+                                int LA12_62 = input.LA(7);
 
-                                if ( (LA12_43=='m') ) {
-                                    int LA12_46 = input.LA(8);
+                                if ( (LA12_62=='m') ) {
+                                    int LA12_68 = input.LA(8);
 
-                                    if ( ((LA12_46>='0' && LA12_46<='9')||(LA12_46>='A' && LA12_46<='Z')||LA12_46=='_'||(LA12_46>='a' && LA12_46<='z')) ) {
-                                        alt12=11;
+                                    if ( ((LA12_68>='0' && LA12_68<='9')||(LA12_68>='A' && LA12_68<='Z')||LA12_68=='_'||(LA12_68>='a' && LA12_68<='z')) ) {
+                                        alt12=16;
                                     }
                                     else {
                                         alt12=1;}
                                 }
                                 else {
-                                    alt12=11;}
+                                    alt12=16;}
                             }
                             else {
-                                alt12=11;}
+                                alt12=16;}
                         }
                         else {
-                            alt12=11;}
+                            alt12=16;}
                     }
                     else {
-                        alt12=11;}
+                        alt12=16;}
                 }
                 else {
-                    alt12=11;}
+                    alt12=16;}
             }
             else {
-                alt12=11;}
+                alt12=16;}
         }
         else if ( (LA12_0==':') ) {
             alt12=2;
@@ -795,109 +893,109 @@ public class InternalSemiFormalProofLexer extends Lexer {
             int LA12_6 = input.LA(2);
 
             if ( (LA12_6=='y') ) {
-                int LA12_24 = input.LA(3);
+                int LA12_29 = input.LA(3);
 
-                if ( (LA12_24=='p') ) {
-                    int LA12_35 = input.LA(4);
+                if ( (LA12_29=='p') ) {
+                    int LA12_45 = input.LA(4);
 
-                    if ( (LA12_35=='o') ) {
-                        int LA12_38 = input.LA(5);
+                    if ( (LA12_45=='o') ) {
+                        int LA12_51 = input.LA(5);
 
-                        if ( (LA12_38=='t') ) {
-                            int LA12_41 = input.LA(6);
+                        if ( (LA12_51=='t') ) {
+                            int LA12_57 = input.LA(6);
 
-                            if ( (LA12_41=='h') ) {
-                                int LA12_44 = input.LA(7);
+                            if ( (LA12_57=='h') ) {
+                                int LA12_63 = input.LA(7);
 
-                                if ( (LA12_44=='e') ) {
-                                    int LA12_47 = input.LA(8);
+                                if ( (LA12_63=='e') ) {
+                                    int LA12_69 = input.LA(8);
 
-                                    if ( (LA12_47=='s') ) {
-                                        int LA12_50 = input.LA(9);
+                                    if ( (LA12_69=='s') ) {
+                                        int LA12_74 = input.LA(9);
 
-                                        if ( (LA12_50=='i') ) {
-                                            int LA12_52 = input.LA(10);
+                                        if ( (LA12_74=='i') ) {
+                                            int LA12_78 = input.LA(10);
 
-                                            if ( (LA12_52=='s') ) {
-                                                int LA12_53 = input.LA(11);
+                                            if ( (LA12_78=='s') ) {
+                                                int LA12_79 = input.LA(11);
 
-                                                if ( ((LA12_53>='0' && LA12_53<='9')||(LA12_53>='A' && LA12_53<='Z')||LA12_53=='_'||(LA12_53>='a' && LA12_53<='z')) ) {
-                                                    alt12=11;
+                                                if ( ((LA12_79>='0' && LA12_79<='9')||(LA12_79>='A' && LA12_79<='Z')||LA12_79=='_'||(LA12_79>='a' && LA12_79<='z')) ) {
+                                                    alt12=16;
                                                 }
                                                 else {
                                                     alt12=6;}
                                             }
                                             else {
-                                                alt12=11;}
+                                                alt12=16;}
                                         }
                                         else {
-                                            alt12=11;}
+                                            alt12=16;}
                                     }
                                     else {
-                                        alt12=11;}
+                                        alt12=16;}
                                 }
                                 else {
-                                    alt12=11;}
+                                    alt12=16;}
                             }
                             else {
-                                alt12=11;}
+                                alt12=16;}
                         }
                         else {
-                            alt12=11;}
+                            alt12=16;}
                     }
                     else {
-                        alt12=11;}
+                        alt12=16;}
                 }
                 else {
-                    alt12=11;}
+                    alt12=16;}
             }
             else {
-                alt12=11;}
+                alt12=16;}
         }
         else if ( (LA12_0=='e') ) {
             int LA12_7 = input.LA(2);
 
             if ( (LA12_7=='p') ) {
-                int LA12_25 = input.LA(3);
+                int LA12_30 = input.LA(3);
 
-                if ( (LA12_25=='s') ) {
-                    int LA12_36 = input.LA(4);
+                if ( (LA12_30=='s') ) {
+                    int LA12_46 = input.LA(4);
 
-                    if ( (LA12_36=='i') ) {
-                        int LA12_39 = input.LA(5);
+                    if ( (LA12_46=='i') ) {
+                        int LA12_52 = input.LA(5);
 
-                        if ( (LA12_39=='l') ) {
-                            int LA12_42 = input.LA(6);
+                        if ( (LA12_52=='l') ) {
+                            int LA12_58 = input.LA(6);
 
-                            if ( (LA12_42=='o') ) {
-                                int LA12_45 = input.LA(7);
+                            if ( (LA12_58=='o') ) {
+                                int LA12_64 = input.LA(7);
 
-                                if ( (LA12_45=='n') ) {
-                                    int LA12_48 = input.LA(8);
+                                if ( (LA12_64=='n') ) {
+                                    int LA12_70 = input.LA(8);
 
-                                    if ( ((LA12_48>='0' && LA12_48<='9')||(LA12_48>='A' && LA12_48<='Z')||LA12_48=='_'||(LA12_48>='a' && LA12_48<='z')) ) {
-                                        alt12=11;
+                                    if ( ((LA12_70>='0' && LA12_70<='9')||(LA12_70>='A' && LA12_70<='Z')||LA12_70=='_'||(LA12_70>='a' && LA12_70<='z')) ) {
+                                        alt12=16;
                                     }
                                     else {
                                         alt12=7;}
                                 }
                                 else {
-                                    alt12=11;}
+                                    alt12=16;}
                             }
                             else {
-                                alt12=11;}
+                                alt12=16;}
                         }
                         else {
-                            alt12=11;}
+                            alt12=16;}
                     }
                     else {
-                        alt12=11;}
+                        alt12=16;}
                 }
                 else {
-                    alt12=11;}
+                    alt12=16;}
             }
             else {
-                alt12=11;}
+                alt12=16;}
         }
         else if ( (LA12_0=='-') ) {
             int LA12_8 = input.LA(2);
@@ -906,13 +1004,13 @@ public class InternalSemiFormalProofLexer extends Lexer {
                 alt12=8;
             }
             else {
-                alt12=17;}
+                alt12=22;}
         }
         else if ( (LA12_0=='^') ) {
             int LA12_9 = input.LA(2);
 
             if ( ((LA12_9>='A' && LA12_9<='Z')||LA12_9=='_'||(LA12_9>='a' && LA12_9<='z')) ) {
-                alt12=11;
+                alt12=16;
             }
             else {
                 alt12=9;}
@@ -920,55 +1018,184 @@ public class InternalSemiFormalProofLexer extends Lexer {
         else if ( (LA12_0=='.') ) {
             alt12=10;
         }
-        else if ( ((LA12_0>='A' && LA12_0<='S')||(LA12_0>='U' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='d')||(LA12_0>='f' && LA12_0<='g')||(LA12_0>='i' && LA12_0<='z')) ) {
+        else if ( (LA12_0=='{') ) {
             alt12=11;
         }
-        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {
+        else if ( (LA12_0=='}') ) {
             alt12=12;
         }
-        else if ( (LA12_0=='\"') ) {
+        else if ( (LA12_0=='u') ) {
             int LA12_13 = input.LA(2);
 
-            if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFE')) ) {
-                alt12=13;
+            if ( (LA12_13=='n') ) {
+                int LA12_36 = input.LA(3);
+
+                if ( (LA12_36=='k') ) {
+                    int LA12_47 = input.LA(4);
+
+                    if ( (LA12_47=='n') ) {
+                        int LA12_53 = input.LA(5);
+
+                        if ( (LA12_53=='o') ) {
+                            int LA12_59 = input.LA(6);
+
+                            if ( (LA12_59=='w') ) {
+                                int LA12_65 = input.LA(7);
+
+                                if ( (LA12_65=='n') ) {
+                                    int LA12_71 = input.LA(8);
+
+                                    if ( ((LA12_71>='0' && LA12_71<='9')||(LA12_71>='A' && LA12_71<='Z')||LA12_71=='_'||(LA12_71>='a' && LA12_71<='z')) ) {
+                                        alt12=16;
+                                    }
+                                    else {
+                                        alt12=13;}
+                                }
+                                else {
+                                    alt12=16;}
+                            }
+                            else {
+                                alt12=16;}
+                        }
+                        else {
+                            alt12=16;}
+                    }
+                    else {
+                        alt12=16;}
+                }
+                else {
+                    alt12=16;}
             }
             else {
-                alt12=17;}
+                alt12=16;}
         }
-        else if ( (LA12_0=='\'') ) {
+        else if ( (LA12_0=='v') ) {
             int LA12_14 = input.LA(2);
 
-            if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFE')) ) {
-                alt12=13;
+            if ( (LA12_14=='a') ) {
+                int LA12_37 = input.LA(3);
+
+                if ( (LA12_37=='l') ) {
+                    int LA12_48 = input.LA(4);
+
+                    if ( (LA12_48=='i') ) {
+                        int LA12_54 = input.LA(5);
+
+                        if ( (LA12_54=='d') ) {
+                            int LA12_60 = input.LA(6);
+
+                            if ( ((LA12_60>='0' && LA12_60<='9')||(LA12_60>='A' && LA12_60<='Z')||LA12_60=='_'||(LA12_60>='a' && LA12_60<='z')) ) {
+                                alt12=16;
+                            }
+                            else {
+                                alt12=14;}
+                        }
+                        else {
+                            alt12=16;}
+                    }
+                    else {
+                        alt12=16;}
+                }
+                else {
+                    alt12=16;}
             }
             else {
-                alt12=17;}
+                alt12=16;}
+        }
+        else if ( (LA12_0=='i') ) {
+            int LA12_15 = input.LA(2);
+
+            if ( (LA12_15=='n') ) {
+                int LA12_38 = input.LA(3);
+
+                if ( (LA12_38=='v') ) {
+                    int LA12_49 = input.LA(4);
+
+                    if ( (LA12_49=='a') ) {
+                        int LA12_55 = input.LA(5);
+
+                        if ( (LA12_55=='l') ) {
+                            int LA12_61 = input.LA(6);
+
+                            if ( (LA12_61=='i') ) {
+                                int LA12_67 = input.LA(7);
+
+                                if ( (LA12_67=='d') ) {
+                                    int LA12_72 = input.LA(8);
+
+                                    if ( ((LA12_72>='0' && LA12_72<='9')||(LA12_72>='A' && LA12_72<='Z')||LA12_72=='_'||(LA12_72>='a' && LA12_72<='z')) ) {
+                                        alt12=16;
+                                    }
+                                    else {
+                                        alt12=15;}
+                                }
+                                else {
+                                    alt12=16;}
+                            }
+                            else {
+                                alt12=16;}
+                        }
+                        else {
+                            alt12=16;}
+                    }
+                    else {
+                        alt12=16;}
+                }
+                else {
+                    alt12=16;}
+            }
+            else {
+                alt12=16;}
+        }
+        else if ( ((LA12_0>='A' && LA12_0<='S')||(LA12_0>='U' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='d')||(LA12_0>='f' && LA12_0<='g')||(LA12_0>='j' && LA12_0<='t')||(LA12_0>='w' && LA12_0<='z')) ) {
+            alt12=16;
+        }
+        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {
+            alt12=17;
+        }
+        else if ( (LA12_0=='\"') ) {
+            int LA12_18 = input.LA(2);
+
+            if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFE')) ) {
+                alt12=18;
+            }
+            else {
+                alt12=22;}
+        }
+        else if ( (LA12_0=='\'') ) {
+            int LA12_19 = input.LA(2);
+
+            if ( ((LA12_19>='\u0000' && LA12_19<='\uFFFE')) ) {
+                alt12=18;
+            }
+            else {
+                alt12=22;}
         }
         else if ( (LA12_0=='/') ) {
             switch ( input.LA(2) ) {
             case '/':
                 {
-                alt12=15;
+                alt12=20;
                 }
                 break;
             case '*':
                 {
-                alt12=14;
+                alt12=19;
                 }
                 break;
             default:
-                alt12=17;}
+                alt12=22;}
 
         }
         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {
-            alt12=16;
+            alt12=21;
         }
-        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFE')) ) {
-            alt12=17;
+        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFE')) ) {
+            alt12=22;
         }
         else {
             NoViableAltException nvae =
-                new NoViableAltException("1:1: Tokens : ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 12, 0, input);
+                new NoViableAltException("1:1: Tokens : ( T11 | T12 | T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );", 12, 0, input);
 
             throw nvae;
         }
@@ -1044,49 +1271,84 @@ public class InternalSemiFormalProofLexer extends Lexer {
                 }
                 break;
             case 11 :
-                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:50: RULE_ID
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:50: T21
+                {
+                mT21(); 
+
+                }
+                break;
+            case 12 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:54: T22
+                {
+                mT22(); 
+
+                }
+                break;
+            case 13 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:58: T23
+                {
+                mT23(); 
+
+                }
+                break;
+            case 14 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:62: T24
+                {
+                mT24(); 
+
+                }
+                break;
+            case 15 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:66: T25
+                {
+                mT25(); 
+
+                }
+                break;
+            case 16 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:70: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 12 :
-                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:58: RULE_INT
+            case 17 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:78: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 13 :
-                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:67: RULE_STRING
+            case 18 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:87: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 14 :
-                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:79: RULE_ML_COMMENT
+            case 19 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:99: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 15 :
-                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:95: RULE_SL_COMMENT
+            case 20 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:115: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 16 :
-                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:111: RULE_WS
+            case 21 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:131: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 17 :
-                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:119: RULE_ANY_OTHER
+            case 22 :
+                // ../net.certware.argument.sfp/src-gen/net/certware/argument/sfp/parser/antlr/internal/InternalSemiFormalProof.g:1:139: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 

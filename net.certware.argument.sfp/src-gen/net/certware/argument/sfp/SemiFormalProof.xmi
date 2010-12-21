@@ -34,30 +34,22 @@
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.certware.net/argument/sfp/SemiFormalProof#//Justifications"/>
       </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:Action">
-            <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.certware.net/argument/sfp/SemiFormalProof#//Justifications"/>
-            </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/argument/sfp/SemiFormalProof#//Justifications"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="justifications" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
           </elements>
-          <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
             <elements xsi:type="xtext:Assignment" feature="justifications" operator="+=">
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
             </elements>
-            <elements xsi:type="xtext:Group" cardinality="*">
-              <elements xsi:type="xtext:Keyword" value=","/>
-              <elements xsi:type="xtext:Assignment" feature="justifications" operator="+=">
-                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
-              </elements>
-            </elements>
           </elements>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="hypothesis" operator="=">
-          <terminal xsi:type="xtext:Keyword" value="hypothesis"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="epsilon" operator="=">
-          <terminal xsi:type="xtext:Keyword" value="epsilon"/>
         </elements>
       </alternatives>
     </rules>
@@ -72,9 +64,15 @@
               <classifier xsi:type="ecore:EClass" href="http://www.certware.net/argument/sfp/SemiFormalProof#//Justification"/>
             </type>
           </elements>
-          <elements xsi:type="xtext:Assignment" feature="numeral" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
+          <elements xsi:type="xtext:Assignment" feature="hypothesis" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="hypothesis"/>
           </elements>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="epsilon" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="epsilon"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="numeral" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="assertion" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
@@ -168,7 +166,7 @@
             </elements>
           </elements>
         </elements>
-        <elements xsi:type="xtext:Assignment" feature="epsilon" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="epsilon" operator="?=">
           <terminal xsi:type="xtext:Keyword" value="epsilon"/>
         </elements>
       </alternatives>
@@ -195,6 +193,53 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="{"/>
+          <elements xsi:type="xtext:Assignment" feature="validation" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="}"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Validation">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.certware.net/argument/sfp/SemiFormalProof#//Validation"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/argument/sfp/SemiFormalProof#//Validation"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="author" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="timeStamp" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="state" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:EnumRule" name="ValidationKind">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EEnum" href="http://www.certware.net/argument/sfp/SemiFormalProof#//ValidationKind"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.certware.net/argument/sfp/SemiFormalProof#//ValidationKind/UNKNOWN"/>
+          <literal value="unknown"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.certware.net/argument/sfp/SemiFormalProof#//ValidationKind/VALID"/>
+          <literal value="valid"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.certware.net/argument/sfp/SemiFormalProof#//ValidationKind/INVALID"/>
+          <literal value="invalid"/>
+        </elements>
       </alternatives>
     </rules>
   </xtext:Grammar>

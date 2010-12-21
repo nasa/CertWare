@@ -8,14 +8,11 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="net.certware.argument.euz.presentation.EuzModelWizardID"
             name="%_UI_EuzModelWizard_label"
             class="net.certware.argument.euz.presentation.EuzModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/EuzModelFile.gif">
          <description>%_UI_EuzModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>

@@ -358,17 +358,19 @@ public class SolutionEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureSolutionLabelFigure = new WrappingLabel();
 			fFigureSolutionLabelFigure.setText("Solution");
+			fFigureSolutionLabelFigure.setTextWrap(true);
 
 			this.add(fFigureSolutionLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

@@ -26,6 +26,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationImpl#isHypothesis <em>Hypothesis</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationImpl#isEpsilon <em>Epsilon</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationImpl#getNumeral <em>Numeral</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationImpl#getAssertion <em>Assertion</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationImpl#getEntailment <em>Entailment</em>}</li>
@@ -36,6 +38,46 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class JustificationImpl extends MinimalEObjectImpl.Container implements Justification
 {
+  /**
+   * The default value of the '{@link #isHypothesis() <em>Hypothesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHypothesis()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HYPOTHESIS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHypothesis() <em>Hypothesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHypothesis()
+   * @generated
+   * @ordered
+   */
+  protected boolean hypothesis = HYPOTHESIS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isEpsilon() <em>Epsilon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEpsilon()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean EPSILON_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isEpsilon() <em>Epsilon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEpsilon()
+   * @generated
+   * @ordered
+   */
+  protected boolean epsilon = EPSILON_EDEFAULT;
+
   /**
    * The default value of the '{@link #getNumeral() <em>Numeral</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,6 +137,52 @@ public class JustificationImpl extends MinimalEObjectImpl.Container implements J
   protected EClass eStaticClass()
   {
     return SemiFormalProofPackage.Literals.JUSTIFICATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isHypothesis()
+  {
+    return hypothesis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHypothesis(boolean newHypothesis)
+  {
+    boolean oldHypothesis = hypothesis;
+    hypothesis = newHypothesis;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.JUSTIFICATION__HYPOTHESIS, oldHypothesis, hypothesis));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isEpsilon()
+  {
+    return epsilon;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEpsilon(boolean newEpsilon)
+  {
+    boolean oldEpsilon = epsilon;
+    epsilon = newEpsilon;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.JUSTIFICATION__EPSILON, oldEpsilon, epsilon));
   }
 
   /**
@@ -244,6 +332,10 @@ public class JustificationImpl extends MinimalEObjectImpl.Container implements J
   {
     switch (featureID)
     {
+      case SemiFormalProofPackage.JUSTIFICATION__HYPOTHESIS:
+        return isHypothesis();
+      case SemiFormalProofPackage.JUSTIFICATION__EPSILON:
+        return isEpsilon();
       case SemiFormalProofPackage.JUSTIFICATION__NUMERAL:
         return getNumeral();
       case SemiFormalProofPackage.JUSTIFICATION__ASSERTION:
@@ -264,6 +356,12 @@ public class JustificationImpl extends MinimalEObjectImpl.Container implements J
   {
     switch (featureID)
     {
+      case SemiFormalProofPackage.JUSTIFICATION__HYPOTHESIS:
+        setHypothesis((Boolean)newValue);
+        return;
+      case SemiFormalProofPackage.JUSTIFICATION__EPSILON:
+        setEpsilon((Boolean)newValue);
+        return;
       case SemiFormalProofPackage.JUSTIFICATION__NUMERAL:
         setNumeral((String)newValue);
         return;
@@ -287,6 +385,12 @@ public class JustificationImpl extends MinimalEObjectImpl.Container implements J
   {
     switch (featureID)
     {
+      case SemiFormalProofPackage.JUSTIFICATION__HYPOTHESIS:
+        setHypothesis(HYPOTHESIS_EDEFAULT);
+        return;
+      case SemiFormalProofPackage.JUSTIFICATION__EPSILON:
+        setEpsilon(EPSILON_EDEFAULT);
+        return;
       case SemiFormalProofPackage.JUSTIFICATION__NUMERAL:
         setNumeral(NUMERAL_EDEFAULT);
         return;
@@ -310,6 +414,10 @@ public class JustificationImpl extends MinimalEObjectImpl.Container implements J
   {
     switch (featureID)
     {
+      case SemiFormalProofPackage.JUSTIFICATION__HYPOTHESIS:
+        return hypothesis != HYPOTHESIS_EDEFAULT;
+      case SemiFormalProofPackage.JUSTIFICATION__EPSILON:
+        return epsilon != EPSILON_EDEFAULT;
       case SemiFormalProofPackage.JUSTIFICATION__NUMERAL:
         return NUMERAL_EDEFAULT == null ? numeral != null : !NUMERAL_EDEFAULT.equals(numeral);
       case SemiFormalProofPackage.JUSTIFICATION__ASSERTION:
@@ -331,7 +439,11 @@ public class JustificationImpl extends MinimalEObjectImpl.Container implements J
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (numeral: ");
+    result.append(" (hypothesis: ");
+    result.append(hypothesis);
+    result.append(", epsilon: ");
+    result.append(epsilon);
+    result.append(", numeral: ");
     result.append(numeral);
     result.append(')');
     return result.toString();

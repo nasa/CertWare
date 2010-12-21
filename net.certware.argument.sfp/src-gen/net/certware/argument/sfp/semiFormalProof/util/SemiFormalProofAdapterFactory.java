@@ -118,6 +118,11 @@ public class SemiFormalProofAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
+      public Adapter caseValidation(Validation object)
+      {
+        return createValidationAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -255,6 +260,21 @@ public class SemiFormalProofAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.argument.sfp.semiFormalProof.Validation <em>Validation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.argument.sfp.semiFormalProof.Validation
+   * @generated
+   */
+  public Adapter createValidationAdapter()
   {
     return null;
   }

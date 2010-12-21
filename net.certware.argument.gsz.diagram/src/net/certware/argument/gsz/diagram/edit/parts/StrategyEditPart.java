@@ -347,12 +347,13 @@ public class StrategyEditPart extends ShapeNodeEditPart {
 		private WrappingLabel fFigureModelElementContentLabelFigure;
 
 		/**
-		 * @generated
+		 * @generated NOT 
 		 */
 		public StrategyFigure() {
 
 			this.setForegroundColor(THIS_FORE);
 			this.setBackgroundColor(THIS_BACK);
+			this.setLineWidth(2); // added outside of generator
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(100),
 					getMapMode().DPtoLP(60)));
 			createContents();

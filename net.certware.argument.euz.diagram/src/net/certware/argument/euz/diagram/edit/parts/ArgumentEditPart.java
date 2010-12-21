@@ -385,17 +385,19 @@ public class ArgumentEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureArgumentLabelFigure = new WrappingLabel();
 			fFigureArgumentLabelFigure.setText("Argument");
+			fFigureArgumentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureArgumentLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

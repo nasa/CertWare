@@ -79,8 +79,8 @@ public class Main {
 		*/
 
 		/** Graph Acyclic check and entailment verification **/
-		String message = new String();
-		if (acyclic.isAcyclic(message)) {
+		String message = acyclic.isAcyclic();
+		if ( message == null ) {
 
 			// boolean success = true;
 			Set context = new HashSet();

@@ -8,6 +8,7 @@ package net.certware.argument.sfp.semiFormalProof.impl;
 import net.certware.argument.sfp.semiFormalProof.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -75,8 +76,43 @@ public class SemiFormalProofFactoryImpl extends EFactoryImpl implements SemiForm
       case SemiFormalProofPackage.CONJUNCTION: return createConjunction();
       case SemiFormalProofPackage.PROOF_STEPS: return createProofSteps();
       case SemiFormalProofPackage.STATEMENT: return createStatement();
+      case SemiFormalProofPackage.VALIDATION: return createValidation();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case SemiFormalProofPackage.VALIDATION_KIND:
+        return createValidationKindFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case SemiFormalProofPackage.VALIDATION_KIND:
+        return convertValidationKindToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -166,6 +202,39 @@ public class SemiFormalProofFactoryImpl extends EFactoryImpl implements SemiForm
   {
     StatementImpl statement = new StatementImpl();
     return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Validation createValidation()
+  {
+    ValidationImpl validation = new ValidationImpl();
+    return validation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValidationKind createValidationKindFromString(EDataType eDataType, String initialValue)
+  {
+    ValidationKind result = ValidationKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertValidationKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

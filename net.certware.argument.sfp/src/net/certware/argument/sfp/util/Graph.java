@@ -24,6 +24,8 @@ public class Graph {
 	/** adjacency vector */
 	Vector adjacency;
 
+	// TODO is there a reason statement identifiers have to be integers?
+
 	/**
 	 * Sets graph vertex count to argument; sets edge count to zero. Allocates
 	 * array vector to vertex count plus one.
@@ -72,49 +74,56 @@ public class Graph {
 	 */
 	public void insert(Statement s) {
 		try {
+			// check incoming
+			if ( s == null || s.getJustification() == null ) {
+				return;
+			}
+
 			// statement identifier
 			int statementNumber = Integer.parseInt( s.getId() );
-			
+
 			// get the statement's justification list, if numerical references
 			// add an arc from the statement node to the justification reference number
 			// catches number format exceptions, logs them, moves on
 			for ( Justification j : s.getJustification().getJustifications() ) {
-				
+
 				try { 
-					// reference numeral
+					// skip assertions
+					/*
+					if ( j.getAssertion() != null && j.getAssertion().getText().isEmpty() == false)
+						continue;
+					*/
+
+					// reference numerals same line
 					if ( j.getNumeral() != null && j.getNumeral().isEmpty() == false ) {
 						int n = Integer.parseInt( j.getNumeral() );
 						addArc(statementNumber, n);
-					} else 
-						// assertion
-						if ( j.getAssertion() != null && j.getAssertion().getText().isEmpty() == false) {
-							continue;
-					} else {
-						// entailment
+					}
+
+					// entailment tail
+					if ( j.getEntailment() != null ) {
 						String tail = j.getEntailment().getTail();
 						if ( tail != null ) {
 							int n = Integer.parseInt( tail );
 							addArc(statementNumber, n);
 						} else {
 							CertWareLog.logWarning(
-									String.format("Entailment tail found null for statement %s",
-									s.getStatement() ));
+									String.format("%s %s",
+											"Entailment tail found null for statement",
+											s.getStatement() ));
 							edgeInsertionClean = false;
 						}
 					}
-
 				} catch( NumberFormatException nfe ) {
-					CertWareLog.logWarning(
-							String.format("Integer parse error for statement %s",
-							s.getStatement() ));
+					// parser and editor report the warnings
 					edgeInsertionClean = false;
 				}
 			} // for
 		} catch (Exception e) {
 			CertWareLog.logError(
 					String.format("Graph insertion error for statement %s",
-					s.getStatement() ),
-					e);
+							s.getStatement() ),
+							e);
 			edgeInsertionClean = false;
 		}
 	}
@@ -126,8 +135,8 @@ public class Graph {
 	public boolean isClean() {
 		return edgeInsertionClean;
 	}
-	
-	
+
+
 	/**
 	 * Private counters for DFS search
 	 * @author nachi
@@ -168,9 +177,14 @@ public class Graph {
 		for (int i = 0; i < neighbors.size(); i++) {
 			int u = ((Integer) neighbors.elementAt(i)).intValue();
 
-			if (preOrder[u] == 0) // Have we not seen vertex u before?
-			{
-				doDFS(u, preOrder, postOrder, countPair);
+			try {
+				if (preOrder[u] == 0) // Have we not seen vertex u before?
+				{
+					doDFS(u, preOrder, postOrder, countPair);
+				}
+			} catch( ArrayIndexOutOfBoundsException ae ) {
+				// ignore, validation catches invalid statement numbers
+				// TODO change pre order and post order to lists rather than arrays
 			}
 		}
 
@@ -181,7 +195,7 @@ public class Graph {
 	/**
 	 * Depth-first search on graph, setup and execute.
 	 * @param v starting vertex
-	 * @param preOrder pre-order array
+	 * @param preOrder preorder array
 	 * @param postOrder post-order array
 	 * @return post-order array value at vertex
 	 */
@@ -203,16 +217,15 @@ public class Graph {
 	 * Whether the graph is acyclic.
 	 * Sets incoming message to null, but if cycle found loads it with message identifying cycle.
 	 * See {@code SemiFormalProofJavaValidator} for companion marker generation for validation.
-	 * @param message returned message for cycle identification, valid only if return value is false
-	 * @return true if graph is acyclic
+	 * @return message location if cycle found, null if no cycles
 	 */
-	public boolean isAcyclic(String message)
+	public String isAcyclic()
 	{
 		int vertexCount = getVertexCount();
 		int[] preOrder = new int[vertexCount];
 		int[] postOrder = new int[vertexCount];
 		boolean[] span = new boolean[vertexCount];
-		message = null;
+		String message = null;
 
 		for (int i = 1; i < vertexCount; i++) { // check if any vertex is on a cycle
 
@@ -236,12 +249,16 @@ public class Graph {
 				for (int k = 0; k < neighbors.size(); k++) {
 					int u = ((Integer) neighbors.elementAt(k)).intValue();
 
+					try {
 					if (postOrder[u] >= postOrder[j]) {
 						message = String.format("%s %d and %d",
 								"A cycle exists between proof statements", 
 								postOrder[u], 
 								postOrder[j]);
-						return false; 
+						return message; 
+					}
+					} catch ( ArrayIndexOutOfBoundsException obe) {
+						// ignore, move on
 					}
 
 					// note: PostOrder[u] > 0 since u is reachable from j
@@ -253,10 +270,10 @@ public class Graph {
 			}
 		}
 
-		return true;
+		return message;
 	}
 
-	
+
 	/**
 	 * Insert object. 
 	 * @param infObj
@@ -277,7 +294,7 @@ public class Graph {
 			CertWareLog.logError("Argument graph validation", e);
 		}
 	}
-	*/
+	 */
 
 }
 

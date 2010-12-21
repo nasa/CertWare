@@ -98,6 +98,15 @@ public interface SemiFormalProofFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Validation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Validation</em>'.
+   * @generated
+   */
+  Validation createValidation();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

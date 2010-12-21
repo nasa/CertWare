@@ -110,4 +110,14 @@ public interface IHelpContext {
 	/** example wizard document */
 	public static String EXAMPLE_WIZARD_DOCUMENT = PREFIX + "example_wizard_document_context"; //$NON-NLS-1$
 
+	// proof review context IDs
+	/** review wizard page context */
+	public static String REVIEW_WIZARD_PAGE = PREFIX + "review_wizard_page_context"; //$NON-NLS-1$
+	/** review wizard proof context */
+	public static String REVIEW_WIZARD_PROOF = PREFIX + "review_wizard_proof_context"; //$NON-NLS-1$
+	/** review wizard statement context */
+	public static String REVIEW_WIZARD_STATEMENT = PREFIX + "review_wizard_statement_context"; //$NON-NLS-1$
+	/** review wizard hypothesis context */
+	public static String REVIEW_WIZARD_HYPOTHESIS = PREFIX + "review_wizard_hypothesis_context"; //$NON-NLS-1$
+	
 }

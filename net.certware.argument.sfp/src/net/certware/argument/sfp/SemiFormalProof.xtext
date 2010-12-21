@@ -8,6 +8,7 @@ grammar net.certware.argument.sfp.SemiFormalProof with org.eclipse.xtext.common.
 
 generate semiFormalProof "http://www.certware.net/argument/sfp/SemiFormalProof"
 
+
 Proof: 
 	'Theorem' ':'  
 	title=Text 
@@ -18,10 +19,10 @@ Proof:
 Text : STRING;
 
 Justifications : {Justifications} 
-	(justifications+=Justification (',' justifications+=Justification)*)? | hypothesis='hypothesis' | epsilon='epsilon'; 
+	(justifications+=Justification (',' justifications+=Justification)*)? ; 
 
 Justification : {Justification}
-	numeral=Numeral | assertion=QuotedAssertion | entailment=Entailment ;
+	hypothesis?='hypothesis' | epsilon?='epsilon' | numeral=Numeral | assertion=QuotedAssertion | entailment=Entailment ;
 	
 QuotedAssertion : {QuotedAssertion}
 	text=Text;
@@ -35,10 +36,20 @@ Conjunction : {Conjunction}
 Numeral : INT;
 
 ProofSteps : {ProofSteps} 
-	(statements+=Statement (statements+=Statement)*)? | epsilon='epsilon'
+	(statements+=Statement (statements+=Statement)*)? | epsilon?='epsilon'
 	;
 	
 Statement : {Statement}
-	id=Numeral '.' statement=Text '(' justification=Justifications ')' ;
+	id=Numeral '.' statement=Text '(' justification=Justifications ')' ( '{' validation=Validation '}')? ;
+
+Validation : {Validation}
+	author=Text (timeStamp=Text)? state=ValidationKind ; 
+	
+// enumeration ordered so that value 0 is unknown
+enum ValidationKind :
+	UNKNOWN='unknown' |
+	VALID='valid' |
+	INVALID='invalid'
+	;  
 	
 // end

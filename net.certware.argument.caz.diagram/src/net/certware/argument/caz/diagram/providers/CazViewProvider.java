@@ -319,6 +319,7 @@ public class CazViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unused")
 	public Node createClaim_2001(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -364,6 +365,7 @@ public class CazViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unused")
 	public Node createEvidence_2002(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -410,6 +412,7 @@ public class CazViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unused")
 	public Node createArgument_2003(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -456,6 +459,7 @@ public class CazViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unused")
 	public Node createAssumption_2004(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -504,6 +508,7 @@ public class CazViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unused")
 	public Node createJustification_2005(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -553,6 +558,7 @@ public class CazViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unused")
 	public Node createContext_2006(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();

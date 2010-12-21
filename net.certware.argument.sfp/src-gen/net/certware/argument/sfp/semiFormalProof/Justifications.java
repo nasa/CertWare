@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justifications#getJustifications <em>Justifications</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justifications#getHypothesis <em>Hypothesis</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justifications#getEpsilon <em>Epsilon</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,57 +42,5 @@ public interface Justifications extends EObject
    * @generated
    */
   EList<Justification> getJustifications();
-
-  /**
-   * Returns the value of the '<em><b>Hypothesis</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Hypothesis</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Hypothesis</em>' attribute.
-   * @see #setHypothesis(String)
-   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getJustifications_Hypothesis()
-   * @model
-   * @generated
-   */
-  String getHypothesis();
-
-  /**
-   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Justifications#getHypothesis <em>Hypothesis</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Hypothesis</em>' attribute.
-   * @see #getHypothesis()
-   * @generated
-   */
-  void setHypothesis(String value);
-
-  /**
-   * Returns the value of the '<em><b>Epsilon</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Epsilon</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Epsilon</em>' attribute.
-   * @see #setEpsilon(String)
-   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getJustifications_Epsilon()
-   * @model
-   * @generated
-   */
-  String getEpsilon();
-
-  /**
-   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Justifications#getEpsilon <em>Epsilon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Epsilon</em>' attribute.
-   * @see #getEpsilon()
-   * @generated
-   */
-  void setEpsilon(String value);
 
 } // Justifications

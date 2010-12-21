@@ -23,7 +23,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSemiFormalProofParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Theorem'", "':'", "'('", "')'", "','", "'->'", "'^'", "'.'", "'hypothesis'", "'epsilon'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'unknown'", "'valid'", "'invalid'", "'Theorem'", "':'", "'('", "')'", "','", "'->'", "'^'", "'.'", "'{'", "'}'", "'hypothesis'", "'epsilon'"
     };
     public static final int RULE_ID=6;
     public static final int RULE_STRING=4;
@@ -234,30 +234,30 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start ruleJustifications
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:126:1: ruleJustifications : ( ( rule__Justifications__Alternatives ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:126:1: ruleJustifications : ( ( rule__Justifications__Group__0 ) ) ;
     public final void ruleJustifications() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:130:2: ( ( ( rule__Justifications__Alternatives ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:131:1: ( ( rule__Justifications__Alternatives ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:130:2: ( ( ( rule__Justifications__Group__0 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:131:1: ( ( rule__Justifications__Group__0 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:131:1: ( ( rule__Justifications__Alternatives ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:132:1: ( rule__Justifications__Alternatives )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:131:1: ( ( rule__Justifications__Group__0 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:132:1: ( rule__Justifications__Group__0 )
             {
-             before(grammarAccess.getJustificationsAccess().getAlternatives()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:133:1: ( rule__Justifications__Alternatives )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:133:2: rule__Justifications__Alternatives
+             before(grammarAccess.getJustificationsAccess().getGroup()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:133:1: ( rule__Justifications__Group__0 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:133:2: rule__Justifications__Group__0
             {
-            pushFollow(FOLLOW_rule__Justifications__Alternatives_in_ruleJustifications213);
-            rule__Justifications__Alternatives();
+            pushFollow(FOLLOW_rule__Justifications__Group__0_in_ruleJustifications213);
+            rule__Justifications__Group__0();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getJustificationsAccess().getAlternatives()); 
+             after(grammarAccess.getJustificationsAccess().getGroup()); 
 
             }
 
@@ -795,116 +795,66 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     // $ANTLR end ruleStatement
 
 
-    // $ANTLR start rule__Justifications__Alternatives
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:341:1: rule__Justifications__Alternatives : ( ( ( rule__Justifications__Group_0__0 ) ) | ( ( rule__Justifications__HypothesisAssignment_1 ) ) | ( ( rule__Justifications__EpsilonAssignment_2 ) ) );
-    public final void rule__Justifications__Alternatives() throws RecognitionException {
+    // $ANTLR start entryRuleValidation
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:341:1: entryRuleValidation : ruleValidation EOF ;
+    public final void entryRuleValidation() throws RecognitionException {
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:342:1: ( ruleValidation EOF )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:343:1: ruleValidation EOF
+            {
+             before(grammarAccess.getValidationRule()); 
+            pushFollow(FOLLOW_ruleValidation_in_entryRuleValidation659);
+            ruleValidation();
+            _fsp--;
+
+             after(grammarAccess.getValidationRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValidation666); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end entryRuleValidation
+
+
+    // $ANTLR start ruleValidation
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:350:1: ruleValidation : ( ( rule__Validation__Group__0 ) ) ;
+    public final void ruleValidation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:345:1: ( ( ( rule__Justifications__Group_0__0 ) ) | ( ( rule__Justifications__HypothesisAssignment_1 ) ) | ( ( rule__Justifications__EpsilonAssignment_2 ) ) )
-            int alt1=3;
-            switch ( input.LA(1) ) {
-            case EOF:
-            case RULE_STRING:
-            case RULE_INT:
-            case 14:
-                {
-                alt1=1;
-                }
-                break;
-            case 19:
-                {
-                alt1=2;
-                }
-                break;
-            case 20:
-                {
-                alt1=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("341:1: rule__Justifications__Alternatives : ( ( ( rule__Justifications__Group_0__0 ) ) | ( ( rule__Justifications__HypothesisAssignment_1 ) ) | ( ( rule__Justifications__EpsilonAssignment_2 ) ) );", 1, 0, input);
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:354:2: ( ( ( rule__Validation__Group__0 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:355:1: ( ( rule__Validation__Group__0 ) )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:355:1: ( ( rule__Validation__Group__0 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:356:1: ( rule__Validation__Group__0 )
+            {
+             before(grammarAccess.getValidationAccess().getGroup()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:357:1: ( rule__Validation__Group__0 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:357:2: rule__Validation__Group__0
+            {
+            pushFollow(FOLLOW_rule__Validation__Group__0_in_ruleValidation692);
+            rule__Validation__Group__0();
+            _fsp--;
 
-                throw nvae;
+
             }
 
-            switch (alt1) {
-                case 1 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:346:1: ( ( rule__Justifications__Group_0__0 ) )
-                    {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:346:1: ( ( rule__Justifications__Group_0__0 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:347:1: ( rule__Justifications__Group_0__0 )
-                    {
-                     before(grammarAccess.getJustificationsAccess().getGroup_0()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:348:1: ( rule__Justifications__Group_0__0 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:348:2: rule__Justifications__Group_0__0
-                    {
-                    pushFollow(FOLLOW_rule__Justifications__Group_0__0_in_rule__Justifications__Alternatives668);
-                    rule__Justifications__Group_0__0();
-                    _fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getJustificationsAccess().getGroup_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:352:6: ( ( rule__Justifications__HypothesisAssignment_1 ) )
-                    {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:352:6: ( ( rule__Justifications__HypothesisAssignment_1 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:353:1: ( rule__Justifications__HypothesisAssignment_1 )
-                    {
-                     before(grammarAccess.getJustificationsAccess().getHypothesisAssignment_1()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:354:1: ( rule__Justifications__HypothesisAssignment_1 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:354:2: rule__Justifications__HypothesisAssignment_1
-                    {
-                    pushFollow(FOLLOW_rule__Justifications__HypothesisAssignment_1_in_rule__Justifications__Alternatives686);
-                    rule__Justifications__HypothesisAssignment_1();
-                    _fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getJustificationsAccess().getHypothesisAssignment_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:358:6: ( ( rule__Justifications__EpsilonAssignment_2 ) )
-                    {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:358:6: ( ( rule__Justifications__EpsilonAssignment_2 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:359:1: ( rule__Justifications__EpsilonAssignment_2 )
-                    {
-                     before(grammarAccess.getJustificationsAccess().getEpsilonAssignment_2()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:360:1: ( rule__Justifications__EpsilonAssignment_2 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:360:2: rule__Justifications__EpsilonAssignment_2
-                    {
-                    pushFollow(FOLLOW_rule__Justifications__EpsilonAssignment_2_in_rule__Justifications__Alternatives704);
-                    rule__Justifications__EpsilonAssignment_2();
-                    _fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getJustificationsAccess().getEpsilonAssignment_2()); 
-
-                    }
-
-
-                    }
-                    break;
+             after(grammarAccess.getValidationAccess().getGroup()); 
 
             }
+
+
+            }
+
         }
         catch (RecognitionException re) {
             reportError(re);
@@ -917,57 +867,117 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__Alternatives
+    // $ANTLR end ruleValidation
+
+
+    // $ANTLR start ruleValidationKind
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:370:1: ruleValidationKind : ( ( rule__ValidationKind__Alternatives ) ) ;
+    public final void ruleValidationKind() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:374:1: ( ( ( rule__ValidationKind__Alternatives ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:375:1: ( ( rule__ValidationKind__Alternatives ) )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:375:1: ( ( rule__ValidationKind__Alternatives ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:376:1: ( rule__ValidationKind__Alternatives )
+            {
+             before(grammarAccess.getValidationKindAccess().getAlternatives()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:377:1: ( rule__ValidationKind__Alternatives )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:377:2: rule__ValidationKind__Alternatives
+            {
+            pushFollow(FOLLOW_rule__ValidationKind__Alternatives_in_ruleValidationKind729);
+            rule__ValidationKind__Alternatives();
+            _fsp--;
+
+
+            }
+
+             after(grammarAccess.getValidationKindAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end ruleValidationKind
 
 
     // $ANTLR start rule__Justification__Alternatives
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:369:1: rule__Justification__Alternatives : ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__AssertionAssignment_1 ) ) | ( ( rule__Justification__EntailmentAssignment_2 ) ) );
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:388:1: rule__Justification__Alternatives : ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__EpsilonAssignment_1 ) ) | ( ( rule__Justification__NumeralAssignment_2 ) ) | ( ( rule__Justification__AssertionAssignment_3 ) ) | ( ( rule__Justification__EntailmentAssignment_4 ) ) );
     public final void rule__Justification__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:373:1: ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__AssertionAssignment_1 ) ) | ( ( rule__Justification__EntailmentAssignment_2 ) ) )
-            int alt2=3;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==RULE_INT) ) {
-                int LA2_1 = input.LA(2);
-
-                if ( ((LA2_1>=16 && LA2_1<=17)) ) {
-                    alt2=3;
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:392:1: ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__EpsilonAssignment_1 ) ) | ( ( rule__Justification__NumeralAssignment_2 ) ) | ( ( rule__Justification__AssertionAssignment_3 ) ) | ( ( rule__Justification__EntailmentAssignment_4 ) ) )
+            int alt1=5;
+            switch ( input.LA(1) ) {
+            case 24:
+                {
+                alt1=1;
                 }
-                else if ( (LA2_1==EOF||(LA2_1>=14 && LA2_1<=15)) ) {
-                    alt2=1;
+                break;
+            case 25:
+                {
+                alt1=2;
+                }
+                break;
+            case RULE_INT:
+                {
+                int LA1_3 = input.LA(2);
+
+                if ( ((LA1_3>=19 && LA1_3<=20)) ) {
+                    alt1=5;
+                }
+                else if ( (LA1_3==EOF||(LA1_3>=17 && LA1_3<=18)) ) {
+                    alt1=3;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("369:1: rule__Justification__Alternatives : ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__AssertionAssignment_1 ) ) | ( ( rule__Justification__EntailmentAssignment_2 ) ) );", 2, 1, input);
+                        new NoViableAltException("388:1: rule__Justification__Alternatives : ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__EpsilonAssignment_1 ) ) | ( ( rule__Justification__NumeralAssignment_2 ) ) | ( ( rule__Justification__AssertionAssignment_3 ) ) | ( ( rule__Justification__EntailmentAssignment_4 ) ) );", 1, 3, input);
 
                     throw nvae;
                 }
-            }
-            else if ( (LA2_0==RULE_STRING) ) {
-                alt2=2;
-            }
-            else {
+                }
+                break;
+            case RULE_STRING:
+                {
+                alt1=4;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("369:1: rule__Justification__Alternatives : ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__AssertionAssignment_1 ) ) | ( ( rule__Justification__EntailmentAssignment_2 ) ) );", 2, 0, input);
+                    new NoViableAltException("388:1: rule__Justification__Alternatives : ( ( ( rule__Justification__Group_0__0 ) ) | ( ( rule__Justification__EpsilonAssignment_1 ) ) | ( ( rule__Justification__NumeralAssignment_2 ) ) | ( ( rule__Justification__AssertionAssignment_3 ) ) | ( ( rule__Justification__EntailmentAssignment_4 ) ) );", 1, 0, input);
 
                 throw nvae;
             }
-            switch (alt2) {
+
+            switch (alt1) {
                 case 1 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:374:1: ( ( rule__Justification__Group_0__0 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:393:1: ( ( rule__Justification__Group_0__0 ) )
                     {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:374:1: ( ( rule__Justification__Group_0__0 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:375:1: ( rule__Justification__Group_0__0 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:393:1: ( ( rule__Justification__Group_0__0 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:394:1: ( rule__Justification__Group_0__0 )
                     {
                      before(grammarAccess.getJustificationAccess().getGroup_0()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:376:1: ( rule__Justification__Group_0__0 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:376:2: rule__Justification__Group_0__0
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:395:1: ( rule__Justification__Group_0__0 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:395:2: rule__Justification__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Justification__Group_0__0_in_rule__Justification__Alternatives737);
+                    pushFollow(FOLLOW_rule__Justification__Group_0__0_in_rule__Justification__Alternatives764);
                     rule__Justification__Group_0__0();
                     _fsp--;
 
@@ -982,23 +992,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:380:6: ( ( rule__Justification__AssertionAssignment_1 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:399:6: ( ( rule__Justification__EpsilonAssignment_1 ) )
                     {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:380:6: ( ( rule__Justification__AssertionAssignment_1 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:381:1: ( rule__Justification__AssertionAssignment_1 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:399:6: ( ( rule__Justification__EpsilonAssignment_1 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:400:1: ( rule__Justification__EpsilonAssignment_1 )
                     {
-                     before(grammarAccess.getJustificationAccess().getAssertionAssignment_1()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:382:1: ( rule__Justification__AssertionAssignment_1 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:382:2: rule__Justification__AssertionAssignment_1
+                     before(grammarAccess.getJustificationAccess().getEpsilonAssignment_1()); 
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:401:1: ( rule__Justification__EpsilonAssignment_1 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:401:2: rule__Justification__EpsilonAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Justification__AssertionAssignment_1_in_rule__Justification__Alternatives755);
-                    rule__Justification__AssertionAssignment_1();
+                    pushFollow(FOLLOW_rule__Justification__EpsilonAssignment_1_in_rule__Justification__Alternatives782);
+                    rule__Justification__EpsilonAssignment_1();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getJustificationAccess().getAssertionAssignment_1()); 
+                     after(grammarAccess.getJustificationAccess().getEpsilonAssignment_1()); 
 
                     }
 
@@ -1006,23 +1016,71 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:386:6: ( ( rule__Justification__EntailmentAssignment_2 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:405:6: ( ( rule__Justification__NumeralAssignment_2 ) )
                     {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:386:6: ( ( rule__Justification__EntailmentAssignment_2 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:387:1: ( rule__Justification__EntailmentAssignment_2 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:405:6: ( ( rule__Justification__NumeralAssignment_2 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:406:1: ( rule__Justification__NumeralAssignment_2 )
                     {
-                     before(grammarAccess.getJustificationAccess().getEntailmentAssignment_2()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:388:1: ( rule__Justification__EntailmentAssignment_2 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:388:2: rule__Justification__EntailmentAssignment_2
+                     before(grammarAccess.getJustificationAccess().getNumeralAssignment_2()); 
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:407:1: ( rule__Justification__NumeralAssignment_2 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:407:2: rule__Justification__NumeralAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__Justification__EntailmentAssignment_2_in_rule__Justification__Alternatives773);
-                    rule__Justification__EntailmentAssignment_2();
+                    pushFollow(FOLLOW_rule__Justification__NumeralAssignment_2_in_rule__Justification__Alternatives800);
+                    rule__Justification__NumeralAssignment_2();
                     _fsp--;
 
 
                     }
 
-                     after(grammarAccess.getJustificationAccess().getEntailmentAssignment_2()); 
+                     after(grammarAccess.getJustificationAccess().getNumeralAssignment_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:411:6: ( ( rule__Justification__AssertionAssignment_3 ) )
+                    {
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:411:6: ( ( rule__Justification__AssertionAssignment_3 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:412:1: ( rule__Justification__AssertionAssignment_3 )
+                    {
+                     before(grammarAccess.getJustificationAccess().getAssertionAssignment_3()); 
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:413:1: ( rule__Justification__AssertionAssignment_3 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:413:2: rule__Justification__AssertionAssignment_3
+                    {
+                    pushFollow(FOLLOW_rule__Justification__AssertionAssignment_3_in_rule__Justification__Alternatives818);
+                    rule__Justification__AssertionAssignment_3();
+                    _fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getJustificationAccess().getAssertionAssignment_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:417:6: ( ( rule__Justification__EntailmentAssignment_4 ) )
+                    {
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:417:6: ( ( rule__Justification__EntailmentAssignment_4 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:418:1: ( rule__Justification__EntailmentAssignment_4 )
+                    {
+                     before(grammarAccess.getJustificationAccess().getEntailmentAssignment_4()); 
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:419:1: ( rule__Justification__EntailmentAssignment_4 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:419:2: rule__Justification__EntailmentAssignment_4
+                    {
+                    pushFollow(FOLLOW_rule__Justification__EntailmentAssignment_4_in_rule__Justification__Alternatives836);
+                    rule__Justification__EntailmentAssignment_4();
+                    _fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getJustificationAccess().getEntailmentAssignment_4()); 
 
                     }
 
@@ -1047,50 +1105,50 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Alternatives
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:397:1: rule__Conjunction__Alternatives : ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) );
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:428:1: rule__Conjunction__Alternatives : ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) );
     public final void rule__Conjunction__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:401:1: ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:432:1: ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            if ( (LA3_0==RULE_INT) ) {
-                int LA3_1 = input.LA(2);
+            if ( (LA2_0==RULE_INT) ) {
+                int LA2_1 = input.LA(2);
 
-                if ( (LA3_1==EOF||LA3_1==16) ) {
-                    alt3=2;
+                if ( (LA2_1==20) ) {
+                    alt2=1;
                 }
-                else if ( (LA3_1==17) ) {
-                    alt3=1;
+                else if ( (LA2_1==EOF||LA2_1==19) ) {
+                    alt2=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("397:1: rule__Conjunction__Alternatives : ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) );", 3, 1, input);
+                        new NoViableAltException("428:1: rule__Conjunction__Alternatives : ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) );", 2, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("397:1: rule__Conjunction__Alternatives : ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) );", 3, 0, input);
+                    new NoViableAltException("428:1: rule__Conjunction__Alternatives : ( ( ( rule__Conjunction__Group_0__0 ) ) | ( ( rule__Conjunction__LhsAssignment_1 ) ) );", 2, 0, input);
 
                 throw nvae;
             }
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:402:1: ( ( rule__Conjunction__Group_0__0 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:433:1: ( ( rule__Conjunction__Group_0__0 ) )
                     {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:402:1: ( ( rule__Conjunction__Group_0__0 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:403:1: ( rule__Conjunction__Group_0__0 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:433:1: ( ( rule__Conjunction__Group_0__0 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:434:1: ( rule__Conjunction__Group_0__0 )
                     {
                      before(grammarAccess.getConjunctionAccess().getGroup_0()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:404:1: ( rule__Conjunction__Group_0__0 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:404:2: rule__Conjunction__Group_0__0
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:435:1: ( rule__Conjunction__Group_0__0 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:435:2: rule__Conjunction__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Conjunction__Group_0__0_in_rule__Conjunction__Alternatives806);
+                    pushFollow(FOLLOW_rule__Conjunction__Group_0__0_in_rule__Conjunction__Alternatives869);
                     rule__Conjunction__Group_0__0();
                     _fsp--;
 
@@ -1105,16 +1163,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:408:6: ( ( rule__Conjunction__LhsAssignment_1 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:439:6: ( ( rule__Conjunction__LhsAssignment_1 ) )
                     {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:408:6: ( ( rule__Conjunction__LhsAssignment_1 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:409:1: ( rule__Conjunction__LhsAssignment_1 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:439:6: ( ( rule__Conjunction__LhsAssignment_1 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:440:1: ( rule__Conjunction__LhsAssignment_1 )
                     {
                      before(grammarAccess.getConjunctionAccess().getLhsAssignment_1()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:410:1: ( rule__Conjunction__LhsAssignment_1 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:410:2: rule__Conjunction__LhsAssignment_1
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:441:1: ( rule__Conjunction__LhsAssignment_1 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:441:2: rule__Conjunction__LhsAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Conjunction__LhsAssignment_1_in_rule__Conjunction__Alternatives824);
+                    pushFollow(FOLLOW_rule__Conjunction__LhsAssignment_1_in_rule__Conjunction__Alternatives887);
                     rule__Conjunction__LhsAssignment_1();
                     _fsp--;
 
@@ -1146,40 +1204,40 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Alternatives
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:419:1: rule__ProofSteps__Alternatives : ( ( ( rule__ProofSteps__Group_0__0 ) ) | ( ( rule__ProofSteps__EpsilonAssignment_1 ) ) );
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:450:1: rule__ProofSteps__Alternatives : ( ( ( rule__ProofSteps__Group_0__0 ) ) | ( ( rule__ProofSteps__EpsilonAssignment_1 ) ) );
     public final void rule__ProofSteps__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:423:1: ( ( ( rule__ProofSteps__Group_0__0 ) ) | ( ( rule__ProofSteps__EpsilonAssignment_1 ) ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:454:1: ( ( ( rule__ProofSteps__Group_0__0 ) ) | ( ( rule__ProofSteps__EpsilonAssignment_1 ) ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA4_0==EOF||LA4_0==RULE_INT) ) {
-                alt4=1;
+            if ( (LA3_0==EOF||LA3_0==RULE_INT) ) {
+                alt3=1;
             }
-            else if ( (LA4_0==20) ) {
-                alt4=2;
+            else if ( (LA3_0==25) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("419:1: rule__ProofSteps__Alternatives : ( ( ( rule__ProofSteps__Group_0__0 ) ) | ( ( rule__ProofSteps__EpsilonAssignment_1 ) ) );", 4, 0, input);
+                    new NoViableAltException("450:1: rule__ProofSteps__Alternatives : ( ( ( rule__ProofSteps__Group_0__0 ) ) | ( ( rule__ProofSteps__EpsilonAssignment_1 ) ) );", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:424:1: ( ( rule__ProofSteps__Group_0__0 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:455:1: ( ( rule__ProofSteps__Group_0__0 ) )
                     {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:424:1: ( ( rule__ProofSteps__Group_0__0 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:425:1: ( rule__ProofSteps__Group_0__0 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:455:1: ( ( rule__ProofSteps__Group_0__0 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:456:1: ( rule__ProofSteps__Group_0__0 )
                     {
                      before(grammarAccess.getProofStepsAccess().getGroup_0()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:426:1: ( rule__ProofSteps__Group_0__0 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:426:2: rule__ProofSteps__Group_0__0
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:457:1: ( rule__ProofSteps__Group_0__0 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:457:2: rule__ProofSteps__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__ProofSteps__Group_0__0_in_rule__ProofSteps__Alternatives857);
+                    pushFollow(FOLLOW_rule__ProofSteps__Group_0__0_in_rule__ProofSteps__Alternatives920);
                     rule__ProofSteps__Group_0__0();
                     _fsp--;
 
@@ -1194,16 +1252,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:430:6: ( ( rule__ProofSteps__EpsilonAssignment_1 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:461:6: ( ( rule__ProofSteps__EpsilonAssignment_1 ) )
                     {
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:430:6: ( ( rule__ProofSteps__EpsilonAssignment_1 ) )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:431:1: ( rule__ProofSteps__EpsilonAssignment_1 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:461:6: ( ( rule__ProofSteps__EpsilonAssignment_1 ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:462:1: ( rule__ProofSteps__EpsilonAssignment_1 )
                     {
                      before(grammarAccess.getProofStepsAccess().getEpsilonAssignment_1()); 
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:432:1: ( rule__ProofSteps__EpsilonAssignment_1 )
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:432:2: rule__ProofSteps__EpsilonAssignment_1
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:463:1: ( rule__ProofSteps__EpsilonAssignment_1 )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:463:2: rule__ProofSteps__EpsilonAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__ProofSteps__EpsilonAssignment_1_in_rule__ProofSteps__Alternatives875);
+                    pushFollow(FOLLOW_rule__ProofSteps__EpsilonAssignment_1_in_rule__ProofSteps__Alternatives938);
                     rule__ProofSteps__EpsilonAssignment_1();
                     _fsp--;
 
@@ -1234,21 +1292,134 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     // $ANTLR end rule__ProofSteps__Alternatives
 
 
+    // $ANTLR start rule__ValidationKind__Alternatives
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:472:1: rule__ValidationKind__Alternatives : ( ( ( 'unknown' ) ) | ( ( 'valid' ) ) | ( ( 'invalid' ) ) );
+    public final void rule__ValidationKind__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:476:1: ( ( ( 'unknown' ) ) | ( ( 'valid' ) ) | ( ( 'invalid' ) ) )
+            int alt4=3;
+            switch ( input.LA(1) ) {
+            case 11:
+                {
+                alt4=1;
+                }
+                break;
+            case 12:
+                {
+                alt4=2;
+                }
+                break;
+            case 13:
+                {
+                alt4=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("472:1: rule__ValidationKind__Alternatives : ( ( ( 'unknown' ) ) | ( ( 'valid' ) ) | ( ( 'invalid' ) ) );", 4, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt4) {
+                case 1 :
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:477:1: ( ( 'unknown' ) )
+                    {
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:477:1: ( ( 'unknown' ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:478:1: ( 'unknown' )
+                    {
+                     before(grammarAccess.getValidationKindAccess().getUNKNOWNEnumLiteralDeclaration_0()); 
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:479:1: ( 'unknown' )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:479:3: 'unknown'
+                    {
+                    match(input,11,FOLLOW_11_in_rule__ValidationKind__Alternatives972); 
+
+                    }
+
+                     after(grammarAccess.getValidationKindAccess().getUNKNOWNEnumLiteralDeclaration_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:484:6: ( ( 'valid' ) )
+                    {
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:484:6: ( ( 'valid' ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:485:1: ( 'valid' )
+                    {
+                     before(grammarAccess.getValidationKindAccess().getVALIDEnumLiteralDeclaration_1()); 
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:486:1: ( 'valid' )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:486:3: 'valid'
+                    {
+                    match(input,12,FOLLOW_12_in_rule__ValidationKind__Alternatives993); 
+
+                    }
+
+                     after(grammarAccess.getValidationKindAccess().getVALIDEnumLiteralDeclaration_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:491:6: ( ( 'invalid' ) )
+                    {
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:491:6: ( ( 'invalid' ) )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:492:1: ( 'invalid' )
+                    {
+                     before(grammarAccess.getValidationKindAccess().getINVALIDEnumLiteralDeclaration_2()); 
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:493:1: ( 'invalid' )
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:493:3: 'invalid'
+                    {
+                    match(input,13,FOLLOW_13_in_rule__ValidationKind__Alternatives1014); 
+
+                    }
+
+                     after(grammarAccess.getValidationKindAccess().getINVALIDEnumLiteralDeclaration_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__ValidationKind__Alternatives
+
+
     // $ANTLR start rule__Proof__Group__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:443:1: rule__Proof__Group__0 : rule__Proof__Group__0__Impl rule__Proof__Group__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:505:1: rule__Proof__Group__0 : rule__Proof__Group__0__Impl rule__Proof__Group__1 ;
     public final void rule__Proof__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:447:1: ( rule__Proof__Group__0__Impl rule__Proof__Group__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:448:2: rule__Proof__Group__0__Impl rule__Proof__Group__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:509:1: ( rule__Proof__Group__0__Impl rule__Proof__Group__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:510:2: rule__Proof__Group__0__Impl rule__Proof__Group__1
             {
-            pushFollow(FOLLOW_rule__Proof__Group__0__Impl_in_rule__Proof__Group__0906);
+            pushFollow(FOLLOW_rule__Proof__Group__0__Impl_in_rule__Proof__Group__01047);
             rule__Proof__Group__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Proof__Group__1_in_rule__Proof__Group__0909);
+            pushFollow(FOLLOW_rule__Proof__Group__1_in_rule__Proof__Group__01050);
             rule__Proof__Group__1();
             _fsp--;
 
@@ -1271,20 +1442,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:455:1: rule__Proof__Group__0__Impl : ( 'Theorem' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:517:1: rule__Proof__Group__0__Impl : ( 'Theorem' ) ;
     public final void rule__Proof__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:459:1: ( ( 'Theorem' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:460:1: ( 'Theorem' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:521:1: ( ( 'Theorem' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:522:1: ( 'Theorem' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:460:1: ( 'Theorem' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:461:1: 'Theorem'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:522:1: ( 'Theorem' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:523:1: 'Theorem'
             {
              before(grammarAccess.getProofAccess().getTheoremKeyword_0()); 
-            match(input,11,FOLLOW_11_in_rule__Proof__Group__0__Impl937); 
+            match(input,14,FOLLOW_14_in_rule__Proof__Group__0__Impl1078); 
              after(grammarAccess.getProofAccess().getTheoremKeyword_0()); 
 
             }
@@ -1308,20 +1479,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:474:1: rule__Proof__Group__1 : rule__Proof__Group__1__Impl rule__Proof__Group__2 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:536:1: rule__Proof__Group__1 : rule__Proof__Group__1__Impl rule__Proof__Group__2 ;
     public final void rule__Proof__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:478:1: ( rule__Proof__Group__1__Impl rule__Proof__Group__2 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:479:2: rule__Proof__Group__1__Impl rule__Proof__Group__2
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:540:1: ( rule__Proof__Group__1__Impl rule__Proof__Group__2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:541:2: rule__Proof__Group__1__Impl rule__Proof__Group__2
             {
-            pushFollow(FOLLOW_rule__Proof__Group__1__Impl_in_rule__Proof__Group__1968);
+            pushFollow(FOLLOW_rule__Proof__Group__1__Impl_in_rule__Proof__Group__11109);
             rule__Proof__Group__1__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Proof__Group__2_in_rule__Proof__Group__1971);
+            pushFollow(FOLLOW_rule__Proof__Group__2_in_rule__Proof__Group__11112);
             rule__Proof__Group__2();
             _fsp--;
 
@@ -1344,20 +1515,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:486:1: rule__Proof__Group__1__Impl : ( ':' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:548:1: rule__Proof__Group__1__Impl : ( ':' ) ;
     public final void rule__Proof__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:490:1: ( ( ':' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:491:1: ( ':' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:552:1: ( ( ':' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:553:1: ( ':' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:491:1: ( ':' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:492:1: ':'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:553:1: ( ':' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:554:1: ':'
             {
              before(grammarAccess.getProofAccess().getColonKeyword_1()); 
-            match(input,12,FOLLOW_12_in_rule__Proof__Group__1__Impl999); 
+            match(input,15,FOLLOW_15_in_rule__Proof__Group__1__Impl1140); 
              after(grammarAccess.getProofAccess().getColonKeyword_1()); 
 
             }
@@ -1381,20 +1552,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__2
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:505:1: rule__Proof__Group__2 : rule__Proof__Group__2__Impl rule__Proof__Group__3 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:567:1: rule__Proof__Group__2 : rule__Proof__Group__2__Impl rule__Proof__Group__3 ;
     public final void rule__Proof__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:509:1: ( rule__Proof__Group__2__Impl rule__Proof__Group__3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:510:2: rule__Proof__Group__2__Impl rule__Proof__Group__3
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:571:1: ( rule__Proof__Group__2__Impl rule__Proof__Group__3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:572:2: rule__Proof__Group__2__Impl rule__Proof__Group__3
             {
-            pushFollow(FOLLOW_rule__Proof__Group__2__Impl_in_rule__Proof__Group__21030);
+            pushFollow(FOLLOW_rule__Proof__Group__2__Impl_in_rule__Proof__Group__21171);
             rule__Proof__Group__2__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Proof__Group__3_in_rule__Proof__Group__21033);
+            pushFollow(FOLLOW_rule__Proof__Group__3_in_rule__Proof__Group__21174);
             rule__Proof__Group__3();
             _fsp--;
 
@@ -1417,23 +1588,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__2__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:517:1: rule__Proof__Group__2__Impl : ( ( rule__Proof__TitleAssignment_2 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:579:1: rule__Proof__Group__2__Impl : ( ( rule__Proof__TitleAssignment_2 ) ) ;
     public final void rule__Proof__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:521:1: ( ( ( rule__Proof__TitleAssignment_2 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:522:1: ( ( rule__Proof__TitleAssignment_2 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:583:1: ( ( ( rule__Proof__TitleAssignment_2 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:584:1: ( ( rule__Proof__TitleAssignment_2 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:522:1: ( ( rule__Proof__TitleAssignment_2 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:523:1: ( rule__Proof__TitleAssignment_2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:584:1: ( ( rule__Proof__TitleAssignment_2 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:585:1: ( rule__Proof__TitleAssignment_2 )
             {
              before(grammarAccess.getProofAccess().getTitleAssignment_2()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:524:1: ( rule__Proof__TitleAssignment_2 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:524:2: rule__Proof__TitleAssignment_2
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:586:1: ( rule__Proof__TitleAssignment_2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:586:2: rule__Proof__TitleAssignment_2
             {
-            pushFollow(FOLLOW_rule__Proof__TitleAssignment_2_in_rule__Proof__Group__2__Impl1060);
+            pushFollow(FOLLOW_rule__Proof__TitleAssignment_2_in_rule__Proof__Group__2__Impl1201);
             rule__Proof__TitleAssignment_2();
             _fsp--;
 
@@ -1463,20 +1634,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:534:1: rule__Proof__Group__3 : rule__Proof__Group__3__Impl rule__Proof__Group__4 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:596:1: rule__Proof__Group__3 : rule__Proof__Group__3__Impl rule__Proof__Group__4 ;
     public final void rule__Proof__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:538:1: ( rule__Proof__Group__3__Impl rule__Proof__Group__4 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:539:2: rule__Proof__Group__3__Impl rule__Proof__Group__4
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:600:1: ( rule__Proof__Group__3__Impl rule__Proof__Group__4 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:601:2: rule__Proof__Group__3__Impl rule__Proof__Group__4
             {
-            pushFollow(FOLLOW_rule__Proof__Group__3__Impl_in_rule__Proof__Group__31090);
+            pushFollow(FOLLOW_rule__Proof__Group__3__Impl_in_rule__Proof__Group__31231);
             rule__Proof__Group__3__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Proof__Group__4_in_rule__Proof__Group__31093);
+            pushFollow(FOLLOW_rule__Proof__Group__4_in_rule__Proof__Group__31234);
             rule__Proof__Group__4();
             _fsp--;
 
@@ -1499,20 +1670,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__3__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:546:1: rule__Proof__Group__3__Impl : ( '(' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:608:1: rule__Proof__Group__3__Impl : ( '(' ) ;
     public final void rule__Proof__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:550:1: ( ( '(' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:551:1: ( '(' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:612:1: ( ( '(' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:613:1: ( '(' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:551:1: ( '(' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:552:1: '('
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:613:1: ( '(' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:614:1: '('
             {
              before(grammarAccess.getProofAccess().getLeftParenthesisKeyword_3()); 
-            match(input,13,FOLLOW_13_in_rule__Proof__Group__3__Impl1121); 
+            match(input,16,FOLLOW_16_in_rule__Proof__Group__3__Impl1262); 
              after(grammarAccess.getProofAccess().getLeftParenthesisKeyword_3()); 
 
             }
@@ -1536,20 +1707,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__4
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:565:1: rule__Proof__Group__4 : rule__Proof__Group__4__Impl rule__Proof__Group__5 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:627:1: rule__Proof__Group__4 : rule__Proof__Group__4__Impl rule__Proof__Group__5 ;
     public final void rule__Proof__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:569:1: ( rule__Proof__Group__4__Impl rule__Proof__Group__5 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:570:2: rule__Proof__Group__4__Impl rule__Proof__Group__5
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:631:1: ( rule__Proof__Group__4__Impl rule__Proof__Group__5 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:632:2: rule__Proof__Group__4__Impl rule__Proof__Group__5
             {
-            pushFollow(FOLLOW_rule__Proof__Group__4__Impl_in_rule__Proof__Group__41152);
+            pushFollow(FOLLOW_rule__Proof__Group__4__Impl_in_rule__Proof__Group__41293);
             rule__Proof__Group__4__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Proof__Group__5_in_rule__Proof__Group__41155);
+            pushFollow(FOLLOW_rule__Proof__Group__5_in_rule__Proof__Group__41296);
             rule__Proof__Group__5();
             _fsp--;
 
@@ -1572,23 +1743,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__4__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:577:1: rule__Proof__Group__4__Impl : ( ( rule__Proof__JustificationsAssignment_4 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:639:1: rule__Proof__Group__4__Impl : ( ( rule__Proof__JustificationsAssignment_4 ) ) ;
     public final void rule__Proof__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:581:1: ( ( ( rule__Proof__JustificationsAssignment_4 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:582:1: ( ( rule__Proof__JustificationsAssignment_4 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:643:1: ( ( ( rule__Proof__JustificationsAssignment_4 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:644:1: ( ( rule__Proof__JustificationsAssignment_4 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:582:1: ( ( rule__Proof__JustificationsAssignment_4 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:583:1: ( rule__Proof__JustificationsAssignment_4 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:644:1: ( ( rule__Proof__JustificationsAssignment_4 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:645:1: ( rule__Proof__JustificationsAssignment_4 )
             {
              before(grammarAccess.getProofAccess().getJustificationsAssignment_4()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:584:1: ( rule__Proof__JustificationsAssignment_4 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:584:2: rule__Proof__JustificationsAssignment_4
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:646:1: ( rule__Proof__JustificationsAssignment_4 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:646:2: rule__Proof__JustificationsAssignment_4
             {
-            pushFollow(FOLLOW_rule__Proof__JustificationsAssignment_4_in_rule__Proof__Group__4__Impl1182);
+            pushFollow(FOLLOW_rule__Proof__JustificationsAssignment_4_in_rule__Proof__Group__4__Impl1323);
             rule__Proof__JustificationsAssignment_4();
             _fsp--;
 
@@ -1618,20 +1789,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__5
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:594:1: rule__Proof__Group__5 : rule__Proof__Group__5__Impl rule__Proof__Group__6 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:656:1: rule__Proof__Group__5 : rule__Proof__Group__5__Impl rule__Proof__Group__6 ;
     public final void rule__Proof__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:598:1: ( rule__Proof__Group__5__Impl rule__Proof__Group__6 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:599:2: rule__Proof__Group__5__Impl rule__Proof__Group__6
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:660:1: ( rule__Proof__Group__5__Impl rule__Proof__Group__6 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:661:2: rule__Proof__Group__5__Impl rule__Proof__Group__6
             {
-            pushFollow(FOLLOW_rule__Proof__Group__5__Impl_in_rule__Proof__Group__51212);
+            pushFollow(FOLLOW_rule__Proof__Group__5__Impl_in_rule__Proof__Group__51353);
             rule__Proof__Group__5__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Proof__Group__6_in_rule__Proof__Group__51215);
+            pushFollow(FOLLOW_rule__Proof__Group__6_in_rule__Proof__Group__51356);
             rule__Proof__Group__6();
             _fsp--;
 
@@ -1654,20 +1825,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__5__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:606:1: rule__Proof__Group__5__Impl : ( ')' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:668:1: rule__Proof__Group__5__Impl : ( ')' ) ;
     public final void rule__Proof__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:610:1: ( ( ')' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:611:1: ( ')' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:672:1: ( ( ')' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:673:1: ( ')' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:611:1: ( ')' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:612:1: ')'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:673:1: ( ')' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:674:1: ')'
             {
              before(grammarAccess.getProofAccess().getRightParenthesisKeyword_5()); 
-            match(input,14,FOLLOW_14_in_rule__Proof__Group__5__Impl1243); 
+            match(input,17,FOLLOW_17_in_rule__Proof__Group__5__Impl1384); 
              after(grammarAccess.getProofAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -1691,16 +1862,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__6
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:625:1: rule__Proof__Group__6 : rule__Proof__Group__6__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:687:1: rule__Proof__Group__6 : rule__Proof__Group__6__Impl ;
     public final void rule__Proof__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:629:1: ( rule__Proof__Group__6__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:630:2: rule__Proof__Group__6__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:691:1: ( rule__Proof__Group__6__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:692:2: rule__Proof__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__Proof__Group__6__Impl_in_rule__Proof__Group__61274);
+            pushFollow(FOLLOW_rule__Proof__Group__6__Impl_in_rule__Proof__Group__61415);
             rule__Proof__Group__6__Impl();
             _fsp--;
 
@@ -1723,23 +1894,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__Group__6__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:636:1: rule__Proof__Group__6__Impl : ( ( rule__Proof__ProofStepsAssignment_6 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:698:1: rule__Proof__Group__6__Impl : ( ( rule__Proof__ProofStepsAssignment_6 ) ) ;
     public final void rule__Proof__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:640:1: ( ( ( rule__Proof__ProofStepsAssignment_6 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:641:1: ( ( rule__Proof__ProofStepsAssignment_6 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:702:1: ( ( ( rule__Proof__ProofStepsAssignment_6 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:703:1: ( ( rule__Proof__ProofStepsAssignment_6 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:641:1: ( ( rule__Proof__ProofStepsAssignment_6 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:642:1: ( rule__Proof__ProofStepsAssignment_6 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:703:1: ( ( rule__Proof__ProofStepsAssignment_6 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:704:1: ( rule__Proof__ProofStepsAssignment_6 )
             {
              before(grammarAccess.getProofAccess().getProofStepsAssignment_6()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:643:1: ( rule__Proof__ProofStepsAssignment_6 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:643:2: rule__Proof__ProofStepsAssignment_6
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:705:1: ( rule__Proof__ProofStepsAssignment_6 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:705:2: rule__Proof__ProofStepsAssignment_6
             {
-            pushFollow(FOLLOW_rule__Proof__ProofStepsAssignment_6_in_rule__Proof__Group__6__Impl1301);
+            pushFollow(FOLLOW_rule__Proof__ProofStepsAssignment_6_in_rule__Proof__Group__6__Impl1442);
             rule__Proof__ProofStepsAssignment_6();
             _fsp--;
 
@@ -1768,91 +1939,22 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     // $ANTLR end rule__Proof__Group__6__Impl
 
 
-    // $ANTLR start rule__Justifications__Group_0__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:667:1: rule__Justifications__Group_0__0 : rule__Justifications__Group_0__0__Impl rule__Justifications__Group_0__1 ;
-    public final void rule__Justifications__Group_0__0() throws RecognitionException {
+    // $ANTLR start rule__Justifications__Group__0
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:729:1: rule__Justifications__Group__0 : rule__Justifications__Group__0__Impl rule__Justifications__Group__1 ;
+    public final void rule__Justifications__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:671:1: ( rule__Justifications__Group_0__0__Impl rule__Justifications__Group_0__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:672:2: rule__Justifications__Group_0__0__Impl rule__Justifications__Group_0__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:733:1: ( rule__Justifications__Group__0__Impl rule__Justifications__Group__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:734:2: rule__Justifications__Group__0__Impl rule__Justifications__Group__1
             {
-            pushFollow(FOLLOW_rule__Justifications__Group_0__0__Impl_in_rule__Justifications__Group_0__01345);
-            rule__Justifications__Group_0__0__Impl();
+            pushFollow(FOLLOW_rule__Justifications__Group__0__Impl_in_rule__Justifications__Group__01486);
+            rule__Justifications__Group__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Justifications__Group_0__1_in_rule__Justifications__Group_0__01348);
-            rule__Justifications__Group_0__1();
-            _fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end rule__Justifications__Group_0__0
-
-
-    // $ANTLR start rule__Justifications__Group_0__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:679:1: rule__Justifications__Group_0__0__Impl : ( () ) ;
-    public final void rule__Justifications__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:683:1: ( ( () ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:684:1: ( () )
-            {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:684:1: ( () )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:685:1: ()
-            {
-             before(grammarAccess.getJustificationsAccess().getJustificationsAction_0_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:686:1: ()
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:688:1: 
-            {
-            }
-
-             after(grammarAccess.getJustificationsAccess().getJustificationsAction_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end rule__Justifications__Group_0__0__Impl
-
-
-    // $ANTLR start rule__Justifications__Group_0__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:698:1: rule__Justifications__Group_0__1 : rule__Justifications__Group_0__1__Impl ;
-    public final void rule__Justifications__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:702:1: ( rule__Justifications__Group_0__1__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:703:2: rule__Justifications__Group_0__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Justifications__Group_0__1__Impl_in_rule__Justifications__Group_0__11406);
-            rule__Justifications__Group_0__1__Impl();
+            pushFollow(FOLLOW_rule__Justifications__Group__1_in_rule__Justifications__Group__01489);
+            rule__Justifications__Group__1();
             _fsp--;
 
 
@@ -1870,36 +1972,105 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__Group_0__1
+    // $ANTLR end rule__Justifications__Group__0
 
 
-    // $ANTLR start rule__Justifications__Group_0__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:709:1: rule__Justifications__Group_0__1__Impl : ( ( rule__Justifications__Group_0_1__0 )? ) ;
-    public final void rule__Justifications__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__Justifications__Group__0__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:741:1: rule__Justifications__Group__0__Impl : ( () ) ;
+    public final void rule__Justifications__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:713:1: ( ( ( rule__Justifications__Group_0_1__0 )? ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:714:1: ( ( rule__Justifications__Group_0_1__0 )? )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:745:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:746:1: ( () )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:714:1: ( ( rule__Justifications__Group_0_1__0 )? )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:715:1: ( rule__Justifications__Group_0_1__0 )?
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:746:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:747:1: ()
             {
-             before(grammarAccess.getJustificationsAccess().getGroup_0_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:716:1: ( rule__Justifications__Group_0_1__0 )?
+             before(grammarAccess.getJustificationsAccess().getJustificationsAction_0()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:748:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:750:1: 
+            {
+            }
+
+             after(grammarAccess.getJustificationsAccess().getJustificationsAction_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Justifications__Group__0__Impl
+
+
+    // $ANTLR start rule__Justifications__Group__1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:760:1: rule__Justifications__Group__1 : rule__Justifications__Group__1__Impl ;
+    public final void rule__Justifications__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:764:1: ( rule__Justifications__Group__1__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:765:2: rule__Justifications__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Justifications__Group__1__Impl_in_rule__Justifications__Group__11547);
+            rule__Justifications__Group__1__Impl();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Justifications__Group__1
+
+
+    // $ANTLR start rule__Justifications__Group__1__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:771:1: rule__Justifications__Group__1__Impl : ( ( rule__Justifications__Group_1__0 )? ) ;
+    public final void rule__Justifications__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:775:1: ( ( ( rule__Justifications__Group_1__0 )? ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:776:1: ( ( rule__Justifications__Group_1__0 )? )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:776:1: ( ( rule__Justifications__Group_1__0 )? )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:777:1: ( rule__Justifications__Group_1__0 )?
+            {
+             before(grammarAccess.getJustificationsAccess().getGroup_1()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:778:1: ( rule__Justifications__Group_1__0 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( ((LA5_0>=RULE_STRING && LA5_0<=RULE_INT)) ) {
+            if ( ((LA5_0>=RULE_STRING && LA5_0<=RULE_INT)||(LA5_0>=24 && LA5_0<=25)) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:716:2: rule__Justifications__Group_0_1__0
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:778:2: rule__Justifications__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Justifications__Group_0_1__0_in_rule__Justifications__Group_0__1__Impl1433);
-                    rule__Justifications__Group_0_1__0();
+                    pushFollow(FOLLOW_rule__Justifications__Group_1__0_in_rule__Justifications__Group__1__Impl1574);
+                    rule__Justifications__Group_1__0();
                     _fsp--;
 
 
@@ -1908,7 +2079,7 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
             }
 
-             after(grammarAccess.getJustificationsAccess().getGroup_0_1()); 
+             after(grammarAccess.getJustificationsAccess().getGroup_1()); 
 
             }
 
@@ -1927,103 +2098,25 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__Group_0__1__Impl
+    // $ANTLR end rule__Justifications__Group__1__Impl
 
 
-    // $ANTLR start rule__Justifications__Group_0_1__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:730:1: rule__Justifications__Group_0_1__0 : rule__Justifications__Group_0_1__0__Impl rule__Justifications__Group_0_1__1 ;
-    public final void rule__Justifications__Group_0_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:734:1: ( rule__Justifications__Group_0_1__0__Impl rule__Justifications__Group_0_1__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:735:2: rule__Justifications__Group_0_1__0__Impl rule__Justifications__Group_0_1__1
-            {
-            pushFollow(FOLLOW_rule__Justifications__Group_0_1__0__Impl_in_rule__Justifications__Group_0_1__01468);
-            rule__Justifications__Group_0_1__0__Impl();
-            _fsp--;
-
-            pushFollow(FOLLOW_rule__Justifications__Group_0_1__1_in_rule__Justifications__Group_0_1__01471);
-            rule__Justifications__Group_0_1__1();
-            _fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end rule__Justifications__Group_0_1__0
-
-
-    // $ANTLR start rule__Justifications__Group_0_1__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:742:1: rule__Justifications__Group_0_1__0__Impl : ( ( rule__Justifications__JustificationsAssignment_0_1_0 ) ) ;
-    public final void rule__Justifications__Group_0_1__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__Justifications__Group_1__0
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:792:1: rule__Justifications__Group_1__0 : rule__Justifications__Group_1__0__Impl rule__Justifications__Group_1__1 ;
+    public final void rule__Justifications__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:746:1: ( ( ( rule__Justifications__JustificationsAssignment_0_1_0 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:747:1: ( ( rule__Justifications__JustificationsAssignment_0_1_0 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:796:1: ( rule__Justifications__Group_1__0__Impl rule__Justifications__Group_1__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:797:2: rule__Justifications__Group_1__0__Impl rule__Justifications__Group_1__1
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:747:1: ( ( rule__Justifications__JustificationsAssignment_0_1_0 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:748:1: ( rule__Justifications__JustificationsAssignment_0_1_0 )
-            {
-             before(grammarAccess.getJustificationsAccess().getJustificationsAssignment_0_1_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:749:1: ( rule__Justifications__JustificationsAssignment_0_1_0 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:749:2: rule__Justifications__JustificationsAssignment_0_1_0
-            {
-            pushFollow(FOLLOW_rule__Justifications__JustificationsAssignment_0_1_0_in_rule__Justifications__Group_0_1__0__Impl1498);
-            rule__Justifications__JustificationsAssignment_0_1_0();
+            pushFollow(FOLLOW_rule__Justifications__Group_1__0__Impl_in_rule__Justifications__Group_1__01609);
+            rule__Justifications__Group_1__0__Impl();
             _fsp--;
 
-
-            }
-
-             after(grammarAccess.getJustificationsAccess().getJustificationsAssignment_0_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end rule__Justifications__Group_0_1__0__Impl
-
-
-    // $ANTLR start rule__Justifications__Group_0_1__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:759:1: rule__Justifications__Group_0_1__1 : rule__Justifications__Group_0_1__1__Impl ;
-    public final void rule__Justifications__Group_0_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:763:1: ( rule__Justifications__Group_0_1__1__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:764:2: rule__Justifications__Group_0_1__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Justifications__Group_0_1__1__Impl_in_rule__Justifications__Group_0_1__11528);
-            rule__Justifications__Group_0_1__1__Impl();
+            pushFollow(FOLLOW_rule__Justifications__Group_1__1_in_rule__Justifications__Group_1__01612);
+            rule__Justifications__Group_1__1();
             _fsp--;
 
 
@@ -2041,40 +2134,118 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__Group_0_1__1
+    // $ANTLR end rule__Justifications__Group_1__0
 
 
-    // $ANTLR start rule__Justifications__Group_0_1__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:770:1: rule__Justifications__Group_0_1__1__Impl : ( ( rule__Justifications__Group_0_1_1__0 )* ) ;
-    public final void rule__Justifications__Group_0_1__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__Justifications__Group_1__0__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:804:1: rule__Justifications__Group_1__0__Impl : ( ( rule__Justifications__JustificationsAssignment_1_0 ) ) ;
+    public final void rule__Justifications__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:774:1: ( ( ( rule__Justifications__Group_0_1_1__0 )* ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:775:1: ( ( rule__Justifications__Group_0_1_1__0 )* )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:808:1: ( ( ( rule__Justifications__JustificationsAssignment_1_0 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:809:1: ( ( rule__Justifications__JustificationsAssignment_1_0 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:775:1: ( ( rule__Justifications__Group_0_1_1__0 )* )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:776:1: ( rule__Justifications__Group_0_1_1__0 )*
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:809:1: ( ( rule__Justifications__JustificationsAssignment_1_0 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:810:1: ( rule__Justifications__JustificationsAssignment_1_0 )
             {
-             before(grammarAccess.getJustificationsAccess().getGroup_0_1_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:777:1: ( rule__Justifications__Group_0_1_1__0 )*
+             before(grammarAccess.getJustificationsAccess().getJustificationsAssignment_1_0()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:811:1: ( rule__Justifications__JustificationsAssignment_1_0 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:811:2: rule__Justifications__JustificationsAssignment_1_0
+            {
+            pushFollow(FOLLOW_rule__Justifications__JustificationsAssignment_1_0_in_rule__Justifications__Group_1__0__Impl1639);
+            rule__Justifications__JustificationsAssignment_1_0();
+            _fsp--;
+
+
+            }
+
+             after(grammarAccess.getJustificationsAccess().getJustificationsAssignment_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Justifications__Group_1__0__Impl
+
+
+    // $ANTLR start rule__Justifications__Group_1__1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:821:1: rule__Justifications__Group_1__1 : rule__Justifications__Group_1__1__Impl ;
+    public final void rule__Justifications__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:825:1: ( rule__Justifications__Group_1__1__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:826:2: rule__Justifications__Group_1__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Justifications__Group_1__1__Impl_in_rule__Justifications__Group_1__11669);
+            rule__Justifications__Group_1__1__Impl();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Justifications__Group_1__1
+
+
+    // $ANTLR start rule__Justifications__Group_1__1__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:832:1: rule__Justifications__Group_1__1__Impl : ( ( rule__Justifications__Group_1_1__0 )* ) ;
+    public final void rule__Justifications__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:836:1: ( ( ( rule__Justifications__Group_1_1__0 )* ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:837:1: ( ( rule__Justifications__Group_1_1__0 )* )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:837:1: ( ( rule__Justifications__Group_1_1__0 )* )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:838:1: ( rule__Justifications__Group_1_1__0 )*
+            {
+             before(grammarAccess.getJustificationsAccess().getGroup_1_1()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:839:1: ( rule__Justifications__Group_1_1__0 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==15) ) {
+                if ( (LA6_0==18) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:777:2: rule__Justifications__Group_0_1_1__0
+            	    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:839:2: rule__Justifications__Group_1_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Justifications__Group_0_1_1__0_in_rule__Justifications__Group_0_1__1__Impl1555);
-            	    rule__Justifications__Group_0_1_1__0();
+            	    pushFollow(FOLLOW_rule__Justifications__Group_1_1__0_in_rule__Justifications__Group_1__1__Impl1696);
+            	    rule__Justifications__Group_1_1__0();
             	    _fsp--;
 
 
@@ -2086,7 +2257,7 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
                 }
             } while (true);
 
-             after(grammarAccess.getJustificationsAccess().getGroup_0_1_1()); 
+             after(grammarAccess.getJustificationsAccess().getGroup_1_1()); 
 
             }
 
@@ -2105,94 +2276,25 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__Group_0_1__1__Impl
+    // $ANTLR end rule__Justifications__Group_1__1__Impl
 
 
-    // $ANTLR start rule__Justifications__Group_0_1_1__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:791:1: rule__Justifications__Group_0_1_1__0 : rule__Justifications__Group_0_1_1__0__Impl rule__Justifications__Group_0_1_1__1 ;
-    public final void rule__Justifications__Group_0_1_1__0() throws RecognitionException {
+    // $ANTLR start rule__Justifications__Group_1_1__0
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:853:1: rule__Justifications__Group_1_1__0 : rule__Justifications__Group_1_1__0__Impl rule__Justifications__Group_1_1__1 ;
+    public final void rule__Justifications__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:795:1: ( rule__Justifications__Group_0_1_1__0__Impl rule__Justifications__Group_0_1_1__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:796:2: rule__Justifications__Group_0_1_1__0__Impl rule__Justifications__Group_0_1_1__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:857:1: ( rule__Justifications__Group_1_1__0__Impl rule__Justifications__Group_1_1__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:858:2: rule__Justifications__Group_1_1__0__Impl rule__Justifications__Group_1_1__1
             {
-            pushFollow(FOLLOW_rule__Justifications__Group_0_1_1__0__Impl_in_rule__Justifications__Group_0_1_1__01590);
-            rule__Justifications__Group_0_1_1__0__Impl();
+            pushFollow(FOLLOW_rule__Justifications__Group_1_1__0__Impl_in_rule__Justifications__Group_1_1__01731);
+            rule__Justifications__Group_1_1__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Justifications__Group_0_1_1__1_in_rule__Justifications__Group_0_1_1__01593);
-            rule__Justifications__Group_0_1_1__1();
-            _fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end rule__Justifications__Group_0_1_1__0
-
-
-    // $ANTLR start rule__Justifications__Group_0_1_1__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:803:1: rule__Justifications__Group_0_1_1__0__Impl : ( ',' ) ;
-    public final void rule__Justifications__Group_0_1_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:807:1: ( ( ',' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:808:1: ( ',' )
-            {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:808:1: ( ',' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:809:1: ','
-            {
-             before(grammarAccess.getJustificationsAccess().getCommaKeyword_0_1_1_0()); 
-            match(input,15,FOLLOW_15_in_rule__Justifications__Group_0_1_1__0__Impl1621); 
-             after(grammarAccess.getJustificationsAccess().getCommaKeyword_0_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end rule__Justifications__Group_0_1_1__0__Impl
-
-
-    // $ANTLR start rule__Justifications__Group_0_1_1__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:822:1: rule__Justifications__Group_0_1_1__1 : rule__Justifications__Group_0_1_1__1__Impl ;
-    public final void rule__Justifications__Group_0_1_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:826:1: ( rule__Justifications__Group_0_1_1__1__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:827:2: rule__Justifications__Group_0_1_1__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Justifications__Group_0_1_1__1__Impl_in_rule__Justifications__Group_0_1_1__11652);
-            rule__Justifications__Group_0_1_1__1__Impl();
+            pushFollow(FOLLOW_rule__Justifications__Group_1_1__1_in_rule__Justifications__Group_1_1__01734);
+            rule__Justifications__Group_1_1__1();
             _fsp--;
 
 
@@ -2210,34 +2312,25 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__Group_0_1_1__1
+    // $ANTLR end rule__Justifications__Group_1_1__0
 
 
-    // $ANTLR start rule__Justifications__Group_0_1_1__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:833:1: rule__Justifications__Group_0_1_1__1__Impl : ( ( rule__Justifications__JustificationsAssignment_0_1_1_1 ) ) ;
-    public final void rule__Justifications__Group_0_1_1__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__Justifications__Group_1_1__0__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:865:1: rule__Justifications__Group_1_1__0__Impl : ( ',' ) ;
+    public final void rule__Justifications__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:837:1: ( ( ( rule__Justifications__JustificationsAssignment_0_1_1_1 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:838:1: ( ( rule__Justifications__JustificationsAssignment_0_1_1_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:869:1: ( ( ',' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:870:1: ( ',' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:838:1: ( ( rule__Justifications__JustificationsAssignment_0_1_1_1 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:839:1: ( rule__Justifications__JustificationsAssignment_0_1_1_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:870:1: ( ',' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:871:1: ','
             {
-             before(grammarAccess.getJustificationsAccess().getJustificationsAssignment_0_1_1_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:840:1: ( rule__Justifications__JustificationsAssignment_0_1_1_1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:840:2: rule__Justifications__JustificationsAssignment_0_1_1_1
-            {
-            pushFollow(FOLLOW_rule__Justifications__JustificationsAssignment_0_1_1_1_in_rule__Justifications__Group_0_1_1__1__Impl1679);
-            rule__Justifications__JustificationsAssignment_0_1_1_1();
-            _fsp--;
-
-
-            }
-
-             after(grammarAccess.getJustificationsAccess().getJustificationsAssignment_0_1_1_1()); 
+             before(grammarAccess.getJustificationsAccess().getCommaKeyword_1_1_0()); 
+            match(input,18,FOLLOW_18_in_rule__Justifications__Group_1_1__0__Impl1762); 
+             after(grammarAccess.getJustificationsAccess().getCommaKeyword_1_1_0()); 
 
             }
 
@@ -2256,24 +2349,102 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__Group_0_1_1__1__Impl
+    // $ANTLR end rule__Justifications__Group_1_1__0__Impl
+
+
+    // $ANTLR start rule__Justifications__Group_1_1__1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:884:1: rule__Justifications__Group_1_1__1 : rule__Justifications__Group_1_1__1__Impl ;
+    public final void rule__Justifications__Group_1_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:888:1: ( rule__Justifications__Group_1_1__1__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:889:2: rule__Justifications__Group_1_1__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Justifications__Group_1_1__1__Impl_in_rule__Justifications__Group_1_1__11793);
+            rule__Justifications__Group_1_1__1__Impl();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Justifications__Group_1_1__1
+
+
+    // $ANTLR start rule__Justifications__Group_1_1__1__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:895:1: rule__Justifications__Group_1_1__1__Impl : ( ( rule__Justifications__JustificationsAssignment_1_1_1 ) ) ;
+    public final void rule__Justifications__Group_1_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:899:1: ( ( ( rule__Justifications__JustificationsAssignment_1_1_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:900:1: ( ( rule__Justifications__JustificationsAssignment_1_1_1 ) )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:900:1: ( ( rule__Justifications__JustificationsAssignment_1_1_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:901:1: ( rule__Justifications__JustificationsAssignment_1_1_1 )
+            {
+             before(grammarAccess.getJustificationsAccess().getJustificationsAssignment_1_1_1()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:902:1: ( rule__Justifications__JustificationsAssignment_1_1_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:902:2: rule__Justifications__JustificationsAssignment_1_1_1
+            {
+            pushFollow(FOLLOW_rule__Justifications__JustificationsAssignment_1_1_1_in_rule__Justifications__Group_1_1__1__Impl1820);
+            rule__Justifications__JustificationsAssignment_1_1_1();
+            _fsp--;
+
+
+            }
+
+             after(grammarAccess.getJustificationsAccess().getJustificationsAssignment_1_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Justifications__Group_1_1__1__Impl
 
 
     // $ANTLR start rule__Justification__Group_0__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:854:1: rule__Justification__Group_0__0 : rule__Justification__Group_0__0__Impl rule__Justification__Group_0__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:916:1: rule__Justification__Group_0__0 : rule__Justification__Group_0__0__Impl rule__Justification__Group_0__1 ;
     public final void rule__Justification__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:858:1: ( rule__Justification__Group_0__0__Impl rule__Justification__Group_0__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:859:2: rule__Justification__Group_0__0__Impl rule__Justification__Group_0__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:920:1: ( rule__Justification__Group_0__0__Impl rule__Justification__Group_0__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:921:2: rule__Justification__Group_0__0__Impl rule__Justification__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Justification__Group_0__0__Impl_in_rule__Justification__Group_0__01713);
+            pushFollow(FOLLOW_rule__Justification__Group_0__0__Impl_in_rule__Justification__Group_0__01854);
             rule__Justification__Group_0__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Justification__Group_0__1_in_rule__Justification__Group_0__01716);
+            pushFollow(FOLLOW_rule__Justification__Group_0__1_in_rule__Justification__Group_0__01857);
             rule__Justification__Group_0__1();
             _fsp--;
 
@@ -2296,21 +2467,21 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Justification__Group_0__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:866:1: rule__Justification__Group_0__0__Impl : ( () ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:928:1: rule__Justification__Group_0__0__Impl : ( () ) ;
     public final void rule__Justification__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:870:1: ( ( () ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:871:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:932:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:933:1: ( () )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:871:1: ( () )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:872:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:933:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:934:1: ()
             {
              before(grammarAccess.getJustificationAccess().getJustificationAction_0_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:873:1: ()
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:875:1: 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:935:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:937:1: 
             {
             }
 
@@ -2333,16 +2504,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Justification__Group_0__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:885:1: rule__Justification__Group_0__1 : rule__Justification__Group_0__1__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:947:1: rule__Justification__Group_0__1 : rule__Justification__Group_0__1__Impl ;
     public final void rule__Justification__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:889:1: ( rule__Justification__Group_0__1__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:890:2: rule__Justification__Group_0__1__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:951:1: ( rule__Justification__Group_0__1__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:952:2: rule__Justification__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Justification__Group_0__1__Impl_in_rule__Justification__Group_0__11774);
+            pushFollow(FOLLOW_rule__Justification__Group_0__1__Impl_in_rule__Justification__Group_0__11915);
             rule__Justification__Group_0__1__Impl();
             _fsp--;
 
@@ -2365,30 +2536,30 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Justification__Group_0__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:896:1: rule__Justification__Group_0__1__Impl : ( ( rule__Justification__NumeralAssignment_0_1 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:958:1: rule__Justification__Group_0__1__Impl : ( ( rule__Justification__HypothesisAssignment_0_1 ) ) ;
     public final void rule__Justification__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:900:1: ( ( ( rule__Justification__NumeralAssignment_0_1 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:901:1: ( ( rule__Justification__NumeralAssignment_0_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:962:1: ( ( ( rule__Justification__HypothesisAssignment_0_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:963:1: ( ( rule__Justification__HypothesisAssignment_0_1 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:901:1: ( ( rule__Justification__NumeralAssignment_0_1 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:902:1: ( rule__Justification__NumeralAssignment_0_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:963:1: ( ( rule__Justification__HypothesisAssignment_0_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:964:1: ( rule__Justification__HypothesisAssignment_0_1 )
             {
-             before(grammarAccess.getJustificationAccess().getNumeralAssignment_0_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:903:1: ( rule__Justification__NumeralAssignment_0_1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:903:2: rule__Justification__NumeralAssignment_0_1
+             before(grammarAccess.getJustificationAccess().getHypothesisAssignment_0_1()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:965:1: ( rule__Justification__HypothesisAssignment_0_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:965:2: rule__Justification__HypothesisAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Justification__NumeralAssignment_0_1_in_rule__Justification__Group_0__1__Impl1801);
-            rule__Justification__NumeralAssignment_0_1();
+            pushFollow(FOLLOW_rule__Justification__HypothesisAssignment_0_1_in_rule__Justification__Group_0__1__Impl1942);
+            rule__Justification__HypothesisAssignment_0_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getJustificationAccess().getNumeralAssignment_0_1()); 
+             after(grammarAccess.getJustificationAccess().getHypothesisAssignment_0_1()); 
 
             }
 
@@ -2411,20 +2582,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__QuotedAssertion__Group__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:917:1: rule__QuotedAssertion__Group__0 : rule__QuotedAssertion__Group__0__Impl rule__QuotedAssertion__Group__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:979:1: rule__QuotedAssertion__Group__0 : rule__QuotedAssertion__Group__0__Impl rule__QuotedAssertion__Group__1 ;
     public final void rule__QuotedAssertion__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:921:1: ( rule__QuotedAssertion__Group__0__Impl rule__QuotedAssertion__Group__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:922:2: rule__QuotedAssertion__Group__0__Impl rule__QuotedAssertion__Group__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:983:1: ( rule__QuotedAssertion__Group__0__Impl rule__QuotedAssertion__Group__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:984:2: rule__QuotedAssertion__Group__0__Impl rule__QuotedAssertion__Group__1
             {
-            pushFollow(FOLLOW_rule__QuotedAssertion__Group__0__Impl_in_rule__QuotedAssertion__Group__01835);
+            pushFollow(FOLLOW_rule__QuotedAssertion__Group__0__Impl_in_rule__QuotedAssertion__Group__01976);
             rule__QuotedAssertion__Group__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__QuotedAssertion__Group__1_in_rule__QuotedAssertion__Group__01838);
+            pushFollow(FOLLOW_rule__QuotedAssertion__Group__1_in_rule__QuotedAssertion__Group__01979);
             rule__QuotedAssertion__Group__1();
             _fsp--;
 
@@ -2447,21 +2618,21 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__QuotedAssertion__Group__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:929:1: rule__QuotedAssertion__Group__0__Impl : ( () ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:991:1: rule__QuotedAssertion__Group__0__Impl : ( () ) ;
     public final void rule__QuotedAssertion__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:933:1: ( ( () ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:934:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:995:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:996:1: ( () )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:934:1: ( () )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:935:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:996:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:997:1: ()
             {
              before(grammarAccess.getQuotedAssertionAccess().getQuotedAssertionAction_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:936:1: ()
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:938:1: 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:998:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1000:1: 
             {
             }
 
@@ -2484,16 +2655,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__QuotedAssertion__Group__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:948:1: rule__QuotedAssertion__Group__1 : rule__QuotedAssertion__Group__1__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1010:1: rule__QuotedAssertion__Group__1 : rule__QuotedAssertion__Group__1__Impl ;
     public final void rule__QuotedAssertion__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:952:1: ( rule__QuotedAssertion__Group__1__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:953:2: rule__QuotedAssertion__Group__1__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1014:1: ( rule__QuotedAssertion__Group__1__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1015:2: rule__QuotedAssertion__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QuotedAssertion__Group__1__Impl_in_rule__QuotedAssertion__Group__11896);
+            pushFollow(FOLLOW_rule__QuotedAssertion__Group__1__Impl_in_rule__QuotedAssertion__Group__12037);
             rule__QuotedAssertion__Group__1__Impl();
             _fsp--;
 
@@ -2516,23 +2687,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__QuotedAssertion__Group__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:959:1: rule__QuotedAssertion__Group__1__Impl : ( ( rule__QuotedAssertion__TextAssignment_1 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1021:1: rule__QuotedAssertion__Group__1__Impl : ( ( rule__QuotedAssertion__TextAssignment_1 ) ) ;
     public final void rule__QuotedAssertion__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:963:1: ( ( ( rule__QuotedAssertion__TextAssignment_1 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:964:1: ( ( rule__QuotedAssertion__TextAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1025:1: ( ( ( rule__QuotedAssertion__TextAssignment_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1026:1: ( ( rule__QuotedAssertion__TextAssignment_1 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:964:1: ( ( rule__QuotedAssertion__TextAssignment_1 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:965:1: ( rule__QuotedAssertion__TextAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1026:1: ( ( rule__QuotedAssertion__TextAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1027:1: ( rule__QuotedAssertion__TextAssignment_1 )
             {
              before(grammarAccess.getQuotedAssertionAccess().getTextAssignment_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:966:1: ( rule__QuotedAssertion__TextAssignment_1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:966:2: rule__QuotedAssertion__TextAssignment_1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:1: ( rule__QuotedAssertion__TextAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:2: rule__QuotedAssertion__TextAssignment_1
             {
-            pushFollow(FOLLOW_rule__QuotedAssertion__TextAssignment_1_in_rule__QuotedAssertion__Group__1__Impl1923);
+            pushFollow(FOLLOW_rule__QuotedAssertion__TextAssignment_1_in_rule__QuotedAssertion__Group__1__Impl2064);
             rule__QuotedAssertion__TextAssignment_1();
             _fsp--;
 
@@ -2562,20 +2733,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:980:1: rule__Entailment__Group__0 : rule__Entailment__Group__0__Impl rule__Entailment__Group__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1042:1: rule__Entailment__Group__0 : rule__Entailment__Group__0__Impl rule__Entailment__Group__1 ;
     public final void rule__Entailment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:984:1: ( rule__Entailment__Group__0__Impl rule__Entailment__Group__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:985:2: rule__Entailment__Group__0__Impl rule__Entailment__Group__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1046:1: ( rule__Entailment__Group__0__Impl rule__Entailment__Group__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1047:2: rule__Entailment__Group__0__Impl rule__Entailment__Group__1
             {
-            pushFollow(FOLLOW_rule__Entailment__Group__0__Impl_in_rule__Entailment__Group__01957);
+            pushFollow(FOLLOW_rule__Entailment__Group__0__Impl_in_rule__Entailment__Group__02098);
             rule__Entailment__Group__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Entailment__Group__1_in_rule__Entailment__Group__01960);
+            pushFollow(FOLLOW_rule__Entailment__Group__1_in_rule__Entailment__Group__02101);
             rule__Entailment__Group__1();
             _fsp--;
 
@@ -2598,21 +2769,21 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:992:1: rule__Entailment__Group__0__Impl : ( () ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1054:1: rule__Entailment__Group__0__Impl : ( () ) ;
     public final void rule__Entailment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:996:1: ( ( () ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:997:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1058:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1059:1: ( () )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:997:1: ( () )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:998:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1059:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1060:1: ()
             {
              before(grammarAccess.getEntailmentAccess().getEntailmentAction_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:999:1: ()
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1001:1: 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1061:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1063:1: 
             {
             }
 
@@ -2635,20 +2806,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1011:1: rule__Entailment__Group__1 : rule__Entailment__Group__1__Impl rule__Entailment__Group__2 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1073:1: rule__Entailment__Group__1 : rule__Entailment__Group__1__Impl rule__Entailment__Group__2 ;
     public final void rule__Entailment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1015:1: ( rule__Entailment__Group__1__Impl rule__Entailment__Group__2 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1016:2: rule__Entailment__Group__1__Impl rule__Entailment__Group__2
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1077:1: ( rule__Entailment__Group__1__Impl rule__Entailment__Group__2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1078:2: rule__Entailment__Group__1__Impl rule__Entailment__Group__2
             {
-            pushFollow(FOLLOW_rule__Entailment__Group__1__Impl_in_rule__Entailment__Group__12018);
+            pushFollow(FOLLOW_rule__Entailment__Group__1__Impl_in_rule__Entailment__Group__12159);
             rule__Entailment__Group__1__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Entailment__Group__2_in_rule__Entailment__Group__12021);
+            pushFollow(FOLLOW_rule__Entailment__Group__2_in_rule__Entailment__Group__12162);
             rule__Entailment__Group__2();
             _fsp--;
 
@@ -2671,23 +2842,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1023:1: rule__Entailment__Group__1__Impl : ( ( rule__Entailment__HeadAssignment_1 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1085:1: rule__Entailment__Group__1__Impl : ( ( rule__Entailment__HeadAssignment_1 ) ) ;
     public final void rule__Entailment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1027:1: ( ( ( rule__Entailment__HeadAssignment_1 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:1: ( ( rule__Entailment__HeadAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1089:1: ( ( ( rule__Entailment__HeadAssignment_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1090:1: ( ( rule__Entailment__HeadAssignment_1 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1028:1: ( ( rule__Entailment__HeadAssignment_1 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1029:1: ( rule__Entailment__HeadAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1090:1: ( ( rule__Entailment__HeadAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1091:1: ( rule__Entailment__HeadAssignment_1 )
             {
              before(grammarAccess.getEntailmentAccess().getHeadAssignment_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1030:1: ( rule__Entailment__HeadAssignment_1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1030:2: rule__Entailment__HeadAssignment_1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1092:1: ( rule__Entailment__HeadAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1092:2: rule__Entailment__HeadAssignment_1
             {
-            pushFollow(FOLLOW_rule__Entailment__HeadAssignment_1_in_rule__Entailment__Group__1__Impl2048);
+            pushFollow(FOLLOW_rule__Entailment__HeadAssignment_1_in_rule__Entailment__Group__1__Impl2189);
             rule__Entailment__HeadAssignment_1();
             _fsp--;
 
@@ -2717,20 +2888,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__2
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1040:1: rule__Entailment__Group__2 : rule__Entailment__Group__2__Impl rule__Entailment__Group__3 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1102:1: rule__Entailment__Group__2 : rule__Entailment__Group__2__Impl rule__Entailment__Group__3 ;
     public final void rule__Entailment__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1044:1: ( rule__Entailment__Group__2__Impl rule__Entailment__Group__3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1045:2: rule__Entailment__Group__2__Impl rule__Entailment__Group__3
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1106:1: ( rule__Entailment__Group__2__Impl rule__Entailment__Group__3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1107:2: rule__Entailment__Group__2__Impl rule__Entailment__Group__3
             {
-            pushFollow(FOLLOW_rule__Entailment__Group__2__Impl_in_rule__Entailment__Group__22078);
+            pushFollow(FOLLOW_rule__Entailment__Group__2__Impl_in_rule__Entailment__Group__22219);
             rule__Entailment__Group__2__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Entailment__Group__3_in_rule__Entailment__Group__22081);
+            pushFollow(FOLLOW_rule__Entailment__Group__3_in_rule__Entailment__Group__22222);
             rule__Entailment__Group__3();
             _fsp--;
 
@@ -2753,20 +2924,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__2__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1052:1: rule__Entailment__Group__2__Impl : ( '->' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1114:1: rule__Entailment__Group__2__Impl : ( '->' ) ;
     public final void rule__Entailment__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1056:1: ( ( '->' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1057:1: ( '->' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1118:1: ( ( '->' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1119:1: ( '->' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1057:1: ( '->' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1058:1: '->'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1119:1: ( '->' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1120:1: '->'
             {
              before(grammarAccess.getEntailmentAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
-            match(input,16,FOLLOW_16_in_rule__Entailment__Group__2__Impl2109); 
+            match(input,19,FOLLOW_19_in_rule__Entailment__Group__2__Impl2250); 
              after(grammarAccess.getEntailmentAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
 
             }
@@ -2790,16 +2961,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1071:1: rule__Entailment__Group__3 : rule__Entailment__Group__3__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1133:1: rule__Entailment__Group__3 : rule__Entailment__Group__3__Impl ;
     public final void rule__Entailment__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1075:1: ( rule__Entailment__Group__3__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1076:2: rule__Entailment__Group__3__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1137:1: ( rule__Entailment__Group__3__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1138:2: rule__Entailment__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Entailment__Group__3__Impl_in_rule__Entailment__Group__32140);
+            pushFollow(FOLLOW_rule__Entailment__Group__3__Impl_in_rule__Entailment__Group__32281);
             rule__Entailment__Group__3__Impl();
             _fsp--;
 
@@ -2822,23 +2993,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__Group__3__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1082:1: rule__Entailment__Group__3__Impl : ( ( rule__Entailment__TailAssignment_3 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1144:1: rule__Entailment__Group__3__Impl : ( ( rule__Entailment__TailAssignment_3 ) ) ;
     public final void rule__Entailment__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1086:1: ( ( ( rule__Entailment__TailAssignment_3 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1087:1: ( ( rule__Entailment__TailAssignment_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1148:1: ( ( ( rule__Entailment__TailAssignment_3 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1149:1: ( ( rule__Entailment__TailAssignment_3 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1087:1: ( ( rule__Entailment__TailAssignment_3 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1088:1: ( rule__Entailment__TailAssignment_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1149:1: ( ( rule__Entailment__TailAssignment_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1150:1: ( rule__Entailment__TailAssignment_3 )
             {
              before(grammarAccess.getEntailmentAccess().getTailAssignment_3()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1089:1: ( rule__Entailment__TailAssignment_3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1089:2: rule__Entailment__TailAssignment_3
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1151:1: ( rule__Entailment__TailAssignment_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1151:2: rule__Entailment__TailAssignment_3
             {
-            pushFollow(FOLLOW_rule__Entailment__TailAssignment_3_in_rule__Entailment__Group__3__Impl2167);
+            pushFollow(FOLLOW_rule__Entailment__TailAssignment_3_in_rule__Entailment__Group__3__Impl2308);
             rule__Entailment__TailAssignment_3();
             _fsp--;
 
@@ -2868,20 +3039,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1107:1: rule__Conjunction__Group_0__0 : rule__Conjunction__Group_0__0__Impl rule__Conjunction__Group_0__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1169:1: rule__Conjunction__Group_0__0 : rule__Conjunction__Group_0__0__Impl rule__Conjunction__Group_0__1 ;
     public final void rule__Conjunction__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1111:1: ( rule__Conjunction__Group_0__0__Impl rule__Conjunction__Group_0__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1112:2: rule__Conjunction__Group_0__0__Impl rule__Conjunction__Group_0__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1173:1: ( rule__Conjunction__Group_0__0__Impl rule__Conjunction__Group_0__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1174:2: rule__Conjunction__Group_0__0__Impl rule__Conjunction__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Conjunction__Group_0__0__Impl_in_rule__Conjunction__Group_0__02205);
+            pushFollow(FOLLOW_rule__Conjunction__Group_0__0__Impl_in_rule__Conjunction__Group_0__02346);
             rule__Conjunction__Group_0__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Conjunction__Group_0__1_in_rule__Conjunction__Group_0__02208);
+            pushFollow(FOLLOW_rule__Conjunction__Group_0__1_in_rule__Conjunction__Group_0__02349);
             rule__Conjunction__Group_0__1();
             _fsp--;
 
@@ -2904,21 +3075,21 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1119:1: rule__Conjunction__Group_0__0__Impl : ( () ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1181:1: rule__Conjunction__Group_0__0__Impl : ( () ) ;
     public final void rule__Conjunction__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1123:1: ( ( () ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1124:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1185:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1186:1: ( () )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1124:1: ( () )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1125:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1186:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1187:1: ()
             {
              before(grammarAccess.getConjunctionAccess().getConjunctionAction_0_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1126:1: ()
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1128:1: 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1188:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1190:1: 
             {
             }
 
@@ -2941,20 +3112,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1138:1: rule__Conjunction__Group_0__1 : rule__Conjunction__Group_0__1__Impl rule__Conjunction__Group_0__2 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1200:1: rule__Conjunction__Group_0__1 : rule__Conjunction__Group_0__1__Impl rule__Conjunction__Group_0__2 ;
     public final void rule__Conjunction__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1142:1: ( rule__Conjunction__Group_0__1__Impl rule__Conjunction__Group_0__2 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1143:2: rule__Conjunction__Group_0__1__Impl rule__Conjunction__Group_0__2
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1204:1: ( rule__Conjunction__Group_0__1__Impl rule__Conjunction__Group_0__2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1205:2: rule__Conjunction__Group_0__1__Impl rule__Conjunction__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Conjunction__Group_0__1__Impl_in_rule__Conjunction__Group_0__12266);
+            pushFollow(FOLLOW_rule__Conjunction__Group_0__1__Impl_in_rule__Conjunction__Group_0__12407);
             rule__Conjunction__Group_0__1__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Conjunction__Group_0__2_in_rule__Conjunction__Group_0__12269);
+            pushFollow(FOLLOW_rule__Conjunction__Group_0__2_in_rule__Conjunction__Group_0__12410);
             rule__Conjunction__Group_0__2();
             _fsp--;
 
@@ -2977,23 +3148,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1150:1: rule__Conjunction__Group_0__1__Impl : ( ( rule__Conjunction__LhsAssignment_0_1 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1212:1: rule__Conjunction__Group_0__1__Impl : ( ( rule__Conjunction__LhsAssignment_0_1 ) ) ;
     public final void rule__Conjunction__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1154:1: ( ( ( rule__Conjunction__LhsAssignment_0_1 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1155:1: ( ( rule__Conjunction__LhsAssignment_0_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1216:1: ( ( ( rule__Conjunction__LhsAssignment_0_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1217:1: ( ( rule__Conjunction__LhsAssignment_0_1 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1155:1: ( ( rule__Conjunction__LhsAssignment_0_1 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1156:1: ( rule__Conjunction__LhsAssignment_0_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1217:1: ( ( rule__Conjunction__LhsAssignment_0_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1218:1: ( rule__Conjunction__LhsAssignment_0_1 )
             {
              before(grammarAccess.getConjunctionAccess().getLhsAssignment_0_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1157:1: ( rule__Conjunction__LhsAssignment_0_1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1157:2: rule__Conjunction__LhsAssignment_0_1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1219:1: ( rule__Conjunction__LhsAssignment_0_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1219:2: rule__Conjunction__LhsAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Conjunction__LhsAssignment_0_1_in_rule__Conjunction__Group_0__1__Impl2296);
+            pushFollow(FOLLOW_rule__Conjunction__LhsAssignment_0_1_in_rule__Conjunction__Group_0__1__Impl2437);
             rule__Conjunction__LhsAssignment_0_1();
             _fsp--;
 
@@ -3023,20 +3194,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__2
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1167:1: rule__Conjunction__Group_0__2 : rule__Conjunction__Group_0__2__Impl rule__Conjunction__Group_0__3 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1229:1: rule__Conjunction__Group_0__2 : rule__Conjunction__Group_0__2__Impl rule__Conjunction__Group_0__3 ;
     public final void rule__Conjunction__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1171:1: ( rule__Conjunction__Group_0__2__Impl rule__Conjunction__Group_0__3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1172:2: rule__Conjunction__Group_0__2__Impl rule__Conjunction__Group_0__3
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1233:1: ( rule__Conjunction__Group_0__2__Impl rule__Conjunction__Group_0__3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1234:2: rule__Conjunction__Group_0__2__Impl rule__Conjunction__Group_0__3
             {
-            pushFollow(FOLLOW_rule__Conjunction__Group_0__2__Impl_in_rule__Conjunction__Group_0__22326);
+            pushFollow(FOLLOW_rule__Conjunction__Group_0__2__Impl_in_rule__Conjunction__Group_0__22467);
             rule__Conjunction__Group_0__2__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Conjunction__Group_0__3_in_rule__Conjunction__Group_0__22329);
+            pushFollow(FOLLOW_rule__Conjunction__Group_0__3_in_rule__Conjunction__Group_0__22470);
             rule__Conjunction__Group_0__3();
             _fsp--;
 
@@ -3059,20 +3230,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__2__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1179:1: rule__Conjunction__Group_0__2__Impl : ( '^' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1241:1: rule__Conjunction__Group_0__2__Impl : ( '^' ) ;
     public final void rule__Conjunction__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1183:1: ( ( '^' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1184:1: ( '^' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1245:1: ( ( '^' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1246:1: ( '^' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1184:1: ( '^' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1185:1: '^'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1246:1: ( '^' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1247:1: '^'
             {
              before(grammarAccess.getConjunctionAccess().getCircumflexAccentKeyword_0_2()); 
-            match(input,17,FOLLOW_17_in_rule__Conjunction__Group_0__2__Impl2357); 
+            match(input,20,FOLLOW_20_in_rule__Conjunction__Group_0__2__Impl2498); 
              after(grammarAccess.getConjunctionAccess().getCircumflexAccentKeyword_0_2()); 
 
             }
@@ -3096,16 +3267,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1198:1: rule__Conjunction__Group_0__3 : rule__Conjunction__Group_0__3__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1260:1: rule__Conjunction__Group_0__3 : rule__Conjunction__Group_0__3__Impl ;
     public final void rule__Conjunction__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1202:1: ( rule__Conjunction__Group_0__3__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1203:2: rule__Conjunction__Group_0__3__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1264:1: ( rule__Conjunction__Group_0__3__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1265:2: rule__Conjunction__Group_0__3__Impl
             {
-            pushFollow(FOLLOW_rule__Conjunction__Group_0__3__Impl_in_rule__Conjunction__Group_0__32388);
+            pushFollow(FOLLOW_rule__Conjunction__Group_0__3__Impl_in_rule__Conjunction__Group_0__32529);
             rule__Conjunction__Group_0__3__Impl();
             _fsp--;
 
@@ -3128,23 +3299,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__Group_0__3__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1209:1: rule__Conjunction__Group_0__3__Impl : ( ( rule__Conjunction__RhsAssignment_0_3 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1271:1: rule__Conjunction__Group_0__3__Impl : ( ( rule__Conjunction__RhsAssignment_0_3 ) ) ;
     public final void rule__Conjunction__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1213:1: ( ( ( rule__Conjunction__RhsAssignment_0_3 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1214:1: ( ( rule__Conjunction__RhsAssignment_0_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1275:1: ( ( ( rule__Conjunction__RhsAssignment_0_3 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1276:1: ( ( rule__Conjunction__RhsAssignment_0_3 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1214:1: ( ( rule__Conjunction__RhsAssignment_0_3 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1215:1: ( rule__Conjunction__RhsAssignment_0_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1276:1: ( ( rule__Conjunction__RhsAssignment_0_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1277:1: ( rule__Conjunction__RhsAssignment_0_3 )
             {
              before(grammarAccess.getConjunctionAccess().getRhsAssignment_0_3()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1216:1: ( rule__Conjunction__RhsAssignment_0_3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1216:2: rule__Conjunction__RhsAssignment_0_3
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1278:1: ( rule__Conjunction__RhsAssignment_0_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1278:2: rule__Conjunction__RhsAssignment_0_3
             {
-            pushFollow(FOLLOW_rule__Conjunction__RhsAssignment_0_3_in_rule__Conjunction__Group_0__3__Impl2415);
+            pushFollow(FOLLOW_rule__Conjunction__RhsAssignment_0_3_in_rule__Conjunction__Group_0__3__Impl2556);
             rule__Conjunction__RhsAssignment_0_3();
             _fsp--;
 
@@ -3174,20 +3345,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1234:1: rule__ProofSteps__Group_0__0 : rule__ProofSteps__Group_0__0__Impl rule__ProofSteps__Group_0__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1296:1: rule__ProofSteps__Group_0__0 : rule__ProofSteps__Group_0__0__Impl rule__ProofSteps__Group_0__1 ;
     public final void rule__ProofSteps__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1238:1: ( rule__ProofSteps__Group_0__0__Impl rule__ProofSteps__Group_0__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1239:2: rule__ProofSteps__Group_0__0__Impl rule__ProofSteps__Group_0__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1300:1: ( rule__ProofSteps__Group_0__0__Impl rule__ProofSteps__Group_0__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1301:2: rule__ProofSteps__Group_0__0__Impl rule__ProofSteps__Group_0__1
             {
-            pushFollow(FOLLOW_rule__ProofSteps__Group_0__0__Impl_in_rule__ProofSteps__Group_0__02453);
+            pushFollow(FOLLOW_rule__ProofSteps__Group_0__0__Impl_in_rule__ProofSteps__Group_0__02594);
             rule__ProofSteps__Group_0__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__ProofSteps__Group_0__1_in_rule__ProofSteps__Group_0__02456);
+            pushFollow(FOLLOW_rule__ProofSteps__Group_0__1_in_rule__ProofSteps__Group_0__02597);
             rule__ProofSteps__Group_0__1();
             _fsp--;
 
@@ -3210,21 +3381,21 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1246:1: rule__ProofSteps__Group_0__0__Impl : ( () ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1308:1: rule__ProofSteps__Group_0__0__Impl : ( () ) ;
     public final void rule__ProofSteps__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1250:1: ( ( () ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1251:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1312:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1313:1: ( () )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1251:1: ( () )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1252:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1313:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1314:1: ()
             {
              before(grammarAccess.getProofStepsAccess().getProofStepsAction_0_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1253:1: ()
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1255:1: 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1315:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1317:1: 
             {
             }
 
@@ -3247,16 +3418,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1265:1: rule__ProofSteps__Group_0__1 : rule__ProofSteps__Group_0__1__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1327:1: rule__ProofSteps__Group_0__1 : rule__ProofSteps__Group_0__1__Impl ;
     public final void rule__ProofSteps__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1269:1: ( rule__ProofSteps__Group_0__1__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1270:2: rule__ProofSteps__Group_0__1__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1331:1: ( rule__ProofSteps__Group_0__1__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1332:2: rule__ProofSteps__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__ProofSteps__Group_0__1__Impl_in_rule__ProofSteps__Group_0__12514);
+            pushFollow(FOLLOW_rule__ProofSteps__Group_0__1__Impl_in_rule__ProofSteps__Group_0__12655);
             rule__ProofSteps__Group_0__1__Impl();
             _fsp--;
 
@@ -3279,20 +3450,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1276:1: rule__ProofSteps__Group_0__1__Impl : ( ( rule__ProofSteps__Group_0_1__0 )? ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1338:1: rule__ProofSteps__Group_0__1__Impl : ( ( rule__ProofSteps__Group_0_1__0 )? ) ;
     public final void rule__ProofSteps__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1280:1: ( ( ( rule__ProofSteps__Group_0_1__0 )? ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1281:1: ( ( rule__ProofSteps__Group_0_1__0 )? )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1342:1: ( ( ( rule__ProofSteps__Group_0_1__0 )? ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1343:1: ( ( rule__ProofSteps__Group_0_1__0 )? )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1281:1: ( ( rule__ProofSteps__Group_0_1__0 )? )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1282:1: ( rule__ProofSteps__Group_0_1__0 )?
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1343:1: ( ( rule__ProofSteps__Group_0_1__0 )? )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1344:1: ( rule__ProofSteps__Group_0_1__0 )?
             {
              before(grammarAccess.getProofStepsAccess().getGroup_0_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1283:1: ( rule__ProofSteps__Group_0_1__0 )?
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1345:1: ( rule__ProofSteps__Group_0_1__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -3301,9 +3472,9 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
             }
             switch (alt7) {
                 case 1 :
-                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1283:2: rule__ProofSteps__Group_0_1__0
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1345:2: rule__ProofSteps__Group_0_1__0
                     {
-                    pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__0_in_rule__ProofSteps__Group_0__1__Impl2541);
+                    pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__0_in_rule__ProofSteps__Group_0__1__Impl2682);
                     rule__ProofSteps__Group_0_1__0();
                     _fsp--;
 
@@ -3336,20 +3507,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0_1__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1297:1: rule__ProofSteps__Group_0_1__0 : rule__ProofSteps__Group_0_1__0__Impl rule__ProofSteps__Group_0_1__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1359:1: rule__ProofSteps__Group_0_1__0 : rule__ProofSteps__Group_0_1__0__Impl rule__ProofSteps__Group_0_1__1 ;
     public final void rule__ProofSteps__Group_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1301:1: ( rule__ProofSteps__Group_0_1__0__Impl rule__ProofSteps__Group_0_1__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1302:2: rule__ProofSteps__Group_0_1__0__Impl rule__ProofSteps__Group_0_1__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1363:1: ( rule__ProofSteps__Group_0_1__0__Impl rule__ProofSteps__Group_0_1__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1364:2: rule__ProofSteps__Group_0_1__0__Impl rule__ProofSteps__Group_0_1__1
             {
-            pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__0__Impl_in_rule__ProofSteps__Group_0_1__02576);
+            pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__0__Impl_in_rule__ProofSteps__Group_0_1__02717);
             rule__ProofSteps__Group_0_1__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__1_in_rule__ProofSteps__Group_0_1__02579);
+            pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__1_in_rule__ProofSteps__Group_0_1__02720);
             rule__ProofSteps__Group_0_1__1();
             _fsp--;
 
@@ -3372,23 +3543,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0_1__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1309:1: rule__ProofSteps__Group_0_1__0__Impl : ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1371:1: rule__ProofSteps__Group_0_1__0__Impl : ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) ) ;
     public final void rule__ProofSteps__Group_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1313:1: ( ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1314:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1375:1: ( ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1376:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1314:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1315:1: ( rule__ProofSteps__StatementsAssignment_0_1_0 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1376:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_0 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1377:1: ( rule__ProofSteps__StatementsAssignment_0_1_0 )
             {
              before(grammarAccess.getProofStepsAccess().getStatementsAssignment_0_1_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1316:1: ( rule__ProofSteps__StatementsAssignment_0_1_0 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1316:2: rule__ProofSteps__StatementsAssignment_0_1_0
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1378:1: ( rule__ProofSteps__StatementsAssignment_0_1_0 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1378:2: rule__ProofSteps__StatementsAssignment_0_1_0
             {
-            pushFollow(FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_0_in_rule__ProofSteps__Group_0_1__0__Impl2606);
+            pushFollow(FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_0_in_rule__ProofSteps__Group_0_1__0__Impl2747);
             rule__ProofSteps__StatementsAssignment_0_1_0();
             _fsp--;
 
@@ -3418,16 +3589,16 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0_1__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1326:1: rule__ProofSteps__Group_0_1__1 : rule__ProofSteps__Group_0_1__1__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1388:1: rule__ProofSteps__Group_0_1__1 : rule__ProofSteps__Group_0_1__1__Impl ;
     public final void rule__ProofSteps__Group_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1330:1: ( rule__ProofSteps__Group_0_1__1__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1331:2: rule__ProofSteps__Group_0_1__1__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1392:1: ( rule__ProofSteps__Group_0_1__1__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1393:2: rule__ProofSteps__Group_0_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__1__Impl_in_rule__ProofSteps__Group_0_1__12636);
+            pushFollow(FOLLOW_rule__ProofSteps__Group_0_1__1__Impl_in_rule__ProofSteps__Group_0_1__12777);
             rule__ProofSteps__Group_0_1__1__Impl();
             _fsp--;
 
@@ -3450,20 +3621,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__Group_0_1__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1337:1: rule__ProofSteps__Group_0_1__1__Impl : ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1399:1: rule__ProofSteps__Group_0_1__1__Impl : ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* ) ;
     public final void rule__ProofSteps__Group_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1341:1: ( ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1342:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1403:1: ( ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1404:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1342:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1343:1: ( rule__ProofSteps__StatementsAssignment_0_1_1 )*
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1404:1: ( ( rule__ProofSteps__StatementsAssignment_0_1_1 )* )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1405:1: ( rule__ProofSteps__StatementsAssignment_0_1_1 )*
             {
              before(grammarAccess.getProofStepsAccess().getStatementsAssignment_0_1_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1344:1: ( rule__ProofSteps__StatementsAssignment_0_1_1 )*
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1406:1: ( rule__ProofSteps__StatementsAssignment_0_1_1 )*
             loop8:
             do {
                 int alt8=2;
@@ -3476,9 +3647,9 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
                 switch (alt8) {
             	case 1 :
-            	    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1344:2: rule__ProofSteps__StatementsAssignment_0_1_1
+            	    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1406:2: rule__ProofSteps__StatementsAssignment_0_1_1
             	    {
-            	    pushFollow(FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_1_in_rule__ProofSteps__Group_0_1__1__Impl2663);
+            	    pushFollow(FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_1_in_rule__ProofSteps__Group_0_1__1__Impl2804);
             	    rule__ProofSteps__StatementsAssignment_0_1_1();
             	    _fsp--;
 
@@ -3514,20 +3685,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1358:1: rule__Statement__Group__0 : rule__Statement__Group__0__Impl rule__Statement__Group__1 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1420:1: rule__Statement__Group__0 : rule__Statement__Group__0__Impl rule__Statement__Group__1 ;
     public final void rule__Statement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1362:1: ( rule__Statement__Group__0__Impl rule__Statement__Group__1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1363:2: rule__Statement__Group__0__Impl rule__Statement__Group__1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1424:1: ( rule__Statement__Group__0__Impl rule__Statement__Group__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1425:2: rule__Statement__Group__0__Impl rule__Statement__Group__1
             {
-            pushFollow(FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02698);
+            pushFollow(FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02839);
             rule__Statement__Group__0__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02701);
+            pushFollow(FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02842);
             rule__Statement__Group__1();
             _fsp--;
 
@@ -3550,21 +3721,21 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__0__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1370:1: rule__Statement__Group__0__Impl : ( () ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1432:1: rule__Statement__Group__0__Impl : ( () ) ;
     public final void rule__Statement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1374:1: ( ( () ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1375:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1436:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1437:1: ( () )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1375:1: ( () )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1376:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1437:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1438:1: ()
             {
              before(grammarAccess.getStatementAccess().getStatementAction_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1377:1: ()
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1379:1: 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1439:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1441:1: 
             {
             }
 
@@ -3587,20 +3758,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1389:1: rule__Statement__Group__1 : rule__Statement__Group__1__Impl rule__Statement__Group__2 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1451:1: rule__Statement__Group__1 : rule__Statement__Group__1__Impl rule__Statement__Group__2 ;
     public final void rule__Statement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1393:1: ( rule__Statement__Group__1__Impl rule__Statement__Group__2 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1394:2: rule__Statement__Group__1__Impl rule__Statement__Group__2
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1455:1: ( rule__Statement__Group__1__Impl rule__Statement__Group__2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1456:2: rule__Statement__Group__1__Impl rule__Statement__Group__2
             {
-            pushFollow(FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12759);
+            pushFollow(FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12900);
             rule__Statement__Group__1__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12762);
+            pushFollow(FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12903);
             rule__Statement__Group__2();
             _fsp--;
 
@@ -3623,23 +3794,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__1__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1401:1: rule__Statement__Group__1__Impl : ( ( rule__Statement__IdAssignment_1 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1463:1: rule__Statement__Group__1__Impl : ( ( rule__Statement__IdAssignment_1 ) ) ;
     public final void rule__Statement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1405:1: ( ( ( rule__Statement__IdAssignment_1 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1406:1: ( ( rule__Statement__IdAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1467:1: ( ( ( rule__Statement__IdAssignment_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1468:1: ( ( rule__Statement__IdAssignment_1 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1406:1: ( ( rule__Statement__IdAssignment_1 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1407:1: ( rule__Statement__IdAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1468:1: ( ( rule__Statement__IdAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1469:1: ( rule__Statement__IdAssignment_1 )
             {
              before(grammarAccess.getStatementAccess().getIdAssignment_1()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1408:1: ( rule__Statement__IdAssignment_1 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1408:2: rule__Statement__IdAssignment_1
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1470:1: ( rule__Statement__IdAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1470:2: rule__Statement__IdAssignment_1
             {
-            pushFollow(FOLLOW_rule__Statement__IdAssignment_1_in_rule__Statement__Group__1__Impl2789);
+            pushFollow(FOLLOW_rule__Statement__IdAssignment_1_in_rule__Statement__Group__1__Impl2930);
             rule__Statement__IdAssignment_1();
             _fsp--;
 
@@ -3669,20 +3840,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__2
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1418:1: rule__Statement__Group__2 : rule__Statement__Group__2__Impl rule__Statement__Group__3 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1480:1: rule__Statement__Group__2 : rule__Statement__Group__2__Impl rule__Statement__Group__3 ;
     public final void rule__Statement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1422:1: ( rule__Statement__Group__2__Impl rule__Statement__Group__3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1423:2: rule__Statement__Group__2__Impl rule__Statement__Group__3
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1484:1: ( rule__Statement__Group__2__Impl rule__Statement__Group__3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1485:2: rule__Statement__Group__2__Impl rule__Statement__Group__3
             {
-            pushFollow(FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22819);
+            pushFollow(FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22960);
             rule__Statement__Group__2__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22822);
+            pushFollow(FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22963);
             rule__Statement__Group__3();
             _fsp--;
 
@@ -3705,20 +3876,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__2__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1430:1: rule__Statement__Group__2__Impl : ( '.' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1492:1: rule__Statement__Group__2__Impl : ( '.' ) ;
     public final void rule__Statement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1434:1: ( ( '.' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1435:1: ( '.' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1496:1: ( ( '.' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1497:1: ( '.' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1435:1: ( '.' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1436:1: '.'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1497:1: ( '.' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1498:1: '.'
             {
              before(grammarAccess.getStatementAccess().getFullStopKeyword_2()); 
-            match(input,18,FOLLOW_18_in_rule__Statement__Group__2__Impl2850); 
+            match(input,21,FOLLOW_21_in_rule__Statement__Group__2__Impl2991); 
              after(grammarAccess.getStatementAccess().getFullStopKeyword_2()); 
 
             }
@@ -3742,20 +3913,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1449:1: rule__Statement__Group__3 : rule__Statement__Group__3__Impl rule__Statement__Group__4 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1511:1: rule__Statement__Group__3 : rule__Statement__Group__3__Impl rule__Statement__Group__4 ;
     public final void rule__Statement__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1453:1: ( rule__Statement__Group__3__Impl rule__Statement__Group__4 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1454:2: rule__Statement__Group__3__Impl rule__Statement__Group__4
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1515:1: ( rule__Statement__Group__3__Impl rule__Statement__Group__4 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1516:2: rule__Statement__Group__3__Impl rule__Statement__Group__4
             {
-            pushFollow(FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__32881);
+            pushFollow(FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__33022);
             rule__Statement__Group__3__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__32884);
+            pushFollow(FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__33025);
             rule__Statement__Group__4();
             _fsp--;
 
@@ -3778,23 +3949,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__3__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1461:1: rule__Statement__Group__3__Impl : ( ( rule__Statement__StatementAssignment_3 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1523:1: rule__Statement__Group__3__Impl : ( ( rule__Statement__StatementAssignment_3 ) ) ;
     public final void rule__Statement__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1465:1: ( ( ( rule__Statement__StatementAssignment_3 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1466:1: ( ( rule__Statement__StatementAssignment_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1527:1: ( ( ( rule__Statement__StatementAssignment_3 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1528:1: ( ( rule__Statement__StatementAssignment_3 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1466:1: ( ( rule__Statement__StatementAssignment_3 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1467:1: ( rule__Statement__StatementAssignment_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1528:1: ( ( rule__Statement__StatementAssignment_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1529:1: ( rule__Statement__StatementAssignment_3 )
             {
              before(grammarAccess.getStatementAccess().getStatementAssignment_3()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1468:1: ( rule__Statement__StatementAssignment_3 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1468:2: rule__Statement__StatementAssignment_3
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1530:1: ( rule__Statement__StatementAssignment_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1530:2: rule__Statement__StatementAssignment_3
             {
-            pushFollow(FOLLOW_rule__Statement__StatementAssignment_3_in_rule__Statement__Group__3__Impl2911);
+            pushFollow(FOLLOW_rule__Statement__StatementAssignment_3_in_rule__Statement__Group__3__Impl3052);
             rule__Statement__StatementAssignment_3();
             _fsp--;
 
@@ -3824,20 +3995,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__4
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1478:1: rule__Statement__Group__4 : rule__Statement__Group__4__Impl rule__Statement__Group__5 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1540:1: rule__Statement__Group__4 : rule__Statement__Group__4__Impl rule__Statement__Group__5 ;
     public final void rule__Statement__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1482:1: ( rule__Statement__Group__4__Impl rule__Statement__Group__5 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1483:2: rule__Statement__Group__4__Impl rule__Statement__Group__5
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1544:1: ( rule__Statement__Group__4__Impl rule__Statement__Group__5 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1545:2: rule__Statement__Group__4__Impl rule__Statement__Group__5
             {
-            pushFollow(FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__42941);
+            pushFollow(FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__43082);
             rule__Statement__Group__4__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__42944);
+            pushFollow(FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__43085);
             rule__Statement__Group__5();
             _fsp--;
 
@@ -3860,20 +4031,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__4__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1490:1: rule__Statement__Group__4__Impl : ( '(' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1552:1: rule__Statement__Group__4__Impl : ( '(' ) ;
     public final void rule__Statement__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1494:1: ( ( '(' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1495:1: ( '(' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1556:1: ( ( '(' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1557:1: ( '(' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1495:1: ( '(' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1496:1: '('
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1557:1: ( '(' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1558:1: '('
             {
              before(grammarAccess.getStatementAccess().getLeftParenthesisKeyword_4()); 
-            match(input,13,FOLLOW_13_in_rule__Statement__Group__4__Impl2972); 
+            match(input,16,FOLLOW_16_in_rule__Statement__Group__4__Impl3113); 
              after(grammarAccess.getStatementAccess().getLeftParenthesisKeyword_4()); 
 
             }
@@ -3897,20 +4068,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__5
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1509:1: rule__Statement__Group__5 : rule__Statement__Group__5__Impl rule__Statement__Group__6 ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1571:1: rule__Statement__Group__5 : rule__Statement__Group__5__Impl rule__Statement__Group__6 ;
     public final void rule__Statement__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1513:1: ( rule__Statement__Group__5__Impl rule__Statement__Group__6 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1514:2: rule__Statement__Group__5__Impl rule__Statement__Group__6
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1575:1: ( rule__Statement__Group__5__Impl rule__Statement__Group__6 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1576:2: rule__Statement__Group__5__Impl rule__Statement__Group__6
             {
-            pushFollow(FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__53003);
+            pushFollow(FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__53144);
             rule__Statement__Group__5__Impl();
             _fsp--;
 
-            pushFollow(FOLLOW_rule__Statement__Group__6_in_rule__Statement__Group__53006);
+            pushFollow(FOLLOW_rule__Statement__Group__6_in_rule__Statement__Group__53147);
             rule__Statement__Group__6();
             _fsp--;
 
@@ -3933,23 +4104,23 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__5__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1521:1: rule__Statement__Group__5__Impl : ( ( rule__Statement__JustificationAssignment_5 ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1583:1: rule__Statement__Group__5__Impl : ( ( rule__Statement__JustificationAssignment_5 ) ) ;
     public final void rule__Statement__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1525:1: ( ( ( rule__Statement__JustificationAssignment_5 ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1526:1: ( ( rule__Statement__JustificationAssignment_5 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1587:1: ( ( ( rule__Statement__JustificationAssignment_5 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1588:1: ( ( rule__Statement__JustificationAssignment_5 ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1526:1: ( ( rule__Statement__JustificationAssignment_5 ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1527:1: ( rule__Statement__JustificationAssignment_5 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1588:1: ( ( rule__Statement__JustificationAssignment_5 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1589:1: ( rule__Statement__JustificationAssignment_5 )
             {
              before(grammarAccess.getStatementAccess().getJustificationAssignment_5()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1528:1: ( rule__Statement__JustificationAssignment_5 )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1528:2: rule__Statement__JustificationAssignment_5
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1590:1: ( rule__Statement__JustificationAssignment_5 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1590:2: rule__Statement__JustificationAssignment_5
             {
-            pushFollow(FOLLOW_rule__Statement__JustificationAssignment_5_in_rule__Statement__Group__5__Impl3033);
+            pushFollow(FOLLOW_rule__Statement__JustificationAssignment_5_in_rule__Statement__Group__5__Impl3174);
             rule__Statement__JustificationAssignment_5();
             _fsp--;
 
@@ -3979,17 +4150,21 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__6
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1538:1: rule__Statement__Group__6 : rule__Statement__Group__6__Impl ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1600:1: rule__Statement__Group__6 : rule__Statement__Group__6__Impl rule__Statement__Group__7 ;
     public final void rule__Statement__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1542:1: ( rule__Statement__Group__6__Impl )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1543:2: rule__Statement__Group__6__Impl
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1604:1: ( rule__Statement__Group__6__Impl rule__Statement__Group__7 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1605:2: rule__Statement__Group__6__Impl rule__Statement__Group__7
             {
-            pushFollow(FOLLOW_rule__Statement__Group__6__Impl_in_rule__Statement__Group__63063);
+            pushFollow(FOLLOW_rule__Statement__Group__6__Impl_in_rule__Statement__Group__63204);
             rule__Statement__Group__6__Impl();
+            _fsp--;
+
+            pushFollow(FOLLOW_rule__Statement__Group__7_in_rule__Statement__Group__63207);
+            rule__Statement__Group__7();
             _fsp--;
 
 
@@ -4011,20 +4186,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__Group__6__Impl
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1549:1: rule__Statement__Group__6__Impl : ( ')' ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1612:1: rule__Statement__Group__6__Impl : ( ')' ) ;
     public final void rule__Statement__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1553:1: ( ( ')' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1554:1: ( ')' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1616:1: ( ( ')' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1617:1: ( ')' )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1554:1: ( ')' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1555:1: ')'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1617:1: ( ')' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1618:1: ')'
             {
              before(grammarAccess.getStatementAccess().getRightParenthesisKeyword_6()); 
-            match(input,14,FOLLOW_14_in_rule__Statement__Group__6__Impl3091); 
+            match(input,17,FOLLOW_17_in_rule__Statement__Group__6__Impl3235); 
              after(grammarAccess.getStatementAccess().getRightParenthesisKeyword_6()); 
 
             }
@@ -4047,21 +4222,660 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     // $ANTLR end rule__Statement__Group__6__Impl
 
 
+    // $ANTLR start rule__Statement__Group__7
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1631:1: rule__Statement__Group__7 : rule__Statement__Group__7__Impl ;
+    public final void rule__Statement__Group__7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1635:1: ( rule__Statement__Group__7__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1636:2: rule__Statement__Group__7__Impl
+            {
+            pushFollow(FOLLOW_rule__Statement__Group__7__Impl_in_rule__Statement__Group__73266);
+            rule__Statement__Group__7__Impl();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group__7
+
+
+    // $ANTLR start rule__Statement__Group__7__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1642:1: rule__Statement__Group__7__Impl : ( ( rule__Statement__Group_7__0 )? ) ;
+    public final void rule__Statement__Group__7__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1646:1: ( ( ( rule__Statement__Group_7__0 )? ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1647:1: ( ( rule__Statement__Group_7__0 )? )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1647:1: ( ( rule__Statement__Group_7__0 )? )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1648:1: ( rule__Statement__Group_7__0 )?
+            {
+             before(grammarAccess.getStatementAccess().getGroup_7()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1649:1: ( rule__Statement__Group_7__0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==22) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1649:2: rule__Statement__Group_7__0
+                    {
+                    pushFollow(FOLLOW_rule__Statement__Group_7__0_in_rule__Statement__Group__7__Impl3293);
+                    rule__Statement__Group_7__0();
+                    _fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getStatementAccess().getGroup_7()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group__7__Impl
+
+
+    // $ANTLR start rule__Statement__Group_7__0
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1675:1: rule__Statement__Group_7__0 : rule__Statement__Group_7__0__Impl rule__Statement__Group_7__1 ;
+    public final void rule__Statement__Group_7__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1679:1: ( rule__Statement__Group_7__0__Impl rule__Statement__Group_7__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1680:2: rule__Statement__Group_7__0__Impl rule__Statement__Group_7__1
+            {
+            pushFollow(FOLLOW_rule__Statement__Group_7__0__Impl_in_rule__Statement__Group_7__03340);
+            rule__Statement__Group_7__0__Impl();
+            _fsp--;
+
+            pushFollow(FOLLOW_rule__Statement__Group_7__1_in_rule__Statement__Group_7__03343);
+            rule__Statement__Group_7__1();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group_7__0
+
+
+    // $ANTLR start rule__Statement__Group_7__0__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1687:1: rule__Statement__Group_7__0__Impl : ( '{' ) ;
+    public final void rule__Statement__Group_7__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1691:1: ( ( '{' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1692:1: ( '{' )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1692:1: ( '{' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1693:1: '{'
+            {
+             before(grammarAccess.getStatementAccess().getLeftCurlyBracketKeyword_7_0()); 
+            match(input,22,FOLLOW_22_in_rule__Statement__Group_7__0__Impl3371); 
+             after(grammarAccess.getStatementAccess().getLeftCurlyBracketKeyword_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group_7__0__Impl
+
+
+    // $ANTLR start rule__Statement__Group_7__1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1706:1: rule__Statement__Group_7__1 : rule__Statement__Group_7__1__Impl rule__Statement__Group_7__2 ;
+    public final void rule__Statement__Group_7__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1710:1: ( rule__Statement__Group_7__1__Impl rule__Statement__Group_7__2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1711:2: rule__Statement__Group_7__1__Impl rule__Statement__Group_7__2
+            {
+            pushFollow(FOLLOW_rule__Statement__Group_7__1__Impl_in_rule__Statement__Group_7__13402);
+            rule__Statement__Group_7__1__Impl();
+            _fsp--;
+
+            pushFollow(FOLLOW_rule__Statement__Group_7__2_in_rule__Statement__Group_7__13405);
+            rule__Statement__Group_7__2();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group_7__1
+
+
+    // $ANTLR start rule__Statement__Group_7__1__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1718:1: rule__Statement__Group_7__1__Impl : ( ( rule__Statement__ValidationAssignment_7_1 ) ) ;
+    public final void rule__Statement__Group_7__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1722:1: ( ( ( rule__Statement__ValidationAssignment_7_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1723:1: ( ( rule__Statement__ValidationAssignment_7_1 ) )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1723:1: ( ( rule__Statement__ValidationAssignment_7_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1724:1: ( rule__Statement__ValidationAssignment_7_1 )
+            {
+             before(grammarAccess.getStatementAccess().getValidationAssignment_7_1()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1725:1: ( rule__Statement__ValidationAssignment_7_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1725:2: rule__Statement__ValidationAssignment_7_1
+            {
+            pushFollow(FOLLOW_rule__Statement__ValidationAssignment_7_1_in_rule__Statement__Group_7__1__Impl3432);
+            rule__Statement__ValidationAssignment_7_1();
+            _fsp--;
+
+
+            }
+
+             after(grammarAccess.getStatementAccess().getValidationAssignment_7_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group_7__1__Impl
+
+
+    // $ANTLR start rule__Statement__Group_7__2
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1735:1: rule__Statement__Group_7__2 : rule__Statement__Group_7__2__Impl ;
+    public final void rule__Statement__Group_7__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1739:1: ( rule__Statement__Group_7__2__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1740:2: rule__Statement__Group_7__2__Impl
+            {
+            pushFollow(FOLLOW_rule__Statement__Group_7__2__Impl_in_rule__Statement__Group_7__23462);
+            rule__Statement__Group_7__2__Impl();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group_7__2
+
+
+    // $ANTLR start rule__Statement__Group_7__2__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1746:1: rule__Statement__Group_7__2__Impl : ( '}' ) ;
+    public final void rule__Statement__Group_7__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1750:1: ( ( '}' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1751:1: ( '}' )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1751:1: ( '}' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1752:1: '}'
+            {
+             before(grammarAccess.getStatementAccess().getRightCurlyBracketKeyword_7_2()); 
+            match(input,23,FOLLOW_23_in_rule__Statement__Group_7__2__Impl3490); 
+             after(grammarAccess.getStatementAccess().getRightCurlyBracketKeyword_7_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__Group_7__2__Impl
+
+
+    // $ANTLR start rule__Validation__Group__0
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1771:1: rule__Validation__Group__0 : rule__Validation__Group__0__Impl rule__Validation__Group__1 ;
+    public final void rule__Validation__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1775:1: ( rule__Validation__Group__0__Impl rule__Validation__Group__1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1776:2: rule__Validation__Group__0__Impl rule__Validation__Group__1
+            {
+            pushFollow(FOLLOW_rule__Validation__Group__0__Impl_in_rule__Validation__Group__03527);
+            rule__Validation__Group__0__Impl();
+            _fsp--;
+
+            pushFollow(FOLLOW_rule__Validation__Group__1_in_rule__Validation__Group__03530);
+            rule__Validation__Group__1();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__0
+
+
+    // $ANTLR start rule__Validation__Group__0__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1783:1: rule__Validation__Group__0__Impl : ( () ) ;
+    public final void rule__Validation__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1787:1: ( ( () ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1788:1: ( () )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1788:1: ( () )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1789:1: ()
+            {
+             before(grammarAccess.getValidationAccess().getValidationAction_0()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1790:1: ()
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1792:1: 
+            {
+            }
+
+             after(grammarAccess.getValidationAccess().getValidationAction_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__0__Impl
+
+
+    // $ANTLR start rule__Validation__Group__1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1802:1: rule__Validation__Group__1 : rule__Validation__Group__1__Impl rule__Validation__Group__2 ;
+    public final void rule__Validation__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1806:1: ( rule__Validation__Group__1__Impl rule__Validation__Group__2 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1807:2: rule__Validation__Group__1__Impl rule__Validation__Group__2
+            {
+            pushFollow(FOLLOW_rule__Validation__Group__1__Impl_in_rule__Validation__Group__13588);
+            rule__Validation__Group__1__Impl();
+            _fsp--;
+
+            pushFollow(FOLLOW_rule__Validation__Group__2_in_rule__Validation__Group__13591);
+            rule__Validation__Group__2();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__1
+
+
+    // $ANTLR start rule__Validation__Group__1__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1814:1: rule__Validation__Group__1__Impl : ( ( rule__Validation__AuthorAssignment_1 ) ) ;
+    public final void rule__Validation__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1818:1: ( ( ( rule__Validation__AuthorAssignment_1 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1819:1: ( ( rule__Validation__AuthorAssignment_1 ) )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1819:1: ( ( rule__Validation__AuthorAssignment_1 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1820:1: ( rule__Validation__AuthorAssignment_1 )
+            {
+             before(grammarAccess.getValidationAccess().getAuthorAssignment_1()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1821:1: ( rule__Validation__AuthorAssignment_1 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1821:2: rule__Validation__AuthorAssignment_1
+            {
+            pushFollow(FOLLOW_rule__Validation__AuthorAssignment_1_in_rule__Validation__Group__1__Impl3618);
+            rule__Validation__AuthorAssignment_1();
+            _fsp--;
+
+
+            }
+
+             after(grammarAccess.getValidationAccess().getAuthorAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__1__Impl
+
+
+    // $ANTLR start rule__Validation__Group__2
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1831:1: rule__Validation__Group__2 : rule__Validation__Group__2__Impl rule__Validation__Group__3 ;
+    public final void rule__Validation__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1835:1: ( rule__Validation__Group__2__Impl rule__Validation__Group__3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1836:2: rule__Validation__Group__2__Impl rule__Validation__Group__3
+            {
+            pushFollow(FOLLOW_rule__Validation__Group__2__Impl_in_rule__Validation__Group__23648);
+            rule__Validation__Group__2__Impl();
+            _fsp--;
+
+            pushFollow(FOLLOW_rule__Validation__Group__3_in_rule__Validation__Group__23651);
+            rule__Validation__Group__3();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__2
+
+
+    // $ANTLR start rule__Validation__Group__2__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1843:1: rule__Validation__Group__2__Impl : ( ( rule__Validation__TimeStampAssignment_2 )? ) ;
+    public final void rule__Validation__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1847:1: ( ( ( rule__Validation__TimeStampAssignment_2 )? ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1848:1: ( ( rule__Validation__TimeStampAssignment_2 )? )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1848:1: ( ( rule__Validation__TimeStampAssignment_2 )? )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1849:1: ( rule__Validation__TimeStampAssignment_2 )?
+            {
+             before(grammarAccess.getValidationAccess().getTimeStampAssignment_2()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1850:1: ( rule__Validation__TimeStampAssignment_2 )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==RULE_STRING) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1850:2: rule__Validation__TimeStampAssignment_2
+                    {
+                    pushFollow(FOLLOW_rule__Validation__TimeStampAssignment_2_in_rule__Validation__Group__2__Impl3678);
+                    rule__Validation__TimeStampAssignment_2();
+                    _fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getValidationAccess().getTimeStampAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__2__Impl
+
+
+    // $ANTLR start rule__Validation__Group__3
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1860:1: rule__Validation__Group__3 : rule__Validation__Group__3__Impl ;
+    public final void rule__Validation__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1864:1: ( rule__Validation__Group__3__Impl )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1865:2: rule__Validation__Group__3__Impl
+            {
+            pushFollow(FOLLOW_rule__Validation__Group__3__Impl_in_rule__Validation__Group__33709);
+            rule__Validation__Group__3__Impl();
+            _fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__3
+
+
+    // $ANTLR start rule__Validation__Group__3__Impl
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1871:1: rule__Validation__Group__3__Impl : ( ( rule__Validation__StateAssignment_3 ) ) ;
+    public final void rule__Validation__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1875:1: ( ( ( rule__Validation__StateAssignment_3 ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1876:1: ( ( rule__Validation__StateAssignment_3 ) )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1876:1: ( ( rule__Validation__StateAssignment_3 ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1877:1: ( rule__Validation__StateAssignment_3 )
+            {
+             before(grammarAccess.getValidationAccess().getStateAssignment_3()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1878:1: ( rule__Validation__StateAssignment_3 )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1878:2: rule__Validation__StateAssignment_3
+            {
+            pushFollow(FOLLOW_rule__Validation__StateAssignment_3_in_rule__Validation__Group__3__Impl3736);
+            rule__Validation__StateAssignment_3();
+            _fsp--;
+
+
+            }
+
+             after(grammarAccess.getValidationAccess().getStateAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__Group__3__Impl
+
+
     // $ANTLR start rule__Proof__TitleAssignment_2
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1583:1: rule__Proof__TitleAssignment_2 : ( ruleText ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1897:1: rule__Proof__TitleAssignment_2 : ( ruleText ) ;
     public final void rule__Proof__TitleAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1587:1: ( ( ruleText ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1588:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1901:1: ( ( ruleText ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1902:1: ( ruleText )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1588:1: ( ruleText )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1589:1: ruleText
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1902:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1903:1: ruleText
             {
              before(grammarAccess.getProofAccess().getTitleTextParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleText_in_rule__Proof__TitleAssignment_23141);
+            pushFollow(FOLLOW_ruleText_in_rule__Proof__TitleAssignment_23779);
             ruleText();
             _fsp--;
 
@@ -4088,20 +4902,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__JustificationsAssignment_4
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1598:1: rule__Proof__JustificationsAssignment_4 : ( ruleJustifications ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1912:1: rule__Proof__JustificationsAssignment_4 : ( ruleJustifications ) ;
     public final void rule__Proof__JustificationsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1602:1: ( ( ruleJustifications ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1603:1: ( ruleJustifications )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1916:1: ( ( ruleJustifications ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1917:1: ( ruleJustifications )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1603:1: ( ruleJustifications )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1604:1: ruleJustifications
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1917:1: ( ruleJustifications )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1918:1: ruleJustifications
             {
              before(grammarAccess.getProofAccess().getJustificationsJustificationsParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleJustifications_in_rule__Proof__JustificationsAssignment_43172);
+            pushFollow(FOLLOW_ruleJustifications_in_rule__Proof__JustificationsAssignment_43810);
             ruleJustifications();
             _fsp--;
 
@@ -4128,20 +4942,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Proof__ProofStepsAssignment_6
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1613:1: rule__Proof__ProofStepsAssignment_6 : ( ruleProofSteps ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1927:1: rule__Proof__ProofStepsAssignment_6 : ( ruleProofSteps ) ;
     public final void rule__Proof__ProofStepsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1617:1: ( ( ruleProofSteps ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1618:1: ( ruleProofSteps )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1931:1: ( ( ruleProofSteps ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1932:1: ( ruleProofSteps )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1618:1: ( ruleProofSteps )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1619:1: ruleProofSteps
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1932:1: ( ruleProofSteps )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1933:1: ruleProofSteps
             {
              before(grammarAccess.getProofAccess().getProofStepsProofStepsParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleProofSteps_in_rule__Proof__ProofStepsAssignment_63203);
+            pushFollow(FOLLOW_ruleProofSteps_in_rule__Proof__ProofStepsAssignment_63841);
             ruleProofSteps();
             _fsp--;
 
@@ -4167,25 +4981,25 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     // $ANTLR end rule__Proof__ProofStepsAssignment_6
 
 
-    // $ANTLR start rule__Justifications__JustificationsAssignment_0_1_0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1628:1: rule__Justifications__JustificationsAssignment_0_1_0 : ( ruleJustification ) ;
-    public final void rule__Justifications__JustificationsAssignment_0_1_0() throws RecognitionException {
+    // $ANTLR start rule__Justifications__JustificationsAssignment_1_0
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1942:1: rule__Justifications__JustificationsAssignment_1_0 : ( ruleJustification ) ;
+    public final void rule__Justifications__JustificationsAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1632:1: ( ( ruleJustification ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1633:1: ( ruleJustification )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1946:1: ( ( ruleJustification ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1947:1: ( ruleJustification )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1633:1: ( ruleJustification )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1634:1: ruleJustification
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1947:1: ( ruleJustification )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1948:1: ruleJustification
             {
-             before(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_0_1_0_0()); 
-            pushFollow(FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_0_1_03234);
+             before(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_1_0_0()); 
+            pushFollow(FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_1_03872);
             ruleJustification();
             _fsp--;
 
-             after(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_0_1_0_0()); 
+             after(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_1_0_0()); 
 
             }
 
@@ -4204,28 +5018,28 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__JustificationsAssignment_0_1_0
+    // $ANTLR end rule__Justifications__JustificationsAssignment_1_0
 
 
-    // $ANTLR start rule__Justifications__JustificationsAssignment_0_1_1_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1643:1: rule__Justifications__JustificationsAssignment_0_1_1_1 : ( ruleJustification ) ;
-    public final void rule__Justifications__JustificationsAssignment_0_1_1_1() throws RecognitionException {
+    // $ANTLR start rule__Justifications__JustificationsAssignment_1_1_1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1957:1: rule__Justifications__JustificationsAssignment_1_1_1 : ( ruleJustification ) ;
+    public final void rule__Justifications__JustificationsAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1647:1: ( ( ruleJustification ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1648:1: ( ruleJustification )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1961:1: ( ( ruleJustification ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1962:1: ( ruleJustification )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1648:1: ( ruleJustification )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1649:1: ruleJustification
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1962:1: ( ruleJustification )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1963:1: ruleJustification
             {
-             before(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_0_1_1_1_0()); 
-            pushFollow(FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_0_1_1_13265);
+             before(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_1_1_1_0()); 
+            pushFollow(FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_1_1_13903);
             ruleJustification();
             _fsp--;
 
-             after(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_0_1_1_1_0()); 
+             after(grammarAccess.getJustificationsAccess().getJustificationsJustificationParserRuleCall_1_1_1_0()); 
 
             }
 
@@ -4244,33 +5058,33 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__JustificationsAssignment_0_1_1_1
+    // $ANTLR end rule__Justifications__JustificationsAssignment_1_1_1
 
 
-    // $ANTLR start rule__Justifications__HypothesisAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1658:1: rule__Justifications__HypothesisAssignment_1 : ( ( 'hypothesis' ) ) ;
-    public final void rule__Justifications__HypothesisAssignment_1() throws RecognitionException {
+    // $ANTLR start rule__Justification__HypothesisAssignment_0_1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1972:1: rule__Justification__HypothesisAssignment_0_1 : ( ( 'hypothesis' ) ) ;
+    public final void rule__Justification__HypothesisAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1662:1: ( ( ( 'hypothesis' ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1663:1: ( ( 'hypothesis' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1976:1: ( ( ( 'hypothesis' ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1977:1: ( ( 'hypothesis' ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1663:1: ( ( 'hypothesis' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1664:1: ( 'hypothesis' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1977:1: ( ( 'hypothesis' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1978:1: ( 'hypothesis' )
             {
-             before(grammarAccess.getJustificationsAccess().getHypothesisHypothesisKeyword_1_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1665:1: ( 'hypothesis' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1666:1: 'hypothesis'
+             before(grammarAccess.getJustificationAccess().getHypothesisHypothesisKeyword_0_1_0()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1979:1: ( 'hypothesis' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1980:1: 'hypothesis'
             {
-             before(grammarAccess.getJustificationsAccess().getHypothesisHypothesisKeyword_1_0()); 
-            match(input,19,FOLLOW_19_in_rule__Justifications__HypothesisAssignment_13301); 
-             after(grammarAccess.getJustificationsAccess().getHypothesisHypothesisKeyword_1_0()); 
+             before(grammarAccess.getJustificationAccess().getHypothesisHypothesisKeyword_0_1_0()); 
+            match(input,24,FOLLOW_24_in_rule__Justification__HypothesisAssignment_0_13939); 
+             after(grammarAccess.getJustificationAccess().getHypothesisHypothesisKeyword_0_1_0()); 
 
             }
 
-             after(grammarAccess.getJustificationsAccess().getHypothesisHypothesisKeyword_1_0()); 
+             after(grammarAccess.getJustificationAccess().getHypothesisHypothesisKeyword_0_1_0()); 
 
             }
 
@@ -4289,33 +5103,33 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__HypothesisAssignment_1
+    // $ANTLR end rule__Justification__HypothesisAssignment_0_1
 
 
-    // $ANTLR start rule__Justifications__EpsilonAssignment_2
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1681:1: rule__Justifications__EpsilonAssignment_2 : ( ( 'epsilon' ) ) ;
-    public final void rule__Justifications__EpsilonAssignment_2() throws RecognitionException {
+    // $ANTLR start rule__Justification__EpsilonAssignment_1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1995:1: rule__Justification__EpsilonAssignment_1 : ( ( 'epsilon' ) ) ;
+    public final void rule__Justification__EpsilonAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1685:1: ( ( ( 'epsilon' ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1686:1: ( ( 'epsilon' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1999:1: ( ( ( 'epsilon' ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2000:1: ( ( 'epsilon' ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1686:1: ( ( 'epsilon' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1687:1: ( 'epsilon' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2000:1: ( ( 'epsilon' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2001:1: ( 'epsilon' )
             {
-             before(grammarAccess.getJustificationsAccess().getEpsilonEpsilonKeyword_2_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1688:1: ( 'epsilon' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1689:1: 'epsilon'
+             before(grammarAccess.getJustificationAccess().getEpsilonEpsilonKeyword_1_0()); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2002:1: ( 'epsilon' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2003:1: 'epsilon'
             {
-             before(grammarAccess.getJustificationsAccess().getEpsilonEpsilonKeyword_2_0()); 
-            match(input,20,FOLLOW_20_in_rule__Justifications__EpsilonAssignment_23345); 
-             after(grammarAccess.getJustificationsAccess().getEpsilonEpsilonKeyword_2_0()); 
+             before(grammarAccess.getJustificationAccess().getEpsilonEpsilonKeyword_1_0()); 
+            match(input,25,FOLLOW_25_in_rule__Justification__EpsilonAssignment_13983); 
+             after(grammarAccess.getJustificationAccess().getEpsilonEpsilonKeyword_1_0()); 
 
             }
 
-             after(grammarAccess.getJustificationsAccess().getEpsilonEpsilonKeyword_2_0()); 
+             after(grammarAccess.getJustificationAccess().getEpsilonEpsilonKeyword_1_0()); 
 
             }
 
@@ -4334,28 +5148,28 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justifications__EpsilonAssignment_2
+    // $ANTLR end rule__Justification__EpsilonAssignment_1
 
 
-    // $ANTLR start rule__Justification__NumeralAssignment_0_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1704:1: rule__Justification__NumeralAssignment_0_1 : ( ruleNumeral ) ;
-    public final void rule__Justification__NumeralAssignment_0_1() throws RecognitionException {
+    // $ANTLR start rule__Justification__NumeralAssignment_2
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2018:1: rule__Justification__NumeralAssignment_2 : ( ruleNumeral ) ;
+    public final void rule__Justification__NumeralAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1708:1: ( ( ruleNumeral ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1709:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2022:1: ( ( ruleNumeral ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2023:1: ( ruleNumeral )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1709:1: ( ruleNumeral )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1710:1: ruleNumeral
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2023:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2024:1: ruleNumeral
             {
-             before(grammarAccess.getJustificationAccess().getNumeralNumeralParserRuleCall_0_1_0()); 
-            pushFollow(FOLLOW_ruleNumeral_in_rule__Justification__NumeralAssignment_0_13384);
+             before(grammarAccess.getJustificationAccess().getNumeralNumeralParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleNumeral_in_rule__Justification__NumeralAssignment_24022);
             ruleNumeral();
             _fsp--;
 
-             after(grammarAccess.getJustificationAccess().getNumeralNumeralParserRuleCall_0_1_0()); 
+             after(grammarAccess.getJustificationAccess().getNumeralNumeralParserRuleCall_2_0()); 
 
             }
 
@@ -4374,28 +5188,28 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justification__NumeralAssignment_0_1
+    // $ANTLR end rule__Justification__NumeralAssignment_2
 
 
-    // $ANTLR start rule__Justification__AssertionAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1719:1: rule__Justification__AssertionAssignment_1 : ( ruleQuotedAssertion ) ;
-    public final void rule__Justification__AssertionAssignment_1() throws RecognitionException {
+    // $ANTLR start rule__Justification__AssertionAssignment_3
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2033:1: rule__Justification__AssertionAssignment_3 : ( ruleQuotedAssertion ) ;
+    public final void rule__Justification__AssertionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1723:1: ( ( ruleQuotedAssertion ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1724:1: ( ruleQuotedAssertion )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2037:1: ( ( ruleQuotedAssertion ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2038:1: ( ruleQuotedAssertion )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1724:1: ( ruleQuotedAssertion )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1725:1: ruleQuotedAssertion
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2038:1: ( ruleQuotedAssertion )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2039:1: ruleQuotedAssertion
             {
-             before(grammarAccess.getJustificationAccess().getAssertionQuotedAssertionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQuotedAssertion_in_rule__Justification__AssertionAssignment_13415);
+             before(grammarAccess.getJustificationAccess().getAssertionQuotedAssertionParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleQuotedAssertion_in_rule__Justification__AssertionAssignment_34053);
             ruleQuotedAssertion();
             _fsp--;
 
-             after(grammarAccess.getJustificationAccess().getAssertionQuotedAssertionParserRuleCall_1_0()); 
+             after(grammarAccess.getJustificationAccess().getAssertionQuotedAssertionParserRuleCall_3_0()); 
 
             }
 
@@ -4414,28 +5228,28 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justification__AssertionAssignment_1
+    // $ANTLR end rule__Justification__AssertionAssignment_3
 
 
-    // $ANTLR start rule__Justification__EntailmentAssignment_2
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1734:1: rule__Justification__EntailmentAssignment_2 : ( ruleEntailment ) ;
-    public final void rule__Justification__EntailmentAssignment_2() throws RecognitionException {
+    // $ANTLR start rule__Justification__EntailmentAssignment_4
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2048:1: rule__Justification__EntailmentAssignment_4 : ( ruleEntailment ) ;
+    public final void rule__Justification__EntailmentAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1738:1: ( ( ruleEntailment ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1739:1: ( ruleEntailment )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2052:1: ( ( ruleEntailment ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2053:1: ( ruleEntailment )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1739:1: ( ruleEntailment )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1740:1: ruleEntailment
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2053:1: ( ruleEntailment )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2054:1: ruleEntailment
             {
-             before(grammarAccess.getJustificationAccess().getEntailmentEntailmentParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleEntailment_in_rule__Justification__EntailmentAssignment_23446);
+             before(grammarAccess.getJustificationAccess().getEntailmentEntailmentParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_ruleEntailment_in_rule__Justification__EntailmentAssignment_44084);
             ruleEntailment();
             _fsp--;
 
-             after(grammarAccess.getJustificationAccess().getEntailmentEntailmentParserRuleCall_2_0()); 
+             after(grammarAccess.getJustificationAccess().getEntailmentEntailmentParserRuleCall_4_0()); 
 
             }
 
@@ -4454,24 +5268,24 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end rule__Justification__EntailmentAssignment_2
+    // $ANTLR end rule__Justification__EntailmentAssignment_4
 
 
     // $ANTLR start rule__QuotedAssertion__TextAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1749:1: rule__QuotedAssertion__TextAssignment_1 : ( ruleText ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2063:1: rule__QuotedAssertion__TextAssignment_1 : ( ruleText ) ;
     public final void rule__QuotedAssertion__TextAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1753:1: ( ( ruleText ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1754:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2067:1: ( ( ruleText ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2068:1: ( ruleText )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1754:1: ( ruleText )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1755:1: ruleText
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2068:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2069:1: ruleText
             {
              before(grammarAccess.getQuotedAssertionAccess().getTextTextParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleText_in_rule__QuotedAssertion__TextAssignment_13477);
+            pushFollow(FOLLOW_ruleText_in_rule__QuotedAssertion__TextAssignment_14115);
             ruleText();
             _fsp--;
 
@@ -4498,20 +5312,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__HeadAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1764:1: rule__Entailment__HeadAssignment_1 : ( ruleConjunction ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2078:1: rule__Entailment__HeadAssignment_1 : ( ruleConjunction ) ;
     public final void rule__Entailment__HeadAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1768:1: ( ( ruleConjunction ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1769:1: ( ruleConjunction )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2082:1: ( ( ruleConjunction ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2083:1: ( ruleConjunction )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1769:1: ( ruleConjunction )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1770:1: ruleConjunction
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2083:1: ( ruleConjunction )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2084:1: ruleConjunction
             {
              before(grammarAccess.getEntailmentAccess().getHeadConjunctionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleConjunction_in_rule__Entailment__HeadAssignment_13508);
+            pushFollow(FOLLOW_ruleConjunction_in_rule__Entailment__HeadAssignment_14146);
             ruleConjunction();
             _fsp--;
 
@@ -4538,20 +5352,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Entailment__TailAssignment_3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1779:1: rule__Entailment__TailAssignment_3 : ( ruleNumeral ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2093:1: rule__Entailment__TailAssignment_3 : ( ruleNumeral ) ;
     public final void rule__Entailment__TailAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1783:1: ( ( ruleNumeral ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1784:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2097:1: ( ( ruleNumeral ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2098:1: ( ruleNumeral )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1784:1: ( ruleNumeral )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1785:1: ruleNumeral
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2098:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2099:1: ruleNumeral
             {
              before(grammarAccess.getEntailmentAccess().getTailNumeralParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleNumeral_in_rule__Entailment__TailAssignment_33539);
+            pushFollow(FOLLOW_ruleNumeral_in_rule__Entailment__TailAssignment_34177);
             ruleNumeral();
             _fsp--;
 
@@ -4578,20 +5392,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__LhsAssignment_0_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1794:1: rule__Conjunction__LhsAssignment_0_1 : ( ruleNumeral ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2108:1: rule__Conjunction__LhsAssignment_0_1 : ( ruleNumeral ) ;
     public final void rule__Conjunction__LhsAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1798:1: ( ( ruleNumeral ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1799:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2112:1: ( ( ruleNumeral ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2113:1: ( ruleNumeral )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1799:1: ( ruleNumeral )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1800:1: ruleNumeral
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2113:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2114:1: ruleNumeral
             {
              before(grammarAccess.getConjunctionAccess().getLhsNumeralParserRuleCall_0_1_0()); 
-            pushFollow(FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_0_13570);
+            pushFollow(FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_0_14208);
             ruleNumeral();
             _fsp--;
 
@@ -4618,20 +5432,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__RhsAssignment_0_3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1809:1: rule__Conjunction__RhsAssignment_0_3 : ( ruleConjunction ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2123:1: rule__Conjunction__RhsAssignment_0_3 : ( ruleConjunction ) ;
     public final void rule__Conjunction__RhsAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1813:1: ( ( ruleConjunction ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1814:1: ( ruleConjunction )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2127:1: ( ( ruleConjunction ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2128:1: ( ruleConjunction )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1814:1: ( ruleConjunction )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1815:1: ruleConjunction
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2128:1: ( ruleConjunction )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2129:1: ruleConjunction
             {
              before(grammarAccess.getConjunctionAccess().getRhsConjunctionParserRuleCall_0_3_0()); 
-            pushFollow(FOLLOW_ruleConjunction_in_rule__Conjunction__RhsAssignment_0_33601);
+            pushFollow(FOLLOW_ruleConjunction_in_rule__Conjunction__RhsAssignment_0_34239);
             ruleConjunction();
             _fsp--;
 
@@ -4658,20 +5472,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Conjunction__LhsAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1824:1: rule__Conjunction__LhsAssignment_1 : ( ruleNumeral ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2138:1: rule__Conjunction__LhsAssignment_1 : ( ruleNumeral ) ;
     public final void rule__Conjunction__LhsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1828:1: ( ( ruleNumeral ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1829:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2142:1: ( ( ruleNumeral ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2143:1: ( ruleNumeral )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1829:1: ( ruleNumeral )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1830:1: ruleNumeral
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2143:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2144:1: ruleNumeral
             {
              before(grammarAccess.getConjunctionAccess().getLhsNumeralParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_13632);
+            pushFollow(FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_14270);
             ruleNumeral();
             _fsp--;
 
@@ -4698,20 +5512,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__StatementsAssignment_0_1_0
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1839:1: rule__ProofSteps__StatementsAssignment_0_1_0 : ( ruleStatement ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2153:1: rule__ProofSteps__StatementsAssignment_0_1_0 : ( ruleStatement ) ;
     public final void rule__ProofSteps__StatementsAssignment_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1843:1: ( ( ruleStatement ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1844:1: ( ruleStatement )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2157:1: ( ( ruleStatement ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2158:1: ( ruleStatement )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1844:1: ( ruleStatement )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1845:1: ruleStatement
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2158:1: ( ruleStatement )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2159:1: ruleStatement
             {
              before(grammarAccess.getProofStepsAccess().getStatementsStatementParserRuleCall_0_1_0_0()); 
-            pushFollow(FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_03663);
+            pushFollow(FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_04301);
             ruleStatement();
             _fsp--;
 
@@ -4738,20 +5552,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__StatementsAssignment_0_1_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1854:1: rule__ProofSteps__StatementsAssignment_0_1_1 : ( ruleStatement ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2168:1: rule__ProofSteps__StatementsAssignment_0_1_1 : ( ruleStatement ) ;
     public final void rule__ProofSteps__StatementsAssignment_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1858:1: ( ( ruleStatement ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1859:1: ( ruleStatement )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2172:1: ( ( ruleStatement ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2173:1: ( ruleStatement )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1859:1: ( ruleStatement )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1860:1: ruleStatement
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2173:1: ( ruleStatement )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2174:1: ruleStatement
             {
              before(grammarAccess.getProofStepsAccess().getStatementsStatementParserRuleCall_0_1_1_0()); 
-            pushFollow(FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_13694);
+            pushFollow(FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_14332);
             ruleStatement();
             _fsp--;
 
@@ -4778,24 +5592,24 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__ProofSteps__EpsilonAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1869:1: rule__ProofSteps__EpsilonAssignment_1 : ( ( 'epsilon' ) ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2183:1: rule__ProofSteps__EpsilonAssignment_1 : ( ( 'epsilon' ) ) ;
     public final void rule__ProofSteps__EpsilonAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1873:1: ( ( ( 'epsilon' ) ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1874:1: ( ( 'epsilon' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2187:1: ( ( ( 'epsilon' ) ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2188:1: ( ( 'epsilon' ) )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1874:1: ( ( 'epsilon' ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1875:1: ( 'epsilon' )
-            {
-             before(grammarAccess.getProofStepsAccess().getEpsilonEpsilonKeyword_1_0()); 
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1876:1: ( 'epsilon' )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1877:1: 'epsilon'
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2188:1: ( ( 'epsilon' ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2189:1: ( 'epsilon' )
             {
              before(grammarAccess.getProofStepsAccess().getEpsilonEpsilonKeyword_1_0()); 
-            match(input,20,FOLLOW_20_in_rule__ProofSteps__EpsilonAssignment_13730); 
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2190:1: ( 'epsilon' )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2191:1: 'epsilon'
+            {
+             before(grammarAccess.getProofStepsAccess().getEpsilonEpsilonKeyword_1_0()); 
+            match(input,25,FOLLOW_25_in_rule__ProofSteps__EpsilonAssignment_14368); 
              after(grammarAccess.getProofStepsAccess().getEpsilonEpsilonKeyword_1_0()); 
 
             }
@@ -4823,20 +5637,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__IdAssignment_1
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1892:1: rule__Statement__IdAssignment_1 : ( ruleNumeral ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2206:1: rule__Statement__IdAssignment_1 : ( ruleNumeral ) ;
     public final void rule__Statement__IdAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1896:1: ( ( ruleNumeral ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1897:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2210:1: ( ( ruleNumeral ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2211:1: ( ruleNumeral )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1897:1: ( ruleNumeral )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1898:1: ruleNumeral
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2211:1: ( ruleNumeral )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2212:1: ruleNumeral
             {
              before(grammarAccess.getStatementAccess().getIdNumeralParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleNumeral_in_rule__Statement__IdAssignment_13769);
+            pushFollow(FOLLOW_ruleNumeral_in_rule__Statement__IdAssignment_14407);
             ruleNumeral();
             _fsp--;
 
@@ -4863,20 +5677,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__StatementAssignment_3
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1907:1: rule__Statement__StatementAssignment_3 : ( ruleText ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2221:1: rule__Statement__StatementAssignment_3 : ( ruleText ) ;
     public final void rule__Statement__StatementAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1911:1: ( ( ruleText ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1912:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2225:1: ( ( ruleText ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2226:1: ( ruleText )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1912:1: ( ruleText )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1913:1: ruleText
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2226:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2227:1: ruleText
             {
              before(grammarAccess.getStatementAccess().getStatementTextParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleText_in_rule__Statement__StatementAssignment_33800);
+            pushFollow(FOLLOW_ruleText_in_rule__Statement__StatementAssignment_34438);
             ruleText();
             _fsp--;
 
@@ -4903,20 +5717,20 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start rule__Statement__JustificationAssignment_5
-    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1922:1: rule__Statement__JustificationAssignment_5 : ( ruleJustifications ) ;
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2236:1: rule__Statement__JustificationAssignment_5 : ( ruleJustifications ) ;
     public final void rule__Statement__JustificationAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1926:1: ( ( ruleJustifications ) )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1927:1: ( ruleJustifications )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2240:1: ( ( ruleJustifications ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2241:1: ( ruleJustifications )
             {
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1927:1: ( ruleJustifications )
-            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:1928:1: ruleJustifications
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2241:1: ( ruleJustifications )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2242:1: ruleJustifications
             {
              before(grammarAccess.getStatementAccess().getJustificationJustificationsParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleJustifications_in_rule__Statement__JustificationAssignment_53831);
+            pushFollow(FOLLOW_ruleJustifications_in_rule__Statement__JustificationAssignment_54469);
             ruleJustifications();
             _fsp--;
 
@@ -4942,6 +5756,166 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     // $ANTLR end rule__Statement__JustificationAssignment_5
 
 
+    // $ANTLR start rule__Statement__ValidationAssignment_7_1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2251:1: rule__Statement__ValidationAssignment_7_1 : ( ruleValidation ) ;
+    public final void rule__Statement__ValidationAssignment_7_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2255:1: ( ( ruleValidation ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2256:1: ( ruleValidation )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2256:1: ( ruleValidation )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2257:1: ruleValidation
+            {
+             before(grammarAccess.getStatementAccess().getValidationValidationParserRuleCall_7_1_0()); 
+            pushFollow(FOLLOW_ruleValidation_in_rule__Statement__ValidationAssignment_7_14500);
+            ruleValidation();
+            _fsp--;
+
+             after(grammarAccess.getStatementAccess().getValidationValidationParserRuleCall_7_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Statement__ValidationAssignment_7_1
+
+
+    // $ANTLR start rule__Validation__AuthorAssignment_1
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2266:1: rule__Validation__AuthorAssignment_1 : ( ruleText ) ;
+    public final void rule__Validation__AuthorAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2270:1: ( ( ruleText ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2271:1: ( ruleText )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2271:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2272:1: ruleText
+            {
+             before(grammarAccess.getValidationAccess().getAuthorTextParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleText_in_rule__Validation__AuthorAssignment_14531);
+            ruleText();
+            _fsp--;
+
+             after(grammarAccess.getValidationAccess().getAuthorTextParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__AuthorAssignment_1
+
+
+    // $ANTLR start rule__Validation__TimeStampAssignment_2
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2281:1: rule__Validation__TimeStampAssignment_2 : ( ruleText ) ;
+    public final void rule__Validation__TimeStampAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2285:1: ( ( ruleText ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2286:1: ( ruleText )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2286:1: ( ruleText )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2287:1: ruleText
+            {
+             before(grammarAccess.getValidationAccess().getTimeStampTextParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleText_in_rule__Validation__TimeStampAssignment_24562);
+            ruleText();
+            _fsp--;
+
+             after(grammarAccess.getValidationAccess().getTimeStampTextParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__TimeStampAssignment_2
+
+
+    // $ANTLR start rule__Validation__StateAssignment_3
+    // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2296:1: rule__Validation__StateAssignment_3 : ( ruleValidationKind ) ;
+    public final void rule__Validation__StateAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2300:1: ( ( ruleValidationKind ) )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2301:1: ( ruleValidationKind )
+            {
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2301:1: ( ruleValidationKind )
+            // ../net.certware.argument.sfp.ui/src-gen/net/certware/argument/sfp/ui/contentassist/antlr/internal/InternalSemiFormalProof.g:2302:1: ruleValidationKind
+            {
+             before(grammarAccess.getValidationAccess().getStateValidationKindEnumRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleValidationKind_in_rule__Validation__StateAssignment_34593);
+            ruleValidationKind();
+            _fsp--;
+
+             after(grammarAccess.getValidationAccess().getStateValidationKindEnumRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end rule__Validation__StateAssignment_3
+
+
  
 
     public static final BitSet FOLLOW_ruleProof_in_entryRuleProof61 = new BitSet(new long[]{0x0000000000000000L});
@@ -4952,7 +5926,7 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_RULE_STRING_in_ruleText154 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJustifications_in_entryRuleJustifications180 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJustifications187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Alternatives_in_ruleJustifications213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group__0_in_ruleJustifications213 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJustification_in_entryRuleJustification240 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJustification247 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Justification__Alternatives_in_ruleJustification273 = new BitSet(new long[]{0x0000000000000002L});
@@ -4974,127 +5948,158 @@ public class InternalSemiFormalProofParser extends AbstractInternalContentAssist
     public static final BitSet FOLLOW_ruleStatement_in_entryRuleStatement599 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStatement606 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Statement__Group__0_in_ruleStatement632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0__0_in_rule__Justifications__Alternatives668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__HypothesisAssignment_1_in_rule__Justifications__Alternatives686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__EpsilonAssignment_2_in_rule__Justifications__Alternatives704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justification__Group_0__0_in_rule__Justification__Alternatives737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justification__AssertionAssignment_1_in_rule__Justification__Alternatives755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justification__EntailmentAssignment_2_in_rule__Justification__Alternatives773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__0_in_rule__Conjunction__Alternatives806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__LhsAssignment_1_in_rule__Conjunction__Alternatives824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__0_in_rule__ProofSteps__Alternatives857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__EpsilonAssignment_1_in_rule__ProofSteps__Alternatives875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__Group__0__Impl_in_rule__Proof__Group__0906 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__Proof__Group__1_in_rule__Proof__Group__0909 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Proof__Group__0__Impl937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__Group__1__Impl_in_rule__Proof__Group__1968 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Proof__Group__2_in_rule__Proof__Group__1971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Proof__Group__1__Impl999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__Group__2__Impl_in_rule__Proof__Group__21030 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__Proof__Group__3_in_rule__Proof__Group__21033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__TitleAssignment_2_in_rule__Proof__Group__2__Impl1060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__Group__3__Impl_in_rule__Proof__Group__31090 = new BitSet(new long[]{0x0000000000184030L});
-    public static final BitSet FOLLOW_rule__Proof__Group__4_in_rule__Proof__Group__31093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Proof__Group__3__Impl1121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__Group__4__Impl_in_rule__Proof__Group__41152 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Proof__Group__5_in_rule__Proof__Group__41155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__JustificationsAssignment_4_in_rule__Proof__Group__4__Impl1182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__Group__5__Impl_in_rule__Proof__Group__51212 = new BitSet(new long[]{0x0000000000100022L});
-    public static final BitSet FOLLOW_rule__Proof__Group__6_in_rule__Proof__Group__51215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Proof__Group__5__Impl1243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__Group__6__Impl_in_rule__Proof__Group__61274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Proof__ProofStepsAssignment_6_in_rule__Proof__Group__6__Impl1301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0__0__Impl_in_rule__Justifications__Group_0__01345 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0__1_in_rule__Justifications__Group_0__01348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0__1__Impl_in_rule__Justifications__Group_0__11406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1__0_in_rule__Justifications__Group_0__1__Impl1433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1__0__Impl_in_rule__Justifications__Group_0_1__01468 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1__1_in_rule__Justifications__Group_0_1__01471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__JustificationsAssignment_0_1_0_in_rule__Justifications__Group_0_1__0__Impl1498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1__1__Impl_in_rule__Justifications__Group_0_1__11528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1_1__0_in_rule__Justifications__Group_0_1__1__Impl1555 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1_1__0__Impl_in_rule__Justifications__Group_0_1_1__01590 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1_1__1_in_rule__Justifications__Group_0_1_1__01593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Justifications__Group_0_1_1__0__Impl1621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__Group_0_1_1__1__Impl_in_rule__Justifications__Group_0_1_1__11652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justifications__JustificationsAssignment_0_1_1_1_in_rule__Justifications__Group_0_1_1__1__Impl1679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justification__Group_0__0__Impl_in_rule__Justification__Group_0__01713 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Justification__Group_0__1_in_rule__Justification__Group_0__01716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justification__Group_0__1__Impl_in_rule__Justification__Group_0__11774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Justification__NumeralAssignment_0_1_in_rule__Justification__Group_0__1__Impl1801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QuotedAssertion__Group__0__Impl_in_rule__QuotedAssertion__Group__01835 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__QuotedAssertion__Group__1_in_rule__QuotedAssertion__Group__01838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QuotedAssertion__Group__1__Impl_in_rule__QuotedAssertion__Group__11896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QuotedAssertion__TextAssignment_1_in_rule__QuotedAssertion__Group__1__Impl1923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__Group__0__Impl_in_rule__Entailment__Group__01957 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Entailment__Group__1_in_rule__Entailment__Group__01960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__Group__1__Impl_in_rule__Entailment__Group__12018 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__Entailment__Group__2_in_rule__Entailment__Group__12021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__HeadAssignment_1_in_rule__Entailment__Group__1__Impl2048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__Group__2__Impl_in_rule__Entailment__Group__22078 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Entailment__Group__3_in_rule__Entailment__Group__22081 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Entailment__Group__2__Impl2109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__Group__3__Impl_in_rule__Entailment__Group__32140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Entailment__TailAssignment_3_in_rule__Entailment__Group__3__Impl2167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__0__Impl_in_rule__Conjunction__Group_0__02205 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__1_in_rule__Conjunction__Group_0__02208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__1__Impl_in_rule__Conjunction__Group_0__12266 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__2_in_rule__Conjunction__Group_0__12269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__LhsAssignment_0_1_in_rule__Conjunction__Group_0__1__Impl2296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__2__Impl_in_rule__Conjunction__Group_0__22326 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__3_in_rule__Conjunction__Group_0__22329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Conjunction__Group_0__2__Impl2357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__Group_0__3__Impl_in_rule__Conjunction__Group_0__32388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Conjunction__RhsAssignment_0_3_in_rule__Conjunction__Group_0__3__Impl2415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__0__Impl_in_rule__ProofSteps__Group_0__02453 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__1_in_rule__ProofSteps__Group_0__02456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__1__Impl_in_rule__ProofSteps__Group_0__12514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__0_in_rule__ProofSteps__Group_0__1__Impl2541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__0__Impl_in_rule__ProofSteps__Group_0_1__02576 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__1_in_rule__ProofSteps__Group_0_1__02579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_0_in_rule__ProofSteps__Group_0_1__0__Impl2606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__1__Impl_in_rule__ProofSteps__Group_0_1__12636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_1_in_rule__ProofSteps__Group_0_1__1__Impl2663 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02698 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12759 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__IdAssignment_1_in_rule__Statement__Group__1__Impl2789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22819 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Statement__Group__2__Impl2850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__32881 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__32884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__StatementAssignment_3_in_rule__Statement__Group__3__Impl2911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__42941 = new BitSet(new long[]{0x0000000000184030L});
-    public static final BitSet FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__42944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Statement__Group__4__Impl2972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__53003 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Statement__Group__6_in_rule__Statement__Group__53006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__JustificationAssignment_5_in_rule__Statement__Group__5__Impl3033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Statement__Group__6__Impl_in_rule__Statement__Group__63063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Statement__Group__6__Impl3091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleText_in_rule__Proof__TitleAssignment_23141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJustifications_in_rule__Proof__JustificationsAssignment_43172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProofSteps_in_rule__Proof__ProofStepsAssignment_63203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_0_1_03234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_0_1_1_13265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Justifications__HypothesisAssignment_13301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Justifications__EpsilonAssignment_23345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumeral_in_rule__Justification__NumeralAssignment_0_13384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuotedAssertion_in_rule__Justification__AssertionAssignment_13415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntailment_in_rule__Justification__EntailmentAssignment_23446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleText_in_rule__QuotedAssertion__TextAssignment_13477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConjunction_in_rule__Entailment__HeadAssignment_13508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumeral_in_rule__Entailment__TailAssignment_33539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_0_13570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConjunction_in_rule__Conjunction__RhsAssignment_0_33601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_13632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_03663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_13694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__ProofSteps__EpsilonAssignment_13730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumeral_in_rule__Statement__IdAssignment_13769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleText_in_rule__Statement__StatementAssignment_33800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJustifications_in_rule__Statement__JustificationAssignment_53831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidation_in_entryRuleValidation659 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValidation666 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__Group__0_in_ruleValidation692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ValidationKind__Alternatives_in_ruleValidationKind729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__Group_0__0_in_rule__Justification__Alternatives764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__EpsilonAssignment_1_in_rule__Justification__Alternatives782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__NumeralAssignment_2_in_rule__Justification__Alternatives800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__AssertionAssignment_3_in_rule__Justification__Alternatives818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__EntailmentAssignment_4_in_rule__Justification__Alternatives836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__0_in_rule__Conjunction__Alternatives869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__LhsAssignment_1_in_rule__Conjunction__Alternatives887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__0_in_rule__ProofSteps__Alternatives920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__EpsilonAssignment_1_in_rule__ProofSteps__Alternatives938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__ValidationKind__Alternatives972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__ValidationKind__Alternatives993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__ValidationKind__Alternatives1014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__Group__0__Impl_in_rule__Proof__Group__01047 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Proof__Group__1_in_rule__Proof__Group__01050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Proof__Group__0__Impl1078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__Group__1__Impl_in_rule__Proof__Group__11109 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Proof__Group__2_in_rule__Proof__Group__11112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Proof__Group__1__Impl1140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__Group__2__Impl_in_rule__Proof__Group__21171 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__Proof__Group__3_in_rule__Proof__Group__21174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__TitleAssignment_2_in_rule__Proof__Group__2__Impl1201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__Group__3__Impl_in_rule__Proof__Group__31231 = new BitSet(new long[]{0x0000000003020030L});
+    public static final BitSet FOLLOW_rule__Proof__Group__4_in_rule__Proof__Group__31234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Proof__Group__3__Impl1262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__Group__4__Impl_in_rule__Proof__Group__41293 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Proof__Group__5_in_rule__Proof__Group__41296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__JustificationsAssignment_4_in_rule__Proof__Group__4__Impl1323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__Group__5__Impl_in_rule__Proof__Group__51353 = new BitSet(new long[]{0x0000000002000022L});
+    public static final BitSet FOLLOW_rule__Proof__Group__6_in_rule__Proof__Group__51356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Proof__Group__5__Impl1384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__Group__6__Impl_in_rule__Proof__Group__61415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Proof__ProofStepsAssignment_6_in_rule__Proof__Group__6__Impl1442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group__0__Impl_in_rule__Justifications__Group__01486 = new BitSet(new long[]{0x0000000003000032L});
+    public static final BitSet FOLLOW_rule__Justifications__Group__1_in_rule__Justifications__Group__01489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group__1__Impl_in_rule__Justifications__Group__11547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1__0_in_rule__Justifications__Group__1__Impl1574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1__0__Impl_in_rule__Justifications__Group_1__01609 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1__1_in_rule__Justifications__Group_1__01612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__JustificationsAssignment_1_0_in_rule__Justifications__Group_1__0__Impl1639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1__1__Impl_in_rule__Justifications__Group_1__11669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1_1__0_in_rule__Justifications__Group_1__1__Impl1696 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1_1__0__Impl_in_rule__Justifications__Group_1_1__01731 = new BitSet(new long[]{0x0000000003000030L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1_1__1_in_rule__Justifications__Group_1_1__01734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Justifications__Group_1_1__0__Impl1762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__Group_1_1__1__Impl_in_rule__Justifications__Group_1_1__11793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justifications__JustificationsAssignment_1_1_1_in_rule__Justifications__Group_1_1__1__Impl1820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__Group_0__0__Impl_in_rule__Justification__Group_0__01854 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Justification__Group_0__1_in_rule__Justification__Group_0__01857 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__Group_0__1__Impl_in_rule__Justification__Group_0__11915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Justification__HypothesisAssignment_0_1_in_rule__Justification__Group_0__1__Impl1942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QuotedAssertion__Group__0__Impl_in_rule__QuotedAssertion__Group__01976 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__QuotedAssertion__Group__1_in_rule__QuotedAssertion__Group__01979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QuotedAssertion__Group__1__Impl_in_rule__QuotedAssertion__Group__12037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QuotedAssertion__TextAssignment_1_in_rule__QuotedAssertion__Group__1__Impl2064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__Group__0__Impl_in_rule__Entailment__Group__02098 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Entailment__Group__1_in_rule__Entailment__Group__02101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__Group__1__Impl_in_rule__Entailment__Group__12159 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__Entailment__Group__2_in_rule__Entailment__Group__12162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__HeadAssignment_1_in_rule__Entailment__Group__1__Impl2189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__Group__2__Impl_in_rule__Entailment__Group__22219 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Entailment__Group__3_in_rule__Entailment__Group__22222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Entailment__Group__2__Impl2250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__Group__3__Impl_in_rule__Entailment__Group__32281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Entailment__TailAssignment_3_in_rule__Entailment__Group__3__Impl2308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__0__Impl_in_rule__Conjunction__Group_0__02346 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__1_in_rule__Conjunction__Group_0__02349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__1__Impl_in_rule__Conjunction__Group_0__12407 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__2_in_rule__Conjunction__Group_0__12410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__LhsAssignment_0_1_in_rule__Conjunction__Group_0__1__Impl2437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__2__Impl_in_rule__Conjunction__Group_0__22467 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__3_in_rule__Conjunction__Group_0__22470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Conjunction__Group_0__2__Impl2498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__Group_0__3__Impl_in_rule__Conjunction__Group_0__32529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Conjunction__RhsAssignment_0_3_in_rule__Conjunction__Group_0__3__Impl2556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__0__Impl_in_rule__ProofSteps__Group_0__02594 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__1_in_rule__ProofSteps__Group_0__02597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0__1__Impl_in_rule__ProofSteps__Group_0__12655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__0_in_rule__ProofSteps__Group_0__1__Impl2682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__0__Impl_in_rule__ProofSteps__Group_0_1__02717 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__1_in_rule__ProofSteps__Group_0_1__02720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_0_in_rule__ProofSteps__Group_0_1__0__Impl2747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__Group_0_1__1__Impl_in_rule__ProofSteps__Group_0_1__12777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProofSteps__StatementsAssignment_0_1_1_in_rule__ProofSteps__Group_0_1__1__Impl2804 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__Statement__Group__0__Impl_in_rule__Statement__Group__02839 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Statement__Group__1_in_rule__Statement__Group__02842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__1__Impl_in_rule__Statement__Group__12900 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__Statement__Group__2_in_rule__Statement__Group__12903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__IdAssignment_1_in_rule__Statement__Group__1__Impl2930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__2__Impl_in_rule__Statement__Group__22960 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Statement__Group__3_in_rule__Statement__Group__22963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Statement__Group__2__Impl2991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__3__Impl_in_rule__Statement__Group__33022 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__Statement__Group__4_in_rule__Statement__Group__33025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__StatementAssignment_3_in_rule__Statement__Group__3__Impl3052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__4__Impl_in_rule__Statement__Group__43082 = new BitSet(new long[]{0x0000000003020030L});
+    public static final BitSet FOLLOW_rule__Statement__Group__5_in_rule__Statement__Group__43085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Statement__Group__4__Impl3113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__5__Impl_in_rule__Statement__Group__53144 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Statement__Group__6_in_rule__Statement__Group__53147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__JustificationAssignment_5_in_rule__Statement__Group__5__Impl3174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__6__Impl_in_rule__Statement__Group__63204 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__7_in_rule__Statement__Group__63207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Statement__Group__6__Impl3235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group__7__Impl_in_rule__Statement__Group__73266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_7__0_in_rule__Statement__Group__7__Impl3293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_7__0__Impl_in_rule__Statement__Group_7__03340 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Statement__Group_7__1_in_rule__Statement__Group_7__03343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Statement__Group_7__0__Impl3371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_7__1__Impl_in_rule__Statement__Group_7__13402 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__Statement__Group_7__2_in_rule__Statement__Group_7__13405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__ValidationAssignment_7_1_in_rule__Statement__Group_7__1__Impl3432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Statement__Group_7__2__Impl_in_rule__Statement__Group_7__23462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Statement__Group_7__2__Impl3490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__Group__0__Impl_in_rule__Validation__Group__03527 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Validation__Group__1_in_rule__Validation__Group__03530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__Group__1__Impl_in_rule__Validation__Group__13588 = new BitSet(new long[]{0x0000000000003810L});
+    public static final BitSet FOLLOW_rule__Validation__Group__2_in_rule__Validation__Group__13591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__AuthorAssignment_1_in_rule__Validation__Group__1__Impl3618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__Group__2__Impl_in_rule__Validation__Group__23648 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_rule__Validation__Group__3_in_rule__Validation__Group__23651 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__TimeStampAssignment_2_in_rule__Validation__Group__2__Impl3678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__Group__3__Impl_in_rule__Validation__Group__33709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Validation__StateAssignment_3_in_rule__Validation__Group__3__Impl3736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleText_in_rule__Proof__TitleAssignment_23779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJustifications_in_rule__Proof__JustificationsAssignment_43810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProofSteps_in_rule__Proof__ProofStepsAssignment_63841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_1_03872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJustification_in_rule__Justifications__JustificationsAssignment_1_1_13903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Justification__HypothesisAssignment_0_13939 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Justification__EpsilonAssignment_13983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumeral_in_rule__Justification__NumeralAssignment_24022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuotedAssertion_in_rule__Justification__AssertionAssignment_34053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntailment_in_rule__Justification__EntailmentAssignment_44084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleText_in_rule__QuotedAssertion__TextAssignment_14115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConjunction_in_rule__Entailment__HeadAssignment_14146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumeral_in_rule__Entailment__TailAssignment_34177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_0_14208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConjunction_in_rule__Conjunction__RhsAssignment_0_34239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumeral_in_rule__Conjunction__LhsAssignment_14270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_04301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatement_in_rule__ProofSteps__StatementsAssignment_0_1_14332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__ProofSteps__EpsilonAssignment_14368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumeral_in_rule__Statement__IdAssignment_14407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleText_in_rule__Statement__StatementAssignment_34438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJustifications_in_rule__Statement__JustificationAssignment_54469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidation_in_rule__Statement__ValidationAssignment_7_14500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleText_in_rule__Validation__AuthorAssignment_14531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleText_in_rule__Validation__TimeStampAssignment_24562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidationKind_in_rule__Validation__StateAssignment_34593 = new BitSet(new long[]{0x0000000000000002L});
 
 }

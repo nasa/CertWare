@@ -369,17 +369,19 @@ public class ClaimEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureClaimLabelFigure = new WrappingLabel();
 			fFigureClaimLabelFigure.setText("Claim");
+			fFigureClaimLabelFigure.setTextWrap(true);
 
 			this.add(fFigureClaimLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

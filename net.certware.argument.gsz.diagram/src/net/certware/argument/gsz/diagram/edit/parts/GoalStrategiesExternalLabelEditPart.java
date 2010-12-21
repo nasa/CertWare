@@ -587,7 +587,7 @@ public class GoalStrategiesExternalLabelEditPart extends LabelEditPart
 		 * @generated
 		 */
 		public GoalStrategiesExternalLabelFigure() {
-			this.setText("is solved by");
+			this.setText(Messages.GoalStrategiesExternalLabelEditPart_0);
 		}
 
 	}

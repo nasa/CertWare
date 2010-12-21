@@ -21,11 +21,13 @@ Require-Bundle: org.eclipse.xtext,
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.argument.sfp,
- net.certware.argument.sfp.services,
- net.certware.argument.sfp.semiFormalProof,
- net.certware.argument.sfp.semiFormalProof.impl,
- net.certware.argument.sfp.semiFormalProof.util,
  net.certware.argument.sfp.parseTreeConstruction,
  net.certware.argument.sfp.parser.antlr,
  net.certware.argument.sfp.parser.antlr.internal,
+ net.certware.argument.sfp.semiFormalProof,
+ net.certware.argument.sfp.semiFormalProof.impl,
+ net.certware.argument.sfp.semiFormalProof.util,
+ net.certware.argument.sfp.services,
+ net.certware.argument.sfp.util,
  net.certware.argument.sfp.validation
+Eclipse-RegisterBuddy: org.apache.log4j

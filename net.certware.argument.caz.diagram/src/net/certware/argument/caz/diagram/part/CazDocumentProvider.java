@@ -57,6 +57,7 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * @generated
  */
+@SuppressWarnings("restriction")
 public class CazDocumentProvider extends AbstractDocumentProvider implements
 		IDiagramDocumentProvider {
 

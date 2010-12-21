@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.ProofStepsImpl#getStatements <em>Statements</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.ProofStepsImpl#getEpsilon <em>Epsilon</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.ProofStepsImpl#isEpsilon <em>Epsilon</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,24 +52,24 @@ public class ProofStepsImpl extends MinimalEObjectImpl.Container implements Proo
   protected EList<Statement> statements;
 
   /**
-   * The default value of the '{@link #getEpsilon() <em>Epsilon</em>}' attribute.
+   * The default value of the '{@link #isEpsilon() <em>Epsilon</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEpsilon()
+   * @see #isEpsilon()
    * @generated
    * @ordered
    */
-  protected static final String EPSILON_EDEFAULT = null;
+  protected static final boolean EPSILON_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getEpsilon() <em>Epsilon</em>}' attribute.
+   * The cached value of the '{@link #isEpsilon() <em>Epsilon</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEpsilon()
+   * @see #isEpsilon()
    * @generated
    * @ordered
    */
-  protected String epsilon = EPSILON_EDEFAULT;
+  protected boolean epsilon = EPSILON_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,7 +111,7 @@ public class ProofStepsImpl extends MinimalEObjectImpl.Container implements Proo
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEpsilon()
+  public boolean isEpsilon()
   {
     return epsilon;
   }
@@ -121,9 +121,9 @@ public class ProofStepsImpl extends MinimalEObjectImpl.Container implements Proo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEpsilon(String newEpsilon)
+  public void setEpsilon(boolean newEpsilon)
   {
-    String oldEpsilon = epsilon;
+    boolean oldEpsilon = epsilon;
     epsilon = newEpsilon;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.PROOF_STEPS__EPSILON, oldEpsilon, epsilon));
@@ -158,7 +158,7 @@ public class ProofStepsImpl extends MinimalEObjectImpl.Container implements Proo
       case SemiFormalProofPackage.PROOF_STEPS__STATEMENTS:
         return getStatements();
       case SemiFormalProofPackage.PROOF_STEPS__EPSILON:
-        return getEpsilon();
+        return isEpsilon();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -179,7 +179,7 @@ public class ProofStepsImpl extends MinimalEObjectImpl.Container implements Proo
         getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
       case SemiFormalProofPackage.PROOF_STEPS__EPSILON:
-        setEpsilon((String)newValue);
+        setEpsilon((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -218,7 +218,7 @@ public class ProofStepsImpl extends MinimalEObjectImpl.Container implements Proo
       case SemiFormalProofPackage.PROOF_STEPS__STATEMENTS:
         return statements != null && !statements.isEmpty();
       case SemiFormalProofPackage.PROOF_STEPS__EPSILON:
-        return EPSILON_EDEFAULT == null ? epsilon != null : !EPSILON_EDEFAULT.equals(epsilon);
+        return epsilon != EPSILON_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

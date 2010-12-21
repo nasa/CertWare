@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
+import org.eclipse.gmf.runtime.gef.ui.internal.parts.WrapTextCellEditor;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
@@ -47,6 +48,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
+@SuppressWarnings("restriction")
 public class ContextContentEditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
@@ -300,12 +302,13 @@ public class ContextContentEditPart extends CompartmentEditPart implements
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
 			setManager(new TextDirectEditManager(this,
-					TextDirectEditManager.getTextCellEditorClass(this),
+					// TextDirectEditManager.getTextCellEditorClass(this),
+					WrapTextCellEditor.class,
 					CazEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;

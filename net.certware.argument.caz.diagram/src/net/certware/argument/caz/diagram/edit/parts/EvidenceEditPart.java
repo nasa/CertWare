@@ -8,7 +8,6 @@ import net.certware.argument.caz.diagram.edit.policies.EvidenceItemSemanticEditP
 import net.certware.argument.caz.diagram.part.CazVisualIDRegistry;
 import net.certware.argument.caz.diagram.providers.CazElementTypes;
 
-import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -361,17 +360,19 @@ public class EvidenceEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureEvidenceLabelFigure = new WrappingLabel();
 			fFigureEvidenceLabelFigure.setText("Evidence");
+			fFigureEvidenceLabelFigure.setTextWrap(true);
 
 			this.add(fFigureEvidenceLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

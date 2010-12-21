@@ -8,6 +8,7 @@ package net.certware.argument.sfp.semiFormalProof.impl;
 import net.certware.argument.sfp.semiFormalProof.Justifications;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage;
 import net.certware.argument.sfp.semiFormalProof.Statement;
+import net.certware.argument.sfp.semiFormalProof.Validation;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.StatementImpl#getId <em>Id</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.StatementImpl#getStatement <em>Statement</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.StatementImpl#getJustification <em>Justification</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.StatementImpl#getValidation <em>Validation</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,6 +86,16 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @ordered
    */
   protected Justifications justification;
+
+  /**
+   * The cached value of the '{@link #getValidation() <em>Validation</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValidation()
+   * @generated
+   * @ordered
+   */
+  protected Validation validation;
 
   /**
    * <!-- begin-user-doc -->
@@ -205,6 +217,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  public Validation getValidation()
+  {
+    return validation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValidation(Validation newValidation, NotificationChain msgs)
+  {
+    Validation oldValidation = validation;
+    validation = newValidation;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.STATEMENT__VALIDATION, oldValidation, newValidation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValidation(Validation newValidation)
+  {
+    if (newValidation != validation)
+    {
+      NotificationChain msgs = null;
+      if (validation != null)
+        msgs = ((InternalEObject)validation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SemiFormalProofPackage.STATEMENT__VALIDATION, null, msgs);
+      if (newValidation != null)
+        msgs = ((InternalEObject)newValidation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SemiFormalProofPackage.STATEMENT__VALIDATION, null, msgs);
+      msgs = basicSetValidation(newValidation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.STATEMENT__VALIDATION, newValidation, newValidation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -212,6 +272,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     {
       case SemiFormalProofPackage.STATEMENT__JUSTIFICATION:
         return basicSetJustification(null, msgs);
+      case SemiFormalProofPackage.STATEMENT__VALIDATION:
+        return basicSetValidation(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -232,6 +294,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return getStatement();
       case SemiFormalProofPackage.STATEMENT__JUSTIFICATION:
         return getJustification();
+      case SemiFormalProofPackage.STATEMENT__VALIDATION:
+        return getValidation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -254,6 +318,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return;
       case SemiFormalProofPackage.STATEMENT__JUSTIFICATION:
         setJustification((Justifications)newValue);
+        return;
+      case SemiFormalProofPackage.STATEMENT__VALIDATION:
+        setValidation((Validation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -278,6 +345,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case SemiFormalProofPackage.STATEMENT__JUSTIFICATION:
         setJustification((Justifications)null);
         return;
+      case SemiFormalProofPackage.STATEMENT__VALIDATION:
+        setValidation((Validation)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -298,6 +368,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return STATEMENT_EDEFAULT == null ? statement != null : !STATEMENT_EDEFAULT.equals(statement);
       case SemiFormalProofPackage.STATEMENT__JUSTIFICATION:
         return justification != null;
+      case SemiFormalProofPackage.STATEMENT__VALIDATION:
+        return validation != null;
     }
     return super.eIsSet(featureID);
   }

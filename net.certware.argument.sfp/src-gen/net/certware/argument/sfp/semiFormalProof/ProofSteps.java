@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.ProofSteps#getStatements <em>Statements</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.ProofSteps#getEpsilon <em>Epsilon</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.ProofSteps#isEpsilon <em>Epsilon</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,21 +53,21 @@ public interface ProofSteps extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Epsilon</em>' attribute.
-   * @see #setEpsilon(String)
+   * @see #setEpsilon(boolean)
    * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getProofSteps_Epsilon()
    * @model
    * @generated
    */
-  String getEpsilon();
+  boolean isEpsilon();
 
   /**
-   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.ProofSteps#getEpsilon <em>Epsilon</em>}' attribute.
+   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.ProofSteps#isEpsilon <em>Epsilon</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Epsilon</em>' attribute.
-   * @see #getEpsilon()
+   * @see #isEpsilon()
    * @generated
    */
-  void setEpsilon(String value);
+  void setEpsilon(boolean value);
 
 } // ProofSteps

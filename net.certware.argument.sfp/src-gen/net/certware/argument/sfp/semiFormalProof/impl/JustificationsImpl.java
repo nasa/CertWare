@@ -11,7 +11,6 @@ import net.certware.argument.sfp.semiFormalProof.Justification;
 import net.certware.argument.sfp.semiFormalProof.Justifications;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,7 +18,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -33,8 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationsImpl#getJustifications <em>Justifications</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationsImpl#getHypothesis <em>Hypothesis</em>}</li>
- *   <li>{@link net.certware.argument.sfp.semiFormalProof.impl.JustificationsImpl#getEpsilon <em>Epsilon</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,46 +47,6 @@ public class JustificationsImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected EList<Justification> justifications;
-
-  /**
-   * The default value of the '{@link #getHypothesis() <em>Hypothesis</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHypothesis()
-   * @generated
-   * @ordered
-   */
-  protected static final String HYPOTHESIS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getHypothesis() <em>Hypothesis</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHypothesis()
-   * @generated
-   * @ordered
-   */
-  protected String hypothesis = HYPOTHESIS_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEpsilon() <em>Epsilon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEpsilon()
-   * @generated
-   * @ordered
-   */
-  protected static final String EPSILON_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEpsilon() <em>Epsilon</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEpsilon()
-   * @generated
-   * @ordered
-   */
-  protected String epsilon = EPSILON_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -132,52 +88,6 @@ public class JustificationsImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getHypothesis()
-  {
-    return hypothesis;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setHypothesis(String newHypothesis)
-  {
-    String oldHypothesis = hypothesis;
-    hypothesis = newHypothesis;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.JUSTIFICATIONS__HYPOTHESIS, oldHypothesis, hypothesis));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getEpsilon()
-  {
-    return epsilon;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEpsilon(String newEpsilon)
-  {
-    String oldEpsilon = epsilon;
-    epsilon = newEpsilon;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SemiFormalProofPackage.JUSTIFICATIONS__EPSILON, oldEpsilon, epsilon));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -201,10 +111,6 @@ public class JustificationsImpl extends MinimalEObjectImpl.Container implements 
     {
       case SemiFormalProofPackage.JUSTIFICATIONS__JUSTIFICATIONS:
         return getJustifications();
-      case SemiFormalProofPackage.JUSTIFICATIONS__HYPOTHESIS:
-        return getHypothesis();
-      case SemiFormalProofPackage.JUSTIFICATIONS__EPSILON:
-        return getEpsilon();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -224,12 +130,6 @@ public class JustificationsImpl extends MinimalEObjectImpl.Container implements 
         getJustifications().clear();
         getJustifications().addAll((Collection<? extends Justification>)newValue);
         return;
-      case SemiFormalProofPackage.JUSTIFICATIONS__HYPOTHESIS:
-        setHypothesis((String)newValue);
-        return;
-      case SemiFormalProofPackage.JUSTIFICATIONS__EPSILON:
-        setEpsilon((String)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -247,12 +147,6 @@ public class JustificationsImpl extends MinimalEObjectImpl.Container implements 
       case SemiFormalProofPackage.JUSTIFICATIONS__JUSTIFICATIONS:
         getJustifications().clear();
         return;
-      case SemiFormalProofPackage.JUSTIFICATIONS__HYPOTHESIS:
-        setHypothesis(HYPOTHESIS_EDEFAULT);
-        return;
-      case SemiFormalProofPackage.JUSTIFICATIONS__EPSILON:
-        setEpsilon(EPSILON_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -269,31 +163,8 @@ public class JustificationsImpl extends MinimalEObjectImpl.Container implements 
     {
       case SemiFormalProofPackage.JUSTIFICATIONS__JUSTIFICATIONS:
         return justifications != null && !justifications.isEmpty();
-      case SemiFormalProofPackage.JUSTIFICATIONS__HYPOTHESIS:
-        return HYPOTHESIS_EDEFAULT == null ? hypothesis != null : !HYPOTHESIS_EDEFAULT.equals(hypothesis);
-      case SemiFormalProofPackage.JUSTIFICATIONS__EPSILON:
-        return EPSILON_EDEFAULT == null ? epsilon != null : !EPSILON_EDEFAULT.equals(epsilon);
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (hypothesis: ");
-    result.append(hypothesis);
-    result.append(", epsilon: ");
-    result.append(epsilon);
-    result.append(')');
-    return result.toString();
   }
 
 } //JustificationsImpl

@@ -314,17 +314,19 @@ public class EvidenceEditPart extends ShapeNodeEditPart {
 		}
 
 		/**
-		 * @generated
+		 * @generated NOT
 		 */
 		private void createContents() {
 
 			fFigureEvidenceLabelFigure = new WrappingLabel();
 			fFigureEvidenceLabelFigure.setText("Evidence");
+			fFigureEvidenceLabelFigure.setTextWrap(true);
 
 			this.add(fFigureEvidenceLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
 			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setTextWrap(true);
 
 			this.add(fFigureModelElementContentLabelFigure);
 

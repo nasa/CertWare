@@ -37,14 +37,14 @@ public class SemiFormalProofParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getJustificationsAccess().getAlternatives(), "rule__Justifications__Alternatives");
 					put(grammarAccess.getJustificationAccess().getAlternatives(), "rule__Justification__Alternatives");
 					put(grammarAccess.getConjunctionAccess().getAlternatives(), "rule__Conjunction__Alternatives");
 					put(grammarAccess.getProofStepsAccess().getAlternatives(), "rule__ProofSteps__Alternatives");
+					put(grammarAccess.getValidationKindAccess().getAlternatives(), "rule__ValidationKind__Alternatives");
 					put(grammarAccess.getProofAccess().getGroup(), "rule__Proof__Group__0");
-					put(grammarAccess.getJustificationsAccess().getGroup_0(), "rule__Justifications__Group_0__0");
-					put(grammarAccess.getJustificationsAccess().getGroup_0_1(), "rule__Justifications__Group_0_1__0");
-					put(grammarAccess.getJustificationsAccess().getGroup_0_1_1(), "rule__Justifications__Group_0_1_1__0");
+					put(grammarAccess.getJustificationsAccess().getGroup(), "rule__Justifications__Group__0");
+					put(grammarAccess.getJustificationsAccess().getGroup_1(), "rule__Justifications__Group_1__0");
+					put(grammarAccess.getJustificationsAccess().getGroup_1_1(), "rule__Justifications__Group_1_1__0");
 					put(grammarAccess.getJustificationAccess().getGroup_0(), "rule__Justification__Group_0__0");
 					put(grammarAccess.getQuotedAssertionAccess().getGroup(), "rule__QuotedAssertion__Group__0");
 					put(grammarAccess.getEntailmentAccess().getGroup(), "rule__Entailment__Group__0");
@@ -52,16 +52,18 @@ public class SemiFormalProofParser extends AbstractContentAssistParser {
 					put(grammarAccess.getProofStepsAccess().getGroup_0(), "rule__ProofSteps__Group_0__0");
 					put(grammarAccess.getProofStepsAccess().getGroup_0_1(), "rule__ProofSteps__Group_0_1__0");
 					put(grammarAccess.getStatementAccess().getGroup(), "rule__Statement__Group__0");
+					put(grammarAccess.getStatementAccess().getGroup_7(), "rule__Statement__Group_7__0");
+					put(grammarAccess.getValidationAccess().getGroup(), "rule__Validation__Group__0");
 					put(grammarAccess.getProofAccess().getTitleAssignment_2(), "rule__Proof__TitleAssignment_2");
 					put(grammarAccess.getProofAccess().getJustificationsAssignment_4(), "rule__Proof__JustificationsAssignment_4");
 					put(grammarAccess.getProofAccess().getProofStepsAssignment_6(), "rule__Proof__ProofStepsAssignment_6");
-					put(grammarAccess.getJustificationsAccess().getJustificationsAssignment_0_1_0(), "rule__Justifications__JustificationsAssignment_0_1_0");
-					put(grammarAccess.getJustificationsAccess().getJustificationsAssignment_0_1_1_1(), "rule__Justifications__JustificationsAssignment_0_1_1_1");
-					put(grammarAccess.getJustificationsAccess().getHypothesisAssignment_1(), "rule__Justifications__HypothesisAssignment_1");
-					put(grammarAccess.getJustificationsAccess().getEpsilonAssignment_2(), "rule__Justifications__EpsilonAssignment_2");
-					put(grammarAccess.getJustificationAccess().getNumeralAssignment_0_1(), "rule__Justification__NumeralAssignment_0_1");
-					put(grammarAccess.getJustificationAccess().getAssertionAssignment_1(), "rule__Justification__AssertionAssignment_1");
-					put(grammarAccess.getJustificationAccess().getEntailmentAssignment_2(), "rule__Justification__EntailmentAssignment_2");
+					put(grammarAccess.getJustificationsAccess().getJustificationsAssignment_1_0(), "rule__Justifications__JustificationsAssignment_1_0");
+					put(grammarAccess.getJustificationsAccess().getJustificationsAssignment_1_1_1(), "rule__Justifications__JustificationsAssignment_1_1_1");
+					put(grammarAccess.getJustificationAccess().getHypothesisAssignment_0_1(), "rule__Justification__HypothesisAssignment_0_1");
+					put(grammarAccess.getJustificationAccess().getEpsilonAssignment_1(), "rule__Justification__EpsilonAssignment_1");
+					put(grammarAccess.getJustificationAccess().getNumeralAssignment_2(), "rule__Justification__NumeralAssignment_2");
+					put(grammarAccess.getJustificationAccess().getAssertionAssignment_3(), "rule__Justification__AssertionAssignment_3");
+					put(grammarAccess.getJustificationAccess().getEntailmentAssignment_4(), "rule__Justification__EntailmentAssignment_4");
 					put(grammarAccess.getQuotedAssertionAccess().getTextAssignment_1(), "rule__QuotedAssertion__TextAssignment_1");
 					put(grammarAccess.getEntailmentAccess().getHeadAssignment_1(), "rule__Entailment__HeadAssignment_1");
 					put(grammarAccess.getEntailmentAccess().getTailAssignment_3(), "rule__Entailment__TailAssignment_3");
@@ -74,6 +76,10 @@ public class SemiFormalProofParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStatementAccess().getIdAssignment_1(), "rule__Statement__IdAssignment_1");
 					put(grammarAccess.getStatementAccess().getStatementAssignment_3(), "rule__Statement__StatementAssignment_3");
 					put(grammarAccess.getStatementAccess().getJustificationAssignment_5(), "rule__Statement__JustificationAssignment_5");
+					put(grammarAccess.getStatementAccess().getValidationAssignment_7_1(), "rule__Statement__ValidationAssignment_7_1");
+					put(grammarAccess.getValidationAccess().getAuthorAssignment_1(), "rule__Validation__AuthorAssignment_1");
+					put(grammarAccess.getValidationAccess().getTimeStampAssignment_2(), "rule__Validation__TimeStampAssignment_2");
+					put(grammarAccess.getValidationAccess().getStateAssignment_3(), "rule__Validation__StateAssignment_3");
 				}
 			};
 		}

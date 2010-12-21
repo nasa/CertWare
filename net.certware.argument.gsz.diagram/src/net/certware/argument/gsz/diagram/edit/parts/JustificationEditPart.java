@@ -319,12 +319,12 @@ public class JustificationEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureJustificationLabelFigure = new WrappingLabel();
-			fFigureJustificationLabelFigure.setText("Justification");
+			fFigureJustificationLabelFigure.setText(Messages.JustificationEditPart_0);
 			fFigureJustificationLabelFigure.setTextWrap(true);
 			this.add(fFigureJustificationLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
-			fFigureModelElementContentLabelFigure.setText("");
+			fFigureModelElementContentLabelFigure.setText(Messages.JustificationEditPart_1);
 			fFigureModelElementContentLabelFigure.setTextWrap(true);
 			this.add(fFigureModelElementContentLabelFigure);
 

@@ -3,7 +3,6 @@ package net.certware.argument.sfp.util;
 import java.util.HashSet;
 import java.util.Set;
 
-import net.certware.argument.sfp.semiFormalProof.Conjunction;
 import net.certware.argument.sfp.semiFormalProof.Entailment;
 import net.certware.argument.sfp.semiFormalProof.Justification;
 import net.certware.argument.sfp.semiFormalProof.Justifications;
@@ -13,36 +12,11 @@ import net.certware.core.ui.log.CertWareLog;
 
 /**
  * Graph algorithms.
- * 
  * @author nachi
  * @author mrb
  * @since 1.0.3
  */
 public class GraphAlgs {
-
-
-	/*
-	static public void DFS_Search(Graph graph, int v, int[] preOrder, Vector nodes) {
-		preOrder[v] = 1;
-
-		Vector neighbors = graph.neighbors(v);
-
-		for (int i = 0; i < neighbors.size(); i++) {
-			int u = ((Integer) neighbors.elementAt(i)).intValue();
-
-			if ((((Inference) Main.inferenceList.get(u)).comment.length > 0)
-					&& (((Inference) Main.inferenceList.get(u)).comment[0].equals(Justification.HYPOTHESIS)) 
-					                                                    && preOrder[u] == 0)
-				nodes.add((Integer) neighbors.elementAt(i));
-
-			if (preOrder[u] == 0) { // have we not seen vertex u before?
-				DFS_Search(graph, u, preOrder, nodes);
-			}
-		}
-
-		return;
-	}
-	*/
 
 	/*
 	static public void check_entailments(Inference infObj, Set disjunct) {
@@ -72,11 +46,12 @@ public class GraphAlgs {
 	}
 	 */
 
-	static public void checkEntailments(Proof proof, Statement statement, Set disjunct) {
+	static public void checkEntailments(Proof proof, Statement statement, Set<String> disjunct) {
 		
-		// TODO is this working?
+		if ( proof == null || statement == null || disjunct == null )
+			return;
 		
-		Set conjunct = new HashSet();
+		Set<String> conjunct = new HashSet<String>();
 
 		try {
 			if ( statement.getJustification() != null ) {
@@ -93,20 +68,16 @@ public class GraphAlgs {
 							findContext(proof, tail, disjunct);
 						}
 
-						// number justifications
-						String numeral = j.getNumeral();
-						findContext(proof, numeral, disjunct);
-					} // for
+						// numeral justifications
+						findContext(proof, j.getNumeral(), disjunct);
+					}
 
 					// build conjunct
 					for ( Justification j : justifications.getJustifications() ) {
 						Entailment entailment = j.getEntailment();
 						if ( entailment != null ) {
-							Conjunction c = entailment.getHead();
-							while( c != null ) {
-								conjunct.add( new Integer(c.getLhs() ) ) ;
-								c = c.getRhs();
-							}
+							conjunct.addAll( ProofUtil.getHeadList(entailment) );
+							
 						} // non-null entailment
 					} // for
 				} // not empty
@@ -114,6 +85,7 @@ public class GraphAlgs {
 
 			// remove the conjunct set from the disjunct set
 			disjunct.removeAll(conjunct);
+			
 		} catch( NumberFormatException nfe ) {
 			CertWareLog.logWarning(String.format("%s:%s",
 					"Entailment check terminated",
@@ -121,7 +93,24 @@ public class GraphAlgs {
 		}
 	}
 
-
+	/**
+	 * Find a statement in a proof given its id.
+	 * Would rather put this in the {@code Proof} class but it will be overwritten there.
+	 * @param proof proof to search
+	 * @param id statement ID to find
+	 * @return statement or null, matching id with {@code equalsIgnoreCase}
+	 */
+	static public Statement findStatement(Proof proof, String id) {
+		Statement rv = null;
+		if ( proof != null && proof.getProofSteps() != null && id != null ) {
+			for ( Statement s : proof.getProofSteps().getStatements() ) {
+				if ( id.equalsIgnoreCase( s.getId() )) { 
+					return s;
+				}
+			}
+		}
+		return rv;
+	}
 
 	/**
 	 * Find statement context, adjusting vertex set.
@@ -129,14 +118,14 @@ public class GraphAlgs {
 	 * @param id statement ID for context
 	 * @param vertices set of vertices
 	 */
-	static public void findContext(Proof proof, String id, Set vertices) {
+	static public void findContext(Proof proof, String id, Set<String> vertices) {
 
-		// check proof
-		if ( proof == null )
+		// check incoming
+		if ( proof == null || id == null || vertices == null )
 			return;
 		
 		// find the statement
-		Statement s = proof.findStatement(id);
+		Statement s = findStatement(proof,id);
 		if ( s == null || s.getJustification() == null )
 			return;
 		
@@ -150,14 +139,16 @@ public class GraphAlgs {
 				
 				// hypothesis justification
 			} else if ( j.getAssertion() != null && j.getAssertion().getText().isEmpty() == false ) {
-				if ( Justification.HYPOTHESIS.equalsIgnoreCase( j.getAssertion().getText() )) {
-					vertices.add( new Integer(s.getId() ));
+				if ( j.isHypothesis() ) {
+					// vertices.add( new Integer(s.getId() ));
+					vertices.add( s.getId() ); // TODO does the first line have an ID?
 				}
 				
 				// entailment justification
 			} else if ( j.getEntailment() != null && j.getEntailment().getHead() != null ) {
 				Set nestedDisjunct = new HashSet();
 				checkEntailments(proof,s,nestedDisjunct);
+				
 				if ( nestedDisjunct.isEmpty() == false ) {
 					vertices.addAll(nestedDisjunct);
 				}

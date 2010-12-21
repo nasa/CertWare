@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justification#isHypothesis <em>Hypothesis</em>}</li>
+ *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justification#isEpsilon <em>Epsilon</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justification#getNumeral <em>Numeral</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justification#getAssertion <em>Assertion</em>}</li>
  *   <li>{@link net.certware.argument.sfp.semiFormalProof.Justification#getEntailment <em>Entailment</em>}</li>
@@ -27,9 +29,58 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Justification extends EObject
 {
-	/** hypothesis keyword */
-	public static final String HYPOTHESIS = "hypothesis";
-	
+  /**
+   * Returns the value of the '<em><b>Hypothesis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Hypothesis</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Hypothesis</em>' attribute.
+   * @see #setHypothesis(boolean)
+   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getJustification_Hypothesis()
+   * @model
+   * @generated
+   */
+  boolean isHypothesis();
+
+  /**
+   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Justification#isHypothesis <em>Hypothesis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Hypothesis</em>' attribute.
+   * @see #isHypothesis()
+   * @generated
+   */
+  void setHypothesis(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Epsilon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Epsilon</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Epsilon</em>' attribute.
+   * @see #setEpsilon(boolean)
+   * @see net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage#getJustification_Epsilon()
+   * @model
+   * @generated
+   */
+  boolean isEpsilon();
+
+  /**
+   * Sets the value of the '{@link net.certware.argument.sfp.semiFormalProof.Justification#isEpsilon <em>Epsilon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Epsilon</em>' attribute.
+   * @see #isEpsilon()
+   * @generated
+   */
+  void setEpsilon(boolean value);
+
   /**
    * Returns the value of the '<em><b>Numeral</b></em>' attribute.
    * <!-- begin-user-doc -->

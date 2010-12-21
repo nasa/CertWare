@@ -9,13 +9,16 @@ h2. Version History
 h3. Version 1.0.3
 
 _Bugs Fixed_:
-* Reassigned GSZ creation wizard to CertWare new wizard category.
+* Reassigned diagram model creation wizard to CertWare new wizard category.
 * Fixed labels on EUZ plugin identities and branding plug-in. 
+* Reassigned diagram preference pages to fall under the CertWare category.
 _Enhancements_:
-* Expanded body text regions in graphical shapes.  
+* Expanded body text regions in all graphical shapes, allowing multi-line wrap display and editing. 
 * Added adapters for SFP outline view.
 * Added semi-formal proof plug-ins with SFP active parser editor.
 * Added semi-formal proof validation for graph cycles and entailment.
+* Partial string externalization.
+* Updated to JGit and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
 _Commit_:
 * TBD
 
@@ -189,7 +192,8 @@ h3. Plugins Summary
 * @net.certware.argument.euz.*@ Argument diagram graphical model equivalent for EUROCONTROL models.    
 * @net.certware.argument.gsn.*@ Argument model and editor support for GSN, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.  
-* @net.certware.argument.gsz.*@ Argument diagram graphical model equivalent for GSN models.    
+* @net.certware.argument.gsz.*@ Argument diagram graphical model equivalent for GSN models.
+* @net.certware.argument.sfp.*@ Semi-formal proof structured text argument models.
 * @net.certware.branding@ Project branding plugin for feature definition.
 * @net.certware.core@ Core project content.
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  

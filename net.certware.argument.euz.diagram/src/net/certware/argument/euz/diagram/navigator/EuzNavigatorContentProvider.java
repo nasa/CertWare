@@ -245,116 +245,18 @@ public class EuzNavigatorContentProvider implements ICommonContentProvider {
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (EuzVisualIDRegistry.getVisualID(view)) {
 
-		case CriteriaCriteriaAssumptionsEditPart.VISUAL_ID: {
+		case StrategyStrategyCriteriaEditPart.VISUAL_ID: {
 			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_CriteriaCriteriaAssumptions_4009_target,
+					Messages.NavigatorGroupName_StrategyStrategyCriteria_4012_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_CriteriaCriteriaAssumptions_4009_source,
+					Messages.NavigatorGroupName_StrategyStrategyCriteria_4012_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case StrategyStrategyArgumentsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyArguments_4010_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyArguments_4010_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case SolutionEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			EuzNavigatorGroup incominglinks = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_Solution_2002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup outgoinglinks = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_Solution_2002_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(ArgumentArgumentSolutionsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(SolutionSolutionContextsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(SolutionSolutionCriteriaEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case StrategyStrategyJustificationsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyJustifications_4011_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyJustifications_4011_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(JustificationEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
@@ -419,22 +321,49 @@ public class EuzNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ArgumentArgumentSolutionsEditPart.VISUAL_ID: {
+		case ArgumentArgumentContextsEditPart.VISUAL_ID: {
 			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentSolutions_4004_target,
+					Messages.NavigatorGroupName_ArgumentArgumentContexts_4003_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentSolutions_4004_source,
+					Messages.NavigatorGroupName_ArgumentArgumentContexts_4003_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
+					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SolutionSolutionContextsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionContexts_4014_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionContexts_4014_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
 			if (!target.isEmpty()) {
@@ -517,21 +446,417 @@ public class EuzNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case EvidenceEditPart.VISUAL_ID: {
+		case StrategyStrategyJustificationsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategyJustifications_4011_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategyJustifications_4011_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(JustificationEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentArgumentSolutionsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentSolutions_4004_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentSolutions_4004_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ContextContextAssumptionsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ContextContextAssumptions_4007_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ContextContextAssumptions_4007_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case JustificationEditPart.VISUAL_ID: {
 			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			EuzNavigatorGroup incominglinks = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_Evidence_2003_incominglinks,
+					Messages.NavigatorGroupName_Justification_2006_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(
 					Collections.singleton(sv),
 					EuzVisualIDRegistry
-							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
+							.getType(ArgumentArgumentJustificationsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(StrategyStrategyJustificationsEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case SolutionSolutionEvidenceEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionEvidence_4015_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_SolutionSolutionEvidence_4015_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case CriteriaCriteriaAssumptionsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_CriteriaCriteriaAssumptions_4009_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_CriteriaCriteriaAssumptions_4009_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case StrategyStrategyAssumptionsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategyAssumptions_4013_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategyAssumptions_4013_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentArgumentAssumptionsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentAssumptions_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentAssumptions_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case StrategyEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			EuzNavigatorGroup incominglinks = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_Strategy_2004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup outgoinglinks = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_Strategy_2004_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(ArgumentArgumentStrategiesEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(StrategyStrategyArgumentsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(StrategyStrategyJustificationsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(StrategyStrategyCriteriaEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(StrategyStrategyAssumptionsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case StrategyStrategyArgumentsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategyArguments_4010_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_StrategyStrategyArguments_4010_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case SolutionEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			EuzNavigatorGroup incominglinks = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_Solution_2002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup outgoinglinks = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_Solution_2002_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(ArgumentArgumentSolutionsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(SolutionSolutionContextsEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(SolutionSolutionCriteriaEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case CriteriaCriteriaContextsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_CriteriaCriteriaContexts_4008_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_CriteriaCriteriaContexts_4008_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentArgumentCriteriaEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentCriteria_4005_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentCriteria_4005_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentSubArgumentsEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentSubArguments_4017_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentSubArguments_4017_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
 			}
 			return result.toArray();
 		}
@@ -666,221 +991,6 @@ public class EuzNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ArgumentArgumentJustificationsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentJustifications_4006_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentJustifications_4006_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(JustificationEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case SolutionSolutionCriteriaEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionCriteria_4016_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionCriteria_4016_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case CriteriaCriteriaContextsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_CriteriaCriteriaContexts_4008_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_CriteriaCriteriaContexts_4008_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ArgumentArgumentCriteriaEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentCriteria_4005_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentCriteria_4005_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ContextContextAssumptionsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ContextContextAssumptions_4007_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ContextContextAssumptions_4007_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ArgumentArgumentAssumptionsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentAssumptions_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentAssumptions_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case JustificationEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			EuzNavigatorGroup incominglinks = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_Justification_2006_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(ArgumentArgumentJustificationsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(StrategyStrategyJustificationsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case ArgumentSubArgumentsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentSubArguments_4017_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentSubArguments_4017_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
 		case AssumptionEditPart.VISUAL_ID: {
 			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -918,144 +1028,14 @@ public class EuzNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case StrategyEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			EuzNavigatorGroup incominglinks = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_Strategy_2004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup outgoinglinks = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_Strategy_2004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(ArgumentArgumentStrategiesEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(StrategyStrategyArgumentsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(StrategyStrategyJustificationsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(StrategyStrategyCriteriaEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					EuzVisualIDRegistry
-							.getType(StrategyStrategyAssumptionsEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case SolutionSolutionEvidenceEditPart.VISUAL_ID: {
+		case SolutionSolutionCriteriaEditPart.VISUAL_ID: {
 			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionEvidence_4015_target,
+					Messages.NavigatorGroupName_SolutionSolutionCriteria_4016_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionEvidence_4015_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ArgumentArgumentStrategiesEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentStrategies_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentStrategies_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ArgumentArgumentContextsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentContexts_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentContexts_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case StrategyStrategyCriteriaEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyCriteria_4012_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyCriteria_4012_source,
+					Messages.NavigatorGroupName_SolutionSolutionCriteria_4016_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
@@ -1063,34 +1043,7 @@ public class EuzNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case StrategyStrategyAssumptionsEditPart.VISUAL_ID: {
-			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyAssumptions_4013_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_StrategyStrategyAssumptions_4013_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
+					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
 			if (!target.isEmpty()) {
@@ -1145,22 +1098,69 @@ public class EuzNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case SolutionSolutionContextsEditPart.VISUAL_ID: {
+		case EvidenceEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			EuzNavigatorGroup incominglinks = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_Evidence_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					EuzVisualIDRegistry
+							.getType(SolutionSolutionEvidenceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentArgumentJustificationsEditPart.VISUAL_ID: {
 			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			EuzNavigatorGroup target = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionContexts_4014_target,
+					Messages.NavigatorGroupName_ArgumentArgumentJustifications_4006_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			EuzNavigatorGroup source = new EuzNavigatorGroup(
-					Messages.NavigatorGroupName_SolutionSolutionContexts_4014_source,
+					Messages.NavigatorGroupName_ArgumentArgumentJustifications_4006_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
+					EuzVisualIDRegistry
+							.getType(JustificationEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentArgumentStrategiesEditPart.VISUAL_ID: {
+			LinkedList<EuzAbstractNavigatorItem> result = new LinkedList<EuzAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			EuzNavigatorGroup target = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentStrategies_4001_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			EuzNavigatorGroup source = new EuzNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentStrategies_4001_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
 			if (!target.isEmpty()) {

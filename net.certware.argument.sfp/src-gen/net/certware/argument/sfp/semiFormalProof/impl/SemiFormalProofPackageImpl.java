@@ -15,9 +15,12 @@ import net.certware.argument.sfp.semiFormalProof.QuotedAssertion;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofFactory;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage;
 import net.certware.argument.sfp.semiFormalProof.Statement;
+import net.certware.argument.sfp.semiFormalProof.Validation;
+import net.certware.argument.sfp.semiFormalProof.ValidationKind;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -86,6 +89,20 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    * @generated
    */
   private EClass statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass validationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum validationKindEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -215,26 +232,6 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getJustifications_Hypothesis()
-  {
-    return (EAttribute)justificationsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getJustifications_Epsilon()
-  {
-    return (EAttribute)justificationsEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getJustification()
   {
     return justificationEClass;
@@ -245,7 +242,7 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getJustification_Numeral()
+  public EAttribute getJustification_Hypothesis()
   {
     return (EAttribute)justificationEClass.getEStructuralFeatures().get(0);
   }
@@ -255,9 +252,29 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getJustification_Epsilon()
+  {
+    return (EAttribute)justificationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJustification_Numeral()
+  {
+    return (EAttribute)justificationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getJustification_Assertion()
   {
-    return (EReference)justificationEClass.getEStructuralFeatures().get(1);
+    return (EReference)justificationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -267,7 +284,7 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    */
   public EReference getJustification_Entailment()
   {
-    return (EReference)justificationEClass.getEStructuralFeatures().get(2);
+    return (EReference)justificationEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -425,6 +442,66 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStatement_Validation()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getValidation()
+  {
+    return validationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValidation_Author()
+  {
+    return (EAttribute)validationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValidation_TimeStamp()
+  {
+    return (EAttribute)validationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValidation_State()
+  {
+    return (EAttribute)validationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getValidationKind()
+  {
+    return validationKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SemiFormalProofFactory getSemiFormalProofFactory()
   {
     return (SemiFormalProofFactory)getEFactoryInstance();
@@ -457,10 +534,10 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
 
     justificationsEClass = createEClass(JUSTIFICATIONS);
     createEReference(justificationsEClass, JUSTIFICATIONS__JUSTIFICATIONS);
-    createEAttribute(justificationsEClass, JUSTIFICATIONS__HYPOTHESIS);
-    createEAttribute(justificationsEClass, JUSTIFICATIONS__EPSILON);
 
     justificationEClass = createEClass(JUSTIFICATION);
+    createEAttribute(justificationEClass, JUSTIFICATION__HYPOTHESIS);
+    createEAttribute(justificationEClass, JUSTIFICATION__EPSILON);
     createEAttribute(justificationEClass, JUSTIFICATION__NUMERAL);
     createEReference(justificationEClass, JUSTIFICATION__ASSERTION);
     createEReference(justificationEClass, JUSTIFICATION__ENTAILMENT);
@@ -484,6 +561,15 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
     createEAttribute(statementEClass, STATEMENT__ID);
     createEAttribute(statementEClass, STATEMENT__STATEMENT);
     createEReference(statementEClass, STATEMENT__JUSTIFICATION);
+    createEReference(statementEClass, STATEMENT__VALIDATION);
+
+    validationEClass = createEClass(VALIDATION);
+    createEAttribute(validationEClass, VALIDATION__AUTHOR);
+    createEAttribute(validationEClass, VALIDATION__TIME_STAMP);
+    createEAttribute(validationEClass, VALIDATION__STATE);
+
+    // Create enums
+    validationKindEEnum = createEEnum(VALIDATION_KIND);
   }
 
   /**
@@ -524,10 +610,10 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
 
     initEClass(justificationsEClass, Justifications.class, "Justifications", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getJustifications_Justifications(), this.getJustification(), null, "justifications", null, 0, -1, Justifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getJustifications_Hypothesis(), ecorePackage.getEString(), "hypothesis", null, 0, 1, Justifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getJustifications_Epsilon(), ecorePackage.getEString(), "epsilon", null, 0, 1, Justifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(justificationEClass, Justification.class, "Justification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getJustification_Hypothesis(), ecorePackage.getEBoolean(), "hypothesis", null, 0, 1, Justification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJustification_Epsilon(), ecorePackage.getEBoolean(), "epsilon", null, 0, 1, Justification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getJustification_Numeral(), ecorePackage.getEString(), "numeral", null, 0, 1, Justification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJustification_Assertion(), this.getQuotedAssertion(), null, "assertion", null, 0, 1, Justification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJustification_Entailment(), this.getEntailment(), null, "entailment", null, 0, 1, Justification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -545,12 +631,24 @@ public class SemiFormalProofPackageImpl extends EPackageImpl implements SemiForm
 
     initEClass(proofStepsEClass, ProofSteps.class, "ProofSteps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProofSteps_Statements(), this.getStatement(), null, "statements", null, 0, -1, ProofSteps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProofSteps_Epsilon(), ecorePackage.getEString(), "epsilon", null, 0, 1, ProofSteps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProofSteps_Epsilon(), ecorePackage.getEBoolean(), "epsilon", null, 0, 1, ProofSteps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStatement_Id(), ecorePackage.getEString(), "id", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStatement_Statement(), ecorePackage.getEString(), "statement", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Justification(), this.getJustifications(), null, "justification", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_Validation(), this.getValidation(), null, "validation", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(validationEClass, Validation.class, "Validation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getValidation_Author(), ecorePackage.getEString(), "author", null, 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getValidation_TimeStamp(), ecorePackage.getEString(), "timeStamp", null, 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getValidation_State(), this.getValidationKind(), "state", null, 0, 1, Validation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(validationKindEEnum, ValidationKind.class, "ValidationKind");
+    addEEnumLiteral(validationKindEEnum, ValidationKind.UNKNOWN);
+    addEEnumLiteral(validationKindEEnum, ValidationKind.VALID);
+    addEEnumLiteral(validationKindEEnum, ValidationKind.INVALID);
 
     // Create resource
     createResource(eNS_URI);
