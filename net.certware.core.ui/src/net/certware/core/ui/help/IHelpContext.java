@@ -119,5 +119,7 @@ public interface IHelpContext {
 	public static String REVIEW_WIZARD_STATEMENT = PREFIX + "review_wizard_statement_context"; //$NON-NLS-1$
 	/** review wizard hypothesis context */
 	public static String REVIEW_WIZARD_HYPOTHESIS = PREFIX + "review_wizard_hypothesis_context"; //$NON-NLS-1$
+	/** review wizard setup page */
+	public static String REVIEW_WIZARD_SETUP_PAGE = PREFIX + "review_wizard_setup_context"; //$NON-NLS-1$
 	
 }

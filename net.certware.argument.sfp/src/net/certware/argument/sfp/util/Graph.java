@@ -19,8 +19,6 @@ public class Graph {
 	private int edgeCount;
 	/** whether the graph is directed */
 	private boolean digraph;
-	/** whether the edge addition was clean */
-	private boolean edgeInsertionClean;
 	/** adjacency vector */
 	Vector adjacency;
 
@@ -29,7 +27,6 @@ public class Graph {
 	/**
 	 * Sets graph vertex count to argument; sets edge count to zero. Allocates
 	 * array vector to vertex count plus one.
-	 * Sets clean flag to true;
 	 * @param vc vertex count
 	 * @param flag true if digraph
 	 */
@@ -37,7 +34,6 @@ public class Graph {
 		vertexCount = vc;
 		edgeCount = 0;
 		digraph = flag;
-		edgeInsertionClean = true;
 		allocateElements(vc + 1);
 	}
 
@@ -70,10 +66,12 @@ public class Graph {
 	/**
 	 * Insert statement.
 	 * Traps arc addition exceptions and writes to CertWare log.
-	 * @param s statement 
+	 * @param s statement
+	 * @throws {@code ArrayIndexOutOfBoundsException} on statement identifiers
+	 * @throws {@code NumberFormatException} on identifier translation from string, or on entailment tail null 
 	 */
-	public void insert(Statement s) {
-		try {
+	public void insert(Statement s) throws ArrayIndexOutOfBoundsException, NumberFormatException {
+
 			// check incoming
 			if ( s == null || s.getJustification() == null ) {
 				return;
@@ -87,7 +85,6 @@ public class Graph {
 			// catches number format exceptions, logs them, moves on
 			for ( Justification j : s.getJustification().getJustifications() ) {
 
-				try { 
 					// skip assertions
 					/*
 					if ( j.getAssertion() != null && j.getAssertion().getText().isEmpty() == false)
@@ -107,18 +104,15 @@ public class Graph {
 							int n = Integer.parseInt( tail );
 							addArc(statementNumber, n);
 						} else {
-							CertWareLog.logWarning(
-									String.format("%s %s",
-											"Entailment tail found null for statement",
-											s.getStatement() ));
-							edgeInsertionClean = false;
+							String message = String.format("%s %s",
+									"Entailment tail found null for statement",
+									s.getStatement() );
+							CertWareLog.logWarning(message);
+							throw new NumberFormatException(message);
 						}
 					}
-				} catch( NumberFormatException nfe ) {
-					// parser and editor report the warnings
-					edgeInsertionClean = false;
-				}
 			} // for
+		/*
 		} catch (Exception e) {
 			CertWareLog.logError(
 					String.format("Graph insertion error for statement %s",
@@ -126,15 +120,18 @@ public class Graph {
 							e);
 			edgeInsertionClean = false;
 		}
+		*/
 	}
 
 	/**
 	 * Whether the edge insertions were clean, without warnings or errors.
 	 * @return {@code edgeInsertionClean} flag value, true if clean
 	 */
+/*
 	public boolean isClean() {
 		return edgeInsertionClean;
 	}
+	*/
 
 
 	/**

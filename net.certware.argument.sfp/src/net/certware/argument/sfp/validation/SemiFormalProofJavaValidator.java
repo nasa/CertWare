@@ -1,5 +1,12 @@
 package net.certware.argument.sfp.validation;
 
+/**
+ * Semi-formal proof validation methods.
+ * Hooked into Xtext validator through extension point and abstract class code generation.
+ * Uses dependency injection to identify methods to invoke.
+ * @author mrb
+ * @since 1.0.3
+ */
 import java.util.HashSet;
 import java.util.Set;
 
@@ -54,6 +61,8 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 		}
 	}
 
+	// TODO public void proofHasUnusedSteps(Proof proof)
+	
 	/**
 	 * A proof step statement's justification cannot refer to itself.
 	 * Issues warning if statement ID is in the justification numeral list.
@@ -212,12 +221,17 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 		Graph graph = new Graph(statementCount,true);
 
 		// load the graph edges according to justification references
-		for ( Statement s : statements ) {
-			graph.insert(s);
+		boolean edgeInsertionClean = true;
+		try {
+			for ( Statement s : statements ) {
+				graph.insert(s);
+			}
+		} catch( ArrayIndexOutOfBoundsException obe) {
+			edgeInsertionClean = false;
 		}
 
 		// now search the graph for cycles
-		if ( graph.isClean() ) {
+		if ( edgeInsertionClean ) {
 			String result = graph.isAcyclic();
 			if ( result != null ) {
 				warning(String.format("%s %s", "Proof:", result),

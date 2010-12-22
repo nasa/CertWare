@@ -127,6 +127,11 @@ public class ProofUtil {
 		return false;
 	}
 
+	/**
+	 * Whether the proof's statements are all valid.
+	 * @param p proof
+	 * @return true if all statements valid, false if null or any statement invalid or unknown
+	 */
 	public static boolean proofValidated(Proof p) {
 		if ( p == null || p.getProofSteps() == null )
 			return false;
@@ -141,4 +146,65 @@ public class ProofUtil {
 		return true;
 	}
 
+	/**
+	 * Find a statement in a proof given its identifier.
+	 * @param p proof containing statement list
+	 * @param id statement identifier to find
+	 * @return first statement matching ignore case or null
+	 */
+	public static Statement findStatement( Proof p, String id ) {
+		
+		if ( p != null && p.getProofSteps() != null && id.isEmpty() == false ) {
+			for ( Statement s : p.getProofSteps().getStatements() ) {
+				if ( s.getId().equalsIgnoreCase(id))
+					return s;
+			}
+		}
+		
+		return null;
+	}
+
+	/**
+	 * Get a list of statements given as justifications for a given statement.
+	 * @param p proof to search for statement references
+	 * @param s statement containing justifications
+	 * @return statement list, numeral references only (for now)
+	 */
+	public static EList<Statement> getStatementJustifications(Proof p, Statement s) {
+		EList<Statement> dependencies = new BasicEList<Statement>();
+
+		if ( statementIsHypothesis(s) )
+			return dependencies;
+		
+		if ( statementIsEpsilon(s))
+			return dependencies;
+		
+		if ( s != null && s.getJustification() != null && s.getJustification().getJustifications().isEmpty() == false ) {
+
+			// TODO determine what to do with entailment
+			for ( Justification j : s.getJustification().getJustifications() ) {
+				if ( j.getNumeral() != null ) {
+					Statement rs = findStatement( p, j.getNumeral() );
+					if ( rs != null )
+						dependencies.add(rs);
+				}
+			}
+		}
+		return dependencies;
+	}
+	
+	/**
+	 * Checks whether a statement's justifications are valid.
+	 * @param p proof
+	 * @param s statement
+	 * @return false if any justification statement is invalid
+	 */
+	public static boolean justificationsValid(Proof p, Statement s) {
+		EList<Statement> dependencies = getStatementJustifications(p,s);
+		for ( Statement j : dependencies ) {
+			if ( j.getValidation() != null && j.getValidation().getState() == ValidationKind.INVALID )
+				return false;
+		}
+		return true;
+	}
 }
