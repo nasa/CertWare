@@ -11,6 +11,7 @@ import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.ProofSteps;
 import net.certware.argument.sfp.semiFormalProof.QuotedAssertion;
 import net.certware.argument.sfp.semiFormalProof.Statement;
+import net.certware.argument.sfp.semiFormalProof.Validation;
 
 import org.eclipse.xtext.ui.editor.outline.actions.DefaultContentOutlineNodeAdapterFactory;
 
@@ -28,7 +29,8 @@ public class SemiFormalProofOutlineNodeAdapterFactory extends DefaultContentOutl
 		Entailment.class,
 		Conjunction.class,
 		ProofSteps.class,
-		Statement.class
+		Statement.class,
+		Validation.class
 	};
 
 	@Override

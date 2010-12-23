@@ -109,6 +109,9 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 		authorText.addKeyListener(new KeyListener() {
 			@Override
 			public void keyPressed(KeyEvent e) {
+				// disallow quotes to avoid parsing problems
+				if ( e.character == '"')
+					e.doit = false;
 			}
 
 			@Override
@@ -120,6 +123,9 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 		timeStampText.addKeyListener(new KeyListener() {
 			@Override
 			public void keyPressed(KeyEvent e) {
+				// disallow quotes to avoid parsing problems
+				if ( e.character == '"')
+					e.doit = false;
 			}
 
 			@Override

@@ -145,6 +145,44 @@ public class ProofUtil {
 		
 		return true;
 	}
+	
+	/**
+	 * Compute and return the validation state for a proof.
+	 * If any statement has no validation, return unknown.
+	 * If any statement is unknown, return unknown.
+	 * If any statement is invalid, return invalid.
+	 * Otherwise, return valid.
+	 * @param p proof to scan
+	 * @return validation kind enumeration
+	 */
+	public static ValidationKind getProofValidationKind(Proof p) {
+		if ( p == null || p.getProofSteps() == null )
+			return ValidationKind.UNKNOWN;
+
+		// any statement not validated, return unknown
+		for ( Statement s : p.getProofSteps().getStatements() ) {
+			if ( s.getValidation() == null ) {
+				return ValidationKind.UNKNOWN;
+			}
+		}
+		
+		// any statement invalid, return invalid
+		for ( Statement s : p.getProofSteps().getStatements() ) {
+			if ( s.getValidation().getState() == ValidationKind.INVALID ) {
+				return ValidationKind.INVALID;
+			}
+		}
+		
+		// any statement unknown, return unknown
+		for ( Statement s : p.getProofSteps().getStatements() ) {
+			if ( s.getValidation().getState() == ValidationKind.UNKNOWN ) {
+				return ValidationKind.UNKNOWN;
+			}
+		}
+
+		// otherwise, all statements are valid
+		return ValidationKind.VALID;
+	}
 
 	/**
 	 * Find a statement in a proof given its identifier.
@@ -191,6 +229,28 @@ public class ProofUtil {
 			}
 		}
 		return dependencies;
+	}
+	
+	/**
+	 * Get a list of statements given as justifications for the theorem.
+	 * @param p proof to search for statement references
+	 * @return statement list, numeral references only (for now)
+	 */
+	public static EList<Statement> getTheoremJustifications(Proof p) {
+		EList<Statement> justifications = new BasicEList<Statement>();
+		
+		if ( p != null && p.getJustifications() != null ) {
+			// TODO determine what to do with entailment
+			for ( Justification j : p.getJustifications().getJustifications() ) {
+				if ( j.getNumeral() != null ) {
+					Statement rs = findStatement( p, j.getNumeral() );
+					if ( rs != null )
+						justifications.add(rs);
+				}
+			}
+		}
+		
+		return justifications;
 	}
 	
 	/**

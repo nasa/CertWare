@@ -1,10 +1,7 @@
 package net.certware.argument.sfp.review.wizard;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.text.MessageFormat;
-import java.util.HashMap;
-import java.util.Map;
 
 import net.certware.argument.sfp.review.Activator;
 import net.certware.argument.sfp.semiFormalProof.Proof;
@@ -19,7 +16,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardContainer;
 import org.eclipse.jface.wizard.Wizard;
@@ -30,7 +26,10 @@ import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.xtext.resource.SaveOptions;
+import org.eclipse.xtext.resource.SaveOptions.Builder;
 
 
 /**
@@ -57,6 +56,7 @@ public class ReviewWizard extends Wizard {
 	private ReviewSetupPage pageSetup;
 	/** page image path */
 	private String PAGE_IMAGE = "icons/wizban/pattern_wiz.gif";
+	private Resource resource;
 
 
 	/**
@@ -135,9 +135,11 @@ public class ReviewWizard extends Wizard {
 			return false; // refuse, no model
 
 		// use the original resource to save back into source
-		final Resource resource = proof.eResource();
-		System.err.println("testing: resource is modified: " + resource.isModified());
-		final String message = MessageFormat.format("{0} {1}", "Saving proof file", resource.getURI());
+		final String message = MessageFormat.format("{0} {1}", 
+				"Saving proof file", 
+				( resource.getURI().isPlatformResource() 
+    					? resource.getURI().lastSegment() 
+    							: resource.getURI() )) ;
 
 		// test if resource is unloaded
 		// this should not happen if finish button state is working properly
@@ -146,30 +148,33 @@ public class ReviewWizard extends Wizard {
 			return false;
 		}
 		
-	    try {
-	    	// write back to resource
-	        getContainer().run(false, true, new IRunnableWithProgress() {
-	          public void run(IProgressMonitor monitor)
-	            	throws InvocationTargetException, InterruptedException {
-	            monitor.beginTask("Saving proof file", 100);
+		// run in workspace modify
+		WorkspaceModifyOperation operation =
+			new WorkspaceModifyOperation() {
+				@Override
+				protected void execute(IProgressMonitor monitor) {
+		            monitor.beginTask("Exception saving proof file", 100);
 
-	            // compare memory copy with file copy to determine whether dirty
-	            monitor.worked(20);
-				Map options = new HashMap();
-				options.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Boolean.TRUE);
-				options.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED_FILE_BUFFER, Boolean.TRUE);
-				
-				monitor.worked(40);
-				try { 
-					resource.save(options);
-				} catch( IOException e ) {
-					CertWareLog.logError(message, e);
-					monitor.setCanceled(true);
+		            // compare memory copy with file copy to determine whether dirty
+		            monitor.worked(20);
+					Builder builder = SaveOptions.newBuilder();
+					builder.noValidation();
+					
+					monitor.worked(40);
+					try { 
+						resource.save( builder.getOptions().toOptionsMap() ); 
+					} catch( IOException e ) {
+						CertWareLog.logError(message, e);
+						monitor.setCanceled(true);
+					}
+		            
+		            monitor.done();
 				}
-	            
-	            monitor.done();
-	          }
-	        });
+		};
+
+    	// write back to resource
+	    try {
+	        getContainer().run(false, false, operation);
 	      } catch (Exception e) {
 				CertWareLog.logError(message, e);
 				ExceptionDetailsDialog dialog = 
@@ -180,12 +185,14 @@ public class ReviewWizard extends Wizard {
 							e, 
 							Activator.getDefault());
 				dialog.open();
-				return false;
+				return false; // rejected
 	      }
 
 	    CertWareLog.logInfo( MessageFormat.format("{0} {1}",
-	    		"Saved proof file", 
-	    		proof.getTitle() ));
+	    			"Saved proof file", 
+	    			( resource.getURI().isPlatformResource() 
+	    					? resource.getURI().lastSegment() 
+	    							: resource.getURI() )) );
 
 		return true; // accepted
 	}
@@ -206,24 +213,31 @@ public class ReviewWizard extends Wizard {
 		IFile ifile = (IFile)selection.getFirstElement();
 		if ( ifile.isAccessible() ) {
 		      ResourceSet resourceSet = new ResourceSetImpl();
-		      Resource resource = resourceSet.getResource( 
+		      resource = resourceSet.getResource( 
 		    		  URI.createPlatformResourceURI(ifile.getFullPath().toString(), true), true);
 		      proof = (Proof)resource.getContents().get(0);
 		      if ( proof == null ) {
-					String message = MessageFormat.format("Wizard found selected file is empty: {0}",ifile.getName());
+					String message = MessageFormat.format(
+							"Wizard found selected file is empty: {0}",
+							ifile.getName());
 					CertWareLog.logWarning(message);
 					MessageDialog.openWarning(getShell(), TITLE, message);
 					return;		    	  
 		      }
 		} else {
-			String message = MessageFormat.format("Wizard found selected file is not accessible: {0}",ifile.getName());
+			String message = MessageFormat.format(
+					"Wizard found selected file is not accessible: {0}",
+					ifile.getName());
 			CertWareLog.logWarning(message);
 			MessageDialog.openWarning(getShell(), TITLE, message);
 			return;
 		}
 	}
 
-
+	/**
+	 * Whether the wizard can finish.
+	 * @return the page completion state of the validation page
+	 */
 	@Override
 	public boolean canFinish() {
 		return pageValidate.isPageComplete();

@@ -50,6 +50,8 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	private ImageRegistry imageRegistry;
 	/** tree viewer */
 	private TreeViewer viewer;
+	/** model container */
+	private ModelContainer model;
 	
 	/**
 	 * Creates the scrolled properties block.
@@ -62,6 +64,10 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		setupPage = sp;
 		this.imageRegistry = Activator.getDefault().getImageRegistry();
 		this.proof = proof;
+		
+		// create a dummy container to serve as tree root
+		model = new ModelContainer();
+		model.proof = proof;
 	}
 
 	/**
@@ -81,6 +87,12 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		 */
 		public Object[] getElements(Object inputElement) {
 			
+			// model container provides proof
+			if ( inputElement instanceof ModelContainer ) {
+				ModelContainer mc = (ModelContainer)inputElement;
+				return new Object[] { mc.proof };
+			}
+			
 			// individual proof statements
 			if (inputElement instanceof Proof) {
 				Proof p = (Proof)inputElement;
@@ -88,8 +100,8 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 					return new Object[0];
 				}
 				return p.getProofSteps().getStatements().toArray();
-				// return new Object[] {p, p.getProofSteps().getStatements().toArray() };
 			}
+			
 			
 			return new Object[0];
 		}
@@ -171,7 +183,7 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 
 			if ( obj instanceof Proof ) {
 				Proof p = (Proof)obj;
-				return MessageFormat.format("{0}: {1}", "Proof", p.getTitle());
+				return MessageFormat.format("{0}: {1}", "Theorem:", p.getTitle());
 			}
 			
 			if ( obj instanceof Statement ) {
@@ -185,7 +197,6 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 							s.getId(), s.getStatement(), "epsilon");
 				}
 				return MessageFormat.format("{0}. {1}", s.getId(), s.getStatement());
-				// TODO do something with validation field
 			}
 
 			return obj.toString();
@@ -197,25 +208,21 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		 * @return image for proof, hypothesis, statement, or null
 		 */
 		public Image getImage(Object obj) {
+			
+			// proof image based on validation of statements
 			if ( obj instanceof Proof ) {
 				Proof p = (Proof)obj;
-				if ( ProofUtil.proofValidated(p)) {
-					return imageRegistry.get( Activator.REVIEW_VALID_IMAGE );
-				} else {
+				ValidationKind vk = ProofUtil.getProofValidationKind(p);
+				if ( vk == ValidationKind.INVALID )
 					return imageRegistry.get( Activator.REVIEW_INVALID_IMAGE );
-				}
-				// return proofImage;
+				if ( vk == ValidationKind.VALID )
+					return imageRegistry.get( Activator.REVIEW_VALID_IMAGE );
+				return imageRegistry.get( Activator.REVIEW_UNKNOWN_IMAGE );
 			}
 
+			// statement image based on its validation
 			if ( obj instanceof Statement ) {
 				Statement s = (Statement)obj;
-				/*
-				if ( ProofUtil.statementIsHypothesis(s) ) {
-					return hypothesisImage;
-				}
-				return statementImage;
-				*/
-				
 				if ( s.getValidation() != null ) {
 					if ( s.getValidation().getState().getValue() == ValidationKind.INVALID_VALUE ) {
 						return imageRegistry.get( Activator.REVIEW_INVALID_IMAGE );
@@ -303,7 +310,7 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 
 		viewer.setContentProvider(new MasterContentProvider());
 		viewer.setLabelProvider(new MasterLabelProvider());
-		viewer.setInput(proof);
+		viewer.setInput( model ); 
 		viewer.expandAll();
 	}
 
@@ -347,5 +354,8 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		detailsPart.registerPage(StatementImpl.class, new StatementDetailPage(proof,viewer,validatePage,setupPage));
 	}
 
+	class ModelContainer {
+		Proof proof;
+	}
 
 }

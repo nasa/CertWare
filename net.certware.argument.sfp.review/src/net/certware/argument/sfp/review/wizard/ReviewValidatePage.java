@@ -32,7 +32,7 @@ public class ReviewValidatePage extends WizardPage implements IHelpContext {
 	/** context provider for help system */
 	static ReviewContextProvider contextprovider = null;
 	/** page title */
-	static final String PAGE_TITLE = "CertWare Semi-Formal Proof Step";
+	static final String PAGE_TITLE = "CertWare Semi-Formal Proof Review";
 	/** page description */
 	static final String PAGE_DESCRIPTION = "Proof Statement Review";
 	/** proof to process */
@@ -45,15 +45,11 @@ public class ReviewValidatePage extends WizardPage implements IHelpContext {
 	ReviewSetupPage setupPage;
 	
 	/**
-	 * Constructor for the review wizard page.
+	 * Constructor for the review wizard validate page.
 	 * @param proof proof to review
-	 * @param toolkit 
+	 * @param toolkit form toolkit
+	 * @param setupPage associated setup page
 	 */
-	/*
-	public ReviewValidatePage(Proof proof, FormToolkit toolkit) {
-	}
-	*/
-
 	public ReviewValidatePage(Proof proof, FormToolkit toolkit,ReviewSetupPage setupPage) {
 		super("Proof Review Page");
 		setTitle(PAGE_TITLE);
@@ -74,13 +70,14 @@ public class ReviewValidatePage extends WizardPage implements IHelpContext {
 		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
     	ScrolledForm form = toolkit.createScrolledForm(composite);
     	IManagedForm managedForm = new ManagedForm(toolkit, form);
-    	form.setText("Statement Details");
+    	form.setText("Proof Statement Validation");
     	form.setLayoutData(new GridData(GridData.FILL_BOTH));
 
     	// block for the master-details pages
     	ScrolledPropertiesBlock block = new ScrolledPropertiesBlock(proof,this,setupPage);
     	block.createContent(managedForm);
 		
+		setMessage("Select a statement to review", DialogPage.INFORMATION);
 		setControl(composite);
 		setHelpContextIDs(composite);
 		setPageComplete(false);
@@ -122,22 +119,9 @@ public class ReviewValidatePage extends WizardPage implements IHelpContext {
 			IStructuredSelection iss = (IStructuredSelection)selectedNode;
 			if ( iss.isEmpty() == false ) {
 				Object firstElement = iss.getFirstElement();
-				
-				/*
-				if ( (firstElement instanceof ExampleCategory) == false ) {
-					setPageComplete(true);
-					setMessage("Select Finish to copy resources into workspace container",
-							DialogPage.INFORMATION);
-					selectedExample = (Example)firstElement;
-					return;
-				}
-				*/
-				
 			}
 		}
 
-		setMessage("Select a statement to review", DialogPage.INFORMATION);
-		setPageComplete(false);
 	}
 
 	/**

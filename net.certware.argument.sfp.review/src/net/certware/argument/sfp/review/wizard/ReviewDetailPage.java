@@ -61,7 +61,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	/** statement comment */
 	Label commentValue = null; 
 	/** details client */
-	Composite detailsClient = null;
+	Composite justificationsClient = null;
 	/** buttons client */
 	Composite buttonsClient = null;
 	/** input example to display */
@@ -90,7 +90,10 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	private ReviewSetupPage setupPage;
 	/** validate page method references */
 	private ReviewValidatePage validatePage;
-	
+	private Composite deductionClient;
+	private Section deductionSection;
+	private Section justificationsSection;
+
 	/**
 	 * Constructor saves the contributions for name search.
 	 * @param proof proof to display
@@ -101,7 +104,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		this.setupPage = setup;
 		this.validatePage = validate;
 		this.imageRegistry = Activator.getDefault().getImageRegistry();
-		// TODO determine what to set and display for hypothesis and epsilon validation
+
 		// TODO determine how to invalidate all dependent statements
 		// TODO disable buttons if any predecessor statement on details is invalid
 		// TODO disable button if statement already matches
@@ -122,37 +125,48 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		parent.setLayout(layout);
 
 		toolkit = mform.getToolkit();
-		Section s1 = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
-		s1.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
-		s1.setText("Statement Justification");
-		s1.setDescription("Whether the justifications support the deduction");
-		toolkit.createCompositeSeparator(s1);
+		
+		// justifications area
+		justificationsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		justificationsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		justificationsSection.setText("Statement Justifications");
+		justificationsSection.setDescription("");
+		toolkit.createCompositeSeparator(justificationsSection);
+		justificationsClient = toolkit.createComposite(justificationsSection);
+		TableWrapLayout jcl = new TableWrapLayout();
+		jcl.numColumns = 3;
+		justificationsClient.setLayout( jcl );
+		justificationsSection.setClient(justificationsClient);
 
-		detailsClient = toolkit.createComposite(s1);
+		// deduction area
+		deductionSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		deductionSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		deductionSection.setText("Statement Deduction");
+		deductionSection.setDescription("");
+		// toolkit.createCompositeSeparator(deductionSection);
+		deductionClient = toolkit.createComposite(deductionSection);
 		TableWrapLayout dcl = new TableWrapLayout();
 		dcl.numColumns = 3;
-		detailsClient.setLayout( dcl );
-
-		// header and data rows
-		populateHeader();
-		populateDetails();
-		s1.setClient(detailsClient);
-
+		deductionClient.setLayout( dcl );
+		deductionSection.setClient(deductionClient);
+		
 		// buttons area
-		buttonsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.NO_TITLE );
+		buttonsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR ); // Section.NO_TITLE );
 		buttonsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB ));
-		buttonsSection.setText("Validation"); // not used with this style
-
-		// buttons client, may have no children
+		buttonsSection.setText("Statement Validation"); 
+		buttonsSection.setDescription("");
 		buttonsClient = toolkit.createComposite(buttonsSection);
 		TableWrapLayout bcl = new TableWrapLayout();
 		bcl.makeColumnsEqualWidth = false;
-		bcl.numColumns = 7;
+		bcl.numColumns = 1;
 		buttonsClient.setLayout(bcl);
-
-		populateButtons();
-		
 		buttonsSection.setClient(buttonsClient);
+
+		populateJustifications();
+		populateDeduction();
+		populateButtons();
+
+		parent.setSize(300, 100);
 
 		// recover expanded state from the dialog settings store
 		/*
@@ -162,11 +176,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 			tsection = settings.addNewSection(REVIEW_PAGE_SETTINGS);
 		}
 		final IDialogSettings section = tsection;
-		 */
 
-		parent.setSize(300, 100);
-
-		/*
 		resourcesSection.setExpanded(section.getBoolean(RESOURCES_SECTION_STATE));
 		resourcesSection.addExpansionListener(new IExpansionListener(){
 			public void expansionStateChanged(ExpansionEvent e) {
@@ -178,33 +188,71 @@ public abstract class ReviewDetailPage implements IDetailsPage
 
 	}
 
+	/**
+	 * Marks the model as dirty.
+	 * Sets the page complete flag to true.
+	 */
 	private void markDirty() {
 		dirty = true;
+		validatePage.setPageComplete(true);
 	}
-	
+
+	/**
+	 * Update the validation element of the selected statement.
+	 * @param kind validation kind
+	 */
 	public void updateValidation( ValidationKind kind ) {
-		
+
 		if ( statement != null ) {
 			if ( statement.getValidation() == null ) {
 				statement.setValidation( SemiFormalProofFactory.eINSTANCE.createValidation() );
 			}
-			
+
 			// update the model
 			statement.getValidation().setState( kind );
-			statement.getValidation().setAuthor( setupPage.getAuthor() );
-			statement.getValidation().setTimeStamp( setupPage.getTimeStamp() );
-			
+			statement.getValidation().setAuthor( addQuotes( setupPage.getAuthor()) );
+			statement.getValidation().setTimeStamp( addQuotes( setupPage.getTimeStamp()) );
+
 			// update the details page to show the new author and time stamp
-			authorText.setText( setupPage.getAuthor() );
-			timeStampText.setText( setupPage.getTimeStamp() );
-			
+			authorText.setText( removeQuotes( setupPage.getAuthor() ) );
+			timeStampText.setText( removeQuotes( setupPage.getTimeStamp() ) );
+
 			// refresh labels on master and details pages
 			update(); 
 			viewer.refresh(); 
-			markDirty();
 		}
 	}
 
+	/**
+	 * Add quotation marks to a string for saving in the resource.
+	 * @param s string presumed not to have quotation mark as first character
+	 * @return s with quotation marks in first and last character, or s unchanged
+	 */
+	protected String addQuotes(String s) {
+		if ( s.charAt(0) != '"' )
+			return '"' + s + '"';
+		return s;
+	}
+
+	/**
+	 * Remove quotation marks from a string for display.
+	 * @param s string presumed to have quotation marks as first and last characters
+	 * @return s without first and last quotation marks, or s unchanged
+	 */
+	protected String removeQuotes(String s) {
+		if ( s != null && s.isEmpty() == false ) {
+			if ( s.charAt(0) == '"') {
+				return s.substring(1,s.length()-1);
+			}
+		}
+		
+		return s;
+	}
+	
+	/**
+	 * Get the author stored in the statement's validation record.
+	 * @return statement validation author
+	 */
 	public String getOriginalAuthor() {
 		if ( statement != null && statement.getValidation() != null ) {
 			return statement.getValidation().getAuthor();
@@ -212,6 +260,10 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		return "";
 	}
 
+	/**
+	 * Get the time stamp stored in the statement's validation record.
+	 * @return statement validation time stamp
+	 */
 	public String getOriginalTimeStamp() {
 		if ( statement != null && statement.getValidation() != null ) {
 			return statement.getValidation().getTimeStamp();
@@ -223,7 +275,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	 * Commit changes.  Unused.
 	 */
 	public void commit(boolean onSave) {
-		
+
 	}
 
 	/**
@@ -242,18 +294,18 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	/**
 	 * Populate the column header.
 	 */
-	private void populateHeader() {
-		Label idLabel = new Label(detailsClient, SWT.NONE);
+	private void populateHeader(Composite client) {
+		Label idLabel = new Label(client, SWT.NONE);
 		idLabel.setText("Valid");
 		idLabel.setFont(boldFont);
 		idLabel.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.MIDDLE));
 
-		Label bodyLabel = new Label(detailsClient, SWT.NONE);
+		Label bodyLabel = new Label(client, SWT.NONE);
 		bodyLabel.setText("Statement");
 		bodyLabel.setFont(boldFont);
 		bodyLabel.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.MIDDLE));
 
-		Label commentLabel = new Label(detailsClient, SWT.NONE);
+		Label commentLabel = new Label(client, SWT.NONE);
 		commentLabel.setText("Comment");
 		commentLabel.setFont(boldFont);
 		commentLabel.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.MIDDLE));
@@ -282,9 +334,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	/**
 	 * Populate the column rows.
 	 */
-	private void populateDetails() {
-
-		// TODO add help context content
+	private void populateJustifications() {
 
 		// show only the selected statement's justifications
 		if ( statement != null ) {
@@ -292,124 +342,185 @@ public abstract class ReviewDetailPage implements IDetailsPage
 			// find statement justifications, returned as list
 			EList<Statement> justifiers = ProofUtil.getStatementJustifications(proof, statement);
 
-			// show justifiers
-			for ( Statement s : justifiers ) {
-				displayStatementLine(s);
-			} // all justification statements
-
-			// 	skip a line
 			if ( justifiers.size() > 0 ) {
-				displayDeductionLine();
+				populateHeader(justificationsClient);
+
+				// show justifiers
+				for ( Statement s : justifiers ) {
+					displayStatementLine(justificationsClient,s);
+				}
 			}
 
-			// display the selected statement
-			displayStatementLine(statement);
-		}
-
-	}
-
-	private void populateButtons() {
-		EList<Statement> justifiers = ProofUtil.getStatementJustifications(proof, statement);
-		if ( justifiers.isEmpty() ) {
-			buttonsSection.setDescription("Statement requires no logic validation.");
+			// update section description
+			switch( justifiers.size() ) {
+			case 0: justificationsSection.setDescription("No justifications given"); break;
+			case 1: justificationsSection.setDescription("Statement justification:"); break;
+			default: justificationsSection.setDescription("Statement justifications:"); break;
+			}
+			
 		} else {
-			buttonsSection.setDescription("Validate the statement deduction:");
+			justificationsSection.setDescription("");
+		}
 
-			// buttons on the buttons client
-			validButton = toolkit.createButton(buttonsClient, "Valid", SWT.PUSH);
-			validButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
-			validButton.setImage( imageRegistry.get( Activator.REVIEW_VALID_IMAGE ));
-			validButton.addSelectionListener(new SelectionAdapter() {
-				public void widgetSelected(SelectionEvent e) {
-					updateValidation(ValidationKind.VALID);
-					updateButtons();
-				}
-			});
-			invalidButton = toolkit.createButton(buttonsClient, "Invalid", SWT.PUSH);
-			invalidButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
-			invalidButton.setImage( imageRegistry.get( Activator.REVIEW_INVALID_IMAGE ));
-			invalidButton.addSelectionListener(new SelectionAdapter() {
-				public void widgetSelected(SelectionEvent e) {
-					updateValidation(ValidationKind.INVALID);
-					updateButtons();
-				}
-			});
-			unknownButton = toolkit.createButton(buttonsClient, "Unknown", SWT.PUSH);
-			unknownButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
-			unknownButton.setImage( imageRegistry.get( Activator.REVIEW_UNKNOWN_IMAGE ));
-			unknownButton.addSelectionListener(new SelectionAdapter() {
-				public void widgetSelected(SelectionEvent e) {
-					updateValidation(ValidationKind.UNKNOWN);
-					updateButtons();
-				}
-			});
-			
-			toolkit.createLabel(buttonsClient,"Previous Author");
-			authorText = toolkit.createText(buttonsClient,getOriginalAuthor());
-			authorText.setEditable(false);
-			
-			toolkit.createLabel(buttonsClient,"Time Stamp");
-			timeStampText = toolkit.createText(buttonsClient, getOriginalTimeStamp());
-			timeStampText.setEditable(false);
-			
-			// set enabled states based on statement selection
-			updateButtons();
+	}
+
+	/**
+	 * Populate the deduction row.
+	 */
+	private void populateDeduction() {
+		if ( statement != null ) {
+			EList<Statement> justifiers = ProofUtil.getStatementJustifications(proof, statement);
+			if ( justifiers.isEmpty() ) {
+				deductionSection.setDescription("Assertion:");
+				buttonsSection.setDescription("Validate the assertion:");
+			} else {
+				deductionSection.setDescription("Deduction given the above justifications:");
+				buttonsSection.setDescription("Validate the deduction:");
+			}
+
+			populateHeader(deductionClient);
+			displayStatementLine(deductionClient,statement);
 		}
 	}
 	
-	private void updateButtons() {
-		if ( statement != null && statement.getValidation() != null ) {
-			if ( statement.getValidation().getState() == ValidationKind.INVALID ) {
-				invalidButton.setEnabled(false);
-				validButton.setEnabled(true);
-				unknownButton.setEnabled(true);
-			}
-			if ( statement.getValidation().getState() == ValidationKind.VALID ) {
-				invalidButton.setEnabled(true);
-				validButton.setEnabled(false);
-				unknownButton.setEnabled(true);
-			}
-			if ( statement.getValidation().getState() == ValidationKind.UNKNOWN ) {
-				invalidButton.setEnabled(true);
-				validButton.setEnabled(true);
-				unknownButton.setEnabled(false);
-			}
-			
-			// if any predecessors invalid, disable the valid button
-			if ( ProofUtil.justificationsValid(proof,statement) == false ) {
-				validButton.setEnabled(false);
-			}
-			
-			validatePage.setPageComplete(true);
-		}
-	}
 	
-	private void displayDeductionLine() {
-		Label s1 = toolkit.createLabel(detailsClient, "");
-		s1.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+	/**
+	 * Create the buttons row and validation reference row on their form clients.
+	 * Adds button listeners to update validation and button enabled states.
+	 */
+	private void populateButtons() {
+
+		// buttons composite row
+		Composite buttonsComposite = toolkit.createComposite(buttonsClient);
+		TableWrapLayout buttonsCompositeLayout = new TableWrapLayout();
+		buttonsCompositeLayout.makeColumnsEqualWidth = true;
+		buttonsCompositeLayout.numColumns = 3;
+		buttonsComposite.setLayout(buttonsCompositeLayout);
 		
-		Label s2 = toolkit.createLabel(detailsClient, "Whether the above justifies this statement:");
+		// author composite row
+		Composite authorComposite = toolkit.createComposite(buttonsClient);
+		TableWrapLayout authorCompositeLayout = new TableWrapLayout();
+		authorCompositeLayout.makeColumnsEqualWidth = false;
+		authorCompositeLayout.numColumns = 4;
+		authorComposite.setLayout(authorCompositeLayout);
+		
+		// buttons on the buttons client
+		validButton = toolkit.createButton(buttonsComposite, "Valid", SWT.PUSH);
+		validButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
+		validButton.setImage( imageRegistry.get( Activator.REVIEW_VALID_IMAGE ));
+		validButton.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(SelectionEvent e) {
+				updateValidation(ValidationKind.VALID);
+				updateButtons();
+			}
+		});
+		invalidButton = toolkit.createButton(buttonsComposite, "Invalid", SWT.PUSH);
+		invalidButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
+		invalidButton.setImage( imageRegistry.get( Activator.REVIEW_INVALID_IMAGE ));
+		invalidButton.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(SelectionEvent e) {
+				updateValidation(ValidationKind.INVALID);
+				updateButtons();
+			}
+		});
+		unknownButton = toolkit.createButton(buttonsComposite, "Unknown", SWT.PUSH);
+		unknownButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
+		unknownButton.setImage( imageRegistry.get( Activator.REVIEW_UNKNOWN_IMAGE ));
+		unknownButton.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(SelectionEvent e) {
+				updateValidation(ValidationKind.UNKNOWN);
+				updateButtons();
+			}
+		});
+
+		toolkit.createLabel(authorComposite,"Previous Author");
+		authorText = toolkit.createText(authorComposite,removeQuotes(getOriginalAuthor()));
+		authorText.setEditable(false);
+
+		toolkit.createLabel(authorComposite,"Time Stamp");
+		timeStampText = toolkit.createText(authorComposite, removeQuotes(getOriginalTimeStamp()));
+		timeStampText.setEditable(false);
+
+		// set enabled states based on statement selection
+		updateButtons();
+	}
+
+	/**
+	 * Update the enable states of the buttons based on validation kind.
+	 * Adds the validation object if not present in statement.
+	 */
+	private void updateButtons() {
+
+		if ( statement == null )
+			return;
+		
+		if ( statement.getValidation() == null ) {
+			statement.setValidation( SemiFormalProofFactory.eINSTANCE.createValidation() );
+		}
+
+		if ( statement.getValidation().getState() == ValidationKind.INVALID ) {
+			invalidButton.setEnabled(false);
+			validButton.setEnabled(true);
+			unknownButton.setEnabled(true);
+		}
+		if ( statement.getValidation().getState() == ValidationKind.VALID ) {
+			invalidButton.setEnabled(true);
+			validButton.setEnabled(false);
+			unknownButton.setEnabled(true);
+		}
+		if ( statement.getValidation().getState() == ValidationKind.UNKNOWN ) {
+			invalidButton.setEnabled(true);
+			validButton.setEnabled(true);
+			unknownButton.setEnabled(false);
+		}
+
+		// if any predecessors invalid, disable the valid button
+		if ( ProofUtil.justificationsValid(proof,statement) == false ) {
+			validButton.setEnabled(false);
+		}
+
+		markDirty();
+		validatePage.setPageComplete(true);
+	}
+
+	/**
+	 * Create the widgets for the deduction line header.
+	 */
+	/*
+	private void displayDeductionLine() {
+		
+		// text line
+		Label s1 = toolkit.createLabel(justificationsClient, "");
+		s1.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+
+		Label s2 = toolkit.createLabel(justificationsClient, "Whether the above justifies this statement:");
 		s2.setFont(boldFont);
 		s2.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
-		
-		Label s3 = toolkit.createLabel(detailsClient, "");
+
+		Label s3 = toolkit.createLabel(justificationsClient, "");
 		s3.setFont(boldFont);
 		s3.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
 	}
+	*/
 
-	private void displayStatementLine(Statement s) {
-		Label idValue = toolkit.createLabel(detailsClient,s.getId());
+	/**
+	 * Create the widgets for a statement line.
+	 * @param client client on which to add children
+	 * @param s statement to display
+	 */
+	private void displayStatementLine(Composite client, Statement s) {
+		Label idValue = toolkit.createLabel(client,s.getId());
 		idValue.setFont(normalFont);
 		idValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
 		idValue.setImage( getImageForStatement(s) );
 
-		FormText bodyValue = toolkit.createFormText(detailsClient, false);
+		FormText bodyValue = toolkit.createFormText(client, false);
 		bodyValue.setWhitespaceNormalized(true);
 		bodyValue.setText(s.getStatement(), false, false);
 		bodyValue.setFont(normalFont);
 		bodyValue.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
 
-		Label commentValue = toolkit.createLabel(detailsClient, ProofUtil.getStatementComment(s));
+		Label commentValue = toolkit.createLabel(client, ProofUtil.getStatementComment(s));
 		commentValue.setFont(normalFont);
 		commentValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
 	}
@@ -429,24 +540,13 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	}
 
 	/**
-	 * Is dirty from edits.  Unused.
-	 * @return always returns false
-	 */
-	/*
-	public boolean isDirty() {
-		System.err.println("checking dirty");
-		return false;
-	}
-	*/
-
-	/**
 	 * Whether the model is dirty.
 	 * @return true if changes were made to underlying model requiring save
 	 */
 	public boolean isDirty() {
 		return dirty;
 	}
-	
+
 	/**
 	 * Is stale from refresh.  Unused.
 	 * @return always returns false
@@ -477,23 +577,26 @@ public abstract class ReviewDetailPage implements IDetailsPage
 			return;
 
 		// clear previous data
-		clearClient(detailsClient);
+		clearClient(justificationsClient);
+		clearClient(deductionClient);
 		clearClient(buttonsClient);
 
 		// reload the clients
-		populateHeader();
-		populateDetails();
+		// populateHeader();
+		populateJustifications();
+		populateDeduction();
 		populateButtons();
 
 		// layout clients
-		detailsClient.getParent().layout(true, true);
+		justificationsSection.getParent().layout(true);
+		justificationsClient.getParent().layout(true, true);
+		deductionSection.getParent().layout(true, true);
+		deductionClient.getParent().layout(true, true);
 		buttonsSection.getParent().layout(true);
 		buttonsClient.getParent().layout(true, true);
 
 		mform.reflow(true);
-		// mform.getForm().layout(true); not helpful
-
-		setHelpContext(detailsClient);
+		setHelpContext(deductionClient);
 	}
 
 	/**
