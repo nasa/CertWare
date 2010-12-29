@@ -10,27 +10,18 @@ import net.certware.argument.sfp.util.ProofUtil;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jface.resource.FontDescriptor;
-import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Font;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormText;
-import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
@@ -41,45 +32,16 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
  * @author mrb
  * @since 1.0.3
  */
-public abstract class ReviewDetailPage implements IDetailsPage
+public abstract class ReviewDetailPage extends GenericDetailPage
 {
-	/** dialog settings section key */
-	static final String REVIEW_PAGE_SETTINGS = "REVIEW_PAGE_SETTINGS";
-	/** resources section key */
-	static final String RESOURCES_SECTION_STATE = "resources_section_state";
-
-	/** the form toolkit created by dialog host */
-	FormToolkit toolkit = null;
-	/** the managed form container */
-	IManagedForm mform = null;
-	/** bold font labels */
-	Font boldFont = null;
-	/** normal font for values */
-	Font normalFont = null;
-	/** statement id value */
-	Label idValue = null;
-	/** statement body text */
-	Text bodyValue = null;
-	/** statement comment */
-	Label commentValue = null; 
 	/** details client */
-	Composite premisesClient = null;
+	private Composite premisesClient = null;
 	/** buttons client */
-	Composite buttonsClient = null;
-	/** input example to display */
-	Statement statement;
-	/** proof for statements */
-	Proof proof;
-	/** image registry */
-	ImageRegistry imageRegistry;
+	private Composite buttonsClient = null;
 	/** author text */
 	private Text authorText;
 	/** time stamp text */
 	private Text timeStampText;
-	/** whether a save is necessary */
-	private boolean dirty;
-	/** viewer on master part to refresh */
-	TreeViewer viewer;
 	/** buttons layout section */
 	private Section buttonsSection;
 	/** proof valid button */
@@ -88,10 +50,6 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	private Button invalidButton;
 	/** proof unknown button */
 	private Button unknownButton;
-	/** setup page field references */
-	private ReviewSetupPage setupPage;
-	/** validate page method references */
-	private ReviewValidatePage validatePage;
 	/** client for inference statements */
 	private Composite inferenceClient;
 	/** section for inference client */
@@ -112,15 +70,11 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	 * @param proof proof to display
 	 */
 	public ReviewDetailPage(Proof proof,TreeViewer viewer, ReviewValidatePage validate, ReviewSetupPage setup) {
-		this.proof = proof;
-		this.viewer = viewer;
-		this.setupPage = setup;
-		this.validatePage = validate;
-		this.imageRegistry = Activator.getDefault().getImageRegistry();
-
+		super(proof,viewer,validate,setup);
 		// TODO determine how to invalidate all downstream statements
 		// TODO add a special 'set all unknown' button on setup page?
 		// TODO add an insert line command to the editor, inserting numbered line and renumbering those following?
+		// TODO fix the save resource on finish
 	}
 
 	/**
@@ -217,34 +171,6 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		populateButtons();
 
 		parent.setSize(300, 100);
-
-		// recover expanded state from the dialog settings store
-		/*
-		IDialogSettings settings = Activator.getDefault().getDialogSettings();
-		IDialogSettings tsection = settings.getSection(REVIEW_PAGE_SETTINGS);
-		if (tsection == null) {
-			tsection = settings.addNewSection(REVIEW_PAGE_SETTINGS);
-		}
-		final IDialogSettings section = tsection;
-
-		resourcesSection.setExpanded(section.getBoolean(RESOURCES_SECTION_STATE));
-		resourcesSection.addExpansionListener(new IExpansionListener(){
-			public void expansionStateChanged(ExpansionEvent e) {
-				section.put(RESOURCES_SECTION_STATE, e.getState() );
-			}
-			public void expansionStateChanging(ExpansionEvent e) {
-			}});
-		 */
-
-	}
-
-	/**
-	 * Marks the model as dirty.
-	 * Sets the page complete flag to true.
-	 */
-	private void markDirty() {
-		dirty = true;
-		validatePage.setPageComplete(true);
 	}
 
 	/**
@@ -276,32 +202,6 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	}
 
 	/**
-	 * Add quotation marks to a string for saving in the resource.
-	 * @param s string presumed not to have quotation mark as first character
-	 * @return s with quotation marks in first and last character, or s unchanged if first character already quote
-	 */
-	protected String addQuotes(String s) {
-		if ( s.charAt(0) != '"' )
-			return '"' + s + '"';
-		return s;
-	}
-
-	/**
-	 * Remove quotation marks from a string for display.
-	 * @param s string presumed to have quotation marks as first and last characters
-	 * @return s without first and last quotation marks, or s unchanged
-	 */
-	protected String removeQuotes(String s) {
-		if ( s != null && s.isEmpty() == false ) {
-			if ( s.charAt(0) == '"') {
-				return s.substring(1,s.length()-1);
-			}
-		}
-		
-		return s;
-	}
-	
-	/**
 	 * Get the author stored in the statement's validation record.
 	 * @return statement validation author
 	 */
@@ -321,68 +221,6 @@ public abstract class ReviewDetailPage implements IDetailsPage
 			return statement.getValidation().getTimeStamp();
 		}
 		return "";
-	}
-
-	/**
-	 * Commit changes.  Unused.
-	 */
-	public void commit(boolean onSave) {
-
-	}
-
-	/**
-	 * Clean up.  Dispose of fonts.  Write dialog settings back to plugin.
-	 */
-	public void dispose() {
-		if ( normalFont != null ) normalFont.dispose();
-		if ( boldFont != null ) boldFont.dispose();
-
-		// put values back into dialog store
-		//IDialogSettings settings = Activator.getDefault().getDialogSettings();
-		//IDialogSettings section = settings.getSection(REVIEW_PAGE_SETTINGS);
-		// section.put(RESOURCES_SECTION_STATE, resourcesSection.isExpanded());
-	}
-
-	/**
-	 * Populate the column header. 
-	 * Adds valid, statement, and comment labels.  Presumes table wrap layout.
-	 * @param client client composite to write onto
-	 */
-	private void populateHeader(Composite client) {
-		Label idLabel = new Label(client, SWT.NONE);
-		idLabel.setText("Valid");
-		idLabel.setFont(boldFont);
-		idLabel.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.MIDDLE));
-
-		Label bodyLabel = new Label(client, SWT.NONE);
-		bodyLabel.setText("Statement");
-		bodyLabel.setFont(boldFont);
-		bodyLabel.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.MIDDLE));
-
-		Label commentLabel = new Label(client, SWT.NONE);
-		commentLabel.setText("Comment");
-		commentLabel.setFont(boldFont);
-		commentLabel.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.MIDDLE));
-	}
-
-	/**
-	 * Gets the image to be associated with a statement in its label.
-	 * @param s statement
-	 * @return return image from image registry
-	 */
-	private Image getImageForStatement(Statement s) {
-
-		if ( s.getValidation() != null ) {
-			if ( s.getValidation().getState() == ValidationKind.INVALID ) {
-				return imageRegistry.get( Activator.REVIEW_INVALID_IMAGE );
-			}
-
-			if ( s.getValidation().getState() == ValidationKind.VALID ) {
-				return imageRegistry.get( Activator.REVIEW_VALID_IMAGE );
-			}
-		}
-
-		return imageRegistry.get( Activator.REVIEW_UNKNOWN_IMAGE );
 	}
 
 	/**
@@ -650,26 +488,6 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	}
 
 	/**
-	 * Create the widgets for the deduction line header.
-	 */
-	/*
-	private void displayDeductionLine() {
-		
-		// text line
-		Label s1 = toolkit.createLabel(justificationsClient, "");
-		s1.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
-
-		Label s2 = toolkit.createLabel(justificationsClient, "Whether the above justifies this statement:");
-		s2.setFont(boldFont);
-		s2.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
-
-		Label s3 = toolkit.createLabel(justificationsClient, "");
-		s3.setFont(boldFont);
-		s3.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
-	}
-	*/
-
-	/**
 	 * Create the widgets for an entailment line.
 	 * @param client client on which to add children
 	 * @param s statement to display
@@ -719,52 +537,9 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	}
 
 	/**
-	 * Initialize the page.  Create fonts.
-	 */
-	public void initialize(IManagedForm form) {
-		mform = form;
-
-		// create some fonts
-		FontDescriptor d = JFaceResources.getDefaultFontDescriptor();
-		d = d.setStyle(SWT.BOLD);
-		boldFont = new Font(form.getForm().getDisplay(),d.getFontData());
-		d = d.setStyle(SWT.NORMAL);
-		normalFont = new Font(form.getForm().getDisplay(),d.getFontData());
-	}
-
-	/**
-	 * Whether the model is dirty.
-	 * @return true if changes were made to underlying model requiring save
-	 */
-	public boolean isDirty() {
-		return dirty;
-	}
-
-	/**
-	 * Is stale from refresh.  Unused.
-	 * @return always returns false
-	 */
-	public boolean isStale() {
-		return false;
-	}
-
-	/**
-	 * Clears the client's children by disposal.
-	 * @param client client to clear, client remains viable
-	 */
-	private void clearClient(Composite client) {
-		if ( client != null ) {
-			for ( Control control : client.getChildren() ) {
-				control.dispose();
-			}
-			client.layout(true);
-		}
-	}
-
-	/**
 	 * Refreshes the page with new selection data.
 	 */
-	private void update() {
+	protected void update() {
 
 		if ( proof == null )
 			return;
@@ -809,20 +584,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	 * Sets the help context ID.
 	 * @param c control for help system reference
 	 */
-	abstract void setHelpContext(Control c);
-
-	/**
-	 * Refresh calls update.
-	 */
-	public void refresh() {
-		update();
-	}
-
-	/**
-	 * Sets the focus for editing.  Unused.
-	 */
-	public void setFocus() {
-	}
+	// abstract void setHelpContext(Control c);
 
 	/**
 	 * Sets the form input object to the given value.

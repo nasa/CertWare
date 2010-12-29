@@ -9,25 +9,16 @@ import net.certware.argument.sfp.util.ProofUtil;
 import net.certware.core.ui.help.IHelpContext;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.jface.resource.FontDescriptor;
-import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
-import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormText;
-import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
@@ -40,38 +31,12 @@ import org.eclipse.ui.help.IWorkbenchHelpSystem;
  * @author mrb
  * @since 1.0.3
  */
-public class ProofDetailPage implements IDetailsPage
+public class ProofDetailPage extends GenericDetailPage
 {
-	/** the form toolkit created by dialog host */
-	FormToolkit toolkit = null;
-	/** the managed form container */
-	IManagedForm mform = null;
-	/** bold font labels */
-	Font boldFont = null;
-	/** normal font for values */
-	Font normalFont = null;
-	/** statement id value */
-	Label idValue = null;
-	/** statement body text */
-	Text bodyValue = null;
-	/** statement comment */
-	Label commentValue = null; 
 	/** premises client */
 	Composite premisesClient = null;
 	/** entailments client */
 	Composite entailmentsClient = null;
-	/** proof for statements */
-	Proof proof;
-	/** image registry */
-	ImageRegistry imageRegistry;
-	/** viewer on master part to refresh */
-	TreeViewer viewer;
-	/** setup page field references */
-	@SuppressWarnings("unused")
-	private ReviewSetupPage setupPage;
-	/** validate page method references */
-	@SuppressWarnings("unused")
-	private ReviewValidatePage validatePage;
 	/** deduction client */
 	private Composite theoremClient;
 	/** deduction section */
@@ -89,12 +54,7 @@ public class ProofDetailPage implements IDetailsPage
 	 * @param setup review setup page
 	 */
 	public ProofDetailPage(Proof proof,TreeViewer viewer,ReviewValidatePage validate, ReviewSetupPage setup) {
-		this.proof = proof;
-		this.viewer = viewer;
-		this.validatePage = validate;
-		this.setupPage = setup;
-		this.imageRegistry = Activator.getDefault().getImageRegistry();
-
+		super(proof,viewer,validate,setup);
 	}
 	
 	/**
@@ -162,61 +122,6 @@ public class ProofDetailPage implements IDetailsPage
 		populateTheorem();
 
 		parent.setSize(300, 100);
-	}
-
-	/**
-	 * Commit changes.  Unused.
-	 */
-	public void commit(boolean onSave) {
-
-	}
-
-	/**
-	 * Clean up.  Dispose of fonts.  Write dialog settings back to plugin.
-	 */
-	public void dispose() {
-		if ( normalFont != null ) normalFont.dispose();
-		if ( boldFont != null ) boldFont.dispose();
-	}
-
-	/**
-	 * Populate the column header.
-	 */
-	private void populateHeader(Composite client) {
-		Label idLabel = new Label(client, SWT.NONE);
-		idLabel.setText("Valid");
-		idLabel.setFont(boldFont);
-		idLabel.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.MIDDLE));
-
-		Label bodyLabel = new Label(client, SWT.NONE);
-		bodyLabel.setText("Statement");
-		bodyLabel.setFont(boldFont);
-		bodyLabel.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.MIDDLE));
-
-		Label commentLabel = new Label(client, SWT.NONE);
-		commentLabel.setText(client == theoremClient ? "" : "Comment"); 
-		commentLabel.setFont(boldFont);
-		commentLabel.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.MIDDLE));
-	}
-
-	/**
-	 * Gets the image to be associated with a statement in its label.
-	 * @param s statement
-	 * @return return image from image registry
-	 */
-	private Image getImageForStatement(Statement s) {
-
-		if ( s.getValidation() != null ) {
-			if ( s.getValidation().getState() == ValidationKind.INVALID ) {
-				return imageRegistry.get( Activator.REVIEW_INVALID_IMAGE );
-			}
-
-			if ( s.getValidation().getState() == ValidationKind.VALID ) {
-				return imageRegistry.get( Activator.REVIEW_VALID_IMAGE );
-			}
-		}
-
-		return imageRegistry.get( Activator.REVIEW_UNKNOWN_IMAGE );
 	}
 
 	/**
@@ -422,53 +327,11 @@ public class ProofDetailPage implements IDetailsPage
 		commentValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
 	}
 
-	/**
-	 * Initialize the page.  Create fonts.
-	 */
-	public void initialize(IManagedForm form) {
-		mform = form;
-
-		// create some fonts
-		FontDescriptor d = JFaceResources.getDefaultFontDescriptor();
-		d = d.setStyle(SWT.BOLD);
-		boldFont = new Font(form.getForm().getDisplay(),d.getFontData());
-		d = d.setStyle(SWT.NORMAL);
-		normalFont = new Font(form.getForm().getDisplay(),d.getFontData());
-	}
-
-	/**
-	 * Whether the model is dirty.
-	 * @return always returns false
-	 */
-	public boolean isDirty() {
-		return false;
-	}
-
-	/**
-	 * Is stale from refresh.  Unused.
-	 * @return always returns false
-	 */
-	public boolean isStale() {
-		return false;
-	}
-
-	/**
-	 * Clears the client's children by disposal.
-	 * @param client client to clear, client remains viable
-	 */
-	private void clearClient(Composite client) {
-		if ( client != null ) {
-			for ( Control control : client.getChildren() ) {
-				control.dispose();
-			}
-			client.layout(true);
-		}
-	}
 
 	/**
 	 * Refreshes the page with new selection data.
 	 */
-	private void update() {
+	protected void update() {
 
 		if ( proof == null )
 			return;
@@ -496,24 +359,13 @@ public class ProofDetailPage implements IDetailsPage
 		setHelpContext(theoremClient);
 	}
 
-	/**
-	 * Refresh calls update.
-	 */
-	public void refresh() {
-		update();
-	}
-
-	/**
-	 * Sets the focus for editing.  Unused.
-	 */
-	public void setFocus() {
-	}
 
 	/**
 	 * Sets the form input object to the given value.
 	 * Expects a {@code Proof} object.
 	 * @return always returns false
 	 */
+	@Override
 	public boolean setFormInput(Object input) {
 		proof = (Proof)input;
 		return false;
@@ -524,6 +376,7 @@ public class ProofDetailPage implements IDetailsPage
 	 * Listener mapped to objects of the statement type.
 	 * Uses the first selected item.  Calls <code>update()</code>. 
 	 */
+	@Override
 	public void selectionChanged(IFormPart part, ISelection selection) {
 		IStructuredSelection ssel = (IStructuredSelection)selection;
 
@@ -536,21 +389,6 @@ public class ProofDetailPage implements IDetailsPage
 		} 
 		
 		update();
-	}
-
-	/**
-	 * Remove quotation marks from a string for display.
-	 * @param s string presumed to have quotation marks as first and last characters
-	 * @return s without first and last quotation marks, or s unchanged
-	 */
-	protected String removeQuotes(String s) {
-		if ( s != null && s.isEmpty() == false ) {
-			if ( s.charAt(0) == '"') {
-				return s.substring(1,s.length()-1);
-			}
-		}
-		
-		return s;
 	}
 
 	/**

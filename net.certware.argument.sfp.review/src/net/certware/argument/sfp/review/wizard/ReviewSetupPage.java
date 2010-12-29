@@ -3,15 +3,22 @@ package net.certware.argument.sfp.review.wizard;
 import java.util.Calendar;
 
 import net.certware.argument.sfp.semiFormalProof.Proof;
+import net.certware.argument.sfp.semiFormalProof.Statement;
+import net.certware.argument.sfp.semiFormalProof.ValidationKind;
 import net.certware.core.ui.help.IHelpContext;
+import net.certware.core.ui.log.CertWareLog;
 
 import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.dialogs.IDialogPage;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
@@ -25,7 +32,7 @@ import org.eclipse.ui.help.IWorkbenchHelpSystem;
 
 /**
  * Review wizard setup page.
- * Creates a master-details block with proof and statement details.
+ * Provides text fields for entering validation data.  
  * @author mrb
  * @since 1.0.3
  */
@@ -49,7 +56,8 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 	Text authorText;
 	/** time stamp text field */
 	Text timeStampText;
-	private Composite setupClient;
+	/** client composite for setup section */
+	Composite setupClient;
 	
 	/**
 	 * Constructor for the review wizard page.
@@ -134,8 +142,59 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 			}});
 		
 		
-		// control
+		// buttons section
+		Section s2 = toolkit.createSection(composite, Section.DESCRIPTION | Section.TITLE_BAR);
+		s2.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		s2.setText("Argument Model Validation Reset");
+		s2.setDescription("Optional actions to apply to the selected proof model prior to step-by-step validation");
+		toolkit.createCompositeSeparator(s2);
+
+		// buttons client
+		Composite buttonsClient = toolkit.createComposite(s2);
+		TableWrapLayout bcl = new TableWrapLayout();
+		bcl.makeColumnsEqualWidth = false;
+		bcl.numColumns = 5;
+		buttonsClient.setLayout( bcl );
+		buttonsClient.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		
+		toolkit.createLabel(buttonsClient, "");
+		
+		final Button b2 = toolkit.createButton(buttonsClient, "Set All Unknown...", SWT.PUSH);
+		b2.setLayoutData( new TableWrapData(TableWrapData.FILL,TableWrapData.MIDDLE));
+		b2.setToolTipText("Sets the validation state of all statements to unknown");
+		b2.addSelectionListener(new SelectionAdapter(){
+			public void widgetSelected(SelectionEvent se) {
+				if ( MessageDialog.openConfirm(getShell(), 
+						PAGE_TITLE, 
+						"Set all validation states to unknown?") ) {
+					setValidationUnknown();
+					b2.setEnabled(false);
+				}
+			}
+		});
+		
+		toolkit.createLabel(buttonsClient, "");
+		
+		final Button b4 = toolkit.createButton(buttonsClient, "Clear All Authors...", SWT.PUSH);
+		b4.setLayoutData( new TableWrapData(TableWrapData.FILL,TableWrapData.MIDDLE));
+		b4.setToolTipText("Sets the author and time stamp fields of all statements to empty");
+		b4.addSelectionListener(new SelectionAdapter(){
+			public void widgetSelected(SelectionEvent se) {
+				if ( MessageDialog.openConfirm(getShell(), 
+						PAGE_TITLE, 
+						"Clear all author and time stamp values?") ) {
+					setAuthorsUnknown();
+					b4.setEnabled(false);
+				}
+			}
+		});
+		
+		toolkit.createLabel(buttonsClient, "These actions commit only upon wizard finish");
+
+		// assign clients to sections
 		s1.setClient(setupClient);
+		s2.setClient(buttonsClient);
+		
 		setControl(composite);
 		setHelpContextIDs(composite);
 		setPageComplete(false);
@@ -144,6 +203,7 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 	/**
 	 * Set the context IDs for help system.  
 	 * Wait to call until site has been established.
+	 * @param control control widget to pass to help setup
 	 */
 	private void setHelpContextIDs(Control control) {
 		IWorkbenchHelpSystem helpSystem = PlatformUI.getWorkbench().getHelpSystem();
@@ -167,7 +227,7 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 	}
 
 	/**
-	 * Sets page complete if text fields completed.
+	 * Sets page complete if both text fields are not empty.
 	 */
 	public void setPageComplete() {
 		
@@ -181,7 +241,7 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 
 	/**
 	 * Get the author text field value.
-	 * @return text field value or null
+	 * @return text field value or empty string
 	 */
 	public String getAuthor() {
 		if ( authorText != null )
@@ -191,11 +251,40 @@ public class ReviewSetupPage extends WizardPage implements IHelpContext {
 	
 	/**
 	 * Get the time stamp text field value.
-	 * @return time stamp field value or null
+	 * @return time stamp field value or empty string
 	 */
 	public String getTimeStamp() {
 		if ( timeStampText != null )
 			return timeStampText.getText();
 		return "";
+	}
+	
+	/**
+	 * Sets all authors and time stamps to empty fields.
+	 */
+	protected void setAuthorsUnknown() {
+		if ( proof != null && proof.getProofSteps() != null ) {
+			for ( Statement s : proof.getProofSteps().getStatements() ) {
+				if ( s.getValidation() != null ) {
+					s.getValidation().setAuthor("");
+					s.getValidation().setTimeStamp("");
+				}
+			}
+			CertWareLog.logInfo("Set all validation authors to empty");
+		}
+	}
+	
+	/**
+	 * Sets all validation kinds to unknown.
+	 */
+	protected void setValidationUnknown() {
+		if ( proof != null && proof.getProofSteps() != null ) {
+			for ( Statement s : proof.getProofSteps().getStatements() ) {
+				if ( s.getValidation() != null ) {
+					s.getValidation().setState( ValidationKind.UNKNOWN );
+				}
+			}
+			CertWareLog.logInfo("Set all statement validations to unknown");
+		}
 	}
 }
