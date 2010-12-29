@@ -1,6 +1,7 @@
 package net.certware.argument.sfp.review.wizard;
 
 import net.certware.argument.sfp.review.Activator;
+import net.certware.argument.sfp.semiFormalProof.Entailment;
 import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.Statement;
 import net.certware.argument.sfp.semiFormalProof.ValidationKind;
@@ -55,8 +56,10 @@ public class ProofDetailPage implements IDetailsPage
 	Text bodyValue = null;
 	/** statement comment */
 	Label commentValue = null; 
-	/** details client */
-	Composite justificationsClient = null;
+	/** premises client */
+	Composite premisesClient = null;
+	/** entailments client */
+	Composite entailmentsClient = null;
 	/** proof for statements */
 	Proof proof;
 	/** image registry */
@@ -73,8 +76,10 @@ public class ProofDetailPage implements IDetailsPage
 	private Composite theoremClient;
 	/** deduction section */
 	private Section theoremSection;
-	/** justifications section */
-	private Section justificationsSection;
+	/** premises section */
+	private Section premisesSection;
+	/** entailments section */
+	private Section entailmentsSection;
 
 	/**
 	 * Detail page for proofs.
@@ -108,17 +113,38 @@ public class ProofDetailPage implements IDetailsPage
 
 		toolkit = mform.getToolkit();
 		
-		// justifications area
-		justificationsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
-		justificationsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
-		justificationsSection.setText("Theorem Justifications");
-		justificationsSection.setDescription("");
-		toolkit.createCompositeSeparator(justificationsSection);
-		justificationsClient = toolkit.createComposite(justificationsSection);
+		// instructions area
+		Section instructionsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		instructionsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		instructionsSection.setText("Theorem Justification");
+		toolkit.createCompositeSeparator(instructionsSection);
+		Composite instructionsClient = toolkit.createComposite(instructionsSection);
+		TableWrapLayout vcl = new TableWrapLayout();
+		vcl.numColumns = 1;
+		instructionsClient.setLayout( vcl );
+		instructionsSection.setClient(instructionsClient);
+
+		// premises area
+		premisesSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		premisesSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		premisesSection.setText("Premises");
+		premisesSection.setDescription("");
+		premisesClient = toolkit.createComposite(premisesSection);
 		TableWrapLayout jcl = new TableWrapLayout();
 		jcl.numColumns = 3;
-		justificationsClient.setLayout( jcl );
-		justificationsSection.setClient(justificationsClient);
+		premisesClient.setLayout( jcl );
+		premisesSection.setClient(premisesClient);
+
+		// entailments area
+		entailmentsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		entailmentsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		entailmentsSection.setText("Entailments");
+		entailmentsSection.setDescription("");
+		entailmentsClient = toolkit.createComposite(entailmentsSection);
+		TableWrapLayout ecl = new TableWrapLayout();
+		ecl.numColumns = 3;
+		entailmentsClient.setLayout( ecl );
+		entailmentsSection.setClient(entailmentsClient);
 
 		// theorem area
 		theoremSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
@@ -131,7 +157,8 @@ public class ProofDetailPage implements IDetailsPage
 		theoremClient.setLayout( dcl );
 		theoremSection.setClient(theoremClient);
 		
-		populateJustifications();
+		populatePremises();
+		populateEntailments();
 		populateTheorem();
 
 		parent.setSize(300, 100);
@@ -193,46 +220,141 @@ public class ProofDetailPage implements IDetailsPage
 	}
 
 	/**
-	 * Populate the column rows.
+	 * Populate the premises.
 	 */
-	private void populateJustifications() {
+	private void populatePremises() {
 
 		// show only the selected proof's justifications
 		if ( proof != null ) {
 
 			// find theorem justifications, returned as list
-			EList<Statement> justifiers = ProofUtil.getTheoremJustifications(proof);
+			EList<Statement> justifiers = ProofUtil.getTheoremPremises(proof);
 
 			if ( justifiers.size() > 0 ) {
-				populateHeader(justificationsClient);
+				populateHeader(premisesClient);
 
 				// show justifiers
 				for ( Statement s : justifiers ) {
-					displayStatementLine(justificationsClient,s);
+					displayStatementLine(premisesClient,s);
 				}
 			}
 
 			// update section description
 			switch( justifiers.size() ) {
-			case 0: justificationsSection.setDescription("No justifications given"); break;
-			case 1: justificationsSection.setDescription("Theorem justification:"); break;
-			default: justificationsSection.setDescription("Theorem justifications:"); break;
+			case 0: premisesSection.setDescription("");
+				premisesSection.setExpanded(false);
+				break;
+			case 1: premisesSection.setDescription("Theorem premise:");
+				premisesSection.setExpanded(true);
+			break;
+			default: premisesSection.setDescription("Theorem premises:");
+				premisesSection.setExpanded(true);
+				break;
 			}
 			
 		} else {
-			justificationsSection.setDescription("");
+			premisesSection.setDescription("");
+			premisesSection.setExpanded(false);
 		}
 
 	}
+	
+	/**
+	 * Populate the entailments.
+	 */
+	private void populateEntailments() {
+		if ( proof != null ) {
+			// find statement entailments, returned as list
+			EList<Entailment> entailments = ProofUtil.getTheoremEntailments(proof);
+
+			if ( entailments.size() > 0 ) {
+				populateHeader(entailmentsClient);
+
+				// show entailments
+				boolean firstPass = true;
+				for ( Entailment e : entailments ) {
+
+					// separator
+					if ( firstPass == false ) {
+						populateHeader(entailmentsClient);
+					}
+					
+					// entailment heads
+					EList<String> heads = ProofUtil.getHeadList(e);
+					
+					for ( String head : heads ) {
+						Statement es = ProofUtil.findStatement(proof, head);
+						if ( es != null ) {
+							displayStatementLine(entailmentsClient, es);
+						}
+					}
+					
+					// entailment tail
+					Statement ts = ProofUtil.findStatement(proof, e.getTail());
+					displayEntailmentLine(entailmentsClient,ts,heads.size()>1);
+					firstPass = false;
+				}
+			}
+
+			// update section description
+			switch( entailments.size() ) {
+				case 0: 
+					clearClient(entailmentsClient);
+					entailmentsSection.setExpanded(false);
+					break;
+				case 1: 
+					entailmentsSection.setDescription("Theorem entailment:");
+					entailmentsSection.setExpanded(true);
+					break;
+				default: 
+					entailmentsSection.setDescription("Theorem entailments:");
+					entailmentsSection.setExpanded(true);
+					break;
+			}
+			
+		} else {
+			clearClient(entailmentsClient);
+			entailmentsSection.setExpanded(false);
+		}
+	}
 
 	/**
-	 * Populate the deduction row.
+	 * Create the widgets for an entailment line.
+	 * @param client client on which to add children
+	 * @param s statement to display
+	 * @param plural whether there is more than one head item
+	 */
+	private void displayEntailmentLine(Composite client, Statement s, boolean plural) {
+
+		// first row, show entailment signal
+		Label c1 = toolkit.createLabel(client,"");
+		c1.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+		c1.setImage( imageRegistry.get( Activator.REVIEW_ENTAILMENT_IMAGE ) );
+
+		Label c2 = toolkit.createLabel(client, plural ? "Imply" : "Implies");
+		c2.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+
+		Label c3 = toolkit.createLabel(client,"");
+		c3.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+
+		// next row, display the statement content
+		displayStatementLine(client,s);
+	}
+	
+	/**
+	 * Populate the theorem row.
 	 */
 	private void populateTheorem() {
 		if ( proof != null ) {
-			EList<Statement> justifiers = ProofUtil.getTheoremJustifications(proof);
-			if ( justifiers.isEmpty() ) {
+			EList<Statement> premises = ProofUtil.getTheoremPremises(proof);
+			EList<Entailment> entailments = ProofUtil.getTheoremEntailments(proof);
+
+			if ( premises.isEmpty() && entailments.isEmpty() ) {
 				theoremSection.setDescription("Theorem:");
+			} else if ( premises.isEmpty() ) {
+				theoremSection.setDescription("Theorem given the above entailments:");
+			} else if ( entailments.isEmpty() ) {
+				theoremSection.setDescription("Theorem given the above premises:");
 			} else {
 				theoremSection.setDescription("Theorem given the above justifications:");
 			}
@@ -254,7 +376,7 @@ public class ProofDetailPage implements IDetailsPage
 
 		FormText bodyValue = toolkit.createFormText(client, false);
 		bodyValue.setWhitespaceNormalized(true);
-		bodyValue.setText(proof.getTitle(), false, false);
+		bodyValue.setText( removeQuotes(proof.getTitle()), false, false);
 		bodyValue.setFont(normalFont);
 		bodyValue.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
 
@@ -286,12 +408,14 @@ public class ProofDetailPage implements IDetailsPage
 		idValue.setFont(normalFont);
 		idValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
 		idValue.setImage( getImageForStatement(s) );
+		idValue.setToolTipText( s.getId() );
 
 		FormText bodyValue = toolkit.createFormText(client, false);
 		bodyValue.setWhitespaceNormalized(true);
-		bodyValue.setText(s.getStatement(), false, false);
+		bodyValue.setText( removeQuotes(s.getStatement()), false, false);
 		bodyValue.setFont(normalFont);
 		bodyValue.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
+		bodyValue.setToolTipText( s.getId() + ' ' + s.getStatement() );
 
 		Label commentValue = toolkit.createLabel(client, ProofUtil.getStatementComment(s));
 		commentValue.setFont(normalFont);
@@ -350,17 +474,21 @@ public class ProofDetailPage implements IDetailsPage
 			return;
 
 		// clear previous data
-		clearClient(justificationsClient);
+		clearClient(premisesClient);
+		clearClient(entailmentsClient);
 		clearClient(theoremClient);
 
 		// reload the clients
 		// populateHeader();
-		populateJustifications();
+		populatePremises();
+		populateEntailments();
 		populateTheorem();
 
 		// layout clients
-		justificationsSection.getParent().layout(true);
-		justificationsClient.getParent().layout(true, true);
+		premisesSection.getParent().layout(true);
+		premisesClient.getParent().layout(true, true);
+		entailmentsSection.getParent().layout(true);
+		entailmentsClient.getParent().layout(true, true);
 		theoremSection.getParent().layout(true, true);
 		theoremClient.getParent().layout(true, true);
 
@@ -408,6 +536,21 @@ public class ProofDetailPage implements IDetailsPage
 		} 
 		
 		update();
+	}
+
+	/**
+	 * Remove quotation marks from a string for display.
+	 * @param s string presumed to have quotation marks as first and last characters
+	 * @return s without first and last quotation marks, or s unchanged
+	 */
+	protected String removeQuotes(String s) {
+		if ( s != null && s.isEmpty() == false ) {
+			if ( s.charAt(0) == '"') {
+				return s.substring(1,s.length()-1);
+			}
+		}
+		
+		return s;
 	}
 
 	/**

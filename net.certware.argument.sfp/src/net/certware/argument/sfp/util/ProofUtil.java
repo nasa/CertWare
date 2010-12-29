@@ -203,51 +203,112 @@ public class ProofUtil {
 	}
 
 	/**
-	 * Get a list of statements given as justifications for a given statement.
+	 * Get a list of statements given as premises for a given statement.
 	 * @param p proof to search for statement references
 	 * @param s statement containing justifications
 	 * @return statement list, numeral references only (for now)
 	 */
-	public static EList<Statement> getStatementJustifications(Proof p, Statement s) {
-		EList<Statement> dependencies = new BasicEList<Statement>();
+	public static EList<Statement> getStatementPremises(Proof p, Statement s) {
+		EList<Statement> premises = new BasicEList<Statement>();
 
 		if ( statementIsHypothesis(s) )
-			return dependencies;
+			return premises;
 		
-		if ( statementIsEpsilon(s))
-			return dependencies;
+		if ( statementIsEpsilon(s) )
+			return premises;
+		
 		
 		if ( s != null && s.getJustification() != null && s.getJustification().getJustifications().isEmpty() == false ) {
 
-			// TODO determine what to do with entailment
+			// returns only the list of numeral statement references as inference premises, not entailment for deduction
 			for ( Justification j : s.getJustification().getJustifications() ) {
 				if ( j.getNumeral() != null ) {
 					Statement rs = findStatement( p, j.getNumeral() );
 					if ( rs != null )
-						dependencies.add(rs);
+						premises.add(rs);
 				}
 			}
 		}
-		return dependencies;
+		return premises;
 	}
 	
+
+	/**
+	 * Get the entailments element for a deduction statement.
+	 * @param s statement to search for entailment justifications.
+	 * @return entailment list
+	 */
+	public static EList<Entailment> getStatementEntailments(Statement s) {
+		EList<Entailment> entailments = new BasicEList<Entailment>();
+		
+		if ( s != null && s.getJustification() != null ) {
+			for ( Justification j : s.getJustification().getJustifications() ) {
+				if ( j.getEntailment() != null ) {
+					entailments.add( j.getEntailment() );
+				}
+			}
+		}
+		
+		return entailments;
+	}
+
+	/**
+	 * Get the entailment elements for a theorem statement.
+	 * @param s statement to search for entailment justifications.
+	 * @return entailment list
+	 */
+	public static EList<Entailment> getTheoremEntailments(Proof p) {
+		EList<Entailment> entailments = new BasicEList<Entailment>();
+		
+		if ( p != null && p.getJustifications() != null ) {
+			for ( Justification j : p.getJustifications().getJustifications() ) {
+				if ( j.getEntailment() != null ) {
+					entailments.add( j.getEntailment() );
+				}
+			}
+		}
+		
+		return entailments;
+	}
+
 	/**
 	 * Get a list of statements given as justifications for the theorem.
+	 * Includes each justification given as an inference (numeral).
 	 * @param p proof to search for statement references
-	 * @return statement list, numeral references only (for now)
+	 * @return statement list from proof, not showing any missing statements from invalid references
 	 */
-	public static EList<Statement> getTheoremJustifications(Proof p) {
+	public static EList<Statement> getTheoremPremises(Proof p) {
 		EList<Statement> justifications = new BasicEList<Statement>();
 		
 		if ( p != null && p.getJustifications() != null ) {
-			// TODO determine what to do with entailment
 			for ( Justification j : p.getJustifications().getJustifications() ) {
+				// inference statements
 				if ( j.getNumeral() != null ) {
 					Statement rs = findStatement( p, j.getNumeral() );
 					if ( rs != null )
 						justifications.add(rs);
+				} 
+				/*
+				else 
+					// entailment statements
+					if ( j.getEntailment() != null ) {
+						EList<String> heads = getHeadList(j.getEntailment());
+
+						// add head elements
+						for ( String head : heads ) {
+							Statement hs = findStatement(p, head);
+							if ( hs != null )
+								justifications.add(hs);
+						}
+						
+						// add tail
+						Statement ts = findStatement( p, j.getEntailment().getTail() );
+						if ( ts != null )
+							justifications.add(ts);
+						
 				}
-			}
+				*/
+			} // for justifications
 		}
 		
 		return justifications;
@@ -260,7 +321,7 @@ public class ProofUtil {
 	 * @return false if any justification statement is invalid
 	 */
 	public static boolean justificationsValid(Proof p, Statement s) {
-		EList<Statement> dependencies = getStatementJustifications(p,s);
+		EList<Statement> dependencies = getStatementPremises(p,s);
 		for ( Statement j : dependencies ) {
 			if ( j.getValidation() != null && j.getValidation().getState() == ValidationKind.INVALID )
 				return false;

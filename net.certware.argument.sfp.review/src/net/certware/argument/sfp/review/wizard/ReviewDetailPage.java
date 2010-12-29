@@ -1,6 +1,7 @@
 package net.certware.argument.sfp.review.wizard;
 
 import net.certware.argument.sfp.review.Activator;
+import net.certware.argument.sfp.semiFormalProof.Entailment;
 import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofFactory;
 import net.certware.argument.sfp.semiFormalProof.Statement;
@@ -35,7 +36,8 @@ import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
 
 /**
- * A generic example page to be extended by specific proof classes.
+ * A generic statement details page.  
+ * Most logic contained here.  Sub-classes add help context.
  * @author mrb
  * @since 1.0.3
  */
@@ -61,7 +63,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	/** statement comment */
 	Label commentValue = null; 
 	/** details client */
-	Composite justificationsClient = null;
+	Composite premisesClient = null;
 	/** buttons client */
 	Composite buttonsClient = null;
 	/** input example to display */
@@ -90,9 +92,20 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	private ReviewSetupPage setupPage;
 	/** validate page method references */
 	private ReviewValidatePage validatePage;
-	private Composite deductionClient;
+	/** client for inference statements */
+	private Composite inferenceClient;
+	/** section for inference client */
+	private Section inferenceSection;
+	/** section for justifications client */
+	private Section premisesSection;
+	/** section for entailments */
+	private Section entailmentsSection;
+	/** client for entailment section */
+	private Composite entailmentsClient;
+	/** section for deduction */
 	private Section deductionSection;
-	private Section justificationsSection;
+	/** client for deduction section */
+	private Composite deductionClient;
 
 	/**
 	 * Constructor saves the contributions for name search.
@@ -105,17 +118,18 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		this.validatePage = validate;
 		this.imageRegistry = Activator.getDefault().getImageRegistry();
 
-		// TODO determine how to invalidate all dependent statements
-		// TODO disable buttons if any predecessor statement on details is invalid
-		// TODO disable button if statement already matches
+		// TODO determine how to invalidate all downstream statements
+		// TODO add a special 'set all unknown' button on setup page?
+		// TODO add an insert line command to the editor, inserting numbered line and renumbering those following?
 	}
 
 	/**
 	 * Creates the initial page structure before values available.
-	 * @param parent page
+	 * @param parent details page of scrolled block
 	 */
 	public void createContents(Composite parent)
 	{
+		// put a table wrap layout onto the scrolled block area for the details pages
 		TableWrapLayout layout = new TableWrapLayout();
 		layout.topMargin = 5;
 		layout.leftMargin = 5;
@@ -125,35 +139,68 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		parent.setLayout(layout);
 
 		toolkit = mform.getToolkit();
-		
-		// justifications area
-		justificationsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
-		justificationsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
-		justificationsSection.setText("Statement Justifications");
-		justificationsSection.setDescription("");
-		toolkit.createCompositeSeparator(justificationsSection);
-		justificationsClient = toolkit.createComposite(justificationsSection);
-		TableWrapLayout jcl = new TableWrapLayout();
-		jcl.numColumns = 3;
-		justificationsClient.setLayout( jcl );
-		justificationsSection.setClient(justificationsClient);
 
+		// instructions area
+		Section instructionsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		instructionsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		instructionsSection.setText("Statement Validation");
+		instructionsSection.setDescription("Evaluate the statement's validity according to its logical elements below:");
+		toolkit.createCompositeSeparator(instructionsSection);
+		Composite instructionsClient = toolkit.createComposite(instructionsSection);
+		TableWrapLayout vcl = new TableWrapLayout();
+		vcl.numColumns = 1;
+		instructionsClient.setLayout( vcl );
+		instructionsSection.setClient(instructionsClient);
+		
+		// premises area
+		premisesSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		premisesSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		premisesSection.setText("Premises");
+		premisesSection.setDescription("");
+		premisesClient = toolkit.createComposite(premisesSection);
+		TableWrapLayout pcl = new TableWrapLayout();
+		pcl.numColumns = 3;
+		premisesClient.setLayout( pcl );
+		premisesSection.setClient(premisesClient);
+
+		// inference area
+		inferenceSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		inferenceSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		inferenceSection.setText("Inference");
+		inferenceSection.setDescription("");
+		inferenceClient = toolkit.createComposite(inferenceSection);
+		TableWrapLayout icl = new TableWrapLayout();
+		icl.numColumns = 3;
+		inferenceClient.setLayout( icl );
+		inferenceSection.setClient(inferenceClient);
+		
+		// entailment area
+		entailmentsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
+		entailmentsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
+		entailmentsSection.setText("Entailments");
+		entailmentsSection.setDescription("");
+		entailmentsClient = toolkit.createComposite(entailmentsSection);
+		TableWrapLayout ecl = new TableWrapLayout();
+		ecl.numColumns = 3;
+		entailmentsClient.setLayout( ecl );
+		entailmentsSection.setClient(entailmentsClient);
+		
 		// deduction area
 		deductionSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR);
 		deductionSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB));
-		deductionSection.setText("Statement Deduction");
+		deductionSection.setText("Deduction");
 		deductionSection.setDescription("");
-		// toolkit.createCompositeSeparator(deductionSection);
 		deductionClient = toolkit.createComposite(deductionSection);
 		TableWrapLayout dcl = new TableWrapLayout();
 		dcl.numColumns = 3;
 		deductionClient.setLayout( dcl );
 		deductionSection.setClient(deductionClient);
 		
+		
 		// buttons area
 		buttonsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR ); // Section.NO_TITLE );
 		buttonsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.FILL_GRAB ));
-		buttonsSection.setText("Statement Validation"); 
+		buttonsSection.setText("Validation"); 
 		buttonsSection.setDescription("");
 		buttonsClient = toolkit.createComposite(buttonsSection);
 		TableWrapLayout bcl = new TableWrapLayout();
@@ -162,7 +209,10 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		buttonsClient.setLayout(bcl);
 		buttonsSection.setClient(buttonsClient);
 
-		populateJustifications();
+		// populate the sections with latest selections
+		populatePremises();
+		populateInference();
+		populateEntailments();
 		populateDeduction();
 		populateButtons();
 
@@ -199,6 +249,8 @@ public abstract class ReviewDetailPage implements IDetailsPage
 
 	/**
 	 * Update the validation element of the selected statement.
+	 * Adds validation kind, author, and time stamp to the validation entry.
+	 * Creates the validation element if it is missing.
 	 * @param kind validation kind
 	 */
 	public void updateValidation( ValidationKind kind ) {
@@ -226,7 +278,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	/**
 	 * Add quotation marks to a string for saving in the resource.
 	 * @param s string presumed not to have quotation mark as first character
-	 * @return s with quotation marks in first and last character, or s unchanged
+	 * @return s with quotation marks in first and last character, or s unchanged if first character already quote
 	 */
 	protected String addQuotes(String s) {
 		if ( s.charAt(0) != '"' )
@@ -292,7 +344,9 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	}
 
 	/**
-	 * Populate the column header.
+	 * Populate the column header. 
+	 * Adds valid, statement, and comment labels.  Presumes table wrap layout.
+	 * @param client client composite to write onto
 	 */
 	private void populateHeader(Composite client) {
 		Label idLabel = new Label(client, SWT.NONE);
@@ -332,57 +386,163 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	}
 
 	/**
-	 * Populate the column rows.
+	 * Populate the premise rows.
 	 */
-	private void populateJustifications() {
+	private void populatePremises() {
 
 		// show only the selected statement's justifications
 		if ( statement != null ) {
 
 			// find statement justifications, returned as list
-			EList<Statement> justifiers = ProofUtil.getStatementJustifications(proof, statement);
+			EList<Statement> premises = ProofUtil.getStatementPremises(proof, statement);
 
-			if ( justifiers.size() > 0 ) {
-				populateHeader(justificationsClient);
+			if ( premises.size() > 0 ) {
+				populateHeader(premisesClient);
 
 				// show justifiers
-				for ( Statement s : justifiers ) {
-					displayStatementLine(justificationsClient,s);
+				for ( Statement s : premises ) {
+					displayStatementLine(premisesClient,s);
 				}
 			}
 
 			// update section description
-			switch( justifiers.size() ) {
-			case 0: justificationsSection.setDescription("No justifications given"); break;
-			case 1: justificationsSection.setDescription("Statement justification:"); break;
-			default: justificationsSection.setDescription("Statement justifications:"); break;
+			switch( premises.size() ) {
+				case 0: premisesSection.setDescription("No premises given."); 
+				premisesSection.setExpanded(false); 
+				break;
+				case 1: premisesSection.setDescription("Inference Premise:"); 
+				premisesSection.setExpanded(true); 
+				break;
+				default: premisesSection.setDescription("Inference Premises:"); 
+				premisesSection.setExpanded(true); 
+				break;
 			}
 			
 		} else {
-			justificationsSection.setDescription("");
+			//premisesSection.setDescription("");
+			clearClient(premisesClient);
+			premisesSection.setExpanded(false);
 		}
 
 	}
 
 	/**
+	 * Populate the entailment rows.
+	 */
+	private void populateEntailments() {
+
+		// show only the selected statement's entailments
+		if ( statement != null ) {
+
+			// find statement entailments, returned as list
+			EList<Entailment> entailments = ProofUtil.getStatementEntailments(statement);
+
+			if ( entailments.size() > 0 ) {
+				populateHeader(entailmentsClient);
+
+				// show entailments
+				boolean firstPass = true;
+				for ( Entailment e : entailments ) {
+
+					// separator
+					if ( firstPass == false ) {
+						populateHeader(entailmentsClient);
+					}
+					
+					// entailment heads
+					EList<String> heads = ProofUtil.getHeadList(e);
+					
+					for ( String head : heads ) {
+						Statement es = ProofUtil.findStatement(proof, head);
+						if ( es != null ) {
+							displayStatementLine(entailmentsClient, es);
+						}
+					}
+					
+					// entailment tail
+					Statement ts = ProofUtil.findStatement(proof, e.getTail());
+					displayEntailmentLine(entailmentsClient,ts,heads.size()>1);
+					firstPass = false;
+				}
+			}
+
+			// update section description
+			switch( entailments.size() ) {
+				case 0: 
+					clearClient(entailmentsClient);
+					entailmentsSection.setExpanded(false);
+					break;
+				case 1: 
+					entailmentsSection.setDescription("Deduction entailment:");
+					entailmentsSection.setExpanded(true);
+					break;
+				default: 
+					entailmentsSection.setDescription("Deduction entailments:");
+					entailmentsSection.setExpanded(true);
+					break;
+			}
+			
+		} else {
+			clearClient(entailmentsClient);
+			entailmentsSection.setExpanded(false);
+		}
+		
+	}
+	
+	
+	/**
+	 * Populate the inference row.
+	 */
+	private void populateInference() {
+		if ( statement != null ) {
+			
+			EList<Statement> premises = ProofUtil.getStatementPremises(proof, statement);
+			EList<Entailment> entailments = ProofUtil.getStatementEntailments(statement);
+			
+			if ( premises.isEmpty() ) {
+				if ( entailments.isEmpty() == false ) {
+					inferenceSection.setDescription("Deduction:");
+				} else if ( ProofUtil.statementIsEpsilon(statement)) {
+					inferenceSection.setDescription("Empty set");
+				} else if ( ProofUtil.statementIsHypothesis(statement)) {
+					inferenceSection.setDescription("Hypothesis:");
+				} else {
+					inferenceSection.setDescription("Definition:");
+				}
+			} else {
+				inferenceSection.setDescription("Inference given the above premises:");
+			}
+
+			populateHeader(inferenceClient);
+			displayStatementLine(inferenceClient,statement);
+			
+			inferenceSection.setExpanded(true);
+		} else {
+			inferenceSection.setExpanded(false);
+		}
+	}
+	
+	/**
 	 * Populate the deduction row.
 	 */
 	private void populateDeduction() {
 		if ( statement != null ) {
-			EList<Statement> justifiers = ProofUtil.getStatementJustifications(proof, statement);
-			if ( justifiers.isEmpty() ) {
-				deductionSection.setDescription("Assertion:");
-				buttonsSection.setDescription("Validate the assertion:");
+			
+			EList<Entailment> entailments = ProofUtil.getStatementEntailments(statement);
+			if ( entailments.isEmpty() ) {
+				clearClient(deductionClient);
+				deductionSection.setExpanded(false);
 			} else {
-				deductionSection.setDescription("Deduction given the above justifications:");
-				buttonsSection.setDescription("Validate the deduction:");
+				deductionSection.setDescription("Deduction given the above entailments:");
+				deductionSection.setExpanded(true);
 			}
-
+			
 			populateHeader(deductionClient);
 			displayStatementLine(deductionClient,statement);
+		} else {
+			deductionSection.setExpanded(false);
 		}
 	}
-	
 	
 	/**
 	 * Create the buttons row and validation reference row on their form clients.
@@ -433,6 +593,7 @@ public abstract class ReviewDetailPage implements IDetailsPage
 			}
 		});
 
+		// add labels made from validation setup fields
 		toolkit.createLabel(authorComposite,"Previous Author");
 		authorText = toolkit.createText(authorComposite,removeQuotes(getOriginalAuthor()));
 		authorText.setEditable(false);
@@ -440,6 +601,11 @@ public abstract class ReviewDetailPage implements IDetailsPage
 		toolkit.createLabel(authorComposite,"Time Stamp");
 		timeStampText = toolkit.createText(authorComposite, removeQuotes(getOriginalTimeStamp()));
 		timeStampText.setEditable(false);
+
+		// update description
+		if ( statement != null ) {
+			buttonsSection.setDescription("Validate the statement:");
+		}
 
 		// set enabled states based on statement selection
 		updateButtons();
@@ -504,25 +670,52 @@ public abstract class ReviewDetailPage implements IDetailsPage
 	*/
 
 	/**
+	 * Create the widgets for an entailment line.
+	 * @param client client on which to add children
+	 * @param s statement to display
+	 * @param plural whether there is more than one head item
+	 */
+	private void displayEntailmentLine(Composite client, Statement s, boolean plural) {
+
+		// first row, show entailment signal
+		Label c1 = toolkit.createLabel(client,"");
+		c1.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+		c1.setImage( imageRegistry.get( Activator.REVIEW_ENTAILMENT_IMAGE ) );
+
+		Label c2 = toolkit.createLabel(client, plural ? "Imply" : "Implies");
+		c2.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+
+		Label c3 = toolkit.createLabel(client,"");
+		c3.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+
+		// next row, display the statement content
+		displayStatementLine(client,s);
+	}
+	
+	/**
 	 * Create the widgets for a statement line.
 	 * @param client client on which to add children
 	 * @param s statement to display
 	 */
 	private void displayStatementLine(Composite client, Statement s) {
+		
 		Label idValue = toolkit.createLabel(client,s.getId());
 		idValue.setFont(normalFont);
 		idValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
 		idValue.setImage( getImageForStatement(s) );
+		idValue.setToolTipText( s.getId() );
 
 		FormText bodyValue = toolkit.createFormText(client, false);
 		bodyValue.setWhitespaceNormalized(true);
-		bodyValue.setText(s.getStatement(), false, false);
+		bodyValue.setText( removeQuotes(s.getStatement()) , false, false);
 		bodyValue.setFont(normalFont);
 		bodyValue.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
+		bodyValue.setToolTipText( s.getId() + ' ' + s.getStatement() );
 
 		Label commentValue = toolkit.createLabel(client, ProofUtil.getStatementComment(s));
 		commentValue.setFont(normalFont);
 		commentValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
+		commentValue.setToolTipText( commentValue.getText() );
 	}
 
 	/**
@@ -577,26 +770,39 @@ public abstract class ReviewDetailPage implements IDetailsPage
 			return;
 
 		// clear previous data
-		clearClient(justificationsClient);
+		clearClient(premisesClient);
+		clearClient(inferenceClient);
+		clearClient(entailmentsClient);
 		clearClient(deductionClient);
 		clearClient(buttonsClient);
 
 		// reload the clients
 		// populateHeader();
-		populateJustifications();
+		populatePremises();
+		populateInference();
+		populateEntailments();
 		populateDeduction();
 		populateButtons();
 
 		// layout clients
-		justificationsSection.getParent().layout(true);
-		justificationsClient.getParent().layout(true, true);
-		deductionSection.getParent().layout(true, true);
-		deductionClient.getParent().layout(true, true);
+		premisesSection.getParent().layout(true);
+		premisesClient.getParent().layout(true, true);
+		
+		inferenceSection.getParent().layout(true, true);
+		inferenceClient.getParent().layout(true, true);
+		
+		entailmentsSection.getParent().layout(true);
+		entailmentsClient.getParent().layout(true,true);
+		
+		deductionSection.getParent().layout(true);
+		deductionClient.getParent().layout(true,true);
+		
 		buttonsSection.getParent().layout(true);
 		buttonsClient.getParent().layout(true, true);
 
+		// layout form
 		mform.reflow(true);
-		setHelpContext(deductionClient);
+		setHelpContext(inferenceClient);
 	}
 
 	/**

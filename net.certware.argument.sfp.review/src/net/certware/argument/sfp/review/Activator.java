@@ -21,6 +21,7 @@ public class Activator extends AbstractUIPlugin  {
 	public static final String REVIEW_HYPOTHESIS_IMAGE = "hypothesis.image"; //$NON-NLS-1$
 	public static final String REVIEW_HORIZONTAL_IMAGE = "horizontal.image"; //$NON-NLS-1$
 	public static final String REVIEW_VERTICAL_IMAGE = "vertical.image"; //$NON-NLS-1$
+	public static final String REVIEW_ENTAILMENT_IMAGE = "entailment.image"; //$NON-NLS-1$
 	
 	/** plugin id */
 	public static final String PLUGIN_ID = "net.certware.argument.sfp.review"; //$NON-NLS-1$
@@ -68,5 +69,6 @@ public class Activator extends AbstractUIPlugin  {
         initializeImage(registry,bundle,"icons/obj16/th_vertical.gif",REVIEW_VERTICAL_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/unknown.gif",REVIEW_UNKNOWN_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/valid.png",REVIEW_VALID_IMAGE);
+        initializeImage(registry,bundle,"icons/obj16/entailment.gif",REVIEW_ENTAILMENT_IMAGE);
      }
 }
