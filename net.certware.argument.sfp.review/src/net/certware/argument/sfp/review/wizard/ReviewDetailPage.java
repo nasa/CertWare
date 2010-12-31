@@ -72,7 +72,6 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 	public ReviewDetailPage(Proof proof,TreeViewer viewer, ReviewValidatePage validate, ReviewSetupPage setup) {
 		super(proof,viewer,validate,setup);
 		// TODO determine how to invalidate all downstream statements
-		// TODO add a special 'set all unknown' button on setup page?
 		// TODO add an insert line command to the editor, inserting numbered line and renumbering those following?
 		// TODO fix the save resource on finish
 	}
@@ -577,7 +576,7 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 
 		// layout form
 		mform.reflow(true);
-		setHelpContext(inferenceClient);
+		setHelpContext(inferenceClient); // TODO is this right?
 	}
 
 	/**

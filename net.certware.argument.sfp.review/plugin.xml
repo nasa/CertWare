@@ -24,7 +24,7 @@
             locationURI="popup:org.eclipse.ui.popup.any">
          <command
                commandId="net.certware.argument.sfp.review.launchWizard"
-               label="Review Proof"
+               label="Review Wizard"
                style="push"
                tooltip="Load and review the semi-formal proof">
             <visibleWhen
@@ -50,7 +50,6 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            category="certware"
             categoryId="net.certware.core.ui.category"
             description="Launches the proof review wizard"
             helpContextId="net.certware.core.ui.review_wizard_page_context"

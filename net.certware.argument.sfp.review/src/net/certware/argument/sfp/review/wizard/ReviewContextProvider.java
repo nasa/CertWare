@@ -35,6 +35,8 @@ public class ReviewContextProvider extends org.eclipse.help.AbstractContextProvi
 	 */
 	public IContext getContext(Object target)
 	{
+		System.err.println("help get context target is " + target); // TODO selection tracking
+		
 		if (target instanceof TreeSelection) {
 			Object element = ((TreeSelection)target).getFirstElement();
 			if (element instanceof Proof) {
@@ -59,8 +61,8 @@ public class ReviewContextProvider extends org.eclipse.help.AbstractContextProvi
 	public int getContextChangeMask()
 	{
 		// dynamic context change reporting
-		return IContextProvider.NONE;
-		// return IContextProvider.SELECTION;
+		// return IContextProvider.NONE; // TODO testing
+		return IContextProvider.SELECTION;
 	}
 
 	/**
@@ -70,6 +72,8 @@ public class ReviewContextProvider extends org.eclipse.help.AbstractContextProvi
 	 */
 	public String getSearchExpression(Object target)
 	{
+		System.err.println("search target is " + target); // TODO selection tracking
+		
 		if ( target instanceof Proof ) {
 			return "\"proof\"";
 		}
@@ -83,7 +87,6 @@ public class ReviewContextProvider extends org.eclipse.help.AbstractContextProvi
 		}
 
 		return "statement";
-
 	}
 
 	@Override
@@ -95,6 +98,8 @@ public class ReviewContextProvider extends org.eclipse.help.AbstractContextProvi
 			return HelpSystem.getContext(IHelpContext.REVIEW_WIZARD_STATEMENT,locale);
 		if ( IHelpContext.REVIEW_WIZARD_PROOF.equals(id))
 			return HelpSystem.getContext(IHelpContext.REVIEW_WIZARD_PROOF,locale);
+		if ( IHelpContext.REVIEW_WIZARD_SETUP_PAGE.equals(id))
+			return HelpSystem.getContext(IHelpContext.REVIEW_WIZARD_SETUP_PAGE,locale);
 		
 		return HelpSystem.getContext(IHelpContext.REVIEW_WIZARD_PAGE,locale);
 	}

@@ -5,6 +5,8 @@ import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.Statement;
 import net.certware.argument.sfp.semiFormalProof.ValidationKind;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.resource.JFaceResources;
@@ -16,7 +18,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.IManagedForm;
@@ -30,7 +31,7 @@ import org.eclipse.ui.forms.widgets.TableWrapData;
  * @author mrb
  * @since 1.0.3
  */
-abstract public class GenericDetailPage implements IDetailsPage
+abstract public class GenericDetailPage implements IDetailsPage, IAdaptable
 {
 	/** the form toolkit created by dialog host */
 	FormToolkit toolkit = null;
@@ -40,16 +41,6 @@ abstract public class GenericDetailPage implements IDetailsPage
 	Font boldFont = null;
 	/** normal font for values */
 	Font normalFont = null;
-	/** statement id value */
-	Label idValue = null;
-	/** statement body text */
-	Text bodyValue = null;
-	/** statement comment */
-	Label commentValue = null; 
-	/** premises client */
-	Composite premisesClient = null;
-	/** entailments client */
-	Composite entailmentsClient = null;
 	/** proof for statements */
 	Proof proof;
 	/** input example to display */
@@ -64,6 +55,8 @@ abstract public class GenericDetailPage implements IDetailsPage
 	ReviewSetupPage setupPage;
 	/** validate page method references */
 	ReviewValidatePage validatePage;
+	/** help context provider */
+	ReviewContextProvider contextprovider;
 
 	/**
 	 * Generic detail page constructor.
@@ -99,6 +92,23 @@ abstract public class GenericDetailPage implements IDetailsPage
 		if ( normalFont != null ) normalFont.dispose();
 		if ( boldFont != null ) boldFont.dispose();
 	}
+
+	/**
+	 * Adapter to identify context provider.
+	 * Supports the help system contribution.
+	 */
+	@SuppressWarnings("rawtypes")
+	public Object getAdapter(Class key) {
+
+		if (key.equals(IContextProvider.class)) {
+			if (contextprovider == null)
+				contextprovider = new ReviewContextProvider();
+			return contextprovider;
+		}
+
+		return null;
+	}
+
 
 	/**
 	 * Populate the column header.

@@ -63,3 +63,5 @@ entailments
 refactored
 skimpy
 preorder
+lubbock
+rushton

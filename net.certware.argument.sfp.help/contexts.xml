@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contexts>
+	<context id="review_wizard_page_context" title="Review Wizard Page">
+		<description>
+		The semi-formal proof review wizard presents each proof statement for
+		review within its justification context.  Choose a statement on the left-hand
+		side of the page to view its details on the right-hand side.  Use the
+		validation buttons on the details page to assign a validation type to each
+		statement.  
+		</description>
+		<topic href="html/topics/review_page.html" label="Review Wizard Page" />
+		<topic href="html/topics/review_wizard.html" label="Review Wizard" />
+		<topic href="html/concepts/sfp.html" label="Semi-Formal Proof" />
+	</context>
+	<context id="review_wizard_proof_context" title="Semi-Formal Proof Page">
+		<description>
+		The proof details page presents the theorem-level statement of the proof.  
+		This page shows the justifications for the proof, which are the inferences
+		or deductions made in the context of other statements.    
+		</description>
+		<topic href="html/topics/review_proof.html" label="Review Wizard Proof" />
+		<topic href="html/topics/review_page.html" label="Review Wizard Page" />
+		<topic href="html/topics/review_statement.html" label="Review Wizard Statement" />
+		<topic href="html/topics/review_wizard.html" label="Review Wizard" />
+		<topic href="html/concepts/sfp.html" label="Semi-Formal Proof" />
+	</context>
+	<context id="review_wizard_statement_context" title="Semi-Formal Statement Page">
+		<description>
+		The statement details page presents the argument-body statements of the proof.
+		The page shows the details for the statement selected in the proof navigator
+		pane.  According to the structure of the statement, the page will show the
+		statement's premises, inferences, entailments, and deductions.  At the bottom
+		of the page use the validation buttons to assign a valid, invalid, or unknown
+		state (along with the author and time stamp records) to the statement
+		if the items shown together justify the statement.       
+		</description>
+		<topic href="html/topics/review_proof.html" label="Review Wizard Proof" />
+		<topic href="html/topics/review_page.html" label="Review Wizard Page" />
+		<topic href="html/topics/review_hypothesis.html" label="Review Wizard Hypothesis" />
+		<topic href="html/topics/review_wizard.html" label="Review Wizard" />
+		<topic href="html/concepts/sfp.html" label="Semi-Formal Proof" />
+	</context>
+	<context id="review_wizard_hypothesis_context" title="Semi-Formal Hypothesis Page">
+		<description>
+		An hypothesis statement page presents a proof statement that serves as
+		an unjustified-hypothesis.  Consequently, the unrelated justification areas
+		contain no other supporting information.  This is merely a special case
+		of a statement. The page shows the statement selected in the proof navigator
+		pane, and the comment column shows the 'hypothesis' key word.  At the bottom
+		of the page use the validation buttons to assign a valid, invalid, or unknown
+		state (along with the author and time stamp records) to the statement
+		if the hypothesis is reasonable.       
+		</description>
+		<topic href="html/topics/review_proof.html" label="Review Wizard Proof" />
+		<topic href="html/topics/review_page.html" label="Review Wizard Page" />
+		<topic href="html/topics/review_statement.html" label="Review Wizard Statement" />
+		<topic href="html/topics/review_wizard.html" label="Review Wizard" />
+		<topic href="html/concepts/sfp.html" label="Semi-Formal Proof" />
+	</context>
+	<context id="review_wizard_setup_context" title="Review Wizard Setup Page">
+		<description>
+		The semi-formal proof (SFP) review wizard's first page prompts for some setup information to be
+		applied on the subsequent pages.  The prompts for author and time stamp
+		refer to the validation records that the wizard will then assign to each
+		validation action taken by the analyst using the wizard.  When the analyst
+		validates or invalidates a statement on the subsequent page, the wizard
+		will record that choice along with the author and time stamp in the validation
+		record for the statement.  These can be seen in the wizard as well as in
+		the SFP editor.  The buttons on this page are convenience tools to clear
+		earlier records and start over; the wizard will prompt to acknowledge each
+		of these button actions.  
+		</description>
+		<topic href="html/topics/review_page.html" label="Review Wizard Page" />
+		<topic href="html/topics/review_statement.html" label="Review Wizard Statement" />
+		<topic href="html/topics/review_proof.html" label="Review Wizard Proof" />
+		<topic href="html/topics/review_wizard.html" label="Review Wizard" />
+		<topic href="html/concepts/sfp.html" label="Semi-Formal Proof" />
+	</context>
+	
+</contexts>

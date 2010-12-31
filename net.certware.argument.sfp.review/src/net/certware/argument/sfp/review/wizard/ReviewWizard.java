@@ -6,6 +6,7 @@ import java.text.MessageFormat;
 import net.certware.argument.sfp.review.Activator;
 import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.core.ui.dialog.ExceptionDetailsDialog;
+import net.certware.core.ui.help.IHelpContext;
 import net.certware.core.ui.log.CertWareLog;
 
 import org.eclipse.core.resources.IFile;
@@ -38,7 +39,7 @@ import org.eclipse.xtext.resource.SaveOptions.Builder;
  * @author mrb
  * @since 1.0.3
  */
-public class ReviewWizard extends Wizard {
+public class ReviewWizard extends Wizard implements IHelpContext {
 
 	/** dialog height key */
 	private static final String REVIEW_WIZARD_HEIGHT = "REVIEW_WIZARD_HEIGHT";
@@ -56,6 +57,7 @@ public class ReviewWizard extends Wizard {
 	private ReviewSetupPage pageSetup;
 	/** page image path */
 	private String PAGE_IMAGE = "icons/wizban/pattern_wiz.gif";
+	/** selected resource to act upon */
 	private Resource resource;
 
 
@@ -110,7 +112,9 @@ public class ReviewWizard extends Wizard {
 		addPage(pageSetup);
 		addPage(pageValidate);
 
+		// set size and help system on shell
 		setDialogSize();
+		PlatformUI.getWorkbench().getHelpSystem().setHelp(getShell(),IHelpContext.REVIEW_WIZARD_SETUP_PAGE);
 	}
 
 	/**
@@ -229,7 +233,8 @@ public class ReviewWizard extends Wizard {
 					"Wizard found selected file is not accessible: {0}",
 					ifile.getName());
 			CertWareLog.logWarning(message);
-			MessageDialog.openWarning(getShell(), TITLE, message);
+			if ( getShell() != null )
+				MessageDialog.openWarning(getShell(), TITLE, message);
 			return;
 		}
 	}

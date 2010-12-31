@@ -18,6 +18,7 @@ _Enhancements_:
 * Added semi-formal proof plug-ins with SFP active parser editor.
 * Added semi-formal proof validation for graph cycles and entailment.
 * Added semi-formal proof review wizard.
+* Added semi-formal proof help (first draft).  
 * Partial string externalization.
 * Updated to JGit and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
 _Commit_:
