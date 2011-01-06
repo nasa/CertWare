@@ -98,8 +98,8 @@ public abstract class AbstractExportJob extends Job {
 	
 	/**
 	 * Gets the number of steps for progress monitoring.
-	
-	 * @return total progress monitoring steps */
+	 * @return total progress monitoring steps 
+	 */
 	public int getSteps() {
 		return steps;
 	}
@@ -107,8 +107,8 @@ public abstract class AbstractExportJob extends Job {
 	/**
 	 * Prompts the user for a destination file name.
 	 * @param shell shell for dialog
-	
-	 * @return filename or null if canceled */
+	 * @return filename or null if canceled 
+	 */
 	public String promptFileName(Shell shell) {
 		String fileName = previousFileName;
 		final FileDialog fsd = new FileDialog(shell,SWT.SAVE);
@@ -126,8 +126,8 @@ public abstract class AbstractExportJob extends Job {
 	/**
 	 * Do the work of exporting while in the run method.
 	 * @param monitor progress monitor
-	
-	 * @return status indication, passed on to run method return */
+	 * @return status indication, passed on to run method return 
+	 */
 	abstract IStatus produce(IProgressMonitor monitor);
 
 	
@@ -135,9 +135,9 @@ public abstract class AbstractExportJob extends Job {
 	 * Runs the job, starting the progress monitor and performing done after the
 	 * produce() method returns.
 	 * @param monitor progress monitor
-	
-	
-	 * @return same status value from produce() method * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor) */
+	 * @return same status value from produce() method 
+	 * @see org.eclipse.core.runtime.jobs.Job#run(org.eclipse.core.runtime.IProgressMonitor) 
+	 */
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 		// set some indicator of progress count
@@ -162,10 +162,10 @@ public abstract class AbstractExportJob extends Job {
 	}
 
 	/**
-	 * Method getFileName.
+	 * Returns the chosen destination file name.
 	 * @return returns the file name 
 	 */
-	public String getFileName() {
+	public String getDestinationFileName() {
 		return previousFileName;
 	}
 	

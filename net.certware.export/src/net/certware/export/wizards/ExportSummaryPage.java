@@ -267,11 +267,10 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     }
     
     /**
-     *  The Finish button was pressed.  Try to do the required work now and answer
-     *  a boolean indicating success.  If false is returned then the wizard will
-     *  not close.
-     *  
-    @return boolean false if target invalid or export operation fails  */
+     * The Finish button was pressed.  Try to do the required work now and answer
+     * a boolean indicating success.  If false is returned then the wizard will not close.
+     * @return boolean false if target invalid or export operation fails  
+     */
     @SuppressWarnings("unchecked")
     public boolean finish() { // $codepro.audit.disable booleanMethodNamingConvention
       
@@ -520,6 +519,10 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
         catch (URISyntaxException e) {
           CertWareLog.logError(Messages.ExportSummaryPage_17, e);
           return null;
+        }
+        catch(IllegalArgumentException e) {
+        	// not a workspace absolute location
+        	return null;
         }
         
         if(containers.length > 0){

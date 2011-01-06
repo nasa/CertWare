@@ -114,6 +114,7 @@ public class FileSystemExporter implements ICertWareConstants {
 			return;
 		}
 
+		// TODO move this to abstract class, model types contributed as fragments
 		// create the generic document target
 		/*
     	WriteExcel excel = new WriteExcel();

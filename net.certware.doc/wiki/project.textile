@@ -21,6 +21,7 @@ _Enhancements_:
 * Added semi-formal proof help (first draft).  
 * Partial string externalization.
 * Updated to JGit and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
+* Added measurement model plugins.  The model is derived from the OMG Software Metrics Metamodel (1.0 beta 1, March 2009) XML schema, adopting and modifying an EMF implementation from Eclipse GMT MODISCO.
 _Commit_:
 * TBD
 
@@ -82,10 +83,12 @@ h3. Meta-Models
 * @ARM@ OMG argument metamodel and its Ecore implementation
 * @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
 * @CAZ@ A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
-* @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
-* @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
 * @EUR@ A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
 * @EUZ@ A diagram for EUROCONTROL notation derived from EUR and ARM metamodels. 
+* @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
+* @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
+* @SFP@ A semi-formal proof metamodel derived from an Xtext grammar for these proofs.
+* @SMM@ OMG software measurement metamodel and its Ecore implementation.
 * @VCL@ A verification checklist generic metamodel.
 
 h3. Development
@@ -195,7 +198,7 @@ h3. Plugins Summary
 * @net.certware.argument.gsn.*@ Argument model and editor support for GSN, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.  
 * @net.certware.argument.gsz.*@ Argument diagram graphical model equivalent for GSN models.
-* @net.certware.argument.sfp.*@ Semi-formal proof structured text argument models.
+* @net.certware.argument.sfp.*@ Semi-formal proof structured text argument models.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.branding@ Project branding plugin for feature definition.
 * @net.certware.core@ Core project content.
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  
@@ -207,6 +210,7 @@ h3. Plugins Summary
 * @net.certware.launch@ Launch configuration shared files.
 * @net.certware.libs.doc@ Plugin packaging of docx4J 2.5 libraries.
 * @net.certware.libs.poi@ Plugin packaging of Apache POI 3.6 libraries.
+* @net.certware.measurement.smm.*@ Measurement model and editor support the OMG SMM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.target@ CertWare project target definition.
 * @net.certware.update@ Update site definition project (currently unused).
 * @net.certware.verification.checklist.*@ Verification model and editor support for generic check lists. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.

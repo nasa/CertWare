@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 Object Management Group (SMM metamodel)
+ Copyright (c) 2010 Castor Technology (ecore from schema, Eclipse GMT MODISCO)
+ Kestrel Technology LLC (modified generated models) 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.argument.smm.presentation.SmmModelWizardID"
+            name="%_UI_SmmModelWizard_label"
+            class="net.certware.argument.smm.presentation.SmmModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/SmmModelFile.gif">
+         <description>%_UI_SmmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.smm.presentation.SmmEditorID"
+            name="%_UI_SmmEditor_label"
+            icon="icons/full/obj16/SmmModelFile.gif"
+            extensions="smm"
+            class="net.certware.argument.smm.presentation.SmmEditor"
+            contributorClass="net.certware.argument.smm.presentation.SmmActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
