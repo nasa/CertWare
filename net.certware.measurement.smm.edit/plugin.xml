@@ -12,7 +12,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
             uri="http://www.eclipse.org/MoDisco/smm"
-            class="net.certware.argument.smm.provider.SmmItemProviderAdapterFactory"
+            class="net.certware.measurement.smm.provider.SmmItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

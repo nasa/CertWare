@@ -8,7 +8,7 @@ Bundle-Activator: net.certware.measurement.smm.action.provider.SmmEditPlugin$Imp
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: net.certware.argument.smm.provider,
+Export-Package: net.certware.measurement.smm.provider,
  net.certware.measurement.smm.action.provider
 Require-Bundle: org.eclipse.core.runtime,
  net.certware.measurement.smm;visibility:=reexport,

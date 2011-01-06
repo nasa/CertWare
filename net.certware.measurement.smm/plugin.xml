@@ -12,14 +12,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.eclipse.org/MoDisco/smm"
-            class="net.certware.argument.smm.SmmPackage"
+            class="net.certware.measurement.smm.SmmPackage"
             genModel="model/smm.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser
             type="smm"
-            class="net.certware.argument.smm.util.SmmResourceFactoryImpl"/>
+            class="net.certware.measurement.smm.util.SmmResourceFactoryImpl"/>
    </extension>
 
 </plugin>

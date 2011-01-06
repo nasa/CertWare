@@ -10,9 +10,9 @@
     complianceLevel="6.0" copyrightFields="false" editPluginID="net.certware.measurement.smm.edit"
     editorPluginID="net.certware.measurement.smm.editor" testsPluginID="net.certware.measurement.smm.tests">
   <foreignModel>smm.ecore</foreignModel>
-  <genPackages prefix="Smm" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
-      generateExampleClass="false" multipleEditorPages="false" fileExtensions="smm"
-      ecorePackage="smm.ecore#/">
+  <genPackages prefix="Smm" basePackage="net.certware.measurement" resource="XMI"
+      disposableProviderFactory="true" generateExampleClass="false" multipleEditorPages="false"
+      fileExtensions="smm" ecorePackage="smm.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="smm.ecore#//Accumulator">
       <genEnumLiterals ecoreEnumLiteral="smm.ecore#//Accumulator/sum"/>
       <genEnumLiterals ecoreEnumLiteral="smm.ecore#//Accumulator/maximum"/>

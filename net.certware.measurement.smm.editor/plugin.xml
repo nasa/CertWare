@@ -11,9 +11,9 @@
 
    <extension point="org.eclipse.ui.newWizards">
       <wizard
-            id="net.certware.argument.smm.presentation.SmmModelWizardID"
+            id="net.certware.measurement.smm.presentation.SmmModelWizardID"
             name="%_UI_SmmModelWizard_label"
-            class="net.certware.argument.smm.presentation.SmmModelWizard"
+            class="net.certware.measurement.smm.presentation.SmmModelWizard"
             category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/SmmModelFile.gif">
          <description>%_UI_SmmModelWizard_description</description>
@@ -23,12 +23,12 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="net.certware.argument.smm.presentation.SmmEditorID"
+            id="net.certware.measurement.smm.presentation.SmmEditorID"
             name="%_UI_SmmEditor_label"
             icon="icons/full/obj16/SmmModelFile.gif"
             extensions="smm"
-            class="net.certware.argument.smm.presentation.SmmEditor"
-            contributorClass="net.certware.argument.smm.presentation.SmmActionBarContributor">
+            class="net.certware.measurement.smm.presentation.SmmEditor"
+            contributorClass="net.certware.measurement.smm.presentation.SmmActionBarContributor">
       </editor>
    </extension>
 
