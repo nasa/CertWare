@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="net.certware.core.ui.exportwizard.category"
+            class="net.certware.export.wizards.ExportSummaryWizard"
+            icon="icons/obj16/icon_DOC_small.png"
+            id="net.certware.export.wizard.doc"
+            name="GSN Argument to Word Document">
+         <description>
+            Exports selected argument files to Word documents.
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="net.certware.export.category"
+            description="Exports the selected GSN nodes to a Word Document"
+            helpContextId="export_gsn"
+            id="net.certware.export.command.gsn"
+            name="Export GSN to Word Document">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="net.certware.export.command.gsn"
+            icon="icons/obj16/icon_DOC_small.png">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="net.certware.export.handlers.ExportGSNHandler"
+            commandId="net.certware.export.command.gsn"
+            helpContextId="export_gsn">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="or">
+                  <or>
+                     <instanceof
+                           value="net.certware.argument.gsn.Strategy">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Goal">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Solution">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Justification">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Assumption">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Context">
+                     </instanceof>
+                  </or>
+               </iterate>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:net.certware.argument.gsn.presentation.GsnEditorID?after=additions">
+         <menu
+               icon="icons/obj16/export_wiz.gif"
+               label="Export"
+               mnemonic="E"
+               tooltip="Export selection to file system">
+            <command
+                  commandId="net.certware.export.command.gsn"
+                  helpContextId="export_gsn"
+                  label="Word Document..."
+                  mnemonic="W"
+                  style="push"
+                  tooltip="Exports GSN node selection to Word document">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</fragment>

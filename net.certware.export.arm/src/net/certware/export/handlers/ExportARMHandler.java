@@ -8,6 +8,7 @@ package net.certware.export.handlers;
 import java.util.Collection;
 
 import net.certware.core.ui.log.CertWareLog;
+import net.certware.export.jobs.AbstractExportJob;
 import net.certware.export.jobs.ExportARMJob;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -47,7 +48,7 @@ public class ExportARMHandler extends AbstractHandler {
 				// determine the kind of selection
 				// use various job constructors according to selection
 				Collection collection = null;
-				ExportARMJob job = null;
+				AbstractExportJob job = null;
 				final String jobTitle = Messages.ExportARMHandler_0;
 
 				if ( iss.size() > 1 ) {

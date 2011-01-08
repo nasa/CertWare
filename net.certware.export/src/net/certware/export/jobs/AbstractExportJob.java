@@ -5,16 +5,41 @@
  */
 package net.certware.export.jobs;
 
+import java.io.File;
 import java.text.MessageFormat;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 
 import net.certware.core.ui.log.CertWareLog;
 
+import org.docx4j.XmlUtils;
+import org.docx4j.convert.out.flatOpcXml.FlatOpcXmlCreator;
+import org.docx4j.jaxb.NamespacePrefixMapperUtils;
+import org.docx4j.openpackaging.exceptions.Docx4JException;
+import org.docx4j.openpackaging.exceptions.InvalidFormatException;
+import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
+import org.docx4j.openpackaging.parts.WordprocessingML.MainDocumentPart;
+import org.docx4j.openpackaging.parts.WordprocessingML.StyleDefinitionsPart;
+import org.docx4j.wml.ObjectFactory;
+import org.docx4j.wml.R;
+import org.docx4j.wml.RPr;
+import org.docx4j.wml.Style;
+import org.docx4j.wml.Text;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
@@ -26,6 +51,7 @@ import org.eclipse.swt.widgets.Shell;
  */
 public abstract class AbstractExportJob extends Job {
 
+	protected static String STYLE_MODEL_ELEMENT_CONTENT = "<w:style xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" w:type=\"character\" w:customStyle=\"1\" w:styleId=\"ModelElementContent\"><w:name w:val=\"Model Element Content\" /><w:basedOn w:val=\"DefaultParagraphFont\" /><w:link w:val=\"Heading3\" /><w:uiPriority w:val=\"9\" /><w:rPr><w:rFonts w:asciiTheme=\"majorHAnsi\" w:hAnsiTheme=\"majorHAnsi\" w:cstheme=\"majorBidi\" /><w:b /><w:bCs /><w:color w:val=\"4F81BD\" w:themeColor=\"accent1\" /></w:rPr></w:style>";
 	/** for exporting a single node and its descendants */  
 	protected EObject node = null;
 	/** for exporting a selection of nodes only */
@@ -36,6 +62,16 @@ public abstract class AbstractExportJob extends Job {
 	protected int steps = 1;
 	/** previously-selected destination file name */
 	protected String previousFileName = Messages.AbstractExportJob_0;
+	/** the word mark-up language package for the document */
+	protected WordprocessingMLPackage wordMLPackage;
+	/** the main document part from an incoming document file */
+	protected MainDocumentPart mainDocumentPart = null;
+	/** the style definition part from the main document incoming file */
+	protected StyleDefinitionsPart stylesPart = null;
+	/** style map populated by extension point */
+	protected Map<Integer,String> styleMap = new HashMap<Integer,String>();
+	/** document object creation factory, created at run-time */
+	protected ObjectFactory factory;
 	
 	/**
 	 * Default constructor uses default job name.
@@ -234,5 +270,225 @@ public abstract class AbstractExportJob extends Job {
 			CertWareLog.logInfo(MessageFormat.format(Messages.AbstractExportJob_6, getName(), Messages.AbstractExportJob_7));
 		}
 	}
+
+	/**
+	 * Loads the generic document style map.
+	 * Assigns a generic style name for each argument model node identifier.
+	 * Uses model package identifiers as keys.
+	 */
+	public void loadContributedStyles() {
+		// TODO read plugin contributions into the style map
+	}
+
+	/**
+	 * Assign or reassign a model element's style.
+	 * @param key model element ID from package definition
+	 * @param styleId style ID, such as {@code Heading1Char} or {@code TaggedValue}.
+	 */
+	protected void assignStyleId(int key, String styleId) {
+		if ( styleMap.containsKey(styleId)) {
+			styleMap.remove(styleId);
+		}
+		styleMap.put(key, styleId);
+	}
+
+	/**
+	 * Assign or reassign a model element's style.
+	 * @param key model element ID from package definition
+	 * @param xml XML string describing style, including {@code xmlns} tags where needed
+	 */
+	protected void assignStyle(int key, String xml) {
+		Style style = addStyle(xml);
+		assignStyleId(key,style.getStyleId());
+	}
+
+	/**
+	 * Add a new XML-described format to the styles list for the main document styles part.
+	 * @param format XML-syntax format
+	 * @return style or null
+	 */
+	protected Style addStyle(String format) {
+		try {
+			Style newStyle;
+			newStyle = (Style)XmlUtils.unmarshalString(format);
+			stylesPart.getJaxbElement().getStyle().add(newStyle);
+			return newStyle;
+		} catch (JAXBException e) {
+			CertWareLog.logError(String.format("%s: %s", "Adding XML style",format),e);
+		}
+		return null;
+	}
+
+	/**
+	 * Creates a new run with text of the given style. 
+	 * Presumes the style is a run style rather than a paragraph style.
+	 * @param style style name to apply from document style part or defaults
+	 * @param text text to insert in run
+	 * @return the new run, ready to add to the paragraph content list
+	 */
+	protected R addStyledRunOfText(String styleId, String text) {
+	
+		R run = addRunOfText(text);
+	
+		// apply style if available
+		if (mainDocumentPart.getPropertyResolver().activateStyle(styleId)) {
+			Style style = mainDocumentPart.getPropertyResolver().getStyle(styleId);
+			RPr runProperties = style.getRPr();
+			run.setRPr(runProperties);
+		} 
+	
+		// otherwise create run without style
+		// create the text and add it to the run
+		/*
+		Text tid = factory.createText();
+		tid.setValue(text);
+		run.getRunContent().add(tid);
+		*/
+	
+		return run;
+	}
+
+	/**
+	 * Creates a new run with text of default style.
+	 * @param text text to insert in run
+	 * @return the new run, ready to add to the paragraph content list
+	 */
+	protected R addRunOfText(String text) {
+		// create and style the run properties
+		R run = factory.createR();
+		Text tid = factory.createText();
+		tid.setValue(text);
+		run.getRunContent().add(tid);
+	
+		// return the run
+		return run;
+	}
+
+	/**
+	 * Write a paragraph for the title of the document.
+	 * @param monitor progress monitor (unused)
+	 */
+	protected void writeTitle(IProgressMonitor monitor) {
+		mainDocumentPart.addStyledParagraphOfText("Heading1", "CertWare Export");
+		mainDocumentPart.addStyledParagraphOfText("Normal", Calendar.getInstance().getTime().toString());
+	}
+
+	/**
+	 * Perform standard setup for the processor and document.
+	 * Creates the work processing document package.
+	 * @param monitor progress monitor
+	 * @throws InvalidFormatException for creating package 
+	 */
+	protected void setupDocument(IProgressMonitor monitor) throws InvalidFormatException {
+		monitor.subTask("Creating package");
+		if ( mainDocumentPart == null )  { // incoming document not provided
+			wordMLPackage = WordprocessingMLPackage.createPackage();
+			mainDocumentPart = wordMLPackage.getMainDocumentPart();
+			stylesPart = mainDocumentPart.getStyleDefinitionsPart();
+		}
+	
+		writeTitle(monitor);
+	}
+
+	/**
+	 * Open a template document for writing into.
+	 * @param monitor progress monitor
+	 * @param file selected template file to populate
+	 * @throws Docx4JException exceptions on loading file
+	 */
+	protected void openDocument(IProgressMonitor monitor, IFile file)
+			throws Docx4JException {
+				wordMLPackage = WordprocessingMLPackage.load(file.getFullPath().toFile());
+				mainDocumentPart = wordMLPackage.getMainDocumentPart();
+				stylesPart = mainDocumentPart.getStyleDefinitionsPart();
+			}
+
+	/**
+	 * Perform standard tear-down of the processor and document.
+	 * @param monitor progress monitor
+	 * @param save whether to save marshaled document
+	 * @throws Docx4JException for word package problems 
+	 * @throws JAXBException for marshalling problems 
+	 */
+	protected void tearDownDocument(IProgressMonitor monitor, boolean save)
+			throws Docx4JException, JAXBException {
+			
+				monitor.subTask("Cleaning up");
+			
+				// save it to the file system according to destination file selection, or dump to standard output
+				if ( save ) {
+					// save it to the file
+					wordMLPackage.save( new File(getDestinationFileName()) );
+					CertWareLog.logInfo(MessageFormat.format("{0} {1}", "Exported to", getDestinationFileName()));
+				} else {
+					// marshal it to the console
+					final FlatOpcXmlCreator worker = new FlatOpcXmlCreator(wordMLPackage);
+					final org.docx4j.xmlPackage.Package pkg = worker.get();
+					JAXBContext jc = org.docx4j.jaxb.Context.jcXmlPackage;
+					Marshaller marshaller=jc.createMarshaller();
+					marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+					NamespacePrefixMapperUtils.setProperty(marshaller, NamespacePrefixMapperUtils.getPrefixMapper());			
+					marshaller.marshal(pkg, System.out);				
+				}
+			}
+
+	/**
+	 * The switch method specific to the visitor of the model structure.
+	 * @param eObject object to visit.
+	 */
+	abstract protected void doSwitch(EObject eObject);
+	
+	/**
+	 * Output instructions depending upon selection type.
+	 * Assumes ML package has been initialized via setupDocument().
+	 * Processes the selection(s) using the model's visitor switch.
+	 * @param monitor progress monitor
+	 * @return {@code OK_STATUS} on success or {@code CANCEL_STATUS} on monitor canceled 
+	 * @throws JAXBException 
+	 * @throws Docx4JException 
+	 */
+	protected IStatus exportSelection(IProgressMonitor monitor) throws JAXBException,
+			Docx4JException {
+				factory = new ObjectFactory();
+			
+				if ( null != getResource() ) {
+					monitor.subTask("Producing resource content");
+					// iterates over all nodes in the resource using a visitor pattern
+					for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getResource(), true); iter.hasNext(); ) {
+						EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+						doSwitch(eObject);
+						monitor.worked(1);
+						if ( monitor.isCanceled() ) {
+							return Status.CANCEL_STATUS;
+						}
+					}
+				} else if ( null != getNodeCollection() ) {
+					monitor.subTask("Producing node collection content");
+					// iterates over the given collection in order using a visitor pattern
+					for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNodeCollection(), true); iter.hasNext(); ) {
+						EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+						doSwitch(eObject);
+						monitor.worked(1);
+						if ( monitor.isCanceled() ) {
+							return Status.CANCEL_STATUS;
+						}
+					}
+				} else {
+					monitor.subTask("Producing node content");
+					// iterates over a node and its children
+					// do the node itself, then its contents
+					doSwitch(getNode());
+					for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNode(), true); iter.hasNext(); ) {
+						EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+						doSwitch(eObject);
+						monitor.worked(1);
+						if ( monitor.isCanceled() ) {
+							return Status.CANCEL_STATUS;
+						}
+					}
+				}
+			
+				return Status.OK_STATUS;
+			}
 	
 }

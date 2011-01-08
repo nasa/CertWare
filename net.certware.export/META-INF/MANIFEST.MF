@@ -6,13 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.certware.export.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: net.certware.argument.arm,
- net.certware.argument.arm.presentation,
- net.certware.argument.cae,
- net.certware.argument.cae.presentation,
- net.certware.argument.gsn,
- net.certware.argument.gsn.presentation,
- net.certware.core,
+Import-Package: net.certware.core,
  net.certware.core.ui.log,
  org.eclipse.core.commands,
  org.eclipse.core.resources,
@@ -35,5 +29,4 @@ Import-Package: net.certware.argument.arm,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.libs.doc,
  org.eclipse.jface,
- org.eclipse.ui,
- net.certware.argument.gsn
+ org.eclipse.ui

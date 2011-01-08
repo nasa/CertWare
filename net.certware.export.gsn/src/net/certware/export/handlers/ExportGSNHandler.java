@@ -28,10 +28,9 @@ import org.eclipse.ui.handlers.HandlerUtil;
  * @since 1.0
  */
 public class ExportGSNHandler extends AbstractHandler {
-
 	/**
 	 * Method execute.
-	 * @param event execution event associated with this job
+	 * @param event execution event associated with job
 	 * @return always returns null
 	 * @throws ExecutionException
 	 * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
@@ -45,8 +44,6 @@ public class ExportGSNHandler extends AbstractHandler {
 			final IStructuredSelection iss = (IStructuredSelection)iselection;
 			if (null != iss.getFirstElement() ) {
 
-				// TODO get the activator extension point contributions, pass to job
-				
 				// determine the kind of selection
 				// use various job constructors according to selection
 				Collection collection = null;

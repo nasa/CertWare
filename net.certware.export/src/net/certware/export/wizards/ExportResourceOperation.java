@@ -170,7 +170,8 @@ public class ExportResourceOperation implements IRunnableWithProgress { // $code
 	 * @throws InterruptedException 
 	 */
 	protected void exportChildren(IResource[] children, IPath currentPath, IProgressMonitor monitor)
-	throws InterruptedException {
+	throws InterruptedException 
+	{
 		for (int i = 0; i < children.length; i++) {
 			IResource child = children[i]; // $codepro.audit.disable variableDeclaredInLoop
 			if (!child.isAccessible()) {

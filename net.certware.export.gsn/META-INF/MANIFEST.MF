@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Project GSN Model Exports
+Bundle-SymbolicName: net.certware.export.gsn;singleton:=true
+Bundle-Version: 1.0.3.qualifier
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.export
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: net.certware.argument.gsn;bundle-version="1.0.1"

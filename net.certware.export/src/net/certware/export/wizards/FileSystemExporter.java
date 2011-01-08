@@ -7,13 +7,8 @@ package net.certware.export.wizards;
 import java.io.File;
 import java.io.IOException;
 
-import net.certware.argument.arm.ArmPackage;
-import net.certware.argument.cae.CaePackage;
-import net.certware.argument.gsn.GsnPackage;
 import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.log.CertWareLog;
-import net.certware.export.jobs.ExportARMJob;
-import net.certware.export.jobs.ExportGSNJob;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -99,7 +94,6 @@ public class FileSystemExporter implements ICertWareConstants {
 	 * @param destinationPath selected destination including original file name
 	 * @param monitor progress monitor for reporting work
 	 */
-	@SuppressWarnings("unused")
 	protected void writeFile(IFile file, IPath destinationPath, IProgressMonitor monitor)
 	{
 		// IPath destinationWithoutExtension = destinationPath.removeFileExtension();
@@ -114,28 +108,15 @@ public class FileSystemExporter implements ICertWareConstants {
 			return;
 		}
 
-		// TODO move this to abstract class, model types contributed as fragments
+		// TODO recover this with the new fragment refactoring
 		// create the generic document target
-		/*
-    	WriteExcel excel = new WriteExcel();
-    	excel.setDestinationFile(destinationFile);
-		 */
-		if ( ICertWareConstants.GSN_EXTENSION.equals(extension)) {
- 			// TODO pass the destination file
-			final EObject eo = readModel(file);
-			final ExportGSNJob ej = new ExportGSNJob(Messages.FileSystemExporter_1,eo);
-			ej.produce(monitor);
-			return;
-		}
 		if ( ICertWareConstants.ARM_EXTENSION.equals(extension)) {
- 			// TODO pass the destination file
 			final EObject eo = readModel(file);
-			final ExportARMJob ej = new ExportARMJob(Messages.FileSystemExporter_2,eo);
-			ej.produce(monitor);
+			//final ExportARMJob ej = new ExportARMJob("Export argument",eo);
+			//ej.produce(monitor);
+			System.err.println("JOB TEMPORARILY REMOVED");
 			return;
 		}
-		
-		// TODO CAE export
 	}
 
 	/**
@@ -158,13 +139,9 @@ public class FileSystemExporter implements ICertWareConstants {
 	}
 
 	/**
-	 * Initializes the model packages to ensure they are registered for resource opening.
+	 * Initialize exporter.
 	 */
-	@SuppressWarnings("unused")
 	public void init() {
-		final GsnPackage gp = GsnPackage.eINSTANCE; // $codepro.audit.disable variableUsage
-		final CaePackage cp = CaePackage.eINSTANCE; // $codepro.audit.disable variableUsage
-		final ArmPackage ap = ArmPackage.eINSTANCE; // $codepro.audit.disable variableUsage
 	}
 
 	/**

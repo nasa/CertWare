@@ -1,0 +1,224 @@
+Styles information extracted from the default docx4j document.
+
+default paragraph style string: <w:pPr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:spacing w:after="200" w:line="276" w:lineRule="auto" /></w:pPr>
+
+known styles count: 164
+
+key: Heading1 type: paragraph
+key: EnvelopeAddress type: paragraph
+key: NormalWeb type: paragraph
+key: ColorfulGrid type: table
+key: SalutationChar type: character
+key: ClosingChar type: character
+key: Footer type: paragraph
+key: CommentText type: paragraph
+key: IntenseQuote type: paragraph
+key: Emphasis type: character
+key: HTMLCite type: character
+key: BodyText3Char type: character
+key: Date type: paragraph
+key: TableofFigures type: paragraph
+key: Heading9 type: paragraph
+key: ListNumber type: paragraph
+key: Heading8 type: paragraph
+key: HTMLKeyboard type: character
+key: Heading7 type: paragraph
+key: Heading6 type: paragraph
+key: Heading3Char type: character
+key: Index1 type: paragraph
+key: Heading5 type: paragraph
+key: Heading5Char type: character
+key: Heading4 type: paragraph
+key: Heading3 type: paragraph
+key: BodyTextIndentChar type: character
+key: Heading2 type: paragraph
+key: EnvelopeReturn type: paragraph
+key: IndexHeading type: paragraph
+key: Salutation type: paragraph
+key: Heading1Char type: character
+key: MessageHeaderChar type: character
+key: EndnoteReference type: character
+key: SubtleEmphasis type: character
+key: FooterChar type: character
+key: Closing type: paragraph
+key: TOCHeading type: paragraph
+key: BodyText2Char type: character
+key: DocumentMap type: paragraph
+key: EndnoteTextChar type: character
+key: HeaderChar type: character
+key: PlaceholderText type: character
+key: Caption type: paragraph
+key: BodyTextIndent type: paragraph
+key: BodyTextIndent3 type: paragraph
+key: ListNumber3 type: paragraph
+key: List2 type: paragraph
+key: ListNumber4 type: paragraph
+key: List3 type: paragraph
+key: ListNumber5 type: paragraph
+key: BodyTextIndent2 type: paragraph
+key: List4 type: paragraph
+key: List5 type: paragraph
+key: HTMLTypewriter type: character
+key: ListNumber2 type: paragraph
+key: ArticleSection type: numbering
+key: FootnoteTextChar type: character
+key: FootnoteText type: paragraph
+key: Normal type: paragraph
+key: Header type: paragraph
+key: HTMLSample type: character
+key: HTMLAddressChar type: character
+key: MacroTextChar type: character
+key: IntenseEmphasis type: character
+key: NoSpacing type: paragraph
+key: CommentSubject type: paragraph
+key: BodyTextIndent3Char type: character
+key: BodyTextChar type: character
+key: Index5 type: paragraph
+key: Heading2Char type: character
+key: Index4 type: paragraph
+key: TitleChar type: character
+key: Index3 type: paragraph
+key: Index2 type: paragraph
+key: Index9 type: paragraph
+key: Index8 type: paragraph
+key: HTMLVariable type: character
+key: Index7 type: paragraph
+key: Index6 type: paragraph
+key: TOAHeading type: paragraph
+key: NoList type: numbering
+key: Title type: paragraph
+key: BodyTextFirstIndent2 type: paragraph
+key: QuoteChar type: character
+key: MacroText type: paragraph
+key: TableGrid type: table
+key: ListBullet type: paragraph
+key: NormalIndent type: paragraph
+key: BodyTextFirstIndentChar type: character
+key: DateChar type: character
+key: FootnoteReference type: character
+key: TOC8 type: paragraph
+key: ListContinue5 type: paragraph
+key: Strong type: character
+key: TOC9 type: paragraph
+key: TableofAuthorities type: paragraph
+key: Heading4Char type: character
+key: NoteHeading type: paragraph
+key: HTMLDefinition type: character
+key: NoteHeadingChar type: character
+key: HTMLPreformattedChar type: character
+key: BookTitle type: character
+key: LineNumber type: character
+key: ListContinue type: paragraph
+key: Quote type: paragraph
+key: HTMLPreformatted type: paragraph
+key: SubtleReference type: character
+key: TOC7 type: paragraph
+key: ListContinue4 type: paragraph
+key: BodyTextFirstIndent2Char type: character
+key: TOC6 type: paragraph
+key: ListContinue3 type: paragraph
+key: TOC5 type: paragraph
+key: ListContinue2 type: paragraph
+key: IntenseQuoteChar type: character
+key: TOC4 type: paragraph
+key: TOC3 type: paragraph
+key: TOC2 type: paragraph
+key: TOC1 type: paragraph
+key: PageNumber type: character
+key: DefaultParagraphFont type: character
+key: CommentTextChar type: character
+key: BodyText2 type: paragraph
+key: BodyText3 type: paragraph
+key: PlainTextChar type: character
+key: BodyTextIndent2Char type: character
+key: SubtitleChar type: character
+key: Bibliography type: paragraph
+key: TableNormal type: table
+key: ListParagraph type: paragraph
+key: HTMLAddress type: paragraph
+key: E-mailSignature type: paragraph
+key: E-mailSignatureChar type: character
+key: BalloonText type: paragraph
+key: DocumentMapChar type: character
+key: BalloonTextChar type: character
+key: IntenseReference type: character
+key: 111111 type: numbering
+key: Signature type: paragraph
+key: EndnoteText type: paragraph
+key: SignatureChar type: character
+key: CommentReference type: character
+key: MessageHeader type: paragraph
+key: ListBullet2 type: paragraph
+key: ListBullet3 type: paragraph
+key: BodyTextFirstIndent type: paragraph
+key: ListBullet4 type: paragraph
+key: ListBullet5 type: paragraph
+key: Heading6Char type: character
+key: PlainText type: paragraph
+key: 1ai type: numbering
+key: List type: paragraph
+key: Hyperlink type: character
+key: HTMLCode type: character
+key: Subtitle type: paragraph
+key: BodyText type: paragraph
+key: Heading7Char type: character
+key: Heading9Char type: character
+key: BlockText type: paragraph
+key: HTMLAcronym type: character
+key: Heading8Char type: character
+key: CommentSubjectChar type: character
+key: FollowedHyperlink type: character
+
+The docx4j source base has the default styles definition file in XML with latent and activated style definitions.  These might be used as examples for defining new styles via plugins or fragments.
+The package loads these when creating the StyleDefinitionsPart.  See http://dev.plutext.org/trac/docx4j/browser/branches/VERSION_2_6_0/src/main/java/org/docx4j/openpackaging/parts/WordprocessingML/styles.xml  
+For example from that XML file:
+
+  <w:style w:type="paragraph" w:styleId="Title">
+    <w:name w:val="Title" />
+    <w:basedOn w:val="Normal" />
+    <w:next w:val="Normal" />
+    <w:link w:val="TitleChar" />
+    <w:uiPriority w:val="10" />
+    <w:qFormat />
+    <w:rsid w:val="00841CD9" />
+    <w:pPr>
+      <w:pBdr>
+        <w:bottom w:val="single" w:sz="8" w:space="4" w:color="4F81BD" w:themeColor="accent1" />
+      </w:pBdr>
+      <w:spacing w:after="300" />
+      <w:contextualSpacing />
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:asciiTheme="majorHAnsi" w:eastAsiaTheme="majorEastAsia" w:hAnsiTheme="majorHAnsi" w:cstheme="majorBidi" />
+      <w:color w:val="17365D" w:themeColor="text2" w:themeShade="BF" />
+      <w:spacing w:val="5" />
+      <w:kern w:val="28" />
+      <w:sz w:val="52" />
+      <w:szCs w:val="52" />
+    </w:rPr>
+  </w:style>
+  
+In code, also from StyleDefinitionsPart:
+
+private final static String DEFAULT_CHARACTER_STYLE_DEFAULT = "<w:style w:type=\"character\" w:default=\"1\" w:styleId=\"DefaultParagraphFont\" " + Namespaces.W_NAMESPACE_DECLARATION + "><w:name w:val=\"Default Paragraph Font\" /></w:style>";
+
+   public Style getDefaultCharacterStyle() {
+	       
+	        if (defaultCharacterStyle==null) {
+	                defaultCharacterStyle = getDefaultStyle("character");
+	        }
+	        // OpenOffice conversion to docx
+	        // doesn't necessarily contain a default character style
+	        // so manufacture one
+	        if (defaultCharacterStyle==null) {
+	                try {
+	                                defaultCharacterStyle = (Style)XmlUtils.unmarshalString(DEFAULT_CHARACTER_STYLE_DEFAULT);
+	                                this.jaxbElement.getStyle().add(defaultCharacterStyle);
+	                        } catch (JAXBException e) {
+	                                e.printStackTrace();
+	                        }
+	        }
+	                return defaultCharacterStyle;
+	    }
+
+  

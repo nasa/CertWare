@@ -28,10 +28,10 @@ public class ExportSummaryWizard extends Wizard implements IExportWizard
   
 	/**
 	 * Perform the finish button response.
-	
-	
-	
-	 * @return defers return value to summary page finish method * @see org.eclipse.jface.wizard.IWizard#performFinish() * @see org.eclipse.jface.wizard.IWizard#performFinish() * @see org.eclipse.jface.wizard.IWizard#performFinish()
+	 * @return defers return value to summary page finish method 
+	 * * @see org.eclipse.jface.wizard.IWizard#performFinish() 
+	 * * @see org.eclipse.jface.wizard.IWizard#performFinish() 
+	 * * @see org.eclipse.jface.wizard.IWizard#performFinish()
 	 */
   public boolean performFinish()
   {
@@ -40,11 +40,10 @@ public class ExportSummaryWizard extends Wizard implements IExportWizard
 
   /**
    * Initializes the wizard.  Creates the wizard page and adds it to the wizard.
-  
    * @param selection selection related to export request
    * @param workbench IWorkbench
-  
-   * @see org.eclipse.ui.IWorkbenchWizard#init(IWorkbench, IStructuredSelection) */
+   * @see org.eclipse.ui.IWorkbenchWizard#init(IWorkbench, IStructuredSelection) 
+   */
   public void init(IWorkbench workbench, IStructuredSelection selection)
   {
     rep = new ExportSummaryPage(PAGE_NAME, selection);

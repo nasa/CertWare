@@ -11,7 +11,6 @@ import net.certware.example.ExampleDocument;
 import net.certware.example.ExamplePattern;
 
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -32,7 +31,6 @@ import org.eclipse.ui.forms.SectionPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 
 /**
@@ -42,26 +40,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  */
 public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 
-	/** category image */
-	Image categoryImage;
-	/** pattern image */
-	Image patternImage = null;
-	/** document image */
-	Image documentImage = null;
-	/** checklist image */
-	Image checklistImage = null;
-	/** category image path */
-	static final String CATEGORY_IMAGE = "icons/obj16/category.gif";
-	/** pattern image path */
-	static final String PATTERN_IMAGE = "icons/obj16/pattern.gif";
-	/** document image path */
-	static final String DOCUMENT_IMAGE = "icons/obj16/document.gif";
-	/** checklist image path */
-	static final String CHECKLIST_IMAGE = "icons/obj16/checklist.gif";
-	/** horizontal layout image path */
-	static final String HORIZONTAL_IMAGE = "icons/obj16/th_horizontal.gif";
-	/** vertical layout image path */
-	static final String VERTICAL_IMAGE = "icons/obj16/th_vertical.gif";
+
 	/** example contributions for the trees */
 	private ExampleContributions ec;
 	/** selected node in tree */
@@ -71,27 +50,11 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 
 	
 	/**
-	 * Gets an image from the plugin.
-	 * @param path path to image file
-	 * @return image or null if descriptor not found
-	 */
-	private Image getImage(String path) {
-		ImageDescriptor id = AbstractUIPlugin.imageDescriptorFromPlugin(Activator.PLUGIN_ID, path);
-		if ( id != null )
-			return id.createImage();
-		return null;
-	}
-	
-	/**
 	 * Creates the scrolled properties block.
 	 * Creates the supporting images.
 	 * @param ec contributions class
 	 */
 	public ScrolledPropertiesBlock(ExampleContributions ec, ExampleWizardPage wp) {
-		categoryImage = getImage(CATEGORY_IMAGE);
-		patternImage = getImage(PATTERN_IMAGE);
-		documentImage = getImage(DOCUMENT_IMAGE);
-		checklistImage = getImage(CHECKLIST_IMAGE);
 		wizardPage = wp;
 		this.ec = ec;
 	}
@@ -100,14 +63,6 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	 * Disposes of resources used by this block.
 	 */
 	public void dispose() {
-		if ( categoryImage != null ) 
-			categoryImage.dispose();
-		if ( patternImage != null )
-			patternImage.dispose();
-		if ( documentImage != null )
-			documentImage.dispose();
-		if ( checklistImage != null )
-			checklistImage.dispose();
 	}
 
 	/**
@@ -235,19 +190,19 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		 */
 		public Image getImage(Object obj) {
 			if ( obj instanceof ExampleCategory ) {
-				return categoryImage;
+				return Activator.getDefault().getImageRegistry().get(Activator.EXAMPLE_CATEGORY_IMAGE);
 			}
 
 			if ( obj instanceof ExampleDocument ) {
-				return documentImage;
+				return Activator.getDefault().getImageRegistry().get(Activator.EXAMPLE_DOCUMENT_IMAGE);
 			}
 
 			if ( obj instanceof ExamplePattern ) {
-				return patternImage;
+				return Activator.getDefault().getImageRegistry().get(Activator.EXAMPLE_PATTERN_IMAGE);
 			}
 
 			if ( obj instanceof ExampleChecklist ) {
-				return checklistImage;
+				return Activator.getDefault().getImageRegistry().get(Activator.EXAMPLE_CHECKLIST_IMAGE);
 			}
 
 			return null;
@@ -345,7 +300,7 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		};
 		haction.setChecked(true);
 		haction.setToolTipText("Horizontal orientation");
-		haction.setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(Activator.PLUGIN_ID,HORIZONTAL_IMAGE));
+		haction.setImageDescriptor(Activator.getDefault().getImageRegistry().getDescriptor(Activator.EXAMPLE_HORIZONTAL_IMAGE));
 
 		Action vaction = new Action("ver", Action.AS_RADIO_BUTTON) {
 			public void run() {
@@ -355,7 +310,7 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 		};
 		vaction.setChecked(false);
 		vaction.setToolTipText("Vertical orientation");
-		vaction.setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(Activator.PLUGIN_ID,VERTICAL_IMAGE));
+		vaction.setImageDescriptor(Activator.getDefault().getImageRegistry().getDescriptor(Activator.EXAMPLE_VERTICAL_IMAGE));
 
 		form.getToolBarManager().add(haction);
 		form.getToolBarManager().add(vaction);

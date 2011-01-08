@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Project ARM Model Exports
+Bundle-SymbolicName: net.certware.export.arm;singleton:=true
+Bundle-Version: 1.0.3.qualifier
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.export
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: net.certware.argument.arm,
+ net.certware.argument.arm.util

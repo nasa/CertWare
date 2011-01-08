@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="net.certware.export" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="net.certware.export" id="net.certware.export" name="CertWare Exports"/>
+      </appinfo>
+      <documentation>
+         Provides export capabilities to the run-time platform.  Installs the exports for selection through standard workbench operations.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="styleid_mapping"/>
+            <element ref="style_resource"/>
+            <element ref="style_contribution"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="style_resource">
+      <annotation>
+         <documentation>
+            An XML resource file associated with the example to be copied into the workspace.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  Description of the nature style file.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="xml_file" type="string" use="required">
+            <annotation>
+               <documentation>
+                  An XML style file to be loaded prior to export operations.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="resource"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="styleid_mapping">
+      <annotation>
+         <documentation>
+            Maps one of the built-in style IDs to a model element or attribute.  Use the model&apos;s package identifier for the identifier value.  Use the style IDs from the built-in document styles (see docx4j styles.xml), e.g. &quot;Heading1&quot; for a paragraph style or &quot;Heading1Char&quot; for a run style.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="model_element_id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Model element number from the model package file.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="style_id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Paragraph or run style ID from built-in or supplemental styles.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="style_contribution">
+      <annotation>
+         <documentation>
+            Provides an XML-syntax string to define a new style.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="xml_string" type="string" use="required">
+            <annotation>
+               <documentation>
+                  XML string describing the style including the namespace.  The style name should be included in the string as it will be retrieved for application during the export process.  The usual namespace for word processing documents in this framework is
+xmlns:w=&quot;http://schemas.openxmlformats.org/wordprocessingml/2006/main&quot;.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         1.0.3
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2011 Kestrel Technology LLC.
+      </documentation>
+   </annotation>
+
+</schema>
