@@ -3,12 +3,13 @@
  * NASA Langley Research Center
  * Kestrel Technology LLC
  */
-package net.certware.export.handlers;
+package net.certware.export.arm.handlers;
 
 import java.util.Collection;
 
 import net.certware.core.ui.log.CertWareLog;
-import net.certware.export.jobs.ExportGSNJob;
+import net.certware.export.arm.jobs.ExportARMJob;
+import net.certware.export.jobs.AbstractExportJob;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -23,11 +24,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * Handles the command to export a GSN model node (and its subordinates).
+ * Handles the command to export a ARM model node (and its subordinates).
  * @author mrb
  * @since 1.0
  */
-public class ExportGSNHandler extends AbstractHandler {
+public class ExportARMHandler extends AbstractHandler {
 	/**
 	 * Method execute.
 	 * @param event execution event associated with job
@@ -47,21 +48,21 @@ public class ExportGSNHandler extends AbstractHandler {
 				// determine the kind of selection
 				// use various job constructors according to selection
 				Collection collection = null;
-				ExportGSNJob job = null;
-				final String jobTitle = Messages.ExportGSNHandler_0;
+				AbstractExportJob job = null;
+				final String jobTitle = Messages.ExportARMHandler_0;
 
 				if ( iss.size() > 1 ) {
 					collection = iss.toList();
-					job = new ExportGSNJob(jobTitle, collection);
+					job = new ExportARMJob(jobTitle, collection);
 				} else {
 					if ( iss.getFirstElement() instanceof Resource ) {
-						job = new ExportGSNJob(jobTitle, (Resource)iss.getFirstElement());
+						job = new ExportARMJob(jobTitle, (Resource)iss.getFirstElement());
 					}
 					else if ( iss.getFirstElement() instanceof EObject ) {
-						job = new ExportGSNJob(jobTitle, (EObject)iss.getFirstElement());
+						job = new ExportARMJob(jobTitle, (EObject)iss.getFirstElement());
 					}
 					else {
-						CertWareLog.logWarning(Messages.ExportGSNHandler_1);
+						CertWareLog.logWarning(Messages.ExportARMHandler_1);
 						return null;
 					}
 				}

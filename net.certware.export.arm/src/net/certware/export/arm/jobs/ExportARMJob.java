@@ -2,7 +2,7 @@
  * CertWare Project
  * Copyright (c) 2010 Kestrel Technology LLC
  */
-package net.certware.export.jobs;
+package net.certware.export.arm.jobs;
 
 import java.util.Collection;
 
@@ -29,6 +29,7 @@ import net.certware.argument.arm.ReasoningElement;
 import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.arm.util.ArmSwitch;
 import net.certware.core.ui.log.CertWareLog;
+import net.certware.export.jobs.AbstractExportJob;
 
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.wml.P;
@@ -147,7 +148,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseTaggedValue(TaggedValue taggedValue) {
 			if ( writeTagsHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.TAGGED_VALUE), "Tags");
+				addStyledText(styleMap.get(ArmPackage.TAGGED_VALUE),"Tags");
 				writeTagsHeader = false;
 			}
 			
@@ -188,7 +189,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseArgumentElement(ArgumentElement argumentElement) {
 			if ( writeArgumentElementHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ARGUMENT_ELEMENT), "Argument Elements");
+				addStyledText(styleMap.get(ArmPackage.ARGUMENT_ELEMENT),"Argument Elements");
 				writeArgumentElementHeader = false;
 			}
 
@@ -204,7 +205,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseArgumentLink(ArgumentLink argumentLink) {
 			if ( writeArgumentLinkHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ARGUMENT_ELEMENT), "Argument Links");
+				addStyledText(styleMap.get(ArmPackage.ARGUMENT_ELEMENT), "Argument Links");
 				writeArgumentLinkHeader = false;
 			}
 
@@ -228,7 +229,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseAssertedRelationship(AssertedRelationship assertedRelationship) {
 			if ( writeAssertedRelationshipHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ASSERTED_RELATIONSHIP), "Asserted Relationship");
+				addStyledText(styleMap.get(ArmPackage.ASSERTED_RELATIONSHIP), "Asserted Relationship");
 				writeAssertedRelationshipHeader = false;
 			}
 
@@ -262,7 +263,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseAssertedInference(AssertedInference assertedInference) {
 			if ( writeAssertedInferenceHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ASSERTED_INFERENCE), "Asserted Inference");
+				addStyledText(styleMap.get(ArmPackage.ASSERTED_INFERENCE), "Asserted Inference");
 				writeAssertedInferenceHeader = false;
 			}
 
@@ -279,7 +280,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseAssertedEvidence(AssertedEvidence assertedEvidence) {
 			if ( writeAssertedEvidenceHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ASSERTED_EVIDENCE), "Asserted Evidence");
+				addStyledText(styleMap.get(ArmPackage.ASSERTED_EVIDENCE), "Asserted Evidence");
 				writeAssertedEvidenceHeader = false;
 			}
 
@@ -296,7 +297,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseAssertedContext(AssertedContext assertedContext) {
 			if ( writeAssertedContextHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ASSERTED_CONTEXT), "Asserted Context");
+				addStyledText(styleMap.get(ArmPackage.ASSERTED_CONTEXT), "Asserted Context");
 				writeAssertedContextHeader = false;
 			}
 
@@ -313,7 +314,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseAssertedCounterEvidence(AssertedCounterEvidence assertedCounterEvidence) {
 			if ( writeAssertedCounterEvidenceHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ASSERTED_COUNTER_EVIDENCE), "Asserted Counter-Evidence");
+				addStyledText(styleMap.get(ArmPackage.ASSERTED_COUNTER_EVIDENCE), "Asserted Counter-Evidence");
 				writeAssertedCounterEvidenceHeader = false;
 			}
 			caseAssertedRelationship(assertedCounterEvidence);
@@ -329,7 +330,7 @@ public class ExportARMJob extends AbstractExportJob {
 		 */
 		public Boolean caseAssertedChallenge(AssertedChallenge assertedChallenge) {
 			if ( writeAssertedChallengeHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ASSERTED_CHALLENGE), "Asserted Challenge");
+				addStyledText(styleMap.get(ArmPackage.ASSERTED_CHALLENGE), "Asserted Challenge");
 				writeAssertedChallengeHeader = false;
 			}
 
@@ -431,44 +432,44 @@ public class ExportARMJob extends AbstractExportJob {
 
 		// each model element can have its own style
 		// for convenience we use the model element literals as keys 
-		styleMap.put(ArmPackage.ANNOTATION, "Annotation");
-		styleMap.put(ArmPackage.ARGUMENT, "Argument");
-		styleMap.put(ArmPackage.ARGUMENT_ELEMENT,"ArgumentElement");
-		styleMap.put(ArmPackage.ARGUMENT_LINK, "ArgumentLink");
-		styleMap.put(ArmPackage.ARGUMENT_LINK__SOURCE, "ArgumentLinkSource");
-		styleMap.put(ArmPackage.ARGUMENT_LINK__TARGET, "ArgumentLinkTarget");
-		styleMap.put(ArmPackage.ARGUMENT_REASONING__DESCRIBES, "ArgumentReasoningDescribes");
-		styleMap.put(ArmPackage.ARGUMENT_REASONING__HAS_STRUCTURE, "ArgumentReasoningHasStructure");
-		styleMap.put(ArmPackage.ARGUMENT__CONTAINS_ARGUMENT,"ArgumentContainsArgument");
-		styleMap.put(ArmPackage.ARGUMENT__CONTAINS_ARGUMENT_ELEMENT,"ArgumentContainsArgumentElement");
-		styleMap.put(ArmPackage.ARGUMENT__CONTAINS_ARGUMENT_LINK,"ArgumentContainsArgumentLink");
-		styleMap.put(ArmPackage.ARGUMENT_REASONING, "ArgumentReasoning");
-		styleMap.put(ArmPackage.ASSERTED_CHALLENGE, "AssertedChallenge");
-		styleMap.put(ArmPackage.ASSERTED_CONTEXT, "AssertedContext");
-		styleMap.put(ArmPackage.ASSERTED_COUNTER_EVIDENCE, "AssertedCounterEvidence");
-		styleMap.put(ArmPackage.ASSERTED_EVIDENCE, "AssertedEvidence");
-		styleMap.put(ArmPackage.ASSERTED_INFERENCE, "AssertedInference");
-		styleMap.put(ArmPackage.ASSERTED_RELATIONSHIP, "AssertedRelationship");
-		styleMap.put(ArmPackage.CITATION_ELEMENT, "CitationElement");
-		styleMap.put(ArmPackage.CITATION_ELEMENT__REFERS_TO_ARGUMENT, "CitationElementRefersToArgument");
-		styleMap.put(ArmPackage.CITATION_ELEMENT__REFERS_TO_ARGUMENT_ELEMENT, "CitationElementRefersToArgumentElement");
-		styleMap.put(ArmPackage.CLAIM, "Claim");
-		styleMap.put(ArmPackage.CLAIM__ASSUMED, "ClaimAssumed");
-		styleMap.put(ArmPackage.CLAIM__TO_BE_SUPPORTED, "ClaimToBeSupported");
-		styleMap.put(ArmPackage.EVIDENCE_ASSERTION, "EvidenceAssertion");
-		styleMap.put(ArmPackage.INFORMATION_ELEMENT, "InformationElement");
-		styleMap.put(ArmPackage.MODEL_ELEMENT, "ModelElement"); 
-		styleMap.put(ArmPackage.MODEL_ELEMENT__CONTENT, "ModelElementContent");
-		styleMap.put(ArmPackage.MODEL_ELEMENT__DESCRIPTION, "ModelElementDescription");
-		styleMap.put(ArmPackage.MODEL_ELEMENT__IDENTIFIER, "ModelElementIdentifier");
-		styleMap.put(ArmPackage.MODEL_ELEMENT__IS_TAGGED, "ModelElementIsTagged");
-		styleMap.put(ArmPackage.REASONING_ELEMENT, "ReasoningElement");
-		styleMap.put(ArmPackage.TAGGED_VALUE, "TaggedValue");
-		styleMap.put(ArmPackage.TAGGED_VALUE__KEY, "TaggedValueKey");
-		styleMap.put(ArmPackage.TAGGED_VALUE__VALUE, "TaggedValueValue");
+		styleMap.put(ArmPackage.ANNOTATION, new StyleEntry(false, "Annotation"));
+		styleMap.put(ArmPackage.ARGUMENT, new StyleEntry(true,"Argument"));
+		styleMap.put(ArmPackage.ARGUMENT_ELEMENT,new StyleEntry(false,"ArgumentElement"));
+		styleMap.put(ArmPackage.ARGUMENT_LINK, new StyleEntry(false,"ArgumentLink"));
+		styleMap.put(ArmPackage.ARGUMENT_LINK__SOURCE, new StyleEntry(false,"ArgumentLinkSource"));
+		styleMap.put(ArmPackage.ARGUMENT_LINK__TARGET, new StyleEntry(false,"ArgumentLinkTarget"));
+		styleMap.put(ArmPackage.ARGUMENT_REASONING__DESCRIBES, new StyleEntry(false,"ArgumentReasoningDescribes"));
+		styleMap.put(ArmPackage.ARGUMENT_REASONING__HAS_STRUCTURE, new StyleEntry(false,"ArgumentReasoningHasStructure"));
+		styleMap.put(ArmPackage.ARGUMENT__CONTAINS_ARGUMENT,new StyleEntry(false,"ArgumentContainsArgument"));
+		styleMap.put(ArmPackage.ARGUMENT__CONTAINS_ARGUMENT_ELEMENT, new StyleEntry(false,"ArgumentContainsArgumentElement"));
+		styleMap.put(ArmPackage.ARGUMENT__CONTAINS_ARGUMENT_LINK,new StyleEntry(false,"ArgumentContainsArgumentLink"));
+		styleMap.put(ArmPackage.ARGUMENT_REASONING, new StyleEntry(false,"ArgumentReasoning"));
+		styleMap.put(ArmPackage.ASSERTED_CHALLENGE, new StyleEntry(false,"AssertedChallenge"));
+		styleMap.put(ArmPackage.ASSERTED_CONTEXT, new StyleEntry(false,"AssertedContext"));
+		styleMap.put(ArmPackage.ASSERTED_COUNTER_EVIDENCE, new StyleEntry(false,"AssertedCounterEvidence"));
+		styleMap.put(ArmPackage.ASSERTED_EVIDENCE, new StyleEntry(false,"AssertedEvidence"));
+		styleMap.put(ArmPackage.ASSERTED_INFERENCE, new StyleEntry(false,"AssertedInference"));
+		styleMap.put(ArmPackage.ASSERTED_RELATIONSHIP, new StyleEntry(false,"AssertedRelationship"));
+		styleMap.put(ArmPackage.CITATION_ELEMENT, new StyleEntry(false,"CitationElement"));
+		styleMap.put(ArmPackage.CITATION_ELEMENT__REFERS_TO_ARGUMENT, new StyleEntry(false,"CitationElementRefersToArgument"));
+		styleMap.put(ArmPackage.CITATION_ELEMENT__REFERS_TO_ARGUMENT_ELEMENT, new StyleEntry(false,"CitationElementRefersToArgumentElement"));
+		styleMap.put(ArmPackage.CLAIM, new StyleEntry(false,"Claim"));
+		styleMap.put(ArmPackage.CLAIM__ASSUMED, new StyleEntry(false,"ClaimAssumed"));
+		styleMap.put(ArmPackage.CLAIM__TO_BE_SUPPORTED, new StyleEntry(false,"ClaimToBeSupported"));
+		styleMap.put(ArmPackage.EVIDENCE_ASSERTION, new StyleEntry(false,"EvidenceAssertion"));
+		styleMap.put(ArmPackage.INFORMATION_ELEMENT, new StyleEntry(false,"InformationElement"));
+		styleMap.put(ArmPackage.MODEL_ELEMENT, new StyleEntry(false,"ModelElement")); 
+		styleMap.put(ArmPackage.MODEL_ELEMENT__CONTENT, new StyleEntry(false,"ModelElementContent"));
+		styleMap.put(ArmPackage.MODEL_ELEMENT__DESCRIPTION, new StyleEntry(false,"ModelElementDescription"));
+		styleMap.put(ArmPackage.MODEL_ELEMENT__IDENTIFIER, new StyleEntry(false,"ModelElementIdentifier"));
+		styleMap.put(ArmPackage.MODEL_ELEMENT__IS_TAGGED, new StyleEntry(false,"ModelElementIsTagged"));
+		styleMap.put(ArmPackage.REASONING_ELEMENT, new StyleEntry(false,"ReasoningElement"));
+		styleMap.put(ArmPackage.TAGGED_VALUE,new StyleEntry(false, "TaggedValue"));
+		styleMap.put(ArmPackage.TAGGED_VALUE__KEY, new StyleEntry(false,"TaggedValueKey"));
+		styleMap.put(ArmPackage.TAGGED_VALUE__VALUE, new StyleEntry(false,"TaggedValueValue"));
 
-		assignStyle(ArmPackage.MODEL_ELEMENT__CONTENT,"Heading2Char"); // TODO testing
-		assignStyle(ArmPackage.ARGUMENT_ELEMENT__CONTENT,"Heading3Char"); // TODO testing
+		assignStyle(ArmPackage.MODEL_ELEMENT__CONTENT,true,"Heading2Char"); // TODO testing
+		assignStyle(ArmPackage.ARGUMENT_ELEMENT__CONTENT,false,"Heading3Char"); // TODO testing
 
 		// override with plugin contributions
 		loadContributedStyles();

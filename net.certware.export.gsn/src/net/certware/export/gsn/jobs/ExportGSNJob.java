@@ -2,7 +2,7 @@
  * CertWare Project
  * Copyright (c) 2010 Kestrel Technology LLC
  */
-package net.certware.export.jobs;
+package net.certware.export.gsn.jobs;
 
 import java.util.Collection;
 
@@ -23,6 +23,7 @@ import net.certware.argument.gsn.Solution;
 import net.certware.argument.gsn.Strategy;
 import net.certware.argument.gsn.util.GsnSwitch;
 import net.certware.core.ui.log.CertWareLog;
+import net.certware.export.jobs.AbstractExportJob;
 
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.wml.P;
@@ -131,7 +132,7 @@ public class ExportGSNJob extends AbstractExportJob {
 		 */
 		public Boolean caseAssertedEvidence(AssertedEvidence assertedEvidence) {
 			if ( writeAssertedEvidenceHeader ) {
-				mainDocumentPart.addStyledParagraphOfText(styleMap.get(ArmPackage.ASSERTED_EVIDENCE), "Asserted Evidence");
+				addStyledText(styleMap.get(ArmPackage.ASSERTED_EVIDENCE), "Asserted Evidence");
 				writeAssertedEvidenceHeader = false;
 			}
 
@@ -268,55 +269,57 @@ public class ExportGSNJob extends AbstractExportJob {
 
 		// each model element can have its own style
 		// for convenience we use the model element literals as keys
-		styleMap.put(GsnPackage.ASSUMPTION, "Assumption");
-		styleMap.put(GsnPackage.ASSUMPTION__CONTENT, "AssumptionContent");
-		styleMap.put(GsnPackage.ASSUMPTION__DESCRIPTION, "AssumptionDescription");
-		styleMap.put(GsnPackage.ASSUMPTION__IDENTIFIER,"AssumptionIdentifier");
-		styleMap.put(GsnPackage.ASSUMPTION__IS_TAGGED, "AssumptionIsTagged");
+		styleMap.put(GsnPackage.ASSUMPTION, new StyleEntry(true,"Assumption"));
+		styleMap.put(GsnPackage.ASSUMPTION__CONTENT, new StyleEntry(false,"AssumptionContent"));
+		styleMap.put(GsnPackage.ASSUMPTION__DESCRIPTION, new StyleEntry(false,"AssumptionDescription"));
+		styleMap.put(GsnPackage.ASSUMPTION__IDENTIFIER,new StyleEntry(false,"AssumptionIdentifier"));
+		styleMap.put(GsnPackage.ASSUMPTION__IS_TAGGED, new StyleEntry(false,"AssumptionIsTagged"));
 
-		styleMap.put(GsnPackage.CONTEXT, "Context");
-		styleMap.put(GsnPackage.CONTEXT__CONTENT,"ContextContent");
-		styleMap.put(GsnPackage.CONTEXT__DESCRIPTION,"ContextDescription");
-		styleMap.put(GsnPackage.CONTEXT__IDENTIFIER,"ContextIdentifier");
-		styleMap.put(GsnPackage.CONTEXT__IS_TAGGED,"ContextIsTagged");
+		styleMap.put(GsnPackage.CONTEXT, new StyleEntry(true,"Context"));
+		styleMap.put(GsnPackage.CONTEXT__CONTENT,new StyleEntry(false,"ContextContent"));
+		styleMap.put(GsnPackage.CONTEXT__DESCRIPTION,new StyleEntry(false,"ContextDescription"));
+		styleMap.put(GsnPackage.CONTEXT__IDENTIFIER,new StyleEntry(false,"ContextIdentifier"));
+		styleMap.put(GsnPackage.CONTEXT__IS_TAGGED,new StyleEntry(false,"ContextIsTagged"));
 		
-		styleMap.put(GsnPackage.EVIDENCE,"Evidence");
-		styleMap.put(GsnPackage.EVIDENCE__CONTENT,"EvidenceContent");
-		styleMap.put(GsnPackage.EVIDENCE__DESCRIPTION,"EvidenceDescription");
-		styleMap.put(GsnPackage.EVIDENCE__IDENTIFIER,"EvidenceIdentifier");
-		styleMap.put(GsnPackage.EVIDENCE__IS_TAGGED,"EvidenceIsTagged");
-		styleMap.put(GsnPackage.EVIDENCE__SOURCE,"EvidenceSource");
-		styleMap.put(GsnPackage.EVIDENCE__TARGET,"EvidenceTarget");
+		styleMap.put(GsnPackage.EVIDENCE,new StyleEntry(true,"Evidence"));
+		styleMap.put(GsnPackage.EVIDENCE__CONTENT,new StyleEntry(false,"EvidenceContent"));
+		styleMap.put(GsnPackage.EVIDENCE__DESCRIPTION,new StyleEntry(false,"EvidenceDescription"));
+		styleMap.put(GsnPackage.EVIDENCE__IDENTIFIER,new StyleEntry(false,"EvidenceIdentifier"));
+		styleMap.put(GsnPackage.EVIDENCE__IS_TAGGED,new StyleEntry(false,"EvidenceIsTagged"));
+		styleMap.put(GsnPackage.EVIDENCE__SOURCE,new StyleEntry(false,"EvidenceSource"));
+		styleMap.put(GsnPackage.EVIDENCE__TARGET,new StyleEntry(false,"EvidenceTarget"));
 
-		styleMap.put(GsnPackage.GOAL,"Goal");
-		styleMap.put(GsnPackage.GOAL__ASSUMED,"GoalAssumed");
-		styleMap.put(GsnPackage.GOAL__ASSUMPTIONS,"GoalAssumptions");
-		styleMap.put(GsnPackage.GOAL__CONTENT,"GoalContent");
-		styleMap.put(GsnPackage.GOAL__DESCRIPTION,"GoalDescription");
-		styleMap.put(GsnPackage.GOAL__GOAL_CONTEXTS,"GoalGoalContexts");
-		styleMap.put(GsnPackage.GOAL__GOAL_SOLUTIONS,"GoalGoalSolutions");
-		styleMap.put(GsnPackage.GOAL__IDENTIFIER,"GoalIdentifier");
-		styleMap.put(GsnPackage.GOAL__IS_TAGGED,"GoalIsTagged");
-		styleMap.put(GsnPackage.GOAL__STRATEGIES,"GoalStrategies");
-		styleMap.put(GsnPackage.GOAL__SUB_GOALS,"GoalSubGoals");
-		styleMap.put(GsnPackage.GOAL__TO_BE_SUPPORTED,"GoalToBeSupported");
+		styleMap.put(GsnPackage.GOAL,new StyleEntry(true,"Goal"));
+		styleMap.put(GsnPackage.GOAL__ASSUMED,new StyleEntry(false,"GoalAssumed"));
+		styleMap.put(GsnPackage.GOAL__ASSUMPTIONS,new StyleEntry(false,"GoalAssumptions"));
+		styleMap.put(GsnPackage.GOAL__CONTENT,new StyleEntry(false,"GoalContent"));
+		styleMap.put(GsnPackage.GOAL__DESCRIPTION,new StyleEntry(false,"GoalDescription"));
+		styleMap.put(GsnPackage.GOAL__GOAL_CONTEXTS,new StyleEntry(false,"GoalGoalContexts"));
+		styleMap.put(GsnPackage.GOAL__GOAL_SOLUTIONS,new StyleEntry(false,"GoalGoalSolutions"));
+		styleMap.put(GsnPackage.GOAL__IDENTIFIER,new StyleEntry(false,"GoalIdentifier"));
+		styleMap.put(GsnPackage.GOAL__IS_TAGGED,new StyleEntry(false,"GoalIsTagged"));
+		styleMap.put(GsnPackage.GOAL__STRATEGIES,new StyleEntry(false,"GoalStrategies"));
+		styleMap.put(GsnPackage.GOAL__SUB_GOALS,new StyleEntry(false,"GoalSubGoals"));
+		styleMap.put(GsnPackage.GOAL__TO_BE_SUPPORTED,new StyleEntry(false,"GoalToBeSupported"));
 
-		styleMap.put(GsnPackage.JUSTIFICATION,"Justification");
-		styleMap.put(GsnPackage.JUSTIFICATION__CONTENT,"JustificationContent");
-		styleMap.put(GsnPackage.JUSTIFICATION__DESCRIPTION,"JustificationDescription");
-		styleMap.put(GsnPackage.JUSTIFICATION__IDENTIFIER,"JustificationIdentifier");
-		styleMap.put(GsnPackage.JUSTIFICATION__IS_TAGGED,"JustificationIsTagged");
+		styleMap.put(GsnPackage.JUSTIFICATION,new StyleEntry(true,"Justification"));
+		styleMap.put(GsnPackage.JUSTIFICATION__CONTENT,new StyleEntry(false,"JustificationContent"));
+		styleMap.put(GsnPackage.JUSTIFICATION__DESCRIPTION,new StyleEntry(false,"JustificationDescription"));
+		styleMap.put(GsnPackage.JUSTIFICATION__IDENTIFIER,new StyleEntry(false,"JustificationIdentifier"));
+		styleMap.put(GsnPackage.JUSTIFICATION__IS_TAGGED,new StyleEntry(false,"JustificationIsTagged"));
 
-		styleMap.put(GsnPackage.SOLUTION,"Solution");
-		styleMap.put(GsnPackage.SOLUTION__CONTENT,"SolutionContent");
-		styleMap.put(GsnPackage.SOLUTION__DESCRIPTION,"SolutionDescription");
-		styleMap.put(GsnPackage.SOLUTION__IDENTIFIER,"SolutionIdentifier");
-		styleMap.put(GsnPackage.SOLUTION__IS_TAGGED,"SolutionIsTagged");
-		styleMap.put(GsnPackage.SOLUTION__SOLUTION_CONTEXTS,"SolutionSolutionContexts");
-		styleMap.put(GsnPackage.SOLUTION__SOLUTION_EVIDENCE,"SolutionSolutionEvidence");
-		styleMap.put(GsnPackage.SOLUTION__SOURCE,"SolutionSource");
-		styleMap.put(GsnPackage.SOLUTION__TARGET,"SolutionTarget");
+		styleMap.put(GsnPackage.SOLUTION,new StyleEntry(true,"Solution"));
+		styleMap.put(GsnPackage.SOLUTION__CONTENT,new StyleEntry(false,"SolutionContent"));
+		styleMap.put(GsnPackage.SOLUTION__DESCRIPTION,new StyleEntry(false,"SolutionDescription"));
+		styleMap.put(GsnPackage.SOLUTION__IDENTIFIER,new StyleEntry(false,"SolutionIdentifier"));
+		styleMap.put(GsnPackage.SOLUTION__IS_TAGGED,new StyleEntry(false,"SolutionIsTagged"));
+		styleMap.put(GsnPackage.SOLUTION__SOLUTION_CONTEXTS,new StyleEntry(false,"SolutionSolutionContexts"));
+		styleMap.put(GsnPackage.SOLUTION__SOLUTION_EVIDENCE,new StyleEntry(false,"SolutionSolutionEvidence"));
+		styleMap.put(GsnPackage.SOLUTION__SOURCE,new StyleEntry(false,"SolutionSource"));
+		styleMap.put(GsnPackage.SOLUTION__TARGET,new StyleEntry(false,"SolutionTarget"));
 
+		// TODO override above strings with default styles; let the extension point take care of custom names
+		
 		// override with plugin contributions
 		loadContributedStyles();
 	}

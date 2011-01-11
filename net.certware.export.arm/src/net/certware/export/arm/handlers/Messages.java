@@ -3,7 +3,7 @@
  * NASA Langley Research Center
  * Kestrel Technology LLC
  */
-package net.certware.export.handlers;
+package net.certware.export.arm.handlers;
 
 import org.eclipse.osgi.util.NLS;
 
@@ -13,10 +13,10 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 	/**
 	 * Field BUNDLE_NAME.
-	 * (value is ""net.certware.export.handlers.messages"")
+	 * (value is ""net.certware.export.arm.handlers.messages"")
 	 */
 	@SuppressWarnings("unused")
-	private static final String BUNDLE_NAME = "net.certware.export.handlers.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "net.certware.export.arm.handlers.messages"; //$NON-NLS-1$
 	/**
 	 * Field ExportARMHandler_0.
 	 */
