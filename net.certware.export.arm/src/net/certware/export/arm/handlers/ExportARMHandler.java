@@ -49,7 +49,7 @@ public class ExportARMHandler extends AbstractHandler {
 				// use various job constructors according to selection
 				Collection collection = null;
 				AbstractExportJob job = null;
-				final String jobTitle = Messages.ExportARMHandler_0;
+				final String jobTitle = "Export ARM model elements";
 
 				if ( iss.size() > 1 ) {
 					collection = iss.toList();
@@ -62,7 +62,7 @@ public class ExportARMHandler extends AbstractHandler {
 						job = new ExportARMJob(jobTitle, (EObject)iss.getFirstElement());
 					}
 					else {
-						CertWareLog.logWarning(Messages.ExportARMHandler_1);
+						CertWareLog.logWarning("Unknown selection for ARM export");
 						return null;
 					}
 				}

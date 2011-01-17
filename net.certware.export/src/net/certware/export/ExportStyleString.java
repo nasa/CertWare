@@ -15,6 +15,8 @@ public class ExportStyleString extends ExportContribution implements IExportCont
 
 	/** XML format string */
 	String xmlString;
+	/** whether the style is for a paragraph */
+	String styleIsParagraph;
 
 	/**
 	 * Create the contribution for a style ID and extract the contribution.
@@ -22,19 +24,28 @@ public class ExportStyleString extends ExportContribution implements IExportCont
 	 */
 	public ExportStyleString(IConfigurationElement ce) {
 		super(ce);
-		
+
 		if ( ce != null ) {
 
 			// extension contributor
 			contributor = ce.getContributor();
-		
-		// 	extract fields
-			xmlString = safeAssignment(ce, EXPORT_STYLE_XML_STRING);
+
+			// 	extract fields
+			xmlString = safeAssignment(ce, EXPORT_CONTRIBUTION_STYLE_STRING);
+			styleIsParagraph = safeAssignment(ce, EXPORT_CONTRIBUTION_IS_PARAGRAPH);
 		}
 	}
-	
+
 	public String getXmlString() {
 		return xmlString;
 	}
-	
+
+	public String getStyleIsParagraph() {
+		return styleIsParagraph; // expecting Boolean value owing to schema
+	}
+
+	public Boolean isParagraph() {
+		return Boolean.valueOf(styleIsParagraph);
+	}
+
 }

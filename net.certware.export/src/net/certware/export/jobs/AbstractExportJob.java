@@ -18,6 +18,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
 import net.certware.core.ui.log.CertWareLog;
+import net.certware.export.ExportContributions;
 
 import org.docx4j.XmlUtils;
 import org.docx4j.convert.out.flatOpcXml.FlatOpcXmlCreator;
@@ -51,7 +52,7 @@ import org.eclipse.swt.widgets.Shell;
  */
 public abstract class AbstractExportJob extends Job {
 
-	protected static String STYLE_MODEL_ELEMENT_CONTENT = "<w:style xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" w:type=\"character\" w:customStyle=\"1\" w:styleId=\"ModelElementContent\"><w:name w:val=\"Model Element Content\" /><w:basedOn w:val=\"DefaultParagraphFont\" /><w:link w:val=\"Heading3\" /><w:uiPriority w:val=\"9\" /><w:rPr><w:rFonts w:asciiTheme=\"majorHAnsi\" w:hAnsiTheme=\"majorHAnsi\" w:cstheme=\"majorBidi\" /><w:b /><w:bCs /><w:color w:val=\"4F81BD\" w:themeColor=\"accent1\" /></w:rPr></w:style>";
+	// protected static String STYLE_MODEL_ELEMENT_CONTENT = "<w:style xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" w:type=\"character\" w:customStyle=\"1\" w:styleId=\"ModelElementContent\"><w:name w:val=\"Model Element Content\" /><w:basedOn w:val=\"DefaultParagraphFont\" /><w:link w:val=\"Heading3\" /><w:uiPriority w:val=\"9\" /><w:rPr><w:rFonts w:asciiTheme=\"majorHAnsi\" w:hAnsiTheme=\"majorHAnsi\" w:cstheme=\"majorBidi\" /><w:b /><w:bCs /><w:color w:val=\"4F81BD\" w:themeColor=\"accent1\" /></w:rPr></w:style>";
 	/** for exporting a single node and its descendants */  
 	protected EObject node = null;
 	/** for exporting a selection of nodes only */
@@ -69,9 +70,23 @@ public abstract class AbstractExportJob extends Job {
 	/** the style definition part from the main document incoming file */
 	protected StyleDefinitionsPart stylesPart = null;
 	/** style map populated by extension point */
-	protected Map<Integer,String> styleMap = new HashMap<Integer,String>();
+	protected Map<Integer,StyleEntry> styleMap = new HashMap<Integer,StyleEntry>();
 	/** document object creation factory, created at run-time */
 	protected ObjectFactory factory;
+	/** style entry including paragraph indicator */
+	protected class StyleEntry {
+		/**
+		 * Records a document style entry.
+		 * @param isParagraph true if style is for paragraphs, false otherwise
+		 * @param style string identifier
+		 */
+		public StyleEntry(boolean isParagraph, String style) {
+			this.isParagraph = isParagraph;
+			this.style = style;
+		}
+		boolean isParagraph = false; // true for paragraph, false for run
+		String style = ""; // style string identifier
+	}
 	
 	/**
 	 * Default constructor uses default job name.
@@ -164,7 +179,7 @@ public abstract class AbstractExportJob extends Job {
 	 * @param monitor progress monitor
 	 * @return status indication, passed on to run method return 
 	 */
-	abstract IStatus produce(IProgressMonitor monitor);
+	abstract public IStatus produce(IProgressMonitor monitor);
 
 	
 	/**
@@ -277,29 +292,44 @@ public abstract class AbstractExportJob extends Job {
 	 * Uses model package identifiers as keys.
 	 */
 	public void loadContributedStyles() {
+		ExportContributions ec = new ExportContributions();
+		ec.initialize();
+		
 		// TODO read plugin contributions into the style map
+
+		System.err.println("contributed ids: " + ec.getStyleIdMappings().size());
+		System.err.println("contributed res: " + ec.getStyleResources().size());
+		System.err.println("contributed sty: " + ec.getStyleStrings().size());
 	}
 
 	/**
 	 * Assign or reassign a model element's style.
 	 * @param key model element ID from package definition
+	 * @param isParagraph true if style is for a paragraph, false for run
 	 * @param styleId style ID, such as {@code Heading1Char} or {@code TaggedValue}.
 	 */
-	protected void assignStyleId(int key, String styleId) {
+	protected void assignStyleId(int key, boolean isParagraph, String styleId) {
+		System.err.println("assigning style id " + key + " is paragraph " + isParagraph + " styleId " + styleId);
 		if ( styleMap.containsKey(styleId)) {
 			styleMap.remove(styleId);
 		}
-		styleMap.put(key, styleId);
+		styleMap.put(key, new StyleEntry(isParagraph,styleId));
 	}
 
 	/**
 	 * Assign or reassign a model element's style.
 	 * @param key model element ID from package definition
+	 * @param isParagraph true if style is for paragraph, false otherwise
 	 * @param xml XML string describing style, including {@code xmlns} tags where needed
 	 */
-	protected void assignStyle(int key, String xml) {
+	protected void assignStyle(int key, boolean isParagraph, String xml) {
+		System.err.println("assigning style " + key + " is paragraph " + isParagraph + " xml " + xml);
 		Style style = addStyle(xml);
-		assignStyleId(key,style.getStyleId());
+		if ( style != null ) {
+			assignStyleId(key,isParagraph,style.getStyleId());
+		} else {
+			System.err.println("Unmarshalled null style for " + xml);
+		}
 	}
 
 	/**
@@ -309,6 +339,7 @@ public abstract class AbstractExportJob extends Job {
 	 */
 	protected Style addStyle(String format) {
 		try {
+			System.err.println("adding style format " + format);
 			Style newStyle;
 			newStyle = (Style)XmlUtils.unmarshalString(format);
 			stylesPart.getJaxbElement().getStyle().add(newStyle);
@@ -320,19 +351,33 @@ public abstract class AbstractExportJob extends Job {
 	}
 
 	/**
+	 * 
+	 * @param styleEntry style entry from style map
+	 * @param text text string to write into paragraph or run according to style
+	 * @return object of type {@code org.docx4j.wml.P} for paragraph or {@code org.docx4j.wml.R} for run.
+	 */
+	protected Object addStyledText(StyleEntry styleEntry, String text) {
+		if ( styleEntry.isParagraph ) {
+			return mainDocumentPart.addStyledParagraphOfText(styleEntry.style, text);
+		} else {
+			return addStyledRunOfText(styleEntry,text);
+		}
+	}
+	
+	/**
 	 * Creates a new run with text of the given style. 
 	 * Presumes the style is a run style rather than a paragraph style.
 	 * @param style style name to apply from document style part or defaults
-	 * @param text text to insert in run
+	 * @param styleEntry style entry
 	 * @return the new run, ready to add to the paragraph content list
 	 */
-	protected R addStyledRunOfText(String styleId, String text) {
+	protected R addStyledRunOfText(StyleEntry styleEntry, String text ) {
 	
-		R run = addRunOfText(text);
+		R run = addRunOfText(styleEntry.style);
 	
 		// apply style if available
-		if (mainDocumentPart.getPropertyResolver().activateStyle(styleId)) {
-			Style style = mainDocumentPart.getPropertyResolver().getStyle(styleId);
+		if (mainDocumentPart.getPropertyResolver().activateStyle(styleEntry.style)) {
+			Style style = mainDocumentPart.getPropertyResolver().getStyle(styleEntry.style);
 			RPr runProperties = style.getRPr();
 			run.setRPr(runProperties);
 		} 
@@ -418,6 +463,7 @@ public abstract class AbstractExportJob extends Job {
 				// save it to the file system according to destination file selection, or dump to standard output
 				if ( save ) {
 					// save it to the file
+					System.err.println("saving ML document to " + getDestinationFileName()); // TODO renaming
 					wordMLPackage.save( new File(getDestinationFileName()) );
 					CertWareLog.logInfo(MessageFormat.format("{0} {1}", "Exported to", getDestinationFileName()));
 				} else {

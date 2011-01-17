@@ -22,6 +22,7 @@ public class ExportContributions implements IExportContribution {
 	List<ExportStyleIdMapping> styleIdMappings = new ArrayList();
 	List<ExportStyleResource> styleResources = new ArrayList();
 	List<ExportStyleString> styleStrings = new ArrayList();
+	List<ExportOperation> fileExporters = new ArrayList();
 	
 	/**
 	 * Initialize the categories and list given the extension point contributions.
@@ -29,9 +30,14 @@ public class ExportContributions implements IExportContribution {
 	public void initialize() {
 
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXPORT_EXTENSION);
+		
+		System.err.println("Export platform config: " + config.length );
 
 		// given the contributions, allocate them to the categories
 		for ( IConfigurationElement ce : config ) {
+			
+			System.err.println("Export configuration element name: " + ce.getName()); // TODO testing
+			
 			if ( EXPORT_ELEMENT_STYLEID_MAPPING.equals(ce.getName())) {
 				ExportStyleIdMapping esm = new ExportStyleIdMapping(ce);
 				styleIdMappings.add(esm);
@@ -45,6 +51,11 @@ public class ExportContributions implements IExportContribution {
 			if ( EXPORT_ELEMENT_STYLE_CONTRIBUTION.equals(ce.getName())) {
 				ExportStyleString ess = new ExportStyleString(ce);
 				styleStrings.add(ess);
+			}
+			
+			if ( EXPORT_ELEMENT_OPERATION.equals(ce.getName())) {
+				ExportOperation exo = new ExportOperation(ce);
+				fileExporters.add(exo);
 			}
 		}
 	}
@@ -69,6 +80,11 @@ public class ExportContributions implements IExportContribution {
 	public List<ExportStyleString> getStyleStrings() {
 		return styleStrings;
 	}
-	
-	
+
+	/**
+	 * @return the file exporters list
+	 */
+	public List<ExportOperation> getExportOperations() {
+		return fileExporters;
+	}
 }

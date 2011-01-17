@@ -19,7 +19,17 @@ public class Activator extends AbstractUIPlugin {
 	private BundleContext context; 
 	/** plugin ID for image acquisition */
 	private static final String PLUGIN_ID = "net.certware.export"; //$NON-NLS-1$
-
+	/** singleton reference */
+	static private Activator plugin;
+	
+	/**
+	 * Returns the reference to the plugin.
+	 * @return plugin reference
+	 */
+	public static Activator getDefault() {
+		return plugin;
+	}
+	
 	/**
 	 * Return the bundle context from start call.
 	 * @return bundle context 
@@ -31,19 +41,21 @@ public class Activator extends AbstractUIPlugin {
 	/**
 	 * Start the component.
 	 * @param bundleContext bundle context
-	
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext) */
+	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext) 
+	 */
 	public void start(BundleContext bundleContext) {
 		context = bundleContext;
+		plugin = this;
 	}
 
 	/**
 	 * Stop the component.
 	 * @param bundleContext unused
-	
-	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext) */
+	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext) 
+	 */
 	public void stop(BundleContext bundleContext) {
 		context = null;
+		plugin = null;
 	}
 	
    /**

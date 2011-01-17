@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="cpn"
+            id="net.certware.planning.cpn.CpnDsl"
+            name="CpnDsl Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="net.certware.planning.cpn.CpnDsl.validate">
+         <activeWhen>
+            <reference
+                    definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="net.certware.planning.cpn.CpnDsl.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="net.certware.planning.cpn.CpnDsl" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="net.certware.planning.cpn.CpnDsl"
+            name="CpnDsl">
+            <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
+        </page>
+        <page
+            category="net.certware.planning.cpn.CpnDsl"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="net.certware.planning.cpn.CpnDsl.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
+        </page>
+        <page
+            category="net.certware.planning.cpn.CpnDsl"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="net.certware.planning.cpn.CpnDsl.templates"
+            name="Templates">
+            <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="net.certware.planning.cpn.ui.keyword_CpnDsl"
+            label="CpnDsl"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="net.certware.planning.cpn.CpnDsl.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="net.certware.planning.cpn.CpnDsl.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="cpn">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="cpn">
+        </resourceServiceProvider>
+    </extension>
+
+
+
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+   <!-- quickfix marker resolution generator -->
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+      </markerResolutionGenerator>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.xtext.projectwiz"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
+            icon="icons/editor.gif"
+            id="net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
+            name="CpnDsl Project"
+            project="true">
+      </wizard>
+   </extension>
+
+</plugin>

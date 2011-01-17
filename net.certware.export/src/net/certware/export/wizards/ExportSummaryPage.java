@@ -12,6 +12,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 import net.certware.core.ui.log.CertWareLog;
+import net.certware.export.jobs.ExportResourceOperation;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IProject;
@@ -63,9 +64,9 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     /** store key for create structure */
     private static final String STORE_CREATE_STRUCTURE_ID = "ExportSummaryPage.STORE_CREATE_STRUCTURE_ID"; //$NON-NLS-1$
     /** select destination message */
-    private static final String SELECT_DESTINATION_MESSAGE = Messages.ExportSummaryPage_0;
+    private static final String SELECT_DESTINATION_MESSAGE = "Select destination";
     /** dialog title for destination message */
-    private static final String SELECT_DESTINATION_TITLE = Messages.ExportSummaryPage_1;
+    private static final String SELECT_DESTINATION_TITLE = "Select Destination";
     /** empty directory names list */
     private static final String[] EMPTY_DIRECTORY_NAMES = new String[0];
     
@@ -84,8 +85,8 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      */
     public ExportSummaryPage(IStructuredSelection selection) {
         this("fileSystemExportPage1", selection); //$NON-NLS-1$
-        setTitle(Messages.ExportSummaryPage_2);
-        setDescription(Messages.ExportSummaryPage_3);
+        setTitle("Export to Document");
+        setDescription("Translates the results file to a document file in the local file system.");
     }
 
     /**
@@ -144,7 +145,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
 
         // destination browse button
         destinationBrowseButton = new Button(destinationSelectionGroup, SWT.PUSH);
-        destinationBrowseButton.setText(Messages.ExportSummaryPage_4);
+        destinationBrowseButton.setText("Browse...");
         destinationBrowseButton.addListener(SWT.Selection, this);
         destinationBrowseButton.setFont(font);
         setButtonLayoutData(destinationBrowseButton);
@@ -173,13 +174,13 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     protected void createDirectoryStructureOptions(Composite optionsGroup, Font font) {
         // create directory structure radios
         createDirectoryStructureButton = new Button(optionsGroup, SWT.RADIO | SWT.LEFT);
-        createDirectoryStructureButton.setText(Messages.ExportSummaryPage_5);
+        createDirectoryStructureButton.setText("Create directory structure");
         createDirectoryStructureButton.setSelection(false);
         createDirectoryStructureButton.setFont(font);
 
         // create directory structure radios
         createSelectionOnlyButton = new Button(optionsGroup, SWT.RADIO | SWT.LEFT);
-        createSelectionOnlyButton.setText(Messages.ExportSummaryPage_6);
+        createSelectionOnlyButton.setText("Create selected directories");
         createSelectionOnlyButton.setSelection(true);
         createSelectionOnlyButton.setFont(font);
     }
@@ -193,7 +194,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     protected void createOverwriteExisting(Group optionsGroup, Font font) {
         // overwrite... check box
         overwriteExistingFilesCheckbox = new Button(optionsGroup, SWT.CHECK | SWT.LEFT);
-        overwriteExistingFilesCheckbox.setText(Messages.ExportSummaryPage_7);
+        overwriteExistingFilesCheckbox.setText("Overwrite existing files");
         overwriteExistingFilesCheckbox.setFont(font);
     }
 
@@ -205,12 +206,12 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      * @return true if directory exists, or does not exist and user chooses to create it  */
     protected boolean isExistingDirectory(File directory) {
         if (!directory.exists()) {
-            if (!queryYesNoQuestion(Messages.ExportSummaryPage_8)) {
+            if (!queryYesNoQuestion("Create target directory?")) {
                 return false;
             }
 
             if (!directory.mkdirs()) {
-                displayErrorDialog(Messages.ExportSummaryPage_9);
+                displayErrorDialog("Error creating directory");
                 giveFocusToDestination();
                 return false;
             }
@@ -228,7 +229,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     @return false if target is invalid or does not exist, true otherwise */
     protected boolean isValidTarget(File targetDirectory) {
         if (targetDirectory.exists() && !targetDirectory.isDirectory()) {
-            displayErrorDialog(Messages.ExportSummaryPage_10);
+            displayErrorDialog("Target is invalid");
             giveFocusToDestination();
             return false;
         }
@@ -257,7 +258,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
         final IStatus status = op.getStatus();
         if (!status.isOK()) {
             ErrorDialog.openError(getContainer().getShell(),
-              Messages.ExportSummaryPage_11,
+              "Problems during export",
                     null, // no special message
                     status);
             return false;
@@ -295,7 +296,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
      *  
     @return java.lang.String */
     protected String getDestinationLabel() {
-        return Messages.ExportSummaryPage_12;
+        return "Export to directory";
     }
 
     /**
@@ -432,11 +433,11 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
                 setMessage(null);
             }
             else {
-                setMessage(Messages.ExportSummaryPage_13,  WARNING);
+                setMessage("Potential conflicting container",  WARNING);
             }
             
         } else {
-            setErrorMessage(Messages.ExportSummaryPage_14);
+            setErrorMessage("Conflicting container");
             giveFocusToDestination();
             return false;
         }
@@ -458,7 +459,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
         @SuppressWarnings("unchecked")
 		final List<IResource> resourcesToExport = getWhiteCheckedResources();
         if (0 == resourcesToExport.size()){
-            setErrorMessage(Messages.ExportSummaryPage_15);
+            setErrorMessage("No files selected");
             isValid =  false;
         } else {
             setErrorMessage(null);
@@ -471,7 +472,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
     
      * @return String */
     protected String destinationEmptyMessage() {
-        return Messages.ExportSummaryPage_16;
+        return "Empty destination";
     }
 
     /**
@@ -517,7 +518,7 @@ public class ExportSummaryPage extends  WizardExportResourcesPage implements Lis
           containers = root.findContainersForLocationURI(new URI(targetDirectory));
         }
         catch (URISyntaxException e) {
-          CertWareLog.logError(Messages.ExportSummaryPage_17, e);
+          CertWareLog.logError("Exporting resource", e);
           return null;
         }
         catch(IllegalArgumentException e) {

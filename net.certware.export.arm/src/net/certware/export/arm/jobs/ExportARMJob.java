@@ -124,6 +124,8 @@ public class ExportARMJob extends AbstractExportJob {
 			// prefix, identifier, description, and content
 			// tagged values visited in a different case
 
+			System.err.println("adding model element " + prefix + " me " + me.getIdentifier());// TODO testing
+			
 			P modelElementParagraph = factory.createP();
 			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT),prefix));
 			modelElementParagraph.getParagraphContent().add( addRunOfText(" "));
@@ -468,8 +470,8 @@ public class ExportARMJob extends AbstractExportJob {
 		styleMap.put(ArmPackage.TAGGED_VALUE__KEY, new StyleEntry(false,"TaggedValueKey"));
 		styleMap.put(ArmPackage.TAGGED_VALUE__VALUE, new StyleEntry(false,"TaggedValueValue"));
 
-		assignStyle(ArmPackage.MODEL_ELEMENT__CONTENT,true,"Heading2Char"); // TODO testing
-		assignStyle(ArmPackage.ARGUMENT_ELEMENT__CONTENT,false,"Heading3Char"); // TODO testing
+		assignStyleId(ArmPackage.MODEL_ELEMENT__CONTENT,true,"Heading2Char"); // TODO testing
+		assignStyleId(ArmPackage.ARGUMENT_ELEMENT__CONTENT,false,"Heading3Char"); // TODO testing
 
 		// override with plugin contributions
 		loadContributedStyles();
@@ -489,7 +491,7 @@ public class ExportARMJob extends AbstractExportJob {
 			loadStyleMap();
 			setupDocument(monitor);
 			rv = exportSelection(monitor);
-			if ( rv.equals(Status.OK_STATUS )) {
+			if ( rv == Status.OK_STATUS ) {
 				tearDownDocument(monitor,true);
 			}
 		} catch (JAXBException e) {

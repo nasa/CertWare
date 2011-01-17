@@ -113,6 +113,11 @@ public abstract class AbstractGsnDslUiModule extends DefaultUiModule {
 		return org.eclipse.xtext.builder.impl.PersistentDataAwareDirtyResource.class;
 	}
 
+	// contributed by org.eclipse.xtext.ui.generator.projectWizard.SimpleProjectWizardFragment
+	public Class<? extends org.eclipse.xtext.ui.wizard.IProjectCreator> bindIProjectCreator() {
+		return net.certware.argument.gsn.ui.wizard.GsnDslProjectCreator.class;
+	}
+
 	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {
 		return net.certware.argument.gsn.ui.quickfix.GsnDslQuickfixProvider.class;

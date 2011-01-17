@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://schemas.microsoft.com/project/2010"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://schemas.microsoft.com/project/2010" 
+	elementFormDefault="qualified">
+  <xsd:annotation>
+    <xsd:documentation>The full project schema definition from the project level down, starting with data type definitions.</xsd:documentation>
+    <xsd:appinfo>The Project Data Interchange Schema for Microsoft Project 2010.</xsd:appinfo>
+  </xsd:annotation>
+  <!-- data type definitions - @TimephasedData schema -->
+>
+  <!-- @Project schema -->
+  <xsd:element name="Project">
+    <xsd:annotation>
+      <xsd:documentation>The project element is the top level element of the document.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="SaveVersion" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>The version of Microsoft Office Project from which the project was saved. Values are: 12=Project 2007, 14=Project 2010.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="UID" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The unique ID of the project.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="16" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="Name" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>The name of the project.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="255" />
+            </xsd:restriction>
+          </xsd:simpleType>
+  </xsd:element> 
+</xsd:sequence>
+     </xsd:complexType>
+     </xsd:element>
+  </xsd:schema>

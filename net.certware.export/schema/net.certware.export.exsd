@@ -18,9 +18,10 @@
       </annotation>
       <complexType>
          <choice minOccurs="1" maxOccurs="unbounded">
-            <element ref="styleid_mapping"/>
-            <element ref="style_resource"/>
-            <element ref="style_contribution"/>
+            <element ref="styleIdMapping"/>
+            <element ref="styleResource"/>
+            <element ref="styleContribution"/>
+            <element ref="exportOperation"/>
          </choice>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -49,14 +50,14 @@
       </complexType>
    </element>
 
-   <element name="style_resource">
+   <element name="styleResource">
       <annotation>
          <documentation>
             An XML resource file associated with the example to be copied into the workspace.
          </documentation>
       </annotation>
       <complexType>
-         <attribute name="description" type="string">
+         <attribute name="styleTheme" type="string">
             <annotation>
                <documentation>
                   Description of the nature style file.
@@ -66,7 +67,7 @@
                </appinfo>
             </annotation>
          </attribute>
-         <attribute name="xml_file" type="string" use="required">
+         <attribute name="styleFile" type="string" use="required">
             <annotation>
                <documentation>
                   An XML style file to be loaded prior to export operations.
@@ -79,21 +80,21 @@
       </complexType>
    </element>
 
-   <element name="styleid_mapping">
+   <element name="styleIdMapping">
       <annotation>
          <documentation>
             Maps one of the built-in style IDs to a model element or attribute.  Use the model&apos;s package identifier for the identifier value.  Use the style IDs from the built-in document styles (see docx4j styles.xml), e.g. &quot;Heading1&quot; for a paragraph style or &quot;Heading1Char&quot; for a run style.
          </documentation>
       </annotation>
       <complexType>
-         <attribute name="model_element_id" type="string" use="required">
+         <attribute name="modelElementID" type="string" use="required">
             <annotation>
                <documentation>
                   Model element number from the model package file.
                </documentation>
             </annotation>
          </attribute>
-         <attribute name="style_id" type="string" use="required">
+         <attribute name="styleString" type="string" use="required">
             <annotation>
                <documentation>
                   Paragraph or run style ID from built-in or supplemental styles.
@@ -103,22 +104,63 @@
                </appinfo>
             </annotation>
          </attribute>
+         <attribute name="isParagraphStyle" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  True if the style is for paragraphs, false if style is for runs.
+               </documentation>
+            </annotation>
+         </attribute>
       </complexType>
    </element>
 
-   <element name="style_contribution">
+   <element name="styleContribution">
       <annotation>
          <documentation>
             Provides an XML-syntax string to define a new style.
          </documentation>
       </annotation>
       <complexType>
-         <attribute name="xml_string" type="string" use="required">
+         <attribute name="styleString" type="string" use="required">
             <annotation>
                <documentation>
                   XML string describing the style including the namespace.  The style name should be included in the string as it will be retrieved for application during the export process.  The usual namespace for word processing documents in this framework is
 xmlns:w=&quot;http://schemas.openxmlformats.org/wordprocessingml/2006/main&quot;.
                </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="isParagraphStyle" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  True if the style is for paragraphs, false otherwise (for runs).
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="exportOperation">
+      <annotation>
+         <documentation>
+            Class for exporting the argument as a formatted document from the export wizard.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="fileExtension" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The model file extension to match when running the export wizard.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The export operation class will be called from the workbench export wizard when a file of this type is selected for export.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":net.certware.export.jobs.IExportResourceOperation"/>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>

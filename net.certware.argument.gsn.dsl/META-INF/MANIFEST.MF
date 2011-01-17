@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: CertWare GSN Argument DSL
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-Version: 1.0.2.qualifier
-Bundle-SymbolicName: net.certware.argument.gsn.dsl; singleton:=true
+Bundle-SymbolicName: net.certware.argument.gsn.dsl;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.generator;resolution:=optional,

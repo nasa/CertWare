@@ -208,7 +208,7 @@
          id="net.certware.argument.diagram.figures"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="1.0.3.qualifier"
          unpack="false"/>
 
    <plugin
@@ -256,7 +256,7 @@
          id="net.certware.argument.euz.diagram"
          download-size="0"
          install-size="0"
-         version="1.0.2.qualifier"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
@@ -332,7 +332,7 @@
          id="net.certware.argument.gsz.diagram"
          download-size="0"
          install-size="0"
-         version="1.0.1.qualifier"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin

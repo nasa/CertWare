@@ -1,0 +1,4 @@
+import net::certware::planning::cpn::cpnDsl;
+
+sortedGreetings(Model this) :
+	this.greetings.sortBy(g|g.name.toLowerCase());

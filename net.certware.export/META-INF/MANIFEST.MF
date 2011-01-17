@@ -30,3 +30,6 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.libs.doc,
  org.eclipse.jface,
  org.eclipse.ui
+Export-Package: net.certware.export,
+ net.certware.export.jobs,
+ net.certware.export.wizards

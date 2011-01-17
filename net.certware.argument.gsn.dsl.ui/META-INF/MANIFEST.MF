@@ -12,7 +12,11 @@ Require-Bundle: net.certware.argument.gsn.dsl;visibility:=reexport,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.antlr.runtime,
- org.eclipse.xtext.builder
+ org.eclipse.xtext.builder,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.xtend,
+ org.eclipse.xpand
 Import-Package: net.certware.argument.arm,
  org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

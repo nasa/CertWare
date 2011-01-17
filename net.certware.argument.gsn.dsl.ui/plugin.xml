@@ -140,7 +140,18 @@
     </extension>
 
 
-
+<extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:net.certware.argument.gsn.ui.wizard.GsnDslNewProjectWizard"
+            icon="icons/obj16/editor.gif"
+            id="net.certware.argument.gsn.ui.wizard.GsnDslNewProjectWizard"
+            name="GSN DSL Project"
+            project="true">
+      </wizard>
+   </extension>
+   
    <!-- quickfix marker resolution generator -->
    <extension
          point="org.eclipse.ui.ide.markerResolution">

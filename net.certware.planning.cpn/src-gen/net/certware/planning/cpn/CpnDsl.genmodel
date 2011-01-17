@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.planning.cpn/src-gen"
+    editDirectory="/net.certware.planning.cpn.edit/src" editorDirectory="/net.certware.planning.cpn.editor/src"
+    modelPluginID="net.certware.planning.cpn" forceOverwrite="true" modelName="CpnDsl"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.planning.cpn.edit"
+    editorPluginID="net.certware.planning.cpn.editor" usedGenPackages="../../../../../../net.certware.argument.arm/model/arm.genmodel#//arm">
+  <genPackages prefix="CpnDsl" basePackage="net.certware.planning.cpn" disposableProviderFactory="true"
+      ecorePackage="CpnDsl.ecore#/">
+    <genClasses ecoreClass="CpnDsl.ecore#//Plans">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CpnDsl.ecore#//Plans/argumentmodels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CpnDsl.ecore#//Plans/plans"/>
+    </genClasses>
+    <genClasses ecoreClass="CpnDsl.ecore#//ArgumentModels">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CpnDsl.ecore#//ArgumentModels/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="CpnDsl.ecore#//Allocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CpnDsl.ecore#//Allocation/cost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CpnDsl.ecore#//Allocation/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CpnDsl.ecore#//Allocation/team"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CpnDsl.ecore#//Allocation/facility"/>
+    </genClasses>
+    <genClasses ecoreClass="CpnDsl.ecore#//Plan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CpnDsl.ecore#//Plan/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CpnDsl.ecore#//Plan/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CpnDsl.ecore#//Plan/estimated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CpnDsl.ecore#//Plan/actual"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

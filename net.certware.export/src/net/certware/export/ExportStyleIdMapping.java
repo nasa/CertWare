@@ -19,6 +19,8 @@ public class ExportStyleIdMapping extends ExportContribution implements IExportC
 	String modelElementId;
 	/** document paragraph or run style ID */
 	String styleId;
+	/** whether the style is for paragraphs */
+	String styleIsParagraph;
 
 	/**
 	 * Create the contribution for a style ID and extract the contribution.
@@ -30,13 +32,22 @@ public class ExportStyleIdMapping extends ExportContribution implements IExportC
 		if ( ce != null ) {
 			// extract fields
 			modelElementId = safeAssignment(ce,EXPORT_STYLEID_MODEL_ELEMENT_ID);
-			styleId = safeAssignment(ce,EXPORT_STYLEID_STYLE_ID);
+			styleId = safeAssignment(ce,EXPORT_STYLEID_STYLE_STRING);
+			styleIsParagraph = safeAssignment(ce,EXPORT_STYLEID_IS_PARAGRAPH);
 		}
 
 	}
 	
 	public String getStyleId() {
 		return styleId;
+	}
+
+	public String getStyleIsParagraph() {
+		return styleIsParagraph;
+	}
+	
+	public Boolean isParagraph() {
+		return Boolean.valueOf(styleIsParagraph);
 	}
 	
 	public int getModelElementId() {

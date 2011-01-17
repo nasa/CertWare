@@ -16,7 +16,7 @@ public class ExportStyleResource extends ExportContribution implements IExportCo
 	/** model element ID */
 	String xmlFile;
 	/** document paragraph or run style ID */
-	String description;
+	String theme;
 
 	/**
 	 * Create the contribution for a style ID and extract the contribution.
@@ -27,8 +27,8 @@ public class ExportStyleResource extends ExportContribution implements IExportCo
 		
 		if ( ce != null ) {
 			// extract fields
-			xmlFile = safeAssignment(ce,EXPORT_RESOURCE_XML_FILE);
-			description = safeAssignment(ce,EXPORT_RESOURCE_DESCRIPTION);
+			xmlFile = safeAssignment(ce,EXPORT_RESOURCE_FILE);
+			theme = safeAssignment(ce,EXPORT_RESOURCE_THEME);
 		}
 	}
 	
@@ -36,7 +36,7 @@ public class ExportStyleResource extends ExportContribution implements IExportCo
 		return xmlFile;
 	}
 	
-	public String getDescription() {
-		return description;
+	public String getTheme() {
+		return theme;
 	}
 }

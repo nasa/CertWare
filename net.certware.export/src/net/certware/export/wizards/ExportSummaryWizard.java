@@ -18,11 +18,11 @@ import org.eclipse.ui.IWorkbench;
 public class ExportSummaryWizard extends Wizard implements IExportWizard
 {
 	/** wizard banner name */
-	protected static final String BANNER = Messages.ExportSummaryWizard_0;
+	protected static final String BANNER = "icons/wizban/docx.png";
 	/** export job name */
-	protected static final String JOB_NAME = Messages.ExportSummaryWizard_1;
+	protected static final String JOB_NAME = "Export Summary";
 	/** export wizard page name */
-	protected static final String PAGE_NAME = Messages.ExportSummaryWizard_2;
+	protected static final String PAGE_NAME = "Export CertWare Case to Word Document";
 	/** summary page reference */
 	protected ExportSummaryPage rep;
   

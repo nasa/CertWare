@@ -19,6 +19,7 @@ _Enhancements_:
 * Added semi-formal proof validation for graph cycles and entailment.
 * Added semi-formal proof review wizard.
 * Added semi-formal proof help (first draft).  
+* Added planning module content for Microsoft Project MSPDI interchange model.
 * Partial string externalization.
 * Updated to JGit and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
 * Added measurement model plugins.  The model is derived from the OMG Software Metrics Metamodel (1.0 beta 1, March 2009) XML schema, adopting and modifying an EMF implementation from Eclipse GMT MODISCO.
@@ -90,6 +91,7 @@ h3. Meta-Models
 * @SFP@ A semi-formal proof metamodel derived from an Xtext grammar for these proofs.
 * @SMM@ OMG software measurement metamodel and its Ecore implementation.
 * @VCL@ A verification checklist generic metamodel.
+* @MSPDI@ The MSPDI schema from Microsoft Project.
 
 h3. Development
 
@@ -211,6 +213,7 @@ h3. Plugins Summary
 * @net.certware.libs.doc@ Plugin packaging of docx4J 2.5 libraries.
 * @net.certware.libs.poi@ Plugin packaging of Apache POI 3.6 libraries.
 * @net.certware.measurement.smm.*@ Measurement model and editor support the OMG SMM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* @net.certware.planning.mspdi.*@ Planning content model using Microsoft project data schema. The Microsoft MSPDI schema was coerced into an Ecore model, then the EMF plugins generated from this model.    
 * @net.certware.target@ CertWare project target definition.
 * @net.certware.update@ Update site definition project (currently unused).
 * @net.certware.verification.checklist.*@ Verification model and editor support for generic check lists. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
@@ -225,6 +228,7 @@ h3. File Names and Extensions
 * @*.caz@ and @*.caz_diagram@ are CAE diagram model and diagram files
 * @*.eur@ EUROCONTROL model files
 * @*.euz@ and @*.euz_diagram@ are EUROCONTROL diagram model and diagram files
+* @*.mspdi@ and @*.mpx@ are Microsoft Project (MSPDI) model files.
 * @*.vcl@ Verification checklist model files
 
 h3. Target Platform
