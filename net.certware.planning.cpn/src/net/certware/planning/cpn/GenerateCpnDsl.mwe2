@@ -65,12 +65,12 @@ Workflow {
 			}
 
 			// scoping and exporting API
-			// fragment = scoping.ImportURIScopingFragment {}
-			// fragment = exporting.SimpleNamesFragment {}
+			fragment = scoping.ImportURIScopingFragment {} // was commented MRB
+			// fragment = exporting.SimpleNamesFragment {} 
 
 			// scoping and exporting API 
-			fragment = scoping.ImportNamespacesScopingFragment {}
-			fragment = exporting.QualifiedNamesFragment {}
+			// fragment = scoping.ImportNamespacesScopingFragment {} // was not commented MRB
+			fragment = exporting.QualifiedNamesFragment {} 
 			fragment = builder.BuilderIntegrationFragment {}
 
 			// formatter API 

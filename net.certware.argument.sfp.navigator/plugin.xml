@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+         <commonFilter
+               activeByDefault="false"
+               class="net.certware.argument.sfp.navigator.filters.NavigatorFilter"
+               description="Filters the SFP model files"
+               id="net.certware.argument.sfp.navigator.filters.filefilter"
+               name="CertWare SFP Models"
+               visibleInUI="true">
+      </commonFilter>
+            <navigatorContent
+            activeByDefault="true"
+            contentProvider="net.certware.argument.sfp.navigator.ContentProvider"
+            icon="icons/obj16/property.gif"
+            id="net.certware.argument.sfp.navigator.navigatorContent"
+            labelProvider="net.certware.argument.sfp.navigator.LabelProvider"
+            name="SFP Model Conditions"
+            priority="high"
+            providesSaveables="false">
+         <triggerPoints>
+            <or>
+               <and>
+                  <instanceof
+                        value="org.eclipse.core.resources.IResource">
+                  </instanceof>
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.core.resources.extension"
+                        value="sfp">
+                  </test>
+               </and>
+               <instanceof
+                     value="net.certware.argument.sfp.navigator.TreeData">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="net.certware.argument.sfp.navigator.TreeData">
+               </instanceof>
+            </or>
+         </possibleChildren>
+      </navigatorContent>
+   </extension>
+      <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding
+            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.argument.sfp.navigator.filters.*">
+            </contentExtension>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.argument.sfp.navigator.navigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+
+</plugin>

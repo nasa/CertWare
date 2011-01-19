@@ -6,12 +6,13 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-            default="true"
-            extensions="cpn"
-            id="net.certware.planning.cpn.CpnDsl"
-            name="CpnDsl Editor">
+              class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="cpn"
+              icon="icons/cpn.gif"
+              id="net.certware.planning.cpn.CpnDsl"
+              name="CPN DSL Editor">
         </editor>
     </extension>
     <extension
@@ -50,9 +51,10 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="net.certware.planning.cpn.CpnDsl"
-            name="CpnDsl">
+              category="certware"
+              class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="net.certware.planning.cpn.CpnDsl"
+              name="CPN DSL">
             <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
         </page>
         <page
@@ -88,9 +90,10 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="net.certware.planning.cpn.CpnDsl.validate"
-                 style="push"
-                 tooltip="Trigger expensive validation">
+                   commandId="net.certware.planning.cpn.CpnDsl.validate"
+                   icon="icons/validate.gif"
+                   style="push"
+                   tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
@@ -101,7 +104,9 @@
     </extension>
     <extension point="org.eclipse.ui.menus">
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
-			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+			<command
+         commandId="org.eclipse.xtext.ui.editor.FindReferences"
+         icon="icons/find.gif">
 				<visibleWhen checkEnabled="false">
                 	<reference definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
                 	</reference>
@@ -135,6 +140,10 @@
             class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="cpn">
         </resourceServiceProvider>
+        <resourceServiceProvider
+              class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+              uriExtension="arm">
+        </resourceServiceProvider>
     </extension>
 
 
@@ -164,9 +173,11 @@
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.open">
-			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-				style="push"
-				tooltip="Open Quick Outline">
+			<command
+         commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+         icon="icons/outline.gif"
+         style="push"
+         tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened"/>
 				</visibleWhen>

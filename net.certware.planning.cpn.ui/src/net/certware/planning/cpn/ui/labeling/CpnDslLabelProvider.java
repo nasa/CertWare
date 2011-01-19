@@ -3,6 +3,11 @@
 */
 package net.certware.planning.cpn.ui.labeling;
 
+import net.certware.planning.cpn.cpnDsl.Allocation;
+import net.certware.planning.cpn.cpnDsl.ArgumentModels;
+import net.certware.planning.cpn.cpnDsl.Plan;
+import net.certware.planning.cpn.cpnDsl.Plans;
+
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 
@@ -18,6 +23,22 @@ public class CpnDslLabelProvider extends DefaultEObjectLabelProvider {
 	@Inject
 	public CpnDslLabelProvider(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
+	}
+	
+	String image(Plan plan) {
+		return "plan.gif";
+	}
+	
+	String image(Plans plans) {
+		return "cpn.gif";
+	}
+	
+	String image(ArgumentModels am) {
+		return "import.gif";
+	}
+	
+	String image(Allocation allocation) {
+		return "isolation.gif";
 	}
 
 /*

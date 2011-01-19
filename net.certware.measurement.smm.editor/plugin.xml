@@ -15,7 +15,7 @@
             name="%_UI_SmmModelWizard_label"
             class="net.certware.measurement.smm.presentation.SmmModelWizard"
             category="net.certware.core.ui.newwizard.category"
-            icon="icons/full/obj16/SmmModelFile.gif">
+            icon="icons/full/obj16/measure.gif">
          <description>%_UI_SmmModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -25,7 +25,7 @@
       <editor
             id="net.certware.measurement.smm.presentation.SmmEditorID"
             name="%_UI_SmmEditor_label"
-            icon="icons/full/obj16/SmmModelFile.gif"
+            icon="icons/full/obj16/measure.gif"
             extensions="smm"
             class="net.certware.measurement.smm.presentation.SmmEditor"
             contributorClass="net.certware.measurement.smm.presentation.SmmActionBarContributor">

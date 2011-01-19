@@ -13,16 +13,13 @@ _Bugs Fixed_:
 * Fixed labels on EUZ plugin identities and branding plug-in. 
 * Reassigned diagram preference pages to fall under the CertWare category.
 _Enhancements_:
-* Expanded body text regions in all graphical shapes, allowing multi-line wrap display and editing. 
-* Added adapters for SFP outline view.
-* Added semi-formal proof plug-ins with SFP active parser editor.
-* Added semi-formal proof validation for graph cycles and entailment.
-* Added semi-formal proof review wizard.
-* Added semi-formal proof help (first draft).  
+* Expanded body text regions in all graphical shapes, allowing multi-line wrap display and editing.
+* Expanded semi-formal proof support.  Added adapters for SFP outline view. Added active parser editor. Added validation for graph cycles and entailment. Added proof review wizard. Added dynamic help (first draft).  Added navigator contribution for SFP file types.
 * Added planning module content for Microsoft Project MSPDI interchange model.
 * Partial string externalization.
-* Updated to JGit and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
+* Updated to JGit 0.10.1 and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
 * Added measurement model plugins.  The model is derived from the OMG Software Metrics Metamodel (1.0 beta 1, March 2009) XML schema, adopting and modifying an EMF implementation from Eclipse GMT MODISCO.
+* Added CertWare Planning Notation (CPN) DSL for assigning planning data mapping onto ARM Metamodel.  Xtext project generated editor for DSL.  Validation included for editor content with markers.
 _Commit_:
 * TBD
 

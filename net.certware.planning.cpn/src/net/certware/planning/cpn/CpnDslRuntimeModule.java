@@ -3,9 +3,50 @@
  */
 package net.certware.planning.cpn;
 
+
+import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.arm.ModelElement;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class CpnDslRuntimeModule extends net.certware.planning.cpn.AbstractCpnDslRuntimeModule {
 
+	// added to support ARM access
+	public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
+		return ArmResourceServiceProvider.class;
+	}
+	
+	// added to support ARM access
+	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return ArmQualifiedNameProvider.class;
+	}
+	
+	//public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
+	//return ArmGlobalScopeProvider.class;
+	//}
+	
+	static class ArmResourceServiceProvider extends DefaultResourceServiceProvider {
+		@Override
+		public boolean canHandle(URI uri) {
+			if (uri.toPlatformString(true).endsWith(ArmPackage.eNAME)) {
+				return true;
+			}
+			return super.canHandle(uri);
+		}
+	}
+	
+	static class ArmQualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider {
+		public String qualifiedName(ModelElement me) {
+			// System.err.println("getting qualified name for " + me + " returning " + me.getIdentifier());
+			return me.getIdentifier();
+		}
+	}
+	
 }
