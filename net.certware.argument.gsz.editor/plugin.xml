@@ -12,7 +12,7 @@
             id="net.certware.argument.gsz.presentation.GszModelWizardID"
             name="%_UI_GszModelWizard_label"
             class="net.certware.argument.gsz.presentation.GszModelWizard"
-            category="net.certware.core.ui.newwizard.categoryorg.eclipse.emf.ecore.Wizard.category.ID"
+            category="%_UI_Wizard_category"
             icon="icons/full/obj16/GszModelFile.gif">
          <description>%_UI_GszModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>

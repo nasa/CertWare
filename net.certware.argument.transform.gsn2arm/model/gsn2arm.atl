@@ -1,0 +1,141 @@
+-- @path GSN=/net.certware.argument.gsn/model/gsn.ecore
+-- @path ARM=/net.certware.argument.arm/model/arm.ecore
+
+module gsn2arm;
+create OUT : ARM from IN : GSN;
+
+-- helpers
+-- idIdentified() returns true if the model element has an identifier, false otherwise 
+helper context GSN!ModelElement def: isIdentified(): Boolean =
+	if not self.identifier.size() < 1 then
+		false
+	else
+		true
+	endif;
+
+
+-- rules
+rule Goal2Claim extends CopyClaim {
+	from 
+		s: GSN!Goal
+	to
+		t: ARM!Claim (
+			-- subgoals
+			-- strategies
+			-- goal contexts
+			-- assumptions
+			-- goal solutions
+			)
+}
+
+rule Strategy2ReasoningElement extends CopyReasoningElement {
+	from 
+		s: GSN!Strategy
+	to
+		t: ARM!ReasoningElement (
+			-- goals
+			-- justifications
+			-- strategy contexts
+			-- strategy solutions
+			)
+}
+
+rule Justification2InformationElement extends CopyInformationElement {
+	from 
+		s: GSN!Justification
+	to
+		t: ARM!InformationElement
+}
+
+rule Context2InformationElement extends CopyInformationElement {
+	from 
+		s: GSN!Context
+	to
+		t: ARM!InformationElement
+}
+
+rule Assumption2InformationElement extends CopyInformationElement {
+	from 
+		s: GSN!Assumption
+	to
+		t: ARM!InformationElement
+}
+
+rule Solution2AssertedEvidence extends CopyAssertedEvidence {
+	from 
+		s: GSN!Solution
+	to 
+		t: ARM!AssertedEvidence (
+			-- solution evidence 
+			-- solution context
+			)
+}
+
+-- up-classing rules
+rule CopyClaim extends CopyReasoningElement {
+	from s: GSN!Claim
+	to t: ARM!Claim (
+		assumed <- s.assumed,
+		toBeSupported <- s.toBeSupported
+	)
+}
+
+rule CopyInformationElement extends CopyArgumentElement {
+	from s: GSN!InformationElement
+	to t: ARM!InformationElement
+}
+
+rule CopyReasoningElement extends CopyArgumentElement {
+	from s: GSN!ReasoningElement
+	to t: ARM!ReasoningElement
+}
+
+rule CopyArgumentElement extends CopyModelElement {
+	from s: GSN!ArgumentElement
+	to t: ARM!ArgumentElement
+}
+
+rule CopyAssertedEvidence extends CopyAssertedRelationship {
+	from s: GSN!AssertedEvidence
+	to t: ARM!AssertedEvidence
+}
+
+rule CopyAssertedRelationship extends CopyArgumentLink {
+	from s: GSN!AssertedRelationship
+	to t: ARM!AssertedRelationship
+}
+
+rule CopyArgumentLink extends CopyModelElement {
+	from s: GSN!ArgumentLink
+	to t: ARM!ArgumentLink (
+		target <- s.target, -- ???
+		source <- s.source --???
+		-- source
+		-- target
+		)
+}
+
+rule NewTaggedValue(k: String, v: String ) {
+	to p : ARM!TaggedValue ()
+			-- no constructors with attribute assignments 
+	do {
+		p.value <- v;
+		p.key <- k;
+	}
+}
+
+-- copy the core model element content across
+rule CopyModelElement {
+	from s: GSN!ModelElement
+	to t: ARM!ModelElement(
+		identifier <- s.identifier,
+		description <- s.description,
+		content <- s.content,
+		isTagged <- s.isTagged
+	)
+}
+
+-- ATL language specification:
+-- Constant keywords: true, false;
+-- Type keywords: Bag, Set, OrderedSet, Sequence, Tuple, Integer, Real, Boolean, String, TupleType, Map;
+-- Language keywords: not, and, or, xor, implies, module, create, from, uses, helper, def, context, rule, using, derived, to, mapsTo, distinct, foreach, in, do, if, then, else, endif, let, library, query, for, div, refining, entrypoint.

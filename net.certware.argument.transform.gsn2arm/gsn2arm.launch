@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
+<stringAttribute key="ATL File Name" value="/net.certware.argument.transform.gsn2arm/src/net/certware/argument/transform/gsn2arm/files/gsn2arm.atl"/>
+<stringAttribute key="ATL VM" value="EMF-specific VM"/>
+<booleanAttribute key="IS_REFINING" value="false"/>
+<mapAttribute key="Input">
+<mapEntry key="IN" value="GSN"/>
+</mapAttribute>
+<mapAttribute key="Libs"/>
+<mapAttribute key="Model Handler">
+<mapEntry key="ARM" value="EMF"/>
+<mapEntry key="GSN" value="EMF"/>
+</mapAttribute>
+<mapAttribute key="ModelType">
+<mapEntry key="ARM" value="METAMODELOUTPUT"/>
+<mapEntry key="GSN" value="METAMODELINPUT"/>
+<mapEntry key="IN" value="MODELINPUT"/>
+<mapEntry key="OUT" value="MODELOUTPUT"/>
+</mapAttribute>
+<mapAttribute key="Options">
+<mapEntry key="OPTION_CLEAR" value="false"/>
+<mapEntry key="OPTION_CONTENT_TYPE" value="false"/>
+<mapEntry key="OPTION_DERIVED" value="true"/>
+<mapEntry key="allowInterModelReferences" value="true"/>
+<mapEntry key="printExecutionTime" value="true"/>
+<mapEntry key="step" value="false"/>
+<mapEntry key="supportUML2Stereotypes" value="false"/>
+</mapAttribute>
+<listAttribute key="OrderedInput">
+<listEntry value="IN"/>
+</listAttribute>
+<listAttribute key="OrderedOutput">
+<listEntry value="OUT"/>
+</listAttribute>
+<mapAttribute key="Output">
+<mapEntry key="OUT" value="ARM"/>
+</mapAttribute>
+<mapAttribute key="Path">
+<mapEntry key="ARM" value="/net.certware.argument.arm/model/arm.ecore"/>
+<mapEntry key="GSN" value="/net.certware.argument.gsn/model/gsn.ecore"/>
+<mapEntry key="IN" value="my.gsn"/>
+<mapEntry key="OUT" value="my.arm"/>
+</mapAttribute>
+<listAttribute key="Superimpose"/>
+<stringAttribute key="bad_container_name" value="/net.certware.argument.transform.gsn2arm/gsn"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+</launchConfiguration>

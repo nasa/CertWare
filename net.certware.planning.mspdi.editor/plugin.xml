@@ -12,7 +12,7 @@
       <editor
             id="net.certware.planning.mspdi.presentation.mspdiEditorID"
             name="%_UI_mspdiEditor_label"
-            icon="icons/full/obj16/MspdiModelFile.gif"
+            icon="icons/full/obj16/mspdiModelFile.gif"
             extensions="mspdi,mpx"
             class="net.certware.planning.mspdi.presentation.MspdiEditor"
             contributorClass="net.certware.planning.mspdi.presentation.MspdiActionBarContributor">
@@ -23,7 +23,7 @@
       <wizard
             category="net.certware.core.ui.newwizard.category"
             class="net.certware.planning.mspdi.presentation.MspdiModelWizard"
-            icon="icons/full/obj16/MspdiModelFile.gif"
+            icon="icons/full/obj16/mspdiModelFile.gif"
             id="net.certware.planning.mspdi.editor.wizard1"
             name="%_UI_mspdiModelWizard_label">
          <selection

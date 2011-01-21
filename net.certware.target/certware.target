@@ -3,11 +3,26 @@
 
 <target name="CertWare Target">
 <locations>
-<location id="org.eclipse.egit" path="${eclipse_home}" type="Feature"/>
-<location path="${workspace_loc}/net.certware.target/delta.pack/eclipse" type="Directory"/>
 <location id="org.eclipse.jgit" path="${eclipse_home}" type="Feature"/>
-<location path="${workspace_loc}/net.certware.target/testing" type="Directory"/>
 <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.jetty.slf4jlogback.feature.group" version="7.1.6.v20100831"/>
+<unit id="org.eclipse.emf.mwe.sdk.feature.group" version="1.0.0.v201008251122"/>
+<repository location="http://download.eclipse.org/releases/helios/"/>
+</location>
+<location id="org.eclipse.epsilon.gmf.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epsilon.evl.emf.validation.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epsilon.hutn.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.egit" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epsilon.feature" path="${eclipse_home}" type="Feature"/>
+<location path="${workspace_loc}/net.certware.target/delta.pack/eclipse" type="Directory"/>
+<location id="org.eclipse.epsilon.eugenia.feature" path="${eclipse_home}" type="Feature"/>
+<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
+<unit id="org.eclipse.m2m.atl.feature.group" version="3.1.1.v201009141132"/>
+<unit id="org.eclipse.m2m.atl.doc.feature.group" version="3.1.1.v201009141132"/>
+<unit id="org.eclipse.m2m.atl.examples.feature.group" version="3.1.1.v201009141132"/>
+<unit id="org.eclipse.m2m.atl.profiler.feature.group" version="3.1.1.v201009141132"/>
+<unit id="org.eclipse.m2m.atl.sdk.feature.group" version="3.1.1.v201009141132"/>
+<unit id="org.eclipse.m2m.atl.source.feature.group" version="3.1.1.v201009141132"/>
 <unit id="org.eclipse.ecf.core.feature.group" version="3.3.1.v20100913-1814"/>
 <unit id="org.eclipse.platform.ide" version="3.6.1.M20100909-0800"/>
 <unit id="org.eclipse.equinox.executable.feature.group" version="3.4.1.R36x_v20100823-7M7K7JF90dnJ-WLf3cf4yi"/>
@@ -40,15 +55,6 @@
 <unit id="org.eclipse.xtext.ui.source.feature.group" version="1.0.1.v201008251220"/>
 <repository location="http://download.eclipse.org/releases/helios/"/>
 </location>
-<location id="org.eclipse.epsilon.eugenia.feature" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.epsilon.evl.emf.validation.feature" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.epsilon.feature" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.epsilon.gmf.feature" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.epsilon.hutn.feature" path="${eclipse_home}" type="Feature"/>
-<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
-<unit id="org.eclipse.jetty.slf4jlogback.feature.group" version="7.1.6.v20100831"/>
-<unit id="org.eclipse.emf.mwe.sdk.feature.group" version="1.0.0.v201008251122"/>
-<repository location="http://download.eclipse.org/releases/helios/"/>
-</location>
+<location path="${workspace_loc}/net.certware.target/testing" type="Directory"/>
 </locations>
 </target>
