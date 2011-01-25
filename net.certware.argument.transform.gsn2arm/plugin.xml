@@ -14,7 +14,7 @@
                helpContextId="gsn2arm"
                icon="icons/obj16/atl_logo.gif"
                id="net.certware.argument.transform.gsn2arm.action"
-               label="Transform to an ARM model"
+               label="Transform to ARM"
                tooltip="Applies an ATL transformation to the GSN model">
          </action>
       </objectContribution>

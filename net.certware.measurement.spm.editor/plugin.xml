@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2011 Kestrel Technology LLC
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.certware.measurement.spm.presentation.SpmModelWizardID"
+            name="%_UI_SpmModelWizard_label"
+            class="net.certware.measurement.spm.presentation.SpmModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpmModelFile.gif">
+         <description>%_UI_SpmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.measurement.spm.presentation.SpmEditorID"
+            name="%_UI_SpmEditor_label"
+            icon="icons/full/obj16/SpmModelFile.gif"
+            extensions="spm"
+            class="net.certware.measurement.spm.presentation.SpmEditor"
+            contributorClass="net.certware.measurement.spm.presentation.SpmActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

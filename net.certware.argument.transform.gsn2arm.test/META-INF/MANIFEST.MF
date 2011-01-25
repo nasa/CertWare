@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Argument Transform GSN 2 ARM Test
+Bundle-SymbolicName: net.certware.argument.transform.gsn2arm.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.argument.transform.gsn2arm
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,63 @@
+mapping: RepositoryMapping[ -> ../.git]
+tags: 
+refs: 
+refs key HEAD value null
+refs key refs/heads/master value null
+branch: master
+head: SymbolicRef[HEAD -> refs/heads/master=02e1d994b71fc1e689d99f1de07a52da50255aca]
+walk: org.eclipse.jgit.revwalk.RevWalk@4f6b3939
+head obj: AnyObjectId[02e1d994b71fc1e689d99f1de07a52da50255aca]
+ 
+commit: commit 02e1d994b71fc1e689d99f1de07a52da50255aca 1293130589 ----sp
+name 02e1d994b71fc1e689d99f1de07a52da50255aca type 1 author PersonIdent[Matt Barry, mrb@certware.net, Thu Dec 23 12:56:29 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Thu Dec 23 12:56:29 2010 -0600] time 1293130589 when Thu Dec 23 12:56:29 CST 2010
+parents 1 full Working validation review. short Working validation review.
+footer lines:
+commit rev tree:
+first 131 id 8357dc3809e347a0755d0a6ff84d832a71097b3c name 8357dc3809e347a0755d0a6ff84d832a71097b3c type 2
+name 8fcd929621ce5e6c9a91ce6ae37ad9f80fe67d6e type 1 author PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 15:16:34 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 15:16:34 2010 -0600] time 1293052594 when Wed Dec 22 15:16:34 CST 2010
+parents 1 full Recovering project. short Recovering project.
+footer lines:
+commit rev tree:
+first 205 id cdf4b4dbe1289a7f28ba50cba8f8c56aa84efd2c name cdf4b4dbe1289a7f28ba50cba8f8c56aa84efd2c type 2
+name 534bf782ca5a2d8357c3ee6f0aa993edb82b7a09 type 1 author PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 14:39:38 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 14:39:38 2010 -0600] time 1293050378 when Wed Dec 22 14:39:38 CST 2010
+parents 1 full Committing more test files. short Committing more test files.
+footer lines:
+commit rev tree:
+first 244 id f425fd88900b10f88519b09b301bef78dc3bd63b name f425fd88900b10f88519b09b301bef78dc3bd63b type 2
+name a8047b2e122a963c38b5fef870773bf95e898775 type 1 author PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 14:08:50 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 14:08:50 2010 -0600] time 1293048530 when Wed Dec 22 14:08:50 CST 2010
+parents 1 full Adding semi-formal proof files. short Adding semi-formal proof files.
+footer lines:
+commit rev tree:
+first 162 id a255033de1f06130b95afcf581e9b583c31df384 name a255033de1f06130b95afcf581e9b583c31df384 type 2
+name 3861bbb534202a20f2e5965c2fe2c98c603baa0a type 1 author PersonIdent[Matt Barry, mrb@certware.net, Tue Dec 7 15:30:16 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Tue Dec 7 15:30:16 2010 -0600] time 1291757416 when Tue Dec 07 15:30:16 CST 2010
+parents 0 full SSEI SoBP examples commit short SSEI SoBP examples commit
+footer lines:
+commit rev tree:
+first 125 id 7dc533e68542ea48b6d1ab40658fd76b9cfbfd80 name 7dc533e68542ea48b6d1ab40658fd76b9cfbfd80 type 2
+ 
+commit: commit 8fcd929621ce5e6c9a91ce6ae37ad9f80fe67d6e 1293052594 ----sp
+ 
+commit: commit 534bf782ca5a2d8357c3ee6f0aa993edb82b7a09 1293050378 ----sp
+ 
+commit: commit a8047b2e122a963c38b5fef870773bf95e898775 1293048530 ----sp
+ 
+commit: commit 3861bbb534202a20f2e5965c2fe2c98c603baa0a 1291757416 ----sp
+resource L/org.ssei.bp/.project
+file revision: Matt Barry;SSEI SoBP examples commit;3861bbb534202a20f2e5965c2fe2c98c603baa0a;.project;1291757416000;12/7/10 3:30 PM
+line count 11 byte count 204
+resource L/org.ssei.bp/AJSSAP.gsn
+file revision: Matt Barry;SSEI SoBP examples commit;3861bbb534202a20f2e5965c2fe2c98c603baa0a;AJSSAP.gsn;1291757416000;12/7/10 3:30 PM
+line count 66 byte count 5211
+resource L/org.ssei.bp/HCSSAP.gsn
+file revision: Matt Barry;SSEI SoBP examples commit;3861bbb534202a20f2e5965c2fe2c98c603baa0a;HCSSAP.gsn;1291757416000;12/7/10 3:30 PM
+line count 25 byte count 1860
+resource L/org.ssei.bp/HLSSAP.gsn
+file revision: Matt Barry;SSEI SoBP examples commit;3861bbb534202a20f2e5965c2fe2c98c603baa0a;HLSSAP.gsn;1291757416000;12/7/10 3:30 PM
+line count 39 byte count 2970
+resource L/org.ssei.bp/SCSAP.gsn
+file revision: Matt Barry;SSEI SoBP examples commit;3861bbb534202a20f2e5965c2fe2c98c603baa0a;SCSAP.gsn;1291757416000;12/7/10 3:30 PM
+line count 31 byte count 2108
+resource L/org.ssei.bp/SSISSAP.gsn
+file revision: Matt Barry;SSEI SoBP examples commit;3861bbb534202a20f2e5965c2fe2c98c603baa0a;SSISSAP.gsn;1291757416000;12/7/10 3:30 PM
+line count 37 byte count 2647
+

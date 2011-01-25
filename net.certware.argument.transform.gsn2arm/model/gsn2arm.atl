@@ -32,11 +32,14 @@ rule Strategy2ReasoningElement extends CopyReasoningElement {
 	from 
 		s: GSN!Strategy
 	to
-		t: ARM!ReasoningElement (
+		-- t: ARM!ReasoningElement ( this is an abstract class
+			t: ARM!ArgumentReasoning (
 			-- goals
 			-- justifications
 			-- strategy contexts
 			-- strategy solutions
+			-- describes
+			-- has structure
 			)
 }
 

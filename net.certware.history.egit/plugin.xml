@@ -25,32 +25,22 @@
       </image>
    </extension>
    <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
-         <menu
-               id="net.certware.history.egit.menus.history"
-               label="History"
-               mnemonic="H">
-            <command
-                  commandId="net.certware.history.egit.command.dump"
-                  label="Dump to console"
-                  mnemonic="D"
-                  tooltip="Dump history to console">
-            </command>
-         </menu>
-      </menuContribution>
-      <menuContribution
-            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
-         <toolbar
-               id="net.certware.history.egit.toolbars.historyToolbar">
-            <command
-                  commandId="net.certware.history.egit.command.dump"
-                  label="Dump"
-                  tooltip="Dump history to console">
-            </command>
-         </toolbar>
-      </menuContribution>
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="net.certware.history.egit.dump.project"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="net.certware.history.egit.actions.DumpProjectAction"
+               enablesFor="+"
+               helpContextId="projectDump"
+               icon="icons/obj16/dump.gif"
+               id="net.certware.history.egit.action.dump.console"
+               label="Dump history to console"
+               tooltip="Dump the project history metrics to the console">
+         </action>
+      </objectContribution>
    </extension>
 
 </plugin>
