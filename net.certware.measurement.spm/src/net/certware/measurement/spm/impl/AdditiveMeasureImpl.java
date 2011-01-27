@@ -3,8 +3,8 @@
  */
 package net.certware.measurement.spm.impl;
 
+import net.certware.measurement.smm.Accumulator;
 import net.certware.measurement.smm.impl.CollectiveMeasureImpl;
-
 import net.certware.measurement.spm.AdditiveMeasure;
 import net.certware.measurement.spm.SpmPackage;
 
@@ -22,11 +22,13 @@ import org.eclipse.emf.ecore.EClass;
 public class AdditiveMeasureImpl extends CollectiveMeasureImpl implements AdditiveMeasure {
 	/**
 	 * <!-- begin-user-doc -->
+	 * Sets the SUM enumeration. 
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected AdditiveMeasureImpl() {
 		super();
+		this.setAccumulator(Accumulator.SUM);
 	}
 
 	/**

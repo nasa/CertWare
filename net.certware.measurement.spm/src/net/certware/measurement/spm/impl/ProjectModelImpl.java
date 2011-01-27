@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.impl;
 
 import net.certware.measurement.smm.impl.SmmModelImpl;
-
 import net.certware.measurement.spm.ProjectModel;
 import net.certware.measurement.spm.SpmPackage;
 
@@ -38,5 +37,6 @@ public class ProjectModelImpl extends SmmModelImpl implements ProjectModel {
 	protected EClass eStaticClass() {
 		return SpmPackage.Literals.PROJECT_MODEL;
 	}
+
 
 } //ProjectModelImpl

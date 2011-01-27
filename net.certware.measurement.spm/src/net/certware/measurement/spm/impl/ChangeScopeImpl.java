@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.impl;
 
 import net.certware.measurement.smm.impl.ScopeImpl;
-
 import net.certware.measurement.spm.ChangeScope;
 import net.certware.measurement.spm.SpmPackage;
 

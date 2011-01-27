@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.impl;
 
 import net.certware.measurement.smm.impl.BinaryMeasureImpl;
-
 import net.certware.measurement.spm.ReworkStabilityMeasure;
 import net.certware.measurement.spm.SpmPackage;
 

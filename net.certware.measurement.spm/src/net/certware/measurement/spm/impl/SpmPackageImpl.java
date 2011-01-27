@@ -4,25 +4,19 @@
 package net.certware.measurement.spm.impl;
 
 import java.io.IOException;
-
 import java.net.URL;
 
 import net.certware.measurement.smm.SmmPackage;
-
 import net.certware.measurement.spm.SpmFactory;
 import net.certware.measurement.spm.SpmPackage;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 
 /**
@@ -51,14 +45,28 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass projectHistoryEClass = null;
+	private EClass projectCommitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass projectCommitEClass = null;
+	private EClass commitRelationshipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass endProductQualityCategoryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass inProgressQualityCategoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,6 +213,13 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass maturityRatioMeasureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass maintainabilityMeasureEClass = null;
 
 	/**
@@ -234,6 +249,13 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 * @generated
 	 */
 	private EClass baselineCaseSizeMeasureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass usageTimeMeasureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,21 +399,9 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProjectHistory() {
-		if (projectHistoryEClass == null) {
-			projectHistoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(1);
-		}
-		return projectHistoryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getProjectCommit() {
 		if (projectCommitEClass == null) {
-			projectCommitEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(2);
+			projectCommitEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(1);
 		}
 		return projectCommitEClass;
 	}
@@ -401,9 +411,45 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCommitRelationship() {
+		if (commitRelationshipEClass == null) {
+			commitRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(2);
+		}
+		return commitRelationshipEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEndProductQualityCategory() {
+		if (endProductQualityCategoryEClass == null) {
+			endProductQualityCategoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(3);
+		}
+		return endProductQualityCategoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInProgressQualityCategory() {
+		if (inProgressQualityCategoryEClass == null) {
+			inProgressQualityCategoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(4);
+		}
+		return inProgressQualityCategoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEndProductQuality() {
 		if (endProductQualityEClass == null) {
-			endProductQualityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(3);
+			endProductQualityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(5);
 		}
 		return endProductQualityEClass;
 	}
@@ -415,7 +461,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getMaintainability() {
 		if (maintainabilityEClass == null) {
-			maintainabilityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(4);
+			maintainabilityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(6);
 		}
 		return maintainabilityEClass;
 	}
@@ -427,7 +473,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getInProgressIndicator() {
 		if (inProgressIndicatorEClass == null) {
-			inProgressIndicatorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(5);
+			inProgressIndicatorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(7);
 		}
 		return inProgressIndicatorEClass;
 	}
@@ -439,7 +485,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getProjectSize() {
 		if (projectSizeEClass == null) {
-			projectSizeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(6);
+			projectSizeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(8);
 		}
 		return projectSizeEClass;
 	}
@@ -451,7 +497,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getCaseDimensionalMeasure() {
 		if (caseDimensionalMeasureEClass == null) {
-			caseDimensionalMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(7);
+			caseDimensionalMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(9);
 		}
 		return caseDimensionalMeasureEClass;
 	}
@@ -463,7 +509,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getChangeOrderDimensionalMeasure() {
 		if (changeOrderDimensionalMeasureEClass == null) {
-			changeOrderDimensionalMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(8);
+			changeOrderDimensionalMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(10);
 		}
 		return changeOrderDimensionalMeasureEClass;
 	}
@@ -475,7 +521,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getTimeDimensionalMeasure() {
 		if (timeDimensionalMeasureEClass == null) {
-			timeDimensionalMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(9);
+			timeDimensionalMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(11);
 		}
 		return timeDimensionalMeasureEClass;
 	}
@@ -487,7 +533,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getAdditiveMeasure() {
 		if (additiveMeasureEClass == null) {
-			additiveMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(10);
+			additiveMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(12);
 		}
 		return additiveMeasureEClass;
 	}
@@ -499,7 +545,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getCaseScope() {
 		if (caseScopeEClass == null) {
-			caseScopeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(11);
+			caseScopeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(13);
 		}
 		return caseScopeEClass;
 	}
@@ -511,7 +557,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getProjectScope() {
 		if (projectScopeEClass == null) {
-			projectScopeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(12);
+			projectScopeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(14);
 		}
 		return projectScopeEClass;
 	}
@@ -523,7 +569,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getChangeScope() {
 		if (changeScopeEClass == null) {
-			changeScopeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(13);
+			changeScopeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(15);
 		}
 		return changeScopeEClass;
 	}
@@ -535,7 +581,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getCriticalDefectChangeOrderCount() {
 		if (criticalDefectChangeOrderCountEClass == null) {
-			criticalDefectChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(14);
+			criticalDefectChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(16);
 		}
 		return criticalDefectChangeOrderCountEClass;
 	}
@@ -547,7 +593,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getNormalDefectChangeOrderCount() {
 		if (normalDefectChangeOrderCountEClass == null) {
-			normalDefectChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(15);
+			normalDefectChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(17);
 		}
 		return normalDefectChangeOrderCountEClass;
 	}
@@ -559,7 +605,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getImprovementChangeOrderCount() {
 		if (improvementChangeOrderCountEClass == null) {
-			improvementChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(16);
+			improvementChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(18);
 		}
 		return improvementChangeOrderCountEClass;
 	}
@@ -571,7 +617,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getNewFeatureChangeOrderCount() {
 		if (newFeatureChangeOrderCountEClass == null) {
-			newFeatureChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(17);
+			newFeatureChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(19);
 		}
 		return newFeatureChangeOrderCountEClass;
 	}
@@ -583,7 +629,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getTrendMeasure() {
 		if (trendMeasureEClass == null) {
-			trendMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(18);
+			trendMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(20);
 		}
 		return trendMeasureEClass;
 	}
@@ -595,7 +641,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getScrapRatioMeasure() {
 		if (scrapRatioMeasureEClass == null) {
-			scrapRatioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(19);
+			scrapRatioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(21);
 		}
 		return scrapRatioMeasureEClass;
 	}
@@ -607,7 +653,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getModularityMeasure() {
 		if (modularityMeasureEClass == null) {
-			modularityMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(20);
+			modularityMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(22);
 		}
 		return modularityMeasureEClass;
 	}
@@ -619,7 +665,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getReworkRatioMeasure() {
 		if (reworkRatioMeasureEClass == null) {
-			reworkRatioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(21);
+			reworkRatioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(23);
 		}
 		return reworkRatioMeasureEClass;
 	}
@@ -631,7 +677,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getAdaptabilityRatioMeasure() {
 		if (adaptabilityRatioMeasureEClass == null) {
-			adaptabilityRatioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(22);
+			adaptabilityRatioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(24);
 		}
 		return adaptabilityRatioMeasureEClass;
 	}
@@ -641,9 +687,21 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMaturityRatioMeasure() {
+		if (maturityRatioMeasureEClass == null) {
+			maturityRatioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(25);
+		}
+		return maturityRatioMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMaintainabilityMeasure() {
 		if (maintainabilityMeasureEClass == null) {
-			maintainabilityMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(23);
+			maintainabilityMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(26);
 		}
 		return maintainabilityMeasureEClass;
 	}
@@ -655,7 +713,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getBrokenCaseSizeMeasure() {
 		if (brokenCaseSizeMeasureEClass == null) {
-			brokenCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(24);
+			brokenCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(27);
 		}
 		return brokenCaseSizeMeasureEClass;
 	}
@@ -667,7 +725,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getFixedCaseSizeMeasure() {
 		if (fixedCaseSizeMeasureEClass == null) {
-			fixedCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(25);
+			fixedCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(28);
 		}
 		return fixedCaseSizeMeasureEClass;
 	}
@@ -679,7 +737,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getTotalCaseSizeMeasure() {
 		if (totalCaseSizeMeasureEClass == null) {
-			totalCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(26);
+			totalCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(29);
 		}
 		return totalCaseSizeMeasureEClass;
 	}
@@ -691,7 +749,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getBaselineCaseSizeMeasure() {
 		if (baselineCaseSizeMeasureEClass == null) {
-			baselineCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(27);
+			baselineCaseSizeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(30);
 		}
 		return baselineCaseSizeMeasureEClass;
 	}
@@ -701,9 +759,21 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUsageTimeMeasure() {
+		if (usageTimeMeasureEClass == null) {
+			usageTimeMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(31);
+		}
+		return usageTimeMeasureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRepairEffortMeasure() {
 		if (repairEffortMeasureEClass == null) {
-			repairEffortMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(28);
+			repairEffortMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(32);
 		}
 		return repairEffortMeasureEClass;
 	}
@@ -715,7 +785,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getDevelopmentEffortMeasure() {
 		if (developmentEffortMeasureEClass == null) {
-			developmentEffortMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(29);
+			developmentEffortMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(33);
 		}
 		return developmentEffortMeasureEClass;
 	}
@@ -727,7 +797,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getTotalChangeOrderCount() {
 		if (totalChangeOrderCountEClass == null) {
-			totalChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(30);
+			totalChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(34);
 		}
 		return totalChangeOrderCountEClass;
 	}
@@ -739,7 +809,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getCriticalAndNormalChangeOrderCount() {
 		if (criticalAndNormalChangeOrderCountEClass == null) {
-			criticalAndNormalChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(31);
+			criticalAndNormalChangeOrderCountEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(35);
 		}
 		return criticalAndNormalChangeOrderCountEClass;
 	}
@@ -751,7 +821,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getReworkStabilityMeasure() {
 		if (reworkStabilityMeasureEClass == null) {
-			reworkStabilityMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(32);
+			reworkStabilityMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(36);
 		}
 		return reworkStabilityMeasureEClass;
 	}
@@ -763,7 +833,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getReworkBacklogMeasure() {
 		if (reworkBacklogMeasureEClass == null) {
-			reworkBacklogMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(33);
+			reworkBacklogMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(37);
 		}
 		return reworkBacklogMeasureEClass;
 	}
@@ -775,7 +845,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getModularityTrend() {
 		if (modularityTrendEClass == null) {
-			modularityTrendEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(34);
+			modularityTrendEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(38);
 		}
 		return modularityTrendEClass;
 	}
@@ -787,7 +857,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getAdaptabilityTrend() {
 		if (adaptabilityTrendEClass == null) {
-			adaptabilityTrendEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(35);
+			adaptabilityTrendEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(39);
 		}
 		return adaptabilityTrendEClass;
 	}
@@ -799,7 +869,7 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 	 */
 	public EClass getMaturityTrend() {
 		if (maturityTrendEClass == null) {
-			maturityTrendEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(36);
+			maturityTrendEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(40);
 		}
 		return maturityTrendEClass;
 	}

@@ -32,15 +32,6 @@ public interface SpmFactory extends EFactory {
 	ProjectModel createProjectModel();
 
 	/**
-	 * Returns a new object of class '<em>Project History</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Project History</em>'.
-	 * @generated
-	 */
-	ProjectHistory createProjectHistory();
-
-	/**
 	 * Returns a new object of class '<em>Project Commit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,6 +39,33 @@ public interface SpmFactory extends EFactory {
 	 * @generated
 	 */
 	ProjectCommit createProjectCommit();
+
+	/**
+	 * Returns a new object of class '<em>Commit Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Commit Relationship</em>'.
+	 * @generated
+	 */
+	CommitRelationship createCommitRelationship();
+
+	/**
+	 * Returns a new object of class '<em>End Product Quality Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>End Product Quality Category</em>'.
+	 * @generated
+	 */
+	EndProductQualityCategory createEndProductQualityCategory();
+
+	/**
+	 * Returns a new object of class '<em>In Progress Quality Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>In Progress Quality Category</em>'.
+	 * @generated
+	 */
+	InProgressQualityCategory createInProgressQualityCategory();
 
 	/**
 	 * Returns a new object of class '<em>End Product Quality</em>'.
@@ -230,6 +248,15 @@ public interface SpmFactory extends EFactory {
 	AdaptabilityRatioMeasure createAdaptabilityRatioMeasure();
 
 	/**
+	 * Returns a new object of class '<em>Maturity Ratio Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Maturity Ratio Measure</em>'.
+	 * @generated
+	 */
+	MaturityRatioMeasure createMaturityRatioMeasure();
+
+	/**
 	 * Returns a new object of class '<em>Maintainability Measure</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,6 +300,15 @@ public interface SpmFactory extends EFactory {
 	 * @generated
 	 */
 	BaselineCaseSizeMeasure createBaselineCaseSizeMeasure();
+
+	/**
+	 * Returns a new object of class '<em>Usage Time Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Usage Time Measure</em>'.
+	 * @generated
+	 */
+	UsageTimeMeasure createUsageTimeMeasure();
 
 	/**
 	 * Returns a new object of class '<em>Repair Effort Measure</em>'.

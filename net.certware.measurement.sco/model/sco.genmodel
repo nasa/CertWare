@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 Kestrel Technology LLC"
+    modelDirectory="/net.certware.measurement.sco/src" modelPluginID="net.certware.measurement.sco"
+    templateDirectory="" redirection="" modelName="Sco" generateSchema="true" nonNLSMarkers="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    publicConstructors="true" providerRootExtendsClass="" tableProviders="true" colorProviders="true"
+    interfaceNamePattern="">
+  <foreignModel>sco.ecore</foreignModel>
+  <genPackages prefix="Sco" basePackage="net.certware.measurement" resource="XMI"
+      disposableProviderFactory="true" loadInitialization="true" dataTypeConverters="true"
+      multipleEditorPages="false" contentTypeIdentifier="" ecorePackage="sco.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sco.ecore#//ChangeOrderType">
+      <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/Critical"/>
+      <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/Normal"/>
+      <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/Improvements"/>
+      <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/NewFeatures"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="sco.ecore#//ChangeOrderCount">
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Basic"
+          propertyDescription="The name of the change order type" ecoreFeature="ecore:EAttribute sco.ecore#//ChangeOrderCount/name"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="The number of change orders for this type"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ChangeOrderCount/value"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Basic" propertyDescription="The change order type identifier"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ChangeOrderCount/type"/>
+      <genFeatures createChild="false" propertyCategory="Lines" propertyDescription="The estimated number of broken lines in the current artifact"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ChangeOrderCount/brokenLines"/>
+      <genFeatures createChild="false" propertyCategory="Lines" propertyDescription="The number of lines fixed in the current artifact and represented by the repair effort"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ChangeOrderCount/fixedLines"/>
+      <genFeatures createChild="false" propertyCategory="Effort" propertyDescription="The hours of repair effort corresponding to the fixed lines in the current artifact"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ChangeOrderCount/repairEffort"/>
+    </genClasses>
+    <genClasses ecoreClass="sco.ecore#//TotalChangeOrders" labelFeature="#//sco/ChangeOrderCount/type"/>
+    <genClasses ecoreClass="sco.ecore#//CriticalDefectChangeOrders" labelFeature="#//sco/ChangeOrderCount/type"/>
+    <genClasses ecoreClass="sco.ecore#//NormalDefectChangeOrders" labelFeature="#//sco/ChangeOrderCount/type"/>
+    <genClasses ecoreClass="sco.ecore#//ImprovementChangeOrders" labelFeature="#//sco/ChangeOrderCount/type"/>
+    <genClasses ecoreClass="sco.ecore#//NewFeatureChangeOrders" labelFeature="#//sco/ChangeOrderCount/type"/>
+    <genClasses ecoreClass="sco.ecore#//ArtifactIdentifier">
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="The name of the case artifact associated with this record"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactIdentifier/resourceName"/>
+      <genFeatures createChild="false" propertyCategory="Lines" propertyDescription="The number of configured or baselined lines in this artifact"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactIdentifier/baselinedLineCount"/>
+      <genFeatures createChild="false" propertyCategory="Lines" propertyDescription="The current line count for the artifact"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactIdentifier/currentLineCount"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The critical defect change orders"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/criticalDefectChangeOrders"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The normal defect change orders"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/normalDefectChangeOrders"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The improvement change orders"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/improvementChangeOrders"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The new feature change orders"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/newFeatureChangeOrders"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Changes"
+          propertyDescription="The total number of change orders summed from the individual types"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/totalChangeOrders"/>
+    </genClasses>
+    <genClasses ecoreClass="sco.ecore#//ArtifactList">
+      <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Basic"
+          propertyDescription="The list of artifacts included in this commit record"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactList/artifactIdentifiers"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="An identifier for the commit record for associating team provider records"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactList/commitIdentifier"/>
+      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="The usage time in hours for the commit baseline under realistic operation"
+          ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactList/usageTime"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

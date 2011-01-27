@@ -4,8 +4,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spm"
     nsURI="http://www.certware.net/spm" nsPrefix="spm">
   <eClassifiers xsi:type="ecore:EClass" name="ProjectModel" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmModel"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProjectHistory" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProjectCommit" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectCommit" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmModel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommitRelationship" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProductQualityCategory" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Category"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InProgressQualityCategory" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Category"/>
   <eClassifiers xsi:type="ecore:EClass" name="EndProductQuality" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Characteristic"/>
   <eClassifiers xsi:type="ecore:EClass" name="Maintainability" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Characteristic"/>
   <eClassifiers xsi:type="ecore:EClass" name="InProgressIndicator" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Characteristic"/>
@@ -17,20 +19,22 @@
   <eClassifiers xsi:type="ecore:EClass" name="CaseScope" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Scope"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProjectScope" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Scope"/>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeScope" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Scope"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CriticalDefectChangeOrderCount" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Count"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NormalDefectChangeOrderCount" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Count"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ImprovementChangeOrderCount" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Count"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NewFeatureChangeOrderCount" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Count"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CriticalDefectChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDefectChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImprovementChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewFeatureChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="TrendMeasure" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//CollectiveMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="ScrapRatioMeasure" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//RatioMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModularityMeasure" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//RatioMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="ReworkRatioMeasure" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//RatioMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="AdaptabilityRatioMeasure" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MaturityRatioMeasure" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//RatioMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="MaintainabilityMeasure" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//RatioMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="BrokenCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="FixedCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="TotalCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="BaselineCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageTimeMeasure" eSuperTypes="#//TimeDimensionalMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="RepairEffortMeasure" eSuperTypes="#//AdditiveMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="DevelopmentEffortMeasure" eSuperTypes="#//AdditiveMeasure"/>
   <eClassifiers xsi:type="ecore:EClass" name="TotalChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>

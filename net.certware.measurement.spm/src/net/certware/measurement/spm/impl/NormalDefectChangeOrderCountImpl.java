@@ -3,8 +3,6 @@
  */
 package net.certware.measurement.spm.impl;
 
-import net.certware.measurement.smm.impl.CountImpl;
-
 import net.certware.measurement.spm.NormalDefectChangeOrderCount;
 import net.certware.measurement.spm.SpmPackage;
 
@@ -19,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NormalDefectChangeOrderCountImpl extends CountImpl implements NormalDefectChangeOrderCount {
+public class NormalDefectChangeOrderCountImpl extends AdditiveMeasureImpl implements NormalDefectChangeOrderCount {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

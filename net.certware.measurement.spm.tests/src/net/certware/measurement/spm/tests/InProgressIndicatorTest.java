@@ -4,9 +4,7 @@
 package net.certware.measurement.spm.tests;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import net.certware.measurement.spm.InProgressIndicator;
 import net.certware.measurement.spm.SpmFactory;
 

@@ -3,7 +3,7 @@
  */
 package net.certware.measurement.spm;
 
-import net.certware.measurement.smm.SmmElement;
+import net.certware.measurement.smm.SmmModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,5 +15,5 @@ import net.certware.measurement.smm.SmmElement;
  * @model
  * @generated
  */
-public interface ProjectCommit extends SmmElement {
+public interface ProjectCommit extends SmmModel {
 } // ProjectCommit

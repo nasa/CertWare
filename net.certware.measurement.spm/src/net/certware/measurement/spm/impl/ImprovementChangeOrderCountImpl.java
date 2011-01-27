@@ -3,8 +3,6 @@
  */
 package net.certware.measurement.spm.impl;
 
-import net.certware.measurement.smm.impl.CountImpl;
-
 import net.certware.measurement.spm.ImprovementChangeOrderCount;
 import net.certware.measurement.spm.SpmPackage;
 
@@ -19,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ImprovementChangeOrderCountImpl extends CountImpl implements ImprovementChangeOrderCount {
+public class ImprovementChangeOrderCountImpl extends AdditiveMeasureImpl implements ImprovementChangeOrderCount {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

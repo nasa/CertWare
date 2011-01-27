@@ -112,52 +112,6 @@ public interface SpmPackage extends EPackage {
 	int PROJECT_MODEL_FEATURE_COUNT = SmmPackage.SMM_MODEL_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link net.certware.measurement.spm.impl.ProjectHistoryImpl <em>Project History</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see net.certware.measurement.spm.impl.ProjectHistoryImpl
-	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getProjectHistory()
-	 * @generated
-	 */
-	int PROJECT_HISTORY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECT_HISTORY__MODEL = SmmPackage.SMM_ELEMENT__MODEL;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECT_HISTORY__ATTRIBUTE = SmmPackage.SMM_ELEMENT__ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECT_HISTORY__ANNOTATION = SmmPackage.SMM_ELEMENT__ANNOTATION;
-
-	/**
-	 * The number of structural features of the '<em>Project History</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECT_HISTORY_FEATURE_COUNT = SmmPackage.SMM_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.ProjectCommitImpl <em>Project Commit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,7 +119,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getProjectCommit()
 	 * @generated
 	 */
-	int PROJECT_COMMIT = 2;
+	int PROJECT_COMMIT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -174,7 +128,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_COMMIT__MODEL = SmmPackage.SMM_ELEMENT__MODEL;
+	int PROJECT_COMMIT__MODEL = SmmPackage.SMM_MODEL__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -183,7 +137,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_COMMIT__ATTRIBUTE = SmmPackage.SMM_ELEMENT__ATTRIBUTE;
+	int PROJECT_COMMIT__ATTRIBUTE = SmmPackage.SMM_MODEL__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -192,7 +146,16 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_COMMIT__ANNOTATION = SmmPackage.SMM_ELEMENT__ANNOTATION;
+	int PROJECT_COMMIT__ANNOTATION = SmmPackage.SMM_MODEL__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Model Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT_COMMIT__MODEL_ELEMENT = SmmPackage.SMM_MODEL__MODEL_ELEMENT;
 
 	/**
 	 * The number of structural features of the '<em>Project Commit</em>' class.
@@ -201,7 +164,253 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_COMMIT_FEATURE_COUNT = SmmPackage.SMM_ELEMENT_FEATURE_COUNT + 0;
+	int PROJECT_COMMIT_FEATURE_COUNT = SmmPackage.SMM_MODEL_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link net.certware.measurement.spm.impl.CommitRelationshipImpl <em>Commit Relationship</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.measurement.spm.impl.CommitRelationshipImpl
+	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getCommitRelationship()
+	 * @generated
+	 */
+	int COMMIT_RELATIONSHIP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMIT_RELATIONSHIP__MODEL = SmmPackage.SMM_RELATIONSHIP__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMIT_RELATIONSHIP__ATTRIBUTE = SmmPackage.SMM_RELATIONSHIP__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMIT_RELATIONSHIP__ANNOTATION = SmmPackage.SMM_RELATIONSHIP__ANNOTATION;
+
+	/**
+	 * The number of structural features of the '<em>Commit Relationship</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMIT_RELATIONSHIP_FEATURE_COUNT = SmmPackage.SMM_RELATIONSHIP_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link net.certware.measurement.spm.impl.EndProductQualityCategoryImpl <em>End Product Quality Category</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.measurement.spm.impl.EndProductQualityCategoryImpl
+	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getEndProductQualityCategory()
+	 * @generated
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY = 3;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__MODEL = SmmPackage.CATEGORY__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__ATTRIBUTE = SmmPackage.CATEGORY__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__ANNOTATION = SmmPackage.CATEGORY__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__NAME = SmmPackage.CATEGORY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__CATEGORY = SmmPackage.CATEGORY__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Category Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__CATEGORY_ELEMENT = SmmPackage.CATEGORY__CATEGORY_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__OUT_CATEGORY = SmmPackage.CATEGORY__OUT_CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>In Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__IN_CATEGORY = SmmPackage.CATEGORY__IN_CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Category Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY__CATEGORY_MEASURE = SmmPackage.CATEGORY__CATEGORY_MEASURE;
+
+	/**
+	 * The number of structural features of the '<em>End Product Quality Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_PRODUCT_QUALITY_CATEGORY_FEATURE_COUNT = SmmPackage.CATEGORY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link net.certware.measurement.spm.impl.InProgressQualityCategoryImpl <em>In Progress Quality Category</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.measurement.spm.impl.InProgressQualityCategoryImpl
+	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getInProgressQualityCategory()
+	 * @generated
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__MODEL = SmmPackage.CATEGORY__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__ATTRIBUTE = SmmPackage.CATEGORY__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__ANNOTATION = SmmPackage.CATEGORY__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__NAME = SmmPackage.CATEGORY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__CATEGORY = SmmPackage.CATEGORY__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Category Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__CATEGORY_ELEMENT = SmmPackage.CATEGORY__CATEGORY_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__OUT_CATEGORY = SmmPackage.CATEGORY__OUT_CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>In Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__IN_CATEGORY = SmmPackage.CATEGORY__IN_CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Category Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY__CATEGORY_MEASURE = SmmPackage.CATEGORY__CATEGORY_MEASURE;
+
+	/**
+	 * The number of structural features of the '<em>In Progress Quality Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PROGRESS_QUALITY_CATEGORY_FEATURE_COUNT = SmmPackage.CATEGORY_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.EndProductQualityImpl <em>End Product Quality</em>}' class.
@@ -211,7 +420,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getEndProductQuality()
 	 * @generated
 	 */
-	int END_PRODUCT_QUALITY = 3;
+	int END_PRODUCT_QUALITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -284,7 +493,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getMaintainability()
 	 * @generated
 	 */
-	int MAINTAINABILITY = 4;
+	int MAINTAINABILITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -357,7 +566,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getInProgressIndicator()
 	 * @generated
 	 */
-	int IN_PROGRESS_INDICATOR = 5;
+	int IN_PROGRESS_INDICATOR = 7;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -430,7 +639,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getProjectSize()
 	 * @generated
 	 */
-	int PROJECT_SIZE = 6;
+	int PROJECT_SIZE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -503,7 +712,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getCaseDimensionalMeasure()
 	 * @generated
 	 */
-	int CASE_DIMENSIONAL_MEASURE = 7;
+	int CASE_DIMENSIONAL_MEASURE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -657,7 +866,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getChangeOrderDimensionalMeasure()
 	 * @generated
 	 */
-	int CHANGE_ORDER_DIMENSIONAL_MEASURE = 8;
+	int CHANGE_ORDER_DIMENSIONAL_MEASURE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -811,7 +1020,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getTimeDimensionalMeasure()
 	 * @generated
 	 */
-	int TIME_DIMENSIONAL_MEASURE = 9;
+	int TIME_DIMENSIONAL_MEASURE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -965,7 +1174,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getAdditiveMeasure()
 	 * @generated
 	 */
-	int ADDITIVE_MEASURE = 10;
+	int ADDITIVE_MEASURE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1137,7 +1346,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getCaseScope()
 	 * @generated
 	 */
-	int CASE_SCOPE = 11;
+	int CASE_SCOPE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1228,7 +1437,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getProjectScope()
 	 * @generated
 	 */
-	int PROJECT_SCOPE = 12;
+	int PROJECT_SCOPE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1319,7 +1528,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getChangeScope()
 	 * @generated
 	 */
-	int CHANGE_SCOPE = 13;
+	int CHANGE_SCOPE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1410,7 +1619,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getCriticalDefectChangeOrderCount()
 	 * @generated
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT = 14;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1419,7 +1628,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__MODEL = SmmPackage.COUNT__MODEL;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__MODEL = ADDITIVE_MEASURE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -1428,7 +1637,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__ATTRIBUTE = SmmPackage.COUNT__ATTRIBUTE;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__ATTRIBUTE = ADDITIVE_MEASURE__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1437,61 +1646,133 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__ANNOTATION = SmmPackage.COUNT__ANNOTATION;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__ANNOTATION = ADDITIVE_MEASURE__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__MEASURE = SmmPackage.COUNT__MEASURE;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__CATEGORY = ADDITIVE_MEASURE__CATEGORY;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__OBSERVATION = SmmPackage.COUNT__OBSERVATION;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__LIBRARY = ADDITIVE_MEASURE__LIBRARY;
 
 	/**
-	 * The feature id for the '<em><b>Error</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__ERROR = SmmPackage.COUNT__ERROR;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__NAME = ADDITIVE_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Out Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__OUT_MEASUREMENT = SmmPackage.COUNT__OUT_MEASUREMENT;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__EQUIVALENT_FROM = ADDITIVE_MEASURE__EQUIVALENT_FROM;
 
 	/**
-	 * The feature id for the '<em><b>In Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__IN_MEASUREMENT = SmmPackage.COUNT__IN_MEASUREMENT;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__EQUIVALENT_TO = ADDITIVE_MEASURE__EQUIVALENT_TO;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Refinement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__VALUE = SmmPackage.COUNT__VALUE;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__MEASUREMENT = ADDITIVE_MEASURE__MEASUREMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__TRAIT = ADDITIVE_MEASURE__TRAIT;
+
+	/**
+	 * The feature id for the '<em><b>Scope</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__SCOPE = ADDITIVE_MEASURE__SCOPE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__UNIT = ADDITIVE_MEASURE__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Base Measure</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__BASE_MEASURE = ADDITIVE_MEASURE__BASE_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Accumulator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__ACCUMULATOR = ADDITIVE_MEASURE__ACCUMULATOR;
 
 	/**
 	 * The number of structural features of the '<em>Critical Defect Change Order Count</em>' class.
@@ -1500,7 +1781,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT_FEATURE_COUNT = SmmPackage.COUNT_FEATURE_COUNT + 0;
+	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT_FEATURE_COUNT = ADDITIVE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.NormalDefectChangeOrderCountImpl <em>Normal Defect Change Order Count</em>}' class.
@@ -1510,7 +1791,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getNormalDefectChangeOrderCount()
 	 * @generated
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT = 15;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1519,7 +1800,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__MODEL = SmmPackage.COUNT__MODEL;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__MODEL = ADDITIVE_MEASURE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -1528,7 +1809,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__ATTRIBUTE = SmmPackage.COUNT__ATTRIBUTE;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__ATTRIBUTE = ADDITIVE_MEASURE__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1537,61 +1818,133 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__ANNOTATION = SmmPackage.COUNT__ANNOTATION;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__ANNOTATION = ADDITIVE_MEASURE__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__MEASURE = SmmPackage.COUNT__MEASURE;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__CATEGORY = ADDITIVE_MEASURE__CATEGORY;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__OBSERVATION = SmmPackage.COUNT__OBSERVATION;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__LIBRARY = ADDITIVE_MEASURE__LIBRARY;
 
 	/**
-	 * The feature id for the '<em><b>Error</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__ERROR = SmmPackage.COUNT__ERROR;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__NAME = ADDITIVE_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Out Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__OUT_MEASUREMENT = SmmPackage.COUNT__OUT_MEASUREMENT;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__EQUIVALENT_FROM = ADDITIVE_MEASURE__EQUIVALENT_FROM;
 
 	/**
-	 * The feature id for the '<em><b>In Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__IN_MEASUREMENT = SmmPackage.COUNT__IN_MEASUREMENT;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__EQUIVALENT_TO = ADDITIVE_MEASURE__EQUIVALENT_TO;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Refinement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__VALUE = SmmPackage.COUNT__VALUE;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__MEASUREMENT = ADDITIVE_MEASURE__MEASUREMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__TRAIT = ADDITIVE_MEASURE__TRAIT;
+
+	/**
+	 * The feature id for the '<em><b>Scope</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__SCOPE = ADDITIVE_MEASURE__SCOPE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__UNIT = ADDITIVE_MEASURE__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Base Measure</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__BASE_MEASURE = ADDITIVE_MEASURE__BASE_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Accumulator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__ACCUMULATOR = ADDITIVE_MEASURE__ACCUMULATOR;
 
 	/**
 	 * The number of structural features of the '<em>Normal Defect Change Order Count</em>' class.
@@ -1600,7 +1953,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DEFECT_CHANGE_ORDER_COUNT_FEATURE_COUNT = SmmPackage.COUNT_FEATURE_COUNT + 0;
+	int NORMAL_DEFECT_CHANGE_ORDER_COUNT_FEATURE_COUNT = ADDITIVE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.ImprovementChangeOrderCountImpl <em>Improvement Change Order Count</em>}' class.
@@ -1610,7 +1963,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getImprovementChangeOrderCount()
 	 * @generated
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT = 16;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1619,7 +1972,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__MODEL = SmmPackage.COUNT__MODEL;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__MODEL = ADDITIVE_MEASURE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -1628,7 +1981,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__ATTRIBUTE = SmmPackage.COUNT__ATTRIBUTE;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__ATTRIBUTE = ADDITIVE_MEASURE__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1637,61 +1990,133 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__ANNOTATION = SmmPackage.COUNT__ANNOTATION;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__ANNOTATION = ADDITIVE_MEASURE__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__MEASURE = SmmPackage.COUNT__MEASURE;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__CATEGORY = ADDITIVE_MEASURE__CATEGORY;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__OBSERVATION = SmmPackage.COUNT__OBSERVATION;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__LIBRARY = ADDITIVE_MEASURE__LIBRARY;
 
 	/**
-	 * The feature id for the '<em><b>Error</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__ERROR = SmmPackage.COUNT__ERROR;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__NAME = ADDITIVE_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Out Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__OUT_MEASUREMENT = SmmPackage.COUNT__OUT_MEASUREMENT;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__EQUIVALENT_FROM = ADDITIVE_MEASURE__EQUIVALENT_FROM;
 
 	/**
-	 * The feature id for the '<em><b>In Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__IN_MEASUREMENT = SmmPackage.COUNT__IN_MEASUREMENT;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__EQUIVALENT_TO = ADDITIVE_MEASURE__EQUIVALENT_TO;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Refinement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT__VALUE = SmmPackage.COUNT__VALUE;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__MEASUREMENT = ADDITIVE_MEASURE__MEASUREMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__TRAIT = ADDITIVE_MEASURE__TRAIT;
+
+	/**
+	 * The feature id for the '<em><b>Scope</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__SCOPE = ADDITIVE_MEASURE__SCOPE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__UNIT = ADDITIVE_MEASURE__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Base Measure</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__BASE_MEASURE = ADDITIVE_MEASURE__BASE_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Accumulator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPROVEMENT_CHANGE_ORDER_COUNT__ACCUMULATOR = ADDITIVE_MEASURE__ACCUMULATOR;
 
 	/**
 	 * The number of structural features of the '<em>Improvement Change Order Count</em>' class.
@@ -1700,7 +2125,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPROVEMENT_CHANGE_ORDER_COUNT_FEATURE_COUNT = SmmPackage.COUNT_FEATURE_COUNT + 0;
+	int IMPROVEMENT_CHANGE_ORDER_COUNT_FEATURE_COUNT = ADDITIVE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.NewFeatureChangeOrderCountImpl <em>New Feature Change Order Count</em>}' class.
@@ -1710,7 +2135,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getNewFeatureChangeOrderCount()
 	 * @generated
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT = 17;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1719,7 +2144,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__MODEL = SmmPackage.COUNT__MODEL;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__MODEL = ADDITIVE_MEASURE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -1728,7 +2153,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__ATTRIBUTE = SmmPackage.COUNT__ATTRIBUTE;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__ATTRIBUTE = ADDITIVE_MEASURE__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1737,61 +2162,133 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__ANNOTATION = SmmPackage.COUNT__ANNOTATION;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__ANNOTATION = ADDITIVE_MEASURE__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__MEASURE = SmmPackage.COUNT__MEASURE;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__CATEGORY = ADDITIVE_MEASURE__CATEGORY;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__OBSERVATION = SmmPackage.COUNT__OBSERVATION;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__LIBRARY = ADDITIVE_MEASURE__LIBRARY;
 
 	/**
-	 * The feature id for the '<em><b>Error</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__ERROR = SmmPackage.COUNT__ERROR;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__NAME = ADDITIVE_MEASURE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Out Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__OUT_MEASUREMENT = SmmPackage.COUNT__OUT_MEASUREMENT;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__EQUIVALENT_FROM = ADDITIVE_MEASURE__EQUIVALENT_FROM;
 
 	/**
-	 * The feature id for the '<em><b>In Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Equivalent To</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__IN_MEASUREMENT = SmmPackage.COUNT__IN_MEASUREMENT;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__EQUIVALENT_TO = ADDITIVE_MEASURE__EQUIVALENT_TO;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Refinement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT__VALUE = SmmPackage.COUNT__VALUE;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__MEASUREMENT = ADDITIVE_MEASURE__MEASUREMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__TRAIT = ADDITIVE_MEASURE__TRAIT;
+
+	/**
+	 * The feature id for the '<em><b>Scope</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__SCOPE = ADDITIVE_MEASURE__SCOPE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__UNIT = ADDITIVE_MEASURE__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Base Measure</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__BASE_MEASURE = ADDITIVE_MEASURE__BASE_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Accumulator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEW_FEATURE_CHANGE_ORDER_COUNT__ACCUMULATOR = ADDITIVE_MEASURE__ACCUMULATOR;
 
 	/**
 	 * The number of structural features of the '<em>New Feature Change Order Count</em>' class.
@@ -1800,7 +2297,7 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NEW_FEATURE_CHANGE_ORDER_COUNT_FEATURE_COUNT = SmmPackage.COUNT_FEATURE_COUNT + 0;
+	int NEW_FEATURE_CHANGE_ORDER_COUNT_FEATURE_COUNT = ADDITIVE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.TrendMeasureImpl <em>Trend Measure</em>}' class.
@@ -1810,7 +2307,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getTrendMeasure()
 	 * @generated
 	 */
-	int TREND_MEASURE = 18;
+	int TREND_MEASURE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -1982,7 +2479,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getScrapRatioMeasure()
 	 * @generated
 	 */
-	int SCRAP_RATIO_MEASURE = 19;
+	int SCRAP_RATIO_MEASURE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -2163,7 +2660,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getModularityMeasure()
 	 * @generated
 	 */
-	int MODULARITY_MEASURE = 20;
+	int MODULARITY_MEASURE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -2344,7 +2841,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getReworkRatioMeasure()
 	 * @generated
 	 */
-	int REWORK_RATIO_MEASURE = 21;
+	int REWORK_RATIO_MEASURE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -2525,7 +3022,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getAdaptabilityRatioMeasure()
 	 * @generated
 	 */
-	int ADAPTABILITY_RATIO_MEASURE = 22;
+	int ADAPTABILITY_RATIO_MEASURE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -2699,6 +3196,187 @@ public interface SpmPackage extends EPackage {
 	int ADAPTABILITY_RATIO_MEASURE_FEATURE_COUNT = SmmPackage.RATIO_MEASURE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link net.certware.measurement.spm.impl.MaturityRatioMeasureImpl <em>Maturity Ratio Measure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.measurement.spm.impl.MaturityRatioMeasureImpl
+	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getMaturityRatioMeasure()
+	 * @generated
+	 */
+	int MATURITY_RATIO_MEASURE = 25;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__MODEL = SmmPackage.RATIO_MEASURE__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__ATTRIBUTE = SmmPackage.RATIO_MEASURE__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__ANNOTATION = SmmPackage.RATIO_MEASURE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__CATEGORY = SmmPackage.RATIO_MEASURE__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__LIBRARY = SmmPackage.RATIO_MEASURE__LIBRARY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__NAME = SmmPackage.RATIO_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Equivalent From</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__EQUIVALENT_FROM = SmmPackage.RATIO_MEASURE__EQUIVALENT_FROM;
+
+	/**
+	 * The feature id for the '<em><b>Equivalent To</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__EQUIVALENT_TO = SmmPackage.RATIO_MEASURE__EQUIVALENT_TO;
+
+	/**
+	 * The feature id for the '<em><b>Refinement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__MEASUREMENT = SmmPackage.RATIO_MEASURE__MEASUREMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__TRAIT = SmmPackage.RATIO_MEASURE__TRAIT;
+
+	/**
+	 * The feature id for the '<em><b>Scope</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__SCOPE = SmmPackage.RATIO_MEASURE__SCOPE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__UNIT = SmmPackage.RATIO_MEASURE__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Functor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__FUNCTOR = SmmPackage.RATIO_MEASURE__FUNCTOR;
+
+	/**
+	 * The feature id for the '<em><b>Base Measure1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__BASE_MEASURE1 = SmmPackage.RATIO_MEASURE__BASE_MEASURE1;
+
+	/**
+	 * The feature id for the '<em><b>Base Measure2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE__BASE_MEASURE2 = SmmPackage.RATIO_MEASURE__BASE_MEASURE2;
+
+	/**
+	 * The number of structural features of the '<em>Maturity Ratio Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATURITY_RATIO_MEASURE_FEATURE_COUNT = SmmPackage.RATIO_MEASURE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.MaintainabilityMeasureImpl <em>Maintainability Measure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2706,7 +3384,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getMaintainabilityMeasure()
 	 * @generated
 	 */
-	int MAINTAINABILITY_MEASURE = 23;
+	int MAINTAINABILITY_MEASURE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -2887,7 +3565,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getBrokenCaseSizeMeasure()
 	 * @generated
 	 */
-	int BROKEN_CASE_SIZE_MEASURE = 24;
+	int BROKEN_CASE_SIZE_MEASURE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -3059,7 +3737,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getFixedCaseSizeMeasure()
 	 * @generated
 	 */
-	int FIXED_CASE_SIZE_MEASURE = 25;
+	int FIXED_CASE_SIZE_MEASURE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -3231,7 +3909,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getTotalCaseSizeMeasure()
 	 * @generated
 	 */
-	int TOTAL_CASE_SIZE_MEASURE = 26;
+	int TOTAL_CASE_SIZE_MEASURE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -3403,7 +4081,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getBaselineCaseSizeMeasure()
 	 * @generated
 	 */
-	int BASELINE_CASE_SIZE_MEASURE = 27;
+	int BASELINE_CASE_SIZE_MEASURE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -3568,6 +4246,160 @@ public interface SpmPackage extends EPackage {
 	int BASELINE_CASE_SIZE_MEASURE_FEATURE_COUNT = ADDITIVE_MEASURE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link net.certware.measurement.spm.impl.UsageTimeMeasureImpl <em>Usage Time Measure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.measurement.spm.impl.UsageTimeMeasureImpl
+	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getUsageTimeMeasure()
+	 * @generated
+	 */
+	int USAGE_TIME_MEASURE = 31;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__MODEL = TIME_DIMENSIONAL_MEASURE__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__ATTRIBUTE = TIME_DIMENSIONAL_MEASURE__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__ANNOTATION = TIME_DIMENSIONAL_MEASURE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Category</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__CATEGORY = TIME_DIMENSIONAL_MEASURE__CATEGORY;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__LIBRARY = TIME_DIMENSIONAL_MEASURE__LIBRARY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__NAME = TIME_DIMENSIONAL_MEASURE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Equivalent From</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__EQUIVALENT_FROM = TIME_DIMENSIONAL_MEASURE__EQUIVALENT_FROM;
+
+	/**
+	 * The feature id for the '<em><b>Equivalent To</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__EQUIVALENT_TO = TIME_DIMENSIONAL_MEASURE__EQUIVALENT_TO;
+
+	/**
+	 * The feature id for the '<em><b>Refinement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__REFINEMENT = TIME_DIMENSIONAL_MEASURE__REFINEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__MEASUREMENT = TIME_DIMENSIONAL_MEASURE__MEASUREMENT;
+
+	/**
+	 * The feature id for the '<em><b>Out Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__OUT_MEASURE = TIME_DIMENSIONAL_MEASURE__OUT_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__IN_MEASURE = TIME_DIMENSIONAL_MEASURE__IN_MEASURE;
+
+	/**
+	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__TRAIT = TIME_DIMENSIONAL_MEASURE__TRAIT;
+
+	/**
+	 * The feature id for the '<em><b>Scope</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__SCOPE = TIME_DIMENSIONAL_MEASURE__SCOPE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE__UNIT = TIME_DIMENSIONAL_MEASURE__UNIT;
+
+	/**
+	 * The number of structural features of the '<em>Usage Time Measure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TIME_MEASURE_FEATURE_COUNT = TIME_DIMENSIONAL_MEASURE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.RepairEffortMeasureImpl <em>Repair Effort Measure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3575,7 +4407,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getRepairEffortMeasure()
 	 * @generated
 	 */
-	int REPAIR_EFFORT_MEASURE = 28;
+	int REPAIR_EFFORT_MEASURE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -3747,7 +4579,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getDevelopmentEffortMeasure()
 	 * @generated
 	 */
-	int DEVELOPMENT_EFFORT_MEASURE = 29;
+	int DEVELOPMENT_EFFORT_MEASURE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -3919,7 +4751,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getTotalChangeOrderCount()
 	 * @generated
 	 */
-	int TOTAL_CHANGE_ORDER_COUNT = 30;
+	int TOTAL_CHANGE_ORDER_COUNT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -4091,7 +4923,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getCriticalAndNormalChangeOrderCount()
 	 * @generated
 	 */
-	int CRITICAL_AND_NORMAL_CHANGE_ORDER_COUNT = 31;
+	int CRITICAL_AND_NORMAL_CHANGE_ORDER_COUNT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -4272,7 +5104,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getReworkStabilityMeasure()
 	 * @generated
 	 */
-	int REWORK_STABILITY_MEASURE = 32;
+	int REWORK_STABILITY_MEASURE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -4453,7 +5285,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getReworkBacklogMeasure()
 	 * @generated
 	 */
-	int REWORK_BACKLOG_MEASURE = 33;
+	int REWORK_BACKLOG_MEASURE = 37;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -4634,7 +5466,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getModularityTrend()
 	 * @generated
 	 */
-	int MODULARITY_TREND = 34;
+	int MODULARITY_TREND = 38;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -4806,7 +5638,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getAdaptabilityTrend()
 	 * @generated
 	 */
-	int ADAPTABILITY_TREND = 35;
+	int ADAPTABILITY_TREND = 39;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -4978,7 +5810,7 @@ public interface SpmPackage extends EPackage {
 	 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getMaturityTrend()
 	 * @generated
 	 */
-	int MATURITY_TREND = 36;
+	int MATURITY_TREND = 40;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' container reference.
@@ -5154,16 +5986,6 @@ public interface SpmPackage extends EPackage {
 	EClass getProjectModel();
 
 	/**
-	 * Returns the meta object for class '{@link net.certware.measurement.spm.ProjectHistory <em>Project History</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Project History</em>'.
-	 * @see net.certware.measurement.spm.ProjectHistory
-	 * @generated
-	 */
-	EClass getProjectHistory();
-
-	/**
 	 * Returns the meta object for class '{@link net.certware.measurement.spm.ProjectCommit <em>Project Commit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5172,6 +5994,36 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProjectCommit();
+
+	/**
+	 * Returns the meta object for class '{@link net.certware.measurement.spm.CommitRelationship <em>Commit Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Commit Relationship</em>'.
+	 * @see net.certware.measurement.spm.CommitRelationship
+	 * @generated
+	 */
+	EClass getCommitRelationship();
+
+	/**
+	 * Returns the meta object for class '{@link net.certware.measurement.spm.EndProductQualityCategory <em>End Product Quality Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>End Product Quality Category</em>'.
+	 * @see net.certware.measurement.spm.EndProductQualityCategory
+	 * @generated
+	 */
+	EClass getEndProductQualityCategory();
+
+	/**
+	 * Returns the meta object for class '{@link net.certware.measurement.spm.InProgressQualityCategory <em>In Progress Quality Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>In Progress Quality Category</em>'.
+	 * @see net.certware.measurement.spm.InProgressQualityCategory
+	 * @generated
+	 */
+	EClass getInProgressQualityCategory();
 
 	/**
 	 * Returns the meta object for class '{@link net.certware.measurement.spm.EndProductQuality <em>End Product Quality</em>}'.
@@ -5374,6 +6226,16 @@ public interface SpmPackage extends EPackage {
 	EClass getAdaptabilityRatioMeasure();
 
 	/**
+	 * Returns the meta object for class '{@link net.certware.measurement.spm.MaturityRatioMeasure <em>Maturity Ratio Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Maturity Ratio Measure</em>'.
+	 * @see net.certware.measurement.spm.MaturityRatioMeasure
+	 * @generated
+	 */
+	EClass getMaturityRatioMeasure();
+
+	/**
 	 * Returns the meta object for class '{@link net.certware.measurement.spm.MaintainabilityMeasure <em>Maintainability Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5422,6 +6284,16 @@ public interface SpmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBaselineCaseSizeMeasure();
+
+	/**
+	 * Returns the meta object for class '{@link net.certware.measurement.spm.UsageTimeMeasure <em>Usage Time Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Usage Time Measure</em>'.
+	 * @see net.certware.measurement.spm.UsageTimeMeasure
+	 * @generated
+	 */
+	EClass getUsageTimeMeasure();
 
 	/**
 	 * Returns the meta object for class '{@link net.certware.measurement.spm.RepairEffortMeasure <em>Repair Effort Measure</em>}'.
@@ -5546,16 +6418,6 @@ public interface SpmPackage extends EPackage {
 		EClass PROJECT_MODEL = eINSTANCE.getProjectModel();
 
 		/**
-		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.ProjectHistoryImpl <em>Project History</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see net.certware.measurement.spm.impl.ProjectHistoryImpl
-		 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getProjectHistory()
-		 * @generated
-		 */
-		EClass PROJECT_HISTORY = eINSTANCE.getProjectHistory();
-
-		/**
 		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.ProjectCommitImpl <em>Project Commit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5564,6 +6426,36 @@ public interface SpmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROJECT_COMMIT = eINSTANCE.getProjectCommit();
+
+		/**
+		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.CommitRelationshipImpl <em>Commit Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.measurement.spm.impl.CommitRelationshipImpl
+		 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getCommitRelationship()
+		 * @generated
+		 */
+		EClass COMMIT_RELATIONSHIP = eINSTANCE.getCommitRelationship();
+
+		/**
+		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.EndProductQualityCategoryImpl <em>End Product Quality Category</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.measurement.spm.impl.EndProductQualityCategoryImpl
+		 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getEndProductQualityCategory()
+		 * @generated
+		 */
+		EClass END_PRODUCT_QUALITY_CATEGORY = eINSTANCE.getEndProductQualityCategory();
+
+		/**
+		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.InProgressQualityCategoryImpl <em>In Progress Quality Category</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.measurement.spm.impl.InProgressQualityCategoryImpl
+		 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getInProgressQualityCategory()
+		 * @generated
+		 */
+		EClass IN_PROGRESS_QUALITY_CATEGORY = eINSTANCE.getInProgressQualityCategory();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.EndProductQualityImpl <em>End Product Quality</em>}' class.
@@ -5766,6 +6658,16 @@ public interface SpmPackage extends EPackage {
 		EClass ADAPTABILITY_RATIO_MEASURE = eINSTANCE.getAdaptabilityRatioMeasure();
 
 		/**
+		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.MaturityRatioMeasureImpl <em>Maturity Ratio Measure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.measurement.spm.impl.MaturityRatioMeasureImpl
+		 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getMaturityRatioMeasure()
+		 * @generated
+		 */
+		EClass MATURITY_RATIO_MEASURE = eINSTANCE.getMaturityRatioMeasure();
+
+		/**
 		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.MaintainabilityMeasureImpl <em>Maintainability Measure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5814,6 +6716,16 @@ public interface SpmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BASELINE_CASE_SIZE_MEASURE = eINSTANCE.getBaselineCaseSizeMeasure();
+
+		/**
+		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.UsageTimeMeasureImpl <em>Usage Time Measure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.measurement.spm.impl.UsageTimeMeasureImpl
+		 * @see net.certware.measurement.spm.impl.SpmPackageImpl#getUsageTimeMeasure()
+		 * @generated
+		 */
+		EClass USAGE_TIME_MEASURE = eINSTANCE.getUsageTimeMeasure();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.RepairEffortMeasureImpl <em>Repair Effort Measure</em>}' class.

@@ -3,7 +3,6 @@
  */
 package net.certware.measurement.spm;
 
-import net.certware.measurement.smm.Count;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,5 +14,5 @@ import net.certware.measurement.smm.Count;
  * @model
  * @generated
  */
-public interface NormalDefectChangeOrderCount extends Count {
+public interface NormalDefectChangeOrderCount extends AdditiveMeasure {
 } // NormalDefectChangeOrderCount

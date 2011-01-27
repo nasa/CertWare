@@ -16,4 +16,5 @@ import net.certware.measurement.smm.SmmModel;
  * @generated
  */
 public interface ProjectModel extends SmmModel {
+
 } // ProjectModel

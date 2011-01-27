@@ -5,7 +5,6 @@ package net.certware.measurement.spm.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
 
 /**
@@ -33,8 +32,10 @@ public class SpmTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new SpmTests("spm Tests"); //$NON-NLS-1$
 		suite.addTestSuite(ProjectModelTest.class);
-		suite.addTestSuite(ProjectHistoryTest.class);
 		suite.addTestSuite(ProjectCommitTest.class);
+		suite.addTestSuite(CommitRelationshipTest.class);
+		suite.addTestSuite(EndProductQualityCategoryTest.class);
+		suite.addTestSuite(InProgressQualityCategoryTest.class);
 		suite.addTestSuite(EndProductQualityTest.class);
 		suite.addTestSuite(MaintainabilityTest.class);
 		suite.addTestSuite(InProgressIndicatorTest.class);
@@ -55,11 +56,13 @@ public class SpmTests extends TestSuite {
 		suite.addTestSuite(ModularityMeasureTest.class);
 		suite.addTestSuite(ReworkRatioMeasureTest.class);
 		suite.addTestSuite(AdaptabilityRatioMeasureTest.class);
+		suite.addTestSuite(MaturityRatioMeasureTest.class);
 		suite.addTestSuite(MaintainabilityMeasureTest.class);
 		suite.addTestSuite(BrokenCaseSizeMeasureTest.class);
 		suite.addTestSuite(FixedCaseSizeMeasureTest.class);
 		suite.addTestSuite(TotalCaseSizeMeasureTest.class);
 		suite.addTestSuite(BaselineCaseSizeMeasureTest.class);
+		suite.addTestSuite(UsageTimeMeasureTest.class);
 		suite.addTestSuite(RepairEffortMeasureTest.class);
 		suite.addTestSuite(DevelopmentEffortMeasureTest.class);
 		suite.addTestSuite(TotalChangeOrderCountTest.class);

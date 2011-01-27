@@ -6,8 +6,7 @@ package net.certware.measurement.spm.provider;
 
 import java.util.List;
 
-import net.certware.measurement.smm.provider.SmmElementItemProvider;
-
+import net.certware.measurement.smm.provider.SmmModelItemProvider;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -28,7 +27,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class ProjectCommitItemProvider
-	extends SmmElementItemProvider
+	extends SmmModelItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

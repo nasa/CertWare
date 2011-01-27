@@ -3,10 +3,7 @@
  */
 package net.certware.measurement.spm.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import net.certware.measurement.spm.ImprovementChangeOrderCount;
 import net.certware.measurement.spm.SpmFactory;
 
@@ -16,15 +13,7 @@ import net.certware.measurement.spm.SpmFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImprovementChangeOrderCountTest extends TestCase {
-
-	/**
-	 * The fixture for this Improvement Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ImprovementChangeOrderCount fixture = null;
+public class ImprovementChangeOrderCountTest extends AdditiveMeasureTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +35,14 @@ public class ImprovementChangeOrderCountTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Improvement Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(ImprovementChangeOrderCount fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Improvement Change Order Count test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected ImprovementChangeOrderCount getFixture() {
-		return fixture;
+		return (ImprovementChangeOrderCount)fixture;
 	}
 
 	/**

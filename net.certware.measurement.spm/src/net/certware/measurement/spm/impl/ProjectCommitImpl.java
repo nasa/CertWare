@@ -3,8 +3,7 @@
  */
 package net.certware.measurement.spm.impl;
 
-import net.certware.measurement.smm.impl.SmmElementImpl;
-
+import net.certware.measurement.smm.impl.SmmModelImpl;
 import net.certware.measurement.spm.ProjectCommit;
 import net.certware.measurement.spm.SpmPackage;
 
@@ -19,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ProjectCommitImpl extends SmmElementImpl implements ProjectCommit {
+public class ProjectCommitImpl extends SmmModelImpl implements ProjectCommit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

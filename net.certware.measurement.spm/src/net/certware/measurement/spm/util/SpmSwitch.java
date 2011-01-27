@@ -6,20 +6,58 @@ package net.certware.measurement.spm.util;
 import java.util.List;
 
 import net.certware.measurement.smm.BinaryMeasure;
+import net.certware.measurement.smm.Category;
 import net.certware.measurement.smm.Characteristic;
 import net.certware.measurement.smm.CollectiveMeasure;
-import net.certware.measurement.smm.Count;
 import net.certware.measurement.smm.DimensionalMeasure;
-import net.certware.measurement.smm.DimensionalMeasurement;
-import net.certware.measurement.smm.DirectMeasurement;
 import net.certware.measurement.smm.Measure;
-import net.certware.measurement.smm.Measurement;
 import net.certware.measurement.smm.RatioMeasure;
 import net.certware.measurement.smm.Scope;
 import net.certware.measurement.smm.SmmElement;
 import net.certware.measurement.smm.SmmModel;
-
-import net.certware.measurement.spm.*;
+import net.certware.measurement.smm.SmmRelationship;
+import net.certware.measurement.spm.AdaptabilityRatioMeasure;
+import net.certware.measurement.spm.AdaptabilityTrend;
+import net.certware.measurement.spm.AdditiveMeasure;
+import net.certware.measurement.spm.BaselineCaseSizeMeasure;
+import net.certware.measurement.spm.BrokenCaseSizeMeasure;
+import net.certware.measurement.spm.CaseDimensionalMeasure;
+import net.certware.measurement.spm.CaseScope;
+import net.certware.measurement.spm.ChangeOrderDimensionalMeasure;
+import net.certware.measurement.spm.ChangeScope;
+import net.certware.measurement.spm.CommitRelationship;
+import net.certware.measurement.spm.CriticalAndNormalChangeOrderCount;
+import net.certware.measurement.spm.CriticalDefectChangeOrderCount;
+import net.certware.measurement.spm.DevelopmentEffortMeasure;
+import net.certware.measurement.spm.EndProductQuality;
+import net.certware.measurement.spm.EndProductQualityCategory;
+import net.certware.measurement.spm.FixedCaseSizeMeasure;
+import net.certware.measurement.spm.ImprovementChangeOrderCount;
+import net.certware.measurement.spm.InProgressIndicator;
+import net.certware.measurement.spm.InProgressQualityCategory;
+import net.certware.measurement.spm.Maintainability;
+import net.certware.measurement.spm.MaintainabilityMeasure;
+import net.certware.measurement.spm.MaturityRatioMeasure;
+import net.certware.measurement.spm.MaturityTrend;
+import net.certware.measurement.spm.ModularityMeasure;
+import net.certware.measurement.spm.ModularityTrend;
+import net.certware.measurement.spm.NewFeatureChangeOrderCount;
+import net.certware.measurement.spm.NormalDefectChangeOrderCount;
+import net.certware.measurement.spm.ProjectCommit;
+import net.certware.measurement.spm.ProjectModel;
+import net.certware.measurement.spm.ProjectScope;
+import net.certware.measurement.spm.ProjectSize;
+import net.certware.measurement.spm.RepairEffortMeasure;
+import net.certware.measurement.spm.ReworkBacklogMeasure;
+import net.certware.measurement.spm.ReworkRatioMeasure;
+import net.certware.measurement.spm.ReworkStabilityMeasure;
+import net.certware.measurement.spm.ScrapRatioMeasure;
+import net.certware.measurement.spm.SpmPackage;
+import net.certware.measurement.spm.TimeDimensionalMeasure;
+import net.certware.measurement.spm.TotalCaseSizeMeasure;
+import net.certware.measurement.spm.TotalChangeOrderCount;
+import net.certware.measurement.spm.TrendMeasure;
+import net.certware.measurement.spm.UsageTimeMeasure;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -106,17 +144,35 @@ public class SpmSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpmPackage.PROJECT_HISTORY: {
-				ProjectHistory projectHistory = (ProjectHistory)theEObject;
-				T result = caseProjectHistory(projectHistory);
-				if (result == null) result = caseSmmElement(projectHistory);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SpmPackage.PROJECT_COMMIT: {
 				ProjectCommit projectCommit = (ProjectCommit)theEObject;
 				T result = caseProjectCommit(projectCommit);
+				if (result == null) result = caseSmmModel(projectCommit);
 				if (result == null) result = caseSmmElement(projectCommit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpmPackage.COMMIT_RELATIONSHIP: {
+				CommitRelationship commitRelationship = (CommitRelationship)theEObject;
+				T result = caseCommitRelationship(commitRelationship);
+				if (result == null) result = caseSmmRelationship(commitRelationship);
+				if (result == null) result = caseSmmElement(commitRelationship);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpmPackage.END_PRODUCT_QUALITY_CATEGORY: {
+				EndProductQualityCategory endProductQualityCategory = (EndProductQualityCategory)theEObject;
+				T result = caseEndProductQualityCategory(endProductQualityCategory);
+				if (result == null) result = caseCategory(endProductQualityCategory);
+				if (result == null) result = caseSmmElement(endProductQualityCategory);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpmPackage.IN_PROGRESS_QUALITY_CATEGORY: {
+				InProgressQualityCategory inProgressQualityCategory = (InProgressQualityCategory)theEObject;
+				T result = caseInProgressQualityCategory(inProgressQualityCategory);
+				if (result == null) result = caseCategory(inProgressQualityCategory);
+				if (result == null) result = caseSmmElement(inProgressQualityCategory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -216,10 +272,10 @@ public class SpmSwitch<T> {
 			case SpmPackage.CRITICAL_DEFECT_CHANGE_ORDER_COUNT: {
 				CriticalDefectChangeOrderCount criticalDefectChangeOrderCount = (CriticalDefectChangeOrderCount)theEObject;
 				T result = caseCriticalDefectChangeOrderCount(criticalDefectChangeOrderCount);
-				if (result == null) result = caseCount(criticalDefectChangeOrderCount);
-				if (result == null) result = caseDirectMeasurement(criticalDefectChangeOrderCount);
-				if (result == null) result = caseDimensionalMeasurement(criticalDefectChangeOrderCount);
-				if (result == null) result = caseMeasurement(criticalDefectChangeOrderCount);
+				if (result == null) result = caseAdditiveMeasure(criticalDefectChangeOrderCount);
+				if (result == null) result = caseCollectiveMeasure(criticalDefectChangeOrderCount);
+				if (result == null) result = caseDimensionalMeasure(criticalDefectChangeOrderCount);
+				if (result == null) result = caseMeasure(criticalDefectChangeOrderCount);
 				if (result == null) result = caseSmmElement(criticalDefectChangeOrderCount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -227,10 +283,10 @@ public class SpmSwitch<T> {
 			case SpmPackage.NORMAL_DEFECT_CHANGE_ORDER_COUNT: {
 				NormalDefectChangeOrderCount normalDefectChangeOrderCount = (NormalDefectChangeOrderCount)theEObject;
 				T result = caseNormalDefectChangeOrderCount(normalDefectChangeOrderCount);
-				if (result == null) result = caseCount(normalDefectChangeOrderCount);
-				if (result == null) result = caseDirectMeasurement(normalDefectChangeOrderCount);
-				if (result == null) result = caseDimensionalMeasurement(normalDefectChangeOrderCount);
-				if (result == null) result = caseMeasurement(normalDefectChangeOrderCount);
+				if (result == null) result = caseAdditiveMeasure(normalDefectChangeOrderCount);
+				if (result == null) result = caseCollectiveMeasure(normalDefectChangeOrderCount);
+				if (result == null) result = caseDimensionalMeasure(normalDefectChangeOrderCount);
+				if (result == null) result = caseMeasure(normalDefectChangeOrderCount);
 				if (result == null) result = caseSmmElement(normalDefectChangeOrderCount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -238,10 +294,10 @@ public class SpmSwitch<T> {
 			case SpmPackage.IMPROVEMENT_CHANGE_ORDER_COUNT: {
 				ImprovementChangeOrderCount improvementChangeOrderCount = (ImprovementChangeOrderCount)theEObject;
 				T result = caseImprovementChangeOrderCount(improvementChangeOrderCount);
-				if (result == null) result = caseCount(improvementChangeOrderCount);
-				if (result == null) result = caseDirectMeasurement(improvementChangeOrderCount);
-				if (result == null) result = caseDimensionalMeasurement(improvementChangeOrderCount);
-				if (result == null) result = caseMeasurement(improvementChangeOrderCount);
+				if (result == null) result = caseAdditiveMeasure(improvementChangeOrderCount);
+				if (result == null) result = caseCollectiveMeasure(improvementChangeOrderCount);
+				if (result == null) result = caseDimensionalMeasure(improvementChangeOrderCount);
+				if (result == null) result = caseMeasure(improvementChangeOrderCount);
 				if (result == null) result = caseSmmElement(improvementChangeOrderCount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -249,10 +305,10 @@ public class SpmSwitch<T> {
 			case SpmPackage.NEW_FEATURE_CHANGE_ORDER_COUNT: {
 				NewFeatureChangeOrderCount newFeatureChangeOrderCount = (NewFeatureChangeOrderCount)theEObject;
 				T result = caseNewFeatureChangeOrderCount(newFeatureChangeOrderCount);
-				if (result == null) result = caseCount(newFeatureChangeOrderCount);
-				if (result == null) result = caseDirectMeasurement(newFeatureChangeOrderCount);
-				if (result == null) result = caseDimensionalMeasurement(newFeatureChangeOrderCount);
-				if (result == null) result = caseMeasurement(newFeatureChangeOrderCount);
+				if (result == null) result = caseAdditiveMeasure(newFeatureChangeOrderCount);
+				if (result == null) result = caseCollectiveMeasure(newFeatureChangeOrderCount);
+				if (result == null) result = caseDimensionalMeasure(newFeatureChangeOrderCount);
+				if (result == null) result = caseMeasure(newFeatureChangeOrderCount);
 				if (result == null) result = caseSmmElement(newFeatureChangeOrderCount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -311,6 +367,17 @@ public class SpmSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SpmPackage.MATURITY_RATIO_MEASURE: {
+				MaturityRatioMeasure maturityRatioMeasure = (MaturityRatioMeasure)theEObject;
+				T result = caseMaturityRatioMeasure(maturityRatioMeasure);
+				if (result == null) result = caseRatioMeasure(maturityRatioMeasure);
+				if (result == null) result = caseBinaryMeasure(maturityRatioMeasure);
+				if (result == null) result = caseDimensionalMeasure(maturityRatioMeasure);
+				if (result == null) result = caseMeasure(maturityRatioMeasure);
+				if (result == null) result = caseSmmElement(maturityRatioMeasure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SpmPackage.MAINTAINABILITY_MEASURE: {
 				MaintainabilityMeasure maintainabilityMeasure = (MaintainabilityMeasure)theEObject;
 				T result = caseMaintainabilityMeasure(maintainabilityMeasure);
@@ -363,6 +430,16 @@ public class SpmSwitch<T> {
 				if (result == null) result = caseDimensionalMeasure(baselineCaseSizeMeasure);
 				if (result == null) result = caseMeasure(baselineCaseSizeMeasure);
 				if (result == null) result = caseSmmElement(baselineCaseSizeMeasure);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SpmPackage.USAGE_TIME_MEASURE: {
+				UsageTimeMeasure usageTimeMeasure = (UsageTimeMeasure)theEObject;
+				T result = caseUsageTimeMeasure(usageTimeMeasure);
+				if (result == null) result = caseTimeDimensionalMeasure(usageTimeMeasure);
+				if (result == null) result = caseDimensionalMeasure(usageTimeMeasure);
+				if (result == null) result = caseMeasure(usageTimeMeasure);
+				if (result == null) result = caseSmmElement(usageTimeMeasure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -483,21 +560,6 @@ public class SpmSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Project History</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Project History</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProjectHistory(ProjectHistory object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Project Commit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -509,6 +571,51 @@ public class SpmSwitch<T> {
 	 * @generated
 	 */
 	public T caseProjectCommit(ProjectCommit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Commit Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Commit Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommitRelationship(CommitRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>End Product Quality Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>End Product Quality Category</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEndProductQualityCategory(EndProductQualityCategory object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>In Progress Quality Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>In Progress Quality Category</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInProgressQualityCategory(InProgressQualityCategory object) {
 		return null;
 	}
 
@@ -813,6 +920,21 @@ public class SpmSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Maturity Ratio Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Maturity Ratio Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMaturityRatioMeasure(MaturityRatioMeasure object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Maintainability Measure</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -884,6 +1006,21 @@ public class SpmSwitch<T> {
 	 * @generated
 	 */
 	public T caseBaselineCaseSizeMeasure(BaselineCaseSizeMeasure object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Usage Time Measure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Usage Time Measure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUsageTimeMeasure(UsageTimeMeasure object) {
 		return null;
 	}
 
@@ -1053,6 +1190,36 @@ public class SpmSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSmmRelationship(SmmRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Category</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCategory(Category object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Characteristic</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1124,66 +1291,6 @@ public class SpmSwitch<T> {
 	 * @generated
 	 */
 	public T caseScope(Scope object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Measurement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Measurement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMeasurement(Measurement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dimensional Measurement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dimensional Measurement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDimensionalMeasurement(DimensionalMeasurement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Direct Measurement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Direct Measurement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDirectMeasurement(DirectMeasurement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Count</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Count</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCount(Count object) {
 		return null;
 	}
 

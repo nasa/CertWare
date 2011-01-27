@@ -20,6 +20,8 @@ _Enhancements_:
 * Updated to JGit 0.10.1 and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
 * Added measurement model plugins.  The model is derived from the OMG Software Metrics Metamodel (1.0 beta 1, March 2009) XML schema, adopting and modifying an EMF implementation from Eclipse GMT MODISCO.
 * Added CertWare Planning Notation (CPN) DSL for assigning planning data mapping onto ARM Metamodel.  Xtext project generated editor for DSL.  Validation included for editor content with markers.
+* Added CertWare Software Project Metrics (SPM) EMF model for collecting and computing metrics on argument case artifacts in change sets.
+* Added CertWare Software Change Order (SCO) EMF model for capturing change order records for metrics.  
 _Commit_:
 * TBD
 
@@ -90,6 +92,8 @@ h3. Meta-Models
 * @VCL@ A verification checklist generic metamodel.
 * @MSPDI@ The MSPDI schema from Microsoft Project.
 * @CPN@ A CertWare-specific Planning Notation metamodel.  
+* @SPM@ A CertWare-specific software project management metrics metamodel.
+* @SCO@ A CertWare-specific software change order metamodel.
 
 h3. Development
 
@@ -189,6 +193,8 @@ h4. Navigator Contributions
 * @net.certware.argument.cae.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.argument.gsn.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.argument.eur.navigator@ Contributes content on model resource files and navigator filter.
+* @net.certware.argument.sfp.navigator@ Contributes content on model resource files and navigator filter.
+* @net.certware.planning.cpn.navigator@ Contributes content on model resource files and navigator filter.
 * @net.certware.verification.checklist.navigator@ Contributes content on verification checklist files and navigator filter.
 
 h3. Plugins Summary
@@ -205,6 +211,7 @@ h3. Plugins Summary
 * @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.  
 * @net.certware.argument.gsz.*@ Argument diagram graphical model equivalent for GSN models.
 * @net.certware.argument.sfp.*@ Semi-formal proof structured text argument models.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* @net.certware.argument.transform.gsn2arm.*@ An Atlas transformation model for converting GSN arguments to ARM arguments.  
 * @net.certware.branding@ Project branding plugin for feature definition.
 * @net.certware.core@ Core project content.
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  
@@ -216,7 +223,10 @@ h3. Plugins Summary
 * @net.certware.launch@ Launch configuration shared files.
 * @net.certware.libs.doc@ Plugin packaging of docx4J 2.5 libraries.
 * @net.certware.libs.poi@ Plugin packaging of Apache POI 3.6 libraries.
+* @net.certware.measurement.sco.*@ Software change order model and editor support.  Supports the SPM metrics.  Other collectors can be added for different metrics suites.
 * @net.certware.measurement.smm.*@ Measurement model and editor support the OMG SMM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* @net.certware.measurement.spm.*@ Software product management metrics model and editor support for Royce SPM metrics.  Uses the SMM metamodel.
+* @net.certware.planning.cpn.*@ A planning content DSL serving as a project management data overlay on argument models.
 * @net.certware.planning.mspdi.*@ Planning content model using Microsoft project data schema. The Microsoft MSPDI schema was coerced into an Ecore model, then the EMF plugins generated from this model.    
 * @net.certware.target@ CertWare project target definition.
 * @net.certware.update@ Update site definition project (currently unused).
@@ -233,6 +243,9 @@ h3. File Names and Extensions
 * @*.eur@ EUROCONTROL model files
 * @*.euz@ and @*.euz_diagram@ are EUROCONTROL diagram model and diagram files
 * @*.mspdi@ and @*.mpx@ are Microsoft Project (MSPDI) model files.
+* @*.sco@ SCO change order model files.
+* @*.smm@ OMG Software Measurement Metamodel files.
+* @*.spm@ Software Project Management metrics files. 
 * @*.vcl@ Verification checklist model files
 
 h3. Target Platform
@@ -283,6 +296,9 @@ h3. Unit Tests
 * @net.certware.argument.arm.test@ fragment contains tests for ARM models.  Includes two structural tests for examples provided in the OMG standard.
 * @net.certware.argument.gsn.test@ fragment contains tests for GSN models.  Includes one structural test for example provided in the OMG standard.
 * @net.certware.argument.cae.test@ fragment contains tests for CAE models.  Includes one structural test for example provided in the OMG standard.
+* @net.certware.argument.transform.gsn2arm.text@ fragment contains tests for the ATL GSN to ARM translation models.
+* @net.certware.measurement.sco.tests@ plugin contains tests for the SCO models.
+* @net.certware.measurement.spm.tests@ plugin contains tests for the SPM models.  
 
 h3. Automated Analysis
 

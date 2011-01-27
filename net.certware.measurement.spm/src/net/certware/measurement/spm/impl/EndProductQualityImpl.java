@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.impl;
 
 import net.certware.measurement.smm.impl.CharacteristicImpl;
-
 import net.certware.measurement.spm.EndProductQuality;
 import net.certware.measurement.spm.SpmPackage;
 

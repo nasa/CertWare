@@ -70,3 +70,5 @@ accrual
 editable
 hyperlink
 injector
+dimensionless
+baselined

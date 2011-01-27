@@ -115,29 +115,6 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.ProjectHistory} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ProjectHistoryItemProvider projectHistoryItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link net.certware.measurement.spm.ProjectHistory}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createProjectHistoryAdapter() {
-		if (projectHistoryItemProvider == null) {
-			projectHistoryItemProvider = new ProjectHistoryItemProvider(this);
-		}
-
-		return projectHistoryItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.ProjectCommit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,6 +135,75 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 		}
 
 		return projectCommitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.CommitRelationship} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommitRelationshipItemProvider commitRelationshipItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.measurement.spm.CommitRelationship}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCommitRelationshipAdapter() {
+		if (commitRelationshipItemProvider == null) {
+			commitRelationshipItemProvider = new CommitRelationshipItemProvider(this);
+		}
+
+		return commitRelationshipItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.EndProductQualityCategory} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EndProductQualityCategoryItemProvider endProductQualityCategoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.measurement.spm.EndProductQualityCategory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEndProductQualityCategoryAdapter() {
+		if (endProductQualityCategoryItemProvider == null) {
+			endProductQualityCategoryItemProvider = new EndProductQualityCategoryItemProvider(this);
+		}
+
+		return endProductQualityCategoryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.InProgressQualityCategory} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InProgressQualityCategoryItemProvider inProgressQualityCategoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.measurement.spm.InProgressQualityCategory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInProgressQualityCategoryAdapter() {
+		if (inProgressQualityCategoryItemProvider == null) {
+			inProgressQualityCategoryItemProvider = new InProgressQualityCategoryItemProvider(this);
+		}
+
+		return inProgressQualityCategoryItemProvider;
 	}
 
 	/**
@@ -621,6 +667,29 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.MaturityRatioMeasure} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MaturityRatioMeasureItemProvider maturityRatioMeasureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.measurement.spm.MaturityRatioMeasure}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMaturityRatioMeasureAdapter() {
+		if (maturityRatioMeasureItemProvider == null) {
+			maturityRatioMeasureItemProvider = new MaturityRatioMeasureItemProvider(this);
+		}
+
+		return maturityRatioMeasureItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.MaintainabilityMeasure} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -733,6 +802,29 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 		}
 
 		return baselineCaseSizeMeasureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.measurement.spm.UsageTimeMeasure} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UsageTimeMeasureItemProvider usageTimeMeasureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.measurement.spm.UsageTimeMeasure}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUsageTimeMeasureAdapter() {
+		if (usageTimeMeasureItemProvider == null) {
+			usageTimeMeasureItemProvider = new UsageTimeMeasureItemProvider(this);
+		}
+
+		return usageTimeMeasureItemProvider;
 	}
 
 	/**
@@ -1042,8 +1134,10 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 	 */
 	public void dispose() {
 		if (projectModelItemProvider != null) projectModelItemProvider.dispose();
-		if (projectHistoryItemProvider != null) projectHistoryItemProvider.dispose();
 		if (projectCommitItemProvider != null) projectCommitItemProvider.dispose();
+		if (commitRelationshipItemProvider != null) commitRelationshipItemProvider.dispose();
+		if (endProductQualityCategoryItemProvider != null) endProductQualityCategoryItemProvider.dispose();
+		if (inProgressQualityCategoryItemProvider != null) inProgressQualityCategoryItemProvider.dispose();
 		if (endProductQualityItemProvider != null) endProductQualityItemProvider.dispose();
 		if (maintainabilityItemProvider != null) maintainabilityItemProvider.dispose();
 		if (inProgressIndicatorItemProvider != null) inProgressIndicatorItemProvider.dispose();
@@ -1064,11 +1158,13 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 		if (modularityMeasureItemProvider != null) modularityMeasureItemProvider.dispose();
 		if (reworkRatioMeasureItemProvider != null) reworkRatioMeasureItemProvider.dispose();
 		if (adaptabilityRatioMeasureItemProvider != null) adaptabilityRatioMeasureItemProvider.dispose();
+		if (maturityRatioMeasureItemProvider != null) maturityRatioMeasureItemProvider.dispose();
 		if (maintainabilityMeasureItemProvider != null) maintainabilityMeasureItemProvider.dispose();
 		if (brokenCaseSizeMeasureItemProvider != null) brokenCaseSizeMeasureItemProvider.dispose();
 		if (fixedCaseSizeMeasureItemProvider != null) fixedCaseSizeMeasureItemProvider.dispose();
 		if (totalCaseSizeMeasureItemProvider != null) totalCaseSizeMeasureItemProvider.dispose();
 		if (baselineCaseSizeMeasureItemProvider != null) baselineCaseSizeMeasureItemProvider.dispose();
+		if (usageTimeMeasureItemProvider != null) usageTimeMeasureItemProvider.dispose();
 		if (repairEffortMeasureItemProvider != null) repairEffortMeasureItemProvider.dispose();
 		if (developmentEffortMeasureItemProvider != null) developmentEffortMeasureItemProvider.dispose();
 		if (totalChangeOrderCountItemProvider != null) totalChangeOrderCountItemProvider.dispose();
@@ -1135,12 +1231,22 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
-						 SpmFactory.eINSTANCE.createProjectHistory()));
+						 SpmFactory.eINSTANCE.createProjectCommit()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
-						 SpmFactory.eINSTANCE.createProjectCommit()));
+						 SpmFactory.eINSTANCE.createCommitRelationship()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
+						 SpmFactory.eINSTANCE.createEndProductQualityCategory()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
+						 SpmFactory.eINSTANCE.createInProgressQualityCategory()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -1245,6 +1351,11 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
+						 SpmFactory.eINSTANCE.createMaturityRatioMeasure()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
 						 SpmFactory.eINSTANCE.createMaintainabilityMeasure()));
 
 				newChildDescriptors.add
@@ -1266,6 +1377,11 @@ public class SpmItemProviderAdapterFactory extends SpmAdapterFactory implements 
 					(createChildParameter
 						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
 						 SpmFactory.eINSTANCE.createBaselineCaseSizeMeasure()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
+						 SpmFactory.eINSTANCE.createUsageTimeMeasure()));
 
 				newChildDescriptors.add
 					(createChildParameter

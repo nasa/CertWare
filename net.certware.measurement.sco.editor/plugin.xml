@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2011 Kestrel Technology LLC
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.certware.measurement.sco.presentation.ScoModelWizardID"
+            name="%_UI_ScoModelWizard_label"
+            class="net.certware.measurement.sco.presentation.ScoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ScoModelFile.gif">
+         <description>%_UI_ScoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.measurement.sco.presentation.ScoEditorID"
+            name="%_UI_ScoEditor_label"
+            icon="icons/full/obj16/ScoModelFile.gif"
+            extensions="sco"
+            class="net.certware.measurement.sco.presentation.ScoEditor"
+            contributorClass="net.certware.measurement.sco.presentation.ScoActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

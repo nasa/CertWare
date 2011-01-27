@@ -4,26 +4,62 @@
 package net.certware.measurement.spm.util;
 
 import net.certware.measurement.smm.BinaryMeasure;
+import net.certware.measurement.smm.Category;
 import net.certware.measurement.smm.Characteristic;
 import net.certware.measurement.smm.CollectiveMeasure;
-import net.certware.measurement.smm.Count;
 import net.certware.measurement.smm.DimensionalMeasure;
-import net.certware.measurement.smm.DimensionalMeasurement;
-import net.certware.measurement.smm.DirectMeasurement;
 import net.certware.measurement.smm.Measure;
-import net.certware.measurement.smm.Measurement;
 import net.certware.measurement.smm.RatioMeasure;
 import net.certware.measurement.smm.Scope;
 import net.certware.measurement.smm.SmmElement;
 import net.certware.measurement.smm.SmmModel;
-
-import net.certware.measurement.spm.*;
+import net.certware.measurement.smm.SmmRelationship;
+import net.certware.measurement.spm.AdaptabilityRatioMeasure;
+import net.certware.measurement.spm.AdaptabilityTrend;
+import net.certware.measurement.spm.AdditiveMeasure;
+import net.certware.measurement.spm.BaselineCaseSizeMeasure;
+import net.certware.measurement.spm.BrokenCaseSizeMeasure;
+import net.certware.measurement.spm.CaseDimensionalMeasure;
+import net.certware.measurement.spm.CaseScope;
+import net.certware.measurement.spm.ChangeOrderDimensionalMeasure;
+import net.certware.measurement.spm.ChangeScope;
+import net.certware.measurement.spm.CommitRelationship;
+import net.certware.measurement.spm.CriticalAndNormalChangeOrderCount;
+import net.certware.measurement.spm.CriticalDefectChangeOrderCount;
+import net.certware.measurement.spm.DevelopmentEffortMeasure;
+import net.certware.measurement.spm.EndProductQuality;
+import net.certware.measurement.spm.EndProductQualityCategory;
+import net.certware.measurement.spm.FixedCaseSizeMeasure;
+import net.certware.measurement.spm.ImprovementChangeOrderCount;
+import net.certware.measurement.spm.InProgressIndicator;
+import net.certware.measurement.spm.InProgressQualityCategory;
+import net.certware.measurement.spm.Maintainability;
+import net.certware.measurement.spm.MaintainabilityMeasure;
+import net.certware.measurement.spm.MaturityRatioMeasure;
+import net.certware.measurement.spm.MaturityTrend;
+import net.certware.measurement.spm.ModularityMeasure;
+import net.certware.measurement.spm.ModularityTrend;
+import net.certware.measurement.spm.NewFeatureChangeOrderCount;
+import net.certware.measurement.spm.NormalDefectChangeOrderCount;
+import net.certware.measurement.spm.ProjectCommit;
+import net.certware.measurement.spm.ProjectModel;
+import net.certware.measurement.spm.ProjectScope;
+import net.certware.measurement.spm.ProjectSize;
+import net.certware.measurement.spm.RepairEffortMeasure;
+import net.certware.measurement.spm.ReworkBacklogMeasure;
+import net.certware.measurement.spm.ReworkRatioMeasure;
+import net.certware.measurement.spm.ReworkStabilityMeasure;
+import net.certware.measurement.spm.ScrapRatioMeasure;
+import net.certware.measurement.spm.SpmPackage;
+import net.certware.measurement.spm.TimeDimensionalMeasure;
+import net.certware.measurement.spm.TotalCaseSizeMeasure;
+import net.certware.measurement.spm.TotalChangeOrderCount;
+import net.certware.measurement.spm.TrendMeasure;
+import net.certware.measurement.spm.UsageTimeMeasure;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -87,12 +123,20 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 				return createProjectModelAdapter();
 			}
 			@Override
-			public Adapter caseProjectHistory(ProjectHistory object) {
-				return createProjectHistoryAdapter();
-			}
-			@Override
 			public Adapter caseProjectCommit(ProjectCommit object) {
 				return createProjectCommitAdapter();
+			}
+			@Override
+			public Adapter caseCommitRelationship(CommitRelationship object) {
+				return createCommitRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseEndProductQualityCategory(EndProductQualityCategory object) {
+				return createEndProductQualityCategoryAdapter();
+			}
+			@Override
+			public Adapter caseInProgressQualityCategory(InProgressQualityCategory object) {
+				return createInProgressQualityCategoryAdapter();
 			}
 			@Override
 			public Adapter caseEndProductQuality(EndProductQuality object) {
@@ -175,6 +219,10 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 				return createAdaptabilityRatioMeasureAdapter();
 			}
 			@Override
+			public Adapter caseMaturityRatioMeasure(MaturityRatioMeasure object) {
+				return createMaturityRatioMeasureAdapter();
+			}
+			@Override
 			public Adapter caseMaintainabilityMeasure(MaintainabilityMeasure object) {
 				return createMaintainabilityMeasureAdapter();
 			}
@@ -193,6 +241,10 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBaselineCaseSizeMeasure(BaselineCaseSizeMeasure object) {
 				return createBaselineCaseSizeMeasureAdapter();
+			}
+			@Override
+			public Adapter caseUsageTimeMeasure(UsageTimeMeasure object) {
+				return createUsageTimeMeasureAdapter();
 			}
 			@Override
 			public Adapter caseRepairEffortMeasure(RepairEffortMeasure object) {
@@ -239,6 +291,14 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 				return createSmmModelAdapter();
 			}
 			@Override
+			public Adapter caseSmmRelationship(SmmRelationship object) {
+				return createSmmRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseCategory(Category object) {
+				return createCategoryAdapter();
+			}
+			@Override
 			public Adapter caseCharacteristic(Characteristic object) {
 				return createCharacteristicAdapter();
 			}
@@ -257,22 +317,6 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseScope(Scope object) {
 				return createScopeAdapter();
-			}
-			@Override
-			public Adapter caseMeasurement(Measurement object) {
-				return createMeasurementAdapter();
-			}
-			@Override
-			public Adapter caseDimensionalMeasurement(DimensionalMeasurement object) {
-				return createDimensionalMeasurementAdapter();
-			}
-			@Override
-			public Adapter caseDirectMeasurement(DirectMeasurement object) {
-				return createDirectMeasurementAdapter();
-			}
-			@Override
-			public Adapter caseCount(Count object) {
-				return createCountAdapter();
 			}
 			@Override
 			public Adapter caseBinaryMeasure(BinaryMeasure object) {
@@ -317,20 +361,6 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.ProjectHistory <em>Project History</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see net.certware.measurement.spm.ProjectHistory
-	 * @generated
-	 */
-	public Adapter createProjectHistoryAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.ProjectCommit <em>Project Commit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -341,6 +371,48 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProjectCommitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.CommitRelationship <em>Commit Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.spm.CommitRelationship
+	 * @generated
+	 */
+	public Adapter createCommitRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.EndProductQualityCategory <em>End Product Quality Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.spm.EndProductQualityCategory
+	 * @generated
+	 */
+	public Adapter createEndProductQualityCategoryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.InProgressQualityCategory <em>In Progress Quality Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.spm.InProgressQualityCategory
+	 * @generated
+	 */
+	public Adapter createInProgressQualityCategoryAdapter() {
 		return null;
 	}
 
@@ -625,6 +697,20 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.MaturityRatioMeasure <em>Maturity Ratio Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.spm.MaturityRatioMeasure
+	 * @generated
+	 */
+	public Adapter createMaturityRatioMeasureAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.MaintainabilityMeasure <em>Maintainability Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -691,6 +777,20 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBaselineCaseSizeMeasureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.spm.UsageTimeMeasure <em>Usage Time Measure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.spm.UsageTimeMeasure
+	 * @generated
+	 */
+	public Adapter createUsageTimeMeasureAdapter() {
 		return null;
 	}
 
@@ -849,6 +949,34 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.smm.SmmRelationship <em>Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.smm.SmmRelationship
+	 * @generated
+	 */
+	public Adapter createSmmRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.smm.Category <em>Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.smm.Category
+	 * @generated
+	 */
+	public Adapter createCategoryAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link net.certware.measurement.smm.Characteristic <em>Characteristic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -915,62 +1043,6 @@ public class SpmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScopeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link net.certware.measurement.smm.Measurement <em>Measurement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see net.certware.measurement.smm.Measurement
-	 * @generated
-	 */
-	public Adapter createMeasurementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link net.certware.measurement.smm.DimensionalMeasurement <em>Dimensional Measurement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see net.certware.measurement.smm.DimensionalMeasurement
-	 * @generated
-	 */
-	public Adapter createDimensionalMeasurementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link net.certware.measurement.smm.DirectMeasurement <em>Direct Measurement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see net.certware.measurement.smm.DirectMeasurement
-	 * @generated
-	 */
-	public Adapter createDirectMeasurementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link net.certware.measurement.smm.Count <em>Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see net.certware.measurement.smm.Count
-	 * @generated
-	 */
-	public Adapter createCountAdapter() {
 		return null;
 	}
 

@@ -9,19 +9,14 @@ import java.io.IOException;
 import net.certware.measurement.spm.ProjectModel;
 import net.certware.measurement.spm.SpmFactory;
 import net.certware.measurement.spm.SpmPackage;
-
 import net.certware.measurement.spm.util.SpmResourceFactoryImpl;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
 
 /**

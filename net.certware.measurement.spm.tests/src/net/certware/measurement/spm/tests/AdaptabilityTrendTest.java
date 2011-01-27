@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.tests;
 
 import junit.textui.TestRunner;
-
 import net.certware.measurement.spm.AdaptabilityTrend;
 import net.certware.measurement.spm.SpmFactory;
 

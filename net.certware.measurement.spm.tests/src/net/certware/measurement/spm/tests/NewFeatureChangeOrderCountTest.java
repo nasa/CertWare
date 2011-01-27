@@ -3,10 +3,7 @@
  */
 package net.certware.measurement.spm.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import net.certware.measurement.spm.NewFeatureChangeOrderCount;
 import net.certware.measurement.spm.SpmFactory;
 
@@ -16,15 +13,7 @@ import net.certware.measurement.spm.SpmFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NewFeatureChangeOrderCountTest extends TestCase {
-
-	/**
-	 * The fixture for this New Feature Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NewFeatureChangeOrderCount fixture = null;
+public class NewFeatureChangeOrderCountTest extends AdditiveMeasureTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +35,14 @@ public class NewFeatureChangeOrderCountTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this New Feature Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(NewFeatureChangeOrderCount fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this New Feature Change Order Count test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected NewFeatureChangeOrderCount getFixture() {
-		return fixture;
+		return (NewFeatureChangeOrderCount)fixture;
 	}
 
 	/**

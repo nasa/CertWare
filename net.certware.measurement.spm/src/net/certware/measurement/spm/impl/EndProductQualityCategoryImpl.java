@@ -3,29 +3,28 @@
  */
 package net.certware.measurement.spm.impl;
 
-import net.certware.measurement.smm.impl.SmmElementImpl;
-
-import net.certware.measurement.spm.ProjectHistory;
+import net.certware.measurement.smm.impl.CategoryImpl;
+import net.certware.measurement.spm.EndProductQualityCategory;
 import net.certware.measurement.spm.SpmPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Project History</b></em>'.
+ * An implementation of the model object '<em><b>End Product Quality Category</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ProjectHistoryImpl extends SmmElementImpl implements ProjectHistory {
+public class EndProductQualityCategoryImpl extends CategoryImpl implements EndProductQualityCategory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProjectHistoryImpl() {
+	protected EndProductQualityCategoryImpl() {
 		super();
 	}
 
@@ -36,7 +35,7 @@ public class ProjectHistoryImpl extends SmmElementImpl implements ProjectHistory
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SpmPackage.Literals.PROJECT_HISTORY;
+		return SpmPackage.Literals.END_PRODUCT_QUALITY_CATEGORY;
 	}
 
-} //ProjectHistoryImpl
+} //EndProductQualityCategoryImpl

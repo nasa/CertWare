@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.impl;
 
 import net.certware.measurement.smm.impl.DimensionalMeasureImpl;
-
 import net.certware.measurement.spm.CaseDimensionalMeasure;
 import net.certware.measurement.spm.SpmPackage;
 

@@ -3,8 +3,6 @@
  */
 package net.certware.measurement.spm.impl;
 
-import net.certware.measurement.smm.impl.CountImpl;
-
 import net.certware.measurement.spm.NewFeatureChangeOrderCount;
 import net.certware.measurement.spm.SpmPackage;
 
@@ -19,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NewFeatureChangeOrderCountImpl extends CountImpl implements NewFeatureChangeOrderCount {
+public class NewFeatureChangeOrderCountImpl extends AdditiveMeasureImpl implements NewFeatureChangeOrderCount {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

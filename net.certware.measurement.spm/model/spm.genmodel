@@ -25,20 +25,22 @@
     <genClasses ecoreClass="spm.ecore#//CaseScope"/>
     <genClasses ecoreClass="spm.ecore#//ProjectScope"/>
     <genClasses ecoreClass="spm.ecore#//ChangeScope"/>
-    <genClasses ecoreClass="spm.ecore#//CriticalDefectChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/DimensionalMeasurement/value"/>
-    <genClasses ecoreClass="spm.ecore#//NormalDefectChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/DimensionalMeasurement/value"/>
-    <genClasses ecoreClass="spm.ecore#//ImprovementChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/DimensionalMeasurement/value"/>
-    <genClasses ecoreClass="spm.ecore#//NewFeatureChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/DimensionalMeasurement/value"/>
+    <genClasses ecoreClass="spm.ecore#//CriticalDefectChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/Measure/name"/>
+    <genClasses ecoreClass="spm.ecore#//NormalDefectChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/Measure/name"/>
+    <genClasses ecoreClass="spm.ecore#//ImprovementChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/Measure/name"/>
+    <genClasses ecoreClass="spm.ecore#//NewFeatureChangeOrderCount" labelFeature="../../net.certware.measurement.smm/model/smm.genmodel#//smm/Measure/name"/>
     <genClasses ecoreClass="spm.ecore#//TrendMeasure"/>
     <genClasses ecoreClass="spm.ecore#//ScrapRatioMeasure"/>
     <genClasses ecoreClass="spm.ecore#//ModularityMeasure"/>
     <genClasses ecoreClass="spm.ecore#//ReworkRatioMeasure"/>
     <genClasses ecoreClass="spm.ecore#//AdaptabilityRatioMeasure"/>
+    <genClasses ecoreClass="spm.ecore#//MaturityRatioMeasure"/>
     <genClasses ecoreClass="spm.ecore#//MaintainabilityMeasure"/>
     <genClasses ecoreClass="spm.ecore#//BrokenCaseSizeMeasure"/>
     <genClasses ecoreClass="spm.ecore#//FixedCaseSizeMeasure"/>
     <genClasses ecoreClass="spm.ecore#//TotalCaseSizeMeasure"/>
     <genClasses ecoreClass="spm.ecore#//BaselineCaseSizeMeasure"/>
+    <genClasses ecoreClass="spm.ecore#//UsageTimeMeasure"/>
     <genClasses ecoreClass="spm.ecore#//RepairEffortMeasure"/>
     <genClasses ecoreClass="spm.ecore#//DevelopmentEffortMeasure"/>
     <genClasses ecoreClass="spm.ecore#//TotalChangeOrderCount"/>

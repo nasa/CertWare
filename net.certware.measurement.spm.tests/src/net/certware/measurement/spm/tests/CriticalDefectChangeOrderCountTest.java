@@ -3,10 +3,7 @@
  */
 package net.certware.measurement.spm.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import net.certware.measurement.spm.CriticalDefectChangeOrderCount;
 import net.certware.measurement.spm.SpmFactory;
 
@@ -16,15 +13,7 @@ import net.certware.measurement.spm.SpmFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CriticalDefectChangeOrderCountTest extends TestCase {
-
-	/**
-	 * The fixture for this Critical Defect Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CriticalDefectChangeOrderCount fixture = null;
+public class CriticalDefectChangeOrderCountTest extends AdditiveMeasureTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +35,14 @@ public class CriticalDefectChangeOrderCountTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Critical Defect Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(CriticalDefectChangeOrderCount fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Critical Defect Change Order Count test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected CriticalDefectChangeOrderCount getFixture() {
-		return fixture;
+		return (CriticalDefectChangeOrderCount)fixture;
 	}
 
 	/**

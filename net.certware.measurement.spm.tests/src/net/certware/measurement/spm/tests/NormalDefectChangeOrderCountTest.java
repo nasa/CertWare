@@ -3,10 +3,7 @@
  */
 package net.certware.measurement.spm.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import net.certware.measurement.spm.NormalDefectChangeOrderCount;
 import net.certware.measurement.spm.SpmFactory;
 
@@ -16,15 +13,7 @@ import net.certware.measurement.spm.SpmFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NormalDefectChangeOrderCountTest extends TestCase {
-
-	/**
-	 * The fixture for this Normal Defect Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NormalDefectChangeOrderCount fixture = null;
+public class NormalDefectChangeOrderCountTest extends AdditiveMeasureTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +35,14 @@ public class NormalDefectChangeOrderCountTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Normal Defect Change Order Count test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(NormalDefectChangeOrderCount fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Normal Defect Change Order Count test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected NormalDefectChangeOrderCount getFixture() {
-		return fixture;
+		return (NormalDefectChangeOrderCount)fixture;
 	}
 
 	/**

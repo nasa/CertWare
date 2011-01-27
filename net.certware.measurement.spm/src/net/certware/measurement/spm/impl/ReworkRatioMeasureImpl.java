@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.impl;
 
 import net.certware.measurement.smm.impl.RatioMeasureImpl;
-
 import net.certware.measurement.spm.ReworkRatioMeasure;
 import net.certware.measurement.spm.SpmPackage;
 

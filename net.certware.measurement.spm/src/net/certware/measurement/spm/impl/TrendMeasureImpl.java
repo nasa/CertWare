@@ -3,8 +3,8 @@
  */
 package net.certware.measurement.spm.impl;
 
+import net.certware.measurement.smm.Accumulator;
 import net.certware.measurement.smm.impl.CollectiveMeasureImpl;
-
 import net.certware.measurement.spm.SpmPackage;
 import net.certware.measurement.spm.TrendMeasure;
 
@@ -22,11 +22,13 @@ import org.eclipse.emf.ecore.EClass;
 public class TrendMeasureImpl extends CollectiveMeasureImpl implements TrendMeasure {
 	/**
 	 * <!-- begin-user-doc -->
+	 * Sets accumulator to AVERAGE, but it is actually used as a sequence.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected TrendMeasureImpl() {
 		super();
+		this.setAccumulator(Accumulator.AVERAGE);
 	}
 
 	/**

@@ -6,14 +6,10 @@ package net.certware.measurement.spm.provider;
 
 import java.util.List;
 
-import net.certware.measurement.smm.provider.CountItemProvider;
-
 import net.certware.measurement.spm.CriticalDefectChangeOrderCount;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -30,7 +26,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class CriticalDefectChangeOrderCountItemProvider
-	extends CountItemProvider
+	extends AdditiveMeasureItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -82,8 +78,10 @@ public class CriticalDefectChangeOrderCountItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		CriticalDefectChangeOrderCount criticalDefectChangeOrderCount = (CriticalDefectChangeOrderCount)object;
-		return getString("_UI_CriticalDefectChangeOrderCount_type") + " " + criticalDefectChangeOrderCount.getValue(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((CriticalDefectChangeOrderCount)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_CriticalDefectChangeOrderCount_type") : //$NON-NLS-1$
+			getString("_UI_CriticalDefectChangeOrderCount_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -97,17 +95,6 @@ public class CriticalDefectChangeOrderCountItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return SpmEditPlugin.INSTANCE;
 	}
 
 }

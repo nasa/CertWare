@@ -4,7 +4,6 @@
 package net.certware.measurement.spm.tests;
 
 import junit.textui.TestRunner;
-
 import net.certware.measurement.spm.DevelopmentEffortMeasure;
 import net.certware.measurement.spm.SpmFactory;
 
