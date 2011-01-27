@@ -109,7 +109,7 @@ public class ArtifactIdentifierTest extends TestCase {
 		int baseline = 100;
 		int current = 200;
 		
-		ArtifactIdentifier ai = ScoFactory.eINSTANCE.createArtifactIdentifier();
+		ArtifactIdentifier ai = getFixture();
 		ai.setBaselinedLineCount(baseline);
 		ai.setCurrentLineCount(current);
 		TotalChangeOrders tco = ai.getTotalChangeOrders();
@@ -129,7 +129,7 @@ public class ArtifactIdentifierTest extends TestCase {
 		int value = 4;
 		
 		// setup an empty artifact identifier
-		ArtifactIdentifier ai = ScoFactory.eINSTANCE.createArtifactIdentifier();
+		ArtifactIdentifier ai = getFixture();
 		
 		CriticalDefectChangeOrders cdco = ai.getCriticalDefectChangeOrders();
 		NormalDefectChangeOrders ndco = ai.getNormalDefectChangeOrders();
@@ -201,13 +201,9 @@ public class ArtifactIdentifierTest extends TestCase {
 		int newfeature = 4;
 		
 		// setup an empty artifact identifier
-		ArtifactIdentifier ai = ScoFactory.eINSTANCE.createArtifactIdentifier();
+		ArtifactIdentifier ai = getFixture();
 		ai.setBaselinedLineCount(baseline);
 		ai.setCurrentLineCount(current);
-		//ai.setCriticalDefectChangeOrders(ScoFactory.eINSTANCE.createCriticalDefectChangeOrders());
-		//ai.setNormalDefectChangeOrders(ScoFactory.eINSTANCE.createNormalDefectChangeOrders());
-		//ai.setImprovementChangeOrders(ScoFactory.eINSTANCE.createImprovementChangeOrders());
-		//ai.setNewFeatureChangeOrders(ScoFactory.eINSTANCE.createNewFeatureChangeOrders());
 		
 		CriticalDefectChangeOrders cdco = ai.getCriticalDefectChangeOrders();
 		NormalDefectChangeOrders ndco = ai.getNormalDefectChangeOrders();

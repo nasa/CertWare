@@ -7,7 +7,14 @@ import java.util.Collection;
 
 import net.certware.measurement.sco.ArtifactIdentifier;
 import net.certware.measurement.sco.ArtifactList;
+import net.certware.measurement.sco.ChangeOrderCount;
+import net.certware.measurement.sco.CriticalDefectChangeOrders;
+import net.certware.measurement.sco.ImprovementChangeOrders;
+import net.certware.measurement.sco.NewFeatureChangeOrders;
+import net.certware.measurement.sco.NormalDefectChangeOrders;
+import net.certware.measurement.sco.ScoFactory;
 import net.certware.measurement.sco.ScoPackage;
+import net.certware.measurement.sco.TotalChangeOrders;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -273,5 +280,102 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 		result.append(')');
 		return result.toString();
 	}
+	
+	/**
+	 * Accumulate the improvement change order count across all artifacts.
+	 * @return new improvement change order object with sum of changes
+	 */
+	public ImprovementChangeOrders getAllImprovementChangeOrders() {
+		ImprovementChangeOrders ico = ScoFactory.eINSTANCE.createImprovementChangeOrders();
+		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+			addChangeOrders(ico,ai.getImprovementChangeOrders());
+		}
+		return ico;
+	}
 
+	/**
+	 * Accumulate the critical defect change order count across all artifacts.
+	 * @return new critical defect change order object with sum of changes
+	 */
+	public CriticalDefectChangeOrders getAllCriticalDefectChangeOrders() {
+		CriticalDefectChangeOrders cdco = ScoFactory.eINSTANCE.createCriticalDefectChangeOrders();
+		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+			addChangeOrders(cdco,ai.getCriticalDefectChangeOrders());
+		}
+		return cdco;
+	}
+
+	/**
+	 * Accumulate the new feature change order count across all artifacts.
+	 * @return new new-feature order object with sum of changes
+	 */
+	public NewFeatureChangeOrders getAllNewFeatureChangeOrders() {
+		NewFeatureChangeOrders nfco = ScoFactory.eINSTANCE.createNewFeatureChangeOrders();
+		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+			addChangeOrders(nfco,ai.getNewFeatureChangeOrders());
+		}
+		return nfco;
+	}
+
+
+	/**
+	 * Accumulate the normal defect change order count across all artifacts.
+	 * @return new normal defect change order object with sum of changes
+	 */
+	public NormalDefectChangeOrders getAllNormalDefectChangeOrders() {
+		NormalDefectChangeOrders ndco = ScoFactory.eINSTANCE.createNormalDefectChangeOrders();
+		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+			addChangeOrders(ndco,ai.getNormalDefectChangeOrders());
+		}
+		return ndco;
+	}
+
+	/**
+	 * Accumulate the total change order count across all artifacts.
+	 * @return new total order object with sum of changes
+	 */
+	public TotalChangeOrders getAllTotalChangeOrders() {
+		TotalChangeOrders tco = ScoFactory.eINSTANCE.createTotalChangeOrders();
+		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+			addChangeOrders(tco,ai.getTotalChangeOrders());
+		}
+		return tco;
+	}
+
+	/**
+	 * Accumulate and return the baselined line count across all artifacts.
+	 * @return total baselined line count
+	 */
+	public int getAllBaselinedLineCount() {
+		int count = 0;
+		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+			count += ai.getBaselinedLineCount();
+		}
+		return count;
+	}
+
+	/**
+	 * Accumulate and return the current line count across all artifacts.
+	 * @return total current line count
+	 */
+	public int getAllCurrentLineCount() {
+		int count = 0;
+		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+			count += ai.getCurrentLineCount();
+		}
+		return count;
+	}
+
+	/**
+	 * Adds the order fields from c2 to c1.
+	 * @param c1 change count 1, updated
+	 * @param c2 change count 2, not updated
+	 */
+	public void addChangeOrders(ChangeOrderCount c1, ChangeOrderCount c2) {
+		c1.setBrokenLines(c1.getBrokenLines() + c2.getBrokenLines());
+		c1.setFixedLines( c1.getFixedLines() + c2.getFixedLines() );
+		c1.setRepairEffort( c1.getRepairEffort() + c2.getRepairEffort() );
+		c1.setValue( c1.getValue() + c2.getValue() );
+	}
+	
 } //ArtifactListImpl

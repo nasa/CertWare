@@ -21,7 +21,7 @@ _Enhancements_:
 * Added measurement model plugins.  The model is derived from the OMG Software Metrics Metamodel (1.0 beta 1, March 2009) XML schema, adopting and modifying an EMF implementation from Eclipse GMT MODISCO.
 * Added CertWare Planning Notation (CPN) DSL for assigning planning data mapping onto ARM Metamodel.  Xtext project generated editor for DSL.  Validation included for editor content with markers.
 * Added CertWare Software Project Metrics (SPM) EMF model for collecting and computing metrics on argument case artifacts in change sets.
-* Added CertWare Software Change Order (SCO) EMF model for capturing change order records for metrics.  
+* Added CertWare Software Change Order (SCO) EMF model for capturing change order records for metrics.  Added corresponding navigator contribution.   
 _Commit_:
 * TBD
 

@@ -94,4 +94,13 @@ public interface ArtifactList extends EObject {
 	 */
 	void setUsageTime(double value);
 
+	public TotalChangeOrders getAllTotalChangeOrders();
+	public CriticalDefectChangeOrders getAllCriticalDefectChangeOrders();
+	public ImprovementChangeOrders getAllImprovementChangeOrders();
+	public NewFeatureChangeOrders getAllNewFeatureChangeOrders();
+	public NormalDefectChangeOrders getAllNormalDefectChangeOrders();
+	public int getAllBaselinedLineCount();
+	public int getAllCurrentLineCount();
+	
+	
 } // ArtifactList

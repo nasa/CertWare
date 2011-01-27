@@ -24,7 +24,6 @@ public class Activator implements BundleActivator {
 	 */
 	static public String getPluginId() {
 		File f = context.getDataFile("icons/obj16/yesResult.gif");
-		System.err.println("found file " + f);
 		return context.getBundle().getSymbolicName();
 	}
 

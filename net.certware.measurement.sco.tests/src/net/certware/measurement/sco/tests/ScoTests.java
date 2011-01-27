@@ -31,7 +31,7 @@ public class ScoTests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new ScoTests("sco Tests"); //$NON-NLS-1$
+		TestSuite suite = new ScoTests("SCO Tests"); //$NON-NLS-1$
 		suite.addTestSuite(ArtifactIdentifierTest.class);
 		return suite;
 	}

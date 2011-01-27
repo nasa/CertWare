@@ -32,11 +32,15 @@ public interface ICertWareConstants {
 	public static final String MPX_EXTENSION = "mpx"; //$NON-NLS-1$
 	/** file extension for CertWare planning notation model */
 	public static final String CPN_EXTENSION = "cpn"; //$NON-NLS-1$
+	/** file extension for the software change order model */
+	public static final String SCO_EXTENSION = "sco"; //$NON-NLS-1$
+	/** file extension for the software project management model */
+	public static final String SPM_EXTENSION = "spm"; //$NON-NLS-1$
 
 	/** a list of all application file extensions */
 	public static final List<String> FILE_EXTENSIONS = 
 		Collections.unmodifiableList(Arrays.asList(ARM_EXTENSION,GSN_EXTENSION,CAE_EXTENSION,EUR_EXTENSION,VCL_EXTENSION,
-				SFP_EXTENSION,SMM_EXTENSION,MPX_EXTENSION,CPN_EXTENSION));
+				SFP_EXTENSION,SMM_EXTENSION,MPX_EXTENSION,CPN_EXTENSION,SCO_EXTENSION,SPM_EXTENSION));
 	
 	/** backend configuration parameter tag */
 	public static final String CONFIG_PARAMETER = "config";	//$NON-NLS-1$

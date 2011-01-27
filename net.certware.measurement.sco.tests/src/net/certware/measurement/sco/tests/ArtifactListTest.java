@@ -7,6 +7,7 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
+import net.certware.measurement.sco.ArtifactIdentifier;
 import net.certware.measurement.sco.ArtifactList;
 import net.certware.measurement.sco.ScoFactory;
 
@@ -87,4 +88,39 @@ public class ArtifactListTest extends TestCase {
 		setFixture(null);
 	}
 
+	protected void testListAdd() {
+		ArtifactList al = getFixture();
+		assertNotNull(al);
+		assertEquals(0,al.getArtifactIdentifiers().size());
+		ArtifactIdentifier id = ScoFactory.eINSTANCE.createArtifactIdentifier();
+		al.getArtifactIdentifiers().add(id);
+		assertEquals(1,al.getArtifactIdentifiers().size());
+		assertEquals(id,al.getArtifactIdentifiers().get(0));
+	}
+	
+	protected void testListRemoveObject() {
+		ArtifactList al = getFixture();
+		assertNotNull(al);
+		ArtifactIdentifier id1 = ScoFactory.eINSTANCE.createArtifactIdentifier();
+
+		al.getArtifactIdentifiers().add(id1);
+		assertEquals(1,al.getArtifactIdentifiers().size());
+		assertEquals(id1,al.getArtifactIdentifiers().get(0));
+		al.getArtifactIdentifiers().remove(id1);
+		assertEquals(0,al.getArtifactIdentifiers().size());
+	}
+	
+	protected void testListRemoveIndex() {
+		ArtifactList al = getFixture();
+		assertNotNull(al);
+		ArtifactIdentifier id1 = ScoFactory.eINSTANCE.createArtifactIdentifier();
+
+		al.getArtifactIdentifiers().add(id1);
+		assertEquals(1,al.getArtifactIdentifiers().size());
+		assertEquals(id1,al.getArtifactIdentifiers().get(0));
+		al.getArtifactIdentifiers().remove(0);
+		assertEquals(0,al.getArtifactIdentifiers().size());
+	}
+	
+	
 } //ArtifactListTest

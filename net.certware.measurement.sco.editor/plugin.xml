@@ -16,7 +16,7 @@
             name="%_UI_ScoModelWizard_label"
             class="net.certware.measurement.sco.presentation.ScoModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ScoModelFile.gif">
+            icon="icons/full/obj16/sco.gif">
          <description>%_UI_ScoModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -26,7 +26,7 @@
       <editor
             id="net.certware.measurement.sco.presentation.ScoEditorID"
             name="%_UI_ScoEditor_label"
-            icon="icons/full/obj16/ScoModelFile.gif"
+            icon="icons/full/obj16/sco.gif"
             extensions="sco"
             class="net.certware.measurement.sco.presentation.ScoEditor"
             contributorClass="net.certware.measurement.sco.presentation.ScoActionBarContributor">

@@ -16,7 +16,7 @@
             name="%_UI_SpmModelWizard_label"
             class="net.certware.measurement.spm.presentation.SpmModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/SpmModelFile.gif">
+            icon="icons/full/obj16/spider.png">
          <description>%_UI_SpmModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -26,7 +26,7 @@
       <editor
             id="net.certware.measurement.spm.presentation.SpmEditorID"
             name="%_UI_SpmEditor_label"
-            icon="icons/full/obj16/SpmModelFile.gif"
+            icon="icons/full/obj16/spider.png"
             extensions="spm"
             class="net.certware.measurement.spm.presentation.SpmEditor"
             contributorClass="net.certware.measurement.spm.presentation.SpmActionBarContributor">
