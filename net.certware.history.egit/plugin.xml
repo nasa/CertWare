@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="net.certware.core.ui.category"
+            categoryId="net.certware.core.ui.command.category"
             description="Writes the repository to standard output"
             id="net.certware.history.egit.command.dump"
             name="Dump Repository">

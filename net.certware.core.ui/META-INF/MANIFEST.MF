@@ -8,8 +8,10 @@ Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.core.resources,
  org.eclipse.core.runtime,
+ org.eclipse.jface.text,
  org.eclipse.ui.forms,
  org.eclipse.ui.forms.widgets,
+ org.eclipse.ui.texteditor,
  org.osgi.framework
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.core,
@@ -21,4 +23,5 @@ Export-Package: net.certware.core.ui,
  net.certware.core.ui.dialog,
  net.certware.core.ui.help,
  net.certware.core.ui.log,
- net.certware.core.ui.preferences
+ net.certware.core.ui.preferences,
+ net.certware.core.ui.resources

@@ -26,7 +26,7 @@
          point="org.eclipse.ui.commands">
       <category
             description="CertWare Platform UI Commands"
-            id="net.certware.core.ui.category"
+            id="net.certware.core.ui.command.category"
             name="CertWare Commands">
       </category>
    </extension>
@@ -48,6 +48,13 @@
          point="org.eclipse.ui.cheatsheets.cheatSheetContent">
       <category
             id="net.certware.core.ui.cheatsheets"
+            name="CertWare">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="net.certware.core.ui.view.category"
             name="CertWare">
       </category>
    </extension>

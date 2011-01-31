@@ -69,11 +69,11 @@ public class NormalDefectChangeOrdersItemProvider
 	 * This returns NormalDefectChangeOrders.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/NormalDefectChangeOrders")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/normal_changes")); //$NON-NLS-1$
 	}
 
 	/**

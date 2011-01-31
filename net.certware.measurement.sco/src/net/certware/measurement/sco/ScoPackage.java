@@ -533,7 +533,7 @@ public interface ScoPackage extends EPackage {
 	int ARTIFACT_IDENTIFIER__CURRENT_LINE_COUNT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Critical Defect Change Orders</b></em>' reference.
+	 * The feature id for the '<em><b>Critical Defect Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -542,7 +542,7 @@ public interface ScoPackage extends EPackage {
 	int ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Normal Defect Change Orders</b></em>' reference.
+	 * The feature id for the '<em><b>Normal Defect Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -551,7 +551,7 @@ public interface ScoPackage extends EPackage {
 	int ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Improvement Change Orders</b></em>' reference.
+	 * The feature id for the '<em><b>Improvement Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -560,7 +560,7 @@ public interface ScoPackage extends EPackage {
 	int ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS = 5;
 
 	/**
-	 * The feature id for the '<em><b>New Feature Change Orders</b></em>' reference.
+	 * The feature id for the '<em><b>New Feature Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -569,7 +569,7 @@ public interface ScoPackage extends EPackage {
 	int ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS = 6;
 
 	/**
-	 * The feature id for the '<em><b>Total Change Orders</b></em>' reference.
+	 * The feature id for the '<em><b>Total Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -813,10 +813,10 @@ public interface ScoPackage extends EPackage {
 	EAttribute getArtifactIdentifier_CurrentLineCount();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getCriticalDefectChangeOrders <em>Critical Defect Change Orders</em>}'.
+	 * Returns the meta object for the containment reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getCriticalDefectChangeOrders <em>Critical Defect Change Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Critical Defect Change Orders</em>'.
+	 * @return the meta object for the containment reference '<em>Critical Defect Change Orders</em>'.
 	 * @see net.certware.measurement.sco.ArtifactIdentifier#getCriticalDefectChangeOrders()
 	 * @see #getArtifactIdentifier()
 	 * @generated
@@ -824,10 +824,10 @@ public interface ScoPackage extends EPackage {
 	EReference getArtifactIdentifier_CriticalDefectChangeOrders();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getNormalDefectChangeOrders <em>Normal Defect Change Orders</em>}'.
+	 * Returns the meta object for the containment reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getNormalDefectChangeOrders <em>Normal Defect Change Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Normal Defect Change Orders</em>'.
+	 * @return the meta object for the containment reference '<em>Normal Defect Change Orders</em>'.
 	 * @see net.certware.measurement.sco.ArtifactIdentifier#getNormalDefectChangeOrders()
 	 * @see #getArtifactIdentifier()
 	 * @generated
@@ -835,10 +835,10 @@ public interface ScoPackage extends EPackage {
 	EReference getArtifactIdentifier_NormalDefectChangeOrders();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getImprovementChangeOrders <em>Improvement Change Orders</em>}'.
+	 * Returns the meta object for the containment reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getImprovementChangeOrders <em>Improvement Change Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Improvement Change Orders</em>'.
+	 * @return the meta object for the containment reference '<em>Improvement Change Orders</em>'.
 	 * @see net.certware.measurement.sco.ArtifactIdentifier#getImprovementChangeOrders()
 	 * @see #getArtifactIdentifier()
 	 * @generated
@@ -846,10 +846,10 @@ public interface ScoPackage extends EPackage {
 	EReference getArtifactIdentifier_ImprovementChangeOrders();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getNewFeatureChangeOrders <em>New Feature Change Orders</em>}'.
+	 * Returns the meta object for the containment reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getNewFeatureChangeOrders <em>New Feature Change Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>New Feature Change Orders</em>'.
+	 * @return the meta object for the containment reference '<em>New Feature Change Orders</em>'.
 	 * @see net.certware.measurement.sco.ArtifactIdentifier#getNewFeatureChangeOrders()
 	 * @see #getArtifactIdentifier()
 	 * @generated
@@ -857,10 +857,10 @@ public interface ScoPackage extends EPackage {
 	EReference getArtifactIdentifier_NewFeatureChangeOrders();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getTotalChangeOrders <em>Total Change Orders</em>}'.
+	 * Returns the meta object for the containment reference '{@link net.certware.measurement.sco.ArtifactIdentifier#getTotalChangeOrders <em>Total Change Orders</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Total Change Orders</em>'.
+	 * @return the meta object for the containment reference '<em>Total Change Orders</em>'.
 	 * @see net.certware.measurement.sco.ArtifactIdentifier#getTotalChangeOrders()
 	 * @see #getArtifactIdentifier()
 	 * @generated
@@ -1085,7 +1085,7 @@ public interface ScoPackage extends EPackage {
 		EAttribute ARTIFACT_IDENTIFIER__CURRENT_LINE_COUNT = eINSTANCE.getArtifactIdentifier_CurrentLineCount();
 
 		/**
-		 * The meta object literal for the '<em><b>Critical Defect Change Orders</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Critical Defect Change Orders</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1093,7 +1093,7 @@ public interface ScoPackage extends EPackage {
 		EReference ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS = eINSTANCE.getArtifactIdentifier_CriticalDefectChangeOrders();
 
 		/**
-		 * The meta object literal for the '<em><b>Normal Defect Change Orders</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Normal Defect Change Orders</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1101,7 +1101,7 @@ public interface ScoPackage extends EPackage {
 		EReference ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS = eINSTANCE.getArtifactIdentifier_NormalDefectChangeOrders();
 
 		/**
-		 * The meta object literal for the '<em><b>Improvement Change Orders</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Improvement Change Orders</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1109,7 +1109,7 @@ public interface ScoPackage extends EPackage {
 		EReference ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS = eINSTANCE.getArtifactIdentifier_ImprovementChangeOrders();
 
 		/**
-		 * The meta object literal for the '<em><b>New Feature Change Orders</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>New Feature Change Orders</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1117,7 +1117,7 @@ public interface ScoPackage extends EPackage {
 		EReference ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS = eINSTANCE.getArtifactIdentifier_NewFeatureChangeOrders();
 
 		/**
-		 * The meta object literal for the '<em><b>Total Change Orders</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Total Change Orders</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

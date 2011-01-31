@@ -70,7 +70,7 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
     protected void initializeImageRegistry(ImageRegistry registry) {
         Bundle bundle = Platform.getBundle(PLUGIN_ID);
         initializeImage(registry,bundle,"icons/obj16/artifacts.gif",NODE_ARTIFACTS);
-        initializeImage(registry,bundle,"icons/obj16/baseline_lines.gif",NODE_BASELINE);
+        initializeImage(registry,bundle,"icons/obj16/baselined_lines.gif",NODE_BASELINE);
         initializeImage(registry,bundle,"icons/obj16/current_lines.gif",NODE_CURRENT);
         initializeImage(registry,bundle,"icons/obj16/critical_changes.gif",NODE_CRITICAL);
         initializeImage(registry,bundle,"icons/obj16/normal_changes.gif",NODE_NORMAL);

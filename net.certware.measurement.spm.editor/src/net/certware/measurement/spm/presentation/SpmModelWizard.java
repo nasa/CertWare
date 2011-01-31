@@ -70,6 +70,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
+import net.certware.measurement.spm.ProjectModel;
 import net.certware.measurement.spm.SpmFactory;
 import net.certware.measurement.spm.SpmPackage;
 import net.certware.measurement.spm.provider.SpmEditPlugin;
@@ -183,18 +184,25 @@ public class SpmModelWizard extends Wizard implements INewWizard {
 	/**
 	 * Returns the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
+	 * Changed to allow only the project model object in list.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
 			for (EClassifier eClassifier : spmPackage.getEClassifiers()) {
+				/*
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
 						initialObjectNames.add(eClass.getName());
 					}
+				}
+				*/
+				if ( eClassifier instanceof ProjectModel ) {
+					EClass eClass = (EClass)eClassifier;
+					initialObjectNames.add(eClass.getName());
 				}
 			}
 			Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());

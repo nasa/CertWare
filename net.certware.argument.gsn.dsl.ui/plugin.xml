@@ -80,7 +80,7 @@
     <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="net.certware.core.ui.category"
+            categoryId="net.certware.core.ui.command.category"
             description="Trigger expensive validation"
             id="net.certware.argument.gsn.GsnDsl.validate"
             name="Validate">

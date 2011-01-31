@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.measurement.sco.ArtifactIdentifier;
+import net.certware.measurement.sco.ScoFactory;
 import net.certware.measurement.sco.ScoPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -256,14 +258,47 @@ public class ArtifactIdentifierItemProvider
 	}
 
 	/**
-	 * This returns ArtifactIdentifier.gif.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ScoPackage.Literals.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS);
+			childrenFeatures.add(ScoPackage.Literals.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS);
+			childrenFeatures.add(ScoPackage.Literals.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS);
+			childrenFeatures.add(ScoPackage.Literals.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns ArtifactIdentifier.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArtifactIdentifier")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/artifacts")); //$NON-NLS-1$
 	}
 
 	/**
@@ -298,6 +333,12 @@ public class ArtifactIdentifierItemProvider
 			case ScoPackage.ARTIFACT_IDENTIFIER__TOTAL_CHANGE_ORDERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS:
+			case ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS:
+			case ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS:
+			case ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -312,6 +353,26 @@ public class ArtifactIdentifierItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScoPackage.Literals.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS,
+				 ScoFactory.eINSTANCE.createCriticalDefectChangeOrders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScoPackage.Literals.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS,
+				 ScoFactory.eINSTANCE.createNormalDefectChangeOrders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScoPackage.Literals.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS,
+				 ScoFactory.eINSTANCE.createImprovementChangeOrders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ScoPackage.Literals.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS,
+				 ScoFactory.eINSTANCE.createNewFeatureChangeOrders()));
 	}
 
 	/**

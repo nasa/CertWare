@@ -110,130 +110,130 @@ public interface ArtifactIdentifier extends EObject {
 	void setCurrentLineCount(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Critical Defect Change Orders</b></em>' reference.
+	 * Returns the value of the '<em><b>Critical Defect Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Critical Defect Change Orders</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Critical Defect Change Orders</em>' reference.
+	 * @return the value of the '<em>Critical Defect Change Orders</em>' containment reference.
 	 * @see #setCriticalDefectChangeOrders(CriticalDefectChangeOrders)
 	 * @see net.certware.measurement.sco.ScoPackage#getArtifactIdentifier_CriticalDefectChangeOrders()
-	 * @model required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	CriticalDefectChangeOrders getCriticalDefectChangeOrders();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getCriticalDefectChangeOrders <em>Critical Defect Change Orders</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getCriticalDefectChangeOrders <em>Critical Defect Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Critical Defect Change Orders</em>' reference.
+	 * @param value the new value of the '<em>Critical Defect Change Orders</em>' containment reference.
 	 * @see #getCriticalDefectChangeOrders()
 	 * @generated
 	 */
 	void setCriticalDefectChangeOrders(CriticalDefectChangeOrders value);
 
 	/**
-	 * Returns the value of the '<em><b>Normal Defect Change Orders</b></em>' reference.
+	 * Returns the value of the '<em><b>Normal Defect Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Normal Defect Change Orders</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Normal Defect Change Orders</em>' reference.
+	 * @return the value of the '<em>Normal Defect Change Orders</em>' containment reference.
 	 * @see #setNormalDefectChangeOrders(NormalDefectChangeOrders)
 	 * @see net.certware.measurement.sco.ScoPackage#getArtifactIdentifier_NormalDefectChangeOrders()
-	 * @model required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	NormalDefectChangeOrders getNormalDefectChangeOrders();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getNormalDefectChangeOrders <em>Normal Defect Change Orders</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getNormalDefectChangeOrders <em>Normal Defect Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Normal Defect Change Orders</em>' reference.
+	 * @param value the new value of the '<em>Normal Defect Change Orders</em>' containment reference.
 	 * @see #getNormalDefectChangeOrders()
 	 * @generated
 	 */
 	void setNormalDefectChangeOrders(NormalDefectChangeOrders value);
 
 	/**
-	 * Returns the value of the '<em><b>Improvement Change Orders</b></em>' reference.
+	 * Returns the value of the '<em><b>Improvement Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Improvement Change Orders</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Improvement Change Orders</em>' reference.
+	 * @return the value of the '<em>Improvement Change Orders</em>' containment reference.
 	 * @see #setImprovementChangeOrders(ImprovementChangeOrders)
 	 * @see net.certware.measurement.sco.ScoPackage#getArtifactIdentifier_ImprovementChangeOrders()
-	 * @model required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	ImprovementChangeOrders getImprovementChangeOrders();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getImprovementChangeOrders <em>Improvement Change Orders</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getImprovementChangeOrders <em>Improvement Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Improvement Change Orders</em>' reference.
+	 * @param value the new value of the '<em>Improvement Change Orders</em>' containment reference.
 	 * @see #getImprovementChangeOrders()
 	 * @generated
 	 */
 	void setImprovementChangeOrders(ImprovementChangeOrders value);
 
 	/**
-	 * Returns the value of the '<em><b>New Feature Change Orders</b></em>' reference.
+	 * Returns the value of the '<em><b>New Feature Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>New Feature Change Orders</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>New Feature Change Orders</em>' reference.
+	 * @return the value of the '<em>New Feature Change Orders</em>' containment reference.
 	 * @see #setNewFeatureChangeOrders(NewFeatureChangeOrders)
 	 * @see net.certware.measurement.sco.ScoPackage#getArtifactIdentifier_NewFeatureChangeOrders()
-	 * @model required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	NewFeatureChangeOrders getNewFeatureChangeOrders();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getNewFeatureChangeOrders <em>New Feature Change Orders</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getNewFeatureChangeOrders <em>New Feature Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>New Feature Change Orders</em>' reference.
+	 * @param value the new value of the '<em>New Feature Change Orders</em>' containment reference.
 	 * @see #getNewFeatureChangeOrders()
 	 * @generated
 	 */
 	void setNewFeatureChangeOrders(NewFeatureChangeOrders value);
 
 	/**
-	 * Returns the value of the '<em><b>Total Change Orders</b></em>' reference.
+	 * Returns the value of the '<em><b>Total Change Orders</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Total Change Orders</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Total Change Orders</em>' reference.
+	 * @return the value of the '<em>Total Change Orders</em>' containment reference.
 	 * @see #setTotalChangeOrders(TotalChangeOrders)
 	 * @see net.certware.measurement.sco.ScoPackage#getArtifactIdentifier_TotalChangeOrders()
-	 * @model required="true" volatile="true" derived="true"
+	 * @model containment="true" required="true" volatile="true" derived="true"
 	 * @generated
 	 */
 	TotalChangeOrders getTotalChangeOrders();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getTotalChangeOrders <em>Total Change Orders</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactIdentifier#getTotalChangeOrders <em>Total Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Total Change Orders</em>' reference.
+	 * @param value the new value of the '<em>Total Change Orders</em>' containment reference.
 	 * @see #getTotalChangeOrders()
 	 * @generated
 	 */

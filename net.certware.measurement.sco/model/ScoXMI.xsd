@@ -68,11 +68,6 @@
     <xsd:attribute name="resourceName" type="xsd:string" use="required"/>
     <xsd:attribute name="baselinedLineCount" type="xsd:int" use="required"/>
     <xsd:attribute name="currentLineCount" type="xsd:int" use="required"/>
-    <xsd:attribute name="criticalDefectChangeOrders" type="xsd:string"/>
-    <xsd:attribute name="normalDefectChangeOrders" type="xsd:string"/>
-    <xsd:attribute name="improvementChangeOrders" type="xsd:string"/>
-    <xsd:attribute name="newFeatureChangeOrders" type="xsd:string"/>
-    <xsd:attribute name="totalChangeOrders" type="xsd:string"/>
   </xsd:complexType>
   <xsd:element name="ArtifactIdentifier" type="sco:ArtifactIdentifier"/>
   <xsd:complexType name="ArtifactList">

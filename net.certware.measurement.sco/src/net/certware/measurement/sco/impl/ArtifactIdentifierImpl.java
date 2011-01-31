@@ -15,6 +15,7 @@ import net.certware.measurement.sco.TotalChangeOrders;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -103,7 +104,7 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	protected int currentLineCount = CURRENT_LINE_COUNT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCriticalDefectChangeOrders() <em>Critical Defect Change Orders</em>}' reference.
+	 * The cached value of the '{@link #getCriticalDefectChangeOrders() <em>Critical Defect Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCriticalDefectChangeOrders()
@@ -113,7 +114,7 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	protected CriticalDefectChangeOrders criticalDefectChangeOrders;
 
 	/**
-	 * The cached value of the '{@link #getNormalDefectChangeOrders() <em>Normal Defect Change Orders</em>}' reference.
+	 * The cached value of the '{@link #getNormalDefectChangeOrders() <em>Normal Defect Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNormalDefectChangeOrders()
@@ -123,7 +124,7 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	protected NormalDefectChangeOrders normalDefectChangeOrders;
 
 	/**
-	 * The cached value of the '{@link #getImprovementChangeOrders() <em>Improvement Change Orders</em>}' reference.
+	 * The cached value of the '{@link #getImprovementChangeOrders() <em>Improvement Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getImprovementChangeOrders()
@@ -133,7 +134,7 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	protected ImprovementChangeOrders improvementChangeOrders;
 
 	/**
-	 * The cached value of the '{@link #getNewFeatureChangeOrders() <em>New Feature Change Orders</em>}' reference.
+	 * The cached value of the '{@link #getNewFeatureChangeOrders() <em>New Feature Change Orders</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewFeatureChangeOrders()
@@ -149,14 +150,10 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * <!-- begin-user-doc -->
 	 * Creates the artifact identifier and creates its change order references.
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public ArtifactIdentifierImpl() {
 		super();
-		setCriticalDefectChangeOrders(ScoFactory.eINSTANCE.createCriticalDefectChangeOrders());
-		setNormalDefectChangeOrders(ScoFactory.eINSTANCE.createNormalDefectChangeOrders());
-		setImprovementChangeOrders(ScoFactory.eINSTANCE.createImprovementChangeOrders());
-		setNewFeatureChangeOrders(ScoFactory.eINSTANCE.createNewFeatureChangeOrders());
 	}
 
 	/**
@@ -238,14 +235,6 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public CriticalDefectChangeOrders getCriticalDefectChangeOrders() {
-		if (criticalDefectChangeOrders != null && criticalDefectChangeOrders.eIsProxy()) {
-			InternalEObject oldCriticalDefectChangeOrders = (InternalEObject)criticalDefectChangeOrders;
-			criticalDefectChangeOrders = (CriticalDefectChangeOrders)eResolveProxy(oldCriticalDefectChangeOrders);
-			if (criticalDefectChangeOrders != oldCriticalDefectChangeOrders) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS, oldCriticalDefectChangeOrders, criticalDefectChangeOrders));
-			}
-		}
 		return criticalDefectChangeOrders;
 	}
 
@@ -254,8 +243,14 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CriticalDefectChangeOrders basicGetCriticalDefectChangeOrders() {
-		return criticalDefectChangeOrders;
+	public NotificationChain basicSetCriticalDefectChangeOrders(CriticalDefectChangeOrders newCriticalDefectChangeOrders, NotificationChain msgs) {
+		CriticalDefectChangeOrders oldCriticalDefectChangeOrders = criticalDefectChangeOrders;
+		criticalDefectChangeOrders = newCriticalDefectChangeOrders;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS, oldCriticalDefectChangeOrders, newCriticalDefectChangeOrders);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -264,10 +259,17 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public void setCriticalDefectChangeOrders(CriticalDefectChangeOrders newCriticalDefectChangeOrders) {
-		CriticalDefectChangeOrders oldCriticalDefectChangeOrders = criticalDefectChangeOrders;
-		criticalDefectChangeOrders = newCriticalDefectChangeOrders;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS, oldCriticalDefectChangeOrders, criticalDefectChangeOrders));
+		if (newCriticalDefectChangeOrders != criticalDefectChangeOrders) {
+			NotificationChain msgs = null;
+			if (criticalDefectChangeOrders != null)
+				msgs = ((InternalEObject)criticalDefectChangeOrders).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS, null, msgs);
+			if (newCriticalDefectChangeOrders != null)
+				msgs = ((InternalEObject)newCriticalDefectChangeOrders).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS, null, msgs);
+			msgs = basicSetCriticalDefectChangeOrders(newCriticalDefectChangeOrders, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS, newCriticalDefectChangeOrders, newCriticalDefectChangeOrders));
 	}
 
 	/**
@@ -276,14 +278,6 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public NormalDefectChangeOrders getNormalDefectChangeOrders() {
-		if (normalDefectChangeOrders != null && normalDefectChangeOrders.eIsProxy()) {
-			InternalEObject oldNormalDefectChangeOrders = (InternalEObject)normalDefectChangeOrders;
-			normalDefectChangeOrders = (NormalDefectChangeOrders)eResolveProxy(oldNormalDefectChangeOrders);
-			if (normalDefectChangeOrders != oldNormalDefectChangeOrders) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS, oldNormalDefectChangeOrders, normalDefectChangeOrders));
-			}
-		}
 		return normalDefectChangeOrders;
 	}
 
@@ -292,8 +286,14 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NormalDefectChangeOrders basicGetNormalDefectChangeOrders() {
-		return normalDefectChangeOrders;
+	public NotificationChain basicSetNormalDefectChangeOrders(NormalDefectChangeOrders newNormalDefectChangeOrders, NotificationChain msgs) {
+		NormalDefectChangeOrders oldNormalDefectChangeOrders = normalDefectChangeOrders;
+		normalDefectChangeOrders = newNormalDefectChangeOrders;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS, oldNormalDefectChangeOrders, newNormalDefectChangeOrders);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -302,10 +302,17 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public void setNormalDefectChangeOrders(NormalDefectChangeOrders newNormalDefectChangeOrders) {
-		NormalDefectChangeOrders oldNormalDefectChangeOrders = normalDefectChangeOrders;
-		normalDefectChangeOrders = newNormalDefectChangeOrders;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS, oldNormalDefectChangeOrders, normalDefectChangeOrders));
+		if (newNormalDefectChangeOrders != normalDefectChangeOrders) {
+			NotificationChain msgs = null;
+			if (normalDefectChangeOrders != null)
+				msgs = ((InternalEObject)normalDefectChangeOrders).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS, null, msgs);
+			if (newNormalDefectChangeOrders != null)
+				msgs = ((InternalEObject)newNormalDefectChangeOrders).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS, null, msgs);
+			msgs = basicSetNormalDefectChangeOrders(newNormalDefectChangeOrders, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS, newNormalDefectChangeOrders, newNormalDefectChangeOrders));
 	}
 
 	/**
@@ -314,14 +321,6 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public ImprovementChangeOrders getImprovementChangeOrders() {
-		if (improvementChangeOrders != null && improvementChangeOrders.eIsProxy()) {
-			InternalEObject oldImprovementChangeOrders = (InternalEObject)improvementChangeOrders;
-			improvementChangeOrders = (ImprovementChangeOrders)eResolveProxy(oldImprovementChangeOrders);
-			if (improvementChangeOrders != oldImprovementChangeOrders) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS, oldImprovementChangeOrders, improvementChangeOrders));
-			}
-		}
 		return improvementChangeOrders;
 	}
 
@@ -330,8 +329,14 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImprovementChangeOrders basicGetImprovementChangeOrders() {
-		return improvementChangeOrders;
+	public NotificationChain basicSetImprovementChangeOrders(ImprovementChangeOrders newImprovementChangeOrders, NotificationChain msgs) {
+		ImprovementChangeOrders oldImprovementChangeOrders = improvementChangeOrders;
+		improvementChangeOrders = newImprovementChangeOrders;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS, oldImprovementChangeOrders, newImprovementChangeOrders);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -340,10 +345,17 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public void setImprovementChangeOrders(ImprovementChangeOrders newImprovementChangeOrders) {
-		ImprovementChangeOrders oldImprovementChangeOrders = improvementChangeOrders;
-		improvementChangeOrders = newImprovementChangeOrders;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS, oldImprovementChangeOrders, improvementChangeOrders));
+		if (newImprovementChangeOrders != improvementChangeOrders) {
+			NotificationChain msgs = null;
+			if (improvementChangeOrders != null)
+				msgs = ((InternalEObject)improvementChangeOrders).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS, null, msgs);
+			if (newImprovementChangeOrders != null)
+				msgs = ((InternalEObject)newImprovementChangeOrders).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS, null, msgs);
+			msgs = basicSetImprovementChangeOrders(newImprovementChangeOrders, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS, newImprovementChangeOrders, newImprovementChangeOrders));
 	}
 
 	/**
@@ -352,14 +364,6 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public NewFeatureChangeOrders getNewFeatureChangeOrders() {
-		if (newFeatureChangeOrders != null && newFeatureChangeOrders.eIsProxy()) {
-			InternalEObject oldNewFeatureChangeOrders = (InternalEObject)newFeatureChangeOrders;
-			newFeatureChangeOrders = (NewFeatureChangeOrders)eResolveProxy(oldNewFeatureChangeOrders);
-			if (newFeatureChangeOrders != oldNewFeatureChangeOrders) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS, oldNewFeatureChangeOrders, newFeatureChangeOrders));
-			}
-		}
 		return newFeatureChangeOrders;
 	}
 
@@ -368,8 +372,14 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NewFeatureChangeOrders basicGetNewFeatureChangeOrders() {
-		return newFeatureChangeOrders;
+	public NotificationChain basicSetNewFeatureChangeOrders(NewFeatureChangeOrders newNewFeatureChangeOrders, NotificationChain msgs) {
+		NewFeatureChangeOrders oldNewFeatureChangeOrders = newFeatureChangeOrders;
+		newFeatureChangeOrders = newNewFeatureChangeOrders;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS, oldNewFeatureChangeOrders, newNewFeatureChangeOrders);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -378,20 +388,42 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated
 	 */
 	public void setNewFeatureChangeOrders(NewFeatureChangeOrders newNewFeatureChangeOrders) {
-		NewFeatureChangeOrders oldNewFeatureChangeOrders = newFeatureChangeOrders;
-		newFeatureChangeOrders = newNewFeatureChangeOrders;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS, oldNewFeatureChangeOrders, newFeatureChangeOrders));
+		if (newNewFeatureChangeOrders != newFeatureChangeOrders) {
+			NotificationChain msgs = null;
+			if (newFeatureChangeOrders != null)
+				msgs = ((InternalEObject)newFeatureChangeOrders).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS, null, msgs);
+			if (newNewFeatureChangeOrders != null)
+				msgs = ((InternalEObject)newNewFeatureChangeOrders).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS, null, msgs);
+			msgs = basicSetNewFeatureChangeOrders(newNewFeatureChangeOrders, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS, newNewFeatureChangeOrders, newNewFeatureChangeOrders));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public TotalChangeOrders getTotalChangeOrders() {
-		TotalChangeOrders totalChangeOrders = basicGetTotalChangeOrders();
-		return totalChangeOrders != null && totalChangeOrders.eIsProxy() ? (TotalChangeOrders)eResolveProxy((InternalEObject)totalChangeOrders) : totalChangeOrders;
+		return basicGetTotalChangeOrders();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public NotificationChain basicSetTotalChangeOrders(TotalChangeOrders newTotalChangeOrders, NotificationChain msgs) {
+		// Ensure that you remove @generated or mark it @generated NOT
+		TotalChangeOrders oldTotalChangeOrders = totalChangeOrders;
+		totalChangeOrders = newTotalChangeOrders;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_IDENTIFIER__TOTAL_CHANGE_ORDERS, oldTotalChangeOrders, newTotalChangeOrders);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -401,7 +433,6 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 */
 	public TotalChangeOrders basicGetTotalChangeOrders() {
 		// -> do not perform proxy resolution
-		// throw new UnsupportedOperationException();
 		if ( totalChangeOrders == null ) 
 			totalChangeOrders = ScoFactory.eINSTANCE.createTotalChangeOrders();
 		totalChangeOrders.setBrokenLines(0);
@@ -438,10 +469,31 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 	 * @generated NOT
 	 */
 	public void setTotalChangeOrders(TotalChangeOrders newTotalChangeOrders) {
-		// throw new UnsupportedOperationException();
 		if ( newTotalChangeOrders != null ) {
 			totalChangeOrders = newTotalChangeOrders;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS:
+				return basicSetCriticalDefectChangeOrders(null, msgs);
+			case ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS:
+				return basicSetNormalDefectChangeOrders(null, msgs);
+			case ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS:
+				return basicSetImprovementChangeOrders(null, msgs);
+			case ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS:
+				return basicSetNewFeatureChangeOrders(null, msgs);
+			case ScoPackage.ARTIFACT_IDENTIFIER__TOTAL_CHANGE_ORDERS:
+				return basicSetTotalChangeOrders(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -459,20 +511,15 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 			case ScoPackage.ARTIFACT_IDENTIFIER__CURRENT_LINE_COUNT:
 				return getCurrentLineCount();
 			case ScoPackage.ARTIFACT_IDENTIFIER__CRITICAL_DEFECT_CHANGE_ORDERS:
-				if (resolve) return getCriticalDefectChangeOrders();
-				return basicGetCriticalDefectChangeOrders();
+				return getCriticalDefectChangeOrders();
 			case ScoPackage.ARTIFACT_IDENTIFIER__NORMAL_DEFECT_CHANGE_ORDERS:
-				if (resolve) return getNormalDefectChangeOrders();
-				return basicGetNormalDefectChangeOrders();
+				return getNormalDefectChangeOrders();
 			case ScoPackage.ARTIFACT_IDENTIFIER__IMPROVEMENT_CHANGE_ORDERS:
-				if (resolve) return getImprovementChangeOrders();
-				return basicGetImprovementChangeOrders();
+				return getImprovementChangeOrders();
 			case ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS:
-				if (resolve) return getNewFeatureChangeOrders();
-				return basicGetNewFeatureChangeOrders();
+				return getNewFeatureChangeOrders();
 			case ScoPackage.ARTIFACT_IDENTIFIER__TOTAL_CHANGE_ORDERS:
-				if (resolve) return getTotalChangeOrders();
-				return basicGetTotalChangeOrders();
+				return getTotalChangeOrders();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -572,7 +619,7 @@ public class ArtifactIdentifierImpl extends EObjectImpl implements ArtifactIdent
 			case ScoPackage.ARTIFACT_IDENTIFIER__NEW_FEATURE_CHANGE_ORDERS:
 				return newFeatureChangeOrders != null;
 			case ScoPackage.ARTIFACT_IDENTIFIER__TOTAL_CHANGE_ORDERS:
-				return basicGetTotalChangeOrders() != null;
+				return getTotalChangeOrders() != null;
 		}
 		return super.eIsSet(featureID);
 	}

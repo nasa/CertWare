@@ -31,7 +31,7 @@ public class ScoAllTests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new ScoAllTests("SCO Tests"); //$NON-NLS-1$
+		TestSuite suite = new ScoAllTests("Sco Tests"); //$NON-NLS-1$
 		suite.addTest(ScoTests.suite());
 		return suite;
 	}

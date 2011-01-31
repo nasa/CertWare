@@ -8,14 +8,11 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="net.certware.measurement.spm.presentation.SpmModelWizardID"
             name="%_UI_SpmModelWizard_label"
             class="net.certware.measurement.spm.presentation.SpmModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/spider.png">
          <description>%_UI_SpmModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>

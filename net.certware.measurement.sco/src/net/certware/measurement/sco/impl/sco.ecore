@@ -35,15 +35,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLineCount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="criticalDefectChangeOrders"
-        lowerBound="1" eType="#//CriticalDefectChangeOrders"/>
+        eType="#//CriticalDefectChangeOrders" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="normalDefectChangeOrders"
-        lowerBound="1" eType="#//NormalDefectChangeOrders"/>
+        eType="#//NormalDefectChangeOrders" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="improvementChangeOrders"
-        lowerBound="1" eType="#//ImprovementChangeOrders"/>
+        eType="#//ImprovementChangeOrders" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="newFeatureChangeOrders"
-        lowerBound="1" eType="#//NewFeatureChangeOrders"/>
+        eType="#//NewFeatureChangeOrders" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="totalChangeOrders" lowerBound="1"
-        eType="#//TotalChangeOrders" volatile="true" derived="true"/>
+        eType="#//TotalChangeOrders" volatile="true" derived="true" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArtifactList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifactIdentifiers" upperBound="-1"

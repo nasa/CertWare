@@ -1528,10 +1528,11 @@ public class ScoEditor
 	/**
 	 * Returns whether the outline view should be presented to the user.
 	 * <!-- begin-user-doc -->
+	 * Changed to true.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected boolean showOutlineView() {
-		return false;
+		return true;
 	}
 }

@@ -372,6 +372,8 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	 * @param c2 change count 2, not updated
 	 */
 	public void addChangeOrders(ChangeOrderCount c1, ChangeOrderCount c2) {
+		if ( c1 == null || c2 == null )
+			return;
 		c1.setBrokenLines(c1.getBrokenLines() + c2.getBrokenLines());
 		c1.setFixedLines( c1.getFixedLines() + c2.getFixedLines() );
 		c1.setRepairEffort( c1.getRepairEffort() + c2.getRepairEffort() );

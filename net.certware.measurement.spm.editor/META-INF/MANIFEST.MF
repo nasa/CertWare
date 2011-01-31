@@ -12,8 +12,9 @@ Export-Package: net.certware.measurement.spm.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  net.certware.measurement.spm.edit;visibility:=reexport,
+ net.certware.measurement.smm.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- net.certware.measurement.smm.edit;visibility:=reexport
+ net.certware.core.ui
 Bundle-ActivationPolicy: lazy

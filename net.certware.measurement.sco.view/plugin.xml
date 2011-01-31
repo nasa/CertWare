@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="net.certware.core.ui.view.category"
+            class="net.certware.measurement.sco.view.ScoViewMasterDetails"
+            icon="icons/obj16/sco.gif"
+            id="net.certware.measurement.sco.view.masterdetailsview"
+            name="Software Change Orders"
+            restorable="true">
+         <description>
+            Provides a master-details view of the data contained in the change order file.
+         </description>
+      </view>
+   </extension>
+
+</plugin>

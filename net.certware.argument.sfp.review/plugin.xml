@@ -50,7 +50,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            categoryId="net.certware.core.ui.category"
+            categoryId="net.certware.core.ui.command.category"
             description="Launches the proof review wizard"
             helpContextId="net.certware.core.ui.review_wizard_page_context"
             id="net.certware.argument.sfp.review.launchWizard"

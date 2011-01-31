@@ -16,6 +16,7 @@
       <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/Normal"/>
       <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/Improvements"/>
       <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/NewFeatures"/>
+      <genEnumLiterals ecoreEnumLiteral="sco.ecore#//ChangeOrderType/Total"/>
     </genEnums>
     <genClasses image="false" ecoreClass="sco.ecore#//ChangeOrderCount">
       <genFeatures property="Readonly" createChild="false" propertyCategory="Basic"
@@ -43,13 +44,13 @@
           ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactIdentifier/baselinedLineCount"/>
       <genFeatures createChild="false" propertyCategory="Lines" propertyDescription="The current line count for the artifact"
           ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactIdentifier/currentLineCount"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The critical defect change orders"
+      <genFeatures children="true" createChild="true" propertyCategory="Changes" propertyDescription="The critical defect change orders"
           propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/criticalDefectChangeOrders"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The normal defect change orders"
+      <genFeatures children="true" createChild="true" propertyCategory="Changes" propertyDescription="The normal defect change orders"
           propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/normalDefectChangeOrders"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The improvement change orders"
+      <genFeatures children="true" createChild="true" propertyCategory="Changes" propertyDescription="The improvement change orders"
           propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/improvementChangeOrders"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Changes" propertyDescription="The new feature change orders"
+      <genFeatures children="true" createChild="true" propertyCategory="Changes" propertyDescription="The new feature change orders"
           propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/newFeatureChangeOrders"/>
       <genFeatures property="Readonly" createChild="false" propertyCategory="Changes"
           propertyDescription="The total number of change orders summed from the individual types"
