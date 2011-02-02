@@ -13,7 +13,7 @@ public class GsnDslNewProjectWizard extends XtextNewProjectWizard {
 	@Inject
 	public GsnDslNewProjectWizard(IProjectCreator projectCreator) {
 		super(projectCreator);
-		setWindowTitle("New GsnDsl Project");
+		setWindowTitle("New CertWare GSN DSL Project");
 	}
 
 	/**
@@ -22,8 +22,8 @@ public class GsnDslNewProjectWizard extends XtextNewProjectWizard {
 	 */
 	public void addPages() {
 		mainPage = new WizardNewProjectCreationPage("basicNewProjectPage");
-		mainPage.setTitle("GsnDsl Project");
-		mainPage.setDescription("Create a new GsnDsl project.");
+		mainPage.setTitle("GSN DSL Project");
+		mainPage.setDescription("Create a new GSN DSL project.");
 		addPage(mainPage);
 	}
 

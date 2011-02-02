@@ -31,5 +31,14 @@
             contributorClass="net.certware.measurement.smm.presentation.SmmActionBarContributor">
       </editor>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.measurement.smm.presentation.SmmModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>

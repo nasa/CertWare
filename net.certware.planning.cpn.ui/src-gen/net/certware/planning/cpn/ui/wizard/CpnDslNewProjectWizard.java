@@ -13,7 +13,7 @@ public class CpnDslNewProjectWizard extends XtextNewProjectWizard {
 	@Inject
 	public CpnDslNewProjectWizard(IProjectCreator projectCreator) {
 		super(projectCreator);
-		setWindowTitle("New CpnDsl Project");
+		setWindowTitle("New CertWare CPN DSL Project");
 	}
 
 	/**
@@ -22,8 +22,8 @@ public class CpnDslNewProjectWizard extends XtextNewProjectWizard {
 	 */
 	public void addPages() {
 		mainPage = new WizardNewProjectCreationPage("basicNewProjectPage");
-		mainPage.setTitle("CpnDsl Project");
-		mainPage.setDescription("Create a new CpnDsl project.");
+		mainPage.setTitle("CPN DSL Project");
+		mainPage.setDescription("Create a new CPN DSL project.");
 		addPage(mainPage);
 	}
 

@@ -76,7 +76,7 @@ import org.eclipse.ui.part.ViewPart;
  * Master-details layout on a view.  
  * Selecting an SCO file in the workbench refreshes the view.
  * @author mrb
- * @since 1.0.3
+ * @since 1.1
  */
 public class ScoViewMasterDetails extends ViewPart implements ISelectionListener, ICertWareConstants, IResourceChangeListener {
 
@@ -96,6 +96,10 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	Font boldFont;
 	/** tree viewer, loaded with EMF controls */
 	TreeViewer viewer;
+	/** commit id label */
+	Label commitId;
+	/** usage time label */
+	Label usageTime;
 	
 	@Override
 	public void createPartControl(Composite parent) {
@@ -146,7 +150,17 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	 */
 	protected void refreshPart() {
 		// update the input to the tree viewer in the master part
-		viewer.setInput(artifactList);		
+		viewer.setInput(artifactList);
+		
+		// update master side fields
+		if ( artifactList != null ) {
+			String id = artifactList.getCommitIdentifier();
+			if ( id == null )
+				id = "<n/a>";
+			commitId.setText(id);
+			usageTime.setText(String.format("%6.1f hrs",artifactList.getUsageTime()));
+		}
+
 		form.reflow(true);
 	}
 	
@@ -203,10 +217,14 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 			if ( selection instanceof IStructuredSelection ) {
 				IStructuredSelection iss = (IStructuredSelection)selection;
 				Object object = iss.getFirstElement();
-
+				
 				// save the selection if it's an SCO file
 				if ( object instanceof IFile ) {
 					IFile f = (IFile)object;
+					// skip if already loaded
+					if ( f == selectedFile )
+						return;
+
 					if ( f.getFileExtension().equalsIgnoreCase( ICertWareConstants.SCO_EXTENSION )) {
 						selectedFile = (IFile)f;
 						refreshModelFromFile();
@@ -219,7 +237,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 				if ( object instanceof EObject ) {
 					
 				    EObject eo = (EObject)object;
-				    
+
 				    if ( eo != null ) {
 				    	if ( eo instanceof ArtifactList ) {
 					        artifactList = (ArtifactList)eo;
@@ -295,8 +313,6 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	 */
 	public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 
-		// private Label commitId;
-
 		/**
 		 * Create the master part.
 		 * Creates the section with a tree container and viewer.
@@ -343,38 +359,39 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 			wrapLayout.numColumns = 2;
 			treeSection.setLayout(wrapLayout);
 			
-			/* does nothing
-			GridData g1 = new GridData();
-			g1.verticalIndent = 20;
-			g1.horizontalIndent = 30;
-			treeSection.setLayoutData( g1 );
-			*/
-
 			// tree client on the tree section
 			// the tree itself has a grid layout, its container a table layout
-			Composite treeClient = toolkit.createComposite(treeSection, SWT.WRAP);
-			GridLayout gridLayout = new GridLayout();
+			Composite sectionClient = toolkit.createComposite(treeSection, SWT.WRAP);
+			GridLayout gridLayout = new GridLayout(2,false);
 			// gridLayout.marginLeft = 40; this moves the tree box, not the section container
-			treeClient.setLayout(gridLayout);
+			sectionClient.setLayout(gridLayout);
 			TableWrapData tctw = new TableWrapData();
 			tctw.colspan = 2;
-			treeClient.setLayoutData(tctw);
+			sectionClient.setLayoutData(tctw);
 
-			/*
-			Label commitLabel = toolkit.createLabel(treeClient,"Commit");
-			commitLabel.setLayoutData(new TableWrapData());
-			commitId = toolkit.createLabel(treeClient,"");
-			commitId.setLayoutData(new TableWrapData());
-			*/
+			// commit id and usage time
+			Label l1 = toolkit.createLabel(sectionClient, "Commit ID");
+			l1.setFont(boldFont);
+			l1.setLayoutData(new GridData(SWT.LEFT));
+			commitId = toolkit.createLabel(sectionClient, "<n/a>");
+			commitId.setLayoutData(new GridData(SWT.LEFT));
+			
+			Label l3 = toolkit.createLabel(sectionClient, "Usage Time");
+			l3.setFont(boldFont);
+			l3.setLayoutData(new GridData(SWT.LEFT));
+			usageTime = toolkit.createLabel(sectionClient, "<n/a>");
+			usageTime.setLayoutData(new GridData(SWT.LEFT));
 
 			// tree on the tree client
-			Tree tree = toolkit.createTree(treeClient, SWT.NULL);
-			GridData gd2 = new GridData(GridData.FILL_BOTH); // works to fill master container
+			Tree tree = toolkit.createTree(sectionClient, SWT.NULL);
+			GridData gd2 = new GridData(GridData.FILL,GridData.FILL,true,true); // works to fill master container
+			gd2.horizontalSpan = 2;
 			gd2.heightHint = 100;
-			gd2.widthHint = 150;
+			gd2.widthHint = 200;
 			tree.setLayoutData(gd2);
-			toolkit.paintBordersFor(treeClient);
-			treeSection.setClient(treeClient);
+			
+			toolkit.paintBordersFor(sectionClient);
+			treeSection.setClient(sectionClient);
 			
 			final SectionPart spart = new SectionPart(treeSection);
 			managedForm.addPart(spart);

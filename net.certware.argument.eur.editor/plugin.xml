@@ -139,4 +139,13 @@
          </propertySection>
       </propertySections>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.eur.presentation.EurModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 </plugin>

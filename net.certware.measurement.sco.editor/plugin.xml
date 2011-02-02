@@ -29,5 +29,14 @@
             contributorClass="net.certware.measurement.sco.presentation.ScoActionBarContributor">
       </editor>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.measurement.sco.presentation.ScoModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>

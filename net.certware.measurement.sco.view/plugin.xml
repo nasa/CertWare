@@ -16,5 +16,20 @@
          </description>
       </view>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <view
+               id="net.certware.measurement.sco.view.masterdetailsview"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+         <viewShortcut
+               id="net.certware.measurement.sco.view.masterdetailsview">
+         </viewShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>

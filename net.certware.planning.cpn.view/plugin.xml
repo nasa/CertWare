@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="net.certware.core.ui.view.category"
+            class="net.certware.planning.cpn.view.CpnViewMasterDetails"
+            icon="icons/obj16/cpn.gif"
+            id="net.certware.planning.cpn.view.masterdetailsview"
+            name="CertWare Planning"
+            restorable="true">
+         <description>
+            Provides a master-details view of the data contained in the CertWare Planning Notation (CPN) file.
+         </description>
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <view
+               id="net.certware.planning.cpn.view.masterdetailsview"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+         <viewShortcut
+               id="net.certware.planning.cpn.view.masterdetailsview">
+         </viewShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

@@ -750,6 +750,15 @@ Copyright (c) 2010 Kestrel Technology LLC
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.euz.diagram.part.EuzCreationWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 
    <!-- optionally, specify keybindings -->
 </plugin>

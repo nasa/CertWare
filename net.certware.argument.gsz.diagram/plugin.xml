@@ -682,6 +682,15 @@
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>
+               <extension
+                     point="org.eclipse.ui.perspectiveExtensions">
+                  <perspectiveExtension
+                        targetID="net.certware.perspective">
+                     <newWizardShortcut
+                           id="net.certware.argument.gsz.diagram.part.GszCreationWizardID">
+                     </newWizardShortcut>
+                  </perspectiveExtension>
+               </extension>
 
 
 

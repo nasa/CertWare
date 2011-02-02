@@ -191,5 +191,26 @@
             class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.planning.cpn.ui.wizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
+            hasPages="true"
+            icon="icons/cpn.gif"
+            id="net.certware.planning.cpn.ui.wizard"
+            name="New CertWare CPN Project"
+            project="true">
+      </wizard>
+   </extension>
 
 </plugin>

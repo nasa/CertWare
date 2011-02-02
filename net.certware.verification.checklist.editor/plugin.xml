@@ -14,7 +14,7 @@
             name="Verification Checklist Model"
             class="net.certware.verification.checklist.presentation.ChecklistModelWizard"
             category="net.certware.core.ui.newwizard.category"
-            icon="icons/full/obj16/ChecklistModelFile.gif">
+            icon="icons/full/obj16/checklist.png">
          <description>%_UI_ChecklistModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -24,7 +24,7 @@
       <editor
             id="net.certware.verification.checklist.presentation.ChecklistEditorID"
             name="%_UI_ChecklistEditor_label"
-            icon="icons/full/obj16/ChecklistModelFile.gif"
+            icon="icons/full/obj16/checklist.png"
             extensions="vcl"
             class="net.certware.verification.checklist.presentation.ChecklistEditor"
             contributorClass="net.certware.verification.checklist.presentation.ChecklistActionBarContributor">
@@ -107,5 +107,14 @@
              </input>
          </propertySection>
       </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.verification.checklist.presentation.ChecklistModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
    </extension>
 </plugin>

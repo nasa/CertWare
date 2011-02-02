@@ -29,5 +29,14 @@
             contributorClass="net.certware.argument.cae.presentation.CaeActionBarContributor">
       </editor>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.cae.presentation.CaeModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>

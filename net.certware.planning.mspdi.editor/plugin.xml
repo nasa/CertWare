@@ -24,7 +24,7 @@
             category="net.certware.core.ui.newwizard.category"
             class="net.certware.planning.mspdi.presentation.MspdiModelWizard"
             icon="icons/full/obj16/mspdiModelFile.gif"
-            id="net.certware.planning.mspdi.editor.wizard1"
+            id="net.certware.planning.mspdi.editor.wizard"
             name="%_UI_mspdiModelWizard_label">
          <selection
                class="org.eclipse.core.resources.IResource">
@@ -32,6 +32,15 @@
          <description>
             %_UI_mspdiModelWizard_description</description>
       </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.planning.mspdi.editor.wizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
    </extension>
 
 </plugin>

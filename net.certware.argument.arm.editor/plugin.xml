@@ -188,5 +188,14 @@
          </propertySection>
       </propertySections>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.arm.presentation.ArmModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>

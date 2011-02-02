@@ -6,7 +6,7 @@ h1{color:red}. CertWare Implementation and Integration Notes
 
 h2. Version History
 
-h3. Version 1.0.3
+h3. Version 1.1
 
 _Bugs Fixed_:
 * Reassigned diagram model creation wizard to CertWare new wizard category.
@@ -16,12 +16,13 @@ _Enhancements_:
 * Expanded body text regions in all graphical shapes, allowing multi-line wrap display and editing.
 * Expanded semi-formal proof support.  Added adapters for SFP outline view. Added active parser editor. Added validation for graph cycles and entailment. Added proof review wizard. Added dynamic help (first draft).  Added navigator contribution for SFP file types.
 * Added planning module content for Microsoft Project MSPDI interchange model.
-* Partial string externalization.
+* Completed some string externalization.
 * Updated to JGit 0.10.1 and EGit 0.10.1 for target platform and feature. Added these features to the CertWare parent.
 * Added measurement model plugins.  The model is derived from the OMG Software Metrics Metamodel (1.0 beta 1, March 2009) XML schema, adopting and modifying an EMF implementation from Eclipse GMT MODISCO.
-* Added CertWare Planning Notation (CPN) DSL for assigning planning data mapping onto ARM Metamodel.  Xtext project generated editor for DSL.  Validation included for editor content with markers.
+* Added CertWare Planning Notation (CPN) DSL for assigning planning data mapping onto ARM Metamodel.  Xtext project generated editor for DSL.  Validation included for editor content with markers.  Added a workbench view to show contents from workbench navigator or editor selections.
 * Added CertWare Software Project Metrics (SPM) EMF model for collecting and computing metrics on argument case artifacts in change sets.
-* Added CertWare Software Change Order (SCO) EMF model for capturing change order records for metrics.  Added corresponding navigator contribution.   
+* Added CertWare Software Change Order (SCO) EMF model for capturing change order records for metrics.  Added corresponding navigator contribution.  Added a workbench view to show contents from workbench navigator or editor selections.  
+* Added CertWare workbench perspective.  Standard layout.  Added views and new-wizard perspective extensions from each plug-in.  Perspective defined in @net.certware.core.ui@.   
 _Commit_:
 * TBD
 
@@ -185,17 +186,19 @@ Several editors are contributed by the EMF generator models.
 
 h4. Views
 
-None created to date apart from outline views accompanying editors.
+* @net.certware.measurement.sco.view@ Contributes a view for SCO model files.  Responds to both resource and object workbench selections.  Master-detail view on the artifact list items.  Uses the EMF-generated item provider adapter factory to populate the master tree.
+* @net.certware.planning.cpn.view@ Contributes a view for CPN model files.  Responds to both resource and object workbench selections.  Master-detail view on the artifact list items.  Employs made-up adapter factory for item provider adapters so the Xtext injected model providers are not available in the view, instead uses the EMF reflective providers.  
 
 h4. Navigator Contributions
 
-* @net.certware.argument.arm.navigator@ Contributes content on model resource files and navigator filter.
-* @net.certware.argument.cae.navigator@ Contributes content on model resource files and navigator filter.
-* @net.certware.argument.gsn.navigator@ Contributes content on model resource files and navigator filter.
-* @net.certware.argument.eur.navigator@ Contributes content on model resource files and navigator filter.
-* @net.certware.argument.sfp.navigator@ Contributes content on model resource files and navigator filter.
-* @net.certware.planning.cpn.navigator@ Contributes content on model resource files and navigator filter.
-* @net.certware.verification.checklist.navigator@ Contributes content on verification checklist files and navigator filter.
+* @net.certware.argument.arm.navigator@ Contributes content on ARM model resource files and navigator filter.
+* @net.certware.argument.cae.navigator@ Contributes content on CAE model resource files and navigator filter.
+* @net.certware.argument.gsn.navigator@ Contributes content on GSN model resource files and navigator filter.
+* @net.certware.argument.eur.navigator@ Contributes content on EUR model resource files and navigator filter.
+* @net.certware.argument.sfp.navigator@ Contributes content on SFP model resource files and navigator filter.
+* @net.certware.measurement.sco.navigator@ Contributes content on SCO model resource files and navigator filter. 
+* @net.certware.planning.cpn.navigator@ Contributes content on CPN model resource files and navigator filter.
+* @net.certware.verification.checklist.navigator@ Contributes VCL content on verification checklist files and navigator filter.
 
 h3. Plugins Summary
 

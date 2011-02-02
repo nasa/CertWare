@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Planning Notation View
+Bundle-SymbolicName: net.certware.planning.cpn.view;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: net.certware.planning.cpn.view.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: net.certware.core,
+ net.certware.core.ui.log,
+ net.certware.core.ui.resources,
+ net.certware.planning.cpn,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.common.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.resource,
+ org.eclipse.jface.resource,
+ org.eclipse.ui.forms,
+ org.eclipse.ui.forms.events,
+ org.eclipse.ui.forms.widgets,
+ org.eclipse.ui.plugin,
+ org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui,
+ org.eclipse.emf.ecore,
+ net.certware.planning.cpn,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.emf.edit.ui,
+ net.certware.argument.arm,
+ org.eclipse.emf.codegen.ecore.ui

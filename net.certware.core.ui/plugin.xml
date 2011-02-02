@@ -58,5 +58,18 @@
             name="CertWare">
       </category>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="net.certware.core.ui.perspectives.PerspectiveFactory"
+            fixed="false"
+            icon="icons/obj16/certware.gif"
+            id="net.certware.perspective"
+            name="CertWare">
+         <description>
+            CertWare perspective for the workbench.
+         </description>
+      </perspective>
+   </extension>
 
 </plugin>

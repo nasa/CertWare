@@ -145,6 +145,7 @@
       <wizard
             category="net.certware.core.ui.newwizard.category"
             class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:net.certware.argument.gsn.ui.wizard.GsnDslNewProjectWizard"
+            hasPages="true"
             icon="icons/obj16/editor.gif"
             id="net.certware.argument.gsn.ui.wizard.GsnDslNewProjectWizard"
             name="GSN DSL Project"
@@ -158,6 +159,15 @@
       <markerResolutionGenerator
             class="net.certware.argument.gsn.ui.GsnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.gsn.ui.wizard.GsnDslNewProjectWizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
    </extension>
 
 </plugin>

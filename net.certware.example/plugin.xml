@@ -33,5 +33,14 @@
             plugin="net.certware.core.ui">
       </contexts>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.example.wizards.ExampleWizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>
