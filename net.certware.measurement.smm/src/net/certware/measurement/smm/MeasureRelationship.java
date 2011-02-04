@@ -53,7 +53,7 @@ public interface MeasureRelationship extends SmmRelationship {
 	void setFrom(Measure value);
 
 	/**
-	 * Returns the value of the '<em><b>To</b></em>' reference.
+	 * Returns the value of the '<em><b>To</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link net.certware.measurement.smm.Measure#getInMeasure <em>In Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -61,20 +61,20 @@ public interface MeasureRelationship extends SmmRelationship {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To</em>' reference.
+	 * @return the value of the '<em>To</em>' container reference.
 	 * @see #setTo(Measure)
 	 * @see net.certware.measurement.smm.SmmPackage#getMeasureRelationship_To()
 	 * @see net.certware.measurement.smm.Measure#getInMeasure
-	 * @model opposite="inMeasure" required="true"
+	 * @model opposite="inMeasure" required="true" transient="false"
 	 * @generated
 	 */
 	Measure getTo();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.smm.MeasureRelationship#getTo <em>To</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.smm.MeasureRelationship#getTo <em>To</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To</em>' reference.
+	 * @param value the new value of the '<em>To</em>' container reference.
 	 * @see #getTo()
 	 * @generated
 	 */

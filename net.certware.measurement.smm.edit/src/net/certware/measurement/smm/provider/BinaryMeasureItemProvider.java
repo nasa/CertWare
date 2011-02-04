@@ -10,11 +10,13 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.measurement.smm.BinaryMeasure;
+import net.certware.measurement.smm.SmmFactory;
 import net.certware.measurement.smm.SmmPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -134,6 +136,37 @@ public class BinaryMeasureItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1);
+			childrenFeatures.add(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns BinaryMeasure.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +206,10 @@ public class BinaryMeasureItemProvider
 			case SmmPackage.BINARY_MEASURE__FUNCTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case SmmPackage.BINARY_MEASURE__BASE_MEASURE1:
+			case SmmPackage.BINARY_MEASURE__BASE_MEASURE2:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -187,6 +224,114 @@ public class BinaryMeasureItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createBinaryMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createDirectMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createCollectiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createNamedMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createRescaledMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1,
+				 SmmFactory.eINSTANCE.createCounting()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createBinaryMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createDirectMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createCollectiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createNamedMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createRescaledMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2,
+				 SmmFactory.eINSTANCE.createCounting()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_FROM ||
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_TO ||
+			childFeature == SmmPackage.Literals.MEASURE__REFINEMENT ||
+			childFeature == SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1 ||
+			childFeature == SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2 ||
+			childFeature == SmmPackage.Literals.MEASURE__OUT_MEASURE ||
+			childFeature == SmmPackage.Literals.MEASURE__IN_MEASURE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2", //$NON-NLS-1$
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

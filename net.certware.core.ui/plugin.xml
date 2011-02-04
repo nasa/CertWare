@@ -29,6 +29,16 @@
             id="net.certware.core.ui.command.category"
             name="CertWare Commands">
       </category>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Establishes an active listener link between the view and editor"
+            id="net.certware.core.ui.linkEditor"
+            name="Link with Editor">
+         <state
+               class="org.eclipse.ui.handlers.RegistryToggleState:true"
+               id="org.eclipse.ui.commands.toggleState">
+         </state>
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
@@ -71,5 +81,81 @@
          </description>
       </perspective>
    </extension>
-
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/ovr7/certware_ovr.gif"
+            id="net.certware.core.ui.nature.id"
+            natureId="net.certware.resource.nature.id">
+      </image>
+   </extension>
+      <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            adaptable="false"
+            class="net.certware.core.ui.decorators.ResourceLabelDecorator"
+            id="net.certware.core.project.decorator"
+            label="Project Decorator"
+            lightweight="true"
+            location="BOTTOM_RIGHT"
+            state="true">
+         <enablement>
+            <and>
+               <objectClass
+                     name="org.eclipse.core.resources.IResource">
+               </objectClass>
+               <objectClass
+                     name="org.eclipse.core.resources.IFile">
+               </objectClass>
+            </and>
+         </enablement>
+      </decorator>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware_popup"
+               label="CertWare"
+               tooltip="CertWare natures and builders">
+            <dynamic
+                  class="net.certware.core.ui.contributions.ToggleProjectNature"
+                  id="net.certware.project.nature.dynamic">
+            </dynamic>
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate>
+                     <and>
+                        <instanceof
+                              value="org.eclipse.core.resources.IProject">
+                        </instanceof>
+                        <test
+                              property="org.eclipse.core.resources.open"
+                              value="true">
+                        </test>
+                     </and>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="net.certware.core.ui.handlers.LinkEditor"
+            commandId="net.certware.core.ui.linkEditor">
+      </handler>
+   </extension>
+ <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="org.eclipse.ui.cheatsheets.openCheatSheet"
+            icon="icons/obj16/cheatsheet.gif">
+      </image>
+   </extension>
 </plugin>

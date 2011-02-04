@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -45,17 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class MeasurementImpl extends SmmElementImpl implements Measurement {
 	/**
-	 * The cached value of the '{@link #getMeasure() <em>Measure</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMeasure()
-	 * @generated
-	 * @ordered
-	 */
-	protected Measure measure;
-
-	/**
-	 * The cached value of the '{@link #getObservation() <em>Observation</em>}' reference.
+	 * The cached value of the '{@link #getObservation() <em>Observation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getObservation()
@@ -129,24 +120,8 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	 * @generated
 	 */
 	public Measure getMeasure() {
-		if (measure != null && measure.eIsProxy()) {
-			InternalEObject oldMeasure = (InternalEObject)measure;
-			measure = (Measure)eResolveProxy(oldMeasure);
-			if (measure != oldMeasure) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmmPackage.MEASUREMENT__MEASURE, oldMeasure, measure));
-			}
-		}
-		return measure;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Measure basicGetMeasure() {
-		return measure;
+		if (eContainerFeatureID() != SmmPackage.MEASUREMENT__MEASURE) return null;
+		return (Measure)eContainer();
 	}
 
 	/**
@@ -155,12 +130,7 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	 * @generated
 	 */
 	public NotificationChain basicSetMeasure(Measure newMeasure, NotificationChain msgs) {
-		Measure oldMeasure = measure;
-		measure = newMeasure;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmmPackage.MEASUREMENT__MEASURE, oldMeasure, newMeasure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newMeasure, SmmPackage.MEASUREMENT__MEASURE, msgs);
 		return msgs;
 	}
 
@@ -170,10 +140,12 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	 * @generated
 	 */
 	public void setMeasure(Measure newMeasure) {
-		if (newMeasure != measure) {
+		if (newMeasure != eInternalContainer() || (eContainerFeatureID() != SmmPackage.MEASUREMENT__MEASURE && newMeasure != null)) {
+			if (EcoreUtil.isAncestor(this, newMeasure))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString()); //$NON-NLS-1$
 			NotificationChain msgs = null;
-			if (measure != null)
-				msgs = ((InternalEObject)measure).eInverseRemove(this, SmmPackage.MEASURE__MEASUREMENT, Measure.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newMeasure != null)
 				msgs = ((InternalEObject)newMeasure).eInverseAdd(this, SmmPackage.MEASURE__MEASUREMENT, Measure.class, msgs);
 			msgs = basicSetMeasure(newMeasure, msgs);
@@ -189,14 +161,6 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	 * @generated
 	 */
 	public Observation getObservation() {
-		if (observation != null && observation.eIsProxy()) {
-			InternalEObject oldObservation = (InternalEObject)observation;
-			observation = (Observation)eResolveProxy(oldObservation);
-			if (observation != oldObservation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmmPackage.MEASUREMENT__OBSERVATION, oldObservation, observation));
-			}
-		}
 		return observation;
 	}
 
@@ -205,8 +169,14 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Observation basicGetObservation() {
-		return observation;
+	public NotificationChain basicSetObservation(Observation newObservation, NotificationChain msgs) {
+		Observation oldObservation = observation;
+		observation = newObservation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmmPackage.MEASUREMENT__OBSERVATION, oldObservation, newObservation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -215,10 +185,17 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	 * @generated
 	 */
 	public void setObservation(Observation newObservation) {
-		Observation oldObservation = observation;
-		observation = newObservation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmmPackage.MEASUREMENT__OBSERVATION, oldObservation, observation));
+		if (newObservation != observation) {
+			NotificationChain msgs = null;
+			if (observation != null)
+				msgs = ((InternalEObject)observation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmmPackage.MEASUREMENT__OBSERVATION, null, msgs);
+			if (newObservation != null)
+				msgs = ((InternalEObject)newObservation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmmPackage.MEASUREMENT__OBSERVATION, null, msgs);
+			msgs = basicSetObservation(newObservation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmmPackage.MEASUREMENT__OBSERVATION, newObservation, newObservation));
 	}
 
 	/**
@@ -276,8 +253,8 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SmmPackage.MEASUREMENT__MEASURE:
-				if (measure != null)
-					msgs = ((InternalEObject)measure).eInverseRemove(this, SmmPackage.MEASURE__MEASUREMENT, Measure.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetMeasure((Measure)otherEnd, msgs);
 			case SmmPackage.MEASUREMENT__OUT_MEASUREMENT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutMeasurement()).basicAdd(otherEnd, msgs);
@@ -297,6 +274,8 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 		switch (featureID) {
 			case SmmPackage.MEASUREMENT__MEASURE:
 				return basicSetMeasure(null, msgs);
+			case SmmPackage.MEASUREMENT__OBSERVATION:
+				return basicSetObservation(null, msgs);
 			case SmmPackage.MEASUREMENT__OUT_MEASUREMENT:
 				return ((InternalEList<?>)getOutMeasurement()).basicRemove(otherEnd, msgs);
 			case SmmPackage.MEASUREMENT__IN_MEASUREMENT:
@@ -311,14 +290,26 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case SmmPackage.MEASUREMENT__MEASURE:
+				return eInternalContainer().eInverseRemove(this, SmmPackage.MEASURE__MEASUREMENT, Measure.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SmmPackage.MEASUREMENT__MEASURE:
-				if (resolve) return getMeasure();
-				return basicGetMeasure();
+				return getMeasure();
 			case SmmPackage.MEASUREMENT__OBSERVATION:
-				if (resolve) return getObservation();
-				return basicGetObservation();
+				return getObservation();
 			case SmmPackage.MEASUREMENT__ERROR:
 				return getError();
 			case SmmPackage.MEASUREMENT__OUT_MEASUREMENT:
@@ -395,7 +386,7 @@ public abstract class MeasurementImpl extends SmmElementImpl implements Measurem
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SmmPackage.MEASUREMENT__MEASURE:
-				return measure != null;
+				return getMeasure() != null;
 			case SmmPackage.MEASUREMENT__OBSERVATION:
 				return observation != null;
 			case SmmPackage.MEASUREMENT__ERROR:

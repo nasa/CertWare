@@ -79,7 +79,7 @@ public interface Characteristic extends SmmElement {
 	void setParent(Characteristic value);
 
 	/**
-	 * Returns the value of the '<em><b>Characteristics</b></em>' reference list.
+	 * Returns the value of the '<em><b>Characteristics</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.measurement.smm.Measure}.
 	 * It is bidirectional and its opposite is '{@link net.certware.measurement.smm.Measure#getTrait <em>Trait</em>}'.
 	 * <!-- begin-user-doc -->
@@ -88,10 +88,10 @@ public interface Characteristic extends SmmElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Characteristics</em>' reference list.
+	 * @return the value of the '<em>Characteristics</em>' containment reference list.
 	 * @see net.certware.measurement.smm.SmmPackage#getCharacteristic_Characteristics()
 	 * @see net.certware.measurement.smm.Measure#getTrait
-	 * @model opposite="trait"
+	 * @model opposite="trait" containment="true"
 	 * @generated
 	 */
 	EList<Measure> getCharacteristics();

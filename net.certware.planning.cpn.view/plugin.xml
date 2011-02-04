@@ -31,5 +31,35 @@
          </viewShortcut>
       </perspectiveExtension>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="net.certware.planning.cpn.view.open"
+            nameFilter="*.cpn"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.planning.cpn.view.actions.OpenView"
+               enablesFor="1"
+               icon="icons/obj16/cpn.gif"
+               id="net.certware.planning.cpn.view.action.openview"
+               label="Open in CPN View"
+               menubarPath="certware/additions"
+               tooltip="Open the CPN content in its view">
+         </action>
+      </objectContribution>
+   </extension>
 
 </plugin>

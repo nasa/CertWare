@@ -11,6 +11,7 @@ import java.util.List;
 
 import net.certware.measurement.smm.RatioMeasure;
 
+import net.certware.measurement.smm.SmmPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -108,6 +109,34 @@ public class RatioMeasureItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_FROM ||
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_TO ||
+			childFeature == SmmPackage.Literals.MEASURE__REFINEMENT ||
+			childFeature == SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE1 ||
+			childFeature == SmmPackage.Literals.BINARY_MEASURE__BASE_MEASURE2 ||
+			childFeature == SmmPackage.Literals.MEASURE__OUT_MEASURE ||
+			childFeature == SmmPackage.Literals.MEASURE__IN_MEASURE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2", //$NON-NLS-1$
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

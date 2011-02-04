@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 Kestrel Technology LLC"
-    modelDirectory="/net.certware.measurement.spm/src" creationCommands="false" creationSubmenus="true"
-    modelPluginID="net.certware.measurement.spm" modelName="Spm" nonNLSMarkers="true"
-    rootImplementsInterface="" featureMapWrapperInterface="" featureMapWrapperClass=""
-    importerID="org.eclipse.emf.importer.ecore" arrayAccessors="true" complianceLevel="6.0"
+    modelDirectory="/net.certware.measurement.spm/src" creationSubmenus="true" modelPluginID="net.certware.measurement.spm"
+    modelName="Spm" nonNLSMarkers="true" rootImplementsInterface="" featureMapWrapperInterface=""
+    featureMapWrapperClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false" colorProviders="true" usedGenPackages="../../net.certware.measurement.smm/model/smm.genmodel#//smm"
     classNamePattern="">
   <foreignModel>spm.ecore</foreignModel>
   <genPackages prefix="Spm" basePackage="net.certware.measurement" resource="XMI"
       disposableProviderFactory="true" loadInitialization="true" multipleEditorPages="false"
-      childCreationExtenders="true" contentTypeIdentifier="" ecorePackage="spm.ecore#/">
+      contentTypeIdentifier="" ecorePackage="spm.ecore#/">
     <genClasses ecoreClass="spm.ecore#//ProjectModel"/>
-    <genClasses ecoreClass="spm.ecore#//ProjectHistory"/>
     <genClasses ecoreClass="spm.ecore#//ProjectCommit"/>
+    <genClasses ecoreClass="spm.ecore#//CommitRelationship"/>
+    <genClasses ecoreClass="spm.ecore#//EndProductQualityCategory"/>
+    <genClasses ecoreClass="spm.ecore#//InProgressQualityCategory"/>
     <genClasses ecoreClass="spm.ecore#//EndProductQuality"/>
     <genClasses ecoreClass="spm.ecore#//Maintainability"/>
     <genClasses ecoreClass="spm.ecore#//InProgressIndicator"/>

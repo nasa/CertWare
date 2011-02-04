@@ -208,7 +208,7 @@
             hasPages="true"
             icon="icons/cpn.gif"
             id="net.certware.planning.cpn.ui.wizard"
-            name="New CertWare CPN Project"
+            name="CPN Project"
             project="true">
       </wizard>
    </extension>

@@ -2,6 +2,8 @@ package net.certware.core.ui.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.preference.PreferenceConverter;
+import org.eclipse.swt.graphics.RGB;
 
 import net.certware.core.ui.CertWareUI;
 
@@ -17,7 +19,14 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 */
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = CertWareUI.getDefault().getPreferenceStore();
-		store.setDefault(PreferenceConstants.P_PROJECT_NAME, "Safety Case");
+		
+		store.setDefault(PreferenceConstants.P_PROJECT_NAME,"Safety Case");
+		store.setDefault(PreferenceConstants.P_LABEL_DECORATOR_SUFFIX, " CertWare");
+		
+	    PreferenceConverter.setDefault(store, 
+	    		PreferenceConstants.P_LABEL_DECORATOR_FOREGROUND, 
+	    		new RGB(105,105,105));
+
 	}
 
 }

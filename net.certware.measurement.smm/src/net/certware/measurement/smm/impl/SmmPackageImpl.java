@@ -5,6 +5,8 @@
  */
 package net.certware.measurement.smm.impl;
 
+import java.io.IOException;
+import java.net.URL;
 import java.sql.Timestamp;
 
 import java.util.Date;
@@ -43,16 +45,21 @@ import net.certware.measurement.smm.SmmElement;
 import net.certware.measurement.smm.SmmFactory;
 import net.certware.measurement.smm.SmmModel;
 import net.certware.measurement.smm.SmmPackage;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import net.certware.measurement.smm.SmmRelationship;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,6 +68,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected String packageFilename = "smm.ecore"; //$NON-NLS-1$
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,8 +354,6 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
-	 * @see #createPackageContents()
-	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static SmmPackage init() {
@@ -352,11 +364,11 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 
 		isInited = true;
 
-		// Create package meta-data objects
-		theSmmPackage.createPackageContents();
+		// Load packages
+		theSmmPackage.loadPackage();
 
-		// Initialize created meta-data
-		theSmmPackage.initializePackageContents();
+		// Fix loaded packages
+		theSmmPackage.fixPackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSmmPackage.freeze();
@@ -373,6 +385,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getSmmElement() {
+		if (smmElementEClass == null) {
+			smmElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(0);
+		}
 		return smmElementEClass;
 	}
 
@@ -382,7 +397,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getSmmElement_Model() {
-		return (EReference)smmElementEClass.getEStructuralFeatures().get(0);
+        return (EReference)getSmmElement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -391,7 +406,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getSmmElement_Attribute() {
-		return (EReference)smmElementEClass.getEStructuralFeatures().get(1);
+        return (EReference)getSmmElement().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -400,7 +415,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getSmmElement_Annotation() {
-		return (EReference)smmElementEClass.getEStructuralFeatures().get(2);
+        return (EReference)getSmmElement().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -409,6 +424,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getSmmModel() {
+		if (smmModelEClass == null) {
+			smmModelEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(1);
+		}
 		return smmModelEClass;
 	}
 
@@ -418,7 +436,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getSmmModel_ModelElement() {
-		return (EReference)smmModelEClass.getEStructuralFeatures().get(0);
+        return (EReference)getSmmModel().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -427,6 +445,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getSmmRelationship() {
+		if (smmRelationshipEClass == null) {
+			smmRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(2);
+		}
 		return smmRelationshipEClass;
 	}
 
@@ -436,6 +457,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getCategoryRelationship() {
+		if (categoryRelationshipEClass == null) {
+			categoryRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(3);
+		}
 		return categoryRelationshipEClass;
 	}
 
@@ -445,7 +469,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getCategoryRelationship_Name() {
-		return (EAttribute)categoryRelationshipEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCategoryRelationship().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -454,7 +478,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCategoryRelationship_From() {
-		return (EReference)categoryRelationshipEClass.getEStructuralFeatures().get(1);
+        return (EReference)getCategoryRelationship().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -463,7 +487,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCategoryRelationship_To() {
-		return (EReference)categoryRelationshipEClass.getEStructuralFeatures().get(2);
+        return (EReference)getCategoryRelationship().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -472,6 +496,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getCategory() {
+		if (categoryEClass == null) {
+			categoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(4);
+		}
 		return categoryEClass;
 	}
 
@@ -481,7 +508,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getCategory_Name() {
-		return (EAttribute)categoryEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCategory().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -490,7 +517,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCategory_Category() {
-		return (EReference)categoryEClass.getEStructuralFeatures().get(1);
+        return (EReference)getCategory().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -499,7 +526,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCategory_CategoryElement() {
-		return (EReference)categoryEClass.getEStructuralFeatures().get(2);
+        return (EReference)getCategory().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -508,7 +535,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCategory_OutCategory() {
-		return (EReference)categoryEClass.getEStructuralFeatures().get(3);
+        return (EReference)getCategory().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -517,7 +544,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCategory_InCategory() {
-		return (EReference)categoryEClass.getEStructuralFeatures().get(4);
+        return (EReference)getCategory().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -526,7 +553,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCategory_CategoryMeasure() {
-		return (EReference)categoryEClass.getEStructuralFeatures().get(5);
+        return (EReference)getCategory().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -535,6 +562,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getMeasure() {
+		if (measureEClass == null) {
+			measureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(5);
+		}
 		return measureEClass;
 	}
 
@@ -544,7 +574,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_Category() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(0);
+        return (EReference)getMeasure().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -553,7 +583,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getMeasure_Library() {
-		return (EAttribute)measureEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getMeasure().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -562,7 +592,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getMeasure_Name() {
-		return (EAttribute)measureEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getMeasure().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -571,7 +601,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_EquivalentFrom() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(3);
+        return (EReference)getMeasure().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -580,7 +610,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_EquivalentTo() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(4);
+        return (EReference)getMeasure().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -589,7 +619,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_Refinement() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(5);
+        return (EReference)getMeasure().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -598,7 +628,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_Measurement() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(6);
+        return (EReference)getMeasure().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -607,7 +637,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_OutMeasure() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(7);
+        return (EReference)getMeasure().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -616,7 +646,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_InMeasure() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(8);
+        return (EReference)getMeasure().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -625,7 +655,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_Trait() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(9);
+        return (EReference)getMeasure().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -634,7 +664,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasure_Scope() {
-		return (EReference)measureEClass.getEStructuralFeatures().get(10);
+        return (EReference)getMeasure().getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -643,6 +673,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getMeasurement() {
+		if (measurementEClass == null) {
+			measurementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(6);
+		}
 		return measurementEClass;
 	}
 
@@ -652,7 +685,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasurement_Measure() {
-		return (EReference)measurementEClass.getEStructuralFeatures().get(0);
+        return (EReference)getMeasurement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -661,7 +694,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasurement_Observation() {
-		return (EReference)measurementEClass.getEStructuralFeatures().get(1);
+        return (EReference)getMeasurement().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -670,7 +703,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getMeasurement_Error() {
-		return (EAttribute)measurementEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getMeasurement().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -679,7 +712,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasurement_OutMeasurement() {
-		return (EReference)measurementEClass.getEStructuralFeatures().get(3);
+        return (EReference)getMeasurement().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -688,7 +721,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasurement_InMeasurement() {
-		return (EReference)measurementEClass.getEStructuralFeatures().get(4);
+        return (EReference)getMeasurement().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -697,6 +730,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getObservation() {
+		if (observationEClass == null) {
+			observationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(7);
+		}
 		return observationEClass;
 	}
 
@@ -706,7 +742,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getObservation_Observer() {
-		return (EAttribute)observationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getObservation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -715,7 +751,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getObservation_Tool() {
-		return (EAttribute)observationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getObservation().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -724,7 +760,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getObservation_WhenObserved() {
-		return (EAttribute)observationEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getObservation().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -733,6 +769,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getMeasureRelationship() {
+		if (measureRelationshipEClass == null) {
+			measureRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(10);
+		}
 		return measureRelationshipEClass;
 	}
 
@@ -742,7 +781,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasureRelationship_From() {
-		return (EReference)measureRelationshipEClass.getEStructuralFeatures().get(0);
+        return (EReference)getMeasureRelationship().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -751,7 +790,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasureRelationship_To() {
-		return (EReference)measureRelationshipEClass.getEStructuralFeatures().get(1);
+        return (EReference)getMeasureRelationship().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -760,6 +799,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getDimensionalMeasure() {
+		if (dimensionalMeasureEClass == null) {
+			dimensionalMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(11);
+		}
 		return dimensionalMeasureEClass;
 	}
 
@@ -769,7 +811,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getDimensionalMeasure_Unit() {
-		return (EAttribute)dimensionalMeasureEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDimensionalMeasure().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -778,6 +820,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getRanking() {
+		if (rankingEClass == null) {
+			rankingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(12);
+		}
 		return rankingEClass;
 	}
 
@@ -787,7 +832,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getRanking_Interval() {
-		return (EReference)rankingEClass.getEStructuralFeatures().get(0);
+        return (EReference)getRanking().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -796,6 +841,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getRankingInterval() {
+		if (rankingIntervalEClass == null) {
+			rankingIntervalEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(13);
+		}
 		return rankingIntervalEClass;
 	}
 
@@ -805,7 +853,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getRankingInterval_Rank() {
-		return (EReference)rankingIntervalEClass.getEStructuralFeatures().get(0);
+        return (EReference)getRankingInterval().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -814,7 +862,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getRankingInterval_MaximumEndpoint() {
-		return (EAttribute)rankingIntervalEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getRankingInterval().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -823,7 +871,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getRankingInterval_MaximumOpen() {
-		return (EAttribute)rankingIntervalEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getRankingInterval().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -832,7 +880,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getRankingInterval_MinimumEndpoint() {
-		return (EAttribute)rankingIntervalEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getRankingInterval().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -841,7 +889,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getRankingInterval_MinimumOpen() {
-		return (EAttribute)rankingIntervalEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getRankingInterval().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -850,7 +898,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getRankingInterval_Symbol() {
-		return (EAttribute)rankingIntervalEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getRankingInterval().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -859,6 +907,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getCharacteristic() {
+		if (characteristicEClass == null) {
+			characteristicEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(14);
+		}
 		return characteristicEClass;
 	}
 
@@ -868,7 +919,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getCharacteristic_Name() {
-		return (EAttribute)characteristicEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCharacteristic().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -877,7 +928,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCharacteristic_Parent() {
-		return (EReference)characteristicEClass.getEStructuralFeatures().get(1);
+        return (EReference)getCharacteristic().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -886,7 +937,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCharacteristic_Characteristics() {
-		return (EReference)characteristicEClass.getEStructuralFeatures().get(2);
+        return (EReference)getCharacteristic().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -895,6 +946,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getScope() {
+		if (scopeEClass == null) {
+			scopeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(15);
+		}
 		return scopeEClass;
 	}
 
@@ -904,7 +958,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getScope_Class() {
-		return (EAttribute)scopeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getScope().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -913,7 +967,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getScope_Enumerated() {
-		return (EAttribute)scopeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getScope().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -922,7 +976,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getScope_Name() {
-		return (EAttribute)scopeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getScope().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -931,7 +985,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getScope_Measures() {
-		return (EReference)scopeEClass.getEStructuralFeatures().get(3);
+        return (EReference)getScope().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -940,7 +994,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getScope_Recognizer() {
-		return (EAttribute)scopeEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getScope().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -949,6 +1003,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getBinaryMeasure() {
+		if (binaryMeasureEClass == null) {
+			binaryMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(16);
+		}
 		return binaryMeasureEClass;
 	}
 
@@ -958,7 +1015,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getBinaryMeasure_Functor() {
-		return (EAttribute)binaryMeasureEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getBinaryMeasure().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -967,7 +1024,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getBinaryMeasure_BaseMeasure1() {
-		return (EReference)binaryMeasureEClass.getEStructuralFeatures().get(1);
+        return (EReference)getBinaryMeasure().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -976,7 +1033,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getBinaryMeasure_BaseMeasure2() {
-		return (EReference)binaryMeasureEClass.getEStructuralFeatures().get(2);
+        return (EReference)getBinaryMeasure().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -985,6 +1042,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getDirectMeasure() {
+		if (directMeasureEClass == null) {
+			directMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(17);
+		}
 		return directMeasureEClass;
 	}
 
@@ -994,7 +1054,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getDirectMeasure_Operation() {
-		return (EAttribute)directMeasureEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDirectMeasure().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1003,6 +1063,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getCollectiveMeasure() {
+		if (collectiveMeasureEClass == null) {
+			collectiveMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(18);
+		}
 		return collectiveMeasureEClass;
 	}
 
@@ -1012,7 +1075,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCollectiveMeasure_BaseMeasure() {
-		return (EReference)collectiveMeasureEClass.getEStructuralFeatures().get(0);
+        return (EReference)getCollectiveMeasure().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1021,7 +1084,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectiveMeasure_Accumulator() {
-		return (EAttribute)collectiveMeasureEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getCollectiveMeasure().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1030,6 +1093,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getNamedMeasure() {
+		if (namedMeasureEClass == null) {
+			namedMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(19);
+		}
 		return namedMeasureEClass;
 	}
 
@@ -1039,6 +1105,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getRescaledMeasure() {
+		if (rescaledMeasureEClass == null) {
+			rescaledMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(20);
+		}
 		return rescaledMeasureEClass;
 	}
 
@@ -1048,7 +1117,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getRescaledMeasure_Formula() {
-		return (EAttribute)rescaledMeasureEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRescaledMeasure().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1057,6 +1126,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getRatioMeasure() {
+		if (ratioMeasureEClass == null) {
+			ratioMeasureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(21);
+		}
 		return ratioMeasureEClass;
 	}
 
@@ -1066,6 +1138,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getCounting() {
+		if (countingEClass == null) {
+			countingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(22);
+		}
 		return countingEClass;
 	}
 
@@ -1075,6 +1150,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getDimensionalMeasurement() {
+		if (dimensionalMeasurementEClass == null) {
+			dimensionalMeasurementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(24);
+		}
 		return dimensionalMeasurementEClass;
 	}
 
@@ -1084,7 +1162,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getDimensionalMeasurement_Value() {
-		return (EAttribute)dimensionalMeasurementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDimensionalMeasurement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1093,6 +1171,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getGrade() {
+		if (gradeEClass == null) {
+			gradeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(25);
+		}
 		return gradeEClass;
 	}
 
@@ -1102,7 +1183,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getGrade_BaseMeasurement() {
-		return (EReference)gradeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getGrade().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1111,7 +1192,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getGrade_IsBaseSupplied() {
-		return (EAttribute)gradeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getGrade().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1120,7 +1201,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getGrade_Value() {
-		return (EAttribute)gradeEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getGrade().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1129,6 +1210,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getMeasurementRelationship() {
+		if (measurementRelationshipEClass == null) {
+			measurementRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(26);
+		}
 		return measurementRelationshipEClass;
 	}
 
@@ -1138,7 +1222,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getMeasurementRelationship_Name() {
-		return (EAttribute)measurementRelationshipEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getMeasurementRelationship().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1147,7 +1231,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasurementRelationship_From() {
-		return (EReference)measurementRelationshipEClass.getEStructuralFeatures().get(1);
+        return (EReference)getMeasurementRelationship().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1156,7 +1240,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getMeasurementRelationship_To() {
-		return (EReference)measurementRelationshipEClass.getEStructuralFeatures().get(2);
+        return (EReference)getMeasurementRelationship().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1165,6 +1249,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getDirectMeasurement() {
+		if (directMeasurementEClass == null) {
+			directMeasurementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(27);
+		}
 		return directMeasurementEClass;
 	}
 
@@ -1174,6 +1261,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getCount() {
+		if (countEClass == null) {
+			countEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(28);
+		}
 		return countEClass;
 	}
 
@@ -1183,6 +1273,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getCollectiveMeasurement() {
+		if (collectiveMeasurementEClass == null) {
+			collectiveMeasurementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(29);
+		}
 		return collectiveMeasurementEClass;
 	}
 
@@ -1192,7 +1285,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectiveMeasurement_Accumulator() {
-		return (EAttribute)collectiveMeasurementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCollectiveMeasurement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1201,7 +1294,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectiveMeasurement_IsBaseSupplied() {
-		return (EAttribute)collectiveMeasurementEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getCollectiveMeasurement().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1210,7 +1303,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getCollectiveMeasurement_BaseMeasurement() {
-		return (EReference)collectiveMeasurementEClass.getEStructuralFeatures().get(2);
+        return (EReference)getCollectiveMeasurement().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1219,6 +1312,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getAggregatedMeasurement() {
+		if (aggregatedMeasurementEClass == null) {
+			aggregatedMeasurementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(30);
+		}
 		return aggregatedMeasurementEClass;
 	}
 
@@ -1228,7 +1324,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getAggregatedMeasurement_IsBaseSuppled() {
-		return (EAttribute)aggregatedMeasurementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAggregatedMeasurement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1237,7 +1333,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getAggregatedMeasurement_BaseMeasurement() {
-		return (EReference)aggregatedMeasurementEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAggregatedMeasurement().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1246,6 +1342,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getNamedMeasurement() {
+		if (namedMeasurementEClass == null) {
+			namedMeasurementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(31);
+		}
 		return namedMeasurementEClass;
 	}
 
@@ -1255,6 +1354,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getReScaledMeasurement() {
+		if (reScaledMeasurementEClass == null) {
+			reScaledMeasurementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(32);
+		}
 		return reScaledMeasurementEClass;
 	}
 
@@ -1264,7 +1366,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getReScaledMeasurement_IsBaseSupplied() {
-		return (EAttribute)reScaledMeasurementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getReScaledMeasurement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1273,6 +1375,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getAttribute() {
+		if (attributeEClass == null) {
+			attributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(33);
+		}
 		return attributeEClass;
 	}
 
@@ -1282,7 +1387,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getAttribute_Tag() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAttribute().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1291,7 +1396,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getAttribute_Value() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getAttribute().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1300,7 +1405,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getAttribute_Owner() {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(2);
+        return (EReference)getAttribute().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1309,6 +1414,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EClass getAnnotation() {
+		if (annotationEClass == null) {
+			annotationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(34);
+		}
 		return annotationEClass;
 	}
 
@@ -1318,7 +1426,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EAttribute getAnnotation_Text() {
-		return (EAttribute)annotationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAnnotation().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1327,7 +1435,7 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EReference getAnnotation_Owner() {
-		return (EReference)annotationEClass.getEStructuralFeatures().get(1);
+        return (EReference)getAnnotation().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1336,6 +1444,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EEnum getAccumulator() {
+		if (accumulatorEEnum == null) {
+			accumulatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(23);
+		}
 		return accumulatorEEnum;
 	}
 
@@ -1345,6 +1456,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EDataType getDate() {
+		if (dateEDataType == null) {
+			dateEDataType = (EDataType)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(8);
+		}
 		return dateEDataType;
 	}
 
@@ -1354,6 +1468,9 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * @generated
 	 */
 	public EDataType getTimestamp() {
+		if (timestampEDataType == null) {
+			timestampEDataType = (EDataType)EPackage.Registry.INSTANCE.getEPackage(SmmPackage.eNS_URI).getEClassifiers().get(9);
+		}
 		return timestampEDataType;
 	}
 
@@ -1371,165 +1488,32 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isCreated = false;
+	private boolean isLoaded = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
+	 * Laods the package and any sub-packages from their serialized form.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPackageContents() {
-		if (isCreated) return;
-		isCreated = true;
+	public void loadPackage() {
+		if (isLoaded) return;
+		isLoaded = true;
 
-		// Create classes and their features
-		smmElementEClass = createEClass(SMM_ELEMENT);
-		createEReference(smmElementEClass, SMM_ELEMENT__MODEL);
-		createEReference(smmElementEClass, SMM_ELEMENT__ATTRIBUTE);
-		createEReference(smmElementEClass, SMM_ELEMENT__ANNOTATION);
-
-		smmModelEClass = createEClass(SMM_MODEL);
-		createEReference(smmModelEClass, SMM_MODEL__MODEL_ELEMENT);
-
-		smmRelationshipEClass = createEClass(SMM_RELATIONSHIP);
-
-		categoryRelationshipEClass = createEClass(CATEGORY_RELATIONSHIP);
-		createEAttribute(categoryRelationshipEClass, CATEGORY_RELATIONSHIP__NAME);
-		createEReference(categoryRelationshipEClass, CATEGORY_RELATIONSHIP__FROM);
-		createEReference(categoryRelationshipEClass, CATEGORY_RELATIONSHIP__TO);
-
-		categoryEClass = createEClass(CATEGORY);
-		createEAttribute(categoryEClass, CATEGORY__NAME);
-		createEReference(categoryEClass, CATEGORY__CATEGORY);
-		createEReference(categoryEClass, CATEGORY__CATEGORY_ELEMENT);
-		createEReference(categoryEClass, CATEGORY__OUT_CATEGORY);
-		createEReference(categoryEClass, CATEGORY__IN_CATEGORY);
-		createEReference(categoryEClass, CATEGORY__CATEGORY_MEASURE);
-
-		measureEClass = createEClass(MEASURE);
-		createEReference(measureEClass, MEASURE__CATEGORY);
-		createEAttribute(measureEClass, MEASURE__LIBRARY);
-		createEAttribute(measureEClass, MEASURE__NAME);
-		createEReference(measureEClass, MEASURE__EQUIVALENT_FROM);
-		createEReference(measureEClass, MEASURE__EQUIVALENT_TO);
-		createEReference(measureEClass, MEASURE__REFINEMENT);
-		createEReference(measureEClass, MEASURE__MEASUREMENT);
-		createEReference(measureEClass, MEASURE__OUT_MEASURE);
-		createEReference(measureEClass, MEASURE__IN_MEASURE);
-		createEReference(measureEClass, MEASURE__TRAIT);
-		createEReference(measureEClass, MEASURE__SCOPE);
-
-		measurementEClass = createEClass(MEASUREMENT);
-		createEReference(measurementEClass, MEASUREMENT__MEASURE);
-		createEReference(measurementEClass, MEASUREMENT__OBSERVATION);
-		createEAttribute(measurementEClass, MEASUREMENT__ERROR);
-		createEReference(measurementEClass, MEASUREMENT__OUT_MEASUREMENT);
-		createEReference(measurementEClass, MEASUREMENT__IN_MEASUREMENT);
-
-		observationEClass = createEClass(OBSERVATION);
-		createEAttribute(observationEClass, OBSERVATION__OBSERVER);
-		createEAttribute(observationEClass, OBSERVATION__TOOL);
-		createEAttribute(observationEClass, OBSERVATION__WHEN_OBSERVED);
-
-		measureRelationshipEClass = createEClass(MEASURE_RELATIONSHIP);
-		createEReference(measureRelationshipEClass, MEASURE_RELATIONSHIP__FROM);
-		createEReference(measureRelationshipEClass, MEASURE_RELATIONSHIP__TO);
-
-		dimensionalMeasureEClass = createEClass(DIMENSIONAL_MEASURE);
-		createEAttribute(dimensionalMeasureEClass, DIMENSIONAL_MEASURE__UNIT);
-
-		rankingEClass = createEClass(RANKING);
-		createEReference(rankingEClass, RANKING__INTERVAL);
-
-		rankingIntervalEClass = createEClass(RANKING_INTERVAL);
-		createEReference(rankingIntervalEClass, RANKING_INTERVAL__RANK);
-		createEAttribute(rankingIntervalEClass, RANKING_INTERVAL__MAXIMUM_ENDPOINT);
-		createEAttribute(rankingIntervalEClass, RANKING_INTERVAL__MAXIMUM_OPEN);
-		createEAttribute(rankingIntervalEClass, RANKING_INTERVAL__MINIMUM_ENDPOINT);
-		createEAttribute(rankingIntervalEClass, RANKING_INTERVAL__MINIMUM_OPEN);
-		createEAttribute(rankingIntervalEClass, RANKING_INTERVAL__SYMBOL);
-
-		characteristicEClass = createEClass(CHARACTERISTIC);
-		createEAttribute(characteristicEClass, CHARACTERISTIC__NAME);
-		createEReference(characteristicEClass, CHARACTERISTIC__PARENT);
-		createEReference(characteristicEClass, CHARACTERISTIC__CHARACTERISTICS);
-
-		scopeEClass = createEClass(SCOPE);
-		createEAttribute(scopeEClass, SCOPE__CLASS);
-		createEAttribute(scopeEClass, SCOPE__ENUMERATED);
-		createEAttribute(scopeEClass, SCOPE__NAME);
-		createEReference(scopeEClass, SCOPE__MEASURES);
-		createEAttribute(scopeEClass, SCOPE__RECOGNIZER);
-
-		binaryMeasureEClass = createEClass(BINARY_MEASURE);
-		createEAttribute(binaryMeasureEClass, BINARY_MEASURE__FUNCTOR);
-		createEReference(binaryMeasureEClass, BINARY_MEASURE__BASE_MEASURE1);
-		createEReference(binaryMeasureEClass, BINARY_MEASURE__BASE_MEASURE2);
-
-		directMeasureEClass = createEClass(DIRECT_MEASURE);
-		createEAttribute(directMeasureEClass, DIRECT_MEASURE__OPERATION);
-
-		collectiveMeasureEClass = createEClass(COLLECTIVE_MEASURE);
-		createEReference(collectiveMeasureEClass, COLLECTIVE_MEASURE__BASE_MEASURE);
-		createEAttribute(collectiveMeasureEClass, COLLECTIVE_MEASURE__ACCUMULATOR);
-
-		namedMeasureEClass = createEClass(NAMED_MEASURE);
-
-		rescaledMeasureEClass = createEClass(RESCALED_MEASURE);
-		createEAttribute(rescaledMeasureEClass, RESCALED_MEASURE__FORMULA);
-
-		ratioMeasureEClass = createEClass(RATIO_MEASURE);
-
-		countingEClass = createEClass(COUNTING);
-
-		dimensionalMeasurementEClass = createEClass(DIMENSIONAL_MEASUREMENT);
-		createEAttribute(dimensionalMeasurementEClass, DIMENSIONAL_MEASUREMENT__VALUE);
-
-		gradeEClass = createEClass(GRADE);
-		createEReference(gradeEClass, GRADE__BASE_MEASUREMENT);
-		createEAttribute(gradeEClass, GRADE__IS_BASE_SUPPLIED);
-		createEAttribute(gradeEClass, GRADE__VALUE);
-
-		measurementRelationshipEClass = createEClass(MEASUREMENT_RELATIONSHIP);
-		createEAttribute(measurementRelationshipEClass, MEASUREMENT_RELATIONSHIP__NAME);
-		createEReference(measurementRelationshipEClass, MEASUREMENT_RELATIONSHIP__FROM);
-		createEReference(measurementRelationshipEClass, MEASUREMENT_RELATIONSHIP__TO);
-
-		directMeasurementEClass = createEClass(DIRECT_MEASUREMENT);
-
-		countEClass = createEClass(COUNT);
-
-		collectiveMeasurementEClass = createEClass(COLLECTIVE_MEASUREMENT);
-		createEAttribute(collectiveMeasurementEClass, COLLECTIVE_MEASUREMENT__ACCUMULATOR);
-		createEAttribute(collectiveMeasurementEClass, COLLECTIVE_MEASUREMENT__IS_BASE_SUPPLIED);
-		createEReference(collectiveMeasurementEClass, COLLECTIVE_MEASUREMENT__BASE_MEASUREMENT);
-
-		aggregatedMeasurementEClass = createEClass(AGGREGATED_MEASUREMENT);
-		createEAttribute(aggregatedMeasurementEClass, AGGREGATED_MEASUREMENT__IS_BASE_SUPPLED);
-		createEReference(aggregatedMeasurementEClass, AGGREGATED_MEASUREMENT__BASE_MEASUREMENT);
-
-		namedMeasurementEClass = createEClass(NAMED_MEASUREMENT);
-
-		reScaledMeasurementEClass = createEClass(RE_SCALED_MEASUREMENT);
-		createEAttribute(reScaledMeasurementEClass, RE_SCALED_MEASUREMENT__IS_BASE_SUPPLIED);
-
-		attributeEClass = createEClass(ATTRIBUTE);
-		createEAttribute(attributeEClass, ATTRIBUTE__TAG);
-		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
-		createEReference(attributeEClass, ATTRIBUTE__OWNER);
-
-		annotationEClass = createEClass(ANNOTATION);
-		createEAttribute(annotationEClass, ANNOTATION__TEXT);
-		createEReference(annotationEClass, ANNOTATION__OWNER);
-
-		// Create enums
-		accumulatorEEnum = createEEnum(ACCUMULATOR);
-
-		// Create data types
-		dateEDataType = createEDataType(DATE);
-		timestampEDataType = createEDataType(TIMESTAMP);
+		URL url = getClass().getResource(packageFilename);
+		if (url == null) {
+			throw new RuntimeException("Missing serialized package: " + packageFilename); //$NON-NLS-1$
+		}
+		URI uri = URI.createURI(url.toString());
+		Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
+		try {
+			resource.load(null);
+		}
+		catch (IOException exception) {
+			throw new WrappedException(exception);
+		}
+		initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
+		createResource(eNS_URI);
 	}
 
 	/**
@@ -1537,222 +1521,32 @@ public class SmmPackageImpl extends EPackageImpl implements SmmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private boolean isInitialized = false;
+	private boolean isFixed = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
+	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void initializePackageContents() {
-		if (isInitialized) return;
-		isInitialized = true;
+	public void fixPackageContents() {
+		if (isFixed) return;
+		isFixed = true;
+		fixEClassifiers();
+	}
 
-		// Initialize package
-		setName(eNAME);
-		setNsPrefix(eNS_PREFIX);
-		setNsURI(eNS_URI);
-
-		// Create type parameters
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-		smmModelEClass.getESuperTypes().add(this.getSmmElement());
-		smmRelationshipEClass.getESuperTypes().add(this.getSmmElement());
-		categoryRelationshipEClass.getESuperTypes().add(this.getSmmRelationship());
-		categoryEClass.getESuperTypes().add(this.getSmmElement());
-		measureEClass.getESuperTypes().add(this.getSmmElement());
-		measurementEClass.getESuperTypes().add(this.getSmmElement());
-		observationEClass.getESuperTypes().add(this.getSmmElement());
-		measureRelationshipEClass.getESuperTypes().add(this.getSmmRelationship());
-		dimensionalMeasureEClass.getESuperTypes().add(this.getMeasure());
-		rankingEClass.getESuperTypes().add(this.getMeasure());
-		rankingIntervalEClass.getESuperTypes().add(this.getSmmElement());
-		characteristicEClass.getESuperTypes().add(this.getSmmElement());
-		scopeEClass.getESuperTypes().add(this.getSmmElement());
-		binaryMeasureEClass.getESuperTypes().add(this.getDimensionalMeasure());
-		directMeasureEClass.getESuperTypes().add(this.getDimensionalMeasure());
-		collectiveMeasureEClass.getESuperTypes().add(this.getDimensionalMeasure());
-		namedMeasureEClass.getESuperTypes().add(this.getDimensionalMeasure());
-		rescaledMeasureEClass.getESuperTypes().add(this.getDimensionalMeasure());
-		ratioMeasureEClass.getESuperTypes().add(this.getBinaryMeasure());
-		countingEClass.getESuperTypes().add(this.getDirectMeasure());
-		dimensionalMeasurementEClass.getESuperTypes().add(this.getMeasurement());
-		gradeEClass.getESuperTypes().add(this.getMeasurement());
-		measurementRelationshipEClass.getESuperTypes().add(this.getSmmRelationship());
-		directMeasurementEClass.getESuperTypes().add(this.getDimensionalMeasurement());
-		countEClass.getESuperTypes().add(this.getDirectMeasurement());
-		collectiveMeasurementEClass.getESuperTypes().add(this.getDimensionalMeasurement());
-		aggregatedMeasurementEClass.getESuperTypes().add(this.getDimensionalMeasurement());
-		namedMeasurementEClass.getESuperTypes().add(this.getDimensionalMeasurement());
-		reScaledMeasurementEClass.getESuperTypes().add(this.getDimensionalMeasurement());
-		attributeEClass.getESuperTypes().add(this.getSmmElement());
-		annotationEClass.getESuperTypes().add(this.getSmmElement());
-
-		// Initialize classes and features; add operations and parameters
-		initEClass(smmElementEClass, SmmElement.class, "SmmElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getSmmElement_Model(), this.getSmmModel(), this.getSmmModel_ModelElement(), "model", null, 0, 1, SmmElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getSmmElement_Attribute(), this.getAttribute(), this.getAttribute_Owner(), "attribute", null, 0, -1, SmmElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getSmmElement_Annotation(), this.getAnnotation(), this.getAnnotation_Owner(), "annotation", null, 0, -1, SmmElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		addEOperation(smmElementEClass, this.getSmmRelationship(), "getInbound", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
-
-		addEOperation(smmElementEClass, this.getSmmRelationship(), "getOutbound", 0, -1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(smmModelEClass, SmmModel.class, "SmmModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getSmmModel_ModelElement(), this.getSmmElement(), this.getSmmElement_Model(), "modelElement", null, 0, -1, SmmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(smmRelationshipEClass, SmmRelationship.class, "SmmRelationship", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		addEOperation(smmRelationshipEClass, this.getSmmElement(), "getTo", 1, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
-
-		addEOperation(smmRelationshipEClass, this.getSmmElement(), "getFrom", 1, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(categoryRelationshipEClass, CategoryRelationship.class, "CategoryRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getCategoryRelationship_Name(), ecorePackage.getEString(), "name", null, 0, 1, CategoryRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCategoryRelationship_From(), this.getCategory(), this.getCategory_OutCategory(), "from", null, 1, 1, CategoryRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCategoryRelationship_To(), this.getCategory(), this.getCategory_InCategory(), "to", null, 1, 1, CategoryRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCategory_Category(), this.getCategory(), this.getCategory_CategoryElement(), "category", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCategory_CategoryElement(), this.getCategory(), this.getCategory_Category(), "categoryElement", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCategory_OutCategory(), this.getCategoryRelationship(), this.getCategoryRelationship_From(), "outCategory", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCategory_InCategory(), this.getCategoryRelationship(), this.getCategoryRelationship_To(), "inCategory", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCategory_CategoryMeasure(), this.getMeasure(), this.getMeasure_Category(), "categoryMeasure", null, 0, -1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(measureEClass, Measure.class, "Measure", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getMeasure_Category(), this.getCategory(), this.getCategory_CategoryMeasure(), "category", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getMeasure_Library(), ecorePackage.getEString(), "library", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getMeasure_Name(), ecorePackage.getEString(), "name", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_EquivalentFrom(), this.getMeasure(), this.getMeasure_EquivalentTo(), "equivalentFrom", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_EquivalentTo(), this.getMeasure(), this.getMeasure_EquivalentFrom(), "equivalentTo", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_Refinement(), this.getMeasure(), null, "refinement", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_Measurement(), this.getMeasurement(), this.getMeasurement_Measure(), "measurement", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_OutMeasure(), this.getMeasureRelationship(), this.getMeasureRelationship_From(), "outMeasure", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_InMeasure(), this.getMeasureRelationship(), this.getMeasureRelationship_To(), "inMeasure", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_Trait(), this.getCharacteristic(), this.getCharacteristic_Characteristics(), "trait", null, 1, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasure_Scope(), this.getScope(), this.getScope_Measures(), "scope", null, 1, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(measurementEClass, Measurement.class, "Measurement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getMeasurement_Measure(), this.getMeasure(), this.getMeasure_Measurement(), "measure", null, 1, 1, Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasurement_Observation(), this.getObservation(), null, "observation", null, 1, 1, Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getMeasurement_Error(), ecorePackage.getEString(), "error", null, 0, 1, Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasurement_OutMeasurement(), this.getMeasurementRelationship(), this.getMeasurementRelationship_From(), "outMeasurement", null, 0, -1, Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasurement_InMeasurement(), this.getMeasurementRelationship(), this.getMeasurementRelationship_To(), "inMeasurement", null, 0, -1, Measurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(observationEClass, Observation.class, "Observation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getObservation_Observer(), ecorePackage.getEString(), "observer", null, 0, 1, Observation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getObservation_Tool(), ecorePackage.getEString(), "tool", null, 0, 1, Observation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getObservation_WhenObserved(), this.getDate(), "whenObserved", null, 0, 1, Observation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(measureRelationshipEClass, MeasureRelationship.class, "MeasureRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getMeasureRelationship_From(), this.getMeasure(), this.getMeasure_OutMeasure(), "from", null, 1, 1, MeasureRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasureRelationship_To(), this.getMeasure(), this.getMeasure_InMeasure(), "to", null, 1, 1, MeasureRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(dimensionalMeasureEClass, DimensionalMeasure.class, "DimensionalMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getDimensionalMeasure_Unit(), ecorePackage.getEString(), "unit", null, 1, 1, DimensionalMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(rankingEClass, Ranking.class, "Ranking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRanking_Interval(), this.getRankingInterval(), this.getRankingInterval_Rank(), "interval", null, 1, -1, Ranking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(rankingIntervalEClass, RankingInterval.class, "RankingInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getRankingInterval_Rank(), this.getRanking(), this.getRanking_Interval(), "rank", null, 0, 1, RankingInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getRankingInterval_MaximumEndpoint(), ecorePackage.getEDouble(), "maximumEndpoint", null, 1, 1, RankingInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getRankingInterval_MaximumOpen(), ecorePackage.getEBoolean(), "maximumOpen", null, 0, 1, RankingInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getRankingInterval_MinimumEndpoint(), ecorePackage.getEDouble(), "minimumEndpoint", null, 1, 1, RankingInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getRankingInterval_MinimumOpen(), ecorePackage.getEBoolean(), "minimumOpen", null, 0, 1, RankingInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getRankingInterval_Symbol(), ecorePackage.getEString(), "symbol", null, 1, 1, RankingInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(characteristicEClass, Characteristic.class, "Characteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getCharacteristic_Name(), ecorePackage.getEString(), "name", null, 1, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCharacteristic_Parent(), this.getCharacteristic(), null, "parent", null, 0, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCharacteristic_Characteristics(), this.getMeasure(), this.getMeasure_Trait(), "characteristics", null, 0, -1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(scopeEClass, Scope.class, "Scope", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getScope_Class(), ecorePackage.getEString(), "class", null, 1, 1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getScope_Enumerated(), ecorePackage.getEBoolean(), "enumerated", null, 0, 1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getScope_Name(), ecorePackage.getEString(), "name", null, 0, 1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getScope_Measures(), this.getMeasure(), this.getMeasure_Scope(), "measures", null, 0, -1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getScope_Recognizer(), ecorePackage.getEString(), "recognizer", null, 0, 1, Scope.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(binaryMeasureEClass, BinaryMeasure.class, "BinaryMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getBinaryMeasure_Functor(), ecorePackage.getEString(), "functor", null, 1, 1, BinaryMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getBinaryMeasure_BaseMeasure1(), this.getDimensionalMeasure(), null, "baseMeasure1", null, 1, 1, BinaryMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getBinaryMeasure_BaseMeasure2(), this.getDimensionalMeasure(), null, "baseMeasure2", null, 1, 1, BinaryMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(directMeasureEClass, DirectMeasure.class, "DirectMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getDirectMeasure_Operation(), ecorePackage.getEString(), "operation", null, 1, 1, DirectMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(collectiveMeasureEClass, CollectiveMeasure.class, "CollectiveMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getCollectiveMeasure_BaseMeasure(), this.getDimensionalMeasure(), null, "baseMeasure", null, 1, 1, CollectiveMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getCollectiveMeasure_Accumulator(), this.getAccumulator(), "accumulator", null, 1, 1, CollectiveMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(namedMeasureEClass, NamedMeasure.class, "NamedMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(rescaledMeasureEClass, RescaledMeasure.class, "RescaledMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getRescaledMeasure_Formula(), ecorePackage.getEString(), "formula", null, 1, 1, RescaledMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(ratioMeasureEClass, RatioMeasure.class, "RatioMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(countingEClass, Counting.class, "Counting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(dimensionalMeasurementEClass, DimensionalMeasurement.class, "DimensionalMeasurement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getDimensionalMeasurement_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DimensionalMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(gradeEClass, Grade.class, "Grade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getGrade_BaseMeasurement(), this.getDimensionalMeasurement(), null, "baseMeasurement", null, 0, 1, Grade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getGrade_IsBaseSupplied(), ecorePackage.getEBoolean(), "isBaseSupplied", null, 1, 1, Grade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getGrade_Value(), ecorePackage.getEString(), "value", null, 0, 1, Grade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(measurementRelationshipEClass, MeasurementRelationship.class, "MeasurementRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getMeasurementRelationship_Name(), ecorePackage.getEString(), "name", null, 1, 1, MeasurementRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasurementRelationship_From(), this.getMeasurement(), this.getMeasurement_OutMeasurement(), "from", null, 1, 1, MeasurementRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getMeasurementRelationship_To(), this.getMeasurement(), this.getMeasurement_InMeasurement(), "to", null, 1, 1, MeasurementRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(directMeasurementEClass, DirectMeasurement.class, "DirectMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(countEClass, Count.class, "Count", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(collectiveMeasurementEClass, CollectiveMeasurement.class, "CollectiveMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getCollectiveMeasurement_Accumulator(), this.getAccumulator(), "accumulator", null, 1, 1, CollectiveMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getCollectiveMeasurement_IsBaseSupplied(), ecorePackage.getEBoolean(), "isBaseSupplied", null, 1, 1, CollectiveMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getCollectiveMeasurement_BaseMeasurement(), this.getDimensionalMeasurement(), null, "baseMeasurement", null, 0, -1, CollectiveMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(aggregatedMeasurementEClass, AggregatedMeasurement.class, "AggregatedMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getAggregatedMeasurement_IsBaseSuppled(), ecorePackage.getEBoolean(), "isBaseSuppled", null, 1, 1, AggregatedMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getAggregatedMeasurement_BaseMeasurement(), this.getDimensionalMeasurement(), null, "baseMeasurement", null, 0, -1, AggregatedMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(namedMeasurementEClass, NamedMeasurement.class, "NamedMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(reScaledMeasurementEClass, ReScaledMeasurement.class, "ReScaledMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getReScaledMeasurement_IsBaseSupplied(), ecorePackage.getEBoolean(), "isBaseSupplied", null, 1, 1, ReScaledMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getAttribute_Tag(), ecorePackage.getEString(), "tag", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getAttribute_Owner(), this.getSmmElement(), this.getSmmElement_Attribute(), "owner", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(annotationEClass, Annotation.class, "Annotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getAnnotation_Text(), ecorePackage.getEString(), "text", null, 1, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getAnnotation_Owner(), this.getSmmElement(), this.getSmmElement_Annotation(), "owner", null, 0, 1, Annotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		// Initialize enums and add enum literals
-		initEEnum(accumulatorEEnum, Accumulator.class, "Accumulator"); //$NON-NLS-1$
-		addEEnumLiteral(accumulatorEEnum, Accumulator.SUM);
-		addEEnumLiteral(accumulatorEEnum, Accumulator.MAXIMUM);
-		addEEnumLiteral(accumulatorEEnum, Accumulator.MINIMUM);
-		addEEnumLiteral(accumulatorEEnum, Accumulator.AVERAGE);
-
-		// Initialize data types
-		initEDataType(dateEDataType, Date.class, "Date", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEDataType(timestampEDataType, Timestamp.class, "Timestamp", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		// Create resource
-		createResource(eNS_URI);
+	/**
+	 * Sets the instance class on the given classifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void fixInstanceClass(EClassifier eClassifier) {
+		if (eClassifier.getInstanceClassName() == null) {
+			eClassifier.setInstanceClassName("net.certware.measurement.smm." + eClassifier.getName()); //$NON-NLS-1$
+			setGeneratedClassName(eClassifier);
+		}
 	}
 
 } //SmmPackageImpl

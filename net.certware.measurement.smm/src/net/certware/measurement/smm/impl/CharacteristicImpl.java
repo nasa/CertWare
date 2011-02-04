@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -71,7 +72,7 @@ public class CharacteristicImpl extends SmmElementImpl implements Characteristic
 	protected Characteristic parent;
 
 	/**
-	 * The cached value of the '{@link #getCharacteristics() <em>Characteristics</em>}' reference list.
+	 * The cached value of the '{@link #getCharacteristics() <em>Characteristics</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCharacteristics()
@@ -165,7 +166,7 @@ public class CharacteristicImpl extends SmmElementImpl implements Characteristic
 	 */
 	public EList<Measure> getCharacteristics() {
 		if (characteristics == null) {
-			characteristics = new EObjectWithInverseResolvingEList<Measure>(Measure.class, this, SmmPackage.CHARACTERISTIC__CHARACTERISTICS, SmmPackage.MEASURE__TRAIT);
+			characteristics = new EObjectContainmentWithInverseEList<Measure>(Measure.class, this, SmmPackage.CHARACTERISTIC__CHARACTERISTICS, SmmPackage.MEASURE__TRAIT);
 		}
 		return characteristics;
 	}

@@ -9,22 +9,20 @@ import net.certware.core.ui.CertWareUI;
  * CertWare core preferences.
  * Meant to be the base page for CertWare preferences.
  * @author mrb
+ * @since 1.0
  */
 public class CorePreferencePage
 	extends FieldEditorPreferencePage
 	implements IWorkbenchPreferencePage {
 
-	/** image file name */
-	private static final String IMAGE_FILE = "icons/obj16/preferences.gif"; //$NON-NLS-1$
-	
 	/**
 	 * Creates the page and associates the preference store.
 	 */
 	public CorePreferencePage() {
 		super(GRID);
 		setPreferenceStore(CertWareUI.getDefault().getPreferenceStore());
-		setDescription("CertWare core preferences");
-		setImageDescriptor(CertWareUI.imageDescriptorFromPlugin(CertWareUI.PLUGIN_ID, IMAGE_FILE));
+		setDescription("CertWare Core Preferences");
+		setImageDescriptor(CertWareUI.getDefault().getImageRegistry().getDescriptor(CertWareUI.PREFERENCES_IMAGE));
 	}
 	
 	/**
@@ -51,7 +49,19 @@ public class CorePreferencePage
 			new StringFieldEditor(PreferenceConstants.P_STRING, "A &text preference:", getFieldEditorParent()));
 		*/
 		
-		addField( new StringFieldEditor(PreferenceConstants.P_PROJECT_NAME,"Project name:",getFieldEditorParent()));
+		addField( 
+				new StringFieldEditor(PreferenceConstants.P_PROJECT_NAME,
+						"Project &name:",
+						getFieldEditorParent()));
+		addField( 
+				new StringFieldEditor(PreferenceConstants.P_LABEL_DECORATOR_SUFFIX,
+						"&Resource decorator suffix:",
+						getFieldEditorParent()));
+		addField(
+		        new ColorFieldEditor(PreferenceConstants.P_LABEL_DECORATOR_FOREGROUND,
+		          "Resource decorator &foreground:",
+		          getFieldEditorParent()));
+
 	}
 
 	/* (non-Javadoc)

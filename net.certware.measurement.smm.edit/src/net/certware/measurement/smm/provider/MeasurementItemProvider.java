@@ -10,11 +10,13 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.measurement.smm.Measurement;
+import net.certware.measurement.smm.SmmFactory;
 import net.certware.measurement.smm.SmmPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -60,35 +62,12 @@ public class MeasurementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMeasurePropertyDescriptor(object);
 			addObservationPropertyDescriptor(object);
 			addErrorPropertyDescriptor(object);
 			addOutMeasurementPropertyDescriptor(object);
 			addInMeasurementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Measure feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMeasurePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Measurement_measure_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_Measurement_measure_feature", "_UI_Measurement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 SmmPackage.Literals.MEASUREMENT__MEASURE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -180,6 +159,38 @@ public class MeasurementItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(SmmPackage.Literals.MEASUREMENT__OBSERVATION);
+			childrenFeatures.add(SmmPackage.Literals.MEASUREMENT__OUT_MEASUREMENT);
+			childrenFeatures.add(SmmPackage.Literals.MEASUREMENT__IN_MEASUREMENT);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,6 +219,11 @@ public class MeasurementItemProvider
 			case SmmPackage.MEASUREMENT__ERROR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case SmmPackage.MEASUREMENT__OBSERVATION:
+			case SmmPackage.MEASUREMENT__OUT_MEASUREMENT:
+			case SmmPackage.MEASUREMENT__IN_MEASUREMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -222,6 +238,11 @@ public class MeasurementItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASUREMENT__OBSERVATION,
+				 SmmFactory.eINSTANCE.createObservation()));
 	}
 
 }

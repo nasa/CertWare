@@ -205,6 +205,22 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	}
 	
 	/**
+	 * Sets the selected file.
+	 * For use by other actions.
+	 * @param sf selected file
+	 */
+	public void setSelectedFile(IFile sf) {
+		if ( sf != null ) {
+			if ( sf != selectedFile ) {
+				selectedFile = sf;
+				refreshModelFromFile();
+				refreshPart();
+			}
+		}
+	}
+	
+	
+	/**
 	 * Captures the selected file name if it matches our interest.
 	 * @param part workbench part
 	 * @param selection structured selection expecting IFile or EObject
@@ -226,9 +242,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 						return;
 
 					if ( f.getFileExtension().equalsIgnoreCase( ICertWareConstants.SCO_EXTENSION )) {
-						selectedFile = (IFile)f;
-						refreshModelFromFile();
-						refreshPart();
+						setSelectedFile((IFile)f);
 						return;
 					}
 				}

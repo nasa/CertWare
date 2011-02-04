@@ -4,8 +4,10 @@
 package net.certware.measurement.spm.provider;
 
 
+import java.util.Collection;
 import java.util.List;
 
+import net.certware.measurement.smm.SmmPackage;
 import net.certware.measurement.spm.BrokenCaseSizeMeasure;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -95,6 +97,45 @@ public class BrokenCaseSizeMeasureItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_FROM ||
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_TO ||
+			childFeature == SmmPackage.Literals.MEASURE__REFINEMENT ||
+			childFeature == SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE ||
+			childFeature == SmmPackage.Literals.MEASURE__OUT_MEASURE ||
+			childFeature == SmmPackage.Literals.MEASURE__IN_MEASURE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2", //$NON-NLS-1$
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

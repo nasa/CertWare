@@ -10,11 +10,13 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.measurement.smm.Measure;
+import net.certware.measurement.smm.SmmFactory;
 import net.certware.measurement.smm.SmmPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -318,6 +320,44 @@ public class MeasureItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__CATEGORY);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__EQUIVALENT_TO);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__REFINEMENT);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__MEASUREMENT);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__OUT_MEASURE);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__IN_MEASURE);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__TRAIT);
+			childrenFeatures.add(SmmPackage.Literals.MEASURE__SCOPE);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -347,6 +387,17 @@ public class MeasureItemProvider
 			case SmmPackage.MEASURE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case SmmPackage.MEASURE__CATEGORY:
+			case SmmPackage.MEASURE__EQUIVALENT_FROM:
+			case SmmPackage.MEASURE__EQUIVALENT_TO:
+			case SmmPackage.MEASURE__REFINEMENT:
+			case SmmPackage.MEASURE__MEASUREMENT:
+			case SmmPackage.MEASURE__OUT_MEASURE:
+			case SmmPackage.MEASURE__IN_MEASURE:
+			case SmmPackage.MEASURE__TRAIT:
+			case SmmPackage.MEASURE__SCOPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -361,6 +412,227 @@ public class MeasureItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__CATEGORY,
+				 SmmFactory.eINSTANCE.createCategory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createRanking()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createBinaryMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createDirectMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createCollectiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createNamedMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createRescaledMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_FROM,
+				 SmmFactory.eINSTANCE.createCounting()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createRanking()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createBinaryMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createDirectMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createCollectiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createNamedMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createRescaledMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__EQUIVALENT_TO,
+				 SmmFactory.eINSTANCE.createCounting()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createRanking()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createBinaryMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createDirectMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createCollectiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createNamedMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createRescaledMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__REFINEMENT,
+				 SmmFactory.eINSTANCE.createCounting()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__MEASUREMENT,
+				 SmmFactory.eINSTANCE.createGrade()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__MEASUREMENT,
+				 SmmFactory.eINSTANCE.createDirectMeasurement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__MEASUREMENT,
+				 SmmFactory.eINSTANCE.createCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__MEASUREMENT,
+				 SmmFactory.eINSTANCE.createCollectiveMeasurement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__MEASUREMENT,
+				 SmmFactory.eINSTANCE.createAggregatedMeasurement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__MEASUREMENT,
+				 SmmFactory.eINSTANCE.createNamedMeasurement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__MEASUREMENT,
+				 SmmFactory.eINSTANCE.createReScaledMeasurement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__OUT_MEASURE,
+				 SmmFactory.eINSTANCE.createMeasureRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__IN_MEASURE,
+				 SmmFactory.eINSTANCE.createMeasureRelationship()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__TRAIT,
+				 SmmFactory.eINSTANCE.createCharacteristic()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.MEASURE__SCOPE,
+				 SmmFactory.eINSTANCE.createScope()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_FROM ||
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_TO ||
+			childFeature == SmmPackage.Literals.MEASURE__REFINEMENT ||
+			childFeature == SmmPackage.Literals.MEASURE__OUT_MEASURE ||
+			childFeature == SmmPackage.Literals.MEASURE__IN_MEASURE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2", //$NON-NLS-1$
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

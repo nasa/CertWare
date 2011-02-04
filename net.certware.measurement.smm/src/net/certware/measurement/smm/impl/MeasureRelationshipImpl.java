@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,16 +42,6 @@ public class MeasureRelationshipImpl extends SmmElementImpl implements MeasureRe
 	 * @ordered
 	 */
 	protected Measure from;
-
-	/**
-	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected Measure to;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,24 +128,8 @@ public class MeasureRelationshipImpl extends SmmElementImpl implements MeasureRe
 	 * @generated
 	 */
 	public Measure getTo() {
-		if (to != null && to.eIsProxy()) {
-			InternalEObject oldTo = (InternalEObject)to;
-			to = (Measure)eResolveProxy(oldTo);
-			if (to != oldTo) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmmPackage.MEASURE_RELATIONSHIP__TO, oldTo, to));
-			}
-		}
-		return to;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Measure basicGetTo() {
-		return to;
+		if (eContainerFeatureID() != SmmPackage.MEASURE_RELATIONSHIP__TO) return null;
+		return (Measure)eContainer();
 	}
 
 	/**
@@ -163,12 +138,7 @@ public class MeasureRelationshipImpl extends SmmElementImpl implements MeasureRe
 	 * @generated
 	 */
 	public NotificationChain basicSetTo(Measure newTo, NotificationChain msgs) {
-		Measure oldTo = to;
-		to = newTo;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmmPackage.MEASURE_RELATIONSHIP__TO, oldTo, newTo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newTo, SmmPackage.MEASURE_RELATIONSHIP__TO, msgs);
 		return msgs;
 	}
 
@@ -178,10 +148,12 @@ public class MeasureRelationshipImpl extends SmmElementImpl implements MeasureRe
 	 * @generated
 	 */
 	public void setTo(Measure newTo) {
-		if (newTo != to) {
+		if (newTo != eInternalContainer() || (eContainerFeatureID() != SmmPackage.MEASURE_RELATIONSHIP__TO && newTo != null)) {
+			if (EcoreUtil.isAncestor(this, newTo))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString()); //$NON-NLS-1$
 			NotificationChain msgs = null;
-			if (to != null)
-				msgs = ((InternalEObject)to).eInverseRemove(this, SmmPackage.MEASURE__IN_MEASURE, Measure.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTo != null)
 				msgs = ((InternalEObject)newTo).eInverseAdd(this, SmmPackage.MEASURE__IN_MEASURE, Measure.class, msgs);
 			msgs = basicSetTo(newTo, msgs);
@@ -204,8 +176,8 @@ public class MeasureRelationshipImpl extends SmmElementImpl implements MeasureRe
 					msgs = ((InternalEObject)from).eInverseRemove(this, SmmPackage.MEASURE__OUT_MEASURE, Measure.class, msgs);
 				return basicSetFrom((Measure)otherEnd, msgs);
 			case SmmPackage.MEASURE_RELATIONSHIP__TO:
-				if (to != null)
-					msgs = ((InternalEObject)to).eInverseRemove(this, SmmPackage.MEASURE__IN_MEASURE, Measure.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTo((Measure)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -233,14 +205,27 @@ public class MeasureRelationshipImpl extends SmmElementImpl implements MeasureRe
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case SmmPackage.MEASURE_RELATIONSHIP__TO:
+				return eInternalContainer().eInverseRemove(this, SmmPackage.MEASURE__IN_MEASURE, Measure.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SmmPackage.MEASURE_RELATIONSHIP__FROM:
 				if (resolve) return getFrom();
 				return basicGetFrom();
 			case SmmPackage.MEASURE_RELATIONSHIP__TO:
-				if (resolve) return getTo();
-				return basicGetTo();
+				return getTo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,7 +277,7 @@ public class MeasureRelationshipImpl extends SmmElementImpl implements MeasureRe
 			case SmmPackage.MEASURE_RELATIONSHIP__FROM:
 				return from != null;
 			case SmmPackage.MEASURE_RELATIONSHIP__TO:
-				return to != null;
+				return getTo() != null;
 		}
 		return super.eIsSet(featureID);
 	}

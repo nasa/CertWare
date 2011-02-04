@@ -9,12 +9,15 @@ package net.certware.measurement.smm.provider;
 import java.util.Collection;
 import java.util.List;
 
+import net.certware.measurement.smm.Accumulator;
 import net.certware.measurement.smm.CollectiveMeasure;
+import net.certware.measurement.smm.SmmFactory;
 import net.certware.measurement.smm.SmmPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -111,6 +114,37 @@ public class CollectiveMeasureItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE);
+			childrenFeatures.add(SmmPackage.Literals.COLLECTIVE_MEASURE__ACCUMULATOR);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns CollectiveMeasure.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,8 +181,9 @@ public class CollectiveMeasureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CollectiveMeasure.class)) {
+			case SmmPackage.COLLECTIVE_MEASURE__BASE_MEASURE:
 			case SmmPackage.COLLECTIVE_MEASURE__ACCUMULATOR:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -164,6 +199,78 @@ public class CollectiveMeasureItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createBinaryMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createDirectMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createCollectiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createNamedMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createRescaledMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE,
+				 SmmFactory.eINSTANCE.createCounting()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.COLLECTIVE_MEASURE__ACCUMULATOR,
+				 Accumulator.SUM));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_FROM ||
+			childFeature == SmmPackage.Literals.MEASURE__EQUIVALENT_TO ||
+			childFeature == SmmPackage.Literals.MEASURE__REFINEMENT ||
+			childFeature == SmmPackage.Literals.COLLECTIVE_MEASURE__BASE_MEASURE ||
+			childFeature == SmmPackage.Literals.MEASURE__OUT_MEASURE ||
+			childFeature == SmmPackage.Literals.MEASURE__IN_MEASURE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2", //$NON-NLS-1$
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

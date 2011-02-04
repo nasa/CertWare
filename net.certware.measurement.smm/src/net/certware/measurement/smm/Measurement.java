@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Measurement extends SmmElement {
 	/**
-	 * Returns the value of the '<em><b>Measure</b></em>' reference.
+	 * Returns the value of the '<em><b>Measure</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link net.certware.measurement.smm.Measure#getMeasurement <em>Measurement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -37,46 +37,46 @@ public interface Measurement extends SmmElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Measure</em>' reference.
+	 * @return the value of the '<em>Measure</em>' container reference.
 	 * @see #setMeasure(Measure)
 	 * @see net.certware.measurement.smm.SmmPackage#getMeasurement_Measure()
 	 * @see net.certware.measurement.smm.Measure#getMeasurement
-	 * @model opposite="measurement" required="true"
+	 * @model opposite="measurement" required="true" transient="false"
 	 * @generated
 	 */
 	Measure getMeasure();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.smm.Measurement#getMeasure <em>Measure</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.smm.Measurement#getMeasure <em>Measure</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Measure</em>' reference.
+	 * @param value the new value of the '<em>Measure</em>' container reference.
 	 * @see #getMeasure()
 	 * @generated
 	 */
 	void setMeasure(Measure value);
 
 	/**
-	 * Returns the value of the '<em><b>Observation</b></em>' reference.
+	 * Returns the value of the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Observation</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Observation</em>' reference.
+	 * @return the value of the '<em>Observation</em>' containment reference.
 	 * @see #setObservation(Observation)
 	 * @see net.certware.measurement.smm.SmmPackage#getMeasurement_Observation()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Observation getObservation();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.smm.Measurement#getObservation <em>Observation</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.smm.Measurement#getObservation <em>Observation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Observation</em>' reference.
+	 * @param value the new value of the '<em>Observation</em>' containment reference.
 	 * @see #getObservation()
 	 * @generated
 	 */

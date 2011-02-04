@@ -16,6 +16,7 @@ import net.certware.measurement.smm.Scope;
 import net.certware.measurement.smm.SmmElement;
 import net.certware.measurement.smm.SmmModel;
 import net.certware.measurement.smm.SmmRelationship;
+import net.certware.measurement.spm.*;
 import net.certware.measurement.spm.AdaptabilityRatioMeasure;
 import net.certware.measurement.spm.AdaptabilityTrend;
 import net.certware.measurement.spm.AdditiveMeasure;

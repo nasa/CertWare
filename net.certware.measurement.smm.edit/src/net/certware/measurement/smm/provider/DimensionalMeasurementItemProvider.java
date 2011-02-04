@@ -77,7 +77,7 @@ public class DimensionalMeasurementItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DimensionalMeasurement_value_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_DimensionalMeasurement_value_feature", "_UI_DimensionalMeasurement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 getString("_UI_DimensionalMeasurement_value_description"), //$NON-NLS-1$
 				 SmmPackage.Literals.DIMENSIONAL_MEASUREMENT__VALUE,
 				 true,
 				 false,
@@ -95,10 +95,8 @@ public class DimensionalMeasurementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DimensionalMeasurement)object).getError();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DimensionalMeasurement_type") : //$NON-NLS-1$
-			getString("_UI_DimensionalMeasurement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		DimensionalMeasurement dimensionalMeasurement = (DimensionalMeasurement)object;
+		return getString("_UI_DimensionalMeasurement_type") + " " + dimensionalMeasurement.getValue(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

@@ -10,11 +10,13 @@ import java.util.Collection;
 import java.util.List;
 
 import net.certware.measurement.smm.Characteristic;
+import net.certware.measurement.smm.SmmFactory;
 import net.certware.measurement.smm.SmmPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -134,6 +136,36 @@ public class CharacteristicItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns Characteristic.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +205,9 @@ public class CharacteristicItemProvider
 			case SmmPackage.CHARACTERISTIC__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case SmmPackage.CHARACTERISTIC__CHARACTERISTICS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -187,6 +222,51 @@ public class CharacteristicItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createRanking()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createBinaryMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createDirectMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createCollectiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createNamedMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createRescaledMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SmmFactory.eINSTANCE.createCounting()));
 	}
 
 }

@@ -4,12 +4,15 @@
 package net.certware.measurement.spm.provider;
 
 
+import java.util.Collection;
 import java.util.List;
 
+import net.certware.measurement.smm.SmmPackage;
 import net.certware.measurement.smm.provider.CharacteristicItemProvider;
 
 import net.certware.measurement.spm.Maintainability;
 
+import net.certware.measurement.spm.SpmFactory;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -99,6 +102,173 @@ public class MaintainabilityItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.SMM_ELEMENT__MODEL,
+				 SpmFactory.eINSTANCE.createProjectModel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.SMM_ELEMENT__MODEL,
+				 SpmFactory.eINSTANCE.createProjectCommit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createCaseDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createChangeOrderDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createTimeDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createAdditiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createCriticalDefectChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createNormalDefectChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createImprovementChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createNewFeatureChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createTrendMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createScrapRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createModularityMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createReworkRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createAdaptabilityRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createMaturityRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createMaintainabilityMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createBrokenCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createFixedCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createTotalCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createBaselineCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createUsageTimeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createRepairEffortMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createDevelopmentEffortMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createTotalChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createCriticalAndNormalChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createReworkStabilityMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createReworkBacklogMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createModularityTrend()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createAdaptabilityTrend()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CHARACTERISTIC__CHARACTERISTICS,
+				 SpmFactory.eINSTANCE.createMaturityTrend()));
 	}
 
 	/**

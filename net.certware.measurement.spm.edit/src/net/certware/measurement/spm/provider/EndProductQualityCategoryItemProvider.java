@@ -4,12 +4,15 @@
 package net.certware.measurement.spm.provider;
 
 
+import java.util.Collection;
 import java.util.List;
 
+import net.certware.measurement.smm.SmmPackage;
 import net.certware.measurement.smm.provider.CategoryItemProvider;
 
 import net.certware.measurement.spm.EndProductQualityCategory;
 
+import net.certware.measurement.spm.SpmFactory;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -99,6 +102,216 @@ public class EndProductQualityCategoryItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.SMM_ELEMENT__MODEL,
+				 SpmFactory.eINSTANCE.createProjectModel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.SMM_ELEMENT__MODEL,
+				 SpmFactory.eINSTANCE.createProjectCommit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY,
+				 SpmFactory.eINSTANCE.createEndProductQualityCategory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY,
+				 SpmFactory.eINSTANCE.createInProgressQualityCategory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_ELEMENT,
+				 SpmFactory.eINSTANCE.createEndProductQualityCategory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_ELEMENT,
+				 SpmFactory.eINSTANCE.createInProgressQualityCategory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createCaseDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createChangeOrderDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createTimeDimensionalMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createAdditiveMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createCriticalDefectChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createNormalDefectChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createImprovementChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createNewFeatureChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createTrendMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createScrapRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createModularityMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createReworkRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createAdaptabilityRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createMaturityRatioMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createMaintainabilityMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createBrokenCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createFixedCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createTotalCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createBaselineCaseSizeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createUsageTimeMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createRepairEffortMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createDevelopmentEffortMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createTotalChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createCriticalAndNormalChangeOrderCount()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createReworkStabilityMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createReworkBacklogMeasure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createModularityTrend()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createAdaptabilityTrend()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SmmPackage.Literals.CATEGORY__CATEGORY_MEASURE,
+				 SpmFactory.eINSTANCE.createMaturityTrend()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SmmPackage.Literals.CATEGORY__CATEGORY ||
+			childFeature == SmmPackage.Literals.CATEGORY__CATEGORY_ELEMENT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2", //$NON-NLS-1$
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

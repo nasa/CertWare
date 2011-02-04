@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -61,8 +62,31 @@ public class SmmModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addModelElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Model Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModelElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SmmModel_modelElement_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_SmmModel_modelElement_feature", "_UI_SmmModel_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -290,8 +314,9 @@ public class SmmModelItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == SmmPackage.Literals.SMM_ELEMENT__ATTRIBUTE ||
+			childFeature == SmmPackage.Literals.SMM_ELEMENT__MODEL ||
 			childFeature == SmmPackage.Literals.SMM_MODEL__MODEL_ELEMENT ||
+			childFeature == SmmPackage.Literals.SMM_ELEMENT__ATTRIBUTE ||
 			childFeature == SmmPackage.Literals.SMM_ELEMENT__ANNOTATION;
 
 		if (qualify) {

@@ -185,7 +185,7 @@ public class SmmActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(SmmEditorPlugin.INSTANCE.getString("_UI_SmmEditor_menu"), "net.certware.argument.smmMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
+		IMenuManager submenuManager = new MenuManager(SmmEditorPlugin.INSTANCE.getString("_UI_SmmEditor_menu"), "net.certware.measurement.smmMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
 		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
 		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
 		submenuManager.add(new Separator("actions")); //$NON-NLS-1$

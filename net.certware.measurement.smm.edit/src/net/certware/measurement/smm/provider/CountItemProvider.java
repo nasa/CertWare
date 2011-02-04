@@ -79,10 +79,8 @@ public class CountItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Count)object).getError();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Count_type") : //$NON-NLS-1$
-			getString("_UI_Count_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		Count count = (Count)object;
+		return getString("_UI_Count_type") + " " + count.getValue(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

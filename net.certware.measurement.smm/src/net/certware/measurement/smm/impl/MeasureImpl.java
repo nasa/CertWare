@@ -25,8 +25,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -134,7 +136,7 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	protected EList<Measure> refinement;
 
 	/**
-	 * The cached value of the '{@link #getMeasurement() <em>Measurement</em>}' reference list.
+	 * The cached value of the '{@link #getMeasurement() <em>Measurement</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMeasurement()
@@ -154,7 +156,7 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	protected EList<MeasureRelationship> outMeasure;
 
 	/**
-	 * The cached value of the '{@link #getInMeasure() <em>In Measure</em>}' reference list.
+	 * The cached value of the '{@link #getInMeasure() <em>In Measure</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInMeasure()
@@ -162,16 +164,6 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	 * @ordered
 	 */
 	protected EList<MeasureRelationship> inMeasure;
-
-	/**
-	 * The cached value of the '{@link #getTrait() <em>Trait</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTrait()
-	 * @generated
-	 * @ordered
-	 */
-	protected Characteristic trait;
 
 	/**
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference.
@@ -299,7 +291,7 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	 */
 	public EList<Measurement> getMeasurement() {
 		if (measurement == null) {
-			measurement = new EObjectWithInverseResolvingEList<Measurement>(Measurement.class, this, SmmPackage.MEASURE__MEASUREMENT, SmmPackage.MEASUREMENT__MEASURE);
+			measurement = new EObjectContainmentWithInverseEList<Measurement>(Measurement.class, this, SmmPackage.MEASURE__MEASUREMENT, SmmPackage.MEASUREMENT__MEASURE);
 		}
 		return measurement;
 	}
@@ -323,7 +315,7 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	 */
 	public EList<MeasureRelationship> getInMeasure() {
 		if (inMeasure == null) {
-			inMeasure = new EObjectWithInverseResolvingEList<MeasureRelationship>(MeasureRelationship.class, this, SmmPackage.MEASURE__IN_MEASURE, SmmPackage.MEASURE_RELATIONSHIP__TO);
+			inMeasure = new EObjectContainmentWithInverseEList<MeasureRelationship>(MeasureRelationship.class, this, SmmPackage.MEASURE__IN_MEASURE, SmmPackage.MEASURE_RELATIONSHIP__TO);
 		}
 		return inMeasure;
 	}
@@ -334,24 +326,8 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	 * @generated
 	 */
 	public Characteristic getTrait() {
-		if (trait != null && trait.eIsProxy()) {
-			InternalEObject oldTrait = (InternalEObject)trait;
-			trait = (Characteristic)eResolveProxy(oldTrait);
-			if (trait != oldTrait) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmmPackage.MEASURE__TRAIT, oldTrait, trait));
-			}
-		}
-		return trait;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Characteristic basicGetTrait() {
-		return trait;
+		if (eContainerFeatureID() != SmmPackage.MEASURE__TRAIT) return null;
+		return (Characteristic)eContainer();
 	}
 
 	/**
@@ -360,12 +336,7 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	 * @generated
 	 */
 	public NotificationChain basicSetTrait(Characteristic newTrait, NotificationChain msgs) {
-		Characteristic oldTrait = trait;
-		trait = newTrait;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmmPackage.MEASURE__TRAIT, oldTrait, newTrait);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newTrait, SmmPackage.MEASURE__TRAIT, msgs);
 		return msgs;
 	}
 
@@ -375,10 +346,12 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	 * @generated
 	 */
 	public void setTrait(Characteristic newTrait) {
-		if (newTrait != trait) {
+		if (newTrait != eInternalContainer() || (eContainerFeatureID() != SmmPackage.MEASURE__TRAIT && newTrait != null)) {
+			if (EcoreUtil.isAncestor(this, newTrait))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString()); //$NON-NLS-1$
 			NotificationChain msgs = null;
-			if (trait != null)
-				msgs = ((InternalEObject)trait).eInverseRemove(this, SmmPackage.CHARACTERISTIC__CHARACTERISTICS, Characteristic.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTrait != null)
 				msgs = ((InternalEObject)newTrait).eInverseAdd(this, SmmPackage.CHARACTERISTIC__CHARACTERISTICS, Characteristic.class, msgs);
 			msgs = basicSetTrait(newTrait, msgs);
@@ -470,8 +443,8 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 			case SmmPackage.MEASURE__IN_MEASURE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInMeasure()).basicAdd(otherEnd, msgs);
 			case SmmPackage.MEASURE__TRAIT:
-				if (trait != null)
-					msgs = ((InternalEObject)trait).eInverseRemove(this, SmmPackage.CHARACTERISTIC__CHARACTERISTICS, Characteristic.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTrait((Characteristic)otherEnd, msgs);
 			case SmmPackage.MEASURE__SCOPE:
 				if (scope != null)
@@ -515,6 +488,20 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case SmmPackage.MEASURE__TRAIT:
+				return eInternalContainer().eInverseRemove(this, SmmPackage.CHARACTERISTIC__CHARACTERISTICS, Characteristic.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SmmPackage.MEASURE__CATEGORY:
@@ -536,8 +523,7 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 			case SmmPackage.MEASURE__IN_MEASURE:
 				return getInMeasure();
 			case SmmPackage.MEASURE__TRAIT:
-				if (resolve) return getTrait();
-				return basicGetTrait();
+				return getTrait();
 			case SmmPackage.MEASURE__SCOPE:
 				if (resolve) return getScope();
 				return basicGetScope();
@@ -670,7 +656,7 @@ public abstract class MeasureImpl extends SmmElementImpl implements Measure {
 			case SmmPackage.MEASURE__IN_MEASURE:
 				return inMeasure != null && !inMeasure.isEmpty();
 			case SmmPackage.MEASURE__TRAIT:
-				return trait != null;
+				return getTrait() != null;
 			case SmmPackage.MEASURE__SCOPE:
 				return scope != null;
 		}

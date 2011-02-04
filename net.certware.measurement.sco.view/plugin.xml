@@ -31,5 +31,35 @@
          </viewShortcut>
       </perspectiveExtension>
    </extension>
+<extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="net.certware.measurement.sco.view.open"
+            nameFilter="*.sco"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.measurement.sco.view.actions.OpenView"
+               enablesFor="1"
+               icon="icons/obj16/sco.gif"
+               id="net.certware.measurement.sco.view.action.openview"
+               label="Open in SCO View"
+               menubarPath="certware/additions"
+               tooltip="Open the SCO content in its view">
+         </action>
+      </objectContribution>
+   </extension>
 
 </plugin>

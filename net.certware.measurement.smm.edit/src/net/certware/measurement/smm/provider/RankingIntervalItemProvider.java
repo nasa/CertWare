@@ -60,6 +60,7 @@ public class RankingIntervalItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRankPropertyDescriptor(object);
 			addMaximumEndpointPropertyDescriptor(object);
 			addMaximumOpenPropertyDescriptor(object);
 			addMinimumEndpointPropertyDescriptor(object);
@@ -67,6 +68,28 @@ public class RankingIntervalItemProvider
 			addSymbolPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Rank feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRankPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RankingInterval_rank_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_RankingInterval_rank_feature", "_UI_RankingInterval_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 SmmPackage.Literals.RANKING_INTERVAL__RANK,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

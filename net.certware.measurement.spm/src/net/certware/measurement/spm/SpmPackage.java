@@ -468,7 +468,7 @@ public interface SpmPackage extends EPackage {
 	int END_PRODUCT_QUALITY__PARENT = SmmPackage.CHARACTERISTIC__PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Characteristics</b></em>' reference list.
+	 * The feature id for the '<em><b>Characteristics</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -541,7 +541,7 @@ public interface SpmPackage extends EPackage {
 	int MAINTAINABILITY__PARENT = SmmPackage.CHARACTERISTIC__PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Characteristics</b></em>' reference list.
+	 * The feature id for the '<em><b>Characteristics</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -614,7 +614,7 @@ public interface SpmPackage extends EPackage {
 	int IN_PROGRESS_INDICATOR__PARENT = SmmPackage.CHARACTERISTIC__PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Characteristics</b></em>' reference list.
+	 * The feature id for the '<em><b>Characteristics</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -687,7 +687,7 @@ public interface SpmPackage extends EPackage {
 	int PROJECT_SIZE__PARENT = SmmPackage.CHARACTERISTIC__PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Characteristics</b></em>' reference list.
+	 * The feature id for the '<em><b>Characteristics</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -796,7 +796,7 @@ public interface SpmPackage extends EPackage {
 	int CASE_DIMENSIONAL_MEASURE__REFINEMENT = SmmPackage.DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -814,7 +814,7 @@ public interface SpmPackage extends EPackage {
 	int CASE_DIMENSIONAL_MEASURE__OUT_MEASURE = SmmPackage.DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -823,7 +823,7 @@ public interface SpmPackage extends EPackage {
 	int CASE_DIMENSIONAL_MEASURE__IN_MEASURE = SmmPackage.DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -950,7 +950,7 @@ public interface SpmPackage extends EPackage {
 	int CHANGE_ORDER_DIMENSIONAL_MEASURE__REFINEMENT = SmmPackage.DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -968,7 +968,7 @@ public interface SpmPackage extends EPackage {
 	int CHANGE_ORDER_DIMENSIONAL_MEASURE__OUT_MEASURE = SmmPackage.DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -977,7 +977,7 @@ public interface SpmPackage extends EPackage {
 	int CHANGE_ORDER_DIMENSIONAL_MEASURE__IN_MEASURE = SmmPackage.DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1104,7 +1104,7 @@ public interface SpmPackage extends EPackage {
 	int TIME_DIMENSIONAL_MEASURE__REFINEMENT = SmmPackage.DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1122,7 +1122,7 @@ public interface SpmPackage extends EPackage {
 	int TIME_DIMENSIONAL_MEASURE__OUT_MEASURE = SmmPackage.DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1131,7 +1131,7 @@ public interface SpmPackage extends EPackage {
 	int TIME_DIMENSIONAL_MEASURE__IN_MEASURE = SmmPackage.DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1258,7 +1258,7 @@ public interface SpmPackage extends EPackage {
 	int ADDITIVE_MEASURE__REFINEMENT = SmmPackage.COLLECTIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1276,7 +1276,7 @@ public interface SpmPackage extends EPackage {
 	int ADDITIVE_MEASURE__OUT_MEASURE = SmmPackage.COLLECTIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1285,7 +1285,7 @@ public interface SpmPackage extends EPackage {
 	int ADDITIVE_MEASURE__IN_MEASURE = SmmPackage.COLLECTIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1703,7 +1703,7 @@ public interface SpmPackage extends EPackage {
 	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1721,7 +1721,7 @@ public interface SpmPackage extends EPackage {
 	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1730,7 +1730,7 @@ public interface SpmPackage extends EPackage {
 	int CRITICAL_DEFECT_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1875,7 +1875,7 @@ public interface SpmPackage extends EPackage {
 	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1893,7 +1893,7 @@ public interface SpmPackage extends EPackage {
 	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1902,7 +1902,7 @@ public interface SpmPackage extends EPackage {
 	int NORMAL_DEFECT_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2047,7 +2047,7 @@ public interface SpmPackage extends EPackage {
 	int IMPROVEMENT_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2065,7 +2065,7 @@ public interface SpmPackage extends EPackage {
 	int IMPROVEMENT_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2074,7 +2074,7 @@ public interface SpmPackage extends EPackage {
 	int IMPROVEMENT_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2219,7 +2219,7 @@ public interface SpmPackage extends EPackage {
 	int NEW_FEATURE_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2237,7 +2237,7 @@ public interface SpmPackage extends EPackage {
 	int NEW_FEATURE_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2246,7 +2246,7 @@ public interface SpmPackage extends EPackage {
 	int NEW_FEATURE_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2391,7 +2391,7 @@ public interface SpmPackage extends EPackage {
 	int TREND_MEASURE__REFINEMENT = SmmPackage.COLLECTIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2409,7 +2409,7 @@ public interface SpmPackage extends EPackage {
 	int TREND_MEASURE__OUT_MEASURE = SmmPackage.COLLECTIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2418,7 +2418,7 @@ public interface SpmPackage extends EPackage {
 	int TREND_MEASURE__IN_MEASURE = SmmPackage.COLLECTIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2563,7 +2563,7 @@ public interface SpmPackage extends EPackage {
 	int SCRAP_RATIO_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2581,7 +2581,7 @@ public interface SpmPackage extends EPackage {
 	int SCRAP_RATIO_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2590,7 +2590,7 @@ public interface SpmPackage extends EPackage {
 	int SCRAP_RATIO_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2744,7 +2744,7 @@ public interface SpmPackage extends EPackage {
 	int MODULARITY_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2762,7 +2762,7 @@ public interface SpmPackage extends EPackage {
 	int MODULARITY_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2771,7 +2771,7 @@ public interface SpmPackage extends EPackage {
 	int MODULARITY_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2925,7 +2925,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_RATIO_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2943,7 +2943,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_RATIO_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2952,7 +2952,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_RATIO_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3106,7 +3106,7 @@ public interface SpmPackage extends EPackage {
 	int ADAPTABILITY_RATIO_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3124,7 +3124,7 @@ public interface SpmPackage extends EPackage {
 	int ADAPTABILITY_RATIO_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3133,7 +3133,7 @@ public interface SpmPackage extends EPackage {
 	int ADAPTABILITY_RATIO_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3287,7 +3287,7 @@ public interface SpmPackage extends EPackage {
 	int MATURITY_RATIO_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3305,7 +3305,7 @@ public interface SpmPackage extends EPackage {
 	int MATURITY_RATIO_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3314,7 +3314,7 @@ public interface SpmPackage extends EPackage {
 	int MATURITY_RATIO_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3468,7 +3468,7 @@ public interface SpmPackage extends EPackage {
 	int MAINTAINABILITY_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3486,7 +3486,7 @@ public interface SpmPackage extends EPackage {
 	int MAINTAINABILITY_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3495,7 +3495,7 @@ public interface SpmPackage extends EPackage {
 	int MAINTAINABILITY_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3649,7 +3649,7 @@ public interface SpmPackage extends EPackage {
 	int BROKEN_CASE_SIZE_MEASURE__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3667,7 +3667,7 @@ public interface SpmPackage extends EPackage {
 	int BROKEN_CASE_SIZE_MEASURE__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3676,7 +3676,7 @@ public interface SpmPackage extends EPackage {
 	int BROKEN_CASE_SIZE_MEASURE__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3821,7 +3821,7 @@ public interface SpmPackage extends EPackage {
 	int FIXED_CASE_SIZE_MEASURE__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3839,7 +3839,7 @@ public interface SpmPackage extends EPackage {
 	int FIXED_CASE_SIZE_MEASURE__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3848,7 +3848,7 @@ public interface SpmPackage extends EPackage {
 	int FIXED_CASE_SIZE_MEASURE__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3993,7 +3993,7 @@ public interface SpmPackage extends EPackage {
 	int TOTAL_CASE_SIZE_MEASURE__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4011,7 +4011,7 @@ public interface SpmPackage extends EPackage {
 	int TOTAL_CASE_SIZE_MEASURE__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4020,7 +4020,7 @@ public interface SpmPackage extends EPackage {
 	int TOTAL_CASE_SIZE_MEASURE__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4165,7 +4165,7 @@ public interface SpmPackage extends EPackage {
 	int BASELINE_CASE_SIZE_MEASURE__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4183,7 +4183,7 @@ public interface SpmPackage extends EPackage {
 	int BASELINE_CASE_SIZE_MEASURE__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4192,7 +4192,7 @@ public interface SpmPackage extends EPackage {
 	int BASELINE_CASE_SIZE_MEASURE__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4337,7 +4337,7 @@ public interface SpmPackage extends EPackage {
 	int USAGE_TIME_MEASURE__REFINEMENT = TIME_DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4355,7 +4355,7 @@ public interface SpmPackage extends EPackage {
 	int USAGE_TIME_MEASURE__OUT_MEASURE = TIME_DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4364,7 +4364,7 @@ public interface SpmPackage extends EPackage {
 	int USAGE_TIME_MEASURE__IN_MEASURE = TIME_DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4491,7 +4491,7 @@ public interface SpmPackage extends EPackage {
 	int REPAIR_EFFORT_MEASURE__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4509,7 +4509,7 @@ public interface SpmPackage extends EPackage {
 	int REPAIR_EFFORT_MEASURE__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4518,7 +4518,7 @@ public interface SpmPackage extends EPackage {
 	int REPAIR_EFFORT_MEASURE__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4663,7 +4663,7 @@ public interface SpmPackage extends EPackage {
 	int DEVELOPMENT_EFFORT_MEASURE__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4681,7 +4681,7 @@ public interface SpmPackage extends EPackage {
 	int DEVELOPMENT_EFFORT_MEASURE__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4690,7 +4690,7 @@ public interface SpmPackage extends EPackage {
 	int DEVELOPMENT_EFFORT_MEASURE__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4835,7 +4835,7 @@ public interface SpmPackage extends EPackage {
 	int TOTAL_CHANGE_ORDER_COUNT__REFINEMENT = ADDITIVE_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4853,7 +4853,7 @@ public interface SpmPackage extends EPackage {
 	int TOTAL_CHANGE_ORDER_COUNT__OUT_MEASURE = ADDITIVE_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4862,7 +4862,7 @@ public interface SpmPackage extends EPackage {
 	int TOTAL_CHANGE_ORDER_COUNT__IN_MEASURE = ADDITIVE_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5007,7 +5007,7 @@ public interface SpmPackage extends EPackage {
 	int CRITICAL_AND_NORMAL_CHANGE_ORDER_COUNT__REFINEMENT = SmmPackage.BINARY_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5025,7 +5025,7 @@ public interface SpmPackage extends EPackage {
 	int CRITICAL_AND_NORMAL_CHANGE_ORDER_COUNT__OUT_MEASURE = SmmPackage.BINARY_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5034,7 +5034,7 @@ public interface SpmPackage extends EPackage {
 	int CRITICAL_AND_NORMAL_CHANGE_ORDER_COUNT__IN_MEASURE = SmmPackage.BINARY_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5188,7 +5188,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_STABILITY_MEASURE__REFINEMENT = SmmPackage.BINARY_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5206,7 +5206,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_STABILITY_MEASURE__OUT_MEASURE = SmmPackage.BINARY_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5215,7 +5215,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_STABILITY_MEASURE__IN_MEASURE = SmmPackage.BINARY_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5369,7 +5369,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_BACKLOG_MEASURE__REFINEMENT = SmmPackage.RATIO_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5387,7 +5387,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_BACKLOG_MEASURE__OUT_MEASURE = SmmPackage.RATIO_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5396,7 +5396,7 @@ public interface SpmPackage extends EPackage {
 	int REWORK_BACKLOG_MEASURE__IN_MEASURE = SmmPackage.RATIO_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5550,7 +5550,7 @@ public interface SpmPackage extends EPackage {
 	int MODULARITY_TREND__REFINEMENT = TREND_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5568,7 +5568,7 @@ public interface SpmPackage extends EPackage {
 	int MODULARITY_TREND__OUT_MEASURE = TREND_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5577,7 +5577,7 @@ public interface SpmPackage extends EPackage {
 	int MODULARITY_TREND__IN_MEASURE = TREND_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5722,7 +5722,7 @@ public interface SpmPackage extends EPackage {
 	int ADAPTABILITY_TREND__REFINEMENT = TREND_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5740,7 +5740,7 @@ public interface SpmPackage extends EPackage {
 	int ADAPTABILITY_TREND__OUT_MEASURE = TREND_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5749,7 +5749,7 @@ public interface SpmPackage extends EPackage {
 	int ADAPTABILITY_TREND__IN_MEASURE = TREND_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5894,7 +5894,7 @@ public interface SpmPackage extends EPackage {
 	int MATURITY_TREND__REFINEMENT = TREND_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5912,7 +5912,7 @@ public interface SpmPackage extends EPackage {
 	int MATURITY_TREND__OUT_MEASURE = TREND_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5921,7 +5921,7 @@ public interface SpmPackage extends EPackage {
 	int MATURITY_TREND__IN_MEASURE = TREND_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

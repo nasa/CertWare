@@ -73,6 +73,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 import net.certware.measurement.spm.ProjectModel;
 import net.certware.measurement.spm.SpmFactory;
 import net.certware.measurement.spm.SpmPackage;
+import net.certware.measurement.spm.impl.ProjectModelImpl;
 import net.certware.measurement.spm.provider.SpmEditPlugin;
 
 
@@ -200,7 +201,12 @@ public class SpmModelWizard extends Wizard implements INewWizard {
 					}
 				}
 				*/
-				if ( eClassifier instanceof ProjectModel ) {
+				System.err.println("initial object name candidate: " + eClassifier);// TODO working?
+				if ( eClassifier instanceof ProjectModelImpl ) {
+					EClass eClass = (EClass)eClassifier;
+					initialObjectNames.add(eClass.getName());
+				}
+				if ( eClassifier.getName().equals("ProjectModel")) {
 					EClass eClass = (EClass)eClassifier;
 					initialObjectNames.add(eClass.getName());
 				}

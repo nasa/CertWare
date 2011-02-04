@@ -157,7 +157,7 @@ public interface Measure extends SmmElement {
 	EList<Measure> getRefinement();
 
 	/**
-	 * Returns the value of the '<em><b>Measurement</b></em>' reference list.
+	 * Returns the value of the '<em><b>Measurement</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.measurement.smm.Measurement}.
 	 * It is bidirectional and its opposite is '{@link net.certware.measurement.smm.Measurement#getMeasure <em>Measure</em>}'.
 	 * <!-- begin-user-doc -->
@@ -166,10 +166,10 @@ public interface Measure extends SmmElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Measurement</em>' reference list.
+	 * @return the value of the '<em>Measurement</em>' containment reference list.
 	 * @see net.certware.measurement.smm.SmmPackage#getMeasure_Measurement()
 	 * @see net.certware.measurement.smm.Measurement#getMeasure
-	 * @model opposite="measure"
+	 * @model opposite="measure" containment="true"
 	 * @generated
 	 */
 	EList<Measurement> getMeasurement();
@@ -193,7 +193,7 @@ public interface Measure extends SmmElement {
 	EList<MeasureRelationship> getOutMeasure();
 
 	/**
-	 * Returns the value of the '<em><b>In Measure</b></em>' reference list.
+	 * Returns the value of the '<em><b>In Measure</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.measurement.smm.MeasureRelationship}.
 	 * It is bidirectional and its opposite is '{@link net.certware.measurement.smm.MeasureRelationship#getTo <em>To</em>}'.
 	 * <!-- begin-user-doc -->
@@ -202,16 +202,16 @@ public interface Measure extends SmmElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>In Measure</em>' reference list.
+	 * @return the value of the '<em>In Measure</em>' containment reference list.
 	 * @see net.certware.measurement.smm.SmmPackage#getMeasure_InMeasure()
 	 * @see net.certware.measurement.smm.MeasureRelationship#getTo
-	 * @model opposite="to"
+	 * @model opposite="to" containment="true"
 	 * @generated
 	 */
 	EList<MeasureRelationship> getInMeasure();
 
 	/**
-	 * Returns the value of the '<em><b>Trait</b></em>' reference.
+	 * Returns the value of the '<em><b>Trait</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link net.certware.measurement.smm.Characteristic#getCharacteristics <em>Characteristics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -219,20 +219,20 @@ public interface Measure extends SmmElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Trait</em>' reference.
+	 * @return the value of the '<em>Trait</em>' container reference.
 	 * @see #setTrait(Characteristic)
 	 * @see net.certware.measurement.smm.SmmPackage#getMeasure_Trait()
 	 * @see net.certware.measurement.smm.Characteristic#getCharacteristics
-	 * @model opposite="characteristics" required="true"
+	 * @model opposite="characteristics" required="true" transient="false"
 	 * @generated
 	 */
 	Characteristic getTrait();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.smm.Measure#getTrait <em>Trait</em>}' reference.
+	 * Sets the value of the '{@link net.certware.measurement.smm.Measure#getTrait <em>Trait</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Trait</em>' reference.
+	 * @param value the new value of the '<em>Trait</em>' container reference.
 	 * @see #getTrait()
 	 * @generated
 	 */

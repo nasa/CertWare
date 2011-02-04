@@ -472,7 +472,7 @@ public interface SmmPackage extends EPackage {
 	int MEASURE__REFINEMENT = SMM_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -490,7 +490,7 @@ public interface SmmPackage extends EPackage {
 	int MEASURE__OUT_MEASURE = SMM_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -499,7 +499,7 @@ public interface SmmPackage extends EPackage {
 	int MEASURE__IN_MEASURE = SMM_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -563,7 +563,7 @@ public interface SmmPackage extends EPackage {
 	int MEASUREMENT__ANNOTATION = SMM_ELEMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -572,7 +572,7 @@ public interface SmmPackage extends EPackage {
 	int MEASUREMENT__MEASURE = SMM_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -736,7 +736,7 @@ public interface SmmPackage extends EPackage {
 	int MEASURE_RELATIONSHIP__FROM = SMM_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * The feature id for the '<em><b>To</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -845,7 +845,7 @@ public interface SmmPackage extends EPackage {
 	int DIMENSIONAL_MEASURE__REFINEMENT = MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -863,7 +863,7 @@ public interface SmmPackage extends EPackage {
 	int DIMENSIONAL_MEASURE__OUT_MEASURE = MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -872,7 +872,7 @@ public interface SmmPackage extends EPackage {
 	int DIMENSIONAL_MEASURE__IN_MEASURE = MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -999,7 +999,7 @@ public interface SmmPackage extends EPackage {
 	int RANKING__REFINEMENT = MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1017,7 +1017,7 @@ public interface SmmPackage extends EPackage {
 	int RANKING__OUT_MEASURE = MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1026,7 +1026,7 @@ public interface SmmPackage extends EPackage {
 	int RANKING__IN_MEASURE = MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1217,7 +1217,7 @@ public interface SmmPackage extends EPackage {
 	int CHARACTERISTIC__PARENT = SMM_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Characteristics</b></em>' reference list.
+	 * The feature id for the '<em><b>Characteristics</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1417,7 +1417,7 @@ public interface SmmPackage extends EPackage {
 	int BINARY_MEASURE__REFINEMENT = DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1435,7 +1435,7 @@ public interface SmmPackage extends EPackage {
 	int BINARY_MEASURE__OUT_MEASURE = DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1444,7 +1444,7 @@ public interface SmmPackage extends EPackage {
 	int BINARY_MEASURE__IN_MEASURE = DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1598,7 +1598,7 @@ public interface SmmPackage extends EPackage {
 	int DIRECT_MEASURE__REFINEMENT = DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1616,7 +1616,7 @@ public interface SmmPackage extends EPackage {
 	int DIRECT_MEASURE__OUT_MEASURE = DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1625,7 +1625,7 @@ public interface SmmPackage extends EPackage {
 	int DIRECT_MEASURE__IN_MEASURE = DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1761,7 +1761,7 @@ public interface SmmPackage extends EPackage {
 	int COLLECTIVE_MEASURE__REFINEMENT = DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1779,7 +1779,7 @@ public interface SmmPackage extends EPackage {
 	int COLLECTIVE_MEASURE__OUT_MEASURE = DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1788,7 +1788,7 @@ public interface SmmPackage extends EPackage {
 	int COLLECTIVE_MEASURE__IN_MEASURE = DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1933,7 +1933,7 @@ public interface SmmPackage extends EPackage {
 	int NAMED_MEASURE__REFINEMENT = DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1951,7 +1951,7 @@ public interface SmmPackage extends EPackage {
 	int NAMED_MEASURE__OUT_MEASURE = DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1960,7 +1960,7 @@ public interface SmmPackage extends EPackage {
 	int NAMED_MEASURE__IN_MEASURE = DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2087,7 +2087,7 @@ public interface SmmPackage extends EPackage {
 	int RESCALED_MEASURE__REFINEMENT = DIMENSIONAL_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2105,7 +2105,7 @@ public interface SmmPackage extends EPackage {
 	int RESCALED_MEASURE__OUT_MEASURE = DIMENSIONAL_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2114,7 +2114,7 @@ public interface SmmPackage extends EPackage {
 	int RESCALED_MEASURE__IN_MEASURE = DIMENSIONAL_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2250,7 +2250,7 @@ public interface SmmPackage extends EPackage {
 	int RATIO_MEASURE__REFINEMENT = BINARY_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2268,7 +2268,7 @@ public interface SmmPackage extends EPackage {
 	int RATIO_MEASURE__OUT_MEASURE = BINARY_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2277,7 +2277,7 @@ public interface SmmPackage extends EPackage {
 	int RATIO_MEASURE__IN_MEASURE = BINARY_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2431,7 +2431,7 @@ public interface SmmPackage extends EPackage {
 	int COUNTING__REFINEMENT = DIRECT_MEASURE__REFINEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Measurement</b></em>' reference list.
+	 * The feature id for the '<em><b>Measurement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2449,7 +2449,7 @@ public interface SmmPackage extends EPackage {
 	int COUNTING__OUT_MEASURE = DIRECT_MEASURE__OUT_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>In Measure</b></em>' reference list.
+	 * The feature id for the '<em><b>In Measure</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2458,7 +2458,7 @@ public interface SmmPackage extends EPackage {
 	int COUNTING__IN_MEASURE = DIRECT_MEASURE__IN_MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Trait</b></em>' reference.
+	 * The feature id for the '<em><b>Trait</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2540,7 +2540,7 @@ public interface SmmPackage extends EPackage {
 	int DIMENSIONAL_MEASUREMENT__ANNOTATION = MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2549,7 +2549,7 @@ public interface SmmPackage extends EPackage {
 	int DIMENSIONAL_MEASUREMENT__MEASURE = MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2640,7 +2640,7 @@ public interface SmmPackage extends EPackage {
 	int GRADE__ANNOTATION = MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2649,7 +2649,7 @@ public interface SmmPackage extends EPackage {
 	int GRADE__MEASURE = MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2831,7 +2831,7 @@ public interface SmmPackage extends EPackage {
 	int DIRECT_MEASUREMENT__ANNOTATION = DIMENSIONAL_MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2840,7 +2840,7 @@ public interface SmmPackage extends EPackage {
 	int DIRECT_MEASUREMENT__MEASURE = DIMENSIONAL_MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2931,7 +2931,7 @@ public interface SmmPackage extends EPackage {
 	int COUNT__ANNOTATION = DIRECT_MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2940,7 +2940,7 @@ public interface SmmPackage extends EPackage {
 	int COUNT__MEASURE = DIRECT_MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3031,7 +3031,7 @@ public interface SmmPackage extends EPackage {
 	int COLLECTIVE_MEASUREMENT__ANNOTATION = DIMENSIONAL_MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3040,7 +3040,7 @@ public interface SmmPackage extends EPackage {
 	int COLLECTIVE_MEASUREMENT__MEASURE = DIMENSIONAL_MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3158,7 +3158,7 @@ public interface SmmPackage extends EPackage {
 	int AGGREGATED_MEASUREMENT__ANNOTATION = DIMENSIONAL_MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3167,7 +3167,7 @@ public interface SmmPackage extends EPackage {
 	int AGGREGATED_MEASUREMENT__MEASURE = DIMENSIONAL_MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3276,7 +3276,7 @@ public interface SmmPackage extends EPackage {
 	int NAMED_MEASUREMENT__ANNOTATION = DIMENSIONAL_MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3285,7 +3285,7 @@ public interface SmmPackage extends EPackage {
 	int NAMED_MEASUREMENT__MEASURE = DIMENSIONAL_MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3376,7 +3376,7 @@ public interface SmmPackage extends EPackage {
 	int RE_SCALED_MEASUREMENT__ANNOTATION = DIMENSIONAL_MEASUREMENT__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Measure</b></em>' reference.
+	 * The feature id for the '<em><b>Measure</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3385,7 +3385,7 @@ public interface SmmPackage extends EPackage {
 	int RE_SCALED_MEASUREMENT__MEASURE = DIMENSIONAL_MEASUREMENT__MEASURE;
 
 	/**
-	 * The feature id for the '<em><b>Observation</b></em>' reference.
+	 * The feature id for the '<em><b>Observation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3885,10 +3885,10 @@ public interface SmmPackage extends EPackage {
 	EReference getMeasure_Refinement();
 
 	/**
-	 * Returns the meta object for the reference list '{@link net.certware.measurement.smm.Measure#getMeasurement <em>Measurement</em>}'.
+	 * Returns the meta object for the containment reference list '{@link net.certware.measurement.smm.Measure#getMeasurement <em>Measurement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Measurement</em>'.
+	 * @return the meta object for the containment reference list '<em>Measurement</em>'.
 	 * @see net.certware.measurement.smm.Measure#getMeasurement()
 	 * @see #getMeasure()
 	 * @generated
@@ -3907,10 +3907,10 @@ public interface SmmPackage extends EPackage {
 	EReference getMeasure_OutMeasure();
 
 	/**
-	 * Returns the meta object for the reference list '{@link net.certware.measurement.smm.Measure#getInMeasure <em>In Measure</em>}'.
+	 * Returns the meta object for the containment reference list '{@link net.certware.measurement.smm.Measure#getInMeasure <em>In Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>In Measure</em>'.
+	 * @return the meta object for the containment reference list '<em>In Measure</em>'.
 	 * @see net.certware.measurement.smm.Measure#getInMeasure()
 	 * @see #getMeasure()
 	 * @generated
@@ -3918,10 +3918,10 @@ public interface SmmPackage extends EPackage {
 	EReference getMeasure_InMeasure();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.smm.Measure#getTrait <em>Trait</em>}'.
+	 * Returns the meta object for the container reference '{@link net.certware.measurement.smm.Measure#getTrait <em>Trait</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Trait</em>'.
+	 * @return the meta object for the container reference '<em>Trait</em>'.
 	 * @see net.certware.measurement.smm.Measure#getTrait()
 	 * @see #getMeasure()
 	 * @generated
@@ -3950,10 +3950,10 @@ public interface SmmPackage extends EPackage {
 	EClass getMeasurement();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.smm.Measurement#getMeasure <em>Measure</em>}'.
+	 * Returns the meta object for the container reference '{@link net.certware.measurement.smm.Measurement#getMeasure <em>Measure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Measure</em>'.
+	 * @return the meta object for the container reference '<em>Measure</em>'.
 	 * @see net.certware.measurement.smm.Measurement#getMeasure()
 	 * @see #getMeasurement()
 	 * @generated
@@ -3961,10 +3961,10 @@ public interface SmmPackage extends EPackage {
 	EReference getMeasurement_Measure();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.smm.Measurement#getObservation <em>Observation</em>}'.
+	 * Returns the meta object for the containment reference '{@link net.certware.measurement.smm.Measurement#getObservation <em>Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Observation</em>'.
+	 * @return the meta object for the containment reference '<em>Observation</em>'.
 	 * @see net.certware.measurement.smm.Measurement#getObservation()
 	 * @see #getMeasurement()
 	 * @generated
@@ -4069,10 +4069,10 @@ public interface SmmPackage extends EPackage {
 	EReference getMeasureRelationship_From();
 
 	/**
-	 * Returns the meta object for the reference '{@link net.certware.measurement.smm.MeasureRelationship#getTo <em>To</em>}'.
+	 * Returns the meta object for the container reference '{@link net.certware.measurement.smm.MeasureRelationship#getTo <em>To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To</em>'.
+	 * @return the meta object for the container reference '<em>To</em>'.
 	 * @see net.certware.measurement.smm.MeasureRelationship#getTo()
 	 * @see #getMeasureRelationship()
 	 * @generated
@@ -4230,10 +4230,10 @@ public interface SmmPackage extends EPackage {
 	EReference getCharacteristic_Parent();
 
 	/**
-	 * Returns the meta object for the reference list '{@link net.certware.measurement.smm.Characteristic#getCharacteristics <em>Characteristics</em>}'.
+	 * Returns the meta object for the containment reference list '{@link net.certware.measurement.smm.Characteristic#getCharacteristics <em>Characteristics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Characteristics</em>'.
+	 * @return the meta object for the containment reference list '<em>Characteristics</em>'.
 	 * @see net.certware.measurement.smm.Characteristic#getCharacteristics()
 	 * @see #getCharacteristic()
 	 * @generated
@@ -5027,7 +5027,7 @@ public interface SmmPackage extends EPackage {
 		EReference MEASURE__REFINEMENT = eINSTANCE.getMeasure_Refinement();
 
 		/**
-		 * The meta object literal for the '<em><b>Measurement</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Measurement</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5043,7 +5043,7 @@ public interface SmmPackage extends EPackage {
 		EReference MEASURE__OUT_MEASURE = eINSTANCE.getMeasure_OutMeasure();
 
 		/**
-		 * The meta object literal for the '<em><b>In Measure</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>In Measure</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5051,7 +5051,7 @@ public interface SmmPackage extends EPackage {
 		EReference MEASURE__IN_MEASURE = eINSTANCE.getMeasure_InMeasure();
 
 		/**
-		 * The meta object literal for the '<em><b>Trait</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Trait</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5077,7 +5077,7 @@ public interface SmmPackage extends EPackage {
 		EClass MEASUREMENT = eINSTANCE.getMeasurement();
 
 		/**
-		 * The meta object literal for the '<em><b>Measure</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Measure</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5085,7 +5085,7 @@ public interface SmmPackage extends EPackage {
 		EReference MEASUREMENT__MEASURE = eINSTANCE.getMeasurement_Measure();
 
 		/**
-		 * The meta object literal for the '<em><b>Observation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Observation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5169,7 +5169,7 @@ public interface SmmPackage extends EPackage {
 		EReference MEASURE_RELATIONSHIP__FROM = eINSTANCE.getMeasureRelationship_From();
 
 		/**
-		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>To</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5297,7 +5297,7 @@ public interface SmmPackage extends EPackage {
 		EReference CHARACTERISTIC__PARENT = eINSTANCE.getCharacteristic_Parent();
 
 		/**
-		 * The meta object literal for the '<em><b>Characteristics</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Characteristics</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
