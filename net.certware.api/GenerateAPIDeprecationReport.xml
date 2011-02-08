@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+  <property name="xml" value="/reports/deprecation/xml"/>
+  <property name="html" value="/reports/deprecation/html"/>
+  <property name="profile" value="/eclipse/eclipse/plugins"/>
+  <property name="baseline" value="/eclipse/eclipse_3.6.2/plugins"/>
+  <target name="default">
+    <apideprecation
+        baseline="${baseline}"
+        profile="${profile}"
+        report="${xml}"
+        debug="true"
+    />
+    <apideprecation_reportconversion
+    	xmlfiles="${xml}"
+    	htmlfiles="${html}"
+    	debug="true"
+    />
+    </target>
+</project>

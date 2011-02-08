@@ -7,48 +7,12 @@ package net.certware.measurement.smm.impl;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Timestamp;
 
-import java.util.Date;
-
-import net.certware.measurement.smm.Accumulator;
-import net.certware.measurement.smm.AggregatedMeasurement;
-import net.certware.measurement.smm.Annotation;
-import net.certware.measurement.smm.Attribute;
-import net.certware.measurement.smm.BinaryMeasure;
-import net.certware.measurement.smm.Category;
-import net.certware.measurement.smm.CategoryRelationship;
-import net.certware.measurement.smm.Characteristic;
-import net.certware.measurement.smm.CollectiveMeasure;
-import net.certware.measurement.smm.CollectiveMeasurement;
-import net.certware.measurement.smm.Count;
-import net.certware.measurement.smm.Counting;
-import net.certware.measurement.smm.DimensionalMeasure;
-import net.certware.measurement.smm.DimensionalMeasurement;
-import net.certware.measurement.smm.DirectMeasure;
-import net.certware.measurement.smm.DirectMeasurement;
-import net.certware.measurement.smm.Grade;
-import net.certware.measurement.smm.Measure;
-import net.certware.measurement.smm.MeasureRelationship;
-import net.certware.measurement.smm.Measurement;
-import net.certware.measurement.smm.MeasurementRelationship;
-import net.certware.measurement.smm.NamedMeasure;
-import net.certware.measurement.smm.NamedMeasurement;
-import net.certware.measurement.smm.Observation;
-import net.certware.measurement.smm.Ranking;
-import net.certware.measurement.smm.RankingInterval;
-import net.certware.measurement.smm.RatioMeasure;
-import net.certware.measurement.smm.ReScaledMeasurement;
-import net.certware.measurement.smm.RescaledMeasure;
-import net.certware.measurement.smm.Scope;
-import net.certware.measurement.smm.SmmElement;
 import net.certware.measurement.smm.SmmFactory;
-import net.certware.measurement.smm.SmmModel;
 import net.certware.measurement.smm.SmmPackage;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
-import net.certware.measurement.smm.SmmRelationship;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -56,7 +20,6 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;

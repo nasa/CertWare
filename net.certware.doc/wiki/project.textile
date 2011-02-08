@@ -13,6 +13,7 @@ _Bugs Fixed_:
 * Fixed labels on EUZ plugin identities and branding plug-in. 
 * Reassigned diagram preference pages to fall under the CertWare category.
 _Enhancements_:
+* Added API tooling setup to each project, adding nature and builder to support API report generation.  
 * Expanded body text regions in all graphical shapes, allowing multi-line wrap display and editing.
 * Expanded semi-formal proof support.  Added adapters for SFP outline view. Added active parser editor. Added validation for graph cycles and entailment. Added proof review wizard. Added dynamic help (first draft).  Added navigator contribution for SFP file types.
 * Added planning module content for Microsoft Project MSPDI interchange model.

@@ -74,3 +74,4 @@ dimensionless
 baselined
 concoct
 decorator
+discriminator

@@ -9,15 +9,12 @@ import java.util.List;
 
 import net.certware.measurement.smm.SmmPackage;
 import net.certware.measurement.smm.provider.DimensionalMeasureItemProvider;
-
 import net.certware.measurement.spm.CaseDimensionalMeasure;
-
 import net.certware.measurement.spm.SpmFactory;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;

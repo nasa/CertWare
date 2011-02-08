@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="net.certware.core.ui.view.category"
+            class="net.certware.measurement.spm.view.SpmViewMasterDetails"
+            icon="icons/obj16/spider.png"
+            id="net.certware.measurement.spm.view.detailsview"
+            name="Software Project Management Metrics"
+            restorable="true">
+         <description>
+            Provides a master-details view of the data contained in the SPM metrics file.
+         </description>
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <view
+               id="net.certware.measurement.spm.view.detailsview"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ContentOutline">
+         </view>
+         <viewShortcut
+               id="net.certware.measurement.spm.view.detailsview">
+         </viewShortcut>
+      </perspectiveExtension>
+   </extension>
+<extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="net.certware.measurement.spm.view.open"
+            nameFilter="*.spm"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.measurement.spm.view.actions.OpenView"
+               enablesFor="1"
+               icon="icons/obj16/spider.png"
+               id="net.certware.measurement.spm.view.action.openview"
+               label="Open in SPM View"
+               menubarPath="certware/additions"
+               tooltip="Open the SPM content in its view">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

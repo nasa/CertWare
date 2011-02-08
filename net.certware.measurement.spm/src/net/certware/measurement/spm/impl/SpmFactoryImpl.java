@@ -3,7 +3,6 @@
  */
 package net.certware.measurement.spm.impl;
 
-import net.certware.measurement.spm.*;
 import net.certware.measurement.smm.Annotation;
 import net.certware.measurement.smm.Characteristic;
 import net.certware.measurement.smm.DimensionalMeasure;

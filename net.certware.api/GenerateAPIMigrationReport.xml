@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="certware" default="Migration">
+  <property name="xml" value="/reports/migration/xml"/>
+  <property name="html" value="/reports/migration/html"/>
+  <property name="exclude.list" value="/reports/settings/exclude.txt"/>
+  <property name="include.list" value="/reports/settings/include.txt"/>
+  <property name="scope.pattern" value=".*"/>
+  <property name="ref.pattern" value=".*"/>
+  <property name="scan" value="/reports/use-3.6.2/xml"/>
+  <property name="candidate" value="/eclipse/eclipse-3.7/plugins"/>
+  <target name="Migration">
+    <apimigration
+       	excludelist="${exclude.list}"
+      	includelist="${include.list}"
+       	usescan="${scan}"
+       	candidate="${candidate}"
+       	scopepattern="${scope.pattern}"
+       	referencepattern="${ref.pattern}"
+       	report="${xml}"
+       	debug="true"
+    />
+    <apimigration_reportconversion
+    	xmlfiles="${xml}"
+    	htmlfiles="${html}"
+       	debug="true"
+    />
+  </target>
+</project>

@@ -5,41 +5,16 @@ package net.certware.measurement.spm.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
-import net.certware.measurement.smm.BinaryMeasure;
-import net.certware.measurement.smm.Category;
-import net.certware.measurement.smm.Characteristic;
-import net.certware.measurement.smm.CollectiveMeasure;
-import net.certware.measurement.smm.Measure;
-import net.certware.measurement.smm.Scope;
-import net.certware.measurement.smm.SmmElement;
-import net.certware.measurement.smm.SmmModel;
-import net.certware.measurement.smm.SmmPackage;
-
-import net.certware.measurement.smm.util.SmmSwitch;
-
-import net.certware.measurement.spm.SpmFactory;
 
 import net.certware.measurement.spm.util.SpmAdapterFactory;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.edit.command.CommandParameter;
-
-import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;

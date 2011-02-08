@@ -6,7 +6,6 @@ package net.certware.measurement.spm.provider;
 import net.certware.measurement.smm.action.provider.SmmEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**

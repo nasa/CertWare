@@ -1,0 +1,9 @@
+ # DOC BUNDLES
+ net.certware.api
+ net.certware.doc
+ # NON-ECLIPSE BUNDLES
+ com.ibm.icu
+ com.jcraft.jsch
+ javax.servlet
+ javax.servlet.jsp
+ 

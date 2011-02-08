@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="certware" default="API Use">
+	<property name="xml" value="/reports/use/xml"/>
+	<property name="html" value="/reports/use/html"/>
+	<property name="exclude.list" value="/reports/settings/exclude.txt"/>
+	<property name="include.list" value="/reports/settings/include.txt"/>
+	<property name="scope.pattern" value=".*"/>
+	<property name="ref.pattern" value=".*"/>
+	<property name="api.pattern" value="net.certware.*"/>
+	<property name="internal.pattern" value="net.certware.*.internal.*.*"/>
+	<target name="API Use">
+		<apiuse
+	       	considerinternal="true"
+	       	considerillegaluse="true"
+	       	excludelist="${exclude.list}"
+	       	includelist="${include.list}"
+	       	report="${xml}"
+	       	referencepattern="${ref.pattern}"
+	       	scopepattern="${scope.pattern}"
+	       	apipatterns="${api.pattern}"
+	       	internalpatterns="${internal.pattern}"
+	       	debug="true"
+	    />
+		<apiuse_reportconversion
+	    	xmlfiles="${xml}"
+	    	htmlfiles="${html}"
+	       	debug="true"
+	    />
+	</target>
+</project>

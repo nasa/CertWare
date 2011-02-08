@@ -23,7 +23,7 @@
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <extender
             uri="http://www.eclipse.org/MoDisco/smm"
-            class="net.certware.measurement.spm.provider.SpmItemProviderAdapterFactory$SmmChildCreationExtender"/>
+            class="net.certware.measurement.smm.provider.SmmItemProviderAdapterFactory"/>
    </extension>
 
 </plugin>
