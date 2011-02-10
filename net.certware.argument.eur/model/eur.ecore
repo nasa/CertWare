@@ -28,8 +28,12 @@
         unique="false" upperBound="-1" eType="#//Solution"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="criteria" unique="false"
         upperBound="-1" eType="#//Criteria"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" unique="false"
-        upperBound="-1" eType="#//Assumption"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" upperBound="-1"
+        eType="#//Assumption" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="#//Context" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategies" upperBound="-1"
+        eType="#//Strategy" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" unique="false"

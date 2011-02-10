@@ -7,6 +7,7 @@ import net.certware.measurement.smm.SmmPackage;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,13 +104,22 @@ public interface SpmPackage extends EPackage {
 	int PROJECT_MODEL__MODEL_ELEMENT = SmmPackage.SMM_MODEL__MODEL_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Commits</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT_MODEL__COMMITS = SmmPackage.SMM_MODEL_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Project Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_MODEL_FEATURE_COUNT = SmmPackage.SMM_MODEL_FEATURE_COUNT + 0;
+	int PROJECT_MODEL_FEATURE_COUNT = SmmPackage.SMM_MODEL_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link net.certware.measurement.spm.impl.ProjectCommitImpl <em>Project Commit</em>}' class.
@@ -5986,6 +5996,17 @@ public interface SpmPackage extends EPackage {
 	EClass getProjectModel();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.measurement.spm.ProjectModel#getCommits <em>Commits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Commits</em>'.
+	 * @see net.certware.measurement.spm.ProjectModel#getCommits()
+	 * @see #getProjectModel()
+	 * @generated
+	 */
+	EReference getProjectModel_Commits();
+
+	/**
 	 * Returns the meta object for class '{@link net.certware.measurement.spm.ProjectCommit <em>Project Commit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6416,6 +6437,14 @@ public interface SpmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROJECT_MODEL = eINSTANCE.getProjectModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Commits</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROJECT_MODEL__COMMITS = eINSTANCE.getProjectModel_Commits();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.measurement.spm.impl.ProjectCommitImpl <em>Project Commit</em>}' class.

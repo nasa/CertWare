@@ -5,9 +5,6 @@
  */
 package net.certware.measurement.spm.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.measurement.spm.ProjectCommit;
@@ -24,9 +21,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -144,9 +139,11 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	/**
 	 * Returns all of the tree items in a project model as an object list.
 	 * @param pm project model
-	 * @return list of EObjects
+	 * @return list of project commits
 	 */
 	public Object[] getChildrenForModel(ProjectModel pm) {
+		return pm.getCommits().toArray();
+		/*
 		List<EObject> items = new ArrayList<EObject>();
 		
 		TreeIterator ti = pm.eAllContents();
@@ -155,6 +152,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		}
 
 		return items.toArray();
+		*/
 	}
 	
 	/**

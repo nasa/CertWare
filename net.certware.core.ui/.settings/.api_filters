@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="net.certware.core.ui" version="2">
+    <resource path="src/net/certware/core/ui/dialog/ResourceDelegates.java" type="net.certware.core.ui.dialog.ResourceDelegates$FileDelegate">
+        <filter comment="Deprecated API" id="574619656">
+            <message_arguments>
+                <message_argument value="IFile"/>
+                <message_argument value="FileDelegate"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/net/certware/core/ui/dialog/ResourceDelegates.java" type="net.certware.core.ui.dialog.ResourceDelegates$FolderDelegate">
+        <filter comment="Deprecated API" id="574619656">
+            <message_arguments>
+                <message_argument value="IFolder"/>
+                <message_argument value="FolderDelegate"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/net/certware/core/ui/dialog/ResourceDelegates.java" type="net.certware.core.ui.dialog.ResourceDelegates$ProjectDelegate">
+        <filter comment="Deprecated API" id="574619656">
+            <message_arguments>
+                <message_argument value="IProject"/>
+                <message_argument value="ProjectDelegate"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>

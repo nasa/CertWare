@@ -4,22 +4,24 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
+/**
+ * Creates a CertWare perspective.
+ * Views should add perspective extensions to contribute to the perspective.
+ * @author mrb
+ * @since 1.1.0
+ */
 public class PerspectiveFactory implements IPerspectiveFactory {
 
 	/** perspective layout width ratio for the project explorer left of editor */
-	protected static final float RATIO_PROJECT_EXPLORER = 0.15f;
+	protected static final float RATIO_PROJECT_EXPLORER = 0.20f;
 	/** perspective layout width radio for the editor */
-	protected static final float RATIO_EDITOR_AREA = 0.35f;
+	protected static final float RATIO_EDITOR_AREA = 0.60f;
 	/** perspective layout width ratio for elements right of the editor */
-	protected static final float RATIO_RHS = 0.50f;
+	protected static final float RATIO_RHS = 0.70f;
 	/** perspective layout height ratio for elements below the outline on right hand side */
 	protected static final float RATIO_BOTTOM = 0.70f;
-
-	protected static final String ERROR_LOG_VIEW_ID = "org.eclipse.pde.runtime.LogView"; //$NON-NLS-1$
-
-	// these probably aren't needed, now implemented as perspective extensions in their plugins
-	protected static final String CPN_VIEW_ID = "net.certware.planning.cpn.view.masterdetailsview"; //$NON-NLS-1$
-	protected static final String SCO_VIEW_ID = "net.certware.measurement.sco.view.masterdetailsview"; //$NON-NLS-1$
+	/** problems view id, not needed if interface used */
+	protected static final String PROBLEMS_VIEW_ID = "org.eclipse.ui.views.ProblemView"; //$NON-NLS-1$
 
 	/**
 	 * Create the initial perspective layout. 
@@ -45,10 +47,9 @@ public class PerspectiveFactory implements IPerspectiveFactory {
 
 		// put the other stuff on the bottom right
 		IFolderLayout bottomright =
-			layout.createFolder("bottomright", IPageLayout.BOTTOM, RATIO_BOTTOM, IPageLayout.ID_OUTLINE); //$NON-NLS-1$
+			layout.createFolder("bottomright", IPageLayout.BOTTOM, RATIO_BOTTOM, editorArea); //$NON-NLS-1$
 		bottomright.addView(IPageLayout.ID_PROP_SHEET);
 		bottomright.addView(IPageLayout.ID_PROBLEM_VIEW);
-		bottomright.addView(ERROR_LOG_VIEW_ID);
 	}
 
 }

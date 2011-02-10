@@ -14,6 +14,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Activator for SPM view plugin.
+ * Loads the image registry with keys exposed as public and static here.
  * @author mrb
  * @since 1.1
  */
@@ -21,6 +22,7 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 
 	public static String PLUGIN_ID = "net.certware.measurement.spm.view"; //$NON-NLS-1$
 	
+	public static final String COMPUTE_IMAGE = "compute.image";
 	public static final String FORM_IMAGE = "form.image";
 	public static final String HORIZONTAL_IMAGE = "horizontal.image";
 	public static final String VERTICAL_IMAGE = "vertical.image";
@@ -81,10 +83,13 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	
 	/**
 	 * Image registry loading.
+	 * Loads the images by key into the given registry.
+	 * @param registry image registry to load
 	 */
 	@Override
     protected void initializeImageRegistry(ImageRegistry registry) {
         Bundle bundle = Platform.getBundle(PLUGIN_ID);
+        initializeImage(registry,bundle,"icons/obj16/ratio.gif",COMPUTE_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/ratio.gif",NODE_SCRAP_RATIO);
         initializeImage(registry,bundle,"icons/obj16/ratio.gif",NODE_REWORK_RATIO);
         initializeImage(registry,bundle,"icons/obj16/ratio.gif",NODE_MODULARITY);

@@ -109,6 +109,8 @@ public class StrategyItemProvider
 			childrenFeatures.add(EurPackage.Literals.STRATEGY__JUSTIFICATION);
 			childrenFeatures.add(EurPackage.Literals.STRATEGY__CRITERIA);
 			childrenFeatures.add(EurPackage.Literals.STRATEGY__ASSUMPTION);
+			childrenFeatures.add(EurPackage.Literals.STRATEGY__CONTEXTS);
+			childrenFeatures.add(EurPackage.Literals.STRATEGY__STRATEGIES);
 		}
 		return childrenFeatures;
 	}
@@ -167,6 +169,8 @@ public class StrategyItemProvider
 			case EurPackage.STRATEGY__JUSTIFICATION:
 			case EurPackage.STRATEGY__CRITERIA:
 			case EurPackage.STRATEGY__ASSUMPTION:
+			case EurPackage.STRATEGY__CONTEXTS:
+			case EurPackage.STRATEGY__STRATEGIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -203,6 +207,16 @@ public class StrategyItemProvider
 			(createChildParameter
 				(EurPackage.Literals.STRATEGY__ASSUMPTION,
 				 EurFactory.eINSTANCE.createAssumption()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EurPackage.Literals.STRATEGY__CONTEXTS,
+				 EurFactory.eINSTANCE.createContext()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EurPackage.Literals.STRATEGY__STRATEGIES,
+				 EurFactory.eINSTANCE.createStrategy()));
 	}
 
 	/**

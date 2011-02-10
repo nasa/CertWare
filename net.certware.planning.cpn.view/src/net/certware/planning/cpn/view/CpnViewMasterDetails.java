@@ -290,6 +290,10 @@ public class CpnViewMasterDetails extends ViewPart implements ISelectionListener
 
 	@Override
 	public void resourceChanged(IResourceChangeEvent event) {
+		if ( event == null || event.getDelta() == null ) {
+			return;
+		}
+		
 	    try {
 	      event.getDelta().accept(new IResourceDeltaVisitor() {
 	        

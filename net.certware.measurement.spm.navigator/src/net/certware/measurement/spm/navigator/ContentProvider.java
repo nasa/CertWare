@@ -20,6 +20,8 @@ import net.certware.measurement.spm.MaturityRatioMeasure;
 import net.certware.measurement.spm.MaturityTrend;
 import net.certware.measurement.spm.ModularityMeasure;
 import net.certware.measurement.spm.ModularityTrend;
+import net.certware.measurement.spm.ProjectCommit;
+import net.certware.measurement.spm.ProjectModel;
 import net.certware.measurement.spm.ReworkBacklogMeasure;
 import net.certware.measurement.spm.ReworkRatioMeasure;
 import net.certware.measurement.spm.ReworkStabilityMeasure;
@@ -232,42 +234,60 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 
 					// visit the model, collect statistics
 					// these are all direct measurement measures, so the tree data content expects only these types
-					for ( Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) { // $codepro.audit.disable variableShouldBeFinal
-						EObject eo = i.next(); // $codepro.audit.disable variableDeclaredInLoop
+					for ( Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) { 
 
-						if ( eo instanceof ScrapRatioMeasure ) {
-							treeNodes.add(new TreeData((ScrapRatioMeasure)eo,Activator.NODE_SCRAP_RATIO,modelFile));
-						}
-						if ( eo instanceof MaturityRatioMeasure ) {
-							treeNodes.add(new TreeData((MaturityRatioMeasure)eo,Activator.NODE_MATURITY,modelFile));
-						}
-						if ( eo instanceof MaturityTrend ) {
-							treeNodes.add(new TreeData((MaturityTrend)eo,Activator.NODE_MATURITY_TREND,modelFile));
-						}
-						if ( eo instanceof MaintainabilityMeasure ) {
-							treeNodes.add(new TreeData((MaintainabilityMeasure)eo,Activator.NODE_MAINTAINABILITY,modelFile));
-						}
-						if ( eo instanceof ReworkStabilityMeasure ) {
-							treeNodes.add(new TreeData((ReworkStabilityMeasure)eo,Activator.NODE_REWORK_STABILITY,modelFile));
-						}
-						if ( eo instanceof ReworkRatioMeasure ) {
-							treeNodes.add(new TreeData((ReworkRatioMeasure)eo,Activator.NODE_REWORK_RATIO,modelFile));
-						}
-						if ( eo instanceof ReworkBacklogMeasure ) {
-							treeNodes.add(new TreeData((ReworkBacklogMeasure)eo,Activator.NODE_REWORK_BACKLOG,modelFile));
-						}
-						if ( eo instanceof ModularityMeasure ) {
-							treeNodes.add(new TreeData((ModularityMeasure)eo,Activator.NODE_MODULARITY,modelFile));
-						}
-						if ( eo instanceof AdaptabilityRatioMeasure) {
-							treeNodes.add(new TreeData((AdaptabilityRatioMeasure)eo,Activator.NODE_ADAPTABILITY,modelFile));
-						}
-						if ( eo instanceof AdaptabilityTrend) {
-							treeNodes.add(new TreeData((AdaptabilityTrend)eo,Activator.NODE_ADAPTABILITY_TREND,modelFile));
-						}
-						if ( eo instanceof ModularityTrend) {
-							treeNodes.add(new TreeData((ModularityTrend)eo,Activator.NODE_MODULARITY_TREND,modelFile));
-						}
+						EObject eop = i.next(); 
+
+						if ( eop instanceof ProjectModel ) {
+							// get the last commit
+							ProjectModel pm = (ProjectModel)eop;
+
+							if ( pm.getCommits() == null || pm.getCommits().size() < 1) {
+								continue;
+							}
+
+							ProjectCommit pc = pm.getCommits().get( pm.getCommits().size() - 1 );
+
+							// find the measures in the single commit
+							for ( Iterator<EObject> ic = pc.eAllContents(); ic.hasNext(); ) {
+
+								EObject eo = ic.next();
+
+								if ( eo instanceof ScrapRatioMeasure ) {
+									treeNodes.add(new TreeData((ScrapRatioMeasure)eo,Activator.NODE_SCRAP_RATIO,modelFile));
+								}
+								if ( eo instanceof MaturityRatioMeasure ) {
+									treeNodes.add(new TreeData((MaturityRatioMeasure)eo,Activator.NODE_MATURITY,modelFile));
+								}
+								if ( eo instanceof MaturityTrend ) {
+									treeNodes.add(new TreeData((MaturityTrend)eo,Activator.NODE_MATURITY_TREND,modelFile));
+								}
+								if ( eo instanceof MaintainabilityMeasure ) {
+									treeNodes.add(new TreeData((MaintainabilityMeasure)eo,Activator.NODE_MAINTAINABILITY,modelFile));
+								}
+								if ( eo instanceof ReworkStabilityMeasure ) {
+									treeNodes.add(new TreeData((ReworkStabilityMeasure)eo,Activator.NODE_REWORK_STABILITY,modelFile));
+								}
+								if ( eo instanceof ReworkRatioMeasure ) {
+									treeNodes.add(new TreeData((ReworkRatioMeasure)eo,Activator.NODE_REWORK_RATIO,modelFile));
+								}
+								if ( eo instanceof ReworkBacklogMeasure ) {
+									treeNodes.add(new TreeData((ReworkBacklogMeasure)eo,Activator.NODE_REWORK_BACKLOG,modelFile));
+								}
+								if ( eo instanceof ModularityMeasure ) {
+									treeNodes.add(new TreeData((ModularityMeasure)eo,Activator.NODE_MODULARITY,modelFile));
+								}
+								if ( eo instanceof AdaptabilityRatioMeasure) {
+									treeNodes.add(new TreeData((AdaptabilityRatioMeasure)eo,Activator.NODE_ADAPTABILITY,modelFile));
+								}
+								if ( eo instanceof AdaptabilityTrend) {
+									treeNodes.add(new TreeData((AdaptabilityTrend)eo,Activator.NODE_ADAPTABILITY_TREND,modelFile));
+								}
+								if ( eo instanceof ModularityTrend) {
+									treeNodes.add(new TreeData((ModularityTrend)eo,Activator.NODE_MODULARITY_TREND,modelFile));
+								}
+							} // commit contents
+						} // instance of pm
 					} // model iterator
 
 					// populate array and model map

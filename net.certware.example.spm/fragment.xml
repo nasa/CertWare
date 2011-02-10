@@ -15,7 +15,7 @@
             version="CW SPM 2.3.2011">
          <resource
                description="Metrics model file"
-               structure="resources/Metrics.spm">
+               structure="resources/Metrics Old.spm">
          </resource>
       </pattern>
    </extension>

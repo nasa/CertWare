@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+<extension
+      point="org.eclipse.core.expressions.definitions">
+   <definition
+         id="net.certware.measurement.spm.view.model">
+      <iterate
+            ifEmpty="false">
+         <adapt
+               type="org.eclipse.core.resources.IFile">
+            <test
+                  property="org.eclipse.core.resources.name"
+                  value="*.spm">
+            </test>
+         </adapt>
+      </iterate>
+   </definition>
+</extension>
    <extension
          point="org.eclipse.ui.views">
       <view
@@ -24,7 +40,7 @@
                id="net.certware.measurement.spm.view.detailsview"
                minimized="false"
                relationship="stack"
-               relative="org.eclipse.ui.views.ContentOutline">
+               relative="org.eclipse.ui.views.PropertySheet">
          </view>
          <viewShortcut
                id="net.certware.measurement.spm.view.detailsview">
@@ -33,6 +49,70 @@
    </extension>
 <extension
          point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="net.certware.measurement.spm.view.projectModelMenu"
+            objectClass="net.certware.measurement.spm.ProjectModel">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.measurement.spm.view.actions.ComputeMetrics"
+               enablesFor="1"
+               helpContextId="net.certware.core.ui.compute_metrics"
+               icon="icons/obj16/ratio.gif"
+               id="net.certware.measurement.spm.view.action.projectmetrics"
+               label="Compute Metrics"
+               menubarPath="certware/additions"
+               tooltip="Compute the metrics from the raw statistics">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="net.certware.measurement.spm.view.projectCommitMenu"
+            objectClass="net.certware.measurement.spm.ProjectCommit">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.measurement.spm.view.actions.GatherOrders"
+               enablesFor="1"
+               helpContextId="net.certware.core.ui.gather_orders"
+               icon="icons/obj16/sco.gif"
+               id="net.certware.measurement.spm.view.action.gatherorders"
+               label="Gather Change Order Counts..."
+               menubarPath="certware/additions"
+               tooltip="Gather change order counts from an SCO file">
+         </action>
+         <action
+               class="net.certware.measurement.spm.view.actions.ComputeMetrics"
+               enablesFor="1"
+               helpContextId="net.certware.core.ui.compute_metrics"
+               icon="icons/obj16/ratio.gif"
+               id="net.certware.measurement.spm.view.action.commitmetrics"
+               label="Compute Metrics"
+               menubarPath="certware/additions"
+               tooltip="Compute the metrics from the raw statistics">
+         </action>
+      </objectContribution>
       <objectContribution
             adaptable="true"
             id="net.certware.measurement.spm.view.open"
@@ -53,6 +133,7 @@
          <action
                class="net.certware.measurement.spm.view.actions.OpenView"
                enablesFor="1"
+               helpContextId="net.certware.core.ui.open_spm_view"
                icon="icons/obj16/spider.png"
                id="net.certware.measurement.spm.view.action.openview"
                label="Open in SPM View"
@@ -61,5 +142,20 @@
          </action>
       </objectContribution>
    </extension>
+<extension
+      point="org.eclipse.core.runtime.preferences">
+   <initializer
+         class="net.certware.measurement.spm.view.preferences.PreferenceInitializer">
+   </initializer>
+</extension>
+<extension
+      point="org.eclipse.ui.preferencePages">
+   <page
+         category="certware"
+         class="net.certware.measurement.spm.view.preferences.PreferencePage"
+         id="net.certware.measurement.spm.view.page"
+         name="SPM View and Command Preferences">
+   </page>
+</extension>
 
 </plugin>

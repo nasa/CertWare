@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
@@ -392,6 +393,15 @@ public class SpmPackageImpl extends EPackageImpl implements SpmPackage {
 			projectModelEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SpmPackage.eNS_URI).getEClassifiers().get(0);
 		}
 		return projectModelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProjectModel_Commits() {
+        return (EReference)getProjectModel().getEStructuralFeatures().get(0);
 	}
 
 	/**

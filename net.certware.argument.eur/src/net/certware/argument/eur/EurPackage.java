@@ -276,7 +276,7 @@ public interface EurPackage extends EPackage {
 	int STRATEGY__CRITERIA = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Assumption</b></em>' reference list.
+	 * The feature id for the '<em><b>Assumption</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -285,13 +285,31 @@ public interface EurPackage extends EPackage {
 	int STRATEGY__ASSUMPTION = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__CONTEXTS = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Strategies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__STRATEGIES = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Strategy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 5;
+	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link net.certware.argument.eur.impl.SolutionImpl <em>Solution</em>}' class.
@@ -783,15 +801,37 @@ public interface EurPackage extends EPackage {
 	EReference getStrategy_Criteria();
 
 	/**
-	 * Returns the meta object for the reference list '{@link net.certware.argument.eur.Strategy#getAssumption <em>Assumption</em>}'.
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Strategy#getAssumption <em>Assumption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Assumption</em>'.
+	 * @return the meta object for the containment reference list '<em>Assumption</em>'.
 	 * @see net.certware.argument.eur.Strategy#getAssumption()
 	 * @see #getStrategy()
 	 * @generated
 	 */
 	EReference getStrategy_Assumption();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Strategy#getContexts <em>Contexts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contexts</em>'.
+	 * @see net.certware.argument.eur.Strategy#getContexts()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EReference getStrategy_Contexts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.argument.eur.Strategy#getStrategies <em>Strategies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Strategies</em>'.
+	 * @see net.certware.argument.eur.Strategy#getStrategies()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EReference getStrategy_Strategies();
 
 	/**
 	 * Returns the meta object for class '{@link net.certware.argument.eur.Solution <em>Solution</em>}'.
@@ -1040,12 +1080,28 @@ public interface EurPackage extends EPackage {
 		EReference STRATEGY__CRITERIA = eINSTANCE.getStrategy_Criteria();
 
 		/**
-		 * The meta object literal for the '<em><b>Assumption</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Assumption</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STRATEGY__ASSUMPTION = eINSTANCE.getStrategy_Assumption();
+
+		/**
+		 * The meta object literal for the '<em><b>Contexts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRATEGY__CONTEXTS = eINSTANCE.getStrategy_Contexts();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategies</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRATEGY__STRATEGIES = eINSTANCE.getStrategy_Strategies();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.argument.eur.impl.SolutionImpl <em>Solution</em>}' class.

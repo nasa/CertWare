@@ -98,7 +98,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 	FormToolkit toolkit;
 	/** scrolled form on the part */
 	ScrolledForm form;
-	/** selected SCO file */
+	/** selected SPM file */
 	IFile selectedFile = null;
 	/** selected file opener */
 	Hyperlink fileLink = null;
@@ -108,9 +108,13 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 	int sectionStyle = Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED;
 	/** bold font from resources */
 	Font boldFont;
-	/** tree viewer, loaded with EMF controls */
+	/** tree viewer for master part */
 	TreeViewer viewer;
-	
+
+	/**
+	 * Creates the view part, applying a scrolled form and master-details blocks.
+	 * @param parent workbench parent composite
+	 */
 	@Override
 	public void createPartControl(Composite parent) {
 		
@@ -156,13 +160,16 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 		
 		if ( projectModel != null ) {
 			// update master side fields, if any
-			// unused
+			// unused at this point as there are no product model element fields to display
 		}
 
 		form.reflow(true);
 	}
 	
-	
+
+	/**
+	 * Sets the focus to the form.
+	 */
 	@Override
 	public void setFocus() {
 		form.setFocus();
@@ -171,6 +178,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 	/**
 	 * Disposes the toolkit.
 	 * Removes the listeners for the workbench and resources.
+	 * Calls super class dispose.
 	 */
 	@Override
 	public void dispose() {
@@ -207,6 +215,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 	/**
 	 * Sets the selected file.
 	 * For use by other actions.
+	 * If the selected file changes, calls {@link refreshModelFromFile} and {@link refreshPart}.
 	 * @param sf selected file
 	 */
 	public void setSelectedFile(IFile sf) {
@@ -223,7 +232,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 	/**
 	 * Captures the selected file name if it matches our interest.
 	 * @param part workbench part
-	 * @param selection structured selection expecting IFile or EObject
+	 * @param selection structured selection expecting {@code IFile} or an {@code EObject} with {@code ProjectModel} container 
 	 */
 	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
@@ -279,6 +288,10 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 		}
 	}
 
+	/**
+	 * Responds to resource change events.
+	 * Checks for removed and change events.  Refreshes part if necessary.
+	 */
 	@Override
 	public void resourceChanged(IResourceChangeEvent event) {
 	    try {
@@ -366,11 +379,13 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 		}
 
 		/**
-		 * Creates the typical horizontal and vertical layout actions.
+		 * Creates the typical horizontal and vertical layout actions for the tool bar.
+		 * @param managedForm form for toolbar
 		 */
 		protected void createToolBarActions(IManagedForm managedForm) {
 			final ScrolledForm form = managedForm.getForm();
 
+			// layout horizontal
 			Action haction = new Action("hor", Action.AS_RADIO_BUTTON) {
 				public void run() {
 					sashForm.setOrientation(SWT.HORIZONTAL);
@@ -383,6 +398,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 					.getImageRegistry()
 					.getDescriptor(Activator.HORIZONTAL_IMAGE));
 			
+			// layout vertical
 			Action vaction = new Action("ver", Action.AS_RADIO_BUTTON) {
 				public void run() {
 					sashForm.setOrientation(SWT.VERTICAL);
@@ -391,13 +407,18 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 			};
 			vaction.setChecked(false);
 			vaction.setToolTipText("Vertical orientation");
-			vaction.setImageDescriptor(Activator.getDefault().getImageRegistry().getDescriptor(Activator.VERTICAL_IMAGE));
+			vaction.setImageDescriptor(Activator.getDefault()
+					.getImageRegistry()
+					.getDescriptor(Activator.VERTICAL_IMAGE));
+			
+			// add buttons to the tool bar
 			form.getToolBarManager().add(haction);
 			form.getToolBarManager().add(vaction);
 		}
 		
 		/**
 		 * Registers detail pages by class.
+		 * Registers a page for {@code ProjectModelImpl} and {@code ProjectCommitImpl}.
 		 */
 		protected void registerPages(DetailsPart detailsPart) {
 			detailsPart.registerPage(ProjectModelImpl.class, new ProjectModelDetailsPage());
@@ -406,35 +427,62 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 	}
 
 	/**
-	 * Details for a commit record.
+	 * Details page for a commit record.
 	 */
 	public class ProjectCommitDetailsPage implements IDetailsPage {
+		/** whether the page content is stale */
 		boolean stale = true;
+		/** commit metrics client on the section */ 
 		Composite metricsClient;
+		/** commit metrics section */
 		Composite statisticsClient;
+		/** selected commit object from the master side */
 		ProjectCommit projectCommit;
+		/** toolkit for creating form content */
 		FormToolkit myToolkit;
+		/** scrap ratio label */
 		Label scrapRatio;
+		/** maturity ratio label */
 		Label maturityRatio;
+		/** maturity trend label */
 		Label maturityTrend;
+		/** maintainability label */
 		Label maintainability;
+		/** rework stability label */
 		Label reworkStability;
+		/** rework ratio label */
 		Label reworkRatio;
+		/** rework backlog label */
 		Label reworkBacklog;
+		/** modularity label */
 		Label modularity;
+		/** adaptability ratio label */
 		Label adaptabilityRatio;
+		/** adaptability trend label */
 		Label adaptabilityTrend;
+		/** modularity trend label */
 		Label modularityTrend;
+		/** critical change orders count label */
 		Label criticalCount;
+		/** normal change orders count label */
 		Label normalCount;
+		/** improvement change orders count label */
 		Label improvementCount;
+		/** new feature change orders count label */ 
 		Label newCount;
+		/** broken case size label */
 		Label brokenSize;
+		/** fixed case size label */
 		Label fixedSize;
+		/** total case size label */
 		Label totalSize;
+		/** baselined case size label */
 		Label baselineSize;
+		/** usage time label */
 		Label usageTime;
+		/** repair effort label */
 		Label repairEffort;
+		/** development effort label */
 		Label developmentEffort;
 		
 		
@@ -494,7 +542,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 						return String.format("%7.2f %s",dm.getValue(),unit);
 					}
 				}
-				// other measurement types, such as ranking, not used 
+				// other measurement types, such as ranking, not used in this model 
 			}
 
 			return "<none>";
@@ -505,6 +553,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 
 			// visit the model, collect statistics
 			// these are all direct measurement measures, so the tree data content expects only these types
+			// we are only using the first measurement (index 0) in every case 
 			TreeIterator ti = projectCommit.eAllContents();
 			while( ti.hasNext() ) {
 				EObject eo = (EObject)ti.next();
@@ -615,6 +664,11 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 			}
 		}
 
+		/**
+		 * Creates two sections on the form, one for computed metrics and one for the raw statistics 
+		 * used to compute those metrics.
+		 * @param parent parent for the sections
+		 */
 		@Override
 		public void createContents(Composite parent) {
 			
@@ -653,12 +707,12 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 			metricsSection.setClient(metricsClient);
 
 			
+			// raw statistics section
 			Section statisticsSection = myToolkit.createSection(parent, Section.TITLE_BAR | Section.TWISTIE );
 			statisticsSection.setText("Raw Statistics");
 			statisticsSection.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.TOP));
 			// toolkit.createCompositeSeparator(statisticsSection);
 			
-			// raw statistics section
 			statisticsClient = myToolkit.createComposite(statisticsSection);
 			dcl = new TableWrapLayout();
 			dcl.numColumns = 3;
@@ -687,6 +741,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 
 		/**
 		 * Creates the image, text, and value cells for the table layout.
+		 * Used for convenience to produce three labels on a row for image, description, and value cells.
 		 * @param client details client
 		 * @param name row name
 		 * @param imageId row image id key from plug-in image registry
@@ -756,8 +811,8 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 
 		@Override
 		public void refresh() {
-			if ( inputModel.getModelElement() != null ) {
-				commitCount.setText(String.format("%d commits",inputModel.getModelElement().size()));
+			if ( inputModel.getCommits() != null ) {
+				commitCount.setText(String.format("%d commits",inputModel.getCommits().size()));
 			} else {
 				commitCount.setText("none");
 			}
@@ -786,10 +841,10 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 			layout.numColumns = 3;
 			parent.setLayout(layout);
 			
-			Section section = myToolkit.createSection(parent, Section.TITLE_BAR );
+			Section section = myToolkit.createSection(parent, Section.TWISTIE | Section.EXPANDED | Section.TITLE_BAR );
 			section.setText("Project Model");
 			section.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.TOP));
-			toolkit.createCompositeSeparator(section);
+			// toolkit.createCompositeSeparator(section);
 			
 			client = myToolkit.createComposite(section);
 			TableWrapLayout dcl = new TableWrapLayout();

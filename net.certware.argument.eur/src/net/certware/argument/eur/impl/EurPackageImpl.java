@@ -270,6 +270,24 @@ public class EurPackageImpl extends EPackageImpl implements EurPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getStrategy_Contexts() {
+		return (EReference)strategyEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStrategy_Strategies() {
+		return (EReference)strategyEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSolution() {
 		return solutionEClass;
 	}
@@ -407,6 +425,8 @@ public class EurPackageImpl extends EPackageImpl implements EurPackage {
 		createEReference(strategyEClass, STRATEGY__SOLUTION);
 		createEReference(strategyEClass, STRATEGY__CRITERIA);
 		createEReference(strategyEClass, STRATEGY__ASSUMPTION);
+		createEReference(strategyEClass, STRATEGY__CONTEXTS);
+		createEReference(strategyEClass, STRATEGY__STRATEGIES);
 
 		solutionEClass = createEClass(SOLUTION);
 		createEReference(solutionEClass, SOLUTION__CONTEXT);
@@ -479,7 +499,9 @@ public class EurPackageImpl extends EPackageImpl implements EurPackage {
 		initEReference(getStrategy_Justification(), this.getJustification(), null, "justification", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStrategy_Solution(), this.getSolution(), null, "solution", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getStrategy_Criteria(), this.getCriteria(), null, "criteria", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStrategy_Assumption(), this.getAssumption(), null, "assumption", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStrategy_Assumption(), this.getAssumption(), null, "assumption", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStrategy_Contexts(), this.getContext(), null, "contexts", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStrategy_Strategies(), this.getStrategy(), null, "strategies", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSolution_Context(), this.getContext(), null, "context", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

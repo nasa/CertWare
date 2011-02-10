@@ -289,10 +289,19 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 
 	}
 
-
+	/*
+	 * Respond to resource change events.  If removed or changed, update view.
+	 * (non-Javadoc)
+	 * @see org.eclipse.core.resources.IResourceChangeListener#resourceChanged(org.eclipse.core.resources.IResourceChangeEvent)
+	 */
 	@Override
 	public void resourceChanged(IResourceChangeEvent event) {
+    	if ( event == null || event.getDelta() == null ) {
+    		return;
+    	}
+    	
 	    try {
+	    	
 	      event.getDelta().accept(new IResourceDeltaVisitor() {
 	        
 	        public boolean visit(IResourceDelta delta) throws CoreException {

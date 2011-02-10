@@ -8,6 +8,7 @@ import java.util.Collection;
 import net.certware.argument.arm.impl.ReasoningElementImpl;
 import net.certware.argument.eur.Argument;
 import net.certware.argument.eur.Assumption;
+import net.certware.argument.eur.Context;
 import net.certware.argument.eur.Criteria;
 import net.certware.argument.eur.EurPackage;
 import net.certware.argument.eur.Justification;
@@ -34,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.argument.eur.impl.StrategyImpl#getSolution <em>Solution</em>}</li>
  *   <li>{@link net.certware.argument.eur.impl.StrategyImpl#getCriteria <em>Criteria</em>}</li>
  *   <li>{@link net.certware.argument.eur.impl.StrategyImpl#getAssumption <em>Assumption</em>}</li>
+ *   <li>{@link net.certware.argument.eur.impl.StrategyImpl#getContexts <em>Contexts</em>}</li>
+ *   <li>{@link net.certware.argument.eur.impl.StrategyImpl#getStrategies <em>Strategies</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,7 +84,7 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	protected EList<Criteria> criteria;
 
 	/**
-	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' reference list.
+	 * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssumption()
@@ -89,6 +92,26 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 * @ordered
 	 */
 	protected EList<Assumption> assumption;
+
+	/**
+	 * The cached value of the '{@link #getContexts() <em>Contexts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContexts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Context> contexts;
+
+	/**
+	 * The cached value of the '{@link #getStrategies() <em>Strategies</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategies()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Strategy> strategies;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,9 +187,33 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 */
 	public EList<Assumption> getAssumption() {
 		if (assumption == null) {
-			assumption = new EObjectResolvingEList<Assumption>(Assumption.class, this, EurPackage.STRATEGY__ASSUMPTION);
+			assumption = new EObjectContainmentEList<Assumption>(Assumption.class, this, EurPackage.STRATEGY__ASSUMPTION);
 		}
 		return assumption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Context> getContexts() {
+		if (contexts == null) {
+			contexts = new EObjectContainmentEList<Context>(Context.class, this, EurPackage.STRATEGY__CONTEXTS);
+		}
+		return contexts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Strategy> getStrategies() {
+		if (strategies == null) {
+			strategies = new EObjectContainmentEList<Strategy>(Strategy.class, this, EurPackage.STRATEGY__STRATEGIES);
+		}
+		return strategies;
 	}
 
 	/**
@@ -181,6 +228,12 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return ((InternalEList<?>)getArgument()).basicRemove(otherEnd, msgs);
 			case EurPackage.STRATEGY__JUSTIFICATION:
 				return ((InternalEList<?>)getJustification()).basicRemove(otherEnd, msgs);
+			case EurPackage.STRATEGY__ASSUMPTION:
+				return ((InternalEList<?>)getAssumption()).basicRemove(otherEnd, msgs);
+			case EurPackage.STRATEGY__CONTEXTS:
+				return ((InternalEList<?>)getContexts()).basicRemove(otherEnd, msgs);
+			case EurPackage.STRATEGY__STRATEGIES:
+				return ((InternalEList<?>)getStrategies()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -203,6 +256,10 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return getCriteria();
 			case EurPackage.STRATEGY__ASSUMPTION:
 				return getAssumption();
+			case EurPackage.STRATEGY__CONTEXTS:
+				return getContexts();
+			case EurPackage.STRATEGY__STRATEGIES:
+				return getStrategies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -236,6 +293,14 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				getAssumption().clear();
 				getAssumption().addAll((Collection<? extends Assumption>)newValue);
 				return;
+			case EurPackage.STRATEGY__CONTEXTS:
+				getContexts().clear();
+				getContexts().addAll((Collection<? extends Context>)newValue);
+				return;
+			case EurPackage.STRATEGY__STRATEGIES:
+				getStrategies().clear();
+				getStrategies().addAll((Collection<? extends Strategy>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -263,6 +328,12 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 			case EurPackage.STRATEGY__ASSUMPTION:
 				getAssumption().clear();
 				return;
+			case EurPackage.STRATEGY__CONTEXTS:
+				getContexts().clear();
+				return;
+			case EurPackage.STRATEGY__STRATEGIES:
+				getStrategies().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -285,6 +356,10 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return criteria != null && !criteria.isEmpty();
 			case EurPackage.STRATEGY__ASSUMPTION:
 				return assumption != null && !assumption.isEmpty();
+			case EurPackage.STRATEGY__CONTEXTS:
+				return contexts != null && !contexts.isEmpty();
+			case EurPackage.STRATEGY__STRATEGIES:
+				return strategies != null && !strategies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

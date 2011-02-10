@@ -3,7 +3,10 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spm"
     nsURI="http://www.certware.net/spm" nsPrefix="spm">
-  <eClassifiers xsi:type="ecore:EClass" name="ProjectModel" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//SmmModel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectModel" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//SmmModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commits" upperBound="-1"
+        eType="#//ProjectCommit" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProjectCommit" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//SmmModel"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommitRelationship" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//SmmRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="EndProductQualityCategory" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Category"/>

@@ -3,7 +3,10 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spm"
     nsURI="http://www.certware.net/spm" nsPrefix="spm">
-  <eClassifiers xsi:type="ecore:EClass" name="ProjectModel" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmModel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectModel" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commits" upperBound="-1"
+        eType="#//ProjectCommit" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProjectCommit" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmModel"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommitRelationship" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//SmmRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="EndProductQualityCategory" eSuperTypes="../../net.certware.measurement.smm/model/smm.ecore#//Category"/>

@@ -4,10 +4,11 @@
  */
 package net.certware.core.ui.log;
 
+import net.certware.core.ui.CertWareUI;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.widgets.Display;
-import net.certware.core.ui.CertWareUI;
 
 
 /**

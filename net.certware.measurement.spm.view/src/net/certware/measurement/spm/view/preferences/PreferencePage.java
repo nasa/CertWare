@@ -1,10 +1,10 @@
-package net.certware.core.ui.preferences;
+package net.certware.measurement.spm.view.preferences;
 
 import net.certware.core.ui.CertWareUI;
+import net.certware.measurement.spm.view.Activator;
 
-import org.eclipse.jface.preference.ColorFieldEditor;
+import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
@@ -14,17 +14,17 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  * @author mrb
  * @since 1.0
  */
-public class CorePreferencePage
+public class PreferencePage
 	extends FieldEditorPreferencePage
 	implements IWorkbenchPreferencePage {
 
 	/**
 	 * Creates the page and associates the preference store.
 	 */
-	public CorePreferencePage() {
+	public PreferencePage() {
 		super(GRID);
-		setPreferenceStore(CertWareUI.getDefault().getPreferenceStore());
-		setDescription("CertWare Core Preferences");
+		setPreferenceStore(Activator.getDefault().getPreferenceStore());
+		setDescription("SPM View and Command Preferences");
 		setImageDescriptor(CertWareUI.getDefault().getImageRegistry().getDescriptor(CertWareUI.PREFERENCES_IMAGE));
 	}
 	
@@ -53,9 +53,18 @@ public class CorePreferencePage
 		*/
 		
 		addField( 
-				new StringFieldEditor(PreferenceConstants.P_PROJECT_NAME,
-						"Project &name:",
+				new BooleanFieldEditor(PreferenceConstants.P_CLEAR_MEASUREMENTS,
+						"Whether to clear earlier measurement lists when computing new metric values",
 						getFieldEditorParent()));
+		addField( 
+				new BooleanFieldEditor(PreferenceConstants.P_MATCH_COMMITS,
+						"Whether to match commit IDs when gathering change orders",
+						getFieldEditorParent()));
+		addField( 
+				new BooleanFieldEditor(PreferenceConstants.P_INCLUDE_LINE_COUNTS,
+						"Whether to include line counts when gather change orders",
+						getFieldEditorParent()));
+		/*
 		addField( 
 				new StringFieldEditor(PreferenceConstants.P_LABEL_DECORATOR_SUFFIX,
 						"&Resource decorator suffix:",
@@ -64,6 +73,7 @@ public class CorePreferencePage
 		        new ColorFieldEditor(PreferenceConstants.P_LABEL_DECORATOR_FOREGROUND,
 		          "Resource decorator &foreground:",
 		          getFieldEditorParent()));
+		          */
 
 	}
 
