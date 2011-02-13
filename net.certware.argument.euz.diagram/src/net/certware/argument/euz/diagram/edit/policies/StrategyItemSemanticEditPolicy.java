@@ -11,15 +11,21 @@ import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyArguments
 import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyArgumentsReorientCommand;
 import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyAssumptionsCreateCommand;
 import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyAssumptionsReorientCommand;
+import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyContextsCreateCommand;
+import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyContextsReorientCommand;
 import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyCriteriaCreateCommand;
 import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyCriteriaReorientCommand;
 import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyJustificationsCreateCommand;
 import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyJustificationsReorientCommand;
+import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyStrategiesCreateCommand;
+import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyStrategiesReorientCommand;
 import net.certware.argument.euz.diagram.edit.parts.ArgumentArgumentStrategiesEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyArgumentsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyAssumptionsEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyContextsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyStrategiesEditPart;
 import net.certware.argument.euz.diagram.part.EuzVisualIDRegistry;
 import net.certware.argument.euz.diagram.providers.EuzElementTypes;
 
@@ -67,6 +73,14 @@ public class StrategyItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (EuzVisualIDRegistry.getVisualID(incomingLink) == StrategyStrategyStrategiesEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
@@ -95,6 +109,22 @@ public class StrategyItemSemanticEditPolicy extends
 				continue;
 			}
 			if (EuzVisualIDRegistry.getVisualID(outgoingLink) == StrategyStrategyAssumptionsEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (EuzVisualIDRegistry.getVisualID(outgoingLink) == StrategyStrategyStrategiesEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (EuzVisualIDRegistry.getVisualID(outgoingLink) == StrategyStrategyContextsEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -154,6 +184,16 @@ public class StrategyItemSemanticEditPolicy extends
 			return getGEFWrapper(new StrategyStrategyAssumptionsCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
+		if (EuzElementTypes.StrategyStrategyStrategies_4018 == req
+				.getElementType()) {
+			return getGEFWrapper(new StrategyStrategyStrategiesCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
+		if (EuzElementTypes.StrategyStrategyContexts_4019 == req
+				.getElementType()) {
+			return getGEFWrapper(new StrategyStrategyContextsCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -183,6 +223,15 @@ public class StrategyItemSemanticEditPolicy extends
 				.getElementType()) {
 			return null;
 		}
+		if (EuzElementTypes.StrategyStrategyStrategies_4018 == req
+				.getElementType()) {
+			return getGEFWrapper(new StrategyStrategyStrategiesCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
+		if (EuzElementTypes.StrategyStrategyContexts_4019 == req
+				.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -209,6 +258,12 @@ public class StrategyItemSemanticEditPolicy extends
 					req));
 		case StrategyStrategyAssumptionsEditPart.VISUAL_ID:
 			return getGEFWrapper(new StrategyStrategyAssumptionsReorientCommand(
+					req));
+		case StrategyStrategyStrategiesEditPart.VISUAL_ID:
+			return getGEFWrapper(new StrategyStrategyStrategiesReorientCommand(
+					req));
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			return getGEFWrapper(new StrategyStrategyContextsReorientCommand(
 					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);

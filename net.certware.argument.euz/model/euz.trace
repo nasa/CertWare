@@ -83,4 +83,10 @@
   <linkTraces visualID="4017" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/euz' and _eClass_.name = 'Argument') and _feature_.name = 'subArguments')">
     <linkLabelTraces visualID="6017" queryText="true"/>
   </linkTraces>
+  <linkTraces visualID="4018" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/euz' and _eClass_.name = 'Strategy') and _feature_.name = 'strategyStrategies')">
+    <linkLabelTraces visualID="6018" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4019" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/euz' and _eClass_.name = 'Strategy') and _feature_.name = 'strategyContexts')">
+    <linkLabelTraces visualID="6019" queryText="true"/>
+  </linkTraces>
 </trace:TraceModel>

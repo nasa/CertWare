@@ -131,9 +131,15 @@ public class ScoSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScoPackage.ARTIFACT_LIST: {
-				ArtifactList artifactList = (ArtifactList)theEObject;
-				T result = caseArtifactList(artifactList);
+			case ScoPackage.ARTIFACT_COMMIT: {
+				ArtifactCommit artifactCommit = (ArtifactCommit)theEObject;
+				T result = caseArtifactCommit(artifactCommit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScoPackage.COMMIT_HISTORY: {
+				CommitHistory commitHistory = (CommitHistory)theEObject;
+				T result = caseCommitHistory(commitHistory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -247,17 +253,32 @@ public class ScoSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Artifact List</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Artifact Commit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Artifact List</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Artifact Commit</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArtifactList(ArtifactList object) {
+	public T caseArtifactCommit(ArtifactCommit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Commit History</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Commit History</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommitHistory(CommitHistory object) {
 		return null;
 	}
 

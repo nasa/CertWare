@@ -310,6 +310,34 @@
         <details key="tool.large.bundle" value="net.certware.core.ui"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategyStrategies" upperBound="-1"
+        eType="#_b7Um6PfSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Strategy with Assumption"/>
+        <details key="tool.description" value="Links a strategy with its assumption"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategyContexts" upperBound="-1"
+        eType="#_b7V1A_fSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Criteria with Context"/>
+        <details key="tool.description" value="Links criteria with its context"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7VN9vfSEd-ygqq5y8o0Pg" name="Solution"
       eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">

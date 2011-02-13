@@ -548,6 +548,36 @@
           name="StrategyStrategyAssumptionsExternalLabel"/>
     </descriptors>
     <descriptors
+        name="StrategyStrategyStrategiesFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="StrategyStrategyStrategiesFigure">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="StrategyStrategyStrategiesExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="StrategyStrategyStrategiesExternalLabel"/>
+    </descriptors>
+    <descriptors
+        name="StrategyStrategyContextsFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="StrategyStrategyContextsFigure">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="StrategyStrategyContextsExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="StrategyStrategyContextsExternalLabel"/>
+    </descriptors>
+    <descriptors
         name="SolutionSolutionContextsFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
@@ -716,6 +746,12 @@
       name="StrategyStrategyAssumptions"
       figure="StrategyStrategyAssumptionsFigure"/>
   <connections
+      name="StrategyStrategyStrategies"
+      figure="StrategyStrategyStrategiesFigure"/>
+  <connections
+      name="StrategyStrategyContexts"
+      figure="StrategyStrategyContextsFigure"/>
+  <connections
       name="SolutionSolutionContexts"
       figure="SolutionSolutionContextsFigure"/>
   <connections
@@ -851,6 +887,14 @@
   <labels
       name="StrategyStrategyAssumptionsExternalLabel"
       figure="StrategyStrategyAssumptionsExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="StrategyStrategyStrategiesExternalLabel"
+      figure="StrategyStrategyStrategiesExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="StrategyStrategyContextsExternalLabel"
+      figure="StrategyStrategyContextsExternalLabelFigure"
       elementIcon="false"/>
   <labels
       name="SolutionSolutionContextsExternalLabel"

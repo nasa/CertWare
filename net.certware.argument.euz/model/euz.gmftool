@@ -250,6 +250,19 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Criteria with Context"
+          description="Links criteria with its context">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Solution with Context"
           description="Links a solution with its context">
         <smallIcon
@@ -291,6 +304,19 @@
           xsi:type="gmftool:CreationTool"
           title="Strategy with Argument"
           description="Links a strategy with its argument">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/connector.png"
+            bundle="net.certware.core.ui"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Strategy with Assumption"
+          description="Links a strategy with its assumption">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/obj16/connector.png"

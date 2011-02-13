@@ -478,6 +478,24 @@ public class EuzPackageImpl extends EPackageImpl implements EuzPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getStrategy_StrategyStrategies() {
+		return (EReference)strategyEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStrategy_StrategyContexts() {
+		return (EReference)strategyEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EuzFactory getEuzFactory() {
 		return (EuzFactory)getEFactoryInstance();
 	}
@@ -533,6 +551,8 @@ public class EuzPackageImpl extends EPackageImpl implements EuzPackage {
 		createEReference(strategyEClass, STRATEGY__STRATEGY_JUSTIFICATIONS);
 		createEReference(strategyEClass, STRATEGY__STRATEGY_CRITERIA);
 		createEReference(strategyEClass, STRATEGY__STRATEGY_ASSUMPTIONS);
+		createEReference(strategyEClass, STRATEGY__STRATEGY_STRATEGIES);
+		createEReference(strategyEClass, STRATEGY__STRATEGY_CONTEXTS);
 
 		solutionEClass = createEClass(SOLUTION);
 		createEReference(solutionEClass, SOLUTION__SOLUTION_CONTEXTS);
@@ -619,6 +639,8 @@ public class EuzPackageImpl extends EPackageImpl implements EuzPackage {
 		initEReference(getStrategy_StrategyJustifications(), this.getJustification(), null, "strategyJustifications", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_StrategyCriteria(), this.getCriteria(), null, "strategyCriteria", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getStrategy_StrategyAssumptions(), this.getAssumption(), null, "strategyAssumptions", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getStrategy_StrategyStrategies(), this.getStrategy(), null, "strategyStrategies", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getStrategy_StrategyContexts(), this.getContext(), null, "strategyContexts", null, 0, -1, Strategy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(solutionEClass, Solution.class, "Solution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getSolution_SolutionContexts(), this.getContext(), null, "solutionContexts", null, 0, -1, Solution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
@@ -658,7 +680,7 @@ public class EuzPackageImpl extends EPackageImpl implements EuzPackage {
 		   source, 
 		   new String[] {
 			 "foo", "euz" //$NON-NLS-1$ //$NON-NLS-2$
-		   });																										
+		   });																												
 	}
 
 	/**
@@ -676,7 +698,7 @@ public class EuzPackageImpl extends EPackageImpl implements EuzPackage {
 			 "model.extension", "euz", //$NON-NLS-1$ //$NON-NLS-2$
 			 "diagram.extension", "euzd", //$NON-NLS-1$ //$NON-NLS-2$
 			 "onefile", "false" //$NON-NLS-1$ //$NON-NLS-2$
-		   });																									
+		   });																											
 	}
 
 	/**
@@ -766,7 +788,7 @@ public class EuzPackageImpl extends EPackageImpl implements EuzPackage {
 			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
 			 "tool.large.path", "icons/obj16/parallelogram.png", //$NON-NLS-1$ //$NON-NLS-2$
 			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
-		   });						
+		   });								
 		addAnnotation
 		  (solutionEClass, 
 		   source, 
@@ -1052,6 +1074,34 @@ public class EuzPackageImpl extends EPackageImpl implements EuzPackage {
 			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
 			 "tool.name", "Strategy with Assumption", //$NON-NLS-1$ //$NON-NLS-2$
 			 "tool.description", "Links a strategy with its assumption", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
+		   });		
+		addAnnotation
+		  (getStrategy_StrategyStrategies(), 
+		   source, 
+		   new String[] {
+			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Strategy with Assumption", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links a strategy with its assumption", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.large.bundle", "net.certware.core.ui" //$NON-NLS-1$ //$NON-NLS-2$
+		   });		
+		addAnnotation
+		  (getStrategy_StrategyContexts(), 
+		   source, 
+		   new String[] {
+			 "width", "1", //$NON-NLS-1$ //$NON-NLS-2$
+			 "color", "0,0,0", //$NON-NLS-1$ //$NON-NLS-2$
+			 "style", "solid", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.name", "Criteria with Context", //$NON-NLS-1$ //$NON-NLS-2$
+			 "tool.description", "Links criteria with its context", //$NON-NLS-1$ //$NON-NLS-2$
 			 "tool.small.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$
 			 "tool.small.bundle", "net.certware.core.ui", //$NON-NLS-1$ //$NON-NLS-2$
 			 "tool.large.path", "icons/obj16/connector.png", //$NON-NLS-1$ //$NON-NLS-2$

@@ -21,7 +21,7 @@ import net.certware.argument.eur.Solution;
 import net.certware.argument.eur.Strategy;
 import net.certware.argument.eur.presentation.EurEditor;
 import net.certware.argument.eur.util.EurSwitch;
-
+import net.certware.core.ui.help.IHelpContext;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.help.HelpSystem;
@@ -29,8 +29,6 @@ import org.eclipse.help.IContext;
 import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeSelection;
-
-import net.certware.core.ui.help.IHelpContext;
 
 /**
  * Help context provider for the EUROCONTROL editor.

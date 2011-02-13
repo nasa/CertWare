@@ -301,9 +301,10 @@ public class ContextEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(EuzElementTypes.ArgumentArgumentContexts_4003);
 		types.add(EuzElementTypes.CriteriaCriteriaContexts_4008);
+		types.add(EuzElementTypes.StrategyStrategyContexts_4019);
 		types.add(EuzElementTypes.SolutionSolutionContexts_4014);
 		return types;
 	}
@@ -317,6 +318,8 @@ public class ContextEditPart extends ShapeNodeEditPart {
 			types.add(EuzElementTypes.Argument_2001);
 		} else if (relationshipType == EuzElementTypes.CriteriaCriteriaContexts_4008) {
 			types.add(EuzElementTypes.Criteria_2008);
+		} else if (relationshipType == EuzElementTypes.StrategyStrategyContexts_4019) {
+			types.add(EuzElementTypes.Strategy_2004);
 		} else if (relationshipType == EuzElementTypes.SolutionSolutionContexts_4014) {
 			types.add(EuzElementTypes.Solution_2002);
 		}

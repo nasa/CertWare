@@ -8,7 +8,8 @@ import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.dialog.ISelectionValidator;
 import net.certware.core.ui.dialog.ResourceSelectionDialog2;
 import net.certware.core.ui.log.CertWareLog;
-import net.certware.measurement.sco.ArtifactList;
+import net.certware.measurement.sco.ArtifactCommit;
+import net.certware.measurement.sco.CommitHistory;
 import net.certware.measurement.sco.CriticalDefectChangeOrders;
 import net.certware.measurement.sco.ImprovementChangeOrders;
 import net.certware.measurement.sco.NewFeatureChangeOrders;
@@ -81,7 +82,7 @@ public class GatherOrders implements IObjectActionDelegate
 	 * @param ifile file selection from resources
 	 * @return artifact list or null
 	 */
-	private ArtifactList loadOrdersFromFile(IFile ifile) {
+	private CommitHistory loadOrdersFromFile(IFile ifile) {
 		
 		try {
 	        // load the SCO file through the EMF resource set implementation
@@ -89,7 +90,7 @@ public class GatherOrders implements IObjectActionDelegate
 	        Resource resource = resourceSet.getResource( 
 	        		URI.createPlatformResourceURI(ifile.getFullPath().toString(), true), true);
 	        
-	        ArtifactList documentRoot = (ArtifactList)resource.getContents().get(0);
+	        CommitHistory documentRoot = (CommitHistory)resource.getContents().get(0);
 	        if ( documentRoot != null ) {
 	          return documentRoot;
 	        }
@@ -149,7 +150,7 @@ public class GatherOrders implements IObjectActionDelegate
 		
 		Object results[] = dialog.getResult();
 
-		List<ArtifactList> listOfLists = new ArrayList<ArtifactList>();
+		List<CommitHistory> listOfHistories = new ArrayList<CommitHistory>();
 
 		// collect change order artifact lists from the selected files
 		for ( Object o : results ) {
@@ -159,9 +160,9 @@ public class GatherOrders implements IObjectActionDelegate
 					CertWareLog.logWarning(String.format("%s %s","Skipped processing change orders from invalid file",f.getName()));
 					continue;
 				}
-				ArtifactList artifactList = loadOrdersFromFile(f);
-				if ( artifactList != null ) {
-					listOfLists.add(artifactList);
+				CommitHistory commitHistory = loadOrdersFromFile(f);
+				if ( commitHistory != null ) {
+					listOfHistories.add(commitHistory);
 					CertWareLog.logInfo(String.format("%s %s","Processing change orders from file",f.getName()));
 				}
 			}
@@ -208,7 +209,7 @@ public class GatherOrders implements IObjectActionDelegate
 		// project commit
 		if ( first instanceof ProjectCommit ) {
 			ProjectCommit pc = (ProjectCommit)first;
-			if ( computeOrders(pc,listOfLists) == true ) {
+			if ( computeOrders(pc,listOfHistories) == true ) {
 				return;
 			}
 		}
@@ -218,7 +219,7 @@ public class GatherOrders implements IObjectActionDelegate
 			// check raw statistics and compute metrics
 			ProjectModel pm = (ProjectModel)first;
 			for ( ProjectCommit pc : pm.getCommits() ) {
-					if ( computeOrders(pc,listOfLists) == true ) {
+					if ( computeOrders(pc,listOfHistories) == true ) {
 						// nothing logged per commit
 					}
 			}
@@ -251,10 +252,10 @@ public class GatherOrders implements IObjectActionDelegate
 	 * Check whether the raw statistics are present.
 	 * Updates the model elements in the given commit.
 	 * @param pc project commit to check
-	 * @param artifacts list of artifact lists to process from change orders
+	 * @param histories list of history lists to process from change orders
 	 * @return true if orders were successfully gathered
 	 */
-	public boolean computeOrders(ProjectCommit pc, List<ArtifactList> artifacts) {
+	public boolean computeOrders(ProjectCommit pc, List<CommitHistory> histories) {
 		CriticalDefectChangeOrderCount cdcoc = null;
 		NormalDefectChangeOrderCount ndcoc = null;
 		ImprovementChangeOrderCount icoc = null;
@@ -478,11 +479,13 @@ public class GatherOrders implements IObjectActionDelegate
 		if ( pc.getAnnotation() != null && pc.getAnnotation().size() > 0 ) 
 			commitId = pc.getAnnotation().get(0).getText();
 
-		// for each artifact set in the list
-		for ( ArtifactList al : artifacts ) {
+		// for each history artifact set in the list
+		for ( CommitHistory ch : histories ) {
 
-			// match commit ID test
-			String changeCommitId = al.getCommitIdentifier();
+			for ( ArtifactCommit ac : ch.getCommitRecord() ) {
+
+				// match commit ID test
+			String changeCommitId = ac.getCommitIdentifier();
 			if ( matchCommitIds ) {
 				if ( commitId == null || changeCommitId == null ) {
 					continue;
@@ -494,38 +497,38 @@ public class GatherOrders implements IObjectActionDelegate
 			}
 			
 			// critical changes
-			CriticalDefectChangeOrders cc = al.getAllCriticalDefectChangeOrders();
+			CriticalDefectChangeOrders cc = ac.getAllCriticalDefectChangeOrders();
 			if ( cc != null )
 				criticalChangeCount += cc.getValue();
 			
 			// normal changes
-			NormalDefectChangeOrders nc = al.getAllNormalDefectChangeOrders();
+			NormalDefectChangeOrders nc = ac.getAllNormalDefectChangeOrders();
 			if ( nc != null )
 				normalChangeCount += nc.getValue();
 			
 			// improvement changes
-			ImprovementChangeOrders ic = al.getAllImprovementChangeOrders();
+			ImprovementChangeOrders ic = ac.getAllImprovementChangeOrders();
 			if ( ic != null )
 				improvementChangeCount += ic.getValue();
 			
 			// new feature changes
-			NewFeatureChangeOrders fc = al.getAllNewFeatureChangeOrders();
+			NewFeatureChangeOrders fc = ac.getAllNewFeatureChangeOrders();
 			if ( fc != null )
 				newFeatureChangeCount += fc.getValue();
 
 			// total change orders
-			TotalChangeOrders xo = al.getAllTotalChangeOrders();
+			TotalChangeOrders xo = ac.getAllTotalChangeOrders();
 			if ( xo != null )
 				totalChangeOrderCount += xo.getValue();
 		
 			// usage time
-			totalUsageTime += al.getUsageTime();
+			totalUsageTime += ac.getUsageTime();
 			
 			// baselined and current lines
-			baselinedCount += al.getAllBaselinedLineCount();
-			currentCount += al.getAllCurrentLineCount();
-			
-		} // artifact lists
+			baselinedCount += ac.getAllBaselinedLineCount();
+			currentCount += ac.getAllCurrentLineCount();
+			} // artifact commits
+		} // commit histories
 		
 		// compute the combined metric
 		ComputeMetrics computeMetrics = new ComputeMetrics();

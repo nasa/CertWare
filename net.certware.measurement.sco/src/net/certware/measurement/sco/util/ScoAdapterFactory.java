@@ -97,8 +97,12 @@ public class ScoAdapterFactory extends AdapterFactoryImpl {
 				return createArtifactIdentifierAdapter();
 			}
 			@Override
-			public Adapter caseArtifactList(ArtifactList object) {
-				return createArtifactListAdapter();
+			public Adapter caseArtifactCommit(ArtifactCommit object) {
+				return createArtifactCommitAdapter();
+			}
+			@Override
+			public Adapter caseCommitHistory(CommitHistory object) {
+				return createCommitHistoryAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -219,16 +223,30 @@ public class ScoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.certware.measurement.sco.ArtifactList <em>Artifact List</em>}'.
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.sco.ArtifactCommit <em>Artifact Commit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see net.certware.measurement.sco.ArtifactList
+	 * @see net.certware.measurement.sco.ArtifactCommit
 	 * @generated
 	 */
-	public Adapter createArtifactListAdapter() {
+	public Adapter createArtifactCommitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.certware.measurement.sco.CommitHistory <em>Commit History</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.certware.measurement.sco.CommitHistory
+	 * @generated
+	 */
+	public Adapter createCommitHistoryAdapter() {
 		return null;
 	}
 

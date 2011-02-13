@@ -33,8 +33,10 @@ import net.certware.argument.euz.diagram.edit.parts.SolutionSolutionEvidenceEdit
 import net.certware.argument.euz.diagram.edit.parts.StrategyEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyArgumentsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyAssumptionsEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyContextsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyStrategiesEditPart;
 import net.certware.argument.euz.diagram.part.EuzDiagramEditorPlugin;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -167,6 +169,16 @@ public class EuzElementTypes {
 	 * @generated
 	 */
 	public static final IElementType StrategyStrategyAssumptions_4013 = getElementType("net.certware.argument.euz.diagram.StrategyStrategyAssumptions_4013"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType StrategyStrategyStrategies_4018 = getElementType("net.certware.argument.euz.diagram.StrategyStrategyStrategies_4018"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType StrategyStrategyContexts_4019 = getElementType("net.certware.argument.euz.diagram.StrategyStrategyContexts_4019"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -353,6 +365,12 @@ public class EuzElementTypes {
 			elements.put(StrategyStrategyAssumptions_4013,
 					EuzPackage.eINSTANCE.getStrategy_StrategyAssumptions());
 
+			elements.put(StrategyStrategyStrategies_4018,
+					EuzPackage.eINSTANCE.getStrategy_StrategyStrategies());
+
+			elements.put(StrategyStrategyContexts_4019,
+					EuzPackage.eINSTANCE.getStrategy_StrategyContexts());
+
 			elements.put(SolutionSolutionContexts_4014,
 					EuzPackage.eINSTANCE.getSolution_SolutionContexts());
 
@@ -401,6 +419,8 @@ public class EuzElementTypes {
 			KNOWN_ELEMENT_TYPES.add(StrategyStrategyJustifications_4011);
 			KNOWN_ELEMENT_TYPES.add(StrategyStrategyCriteria_4012);
 			KNOWN_ELEMENT_TYPES.add(StrategyStrategyAssumptions_4013);
+			KNOWN_ELEMENT_TYPES.add(StrategyStrategyStrategies_4018);
+			KNOWN_ELEMENT_TYPES.add(StrategyStrategyContexts_4019);
 			KNOWN_ELEMENT_TYPES.add(SolutionSolutionContexts_4014);
 			KNOWN_ELEMENT_TYPES.add(SolutionSolutionEvidence_4015);
 			KNOWN_ELEMENT_TYPES.add(SolutionSolutionCriteria_4016);
@@ -459,6 +479,10 @@ public class EuzElementTypes {
 			return StrategyStrategyCriteria_4012;
 		case StrategyStrategyAssumptionsEditPart.VISUAL_ID:
 			return StrategyStrategyAssumptions_4013;
+		case StrategyStrategyStrategiesEditPart.VISUAL_ID:
+			return StrategyStrategyStrategies_4018;
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			return StrategyStrategyContexts_4019;
 		case SolutionSolutionContextsEditPart.VISUAL_ID:
 			return SolutionSolutionContexts_4014;
 		case SolutionSolutionEvidenceEditPart.VISUAL_ID:

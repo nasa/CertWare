@@ -1,35 +1,30 @@
 package net.certware.history.egit;
 
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
 
 /**
  * Activator for the history provider.
  * @author mrb
  * @since 1.0
  */
-public class Activator implements BundleActivator {
+public class Activator extends AbstractUIPlugin implements BundleActivator {
 
-	private static BundleContext context;
-
-	static BundleContext getContext() {
-		return context;
+	/** singleton reference */
+	static private Activator plugin = null;
+	
+	public Activator() {
+		super();
+		plugin = this;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
+	
+	/**
+	 * Returns the reference to the plugin.
+	 * @return plugin reference
 	 */
-	public void start(BundleContext bundleContext) throws Exception {
-		Activator.context = bundleContext;
+	public static Activator getDefault() {
+		return plugin;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-	 */
-	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
-	}
 
 }

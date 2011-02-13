@@ -11,14 +11,18 @@ import net.certware.argument.arm.Claim;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.ReasoningElement;
-
-import net.certware.argument.eur.*;
+import net.certware.argument.eur.Argument;
+import net.certware.argument.eur.Assumption;
+import net.certware.argument.eur.Context;
+import net.certware.argument.eur.Criteria;
+import net.certware.argument.eur.EurPackage;
+import net.certware.argument.eur.Justification;
+import net.certware.argument.eur.Solution;
+import net.certware.argument.eur.Strategy;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

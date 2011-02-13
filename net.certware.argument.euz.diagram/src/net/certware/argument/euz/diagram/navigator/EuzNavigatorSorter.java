@@ -15,7 +15,7 @@ public class EuzNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 4019;
+	private static final int GROUP_CATEGORY = 4021;
 
 	/**
 	 * @generated

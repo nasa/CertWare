@@ -70,7 +70,7 @@
     <xsd:attribute name="currentLineCount" type="xsd:int" use="required"/>
   </xsd:complexType>
   <xsd:element name="ArtifactIdentifier" type="sco:ArtifactIdentifier"/>
-  <xsd:complexType name="ArtifactList">
+  <xsd:complexType name="ArtifactCommit">
     <xsd:choice maxOccurs="unbounded" minOccurs="0">
       <xsd:element name="artifactIdentifiers" type="sco:ArtifactIdentifier"/>
       <xsd:element ref="xmi:Extension"/>
@@ -80,5 +80,14 @@
     <xsd:attribute name="commitIdentifier" type="xsd:string"/>
     <xsd:attribute name="usageTime" type="xsd:double"/>
   </xsd:complexType>
-  <xsd:element name="ArtifactList" type="sco:ArtifactList"/>
+  <xsd:element name="ArtifactCommit" type="sco:ArtifactCommit"/>
+  <xsd:complexType name="CommitHistory">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="commitRecord" type="sco:ArtifactCommit"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+  </xsd:complexType>
+  <xsd:element name="CommitHistory" type="sco:CommitHistory"/>
 </xsd:schema>

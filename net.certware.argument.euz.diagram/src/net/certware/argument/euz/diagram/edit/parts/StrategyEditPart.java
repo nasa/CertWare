@@ -269,11 +269,13 @@ public class StrategyEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(6);
 		types.add(EuzElementTypes.StrategyStrategyArguments_4010);
 		types.add(EuzElementTypes.StrategyStrategyJustifications_4011);
 		types.add(EuzElementTypes.StrategyStrategyCriteria_4012);
 		types.add(EuzElementTypes.StrategyStrategyAssumptions_4013);
+		types.add(EuzElementTypes.StrategyStrategyStrategies_4018);
+		types.add(EuzElementTypes.StrategyStrategyContexts_4019);
 		return types;
 	}
 
@@ -295,6 +297,12 @@ public class StrategyEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof AssumptionEditPart) {
 			types.add(EuzElementTypes.StrategyStrategyAssumptions_4013);
 		}
+		if (targetEditPart instanceof net.certware.argument.euz.diagram.edit.parts.StrategyEditPart) {
+			types.add(EuzElementTypes.StrategyStrategyStrategies_4018);
+		}
+		if (targetEditPart instanceof ContextEditPart) {
+			types.add(EuzElementTypes.StrategyStrategyContexts_4019);
+		}
 		return types;
 	}
 
@@ -311,6 +319,10 @@ public class StrategyEditPart extends ShapeNodeEditPart {
 			types.add(EuzElementTypes.Criteria_2008);
 		} else if (relationshipType == EuzElementTypes.StrategyStrategyAssumptions_4013) {
 			types.add(EuzElementTypes.Assumption_2005);
+		} else if (relationshipType == EuzElementTypes.StrategyStrategyStrategies_4018) {
+			types.add(EuzElementTypes.Strategy_2004);
+		} else if (relationshipType == EuzElementTypes.StrategyStrategyContexts_4019) {
+			types.add(EuzElementTypes.Context_2007);
 		}
 		return types;
 	}
@@ -319,8 +331,9 @@ public class StrategyEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(EuzElementTypes.ArgumentArgumentStrategies_4001);
+		types.add(EuzElementTypes.StrategyStrategyStrategies_4018);
 		return types;
 	}
 
@@ -331,6 +344,8 @@ public class StrategyEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == EuzElementTypes.ArgumentArgumentStrategies_4001) {
 			types.add(EuzElementTypes.Argument_2001);
+		} else if (relationshipType == EuzElementTypes.StrategyStrategyStrategies_4018) {
+			types.add(EuzElementTypes.Strategy_2004);
 		}
 		return types;
 	}

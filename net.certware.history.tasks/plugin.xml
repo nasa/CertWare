@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="net.certware.history.tasks.dump.project"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.history.tasks.actions.DumpTaskList"
+               enablesFor="+"
+               helpContextId="taskDumpProject"
+               icon="icons/obj16/history_list.png"
+               id="net.certware.history.tasks.action.console.project"
+               label="Dump task list to console"
+               menubarPath="certware/additions"
+               tooltip="Dump the task list metrics to the console">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="net.certware.history.tasks.dump.category"
+            nameFilter="*"
+            objectClass="org.eclipse.mylyn.tasks.core.ITaskContainer">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare">
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.history.tasks.actions.DumpTaskCategory"
+               enablesFor="+"
+               helpContextId="taskDumpCategory"
+               icon="icons/obj16/history_list.png"
+               id="net.certware.history.tasks.action.console.category"
+               label="Dump task category to console"
+               menubarPath="certware/additions"
+               tooltip="Dump the task category metrics to the console">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

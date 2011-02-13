@@ -40,11 +40,15 @@
       <nested inputs="sco.ecore#//ArtifactIdentifier/totalChangeOrders" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=4"/>
     </nested>
     <nested inputs="sco.ecore#//ArtifactIdentifier" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDElementDeclaration=6"/>
-    <nested inputs="sco.ecore#//ArtifactList" outputs="ScoXMI.xsd#//ArtifactList;XSDComplexTypeDefinition=7">
-      <nested inputs="sco.ecore#//ArtifactList/commitIdentifier" outputs="ScoXMI.xsd#//ArtifactList;XSDComplexTypeDefinition=7/XSDAttributeUse=1"/>
-      <nested inputs="sco.ecore#//ArtifactList/usageTime" outputs="ScoXMI.xsd#//ArtifactList;XSDComplexTypeDefinition=7/XSDAttributeUse=2"/>
-      <nested inputs="sco.ecore#//ArtifactList/artifactIdentifiers" outputs="ScoXMI.xsd#//ArtifactList;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"/>
+    <nested inputs="sco.ecore#//ArtifactCommit" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7">
+      <nested inputs="sco.ecore#//ArtifactCommit/commitIdentifier" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7/XSDAttributeUse=1"/>
+      <nested inputs="sco.ecore#//ArtifactCommit/usageTime" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7/XSDAttributeUse=2"/>
+      <nested inputs="sco.ecore#//ArtifactCommit/artifactIdentifiers" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"/>
     </nested>
-    <nested inputs="sco.ecore#//ArtifactList" outputs="ScoXMI.xsd#//ArtifactList;XSDElementDeclaration=7"/>
+    <nested inputs="sco.ecore#//ArtifactCommit" outputs="ScoXMI.xsd#//ArtifactCommit;XSDElementDeclaration=7"/>
+    <nested inputs="sco.ecore#//CommitHistory" outputs="ScoXMI.xsd#//CommitHistory;XSDComplexTypeDefinition=8">
+      <nested inputs="sco.ecore#//CommitHistory/commitRecord" outputs="ScoXMI.xsd#//CommitHistory;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="sco.ecore#//CommitHistory" outputs="ScoXMI.xsd#//CommitHistory;XSDElementDeclaration=8"/>
   </nested>
 </xsd2ecore:XSD2EcoreMappingRoot>

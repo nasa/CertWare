@@ -196,6 +196,18 @@ public class EuzEditPartFactory implements EditPartFactory {
 				return new StrategyStrategyAssumptionsExternalLabelEditPart(
 						view);
 
+			case StrategyStrategyStrategiesEditPart.VISUAL_ID:
+				return new StrategyStrategyStrategiesEditPart(view);
+
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
+
+			case StrategyStrategyContextsEditPart.VISUAL_ID:
+				return new StrategyStrategyContextsEditPart(view);
+
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
+
 			case SolutionSolutionContextsEditPart.VISUAL_ID:
 				return new SolutionSolutionContextsEditPart(view);
 

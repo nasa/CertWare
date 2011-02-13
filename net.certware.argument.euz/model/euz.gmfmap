@@ -414,7 +414,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="euz.gmftool#//@palette/@tools.1/@tools.13"/>
+        href="euz.gmftool#//@palette/@tools.1/@tools.14"/>
     <diagramLink
         href="euz.gmfgraph#StrategyStrategyArguments"/>
     <linkMetaFeature
@@ -430,7 +430,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="euz.gmftool#//@palette/@tools.1/@tools.16"/>
+        href="euz.gmftool#//@palette/@tools.1/@tools.18"/>
     <diagramLink
         href="euz.gmfgraph#StrategyStrategyJustifications"/>
     <linkMetaFeature
@@ -446,7 +446,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="euz.gmftool#//@palette/@tools.1/@tools.15"/>
+        href="euz.gmftool#//@palette/@tools.1/@tools.17"/>
     <diagramLink
         href="euz.gmfgraph#StrategyStrategyCriteria"/>
     <linkMetaFeature
@@ -462,7 +462,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="euz.gmftool#//@palette/@tools.1/@tools.14"/>
+        href="euz.gmftool#//@palette/@tools.1/@tools.15"/>
     <diagramLink
         href="euz.gmfgraph#StrategyStrategyAssumptions"/>
     <linkMetaFeature
@@ -474,11 +474,43 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="euz.gmfgraph#SolutionSolutionContextsExternalLabel"/>
+          href="euz.gmfgraph#StrategyStrategyStrategiesExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="euz.gmftool#//@palette/@tools.1/@tools.16"/>
+    <diagramLink
+        href="euz.gmfgraph#StrategyStrategyStrategies"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="euz.ecore#//Strategy/strategyStrategies"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="euz.gmfgraph#StrategyStrategyContextsExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
         href="euz.gmftool#//@palette/@tools.1/@tools.10"/>
+    <diagramLink
+        href="euz.gmfgraph#StrategyStrategyContexts"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="euz.ecore#//Strategy/strategyContexts"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="euz.gmfgraph#SolutionSolutionContextsExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="euz.gmftool#//@palette/@tools.1/@tools.11"/>
     <diagramLink
         href="euz.gmfgraph#SolutionSolutionContexts"/>
     <linkMetaFeature
@@ -494,7 +526,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="euz.gmftool#//@palette/@tools.1/@tools.12"/>
+        href="euz.gmftool#//@palette/@tools.1/@tools.13"/>
     <diagramLink
         href="euz.gmfgraph#SolutionSolutionEvidence"/>
     <linkMetaFeature
@@ -510,7 +542,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="euz.gmftool#//@palette/@tools.1/@tools.11"/>
+        href="euz.gmftool#//@palette/@tools.1/@tools.12"/>
     <diagramLink
         href="euz.gmfgraph#SolutionSolutionCriteria"/>
     <linkMetaFeature

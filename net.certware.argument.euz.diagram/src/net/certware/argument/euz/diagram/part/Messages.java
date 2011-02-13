@@ -436,72 +436,92 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String SolutionwithContext11CreationTool_title;
+	public static String CriteriawithContext11CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SolutionwithContext11CreationTool_desc;
+	public static String CriteriawithContext11CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SolutionwithCriteria12CreationTool_title;
+	public static String SolutionwithContext12CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SolutionwithCriteria12CreationTool_desc;
+	public static String SolutionwithContext12CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SolutionwithEvidence13CreationTool_title;
+	public static String SolutionwithCriteria13CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SolutionwithEvidence13CreationTool_desc;
+	public static String SolutionwithCriteria13CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithArgument14CreationTool_title;
+	public static String SolutionwithEvidence14CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithArgument14CreationTool_desc;
+	public static String SolutionwithEvidence14CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithAssumption15CreationTool_title;
+	public static String StrategywithArgument15CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithAssumption15CreationTool_desc;
+	public static String StrategywithArgument15CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithCriteria16CreationTool_title;
+	public static String StrategywithAssumption16CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithCriteria16CreationTool_desc;
+	public static String StrategywithAssumption16CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithJustification17CreationTool_title;
+	public static String StrategywithAssumption17CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StrategywithJustification17CreationTool_desc;
+	public static String StrategywithAssumption17CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StrategywithCriteria18CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StrategywithCriteria18CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StrategywithJustification19CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StrategywithJustification19CreationTool_desc;
 
 	/**
 	 * @generated
@@ -571,6 +591,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_StrategyStrategyContexts_4019_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StrategyStrategyContexts_4019_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_CriteriaCriteriaContexts_4008_target;
 
 	/**
@@ -612,6 +642,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Argument_2001_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StrategyStrategyStrategies_4018_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_StrategyStrategyStrategies_4018_source;
 
 	/**
 	 * @generated

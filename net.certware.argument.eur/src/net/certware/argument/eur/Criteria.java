@@ -4,6 +4,7 @@
 package net.certware.argument.eur;
 
 import net.certware.argument.arm.InformationElement;
+
 import org.eclipse.emf.common.util.EList;
 
 /**

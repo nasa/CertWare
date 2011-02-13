@@ -8,6 +8,18 @@
             id="net.certware.argument.transform.gsn2arm.objectContribution"
             nameFilter="*.gsn"
             objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
          <action
                class="net.certware.argument.transform.gsn2arm.TransformAction"
                enablesFor="*"
@@ -15,6 +27,7 @@
                icon="icons/obj16/atl_logo.gif"
                id="net.certware.argument.transform.gsn2arm.action"
                label="Transform to ARM"
+               menubarPath="certware/additions"
                tooltip="Applies an ATL transformation to the GSN model">
          </action>
       </objectContribution>

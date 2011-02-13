@@ -27,20 +27,75 @@
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
+            adaptable="true"
+            id="net.certware.history.egit.sco.project"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.history.egit.actions.GatherHistoryAction"
+               enablesFor="1"
+               icon="icons/obj16/sco.gif"
+               id="net.certware.history.egit.action.write.sco"
+               label="Gather change history to SCO file"
+               menubarPath="certware/additions"
+               tooltip="Gather project repository change history to SCO file">
+         </action>
+      </objectContribution>
+      <objectContribution
             adaptable="false"
             id="net.certware.history.egit.dump.project"
             nameFilter="*"
             objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
          <action
                class="net.certware.history.egit.actions.DumpProjectAction"
                enablesFor="+"
                helpContextId="projectDump"
                icon="icons/obj16/dump.gif"
                id="net.certware.history.egit.action.dump.console"
-               label="Dump history to console"
+               label="Dump change history to console"
+               menubarPath="certware/additions"
                tooltip="Dump the project history metrics to the console">
          </action>
       </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.certware.history.egit.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="certware"
+            class="net.certware.history.egit.preferences.PreferencePage"
+            id="net.certware.history.egit.page"
+            name="EGit History Preferences">
+      </page>
    </extension>
 
 </plugin>

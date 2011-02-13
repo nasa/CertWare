@@ -19,6 +19,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link net.certware.argument.euz.Strategy#getStrategyJustifications <em>Strategy Justifications</em>}</li>
  *   <li>{@link net.certware.argument.euz.Strategy#getStrategyCriteria <em>Strategy Criteria</em>}</li>
  *   <li>{@link net.certware.argument.euz.Strategy#getStrategyAssumptions <em>Strategy Assumptions</em>}</li>
+ *   <li>{@link net.certware.argument.euz.Strategy#getStrategyStrategies <em>Strategy Strategies</em>}</li>
+ *   <li>{@link net.certware.argument.euz.Strategy#getStrategyContexts <em>Strategy Contexts</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,5 +92,37 @@ public interface Strategy extends ReasoningElement {
 	 * @generated
 	 */
 	EList<Assumption> getStrategyAssumptions();
+
+	/**
+	 * Returns the value of the '<em><b>Strategy Strategies</b></em>' reference list.
+	 * The list contents are of type {@link net.certware.argument.euz.Strategy}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Strategy Strategies</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Strategy Strategies</em>' reference list.
+	 * @see net.certware.argument.euz.EuzPackage#getStrategy_StrategyStrategies()
+	 * @model annotation="gmf.link width='1' color='0,0,0' style='solid' tool.name='Strategy with Assumption' tool.description='Links a strategy with its assumption' tool.small.path='icons/obj16/connector.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/connector.png' tool.large.bundle='net.certware.core.ui'"
+	 * @generated
+	 */
+	EList<Strategy> getStrategyStrategies();
+
+	/**
+	 * Returns the value of the '<em><b>Strategy Contexts</b></em>' reference list.
+	 * The list contents are of type {@link net.certware.argument.euz.Context}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Strategy Contexts</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Strategy Contexts</em>' reference list.
+	 * @see net.certware.argument.euz.EuzPackage#getStrategy_StrategyContexts()
+	 * @model annotation="gmf.link width='1' color='0,0,0' style='solid' tool.name='Criteria with Context' tool.description='Links criteria with its context' tool.small.path='icons/obj16/connector.png' tool.small.bundle='net.certware.core.ui' tool.large.path='icons/obj16/connector.png' tool.large.bundle='net.certware.core.ui'"
+	 * @generated
+	 */
+	EList<Context> getStrategyContexts();
 
 } // Strategy

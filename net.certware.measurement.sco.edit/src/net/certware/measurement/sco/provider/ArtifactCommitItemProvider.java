@@ -7,7 +7,7 @@ package net.certware.measurement.sco.provider;
 import java.util.Collection;
 import java.util.List;
 
-import net.certware.measurement.sco.ArtifactList;
+import net.certware.measurement.sco.ArtifactCommit;
 import net.certware.measurement.sco.ScoFactory;
 import net.certware.measurement.sco.ScoPackage;
 
@@ -33,12 +33,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link net.certware.measurement.sco.ArtifactList} object.
+ * This is the item provider adapter for a {@link net.certware.measurement.sco.ArtifactCommit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArtifactListItemProvider
+public class ArtifactCommitItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -55,7 +55,7 @@ public class ArtifactListItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArtifactListItemProvider(AdapterFactory adapterFactory) {
+	public ArtifactCommitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,33 +70,10 @@ public class ArtifactListItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addArtifactIdentifiersPropertyDescriptor(object);
 			addCommitIdentifierPropertyDescriptor(object);
 			addUsageTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Artifact Identifiers feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addArtifactIdentifiersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ArtifactList_artifactIdentifiers_feature"), //$NON-NLS-1$
-				 getString("_UI_ArtifactList_artifactIdentifiers_description"), //$NON-NLS-1$
-				 ScoPackage.Literals.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS,
-				 false,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_BasicPropertyCategory"), //$NON-NLS-1$
-				 null));
 	}
 
 	/**
@@ -110,14 +87,14 @@ public class ArtifactListItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ArtifactList_commitIdentifier_feature"), //$NON-NLS-1$
-				 getString("_UI_ArtifactList_commitIdentifier_description"), //$NON-NLS-1$
-				 ScoPackage.Literals.ARTIFACT_LIST__COMMIT_IDENTIFIER,
+				 getString("_UI_ArtifactCommit_commitIdentifier_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArtifactCommit_commitIdentifier_feature", "_UI_ArtifactCommit_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 ScoPackage.Literals.ARTIFACT_COMMIT__COMMIT_IDENTIFIER,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_BasicPropertyCategory"), //$NON-NLS-1$
+				 null,
 				 null));
 	}
 
@@ -132,14 +109,14 @@ public class ArtifactListItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ArtifactList_usageTime_feature"), //$NON-NLS-1$
-				 getString("_UI_ArtifactList_usageTime_description"), //$NON-NLS-1$
-				 ScoPackage.Literals.ARTIFACT_LIST__USAGE_TIME,
+				 getString("_UI_ArtifactCommit_usageTime_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArtifactCommit_usageTime_feature", "_UI_ArtifactCommit_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 ScoPackage.Literals.ARTIFACT_COMMIT__USAGE_TIME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 getString("_UI_BasicPropertyCategory"), //$NON-NLS-1$
+				 null,
 				 null));
 	}
 
@@ -155,7 +132,7 @@ public class ArtifactListItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ScoPackage.Literals.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS);
+			childrenFeatures.add(ScoPackage.Literals.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS);
 		}
 		return childrenFeatures;
 	}
@@ -174,14 +151,14 @@ public class ArtifactListItemProvider
 	}
 
 	/**
-	 * This returns ArtifactList.gif.
+	 * This returns ArtifactCommit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/artifacts")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArtifactCommit")); //$NON-NLS-1$
 	}
 
 	/**
@@ -192,10 +169,10 @@ public class ArtifactListItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ArtifactList)object).getCommitIdentifier();
+		String label = ((ArtifactCommit)object).getCommitIdentifier();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ArtifactList_type") : //$NON-NLS-1$
-			getString("_UI_ArtifactList_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+			getString("_UI_ArtifactCommit_type") : //$NON-NLS-1$
+			getString("_UI_ArtifactCommit_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -209,12 +186,12 @@ public class ArtifactListItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ArtifactList.class)) {
-			case ScoPackage.ARTIFACT_LIST__COMMIT_IDENTIFIER:
-			case ScoPackage.ARTIFACT_LIST__USAGE_TIME:
+		switch (notification.getFeatureID(ArtifactCommit.class)) {
+			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
+			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ScoPackage.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS:
+			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -234,7 +211,7 @@ public class ArtifactListItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ScoPackage.Literals.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS,
+				(ScoPackage.Literals.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS,
 				 ScoFactory.eINSTANCE.createArtifactIdentifier()));
 	}
 

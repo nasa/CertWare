@@ -9,23 +9,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Artifact List</b></em>'.
+ * A representation of the model object '<em><b>Artifact Commit</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.certware.measurement.sco.ArtifactList#getArtifactIdentifiers <em>Artifact Identifiers</em>}</li>
- *   <li>{@link net.certware.measurement.sco.ArtifactList#getCommitIdentifier <em>Commit Identifier</em>}</li>
- *   <li>{@link net.certware.measurement.sco.ArtifactList#getUsageTime <em>Usage Time</em>}</li>
+ *   <li>{@link net.certware.measurement.sco.ArtifactCommit#getArtifactIdentifiers <em>Artifact Identifiers</em>}</li>
+ *   <li>{@link net.certware.measurement.sco.ArtifactCommit#getCommitIdentifier <em>Commit Identifier</em>}</li>
+ *   <li>{@link net.certware.measurement.sco.ArtifactCommit#getUsageTime <em>Usage Time</em>}</li>
  * </ul>
  * </p>
  *
- * @see net.certware.measurement.sco.ScoPackage#getArtifactList()
+ * @see net.certware.measurement.sco.ScoPackage#getArtifactCommit()
  * @model
  * @generated
  */
-public interface ArtifactList extends EObject {
+public interface ArtifactCommit extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Artifact Identifiers</b></em>' containment reference list.
 	 * The list contents are of type {@link net.certware.measurement.sco.ArtifactIdentifier}.
@@ -36,7 +36,7 @@ public interface ArtifactList extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Artifact Identifiers</em>' containment reference list.
-	 * @see net.certware.measurement.sco.ScoPackage#getArtifactList_ArtifactIdentifiers()
+	 * @see net.certware.measurement.sco.ScoPackage#getArtifactCommit_ArtifactIdentifiers()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -52,14 +52,14 @@ public interface ArtifactList extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Commit Identifier</em>' attribute.
 	 * @see #setCommitIdentifier(String)
-	 * @see net.certware.measurement.sco.ScoPackage#getArtifactList_CommitIdentifier()
+	 * @see net.certware.measurement.sco.ScoPackage#getArtifactCommit_CommitIdentifier()
 	 * @model
 	 * @generated
 	 */
 	String getCommitIdentifier();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactList#getCommitIdentifier <em>Commit Identifier</em>}' attribute.
+	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactCommit#getCommitIdentifier <em>Commit Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Commit Identifier</em>' attribute.
@@ -78,14 +78,14 @@ public interface ArtifactList extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Usage Time</em>' attribute.
 	 * @see #setUsageTime(double)
-	 * @see net.certware.measurement.sco.ScoPackage#getArtifactList_UsageTime()
+	 * @see net.certware.measurement.sco.ScoPackage#getArtifactCommit_UsageTime()
 	 * @model
 	 * @generated
 	 */
 	double getUsageTime();
 
 	/**
-	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactList#getUsageTime <em>Usage Time</em>}' attribute.
+	 * Sets the value of the '{@link net.certware.measurement.sco.ArtifactCommit#getUsageTime <em>Usage Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Usage Time</em>' attribute.
@@ -94,6 +94,7 @@ public interface ArtifactList extends EObject {
 	 */
 	void setUsageTime(double value);
 
+
 	public TotalChangeOrders getAllTotalChangeOrders();
 	public CriticalDefectChangeOrders getAllCriticalDefectChangeOrders();
 	public ImprovementChangeOrders getAllImprovementChangeOrders();
@@ -101,6 +102,4 @@ public interface ArtifactList extends EObject {
 	public NormalDefectChangeOrders getAllNormalDefectChangeOrders();
 	public int getAllBaselinedLineCount();
 	public int getAllCurrentLineCount();
-	
-	
-} // ArtifactList
+} // ArtifactCommit

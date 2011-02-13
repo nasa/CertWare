@@ -60,11 +60,15 @@ import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyArgumentsEdi
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyArgumentsExternalLabelEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyAssumptionsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyAssumptionsExternalLabelEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyContextsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaExternalLabelEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsExternalLabelEditPart;
 
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyStrategiesEditPart;
+import net.certware.argument.euz.diagram.edit.parts.WrappingLabel2EditPart;
+import net.certware.argument.euz.diagram.edit.parts.WrappingLabelEditPart;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -394,6 +398,16 @@ public class EuzVisualIDRegistry {
 			break;
 		case StrategyStrategyAssumptionsEditPart.VISUAL_ID:
 			if (StrategyStrategyAssumptionsExternalLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StrategyStrategyStrategiesEditPart.VISUAL_ID:
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

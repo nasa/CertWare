@@ -8,9 +8,11 @@ import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.core.ui.resources.FileFinder;
 import net.certware.core.ui.resources.FileOpener;
+import net.certware.measurement.sco.ArtifactCommit;
 import net.certware.measurement.sco.ArtifactIdentifier;
-import net.certware.measurement.sco.ArtifactList;
 import net.certware.measurement.sco.ChangeOrderCount;
+import net.certware.measurement.sco.CommitHistory;
+import net.certware.measurement.sco.impl.ArtifactCommitImpl;
 import net.certware.measurement.sco.impl.ArtifactIdentifierImpl;
 import net.certware.measurement.sco.impl.CriticalDefectChangeOrdersImpl;
 import net.certware.measurement.sco.impl.ImprovementChangeOrdersImpl;
@@ -89,17 +91,15 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	/** selected file opener */
 	Hyperlink fileLink = null;
 	/** selected results model */
-	ArtifactList artifactList;
+	// ArtifactList artifactList;
 	/** default section style */
 	int sectionStyle = Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED;
 	/** bold font from resources */
 	Font boldFont;
 	/** tree viewer, loaded with EMF controls */
 	TreeViewer viewer;
-	/** commit id label */
-	Label commitId;
-	/** usage time label */
-	Label usageTime;
+	/** commit history from resource */
+	CommitHistory commitHistory;
 	
 	@Override
 	public void createPartControl(Composite parent) {
@@ -134,13 +134,6 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	    ResourcesPlugin.getWorkspace().addResourceChangeListener(this, 
 	    	      IResourceChangeEvent.POST_CHANGE | IResourceChangeEvent.PRE_CLOSE | IResourceChangeEvent.PRE_DELETE );
 
-	    /* does nothing
-	    GridData gd = new GridData();
-	    gd.horizontalIndent = 20;
-	    gd.verticalIndent = 30;
-	    form.setLayoutData(gd);
-	    */
-	    
 		form.layout(true);
 		form.reflow(true);
 	}
@@ -150,17 +143,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	 */
 	protected void refreshPart() {
 		// update the input to the tree viewer in the master part
-		viewer.setInput(artifactList);
-		
-		// update master side fields
-		if ( artifactList != null ) {
-			String id = artifactList.getCommitIdentifier();
-			if ( id == null )
-				id = "<n/a>";
-			commitId.setText(id);
-			usageTime.setText(String.format("%6.1f hrs",artifactList.getUsageTime()));
-		}
-
+		viewer.setInput(commitHistory);
 		form.reflow(true);
 	}
 	
@@ -195,12 +178,14 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	        // load the XML file through the EMF resource set implementation
 	        ResourceSet resourceSet = new ResourceSetImpl();
 	        Resource resource = resourceSet.getResource( URI.createPlatformResourceURI(selectedFile.getFullPath().toString(), true), true);
-	        ArtifactList documentRoot = (ArtifactList)resource.getContents().get(0);
+	        CommitHistory documentRoot = (CommitHistory)resource.getContents().get(0);
 	        if ( documentRoot != null ) {
-	          artifactList = documentRoot;
+	          commitHistory = documentRoot;
 	        }
 	      } catch( Exception exception ) {
-	        CertWareLog.logError(String.format("%s %s", "Document root null loading" + selectedFile.getName()), exception);
+	        CertWareLog.logError(String.format("%s %s", "Document root null loading" + 
+	        		(selectedFile == null ? "unknown file" : selectedFile.getName())), 
+	        		exception);
 	      }
 	}
 	
@@ -253,17 +238,24 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 				    EObject eo = (EObject)object;
 
 				    if ( eo != null ) {
-				    	if ( eo instanceof ArtifactList ) {
-					        artifactList = (ArtifactList)eo;
-					        selectedFile = null;
-					        refreshPart();
-					        return;
+				    	
+				    	if ( eo instanceof CommitHistory ) {
+				    		commitHistory = (CommitHistory)eo;
+				    		selectedFile = null;
+				    		refreshPart();
+				    		return;
 				    	}
 				    	
 				    	EObject container = eo.eContainer();
-				    	
-				    	if ( container instanceof ArtifactList ) {
-					        artifactList = (ArtifactList)container;
+
+				    	if ( container instanceof ScoResourceImpl ) {
+				    		// might do something with contents later
+				    		return;
+				    	}
+
+				    	if ( container instanceof ArtifactCommit ) {
+				    		ArtifactCommit al = (ArtifactCommit)container;
+					        commitHistory = (CommitHistory)al.eContainer();
 					        selectedFile = null;
 					        refreshPart();
 					        return;
@@ -271,17 +263,12 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 				    	
 				    	if ( container instanceof ArtifactIdentifier ) {
 				    		ArtifactIdentifier ai = (ArtifactIdentifier)container;
-				    		artifactList = (ArtifactList)ai.eContainer();
+				    		ArtifactCommit al = (ArtifactCommit)ai.eContainer();
+				    		commitHistory = (CommitHistory)al.eContainer();
 					        selectedFile = null;
 					        refreshPart();
 					        return;
 				    	}
-				    	
-				    	if ( container instanceof ScoResourceImpl ) {
-				    		// might do something with contents later
-				    		return;
-				    	}
-
 				    }
 				}
 			}
@@ -347,35 +334,8 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 
 			FormToolkit toolkit = managedForm.getToolkit();
 
-			/*
-			TableWrapLayout layout = new TableWrapLayout();
-			layout.topMargin = 5; // this value does move the comp within the sash
-			layout.leftMargin = 5;
-			layout.rightMargin = 5;
-			layout.bottomMargin = 5;
-			layout.numColumns = 1;
-			parent.setLayout(layout);
-			*/
-
-			// parent.setLayoutData(new GridData(GridData.FILL_BOTH)); // fill both here ensures the block fills the view
-			
-			/* does nothing
-			GridData g1 = new GridData();
-			g1.verticalIndent = 20;
-			g1.horizontalIndent = 30;
-			managedForm.getForm().setLayoutData(g1); 
-			*/
-			
-			// managedForm.getForm().setLayoutData(new GridData()); // does nothing
-			/* there are no parts at this point
-			IFormPart[] parts = managedForm.getParts();
-			for ( IFormPart p : parts ) {
-				System.err.println("part " + p);
-			}
-			*/
-			
 			Section treeSection = toolkit.createSection(parent, Section.TITLE_BAR);
-			treeSection.setText("Model Objects");
+			treeSection.setText("Commit History");
 			toolkit.createCompositeSeparator(treeSection);
 			
 			TableWrapLayout wrapLayout = new TableWrapLayout();
@@ -386,24 +346,10 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 			// the tree itself has a grid layout, its container a table layout
 			Composite sectionClient = toolkit.createComposite(treeSection, SWT.WRAP);
 			GridLayout gridLayout = new GridLayout(2,false);
-			// gridLayout.marginLeft = 40; this moves the tree box, not the section container
 			sectionClient.setLayout(gridLayout);
 			TableWrapData tctw = new TableWrapData();
 			tctw.colspan = 2;
 			sectionClient.setLayoutData(tctw);
-
-			// commit id and usage time
-			Label l1 = toolkit.createLabel(sectionClient, "Commit ID");
-			l1.setFont(boldFont);
-			l1.setLayoutData(new GridData(SWT.LEFT));
-			commitId = toolkit.createLabel(sectionClient, "<n/a>");
-			commitId.setLayoutData(new GridData(SWT.LEFT));
-			
-			Label l3 = toolkit.createLabel(sectionClient, "Usage Time");
-			l3.setFont(boldFont);
-			l3.setLayoutData(new GridData(SWT.LEFT));
-			usageTime = toolkit.createLabel(sectionClient, "<n/a>");
-			usageTime.setLayoutData(new GridData(SWT.LEFT));
 
 			// tree on the tree client
 			Tree tree = toolkit.createTree(sectionClient, SWT.NULL);
@@ -424,7 +370,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 			viewer = new TreeViewer(tree);
 			viewer.setContentProvider(new AdapterFactoryContentProvider(factory));
 			viewer.setLabelProvider(new	AdapterFactoryLabelProvider(factory));
-			viewer.setInput(artifactList);
+			viewer.setInput(commitHistory);
 			viewer.expandAll();
 			viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 				public void selectionChanged(SelectionChangedEvent event) {
@@ -469,6 +415,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 		 * Registers detail pages by class.
 		 */
 		protected void registerPages(DetailsPart detailsPart) {
+			detailsPart.registerPage(ArtifactCommitImpl.class,new ArtifactCommitDetailsPage());
 			detailsPart.registerPage(ArtifactIdentifierImpl.class, new ArtifactIdentifierDetailsPage());
 			detailsPart.registerPage(CriticalDefectChangeOrdersImpl.class, new ChangeOrderDetailsPage());
 			detailsPart.registerPage(NormalDefectChangeOrdersImpl.class, new ChangeOrderDetailsPage());
@@ -531,7 +478,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 		public void refresh() {
 			resourceValue.setText(artifactIdentifier.getResourceName());
 			baselinedValue.setText(String.format("%d lines",artifactIdentifier.getBaselinedLineCount()));
-			currentValue.setText(String.format("%d lines",artifactIdentifier.getBaselinedLineCount()));
+			currentValue.setText(String.format("%d lines",artifactIdentifier.getCurrentLineCount()));
 			stale = false;
 			client.getParent().layout(true);
 		}
@@ -727,4 +674,106 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 		}
 	}
 	
+	public class ArtifactCommitDetailsPage implements IDetailsPage {
+		Composite client;
+		boolean stale = true;
+		FormToolkit myToolkit;
+		private ArtifactCommit artifactCommit;
+		Label commitId;
+		Label usageTime;
+
+		
+		@Override
+		public void initialize(IManagedForm form) {
+			myToolkit = form.getToolkit();
+		}
+
+		@Override
+		public void dispose() {
+		}
+
+		@Override
+		public boolean isDirty() {
+			return false;
+		}
+
+		@Override
+		public void commit(boolean onSave) {
+		}
+
+		@Override
+		public boolean setFormInput(Object input) {
+			if ( input instanceof ArtifactCommit ) {
+				artifactCommit = (ArtifactCommit)input;
+				refresh();
+				return true;
+			}
+			return false;
+		}
+
+		@Override
+		public void setFocus() {
+		}
+
+		@Override
+		public boolean isStale() {
+			return stale;
+		}
+
+		@Override
+		public void refresh() {
+			commitId.setText(artifactCommit.getCommitIdentifier());
+			usageTime.setText(String.format("%6.1f hrs",artifactCommit.getUsageTime()));
+			stale = false;
+			client.getParent().layout(true);
+		}
+
+		@Override
+		public void selectionChanged(IFormPart part, ISelection selection) {
+			if ( selection instanceof TreeSelection ) {
+				TreeSelection ts = (TreeSelection)selection;
+				artifactCommit = (ArtifactCommit)ts.getFirstElement();
+				stale = true;
+				setFormInput(artifactCommit);
+			}
+		}
+
+		@Override
+		public void createContents(Composite parent) {
+			
+			TableWrapLayout layout = new TableWrapLayout();
+			layout.topMargin = 0;
+			layout.leftMargin = 5;
+			layout.rightMargin = 5;
+			layout.bottomMargin = 5;
+			layout.numColumns = 1;
+			parent.setLayout(layout);
+			
+			Section section = myToolkit.createSection(parent, Section.TITLE_BAR );
+			section.setText("Artifact Commit");
+			section.setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB, TableWrapData.TOP));
+			toolkit.createCompositeSeparator(section);
+			
+			client = myToolkit.createComposite(section);
+			TableWrapLayout dcl = new TableWrapLayout();
+			dcl.numColumns = 2;
+			client.setLayout( dcl );
+
+			// commit id and usage time
+			Label l1 = toolkit.createLabel(client, "Commit ID");
+			l1.setFont(boldFont);
+			l1.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
+			commitId = toolkit.createLabel(client, "<n/a>");
+			commitId.setLayoutData(new TableWrapData(TableWrapData.RIGHT, TableWrapData.TOP));
+			
+			Label l3 = toolkit.createLabel(client, "Usage Time");
+			l3.setFont(boldFont);
+			l3.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
+			usageTime = toolkit.createLabel(client, "<n/a>");
+			usageTime.setLayoutData(new TableWrapData(TableWrapData.RIGHT, TableWrapData.TOP));
+
+			section.setClient(client);
+			stale = false;
+		}
+	}
 }

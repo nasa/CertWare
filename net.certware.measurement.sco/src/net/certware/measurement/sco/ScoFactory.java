@@ -77,13 +77,22 @@ public interface ScoFactory extends EFactory {
 	ArtifactIdentifier createArtifactIdentifier();
 
 	/**
-	 * Returns a new object of class '<em>Artifact List</em>'.
+	 * Returns a new object of class '<em>Artifact Commit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Artifact List</em>'.
+	 * @return a new object of class '<em>Artifact Commit</em>'.
 	 * @generated
 	 */
-	ArtifactList createArtifactList();
+	ArtifactCommit createArtifactCommit();
+
+	/**
+	 * Returns a new object of class '<em>Commit History</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Commit History</em>'.
+	 * @generated
+	 */
+	CommitHistory createCommitHistory();
 
 	/**
 	 * Returns an instance of data type '<em>Change Order Type</em>' corresponding the given literal.

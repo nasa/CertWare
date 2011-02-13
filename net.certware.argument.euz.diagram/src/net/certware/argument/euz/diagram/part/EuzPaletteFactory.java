@@ -67,13 +67,15 @@ public class EuzPaletteFactory {
 		paletteContainer.add(createContextwithAssumption8CreationTool());
 		paletteContainer.add(createCriteriawithAssumption9CreationTool());
 		paletteContainer.add(createCriteriawithContext10CreationTool());
-		paletteContainer.add(createSolutionwithContext11CreationTool());
-		paletteContainer.add(createSolutionwithCriteria12CreationTool());
-		paletteContainer.add(createSolutionwithEvidence13CreationTool());
-		paletteContainer.add(createStrategywithArgument14CreationTool());
-		paletteContainer.add(createStrategywithAssumption15CreationTool());
-		paletteContainer.add(createStrategywithCriteria16CreationTool());
-		paletteContainer.add(createStrategywithJustification17CreationTool());
+		paletteContainer.add(createCriteriawithContext11CreationTool());
+		paletteContainer.add(createSolutionwithContext12CreationTool());
+		paletteContainer.add(createSolutionwithCriteria13CreationTool());
+		paletteContainer.add(createSolutionwithEvidence14CreationTool());
+		paletteContainer.add(createStrategywithArgument15CreationTool());
+		paletteContainer.add(createStrategywithAssumption16CreationTool());
+		paletteContainer.add(createStrategywithAssumption17CreationTool());
+		paletteContainer.add(createStrategywithCriteria18CreationTool());
+		paletteContainer.add(createStrategywithJustification19CreationTool());
 		return paletteContainer;
 	}
 
@@ -378,13 +380,30 @@ public class EuzPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSolutionwithContext11CreationTool() {
+	private ToolEntry createCriteriawithContext11CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.SolutionwithContext11CreationTool_title,
-				Messages.SolutionwithContext11CreationTool_desc,
+				Messages.CriteriawithContext11CreationTool_title,
+				Messages.CriteriawithContext11CreationTool_desc,
+				Collections
+						.singletonList(EuzElementTypes.StrategyStrategyContexts_4019));
+		entry.setId("createCriteriawithContext11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EuzDiagramEditorPlugin
+				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
+		entry.setLargeIcon(EuzDiagramEditorPlugin
+				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createSolutionwithContext12CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.SolutionwithContext12CreationTool_title,
+				Messages.SolutionwithContext12CreationTool_desc,
 				Collections
 						.singletonList(EuzElementTypes.SolutionSolutionContexts_4014));
-		entry.setId("createSolutionwithContext11CreationTool"); //$NON-NLS-1$
+		entry.setId("createSolutionwithContext12CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EuzDiagramEditorPlugin
 				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
 		entry.setLargeIcon(EuzDiagramEditorPlugin
@@ -395,13 +414,13 @@ public class EuzPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSolutionwithCriteria12CreationTool() {
+	private ToolEntry createSolutionwithCriteria13CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.SolutionwithCriteria12CreationTool_title,
-				Messages.SolutionwithCriteria12CreationTool_desc,
+				Messages.SolutionwithCriteria13CreationTool_title,
+				Messages.SolutionwithCriteria13CreationTool_desc,
 				Collections
 						.singletonList(EuzElementTypes.SolutionSolutionCriteria_4016));
-		entry.setId("createSolutionwithCriteria12CreationTool"); //$NON-NLS-1$
+		entry.setId("createSolutionwithCriteria13CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EuzDiagramEditorPlugin
 				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
 		entry.setLargeIcon(EuzDiagramEditorPlugin
@@ -412,13 +431,13 @@ public class EuzPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSolutionwithEvidence13CreationTool() {
+	private ToolEntry createSolutionwithEvidence14CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.SolutionwithEvidence13CreationTool_title,
-				Messages.SolutionwithEvidence13CreationTool_desc,
+				Messages.SolutionwithEvidence14CreationTool_title,
+				Messages.SolutionwithEvidence14CreationTool_desc,
 				Collections
 						.singletonList(EuzElementTypes.SolutionSolutionEvidence_4015));
-		entry.setId("createSolutionwithEvidence13CreationTool"); //$NON-NLS-1$
+		entry.setId("createSolutionwithEvidence14CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EuzDiagramEditorPlugin
 				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
 		entry.setLargeIcon(EuzDiagramEditorPlugin
@@ -429,13 +448,13 @@ public class EuzPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStrategywithArgument14CreationTool() {
+	private ToolEntry createStrategywithArgument15CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.StrategywithArgument14CreationTool_title,
-				Messages.StrategywithArgument14CreationTool_desc,
+				Messages.StrategywithArgument15CreationTool_title,
+				Messages.StrategywithArgument15CreationTool_desc,
 				Collections
 						.singletonList(EuzElementTypes.StrategyStrategyArguments_4010));
-		entry.setId("createStrategywithArgument14CreationTool"); //$NON-NLS-1$
+		entry.setId("createStrategywithArgument15CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EuzDiagramEditorPlugin
 				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
 		entry.setLargeIcon(EuzDiagramEditorPlugin
@@ -446,13 +465,13 @@ public class EuzPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStrategywithAssumption15CreationTool() {
+	private ToolEntry createStrategywithAssumption16CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.StrategywithAssumption15CreationTool_title,
-				Messages.StrategywithAssumption15CreationTool_desc,
+				Messages.StrategywithAssumption16CreationTool_title,
+				Messages.StrategywithAssumption16CreationTool_desc,
 				Collections
 						.singletonList(EuzElementTypes.StrategyStrategyAssumptions_4013));
-		entry.setId("createStrategywithAssumption15CreationTool"); //$NON-NLS-1$
+		entry.setId("createStrategywithAssumption16CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EuzDiagramEditorPlugin
 				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
 		entry.setLargeIcon(EuzDiagramEditorPlugin
@@ -463,13 +482,30 @@ public class EuzPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStrategywithCriteria16CreationTool() {
+	private ToolEntry createStrategywithAssumption17CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.StrategywithCriteria16CreationTool_title,
-				Messages.StrategywithCriteria16CreationTool_desc,
+				Messages.StrategywithAssumption17CreationTool_title,
+				Messages.StrategywithAssumption17CreationTool_desc,
+				Collections
+						.singletonList(EuzElementTypes.StrategyStrategyStrategies_4018));
+		entry.setId("createStrategywithAssumption17CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(EuzDiagramEditorPlugin
+				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
+		entry.setLargeIcon(EuzDiagramEditorPlugin
+				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createStrategywithCriteria18CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.StrategywithCriteria18CreationTool_title,
+				Messages.StrategywithCriteria18CreationTool_desc,
 				Collections
 						.singletonList(EuzElementTypes.StrategyStrategyCriteria_4012));
-		entry.setId("createStrategywithCriteria16CreationTool"); //$NON-NLS-1$
+		entry.setId("createStrategywithCriteria18CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EuzDiagramEditorPlugin
 				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
 		entry.setLargeIcon(EuzDiagramEditorPlugin
@@ -480,13 +516,13 @@ public class EuzPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStrategywithJustification17CreationTool() {
+	private ToolEntry createStrategywithJustification19CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.StrategywithJustification17CreationTool_title,
-				Messages.StrategywithJustification17CreationTool_desc,
+				Messages.StrategywithJustification19CreationTool_title,
+				Messages.StrategywithJustification19CreationTool_desc,
 				Collections
 						.singletonList(EuzElementTypes.StrategyStrategyJustifications_4011));
-		entry.setId("createStrategywithJustification17CreationTool"); //$NON-NLS-1$
+		entry.setId("createStrategywithJustification19CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(EuzDiagramEditorPlugin
 				.findImageDescriptor("/net.certware.core.ui/icons/obj16/connector.png")); //$NON-NLS-1$
 		entry.setLargeIcon(EuzDiagramEditorPlugin

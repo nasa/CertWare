@@ -9,6 +9,7 @@ import net.certware.argument.arm.impl.ReasoningElementImpl;
 
 import net.certware.argument.euz.Argument;
 import net.certware.argument.euz.Assumption;
+import net.certware.argument.euz.Context;
 import net.certware.argument.euz.Criteria;
 import net.certware.argument.euz.EuzPackage;
 import net.certware.argument.euz.Justification;
@@ -31,6 +32,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link net.certware.argument.euz.impl.StrategyImpl#getStrategyJustifications <em>Strategy Justifications</em>}</li>
  *   <li>{@link net.certware.argument.euz.impl.StrategyImpl#getStrategyCriteria <em>Strategy Criteria</em>}</li>
  *   <li>{@link net.certware.argument.euz.impl.StrategyImpl#getStrategyAssumptions <em>Strategy Assumptions</em>}</li>
+ *   <li>{@link net.certware.argument.euz.impl.StrategyImpl#getStrategyStrategies <em>Strategy Strategies</em>}</li>
+ *   <li>{@link net.certware.argument.euz.impl.StrategyImpl#getStrategyContexts <em>Strategy Contexts</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +79,26 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 * @ordered
 	 */
 	protected EList<Assumption> strategyAssumptions;
+
+	/**
+	 * The cached value of the '{@link #getStrategyStrategies() <em>Strategy Strategies</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyStrategies()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Strategy> strategyStrategies;
+
+	/**
+	 * The cached value of the '{@link #getStrategyContexts() <em>Strategy Contexts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyContexts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Context> strategyContexts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +172,30 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Strategy> getStrategyStrategies() {
+		if (strategyStrategies == null) {
+			strategyStrategies = new EObjectResolvingEList<Strategy>(Strategy.class, this, EuzPackage.STRATEGY__STRATEGY_STRATEGIES);
+		}
+		return strategyStrategies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Context> getStrategyContexts() {
+		if (strategyContexts == null) {
+			strategyContexts = new EObjectResolvingEList<Context>(Context.class, this, EuzPackage.STRATEGY__STRATEGY_CONTEXTS);
+		}
+		return strategyContexts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -160,6 +207,10 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return getStrategyCriteria();
 			case EuzPackage.STRATEGY__STRATEGY_ASSUMPTIONS:
 				return getStrategyAssumptions();
+			case EuzPackage.STRATEGY__STRATEGY_STRATEGIES:
+				return getStrategyStrategies();
+			case EuzPackage.STRATEGY__STRATEGY_CONTEXTS:
+				return getStrategyContexts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,6 +240,14 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				getStrategyAssumptions().clear();
 				getStrategyAssumptions().addAll((Collection<? extends Assumption>)newValue);
 				return;
+			case EuzPackage.STRATEGY__STRATEGY_STRATEGIES:
+				getStrategyStrategies().clear();
+				getStrategyStrategies().addAll((Collection<? extends Strategy>)newValue);
+				return;
+			case EuzPackage.STRATEGY__STRATEGY_CONTEXTS:
+				getStrategyContexts().clear();
+				getStrategyContexts().addAll((Collection<? extends Context>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,6 +272,12 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 			case EuzPackage.STRATEGY__STRATEGY_ASSUMPTIONS:
 				getStrategyAssumptions().clear();
 				return;
+			case EuzPackage.STRATEGY__STRATEGY_STRATEGIES:
+				getStrategyStrategies().clear();
+				return;
+			case EuzPackage.STRATEGY__STRATEGY_CONTEXTS:
+				getStrategyContexts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -233,6 +298,10 @@ public class StrategyImpl extends ReasoningElementImpl implements Strategy {
 				return strategyCriteria != null && !strategyCriteria.isEmpty();
 			case EuzPackage.STRATEGY__STRATEGY_ASSUMPTIONS:
 				return strategyAssumptions != null && !strategyAssumptions.isEmpty();
+			case EuzPackage.STRATEGY__STRATEGY_STRATEGIES:
+				return strategyStrategies != null && !strategyStrategies.isEmpty();
+			case EuzPackage.STRATEGY__STRATEGY_CONTEXTS:
+				return strategyContexts != null && !strategyContexts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

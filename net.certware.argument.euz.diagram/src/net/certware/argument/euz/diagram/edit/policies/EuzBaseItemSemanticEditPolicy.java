@@ -528,6 +528,34 @@ public class EuzBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateStrategyStrategyStrategies_4018(
+				Strategy source, Strategy target) {
+			if (source != null) {
+				if (source.getStrategyStrategies().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistStrategyStrategyStrategies_4018(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateStrategyStrategyContexts_4019(Strategy source,
+				Context target) {
+			if (source != null) {
+				if (source.getStrategyContexts().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistStrategyStrategyContexts_4019(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canCreateSolutionSolutionContexts_4014(Solution source,
 				Context target) {
 			if (source != null) {
@@ -676,6 +704,22 @@ public class EuzBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistStrategyStrategyAssumptions_4013(
 				Strategy source, Assumption target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistStrategyStrategyStrategies_4018(Strategy source,
+				Strategy target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistStrategyStrategyContexts_4019(Strategy source,
+				Context target) {
 			return true;
 		}
 

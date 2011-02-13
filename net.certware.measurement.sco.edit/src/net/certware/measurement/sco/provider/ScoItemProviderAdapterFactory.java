@@ -217,26 +217,49 @@ public class ScoItemProviderAdapterFactory extends ScoAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link net.certware.measurement.sco.ArtifactList} instances.
+	 * This keeps track of the one adapter used for all {@link net.certware.measurement.sco.ArtifactCommit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArtifactListItemProvider artifactListItemProvider;
+	protected ArtifactCommitItemProvider artifactCommitItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link net.certware.measurement.sco.ArtifactList}.
+	 * This creates an adapter for a {@link net.certware.measurement.sco.ArtifactCommit}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createArtifactListAdapter() {
-		if (artifactListItemProvider == null) {
-			artifactListItemProvider = new ArtifactListItemProvider(this);
+	public Adapter createArtifactCommitAdapter() {
+		if (artifactCommitItemProvider == null) {
+			artifactCommitItemProvider = new ArtifactCommitItemProvider(this);
 		}
 
-		return artifactListItemProvider;
+		return artifactCommitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link net.certware.measurement.sco.CommitHistory} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommitHistoryItemProvider commitHistoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.certware.measurement.sco.CommitHistory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCommitHistoryAdapter() {
+		if (commitHistoryItemProvider == null) {
+			commitHistoryItemProvider = new CommitHistoryItemProvider(this);
+		}
+
+		return commitHistoryItemProvider;
 	}
 
 	/**
@@ -344,7 +367,8 @@ public class ScoItemProviderAdapterFactory extends ScoAdapterFactory implements 
 		if (improvementChangeOrdersItemProvider != null) improvementChangeOrdersItemProvider.dispose();
 		if (newFeatureChangeOrdersItemProvider != null) newFeatureChangeOrdersItemProvider.dispose();
 		if (artifactIdentifierItemProvider != null) artifactIdentifierItemProvider.dispose();
-		if (artifactListItemProvider != null) artifactListItemProvider.dispose();
+		if (artifactCommitItemProvider != null) artifactCommitItemProvider.dispose();
+		if (commitHistoryItemProvider != null) commitHistoryItemProvider.dispose();
 	}
 
 }

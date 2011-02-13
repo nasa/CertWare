@@ -50,11 +50,15 @@ public class DumpHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
+		System.out.println("reporting from from dump handler...");
+		
 		// zeroth
 		try {
 			//GitProvider provider = new GitProvider();
 			//provider.configureProject();
 			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("net.certware.test");
+			
+			System.out.println("programmatic access to project " + project);
 			
 			RepositoryMapping repositoryMapping = RepositoryMapping.getMapping((IResource) project);
 			System.out.println("mapping: " + repositoryMapping);

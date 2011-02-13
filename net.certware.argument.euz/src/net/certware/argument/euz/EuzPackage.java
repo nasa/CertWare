@@ -555,13 +555,31 @@ public interface EuzPackage extends EPackage {
 	int STRATEGY__STRATEGY_ASSUMPTIONS = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Strategy Strategies</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__STRATEGY_STRATEGIES = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Strategy Contexts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__STRATEGY_CONTEXTS = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Strategy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 4;
+	int STRATEGY_FEATURE_COUNT = ArmPackage.REASONING_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
@@ -1184,6 +1202,28 @@ public interface EuzPackage extends EPackage {
 	EReference getStrategy_StrategyAssumptions();
 
 	/**
+	 * Returns the meta object for the reference list '{@link net.certware.argument.euz.Strategy#getStrategyStrategies <em>Strategy Strategies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Strategy Strategies</em>'.
+	 * @see net.certware.argument.euz.Strategy#getStrategyStrategies()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EReference getStrategy_StrategyStrategies();
+
+	/**
+	 * Returns the meta object for the reference list '{@link net.certware.argument.euz.Strategy#getStrategyContexts <em>Strategy Contexts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Strategy Contexts</em>'.
+	 * @see net.certware.argument.euz.Strategy#getStrategyContexts()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EReference getStrategy_StrategyContexts();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1502,6 +1542,22 @@ public interface EuzPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRATEGY__STRATEGY_ASSUMPTIONS = eINSTANCE.getStrategy_StrategyAssumptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategy Strategies</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRATEGY__STRATEGY_STRATEGIES = eINSTANCE.getStrategy_StrategyStrategies();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategy Contexts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRATEGY__STRATEGY_CONTEXTS = eINSTANCE.getStrategy_StrategyContexts();
 
 	}
 

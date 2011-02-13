@@ -94,7 +94,14 @@ public class ScoPackageImpl extends EPackageImpl implements ScoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass artifactListEClass = null;
+	private EClass artifactCommitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass commitHistoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -377,11 +384,11 @@ public class ScoPackageImpl extends EPackageImpl implements ScoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getArtifactList() {
-		if (artifactListEClass == null) {
-			artifactListEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ScoPackage.eNS_URI).getEClassifiers().get(8);
+	public EClass getArtifactCommit() {
+		if (artifactCommitEClass == null) {
+			artifactCommitEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ScoPackage.eNS_URI).getEClassifiers().get(8);
 		}
-		return artifactListEClass;
+		return artifactCommitEClass;
 	}
 
 	/**
@@ -389,8 +396,8 @@ public class ScoPackageImpl extends EPackageImpl implements ScoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArtifactList_ArtifactIdentifiers() {
-        return (EReference)getArtifactList().getEStructuralFeatures().get(0);
+	public EReference getArtifactCommit_ArtifactIdentifiers() {
+        return (EReference)getArtifactCommit().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -398,8 +405,8 @@ public class ScoPackageImpl extends EPackageImpl implements ScoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArtifactList_CommitIdentifier() {
-        return (EAttribute)getArtifactList().getEStructuralFeatures().get(1);
+	public EAttribute getArtifactCommit_CommitIdentifier() {
+        return (EAttribute)getArtifactCommit().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -407,8 +414,29 @@ public class ScoPackageImpl extends EPackageImpl implements ScoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArtifactList_UsageTime() {
-        return (EAttribute)getArtifactList().getEStructuralFeatures().get(2);
+	public EAttribute getArtifactCommit_UsageTime() {
+        return (EAttribute)getArtifactCommit().getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCommitHistory() {
+		if (commitHistoryEClass == null) {
+			commitHistoryEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(ScoPackage.eNS_URI).getEClassifiers().get(9);
+		}
+		return commitHistoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCommitHistory_CommitRecord() {
+        return (EReference)getCommitHistory().getEStructuralFeatures().get(0);
 	}
 
 	/**

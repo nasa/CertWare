@@ -45,10 +45,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="totalChangeOrders" lowerBound="1"
         eType="#//TotalChangeOrders" volatile="true" derived="true" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArtifactList">
+  <eClassifiers xsi:type="ecore:EClass" name="ArtifactCommit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifactIdentifiers" upperBound="-1"
         eType="#//ArtifactIdentifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commitIdentifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommitHistory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commitRecord" upperBound="-1"
+        eType="#//ArtifactCommit" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

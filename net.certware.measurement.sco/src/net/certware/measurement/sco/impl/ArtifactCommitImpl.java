@@ -5,8 +5,8 @@ package net.certware.measurement.sco.impl;
 
 import java.util.Collection;
 
+import net.certware.measurement.sco.ArtifactCommit;
 import net.certware.measurement.sco.ArtifactIdentifier;
-import net.certware.measurement.sco.ArtifactList;
 import net.certware.measurement.sco.ChangeOrderCount;
 import net.certware.measurement.sco.CriticalDefectChangeOrders;
 import net.certware.measurement.sco.ImprovementChangeOrders;
@@ -32,20 +32,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Artifact List</b></em>'.
+ * An implementation of the model object '<em><b>Artifact Commit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.measurement.sco.impl.ArtifactListImpl#getArtifactIdentifiers <em>Artifact Identifiers</em>}</li>
- *   <li>{@link net.certware.measurement.sco.impl.ArtifactListImpl#getCommitIdentifier <em>Commit Identifier</em>}</li>
- *   <li>{@link net.certware.measurement.sco.impl.ArtifactListImpl#getUsageTime <em>Usage Time</em>}</li>
+ *   <li>{@link net.certware.measurement.sco.impl.ArtifactCommitImpl#getArtifactIdentifiers <em>Artifact Identifiers</em>}</li>
+ *   <li>{@link net.certware.measurement.sco.impl.ArtifactCommitImpl#getCommitIdentifier <em>Commit Identifier</em>}</li>
+ *   <li>{@link net.certware.measurement.sco.impl.ArtifactCommitImpl#getUsageTime <em>Usage Time</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
+public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	/**
 	 * The cached value of the '{@link #getArtifactIdentifiers() <em>Artifact Identifiers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -101,7 +101,7 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArtifactListImpl() {
+	public ArtifactCommitImpl() {
 		super();
 	}
 
@@ -112,7 +112,7 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScoPackage.Literals.ARTIFACT_LIST;
+		return ScoPackage.Literals.ARTIFACT_COMMIT;
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	 */
 	public EList<ArtifactIdentifier> getArtifactIdentifiers() {
 		if (artifactIdentifiers == null) {
-			artifactIdentifiers = new EObjectContainmentEList<ArtifactIdentifier>(ArtifactIdentifier.class, this, ScoPackage.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS);
+			artifactIdentifiers = new EObjectContainmentEList<ArtifactIdentifier>(ArtifactIdentifier.class, this, ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS);
 		}
 		return artifactIdentifiers;
 	}
@@ -145,7 +145,7 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 		String oldCommitIdentifier = commitIdentifier;
 		commitIdentifier = newCommitIdentifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_LIST__COMMIT_IDENTIFIER, oldCommitIdentifier, commitIdentifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER, oldCommitIdentifier, commitIdentifier));
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 		double oldUsageTime = usageTime;
 		usageTime = newUsageTime;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_LIST__USAGE_TIME, oldUsageTime, usageTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScoPackage.ARTIFACT_COMMIT__USAGE_TIME, oldUsageTime, usageTime));
 	}
 
 	/**
@@ -177,7 +177,7 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS:
+			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
 				return ((InternalEList<?>)getArtifactIdentifiers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -191,11 +191,11 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS:
+			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
 				return getArtifactIdentifiers();
-			case ScoPackage.ARTIFACT_LIST__COMMIT_IDENTIFIER:
+			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
 				return getCommitIdentifier();
-			case ScoPackage.ARTIFACT_LIST__USAGE_TIME:
+			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
 				return getUsageTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -210,14 +210,14 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS:
+			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
 				getArtifactIdentifiers().clear();
 				getArtifactIdentifiers().addAll((Collection<? extends ArtifactIdentifier>)newValue);
 				return;
-			case ScoPackage.ARTIFACT_LIST__COMMIT_IDENTIFIER:
+			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
 				setCommitIdentifier((String)newValue);
 				return;
-			case ScoPackage.ARTIFACT_LIST__USAGE_TIME:
+			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
 				setUsageTime((Double)newValue);
 				return;
 		}
@@ -232,13 +232,13 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS:
+			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
 				getArtifactIdentifiers().clear();
 				return;
-			case ScoPackage.ARTIFACT_LIST__COMMIT_IDENTIFIER:
+			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
 				setCommitIdentifier(COMMIT_IDENTIFIER_EDEFAULT);
 				return;
-			case ScoPackage.ARTIFACT_LIST__USAGE_TIME:
+			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
 				setUsageTime(USAGE_TIME_EDEFAULT);
 				return;
 		}
@@ -253,11 +253,11 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_LIST__ARTIFACT_IDENTIFIERS:
+			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
 				return artifactIdentifiers != null && !artifactIdentifiers.isEmpty();
-			case ScoPackage.ARTIFACT_LIST__COMMIT_IDENTIFIER:
+			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
 				return COMMIT_IDENTIFIER_EDEFAULT == null ? commitIdentifier != null : !COMMIT_IDENTIFIER_EDEFAULT.equals(commitIdentifier);
-			case ScoPackage.ARTIFACT_LIST__USAGE_TIME:
+			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
 				return usageTime != USAGE_TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -379,5 +379,6 @@ public class ArtifactListImpl extends EObjectImpl implements ArtifactList {
 		c1.setRepairEffort( c1.getRepairEffort() + c2.getRepairEffort() );
 		c1.setValue( c1.getValue() + c2.getValue() );
 	}
-	
-} //ArtifactListImpl
+
+
+} //ArtifactCommitImpl

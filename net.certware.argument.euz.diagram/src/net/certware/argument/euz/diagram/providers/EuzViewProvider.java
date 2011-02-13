@@ -60,10 +60,14 @@ import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyArgumentsEdi
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyArgumentsExternalLabelEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyAssumptionsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyAssumptionsExternalLabelEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyContextsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaExternalLabelEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsExternalLabelEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyStrategiesEditPart;
+import net.certware.argument.euz.diagram.edit.parts.WrappingLabel2EditPart;
+import net.certware.argument.euz.diagram.edit.parts.WrappingLabelEditPart;
 import net.certware.argument.euz.diagram.part.EuzVisualIDRegistry;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -357,6 +361,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		case StrategyStrategyAssumptionsEditPart.VISUAL_ID:
 			return createStrategyStrategyAssumptions_4013(containerView, index,
 					persisted, preferencesHint);
+		case StrategyStrategyStrategiesEditPart.VISUAL_ID:
+			return createStrategyStrategyStrategies_4018(containerView, index,
+					persisted, preferencesHint);
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			return createStrategyStrategyContexts_4019(containerView, index,
+					persisted, preferencesHint);
 		case SolutionSolutionContextsEditPart.VISUAL_ID:
 			return createSolutionSolutionContexts_4014(containerView, index,
 					persisted, preferencesHint);
@@ -377,11 +387,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createArgument_2001(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
-		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles()
+				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineTypeStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -410,11 +420,6 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5001 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(ArgumentIdentifierEditPart.VISUAL_ID));
@@ -429,7 +434,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createSolution_2002(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles()
+				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -458,11 +467,6 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5003 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(SolutionIdentifierEditPart.VISUAL_ID));
@@ -477,7 +481,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createEvidence_2003(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles()
+				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -506,11 +514,6 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5005 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(EvidenceIdentifierEditPart.VISUAL_ID));
@@ -525,7 +528,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createStrategy_2004(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles()
+				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -554,11 +561,6 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5007 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(StrategyIdentifierEditPart.VISUAL_ID));
@@ -1569,6 +1571,118 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		Location location6013 = (Location) label6013.getLayoutConstraint();
 		location6013.setX(0);
 		location6013.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createStrategyStrategyStrategies_4018(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(EuzVisualIDRegistry
+				.getType(StrategyStrategyStrategiesEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6018 = createLabel(edge,
+				EuzVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
+		label6018.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6018.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6018 = (Location) label6018.getLayoutConstraint();
+		location6018.setX(0);
+		location6018.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createStrategyStrategyContexts_4019(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(EuzVisualIDRegistry
+				.getType(StrategyStrategyContextsEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6019 = createLabel(edge,
+				EuzVisualIDRegistry.getType(WrappingLabel2EditPart.VISUAL_ID));
+		label6019.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6019.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6019 = (Location) label6019.getLayoutConstraint();
+		location6019.setX(0);
+		location6019.setY(40);
 		return edge;
 	}
 

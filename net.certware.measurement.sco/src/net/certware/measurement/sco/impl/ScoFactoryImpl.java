@@ -64,7 +64,8 @@ public class ScoFactoryImpl extends EFactoryImpl implements ScoFactory {
 			case ScoPackage.IMPROVEMENT_CHANGE_ORDERS: return createImprovementChangeOrders();
 			case ScoPackage.NEW_FEATURE_CHANGE_ORDERS: return createNewFeatureChangeOrders();
 			case ScoPackage.ARTIFACT_IDENTIFIER: return createArtifactIdentifier();
-			case ScoPackage.ARTIFACT_LIST: return createArtifactList();
+			case ScoPackage.ARTIFACT_COMMIT: return createArtifactCommit();
+			case ScoPackage.COMMIT_HISTORY: return createCommitHistory();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -165,9 +166,19 @@ public class ScoFactoryImpl extends EFactoryImpl implements ScoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArtifactList createArtifactList() {
-		ArtifactListImpl artifactList = new ArtifactListImpl();
-		return artifactList;
+	public ArtifactCommit createArtifactCommit() {
+		ArtifactCommitImpl artifactCommit = new ArtifactCommitImpl();
+		return artifactCommit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CommitHistory createCommitHistory() {
+		CommitHistoryImpl commitHistory = new CommitHistoryImpl();
+		return commitHistory;
 	}
 
 	/**

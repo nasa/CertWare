@@ -13,10 +13,13 @@ import net.certware.argument.euz.diagram.edit.commands.CriteriaCriteriaContextsC
 import net.certware.argument.euz.diagram.edit.commands.CriteriaCriteriaContextsReorientCommand;
 import net.certware.argument.euz.diagram.edit.commands.SolutionSolutionContextsCreateCommand;
 import net.certware.argument.euz.diagram.edit.commands.SolutionSolutionContextsReorientCommand;
+import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyContextsCreateCommand;
+import net.certware.argument.euz.diagram.edit.commands.StrategyStrategyContextsReorientCommand;
 import net.certware.argument.euz.diagram.edit.parts.ArgumentArgumentContextsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.ContextContextAssumptionsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.CriteriaCriteriaContextsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.SolutionSolutionContextsEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyContextsEditPart;
 import net.certware.argument.euz.diagram.part.EuzVisualIDRegistry;
 import net.certware.argument.euz.diagram.providers.EuzElementTypes;
 
@@ -65,6 +68,14 @@ public class ContextItemSemanticEditPolicy extends
 				continue;
 			}
 			if (EuzVisualIDRegistry.getVisualID(incomingLink) == CriteriaCriteriaContextsEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (EuzVisualIDRegistry.getVisualID(incomingLink) == StrategyStrategyContextsEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -132,6 +143,10 @@ public class ContextItemSemanticEditPolicy extends
 				.getElementType()) {
 			return null;
 		}
+		if (EuzElementTypes.StrategyStrategyContexts_4019 == req
+				.getElementType()) {
+			return null;
+		}
 		if (EuzElementTypes.SolutionSolutionContexts_4014 == req
 				.getElementType()) {
 			return null;
@@ -156,6 +171,11 @@ public class ContextItemSemanticEditPolicy extends
 		if (EuzElementTypes.CriteriaCriteriaContexts_4008 == req
 				.getElementType()) {
 			return getGEFWrapper(new CriteriaCriteriaContextsCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (EuzElementTypes.StrategyStrategyContexts_4019 == req
+				.getElementType()) {
+			return getGEFWrapper(new StrategyStrategyContextsCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (EuzElementTypes.SolutionSolutionContexts_4014 == req
@@ -183,6 +203,9 @@ public class ContextItemSemanticEditPolicy extends
 					req));
 		case CriteriaCriteriaContextsEditPart.VISUAL_ID:
 			return getGEFWrapper(new CriteriaCriteriaContextsReorientCommand(
+					req));
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			return getGEFWrapper(new StrategyStrategyContextsReorientCommand(
 					req));
 		case SolutionSolutionContextsEditPart.VISUAL_ID:
 			return getGEFWrapper(new SolutionSolutionContextsReorientCommand(

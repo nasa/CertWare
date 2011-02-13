@@ -44,8 +44,10 @@ import net.certware.argument.euz.diagram.edit.parts.SolutionSolutionEvidenceEdit
 import net.certware.argument.euz.diagram.edit.parts.StrategyEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyArgumentsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyAssumptionsEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyContextsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsEditPart;
+import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyStrategiesEditPart;
 import net.certware.argument.euz.diagram.providers.EuzElementTypes;
 
 import org.eclipse.emf.ecore.EObject;
@@ -296,6 +298,8 @@ public class EuzDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyJustifications_4011(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyCriteria_4012(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyAssumptions_4013(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyStrategies_4018(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyContexts_4019(modelElement));
 		return result;
 	}
 
@@ -393,6 +397,8 @@ public class EuzDiagramUpdater {
 		LinkedList<EuzLinkDescriptor> result = new LinkedList<EuzLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Argument_ArgumentStrategies_4001(
 				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Strategy_StrategyStrategies_4018(
+				modelElement, crossReferences));
 		return result;
 	}
 
@@ -443,6 +449,8 @@ public class EuzDiagramUpdater {
 		result.addAll(getIncomingFeatureModelFacetLinks_Argument_ArgumentContexts_4003(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Criteria_CriteriaContexts_4008(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Strategy_StrategyContexts_4019(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Solution_SolutionContexts_4014(
 				modelElement, crossReferences));
@@ -516,6 +524,8 @@ public class EuzDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyJustifications_4011(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyCriteria_4012(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyAssumptions_4013(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyStrategies_4018(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Strategy_StrategyContexts_4019(modelElement));
 		return result;
 	}
 
@@ -840,6 +850,46 @@ public class EuzDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<EuzLinkDescriptor> getIncomingFeatureModelFacetLinks_Strategy_StrategyStrategies_4018(
+			Strategy target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<EuzLinkDescriptor> result = new LinkedList<EuzLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == EuzPackage.eINSTANCE
+					.getStrategy_StrategyStrategies()) {
+				result.add(new EuzLinkDescriptor(setting.getEObject(), target,
+						EuzElementTypes.StrategyStrategyStrategies_4018,
+						StrategyStrategyStrategiesEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<EuzLinkDescriptor> getIncomingFeatureModelFacetLinks_Strategy_StrategyContexts_4019(
+			Context target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<EuzLinkDescriptor> result = new LinkedList<EuzLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == EuzPackage.eINSTANCE
+					.getStrategy_StrategyContexts()) {
+				result.add(new EuzLinkDescriptor(setting.getEObject(), target,
+						EuzElementTypes.StrategyStrategyContexts_4019,
+						StrategyStrategyContextsEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<EuzLinkDescriptor> getIncomingFeatureModelFacetLinks_Solution_SolutionContexts_4014(
 			Context target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
@@ -1117,6 +1167,38 @@ public class EuzDiagramUpdater {
 			result.add(new EuzLinkDescriptor(source, destination,
 					EuzElementTypes.StrategyStrategyAssumptions_4013,
 					StrategyStrategyAssumptionsEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<EuzLinkDescriptor> getOutgoingFeatureModelFacetLinks_Strategy_StrategyStrategies_4018(
+			Strategy source) {
+		LinkedList<EuzLinkDescriptor> result = new LinkedList<EuzLinkDescriptor>();
+		for (Iterator<?> destinations = source.getStrategyStrategies()
+				.iterator(); destinations.hasNext();) {
+			Strategy destination = (Strategy) destinations.next();
+			result.add(new EuzLinkDescriptor(source, destination,
+					EuzElementTypes.StrategyStrategyStrategies_4018,
+					StrategyStrategyStrategiesEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<EuzLinkDescriptor> getOutgoingFeatureModelFacetLinks_Strategy_StrategyContexts_4019(
+			Strategy source) {
+		LinkedList<EuzLinkDescriptor> result = new LinkedList<EuzLinkDescriptor>();
+		for (Iterator<?> destinations = source.getStrategyContexts().iterator(); destinations
+				.hasNext();) {
+			Context destination = (Context) destinations.next();
+			result.add(new EuzLinkDescriptor(source, destination,
+					EuzElementTypes.StrategyStrategyContexts_4019,
+					StrategyStrategyContextsEditPart.VISUAL_ID));
 		}
 		return result;
 	}

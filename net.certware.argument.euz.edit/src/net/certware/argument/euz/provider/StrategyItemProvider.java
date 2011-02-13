@@ -17,6 +17,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -62,8 +63,54 @@ public class StrategyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addStrategyStrategiesPropertyDescriptor(object);
+			addStrategyContextsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Strategy Strategies feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStrategyStrategiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategy_strategyStrategies_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_strategyStrategies_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 EuzPackage.Literals.STRATEGY__STRATEGY_STRATEGIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Strategy Contexts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStrategyContextsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategy_strategyContexts_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategy_strategyContexts_feature", "_UI_Strategy_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 EuzPackage.Literals.STRATEGY__STRATEGY_CONTEXTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -82,6 +129,8 @@ public class StrategyItemProvider
 			childrenFeatures.add(EuzPackage.Literals.STRATEGY__STRATEGY_JUSTIFICATIONS);
 			childrenFeatures.add(EuzPackage.Literals.STRATEGY__STRATEGY_CRITERIA);
 			childrenFeatures.add(EuzPackage.Literals.STRATEGY__STRATEGY_ASSUMPTIONS);
+			childrenFeatures.add(EuzPackage.Literals.STRATEGY__STRATEGY_STRATEGIES);
+			childrenFeatures.add(EuzPackage.Literals.STRATEGY__STRATEGY_CONTEXTS);
 		}
 		return childrenFeatures;
 	}
@@ -140,6 +189,8 @@ public class StrategyItemProvider
 			case EuzPackage.STRATEGY__STRATEGY_JUSTIFICATIONS:
 			case EuzPackage.STRATEGY__STRATEGY_CRITERIA:
 			case EuzPackage.STRATEGY__STRATEGY_ASSUMPTIONS:
+			case EuzPackage.STRATEGY__STRATEGY_STRATEGIES:
+			case EuzPackage.STRATEGY__STRATEGY_CONTEXTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -176,6 +227,16 @@ public class StrategyItemProvider
 			(createChildParameter
 				(EuzPackage.Literals.STRATEGY__STRATEGY_ASSUMPTIONS,
 				 EuzFactory.eINSTANCE.createAssumption()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EuzPackage.Literals.STRATEGY__STRATEGY_STRATEGIES,
+				 EuzFactory.eINSTANCE.createStrategy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EuzPackage.Literals.STRATEGY__STRATEGY_CONTEXTS,
+				 EuzFactory.eINSTANCE.createContext()));
 	}
 
 	/**

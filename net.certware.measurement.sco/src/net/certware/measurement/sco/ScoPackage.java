@@ -587,14 +587,14 @@ public interface ScoPackage extends EPackage {
 	int ARTIFACT_IDENTIFIER_FEATURE_COUNT = 8;
 
 	/**
-	 * The meta object id for the '{@link net.certware.measurement.sco.impl.ArtifactListImpl <em>Artifact List</em>}' class.
+	 * The meta object id for the '{@link net.certware.measurement.sco.impl.ArtifactCommitImpl <em>Artifact Commit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see net.certware.measurement.sco.impl.ArtifactListImpl
-	 * @see net.certware.measurement.sco.impl.ScoPackageImpl#getArtifactList()
+	 * @see net.certware.measurement.sco.impl.ArtifactCommitImpl
+	 * @see net.certware.measurement.sco.impl.ScoPackageImpl#getArtifactCommit()
 	 * @generated
 	 */
-	int ARTIFACT_LIST = 7;
+	int ARTIFACT_COMMIT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Artifact Identifiers</b></em>' containment reference list.
@@ -603,7 +603,7 @@ public interface ScoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_LIST__ARTIFACT_IDENTIFIERS = 0;
+	int ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Commit Identifier</b></em>' attribute.
@@ -612,7 +612,7 @@ public interface ScoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_LIST__COMMIT_IDENTIFIER = 1;
+	int ARTIFACT_COMMIT__COMMIT_IDENTIFIER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Usage Time</b></em>' attribute.
@@ -621,16 +621,44 @@ public interface ScoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_LIST__USAGE_TIME = 2;
+	int ARTIFACT_COMMIT__USAGE_TIME = 2;
 
 	/**
-	 * The number of structural features of the '<em>Artifact List</em>' class.
+	 * The number of structural features of the '<em>Artifact Commit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_LIST_FEATURE_COUNT = 3;
+	int ARTIFACT_COMMIT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link net.certware.measurement.sco.impl.CommitHistoryImpl <em>Commit History</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.certware.measurement.sco.impl.CommitHistoryImpl
+	 * @see net.certware.measurement.sco.impl.ScoPackageImpl#getCommitHistory()
+	 * @generated
+	 */
+	int COMMIT_HISTORY = 8;
+
+	/**
+	 * The feature id for the '<em><b>Commit Record</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMIT_HISTORY__COMMIT_RECORD = 0;
+
+	/**
+	 * The number of structural features of the '<em>Commit History</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMIT_HISTORY_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link net.certware.measurement.sco.ChangeOrderType <em>Change Order Type</em>}' enum.
@@ -640,7 +668,7 @@ public interface ScoPackage extends EPackage {
 	 * @see net.certware.measurement.sco.impl.ScoPackageImpl#getChangeOrderType()
 	 * @generated
 	 */
-	int CHANGE_ORDER_TYPE = 8;
+	int CHANGE_ORDER_TYPE = 9;
 
 
 	/**
@@ -868,47 +896,68 @@ public interface ScoPackage extends EPackage {
 	EReference getArtifactIdentifier_TotalChangeOrders();
 
 	/**
-	 * Returns the meta object for class '{@link net.certware.measurement.sco.ArtifactList <em>Artifact List</em>}'.
+	 * Returns the meta object for class '{@link net.certware.measurement.sco.ArtifactCommit <em>Artifact Commit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Artifact List</em>'.
-	 * @see net.certware.measurement.sco.ArtifactList
+	 * @return the meta object for class '<em>Artifact Commit</em>'.
+	 * @see net.certware.measurement.sco.ArtifactCommit
 	 * @generated
 	 */
-	EClass getArtifactList();
+	EClass getArtifactCommit();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link net.certware.measurement.sco.ArtifactList#getArtifactIdentifiers <em>Artifact Identifiers</em>}'.
+	 * Returns the meta object for the containment reference list '{@link net.certware.measurement.sco.ArtifactCommit#getArtifactIdentifiers <em>Artifact Identifiers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Artifact Identifiers</em>'.
-	 * @see net.certware.measurement.sco.ArtifactList#getArtifactIdentifiers()
-	 * @see #getArtifactList()
+	 * @see net.certware.measurement.sco.ArtifactCommit#getArtifactIdentifiers()
+	 * @see #getArtifactCommit()
 	 * @generated
 	 */
-	EReference getArtifactList_ArtifactIdentifiers();
+	EReference getArtifactCommit_ArtifactIdentifiers();
 
 	/**
-	 * Returns the meta object for the attribute '{@link net.certware.measurement.sco.ArtifactList#getCommitIdentifier <em>Commit Identifier</em>}'.
+	 * Returns the meta object for the attribute '{@link net.certware.measurement.sco.ArtifactCommit#getCommitIdentifier <em>Commit Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Commit Identifier</em>'.
-	 * @see net.certware.measurement.sco.ArtifactList#getCommitIdentifier()
-	 * @see #getArtifactList()
+	 * @see net.certware.measurement.sco.ArtifactCommit#getCommitIdentifier()
+	 * @see #getArtifactCommit()
 	 * @generated
 	 */
-	EAttribute getArtifactList_CommitIdentifier();
+	EAttribute getArtifactCommit_CommitIdentifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link net.certware.measurement.sco.ArtifactList#getUsageTime <em>Usage Time</em>}'.
+	 * Returns the meta object for the attribute '{@link net.certware.measurement.sco.ArtifactCommit#getUsageTime <em>Usage Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Usage Time</em>'.
-	 * @see net.certware.measurement.sco.ArtifactList#getUsageTime()
-	 * @see #getArtifactList()
+	 * @see net.certware.measurement.sco.ArtifactCommit#getUsageTime()
+	 * @see #getArtifactCommit()
 	 * @generated
 	 */
-	EAttribute getArtifactList_UsageTime();
+	EAttribute getArtifactCommit_UsageTime();
+
+	/**
+	 * Returns the meta object for class '{@link net.certware.measurement.sco.CommitHistory <em>Commit History</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Commit History</em>'.
+	 * @see net.certware.measurement.sco.CommitHistory
+	 * @generated
+	 */
+	EClass getCommitHistory();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link net.certware.measurement.sco.CommitHistory#getCommitRecord <em>Commit Record</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Commit Record</em>'.
+	 * @see net.certware.measurement.sco.CommitHistory#getCommitRecord()
+	 * @see #getCommitHistory()
+	 * @generated
+	 */
+	EReference getCommitHistory_CommitRecord();
 
 	/**
 	 * Returns the meta object for enum '{@link net.certware.measurement.sco.ChangeOrderType <em>Change Order Type</em>}'.
@@ -1125,14 +1174,14 @@ public interface ScoPackage extends EPackage {
 		EReference ARTIFACT_IDENTIFIER__TOTAL_CHANGE_ORDERS = eINSTANCE.getArtifactIdentifier_TotalChangeOrders();
 
 		/**
-		 * The meta object literal for the '{@link net.certware.measurement.sco.impl.ArtifactListImpl <em>Artifact List</em>}' class.
+		 * The meta object literal for the '{@link net.certware.measurement.sco.impl.ArtifactCommitImpl <em>Artifact Commit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see net.certware.measurement.sco.impl.ArtifactListImpl
-		 * @see net.certware.measurement.sco.impl.ScoPackageImpl#getArtifactList()
+		 * @see net.certware.measurement.sco.impl.ArtifactCommitImpl
+		 * @see net.certware.measurement.sco.impl.ScoPackageImpl#getArtifactCommit()
 		 * @generated
 		 */
-		EClass ARTIFACT_LIST = eINSTANCE.getArtifactList();
+		EClass ARTIFACT_COMMIT = eINSTANCE.getArtifactCommit();
 
 		/**
 		 * The meta object literal for the '<em><b>Artifact Identifiers</b></em>' containment reference list feature.
@@ -1140,7 +1189,7 @@ public interface ScoPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARTIFACT_LIST__ARTIFACT_IDENTIFIERS = eINSTANCE.getArtifactList_ArtifactIdentifiers();
+		EReference ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS = eINSTANCE.getArtifactCommit_ArtifactIdentifiers();
 
 		/**
 		 * The meta object literal for the '<em><b>Commit Identifier</b></em>' attribute feature.
@@ -1148,7 +1197,7 @@ public interface ScoPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTIFACT_LIST__COMMIT_IDENTIFIER = eINSTANCE.getArtifactList_CommitIdentifier();
+		EAttribute ARTIFACT_COMMIT__COMMIT_IDENTIFIER = eINSTANCE.getArtifactCommit_CommitIdentifier();
 
 		/**
 		 * The meta object literal for the '<em><b>Usage Time</b></em>' attribute feature.
@@ -1156,7 +1205,25 @@ public interface ScoPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTIFACT_LIST__USAGE_TIME = eINSTANCE.getArtifactList_UsageTime();
+		EAttribute ARTIFACT_COMMIT__USAGE_TIME = eINSTANCE.getArtifactCommit_UsageTime();
+
+		/**
+		 * The meta object literal for the '{@link net.certware.measurement.sco.impl.CommitHistoryImpl <em>Commit History</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.certware.measurement.sco.impl.CommitHistoryImpl
+		 * @see net.certware.measurement.sco.impl.ScoPackageImpl#getCommitHistory()
+		 * @generated
+		 */
+		EClass COMMIT_HISTORY = eINSTANCE.getCommitHistory();
+
+		/**
+		 * The meta object literal for the '<em><b>Commit Record</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMIT_HISTORY__COMMIT_RECORD = eINSTANCE.getCommitHistory_CommitRecord();
 
 		/**
 		 * The meta object literal for the '{@link net.certware.measurement.sco.ChangeOrderType <em>Change Order Type</em>}' enum.

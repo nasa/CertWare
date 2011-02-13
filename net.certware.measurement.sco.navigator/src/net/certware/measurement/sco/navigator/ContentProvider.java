@@ -13,7 +13,8 @@ import java.util.Map;
 
 import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.log.CertWareLog;
-import net.certware.measurement.sco.ArtifactList;
+import net.certware.measurement.sco.CommitHistory;
+import net.certware.measurement.sco.ArtifactCommit;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -222,32 +223,38 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					// visit the model, collect statistics
 					for ( Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) { // $codepro.audit.disable variableShouldBeFinal
 						EObject eo = i.next(); // $codepro.audit.disable variableDeclaredInLoop
-						if ( eo instanceof ArtifactList ) {
-							ArtifactList al = (ArtifactList)eo;
-							int artifactCount = al.getArtifactIdentifiers().size();
-							int baselinedLineCount = al.getAllBaselinedLineCount();
-							int currentLineCount = al.getAllCurrentLineCount();
-							int criticalDefectCount = al.getAllCriticalDefectChangeOrders().getValue();
-							int normalDefectCount = al.getAllNormalDefectChangeOrders().getValue();
-							int improvementCount = al.getAllImprovementChangeOrders().getValue();
-							int newFeatureCount = al.getAllNewFeatureChangeOrders().getValue();
-							int totalChangeCount = al.getAllTotalChangeOrders().getValue();
-							
-							final List<TreeData> treeNodes = new ArrayList<TreeData>(); // $codepro.audit.disable localDeclaration
-							
-							treeNodes.add(new TreeData(modelFile,Messages.Node_Artifact,artifactCount,TreeData.ARTIFACT_COUNT));
-							treeNodes.add(new TreeData(modelFile,Messages.Node_Baselined,baselinedLineCount,TreeData.BASELINED_COUNT));
-							treeNodes.add(new TreeData(modelFile,Messages.Node_Current,currentLineCount,TreeData.CURRENT_COUNT));
-							treeNodes.add(new TreeData(modelFile,Messages.Node_Critical,criticalDefectCount,TreeData.CRITICAL_COUNT));
-							treeNodes.add(new TreeData(modelFile,Messages.Node_Normal,normalDefectCount,TreeData.NORMAL_COUNT));
-							treeNodes.add(new TreeData(modelFile,Messages.Node_Improvement,improvementCount,TreeData.IMPROVEMENT_COUNT));
-							treeNodes.add(new TreeData(modelFile,Messages.Node_NewFeature,newFeatureCount,TreeData.NEW_FEATURE_COUNT));
-							treeNodes.add(new TreeData(modelFile,Messages.Node_Total,totalChangeCount,TreeData.TOTAL_COUNT));
-							
-							// populate array and model map
-							final TreeData[] treeDataArray = treeNodes.toArray(new TreeData[treeNodes.size()]); // $codepro.audit.disable localDeclaration
-							cachedModelMap.put(modelFile, treeDataArray);
-							break;
+						if ( eo instanceof CommitHistory) {
+							CommitHistory ch = (CommitHistory)eo;
+							if ( ch.getCommitRecord() != null && ch.getCommitRecord().isEmpty() == false ) {
+								// get the last commit in the list
+								ArtifactCommit ac = 
+									ch.getCommitRecord().get( ch.getCommitRecord().size() - 1);
+
+								int artifactCount = ac.getArtifactIdentifiers().size();
+								int baselinedLineCount = ac.getAllBaselinedLineCount();
+								int currentLineCount = ac.getAllCurrentLineCount();
+								int criticalDefectCount = ac.getAllCriticalDefectChangeOrders().getValue();
+								int normalDefectCount = ac.getAllNormalDefectChangeOrders().getValue();
+								int improvementCount = ac.getAllImprovementChangeOrders().getValue();
+								int newFeatureCount = ac.getAllNewFeatureChangeOrders().getValue();
+								int totalChangeCount = ac.getAllTotalChangeOrders().getValue();
+
+								final List<TreeData> treeNodes = new ArrayList<TreeData>(); // $codepro.audit.disable localDeclaration
+
+								treeNodes.add(new TreeData(modelFile,Messages.Node_Artifact,artifactCount,TreeData.ARTIFACT_COUNT));
+								treeNodes.add(new TreeData(modelFile,Messages.Node_Baselined,baselinedLineCount,TreeData.BASELINED_COUNT));
+								treeNodes.add(new TreeData(modelFile,Messages.Node_Current,currentLineCount,TreeData.CURRENT_COUNT));
+								treeNodes.add(new TreeData(modelFile,Messages.Node_Critical,criticalDefectCount,TreeData.CRITICAL_COUNT));
+								treeNodes.add(new TreeData(modelFile,Messages.Node_Normal,normalDefectCount,TreeData.NORMAL_COUNT));
+								treeNodes.add(new TreeData(modelFile,Messages.Node_Improvement,improvementCount,TreeData.IMPROVEMENT_COUNT));
+								treeNodes.add(new TreeData(modelFile,Messages.Node_NewFeature,newFeatureCount,TreeData.NEW_FEATURE_COUNT));
+								treeNodes.add(new TreeData(modelFile,Messages.Node_Total,totalChangeCount,TreeData.TOTAL_COUNT));
+
+								// populate array and model map
+								final TreeData[] treeDataArray = treeNodes.toArray(new TreeData[treeNodes.size()]); // $codepro.audit.disable localDeclaration
+								cachedModelMap.put(modelFile, treeDataArray);
+								break;
+							}
 						}
 					} // iterator
 
@@ -259,5 +266,5 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		return null; 
 	} // method
 
-	
+
 }
