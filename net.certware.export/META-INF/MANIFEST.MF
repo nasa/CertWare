@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Product Exports
 Bundle-SymbolicName: net.certware.export;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: net.certware.export.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -33,3 +33,4 @@ Require-Bundle: net.certware.libs.doc,
 Export-Package: net.certware.export,
  net.certware.export.jobs,
  net.certware.export.wizards
+Eclipse-RegisterBuddy: org.apache.log4j

@@ -10,7 +10,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://schemas.microsoft.com/project/2007"
+            uri="http://schemas.microsoft.com/project"
             class="net.certware.planning.mspdi.MspdiPackage"
             genModel="model/mspdi.genmodel"/>
    </extension>

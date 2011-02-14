@@ -33,7 +33,7 @@ public class MspdiFactoryImpl extends EFactoryImpl implements MspdiFactory {
 	 */
 	public static MspdiFactory init() {
 		try {
-			MspdiFactory theMspdiFactory = (MspdiFactory)EPackage.Registry.INSTANCE.getEFactory("http://schemas.microsoft.com/project/2007"); 
+			MspdiFactory theMspdiFactory = (MspdiFactory)EPackage.Registry.INSTANCE.getEFactory("http://schemas.microsoft.com/project"); 
 			if (theMspdiFactory != null) {
 				return theMspdiFactory;
 			}

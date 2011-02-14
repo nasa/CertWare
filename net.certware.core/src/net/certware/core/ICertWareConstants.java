@@ -50,6 +50,10 @@ public interface ICertWareConstants {
 	public static final String SCO_EXTENSION = "sco"; //$NON-NLS-1$
 	/** file extension for the software project management model */
 	public static final String SPM_EXTENSION = "spm"; //$NON-NLS-1$
+	/** file extension for word exports */
+	public static final String WORD_EXTENSION = "docx"; //$NON-NLS-1$
+	/** file extension for PDF exports */
+	public static final String PDF_EXTENSION = "pdf"; //$NON-NLS-1$
 
 	/** a list of all application file extensions */
 	public static final List<String> FILE_EXTENSIONS = 

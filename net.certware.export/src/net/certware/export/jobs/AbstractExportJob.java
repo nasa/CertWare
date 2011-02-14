@@ -6,6 +6,8 @@
 package net.certware.export.jobs;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.text.MessageFormat;
 import java.util.Calendar;
 import java.util.Collection;
@@ -17,11 +19,15 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.export.ExportContributions;
 
 import org.docx4j.XmlUtils;
 import org.docx4j.convert.out.flatOpcXml.FlatOpcXmlCreator;
+import org.docx4j.convert.out.pdf.PdfConversion;
+import org.docx4j.convert.out.pdf.viaXSLFO.Conversion;
+import org.docx4j.fonts.IdentityPlusMapper;
 import org.docx4j.jaxb.NamespacePrefixMapperUtils;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.openpackaging.exceptions.InvalidFormatException;
@@ -87,14 +93,14 @@ public abstract class AbstractExportJob extends Job {
 		boolean isParagraph = false; // true for paragraph, false for run
 		String style = ""; // style string identifier
 	}
-	
+
 	/**
 	 * Default constructor uses default job name.
 	 */
 	protected AbstractExportJob() {
 		super(Messages.AbstractExportJob_1);
 	}
-	
+
 	/**
 	 * Create the export job with a name.
 	 * @param name
@@ -114,7 +120,7 @@ public abstract class AbstractExportJob extends Job {
 		nodeCollection = null;
 		resource = null;
 	}
-	
+
 	/**
 	 * Create the export job with a given collection of model nodes.
 	 * @param name job name
@@ -126,7 +132,7 @@ public abstract class AbstractExportJob extends Job {
 		nodeCollection = nodes;
 		resource = null;
 	}
-	
+
 	/**
 	 * Create the export job with a given model resource.
 	 * @param name job name
@@ -138,7 +144,7 @@ public abstract class AbstractExportJob extends Job {
 		nodeCollection = null;
 		this.resource = resource;
 	}
-	
+
 	/**
 	 * Sets the number of steps for progress monitoring. 
 	 * @param count step count
@@ -146,7 +152,7 @@ public abstract class AbstractExportJob extends Job {
 	public void setSteps(int count) {
 		steps = count;
 	}
-	
+
 	/**
 	 * Gets the number of steps for progress monitoring.
 	 * @return total progress monitoring steps 
@@ -173,7 +179,7 @@ public abstract class AbstractExportJob extends Job {
 		}
 		return fileName;
 	}
-	
+
 	/**
 	 * Do the work of exporting while in the run method.
 	 * @param monitor progress monitor
@@ -181,7 +187,7 @@ public abstract class AbstractExportJob extends Job {
 	 */
 	abstract public IStatus produce(IProgressMonitor monitor);
 
-	
+
 	/**
 	 * Runs the job, starting the progress monitor and performing done after the
 	 * produce() method returns.
@@ -218,8 +224,9 @@ public abstract class AbstractExportJob extends Job {
 	 */
 	public String getDestinationFileName() {
 		return previousFileName;
+
 	}
-	
+
 	/**
 	 * Sets the node for export.  
 	 * Typically used if a selection is not available when creating the job.
@@ -229,7 +236,7 @@ public abstract class AbstractExportJob extends Job {
 	public void setNode(EObject node) {
 		this.node = node;
 	}
-	
+
 	/**
 	 * Returns the model element intended for export.
 	 * @return node for export 
@@ -294,12 +301,12 @@ public abstract class AbstractExportJob extends Job {
 	public void loadContributedStyles() {
 		ExportContributions ec = new ExportContributions();
 		ec.initialize();
-		
+
 		// TODO read plugin contributions into the style map
 
-		System.err.println("contributed ids: " + ec.getStyleIdMappings().size());
-		System.err.println("contributed res: " + ec.getStyleResources().size());
-		System.err.println("contributed sty: " + ec.getStyleStrings().size());
+		//System.err.println("contributed ids: " + ec.getStyleIdMappings().size());
+		//System.err.println("contributed res: " + ec.getStyleResources().size());
+		//System.err.println("contributed sty: " + ec.getStyleStrings().size());
 	}
 
 	/**
@@ -309,7 +316,6 @@ public abstract class AbstractExportJob extends Job {
 	 * @param styleId style ID, such as {@code Heading1Char} or {@code TaggedValue}.
 	 */
 	protected void assignStyleId(int key, boolean isParagraph, String styleId) {
-		System.err.println("assigning style id " + key + " is paragraph " + isParagraph + " styleId " + styleId);
 		if ( styleMap.containsKey(styleId)) {
 			styleMap.remove(styleId);
 		}
@@ -323,7 +329,6 @@ public abstract class AbstractExportJob extends Job {
 	 * @param xml XML string describing style, including {@code xmlns} tags where needed
 	 */
 	protected void assignStyle(int key, boolean isParagraph, String xml) {
-		System.err.println("assigning style " + key + " is paragraph " + isParagraph + " xml " + xml);
 		Style style = addStyle(xml);
 		if ( style != null ) {
 			assignStyleId(key,isParagraph,style.getStyleId());
@@ -339,7 +344,6 @@ public abstract class AbstractExportJob extends Job {
 	 */
 	protected Style addStyle(String format) {
 		try {
-			System.err.println("adding style format " + format);
 			Style newStyle;
 			newStyle = (Style)XmlUtils.unmarshalString(format);
 			stylesPart.getJaxbElement().getStyle().add(newStyle);
@@ -363,7 +367,7 @@ public abstract class AbstractExportJob extends Job {
 			return addStyledRunOfText(styleEntry,text);
 		}
 	}
-	
+
 	/**
 	 * Creates a new run with text of the given style. 
 	 * Presumes the style is a run style rather than a paragraph style.
@@ -372,24 +376,27 @@ public abstract class AbstractExportJob extends Job {
 	 * @return the new run, ready to add to the paragraph content list
 	 */
 	protected R addStyledRunOfText(StyleEntry styleEntry, String text ) {
-	
-		R run = addRunOfText(styleEntry.style);
-	
+
+		R run = addRunOfText(text);
+
 		// apply style if available
+		//System.err.println("style entry " + styleEntry.style + "is paragraph " + styleEntry.isParagraph);
+		//System.err.println("resolver " + mainDocumentPart.getPropertyResolver().activateStyle( styleEntry.style ));
+
 		if (mainDocumentPart.getPropertyResolver().activateStyle(styleEntry.style)) {
 			Style style = mainDocumentPart.getPropertyResolver().getStyle(styleEntry.style);
 			RPr runProperties = style.getRPr();
 			run.setRPr(runProperties);
 		} 
-	
+
 		// otherwise create run without style
 		// create the text and add it to the run
 		/*
 		Text tid = factory.createText();
 		tid.setValue(text);
 		run.getRunContent().add(tid);
-		*/
-	
+		 */
+
 		return run;
 	}
 
@@ -404,7 +411,7 @@ public abstract class AbstractExportJob extends Job {
 		Text tid = factory.createText();
 		tid.setValue(text);
 		run.getRunContent().add(tid);
-	
+
 		// return the run
 		return run;
 	}
@@ -431,7 +438,7 @@ public abstract class AbstractExportJob extends Job {
 			mainDocumentPart = wordMLPackage.getMainDocumentPart();
 			stylesPart = mainDocumentPart.getStyleDefinitionsPart();
 		}
-	
+
 		writeTitle(monitor);
 	}
 
@@ -442,11 +449,11 @@ public abstract class AbstractExportJob extends Job {
 	 * @throws Docx4JException exceptions on loading file
 	 */
 	protected void openDocument(IProgressMonitor monitor, IFile file)
-			throws Docx4JException {
-				wordMLPackage = WordprocessingMLPackage.load(file.getFullPath().toFile());
-				mainDocumentPart = wordMLPackage.getMainDocumentPart();
-				stylesPart = mainDocumentPart.getStyleDefinitionsPart();
-			}
+	throws Docx4JException {
+		wordMLPackage = WordprocessingMLPackage.load(file.getFullPath().toFile());
+		mainDocumentPart = wordMLPackage.getMainDocumentPart();
+		stylesPart = mainDocumentPart.getStyleDefinitionsPart();
+	}
 
 	/**
 	 * Perform standard tear-down of the processor and document.
@@ -456,34 +463,51 @@ public abstract class AbstractExportJob extends Job {
 	 * @throws JAXBException for marshalling problems 
 	 */
 	protected void tearDownDocument(IProgressMonitor monitor, boolean save)
-			throws Docx4JException, JAXBException {
-			
-				monitor.subTask("Cleaning up");
-			
-				// save it to the file system according to destination file selection, or dump to standard output
-				if ( save ) {
-					// save it to the file
-					System.err.println("saving ML document to " + getDestinationFileName()); // TODO renaming
-					wordMLPackage.save( new File(getDestinationFileName()) );
+	throws Docx4JException, JAXBException {
+
+		monitor.subTask("Cleaning up");
+
+		// save it to the file system according to destination file selection, or dump to standard output
+		if ( save ) {
+			// save it to the file
+			// TODO when run from export extension there is no user-provided file name
+			if ( getDestinationFileName().endsWith(ICertWareConstants.WORD_EXTENSION)) {
+				wordMLPackage.save( new File(getDestinationFileName()) );
+				CertWareLog.logInfo(MessageFormat.format("{0} {1}", "Exported to", getDestinationFileName()));
+			} else 
+				if (getDestinationFileName().endsWith(ICertWareConstants.PDF_EXTENSION)) {
+					try {
+						wordMLPackage.setFontMapper( new IdentityPlusMapper() );
+						// PdfConversion c = new Conversion(wordMLPackage);
+						PdfConversion c = new Conversion(wordMLPackage);
+						OutputStream os = new FileOutputStream( new File(getDestinationFileName()));
+						c.output(os);
+					} catch (Exception e) {
+						CertWareLog.logError(String.format("%s %s","Writing PDF conversion to",getDestinationFileName()),e);
+						return;
+					}
 					CertWareLog.logInfo(MessageFormat.format("{0} {1}", "Exported to", getDestinationFileName()));
 				} else {
-					// marshal it to the console
-					final FlatOpcXmlCreator worker = new FlatOpcXmlCreator(wordMLPackage);
-					final org.docx4j.xmlPackage.Package pkg = worker.get();
-					JAXBContext jc = org.docx4j.jaxb.Context.jcXmlPackage;
-					Marshaller marshaller=jc.createMarshaller();
-					marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-					NamespacePrefixMapperUtils.setProperty(marshaller, NamespacePrefixMapperUtils.getPrefixMapper());			
-					marshaller.marshal(pkg, System.out);				
+					CertWareLog.logWarning(String.format("%s %s","Unknown destination file type for",getDestinationFileName()));
 				}
-			}
+		} else {
+			// marshal it to the console
+			final FlatOpcXmlCreator worker = new FlatOpcXmlCreator(wordMLPackage);
+			final org.docx4j.xmlPackage.Package pkg = worker.get();
+			JAXBContext jc = org.docx4j.jaxb.Context.jcXmlPackage;
+			Marshaller marshaller=jc.createMarshaller();
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+			NamespacePrefixMapperUtils.setProperty(marshaller, NamespacePrefixMapperUtils.getPrefixMapper());			
+			marshaller.marshal(pkg, System.out);				
+		}
+	}
 
 	/**
 	 * The switch method specific to the visitor of the model structure.
 	 * @param eObject object to visit.
 	 */
 	abstract protected void doSwitch(EObject eObject);
-	
+
 	/**
 	 * Output instructions depending upon selection type.
 	 * Assumes ML package has been initialized via setupDocument().
@@ -494,47 +518,47 @@ public abstract class AbstractExportJob extends Job {
 	 * @throws Docx4JException 
 	 */
 	protected IStatus exportSelection(IProgressMonitor monitor) throws JAXBException,
-			Docx4JException {
-				factory = new ObjectFactory();
-			
-				if ( null != getResource() ) {
-					monitor.subTask("Producing resource content");
-					// iterates over all nodes in the resource using a visitor pattern
-					for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getResource(), true); iter.hasNext(); ) {
-						EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
-						doSwitch(eObject);
-						monitor.worked(1);
-						if ( monitor.isCanceled() ) {
-							return Status.CANCEL_STATUS;
-						}
-					}
-				} else if ( null != getNodeCollection() ) {
-					monitor.subTask("Producing node collection content");
-					// iterates over the given collection in order using a visitor pattern
-					for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNodeCollection(), true); iter.hasNext(); ) {
-						EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
-						doSwitch(eObject);
-						monitor.worked(1);
-						if ( monitor.isCanceled() ) {
-							return Status.CANCEL_STATUS;
-						}
-					}
-				} else {
-					monitor.subTask("Producing node content");
-					// iterates over a node and its children
-					// do the node itself, then its contents
-					doSwitch(getNode());
-					for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNode(), true); iter.hasNext(); ) {
-						EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
-						doSwitch(eObject);
-						monitor.worked(1);
-						if ( monitor.isCanceled() ) {
-							return Status.CANCEL_STATUS;
-						}
-					}
+	Docx4JException {
+		factory = new ObjectFactory();
+
+		if ( null != getResource() ) {
+			monitor.subTask("Producing resource content");
+			// iterates over all nodes in the resource using a visitor pattern
+			for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getResource(), true); iter.hasNext(); ) {
+				EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+				doSwitch(eObject);
+				monitor.worked(1);
+				if ( monitor.isCanceled() ) {
+					return Status.CANCEL_STATUS;
 				}
-			
-				return Status.OK_STATUS;
 			}
-	
+		} else if ( null != getNodeCollection() ) {
+			monitor.subTask("Producing node collection content");
+			// iterates over the given collection in order using a visitor pattern
+			for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNodeCollection(), true); iter.hasNext(); ) {
+				EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+				doSwitch(eObject);
+				monitor.worked(1);
+				if ( monitor.isCanceled() ) {
+					return Status.CANCEL_STATUS;
+				}
+			}
+		} else {
+			monitor.subTask("Producing node content");
+			// iterates over a node and its children
+			// do the node itself, then its contents
+			doSwitch(getNode());
+			for ( final Iterator<EObject> iter = EcoreUtil.getAllContents(getNode(), true); iter.hasNext(); ) {
+				EObject eObject = iter.next(); // $codepro.audit.disable variableDeclaredInLoop
+				doSwitch(eObject);
+				monitor.worked(1);
+				if ( monitor.isCanceled() ) {
+					return Status.CANCEL_STATUS;
+				}
+			}
+		}
+
+		return Status.OK_STATUS;
+	}
+
 }

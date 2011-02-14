@@ -44,7 +44,7 @@ public interface MspdiPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schemas.microsoft.com/project/2007";
+	String eNS_URI = "http://schemas.microsoft.com/project";
 
 	/**
 	 * The package namespace name.

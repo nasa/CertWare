@@ -60,6 +60,48 @@
                tooltip="Open the CPN content in its view">
          </action>
       </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="net.certware.planning.cpn.write.mspdi"
+            nameFilter="*.cpn"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.planning.cpn.view.actions.CreateProjectAction"
+               enablesFor="1"
+               icon="icons/obj16/ms_office.gif"
+               id="net.certware.planning.cpn.view.action.write.mspdi"
+               label="Create Microsoft Project File"
+               menubarPath="certware/additions"
+               tooltip="Translate CPN tasks and resources to MSPDI tasks and resources">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.certware.planning.cpn.view.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="certware"
+            class="net.certware.planning.cpn.view.preferences.PreferencePage"
+            id="net.certware.planning.cpn.view.preferences.page"
+            name="CPN View and Actions">
+      </page>
    </extension>
 
 </plugin>

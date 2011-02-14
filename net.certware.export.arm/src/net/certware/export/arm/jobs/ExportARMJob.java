@@ -124,15 +124,25 @@ public class ExportARMJob extends AbstractExportJob {
 			// prefix, identifier, description, and content
 			// tagged values visited in a different case
 
-			System.err.println("adding model element " + prefix + " me " + me.getIdentifier());// TODO testing
-			
+			// prefix, identifier, description, and content
+			// tagged values visited in a different case
+			//Br b = factory.createBr();
+			//b.setType(STBrType.TEXT_WRAPPING);
 			P modelElementParagraph = factory.createP();
-			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT),prefix));
-			modelElementParagraph.getParagraphContent().add( addRunOfText(" "));
-			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__IDENTIFIER),me.getIdentifier()));
-			modelElementParagraph.getParagraphContent().add( addRunOfText("\nDescription: "));
+			String id = me.getIdentifier();
+			String heading = prefix + ' ' + me.getIdentifier();
+			if ( id.startsWith(prefix) )
+				heading = me.getIdentifier();
+			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT),heading));
+			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
+			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
+			//modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__IDENTIFIER),me.getIdentifier()));
+			// modelElementParagraph.getParagraphContent().add( factory.createRCr());
+			modelElementParagraph.getParagraphContent().add( factory.createBr());
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Description: "));
 			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__DESCRIPTION),me.getDescription()));
-			modelElementParagraph.getParagraphContent().add( addRunOfText("\nContent: "));
+			modelElementParagraph.getParagraphContent().add( factory.createBr());
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Content: "));
 			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__CONTENT),me.getContent()));
 			mainDocumentPart.addObject(modelElementParagraph);
 
@@ -495,9 +505,9 @@ public class ExportARMJob extends AbstractExportJob {
 				tearDownDocument(monitor,true);
 			}
 		} catch (JAXBException e) {
-			CertWareLog.logError("Exporting word document", e);
+			CertWareLog.logError("Exporting ARM document", e);
 		} catch (Docx4JException e) {
-			CertWareLog.logError("Exporting word document", e);
+			CertWareLog.logError("Exporting ARM document", e);
 		}
 
 		cleanupJob(monitor,rv);

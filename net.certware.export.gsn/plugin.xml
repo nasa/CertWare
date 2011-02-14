@@ -23,22 +23,67 @@
             categoryId="net.certware.export.category"
             description="Exports the selected GSN nodes to a Word Document"
             helpContextId="export_gsn"
-            id="net.certware.export.command.gsn"
+            id="net.certware.export.command.gsn.word"
             name="Export GSN to Word Document">
+      </command>
+      <command
+            categoryId="net.certware.export.category"
+            description="Exports the selected GSN nodes to a PDF Document"
+            helpContextId="export_gsn"
+            id="net.certware.export.command.gsn.pdf"
+            name="Export GSN to PDF Document">
       </command>
    </extension>
    <extension
          point="org.eclipse.ui.commandImages">
       <image
-            commandId="net.certware.export.command.gsn"
+            commandId="net.certware.export.command.gsn.word"
             icon="icons/obj16/icon_DOC_small.png">
+      </image>
+      <image
+            commandId="net.certware.export.command.gsn.pdf"
+            icon="icons/obj16/icon_PDF_small.png">
       </image>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
             class="net.certware.export.gsn.handlers.ExportGSNHandler"
-            commandId="net.certware.export.command.gsn"
+            commandId="net.certware.export.command.gsn.word"
+            helpContextId="export_gsn">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="or">
+                  <or>
+                     <instanceof
+                           value="net.certware.argument.gsn.Strategy">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Goal">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Solution">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Justification">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Assumption">
+                     </instanceof>
+                     <instanceof
+                           value="net.certware.argument.gsn.Context">
+                     </instanceof>
+                  </or>
+               </iterate>
+            </with>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.export.gsn.handlers.ExportGSNHandler"
+            commandId="net.certware.export.command.gsn.pdf"
             helpContextId="export_gsn">
          <enabledWhen>
             <with
@@ -82,12 +127,20 @@
                mnemonic="E"
                tooltip="Export selection to file system">
             <command
-                  commandId="net.certware.export.command.gsn"
+                  commandId="net.certware.export.command.gsn.word"
                   helpContextId="export_gsn"
                   label="Word Document..."
                   mnemonic="W"
                   style="push"
                   tooltip="Exports GSN node selection to Word document">
+            </command>
+            <command
+                  commandId="net.certware.export.command.gsn.pdf"
+                  helpContextId="export_gsn"
+                  label="PDF Document..."
+                  mnemonic="P"
+                  style="push"
+                  tooltip="Exports GSN node selection to PDF document">
             </command>
          </menu>
       </menuContribution>

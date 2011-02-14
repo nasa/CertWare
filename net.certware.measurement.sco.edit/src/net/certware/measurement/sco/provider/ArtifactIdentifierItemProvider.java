@@ -30,6 +30,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.ui.PlatformUI;
 
 /**
  * This is the item provider adapter for a {@link net.certware.measurement.sco.ArtifactIdentifier} object.
@@ -293,11 +295,17 @@ public class ArtifactIdentifierItemProvider
 	/**
 	 * This returns ArtifactIdentifier.gif.
 	 * <!-- begin-user-doc -->
+	 * Tries to use the platform image from the editor registry.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
+		String name = ((ArtifactIdentifier)object).getResourceName();
+		ImageDescriptor id = PlatformUI.getWorkbench().getEditorRegistry().getImageDescriptor(name);
+		if ( id != null ) {
+			return overlayImage(object, id.createImage());
+		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/artifacts")); //$NON-NLS-1$
 	}
 

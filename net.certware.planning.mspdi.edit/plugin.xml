@@ -10,7 +10,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://schemas.microsoft.com/project/2007"
+            uri="http://schemas.microsoft.com/project"
             class="net.certware.planning.mspdi.provider.MspdiItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

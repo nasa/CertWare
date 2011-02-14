@@ -48,7 +48,7 @@ public class ExportGSNHandler extends AbstractHandler {
 				// use various job constructors according to selection
 				Collection collection = null;
 				ExportGSNJob job = null;
-				final String jobTitle = Messages.ExportGSNHandler_0;
+				final String jobTitle = "Export GSN Model Elements";
 
 				if ( iss.size() > 1 ) {
 					collection = iss.toList();
@@ -61,7 +61,7 @@ public class ExportGSNHandler extends AbstractHandler {
 						job = new ExportGSNJob(jobTitle, (EObject)iss.getFirstElement());
 					}
 					else {
-						CertWareLog.logWarning(Messages.ExportGSNHandler_1);
+						CertWareLog.logWarning("Unknown selection for GSN export");
 						return null;
 					}
 				}

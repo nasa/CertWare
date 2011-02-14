@@ -108,13 +108,23 @@ public class ExportGSNJob extends AbstractExportJob {
 		public Boolean caseModelElement(String prefix, ModelElement me) {
 			// prefix, identifier, description, and content
 			// tagged values visited in a different case
+			//Br b = factory.createBr();
+			//b.setType(STBrType.TEXT_WRAPPING);
 			P modelElementParagraph = factory.createP();
-			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT),prefix));
-			modelElementParagraph.getParagraphContent().add( addRunOfText(" "));
-			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__IDENTIFIER),me.getIdentifier()));
-			modelElementParagraph.getParagraphContent().add( addRunOfText("\nDescription: "));
+			String id = me.getIdentifier();
+			String heading = prefix + ' ' + me.getIdentifier();
+			if ( id.startsWith(prefix) )
+				heading = me.getIdentifier();
+			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT),heading));
+			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
+			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
+			//modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__IDENTIFIER),me.getIdentifier()));
+			// modelElementParagraph.getParagraphContent().add( factory.createRCr());
+			modelElementParagraph.getParagraphContent().add( factory.createBr());
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Description: "));
 			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__DESCRIPTION),me.getDescription()));
-			modelElementParagraph.getParagraphContent().add( addRunOfText("\nContent: "));
+			modelElementParagraph.getParagraphContent().add( factory.createBr());
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Content: "));
 			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(ArmPackage.MODEL_ELEMENT__CONTENT),me.getContent()));
 			mainDocumentPart.addObject(modelElementParagraph);
 
@@ -319,6 +329,7 @@ public class ExportGSNJob extends AbstractExportJob {
 		styleMap.put(GsnPackage.SOLUTION__TARGET,new StyleEntry(false,"SolutionTarget"));
 
 		// TODO override above strings with default styles; let the extension point take care of custom names
+		styleMap.put(ArmPackage.MODEL_ELEMENT, new StyleEntry(true,"Heading2"));
 		
 		// override with plugin contributions
 		loadContributedStyles();
@@ -341,9 +352,9 @@ public class ExportGSNJob extends AbstractExportJob {
 				tearDownDocument(monitor,true);
 			}
 		} catch (JAXBException e) {
-			CertWareLog.logError("Exporting word document", e);
+			CertWareLog.logError("Exporting GSN document", e);
 		} catch (Docx4JException e) {
-			CertWareLog.logError("Exporting word document", e);
+			CertWareLog.logError("Exporting GSN document", e);
 		}
 
 		cleanupJob(monitor,rv);

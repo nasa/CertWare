@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mspdi"
-    nsURI="http://schemas.microsoft.com/project/2007" nsPrefix="mspdi">
+    nsURI="http://schemas.microsoft.com/project" nsPrefix="mspdi">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The full project schema definition from the project level down, starting with data type definitions."/>
   </eAnnotations>
