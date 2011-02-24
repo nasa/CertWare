@@ -3,6 +3,15 @@
    <feature url="features/net.certware.feature_1.0.0.qualifier.jar" id="net.certware.feature" version="1.0.0.qualifier">
       <category name="certware_category"/>
    </feature>
+   <feature url="features/net.certware.feature_1.1.0.qualifier.jar" id="net.certware.feature" version="1.1.0.qualifier">
+      <category name="certware_category"/>
+   </feature>
+   <feature url="features/net.certware.feature_1.1.1.qualifier.jar" id="net.certware.feature" version="1.1.1.qualifier">
+      <category name="certware_category"/>
+   </feature>
+   <feature url="features/net.certware.feature_1.1.2.qualifier.jar" id="net.certware.feature" version="1.1.2.qualifier">
+      <category name="certware_category"/>
+   </feature>
    <category-def name="certware_category" label="CertWare">
       <description>
          Category definition for a CertWare feature for installation in existing Eclipse platform.

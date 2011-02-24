@@ -1,5 +1,6 @@
 /**
- * Generated with Acceleo
+ * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
+ * All rights reserved.
  */
 package net.certware.argument.eur.parts.forms;
 
@@ -44,6 +45,7 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -54,7 +56,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class ContextPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ContextPropertiesEditionPart {
@@ -129,7 +131,7 @@ public class ContextPropertiesEditionPartForm extends CompositePropertiesEdition
 		propertiesGroup.setLayout(propertiesGroupLayout);
 		createIdentifierText(widgetFactory, propertiesGroup);
 		createDescriptionText(widgetFactory, propertiesGroup);
-		createContentText(widgetFactory, propertiesGroup);
+		createContentTextarea(widgetFactory, propertiesGroup);
 		createIsTaggedTableComposition(widgetFactory, propertiesGroup);
 		createAssumptionReferencesTable(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
@@ -214,41 +216,33 @@ public class ContextPropertiesEditionPartForm extends CompositePropertiesEdition
 	}
 
 	
-	protected void createContentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, EurMessages.ContextPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.content, EurViewsRepository.FORM_KIND));
-		content = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		content.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
+	protected void createContentTextarea(FormToolkit widgetFactory, Composite parent) {
+		Label contentLabel = FormUtils.createPartLabel(widgetFactory, parent, EurMessages.ContextPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.content, EurViewsRepository.FORM_KIND));
+		GridData contentLabelData = new GridData(GridData.FILL_HORIZONTAL);
+		contentLabelData.horizontalSpan = 3;
+		contentLabel.setLayoutData(contentLabelData);
+		content = widgetFactory.createText(parent, "", SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL); //$NON-NLS-1$
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
+		contentData.horizontalSpan = 2;
+		contentData.heightHint = 80;
+		contentData.widthHint = 200;
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
+
 			/**
+			 * {@inheritDoc}
+			 * 
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 * 
 			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartForm.this, EurViewsRepository.Context.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
 			}
-		});
-		content.addKeyListener(new KeyAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartForm.this, EurViewsRepository.Context.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
-				}
-			}
+
 		});
 		EditingUtils.setID(content, EurViewsRepository.Context.content);
-		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
+		EditingUtils.setEEFtype(content, "eef::Textarea"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.content, EurViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -504,7 +498,7 @@ public class ContextPropertiesEditionPartForm extends CompositePropertiesEdition
 		if (newValue != null) {
 			content.setText(newValue);
 		} else {
-			content.setText(""); //$NON-NLS-1$
+			content.setText("");  //$NON-NLS-1$
 		}
 	}
 

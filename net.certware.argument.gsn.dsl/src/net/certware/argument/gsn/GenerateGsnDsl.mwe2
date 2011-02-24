@@ -99,10 +99,10 @@ Workflow {
 
 			// project wizard (optional) 
 
-			fragment = projectWizard.SimpleProjectWizardFragment {
-					generatorProjectName = "${projectName}.generator" 
-					modelFileExtension = file.extensions
-			 }
+			//fragment = projectWizard.SimpleProjectWizardFragment {
+			//		generatorProjectName = "${projectName}.generator" 
+			//		modelFileExtension = file.extensions
+			// }
 
 			// quickfix API 
 			fragment = quickfix.QuickfixProviderFragment {}

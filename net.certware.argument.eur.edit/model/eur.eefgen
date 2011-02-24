@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.argument.eur.edit/src-gen">
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.argument.eur.edit/src-gen" author="mrb" license="/**&#xA; * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.&#xA; * All rights reserved.&#xA; */">
   <editionContexts basePackage="net.certware.argument" descriptorsGenericPropertiesViews="true">
     <PropertiesEditionContext href="eur.components#_Iu88QAhzEeCzO8JExYDW8g"/>
   </editionContexts>

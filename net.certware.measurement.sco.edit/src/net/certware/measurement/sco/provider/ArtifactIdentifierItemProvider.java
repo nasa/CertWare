@@ -302,9 +302,11 @@ public class ArtifactIdentifierItemProvider
 	@Override
 	public Object getImage(Object object) {
 		String name = ((ArtifactIdentifier)object).getResourceName();
-		ImageDescriptor id = PlatformUI.getWorkbench().getEditorRegistry().getImageDescriptor(name);
-		if ( id != null ) {
-			return overlayImage(object, id.createImage());
+		if ( name != null && PlatformUI.getWorkbench() != null && PlatformUI.getWorkbench().getEditorRegistry() != null ) {
+			ImageDescriptor id = PlatformUI.getWorkbench().getEditorRegistry().getImageDescriptor(name);
+			if ( id != null ) {
+				return overlayImage(object, id.createImage());
+			}
 		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/artifacts")); //$NON-NLS-1$
 	}

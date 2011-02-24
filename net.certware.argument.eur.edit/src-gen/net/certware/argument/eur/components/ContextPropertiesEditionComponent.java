@@ -1,5 +1,6 @@
 /**
- * Generated with Acceleo
+ * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
+ * All rights reserved.
  */
 package net.certware.argument.eur.components;
 
@@ -57,7 +58,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class ContextPropertiesEditionComponent extends StandardPropertiesEditionComponent {
@@ -239,8 +240,7 @@ public class ContextPropertiesEditionComponent extends StandardPropertiesEdition
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), context.getDescription()));
 
 			if (context.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), context.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), context.getContent()));
 			basePart.initIsTagged(context, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initAssumption(context, null, EurPackage.eINSTANCE.getContext_Assumption());
 			// init filters
@@ -309,7 +309,7 @@ public class ContextPropertiesEditionComponent extends StandardPropertiesEdition
 		if ((context != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, context, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, context, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, context, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, context, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, context, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -363,8 +363,7 @@ public class ContextPropertiesEditionComponent extends StandardPropertiesEdition
 
 			contextToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			contextToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			contextToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			contextToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			contextToUpdate.getAssumption().addAll(basePart.getAssumptionToAdd());
 
@@ -392,7 +391,7 @@ public class ContextPropertiesEditionComponent extends StandardPropertiesEdition
 				command.append(SetCommand.create(liveEditingDomain, context, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Context.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, context, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, context, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Context.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {

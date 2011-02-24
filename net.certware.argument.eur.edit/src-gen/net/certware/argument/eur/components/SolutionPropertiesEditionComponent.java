@@ -1,5 +1,6 @@
 /**
- * Generated with Acceleo
+ * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
+ * All rights reserved.
  */
 package net.certware.argument.eur.components;
 
@@ -59,7 +60,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class SolutionPropertiesEditionComponent extends StandardPropertiesEditionComponent {
@@ -249,8 +250,7 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), solution.getDescription()));
 
 			if (solution.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), solution.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), solution.getContent()));
 			basePart.initIsTagged(solution, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initTarget(solution, null, ArmPackage.eINSTANCE.getArgumentLink_Target());
 			basePart.initSource(solution, null, ArmPackage.eINSTANCE.getArgumentLink_Source());
@@ -403,7 +403,7 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 		if ((solution != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, solution, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, solution, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, solution, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, solution, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, solution, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -493,8 +493,7 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 
 			solutionToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			solutionToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			solutionToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			solutionToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			solutionToUpdate.getTarget().addAll(basePart.getTargetToAdd());
 			solutionToUpdate.getSource().addAll(basePart.getSourceToAdd());
@@ -526,7 +525,7 @@ public class SolutionPropertiesEditionComponent extends StandardPropertiesEditio
 				command.append(SetCommand.create(liveEditingDomain, solution, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Solution.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, solution, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, solution, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Solution.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {

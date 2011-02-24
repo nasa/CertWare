@@ -309,18 +309,21 @@ public class ProofDetailPage extends GenericDetailPage
 	 * @param s statement to display
 	 */
 	private void displayStatementLine(Composite client, Statement s) {
-		Label idValue = toolkit.createLabel(client,s.getId());
+		String id = s.getId();
+		if ( id == null )
+			id = "";
+		Label idValue = toolkit.createLabel(client,id);
 		idValue.setFont(normalFont);
 		idValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
 		idValue.setImage( getImageForStatement(s) );
-		idValue.setToolTipText( s.getId() );
+		idValue.setToolTipText( id );
 
 		FormText bodyValue = toolkit.createFormText(client, false);
 		bodyValue.setWhitespaceNormalized(true);
 		bodyValue.setText( removeQuotes(s.getStatement()), false, false);
 		bodyValue.setFont(normalFont);
 		bodyValue.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
-		bodyValue.setToolTipText( s.getId() + ' ' + s.getStatement() );
+		bodyValue.setToolTipText( id + ' ' + s.getStatement() );
 
 		Label commentValue = toolkit.createLabel(client, ProofUtil.getStatementComment(s));
 		commentValue.setFont(normalFont);

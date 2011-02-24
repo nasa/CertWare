@@ -51,6 +51,7 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.ISelectionListener;
@@ -143,8 +144,17 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	 */
 	protected void refreshPart() {
 		// update the input to the tree viewer in the master part
-		viewer.setInput(commitHistory);
-		form.reflow(true);
+		new Thread(new Runnable() {
+			public void run() {
+				// try { Thread.sleep(1000); } catch (Exception e) { }
+				Display.getDefault().asyncExec(new Runnable() {
+					public void run() {
+						viewer.setInput(commitHistory);
+						form.reflow(true);
+					}
+				});
+			}
+		}).start();
 	}
 	
 	
@@ -246,12 +256,12 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 				    		return;
 				    	}
 				    	
-				    	EObject container = eo.eContainer();
-
-				    	if ( container instanceof ScoResourceImpl ) {
+				    	if ( eo.eContainer() instanceof ScoResourceImpl ) {
 				    		// might do something with contents later
 				    		return;
 				    	}
+				    	
+				    	EObject container = eo.eContainer();
 
 				    	if ( container instanceof ArtifactCommit ) {
 				    		ArtifactCommit al = (ArtifactCommit)container;
@@ -476,7 +486,8 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 
 		@Override
 		public void refresh() {
-			resourceValue.setText(artifactIdentifier.getResourceName());
+			String name = artifactIdentifier.getResourceName();
+			resourceValue.setText( name == null ? "" : name);
 			baselinedValue.setText(String.format("%d lines",artifactIdentifier.getBaselinedLineCount()));
 			currentValue.setText(String.format("%d lines",artifactIdentifier.getCurrentLineCount()));
 			stale = false;
@@ -599,7 +610,12 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 
 		@Override
 		public void refresh() {
-			changeType.setText(changeOrder.getType().getLiteral());
+			if ( changeOrder == null || changeOrder.getType() == null ) {
+				changeType.setText("");
+			}
+			else {
+				changeType.setText(changeOrder.getType().getLiteral());
+			}
 			changeOrderValue.setText(String.format("%d orders",changeOrder.getValue()));
 			changeOrderBroken.setText(String.format("%d lines",changeOrder.getBrokenLines()));
 			changeOrderFixed.setText(String.format("%d lines",changeOrder.getFixedLines()));
@@ -722,7 +738,8 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 
 		@Override
 		public void refresh() {
-			commitId.setText(artifactCommit.getCommitIdentifier());
+			String id = artifactCommit.getCommitIdentifier();
+			commitId.setText( id == null ? "" : id);
 			usageTime.setText(String.format("%6.1f hrs",artifactCommit.getUsageTime()));
 			stale = false;
 			client.getParent().layout(true);

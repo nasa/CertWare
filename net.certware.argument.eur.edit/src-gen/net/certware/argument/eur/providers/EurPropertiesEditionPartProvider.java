@@ -1,5 +1,6 @@
 /**
- * Generated with Acceleo
+ * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
+ * All rights reserved.
  */
 package net.certware.argument.eur.providers;
 
@@ -24,7 +25,7 @@ import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class EurPropertiesEditionPartProvider implements IPropertiesEditionPartProvider {

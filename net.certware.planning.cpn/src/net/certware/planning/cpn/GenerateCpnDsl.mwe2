@@ -94,11 +94,10 @@ Workflow {
 			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
 
 			// project wizard (optional) 
-			fragment = projectWizard.SimpleProjectWizardFragment {
-			 		generatorProjectName = "${projectName}.generator" 
-					modelFileExtension = file.extensions
-					
-			 }
+			//fragment = projectWizard.SimpleProjectWizardFragment {
+			// 		generatorProjectName = "${projectName}.generator" 
+			//		modelFileExtension = file.extensions
+			// }
 		}
 	}
 }

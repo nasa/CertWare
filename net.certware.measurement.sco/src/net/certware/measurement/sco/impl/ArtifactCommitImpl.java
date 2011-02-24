@@ -177,8 +177,8 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
-				return ((InternalEList<?>)getArtifactIdentifiers()).basicRemove(otherEnd, msgs);
+		case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
+			return ((InternalEList<?>)getArtifactIdentifiers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -191,12 +191,12 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
-				return getArtifactIdentifiers();
-			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
-				return getCommitIdentifier();
-			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
-				return getUsageTime();
+		case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
+			return getArtifactIdentifiers();
+		case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
+			return getCommitIdentifier();
+		case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
+			return getUsageTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,16 +210,16 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
-				getArtifactIdentifiers().clear();
-				getArtifactIdentifiers().addAll((Collection<? extends ArtifactIdentifier>)newValue);
-				return;
-			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
-				setCommitIdentifier((String)newValue);
-				return;
-			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
-				setUsageTime((Double)newValue);
-				return;
+		case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
+			getArtifactIdentifiers().clear();
+			getArtifactIdentifiers().addAll((Collection<? extends ArtifactIdentifier>)newValue);
+			return;
+		case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
+			setCommitIdentifier((String)newValue);
+			return;
+		case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
+			setUsageTime((Double)newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,15 +232,15 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
-				getArtifactIdentifiers().clear();
-				return;
-			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
-				setCommitIdentifier(COMMIT_IDENTIFIER_EDEFAULT);
-				return;
-			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
-				setUsageTime(USAGE_TIME_EDEFAULT);
-				return;
+		case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
+			getArtifactIdentifiers().clear();
+			return;
+		case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
+			setCommitIdentifier(COMMIT_IDENTIFIER_EDEFAULT);
+			return;
+		case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
+			setUsageTime(USAGE_TIME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,12 +253,12 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
-				return artifactIdentifiers != null && !artifactIdentifiers.isEmpty();
-			case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
-				return COMMIT_IDENTIFIER_EDEFAULT == null ? commitIdentifier != null : !COMMIT_IDENTIFIER_EDEFAULT.equals(commitIdentifier);
-			case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
-				return usageTime != USAGE_TIME_EDEFAULT;
+		case ScoPackage.ARTIFACT_COMMIT__ARTIFACT_IDENTIFIERS:
+			return artifactIdentifiers != null && !artifactIdentifiers.isEmpty();
+		case ScoPackage.ARTIFACT_COMMIT__COMMIT_IDENTIFIER:
+			return COMMIT_IDENTIFIER_EDEFAULT == null ? commitIdentifier != null : !COMMIT_IDENTIFIER_EDEFAULT.equals(commitIdentifier);
+		case ScoPackage.ARTIFACT_COMMIT__USAGE_TIME:
+			return usageTime != USAGE_TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -280,15 +280,17 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 		result.append(')');
 		return result.toString();
 	}
-	
+
 	/**
 	 * Accumulate the improvement change order count across all artifacts.
 	 * @return new improvement change order object with sum of changes
 	 */
 	public ImprovementChangeOrders getAllImprovementChangeOrders() {
 		ImprovementChangeOrders ico = ScoFactory.eINSTANCE.createImprovementChangeOrders();
-		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
-			addChangeOrders(ico,ai.getImprovementChangeOrders());
+		if ( artifactIdentifiers != null ) {
+			for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+				addChangeOrders(ico,ai.getImprovementChangeOrders());
+			}
 		}
 		return ico;
 	}
@@ -299,8 +301,10 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	 */
 	public CriticalDefectChangeOrders getAllCriticalDefectChangeOrders() {
 		CriticalDefectChangeOrders cdco = ScoFactory.eINSTANCE.createCriticalDefectChangeOrders();
-		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
-			addChangeOrders(cdco,ai.getCriticalDefectChangeOrders());
+		if ( artifactIdentifiers != null ) {
+			for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+				addChangeOrders(cdco,ai.getCriticalDefectChangeOrders());
+			}
 		}
 		return cdco;
 	}
@@ -311,8 +315,10 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	 */
 	public NewFeatureChangeOrders getAllNewFeatureChangeOrders() {
 		NewFeatureChangeOrders nfco = ScoFactory.eINSTANCE.createNewFeatureChangeOrders();
-		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
-			addChangeOrders(nfco,ai.getNewFeatureChangeOrders());
+		if ( artifactIdentifiers != null ) {
+			for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+				addChangeOrders(nfco,ai.getNewFeatureChangeOrders());
+			}
 		}
 		return nfco;
 	}
@@ -324,10 +330,13 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	 */
 	public NormalDefectChangeOrders getAllNormalDefectChangeOrders() {
 		NormalDefectChangeOrders ndco = ScoFactory.eINSTANCE.createNormalDefectChangeOrders();
-		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
-			addChangeOrders(ndco,ai.getNormalDefectChangeOrders());
+		if ( artifactIdentifiers != null ) {
+			for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+				addChangeOrders(ndco,ai.getNormalDefectChangeOrders());
+			}
 		}
 		return ndco;
+
 	}
 
 	/**
@@ -336,8 +345,10 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	 */
 	public TotalChangeOrders getAllTotalChangeOrders() {
 		TotalChangeOrders tco = ScoFactory.eINSTANCE.createTotalChangeOrders();
-		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
-			addChangeOrders(tco,ai.getTotalChangeOrders());
+		if ( artifactIdentifiers != null ) {
+			for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+				addChangeOrders(tco,ai.getTotalChangeOrders());
+			}
 		}
 		return tco;
 	}
@@ -348,8 +359,11 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	 */
 	public int getAllBaselinedLineCount() {
 		int count = 0;
-		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
-			count += ai.getBaselinedLineCount();
+		if ( artifactIdentifiers != null ) {
+
+			for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+				count += ai.getBaselinedLineCount();
+			}
 		}
 		return count;
 	}
@@ -360,8 +374,10 @@ public class ArtifactCommitImpl extends EObjectImpl implements ArtifactCommit {
 	 */
 	public int getAllCurrentLineCount() {
 		int count = 0;
-		for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
-			count += ai.getCurrentLineCount();
+		if ( artifactIdentifiers != null ) {
+			for ( ArtifactIdentifier ai : this.artifactIdentifiers ) {
+				count += ai.getCurrentLineCount();
+			}
 		}
 		return count;
 	}

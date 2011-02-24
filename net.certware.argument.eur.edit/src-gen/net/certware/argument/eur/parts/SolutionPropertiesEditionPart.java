@@ -1,5 +1,6 @@
 /**
- * Generated with Acceleo
+ * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
+ * All rights reserved.
  */
 package net.certware.argument.eur.parts;
 
@@ -18,7 +19,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public interface SolutionPropertiesEditionPart {

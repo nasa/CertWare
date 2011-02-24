@@ -66,6 +66,7 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.ISelectionListener;
@@ -153,17 +154,27 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 
 	/**
 	 * Refresh the part.
+	 * Tries to use a safe thread on default display.
 	 */
 	protected void refreshPart() {
 		// update the input to the tree viewer in the master part
-		viewer.setInput(projectModel);
-		
-		if ( projectModel != null ) {
-			// update master side fields, if any
-			// unused at this point as there are no product model element fields to display
-		}
-
-		form.reflow(true);
+		new Thread(new Runnable() {
+			public void run() {
+				// try { Thread.sleep(1000); } catch (Exception e) { }
+				Display.getDefault().asyncExec(new Runnable() {
+					public void run() {
+						viewer.setInput(projectModel);
+						
+						if ( projectModel != null ) {
+							// update master side fields, if any
+							// unused at this point as there are no product model element fields to display
+						}
+						
+						form.reflow(true);
+					}
+				});
+			}
+		}).start();
 	}
 	
 

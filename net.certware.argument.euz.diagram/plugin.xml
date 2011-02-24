@@ -47,7 +47,7 @@ Copyright (c) 2010 Kestrel Technology LLC
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/EuzDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="net.certware.core.ui.newwizard.category"
   	     class="net.certware.argument.euz.diagram.part.EuzCreationWizard"
   	     id="net.certware.argument.euz.diagram.part.EuzCreationWizardID">
   	  	 <description>%newWizardDesc</description>  

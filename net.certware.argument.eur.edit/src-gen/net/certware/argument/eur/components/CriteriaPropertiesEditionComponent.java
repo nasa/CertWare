@@ -1,5 +1,6 @@
 /**
- * Generated with Acceleo
+ * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
+ * All rights reserved.
  */
 package net.certware.argument.eur.components;
 
@@ -57,7 +58,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class CriteriaPropertiesEditionComponent extends StandardPropertiesEditionComponent {
@@ -241,8 +242,7 @@ public class CriteriaPropertiesEditionComponent extends StandardPropertiesEditio
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), criteria.getDescription()));
 
 			if (criteria.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), criteria.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), criteria.getContent()));
 			basePart.initIsTagged(criteria, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initContext(criteria, null, EurPackage.eINSTANCE.getCriteria_Context());
 			basePart.initAssumption(criteria, null, EurPackage.eINSTANCE.getCriteria_Assumption());
@@ -332,7 +332,7 @@ public class CriteriaPropertiesEditionComponent extends StandardPropertiesEditio
 		if ((criteria != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -397,8 +397,7 @@ public class CriteriaPropertiesEditionComponent extends StandardPropertiesEditio
 
 			criteriaToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			criteriaToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			criteriaToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			criteriaToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			criteriaToUpdate.getContext().addAll(basePart.getContextToAdd());
 			criteriaToUpdate.getAssumption().addAll(basePart.getAssumptionToAdd());
@@ -427,7 +426,7 @@ public class CriteriaPropertiesEditionComponent extends StandardPropertiesEditio
 				command.append(SetCommand.create(liveEditingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Criteria.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, criteria, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Criteria.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {

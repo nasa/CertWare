@@ -1,5 +1,6 @@
 /**
- * Generated with Acceleo
+ * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
+ * All rights reserved.
  */
 package net.certware.argument.eur.components;
 
@@ -59,7 +60,7 @@ import org.eclipse.ui.PlatformUI;
 // End of user code
 
 /**
- * 
+ * @author mrb
  * 
  */
 public class StrategyPropertiesEditionComponent extends StandardPropertiesEditionComponent {
@@ -171,8 +172,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			basePart.updateSolution(strategy);
 		if (EurPackage.eINSTANCE.getStrategy_Criteria().equals(msg.getFeature()))
 			basePart.updateCriteria(strategy);
-		if (EurPackage.eINSTANCE.getStrategy_Assumption().equals(msg.getFeature()))
-			basePart.updateAssumption(strategy);
+// FIXME INVALID CASE INTO template public liveUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : assumption, Strategy, Strategy.
 
 	}
 
@@ -251,14 +251,13 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getDescription()));
 
 			if (strategy.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getContent()));
 			basePart.initIsTagged(strategy, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initArgument(strategy, null, EurPackage.eINSTANCE.getStrategy_Argument());
 			basePart.initJustification(strategy, null, EurPackage.eINSTANCE.getStrategy_Justification());
 			basePart.initSolution(strategy, null, EurPackage.eINSTANCE.getStrategy_Solution());
 			basePart.initCriteria(strategy, null, EurPackage.eINSTANCE.getStrategy_Criteria());
-			basePart.initAssumption(strategy, null, EurPackage.eINSTANCE.getStrategy_Assumption());
+// FIXME NO VALID CASE INTO template public updater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : assumption, Strategy, Strategy.
 			// init filters
 
 
@@ -399,7 +398,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 		if ((strategy != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -485,17 +484,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
 			//	cc.append(MoveCommand.create(editingDomain, strategy, EurPackage.eINSTANCE.getCriteria(), moveElement.getElement(), moveElement.getIndex()));
 			//}
-			List assumptionToAddFromAssumption = basePart.getAssumptionToAdd();
-			for (Iterator iter = assumptionToAddFromAssumption.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, strategy, EurPackage.eINSTANCE.getStrategy_Assumption(), iter.next()));
-			List assumptionToRemoveFromAssumption = basePart.getAssumptionToRemove();
-			for (Iterator iter = assumptionToRemoveFromAssumption.iterator(); iter.hasNext();)
-				cc.append(RemoveCommand.create(editingDomain, strategy, EurPackage.eINSTANCE.getStrategy_Assumption(), iter.next()));
-			//List assumptionToMoveFromAssumption = basePart.getAssumptionToMove();
-			//for (Iterator iter = assumptionToMoveFromAssumption.iterator(); iter.hasNext();){
-			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-			//	cc.append(MoveCommand.create(editingDomain, strategy, EurPackage.eINSTANCE.getAssumption(), moveElement.getElement(), moveElement.getIndex()));
-			//}
+// FIXME INVALID CASE INTO template public commandUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent, modelName : String) in widgetControl.mtl module, with the values : assumption, Strategy, Strategy, strategy.
 
 		}
 		if (!cc.isEmpty())
@@ -517,14 +506,13 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 
 			strategyToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			strategyToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			strategyToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			strategyToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			strategyToUpdate.getArgument().addAll(basePart.getArgumentToAdd());
 			strategyToUpdate.getJustification().addAll(basePart.getJustificationToAdd());
 			strategyToUpdate.getSolution().addAll(basePart.getSolutionToAdd());
 			strategyToUpdate.getCriteria().addAll(basePart.getCriteriaToAdd());
-			strategyToUpdate.getAssumption().addAll(basePart.getAssumptionToAdd());
+// FIXME INVALID CASE INTO template public partUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : assumption, Strategy, Strategy, strategy.
 
 			return strategyToUpdate;
 		}
@@ -550,7 +538,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				command.append(SetCommand.create(liveEditingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Strategy.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (EurViewsRepository.Strategy.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
@@ -622,14 +610,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				if (PropertiesEditionEvent.MOVE == event.getKind())
 					command.append(MoveCommand.create(liveEditingDomain, strategy, EurPackage.eINSTANCE.getStrategy_Criteria(), event.getNewValue(), event.getNewIndex()));
 			}
-			if (EurViewsRepository.Strategy.assumption == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, strategy, EurPackage.eINSTANCE.getStrategy_Assumption(), event.getNewValue()));
-				if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(RemoveCommand.create(liveEditingDomain, strategy, EurPackage.eINSTANCE.getStrategy_Assumption(), event.getNewValue()));
-				if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, strategy, EurPackage.eINSTANCE.getStrategy_Assumption(), event.getNewValue(), event.getNewIndex()));
-			}
+// FIXME INVALID CASE INTO template public liveCommandUpdater(editionElement : PropertiesEditionElement, view : View, modelName : String) in widgetControl.mtl module, with the values : assumption, Strategy, strategy.
 
 				if (!command.isEmpty() && !command.canExecute()) {
 					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);

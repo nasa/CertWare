@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Certware Planning CPN UI
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.1.2.qualifier
 Bundle-SymbolicName: net.certware.planning.cpn.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.planning.cpn;visibility:=reexport,

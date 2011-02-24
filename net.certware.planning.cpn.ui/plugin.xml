@@ -200,17 +200,5 @@
          </newWizardShortcut>
       </perspectiveExtension>
    </extension>
-   <extension
-         point="org.eclipse.ui.newWizards">
-      <wizard
-            category="net.certware.core.ui.newwizard.category"
-            class="net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
-            hasPages="true"
-            icon="icons/cpn.gif"
-            id="net.certware.planning.cpn.ui.wizard"
-            name="CPN Project"
-            project="true">
-      </wizard>
-   </extension>
 
 </plugin>
