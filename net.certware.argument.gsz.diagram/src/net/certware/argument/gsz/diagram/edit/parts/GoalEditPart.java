@@ -376,7 +376,7 @@ public class GoalEditPart extends ShapeNodeEditPart {
 			fFigureGoalLabelFigure = new WrappingLabel();
 			fFigureGoalLabelFigure.setText("Goal");
 			fFigureGoalLabelFigure.setTextWrap(true);
-			
+
 			this.add(fFigureGoalLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();

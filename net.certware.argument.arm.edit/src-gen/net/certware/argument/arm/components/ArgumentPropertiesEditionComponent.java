@@ -135,21 +135,21 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 			if (msg.getNewValue() != null) {
 				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setIdentifier(Messages.ArgumentPropertiesEditionComponent_0);
+				basePart.setIdentifier("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setDescription(Messages.ArgumentPropertiesEditionComponent_1);
+				basePart.setDescription("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setContent(Messages.ArgumentPropertiesEditionComponent_2);
+				basePart.setContent("");
 			}
 		}
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
@@ -242,8 +242,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), argument.getDescription()));
 
 			if (argument.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), argument.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), argument.getContent()));
 			basePart.initIsTagged(argument, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initContainsArgumentElement(argument, null, ArmPackage.eINSTANCE.getArgument_ContainsArgumentElement());
 			basePart.initContainsArgumentLink(argument, null, ArmPackage.eINSTANCE.getArgument_ContainsArgumentLink());
@@ -345,7 +344,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 		if ((argument != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, argument, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, argument, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, argument, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, argument, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, argument, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -451,8 +450,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 
 			argumentToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			argumentToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			argumentToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			argumentToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			argumentToUpdate.getContainsArgumentElement().addAll(basePart.getContainsArgumentElementToAdd());
 			argumentToUpdate.getContainsArgumentLink().addAll(basePart.getContainsArgumentLinkToAdd());
@@ -482,7 +480,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 				command.append(SetCommand.create(liveEditingDomain, argument, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.Argument.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, argument, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, argument, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.Argument.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
@@ -558,7 +556,7 @@ public class ArgumentPropertiesEditionComponent extends StandardPropertiesEditio
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError(Messages.ArgumentPropertiesEditionComponent_3, null);
+					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

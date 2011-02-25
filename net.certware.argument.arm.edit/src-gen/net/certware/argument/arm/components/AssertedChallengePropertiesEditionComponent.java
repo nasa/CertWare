@@ -136,21 +136,21 @@ public class AssertedChallengePropertiesEditionComponent extends StandardPropert
 			if (msg.getNewValue() != null) {
 				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setIdentifier(Messages.AssertedChallengePropertiesEditionComponent_0);
+				basePart.setIdentifier("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setDescription(Messages.AssertedChallengePropertiesEditionComponent_1);
+				basePart.setDescription("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setContent(Messages.AssertedChallengePropertiesEditionComponent_2);
+				basePart.setContent("");
 			}
 		}
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
@@ -238,8 +238,7 @@ public class AssertedChallengePropertiesEditionComponent extends StandardPropert
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), assertedChallenge.getDescription()));
 
 			if (assertedChallenge.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), assertedChallenge.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), assertedChallenge.getContent()));
 			basePart.initIsTagged(assertedChallenge, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initTarget(assertedChallenge, null, ArmPackage.eINSTANCE.getArgumentLink_Target());
 			basePart.initSource(assertedChallenge, null, ArmPackage.eINSTANCE.getArgumentLink_Source());
@@ -329,7 +328,7 @@ public class AssertedChallengePropertiesEditionComponent extends StandardPropert
 		if ((assertedChallenge != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -394,8 +393,7 @@ public class AssertedChallengePropertiesEditionComponent extends StandardPropert
 
 			assertedChallengeToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			assertedChallengeToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			assertedChallengeToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			assertedChallengeToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			assertedChallengeToUpdate.getTarget().addAll(basePart.getTargetToAdd());
 			assertedChallengeToUpdate.getSource().addAll(basePart.getSourceToAdd());
@@ -424,7 +422,7 @@ public class AssertedChallengePropertiesEditionComponent extends StandardPropert
 				command.append(SetCommand.create(liveEditingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.AssertedChallenge.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, assertedChallenge, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.AssertedChallenge.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
@@ -462,7 +460,7 @@ public class AssertedChallengePropertiesEditionComponent extends StandardPropert
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError(Messages.AssertedChallengePropertiesEditionComponent_3, null);
+					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

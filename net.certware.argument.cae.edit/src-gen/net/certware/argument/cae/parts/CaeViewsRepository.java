@@ -20,34 +20,34 @@ public class CaeViewsRepository {
 	 */
 	public static class Claim {
 		
-		public static String identifier = "cae::Claim::identifier"; //$NON-NLS-1$
+		public static String identifier = "cae::Claim::identifier";
 		
 		
-		public static String description = "cae::Claim::description"; //$NON-NLS-1$
+		public static String description = "cae::Claim::description";
 		
 		
-		public static String content = "cae::Claim::content"; //$NON-NLS-1$
+		public static String content = "cae::Claim::content";
 		
 		
-		public static String isTagged = "cae::Claim::isTagged"; //$NON-NLS-1$
+		public static String isTagged = "cae::Claim::isTagged";
 		
 		
-		public static String assumed = "cae::Claim::assumed"; //$NON-NLS-1$
+		public static String assumed = "cae::Claim::assumed";
 		
 		
-		public static String toBeSupported = "cae::Claim::toBeSupported"; //$NON-NLS-1$
+		public static String toBeSupported = "cae::Claim::toBeSupported";
 		
 		
-		public static String strategy = "cae::Claim::strategy"; //$NON-NLS-1$
+		public static String strategy = "cae::Claim::strategy";
 		
 		
-		public static String assumption = "cae::Claim::assumption"; //$NON-NLS-1$
+		public static String assumption = "cae::Claim::assumption";
 		
 		
-		public static String context = "cae::Claim::context"; //$NON-NLS-1$
+		public static String context = "cae::Claim::context";
 		
 		
-		public static String solution = "cae::Claim::solution"; //$NON-NLS-1$
+		public static String solution = "cae::Claim::solution";
 		
 	
 	}
@@ -58,25 +58,25 @@ public class CaeViewsRepository {
 	 */
 	public static class Argument {
 		
-		public static String identifier = "cae::Argument::identifier"; //$NON-NLS-1$
+		public static String identifier = "cae::Argument::identifier";
 		
 		
-		public static String description = "cae::Argument::description"; //$NON-NLS-1$
+		public static String description = "cae::Argument::description";
 		
 		
-		public static String content = "cae::Argument::content"; //$NON-NLS-1$
+		public static String content = "cae::Argument::content";
 		
 		
-		public static String isTagged = "cae::Argument::isTagged"; //$NON-NLS-1$
+		public static String isTagged = "cae::Argument::isTagged";
 		
 		
-		public static String justification = "cae::Argument::justification"; //$NON-NLS-1$
+		public static String justification = "cae::Argument::justification";
 		
 		
-		public static String evidence = "cae::Argument::evidence"; //$NON-NLS-1$
+		public static String evidence = "cae::Argument::evidence";
 		
 		
-		public static String claims = "cae::Argument::claims"; //$NON-NLS-1$
+		public static String claims = "cae::Argument::claims";
 		
 	
 	}
@@ -87,28 +87,28 @@ public class CaeViewsRepository {
 	 */
 	public static class Evidence {
 		
-		public static String identifier = "cae::Evidence::identifier"; //$NON-NLS-1$
+		public static String identifier = "cae::Evidence::identifier";
 		
 		
-		public static String description = "cae::Evidence::description"; //$NON-NLS-1$
+		public static String description = "cae::Evidence::description";
 		
 		
-		public static String content = "cae::Evidence::content"; //$NON-NLS-1$
+		public static String content = "cae::Evidence::content";
 		
 		
-		public static String isTagged = "cae::Evidence::isTagged"; //$NON-NLS-1$
+		public static String isTagged = "cae::Evidence::isTagged";
 		
 		
-		public static String target = "cae::Evidence::target"; //$NON-NLS-1$
+		public static String target = "cae::Evidence::target";
 		
 		
-		public static String source = "cae::Evidence::source"; //$NON-NLS-1$
+		public static String source = "cae::Evidence::source";
 		
 		
-		public static String context = "cae::Evidence::context"; //$NON-NLS-1$
+		public static String context = "cae::Evidence::context";
 		
 		
-		public static String evidence = "cae::Evidence::evidence"; //$NON-NLS-1$
+		public static String evidence = "cae::Evidence::evidence";
 		
 	
 	}
@@ -119,16 +119,16 @@ public class CaeViewsRepository {
 	 */
 	public static class Assumption {
 		
-		public static String identifier = "cae::Assumption::identifier"; //$NON-NLS-1$
+		public static String identifier = "cae::Assumption::identifier";
 		
 		
-		public static String description = "cae::Assumption::description"; //$NON-NLS-1$
+		public static String description = "cae::Assumption::description";
 		
 		
-		public static String content = "cae::Assumption::content"; //$NON-NLS-1$
+		public static String content = "cae::Assumption::content";
 		
 		
-		public static String isTagged = "cae::Assumption::isTagged"; //$NON-NLS-1$
+		public static String isTagged = "cae::Assumption::isTagged";
 		
 	
 	}
@@ -139,16 +139,16 @@ public class CaeViewsRepository {
 	 */
 	public static class Context {
 		
-		public static String identifier = "cae::Context::identifier"; //$NON-NLS-1$
+		public static String identifier = "cae::Context::identifier";
 		
 		
-		public static String description = "cae::Context::description"; //$NON-NLS-1$
+		public static String description = "cae::Context::description";
 		
 		
-		public static String content = "cae::Context::content"; //$NON-NLS-1$
+		public static String content = "cae::Context::content";
 		
 		
-		public static String isTagged = "cae::Context::isTagged"; //$NON-NLS-1$
+		public static String isTagged = "cae::Context::isTagged";
 		
 	
 	}
@@ -159,16 +159,16 @@ public class CaeViewsRepository {
 	 */
 	public static class Justification {
 		
-		public static String identifier = "cae::Justification::identifier"; //$NON-NLS-1$
+		public static String identifier = "cae::Justification::identifier";
 		
 		
-		public static String description = "cae::Justification::description"; //$NON-NLS-1$
+		public static String description = "cae::Justification::description";
 		
 		
-		public static String content = "cae::Justification::content"; //$NON-NLS-1$
+		public static String content = "cae::Justification::content";
 		
 		
-		public static String isTagged = "cae::Justification::isTagged"; //$NON-NLS-1$
+		public static String isTagged = "cae::Justification::isTagged";
 		
 	
 	}

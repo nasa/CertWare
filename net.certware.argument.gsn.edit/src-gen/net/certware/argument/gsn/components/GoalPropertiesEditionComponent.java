@@ -259,8 +259,7 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), goal.getDescription()));
 
 			if (goal.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), goal.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), goal.getContent()));
 			basePart.initIsTagged(goal, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.setAssumed(goal.isAssumed());
 
@@ -406,7 +405,7 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 		if ((goal != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, goal, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, goal, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, goal, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, goal, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, goal, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -558,8 +557,7 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 
 			goalToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			goalToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			goalToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			goalToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			goalToUpdate.setAssumed(new Boolean(basePart.getAssumed()).booleanValue());
 
@@ -595,7 +593,7 @@ public class GoalPropertiesEditionComponent extends StandardPropertiesEditionCom
 				command.append(SetCommand.create(liveEditingDomain, goal, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Goal.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, goal, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, goal, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Goal.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {

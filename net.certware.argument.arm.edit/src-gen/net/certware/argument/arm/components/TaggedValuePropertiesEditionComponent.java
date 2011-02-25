@@ -121,14 +121,14 @@ public class TaggedValuePropertiesEditionComponent extends StandardPropertiesEdi
 			if (msg.getNewValue() != null) {
 				basePart.setKey(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setKey(Messages.TaggedValuePropertiesEditionComponent_0);
+				basePart.setKey("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getTaggedValue_Value().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setValue(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setValue(Messages.TaggedValuePropertiesEditionComponent_1);
+				basePart.setValue("");
 			}
 		}
 
@@ -206,8 +206,7 @@ public class TaggedValuePropertiesEditionComponent extends StandardPropertiesEdi
 				basePart.setKey(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), taggedValue.getKey()));
 
 			if (taggedValue.getValue() != null)
-				basePart.setValue(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), taggedValue.getValue()));
-
+				basePart.setValue(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), taggedValue.getValue()));
 			// init filters
 
 
@@ -234,7 +233,7 @@ public class TaggedValuePropertiesEditionComponent extends StandardPropertiesEdi
 		CompoundCommand cc = new CompoundCommand();
 		if ((taggedValue != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, taggedValue, ArmPackage.eINSTANCE.getTaggedValue_Key(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getKey())));
-			cc.append(SetCommand.create(editingDomain, taggedValue, ArmPackage.eINSTANCE.getTaggedValue_Value(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getValue())));
+			cc.append(SetCommand.create(editingDomain, taggedValue, ArmPackage.eINSTANCE.getTaggedValue_Value(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getValue())));
 
 		}
 		if (!cc.isEmpty())
@@ -254,8 +253,7 @@ public class TaggedValuePropertiesEditionComponent extends StandardPropertiesEdi
 			TaggedValue taggedValueToUpdate = (TaggedValue)source;
 			taggedValueToUpdate.setKey((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getKey()));
 
-			taggedValueToUpdate.setValue((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getValue()));
-
+			taggedValueToUpdate.setValue((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getValue()));
 
 			return taggedValueToUpdate;
 		}
@@ -278,11 +276,11 @@ public class TaggedValuePropertiesEditionComponent extends StandardPropertiesEdi
 				command.append(SetCommand.create(liveEditingDomain, taggedValue, ArmPackage.eINSTANCE.getTaggedValue_Key(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.TaggedValue.value == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, taggedValue, ArmPackage.eINSTANCE.getTaggedValue_Value(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, taggedValue, ArmPackage.eINSTANCE.getTaggedValue_Value(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError(Messages.TaggedValuePropertiesEditionComponent_2, null);
+					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

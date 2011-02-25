@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: net.certware.argument.euz.editor;singleton:=true
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.1.2.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: net.certware.argument.euz.editor.presentation.EuzEditorPlugin$Implementation
 Bundle-Vendor: %providerName

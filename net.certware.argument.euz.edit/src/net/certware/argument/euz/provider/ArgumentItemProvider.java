@@ -103,6 +103,16 @@ public class ArgumentItemProvider
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, true);
+	}
+
+	/**
 	 * This returns Argument.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

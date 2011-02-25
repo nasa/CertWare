@@ -4,8 +4,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010 Kestrel Technology LLC"
     modelDirectory="/net.certware.argument.caz/src" modelPluginID="net.certware.argument.caz"
     modelName="Caz" nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" testsPluginID="net.certware.argument.caz.tests"
-    usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+    complianceLevel="6.0" copyrightFields="false" providerRootExtendsClass="" testsPluginID="net.certware.argument.caz.tests"
+    colorProviders="true" fontProviders="true" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
   <foreignModel>caz.ecore</foreignModel>
   <genPackages prefix="Caz" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       generateExampleClass="false" multipleEditorPages="false" ecorePackage="caz.ecore#_b7TYwPfSEd-ygqq5y8o0Pg">

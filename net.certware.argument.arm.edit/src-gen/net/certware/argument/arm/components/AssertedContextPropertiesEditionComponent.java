@@ -136,21 +136,21 @@ public class AssertedContextPropertiesEditionComponent extends StandardPropertie
 			if (msg.getNewValue() != null) {
 				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setIdentifier(Messages.AssertedContextPropertiesEditionComponent_0);
+				basePart.setIdentifier("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setDescription(Messages.AssertedContextPropertiesEditionComponent_1);
+				basePart.setDescription("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setContent(Messages.AssertedContextPropertiesEditionComponent_2);
+				basePart.setContent("");
 			}
 		}
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
@@ -238,8 +238,7 @@ public class AssertedContextPropertiesEditionComponent extends StandardPropertie
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), assertedContext.getDescription()));
 
 			if (assertedContext.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), assertedContext.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), assertedContext.getContent()));
 			basePart.initIsTagged(assertedContext, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initTarget(assertedContext, null, ArmPackage.eINSTANCE.getArgumentLink_Target());
 			basePart.initSource(assertedContext, null, ArmPackage.eINSTANCE.getArgumentLink_Source());
@@ -329,7 +328,7 @@ public class AssertedContextPropertiesEditionComponent extends StandardPropertie
 		if ((assertedContext != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -394,8 +393,7 @@ public class AssertedContextPropertiesEditionComponent extends StandardPropertie
 
 			assertedContextToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			assertedContextToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			assertedContextToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			assertedContextToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			assertedContextToUpdate.getTarget().addAll(basePart.getTargetToAdd());
 			assertedContextToUpdate.getSource().addAll(basePart.getSourceToAdd());
@@ -424,7 +422,7 @@ public class AssertedContextPropertiesEditionComponent extends StandardPropertie
 				command.append(SetCommand.create(liveEditingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.AssertedContext.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, assertedContext, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.AssertedContext.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
@@ -462,7 +460,7 @@ public class AssertedContextPropertiesEditionComponent extends StandardPropertie
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError(Messages.AssertedContextPropertiesEditionComponent_3, null);
+					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

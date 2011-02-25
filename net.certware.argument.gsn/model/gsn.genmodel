@@ -5,7 +5,7 @@
     modelDirectory="/net.certware.argument.gsn/src" modelPluginID="net.certware.argument.gsn"
     modelName="Gsn" nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" testsPluginID="net.certware.argument.gsn.tests"
-    colorProviders="true" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+    colorProviders="true" fontProviders="true" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
   <foreignModel>gsn.ecore</foreignModel>
   <genPackages prefix="Gsn" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       generateExampleClass="false" multipleEditorPages="false" ecorePackage="gsn.ecore#/">

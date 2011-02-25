@@ -6,8 +6,8 @@
     modelName="gsz" editPluginClass="net.certware.argument.gsz.provider.GszEditPlugin"
     editorPluginClass="net.certware.argument.gsz.presentation.GszEditorPlugin" nonNLSMarkers="true"
     testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" colorProviders="true" language=""
-    usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+    complianceLevel="6.0" copyrightFields="false" colorProviders="true" fontProviders="true"
+    language="" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
   <foreignModel>gsz.ecore</foreignModel>
   <genPackages prefix="Gsz" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       generateExampleClass="false" multipleEditorPages="false" ecorePackage="gsz.ecore#/">

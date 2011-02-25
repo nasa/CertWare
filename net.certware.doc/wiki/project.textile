@@ -11,15 +11,13 @@ h3. Version 1.1.2
 _Bugs Fixed_:
 * Removed Xtext-generated new project wizards for GSN DSL and CPN DSL.  
 _Enhancements_:
-* Changed content properties nodes of all tree-based model editors to text areas with scroll bars.
+* Changed content property feature of ARM generator model to multi-line, thereby creating multi-line properties for CAE, EUR, and GSN tree-based model editors using text areas with scroll bars.  Updated corresponding EEF framework parts to text areas.  
 
 h3. Version 1.1.1
 
 _Bugs Fixed_:
 * Gather change orders allows empty lists on sum calculators.
 * Proof theorem detail page with empty ID now sets text properly.
-_Enhancements_:
-
 
 h3. Version 1.1
 

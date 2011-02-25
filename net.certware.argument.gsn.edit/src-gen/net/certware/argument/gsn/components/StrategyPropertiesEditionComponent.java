@@ -250,8 +250,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getDescription()));
 
 			if (strategy.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getContent()));
 			basePart.initIsTagged(strategy, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initGoals(strategy, null, GsnPackage.eINSTANCE.getStrategy_Goals());
 			basePart.initJustifications(strategy, null, GsnPackage.eINSTANCE.getStrategy_Justifications());
@@ -371,7 +370,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 		if ((strategy != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -498,8 +497,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 
 			strategyToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			strategyToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			strategyToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			strategyToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			strategyToUpdate.getGoals().addAll(basePart.getGoalsToAdd());
 			strategyToUpdate.getJustifications().addAll(basePart.getJustificationsToAdd());
@@ -530,7 +528,7 @@ public class StrategyPropertiesEditionComponent extends StandardPropertiesEditio
 				command.append(SetCommand.create(liveEditingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Strategy.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, strategy, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Strategy.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {

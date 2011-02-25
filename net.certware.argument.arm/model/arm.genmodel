@@ -18,7 +18,7 @@
     <genClasses image="false" ecoreClass="arm.ecore#//ModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/identifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/content"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/content"/>
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference arm.ecore#//ModelElement/isTagged"/>
     </genClasses>
     <genClasses ecoreClass="arm.ecore#//TaggedValue">

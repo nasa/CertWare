@@ -140,21 +140,21 @@ public class ClaimPropertiesEditionComponent extends StandardPropertiesEditionCo
 			if (msg.getNewValue() != null) {
 				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setIdentifier(Messages.ClaimPropertiesEditionComponent_0);
+				basePart.setIdentifier("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setDescription(Messages.ClaimPropertiesEditionComponent_1);
+				basePart.setDescription("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setContent(Messages.ClaimPropertiesEditionComponent_2);
+				basePart.setContent("");
 			}
 		}
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
@@ -256,8 +256,7 @@ public class ClaimPropertiesEditionComponent extends StandardPropertiesEditionCo
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), claim.getDescription()));
 
 			if (claim.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), claim.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), claim.getContent()));
 			basePart.initIsTagged(claim, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.setAssumed(claim.isAssumed());
 
@@ -385,7 +384,7 @@ public class ClaimPropertiesEditionComponent extends StandardPropertiesEditionCo
 		if ((claim != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, claim, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, claim, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, claim, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, claim, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, claim, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -516,8 +515,7 @@ public class ClaimPropertiesEditionComponent extends StandardPropertiesEditionCo
 
 			claimToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			claimToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			claimToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			claimToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			claimToUpdate.setAssumed(new Boolean(basePart.getAssumed()).booleanValue());
 
@@ -552,7 +550,7 @@ public class ClaimPropertiesEditionComponent extends StandardPropertiesEditionCo
 				command.append(SetCommand.create(liveEditingDomain, claim, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (CaeViewsRepository.Claim.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, claim, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, claim, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (CaeViewsRepository.Claim.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
@@ -652,7 +650,7 @@ public class ClaimPropertiesEditionComponent extends StandardPropertiesEditionCo
 			}
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError(Messages.ClaimPropertiesEditionComponent_3, null);
+					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

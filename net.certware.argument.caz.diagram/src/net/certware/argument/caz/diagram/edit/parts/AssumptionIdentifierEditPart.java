@@ -311,7 +311,7 @@ public class AssumptionIdentifierEditPart extends CompartmentEditPart implements
 	protected DirectEditManager getManager() {
 		if (manager == null) {
 			setManager(new TextDirectEditManager(this,
-					// TextDirectEditManager.getTextCellEditorClass(this),
+			// TextDirectEditManager.getTextCellEditorClass(this),
 					WrapTextCellEditor.class,
 					CazEditPartFactory.getTextCellEditorLocator(this)));
 		}

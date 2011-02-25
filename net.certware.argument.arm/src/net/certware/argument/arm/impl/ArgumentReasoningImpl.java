@@ -111,7 +111,6 @@ public class ArgumentReasoningImpl extends ReasoningElementImpl implements Argum
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public Argument basicGetHasStructure() {

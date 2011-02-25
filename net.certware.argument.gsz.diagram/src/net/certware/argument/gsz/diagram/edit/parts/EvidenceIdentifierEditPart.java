@@ -347,7 +347,7 @@ public class EvidenceIdentifierEditPart extends LabelEditPart implements
 	protected DirectEditManager getManager() {
 		if (manager == null) {
 			setManager(new TextDirectEditManager(this,
-					// TextDirectEditManager.getTextCellEditorClass(this),
+			// TextDirectEditManager.getTextCellEditorClass(this),
 					WrapTextCellEditor.class,
 					GszEditPartFactory.getTextCellEditorLocator(this)));
 		}

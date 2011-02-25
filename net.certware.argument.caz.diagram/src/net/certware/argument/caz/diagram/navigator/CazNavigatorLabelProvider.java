@@ -105,57 +105,57 @@ public class CazNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (CazVisualIDRegistry.getVisualID(view)) {
-		case AssumptionEditPart.VISUAL_ID:
+		case ClaimClaimStrategiesEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/caz?Assumption", CazElementTypes.Assumption_2004); //$NON-NLS-1$
-		case ContextEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/caz?Context", CazElementTypes.Context_2006); //$NON-NLS-1$
-		case ArgumentArgumentEvidenceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/caz?Argument?argumentEvidence", CazElementTypes.ArgumentArgumentEvidence_4007); //$NON-NLS-1$
-		case ClaimSubClaimsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/caz?Claim?subClaims", CazElementTypes.ClaimSubClaims_4005); //$NON-NLS-1$
+					"Navigator?Link?http://www.certware.net/caz?Claim?claimStrategies", CazElementTypes.ClaimClaimStrategies_4001); //$NON-NLS-1$
 		case ArgumentEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/caz?Argument", CazElementTypes.Argument_2003); //$NON-NLS-1$
 		case ClaimClaimSolutionsEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/caz?Claim?claimSolutions", CazElementTypes.ClaimClaimSolutions_4004); //$NON-NLS-1$
+		case ClaimSubClaimsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/caz?Claim?subClaims", CazElementTypes.ClaimSubClaims_4005); //$NON-NLS-1$
+		case ArgumentArgumentClaimsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/caz?Argument?argumentClaims", CazElementTypes.ArgumentArgumentClaims_4008); //$NON-NLS-1$
+		case EvidenceEvidenceContextsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/caz?Evidence?evidenceContexts", CazElementTypes.EvidenceEvidenceContexts_4009); //$NON-NLS-1$
+		case ArgumentArgumentEvidenceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/caz?Argument?argumentEvidence", CazElementTypes.ArgumentArgumentEvidence_4007); //$NON-NLS-1$
+		case ClaimClaimContextsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/caz?Claim?claimContexts", CazElementTypes.ClaimClaimContexts_4003); //$NON-NLS-1$
 		case EvidenceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/caz?Evidence", CazElementTypes.Evidence_2002); //$NON-NLS-1$
 		case EvidenceEvidenceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/caz?Evidence?evidence", CazElementTypes.EvidenceEvidence_4010); //$NON-NLS-1$
+		case AssumptionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/caz?Assumption", CazElementTypes.Assumption_2004); //$NON-NLS-1$
 		case ClaimEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/caz?Claim", CazElementTypes.Claim_2001); //$NON-NLS-1$
-		case ClaimClaimStrategiesEditPart.VISUAL_ID:
+		case ClaimClaimAssumptionsEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.certware.net/caz?Claim?claimStrategies", CazElementTypes.ClaimClaimStrategies_4001); //$NON-NLS-1$
+					"Navigator?Link?http://www.certware.net/caz?Claim?claimAssumptions", CazElementTypes.ClaimClaimAssumptions_4002); //$NON-NLS-1$
+		case JustificationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/caz?Justification", CazElementTypes.Justification_2005); //$NON-NLS-1$
+		case ContextEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/caz?Context", CazElementTypes.Context_2006); //$NON-NLS-1$
 		case ArgumentDiagramEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://www.certware.net/caz?ArgumentDiagram", CazElementTypes.ArgumentDiagram_1000); //$NON-NLS-1$
 		case ArgumentArgumentJustificationEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/caz?Argument?argumentJustification", CazElementTypes.ArgumentArgumentJustification_4006); //$NON-NLS-1$
-		case ArgumentArgumentClaimsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/caz?Argument?argumentClaims", CazElementTypes.ArgumentArgumentClaims_4008); //$NON-NLS-1$
-		case JustificationEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/caz?Justification", CazElementTypes.Justification_2005); //$NON-NLS-1$
-		case ClaimClaimAssumptionsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/caz?Claim?claimAssumptions", CazElementTypes.ClaimClaimAssumptions_4002); //$NON-NLS-1$
-		case ClaimClaimContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/caz?Claim?claimContexts", CazElementTypes.ClaimClaimContexts_4003); //$NON-NLS-1$
-		case EvidenceEvidenceContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/caz?Evidence?evidenceContexts", CazElementTypes.EvidenceEvidenceContexts_4009); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -208,40 +208,40 @@ public class CazNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (CazVisualIDRegistry.getVisualID(view)) {
-		case AssumptionEditPart.VISUAL_ID:
-			return getAssumption_2004Text(view);
-		case ContextEditPart.VISUAL_ID:
-			return getContext_2006Text(view);
-		case ArgumentArgumentEvidenceEditPart.VISUAL_ID:
-			return getArgumentArgumentEvidence_4007Text(view);
-		case ClaimSubClaimsEditPart.VISUAL_ID:
-			return getClaimSubClaims_4005Text(view);
+		case ClaimClaimStrategiesEditPart.VISUAL_ID:
+			return getClaimClaimStrategies_4001Text(view);
 		case ArgumentEditPart.VISUAL_ID:
 			return getArgument_2003Text(view);
 		case ClaimClaimSolutionsEditPart.VISUAL_ID:
 			return getClaimClaimSolutions_4004Text(view);
+		case ClaimSubClaimsEditPart.VISUAL_ID:
+			return getClaimSubClaims_4005Text(view);
+		case ArgumentArgumentClaimsEditPart.VISUAL_ID:
+			return getArgumentArgumentClaims_4008Text(view);
+		case EvidenceEvidenceContextsEditPart.VISUAL_ID:
+			return getEvidenceEvidenceContexts_4009Text(view);
+		case ArgumentArgumentEvidenceEditPart.VISUAL_ID:
+			return getArgumentArgumentEvidence_4007Text(view);
+		case ClaimClaimContextsEditPart.VISUAL_ID:
+			return getClaimClaimContexts_4003Text(view);
 		case EvidenceEditPart.VISUAL_ID:
 			return getEvidence_2002Text(view);
 		case EvidenceEvidenceEditPart.VISUAL_ID:
 			return getEvidenceEvidence_4010Text(view);
+		case AssumptionEditPart.VISUAL_ID:
+			return getAssumption_2004Text(view);
 		case ClaimEditPart.VISUAL_ID:
 			return getClaim_2001Text(view);
-		case ClaimClaimStrategiesEditPart.VISUAL_ID:
-			return getClaimClaimStrategies_4001Text(view);
+		case ClaimClaimAssumptionsEditPart.VISUAL_ID:
+			return getClaimClaimAssumptions_4002Text(view);
+		case JustificationEditPart.VISUAL_ID:
+			return getJustification_2005Text(view);
+		case ContextEditPart.VISUAL_ID:
+			return getContext_2006Text(view);
 		case ArgumentDiagramEditPart.VISUAL_ID:
 			return getArgumentDiagram_1000Text(view);
 		case ArgumentArgumentJustificationEditPart.VISUAL_ID:
 			return getArgumentArgumentJustification_4006Text(view);
-		case ArgumentArgumentClaimsEditPart.VISUAL_ID:
-			return getArgumentArgumentClaims_4008Text(view);
-		case JustificationEditPart.VISUAL_ID:
-			return getJustification_2005Text(view);
-		case ClaimClaimAssumptionsEditPart.VISUAL_ID:
-			return getClaimClaimAssumptions_4002Text(view);
-		case ClaimClaimContextsEditPart.VISUAL_ID:
-			return getClaimClaimContexts_4003Text(view);
-		case EvidenceEvidenceContextsEditPart.VISUAL_ID:
-			return getEvidenceEvidenceContexts_4009Text(view);
 		}
 		return getUnknownElementText(view);
 	}

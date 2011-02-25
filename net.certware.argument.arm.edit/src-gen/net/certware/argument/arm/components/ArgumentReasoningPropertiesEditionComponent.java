@@ -138,21 +138,21 @@ public class ArgumentReasoningPropertiesEditionComponent extends StandardPropert
 			if (msg.getNewValue() != null) {
 				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setIdentifier(Messages.ArgumentReasoningPropertiesEditionComponent_0);
+				basePart.setIdentifier("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setDescription(Messages.ArgumentReasoningPropertiesEditionComponent_1);
+				basePart.setDescription("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setContent(Messages.ArgumentReasoningPropertiesEditionComponent_2);
+				basePart.setContent("");
 			}
 		}
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
@@ -240,8 +240,7 @@ public class ArgumentReasoningPropertiesEditionComponent extends StandardPropert
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), argumentReasoning.getDescription()));
 
 			if (argumentReasoning.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), argumentReasoning.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), argumentReasoning.getContent()));
 			basePart.initIsTagged(argumentReasoning, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initDescribes(argumentReasoning, null, ArmPackage.eINSTANCE.getArgumentReasoning_Describes());
 			// init part
@@ -331,7 +330,7 @@ public class ArgumentReasoningPropertiesEditionComponent extends StandardPropert
 		if ((argumentReasoning != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -388,8 +387,7 @@ public class ArgumentReasoningPropertiesEditionComponent extends StandardPropert
 
 			argumentReasoningToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			argumentReasoningToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			argumentReasoningToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			argumentReasoningToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			argumentReasoningToUpdate.getDescribes().addAll(basePart.getDescribesToAdd());
 			argumentReasoningToUpdate.setHasStructure((Argument)basePart.getHasStructure());
@@ -418,7 +416,7 @@ public class ArgumentReasoningPropertiesEditionComponent extends StandardPropert
 				command.append(SetCommand.create(liveEditingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.ArgumentReasoning.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, argumentReasoning, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.ArgumentReasoning.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
@@ -450,7 +448,7 @@ public class ArgumentReasoningPropertiesEditionComponent extends StandardPropert
 				command.append(SetCommand.create(liveEditingDomain, argumentReasoning, ArmPackage.eINSTANCE.getArgumentReasoning_HasStructure(), event.getNewValue()));
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError(Messages.ArgumentReasoningPropertiesEditionComponent_3, null);
+					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

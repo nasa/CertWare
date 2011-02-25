@@ -233,8 +233,7 @@ public class JustificationPropertiesEditionComponent extends StandardPropertiesE
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), justification.getDescription()));
 
 			if (justification.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), justification.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), justification.getContent()));
 			basePart.initIsTagged(justification, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			// init filters
 
@@ -282,7 +281,7 @@ public class JustificationPropertiesEditionComponent extends StandardPropertiesE
 		if ((justification != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, justification, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, justification, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, justification, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, justification, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, justification, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -325,8 +324,7 @@ public class JustificationPropertiesEditionComponent extends StandardPropertiesE
 
 			justificationToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			justificationToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			justificationToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			justificationToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 
 			return justificationToUpdate;
@@ -353,7 +351,7 @@ public class JustificationPropertiesEditionComponent extends StandardPropertiesE
 				command.append(SetCommand.create(liveEditingDomain, justification, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Justification.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, justification, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, justification, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Justification.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {

@@ -90,7 +90,10 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
+            parser="//@labelParsers/@implementations.0"
+            viewPattern=""
+            editorPattern=""
+            editPattern="">
           <metaFeatures
               href="../../net.certware.argument.arm/model/arm.genmodel#//arm/ModelElement/content"/>
         </modelFacet>

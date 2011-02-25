@@ -16,10 +16,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import net.certware.argument.arm.provider.ArmItemProviderAdapterFactory;
-import net.certware.argument.cae.editor.help.CaeEditorContextProvider;
 import net.certware.argument.cae.provider.CaeItemProviderAdapterFactory;
 
-import org.eclipse.help.IContextProvider;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
@@ -1028,12 +1026,6 @@ public class CaeEditor
 		else if (key.equals(IGotoMarker.class)) {
 			return this;
 		}
-		else if (key.equals(IContextProvider.class)) {
-			if ( contextProvider == null )
-				contextProvider = new CaeEditorContextProvider(this);
-			return contextProvider;
-		}
-
 		else {
 			return super.getAdapter(key);
 		}
@@ -1059,7 +1051,7 @@ public class CaeEditor
 					// Set up the tree viewer.
 					//
 					contentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider.ColorProvider(adapterFactory, contentOutlineViewer));
+					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, contentOutlineViewer));
 					contentOutlineViewer.setInput(editingDomain.getResourceSet());
 
 					// Make sure our popups work.
@@ -1539,6 +1531,7 @@ public class CaeEditor
 	}
 	
 	/** help system context provider reference */
+	@SuppressWarnings("unused")
 	private Object contextProvider = null;
 
 }

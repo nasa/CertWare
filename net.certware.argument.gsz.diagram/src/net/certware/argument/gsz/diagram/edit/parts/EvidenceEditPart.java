@@ -348,7 +348,8 @@ public class EvidenceEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
-			fFigureModelElementContentLabelFigure.setText(Messages.EvidenceEditPart_0);
+			fFigureModelElementContentLabelFigure
+					.setText(Messages.EvidenceEditPart_0);
 			fFigureModelElementContentLabelFigure.setTextWrap(true);
 			this.add(fFigureModelElementContentLabelFigure);
 

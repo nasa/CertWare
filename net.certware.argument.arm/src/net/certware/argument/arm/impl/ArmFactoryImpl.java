@@ -45,7 +45,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public static ArmFactory init() {
@@ -268,9 +267,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param eDataType 
-	 * @param initialValue 
-	 * @return 
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
@@ -280,9 +276,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param eDataType 
-	 * @param instanceValue 
-	 * @return 
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -292,9 +285,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param eDataType 
-	 * @param initialValue 
-	 * @return 
 	 * @generated
 	 */
 	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
@@ -304,9 +294,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param eDataType 
-	 * @param instanceValue 
-	 * @return 
 	 * @generated
 	 */
 	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
@@ -316,9 +303,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param eDataType 
-	 * @param initialValue 
-	 * @return 
 	 * @generated
 	 */
 	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
@@ -328,9 +312,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param eDataType 
-	 * @param instanceValue 
-	 * @return 
 	 * @generated
 	 */
 	public String convertBooleanToString(EDataType eDataType, Object instanceValue) {
@@ -349,7 +330,6 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @deprecated
 	 * @generated
 	 */

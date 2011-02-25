@@ -136,21 +136,21 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 			if (msg.getNewValue() != null) {
 				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setIdentifier(Messages.CitationElementPropertiesEditionComponent_0);
+				basePart.setIdentifier("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setDescription(Messages.CitationElementPropertiesEditionComponent_1);
+				basePart.setDescription("");
 			}
 		}
 		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
 			if (msg.getNewValue() != null) {
 				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 			} else {
-				basePart.setContent(Messages.CitationElementPropertiesEditionComponent_2);
+				basePart.setContent("");
 			}
 		}
 		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
@@ -238,8 +238,7 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), citationElement.getDescription()));
 
 			if (citationElement.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), citationElement.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), citationElement.getContent()));
 			basePart.initIsTagged(citationElement, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			// init part
 			basePart.initRefersToArgumentElement(allResource, citationElement.getRefersToArgumentElement());
@@ -329,7 +328,7 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 		if ((citationElement != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -378,8 +377,7 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 
 			citationElementToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			citationElementToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			citationElementToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			citationElementToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			citationElementToUpdate.setRefersToArgumentElement((ArgumentElement)basePart.getRefersToArgumentElement());
 			citationElementToUpdate.setRefersToArgument((Argument)basePart.getRefersToArgument());
@@ -408,7 +406,7 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.CitationElement.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (ArmViewsRepository.CitationElement.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {
@@ -434,7 +432,7 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgument(), event.getNewValue()));
 
 				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError(Messages.CitationElementPropertiesEditionComponent_3, null);
+					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
 				} else {
 					liveEditingDomain.getCommandStack().execute(command);
 				}

@@ -226,7 +226,6 @@ public class ArmPackageImpl extends EPackageImpl implements ArmPackage {
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -790,6 +789,25 @@ public class ArmPackageImpl extends EPackageImpl implements ArmPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// gmf.label
+		createGmfAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.label</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmfAnnotations() {
+		String source = "gmf.label"; //$NON-NLS-1$		
+		addAnnotation
+		  (getModelElement_Content(), 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 } //ArmPackageImpl

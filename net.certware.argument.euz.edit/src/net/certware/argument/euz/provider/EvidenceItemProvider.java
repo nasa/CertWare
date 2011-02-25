@@ -63,6 +63,16 @@ public class EvidenceItemProvider
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, true);
+	}
+
+	/**
 	 * This returns Evidence.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

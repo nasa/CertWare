@@ -7,9 +7,9 @@
     modelName="Euz" editPluginClass="net.certware.argument.euz.edit.provider.EuzEditPlugin"
     editorPluginClass="net.certware.argument.euz.editor.presentation.EuzEditorPlugin"
     nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" editPluginID="net.certware.argument.euz.edit"
-    editorPluginID="net.certware.argument.euz.editor" colorProviders="true" language=""
-    usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+    complianceLevel="6.0" copyrightFields="false" providerRootExtendsClass="" editPluginID="net.certware.argument.euz.edit"
+    editorPluginID="net.certware.argument.euz.editor" optimizedHasChildren="true"
+    colorProviders="true" language="" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
   <foreignModel>euz.ecore</foreignModel>
   <genPackages prefix="Euz" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       generateExampleClass="false" multipleEditorPages="false" contentTypeIdentifier=""

@@ -140,7 +140,7 @@ public class ModelElementItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElement_content_feature", "_UI_ModelElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				 ArmPackage.Literals.MODEL_ELEMENT__CONTENT,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

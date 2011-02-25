@@ -44,14 +44,14 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/GszDiagramFile.gif"
-  	     category="net.certware.core.ui.newwizard.category"
+  	     category="org.eclipse.ui.Examples"
   	     class="net.certware.argument.gsz.diagram.part.GszCreationWizard"
   	     id="net.certware.argument.gsz.diagram.part.GszCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    </extension>
 
-   <extension point="org.eclipse.ui.popupMenus" id="%extension.id">
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
       <?gmfgen generated="true"?>
       <objectContribution
             id="net.certware.argument.gsz.diagram.InitDiagram"
@@ -125,10 +125,9 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            category="certware"
-            class="net.certware.argument.gsz.diagram.preferences.DiagramGeneralPreferencePage"
             id="net.certware.argument.gsz.diagram.general"
-            name="%prefpage.net.certware.argument.gsz.diagram.general">
+            name="%prefpage.net.certware.argument.gsz.diagram.general"
+            class="net.certware.argument.gsz.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="net.certware.argument.gsz.diagram.appearance"
@@ -653,7 +652,7 @@
       <?gmfgen generated="true"?>
       <category id="net.certware.argument.gsz.diagram.part.GszDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="net.certware.argument.gsz.diagram.LoadResourceAction"
-         name="%command.name"
+         name="Load Resource"
          categoryId="net.certware.argument.gsz.diagram.part.GszDiagramEditorID"
          defaultHandler="net.certware.argument.gsz.diagram.part.LoadResourceAction"/>
    </extension>
@@ -669,7 +668,7 @@
       </MarkerNavigationProvider>
    </extension>
 
-<extension id="diagnostic" name="%extension.name" point="org.eclipse.core.resources.markers">
+<extension id="diagnostic" name="CertWare GSN Diagram Plugin problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -678,7 +677,7 @@
       <?gmfgen generated="true"?>
       <decoratorProvider class="net.certware.argument.gsz.diagram.providers.GszValidationDecoratorProvider">
          <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart" id="PRIMARY_VIEW"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>

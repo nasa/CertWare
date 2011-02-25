@@ -233,97 +233,18 @@ public class CazNavigatorContentProvider implements ICommonContentProvider {
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (CazVisualIDRegistry.getVisualID(view)) {
 
-		case AssumptionEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			CazNavigatorGroup incominglinks = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_Assumption_2004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					CazVisualIDRegistry
-							.getType(ClaimClaimAssumptionsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					CazVisualIDRegistry
-							.getType(EvidenceEvidenceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case ContextEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			CazNavigatorGroup incominglinks = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_Context_2006_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					CazVisualIDRegistry
-							.getType(ClaimClaimContextsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CazVisualIDRegistry
-							.getType(EvidenceEvidenceContextsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					CazVisualIDRegistry
-							.getType(EvidenceEvidenceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case ArgumentArgumentEvidenceEditPart.VISUAL_ID: {
+		case ClaimClaimStrategiesEditPart.VISUAL_ID: {
 			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			CazNavigatorGroup target = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentEvidence_4007_target,
+					Messages.NavigatorGroupName_ClaimClaimStrategies_4001_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			CazNavigatorGroup source = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentEvidence_4007_source,
+					Messages.NavigatorGroupName_ClaimClaimStrategies_4001_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					CazVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ClaimSubClaimsEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			CazNavigatorGroup target = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimSubClaims_4005_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			CazNavigatorGroup source = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimSubClaims_4005_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
@@ -392,6 +313,141 @@ public class CazNavigatorContentProvider implements ICommonContentProvider {
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					CazVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ClaimSubClaimsEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			CazNavigatorGroup target = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ClaimSubClaims_4005_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			CazNavigatorGroup source = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ClaimSubClaims_4005_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentArgumentClaimsEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			CazNavigatorGroup target = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentClaims_4008_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			CazNavigatorGroup source = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentClaims_4008_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case EvidenceEvidenceContextsEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			CazNavigatorGroup target = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_EvidenceEvidenceContexts_4009_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			CazNavigatorGroup source = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_EvidenceEvidenceContexts_4009_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ArgumentArgumentEvidenceEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			CazNavigatorGroup target = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentEvidence_4007_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			CazNavigatorGroup source = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ArgumentArgumentEvidence_4007_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ClaimClaimContextsEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			CazNavigatorGroup target = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ClaimClaimContexts_4003_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			CazNavigatorGroup source = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_ClaimClaimContexts_4003_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CazVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
@@ -484,6 +540,29 @@ public class CazNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case AssumptionEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			CazNavigatorGroup incominglinks = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_Assumption_2004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CazVisualIDRegistry
+							.getType(ClaimClaimAssumptionsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CazVisualIDRegistry
+							.getType(EvidenceEvidenceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
 		case ClaimEditPart.VISUAL_ID: {
 			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -538,18 +617,18 @@ public class CazNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ClaimClaimStrategiesEditPart.VISUAL_ID: {
+		case ClaimClaimAssumptionsEditPart.VISUAL_ID: {
 			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			CazNavigatorGroup target = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimClaimStrategies_4001_target,
+					Messages.NavigatorGroupName_ClaimClaimAssumptions_4002_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			CazNavigatorGroup source = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimClaimStrategies_4001_source,
+					Messages.NavigatorGroupName_ClaimClaimAssumptions_4002_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
+					CazVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
@@ -561,6 +640,59 @@ public class CazNavigatorContentProvider implements ICommonContentProvider {
 			}
 			if (!source.isEmpty()) {
 				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case JustificationEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			CazNavigatorGroup incominglinks = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_Justification_2005_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					CazVisualIDRegistry
+							.getType(ArgumentArgumentJustificationEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CazVisualIDRegistry
+							.getType(EvidenceEvidenceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case ContextEditPart.VISUAL_ID: {
+			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			CazNavigatorGroup incominglinks = new CazNavigatorGroup(
+					Messages.NavigatorGroupName_Context_2006_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CazVisualIDRegistry
+							.getType(ClaimClaimContextsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					CazVisualIDRegistry
+							.getType(EvidenceEvidenceContextsEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CazVisualIDRegistry
+							.getType(EvidenceEvidenceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
 			}
 			return result.toArray();
 		}
@@ -663,138 +795,6 @@ public class CazNavigatorContentProvider implements ICommonContentProvider {
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					CazVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ArgumentArgumentClaimsEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			CazNavigatorGroup target = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentClaims_4008_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			CazNavigatorGroup source = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ArgumentArgumentClaims_4008_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case JustificationEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			CazNavigatorGroup incominglinks = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_Justification_2005_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CazVisualIDRegistry
-							.getType(ArgumentArgumentJustificationEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					CazVisualIDRegistry
-							.getType(EvidenceEvidenceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
-		case ClaimClaimAssumptionsEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			CazNavigatorGroup target = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimClaimAssumptions_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			CazNavigatorGroup source = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimClaimAssumptions_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ClaimClaimContextsEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			CazNavigatorGroup target = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimClaimContexts_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			CazNavigatorGroup source = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_ClaimClaimContexts_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ClaimEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case EvidenceEvidenceContextsEditPart.VISUAL_ID: {
-			LinkedList<CazAbstractNavigatorItem> result = new LinkedList<CazAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			CazNavigatorGroup target = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_EvidenceEvidenceContexts_4009_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			CazNavigatorGroup source = new CazNavigatorGroup(
-					Messages.NavigatorGroupName_EvidenceEvidenceContexts_4009_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CazVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
 			if (!target.isEmpty()) {

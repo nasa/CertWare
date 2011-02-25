@@ -6,7 +6,8 @@
     modelName="Eur" editPluginClass="net.certware.argument.eur.edit.provider.EurEditPlugin"
     editorPluginClass="net.certware.argument.eur.editor.presentation.EurEditorPlugin"
     testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+    complianceLevel="6.0" copyrightFields="false" colorProviders="true" fontProviders="true"
+    usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
   <foreignModel>eur.ecore</foreignModel>
   <genPackages prefix="Eur" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       generateExampleClass="false" multipleEditorPages="false" ecorePackage="eur.ecore#/">
@@ -34,6 +35,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/solution"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/criteria"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/assumption"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/contexts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Strategy/strategies"/>
     </genClasses>
     <genClasses ecoreClass="eur.ecore#//Solution">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eur.ecore#//Solution/context"/>

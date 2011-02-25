@@ -588,7 +588,7 @@ public class SolutionSolutionContextsExternalLabelEditPart extends
 		 * @generated
 		 */
 		public SolutionSolutionContextsExternalLabelFigure() {
-			this.setText(Messages.SolutionSolutionContextsExternalLabelEditPart_0);
+			this.setText("in context");
 		}
 
 	}

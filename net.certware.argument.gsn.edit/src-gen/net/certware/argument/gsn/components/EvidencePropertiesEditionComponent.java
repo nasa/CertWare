@@ -240,8 +240,7 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getDescription()));
 
 			if (evidence.getContent() != null)
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getContent()));
-
+				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getContent()));
 			basePart.initIsTagged(evidence, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
 			basePart.initTarget(evidence, null, ArmPackage.eINSTANCE.getArgumentLink_Target());
 			basePart.initSource(evidence, null, ArmPackage.eINSTANCE.getArgumentLink_Source());
@@ -331,7 +330,7 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 		if ((evidence != null) && (basePart != null)) { 
 			cc.append(SetCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
 			cc.append(SetCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
+			cc.append(SetCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
 			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
 			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
 				cc.append(AddCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
@@ -396,8 +395,7 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 
 			evidenceToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
 
-			evidenceToUpdate.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-
+			evidenceToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
 			evidenceToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
 			evidenceToUpdate.getTarget().addAll(basePart.getTargetToAdd());
 			evidenceToUpdate.getSource().addAll(basePart.getSourceToAdd());
@@ -426,7 +424,7 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 				command.append(SetCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Evidence.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Content(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
+				command.append(SetCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
 			}
 			if (GsnViewsRepository.Evidence.isTagged == event.getAffectedEditor()) {
 				if (PropertiesEditionEvent.SET == event.getKind()) {

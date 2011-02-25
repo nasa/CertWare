@@ -63,6 +63,16 @@ public class AssumptionItemProvider
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, true);
+	}
+
+	/**
 	 * This returns Assumption.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

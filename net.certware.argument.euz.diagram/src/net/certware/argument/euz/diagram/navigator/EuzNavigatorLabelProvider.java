@@ -121,90 +121,90 @@ public class EuzNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (EuzVisualIDRegistry.getVisualID(view)) {
-		case SolutionSolutionCriteriaEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Solution?solutionCriteria", EuzElementTypes.SolutionSolutionCriteria_4016); //$NON-NLS-1$
-		case ArgumentSubArgumentsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Argument?subArguments", EuzElementTypes.ArgumentSubArguments_4017); //$NON-NLS-1$
-		case StrategyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/euz?Strategy", EuzElementTypes.Strategy_2004); //$NON-NLS-1$
-		case ContextContextAssumptionsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Context?contextAssumptions", EuzElementTypes.ContextContextAssumptions_4007); //$NON-NLS-1$
-		case StrategyStrategyJustificationsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyJustifications", EuzElementTypes.StrategyStrategyJustifications_4011); //$NON-NLS-1$
-		case SolutionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/euz?Solution", EuzElementTypes.Solution_2002); //$NON-NLS-1$
-		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Solution?solutionEvidence", EuzElementTypes.SolutionSolutionEvidence_4015); //$NON-NLS-1$
-		case CriteriaCriteriaAssumptionsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Criteria?criteriaAssumptions", EuzElementTypes.CriteriaCriteriaAssumptions_4009); //$NON-NLS-1$
-		case ArgumentArgumentStrategiesEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Argument?argumentStrategies", EuzElementTypes.ArgumentArgumentStrategies_4001); //$NON-NLS-1$
-		case JustificationEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/euz?Justification", EuzElementTypes.Justification_2006); //$NON-NLS-1$
-		case ArgumentDiagramEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http://www.certware.net/euz?ArgumentDiagram", EuzElementTypes.ArgumentDiagram_1000); //$NON-NLS-1$
-		case ArgumentArgumentAssumptionsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Argument?argumentAssumptions", EuzElementTypes.ArgumentArgumentAssumptions_4002); //$NON-NLS-1$
-		case ArgumentArgumentContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Argument?argumentContexts", EuzElementTypes.ArgumentArgumentContexts_4003); //$NON-NLS-1$
-		case StrategyStrategyContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyContexts", EuzElementTypes.StrategyStrategyContexts_4019); //$NON-NLS-1$
-		case SolutionSolutionContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Solution?solutionContexts", EuzElementTypes.SolutionSolutionContexts_4014); //$NON-NLS-1$
-		case CriteriaCriteriaContextsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Criteria?criteriaContexts", EuzElementTypes.CriteriaCriteriaContexts_4008); //$NON-NLS-1$
-		case ArgumentEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/euz?Argument", EuzElementTypes.Argument_2001); //$NON-NLS-1$
 		case StrategyStrategyStrategiesEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyStrategies", EuzElementTypes.StrategyStrategyStrategies_4018); //$NON-NLS-1$
-		case ArgumentArgumentSolutionsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Argument?argumentSolutions", EuzElementTypes.ArgumentArgumentSolutions_4004); //$NON-NLS-1$
-		case ArgumentArgumentCriteriaEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Argument?argumentCriteria", EuzElementTypes.ArgumentArgumentCriteria_4005); //$NON-NLS-1$
 		case StrategyStrategyAssumptionsEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyAssumptions", EuzElementTypes.StrategyStrategyAssumptions_4013); //$NON-NLS-1$
-		case ArgumentArgumentJustificationsEditPart.VISUAL_ID:
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.certware.net/euz?Argument?argumentJustifications", EuzElementTypes.ArgumentArgumentJustifications_4006); //$NON-NLS-1$
-		case EvidenceEditPart.VISUAL_ID:
+					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyContexts", EuzElementTypes.StrategyStrategyContexts_4019); //$NON-NLS-1$
+		case ArgumentArgumentContextsEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/euz?Evidence", EuzElementTypes.Evidence_2003); //$NON-NLS-1$
+					"Navigator?Link?http://www.certware.net/euz?Argument?argumentContexts", EuzElementTypes.ArgumentArgumentContexts_4003); //$NON-NLS-1$
+		case CriteriaCriteriaAssumptionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Criteria?criteriaAssumptions", EuzElementTypes.CriteriaCriteriaAssumptions_4009); //$NON-NLS-1$
 		case StrategyStrategyCriteriaEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyCriteria", EuzElementTypes.StrategyStrategyCriteria_4012); //$NON-NLS-1$
+		case ArgumentDiagramEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http://www.certware.net/euz?ArgumentDiagram", EuzElementTypes.ArgumentDiagram_1000); //$NON-NLS-1$
+		case ContextContextAssumptionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Context?contextAssumptions", EuzElementTypes.ContextContextAssumptions_4007); //$NON-NLS-1$
+		case ArgumentEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/euz?Argument", EuzElementTypes.Argument_2001); //$NON-NLS-1$
+		case EvidenceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/euz?Evidence", EuzElementTypes.Evidence_2003); //$NON-NLS-1$
+		case StrategyStrategyJustificationsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyJustifications", EuzElementTypes.StrategyStrategyJustifications_4011); //$NON-NLS-1$
 		case StrategyStrategyArgumentsEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/euz?Strategy?strategyArguments", EuzElementTypes.StrategyStrategyArguments_4010); //$NON-NLS-1$
-		case ContextEditPart.VISUAL_ID:
+		case ArgumentArgumentStrategiesEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.certware.net/euz?Context", EuzElementTypes.Context_2007); //$NON-NLS-1$
+					"Navigator?Link?http://www.certware.net/euz?Argument?argumentStrategies", EuzElementTypes.ArgumentArgumentStrategies_4001); //$NON-NLS-1$
+		case SolutionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/euz?Solution", EuzElementTypes.Solution_2002); //$NON-NLS-1$
 		case AssumptionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/euz?Assumption", EuzElementTypes.Assumption_2005); //$NON-NLS-1$
+		case StrategyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/euz?Strategy", EuzElementTypes.Strategy_2004); //$NON-NLS-1$
+		case ArgumentSubArgumentsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Argument?subArguments", EuzElementTypes.ArgumentSubArguments_4017); //$NON-NLS-1$
+		case CriteriaCriteriaContextsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Criteria?criteriaContexts", EuzElementTypes.CriteriaCriteriaContexts_4008); //$NON-NLS-1$
+		case ArgumentArgumentCriteriaEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Argument?argumentCriteria", EuzElementTypes.ArgumentArgumentCriteria_4005); //$NON-NLS-1$
+		case JustificationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/euz?Justification", EuzElementTypes.Justification_2006); //$NON-NLS-1$
+		case SolutionSolutionContextsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Solution?solutionContexts", EuzElementTypes.SolutionSolutionContexts_4014); //$NON-NLS-1$
 		case CriteriaEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.certware.net/euz?Criteria", EuzElementTypes.Criteria_2008); //$NON-NLS-1$
+		case ArgumentArgumentSolutionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Argument?argumentSolutions", EuzElementTypes.ArgumentArgumentSolutions_4004); //$NON-NLS-1$
+		case ArgumentArgumentJustificationsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Argument?argumentJustifications", EuzElementTypes.ArgumentArgumentJustifications_4006); //$NON-NLS-1$
+		case SolutionSolutionCriteriaEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Solution?solutionCriteria", EuzElementTypes.SolutionSolutionCriteria_4016); //$NON-NLS-1$
+		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Solution?solutionEvidence", EuzElementTypes.SolutionSolutionEvidence_4015); //$NON-NLS-1$
+		case ContextEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.certware.net/euz?Context", EuzElementTypes.Context_2007); //$NON-NLS-1$
+		case ArgumentArgumentAssumptionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.certware.net/euz?Argument?argumentAssumptions", EuzElementTypes.ArgumentArgumentAssumptions_4002); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -257,62 +257,62 @@ public class EuzNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (EuzVisualIDRegistry.getVisualID(view)) {
-		case SolutionSolutionCriteriaEditPart.VISUAL_ID:
-			return getSolutionSolutionCriteria_4016Text(view);
-		case ArgumentSubArgumentsEditPart.VISUAL_ID:
-			return getArgumentSubArguments_4017Text(view);
-		case StrategyEditPart.VISUAL_ID:
-			return getStrategy_2004Text(view);
-		case ContextContextAssumptionsEditPart.VISUAL_ID:
-			return getContextContextAssumptions_4007Text(view);
-		case StrategyStrategyJustificationsEditPart.VISUAL_ID:
-			return getStrategyStrategyJustifications_4011Text(view);
-		case SolutionEditPart.VISUAL_ID:
-			return getSolution_2002Text(view);
-		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
-			return getSolutionSolutionEvidence_4015Text(view);
-		case CriteriaCriteriaAssumptionsEditPart.VISUAL_ID:
-			return getCriteriaCriteriaAssumptions_4009Text(view);
-		case ArgumentArgumentStrategiesEditPart.VISUAL_ID:
-			return getArgumentArgumentStrategies_4001Text(view);
-		case JustificationEditPart.VISUAL_ID:
-			return getJustification_2006Text(view);
-		case ArgumentDiagramEditPart.VISUAL_ID:
-			return getArgumentDiagram_1000Text(view);
-		case ArgumentArgumentAssumptionsEditPart.VISUAL_ID:
-			return getArgumentArgumentAssumptions_4002Text(view);
-		case ArgumentArgumentContextsEditPart.VISUAL_ID:
-			return getArgumentArgumentContexts_4003Text(view);
-		case StrategyStrategyContextsEditPart.VISUAL_ID:
-			return getStrategyStrategyContexts_4019Text(view);
-		case SolutionSolutionContextsEditPart.VISUAL_ID:
-			return getSolutionSolutionContexts_4014Text(view);
-		case CriteriaCriteriaContextsEditPart.VISUAL_ID:
-			return getCriteriaCriteriaContexts_4008Text(view);
-		case ArgumentEditPart.VISUAL_ID:
-			return getArgument_2001Text(view);
 		case StrategyStrategyStrategiesEditPart.VISUAL_ID:
 			return getStrategyStrategyStrategies_4018Text(view);
-		case ArgumentArgumentSolutionsEditPart.VISUAL_ID:
-			return getArgumentArgumentSolutions_4004Text(view);
-		case ArgumentArgumentCriteriaEditPart.VISUAL_ID:
-			return getArgumentArgumentCriteria_4005Text(view);
 		case StrategyStrategyAssumptionsEditPart.VISUAL_ID:
 			return getStrategyStrategyAssumptions_4013Text(view);
-		case ArgumentArgumentJustificationsEditPart.VISUAL_ID:
-			return getArgumentArgumentJustifications_4006Text(view);
-		case EvidenceEditPart.VISUAL_ID:
-			return getEvidence_2003Text(view);
+		case StrategyStrategyContextsEditPart.VISUAL_ID:
+			return getStrategyStrategyContexts_4019Text(view);
+		case ArgumentArgumentContextsEditPart.VISUAL_ID:
+			return getArgumentArgumentContexts_4003Text(view);
+		case CriteriaCriteriaAssumptionsEditPart.VISUAL_ID:
+			return getCriteriaCriteriaAssumptions_4009Text(view);
 		case StrategyStrategyCriteriaEditPart.VISUAL_ID:
 			return getStrategyStrategyCriteria_4012Text(view);
+		case ArgumentDiagramEditPart.VISUAL_ID:
+			return getArgumentDiagram_1000Text(view);
+		case ContextContextAssumptionsEditPart.VISUAL_ID:
+			return getContextContextAssumptions_4007Text(view);
+		case ArgumentEditPart.VISUAL_ID:
+			return getArgument_2001Text(view);
+		case EvidenceEditPart.VISUAL_ID:
+			return getEvidence_2003Text(view);
+		case StrategyStrategyJustificationsEditPart.VISUAL_ID:
+			return getStrategyStrategyJustifications_4011Text(view);
 		case StrategyStrategyArgumentsEditPart.VISUAL_ID:
 			return getStrategyStrategyArguments_4010Text(view);
-		case ContextEditPart.VISUAL_ID:
-			return getContext_2007Text(view);
+		case ArgumentArgumentStrategiesEditPart.VISUAL_ID:
+			return getArgumentArgumentStrategies_4001Text(view);
+		case SolutionEditPart.VISUAL_ID:
+			return getSolution_2002Text(view);
 		case AssumptionEditPart.VISUAL_ID:
 			return getAssumption_2005Text(view);
+		case StrategyEditPart.VISUAL_ID:
+			return getStrategy_2004Text(view);
+		case ArgumentSubArgumentsEditPart.VISUAL_ID:
+			return getArgumentSubArguments_4017Text(view);
+		case CriteriaCriteriaContextsEditPart.VISUAL_ID:
+			return getCriteriaCriteriaContexts_4008Text(view);
+		case ArgumentArgumentCriteriaEditPart.VISUAL_ID:
+			return getArgumentArgumentCriteria_4005Text(view);
+		case JustificationEditPart.VISUAL_ID:
+			return getJustification_2006Text(view);
+		case SolutionSolutionContextsEditPart.VISUAL_ID:
+			return getSolutionSolutionContexts_4014Text(view);
 		case CriteriaEditPart.VISUAL_ID:
 			return getCriteria_2008Text(view);
+		case ArgumentArgumentSolutionsEditPart.VISUAL_ID:
+			return getArgumentArgumentSolutions_4004Text(view);
+		case ArgumentArgumentJustificationsEditPart.VISUAL_ID:
+			return getArgumentArgumentJustifications_4006Text(view);
+		case SolutionSolutionCriteriaEditPart.VISUAL_ID:
+			return getSolutionSolutionCriteria_4016Text(view);
+		case SolutionSolutionEvidenceEditPart.VISUAL_ID:
+			return getSolutionSolutionEvidence_4015Text(view);
+		case ContextEditPart.VISUAL_ID:
+			return getContext_2007Text(view);
+		case ArgumentArgumentAssumptionsEditPart.VISUAL_ID:
+			return getArgumentArgumentAssumptions_4002Text(view);
 		}
 		return getUnknownElementText(view);
 	}

@@ -39,6 +39,7 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -120,7 +121,7 @@ public class AssumptionPropertiesEditionPartForm extends CompositePropertiesEdit
 		propertiesGroup.setLayout(propertiesGroupLayout);
 		createIdentifierText(widgetFactory, propertiesGroup);
 		createDescriptionText(widgetFactory, propertiesGroup);
-		createContentText(widgetFactory, propertiesGroup);
+		createContentTextarea(widgetFactory, propertiesGroup);
 		createIsTaggedTableComposition(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
 	}
@@ -204,41 +205,33 @@ public class AssumptionPropertiesEditionPartForm extends CompositePropertiesEdit
 	}
 
 	
-	protected void createContentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, GsnMessages.AssumptionPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(GsnViewsRepository.Assumption.content, GsnViewsRepository.FORM_KIND));
-		content = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		content.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
+	protected void createContentTextarea(FormToolkit widgetFactory, Composite parent) {
+		Label contentLabel = FormUtils.createPartLabel(widgetFactory, parent, GsnMessages.AssumptionPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(GsnViewsRepository.Assumption.content, GsnViewsRepository.FORM_KIND));
+		GridData contentLabelData = new GridData(GridData.FILL_HORIZONTAL);
+		contentLabelData.horizontalSpan = 3;
+		contentLabel.setLayoutData(contentLabelData);
+		content = widgetFactory.createText(parent, "", SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL); //$NON-NLS-1$
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
+		contentData.horizontalSpan = 2;
+		contentData.heightHint = 80;
+		contentData.widthHint = 200;
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
+
 			/**
+			 * {@inheritDoc}
+			 * 
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 * 
 			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
 					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(AssumptionPropertiesEditionPartForm.this, GsnViewsRepository.Assumption.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
 			}
-		});
-		content.addKeyListener(new KeyAdapter() {
-			/**
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(AssumptionPropertiesEditionPartForm.this, GsnViewsRepository.Assumption.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
-				}
-			}
+
 		});
 		EditingUtils.setID(content, GsnViewsRepository.Assumption.content);
-		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
+		EditingUtils.setEEFtype(content, "eef::Textarea"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(GsnViewsRepository.Assumption.content, GsnViewsRepository.FORM_KIND), null); //$NON-NLS-1$
 	}
 
@@ -414,7 +407,7 @@ public class AssumptionPropertiesEditionPartForm extends CompositePropertiesEdit
 		if (newValue != null) {
 			content.setText(newValue);
 		} else {
-			content.setText(""); //$NON-NLS-1$
+			content.setText("");  //$NON-NLS-1$
 		}
 	}
 

@@ -45,6 +45,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 
@@ -124,7 +125,7 @@ public class CitationElementPropertiesEditionPartImpl extends CompositePropertie
 		propertiesGroup.setLayout(propertiesGroupLayout);
 		createIdentifierText(propertiesGroup);
 		createDescriptionText(propertiesGroup);
-		createContentText(propertiesGroup);
+		createContentTextarea(propertiesGroup);
 		createIsTaggedAdvancedTableComposition(propertiesGroup);
 		createRefersToArgumentElementFlatComboViewer(propertiesGroup);
 		createRefersToArgumentFlatComboViewer(propertiesGroup);
@@ -221,47 +222,19 @@ public class CitationElementPropertiesEditionPartImpl extends CompositePropertie
 	}
 
 	
-	protected void createContentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ArmMessages.CitationElementPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.CitationElement.content, ArmViewsRepository.SWT_KIND));
-		content = new Text(parent, SWT.BORDER);
+	protected void createContentTextarea(Composite parent) {
+		Label contentLabel = SWTUtils.createPartLabel(parent, ArmMessages.CitationElementPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.CitationElement.content, ArmViewsRepository.SWT_KIND));
+		GridData contentLabelData = new GridData(GridData.FILL_HORIZONTAL);
+		contentLabelData.horizontalSpan = 3;
+		contentLabel.setLayoutData(contentLabelData);
+		content = new Text(parent, SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
+		contentData.horizontalSpan = 2;
+		contentData.heightHint = 80;
+		contentData.widthHint = 200;
 		content.setLayoutData(contentData);
-		content.addFocusListener(new FocusAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CitationElementPropertiesEditionPartImpl.this, ArmViewsRepository.CitationElement.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
-			}
-
-		});
-		content.addKeyListener(new KeyAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
-			 * 
-			 */
-			@Override
-			@SuppressWarnings("synthetic-access")
-			public void keyPressed(KeyEvent e) {
-				if (e.character == SWT.CR) {
-					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CitationElementPropertiesEditionPartImpl.this, ArmViewsRepository.CitationElement.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
-				}
-			}
-
-		});
 		EditingUtils.setID(content, ArmViewsRepository.CitationElement.content);
-		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
+		EditingUtils.setEEFtype(content, "eef::Textarea"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.CitationElement.content, ArmViewsRepository.SWT_KIND), null); //$NON-NLS-1$
 	}
 
@@ -477,7 +450,7 @@ public class CitationElementPropertiesEditionPartImpl extends CompositePropertie
 		if (newValue != null) {
 			content.setText(newValue);
 		} else {
-			content.setText(""); //$NON-NLS-1$
+			content.setText("");  //$NON-NLS-1$
 		}
 	}
 

@@ -63,6 +63,16 @@ public class JustificationItemProvider
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean hasChildren(Object object) {
+		return hasChildren(object, true);
+	}
+
+	/**
 	 * This returns Justification.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -95,7 +95,6 @@ public class CitationElementImpl extends ArgumentElementImpl implements Citation
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public ArgumentElement basicGetRefersToArgumentElement() {
@@ -134,7 +133,6 @@ public class CitationElementImpl extends ArgumentElementImpl implements Citation
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return 
 	 * @generated
 	 */
 	public Argument basicGetRefersToArgument() {

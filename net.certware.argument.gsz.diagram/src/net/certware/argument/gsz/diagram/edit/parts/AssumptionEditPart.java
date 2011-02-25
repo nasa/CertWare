@@ -327,7 +327,8 @@ public class AssumptionEditPart extends ShapeNodeEditPart {
 			this.add(fFigureAssumptionLabelFigure);
 
 			fFigureModelElementContentLabelFigure = new WrappingLabel();
-			fFigureModelElementContentLabelFigure.setText(Messages.AssumptionEditPart_1);
+			fFigureModelElementContentLabelFigure
+					.setText(Messages.AssumptionEditPart_1);
 			fFigureModelElementContentLabelFigure.setTextWrap(true);
 			this.add(fFigureModelElementContentLabelFigure);
 

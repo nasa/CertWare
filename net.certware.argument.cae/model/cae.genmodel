@@ -7,7 +7,7 @@
     editorPluginClass="net.certware.argument.cae.presentation.CaeEditorPlugin" nonNLSMarkers="true"
     testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" testsPluginID="net.certware.argument.cae.tests" colorProviders="true"
-    usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
+    fontProviders="true" usedGenPackages="../../net.certware.argument.arm/model/arm.genmodel#//arm">
   <foreignModel>cae.ecore</foreignModel>
   <genPackages prefix="Cae" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
       generateExampleClass="false" multipleEditorPages="false" ecorePackage="cae.ecore#/">
@@ -20,6 +20,7 @@
     <genClasses ecoreClass="cae.ecore#//Argument">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cae.ecore#//Argument/justification"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cae.ecore#//Argument/evidence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cae.ecore#//Argument/claims"/>
     </genClasses>
     <genClasses ecoreClass="cae.ecore#//Evidence">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cae.ecore#//Evidence/context"/>
