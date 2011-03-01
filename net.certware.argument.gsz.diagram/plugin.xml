@@ -44,7 +44,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/GszDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="net.certware.core.ui.newwizard.category"
   	     class="net.certware.argument.gsz.diagram.part.GszCreationWizard"
   	     id="net.certware.argument.gsz.diagram.part.GszCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -125,9 +125,10 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
+            category="certware"
+            class="net.certware.argument.gsz.diagram.preferences.DiagramGeneralPreferencePage"
             id="net.certware.argument.gsz.diagram.general"
-            name="%prefpage.net.certware.argument.gsz.diagram.general"
-            class="net.certware.argument.gsz.diagram.preferences.DiagramGeneralPreferencePage">
+            name="%prefpage.net.certware.argument.gsz.diagram.general">
       </page>
       <page
             id="net.certware.argument.gsz.diagram.appearance"
@@ -677,7 +678,7 @@
       <?gmfgen generated="true"?>
       <decoratorProvider class="net.certware.argument.gsz.diagram.providers.GszValidationDecoratorProvider">
          <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>

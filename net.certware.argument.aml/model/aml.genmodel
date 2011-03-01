@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright © 2000-2005 SRI International."
+    modelDirectory="/net.certware.argument.aml/src" modelPluginID="net.certware.argument.aml"
+    modelName="aml" editPluginClass="net.certware.argument.aml.provider.AmlEditPlugin"
+    editorPluginClass="net.certware.argument.aml.presentation.AmlEditorPlugin" nonNLSMarkers="true"
+    testsDirectory="" testSuiteClass="" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="6.0" testsPluginID="net.certware.argument.aml.tests" colorProviders="true"
+    fontProviders="true">
+  <foreignModel>file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd</foreignModel>
+  <genPackages prefix="Aml" basePackage="net.certware.argument" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" multipleEditorPages="false" ecorePackage="aml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="aml.ecore#//ObjectType">
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/template"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/argument"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/collection"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/person"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/exhibit"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/memo"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/group"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType/discoveryMethod"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="aml.ecore#//ObjectType1">
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/template"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/argument"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/collection"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/person"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/exhibit"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/memo"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/group"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType1/discoveryMethod"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="aml.ecore#//ObjectType2">
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType2/MISC"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType2/SEQUENTIAL"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType2/VERSIONING"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType2/group"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType2/argument"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType2/template"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="aml.ecore#//ObjectType3">
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/template"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/argument"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/collection"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/person"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/exhibit"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/memo"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/group"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//ObjectType3/discoveryMethod"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="aml.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//Type/Url"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//Type/Template"/>
+      <genEnumLiterals ecoreEnumLiteral="aml.ecore#//Type/Urldir"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="aml.ecore#//ObjectTypeObject"/>
+    <genDataTypes ecoreDataType="aml.ecore#//ObjectTypeObject1"/>
+    <genDataTypes ecoreDataType="aml.ecore#//ObjectTypeObject2"/>
+    <genDataTypes ecoreDataType="aml.ecore#//ObjectTypeObject3"/>
+    <genDataTypes ecoreDataType="aml.ecore#//TypeObject"/>
+    <genClasses ecoreClass="aml.ecore#//AggregationRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//AggregationRule/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//AggregationRule/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//AmlDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//AmlDocument/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//AmlDocument/template"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//AmlDocument/argument"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//AmlDocument/exhibit"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//AmlDocument/collection"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//AmlDocument/person"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//AmlDocument/memo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//AmlDocument/discoveryMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//AmlDocument/version"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Annotation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//Annotation/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Annotation/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Annotation/memo"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Annotation/flag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Annotation/id"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Answer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//Answer/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Answer/belief"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Answer/witness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Answer/rationale"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Answer/annotation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Answer/aggregationRule"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Answer/evidence"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Answer/discoveryMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Answer/questionId"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//ArgumentTemplate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//ArgumentTemplate/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//ArgumentTemplate/idRef"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Argument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Argument/metaData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Argument/creatingTool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Argument/annotation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Argument/argumentTemplate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Argument/answer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Argument/id"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Belief">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Belief/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Belief/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Belief/ordinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Belief/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Choice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Choice/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Choice/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Choice/ordinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Choice/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//CollectionItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//CollectionItem/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//CollectionItem/objectType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//CollectionItem/ordinal"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Collection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Collection/metaData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Collection/creatingTool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Collection/annotation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Collection/question"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Collection/argumentTemplate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//Collection/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Collection/label"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Collection/collectionItem"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Collection/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Collection/label1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Collection/objectType"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Coverage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//Coverage/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Coverage/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Coverage/nationState"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//CreatingTool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//CreatingTool/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//CreatingTool/toolType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//CreatingTool/version"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Creator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Creator/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Creator/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Creator/objectType"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Dependent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Dependent/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Dependent/ordinal"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//DiscoveryMethod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DiscoveryMethod/argumentTemplate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DiscoveryMethod/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DiscoveryMethod/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DiscoveryMethod/autoTrigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DiscoveryMethod/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DiscoveryMethod/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DiscoveryMethod/importType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DiscoveryMethod/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DiscoveryMethod/type"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/actor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/aggregationRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/amlDocument"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/annotation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/answer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/archive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/argument"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/argumentTemplate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/belief"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/choice"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/collection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/collectionItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/contributor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/coverage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/creatingTool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/creator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/department"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/dependent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/discoveryMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/email"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/evidence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/evidenceExhibit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/exhibit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/firstName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/flag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/format"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/identifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/image"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/lastName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/list"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/memo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/metaData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/middleName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/nationState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/nickName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/organization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/period"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/person"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/perspective"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/publisher"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/question"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/questionRelationships"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/rationale"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/reader"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/region"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/relation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/relevance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/reliability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/rights"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/securityMarking"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/subject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/template"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//DocumentRoot/witness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/description1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//DocumentRoot/label1"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//End">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//End/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//End/scheme"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//EvidenceExhibit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//EvidenceExhibit/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//EvidenceExhibit/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//EvidenceExhibit/questionId"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Evidence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Evidence/evidenceExhibit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Evidence/relevance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Evidence/reliability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Evidence/witness"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Evidence/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Evidence/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Evidence/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Evidence/ordinal"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Exhibit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Exhibit/archive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Exhibit/metaData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Exhibit/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Exhibit/id"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Flag">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Flag/witness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Flag/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Flag/flagType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Flag/label"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Interval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Interval/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Interval/min"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//List">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//List/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//List/li"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Memo">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Memo/creator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Memo/reader"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Memo/subject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Memo/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Memo/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Memo/type"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//MetaData">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//MetaData/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//MetaData/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//MetaData/securityMarking"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/creator"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/reader"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//MetaData/subject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//MetaData/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/publisher"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/contributor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//MetaData/date"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/type"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/format"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/identifier"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/source"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/language"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/relation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/coverage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/rights"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//MetaData/image"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//NationState">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//NationState/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//NationState/perspective"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//NationState/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//NationState/actor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//NationState/region"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//NationState/event"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Parameter/symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Parameter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Period">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//Period/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Period/start"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Period/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Period/label"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/middleName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/nickName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/organization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/department"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Person/id"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Publisher">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Publisher/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Publisher/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Publisher/objectType"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//QuestionRelationships">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//QuestionRelationships/dependent"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Question">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//Question/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Question/type"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Question/choice"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Question/questionRelationships"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Question/aggregationRule"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Question/discoveryMethod"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Question/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Question/amplification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Question/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Question/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Question/label"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Reader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Reader/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Reader/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Reader/objectType"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Relevance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Relevance/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Relevance/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Relevance/ordinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Relevance/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Reliability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Reliability/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Reliability/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Reliability/ordinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Reliability/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Start">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Start/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Start/scheme"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Template">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Template/metaData"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Template/creatingTool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Template/annotation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aml.ecore#//Template/question"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Template/id"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Value">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute aml.ecore#//Value/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Value/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Value/interval"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference aml.ecore#//Value/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Value/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Value/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="aml.ecore#//Witness">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Witness/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Witness/idRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aml.ecore#//Witness/timestamp"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

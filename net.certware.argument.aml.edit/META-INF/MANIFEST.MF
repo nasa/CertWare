@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Structured AML Edit
+Bundle-SymbolicName: net.certware.argument.aml.edit;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Activator: net.certware.argument.aml.provider.AmlEditPlugin$Implementation
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.argument.aml.components,
+ net.certware.argument.aml.parts,
+ net.certware.argument.aml.parts.forms,
+ net.certware.argument.aml.parts.impl,
+ net.certware.argument.aml.provider,
+ net.certware.argument.aml.providers
+Require-Bundle: org.eclipse.core.runtime,
+ net.certware.argument.aml;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.emf.eef.runtime;bundle-version="0.8.1";visibility:=reexport
+Bundle-ActivationPolicy: lazy

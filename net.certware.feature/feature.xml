@@ -11,12 +11,14 @@
    </description>
 
    <copyright url="http://www.certware.net/copyright">
-      Copyright (c) 2010-2011 Kestrel Technology LLC.
-Copyright may be assigned to U.S. Government at later date.
+      Copyright (c) 2011 United States Government as represented by
+the National Aeronautics and Space Administration.
+All rights reserved.
    </copyright>
 
    <license url="http://www.certware.net/license">
-      Unlicensed.
+      This product is provided by the US Government for evaluation
+purposes only.  Modification or redistribution is prohibited.
    </license>
 
    <url>
@@ -45,18 +47,6 @@ Copyright may be assigned to U.S. Government at later date.
          id="org.eclipse.epsilon.hutn.feature"
          version="0.0.0"
          name="Eclipse Epsilon HUTN"
-         search-location="both"/>
-
-   <includes
-         id="org.eclipse.egit"
-         version="0.0.0"
-         name="Eclipe EGit"
-         search-location="both"/>
-
-   <includes
-         id="org.eclipse.jgit"
-         version="0.0.0"
-         name="Eclipse JGit"
          search-location="both"/>
 
    <includes

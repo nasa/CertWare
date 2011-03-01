@@ -14,6 +14,8 @@ import java.util.List;
  */
 public interface ICertWareConstants {
 
+	/** file extension for the AML model */
+	public static final String AML_EXTENSION = "aml"; //$NON-NLS-1$
 	/** file extension for the ARM model */
 	public static final String ARM_EXTENSION = "arm"; //$NON-NLS-1$
 	/** file extension for the GSN model */
@@ -58,7 +60,7 @@ public interface ICertWareConstants {
 	/** a list of all application file extensions */
 	public static final List<String> FILE_EXTENSIONS = 
 		Collections.unmodifiableList(Arrays.asList(
-				ARM_EXTENSION,
+				AML_EXTENSION,ARM_EXTENSION,
 				GSN_EXTENSION,GSZ_EXTENSION,GSZ_DIAGRAM_EXTENSION,
 				CAE_EXTENSION,CAZ_EXTENSION,CAZ_DIAGRAM_EXTENSION,
 				EUR_EXTENSION,EUZ_EXTENSION,EUZ_DIAGRAM_EXTENSION,

@@ -1,0 +1,290 @@
+// Developed from information in the Hugin API Manual
+// Does not include grammar for class specifications in the NET language
+// @author mrb
+// @date 2/28/11
+// @since 1.1.3
+
+grammar net.certware.evidence.hugin.NetDSL with org.eclipse.xtext.common.Terminals
+
+generate netDSL "http://www.certware.net/evidence/hugin/NetDSL"
+
+import "http://www.eclipse.org/emf/2002/Ecore"as ecore
+
+Model:
+	domain=DomainDefinition?;
+	
+Sign returns ecore::EString hidden(): '+' | '-' ;
+
+Float returns ecore::EString hidden(): Sign? INT ('.' INT)? ;
+
+// UnsignedNumber returns ecore::EString hidden(): INT ('.' INT)? ;
+
+
+DomainDefinition :
+	header=DomainHeader elements+=DomainElement*
+	;
+	
+DomainHeader : {DomainHeader}
+	'net' '{' attributes+=Attribute* '}'
+	;
+	
+DomainElement :
+	BasicNode | Potential | ClassDefinition
+	;
+	
+Attribute :
+	StatesAttribute |
+	LabelAttribute |
+	PositionAttribute |
+	SubtypeAttribute |
+	StateValuesAttribute | 
+	ApplicationAttribute |
+	NodeSizeAttribute
+	;
+
+BasicNode :
+	keyword=BasicNodeKeyword; 
+	
+BasicNodeKeyword :
+	(('discrete' | 'continuous')? 'node') | 'decision' | 'utility' | 'function'
+	;
+
+StatesAttribute : {StatesAttribute}
+	'states' '=' '(' states+=STRING* ')' ';'
+	;
+	
+LabelAttribute :
+	'label' '=' value=STRING ';'
+	;
+	
+PositionAttribute :
+	'position' '=' '(' x=INT y=INT ')' ';'
+	;
+	
+SubtypeAttribute :
+	'subtype' '=' subtype=('label' | 'boolean' | 'number' | 'interval') ';'
+	;
+		
+StateValuesAttribute :
+	'state_values' '=' '(' numbers+=INT+ ')' ';'
+	;
+	
+ApplicationAttribute :
+	key=ID '=' value=STRING 
+	;
+	
+NodeSizeAttribute : // global magic for HUGIN GUI
+	'node_size' '=' '(' width=INT height=INT ')'
+	;
+	
+Potential :
+	'potential' graph=PotentialGraph model=PotentialModel
+	;
+	
+PotentialGraph : {PotentialGraph}
+	'(' children+=ID* ('|' parents+=ID* )? ')'
+	;
+	
+PotentialModel : {PotentialModel}
+	'{' attributes+=PotentialAttribute* '}'
+	;
+	
+PotentialAttribute :
+	PotentialDataAttribute |
+	PotentialTableAttribute
+	;
+	
+PotentialDataAttribute : {PotentialDataAttribute}
+	'data' '=' '(' unstructured=UnstructuredDataList | structured=StructuredDataList ')' ';'
+	;
+	 
+UnstructuredDataList : {UnstructuredDataList}
+	items+=Float* | NormalDistribution;
+
+StructuredDataList : {StructuredDataList}
+	'(' list=FloatDataList ')'
+	;
+	
+FloatDataList : {FloatDataList}
+	'(' list=UnstructuredDataList ')'
+	;
+	
+NormalDistribution :
+	'normal' '(' mean=MeanExpression ',' variance=Float ')'
+	;
+	
+MeanExpression :
+	MeanTerm ('+' MeanTerm)*
+	;
+	
+MeanTerm :
+	Float |
+	(Float '*' ID) |
+	ID
+	; 
+
+PotentialTableAttribute :
+	nodes=ModelNodesAttribute 
+	(samples=SamplesAttribute)? 
+	data=ModelDataAttribute
+	;
+	
+ModelNodesAttribute : {ModelNodesAttribute}
+	'model_nodes' '=' '(' configurations+=ID* ')' ';'
+	;
+	
+SamplesAttribute :
+	'samples_per_interval' '=' value=INT ';'
+	;
+	
+ModelDataAttribute : {ModelDataAttribute}
+	'model_data' '=' '(' ')' ';' // TODO add expression sequence, introduces left recursion
+	;
+	
+
+///////////////////////////////////////////////////
+// classes
+///////////////////////////////////////////////////
+
+ClassDefinition :
+	'class' name=ID '{' elements+=ClassElement* '}'
+	;
+	
+ClassElement :
+	DomainElement | Attribute | ClassInstance;
+
+ClassInstance :
+	'instance' instanceName=ID ':' className=ID 
+	'(' (input=InputBindings)? (';' output=OutputBindings)? ')'
+	'{' attributes=NodeAttributes '}'
+	;
+	
+InputBindings :
+	lhs=InputBinding ',' rhs=InputBindings
+	;
+	
+InputBinding :
+	formal=ID '=' actual=ID
+	;
+
+OutputBindings :
+	lhs=OutputBinding ',' rhs=OutputBindings
+	;
+	
+OutputBinding :
+	actual=ID '=' formal=ID
+	;
+	
+NodeAttributes :
+	LabelAttribute | PositionAttribute | ApplicationAttribute
+	;	
+
+
+///////////////////////////////////////////////////
+// expressions
+///////////////////////////////////////////////////
+
+Expression :
+	lhs=SimpleExpression Comparison rhs=SimpleExpression |
+	SimpleExpression
+	;
+	
+SimpleExpression :
+	lhs=SimpleExpression PlusOrMinus rhs=Term |
+	PlusOrMinus Term |
+	Term
+	;
+	
+Term :
+	lhs=Term TimesOrDivide rhs=ExpFactor |
+	ExpFactor
+	;
+	
+ExpFactor :
+	lhs=Factor '^' rhs=ExpFactor |
+	Factor
+	;
+
+Factor : {Factor}
+	number=INT | // should be unsigned
+	nodeName=ID |
+	value=STRING |
+	false='false' |
+	true='true' |
+	'(' expression=Expression ')' |
+	op=OperatorName '(' sequence=ExpressionSequence ')'
+	;
+	
+ExpressionSequence : {ExpressionSequence}
+	(expressions+=Expression (',' expressions+=Expression)*)?
+	;	
+
+Comparison :
+	'==' | '=' | '!=' | '<>' | '<' | '<=' | '>' | '>='
+	;
+	
+PlusOrMinus :
+	'+' | '-'
+	;
+	
+TimesOrDivide :
+	'*' | '/'
+	;
+	
+OperatorName :
+	'truncate' |
+	'Normal' |
+	'LogNormal' |
+	'Beta' |
+	'Gamma' |
+	'Exponential' |
+	'Weibull' |
+	'Uniform' |
+	'Triangular' |
+	'PERT' |
+	'Binomial' |
+	'Poisson' |
+	'NegativeBinomial' |
+	'Geometric' |
+	'Distribution' 
+	'NoisyOR' |
+	'min' |
+	'max' |
+	'log' |
+	'log2' |
+	'log10' |
+	'exp' |
+	'sin' |
+	'cos' |
+	'tan' |
+	'sinh' |
+	'cosh' |
+	'tanh' |
+	'sqrt' |
+	'abs' |
+	'floor' |
+	'ceil' |
+	'mod' |
+	'if' |
+	'and' |
+	'or' |
+	'not'
+	;
+	
+///////////////////////////////////////////////////	
+// pending validations, for Java editor callbacks	
+///////////////////////////////////////////////////
+
+// TODO create a validation rule that states attribute is only allowed for discrete nodes
+// TODO subtype attribute only for discrete (chance or decision) node
+// TODO state_values attribute only for nodes of type number or interval
+// TODO state_values attribute must appear after subtype and states attributes
+// TODO state_values if subtype number list length same as states list
+// TODO state_values if subtype interval list length one greater than states list
+// TODO potential graph children must be >0 if parents used
+// TODO chance, decision, and utility nodes can only have chance and decision nodes as parents
+// TODO discrete nodes can only have discrete nodes as parents
+// TODO a node must not be referenced in a potential specification before it has been defined by a node, decision, utility, or function specification
+// TODO mean value of normal distribution must be linear function of continuous graph parents, each term must be numeric constant, name of continuous parent, or constant followed by '*' followed by name of continuous parent
+// TODO formal input name must refer to a node listed in the inputs attribute of the class with name
+// TODO the node referred to by the actual input name must be defined somewhere in the class containing the class instance

@@ -6,6 +6,14 @@ h1{color:red}. CertWare Implementation and Integration Notes
 
 h2. Version History
 
+h3. Version 1.1.3
+
+_Bugs Fixed_:
+* Moved diagram preference page root into the CertWare preference page tree. 
+* Moved diagram new wizard category to the CertWare UI category.  
+_Enhancements_:
+* Added the SRI Structured Argument Markup Language (AML) model, and generated edit support and editors for arguments of this type. _There may be editor issues with the mixed XML element types in this generated code.  A number of elements did not generate properly and manual repair was required._  A navigator contribution provides the explorer filter. 
+
 h3. Version 1.1.2
 
 _Bugs Fixed_:
@@ -97,6 +105,7 @@ The typical output goes to the local disk in a Javadoc directory.  The @overview
 
 h3. Meta-Models
 
+* @AML@ SRI structured argument markup language and its Ecore implementation
 * @ARM@ OMG argument metamodel and its Ecore implementation
 * @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
 * @CAZ@ A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
@@ -216,6 +225,7 @@ h4. Navigator Contributions
 
 h3. Plugins Summary
 
+* @net.certware.argument.aml.*@ Argument model and editor support for SRI AML.  The core plugin contains the model (derived from an XSD schema) definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.  
 * @net.certware.argument.arm.*@ Argument model and editor support for OMG ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.  
 * @net.certware.argument.arm.help@ Help content for ARM models and related workbench contributions.    
 * @net.certware.argument.cae.*@ Argument model and editor support for CAE (ASCAD), built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification. 
@@ -252,6 +262,7 @@ h3. Plugins Summary
 
 h3. File Names and Extensions
 
+* @*.aml@ AML model files
 * @*.arm@ ARM model files
 * @*.gsn@ GSN model files
 * @*.gsz@ and @*.gsz_diagram@ are GSN diagram model and diagram files
@@ -276,7 +287,8 @@ h3. Implementation Features
 
 * EGit included in target platform and run configuration.  Provides Git distributed version control under the team menus.  
 * Eclipse Extended Editing Framework (EEF) included for better property specification in EMF-generated editors.  
-* Eclipse Graphical Modeling Framework (GEF) included for graphical editing of argument models.
+* Eclipse Graphical Modeling Framework (GEF) included for graphical editing of argument models, synthesized partly by using Eclipse Epsilon tools.
+* Eclipse Textual Modeling Framework (TMF) Xtext tools used for domain-specific language models.  
 
 <hr/>
 

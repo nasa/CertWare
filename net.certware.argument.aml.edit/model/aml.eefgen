@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.argument.aml.edit/src-gen" author="mrb" license="">
+  <editionContexts basePackage="net.certware.argument" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="aml.components#_riR3YUFBEeCHqY1i-BlMyQ"/>
+  </editionContexts>
+  <viewsRepositories basePackage="net.certware.argument.aml" swtViews="true" formViews="true">
+    <viewsRepository href="aml.components#_riTsuEFBEeCHqY1i-BlMyQ"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>
