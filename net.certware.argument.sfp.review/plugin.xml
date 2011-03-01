@@ -68,7 +68,8 @@
          point="org.eclipse.ui.commandImages">
       <image
             commandId="net.certware.argument.sfp.review.launchWizard"
-            icon="icons/obj16/valid.png">
+            disabledIcon="icons/dtool16/certware-run-d16.gif"
+            icon="icons/obj16/certware-run.gif">
       </image>
    </extension>
 

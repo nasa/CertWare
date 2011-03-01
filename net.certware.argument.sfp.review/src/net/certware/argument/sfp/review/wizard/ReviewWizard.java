@@ -5,6 +5,7 @@ import java.text.MessageFormat;
 
 import net.certware.argument.sfp.review.Activator;
 import net.certware.argument.sfp.semiFormalProof.Proof;
+import net.certware.core.ui.CertWareUI;
 import net.certware.core.ui.dialog.ExceptionDetailsDialog;
 import net.certware.core.ui.help.IHelpContext;
 import net.certware.core.ui.log.CertWareLog;
@@ -55,8 +56,6 @@ public class ReviewWizard extends Wizard implements IHelpContext {
 	private FormToolkit toolkit;
 	/** setup page */
 	private ReviewSetupPage pageSetup;
-	/** page image path */
-	private String PAGE_IMAGE = "icons/wizban/pattern_wiz.gif";
 	/** selected resource to act upon */
 	private Resource resource;
 
@@ -71,7 +70,7 @@ public class ReviewWizard extends Wizard implements IHelpContext {
 		setWindowTitle(TITLE);
 		setNeedsProgressMonitor(false);
 		setDialogSettings( Activator.getDefault().getDialogSettings() );
-		setDefaultPageImageDescriptor(Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID,PAGE_IMAGE));
+		setDefaultPageImageDescriptor(CertWareUI.getDefault().getImageRegistry().getDescriptor(CertWareUI.CERTWARE_WIZARD_BANNER));
 		setHelpAvailable(true);
 		toolkit = new FormToolkit(Display.getCurrent());
 	}

@@ -4,9 +4,9 @@
 <product name="CertWare" uid="net.certware.product" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/net.certware.product/icons/obj128/black_box_128.png"/>
+      <image path="/net.certware.product/icons/obj256/certware-250.png"/>
       <text>
-         CertWare Desktop Application
+         CertWare Safety Case Workbench Desktop Application.
       </text>
    </aboutInfo>
 
@@ -18,24 +18,27 @@
       <vmArgsMac>-XstartOnFirstThread</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/net.certware.product/icons/obj16/black_box_16.png" i32="/net.certware.product/icons/obj32/black_box_32.png" i48="/net.certware.product/icons/obj48/black_box_48.png" i64="/net.certware.product/icons/obj64/black_box_64.png" i128="/net.certware.product/icons/obj128/black_box_128.png"/>
+   <windowImages i16="/net.certware.product/icons/obj16/certware.gif" i32="/net.certware.product/icons/obj32/certware-32.gif" i48="/net.certware.product/icons/obj48/certware-48.gif" i64="/net.certware.product/icons/obj64/certware-64.gif" i128="/net.certware.product/icons/obj128/certware-128.gif"/>
 
+   <splash
+      location="net.certware.branding" />
    <launcher name="CertWare">
-      <macosx icon="/net.certware.product/icons/black_box.icns"/>
+      <macosx icon="/net.certware.branding/icons/certware.icns"/>
       <solaris/>
       <win useIco="true">
-         <ico path="/net.certware.product/icons/black_box.ico"/>
+         <ico path="/net.certware.branding/icons/certware-256.ico"/>
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>
 
    <license>
-        <url>http://www.certware.net/license</url>
+        <url>http://certware-update.s3-website-us-east-1.amazonaws.com/</url>
         <text>
-   Unlicensed
+   Provided for evaluation purposes only.
          </text>
    </license>
 
@@ -63,7 +66,7 @@
       <plugin id="net.certware.core.ui"/>
       <plugin id="net.certware.libs.doc"/>
       <plugin id="net.certware.product"/>
-      <plugin id="net.certware.update"/>
+      <plugin id="net.certware.update" fragment=""/>
       <plugin id="org.apache.ant"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.lucene"/>
@@ -215,7 +218,7 @@
       <plugin id="org.eclipse.update.core.linux" fragment="true"/>
       <plugin id="org.eclipse.update.core.win32" fragment="true"/>
       <plugin id="org.eclipse.update.ui"/>
-      <plugin id="org.eclipselabs.p2.rcpupdate.utils"/>
+      <plugin id="org.eclipselabs.p2.rcpupdate.utils" fragment=""/>
       <plugin id="org.hamcrest.core"/>
       <plugin id="org.junit"/>
       <plugin id="org.mortbay.jetty.server"/>

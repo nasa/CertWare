@@ -7,6 +7,7 @@ import java.net.URL;
 import java.text.MessageFormat;
 import java.util.Enumeration;
 
+import net.certware.core.ui.CertWareUI;
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.example.Activator;
 import net.certware.example.Example;
@@ -64,6 +65,7 @@ public class ExampleWizard extends Wizard implements INewWizard {
 		super();
 		setWindowTitle(TITLE);
 		setNeedsProgressMonitor(true);
+		setDefaultPageImageDescriptor(CertWareUI.getDefault().getImageRegistry().getDescriptor(CertWareUI.CERTWARE_WIZARD_BANNER));
 		setDialogSettings( Activator.getDefault().getDialogSettings() );
 		setHelpAvailable(true);
 		toolkit = new FormToolkit(Display.getCurrent());
