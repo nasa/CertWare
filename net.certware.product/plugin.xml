@@ -8,14 +8,54 @@
       <product
             application="org.eclipse.ui.ide.workbench"
             description="CertWare Application Workbench"
-            name="CertWareApp">
+            name="CertWare">
          <property
                name="appName"
-               value="CertWareApp">
+               value="CertWare">
          </property>
          <property
                name="preferenceCustomization"
                value="plugin_customization.ini">
+         </property>
+         <property
+               name="introTitle"
+               value="CertWare Safety Case Workbench">
+         </property>
+         <property
+               name="introBrandingImage"
+               value="product:icons/obj64/certware-64.gif">
+         </property>
+         <property
+               name="introBrandingImageText"
+               value="CertWare">
+         </property>
+         <property
+               name="introDescription-overview"
+               value="Overview">
+         </property>
+         <property
+               name="introDescription-firststeps"
+               value="First Steps">
+         </property>
+         <property
+               name="introDescription-tutorials"
+               value="Tutorials">
+         </property>
+         <property
+               name="introDescription-samples"
+               value="Samples">
+         </property>
+         <property
+               name="introDescription-whatsnew"
+               value="What&apos;s New">
+         </property>
+         <property
+               name="introDescription-migrate"
+               value="Migration">
+         </property>
+         <property
+               name="introDescription-webresources"
+               value="Web Resources">
          </property>
       </product>
    </extension>

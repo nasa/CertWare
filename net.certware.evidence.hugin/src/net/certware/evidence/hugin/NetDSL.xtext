@@ -19,6 +19,11 @@ Float returns ecore::EString hidden(): Sign? INT ('.' INT)? ;
 
 // UnsignedNumber returns ecore::EString hidden(): INT ('.' INT)? ;
 
+// single-line comment style leading with %
+// the built-in version allows // as indicator, overridden here
+// multi-line comments are also built-in but should be overridden
+terminal SL_COMMENT : '%' !('\n'|'\r')* ('\r'? '\n')? ;
+
 
 DomainDefinition :
 	header=DomainHeader elements+=DomainElement*
@@ -43,7 +48,7 @@ Attribute :
 	;
 
 BasicNode :
-	keyword=BasicNodeKeyword; 
+	keyword=BasicNodeKeyword (id=ID)? '{' attributes+=Attribute* '}' ;
 	
 BasicNodeKeyword :
 	(('discrete' | 'continuous')? 'node') | 'decision' | 'utility' | 'function'
@@ -70,11 +75,11 @@ StateValuesAttribute :
 	;
 	
 ApplicationAttribute :
-	key=ID '=' value=STRING 
+	key=ID '=' value=STRING ';' 
 	;
 	
 NodeSizeAttribute : // global magic for HUGIN GUI
-	'node_size' '=' '(' width=INT height=INT ')'
+	'node_size' '=' '(' width=INT height=INT ')' ';'
 	;
 	
 Potential :
@@ -95,7 +100,7 @@ PotentialAttribute :
 	;
 	
 PotentialDataAttribute : {PotentialDataAttribute}
-	'data' '=' '(' unstructured=UnstructuredDataList | structured=StructuredDataList ')' ';'
+	'data' '=' '(' (unstructured=UnstructuredDataList | structured=StructuredDataList) ')' ';'
 	;
 	 
 UnstructuredDataList : {UnstructuredDataList}
@@ -185,32 +190,32 @@ NodeAttributes :
 ///////////////////////////////////////////////////
 
 Expression :
-	lhs=SimpleExpression Comparison rhs=SimpleExpression |
-	SimpleExpression
+	lhs=SimpleExpression (Comparison rhs+=SimpleExpression)* // |
+	// simple=SimpleExpression
 	;
 	
 SimpleExpression :
-	lhs=SimpleExpression PlusOrMinus rhs=Term |
-	PlusOrMinus Term |
-	Term
+	lhs=Term (PlusOrMinus rhs+=SimpleExpression)* // | // was swapped
+	// PlusOrMinus single=Term // |
+	// lhs=Term
 	;
 	
 Term :
-	lhs=Term TimesOrDivide rhs=ExpFactor |
-	ExpFactor
+	lhs=ExpFactor (TimesOrDivide rhs+=Term)* // |
+	// lhs=ExpFactor
 	;
 	
 ExpFactor :
-	lhs=Factor '^' rhs=ExpFactor |
-	Factor
+	lhs=Factor ('^' rhs+=ExpFactor)* // |
+	// factor=Factor
 	;
 
 Factor : {Factor}
 	number=INT | // should be unsigned
 	nodeName=ID |
 	value=STRING |
-	false='false' |
-	true='true' |
+	value='false' |
+	value='true' |
 	'(' expression=Expression ')' |
 	op=OperatorName '(' sequence=ExpressionSequence ')'
 	;

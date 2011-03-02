@@ -83,7 +83,7 @@ public class CertWareUI extends AbstractUIPlugin implements BundleActivator {
 	@Override
     protected void initializeImageRegistry(ImageRegistry registry) {
         Bundle bundle = Platform.getBundle(PLUGIN_ID);
-        initializeImage(registry,bundle,"icons/ovr7/certware_ovr.gif",OVERLAY_IMAGE);
+        initializeImage(registry,bundle,"icons/ovr7/certware-ovr.gif",OVERLAY_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/certware.gif",JOB_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/certware.gif",PREFERENCES_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/certware.gif",CERTWARE_IMAGE);

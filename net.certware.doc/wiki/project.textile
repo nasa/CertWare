@@ -12,8 +12,10 @@ _Bugs Fixed_:
 * Moved diagram preference page root into the CertWare preference page tree. 
 * Moved diagram new wizard category to the CertWare UI category.  
 _Enhancements_:
-* Added the SRI Structured Argument Markup Language (AML) model, and generated edit support and editors for arguments of this type. _There may be editor issues with the mixed XML element types in this generated code.  A number of elements did not generate properly and manual repair was required._  A navigator contribution provides the explorer filter. 
-* Updated graphics images, icons, and splash page.    
+* Added the SRI Structured Argument Markup Language (AML) model, and generated edit support and editors for arguments of this type. _There may be editor issues with the mixed XML element types in this generated code.  A number of elements did not generate properly and manual repair was required._  A navigator contribution provides the explorer filter.
+* Added the OMG Software Assurance Evidence Metamodel (SAEM) model, and generated edit support and editors for evidence of this type.  _It is not yet directly connected to the ARM derivatives for complete arguments._  
+* Updated graphics images, icons, and splash page.   
+* Provided initial universal welcome contribution when run as a product. 
 
 h3. Version 1.1.2
 

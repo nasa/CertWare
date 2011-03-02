@@ -8,6 +8,12 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.evidence.hugin;visibility:=reexport,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0"
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.ui,
+ org.eclipse.xtext.builder,
+ org.antlr.runtime
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.evidence.hugin.ui.contentassist.antlr
+Bundle-Activator: net.certware.evidence.hugin.ui.internal.NetDSLActivator

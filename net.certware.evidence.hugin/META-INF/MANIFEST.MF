@@ -12,6 +12,19 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
  com.ibm.icu;resolution:=optional,
- org.eclipse.xtext.xtend;resolution:=optional
+ org.eclipse.xtext.xtend;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.evidence.hugin,
+ net.certware.evidence.hugin.services,
+ net.certware.evidence.hugin.netDSL,
+ net.certware.evidence.hugin.netDSL.impl,
+ net.certware.evidence.hugin.netDSL.util,
+ net.certware.evidence.hugin.parseTreeConstruction,
+ net.certware.evidence.hugin.parser.antlr,
+ net.certware.evidence.hugin.parser.antlr.internal,
+ net.certware.evidence.hugin.validation

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 Object Management Group (SAEM metamodel)&#xA;Copyright (c) 2011 Kestrel Technology LLC (generated models) "
+    modelDirectory="/net.certware.evidence.saem/src" modelPluginID="net.certware.evidence.saem"
+    modelName="Saem" nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" providerRootExtendsClass="" tableProviders="true"
+    colorProviders="true">
+  <foreignModel>file:/Users/mrbarryold/Downloads/saem.ecore</foreignModel>
+  <genPackages prefix="Evidence" basePackage="net.certware.evidence" resource="XMI"
+      disposableProviderFactory="true" generateExampleClass="false" contentTypeIdentifier=""
+      ecorePackage="saem.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//ConsistencyLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConsistencyLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConsistencyLevel/informal"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConsistencyLevel/semiformal"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConsistencyLevel/formal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//Level">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//Level/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//Level/low"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//Level/mediumLow"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//Level/medium"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//Level/mediumHigh"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//Level/high"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//OriginalityLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//OriginalityLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//OriginalityLevel/derivative"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//OriginalityLevel/original"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//ReportingLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReportingLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReportingLevel/secondary"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReportingLevel/primary"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//StandardOfProof">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//StandardOfProof/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//StandardOfProof/other"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//StandardOfProof/POE"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//StandardOfProof/CCE"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//StandardOfProof/BRD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//SupportLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//SupportLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//SupportLevel/indirect"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//SupportLevel/direct"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//CompletenessLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//CompletenessLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//CompletenessLevel/incomplete"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//CompletenessLevel/draft"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//CompletenessLevel/final"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//CompletenessLevel/obsolete"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//ReliabilityLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReliabilityLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReliabilityLevel/unReliable"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReliabilityLevel/notUsuallyReliable"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReliabilityLevel/usuallyReliable"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReliabilityLevel/fairlyReliable"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ReliabilityLevel/completelyReliable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//AccuracyLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//AccuracyLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//AccuracyLevel/improbable"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//AccuracyLevel/doubtful"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//AccuracyLevel/possible"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//AccuracyLevel/probable"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//AccuracyLevel/confirmed"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//ConfidenceLevel">
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConfidenceLevel/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConfidenceLevel/reportedAsUncertain"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConfidenceLevel/reportedAsPlausible"/>
+      <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConfidenceLevel/reportedAsFact"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceAttribute"/>
+    <genClasses ecoreClass="saem.ecore#//Consistency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Consistency/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Completeness">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Completeness/status"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//Element"/>
+    <genClasses ecoreClass="saem.ecore#//Document">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Document/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Document/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Document/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Confidence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Confidence/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//ApprovedBy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//ApprovedBy/supervisor"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Description/text"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//CreatedBy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//CreatedBy/source"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Tool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Tool/version"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Method">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Method/tool"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//RequiresTool">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//RequiresTool/tool"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceItem/event"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsBasedOn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//IsBasedOn/source"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//DomainAssertion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//DomainAssertion/stmt"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsA">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//IsA/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsCharacterizedBy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//IsCharacterizedBy/property"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Person">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Person/affiliation"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Organization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Organization/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Organization/affiliation"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Package/consistency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Package/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Package/criteria"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Package/completeness"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/originator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/request"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/objective"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/activity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/item"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/RequiresPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Package/evaluation"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//EndTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//EndTime/datetime"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Assertion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Assertion/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Assertion/facttype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Assertion/role"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//FormalObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//FormalObject/concept"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//FormalObject/url"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Object"/>
+    <genClasses ecoreClass="saem.ecore#//CompositeSubject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//CompositeSubject/element"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//RoleBinding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//RoleBinding/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//RoleBinding/subject"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//StartTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//StartTime/datetime"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Relevance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Relevance/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Significance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Significance/Value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Accuracy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Accuracy/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//HasRoleIn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//HasRoleIn/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//HasRoleIn/organization"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsScopedBy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//IsScopedBy/scope"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//EffectiveTime"/>
+    <genClasses ecoreClass="saem.ecore#//AtTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//AtTime/dateTtime"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Originality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Originality/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Reporting">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Reporting/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Reliability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Reliability/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Supports"/>
+    <genClasses ecoreClass="saem.ecore#//IsGeneratedAt"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//CollectionMethod"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceRelation/item"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceRelation/assertion"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Support">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Support/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Conflicts">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Conflicts/assertion1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Conflicts/assertion2"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Rationale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Rationale/text"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Refutes">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Refutes/element"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Negates">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Negates/element"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//UnknownSubject"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceEvaluation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceEvaluation/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Resolves">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Resolves/element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//Originator"/>
+    <genClasses ecoreClass="saem.ecore#//EvidenceRequest">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceRequest/item"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceRequest/provenance"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//ProjectObjective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//ProjectObjective/text"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Activity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Activity/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Activity/timing"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Activity/provenance"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//DependsOn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//DependsOn/activity"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsAssociatedWith">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//IsAssociatedWith/request"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//RequiresMethod">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//RequiresMethod/method"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Satisfies">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Satisfies/objective"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//AdministrativeElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//AdministrativeElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//AdministrativeElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//AdministrativeElement/description"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//DomainClaim"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceObservation"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceResolution">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceResolution/rationale"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceResolution/context"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Weakens"/>
+    <genClasses ecoreClass="saem.ecore#//Amplifies"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//Contributes">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Contributes/relation1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Contributes/relation2"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Challenges"/>
+    <genClasses ecoreClass="saem.ecore#//Strength">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Strength/value"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsAcquiredAt"/>
+    <genClasses ecoreClass="saem.ecore#//IsTransferredTo"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//DocumentAttribute"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceEvent/custody"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//OwnedBy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//OwnedBy/owner"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//Provenance"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//TimingProperty"/>
+    <genClasses ecoreClass="saem.ecore#//IsPartOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//IsPartOf/whole"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsRevokedAt"/>
+    <genClasses ecoreClass="saem.ecore#//ProvidesContext">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//ProvidesContext/element"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//ProvidesContext/context"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//DomainObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//DomainObject/name"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//MeansThat">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//MeansThat/meaning"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//EvidenceElement/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceElement/provenance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceElement/timing"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//CareOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//CareOf/curator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//CustodyProperty"/>
+    <genClasses ecoreClass="saem.ecore#//AtLocation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//AtLocation/location"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsCreatedAt"/>
+    <genClasses ecoreClass="saem.ecore#//RequiresPackage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//RequiresPackage/package"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//ActivityProperty"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceProperty"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//AdministrativeProperty"/>
+    <genClasses ecoreClass="saem.ecore#//Service">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Service/tool"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//DocumentProperty"/>
+    <genClasses ecoreClass="saem.ecore#//HasElectronicSource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//HasElectronicSource/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//HasElectronicSource/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//HasElectronicSource/fileSize"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsExpressedInLanguage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//IsExpressedInLanguage/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//IsExpressedInLanguage/IsPrimary"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//UsingProcess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//UsingProcess/method"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//HasSecurityClassification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//HasSecurityClassification/securityClassification"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//IsReleaseableTo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//IsReleaseableTo/releasability"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//EvidenceGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//EvidenceGroup/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceGroup/element"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//HasVersion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//HasVersion/version"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//EvaluationAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvaluationAttribute/provenance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//EvaluationAttribute/timing"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Supercedes">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Supercedes/newAttribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//Supercedes/oldAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//HasMedia">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//HasMedia/media"/>
+    </genClasses>
+    <genClasses ecoreClass="saem.ecore#//Exhibit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Exhibit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute saem.ecore#//Exhibit/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference saem.ecore#//Exhibit/exhibitProperty"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="saem.ecore#//Meaning"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//ExhibitProperty"/>
+    <genClasses image="false" ecoreClass="saem.ecore#//EvidenceInterpretation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference saem.ecore#//EvidenceInterpretation/element"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
