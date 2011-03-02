@@ -168,23 +168,16 @@ finally {
 
 // Entry rule entryRuleFloat
 entryRuleFloat returns [String current=null] 
-	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-	}
 	:
 	{ currentNode = createCompositeNode(grammarAccess.getFloatRule(), currentNode); } 
 	 iv_ruleFloat=ruleFloat 
 	 { $current=$iv_ruleFloat.current.getText(); }  
 	 EOF 
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule Float
 ruleFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { setCurrentLookahead(); resetLookahead(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
     }
     @after { resetLookahead(); 
 	    lastConsumedNode = currentNode;
@@ -222,9 +215,6 @@ ruleFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     }
 )?)
     ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 
 
@@ -1603,18 +1593,18 @@ rulePotentialDataAttribute returns [EObject current=null]
     |(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getPotentialDataAttributeAccess().getStructuredStructuredDataListParserRuleCall_4_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getPotentialDataAttributeAccess().getItemsStructuredDataListParserRuleCall_4_1_0(), currentNode); 
 	    }
-		lv_structured_5_0=ruleStructuredDataList		{
+		lv_items_5_0=ruleStructuredDataList		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getPotentialDataAttributeRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
 	        }
 	        try {
-	       		set(
+	       		add(
 	       			$current, 
-	       			"structured",
-	        		lv_structured_5_0, 
+	       			"items",
+	        		lv_items_5_0, 
 	        		"StructuredDataList", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -1624,7 +1614,7 @@ rulePotentialDataAttribute returns [EObject current=null]
 	    }
 
 )
-))	')' 
+)*)	')' 
     {
         createLeafNode(grammarAccess.getPotentialDataAttributeAccess().getRightParenthesisKeyword_5(), null); 
     }
@@ -1669,19 +1659,19 @@ ruleUnstructuredDataList returns [EObject current=null]
 )(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getItemsFloatParserRuleCall_0_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getListFloatDataListParserRuleCall_0_1_0(), currentNode); 
 	    }
-		lv_items_1_0=ruleFloat		{
+		lv_list_1_0=ruleFloatDataList		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getUnstructuredDataListRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
 	        }
 	        try {
-	       		add(
+	       		set(
 	       			$current, 
-	       			"items",
-	        		lv_items_1_0, 
-	        		"Float", 
+	       			"list",
+	        		lv_list_1_0, 
+	        		"FloatDataList", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -1690,17 +1680,32 @@ ruleUnstructuredDataList returns [EObject current=null]
 	    }
 
 )
-)*)
-    |
-    { 
-        currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getNormalDistributionParserRuleCall_1(), currentNode); 
-    }
-    this_NormalDistribution_2=ruleNormalDistribution
-    { 
-        $current = $this_NormalDistribution_2.current; 
-        currentNode = currentNode.getParent();
-    }
+))
+    |(
+(
+		{ 
+	        currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getNormalNormalDistributionParserRuleCall_1_0(), currentNode); 
+	    }
+		lv_normal_2_0=ruleNormalDistribution		{
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getUnstructuredDataListRule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode.getParent(), $current);
+	        }
+	        try {
+	       		set(
+	       			$current, 
+	       			"normal",
+	        		lv_normal_2_0, 
+	        		"NormalDistribution", 
+	        		currentNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	        currentNode = currentNode.getParent();
+	    }
+
 )
+))
 ;
 
 
@@ -1738,10 +1743,10 @@ ruleStructuredDataList returns [EObject current=null]
     {
         createLeafNode(grammarAccess.getStructuredDataListAccess().getLeftParenthesisKeyword_1(), null); 
     }
-(
+((
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0_0(), currentNode); 
 	    }
 		lv_list_2_0=ruleFloatDataList		{
 	        if ($current==null) {
@@ -1762,7 +1767,32 @@ ruleStructuredDataList returns [EObject current=null]
 	    }
 
 )
-)	')' 
+)
+    |(
+(
+		{ 
+	        currentNode=createCompositeNode(grammarAccess.getStructuredDataListAccess().getItemsStructuredDataListParserRuleCall_2_1_0(), currentNode); 
+	    }
+		lv_items_3_0=ruleStructuredDataList		{
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getStructuredDataListRule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode.getParent(), $current);
+	        }
+	        try {
+	       		add(
+	       			$current, 
+	       			"items",
+	        		lv_items_3_0, 
+	        		"StructuredDataList", 
+	        		currentNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	        currentNode = currentNode.getParent();
+	    }
+
+)
+)*)	')' 
     {
         createLeafNode(grammarAccess.getStructuredDataListAccess().getRightParenthesisKeyword_3(), null); 
     }
@@ -1800,26 +1830,22 @@ ruleFloatDataList returns [EObject current=null]
     currentNode = newNode; 
         associateNodeWithAstElement(currentNode, $current); 
     }
-)	'(' 
-    {
-        createLeafNode(grammarAccess.getFloatDataListAccess().getLeftParenthesisKeyword_1(), null); 
-    }
-(
+)(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getFloatDataListAccess().getListUnstructuredDataListParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getFloatDataListAccess().getItemsFloatParserRuleCall_1_0(), currentNode); 
 	    }
-		lv_list_2_0=ruleUnstructuredDataList		{
+		lv_items_1_0=ruleFloat		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getFloatDataListRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
 	        }
 	        try {
-	       		set(
+	       		add(
 	       			$current, 
-	       			"list",
-	        		lv_list_2_0, 
-	        		"UnstructuredDataList", 
+	       			"items",
+	        		lv_items_1_0, 
+	        		"Float", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
 				handleValueConverterException(vce);
@@ -1828,11 +1854,7 @@ ruleFloatDataList returns [EObject current=null]
 	    }
 
 )
-)	')' 
-    {
-        createLeafNode(grammarAccess.getFloatDataListAccess().getRightParenthesisKeyword_3(), null); 
-    }
-)
+)*)
 ;
 
 

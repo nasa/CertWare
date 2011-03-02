@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class NormalDistributionImpl extends UnstructuredDataListImpl implements NormalDistribution
+public class NormalDistributionImpl extends MinimalEObjectImpl.Container implements NormalDistribution
 {
   /**
    * The default value of the '{@link #getMean() <em>Mean</em>}' attribute.

@@ -1714,11 +1714,11 @@ public class InternalNetDSLLexer extends Lexer {
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:17: ( '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:19: '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:17: ( '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:19: '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('%'); 
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop1:
             do {
                 int alt1=2;
@@ -1731,7 +1731,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:23: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:23: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -1752,7 +1752,7 @@ public class InternalNetDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:39: ( ( '\\r' )? '\\n' )?
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:39: ( ( '\\r' )? '\\n' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1761,9 +1761,9 @@ public class InternalNetDSLLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:40: ( '\\r' )? '\\n'
+                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:40: ( '\\r' )? '\\n'
                     {
-                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:40: ( '\\r' )?
+                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:40: ( '\\r' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -1772,7 +1772,7 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9210:40: '\\r'
+                            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9188:40: '\\r'
                             {
                             match('\r'); 
 
@@ -1802,10 +1802,10 @@ public class InternalNetDSLLexer extends Lexer {
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9212:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9212:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9190:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9190:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9212:11: ( '^' )?
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9190:11: ( '^' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1814,7 +1814,7 @@ public class InternalNetDSLLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9212:11: '^'
+                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9190:11: '^'
                     {
                     match('^'); 
 
@@ -1833,7 +1833,7 @@ public class InternalNetDSLLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9212:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9190:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -1881,10 +1881,10 @@ public class InternalNetDSLLexer extends Lexer {
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9214:10: ( ( '0' .. '9' )+ )
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9214:12: ( '0' .. '9' )+
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9192:10: ( ( '0' .. '9' )+ )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9192:12: ( '0' .. '9' )+
             {
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9214:12: ( '0' .. '9' )+
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9192:12: ( '0' .. '9' )+
             int cnt6=0;
             loop6:
             do {
@@ -1898,7 +1898,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9214:13: '0' .. '9'
+            	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9192:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1928,10 +1928,10 @@ public class InternalNetDSLLexer extends Lexer {
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1943,16 +1943,16 @@ public class InternalNetDSLLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("9216:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 9, 0, input);
+                    new NoViableAltException("9194:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )", 9, 0, input);
 
                 throw nvae;
             }
             switch (alt9) {
                 case 1 :
-                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1968,7 +1968,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -1985,7 +1985,7 @@ public class InternalNetDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:62: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:62: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -2011,10 +2011,10 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:82: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:87: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -2030,7 +2030,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:88: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -2047,7 +2047,7 @@ public class InternalNetDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9216:129: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9194:129: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -2089,12 +2089,12 @@ public class InternalNetDSLLexer extends Lexer {
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9218:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9218:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9196:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9196:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9218:24: ( options {greedy=false; } : . )*
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9196:24: ( options {greedy=false; } : . )*
             loop10:
             do {
                 int alt10=2;
@@ -2119,7 +2119,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9218:52: .
+            	    // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9196:52: .
             	    {
             	    matchAny(); 
 
@@ -2147,10 +2147,10 @@ public class InternalNetDSLLexer extends Lexer {
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9220:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9220:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9198:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9198:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9220:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9198:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -2203,8 +2203,8 @@ public class InternalNetDSLLexer extends Lexer {
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9222:16: ( . )
-            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9222:18: .
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9200:16: ( . )
+            // ../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g:9200:18: .
             {
             matchAny(); 
 

@@ -5,18 +5,18 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
+import java.util.Collection;
+
 import net.certware.evidence.hugin.netDSL.FloatDataList;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
-import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl#getList <em>List</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class FloatDataListImpl extends MinimalEObjectImpl.Container implements FloatDataList
 {
   /**
-   * The cached value of the '{@link #getList() <em>List</em>}' containment reference.
+   * The cached value of the '{@link #getItems() <em>Items</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getList()
+   * @see #getItems()
    * @generated
    * @ordered
    */
-  protected UnstructuredDataList list;
+  protected EList<String> items;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,63 +69,13 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
    * <!-- end-user-doc -->
    * @generated
    */
-  public UnstructuredDataList getList()
+  public EList<String> getItems()
   {
-    return list;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetList(UnstructuredDataList newList, NotificationChain msgs)
-  {
-    UnstructuredDataList oldList = list;
-    list = newList;
-    if (eNotificationRequired())
+    if (items == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetDSLPackage.FLOAT_DATA_LIST__LIST, oldList, newList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      items = new EDataTypeEList<String>(String.class, this, NetDSLPackage.FLOAT_DATA_LIST__ITEMS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setList(UnstructuredDataList newList)
-  {
-    if (newList != list)
-    {
-      NotificationChain msgs = null;
-      if (list != null)
-        msgs = ((InternalEObject)list).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.FLOAT_DATA_LIST__LIST, null, msgs);
-      if (newList != null)
-        msgs = ((InternalEObject)newList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.FLOAT_DATA_LIST__LIST, null, msgs);
-      msgs = basicSetList(newList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, NetDSLPackage.FLOAT_DATA_LIST__LIST, newList, newList));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case NetDSLPackage.FLOAT_DATA_LIST__LIST:
-        return basicSetList(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return items;
   }
 
   /**
@@ -138,8 +88,8 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__LIST:
-        return getList();
+      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
+        return getItems();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -149,13 +99,15 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__LIST:
-        setList((UnstructuredDataList)newValue);
+      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
+        getItems().clear();
+        getItems().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +123,8 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__LIST:
-        setList((UnstructuredDataList)null);
+      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
+        getItems().clear();
         return;
     }
     super.eUnset(featureID);
@@ -188,10 +140,27 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__LIST:
-        return list != null;
+      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
+        return items != null && !items.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (items: ");
+    result.append(items);
+    result.append(')');
+    return result.toString();
   }
 
 } //FloatDataListImpl

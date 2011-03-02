@@ -64,16 +64,18 @@
     <genClasses ecoreClass="NetDSL.ecore#//PotentialAttribute"/>
     <genClasses ecoreClass="NetDSL.ecore#//PotentialDataAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialDataAttribute/unstructured"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialDataAttribute/structured"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialDataAttribute/items"/>
     </genClasses>
     <genClasses ecoreClass="NetDSL.ecore#//UnstructuredDataList">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//UnstructuredDataList/items"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//UnstructuredDataList/list"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//UnstructuredDataList/normal"/>
     </genClasses>
     <genClasses ecoreClass="NetDSL.ecore#//StructuredDataList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//StructuredDataList/list"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//StructuredDataList/items"/>
     </genClasses>
     <genClasses ecoreClass="NetDSL.ecore#//FloatDataList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//FloatDataList/list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//FloatDataList/items"/>
     </genClasses>
     <genClasses ecoreClass="NetDSL.ecore#//NormalDistribution">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//NormalDistribution/mean"/>

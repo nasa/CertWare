@@ -71,22 +71,26 @@
   <eClassifiers xsi:type="ecore:EClass" name="PotentialDataAttribute" eSuperTypes="#//PotentialAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="unstructured" eType="#//UnstructuredDataList"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="structured" eType="#//StructuredDataList"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//StructuredDataList" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnstructuredDataList">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="items" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//FloatDataList"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="normal" eType="#//NormalDistribution"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StructuredDataList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//FloatDataList"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//StructuredDataList" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FloatDataList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//UnstructuredDataList"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="items" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//UnstructuredDataList">
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mean" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

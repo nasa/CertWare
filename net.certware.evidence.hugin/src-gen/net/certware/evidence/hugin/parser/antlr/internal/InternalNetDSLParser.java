@@ -316,20 +316,17 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
         AntlrDatatypeRuleToken iv_ruleFloat = null;
 
 
-         
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-        	
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:174:2: (iv_ruleFloat= ruleFloat EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:175:2: iv_ruleFloat= ruleFloat EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:171:2: (iv_ruleFloat= ruleFloat EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:172:2: iv_ruleFloat= ruleFloat EOF
             {
              currentNode = createCompositeNode(grammarAccess.getFloatRule(), currentNode); 
-            pushFollow(FOLLOW_ruleFloat_in_entryRuleFloat296);
+            pushFollow(FOLLOW_ruleFloat_in_entryRuleFloat290);
             iv_ruleFloat=ruleFloat();
             _fsp--;
 
              current =iv_ruleFloat.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFloat307); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFloat301); 
 
             }
 
@@ -340,9 +337,6 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             } 
         finally {
-
-            	myHiddenTokenState.restore();
-
         }
         return current;
     }
@@ -350,7 +344,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleFloat
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:185:1: ruleFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:179:1: ruleFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) ;
     public final AntlrDatatypeRuleToken ruleFloat() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -361,16 +355,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
          setCurrentLookahead(); resetLookahead(); 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:191:6: ( ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:192:1: ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:184:6: ( ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:185:1: ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:192:1: ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:192:2: (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:185:1: ( (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:185:2: (this_Sign_0= ruleSign )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )?
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:192:2: (this_Sign_0= ruleSign )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:185:2: (this_Sign_0= ruleSign )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -379,12 +372,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:193:5: this_Sign_0= ruleSign
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:186:5: this_Sign_0= ruleSign
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getFloatAccess().getSignParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleSign_in_ruleFloat359);
+                    pushFollow(FOLLOW_ruleSign_in_ruleFloat349);
                     this_Sign_0=ruleSign();
                     _fsp--;
 
@@ -401,14 +394,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             }
 
             this_INT_1=(Token)input.LT(1);
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFloat381); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFloat371); 
 
             		current.merge(this_INT_1);
                 
              
                 createLeafNode(grammarAccess.getFloatAccess().getINTTerminalRuleCall_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:210:1: (kw= '.' this_INT_3= RULE_INT )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:203:1: (kw= '.' this_INT_3= RULE_INT )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -417,16 +410,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:211:2: kw= '.' this_INT_3= RULE_INT
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:204:2: kw= '.' this_INT_3= RULE_INT
                     {
                     kw=(Token)input.LT(1);
-                    match(input,13,FOLLOW_13_in_ruleFloat400); 
+                    match(input,13,FOLLOW_13_in_ruleFloat390); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getFloatAccess().getFullStopKeyword_2_0(), null); 
                         
                     this_INT_3=(Token)input.LT(1);
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFloat415); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFloat405); 
 
                     		current.merge(this_INT_3);
                         
@@ -455,9 +448,6 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             } 
         finally {
-
-            	myHiddenTokenState.restore();
-
         }
         return current;
     }
@@ -465,7 +455,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleDomainDefinition
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:234:1: entryRuleDomainDefinition returns [EObject current=null] : iv_ruleDomainDefinition= ruleDomainDefinition EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:224:1: entryRuleDomainDefinition returns [EObject current=null] : iv_ruleDomainDefinition= ruleDomainDefinition EOF ;
     public final EObject entryRuleDomainDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -473,16 +463,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:235:2: (iv_ruleDomainDefinition= ruleDomainDefinition EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:236:2: iv_ruleDomainDefinition= ruleDomainDefinition EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:225:2: (iv_ruleDomainDefinition= ruleDomainDefinition EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:226:2: iv_ruleDomainDefinition= ruleDomainDefinition EOF
             {
              currentNode = createCompositeNode(grammarAccess.getDomainDefinitionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleDomainDefinition_in_entryRuleDomainDefinition466);
+            pushFollow(FOLLOW_ruleDomainDefinition_in_entryRuleDomainDefinition452);
             iv_ruleDomainDefinition=ruleDomainDefinition();
             _fsp--;
 
              current =iv_ruleDomainDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainDefinition476); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainDefinition462); 
 
             }
 
@@ -500,7 +490,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleDomainDefinition
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:243:1: ruleDomainDefinition returns [EObject current=null] : ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:233:1: ruleDomainDefinition returns [EObject current=null] : ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* ) ;
     public final EObject ruleDomainDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -512,22 +502,22 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:248:6: ( ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:249:1: ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:238:6: ( ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:239:1: ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:249:1: ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:249:2: ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:239:1: ( ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:239:2: ( (lv_header_0_0= ruleDomainHeader ) ) ( (lv_elements_1_0= ruleDomainElement ) )*
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:249:2: ( (lv_header_0_0= ruleDomainHeader ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:250:1: (lv_header_0_0= ruleDomainHeader )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:239:2: ( (lv_header_0_0= ruleDomainHeader ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:240:1: (lv_header_0_0= ruleDomainHeader )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:250:1: (lv_header_0_0= ruleDomainHeader )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:251:3: lv_header_0_0= ruleDomainHeader
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:240:1: (lv_header_0_0= ruleDomainHeader )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:241:3: lv_header_0_0= ruleDomainHeader
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getDomainDefinitionAccess().getHeaderDomainHeaderParserRuleCall_0_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleDomainHeader_in_ruleDomainDefinition522);
+            pushFollow(FOLLOW_ruleDomainHeader_in_ruleDomainDefinition508);
             lv_header_0_0=ruleDomainHeader();
             _fsp--;
 
@@ -554,7 +544,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:273:2: ( (lv_elements_1_0= ruleDomainElement ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:263:2: ( (lv_elements_1_0= ruleDomainElement ) )*
             loop5:
             do {
                 int alt5=2;
@@ -567,15 +557,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:274:1: (lv_elements_1_0= ruleDomainElement )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:264:1: (lv_elements_1_0= ruleDomainElement )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:274:1: (lv_elements_1_0= ruleDomainElement )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:275:3: lv_elements_1_0= ruleDomainElement
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:264:1: (lv_elements_1_0= ruleDomainElement )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:265:3: lv_elements_1_0= ruleDomainElement
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getDomainDefinitionAccess().getElementsDomainElementParserRuleCall_1_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_ruleDomainElement_in_ruleDomainDefinition543);
+            	    pushFollow(FOLLOW_ruleDomainElement_in_ruleDomainDefinition529);
             	    lv_elements_1_0=ruleDomainElement();
             	    _fsp--;
 
@@ -631,7 +621,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleDomainHeader
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:305:1: entryRuleDomainHeader returns [EObject current=null] : iv_ruleDomainHeader= ruleDomainHeader EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:295:1: entryRuleDomainHeader returns [EObject current=null] : iv_ruleDomainHeader= ruleDomainHeader EOF ;
     public final EObject entryRuleDomainHeader() throws RecognitionException {
         EObject current = null;
 
@@ -639,16 +629,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:306:2: (iv_ruleDomainHeader= ruleDomainHeader EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:307:2: iv_ruleDomainHeader= ruleDomainHeader EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:296:2: (iv_ruleDomainHeader= ruleDomainHeader EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:297:2: iv_ruleDomainHeader= ruleDomainHeader EOF
             {
              currentNode = createCompositeNode(grammarAccess.getDomainHeaderRule(), currentNode); 
-            pushFollow(FOLLOW_ruleDomainHeader_in_entryRuleDomainHeader580);
+            pushFollow(FOLLOW_ruleDomainHeader_in_entryRuleDomainHeader566);
             iv_ruleDomainHeader=ruleDomainHeader();
             _fsp--;
 
              current =iv_ruleDomainHeader; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainHeader590); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainHeader576); 
 
             }
 
@@ -666,7 +656,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleDomainHeader
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:314:1: ruleDomainHeader returns [EObject current=null] : ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:304:1: ruleDomainHeader returns [EObject current=null] : ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) ;
     public final EObject ruleDomainHeader() throws RecognitionException {
         EObject current = null;
 
@@ -676,14 +666,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:319:6: ( ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:320:1: ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:309:6: ( ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:310:1: ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:320:1: ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:320:2: () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:310:1: ( () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:310:2: () 'net' '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:320:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:321:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:310:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:311:5: 
             {
              
                     temp=factory.create(grammarAccess.getDomainHeaderAccess().getDomainHeaderAction_0().getType().getClassifier());
@@ -698,15 +688,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,14,FOLLOW_14_in_ruleDomainHeader634); 
+            match(input,14,FOLLOW_14_in_ruleDomainHeader620); 
 
                     createLeafNode(grammarAccess.getDomainHeaderAccess().getNetKeyword_1(), null); 
                 
-            match(input,15,FOLLOW_15_in_ruleDomainHeader644); 
+            match(input,15,FOLLOW_15_in_ruleDomainHeader630); 
 
                     createLeafNode(grammarAccess.getDomainHeaderAccess().getLeftCurlyBracketKeyword_2(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:339:1: ( (lv_attributes_3_0= ruleAttribute ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:329:1: ( (lv_attributes_3_0= ruleAttribute ) )*
             loop6:
             do {
                 int alt6=2;
@@ -719,15 +709,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:340:1: (lv_attributes_3_0= ruleAttribute )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:330:1: (lv_attributes_3_0= ruleAttribute )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:340:1: (lv_attributes_3_0= ruleAttribute )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:341:3: lv_attributes_3_0= ruleAttribute
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:330:1: (lv_attributes_3_0= ruleAttribute )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:331:3: lv_attributes_3_0= ruleAttribute
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getDomainHeaderAccess().getAttributesAttributeParserRuleCall_3_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAttribute_in_ruleDomainHeader665);
+            	    pushFollow(FOLLOW_ruleAttribute_in_ruleDomainHeader651);
             	    lv_attributes_3_0=ruleAttribute();
             	    _fsp--;
 
@@ -760,7 +750,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            match(input,16,FOLLOW_16_in_ruleDomainHeader676); 
+            match(input,16,FOLLOW_16_in_ruleDomainHeader662); 
 
                     createLeafNode(grammarAccess.getDomainHeaderAccess().getRightCurlyBracketKeyword_4(), null); 
                 
@@ -787,7 +777,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleDomainElement
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:375:1: entryRuleDomainElement returns [EObject current=null] : iv_ruleDomainElement= ruleDomainElement EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:365:1: entryRuleDomainElement returns [EObject current=null] : iv_ruleDomainElement= ruleDomainElement EOF ;
     public final EObject entryRuleDomainElement() throws RecognitionException {
         EObject current = null;
 
@@ -795,16 +785,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:376:2: (iv_ruleDomainElement= ruleDomainElement EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:377:2: iv_ruleDomainElement= ruleDomainElement EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:366:2: (iv_ruleDomainElement= ruleDomainElement EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:367:2: iv_ruleDomainElement= ruleDomainElement EOF
             {
              currentNode = createCompositeNode(grammarAccess.getDomainElementRule(), currentNode); 
-            pushFollow(FOLLOW_ruleDomainElement_in_entryRuleDomainElement712);
+            pushFollow(FOLLOW_ruleDomainElement_in_entryRuleDomainElement698);
             iv_ruleDomainElement=ruleDomainElement();
             _fsp--;
 
              current =iv_ruleDomainElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainElement722); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainElement708); 
 
             }
 
@@ -822,7 +812,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleDomainElement
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:384:1: ruleDomainElement returns [EObject current=null] : (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:374:1: ruleDomainElement returns [EObject current=null] : (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition ) ;
     public final EObject ruleDomainElement() throws RecognitionException {
         EObject current = null;
 
@@ -836,10 +826,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:389:6: ( (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:390:1: (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:379:6: ( (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:380:1: (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:390:1: (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:380:1: (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition )
             int alt7=3;
             switch ( input.LA(1) ) {
             case 17:
@@ -864,19 +854,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("390:1: (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition )", 7, 0, input);
+                    new NoViableAltException("380:1: (this_BasicNode_0= ruleBasicNode | this_Potential_1= rulePotential | this_ClassDefinition_2= ruleClassDefinition )", 7, 0, input);
 
                 throw nvae;
             }
 
             switch (alt7) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:391:5: this_BasicNode_0= ruleBasicNode
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:381:5: this_BasicNode_0= ruleBasicNode
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getDomainElementAccess().getBasicNodeParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleBasicNode_in_ruleDomainElement769);
+                    pushFollow(FOLLOW_ruleBasicNode_in_ruleDomainElement755);
                     this_BasicNode_0=ruleBasicNode();
                     _fsp--;
 
@@ -888,12 +878,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:401:5: this_Potential_1= rulePotential
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:391:5: this_Potential_1= rulePotential
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getDomainElementAccess().getPotentialParserRuleCall_1(), currentNode); 
                         
-                    pushFollow(FOLLOW_rulePotential_in_ruleDomainElement796);
+                    pushFollow(FOLLOW_rulePotential_in_ruleDomainElement782);
                     this_Potential_1=rulePotential();
                     _fsp--;
 
@@ -905,12 +895,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:411:5: this_ClassDefinition_2= ruleClassDefinition
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:401:5: this_ClassDefinition_2= ruleClassDefinition
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getDomainElementAccess().getClassDefinitionParserRuleCall_2(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleClassDefinition_in_ruleDomainElement823);
+                    pushFollow(FOLLOW_ruleClassDefinition_in_ruleDomainElement809);
                     this_ClassDefinition_2=ruleClassDefinition();
                     _fsp--;
 
@@ -944,7 +934,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:427:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:417:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -952,16 +942,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:428:2: (iv_ruleAttribute= ruleAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:429:2: iv_ruleAttribute= ruleAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:418:2: (iv_ruleAttribute= ruleAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:419:2: iv_ruleAttribute= ruleAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleAttribute_in_entryRuleAttribute858);
+            pushFollow(FOLLOW_ruleAttribute_in_entryRuleAttribute844);
             iv_ruleAttribute=ruleAttribute();
             _fsp--;
 
              current =iv_ruleAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribute868); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribute854); 
 
             }
 
@@ -979,7 +969,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:436:1: ruleAttribute returns [EObject current=null] : (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:426:1: ruleAttribute returns [EObject current=null] : (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1001,10 +991,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:441:6: ( (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:442:1: (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:431:6: ( (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:432:1: (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:442:1: (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:432:1: (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute )
             int alt8=7;
             switch ( input.LA(1) ) {
             case 23:
@@ -1044,19 +1034,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("442:1: (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute )", 8, 0, input);
+                    new NoViableAltException("432:1: (this_StatesAttribute_0= ruleStatesAttribute | this_LabelAttribute_1= ruleLabelAttribute | this_PositionAttribute_2= rulePositionAttribute | this_SubtypeAttribute_3= ruleSubtypeAttribute | this_StateValuesAttribute_4= ruleStateValuesAttribute | this_ApplicationAttribute_5= ruleApplicationAttribute | this_NodeSizeAttribute_6= ruleNodeSizeAttribute )", 8, 0, input);
 
                 throw nvae;
             }
 
             switch (alt8) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:443:5: this_StatesAttribute_0= ruleStatesAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:433:5: this_StatesAttribute_0= ruleStatesAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getAttributeAccess().getStatesAttributeParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleStatesAttribute_in_ruleAttribute915);
+                    pushFollow(FOLLOW_ruleStatesAttribute_in_ruleAttribute901);
                     this_StatesAttribute_0=ruleStatesAttribute();
                     _fsp--;
 
@@ -1068,12 +1058,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:453:5: this_LabelAttribute_1= ruleLabelAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:443:5: this_LabelAttribute_1= ruleLabelAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getAttributeAccess().getLabelAttributeParserRuleCall_1(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleLabelAttribute_in_ruleAttribute942);
+                    pushFollow(FOLLOW_ruleLabelAttribute_in_ruleAttribute928);
                     this_LabelAttribute_1=ruleLabelAttribute();
                     _fsp--;
 
@@ -1085,12 +1075,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:463:5: this_PositionAttribute_2= rulePositionAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:453:5: this_PositionAttribute_2= rulePositionAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getAttributeAccess().getPositionAttributeParserRuleCall_2(), currentNode); 
                         
-                    pushFollow(FOLLOW_rulePositionAttribute_in_ruleAttribute969);
+                    pushFollow(FOLLOW_rulePositionAttribute_in_ruleAttribute955);
                     this_PositionAttribute_2=rulePositionAttribute();
                     _fsp--;
 
@@ -1102,12 +1092,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:473:5: this_SubtypeAttribute_3= ruleSubtypeAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:463:5: this_SubtypeAttribute_3= ruleSubtypeAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getAttributeAccess().getSubtypeAttributeParserRuleCall_3(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleSubtypeAttribute_in_ruleAttribute996);
+                    pushFollow(FOLLOW_ruleSubtypeAttribute_in_ruleAttribute982);
                     this_SubtypeAttribute_3=ruleSubtypeAttribute();
                     _fsp--;
 
@@ -1119,12 +1109,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:483:5: this_StateValuesAttribute_4= ruleStateValuesAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:473:5: this_StateValuesAttribute_4= ruleStateValuesAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getAttributeAccess().getStateValuesAttributeParserRuleCall_4(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleStateValuesAttribute_in_ruleAttribute1023);
+                    pushFollow(FOLLOW_ruleStateValuesAttribute_in_ruleAttribute1009);
                     this_StateValuesAttribute_4=ruleStateValuesAttribute();
                     _fsp--;
 
@@ -1136,12 +1126,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:493:5: this_ApplicationAttribute_5= ruleApplicationAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:483:5: this_ApplicationAttribute_5= ruleApplicationAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getAttributeAccess().getApplicationAttributeParserRuleCall_5(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleApplicationAttribute_in_ruleAttribute1050);
+                    pushFollow(FOLLOW_ruleApplicationAttribute_in_ruleAttribute1036);
                     this_ApplicationAttribute_5=ruleApplicationAttribute();
                     _fsp--;
 
@@ -1153,12 +1143,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:503:5: this_NodeSizeAttribute_6= ruleNodeSizeAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:493:5: this_NodeSizeAttribute_6= ruleNodeSizeAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getAttributeAccess().getNodeSizeAttributeParserRuleCall_6(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleNodeSizeAttribute_in_ruleAttribute1077);
+                    pushFollow(FOLLOW_ruleNodeSizeAttribute_in_ruleAttribute1063);
                     this_NodeSizeAttribute_6=ruleNodeSizeAttribute();
                     _fsp--;
 
@@ -1192,7 +1182,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleBasicNode
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:519:1: entryRuleBasicNode returns [EObject current=null] : iv_ruleBasicNode= ruleBasicNode EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:509:1: entryRuleBasicNode returns [EObject current=null] : iv_ruleBasicNode= ruleBasicNode EOF ;
     public final EObject entryRuleBasicNode() throws RecognitionException {
         EObject current = null;
 
@@ -1200,16 +1190,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:520:2: (iv_ruleBasicNode= ruleBasicNode EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:521:2: iv_ruleBasicNode= ruleBasicNode EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:510:2: (iv_ruleBasicNode= ruleBasicNode EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:511:2: iv_ruleBasicNode= ruleBasicNode EOF
             {
              currentNode = createCompositeNode(grammarAccess.getBasicNodeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleBasicNode_in_entryRuleBasicNode1112);
+            pushFollow(FOLLOW_ruleBasicNode_in_entryRuleBasicNode1098);
             iv_ruleBasicNode=ruleBasicNode();
             _fsp--;
 
              current =iv_ruleBasicNode; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBasicNode1122); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBasicNode1108); 
 
             }
 
@@ -1227,7 +1217,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleBasicNode
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:528:1: ruleBasicNode returns [EObject current=null] : ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:518:1: ruleBasicNode returns [EObject current=null] : ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) ;
     public final EObject ruleBasicNode() throws RecognitionException {
         EObject current = null;
 
@@ -1240,22 +1230,22 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:533:6: ( ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:534:1: ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:523:6: ( ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:524:1: ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:534:1: ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:534:2: ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:524:1: ( ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:524:2: ( (lv_keyword_0_0= ruleBasicNodeKeyword ) ) ( (lv_id_1_0= RULE_ID ) )? '{' ( (lv_attributes_3_0= ruleAttribute ) )* '}'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:534:2: ( (lv_keyword_0_0= ruleBasicNodeKeyword ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:535:1: (lv_keyword_0_0= ruleBasicNodeKeyword )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:524:2: ( (lv_keyword_0_0= ruleBasicNodeKeyword ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:525:1: (lv_keyword_0_0= ruleBasicNodeKeyword )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:535:1: (lv_keyword_0_0= ruleBasicNodeKeyword )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:536:3: lv_keyword_0_0= ruleBasicNodeKeyword
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:525:1: (lv_keyword_0_0= ruleBasicNodeKeyword )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:526:3: lv_keyword_0_0= ruleBasicNodeKeyword
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getBasicNodeAccess().getKeywordBasicNodeKeywordParserRuleCall_0_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleBasicNodeKeyword_in_ruleBasicNode1168);
+            pushFollow(FOLLOW_ruleBasicNodeKeyword_in_ruleBasicNode1154);
             lv_keyword_0_0=ruleBasicNodeKeyword();
             _fsp--;
 
@@ -1282,7 +1272,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:558:2: ( (lv_id_1_0= RULE_ID ) )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:548:2: ( (lv_id_1_0= RULE_ID ) )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1291,13 +1281,13 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:559:1: (lv_id_1_0= RULE_ID )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:549:1: (lv_id_1_0= RULE_ID )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:559:1: (lv_id_1_0= RULE_ID )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:560:3: lv_id_1_0= RULE_ID
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:549:1: (lv_id_1_0= RULE_ID )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:550:3: lv_id_1_0= RULE_ID
                     {
                     lv_id_1_0=(Token)input.LT(1);
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBasicNode1185); 
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBasicNode1171); 
 
                     			createLeafNode(grammarAccess.getBasicNodeAccess().getIdIDTerminalRuleCall_1_0(), "id"); 
                     		
@@ -1326,11 +1316,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,15,FOLLOW_15_in_ruleBasicNode1201); 
+            match(input,15,FOLLOW_15_in_ruleBasicNode1187); 
 
                     createLeafNode(grammarAccess.getBasicNodeAccess().getLeftCurlyBracketKeyword_2(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:586:1: ( (lv_attributes_3_0= ruleAttribute ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:576:1: ( (lv_attributes_3_0= ruleAttribute ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1343,15 +1333,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:587:1: (lv_attributes_3_0= ruleAttribute )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:577:1: (lv_attributes_3_0= ruleAttribute )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:587:1: (lv_attributes_3_0= ruleAttribute )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:588:3: lv_attributes_3_0= ruleAttribute
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:577:1: (lv_attributes_3_0= ruleAttribute )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:578:3: lv_attributes_3_0= ruleAttribute
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getBasicNodeAccess().getAttributesAttributeParserRuleCall_3_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAttribute_in_ruleBasicNode1222);
+            	    pushFollow(FOLLOW_ruleAttribute_in_ruleBasicNode1208);
             	    lv_attributes_3_0=ruleAttribute();
             	    _fsp--;
 
@@ -1384,7 +1374,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            match(input,16,FOLLOW_16_in_ruleBasicNode1233); 
+            match(input,16,FOLLOW_16_in_ruleBasicNode1219); 
 
                     createLeafNode(grammarAccess.getBasicNodeAccess().getRightCurlyBracketKeyword_4(), null); 
                 
@@ -1411,7 +1401,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleBasicNodeKeyword
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:622:1: entryRuleBasicNodeKeyword returns [String current=null] : iv_ruleBasicNodeKeyword= ruleBasicNodeKeyword EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:612:1: entryRuleBasicNodeKeyword returns [String current=null] : iv_ruleBasicNodeKeyword= ruleBasicNodeKeyword EOF ;
     public final String entryRuleBasicNodeKeyword() throws RecognitionException {
         String current = null;
 
@@ -1419,16 +1409,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:623:2: (iv_ruleBasicNodeKeyword= ruleBasicNodeKeyword EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:624:2: iv_ruleBasicNodeKeyword= ruleBasicNodeKeyword EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:613:2: (iv_ruleBasicNodeKeyword= ruleBasicNodeKeyword EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:614:2: iv_ruleBasicNodeKeyword= ruleBasicNodeKeyword EOF
             {
              currentNode = createCompositeNode(grammarAccess.getBasicNodeKeywordRule(), currentNode); 
-            pushFollow(FOLLOW_ruleBasicNodeKeyword_in_entryRuleBasicNodeKeyword1270);
+            pushFollow(FOLLOW_ruleBasicNodeKeyword_in_entryRuleBasicNodeKeyword1256);
             iv_ruleBasicNodeKeyword=ruleBasicNodeKeyword();
             _fsp--;
 
              current =iv_ruleBasicNodeKeyword.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBasicNodeKeyword1281); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBasicNodeKeyword1267); 
 
             }
 
@@ -1446,7 +1436,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleBasicNodeKeyword
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:631:1: ruleBasicNodeKeyword returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:621:1: ruleBasicNodeKeyword returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' ) ;
     public final AntlrDatatypeRuleToken ruleBasicNodeKeyword() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1455,10 +1445,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:636:6: ( ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:637:1: ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:626:6: ( ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:627:1: ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:637:1: ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:627:1: ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' )
             int alt12=4;
             switch ( input.LA(1) ) {
             case 17:
@@ -1485,19 +1475,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("637:1: ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' )", 12, 0, input);
+                    new NoViableAltException("627:1: ( ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' ) | kw= 'decision' | kw= 'utility' | kw= 'function' )", 12, 0, input);
 
                 throw nvae;
             }
 
             switch (alt12) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:637:2: ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:627:2: ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:637:2: ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:637:3: (kw= 'discrete' | kw= 'continuous' )? kw= 'node'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:627:2: ( (kw= 'discrete' | kw= 'continuous' )? kw= 'node' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:627:3: (kw= 'discrete' | kw= 'continuous' )? kw= 'node'
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:637:3: (kw= 'discrete' | kw= 'continuous' )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:627:3: (kw= 'discrete' | kw= 'continuous' )?
                     int alt11=3;
                     int LA11_0 = input.LA(1);
 
@@ -1509,10 +1499,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:638:2: kw= 'discrete'
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:628:2: kw= 'discrete'
                             {
                             kw=(Token)input.LT(1);
-                            match(input,17,FOLLOW_17_in_ruleBasicNodeKeyword1321); 
+                            match(input,17,FOLLOW_17_in_ruleBasicNodeKeyword1307); 
 
                                     current.merge(kw);
                                     createLeafNode(grammarAccess.getBasicNodeKeywordAccess().getDiscreteKeyword_0_0_0(), null); 
@@ -1521,10 +1511,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:645:2: kw= 'continuous'
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:635:2: kw= 'continuous'
                             {
                             kw=(Token)input.LT(1);
-                            match(input,18,FOLLOW_18_in_ruleBasicNodeKeyword1340); 
+                            match(input,18,FOLLOW_18_in_ruleBasicNodeKeyword1326); 
 
                                     current.merge(kw);
                                     createLeafNode(grammarAccess.getBasicNodeKeywordAccess().getContinuousKeyword_0_0_1(), null); 
@@ -1536,7 +1526,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
 
                     kw=(Token)input.LT(1);
-                    match(input,19,FOLLOW_19_in_ruleBasicNodeKeyword1355); 
+                    match(input,19,FOLLOW_19_in_ruleBasicNodeKeyword1341); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getBasicNodeKeywordAccess().getNodeKeyword_0_1(), null); 
@@ -1548,10 +1538,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:658:2: kw= 'decision'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:648:2: kw= 'decision'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,20,FOLLOW_20_in_ruleBasicNodeKeyword1375); 
+                    match(input,20,FOLLOW_20_in_ruleBasicNodeKeyword1361); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getBasicNodeKeywordAccess().getDecisionKeyword_1(), null); 
@@ -1560,10 +1550,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:665:2: kw= 'utility'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:655:2: kw= 'utility'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,21,FOLLOW_21_in_ruleBasicNodeKeyword1394); 
+                    match(input,21,FOLLOW_21_in_ruleBasicNodeKeyword1380); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getBasicNodeKeywordAccess().getUtilityKeyword_2(), null); 
@@ -1572,10 +1562,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:672:2: kw= 'function'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:662:2: kw= 'function'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,22,FOLLOW_22_in_ruleBasicNodeKeyword1413); 
+                    match(input,22,FOLLOW_22_in_ruleBasicNodeKeyword1399); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getBasicNodeKeywordAccess().getFunctionKeyword_3(), null); 
@@ -1606,7 +1596,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleStatesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:685:1: entryRuleStatesAttribute returns [EObject current=null] : iv_ruleStatesAttribute= ruleStatesAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:675:1: entryRuleStatesAttribute returns [EObject current=null] : iv_ruleStatesAttribute= ruleStatesAttribute EOF ;
     public final EObject entryRuleStatesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1614,16 +1604,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:686:2: (iv_ruleStatesAttribute= ruleStatesAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:687:2: iv_ruleStatesAttribute= ruleStatesAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:676:2: (iv_ruleStatesAttribute= ruleStatesAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:677:2: iv_ruleStatesAttribute= ruleStatesAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getStatesAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleStatesAttribute_in_entryRuleStatesAttribute1453);
+            pushFollow(FOLLOW_ruleStatesAttribute_in_entryRuleStatesAttribute1439);
             iv_ruleStatesAttribute=ruleStatesAttribute();
             _fsp--;
 
              current =iv_ruleStatesAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStatesAttribute1463); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStatesAttribute1449); 
 
             }
 
@@ -1641,7 +1631,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleStatesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:694:1: ruleStatesAttribute returns [EObject current=null] : ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:684:1: ruleStatesAttribute returns [EObject current=null] : ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' ) ;
     public final EObject ruleStatesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1650,14 +1640,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:699:6: ( ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:700:1: ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:689:6: ( ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:690:1: ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:700:1: ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:700:2: () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:690:1: ( () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:690:2: () 'states' '=' '(' ( (lv_states_4_0= RULE_STRING ) )* ')' ';'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:700:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:701:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:690:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:691:5: 
             {
              
                     temp=factory.create(grammarAccess.getStatesAttributeAccess().getStatesAttributeAction_0().getType().getClassifier());
@@ -1672,19 +1662,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,23,FOLLOW_23_in_ruleStatesAttribute1507); 
+            match(input,23,FOLLOW_23_in_ruleStatesAttribute1493); 
 
                     createLeafNode(grammarAccess.getStatesAttributeAccess().getStatesKeyword_1(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleStatesAttribute1517); 
+            match(input,24,FOLLOW_24_in_ruleStatesAttribute1503); 
 
                     createLeafNode(grammarAccess.getStatesAttributeAccess().getEqualsSignKeyword_2(), null); 
                 
-            match(input,25,FOLLOW_25_in_ruleStatesAttribute1527); 
+            match(input,25,FOLLOW_25_in_ruleStatesAttribute1513); 
 
                     createLeafNode(grammarAccess.getStatesAttributeAccess().getLeftParenthesisKeyword_3(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:723:1: ( (lv_states_4_0= RULE_STRING ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:713:1: ( (lv_states_4_0= RULE_STRING ) )*
             loop13:
             do {
                 int alt13=2;
@@ -1697,13 +1687,13 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:724:1: (lv_states_4_0= RULE_STRING )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:714:1: (lv_states_4_0= RULE_STRING )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:724:1: (lv_states_4_0= RULE_STRING )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:725:3: lv_states_4_0= RULE_STRING
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:714:1: (lv_states_4_0= RULE_STRING )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:715:3: lv_states_4_0= RULE_STRING
             	    {
             	    lv_states_4_0=(Token)input.LT(1);
-            	    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStatesAttribute1544); 
+            	    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStatesAttribute1530); 
 
             	    			createLeafNode(grammarAccess.getStatesAttributeAccess().getStatesSTRINGTerminalRuleCall_4_0(), "states"); 
             	    		
@@ -1735,11 +1725,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            match(input,26,FOLLOW_26_in_ruleStatesAttribute1560); 
+            match(input,26,FOLLOW_26_in_ruleStatesAttribute1546); 
 
                     createLeafNode(grammarAccess.getStatesAttributeAccess().getRightParenthesisKeyword_5(), null); 
                 
-            match(input,27,FOLLOW_27_in_ruleStatesAttribute1570); 
+            match(input,27,FOLLOW_27_in_ruleStatesAttribute1556); 
 
                     createLeafNode(grammarAccess.getStatesAttributeAccess().getSemicolonKeyword_6(), null); 
                 
@@ -1766,7 +1756,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleLabelAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:763:1: entryRuleLabelAttribute returns [EObject current=null] : iv_ruleLabelAttribute= ruleLabelAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:753:1: entryRuleLabelAttribute returns [EObject current=null] : iv_ruleLabelAttribute= ruleLabelAttribute EOF ;
     public final EObject entryRuleLabelAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1774,16 +1764,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:764:2: (iv_ruleLabelAttribute= ruleLabelAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:765:2: iv_ruleLabelAttribute= ruleLabelAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:754:2: (iv_ruleLabelAttribute= ruleLabelAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:755:2: iv_ruleLabelAttribute= ruleLabelAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getLabelAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleLabelAttribute_in_entryRuleLabelAttribute1606);
+            pushFollow(FOLLOW_ruleLabelAttribute_in_entryRuleLabelAttribute1592);
             iv_ruleLabelAttribute=ruleLabelAttribute();
             _fsp--;
 
              current =iv_ruleLabelAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLabelAttribute1616); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLabelAttribute1602); 
 
             }
 
@@ -1801,7 +1791,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleLabelAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:772:1: ruleLabelAttribute returns [EObject current=null] : ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:762:1: ruleLabelAttribute returns [EObject current=null] : ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) ;
     public final EObject ruleLabelAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1810,28 +1800,28 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:777:6: ( ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:778:1: ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:767:6: ( ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:768:1: ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:778:1: ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:778:3: 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:768:1: ( 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:768:3: 'label' '=' ( (lv_value_2_0= RULE_STRING ) ) ';'
             {
-            match(input,28,FOLLOW_28_in_ruleLabelAttribute1651); 
+            match(input,28,FOLLOW_28_in_ruleLabelAttribute1637); 
 
                     createLeafNode(grammarAccess.getLabelAttributeAccess().getLabelKeyword_0(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleLabelAttribute1661); 
+            match(input,24,FOLLOW_24_in_ruleLabelAttribute1647); 
 
                     createLeafNode(grammarAccess.getLabelAttributeAccess().getEqualsSignKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:786:1: ( (lv_value_2_0= RULE_STRING ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:787:1: (lv_value_2_0= RULE_STRING )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:776:1: ( (lv_value_2_0= RULE_STRING ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:777:1: (lv_value_2_0= RULE_STRING )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:787:1: (lv_value_2_0= RULE_STRING )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:788:3: lv_value_2_0= RULE_STRING
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:777:1: (lv_value_2_0= RULE_STRING )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:778:3: lv_value_2_0= RULE_STRING
             {
             lv_value_2_0=(Token)input.LT(1);
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLabelAttribute1678); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLabelAttribute1664); 
 
             			createLeafNode(grammarAccess.getLabelAttributeAccess().getValueSTRINGTerminalRuleCall_2_0(), "value"); 
             		
@@ -1857,7 +1847,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,27,FOLLOW_27_in_ruleLabelAttribute1693); 
+            match(input,27,FOLLOW_27_in_ruleLabelAttribute1679); 
 
                     createLeafNode(grammarAccess.getLabelAttributeAccess().getSemicolonKeyword_3(), null); 
                 
@@ -1884,7 +1874,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePositionAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:822:1: entryRulePositionAttribute returns [EObject current=null] : iv_rulePositionAttribute= rulePositionAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:812:1: entryRulePositionAttribute returns [EObject current=null] : iv_rulePositionAttribute= rulePositionAttribute EOF ;
     public final EObject entryRulePositionAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1892,16 +1882,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:823:2: (iv_rulePositionAttribute= rulePositionAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:824:2: iv_rulePositionAttribute= rulePositionAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:813:2: (iv_rulePositionAttribute= rulePositionAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:814:2: iv_rulePositionAttribute= rulePositionAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPositionAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_rulePositionAttribute_in_entryRulePositionAttribute1729);
+            pushFollow(FOLLOW_rulePositionAttribute_in_entryRulePositionAttribute1715);
             iv_rulePositionAttribute=rulePositionAttribute();
             _fsp--;
 
              current =iv_rulePositionAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePositionAttribute1739); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePositionAttribute1725); 
 
             }
 
@@ -1919,7 +1909,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePositionAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:831:1: rulePositionAttribute returns [EObject current=null] : ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:821:1: rulePositionAttribute returns [EObject current=null] : ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' ) ;
     public final EObject rulePositionAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1929,32 +1919,32 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:836:6: ( ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:837:1: ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:826:6: ( ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:827:1: ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:837:1: ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:837:3: 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:827:1: ( 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:827:3: 'position' '=' '(' ( (lv_x_3_0= RULE_INT ) ) ( (lv_y_4_0= RULE_INT ) ) ')' ';'
             {
-            match(input,29,FOLLOW_29_in_rulePositionAttribute1774); 
+            match(input,29,FOLLOW_29_in_rulePositionAttribute1760); 
 
                     createLeafNode(grammarAccess.getPositionAttributeAccess().getPositionKeyword_0(), null); 
                 
-            match(input,24,FOLLOW_24_in_rulePositionAttribute1784); 
+            match(input,24,FOLLOW_24_in_rulePositionAttribute1770); 
 
                     createLeafNode(grammarAccess.getPositionAttributeAccess().getEqualsSignKeyword_1(), null); 
                 
-            match(input,25,FOLLOW_25_in_rulePositionAttribute1794); 
+            match(input,25,FOLLOW_25_in_rulePositionAttribute1780); 
 
                     createLeafNode(grammarAccess.getPositionAttributeAccess().getLeftParenthesisKeyword_2(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:849:1: ( (lv_x_3_0= RULE_INT ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:850:1: (lv_x_3_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:839:1: ( (lv_x_3_0= RULE_INT ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:840:1: (lv_x_3_0= RULE_INT )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:850:1: (lv_x_3_0= RULE_INT )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:851:3: lv_x_3_0= RULE_INT
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:840:1: (lv_x_3_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:841:3: lv_x_3_0= RULE_INT
             {
             lv_x_3_0=(Token)input.LT(1);
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePositionAttribute1811); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePositionAttribute1797); 
 
             			createLeafNode(grammarAccess.getPositionAttributeAccess().getXINTTerminalRuleCall_3_0(), "x"); 
             		
@@ -1980,14 +1970,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:873:2: ( (lv_y_4_0= RULE_INT ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:874:1: (lv_y_4_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:863:2: ( (lv_y_4_0= RULE_INT ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:864:1: (lv_y_4_0= RULE_INT )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:874:1: (lv_y_4_0= RULE_INT )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:875:3: lv_y_4_0= RULE_INT
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:864:1: (lv_y_4_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:865:3: lv_y_4_0= RULE_INT
             {
             lv_y_4_0=(Token)input.LT(1);
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePositionAttribute1833); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rulePositionAttribute1819); 
 
             			createLeafNode(grammarAccess.getPositionAttributeAccess().getYINTTerminalRuleCall_4_0(), "y"); 
             		
@@ -2013,11 +2003,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,26,FOLLOW_26_in_rulePositionAttribute1848); 
+            match(input,26,FOLLOW_26_in_rulePositionAttribute1834); 
 
                     createLeafNode(grammarAccess.getPositionAttributeAccess().getRightParenthesisKeyword_5(), null); 
                 
-            match(input,27,FOLLOW_27_in_rulePositionAttribute1858); 
+            match(input,27,FOLLOW_27_in_rulePositionAttribute1844); 
 
                     createLeafNode(grammarAccess.getPositionAttributeAccess().getSemicolonKeyword_6(), null); 
                 
@@ -2044,7 +2034,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleSubtypeAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:913:1: entryRuleSubtypeAttribute returns [EObject current=null] : iv_ruleSubtypeAttribute= ruleSubtypeAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:903:1: entryRuleSubtypeAttribute returns [EObject current=null] : iv_ruleSubtypeAttribute= ruleSubtypeAttribute EOF ;
     public final EObject entryRuleSubtypeAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2052,16 +2042,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:914:2: (iv_ruleSubtypeAttribute= ruleSubtypeAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:915:2: iv_ruleSubtypeAttribute= ruleSubtypeAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:904:2: (iv_ruleSubtypeAttribute= ruleSubtypeAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:905:2: iv_ruleSubtypeAttribute= ruleSubtypeAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getSubtypeAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleSubtypeAttribute_in_entryRuleSubtypeAttribute1894);
+            pushFollow(FOLLOW_ruleSubtypeAttribute_in_entryRuleSubtypeAttribute1880);
             iv_ruleSubtypeAttribute=ruleSubtypeAttribute();
             _fsp--;
 
              current =iv_ruleSubtypeAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSubtypeAttribute1904); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSubtypeAttribute1890); 
 
             }
 
@@ -2079,7 +2069,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleSubtypeAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:922:1: ruleSubtypeAttribute returns [EObject current=null] : ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:912:1: ruleSubtypeAttribute returns [EObject current=null] : ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' ) ;
     public final EObject ruleSubtypeAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2091,27 +2081,27 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:927:6: ( ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:928:1: ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:917:6: ( ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:918:1: ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:928:1: ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:928:3: 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:918:1: ( 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:918:3: 'subtype' '=' ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) ) ';'
             {
-            match(input,30,FOLLOW_30_in_ruleSubtypeAttribute1939); 
+            match(input,30,FOLLOW_30_in_ruleSubtypeAttribute1925); 
 
                     createLeafNode(grammarAccess.getSubtypeAttributeAccess().getSubtypeKeyword_0(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleSubtypeAttribute1949); 
+            match(input,24,FOLLOW_24_in_ruleSubtypeAttribute1935); 
 
                     createLeafNode(grammarAccess.getSubtypeAttributeAccess().getEqualsSignKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:936:1: ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:937:1: ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:926:1: ( ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:927:1: ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:937:1: ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:938:1: (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:927:1: ( (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:928:1: (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:938:1: (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:928:1: (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' )
             int alt14=4;
             switch ( input.LA(1) ) {
             case 28:
@@ -2136,17 +2126,17 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("938:1: (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' )", 14, 0, input);
+                    new NoViableAltException("928:1: (lv_subtype_2_1= 'label' | lv_subtype_2_2= 'boolean' | lv_subtype_2_3= 'number' | lv_subtype_2_4= 'interval' )", 14, 0, input);
 
                 throw nvae;
             }
 
             switch (alt14) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:939:3: lv_subtype_2_1= 'label'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:929:3: lv_subtype_2_1= 'label'
                     {
                     lv_subtype_2_1=(Token)input.LT(1);
-                    match(input,28,FOLLOW_28_in_ruleSubtypeAttribute1969); 
+                    match(input,28,FOLLOW_28_in_ruleSubtypeAttribute1955); 
 
                             createLeafNode(grammarAccess.getSubtypeAttributeAccess().getSubtypeLabelKeyword_2_0_0(), "subtype"); 
                         
@@ -2166,10 +2156,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:957:8: lv_subtype_2_2= 'boolean'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:947:8: lv_subtype_2_2= 'boolean'
                     {
                     lv_subtype_2_2=(Token)input.LT(1);
-                    match(input,31,FOLLOW_31_in_ruleSubtypeAttribute1998); 
+                    match(input,31,FOLLOW_31_in_ruleSubtypeAttribute1984); 
 
                             createLeafNode(grammarAccess.getSubtypeAttributeAccess().getSubtypeBooleanKeyword_2_0_1(), "subtype"); 
                         
@@ -2189,10 +2179,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:975:8: lv_subtype_2_3= 'number'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:965:8: lv_subtype_2_3= 'number'
                     {
                     lv_subtype_2_3=(Token)input.LT(1);
-                    match(input,32,FOLLOW_32_in_ruleSubtypeAttribute2027); 
+                    match(input,32,FOLLOW_32_in_ruleSubtypeAttribute2013); 
 
                             createLeafNode(grammarAccess.getSubtypeAttributeAccess().getSubtypeNumberKeyword_2_0_2(), "subtype"); 
                         
@@ -2212,10 +2202,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:993:8: lv_subtype_2_4= 'interval'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:983:8: lv_subtype_2_4= 'interval'
                     {
                     lv_subtype_2_4=(Token)input.LT(1);
-                    match(input,33,FOLLOW_33_in_ruleSubtypeAttribute2056); 
+                    match(input,33,FOLLOW_33_in_ruleSubtypeAttribute2042); 
 
                             createLeafNode(grammarAccess.getSubtypeAttributeAccess().getSubtypeIntervalKeyword_2_0_3(), "subtype"); 
                         
@@ -2243,7 +2233,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,27,FOLLOW_27_in_ruleSubtypeAttribute2082); 
+            match(input,27,FOLLOW_27_in_ruleSubtypeAttribute2068); 
 
                     createLeafNode(grammarAccess.getSubtypeAttributeAccess().getSemicolonKeyword_3(), null); 
                 
@@ -2270,7 +2260,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleStateValuesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1026:1: entryRuleStateValuesAttribute returns [EObject current=null] : iv_ruleStateValuesAttribute= ruleStateValuesAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1016:1: entryRuleStateValuesAttribute returns [EObject current=null] : iv_ruleStateValuesAttribute= ruleStateValuesAttribute EOF ;
     public final EObject entryRuleStateValuesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2278,16 +2268,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1027:2: (iv_ruleStateValuesAttribute= ruleStateValuesAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1028:2: iv_ruleStateValuesAttribute= ruleStateValuesAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1017:2: (iv_ruleStateValuesAttribute= ruleStateValuesAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1018:2: iv_ruleStateValuesAttribute= ruleStateValuesAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getStateValuesAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleStateValuesAttribute_in_entryRuleStateValuesAttribute2118);
+            pushFollow(FOLLOW_ruleStateValuesAttribute_in_entryRuleStateValuesAttribute2104);
             iv_ruleStateValuesAttribute=ruleStateValuesAttribute();
             _fsp--;
 
              current =iv_ruleStateValuesAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStateValuesAttribute2128); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStateValuesAttribute2114); 
 
             }
 
@@ -2305,7 +2295,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleStateValuesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1035:1: ruleStateValuesAttribute returns [EObject current=null] : ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1025:1: ruleStateValuesAttribute returns [EObject current=null] : ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' ) ;
     public final EObject ruleStateValuesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2314,25 +2304,25 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1040:6: ( ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1041:1: ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1030:6: ( ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1031:1: ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1041:1: ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1041:3: 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1031:1: ( 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1031:3: 'state_values' '=' '(' ( (lv_numbers_3_0= RULE_INT ) )+ ')' ';'
             {
-            match(input,34,FOLLOW_34_in_ruleStateValuesAttribute2163); 
+            match(input,34,FOLLOW_34_in_ruleStateValuesAttribute2149); 
 
                     createLeafNode(grammarAccess.getStateValuesAttributeAccess().getState_valuesKeyword_0(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleStateValuesAttribute2173); 
+            match(input,24,FOLLOW_24_in_ruleStateValuesAttribute2159); 
 
                     createLeafNode(grammarAccess.getStateValuesAttributeAccess().getEqualsSignKeyword_1(), null); 
                 
-            match(input,25,FOLLOW_25_in_ruleStateValuesAttribute2183); 
+            match(input,25,FOLLOW_25_in_ruleStateValuesAttribute2169); 
 
                     createLeafNode(grammarAccess.getStateValuesAttributeAccess().getLeftParenthesisKeyword_2(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1053:1: ( (lv_numbers_3_0= RULE_INT ) )+
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1043:1: ( (lv_numbers_3_0= RULE_INT ) )+
             int cnt15=0;
             loop15:
             do {
@@ -2346,13 +2336,13 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1054:1: (lv_numbers_3_0= RULE_INT )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1044:1: (lv_numbers_3_0= RULE_INT )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1054:1: (lv_numbers_3_0= RULE_INT )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1055:3: lv_numbers_3_0= RULE_INT
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1044:1: (lv_numbers_3_0= RULE_INT )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1045:3: lv_numbers_3_0= RULE_INT
             	    {
             	    lv_numbers_3_0=(Token)input.LT(1);
-            	    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleStateValuesAttribute2200); 
+            	    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleStateValuesAttribute2186); 
 
             	    			createLeafNode(grammarAccess.getStateValuesAttributeAccess().getNumbersINTTerminalRuleCall_3_0(), "numbers"); 
             	    		
@@ -2388,11 +2378,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 cnt15++;
             } while (true);
 
-            match(input,26,FOLLOW_26_in_ruleStateValuesAttribute2216); 
+            match(input,26,FOLLOW_26_in_ruleStateValuesAttribute2202); 
 
                     createLeafNode(grammarAccess.getStateValuesAttributeAccess().getRightParenthesisKeyword_4(), null); 
                 
-            match(input,27,FOLLOW_27_in_ruleStateValuesAttribute2226); 
+            match(input,27,FOLLOW_27_in_ruleStateValuesAttribute2212); 
 
                     createLeafNode(grammarAccess.getStateValuesAttributeAccess().getSemicolonKeyword_5(), null); 
                 
@@ -2419,7 +2409,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleApplicationAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1093:1: entryRuleApplicationAttribute returns [EObject current=null] : iv_ruleApplicationAttribute= ruleApplicationAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1083:1: entryRuleApplicationAttribute returns [EObject current=null] : iv_ruleApplicationAttribute= ruleApplicationAttribute EOF ;
     public final EObject entryRuleApplicationAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2427,16 +2417,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1094:2: (iv_ruleApplicationAttribute= ruleApplicationAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1095:2: iv_ruleApplicationAttribute= ruleApplicationAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1084:2: (iv_ruleApplicationAttribute= ruleApplicationAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1085:2: iv_ruleApplicationAttribute= ruleApplicationAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getApplicationAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute2262);
+            pushFollow(FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute2248);
             iv_ruleApplicationAttribute=ruleApplicationAttribute();
             _fsp--;
 
              current =iv_ruleApplicationAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationAttribute2272); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationAttribute2258); 
 
             }
 
@@ -2454,7 +2444,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleApplicationAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1102:1: ruleApplicationAttribute returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1092:1: ruleApplicationAttribute returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) ;
     public final EObject ruleApplicationAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2464,20 +2454,20 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1107:6: ( ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1108:1: ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1097:6: ( ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1098:1: ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1108:1: ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1108:2: ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1098:1: ( ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1098:2: ( (lv_key_0_0= RULE_ID ) ) '=' ( (lv_value_2_0= RULE_STRING ) ) ';'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1108:2: ( (lv_key_0_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1109:1: (lv_key_0_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1098:2: ( (lv_key_0_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1099:1: (lv_key_0_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1109:1: (lv_key_0_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1110:3: lv_key_0_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1099:1: (lv_key_0_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1100:3: lv_key_0_0= RULE_ID
             {
             lv_key_0_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleApplicationAttribute2314); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleApplicationAttribute2300); 
 
             			createLeafNode(grammarAccess.getApplicationAttributeAccess().getKeyIDTerminalRuleCall_0_0(), "key"); 
             		
@@ -2503,18 +2493,18 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,24,FOLLOW_24_in_ruleApplicationAttribute2329); 
+            match(input,24,FOLLOW_24_in_ruleApplicationAttribute2315); 
 
                     createLeafNode(grammarAccess.getApplicationAttributeAccess().getEqualsSignKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1136:1: ( (lv_value_2_0= RULE_STRING ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1137:1: (lv_value_2_0= RULE_STRING )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1126:1: ( (lv_value_2_0= RULE_STRING ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1127:1: (lv_value_2_0= RULE_STRING )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1137:1: (lv_value_2_0= RULE_STRING )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1138:3: lv_value_2_0= RULE_STRING
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1127:1: (lv_value_2_0= RULE_STRING )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1128:3: lv_value_2_0= RULE_STRING
             {
             lv_value_2_0=(Token)input.LT(1);
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleApplicationAttribute2346); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleApplicationAttribute2332); 
 
             			createLeafNode(grammarAccess.getApplicationAttributeAccess().getValueSTRINGTerminalRuleCall_2_0(), "value"); 
             		
@@ -2540,7 +2530,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,27,FOLLOW_27_in_ruleApplicationAttribute2361); 
+            match(input,27,FOLLOW_27_in_ruleApplicationAttribute2347); 
 
                     createLeafNode(grammarAccess.getApplicationAttributeAccess().getSemicolonKeyword_3(), null); 
                 
@@ -2567,7 +2557,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleNodeSizeAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1172:1: entryRuleNodeSizeAttribute returns [EObject current=null] : iv_ruleNodeSizeAttribute= ruleNodeSizeAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1162:1: entryRuleNodeSizeAttribute returns [EObject current=null] : iv_ruleNodeSizeAttribute= ruleNodeSizeAttribute EOF ;
     public final EObject entryRuleNodeSizeAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2575,16 +2565,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1173:2: (iv_ruleNodeSizeAttribute= ruleNodeSizeAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1174:2: iv_ruleNodeSizeAttribute= ruleNodeSizeAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1163:2: (iv_ruleNodeSizeAttribute= ruleNodeSizeAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1164:2: iv_ruleNodeSizeAttribute= ruleNodeSizeAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getNodeSizeAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleNodeSizeAttribute_in_entryRuleNodeSizeAttribute2397);
+            pushFollow(FOLLOW_ruleNodeSizeAttribute_in_entryRuleNodeSizeAttribute2383);
             iv_ruleNodeSizeAttribute=ruleNodeSizeAttribute();
             _fsp--;
 
              current =iv_ruleNodeSizeAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeSizeAttribute2407); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeSizeAttribute2393); 
 
             }
 
@@ -2602,7 +2592,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleNodeSizeAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1181:1: ruleNodeSizeAttribute returns [EObject current=null] : ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1171:1: ruleNodeSizeAttribute returns [EObject current=null] : ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' ) ;
     public final EObject ruleNodeSizeAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2612,32 +2602,32 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1186:6: ( ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1187:1: ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1176:6: ( ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1177:1: ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1187:1: ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1187:3: 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1177:1: ( 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1177:3: 'node_size' '=' '(' ( (lv_width_3_0= RULE_INT ) ) ( (lv_height_4_0= RULE_INT ) ) ')' ';'
             {
-            match(input,35,FOLLOW_35_in_ruleNodeSizeAttribute2442); 
+            match(input,35,FOLLOW_35_in_ruleNodeSizeAttribute2428); 
 
                     createLeafNode(grammarAccess.getNodeSizeAttributeAccess().getNode_sizeKeyword_0(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleNodeSizeAttribute2452); 
+            match(input,24,FOLLOW_24_in_ruleNodeSizeAttribute2438); 
 
                     createLeafNode(grammarAccess.getNodeSizeAttributeAccess().getEqualsSignKeyword_1(), null); 
                 
-            match(input,25,FOLLOW_25_in_ruleNodeSizeAttribute2462); 
+            match(input,25,FOLLOW_25_in_ruleNodeSizeAttribute2448); 
 
                     createLeafNode(grammarAccess.getNodeSizeAttributeAccess().getLeftParenthesisKeyword_2(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1199:1: ( (lv_width_3_0= RULE_INT ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1200:1: (lv_width_3_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1189:1: ( (lv_width_3_0= RULE_INT ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1190:1: (lv_width_3_0= RULE_INT )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1200:1: (lv_width_3_0= RULE_INT )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1201:3: lv_width_3_0= RULE_INT
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1190:1: (lv_width_3_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1191:3: lv_width_3_0= RULE_INT
             {
             lv_width_3_0=(Token)input.LT(1);
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2479); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2465); 
 
             			createLeafNode(grammarAccess.getNodeSizeAttributeAccess().getWidthINTTerminalRuleCall_3_0(), "width"); 
             		
@@ -2663,14 +2653,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1223:2: ( (lv_height_4_0= RULE_INT ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1224:1: (lv_height_4_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1213:2: ( (lv_height_4_0= RULE_INT ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1214:1: (lv_height_4_0= RULE_INT )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1224:1: (lv_height_4_0= RULE_INT )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1225:3: lv_height_4_0= RULE_INT
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1214:1: (lv_height_4_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1215:3: lv_height_4_0= RULE_INT
             {
             lv_height_4_0=(Token)input.LT(1);
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2501); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2487); 
 
             			createLeafNode(grammarAccess.getNodeSizeAttributeAccess().getHeightINTTerminalRuleCall_4_0(), "height"); 
             		
@@ -2696,11 +2686,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,26,FOLLOW_26_in_ruleNodeSizeAttribute2516); 
+            match(input,26,FOLLOW_26_in_ruleNodeSizeAttribute2502); 
 
                     createLeafNode(grammarAccess.getNodeSizeAttributeAccess().getRightParenthesisKeyword_5(), null); 
                 
-            match(input,27,FOLLOW_27_in_ruleNodeSizeAttribute2526); 
+            match(input,27,FOLLOW_27_in_ruleNodeSizeAttribute2512); 
 
                     createLeafNode(grammarAccess.getNodeSizeAttributeAccess().getSemicolonKeyword_6(), null); 
                 
@@ -2727,7 +2717,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePotential
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1263:1: entryRulePotential returns [EObject current=null] : iv_rulePotential= rulePotential EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1253:1: entryRulePotential returns [EObject current=null] : iv_rulePotential= rulePotential EOF ;
     public final EObject entryRulePotential() throws RecognitionException {
         EObject current = null;
 
@@ -2735,16 +2725,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1264:2: (iv_rulePotential= rulePotential EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1265:2: iv_rulePotential= rulePotential EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1254:2: (iv_rulePotential= rulePotential EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1255:2: iv_rulePotential= rulePotential EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPotentialRule(), currentNode); 
-            pushFollow(FOLLOW_rulePotential_in_entryRulePotential2562);
+            pushFollow(FOLLOW_rulePotential_in_entryRulePotential2548);
             iv_rulePotential=rulePotential();
             _fsp--;
 
              current =iv_rulePotential; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePotential2572); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePotential2558); 
 
             }
 
@@ -2762,7 +2752,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePotential
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1272:1: rulePotential returns [EObject current=null] : ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1262:1: rulePotential returns [EObject current=null] : ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) ) ;
     public final EObject rulePotential() throws RecognitionException {
         EObject current = null;
 
@@ -2774,26 +2764,26 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1277:6: ( ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1278:1: ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1267:6: ( ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1268:1: ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1278:1: ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1278:3: 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1268:1: ( 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1268:3: 'potential' ( (lv_graph_1_0= rulePotentialGraph ) ) ( (lv_model_2_0= rulePotentialModel ) )
             {
-            match(input,36,FOLLOW_36_in_rulePotential2607); 
+            match(input,36,FOLLOW_36_in_rulePotential2593); 
 
                     createLeafNode(grammarAccess.getPotentialAccess().getPotentialKeyword_0(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1282:1: ( (lv_graph_1_0= rulePotentialGraph ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1283:1: (lv_graph_1_0= rulePotentialGraph )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1272:1: ( (lv_graph_1_0= rulePotentialGraph ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1273:1: (lv_graph_1_0= rulePotentialGraph )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1283:1: (lv_graph_1_0= rulePotentialGraph )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1284:3: lv_graph_1_0= rulePotentialGraph
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1273:1: (lv_graph_1_0= rulePotentialGraph )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1274:3: lv_graph_1_0= rulePotentialGraph
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getPotentialAccess().getGraphPotentialGraphParserRuleCall_1_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_rulePotentialGraph_in_rulePotential2628);
+            pushFollow(FOLLOW_rulePotentialGraph_in_rulePotential2614);
             lv_graph_1_0=rulePotentialGraph();
             _fsp--;
 
@@ -2820,16 +2810,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1306:2: ( (lv_model_2_0= rulePotentialModel ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1307:1: (lv_model_2_0= rulePotentialModel )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1296:2: ( (lv_model_2_0= rulePotentialModel ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1297:1: (lv_model_2_0= rulePotentialModel )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1307:1: (lv_model_2_0= rulePotentialModel )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1308:3: lv_model_2_0= rulePotentialModel
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1297:1: (lv_model_2_0= rulePotentialModel )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1298:3: lv_model_2_0= rulePotentialModel
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getPotentialAccess().getModelPotentialModelParserRuleCall_2_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_rulePotentialModel_in_rulePotential2649);
+            pushFollow(FOLLOW_rulePotentialModel_in_rulePotential2635);
             lv_model_2_0=rulePotentialModel();
             _fsp--;
 
@@ -2879,7 +2869,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePotentialGraph
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1338:1: entryRulePotentialGraph returns [EObject current=null] : iv_rulePotentialGraph= rulePotentialGraph EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1328:1: entryRulePotentialGraph returns [EObject current=null] : iv_rulePotentialGraph= rulePotentialGraph EOF ;
     public final EObject entryRulePotentialGraph() throws RecognitionException {
         EObject current = null;
 
@@ -2887,16 +2877,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1339:2: (iv_rulePotentialGraph= rulePotentialGraph EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1340:2: iv_rulePotentialGraph= rulePotentialGraph EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1329:2: (iv_rulePotentialGraph= rulePotentialGraph EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1330:2: iv_rulePotentialGraph= rulePotentialGraph EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPotentialGraphRule(), currentNode); 
-            pushFollow(FOLLOW_rulePotentialGraph_in_entryRulePotentialGraph2685);
+            pushFollow(FOLLOW_rulePotentialGraph_in_entryRulePotentialGraph2671);
             iv_rulePotentialGraph=rulePotentialGraph();
             _fsp--;
 
              current =iv_rulePotentialGraph; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialGraph2695); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialGraph2681); 
 
             }
 
@@ -2914,7 +2904,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePotentialGraph
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1347:1: rulePotentialGraph returns [EObject current=null] : ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1337:1: rulePotentialGraph returns [EObject current=null] : ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' ) ;
     public final EObject rulePotentialGraph() throws RecognitionException {
         EObject current = null;
 
@@ -2924,14 +2914,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1352:6: ( ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1353:1: ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1342:6: ( ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1343:1: ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1353:1: ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1353:2: () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1343:1: ( () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1343:2: () '(' ( (lv_children_2_0= RULE_ID ) )* ( '|' ( (lv_parents_4_0= RULE_ID ) )* )? ')'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1353:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1354:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1343:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1344:5: 
             {
              
                     temp=factory.create(grammarAccess.getPotentialGraphAccess().getPotentialGraphAction_0().getType().getClassifier());
@@ -2946,11 +2936,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,25,FOLLOW_25_in_rulePotentialGraph2739); 
+            match(input,25,FOLLOW_25_in_rulePotentialGraph2725); 
 
                     createLeafNode(grammarAccess.getPotentialGraphAccess().getLeftParenthesisKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1368:1: ( (lv_children_2_0= RULE_ID ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1358:1: ( (lv_children_2_0= RULE_ID ) )*
             loop16:
             do {
                 int alt16=2;
@@ -2963,13 +2953,13 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1369:1: (lv_children_2_0= RULE_ID )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1359:1: (lv_children_2_0= RULE_ID )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1369:1: (lv_children_2_0= RULE_ID )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1370:3: lv_children_2_0= RULE_ID
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1359:1: (lv_children_2_0= RULE_ID )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1360:3: lv_children_2_0= RULE_ID
             	    {
             	    lv_children_2_0=(Token)input.LT(1);
-            	    match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePotentialGraph2756); 
+            	    match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePotentialGraph2742); 
 
             	    			createLeafNode(grammarAccess.getPotentialGraphAccess().getChildrenIDTerminalRuleCall_2_0(), "children"); 
             	    		
@@ -3001,7 +2991,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1392:3: ( '|' ( (lv_parents_4_0= RULE_ID ) )* )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1382:3: ( '|' ( (lv_parents_4_0= RULE_ID ) )* )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -3010,13 +3000,13 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1392:5: '|' ( (lv_parents_4_0= RULE_ID ) )*
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1382:5: '|' ( (lv_parents_4_0= RULE_ID ) )*
                     {
-                    match(input,37,FOLLOW_37_in_rulePotentialGraph2773); 
+                    match(input,37,FOLLOW_37_in_rulePotentialGraph2759); 
 
                             createLeafNode(grammarAccess.getPotentialGraphAccess().getVerticalLineKeyword_3_0(), null); 
                         
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1396:1: ( (lv_parents_4_0= RULE_ID ) )*
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1386:1: ( (lv_parents_4_0= RULE_ID ) )*
                     loop17:
                     do {
                         int alt17=2;
@@ -3029,13 +3019,13 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1397:1: (lv_parents_4_0= RULE_ID )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1387:1: (lv_parents_4_0= RULE_ID )
                     	    {
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1397:1: (lv_parents_4_0= RULE_ID )
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1398:3: lv_parents_4_0= RULE_ID
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1387:1: (lv_parents_4_0= RULE_ID )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1388:3: lv_parents_4_0= RULE_ID
                     	    {
                     	    lv_parents_4_0=(Token)input.LT(1);
-                    	    match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePotentialGraph2790); 
+                    	    match(input,RULE_ID,FOLLOW_RULE_ID_in_rulePotentialGraph2776); 
 
                     	    			createLeafNode(grammarAccess.getPotentialGraphAccess().getParentsIDTerminalRuleCall_3_1_0(), "parents"); 
                     	    		
@@ -3073,7 +3063,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,26,FOLLOW_26_in_rulePotentialGraph2808); 
+            match(input,26,FOLLOW_26_in_rulePotentialGraph2794); 
 
                     createLeafNode(grammarAccess.getPotentialGraphAccess().getRightParenthesisKeyword_4(), null); 
                 
@@ -3100,7 +3090,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePotentialModel
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1432:1: entryRulePotentialModel returns [EObject current=null] : iv_rulePotentialModel= rulePotentialModel EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1422:1: entryRulePotentialModel returns [EObject current=null] : iv_rulePotentialModel= rulePotentialModel EOF ;
     public final EObject entryRulePotentialModel() throws RecognitionException {
         EObject current = null;
 
@@ -3108,16 +3098,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1433:2: (iv_rulePotentialModel= rulePotentialModel EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1434:2: iv_rulePotentialModel= rulePotentialModel EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1423:2: (iv_rulePotentialModel= rulePotentialModel EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1424:2: iv_rulePotentialModel= rulePotentialModel EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPotentialModelRule(), currentNode); 
-            pushFollow(FOLLOW_rulePotentialModel_in_entryRulePotentialModel2844);
+            pushFollow(FOLLOW_rulePotentialModel_in_entryRulePotentialModel2830);
             iv_rulePotentialModel=rulePotentialModel();
             _fsp--;
 
              current =iv_rulePotentialModel; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialModel2854); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialModel2840); 
 
             }
 
@@ -3135,7 +3125,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePotentialModel
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1441:1: rulePotentialModel returns [EObject current=null] : ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1431:1: rulePotentialModel returns [EObject current=null] : ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' ) ;
     public final EObject rulePotentialModel() throws RecognitionException {
         EObject current = null;
 
@@ -3145,14 +3135,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1446:6: ( ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1447:1: ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1436:6: ( ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1437:1: ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1447:1: ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1447:2: () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1437:1: ( () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1437:2: () '{' ( (lv_attributes_2_0= rulePotentialAttribute ) )* '}'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1447:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1448:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1437:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1438:5: 
             {
              
                     temp=factory.create(grammarAccess.getPotentialModelAccess().getPotentialModelAction_0().getType().getClassifier());
@@ -3167,11 +3157,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,15,FOLLOW_15_in_rulePotentialModel2898); 
+            match(input,15,FOLLOW_15_in_rulePotentialModel2884); 
 
                     createLeafNode(grammarAccess.getPotentialModelAccess().getLeftCurlyBracketKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1462:1: ( (lv_attributes_2_0= rulePotentialAttribute ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1452:1: ( (lv_attributes_2_0= rulePotentialAttribute ) )*
             loop19:
             do {
                 int alt19=2;
@@ -3184,15 +3174,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1463:1: (lv_attributes_2_0= rulePotentialAttribute )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1453:1: (lv_attributes_2_0= rulePotentialAttribute )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1463:1: (lv_attributes_2_0= rulePotentialAttribute )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1464:3: lv_attributes_2_0= rulePotentialAttribute
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1453:1: (lv_attributes_2_0= rulePotentialAttribute )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1454:3: lv_attributes_2_0= rulePotentialAttribute
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getPotentialModelAccess().getAttributesPotentialAttributeParserRuleCall_2_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_rulePotentialAttribute_in_rulePotentialModel2919);
+            	    pushFollow(FOLLOW_rulePotentialAttribute_in_rulePotentialModel2905);
             	    lv_attributes_2_0=rulePotentialAttribute();
             	    _fsp--;
 
@@ -3225,7 +3215,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            match(input,16,FOLLOW_16_in_rulePotentialModel2930); 
+            match(input,16,FOLLOW_16_in_rulePotentialModel2916); 
 
                     createLeafNode(grammarAccess.getPotentialModelAccess().getRightCurlyBracketKeyword_3(), null); 
                 
@@ -3252,7 +3242,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePotentialAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1498:1: entryRulePotentialAttribute returns [EObject current=null] : iv_rulePotentialAttribute= rulePotentialAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1488:1: entryRulePotentialAttribute returns [EObject current=null] : iv_rulePotentialAttribute= rulePotentialAttribute EOF ;
     public final EObject entryRulePotentialAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3260,16 +3250,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1499:2: (iv_rulePotentialAttribute= rulePotentialAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1500:2: iv_rulePotentialAttribute= rulePotentialAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1489:2: (iv_rulePotentialAttribute= rulePotentialAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1490:2: iv_rulePotentialAttribute= rulePotentialAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPotentialAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_rulePotentialAttribute_in_entryRulePotentialAttribute2966);
+            pushFollow(FOLLOW_rulePotentialAttribute_in_entryRulePotentialAttribute2952);
             iv_rulePotentialAttribute=rulePotentialAttribute();
             _fsp--;
 
              current =iv_rulePotentialAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialAttribute2976); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialAttribute2962); 
 
             }
 
@@ -3287,7 +3277,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePotentialAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1507:1: rulePotentialAttribute returns [EObject current=null] : (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1497:1: rulePotentialAttribute returns [EObject current=null] : (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute ) ;
     public final EObject rulePotentialAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3299,10 +3289,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1512:6: ( (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1513:1: (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1502:6: ( (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1503:1: (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1513:1: (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1503:1: (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -3314,18 +3304,18 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1513:1: (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute )", 20, 0, input);
+                    new NoViableAltException("1503:1: (this_PotentialDataAttribute_0= rulePotentialDataAttribute | this_PotentialTableAttribute_1= rulePotentialTableAttribute )", 20, 0, input);
 
                 throw nvae;
             }
             switch (alt20) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1514:5: this_PotentialDataAttribute_0= rulePotentialDataAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1504:5: this_PotentialDataAttribute_0= rulePotentialDataAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getPotentialAttributeAccess().getPotentialDataAttributeParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_rulePotentialDataAttribute_in_rulePotentialAttribute3023);
+                    pushFollow(FOLLOW_rulePotentialDataAttribute_in_rulePotentialAttribute3009);
                     this_PotentialDataAttribute_0=rulePotentialDataAttribute();
                     _fsp--;
 
@@ -3337,12 +3327,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1524:5: this_PotentialTableAttribute_1= rulePotentialTableAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1514:5: this_PotentialTableAttribute_1= rulePotentialTableAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getPotentialAttributeAccess().getPotentialTableAttributeParserRuleCall_1(), currentNode); 
                         
-                    pushFollow(FOLLOW_rulePotentialTableAttribute_in_rulePotentialAttribute3050);
+                    pushFollow(FOLLOW_rulePotentialTableAttribute_in_rulePotentialAttribute3036);
                     this_PotentialTableAttribute_1=rulePotentialTableAttribute();
                     _fsp--;
 
@@ -3376,7 +3366,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePotentialDataAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1540:1: entryRulePotentialDataAttribute returns [EObject current=null] : iv_rulePotentialDataAttribute= rulePotentialDataAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1530:1: entryRulePotentialDataAttribute returns [EObject current=null] : iv_rulePotentialDataAttribute= rulePotentialDataAttribute EOF ;
     public final EObject entryRulePotentialDataAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3384,16 +3374,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1541:2: (iv_rulePotentialDataAttribute= rulePotentialDataAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1542:2: iv_rulePotentialDataAttribute= rulePotentialDataAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1531:2: (iv_rulePotentialDataAttribute= rulePotentialDataAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1532:2: iv_rulePotentialDataAttribute= rulePotentialDataAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPotentialDataAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_rulePotentialDataAttribute_in_entryRulePotentialDataAttribute3085);
+            pushFollow(FOLLOW_rulePotentialDataAttribute_in_entryRulePotentialDataAttribute3071);
             iv_rulePotentialDataAttribute=rulePotentialDataAttribute();
             _fsp--;
 
              current =iv_rulePotentialDataAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialDataAttribute3095); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialDataAttribute3081); 
 
             }
 
@@ -3411,26 +3401,26 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePotentialDataAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1549:1: rulePotentialDataAttribute returns [EObject current=null] : ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_structured_5_0= ruleStructuredDataList ) ) ) ')' ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1539:1: rulePotentialDataAttribute returns [EObject current=null] : ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_items_5_0= ruleStructuredDataList ) )* ) ')' ';' ) ;
     public final EObject rulePotentialDataAttribute() throws RecognitionException {
         EObject current = null;
 
         EObject lv_unstructured_4_0 = null;
 
-        EObject lv_structured_5_0 = null;
+        EObject lv_items_5_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1554:6: ( ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_structured_5_0= ruleStructuredDataList ) ) ) ')' ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1555:1: ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_structured_5_0= ruleStructuredDataList ) ) ) ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1544:6: ( ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_items_5_0= ruleStructuredDataList ) )* ) ')' ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1545:1: ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_items_5_0= ruleStructuredDataList ) )* ) ')' ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1555:1: ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_structured_5_0= ruleStructuredDataList ) ) ) ')' ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1555:2: () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_structured_5_0= ruleStructuredDataList ) ) ) ')' ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1545:1: ( () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_items_5_0= ruleStructuredDataList ) )* ) ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1545:2: () 'data' '=' '(' ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_items_5_0= ruleStructuredDataList ) )* ) ')' ';'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1555:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1556:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1545:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1546:5: 
             {
              
                     temp=factory.create(grammarAccess.getPotentialDataAttributeAccess().getPotentialDataAttributeAction_0().getType().getClassifier());
@@ -3445,48 +3435,60 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,38,FOLLOW_38_in_rulePotentialDataAttribute3139); 
+            match(input,38,FOLLOW_38_in_rulePotentialDataAttribute3125); 
 
                     createLeafNode(grammarAccess.getPotentialDataAttributeAccess().getDataKeyword_1(), null); 
                 
-            match(input,24,FOLLOW_24_in_rulePotentialDataAttribute3149); 
+            match(input,24,FOLLOW_24_in_rulePotentialDataAttribute3135); 
 
                     createLeafNode(grammarAccess.getPotentialDataAttributeAccess().getEqualsSignKeyword_2(), null); 
                 
-            match(input,25,FOLLOW_25_in_rulePotentialDataAttribute3159); 
+            match(input,25,FOLLOW_25_in_rulePotentialDataAttribute3145); 
 
                     createLeafNode(grammarAccess.getPotentialDataAttributeAccess().getLeftParenthesisKeyword_3(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1578:1: ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_structured_5_0= ruleStructuredDataList ) ) )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
-
-            if ( (LA21_0==RULE_INT||(LA21_0>=11 && LA21_0<=12)||LA21_0==26||LA21_0==39) ) {
-                alt21=1;
-            }
-            else if ( (LA21_0==25) ) {
-                alt21=2;
-            }
-            else {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1568:1: ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_items_5_0= ruleStructuredDataList ) )* )
+            int alt22=2;
+            switch ( input.LA(1) ) {
+            case RULE_INT:
+            case 11:
+            case 12:
+                {
+                alt22=1;
+                }
+                break;
+            case 26:
+            case 39:
+                {
+                alt22=1;
+                }
+                break;
+            case 25:
+                {
+                alt22=2;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("1578:1: ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_structured_5_0= ruleStructuredDataList ) ) )", 21, 0, input);
+                    new NoViableAltException("1568:1: ( ( (lv_unstructured_4_0= ruleUnstructuredDataList ) ) | ( (lv_items_5_0= ruleStructuredDataList ) )* )", 22, 0, input);
 
                 throw nvae;
             }
-            switch (alt21) {
+
+            switch (alt22) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1578:2: ( (lv_unstructured_4_0= ruleUnstructuredDataList ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1568:2: ( (lv_unstructured_4_0= ruleUnstructuredDataList ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1578:2: ( (lv_unstructured_4_0= ruleUnstructuredDataList ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1579:1: (lv_unstructured_4_0= ruleUnstructuredDataList )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1568:2: ( (lv_unstructured_4_0= ruleUnstructuredDataList ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1569:1: (lv_unstructured_4_0= ruleUnstructuredDataList )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1579:1: (lv_unstructured_4_0= ruleUnstructuredDataList )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1580:3: lv_unstructured_4_0= ruleUnstructuredDataList
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1569:1: (lv_unstructured_4_0= ruleUnstructuredDataList )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1570:3: lv_unstructured_4_0= ruleUnstructuredDataList
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getPotentialDataAttributeAccess().getUnstructuredUnstructuredDataListParserRuleCall_4_0_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleUnstructuredDataList_in_rulePotentialDataAttribute3181);
+                    pushFollow(FOLLOW_ruleUnstructuredDataList_in_rulePotentialDataAttribute3167);
                     lv_unstructured_4_0=ruleUnstructuredDataList();
                     _fsp--;
 
@@ -3517,43 +3519,61 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1603:6: ( (lv_structured_5_0= ruleStructuredDataList ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1593:6: ( (lv_items_5_0= ruleStructuredDataList ) )*
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1603:6: ( (lv_structured_5_0= ruleStructuredDataList ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1604:1: (lv_structured_5_0= ruleStructuredDataList )
-                    {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1604:1: (lv_structured_5_0= ruleStructuredDataList )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1605:3: lv_structured_5_0= ruleStructuredDataList
-                    {
-                     
-                    	        currentNode=createCompositeNode(grammarAccess.getPotentialDataAttributeAccess().getStructuredStructuredDataListParserRuleCall_4_1_0(), currentNode); 
-                    	    
-                    pushFollow(FOLLOW_ruleStructuredDataList_in_rulePotentialDataAttribute3208);
-                    lv_structured_5_0=ruleStructuredDataList();
-                    _fsp--;
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1593:6: ( (lv_items_5_0= ruleStructuredDataList ) )*
+                    loop21:
+                    do {
+                        int alt21=2;
+                        int LA21_0 = input.LA(1);
+
+                        if ( (LA21_0==25) ) {
+                            alt21=1;
+                        }
 
 
-                    	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getPotentialDataAttributeRule().getType().getClassifier());
-                    	            associateNodeWithAstElement(currentNode.getParent(), current);
-                    	        }
-                    	        try {
-                    	       		set(
-                    	       			current, 
-                    	       			"structured",
-                    	        		lv_structured_5_0, 
-                    	        		"StructuredDataList", 
-                    	        		currentNode);
-                    	        } catch (ValueConverterException vce) {
-                    				handleValueConverterException(vce);
-                    	        }
-                    	        currentNode = currentNode.getParent();
-                    	    
-
-                    }
+                        switch (alt21) {
+                    	case 1 :
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1594:1: (lv_items_5_0= ruleStructuredDataList )
+                    	    {
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1594:1: (lv_items_5_0= ruleStructuredDataList )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1595:3: lv_items_5_0= ruleStructuredDataList
+                    	    {
+                    	     
+                    	    	        currentNode=createCompositeNode(grammarAccess.getPotentialDataAttributeAccess().getItemsStructuredDataListParserRuleCall_4_1_0(), currentNode); 
+                    	    	    
+                    	    pushFollow(FOLLOW_ruleStructuredDataList_in_rulePotentialDataAttribute3194);
+                    	    lv_items_5_0=ruleStructuredDataList();
+                    	    _fsp--;
 
 
-                    }
+                    	    	        if (current==null) {
+                    	    	            current = factory.create(grammarAccess.getPotentialDataAttributeRule().getType().getClassifier());
+                    	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	    	        }
+                    	    	        try {
+                    	    	       		add(
+                    	    	       			current, 
+                    	    	       			"items",
+                    	    	        		lv_items_5_0, 
+                    	    	        		"StructuredDataList", 
+                    	    	        		currentNode);
+                    	    	        } catch (ValueConverterException vce) {
+                    	    				handleValueConverterException(vce);
+                    	    	        }
+                    	    	        currentNode = currentNode.getParent();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop21;
+                        }
+                    } while (true);
 
 
                     }
@@ -3561,11 +3581,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,26,FOLLOW_26_in_rulePotentialDataAttribute3219); 
+            match(input,26,FOLLOW_26_in_rulePotentialDataAttribute3206); 
 
                     createLeafNode(grammarAccess.getPotentialDataAttributeAccess().getRightParenthesisKeyword_5(), null); 
                 
-            match(input,27,FOLLOW_27_in_rulePotentialDataAttribute3229); 
+            match(input,27,FOLLOW_27_in_rulePotentialDataAttribute3216); 
 
                     createLeafNode(grammarAccess.getPotentialDataAttributeAccess().getSemicolonKeyword_6(), null); 
                 
@@ -3592,7 +3612,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleUnstructuredDataList
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1643:1: entryRuleUnstructuredDataList returns [EObject current=null] : iv_ruleUnstructuredDataList= ruleUnstructuredDataList EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1633:1: entryRuleUnstructuredDataList returns [EObject current=null] : iv_ruleUnstructuredDataList= ruleUnstructuredDataList EOF ;
     public final EObject entryRuleUnstructuredDataList() throws RecognitionException {
         EObject current = null;
 
@@ -3600,16 +3620,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1644:2: (iv_ruleUnstructuredDataList= ruleUnstructuredDataList EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1645:2: iv_ruleUnstructuredDataList= ruleUnstructuredDataList EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1634:2: (iv_ruleUnstructuredDataList= ruleUnstructuredDataList EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1635:2: iv_ruleUnstructuredDataList= ruleUnstructuredDataList EOF
             {
              currentNode = createCompositeNode(grammarAccess.getUnstructuredDataListRule(), currentNode); 
-            pushFollow(FOLLOW_ruleUnstructuredDataList_in_entryRuleUnstructuredDataList3265);
+            pushFollow(FOLLOW_ruleUnstructuredDataList_in_entryRuleUnstructuredDataList3252);
             iv_ruleUnstructuredDataList=ruleUnstructuredDataList();
             _fsp--;
 
              current =iv_ruleUnstructuredDataList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnstructuredDataList3275); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnstructuredDataList3262); 
 
             }
 
@@ -3627,22 +3647,22 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleUnstructuredDataList
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1652:1: ruleUnstructuredDataList returns [EObject current=null] : ( ( () ( (lv_items_1_0= ruleFloat ) )* ) | this_NormalDistribution_2= ruleNormalDistribution ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1642:1: ruleUnstructuredDataList returns [EObject current=null] : ( ( () ( (lv_list_1_0= ruleFloatDataList ) ) ) | ( (lv_normal_2_0= ruleNormalDistribution ) ) ) ;
     public final EObject ruleUnstructuredDataList() throws RecognitionException {
         EObject current = null;
 
-        AntlrDatatypeRuleToken lv_items_1_0 = null;
+        EObject lv_list_1_0 = null;
 
-        EObject this_NormalDistribution_2 = null;
+        EObject lv_normal_2_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1657:6: ( ( ( () ( (lv_items_1_0= ruleFloat ) )* ) | this_NormalDistribution_2= ruleNormalDistribution ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1658:1: ( ( () ( (lv_items_1_0= ruleFloat ) )* ) | this_NormalDistribution_2= ruleNormalDistribution )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1647:6: ( ( ( () ( (lv_list_1_0= ruleFloatDataList ) ) ) | ( (lv_normal_2_0= ruleNormalDistribution ) ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1648:1: ( ( () ( (lv_list_1_0= ruleFloatDataList ) ) ) | ( (lv_normal_2_0= ruleNormalDistribution ) ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1658:1: ( ( () ( (lv_items_1_0= ruleFloat ) )* ) | this_NormalDistribution_2= ruleNormalDistribution )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1648:1: ( ( () ( (lv_list_1_0= ruleFloatDataList ) ) ) | ( (lv_normal_2_0= ruleNormalDistribution ) ) )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -3654,19 +3674,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("1658:1: ( ( () ( (lv_items_1_0= ruleFloat ) )* ) | this_NormalDistribution_2= ruleNormalDistribution )", 23, 0, input);
+                    new NoViableAltException("1648:1: ( ( () ( (lv_list_1_0= ruleFloatDataList ) ) ) | ( (lv_normal_2_0= ruleNormalDistribution ) ) )", 23, 0, input);
 
                 throw nvae;
             }
             switch (alt23) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1658:2: ( () ( (lv_items_1_0= ruleFloat ) )* )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1648:2: ( () ( (lv_list_1_0= ruleFloatDataList ) ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1658:2: ( () ( (lv_items_1_0= ruleFloat ) )* )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1658:3: () ( (lv_items_1_0= ruleFloat ) )*
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1648:2: ( () ( (lv_list_1_0= ruleFloatDataList ) ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1648:3: () ( (lv_list_1_0= ruleFloatDataList ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1658:3: ()
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1659:5: 
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1648:3: ()
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1649:5: 
                     {
                      
                             temp=factory.create(grammarAccess.getUnstructuredDataListAccess().getUnstructuredDataListAction_0_0().getType().getClassifier());
@@ -3681,59 +3701,41 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1669:2: ( (lv_items_1_0= ruleFloat ) )*
-                    loop22:
-                    do {
-                        int alt22=2;
-                        int LA22_0 = input.LA(1);
-
-                        if ( (LA22_0==RULE_INT||(LA22_0>=11 && LA22_0<=12)) ) {
-                            alt22=1;
-                        }
-
-
-                        switch (alt22) {
-                    	case 1 :
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1670:1: (lv_items_1_0= ruleFloat )
-                    	    {
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1670:1: (lv_items_1_0= ruleFloat )
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1671:3: lv_items_1_0= ruleFloat
-                    	    {
-                    	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getItemsFloatParserRuleCall_0_1_0(), currentNode); 
-                    	    	    
-                    	    pushFollow(FOLLOW_ruleFloat_in_ruleUnstructuredDataList3331);
-                    	    lv_items_1_0=ruleFloat();
-                    	    _fsp--;
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1659:2: ( (lv_list_1_0= ruleFloatDataList ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1660:1: (lv_list_1_0= ruleFloatDataList )
+                    {
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1660:1: (lv_list_1_0= ruleFloatDataList )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1661:3: lv_list_1_0= ruleFloatDataList
+                    {
+                     
+                    	        currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getListFloatDataListParserRuleCall_0_1_0(), currentNode); 
+                    	    
+                    pushFollow(FOLLOW_ruleFloatDataList_in_ruleUnstructuredDataList3318);
+                    lv_list_1_0=ruleFloatDataList();
+                    _fsp--;
 
 
-                    	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getUnstructuredDataListRule().getType().getClassifier());
-                    	    	            associateNodeWithAstElement(currentNode.getParent(), current);
-                    	    	        }
-                    	    	        try {
-                    	    	       		add(
-                    	    	       			current, 
-                    	    	       			"items",
-                    	    	        		lv_items_1_0, 
-                    	    	        		"Float", 
-                    	    	        		currentNode);
-                    	    	        } catch (ValueConverterException vce) {
-                    	    				handleValueConverterException(vce);
-                    	    	        }
-                    	    	        currentNode = currentNode.getParent();
-                    	    	    
+                    	        if (current==null) {
+                    	            current = factory.create(grammarAccess.getUnstructuredDataListRule().getType().getClassifier());
+                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	        }
+                    	        try {
+                    	       		set(
+                    	       			current, 
+                    	       			"list",
+                    	        		lv_list_1_0, 
+                    	        		"FloatDataList", 
+                    	        		currentNode);
+                    	        } catch (ValueConverterException vce) {
+                    				handleValueConverterException(vce);
+                    	        }
+                    	        currentNode = currentNode.getParent();
+                    	    
 
-                    	    }
+                    }
 
 
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop22;
-                        }
-                    } while (true);
+                    }
 
 
                     }
@@ -3742,19 +3744,44 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1695:5: this_NormalDistribution_2= ruleNormalDistribution
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1684:6: ( (lv_normal_2_0= ruleNormalDistribution ) )
+                    {
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1684:6: ( (lv_normal_2_0= ruleNormalDistribution ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1685:1: (lv_normal_2_0= ruleNormalDistribution )
+                    {
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1685:1: (lv_normal_2_0= ruleNormalDistribution )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1686:3: lv_normal_2_0= ruleNormalDistribution
                     {
                      
-                            currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getNormalDistributionParserRuleCall_1(), currentNode); 
-                        
-                    pushFollow(FOLLOW_ruleNormalDistribution_in_ruleUnstructuredDataList3361);
-                    this_NormalDistribution_2=ruleNormalDistribution();
+                    	        currentNode=createCompositeNode(grammarAccess.getUnstructuredDataListAccess().getNormalNormalDistributionParserRuleCall_1_0(), currentNode); 
+                    	    
+                    pushFollow(FOLLOW_ruleNormalDistribution_in_ruleUnstructuredDataList3346);
+                    lv_normal_2_0=ruleNormalDistribution();
                     _fsp--;
 
-                     
-                            current = this_NormalDistribution_2; 
-                            currentNode = currentNode.getParent();
-                        
+
+                    	        if (current==null) {
+                    	            current = factory.create(grammarAccess.getUnstructuredDataListRule().getType().getClassifier());
+                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	        }
+                    	        try {
+                    	       		set(
+                    	       			current, 
+                    	       			"normal",
+                    	        		lv_normal_2_0, 
+                    	        		"NormalDistribution", 
+                    	        		currentNode);
+                    	        } catch (ValueConverterException vce) {
+                    				handleValueConverterException(vce);
+                    	        }
+                    	        currentNode = currentNode.getParent();
+                    	    
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
@@ -3781,7 +3808,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleStructuredDataList
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1711:1: entryRuleStructuredDataList returns [EObject current=null] : iv_ruleStructuredDataList= ruleStructuredDataList EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1716:1: entryRuleStructuredDataList returns [EObject current=null] : iv_ruleStructuredDataList= ruleStructuredDataList EOF ;
     public final EObject entryRuleStructuredDataList() throws RecognitionException {
         EObject current = null;
 
@@ -3789,16 +3816,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1712:2: (iv_ruleStructuredDataList= ruleStructuredDataList EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1713:2: iv_ruleStructuredDataList= ruleStructuredDataList EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1717:2: (iv_ruleStructuredDataList= ruleStructuredDataList EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1718:2: iv_ruleStructuredDataList= ruleStructuredDataList EOF
             {
              currentNode = createCompositeNode(grammarAccess.getStructuredDataListRule(), currentNode); 
-            pushFollow(FOLLOW_ruleStructuredDataList_in_entryRuleStructuredDataList3396);
+            pushFollow(FOLLOW_ruleStructuredDataList_in_entryRuleStructuredDataList3382);
             iv_ruleStructuredDataList=ruleStructuredDataList();
             _fsp--;
 
              current =iv_ruleStructuredDataList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStructuredDataList3406); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStructuredDataList3392); 
 
             }
 
@@ -3816,24 +3843,26 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleStructuredDataList
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1720:1: ruleStructuredDataList returns [EObject current=null] : ( () '(' ( (lv_list_2_0= ruleFloatDataList ) ) ')' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1725:1: ruleStructuredDataList returns [EObject current=null] : ( () '(' ( ( (lv_list_2_0= ruleFloatDataList ) ) | ( (lv_items_3_0= ruleStructuredDataList ) )* ) ')' ) ;
     public final EObject ruleStructuredDataList() throws RecognitionException {
         EObject current = null;
 
         EObject lv_list_2_0 = null;
 
+        EObject lv_items_3_0 = null;
+
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1725:6: ( ( () '(' ( (lv_list_2_0= ruleFloatDataList ) ) ')' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1726:1: ( () '(' ( (lv_list_2_0= ruleFloatDataList ) ) ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1730:6: ( ( () '(' ( ( (lv_list_2_0= ruleFloatDataList ) ) | ( (lv_items_3_0= ruleStructuredDataList ) )* ) ')' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1731:1: ( () '(' ( ( (lv_list_2_0= ruleFloatDataList ) ) | ( (lv_items_3_0= ruleStructuredDataList ) )* ) ')' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1726:1: ( () '(' ( (lv_list_2_0= ruleFloatDataList ) ) ')' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1726:2: () '(' ( (lv_list_2_0= ruleFloatDataList ) ) ')'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1731:1: ( () '(' ( ( (lv_list_2_0= ruleFloatDataList ) ) | ( (lv_items_3_0= ruleStructuredDataList ) )* ) ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1731:2: () '(' ( ( (lv_list_2_0= ruleFloatDataList ) ) | ( (lv_items_3_0= ruleStructuredDataList ) )* ) ')'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1726:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1727:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1731:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1732:5: 
             {
              
                     temp=factory.create(grammarAccess.getStructuredDataListAccess().getStructuredDataListAction_0().getType().getClassifier());
@@ -3848,47 +3877,144 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,25,FOLLOW_25_in_ruleStructuredDataList3450); 
+            match(input,25,FOLLOW_25_in_ruleStructuredDataList3436); 
 
                     createLeafNode(grammarAccess.getStructuredDataListAccess().getLeftParenthesisKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1741:1: ( (lv_list_2_0= ruleFloatDataList ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1742:1: (lv_list_2_0= ruleFloatDataList )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1742:1: (lv_list_2_0= ruleFloatDataList )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1743:3: lv_list_2_0= ruleFloatDataList
-            {
-             
-            	        currentNode=createCompositeNode(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0(), currentNode); 
-            	    
-            pushFollow(FOLLOW_ruleFloatDataList_in_ruleStructuredDataList3471);
-            lv_list_2_0=ruleFloatDataList();
-            _fsp--;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1746:1: ( ( (lv_list_2_0= ruleFloatDataList ) ) | ( (lv_items_3_0= ruleStructuredDataList ) )* )
+            int alt25=2;
+            switch ( input.LA(1) ) {
+            case RULE_INT:
+            case 11:
+            case 12:
+                {
+                alt25=1;
+                }
+                break;
+            case 26:
+                {
+                alt25=1;
+                }
+                break;
+            case 25:
+                {
+                alt25=2;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("1746:1: ( ( (lv_list_2_0= ruleFloatDataList ) ) | ( (lv_items_3_0= ruleStructuredDataList ) )* )", 25, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt25) {
+                case 1 :
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1746:2: ( (lv_list_2_0= ruleFloatDataList ) )
+                    {
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1746:2: ( (lv_list_2_0= ruleFloatDataList ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1747:1: (lv_list_2_0= ruleFloatDataList )
+                    {
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1747:1: (lv_list_2_0= ruleFloatDataList )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1748:3: lv_list_2_0= ruleFloatDataList
+                    {
+                     
+                    	        currentNode=createCompositeNode(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0_0(), currentNode); 
+                    	    
+                    pushFollow(FOLLOW_ruleFloatDataList_in_ruleStructuredDataList3458);
+                    lv_list_2_0=ruleFloatDataList();
+                    _fsp--;
 
 
-            	        if (current==null) {
-            	            current = factory.create(grammarAccess.getStructuredDataListRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"list",
-            	        		lv_list_2_0, 
-            	        		"FloatDataList", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
-            	    
+                    	        if (current==null) {
+                    	            current = factory.create(grammarAccess.getStructuredDataListRule().getType().getClassifier());
+                    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	        }
+                    	        try {
+                    	       		set(
+                    	       			current, 
+                    	       			"list",
+                    	        		lv_list_2_0, 
+                    	        		"FloatDataList", 
+                    	        		currentNode);
+                    	        } catch (ValueConverterException vce) {
+                    				handleValueConverterException(vce);
+                    	        }
+                    	        currentNode = currentNode.getParent();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1771:6: ( (lv_items_3_0= ruleStructuredDataList ) )*
+                    {
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1771:6: ( (lv_items_3_0= ruleStructuredDataList ) )*
+                    loop24:
+                    do {
+                        int alt24=2;
+                        int LA24_0 = input.LA(1);
+
+                        if ( (LA24_0==25) ) {
+                            alt24=1;
+                        }
+
+
+                        switch (alt24) {
+                    	case 1 :
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1772:1: (lv_items_3_0= ruleStructuredDataList )
+                    	    {
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1772:1: (lv_items_3_0= ruleStructuredDataList )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1773:3: lv_items_3_0= ruleStructuredDataList
+                    	    {
+                    	     
+                    	    	        currentNode=createCompositeNode(grammarAccess.getStructuredDataListAccess().getItemsStructuredDataListParserRuleCall_2_1_0(), currentNode); 
+                    	    	    
+                    	    pushFollow(FOLLOW_ruleStructuredDataList_in_ruleStructuredDataList3485);
+                    	    lv_items_3_0=ruleStructuredDataList();
+                    	    _fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = factory.create(grammarAccess.getStructuredDataListRule().getType().getClassifier());
+                    	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+                    	    	        }
+                    	    	        try {
+                    	    	       		add(
+                    	    	       			current, 
+                    	    	       			"items",
+                    	    	        		lv_items_3_0, 
+                    	    	        		"StructuredDataList", 
+                    	    	        		currentNode);
+                    	    	        } catch (ValueConverterException vce) {
+                    	    				handleValueConverterException(vce);
+                    	    	        }
+                    	    	        currentNode = currentNode.getParent();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop24;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
 
             }
 
-
-            }
-
-            match(input,26,FOLLOW_26_in_ruleStructuredDataList3481); 
+            match(input,26,FOLLOW_26_in_ruleStructuredDataList3497); 
 
                     createLeafNode(grammarAccess.getStructuredDataListAccess().getRightParenthesisKeyword_3(), null); 
                 
@@ -3915,7 +4041,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleFloatDataList
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1777:1: entryRuleFloatDataList returns [EObject current=null] : iv_ruleFloatDataList= ruleFloatDataList EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1807:1: entryRuleFloatDataList returns [EObject current=null] : iv_ruleFloatDataList= ruleFloatDataList EOF ;
     public final EObject entryRuleFloatDataList() throws RecognitionException {
         EObject current = null;
 
@@ -3923,16 +4049,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1778:2: (iv_ruleFloatDataList= ruleFloatDataList EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1779:2: iv_ruleFloatDataList= ruleFloatDataList EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1808:2: (iv_ruleFloatDataList= ruleFloatDataList EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1809:2: iv_ruleFloatDataList= ruleFloatDataList EOF
             {
              currentNode = createCompositeNode(grammarAccess.getFloatDataListRule(), currentNode); 
-            pushFollow(FOLLOW_ruleFloatDataList_in_entryRuleFloatDataList3517);
+            pushFollow(FOLLOW_ruleFloatDataList_in_entryRuleFloatDataList3533);
             iv_ruleFloatDataList=ruleFloatDataList();
             _fsp--;
 
              current =iv_ruleFloatDataList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatDataList3527); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFloatDataList3543); 
 
             }
 
@@ -3950,24 +4076,24 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleFloatDataList
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1786:1: ruleFloatDataList returns [EObject current=null] : ( () '(' ( (lv_list_2_0= ruleUnstructuredDataList ) ) ')' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1816:1: ruleFloatDataList returns [EObject current=null] : ( () ( (lv_items_1_0= ruleFloat ) )* ) ;
     public final EObject ruleFloatDataList() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_list_2_0 = null;
+        AntlrDatatypeRuleToken lv_items_1_0 = null;
 
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1791:6: ( ( () '(' ( (lv_list_2_0= ruleUnstructuredDataList ) ) ')' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1792:1: ( () '(' ( (lv_list_2_0= ruleUnstructuredDataList ) ) ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1821:6: ( ( () ( (lv_items_1_0= ruleFloat ) )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1822:1: ( () ( (lv_items_1_0= ruleFloat ) )* )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1792:1: ( () '(' ( (lv_list_2_0= ruleUnstructuredDataList ) ) ')' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1792:2: () '(' ( (lv_list_2_0= ruleUnstructuredDataList ) ) ')'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1822:1: ( () ( (lv_items_1_0= ruleFloat ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1822:2: () ( (lv_items_1_0= ruleFloat ) )*
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1792:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1793:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1822:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1823:5: 
             {
              
                     temp=factory.create(grammarAccess.getFloatDataListAccess().getFloatDataListAction_0().getType().getClassifier());
@@ -3982,50 +4108,60 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,25,FOLLOW_25_in_ruleFloatDataList3571); 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1833:2: ( (lv_items_1_0= ruleFloat ) )*
+            loop26:
+            do {
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                    createLeafNode(grammarAccess.getFloatDataListAccess().getLeftParenthesisKeyword_1(), null); 
-                
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1807:1: ( (lv_list_2_0= ruleUnstructuredDataList ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1808:1: (lv_list_2_0= ruleUnstructuredDataList )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1808:1: (lv_list_2_0= ruleUnstructuredDataList )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1809:3: lv_list_2_0= ruleUnstructuredDataList
-            {
-             
-            	        currentNode=createCompositeNode(grammarAccess.getFloatDataListAccess().getListUnstructuredDataListParserRuleCall_2_0(), currentNode); 
-            	    
-            pushFollow(FOLLOW_ruleUnstructuredDataList_in_ruleFloatDataList3592);
-            lv_list_2_0=ruleUnstructuredDataList();
-            _fsp--;
+                if ( (LA26_0==RULE_INT||(LA26_0>=11 && LA26_0<=12)) ) {
+                    alt26=1;
+                }
 
 
-            	        if (current==null) {
-            	            current = factory.create(grammarAccess.getFloatDataListRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"list",
-            	        		lv_list_2_0, 
-            	        		"UnstructuredDataList", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
-            	    
-
-            }
+                switch (alt26) {
+            	case 1 :
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1834:1: (lv_items_1_0= ruleFloat )
+            	    {
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1834:1: (lv_items_1_0= ruleFloat )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1835:3: lv_items_1_0= ruleFloat
+            	    {
+            	     
+            	    	        currentNode=createCompositeNode(grammarAccess.getFloatDataListAccess().getItemsFloatParserRuleCall_1_0(), currentNode); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleFloat_in_ruleFloatDataList3598);
+            	    lv_items_1_0=ruleFloat();
+            	    _fsp--;
 
 
-            }
+            	    	        if (current==null) {
+            	    	            current = factory.create(grammarAccess.getFloatDataListRule().getType().getClassifier());
+            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	    	        }
+            	    	        try {
+            	    	       		add(
+            	    	       			current, 
+            	    	       			"items",
+            	    	        		lv_items_1_0, 
+            	    	        		"Float", 
+            	    	        		currentNode);
+            	    	        } catch (ValueConverterException vce) {
+            	    				handleValueConverterException(vce);
+            	    	        }
+            	    	        currentNode = currentNode.getParent();
+            	    	    
 
-            match(input,26,FOLLOW_26_in_ruleFloatDataList3602); 
+            	    }
 
-                    createLeafNode(grammarAccess.getFloatDataListAccess().getRightParenthesisKeyword_3(), null); 
-                
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop26;
+                }
+            } while (true);
+
 
             }
 
@@ -4049,7 +4185,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleNormalDistribution
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1843:1: entryRuleNormalDistribution returns [EObject current=null] : iv_ruleNormalDistribution= ruleNormalDistribution EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1865:1: entryRuleNormalDistribution returns [EObject current=null] : iv_ruleNormalDistribution= ruleNormalDistribution EOF ;
     public final EObject entryRuleNormalDistribution() throws RecognitionException {
         EObject current = null;
 
@@ -4057,16 +4193,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1844:2: (iv_ruleNormalDistribution= ruleNormalDistribution EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1845:2: iv_ruleNormalDistribution= ruleNormalDistribution EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1866:2: (iv_ruleNormalDistribution= ruleNormalDistribution EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1867:2: iv_ruleNormalDistribution= ruleNormalDistribution EOF
             {
              currentNode = createCompositeNode(grammarAccess.getNormalDistributionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleNormalDistribution_in_entryRuleNormalDistribution3638);
+            pushFollow(FOLLOW_ruleNormalDistribution_in_entryRuleNormalDistribution3635);
             iv_ruleNormalDistribution=ruleNormalDistribution();
             _fsp--;
 
              current =iv_ruleNormalDistribution; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNormalDistribution3648); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNormalDistribution3645); 
 
             }
 
@@ -4084,7 +4220,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleNormalDistribution
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1852:1: ruleNormalDistribution returns [EObject current=null] : ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1874:1: ruleNormalDistribution returns [EObject current=null] : ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' ) ;
     public final EObject ruleNormalDistribution() throws RecognitionException {
         EObject current = null;
 
@@ -4096,30 +4232,30 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1857:6: ( ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1858:1: ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1879:6: ( ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1880:1: ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1858:1: ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1858:3: 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1880:1: ( 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1880:3: 'normal' '(' ( (lv_mean_2_0= ruleMeanExpression ) ) ',' ( (lv_variance_4_0= ruleFloat ) ) ')'
             {
-            match(input,39,FOLLOW_39_in_ruleNormalDistribution3683); 
+            match(input,39,FOLLOW_39_in_ruleNormalDistribution3680); 
 
                     createLeafNode(grammarAccess.getNormalDistributionAccess().getNormalKeyword_0(), null); 
                 
-            match(input,25,FOLLOW_25_in_ruleNormalDistribution3693); 
+            match(input,25,FOLLOW_25_in_ruleNormalDistribution3690); 
 
                     createLeafNode(grammarAccess.getNormalDistributionAccess().getLeftParenthesisKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1866:1: ( (lv_mean_2_0= ruleMeanExpression ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1867:1: (lv_mean_2_0= ruleMeanExpression )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1888:1: ( (lv_mean_2_0= ruleMeanExpression ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1889:1: (lv_mean_2_0= ruleMeanExpression )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1867:1: (lv_mean_2_0= ruleMeanExpression )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1868:3: lv_mean_2_0= ruleMeanExpression
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1889:1: (lv_mean_2_0= ruleMeanExpression )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1890:3: lv_mean_2_0= ruleMeanExpression
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getNormalDistributionAccess().getMeanMeanExpressionParserRuleCall_2_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleMeanExpression_in_ruleNormalDistribution3714);
+            pushFollow(FOLLOW_ruleMeanExpression_in_ruleNormalDistribution3711);
             lv_mean_2_0=ruleMeanExpression();
             _fsp--;
 
@@ -4146,20 +4282,20 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,40,FOLLOW_40_in_ruleNormalDistribution3724); 
+            match(input,40,FOLLOW_40_in_ruleNormalDistribution3721); 
 
                     createLeafNode(grammarAccess.getNormalDistributionAccess().getCommaKeyword_3(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1894:1: ( (lv_variance_4_0= ruleFloat ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1895:1: (lv_variance_4_0= ruleFloat )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1916:1: ( (lv_variance_4_0= ruleFloat ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1917:1: (lv_variance_4_0= ruleFloat )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1895:1: (lv_variance_4_0= ruleFloat )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1896:3: lv_variance_4_0= ruleFloat
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1917:1: (lv_variance_4_0= ruleFloat )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1918:3: lv_variance_4_0= ruleFloat
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getNormalDistributionAccess().getVarianceFloatParserRuleCall_4_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleFloat_in_ruleNormalDistribution3745);
+            pushFollow(FOLLOW_ruleFloat_in_ruleNormalDistribution3742);
             lv_variance_4_0=ruleFloat();
             _fsp--;
 
@@ -4186,7 +4322,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,26,FOLLOW_26_in_ruleNormalDistribution3755); 
+            match(input,26,FOLLOW_26_in_ruleNormalDistribution3752); 
 
                     createLeafNode(grammarAccess.getNormalDistributionAccess().getRightParenthesisKeyword_5(), null); 
                 
@@ -4213,7 +4349,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleMeanExpression
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1930:1: entryRuleMeanExpression returns [String current=null] : iv_ruleMeanExpression= ruleMeanExpression EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1952:1: entryRuleMeanExpression returns [String current=null] : iv_ruleMeanExpression= ruleMeanExpression EOF ;
     public final String entryRuleMeanExpression() throws RecognitionException {
         String current = null;
 
@@ -4221,16 +4357,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1931:2: (iv_ruleMeanExpression= ruleMeanExpression EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1932:2: iv_ruleMeanExpression= ruleMeanExpression EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1953:2: (iv_ruleMeanExpression= ruleMeanExpression EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1954:2: iv_ruleMeanExpression= ruleMeanExpression EOF
             {
              currentNode = createCompositeNode(grammarAccess.getMeanExpressionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleMeanExpression_in_entryRuleMeanExpression3792);
+            pushFollow(FOLLOW_ruleMeanExpression_in_entryRuleMeanExpression3789);
             iv_ruleMeanExpression=ruleMeanExpression();
             _fsp--;
 
              current =iv_ruleMeanExpression.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMeanExpression3803); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMeanExpression3800); 
 
             }
 
@@ -4248,7 +4384,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleMeanExpression
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1939:1: ruleMeanExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1961:1: ruleMeanExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* ) ;
     public final AntlrDatatypeRuleToken ruleMeanExpression() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4261,16 +4397,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1944:6: ( (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1945:1: (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1966:6: ( (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1967:1: (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1945:1: (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1946:5: this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1967:1: (this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1968:5: this_MeanTerm_0= ruleMeanTerm (kw= '+' this_MeanTerm_2= ruleMeanTerm )*
             {
              
                     currentNode=createCompositeNode(grammarAccess.getMeanExpressionAccess().getMeanTermParserRuleCall_0(), currentNode); 
                 
-            pushFollow(FOLLOW_ruleMeanTerm_in_ruleMeanExpression3850);
+            pushFollow(FOLLOW_ruleMeanTerm_in_ruleMeanExpression3847);
             this_MeanTerm_0=ruleMeanTerm();
             _fsp--;
 
@@ -4280,23 +4416,23 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
              
                     currentNode = currentNode.getParent();
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1956:1: (kw= '+' this_MeanTerm_2= ruleMeanTerm )*
-            loop24:
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1978:1: (kw= '+' this_MeanTerm_2= ruleMeanTerm )*
+            loop27:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA24_0==11) ) {
-                    alt24=1;
+                if ( (LA27_0==11) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt27) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1957:2: kw= '+' this_MeanTerm_2= ruleMeanTerm
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1979:2: kw= '+' this_MeanTerm_2= ruleMeanTerm
             	    {
             	    kw=(Token)input.LT(1);
-            	    match(input,11,FOLLOW_11_in_ruleMeanExpression3869); 
+            	    match(input,11,FOLLOW_11_in_ruleMeanExpression3866); 
 
             	            current.merge(kw);
             	            createLeafNode(grammarAccess.getMeanExpressionAccess().getPlusSignKeyword_1_0(), null); 
@@ -4304,7 +4440,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             	     
             	            currentNode=createCompositeNode(grammarAccess.getMeanExpressionAccess().getMeanTermParserRuleCall_1_1(), currentNode); 
             	        
-            	    pushFollow(FOLLOW_ruleMeanTerm_in_ruleMeanExpression3891);
+            	    pushFollow(FOLLOW_ruleMeanTerm_in_ruleMeanExpression3888);
             	    this_MeanTerm_2=ruleMeanTerm();
             	    _fsp--;
 
@@ -4319,7 +4455,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop27;
                 }
             } while (true);
 
@@ -4346,7 +4482,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleMeanTerm
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1981:1: entryRuleMeanTerm returns [String current=null] : iv_ruleMeanTerm= ruleMeanTerm EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2003:1: entryRuleMeanTerm returns [String current=null] : iv_ruleMeanTerm= ruleMeanTerm EOF ;
     public final String entryRuleMeanTerm() throws RecognitionException {
         String current = null;
 
@@ -4354,16 +4490,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1982:2: (iv_ruleMeanTerm= ruleMeanTerm EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1983:2: iv_ruleMeanTerm= ruleMeanTerm EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2004:2: (iv_ruleMeanTerm= ruleMeanTerm EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2005:2: iv_ruleMeanTerm= ruleMeanTerm EOF
             {
              currentNode = createCompositeNode(grammarAccess.getMeanTermRule(), currentNode); 
-            pushFollow(FOLLOW_ruleMeanTerm_in_entryRuleMeanTerm3939);
+            pushFollow(FOLLOW_ruleMeanTerm_in_entryRuleMeanTerm3936);
             iv_ruleMeanTerm=ruleMeanTerm();
             _fsp--;
 
              current =iv_ruleMeanTerm.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMeanTerm3950); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMeanTerm3947); 
 
             }
 
@@ -4381,7 +4517,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleMeanTerm
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1990:1: ruleMeanTerm returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2012:1: ruleMeanTerm returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleMeanTerm() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4396,41 +4532,41 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1995:6: ( (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2017:6: ( (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )
-            int alt25=3;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )
+            int alt28=3;
             switch ( input.LA(1) ) {
             case 11:
                 {
-                int LA25_1 = input.LA(2);
+                int LA28_1 = input.LA(2);
 
-                if ( (LA25_1==RULE_INT) ) {
+                if ( (LA28_1==RULE_INT) ) {
                     switch ( input.LA(3) ) {
                     case 13:
                         {
-                        int LA25_5 = input.LA(4);
+                        int LA28_5 = input.LA(4);
 
-                        if ( (LA25_5==RULE_INT) ) {
-                            int LA25_8 = input.LA(5);
+                        if ( (LA28_5==RULE_INT) ) {
+                            int LA28_8 = input.LA(5);
 
-                            if ( (LA25_8==EOF||LA25_8==11||LA25_8==40) ) {
-                                alt25=1;
+                            if ( (LA28_8==41) ) {
+                                alt28=2;
                             }
-                            else if ( (LA25_8==41) ) {
-                                alt25=2;
+                            else if ( (LA28_8==EOF||LA28_8==11||LA28_8==40) ) {
+                                alt28=1;
                             }
                             else {
                                 NoViableAltException nvae =
-                                    new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 8, input);
+                                    new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 8, input);
 
                                 throw nvae;
                             }
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 5, input);
+                                new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 5, input);
 
                             throw nvae;
                         }
@@ -4438,19 +4574,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                         break;
                     case 41:
                         {
-                        alt25=2;
+                        alt28=2;
                         }
                         break;
                     case EOF:
                     case 11:
                     case 40:
                         {
-                        alt25=1;
+                        alt28=1;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 3, input);
+                            new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 3, input);
 
                         throw nvae;
                     }
@@ -4458,7 +4594,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 1, input);
+                        new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 1, input);
 
                     throw nvae;
                 }
@@ -4466,33 +4602,33 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 break;
             case 12:
                 {
-                int LA25_2 = input.LA(2);
+                int LA28_2 = input.LA(2);
 
-                if ( (LA25_2==RULE_INT) ) {
+                if ( (LA28_2==RULE_INT) ) {
                     switch ( input.LA(3) ) {
                     case 13:
                         {
-                        int LA25_5 = input.LA(4);
+                        int LA28_5 = input.LA(4);
 
-                        if ( (LA25_5==RULE_INT) ) {
-                            int LA25_8 = input.LA(5);
+                        if ( (LA28_5==RULE_INT) ) {
+                            int LA28_8 = input.LA(5);
 
-                            if ( (LA25_8==EOF||LA25_8==11||LA25_8==40) ) {
-                                alt25=1;
+                            if ( (LA28_8==41) ) {
+                                alt28=2;
                             }
-                            else if ( (LA25_8==41) ) {
-                                alt25=2;
+                            else if ( (LA28_8==EOF||LA28_8==11||LA28_8==40) ) {
+                                alt28=1;
                             }
                             else {
                                 NoViableAltException nvae =
-                                    new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 8, input);
+                                    new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 8, input);
 
                                 throw nvae;
                             }
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 5, input);
+                                new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 5, input);
 
                             throw nvae;
                         }
@@ -4500,19 +4636,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                         break;
                     case 41:
                         {
-                        alt25=2;
+                        alt28=2;
                         }
                         break;
                     case EOF:
                     case 11:
                     case 40:
                         {
-                        alt25=1;
+                        alt28=1;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 3, input);
+                            new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 3, input);
 
                         throw nvae;
                     }
@@ -4520,7 +4656,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 2, input);
+                        new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 2, input);
 
                     throw nvae;
                 }
@@ -4531,27 +4667,27 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 switch ( input.LA(2) ) {
                 case 13:
                     {
-                    int LA25_5 = input.LA(3);
+                    int LA28_5 = input.LA(3);
 
-                    if ( (LA25_5==RULE_INT) ) {
-                        int LA25_8 = input.LA(4);
+                    if ( (LA28_5==RULE_INT) ) {
+                        int LA28_8 = input.LA(4);
 
-                        if ( (LA25_8==EOF||LA25_8==11||LA25_8==40) ) {
-                            alt25=1;
+                        if ( (LA28_8==41) ) {
+                            alt28=2;
                         }
-                        else if ( (LA25_8==41) ) {
-                            alt25=2;
+                        else if ( (LA28_8==EOF||LA28_8==11||LA28_8==40) ) {
+                            alt28=1;
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 8, input);
+                                new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 8, input);
 
                             throw nvae;
                         }
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 5, input);
+                            new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 5, input);
 
                         throw nvae;
                     }
@@ -4559,19 +4695,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     break;
                 case 41:
                     {
-                    alt25=2;
+                    alt28=2;
                     }
                     break;
                 case EOF:
                 case 11:
                 case 40:
                     {
-                    alt25=1;
+                    alt28=1;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 3, input);
+                        new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 3, input);
 
                     throw nvae;
                 }
@@ -4580,24 +4716,24 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                 break;
             case RULE_ID:
                 {
-                alt25=3;
+                alt28=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("1996:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 25, 0, input);
+                    new NoViableAltException("2018:1: (this_Float_0= ruleFloat | (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID ) | this_ID_4= RULE_ID )", 28, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt25) {
+            switch (alt28) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1997:5: this_Float_0= ruleFloat
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2019:5: this_Float_0= ruleFloat
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getMeanTermAccess().getFloatParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleFloat_in_ruleMeanTerm3997);
+                    pushFollow(FOLLOW_ruleFloat_in_ruleMeanTerm3994);
                     this_Float_0=ruleFloat();
                     _fsp--;
 
@@ -4611,15 +4747,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2008:6: (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2030:6: (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2008:6: (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2009:5: this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2030:6: (this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2031:5: this_Float_1= ruleFloat kw= '*' this_ID_3= RULE_ID
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getMeanTermAccess().getFloatParserRuleCall_1_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleFloat_in_ruleMeanTerm4031);
+                    pushFollow(FOLLOW_ruleFloat_in_ruleMeanTerm4028);
                     this_Float_1=ruleFloat();
                     _fsp--;
 
@@ -4630,13 +4766,13 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                             currentNode = currentNode.getParent();
                         
                     kw=(Token)input.LT(1);
-                    match(input,41,FOLLOW_41_in_ruleMeanTerm4049); 
+                    match(input,41,FOLLOW_41_in_ruleMeanTerm4046); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getMeanTermAccess().getAsteriskKeyword_1_1(), null); 
                         
                     this_ID_3=(Token)input.LT(1);
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMeanTerm4064); 
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMeanTerm4061); 
 
                     		current.merge(this_ID_3);
                         
@@ -4650,10 +4786,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2033:10: this_ID_4= RULE_ID
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2055:10: this_ID_4= RULE_ID
                     {
                     this_ID_4=(Token)input.LT(1);
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMeanTerm4091); 
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMeanTerm4088); 
 
                     		current.merge(this_ID_4);
                         
@@ -4686,7 +4822,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePotentialTableAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2048:1: entryRulePotentialTableAttribute returns [EObject current=null] : iv_rulePotentialTableAttribute= rulePotentialTableAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2070:1: entryRulePotentialTableAttribute returns [EObject current=null] : iv_rulePotentialTableAttribute= rulePotentialTableAttribute EOF ;
     public final EObject entryRulePotentialTableAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -4694,16 +4830,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2049:2: (iv_rulePotentialTableAttribute= rulePotentialTableAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2050:2: iv_rulePotentialTableAttribute= rulePotentialTableAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2071:2: (iv_rulePotentialTableAttribute= rulePotentialTableAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2072:2: iv_rulePotentialTableAttribute= rulePotentialTableAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPotentialTableAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_rulePotentialTableAttribute_in_entryRulePotentialTableAttribute4136);
+            pushFollow(FOLLOW_rulePotentialTableAttribute_in_entryRulePotentialTableAttribute4133);
             iv_rulePotentialTableAttribute=rulePotentialTableAttribute();
             _fsp--;
 
              current =iv_rulePotentialTableAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialTableAttribute4146); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePotentialTableAttribute4143); 
 
             }
 
@@ -4721,7 +4857,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePotentialTableAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2057:1: rulePotentialTableAttribute returns [EObject current=null] : ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2079:1: rulePotentialTableAttribute returns [EObject current=null] : ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) ) ;
     public final EObject rulePotentialTableAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -4735,22 +4871,22 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2062:6: ( ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2063:1: ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2084:6: ( ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2085:1: ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2063:1: ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2063:2: ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2085:1: ( ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2085:2: ( (lv_nodes_0_0= ruleModelNodesAttribute ) ) ( (lv_samples_1_0= ruleSamplesAttribute ) )? ( (lv_data_2_0= ruleModelDataAttribute ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2063:2: ( (lv_nodes_0_0= ruleModelNodesAttribute ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2064:1: (lv_nodes_0_0= ruleModelNodesAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2085:2: ( (lv_nodes_0_0= ruleModelNodesAttribute ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2086:1: (lv_nodes_0_0= ruleModelNodesAttribute )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2064:1: (lv_nodes_0_0= ruleModelNodesAttribute )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2065:3: lv_nodes_0_0= ruleModelNodesAttribute
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2086:1: (lv_nodes_0_0= ruleModelNodesAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2087:3: lv_nodes_0_0= ruleModelNodesAttribute
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getPotentialTableAttributeAccess().getNodesModelNodesAttributeParserRuleCall_0_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleModelNodesAttribute_in_rulePotentialTableAttribute4192);
+            pushFollow(FOLLOW_ruleModelNodesAttribute_in_rulePotentialTableAttribute4189);
             lv_nodes_0_0=ruleModelNodesAttribute();
             _fsp--;
 
@@ -4777,24 +4913,24 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2087:2: ( (lv_samples_1_0= ruleSamplesAttribute ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2109:2: ( (lv_samples_1_0= ruleSamplesAttribute ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA26_0==43) ) {
-                alt26=1;
+            if ( (LA29_0==43) ) {
+                alt29=1;
             }
-            switch (alt26) {
+            switch (alt29) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2088:1: (lv_samples_1_0= ruleSamplesAttribute )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2110:1: (lv_samples_1_0= ruleSamplesAttribute )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2088:1: (lv_samples_1_0= ruleSamplesAttribute )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2089:3: lv_samples_1_0= ruleSamplesAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2110:1: (lv_samples_1_0= ruleSamplesAttribute )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2111:3: lv_samples_1_0= ruleSamplesAttribute
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getPotentialTableAttributeAccess().getSamplesSamplesAttributeParserRuleCall_1_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleSamplesAttribute_in_rulePotentialTableAttribute4213);
+                    pushFollow(FOLLOW_ruleSamplesAttribute_in_rulePotentialTableAttribute4210);
                     lv_samples_1_0=ruleSamplesAttribute();
                     _fsp--;
 
@@ -4824,16 +4960,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2111:3: ( (lv_data_2_0= ruleModelDataAttribute ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2112:1: (lv_data_2_0= ruleModelDataAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2133:3: ( (lv_data_2_0= ruleModelDataAttribute ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2134:1: (lv_data_2_0= ruleModelDataAttribute )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2112:1: (lv_data_2_0= ruleModelDataAttribute )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2113:3: lv_data_2_0= ruleModelDataAttribute
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2134:1: (lv_data_2_0= ruleModelDataAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2135:3: lv_data_2_0= ruleModelDataAttribute
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getPotentialTableAttributeAccess().getDataModelDataAttributeParserRuleCall_2_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleModelDataAttribute_in_rulePotentialTableAttribute4235);
+            pushFollow(FOLLOW_ruleModelDataAttribute_in_rulePotentialTableAttribute4232);
             lv_data_2_0=ruleModelDataAttribute();
             _fsp--;
 
@@ -4883,7 +5019,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleModelNodesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2143:1: entryRuleModelNodesAttribute returns [EObject current=null] : iv_ruleModelNodesAttribute= ruleModelNodesAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2165:1: entryRuleModelNodesAttribute returns [EObject current=null] : iv_ruleModelNodesAttribute= ruleModelNodesAttribute EOF ;
     public final EObject entryRuleModelNodesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -4891,16 +5027,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2144:2: (iv_ruleModelNodesAttribute= ruleModelNodesAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2145:2: iv_ruleModelNodesAttribute= ruleModelNodesAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2166:2: (iv_ruleModelNodesAttribute= ruleModelNodesAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2167:2: iv_ruleModelNodesAttribute= ruleModelNodesAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getModelNodesAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleModelNodesAttribute_in_entryRuleModelNodesAttribute4271);
+            pushFollow(FOLLOW_ruleModelNodesAttribute_in_entryRuleModelNodesAttribute4268);
             iv_ruleModelNodesAttribute=ruleModelNodesAttribute();
             _fsp--;
 
              current =iv_ruleModelNodesAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleModelNodesAttribute4281); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleModelNodesAttribute4278); 
 
             }
 
@@ -4918,7 +5054,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleModelNodesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2152:1: ruleModelNodesAttribute returns [EObject current=null] : ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2174:1: ruleModelNodesAttribute returns [EObject current=null] : ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' ) ;
     public final EObject ruleModelNodesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -4927,14 +5063,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2157:6: ( ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2158:1: ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2179:6: ( ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2180:1: ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2158:1: ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2158:2: () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2180:1: ( () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2180:2: () 'model_nodes' '=' '(' ( (lv_configurations_4_0= RULE_ID ) )* ')' ';'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2158:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2159:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2180:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2181:5: 
             {
              
                     temp=factory.create(grammarAccess.getModelNodesAttributeAccess().getModelNodesAttributeAction_0().getType().getClassifier());
@@ -4949,38 +5085,38 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,42,FOLLOW_42_in_ruleModelNodesAttribute4325); 
+            match(input,42,FOLLOW_42_in_ruleModelNodesAttribute4322); 
 
                     createLeafNode(grammarAccess.getModelNodesAttributeAccess().getModel_nodesKeyword_1(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleModelNodesAttribute4335); 
+            match(input,24,FOLLOW_24_in_ruleModelNodesAttribute4332); 
 
                     createLeafNode(grammarAccess.getModelNodesAttributeAccess().getEqualsSignKeyword_2(), null); 
                 
-            match(input,25,FOLLOW_25_in_ruleModelNodesAttribute4345); 
+            match(input,25,FOLLOW_25_in_ruleModelNodesAttribute4342); 
 
                     createLeafNode(grammarAccess.getModelNodesAttributeAccess().getLeftParenthesisKeyword_3(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2181:1: ( (lv_configurations_4_0= RULE_ID ) )*
-            loop27:
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2203:1: ( (lv_configurations_4_0= RULE_ID ) )*
+            loop30:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( (LA27_0==RULE_ID) ) {
-                    alt27=1;
+                if ( (LA30_0==RULE_ID) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt30) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2182:1: (lv_configurations_4_0= RULE_ID )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2204:1: (lv_configurations_4_0= RULE_ID )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2182:1: (lv_configurations_4_0= RULE_ID )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2183:3: lv_configurations_4_0= RULE_ID
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2204:1: (lv_configurations_4_0= RULE_ID )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2205:3: lv_configurations_4_0= RULE_ID
             	    {
             	    lv_configurations_4_0=(Token)input.LT(1);
-            	    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleModelNodesAttribute4362); 
+            	    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleModelNodesAttribute4359); 
 
             	    			createLeafNode(grammarAccess.getModelNodesAttributeAccess().getConfigurationsIDTerminalRuleCall_4_0(), "configurations"); 
             	    		
@@ -5008,15 +5144,15 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop30;
                 }
             } while (true);
 
-            match(input,26,FOLLOW_26_in_ruleModelNodesAttribute4378); 
+            match(input,26,FOLLOW_26_in_ruleModelNodesAttribute4375); 
 
                     createLeafNode(grammarAccess.getModelNodesAttributeAccess().getRightParenthesisKeyword_5(), null); 
                 
-            match(input,27,FOLLOW_27_in_ruleModelNodesAttribute4388); 
+            match(input,27,FOLLOW_27_in_ruleModelNodesAttribute4385); 
 
                     createLeafNode(grammarAccess.getModelNodesAttributeAccess().getSemicolonKeyword_6(), null); 
                 
@@ -5043,7 +5179,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleSamplesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2221:1: entryRuleSamplesAttribute returns [EObject current=null] : iv_ruleSamplesAttribute= ruleSamplesAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2243:1: entryRuleSamplesAttribute returns [EObject current=null] : iv_ruleSamplesAttribute= ruleSamplesAttribute EOF ;
     public final EObject entryRuleSamplesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -5051,16 +5187,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2222:2: (iv_ruleSamplesAttribute= ruleSamplesAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2223:2: iv_ruleSamplesAttribute= ruleSamplesAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2244:2: (iv_ruleSamplesAttribute= ruleSamplesAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2245:2: iv_ruleSamplesAttribute= ruleSamplesAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getSamplesAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleSamplesAttribute_in_entryRuleSamplesAttribute4424);
+            pushFollow(FOLLOW_ruleSamplesAttribute_in_entryRuleSamplesAttribute4421);
             iv_ruleSamplesAttribute=ruleSamplesAttribute();
             _fsp--;
 
              current =iv_ruleSamplesAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSamplesAttribute4434); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSamplesAttribute4431); 
 
             }
 
@@ -5078,7 +5214,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleSamplesAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2230:1: ruleSamplesAttribute returns [EObject current=null] : ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2252:1: ruleSamplesAttribute returns [EObject current=null] : ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' ) ;
     public final EObject ruleSamplesAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -5087,28 +5223,28 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2235:6: ( ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2236:1: ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2257:6: ( ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2258:1: ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2236:1: ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2236:3: 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2258:1: ( 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2258:3: 'samples_per_interval' '=' ( (lv_value_2_0= RULE_INT ) ) ';'
             {
-            match(input,43,FOLLOW_43_in_ruleSamplesAttribute4469); 
+            match(input,43,FOLLOW_43_in_ruleSamplesAttribute4466); 
 
                     createLeafNode(grammarAccess.getSamplesAttributeAccess().getSamples_per_intervalKeyword_0(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleSamplesAttribute4479); 
+            match(input,24,FOLLOW_24_in_ruleSamplesAttribute4476); 
 
                     createLeafNode(grammarAccess.getSamplesAttributeAccess().getEqualsSignKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2244:1: ( (lv_value_2_0= RULE_INT ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2245:1: (lv_value_2_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2266:1: ( (lv_value_2_0= RULE_INT ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2267:1: (lv_value_2_0= RULE_INT )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2245:1: (lv_value_2_0= RULE_INT )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2246:3: lv_value_2_0= RULE_INT
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2267:1: (lv_value_2_0= RULE_INT )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2268:3: lv_value_2_0= RULE_INT
             {
             lv_value_2_0=(Token)input.LT(1);
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSamplesAttribute4496); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSamplesAttribute4493); 
 
             			createLeafNode(grammarAccess.getSamplesAttributeAccess().getValueINTTerminalRuleCall_2_0(), "value"); 
             		
@@ -5134,7 +5270,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,27,FOLLOW_27_in_ruleSamplesAttribute4511); 
+            match(input,27,FOLLOW_27_in_ruleSamplesAttribute4508); 
 
                     createLeafNode(grammarAccess.getSamplesAttributeAccess().getSemicolonKeyword_3(), null); 
                 
@@ -5161,7 +5297,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleModelDataAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2280:1: entryRuleModelDataAttribute returns [EObject current=null] : iv_ruleModelDataAttribute= ruleModelDataAttribute EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2302:1: entryRuleModelDataAttribute returns [EObject current=null] : iv_ruleModelDataAttribute= ruleModelDataAttribute EOF ;
     public final EObject entryRuleModelDataAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -5169,16 +5305,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2281:2: (iv_ruleModelDataAttribute= ruleModelDataAttribute EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2282:2: iv_ruleModelDataAttribute= ruleModelDataAttribute EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2303:2: (iv_ruleModelDataAttribute= ruleModelDataAttribute EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2304:2: iv_ruleModelDataAttribute= ruleModelDataAttribute EOF
             {
              currentNode = createCompositeNode(grammarAccess.getModelDataAttributeRule(), currentNode); 
-            pushFollow(FOLLOW_ruleModelDataAttribute_in_entryRuleModelDataAttribute4547);
+            pushFollow(FOLLOW_ruleModelDataAttribute_in_entryRuleModelDataAttribute4544);
             iv_ruleModelDataAttribute=ruleModelDataAttribute();
             _fsp--;
 
              current =iv_ruleModelDataAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleModelDataAttribute4557); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleModelDataAttribute4554); 
 
             }
 
@@ -5196,21 +5332,21 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleModelDataAttribute
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2289:1: ruleModelDataAttribute returns [EObject current=null] : ( () 'model_data' '=' '(' ')' ';' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2311:1: ruleModelDataAttribute returns [EObject current=null] : ( () 'model_data' '=' '(' ')' ';' ) ;
     public final EObject ruleModelDataAttribute() throws RecognitionException {
         EObject current = null;
 
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2294:6: ( ( () 'model_data' '=' '(' ')' ';' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2295:1: ( () 'model_data' '=' '(' ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2316:6: ( ( () 'model_data' '=' '(' ')' ';' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2317:1: ( () 'model_data' '=' '(' ')' ';' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2295:1: ( () 'model_data' '=' '(' ')' ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2295:2: () 'model_data' '=' '(' ')' ';'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2317:1: ( () 'model_data' '=' '(' ')' ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2317:2: () 'model_data' '=' '(' ')' ';'
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2295:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2296:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2317:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2318:5: 
             {
              
                     temp=factory.create(grammarAccess.getModelDataAttributeAccess().getModelDataAttributeAction_0().getType().getClassifier());
@@ -5225,23 +5361,23 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,44,FOLLOW_44_in_ruleModelDataAttribute4601); 
+            match(input,44,FOLLOW_44_in_ruleModelDataAttribute4598); 
 
                     createLeafNode(grammarAccess.getModelDataAttributeAccess().getModel_dataKeyword_1(), null); 
                 
-            match(input,24,FOLLOW_24_in_ruleModelDataAttribute4611); 
+            match(input,24,FOLLOW_24_in_ruleModelDataAttribute4608); 
 
                     createLeafNode(grammarAccess.getModelDataAttributeAccess().getEqualsSignKeyword_2(), null); 
                 
-            match(input,25,FOLLOW_25_in_ruleModelDataAttribute4621); 
+            match(input,25,FOLLOW_25_in_ruleModelDataAttribute4618); 
 
                     createLeafNode(grammarAccess.getModelDataAttributeAccess().getLeftParenthesisKeyword_3(), null); 
                 
-            match(input,26,FOLLOW_26_in_ruleModelDataAttribute4631); 
+            match(input,26,FOLLOW_26_in_ruleModelDataAttribute4628); 
 
                     createLeafNode(grammarAccess.getModelDataAttributeAccess().getRightParenthesisKeyword_4(), null); 
                 
-            match(input,27,FOLLOW_27_in_ruleModelDataAttribute4641); 
+            match(input,27,FOLLOW_27_in_ruleModelDataAttribute4638); 
 
                     createLeafNode(grammarAccess.getModelDataAttributeAccess().getSemicolonKeyword_5(), null); 
                 
@@ -5268,7 +5404,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleClassDefinition
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2334:1: entryRuleClassDefinition returns [EObject current=null] : iv_ruleClassDefinition= ruleClassDefinition EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2356:1: entryRuleClassDefinition returns [EObject current=null] : iv_ruleClassDefinition= ruleClassDefinition EOF ;
     public final EObject entryRuleClassDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -5276,16 +5412,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2335:2: (iv_ruleClassDefinition= ruleClassDefinition EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2336:2: iv_ruleClassDefinition= ruleClassDefinition EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2357:2: (iv_ruleClassDefinition= ruleClassDefinition EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2358:2: iv_ruleClassDefinition= ruleClassDefinition EOF
             {
              currentNode = createCompositeNode(grammarAccess.getClassDefinitionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleClassDefinition_in_entryRuleClassDefinition4677);
+            pushFollow(FOLLOW_ruleClassDefinition_in_entryRuleClassDefinition4674);
             iv_ruleClassDefinition=ruleClassDefinition();
             _fsp--;
 
              current =iv_ruleClassDefinition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClassDefinition4687); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClassDefinition4684); 
 
             }
 
@@ -5303,7 +5439,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleClassDefinition
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2343:1: ruleClassDefinition returns [EObject current=null] : ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2365:1: ruleClassDefinition returns [EObject current=null] : ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' ) ;
     public final EObject ruleClassDefinition() throws RecognitionException {
         EObject current = null;
 
@@ -5314,24 +5450,24 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2348:6: ( ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2349:1: ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2370:6: ( ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2371:1: ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2349:1: ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2349:3: 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2371:1: ( 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2371:3: 'class' ( (lv_name_1_0= RULE_ID ) ) '{' ( (lv_elements_3_0= ruleClassElement ) )* '}'
             {
-            match(input,45,FOLLOW_45_in_ruleClassDefinition4722); 
+            match(input,45,FOLLOW_45_in_ruleClassDefinition4719); 
 
                     createLeafNode(grammarAccess.getClassDefinitionAccess().getClassKeyword_0(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2353:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2354:1: (lv_name_1_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2375:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2376:1: (lv_name_1_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2354:1: (lv_name_1_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2355:3: lv_name_1_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2376:1: (lv_name_1_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2377:3: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleClassDefinition4739); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleClassDefinition4736); 
 
             			createLeafNode(grammarAccess.getClassDefinitionAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
             		
@@ -5357,32 +5493,32 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,15,FOLLOW_15_in_ruleClassDefinition4754); 
+            match(input,15,FOLLOW_15_in_ruleClassDefinition4751); 
 
                     createLeafNode(grammarAccess.getClassDefinitionAccess().getLeftCurlyBracketKeyword_2(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2381:1: ( (lv_elements_3_0= ruleClassElement ) )*
-            loop28:
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2403:1: ( (lv_elements_3_0= ruleClassElement ) )*
+            loop31:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA28_0==RULE_ID||(LA28_0>=17 && LA28_0<=23)||(LA28_0>=28 && LA28_0<=30)||(LA28_0>=34 && LA28_0<=36)||(LA28_0>=45 && LA28_0<=46)) ) {
-                    alt28=1;
+                if ( (LA31_0==RULE_ID||(LA31_0>=17 && LA31_0<=23)||(LA31_0>=28 && LA31_0<=30)||(LA31_0>=34 && LA31_0<=36)||(LA31_0>=45 && LA31_0<=46)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt31) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2382:1: (lv_elements_3_0= ruleClassElement )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2404:1: (lv_elements_3_0= ruleClassElement )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2382:1: (lv_elements_3_0= ruleClassElement )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2383:3: lv_elements_3_0= ruleClassElement
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2404:1: (lv_elements_3_0= ruleClassElement )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2405:3: lv_elements_3_0= ruleClassElement
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getClassDefinitionAccess().getElementsClassElementParserRuleCall_3_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_ruleClassElement_in_ruleClassDefinition4775);
+            	    pushFollow(FOLLOW_ruleClassElement_in_ruleClassDefinition4772);
             	    lv_elements_3_0=ruleClassElement();
             	    _fsp--;
 
@@ -5411,11 +5547,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop31;
                 }
             } while (true);
 
-            match(input,16,FOLLOW_16_in_ruleClassDefinition4786); 
+            match(input,16,FOLLOW_16_in_ruleClassDefinition4783); 
 
                     createLeafNode(grammarAccess.getClassDefinitionAccess().getRightCurlyBracketKeyword_4(), null); 
                 
@@ -5442,7 +5578,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleClassElement
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2417:1: entryRuleClassElement returns [EObject current=null] : iv_ruleClassElement= ruleClassElement EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2439:1: entryRuleClassElement returns [EObject current=null] : iv_ruleClassElement= ruleClassElement EOF ;
     public final EObject entryRuleClassElement() throws RecognitionException {
         EObject current = null;
 
@@ -5450,16 +5586,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2418:2: (iv_ruleClassElement= ruleClassElement EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2419:2: iv_ruleClassElement= ruleClassElement EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2440:2: (iv_ruleClassElement= ruleClassElement EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2441:2: iv_ruleClassElement= ruleClassElement EOF
             {
              currentNode = createCompositeNode(grammarAccess.getClassElementRule(), currentNode); 
-            pushFollow(FOLLOW_ruleClassElement_in_entryRuleClassElement4822);
+            pushFollow(FOLLOW_ruleClassElement_in_entryRuleClassElement4819);
             iv_ruleClassElement=ruleClassElement();
             _fsp--;
 
              current =iv_ruleClassElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClassElement4832); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClassElement4829); 
 
             }
 
@@ -5477,7 +5613,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleClassElement
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2426:1: ruleClassElement returns [EObject current=null] : (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2448:1: ruleClassElement returns [EObject current=null] : (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance ) ;
     public final EObject ruleClassElement() throws RecognitionException {
         EObject current = null;
 
@@ -5491,11 +5627,11 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2431:6: ( (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2432:1: (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2453:6: ( (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2454:1: (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2432:1: (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance )
-            int alt29=3;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2454:1: (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance )
+            int alt32=3;
             switch ( input.LA(1) ) {
             case 17:
             case 18:
@@ -5506,7 +5642,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             case 36:
             case 45:
                 {
-                alt29=1;
+                alt32=1;
                 }
                 break;
             case RULE_ID:
@@ -5517,29 +5653,29 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             case 34:
             case 35:
                 {
-                alt29=2;
+                alt32=2;
                 }
                 break;
             case 46:
                 {
-                alt29=3;
+                alt32=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("2432:1: (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance )", 29, 0, input);
+                    new NoViableAltException("2454:1: (this_DomainElement_0= ruleDomainElement | this_Attribute_1= ruleAttribute | this_ClassInstance_2= ruleClassInstance )", 32, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt29) {
+            switch (alt32) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2433:5: this_DomainElement_0= ruleDomainElement
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2455:5: this_DomainElement_0= ruleDomainElement
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getClassElementAccess().getDomainElementParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleDomainElement_in_ruleClassElement4879);
+                    pushFollow(FOLLOW_ruleDomainElement_in_ruleClassElement4876);
                     this_DomainElement_0=ruleDomainElement();
                     _fsp--;
 
@@ -5551,12 +5687,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2443:5: this_Attribute_1= ruleAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2465:5: this_Attribute_1= ruleAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getClassElementAccess().getAttributeParserRuleCall_1(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleAttribute_in_ruleClassElement4906);
+                    pushFollow(FOLLOW_ruleAttribute_in_ruleClassElement4903);
                     this_Attribute_1=ruleAttribute();
                     _fsp--;
 
@@ -5568,12 +5704,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2453:5: this_ClassInstance_2= ruleClassInstance
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2475:5: this_ClassInstance_2= ruleClassInstance
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getClassElementAccess().getClassInstanceParserRuleCall_2(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleClassInstance_in_ruleClassElement4933);
+                    pushFollow(FOLLOW_ruleClassInstance_in_ruleClassElement4930);
                     this_ClassInstance_2=ruleClassInstance();
                     _fsp--;
 
@@ -5607,7 +5743,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleClassInstance
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2469:1: entryRuleClassInstance returns [EObject current=null] : iv_ruleClassInstance= ruleClassInstance EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2491:1: entryRuleClassInstance returns [EObject current=null] : iv_ruleClassInstance= ruleClassInstance EOF ;
     public final EObject entryRuleClassInstance() throws RecognitionException {
         EObject current = null;
 
@@ -5615,16 +5751,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2470:2: (iv_ruleClassInstance= ruleClassInstance EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2471:2: iv_ruleClassInstance= ruleClassInstance EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2492:2: (iv_ruleClassInstance= ruleClassInstance EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2493:2: iv_ruleClassInstance= ruleClassInstance EOF
             {
              currentNode = createCompositeNode(grammarAccess.getClassInstanceRule(), currentNode); 
-            pushFollow(FOLLOW_ruleClassInstance_in_entryRuleClassInstance4968);
+            pushFollow(FOLLOW_ruleClassInstance_in_entryRuleClassInstance4965);
             iv_ruleClassInstance=ruleClassInstance();
             _fsp--;
 
              current =iv_ruleClassInstance; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClassInstance4978); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClassInstance4975); 
 
             }
 
@@ -5642,7 +5778,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleClassInstance
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2478:1: ruleClassInstance returns [EObject current=null] : ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2500:1: ruleClassInstance returns [EObject current=null] : ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' ) ;
     public final EObject ruleClassInstance() throws RecognitionException {
         EObject current = null;
 
@@ -5658,24 +5794,24 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2483:6: ( ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2484:1: ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2505:6: ( ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2506:1: ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2484:1: ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2484:3: 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}'
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2506:1: ( 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2506:3: 'instance' ( (lv_instanceName_1_0= RULE_ID ) ) ':' ( (lv_className_3_0= RULE_ID ) ) '(' ( (lv_input_5_0= ruleInputBindings ) )? ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )? ')' '{' ( (lv_attributes_10_0= ruleNodeAttributes ) ) '}'
             {
-            match(input,46,FOLLOW_46_in_ruleClassInstance5013); 
+            match(input,46,FOLLOW_46_in_ruleClassInstance5010); 
 
                     createLeafNode(grammarAccess.getClassInstanceAccess().getInstanceKeyword_0(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2488:1: ( (lv_instanceName_1_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2489:1: (lv_instanceName_1_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2510:1: ( (lv_instanceName_1_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2511:1: (lv_instanceName_1_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2489:1: (lv_instanceName_1_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2490:3: lv_instanceName_1_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2511:1: (lv_instanceName_1_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2512:3: lv_instanceName_1_0= RULE_ID
             {
             lv_instanceName_1_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleClassInstance5030); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleClassInstance5027); 
 
             			createLeafNode(grammarAccess.getClassInstanceAccess().getInstanceNameIDTerminalRuleCall_1_0(), "instanceName"); 
             		
@@ -5701,18 +5837,18 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,47,FOLLOW_47_in_ruleClassInstance5045); 
+            match(input,47,FOLLOW_47_in_ruleClassInstance5042); 
 
                     createLeafNode(grammarAccess.getClassInstanceAccess().getColonKeyword_2(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2516:1: ( (lv_className_3_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2517:1: (lv_className_3_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2538:1: ( (lv_className_3_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2539:1: (lv_className_3_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2517:1: (lv_className_3_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2518:3: lv_className_3_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2539:1: (lv_className_3_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2540:3: lv_className_3_0= RULE_ID
             {
             lv_className_3_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleClassInstance5062); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleClassInstance5059); 
 
             			createLeafNode(grammarAccess.getClassInstanceAccess().getClassNameIDTerminalRuleCall_3_0(), "className"); 
             		
@@ -5738,28 +5874,28 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,25,FOLLOW_25_in_ruleClassInstance5077); 
+            match(input,25,FOLLOW_25_in_ruleClassInstance5074); 
 
                     createLeafNode(grammarAccess.getClassInstanceAccess().getLeftParenthesisKeyword_4(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2544:1: ( (lv_input_5_0= ruleInputBindings ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2566:1: ( (lv_input_5_0= ruleInputBindings ) )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA30_0==RULE_ID) ) {
-                alt30=1;
+            if ( (LA33_0==RULE_ID) ) {
+                alt33=1;
             }
-            switch (alt30) {
+            switch (alt33) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2545:1: (lv_input_5_0= ruleInputBindings )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2567:1: (lv_input_5_0= ruleInputBindings )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2545:1: (lv_input_5_0= ruleInputBindings )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2546:3: lv_input_5_0= ruleInputBindings
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2567:1: (lv_input_5_0= ruleInputBindings )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2568:3: lv_input_5_0= ruleInputBindings
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getClassInstanceAccess().getInputInputBindingsParserRuleCall_5_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleInputBindings_in_ruleClassInstance5098);
+                    pushFollow(FOLLOW_ruleInputBindings_in_ruleClassInstance5095);
                     lv_input_5_0=ruleInputBindings();
                     _fsp--;
 
@@ -5789,31 +5925,31 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2568:3: ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2590:3: ( ';' ( (lv_output_7_0= ruleOutputBindings ) ) )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA31_0==27) ) {
-                alt31=1;
+            if ( (LA34_0==27) ) {
+                alt34=1;
             }
-            switch (alt31) {
+            switch (alt34) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2568:5: ';' ( (lv_output_7_0= ruleOutputBindings ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2590:5: ';' ( (lv_output_7_0= ruleOutputBindings ) )
                     {
-                    match(input,27,FOLLOW_27_in_ruleClassInstance5110); 
+                    match(input,27,FOLLOW_27_in_ruleClassInstance5107); 
 
                             createLeafNode(grammarAccess.getClassInstanceAccess().getSemicolonKeyword_6_0(), null); 
                         
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2572:1: ( (lv_output_7_0= ruleOutputBindings ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2573:1: (lv_output_7_0= ruleOutputBindings )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2594:1: ( (lv_output_7_0= ruleOutputBindings ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2595:1: (lv_output_7_0= ruleOutputBindings )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2573:1: (lv_output_7_0= ruleOutputBindings )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2574:3: lv_output_7_0= ruleOutputBindings
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2595:1: (lv_output_7_0= ruleOutputBindings )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2596:3: lv_output_7_0= ruleOutputBindings
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getClassInstanceAccess().getOutputOutputBindingsParserRuleCall_6_1_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleOutputBindings_in_ruleClassInstance5131);
+                    pushFollow(FOLLOW_ruleOutputBindings_in_ruleClassInstance5128);
                     lv_output_7_0=ruleOutputBindings();
                     _fsp--;
 
@@ -5846,24 +5982,24 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,26,FOLLOW_26_in_ruleClassInstance5143); 
+            match(input,26,FOLLOW_26_in_ruleClassInstance5140); 
 
                     createLeafNode(grammarAccess.getClassInstanceAccess().getRightParenthesisKeyword_7(), null); 
                 
-            match(input,15,FOLLOW_15_in_ruleClassInstance5153); 
+            match(input,15,FOLLOW_15_in_ruleClassInstance5150); 
 
                     createLeafNode(grammarAccess.getClassInstanceAccess().getLeftCurlyBracketKeyword_8(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2604:1: ( (lv_attributes_10_0= ruleNodeAttributes ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2605:1: (lv_attributes_10_0= ruleNodeAttributes )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2626:1: ( (lv_attributes_10_0= ruleNodeAttributes ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2627:1: (lv_attributes_10_0= ruleNodeAttributes )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2605:1: (lv_attributes_10_0= ruleNodeAttributes )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2606:3: lv_attributes_10_0= ruleNodeAttributes
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2627:1: (lv_attributes_10_0= ruleNodeAttributes )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2628:3: lv_attributes_10_0= ruleNodeAttributes
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getClassInstanceAccess().getAttributesNodeAttributesParserRuleCall_9_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleNodeAttributes_in_ruleClassInstance5174);
+            pushFollow(FOLLOW_ruleNodeAttributes_in_ruleClassInstance5171);
             lv_attributes_10_0=ruleNodeAttributes();
             _fsp--;
 
@@ -5890,7 +6026,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,16,FOLLOW_16_in_ruleClassInstance5184); 
+            match(input,16,FOLLOW_16_in_ruleClassInstance5181); 
 
                     createLeafNode(grammarAccess.getClassInstanceAccess().getRightCurlyBracketKeyword_10(), null); 
                 
@@ -5917,7 +6053,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleInputBindings
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2640:1: entryRuleInputBindings returns [EObject current=null] : iv_ruleInputBindings= ruleInputBindings EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2662:1: entryRuleInputBindings returns [EObject current=null] : iv_ruleInputBindings= ruleInputBindings EOF ;
     public final EObject entryRuleInputBindings() throws RecognitionException {
         EObject current = null;
 
@@ -5925,16 +6061,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2641:2: (iv_ruleInputBindings= ruleInputBindings EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2642:2: iv_ruleInputBindings= ruleInputBindings EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2663:2: (iv_ruleInputBindings= ruleInputBindings EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2664:2: iv_ruleInputBindings= ruleInputBindings EOF
             {
              currentNode = createCompositeNode(grammarAccess.getInputBindingsRule(), currentNode); 
-            pushFollow(FOLLOW_ruleInputBindings_in_entryRuleInputBindings5220);
+            pushFollow(FOLLOW_ruleInputBindings_in_entryRuleInputBindings5217);
             iv_ruleInputBindings=ruleInputBindings();
             _fsp--;
 
              current =iv_ruleInputBindings; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInputBindings5230); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInputBindings5227); 
 
             }
 
@@ -5952,7 +6088,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleInputBindings
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2649:1: ruleInputBindings returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2671:1: ruleInputBindings returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) ) ;
     public final EObject ruleInputBindings() throws RecognitionException {
         EObject current = null;
 
@@ -5964,22 +6100,22 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2654:6: ( ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2655:1: ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2676:6: ( ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2677:1: ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2655:1: ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2655:2: ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2677:1: ( ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2677:2: ( (lv_lhs_0_0= ruleInputBinding ) ) ',' ( (lv_rhs_2_0= ruleInputBindings ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2655:2: ( (lv_lhs_0_0= ruleInputBinding ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2656:1: (lv_lhs_0_0= ruleInputBinding )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2677:2: ( (lv_lhs_0_0= ruleInputBinding ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2678:1: (lv_lhs_0_0= ruleInputBinding )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2656:1: (lv_lhs_0_0= ruleInputBinding )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2657:3: lv_lhs_0_0= ruleInputBinding
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2678:1: (lv_lhs_0_0= ruleInputBinding )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2679:3: lv_lhs_0_0= ruleInputBinding
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getInputBindingsAccess().getLhsInputBindingParserRuleCall_0_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleInputBinding_in_ruleInputBindings5276);
+            pushFollow(FOLLOW_ruleInputBinding_in_ruleInputBindings5273);
             lv_lhs_0_0=ruleInputBinding();
             _fsp--;
 
@@ -6006,20 +6142,20 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,40,FOLLOW_40_in_ruleInputBindings5286); 
+            match(input,40,FOLLOW_40_in_ruleInputBindings5283); 
 
                     createLeafNode(grammarAccess.getInputBindingsAccess().getCommaKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2683:1: ( (lv_rhs_2_0= ruleInputBindings ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2684:1: (lv_rhs_2_0= ruleInputBindings )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2705:1: ( (lv_rhs_2_0= ruleInputBindings ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2706:1: (lv_rhs_2_0= ruleInputBindings )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2684:1: (lv_rhs_2_0= ruleInputBindings )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2685:3: lv_rhs_2_0= ruleInputBindings
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2706:1: (lv_rhs_2_0= ruleInputBindings )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2707:3: lv_rhs_2_0= ruleInputBindings
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getInputBindingsAccess().getRhsInputBindingsParserRuleCall_2_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleInputBindings_in_ruleInputBindings5307);
+            pushFollow(FOLLOW_ruleInputBindings_in_ruleInputBindings5304);
             lv_rhs_2_0=ruleInputBindings();
             _fsp--;
 
@@ -6069,7 +6205,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleInputBinding
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2715:1: entryRuleInputBinding returns [EObject current=null] : iv_ruleInputBinding= ruleInputBinding EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2737:1: entryRuleInputBinding returns [EObject current=null] : iv_ruleInputBinding= ruleInputBinding EOF ;
     public final EObject entryRuleInputBinding() throws RecognitionException {
         EObject current = null;
 
@@ -6077,16 +6213,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2716:2: (iv_ruleInputBinding= ruleInputBinding EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2717:2: iv_ruleInputBinding= ruleInputBinding EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2738:2: (iv_ruleInputBinding= ruleInputBinding EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2739:2: iv_ruleInputBinding= ruleInputBinding EOF
             {
              currentNode = createCompositeNode(grammarAccess.getInputBindingRule(), currentNode); 
-            pushFollow(FOLLOW_ruleInputBinding_in_entryRuleInputBinding5343);
+            pushFollow(FOLLOW_ruleInputBinding_in_entryRuleInputBinding5340);
             iv_ruleInputBinding=ruleInputBinding();
             _fsp--;
 
              current =iv_ruleInputBinding; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInputBinding5353); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInputBinding5350); 
 
             }
 
@@ -6104,7 +6240,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleInputBinding
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2724:1: ruleInputBinding returns [EObject current=null] : ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2746:1: ruleInputBinding returns [EObject current=null] : ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) ) ;
     public final EObject ruleInputBinding() throws RecognitionException {
         EObject current = null;
 
@@ -6114,20 +6250,20 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2729:6: ( ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2730:1: ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2751:6: ( ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2752:1: ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2730:1: ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2730:2: ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2752:1: ( ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2752:2: ( (lv_formal_0_0= RULE_ID ) ) '=' ( (lv_actual_2_0= RULE_ID ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2730:2: ( (lv_formal_0_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2731:1: (lv_formal_0_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2752:2: ( (lv_formal_0_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2753:1: (lv_formal_0_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2731:1: (lv_formal_0_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2732:3: lv_formal_0_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2753:1: (lv_formal_0_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2754:3: lv_formal_0_0= RULE_ID
             {
             lv_formal_0_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInputBinding5395); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInputBinding5392); 
 
             			createLeafNode(grammarAccess.getInputBindingAccess().getFormalIDTerminalRuleCall_0_0(), "formal"); 
             		
@@ -6153,18 +6289,18 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,24,FOLLOW_24_in_ruleInputBinding5410); 
+            match(input,24,FOLLOW_24_in_ruleInputBinding5407); 
 
                     createLeafNode(grammarAccess.getInputBindingAccess().getEqualsSignKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2758:1: ( (lv_actual_2_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2759:1: (lv_actual_2_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2780:1: ( (lv_actual_2_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2781:1: (lv_actual_2_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2759:1: (lv_actual_2_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2760:3: lv_actual_2_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2781:1: (lv_actual_2_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2782:3: lv_actual_2_0= RULE_ID
             {
             lv_actual_2_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInputBinding5427); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInputBinding5424); 
 
             			createLeafNode(grammarAccess.getInputBindingAccess().getActualIDTerminalRuleCall_2_0(), "actual"); 
             		
@@ -6213,7 +6349,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleOutputBindings
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2790:1: entryRuleOutputBindings returns [EObject current=null] : iv_ruleOutputBindings= ruleOutputBindings EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2812:1: entryRuleOutputBindings returns [EObject current=null] : iv_ruleOutputBindings= ruleOutputBindings EOF ;
     public final EObject entryRuleOutputBindings() throws RecognitionException {
         EObject current = null;
 
@@ -6221,16 +6357,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2791:2: (iv_ruleOutputBindings= ruleOutputBindings EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2792:2: iv_ruleOutputBindings= ruleOutputBindings EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2813:2: (iv_ruleOutputBindings= ruleOutputBindings EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2814:2: iv_ruleOutputBindings= ruleOutputBindings EOF
             {
              currentNode = createCompositeNode(grammarAccess.getOutputBindingsRule(), currentNode); 
-            pushFollow(FOLLOW_ruleOutputBindings_in_entryRuleOutputBindings5468);
+            pushFollow(FOLLOW_ruleOutputBindings_in_entryRuleOutputBindings5465);
             iv_ruleOutputBindings=ruleOutputBindings();
             _fsp--;
 
              current =iv_ruleOutputBindings; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutputBindings5478); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOutputBindings5475); 
 
             }
 
@@ -6248,7 +6384,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleOutputBindings
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2799:1: ruleOutputBindings returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2821:1: ruleOutputBindings returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) ) ;
     public final EObject ruleOutputBindings() throws RecognitionException {
         EObject current = null;
 
@@ -6260,22 +6396,22 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2804:6: ( ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2805:1: ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2826:6: ( ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2827:1: ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2805:1: ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2805:2: ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2827:1: ( ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2827:2: ( (lv_lhs_0_0= ruleOutputBinding ) ) ',' ( (lv_rhs_2_0= ruleOutputBindings ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2805:2: ( (lv_lhs_0_0= ruleOutputBinding ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2806:1: (lv_lhs_0_0= ruleOutputBinding )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2827:2: ( (lv_lhs_0_0= ruleOutputBinding ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2828:1: (lv_lhs_0_0= ruleOutputBinding )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2806:1: (lv_lhs_0_0= ruleOutputBinding )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2807:3: lv_lhs_0_0= ruleOutputBinding
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2828:1: (lv_lhs_0_0= ruleOutputBinding )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2829:3: lv_lhs_0_0= ruleOutputBinding
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getOutputBindingsAccess().getLhsOutputBindingParserRuleCall_0_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleOutputBinding_in_ruleOutputBindings5524);
+            pushFollow(FOLLOW_ruleOutputBinding_in_ruleOutputBindings5521);
             lv_lhs_0_0=ruleOutputBinding();
             _fsp--;
 
@@ -6302,20 +6438,20 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,40,FOLLOW_40_in_ruleOutputBindings5534); 
+            match(input,40,FOLLOW_40_in_ruleOutputBindings5531); 
 
                     createLeafNode(grammarAccess.getOutputBindingsAccess().getCommaKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2833:1: ( (lv_rhs_2_0= ruleOutputBindings ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2834:1: (lv_rhs_2_0= ruleOutputBindings )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2855:1: ( (lv_rhs_2_0= ruleOutputBindings ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2856:1: (lv_rhs_2_0= ruleOutputBindings )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2834:1: (lv_rhs_2_0= ruleOutputBindings )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2835:3: lv_rhs_2_0= ruleOutputBindings
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2856:1: (lv_rhs_2_0= ruleOutputBindings )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2857:3: lv_rhs_2_0= ruleOutputBindings
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getOutputBindingsAccess().getRhsOutputBindingsParserRuleCall_2_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleOutputBindings_in_ruleOutputBindings5555);
+            pushFollow(FOLLOW_ruleOutputBindings_in_ruleOutputBindings5552);
             lv_rhs_2_0=ruleOutputBindings();
             _fsp--;
 
@@ -6365,7 +6501,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleOutputBinding
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2865:1: entryRuleOutputBinding returns [EObject current=null] : iv_ruleOutputBinding= ruleOutputBinding EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2887:1: entryRuleOutputBinding returns [EObject current=null] : iv_ruleOutputBinding= ruleOutputBinding EOF ;
     public final EObject entryRuleOutputBinding() throws RecognitionException {
         EObject current = null;
 
@@ -6373,16 +6509,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2866:2: (iv_ruleOutputBinding= ruleOutputBinding EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2867:2: iv_ruleOutputBinding= ruleOutputBinding EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2888:2: (iv_ruleOutputBinding= ruleOutputBinding EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2889:2: iv_ruleOutputBinding= ruleOutputBinding EOF
             {
              currentNode = createCompositeNode(grammarAccess.getOutputBindingRule(), currentNode); 
-            pushFollow(FOLLOW_ruleOutputBinding_in_entryRuleOutputBinding5591);
+            pushFollow(FOLLOW_ruleOutputBinding_in_entryRuleOutputBinding5588);
             iv_ruleOutputBinding=ruleOutputBinding();
             _fsp--;
 
              current =iv_ruleOutputBinding; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutputBinding5601); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOutputBinding5598); 
 
             }
 
@@ -6400,7 +6536,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleOutputBinding
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2874:1: ruleOutputBinding returns [EObject current=null] : ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2896:1: ruleOutputBinding returns [EObject current=null] : ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) ) ;
     public final EObject ruleOutputBinding() throws RecognitionException {
         EObject current = null;
 
@@ -6410,20 +6546,20 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2879:6: ( ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2880:1: ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2901:6: ( ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2902:1: ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2880:1: ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2880:2: ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2902:1: ( ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2902:2: ( (lv_actual_0_0= RULE_ID ) ) '=' ( (lv_formal_2_0= RULE_ID ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2880:2: ( (lv_actual_0_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2881:1: (lv_actual_0_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2902:2: ( (lv_actual_0_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2903:1: (lv_actual_0_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2881:1: (lv_actual_0_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2882:3: lv_actual_0_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2903:1: (lv_actual_0_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2904:3: lv_actual_0_0= RULE_ID
             {
             lv_actual_0_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOutputBinding5643); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOutputBinding5640); 
 
             			createLeafNode(grammarAccess.getOutputBindingAccess().getActualIDTerminalRuleCall_0_0(), "actual"); 
             		
@@ -6449,18 +6585,18 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,24,FOLLOW_24_in_ruleOutputBinding5658); 
+            match(input,24,FOLLOW_24_in_ruleOutputBinding5655); 
 
                     createLeafNode(grammarAccess.getOutputBindingAccess().getEqualsSignKeyword_1(), null); 
                 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2908:1: ( (lv_formal_2_0= RULE_ID ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2909:1: (lv_formal_2_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2930:1: ( (lv_formal_2_0= RULE_ID ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2931:1: (lv_formal_2_0= RULE_ID )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2909:1: (lv_formal_2_0= RULE_ID )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2910:3: lv_formal_2_0= RULE_ID
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2931:1: (lv_formal_2_0= RULE_ID )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2932:3: lv_formal_2_0= RULE_ID
             {
             lv_formal_2_0=(Token)input.LT(1);
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOutputBinding5675); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOutputBinding5672); 
 
             			createLeafNode(grammarAccess.getOutputBindingAccess().getFormalIDTerminalRuleCall_2_0(), "formal"); 
             		
@@ -6509,7 +6645,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleNodeAttributes
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2940:1: entryRuleNodeAttributes returns [EObject current=null] : iv_ruleNodeAttributes= ruleNodeAttributes EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2962:1: entryRuleNodeAttributes returns [EObject current=null] : iv_ruleNodeAttributes= ruleNodeAttributes EOF ;
     public final EObject entryRuleNodeAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -6517,16 +6653,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2941:2: (iv_ruleNodeAttributes= ruleNodeAttributes EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2942:2: iv_ruleNodeAttributes= ruleNodeAttributes EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2963:2: (iv_ruleNodeAttributes= ruleNodeAttributes EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2964:2: iv_ruleNodeAttributes= ruleNodeAttributes EOF
             {
              currentNode = createCompositeNode(grammarAccess.getNodeAttributesRule(), currentNode); 
-            pushFollow(FOLLOW_ruleNodeAttributes_in_entryRuleNodeAttributes5716);
+            pushFollow(FOLLOW_ruleNodeAttributes_in_entryRuleNodeAttributes5713);
             iv_ruleNodeAttributes=ruleNodeAttributes();
             _fsp--;
 
              current =iv_ruleNodeAttributes; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeAttributes5726); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeAttributes5723); 
 
             }
 
@@ -6544,7 +6680,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleNodeAttributes
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2949:1: ruleNodeAttributes returns [EObject current=null] : (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2971:1: ruleNodeAttributes returns [EObject current=null] : (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute ) ;
     public final EObject ruleNodeAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -6558,42 +6694,42 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2954:6: ( (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2955:1: (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2976:6: ( (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2977:1: (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2955:1: (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute )
-            int alt32=3;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2977:1: (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute )
+            int alt35=3;
             switch ( input.LA(1) ) {
             case 28:
                 {
-                alt32=1;
+                alt35=1;
                 }
                 break;
             case 29:
                 {
-                alt32=2;
+                alt35=2;
                 }
                 break;
             case RULE_ID:
                 {
-                alt32=3;
+                alt35=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("2955:1: (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute )", 32, 0, input);
+                    new NoViableAltException("2977:1: (this_LabelAttribute_0= ruleLabelAttribute | this_PositionAttribute_1= rulePositionAttribute | this_ApplicationAttribute_2= ruleApplicationAttribute )", 35, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt35) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2956:5: this_LabelAttribute_0= ruleLabelAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2978:5: this_LabelAttribute_0= ruleLabelAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getNodeAttributesAccess().getLabelAttributeParserRuleCall_0(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleLabelAttribute_in_ruleNodeAttributes5773);
+                    pushFollow(FOLLOW_ruleLabelAttribute_in_ruleNodeAttributes5770);
                     this_LabelAttribute_0=ruleLabelAttribute();
                     _fsp--;
 
@@ -6605,12 +6741,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2966:5: this_PositionAttribute_1= rulePositionAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2988:5: this_PositionAttribute_1= rulePositionAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getNodeAttributesAccess().getPositionAttributeParserRuleCall_1(), currentNode); 
                         
-                    pushFollow(FOLLOW_rulePositionAttribute_in_ruleNodeAttributes5800);
+                    pushFollow(FOLLOW_rulePositionAttribute_in_ruleNodeAttributes5797);
                     this_PositionAttribute_1=rulePositionAttribute();
                     _fsp--;
 
@@ -6622,12 +6758,12 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2976:5: this_ApplicationAttribute_2= ruleApplicationAttribute
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2998:5: this_ApplicationAttribute_2= ruleApplicationAttribute
                     {
                      
                             currentNode=createCompositeNode(grammarAccess.getNodeAttributesAccess().getApplicationAttributeParserRuleCall_2(), currentNode); 
                         
-                    pushFollow(FOLLOW_ruleApplicationAttribute_in_ruleNodeAttributes5827);
+                    pushFollow(FOLLOW_ruleApplicationAttribute_in_ruleNodeAttributes5824);
                     this_ApplicationAttribute_2=ruleApplicationAttribute();
                     _fsp--;
 
@@ -6661,7 +6797,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleExpression
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2992:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3014:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6669,16 +6805,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2993:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:2994:2: iv_ruleExpression= ruleExpression EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3015:2: (iv_ruleExpression= ruleExpression EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3016:2: iv_ruleExpression= ruleExpression EOF
             {
              currentNode = createCompositeNode(grammarAccess.getExpressionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression5862);
+            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression5859);
             iv_ruleExpression=ruleExpression();
             _fsp--;
 
              current =iv_ruleExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression5872); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression5869); 
 
             }
 
@@ -6696,7 +6832,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleExpression
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3001:1: ruleExpression returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3023:1: ruleExpression returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6708,22 +6844,22 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3006:6: ( ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3007:1: ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3028:6: ( ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3029:1: ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3007:1: ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3007:2: ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3029:1: ( ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3029:2: ( (lv_lhs_0_0= ruleSimpleExpression ) ) ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3007:2: ( (lv_lhs_0_0= ruleSimpleExpression ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3008:1: (lv_lhs_0_0= ruleSimpleExpression )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3029:2: ( (lv_lhs_0_0= ruleSimpleExpression ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3030:1: (lv_lhs_0_0= ruleSimpleExpression )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3008:1: (lv_lhs_0_0= ruleSimpleExpression )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3009:3: lv_lhs_0_0= ruleSimpleExpression
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3030:1: (lv_lhs_0_0= ruleSimpleExpression )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3031:3: lv_lhs_0_0= ruleSimpleExpression
             {
              
             	        currentNode=createCompositeNode(grammarAccess.getExpressionAccess().getLhsSimpleExpressionParserRuleCall_0_0(), currentNode); 
             	    
-            pushFollow(FOLLOW_ruleSimpleExpression_in_ruleExpression5918);
+            pushFollow(FOLLOW_ruleSimpleExpression_in_ruleExpression5915);
             lv_lhs_0_0=ruleSimpleExpression();
             _fsp--;
 
@@ -6750,41 +6886,41 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3031:2: ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
-            loop33:
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3053:2: ( ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
+            loop36:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA33_0==24||(LA33_0>=51 && LA33_0<=57)) ) {
-                    alt33=1;
+                if ( (LA36_0==24||(LA36_0>=51 && LA36_0<=57)) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt36) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3032:5: ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3054:5: ruleComparison ( (lv_rhs_2_0= ruleSimpleExpression ) )
             	    {
             	     
             	            currentNode=createCompositeNode(grammarAccess.getExpressionAccess().getComparisonParserRuleCall_1_0(), currentNode); 
             	        
-            	    pushFollow(FOLLOW_ruleComparison_in_ruleExpression5935);
+            	    pushFollow(FOLLOW_ruleComparison_in_ruleExpression5932);
             	    ruleComparison();
             	    _fsp--;
 
             	     
             	            currentNode = currentNode.getParent();
             	        
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3039:1: ( (lv_rhs_2_0= ruleSimpleExpression ) )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3040:1: (lv_rhs_2_0= ruleSimpleExpression )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3061:1: ( (lv_rhs_2_0= ruleSimpleExpression ) )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3062:1: (lv_rhs_2_0= ruleSimpleExpression )
             	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3040:1: (lv_rhs_2_0= ruleSimpleExpression )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3041:3: lv_rhs_2_0= ruleSimpleExpression
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3062:1: (lv_rhs_2_0= ruleSimpleExpression )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3063:3: lv_rhs_2_0= ruleSimpleExpression
             	    {
             	     
             	    	        currentNode=createCompositeNode(grammarAccess.getExpressionAccess().getRhsSimpleExpressionParserRuleCall_1_1_0(), currentNode); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSimpleExpression_in_ruleExpression5955);
+            	    pushFollow(FOLLOW_ruleSimpleExpression_in_ruleExpression5952);
             	    lv_rhs_2_0=ruleSimpleExpression();
             	    _fsp--;
 
@@ -6799,552 +6935,6 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             	    	       			"rhs",
             	    	        		lv_rhs_2_0, 
             	    	        		"SimpleExpression", 
-            	    	        		currentNode);
-            	    	        } catch (ValueConverterException vce) {
-            	    				handleValueConverterException(vce);
-            	    	        }
-            	    	        currentNode = currentNode.getParent();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop33;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end ruleExpression
-
-
-    // $ANTLR start entryRuleSimpleExpression
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3071:1: entryRuleSimpleExpression returns [EObject current=null] : iv_ruleSimpleExpression= ruleSimpleExpression EOF ;
-    public final EObject entryRuleSimpleExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleSimpleExpression = null;
-
-
-        try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3072:2: (iv_ruleSimpleExpression= ruleSimpleExpression EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3073:2: iv_ruleSimpleExpression= ruleSimpleExpression EOF
-            {
-             currentNode = createCompositeNode(grammarAccess.getSimpleExpressionRule(), currentNode); 
-            pushFollow(FOLLOW_ruleSimpleExpression_in_entryRuleSimpleExpression5993);
-            iv_ruleSimpleExpression=ruleSimpleExpression();
-            _fsp--;
-
-             current =iv_ruleSimpleExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleExpression6003); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end entryRuleSimpleExpression
-
-
-    // $ANTLR start ruleSimpleExpression
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3080:1: ruleSimpleExpression returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) ;
-    public final EObject ruleSimpleExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject lv_lhs_0_0 = null;
-
-        EObject lv_rhs_2_0 = null;
-
-
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-            
-        try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3085:6: ( ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3086:1: ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3086:1: ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3086:2: ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3086:2: ( (lv_lhs_0_0= ruleTerm ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3087:1: (lv_lhs_0_0= ruleTerm )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3087:1: (lv_lhs_0_0= ruleTerm )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3088:3: lv_lhs_0_0= ruleTerm
-            {
-             
-            	        currentNode=createCompositeNode(grammarAccess.getSimpleExpressionAccess().getLhsTermParserRuleCall_0_0(), currentNode); 
-            	    
-            pushFollow(FOLLOW_ruleTerm_in_ruleSimpleExpression6049);
-            lv_lhs_0_0=ruleTerm();
-            _fsp--;
-
-
-            	        if (current==null) {
-            	            current = factory.create(grammarAccess.getSimpleExpressionRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"lhs",
-            	        		lv_lhs_0_0, 
-            	        		"Term", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
-            	    
-
-            }
-
-
-            }
-
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3110:2: ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
-            loop34:
-            do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
-
-                if ( (LA34_0==11) ) {
-                    alt34=1;
-                }
-                else if ( (LA34_0==12) ) {
-                    alt34=1;
-                }
-
-
-                switch (alt34) {
-            	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3111:5: rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) )
-            	    {
-            	     
-            	            currentNode=createCompositeNode(grammarAccess.getSimpleExpressionAccess().getPlusOrMinusParserRuleCall_1_0(), currentNode); 
-            	        
-            	    pushFollow(FOLLOW_rulePlusOrMinus_in_ruleSimpleExpression6066);
-            	    rulePlusOrMinus();
-            	    _fsp--;
-
-            	     
-            	            currentNode = currentNode.getParent();
-            	        
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3118:1: ( (lv_rhs_2_0= ruleSimpleExpression ) )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3119:1: (lv_rhs_2_0= ruleSimpleExpression )
-            	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3119:1: (lv_rhs_2_0= ruleSimpleExpression )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3120:3: lv_rhs_2_0= ruleSimpleExpression
-            	    {
-            	     
-            	    	        currentNode=createCompositeNode(grammarAccess.getSimpleExpressionAccess().getRhsSimpleExpressionParserRuleCall_1_1_0(), currentNode); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleSimpleExpression_in_ruleSimpleExpression6086);
-            	    lv_rhs_2_0=ruleSimpleExpression();
-            	    _fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = factory.create(grammarAccess.getSimpleExpressionRule().getType().getClassifier());
-            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	    	        }
-            	    	        try {
-            	    	       		add(
-            	    	       			current, 
-            	    	       			"rhs",
-            	    	        		lv_rhs_2_0, 
-            	    	        		"SimpleExpression", 
-            	    	        		currentNode);
-            	    	        } catch (ValueConverterException vce) {
-            	    				handleValueConverterException(vce);
-            	    	        }
-            	    	        currentNode = currentNode.getParent();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop34;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end ruleSimpleExpression
-
-
-    // $ANTLR start entryRuleTerm
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3150:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
-    public final EObject entryRuleTerm() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleTerm = null;
-
-
-        try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3151:2: (iv_ruleTerm= ruleTerm EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3152:2: iv_ruleTerm= ruleTerm EOF
-            {
-             currentNode = createCompositeNode(grammarAccess.getTermRule(), currentNode); 
-            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm6124);
-            iv_ruleTerm=ruleTerm();
-            _fsp--;
-
-             current =iv_ruleTerm; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm6134); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end entryRuleTerm
-
-
-    // $ANTLR start ruleTerm
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3159:1: ruleTerm returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* ) ;
-    public final EObject ruleTerm() throws RecognitionException {
-        EObject current = null;
-
-        EObject lv_lhs_0_0 = null;
-
-        EObject lv_rhs_2_0 = null;
-
-
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-            
-        try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3164:6: ( ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3165:1: ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3165:1: ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3165:2: ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )*
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3165:2: ( (lv_lhs_0_0= ruleExpFactor ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3166:1: (lv_lhs_0_0= ruleExpFactor )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3166:1: (lv_lhs_0_0= ruleExpFactor )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3167:3: lv_lhs_0_0= ruleExpFactor
-            {
-             
-            	        currentNode=createCompositeNode(grammarAccess.getTermAccess().getLhsExpFactorParserRuleCall_0_0(), currentNode); 
-            	    
-            pushFollow(FOLLOW_ruleExpFactor_in_ruleTerm6180);
-            lv_lhs_0_0=ruleExpFactor();
-            _fsp--;
-
-
-            	        if (current==null) {
-            	            current = factory.create(grammarAccess.getTermRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"lhs",
-            	        		lv_lhs_0_0, 
-            	        		"ExpFactor", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
-            	    
-
-            }
-
-
-            }
-
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3189:2: ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )*
-            loop35:
-            do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
-
-                if ( (LA35_0==41) ) {
-                    alt35=1;
-                }
-                else if ( (LA35_0==58) ) {
-                    alt35=1;
-                }
-
-
-                switch (alt35) {
-            	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3190:5: ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) )
-            	    {
-            	     
-            	            currentNode=createCompositeNode(grammarAccess.getTermAccess().getTimesOrDivideParserRuleCall_1_0(), currentNode); 
-            	        
-            	    pushFollow(FOLLOW_ruleTimesOrDivide_in_ruleTerm6197);
-            	    ruleTimesOrDivide();
-            	    _fsp--;
-
-            	     
-            	            currentNode = currentNode.getParent();
-            	        
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3197:1: ( (lv_rhs_2_0= ruleTerm ) )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3198:1: (lv_rhs_2_0= ruleTerm )
-            	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3198:1: (lv_rhs_2_0= ruleTerm )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3199:3: lv_rhs_2_0= ruleTerm
-            	    {
-            	     
-            	    	        currentNode=createCompositeNode(grammarAccess.getTermAccess().getRhsTermParserRuleCall_1_1_0(), currentNode); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleTerm_in_ruleTerm6217);
-            	    lv_rhs_2_0=ruleTerm();
-            	    _fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = factory.create(grammarAccess.getTermRule().getType().getClassifier());
-            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	    	        }
-            	    	        try {
-            	    	       		add(
-            	    	       			current, 
-            	    	       			"rhs",
-            	    	        		lv_rhs_2_0, 
-            	    	        		"Term", 
-            	    	        		currentNode);
-            	    	        } catch (ValueConverterException vce) {
-            	    				handleValueConverterException(vce);
-            	    	        }
-            	    	        currentNode = currentNode.getParent();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop35;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             resetLookahead(); 
-                	lastConsumedNode = currentNode;
-                
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end ruleTerm
-
-
-    // $ANTLR start entryRuleExpFactor
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3229:1: entryRuleExpFactor returns [EObject current=null] : iv_ruleExpFactor= ruleExpFactor EOF ;
-    public final EObject entryRuleExpFactor() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleExpFactor = null;
-
-
-        try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3230:2: (iv_ruleExpFactor= ruleExpFactor EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3231:2: iv_ruleExpFactor= ruleExpFactor EOF
-            {
-             currentNode = createCompositeNode(grammarAccess.getExpFactorRule(), currentNode); 
-            pushFollow(FOLLOW_ruleExpFactor_in_entryRuleExpFactor6255);
-            iv_ruleExpFactor=ruleExpFactor();
-            _fsp--;
-
-             current =iv_ruleExpFactor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpFactor6265); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end entryRuleExpFactor
-
-
-    // $ANTLR start ruleExpFactor
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3238:1: ruleExpFactor returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* ) ;
-    public final EObject ruleExpFactor() throws RecognitionException {
-        EObject current = null;
-
-        EObject lv_lhs_0_0 = null;
-
-        EObject lv_rhs_2_0 = null;
-
-
-         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
-            
-        try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3243:6: ( ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3244:1: ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3244:1: ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3244:2: ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )*
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3244:2: ( (lv_lhs_0_0= ruleFactor ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3245:1: (lv_lhs_0_0= ruleFactor )
-            {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3245:1: (lv_lhs_0_0= ruleFactor )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3246:3: lv_lhs_0_0= ruleFactor
-            {
-             
-            	        currentNode=createCompositeNode(grammarAccess.getExpFactorAccess().getLhsFactorParserRuleCall_0_0(), currentNode); 
-            	    
-            pushFollow(FOLLOW_ruleFactor_in_ruleExpFactor6311);
-            lv_lhs_0_0=ruleFactor();
-            _fsp--;
-
-
-            	        if (current==null) {
-            	            current = factory.create(grammarAccess.getExpFactorRule().getType().getClassifier());
-            	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	        }
-            	        try {
-            	       		set(
-            	       			current, 
-            	       			"lhs",
-            	        		lv_lhs_0_0, 
-            	        		"Factor", 
-            	        		currentNode);
-            	        } catch (ValueConverterException vce) {
-            				handleValueConverterException(vce);
-            	        }
-            	        currentNode = currentNode.getParent();
-            	    
-
-            }
-
-
-            }
-
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3268:2: ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )*
-            loop36:
-            do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
-
-                if ( (LA36_0==48) ) {
-                    alt36=1;
-                }
-
-
-                switch (alt36) {
-            	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3268:4: '^' ( (lv_rhs_2_0= ruleExpFactor ) )
-            	    {
-            	    match(input,48,FOLLOW_48_in_ruleExpFactor6322); 
-
-            	            createLeafNode(grammarAccess.getExpFactorAccess().getCircumflexAccentKeyword_1_0(), null); 
-            	        
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3272:1: ( (lv_rhs_2_0= ruleExpFactor ) )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3273:1: (lv_rhs_2_0= ruleExpFactor )
-            	    {
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3273:1: (lv_rhs_2_0= ruleExpFactor )
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3274:3: lv_rhs_2_0= ruleExpFactor
-            	    {
-            	     
-            	    	        currentNode=createCompositeNode(grammarAccess.getExpFactorAccess().getRhsExpFactorParserRuleCall_1_1_0(), currentNode); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleExpFactor_in_ruleExpFactor6343);
-            	    lv_rhs_2_0=ruleExpFactor();
-            	    _fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = factory.create(grammarAccess.getExpFactorRule().getType().getClassifier());
-            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
-            	    	        }
-            	    	        try {
-            	    	       		add(
-            	    	       			current, 
-            	    	       			"rhs",
-            	    	        		lv_rhs_2_0, 
-            	    	        		"ExpFactor", 
             	    	        		currentNode);
             	    	        } catch (ValueConverterException vce) {
             	    				handleValueConverterException(vce);
@@ -7385,11 +6975,557 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end ruleExpression
+
+
+    // $ANTLR start entryRuleSimpleExpression
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3093:1: entryRuleSimpleExpression returns [EObject current=null] : iv_ruleSimpleExpression= ruleSimpleExpression EOF ;
+    public final EObject entryRuleSimpleExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSimpleExpression = null;
+
+
+        try {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3094:2: (iv_ruleSimpleExpression= ruleSimpleExpression EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3095:2: iv_ruleSimpleExpression= ruleSimpleExpression EOF
+            {
+             currentNode = createCompositeNode(grammarAccess.getSimpleExpressionRule(), currentNode); 
+            pushFollow(FOLLOW_ruleSimpleExpression_in_entryRuleSimpleExpression5990);
+            iv_ruleSimpleExpression=ruleSimpleExpression();
+            _fsp--;
+
+             current =iv_ruleSimpleExpression; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleExpression6000); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end entryRuleSimpleExpression
+
+
+    // $ANTLR start ruleSimpleExpression
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3102:1: ruleSimpleExpression returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) ;
+    public final EObject ruleSimpleExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_lhs_0_0 = null;
+
+        EObject lv_rhs_2_0 = null;
+
+
+         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+            
+        try {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3107:6: ( ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3108:1: ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3108:1: ( ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3108:2: ( (lv_lhs_0_0= ruleTerm ) ) ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3108:2: ( (lv_lhs_0_0= ruleTerm ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3109:1: (lv_lhs_0_0= ruleTerm )
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3109:1: (lv_lhs_0_0= ruleTerm )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3110:3: lv_lhs_0_0= ruleTerm
+            {
+             
+            	        currentNode=createCompositeNode(grammarAccess.getSimpleExpressionAccess().getLhsTermParserRuleCall_0_0(), currentNode); 
+            	    
+            pushFollow(FOLLOW_ruleTerm_in_ruleSimpleExpression6046);
+            lv_lhs_0_0=ruleTerm();
+            _fsp--;
+
+
+            	        if (current==null) {
+            	            current = factory.create(grammarAccess.getSimpleExpressionRule().getType().getClassifier());
+            	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	        }
+            	        try {
+            	       		set(
+            	       			current, 
+            	       			"lhs",
+            	        		lv_lhs_0_0, 
+            	        		"Term", 
+            	        		currentNode);
+            	        } catch (ValueConverterException vce) {
+            				handleValueConverterException(vce);
+            	        }
+            	        currentNode = currentNode.getParent();
+            	    
+
+            }
+
+
+            }
+
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3132:2: ( rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) ) )*
+            loop37:
+            do {
+                int alt37=2;
+                int LA37_0 = input.LA(1);
+
+                if ( (LA37_0==11) ) {
+                    alt37=1;
+                }
+                else if ( (LA37_0==12) ) {
+                    alt37=1;
+                }
+
+
+                switch (alt37) {
+            	case 1 :
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3133:5: rulePlusOrMinus ( (lv_rhs_2_0= ruleSimpleExpression ) )
+            	    {
+            	     
+            	            currentNode=createCompositeNode(grammarAccess.getSimpleExpressionAccess().getPlusOrMinusParserRuleCall_1_0(), currentNode); 
+            	        
+            	    pushFollow(FOLLOW_rulePlusOrMinus_in_ruleSimpleExpression6063);
+            	    rulePlusOrMinus();
+            	    _fsp--;
+
+            	     
+            	            currentNode = currentNode.getParent();
+            	        
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3140:1: ( (lv_rhs_2_0= ruleSimpleExpression ) )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3141:1: (lv_rhs_2_0= ruleSimpleExpression )
+            	    {
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3141:1: (lv_rhs_2_0= ruleSimpleExpression )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3142:3: lv_rhs_2_0= ruleSimpleExpression
+            	    {
+            	     
+            	    	        currentNode=createCompositeNode(grammarAccess.getSimpleExpressionAccess().getRhsSimpleExpressionParserRuleCall_1_1_0(), currentNode); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleSimpleExpression_in_ruleSimpleExpression6083);
+            	    lv_rhs_2_0=ruleSimpleExpression();
+            	    _fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = factory.create(grammarAccess.getSimpleExpressionRule().getType().getClassifier());
+            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	    	        }
+            	    	        try {
+            	    	       		add(
+            	    	       			current, 
+            	    	       			"rhs",
+            	    	        		lv_rhs_2_0, 
+            	    	        		"SimpleExpression", 
+            	    	        		currentNode);
+            	    	        } catch (ValueConverterException vce) {
+            	    				handleValueConverterException(vce);
+            	    	        }
+            	    	        currentNode = currentNode.getParent();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop37;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             resetLookahead(); 
+                	lastConsumedNode = currentNode;
+                
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end ruleSimpleExpression
+
+
+    // $ANTLR start entryRuleTerm
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3172:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
+    public final EObject entryRuleTerm() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleTerm = null;
+
+
+        try {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3173:2: (iv_ruleTerm= ruleTerm EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3174:2: iv_ruleTerm= ruleTerm EOF
+            {
+             currentNode = createCompositeNode(grammarAccess.getTermRule(), currentNode); 
+            pushFollow(FOLLOW_ruleTerm_in_entryRuleTerm6121);
+            iv_ruleTerm=ruleTerm();
+            _fsp--;
+
+             current =iv_ruleTerm; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTerm6131); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end entryRuleTerm
+
+
+    // $ANTLR start ruleTerm
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3181:1: ruleTerm returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* ) ;
+    public final EObject ruleTerm() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_lhs_0_0 = null;
+
+        EObject lv_rhs_2_0 = null;
+
+
+         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+            
+        try {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3186:6: ( ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3187:1: ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* )
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3187:1: ( ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3187:2: ( (lv_lhs_0_0= ruleExpFactor ) ) ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )*
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3187:2: ( (lv_lhs_0_0= ruleExpFactor ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3188:1: (lv_lhs_0_0= ruleExpFactor )
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3188:1: (lv_lhs_0_0= ruleExpFactor )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3189:3: lv_lhs_0_0= ruleExpFactor
+            {
+             
+            	        currentNode=createCompositeNode(grammarAccess.getTermAccess().getLhsExpFactorParserRuleCall_0_0(), currentNode); 
+            	    
+            pushFollow(FOLLOW_ruleExpFactor_in_ruleTerm6177);
+            lv_lhs_0_0=ruleExpFactor();
+            _fsp--;
+
+
+            	        if (current==null) {
+            	            current = factory.create(grammarAccess.getTermRule().getType().getClassifier());
+            	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	        }
+            	        try {
+            	       		set(
+            	       			current, 
+            	       			"lhs",
+            	        		lv_lhs_0_0, 
+            	        		"ExpFactor", 
+            	        		currentNode);
+            	        } catch (ValueConverterException vce) {
+            				handleValueConverterException(vce);
+            	        }
+            	        currentNode = currentNode.getParent();
+            	    
+
+            }
+
+
+            }
+
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3211:2: ( ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) ) )*
+            loop38:
+            do {
+                int alt38=2;
+                int LA38_0 = input.LA(1);
+
+                if ( (LA38_0==41) ) {
+                    alt38=1;
+                }
+                else if ( (LA38_0==58) ) {
+                    alt38=1;
+                }
+
+
+                switch (alt38) {
+            	case 1 :
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3212:5: ruleTimesOrDivide ( (lv_rhs_2_0= ruleTerm ) )
+            	    {
+            	     
+            	            currentNode=createCompositeNode(grammarAccess.getTermAccess().getTimesOrDivideParserRuleCall_1_0(), currentNode); 
+            	        
+            	    pushFollow(FOLLOW_ruleTimesOrDivide_in_ruleTerm6194);
+            	    ruleTimesOrDivide();
+            	    _fsp--;
+
+            	     
+            	            currentNode = currentNode.getParent();
+            	        
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3219:1: ( (lv_rhs_2_0= ruleTerm ) )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3220:1: (lv_rhs_2_0= ruleTerm )
+            	    {
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3220:1: (lv_rhs_2_0= ruleTerm )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3221:3: lv_rhs_2_0= ruleTerm
+            	    {
+            	     
+            	    	        currentNode=createCompositeNode(grammarAccess.getTermAccess().getRhsTermParserRuleCall_1_1_0(), currentNode); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleTerm_in_ruleTerm6214);
+            	    lv_rhs_2_0=ruleTerm();
+            	    _fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = factory.create(grammarAccess.getTermRule().getType().getClassifier());
+            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	    	        }
+            	    	        try {
+            	    	       		add(
+            	    	       			current, 
+            	    	       			"rhs",
+            	    	        		lv_rhs_2_0, 
+            	    	        		"Term", 
+            	    	        		currentNode);
+            	    	        } catch (ValueConverterException vce) {
+            	    				handleValueConverterException(vce);
+            	    	        }
+            	    	        currentNode = currentNode.getParent();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop38;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             resetLookahead(); 
+                	lastConsumedNode = currentNode;
+                
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end ruleTerm
+
+
+    // $ANTLR start entryRuleExpFactor
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3251:1: entryRuleExpFactor returns [EObject current=null] : iv_ruleExpFactor= ruleExpFactor EOF ;
+    public final EObject entryRuleExpFactor() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleExpFactor = null;
+
+
+        try {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3252:2: (iv_ruleExpFactor= ruleExpFactor EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3253:2: iv_ruleExpFactor= ruleExpFactor EOF
+            {
+             currentNode = createCompositeNode(grammarAccess.getExpFactorRule(), currentNode); 
+            pushFollow(FOLLOW_ruleExpFactor_in_entryRuleExpFactor6252);
+            iv_ruleExpFactor=ruleExpFactor();
+            _fsp--;
+
+             current =iv_ruleExpFactor; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpFactor6262); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end entryRuleExpFactor
+
+
+    // $ANTLR start ruleExpFactor
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3260:1: ruleExpFactor returns [EObject current=null] : ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* ) ;
+    public final EObject ruleExpFactor() throws RecognitionException {
+        EObject current = null;
+
+        EObject lv_lhs_0_0 = null;
+
+        EObject lv_rhs_2_0 = null;
+
+
+         EObject temp=null; setCurrentLookahead(); resetLookahead(); 
+            
+        try {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3265:6: ( ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3266:1: ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* )
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3266:1: ( ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3266:2: ( (lv_lhs_0_0= ruleFactor ) ) ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )*
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3266:2: ( (lv_lhs_0_0= ruleFactor ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3267:1: (lv_lhs_0_0= ruleFactor )
+            {
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3267:1: (lv_lhs_0_0= ruleFactor )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3268:3: lv_lhs_0_0= ruleFactor
+            {
+             
+            	        currentNode=createCompositeNode(grammarAccess.getExpFactorAccess().getLhsFactorParserRuleCall_0_0(), currentNode); 
+            	    
+            pushFollow(FOLLOW_ruleFactor_in_ruleExpFactor6308);
+            lv_lhs_0_0=ruleFactor();
+            _fsp--;
+
+
+            	        if (current==null) {
+            	            current = factory.create(grammarAccess.getExpFactorRule().getType().getClassifier());
+            	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	        }
+            	        try {
+            	       		set(
+            	       			current, 
+            	       			"lhs",
+            	        		lv_lhs_0_0, 
+            	        		"Factor", 
+            	        		currentNode);
+            	        } catch (ValueConverterException vce) {
+            				handleValueConverterException(vce);
+            	        }
+            	        currentNode = currentNode.getParent();
+            	    
+
+            }
+
+
+            }
+
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3290:2: ( '^' ( (lv_rhs_2_0= ruleExpFactor ) ) )*
+            loop39:
+            do {
+                int alt39=2;
+                int LA39_0 = input.LA(1);
+
+                if ( (LA39_0==48) ) {
+                    alt39=1;
+                }
+
+
+                switch (alt39) {
+            	case 1 :
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3290:4: '^' ( (lv_rhs_2_0= ruleExpFactor ) )
+            	    {
+            	    match(input,48,FOLLOW_48_in_ruleExpFactor6319); 
+
+            	            createLeafNode(grammarAccess.getExpFactorAccess().getCircumflexAccentKeyword_1_0(), null); 
+            	        
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3294:1: ( (lv_rhs_2_0= ruleExpFactor ) )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3295:1: (lv_rhs_2_0= ruleExpFactor )
+            	    {
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3295:1: (lv_rhs_2_0= ruleExpFactor )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3296:3: lv_rhs_2_0= ruleExpFactor
+            	    {
+            	     
+            	    	        currentNode=createCompositeNode(grammarAccess.getExpFactorAccess().getRhsExpFactorParserRuleCall_1_1_0(), currentNode); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleExpFactor_in_ruleExpFactor6340);
+            	    lv_rhs_2_0=ruleExpFactor();
+            	    _fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = factory.create(grammarAccess.getExpFactorRule().getType().getClassifier());
+            	    	            associateNodeWithAstElement(currentNode.getParent(), current);
+            	    	        }
+            	    	        try {
+            	    	       		add(
+            	    	       			current, 
+            	    	       			"rhs",
+            	    	        		lv_rhs_2_0, 
+            	    	        		"ExpFactor", 
+            	    	        		currentNode);
+            	    	        } catch (ValueConverterException vce) {
+            	    				handleValueConverterException(vce);
+            	    	        }
+            	    	        currentNode = currentNode.getParent();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop39;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             resetLookahead(); 
+                	lastConsumedNode = currentNode;
+                
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end ruleExpFactor
 
 
     // $ANTLR start entryRuleFactor
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3304:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3326:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
     public final EObject entryRuleFactor() throws RecognitionException {
         EObject current = null;
 
@@ -7397,16 +7533,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3305:2: (iv_ruleFactor= ruleFactor EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3306:2: iv_ruleFactor= ruleFactor EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3327:2: (iv_ruleFactor= ruleFactor EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3328:2: iv_ruleFactor= ruleFactor EOF
             {
              currentNode = createCompositeNode(grammarAccess.getFactorRule(), currentNode); 
-            pushFollow(FOLLOW_ruleFactor_in_entryRuleFactor6381);
+            pushFollow(FOLLOW_ruleFactor_in_entryRuleFactor6378);
             iv_ruleFactor=ruleFactor();
             _fsp--;
 
              current =iv_ruleFactor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFactor6391); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFactor6388); 
 
             }
 
@@ -7424,7 +7560,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleFactor
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3313:1: ruleFactor returns [EObject current=null] : ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3335:1: ruleFactor returns [EObject current=null] : ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) ) ;
     public final EObject ruleFactor() throws RecognitionException {
         EObject current = null;
 
@@ -7443,40 +7579,40 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3318:6: ( ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3319:1: ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3340:6: ( ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3341:1: ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3319:1: ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) )
-            int alt37=7;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3341:1: ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) )
+            int alt40=7;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
-                alt37=1;
+                alt40=1;
                 }
                 break;
             case RULE_ID:
                 {
-                alt37=2;
+                alt40=2;
                 }
                 break;
             case RULE_STRING:
                 {
-                alt37=3;
+                alt40=3;
                 }
                 break;
             case 49:
                 {
-                alt37=4;
+                alt40=4;
                 }
                 break;
             case 50:
                 {
-                alt37=5;
+                alt40=5;
                 }
                 break;
             case 25:
                 {
-                alt37=6;
+                alt40=6;
                 }
                 break;
             case 59:
@@ -7516,25 +7652,25 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
             case 94:
             case 95:
                 {
-                alt37=7;
+                alt40=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("3319:1: ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) )", 37, 0, input);
+                    new NoViableAltException("3341:1: ( ( () ( (lv_number_1_0= RULE_INT ) ) ) | ( (lv_nodeName_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) | ( (lv_value_4_0= 'false' ) ) | ( (lv_value_5_0= 'true' ) ) | ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' ) | ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' ) )", 40, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt37) {
+            switch (alt40) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3319:2: ( () ( (lv_number_1_0= RULE_INT ) ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3341:2: ( () ( (lv_number_1_0= RULE_INT ) ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3319:2: ( () ( (lv_number_1_0= RULE_INT ) ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3319:3: () ( (lv_number_1_0= RULE_INT ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3341:2: ( () ( (lv_number_1_0= RULE_INT ) ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3341:3: () ( (lv_number_1_0= RULE_INT ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3319:3: ()
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3320:5: 
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3341:3: ()
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3342:5: 
                     {
                      
                             temp=factory.create(grammarAccess.getFactorAccess().getFactorAction_0_0().getType().getClassifier());
@@ -7549,14 +7685,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3330:2: ( (lv_number_1_0= RULE_INT ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3331:1: (lv_number_1_0= RULE_INT )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3352:2: ( (lv_number_1_0= RULE_INT ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3353:1: (lv_number_1_0= RULE_INT )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3331:1: (lv_number_1_0= RULE_INT )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3332:3: lv_number_1_0= RULE_INT
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3353:1: (lv_number_1_0= RULE_INT )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3354:3: lv_number_1_0= RULE_INT
                     {
                     lv_number_1_0=(Token)input.LT(1);
-                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFactor6443); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleFactor6440); 
 
                     			createLeafNode(grammarAccess.getFactorAccess().getNumberINTTerminalRuleCall_0_1_0(), "number"); 
                     		
@@ -7589,16 +7725,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3355:6: ( (lv_nodeName_2_0= RULE_ID ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3377:6: ( (lv_nodeName_2_0= RULE_ID ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3355:6: ( (lv_nodeName_2_0= RULE_ID ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3356:1: (lv_nodeName_2_0= RULE_ID )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3377:6: ( (lv_nodeName_2_0= RULE_ID ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3378:1: (lv_nodeName_2_0= RULE_ID )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3356:1: (lv_nodeName_2_0= RULE_ID )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3357:3: lv_nodeName_2_0= RULE_ID
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3378:1: (lv_nodeName_2_0= RULE_ID )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3379:3: lv_nodeName_2_0= RULE_ID
                     {
                     lv_nodeName_2_0=(Token)input.LT(1);
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFactor6472); 
+                    match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFactor6469); 
 
                     			createLeafNode(grammarAccess.getFactorAccess().getNodeNameIDTerminalRuleCall_1_0(), "nodeName"); 
                     		
@@ -7628,16 +7764,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3380:6: ( (lv_value_3_0= RULE_STRING ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3402:6: ( (lv_value_3_0= RULE_STRING ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3380:6: ( (lv_value_3_0= RULE_STRING ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3381:1: (lv_value_3_0= RULE_STRING )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3402:6: ( (lv_value_3_0= RULE_STRING ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3403:1: (lv_value_3_0= RULE_STRING )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3381:1: (lv_value_3_0= RULE_STRING )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3382:3: lv_value_3_0= RULE_STRING
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3403:1: (lv_value_3_0= RULE_STRING )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3404:3: lv_value_3_0= RULE_STRING
                     {
                     lv_value_3_0=(Token)input.LT(1);
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleFactor6500); 
+                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleFactor6497); 
 
                     			createLeafNode(grammarAccess.getFactorAccess().getValueSTRINGTerminalRuleCall_2_0(), "value"); 
                     		
@@ -7667,16 +7803,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3405:6: ( (lv_value_4_0= 'false' ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3427:6: ( (lv_value_4_0= 'false' ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3405:6: ( (lv_value_4_0= 'false' ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3406:1: (lv_value_4_0= 'false' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3427:6: ( (lv_value_4_0= 'false' ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3428:1: (lv_value_4_0= 'false' )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3406:1: (lv_value_4_0= 'false' )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3407:3: lv_value_4_0= 'false'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3428:1: (lv_value_4_0= 'false' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3429:3: lv_value_4_0= 'false'
                     {
                     lv_value_4_0=(Token)input.LT(1);
-                    match(input,49,FOLLOW_49_in_ruleFactor6529); 
+                    match(input,49,FOLLOW_49_in_ruleFactor6526); 
 
                             createLeafNode(grammarAccess.getFactorAccess().getValueFalseKeyword_3_0(), "value"); 
                         
@@ -7702,16 +7838,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3427:6: ( (lv_value_5_0= 'true' ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3449:6: ( (lv_value_5_0= 'true' ) )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3427:6: ( (lv_value_5_0= 'true' ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3428:1: (lv_value_5_0= 'true' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3449:6: ( (lv_value_5_0= 'true' ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3450:1: (lv_value_5_0= 'true' )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3428:1: (lv_value_5_0= 'true' )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3429:3: lv_value_5_0= 'true'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3450:1: (lv_value_5_0= 'true' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3451:3: lv_value_5_0= 'true'
                     {
                     lv_value_5_0=(Token)input.LT(1);
-                    match(input,50,FOLLOW_50_in_ruleFactor6566); 
+                    match(input,50,FOLLOW_50_in_ruleFactor6563); 
 
                             createLeafNode(grammarAccess.getFactorAccess().getValueTrueKeyword_4_0(), "value"); 
                         
@@ -7737,25 +7873,25 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3449:6: ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3471:6: ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3449:6: ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3449:8: '(' ( (lv_expression_7_0= ruleExpression ) ) ')'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3471:6: ( '(' ( (lv_expression_7_0= ruleExpression ) ) ')' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3471:8: '(' ( (lv_expression_7_0= ruleExpression ) ) ')'
                     {
-                    match(input,25,FOLLOW_25_in_ruleFactor6596); 
+                    match(input,25,FOLLOW_25_in_ruleFactor6593); 
 
                             createLeafNode(grammarAccess.getFactorAccess().getLeftParenthesisKeyword_5_0(), null); 
                         
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3453:1: ( (lv_expression_7_0= ruleExpression ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3454:1: (lv_expression_7_0= ruleExpression )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3475:1: ( (lv_expression_7_0= ruleExpression ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3476:1: (lv_expression_7_0= ruleExpression )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3454:1: (lv_expression_7_0= ruleExpression )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3455:3: lv_expression_7_0= ruleExpression
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3476:1: (lv_expression_7_0= ruleExpression )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3477:3: lv_expression_7_0= ruleExpression
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getFactorAccess().getExpressionExpressionParserRuleCall_5_1_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleFactor6617);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleFactor6614);
                     lv_expression_7_0=ruleExpression();
                     _fsp--;
 
@@ -7782,7 +7918,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    match(input,26,FOLLOW_26_in_ruleFactor6627); 
+                    match(input,26,FOLLOW_26_in_ruleFactor6624); 
 
                             createLeafNode(grammarAccess.getFactorAccess().getRightParenthesisKeyword_5_2(), null); 
                         
@@ -7793,21 +7929,21 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3482:6: ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3504:6: ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3482:6: ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3482:7: ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3504:6: ( ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3504:7: ( (lv_op_9_0= ruleOperatorName ) ) '(' ( (lv_sequence_11_0= ruleExpressionSequence ) ) ')'
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3482:7: ( (lv_op_9_0= ruleOperatorName ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3483:1: (lv_op_9_0= ruleOperatorName )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3504:7: ( (lv_op_9_0= ruleOperatorName ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3505:1: (lv_op_9_0= ruleOperatorName )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3483:1: (lv_op_9_0= ruleOperatorName )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3484:3: lv_op_9_0= ruleOperatorName
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3505:1: (lv_op_9_0= ruleOperatorName )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3506:3: lv_op_9_0= ruleOperatorName
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getFactorAccess().getOpOperatorNameParserRuleCall_6_0_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleOperatorName_in_ruleFactor6656);
+                    pushFollow(FOLLOW_ruleOperatorName_in_ruleFactor6653);
                     lv_op_9_0=ruleOperatorName();
                     _fsp--;
 
@@ -7834,20 +7970,20 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    match(input,25,FOLLOW_25_in_ruleFactor6666); 
+                    match(input,25,FOLLOW_25_in_ruleFactor6663); 
 
                             createLeafNode(grammarAccess.getFactorAccess().getLeftParenthesisKeyword_6_1(), null); 
                         
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3510:1: ( (lv_sequence_11_0= ruleExpressionSequence ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3511:1: (lv_sequence_11_0= ruleExpressionSequence )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3532:1: ( (lv_sequence_11_0= ruleExpressionSequence ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3533:1: (lv_sequence_11_0= ruleExpressionSequence )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3511:1: (lv_sequence_11_0= ruleExpressionSequence )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3512:3: lv_sequence_11_0= ruleExpressionSequence
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3533:1: (lv_sequence_11_0= ruleExpressionSequence )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3534:3: lv_sequence_11_0= ruleExpressionSequence
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getFactorAccess().getSequenceExpressionSequenceParserRuleCall_6_2_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleExpressionSequence_in_ruleFactor6687);
+                    pushFollow(FOLLOW_ruleExpressionSequence_in_ruleFactor6684);
                     lv_sequence_11_0=ruleExpressionSequence();
                     _fsp--;
 
@@ -7874,7 +8010,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    match(input,26,FOLLOW_26_in_ruleFactor6697); 
+                    match(input,26,FOLLOW_26_in_ruleFactor6694); 
 
                             createLeafNode(grammarAccess.getFactorAccess().getRightParenthesisKeyword_6_3(), null); 
                         
@@ -7907,7 +8043,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleExpressionSequence
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3546:1: entryRuleExpressionSequence returns [EObject current=null] : iv_ruleExpressionSequence= ruleExpressionSequence EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3568:1: entryRuleExpressionSequence returns [EObject current=null] : iv_ruleExpressionSequence= ruleExpressionSequence EOF ;
     public final EObject entryRuleExpressionSequence() throws RecognitionException {
         EObject current = null;
 
@@ -7915,16 +8051,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3547:2: (iv_ruleExpressionSequence= ruleExpressionSequence EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3548:2: iv_ruleExpressionSequence= ruleExpressionSequence EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3569:2: (iv_ruleExpressionSequence= ruleExpressionSequence EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3570:2: iv_ruleExpressionSequence= ruleExpressionSequence EOF
             {
              currentNode = createCompositeNode(grammarAccess.getExpressionSequenceRule(), currentNode); 
-            pushFollow(FOLLOW_ruleExpressionSequence_in_entryRuleExpressionSequence6734);
+            pushFollow(FOLLOW_ruleExpressionSequence_in_entryRuleExpressionSequence6731);
             iv_ruleExpressionSequence=ruleExpressionSequence();
             _fsp--;
 
              current =iv_ruleExpressionSequence; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionSequence6744); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionSequence6741); 
 
             }
 
@@ -7942,7 +8078,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleExpressionSequence
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3555:1: ruleExpressionSequence returns [EObject current=null] : ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3577:1: ruleExpressionSequence returns [EObject current=null] : ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? ) ;
     public final EObject ruleExpressionSequence() throws RecognitionException {
         EObject current = null;
 
@@ -7954,14 +8090,14 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3560:6: ( ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3561:1: ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3582:6: ( ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3583:1: ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3561:1: ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3561:2: () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3583:1: ( () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )? )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3583:2: () ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )?
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3561:2: ()
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3562:5: 
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3583:2: ()
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3584:5: 
             {
              
                     temp=factory.create(grammarAccess.getExpressionSequenceAccess().getExpressionSequenceAction_0().getType().getClassifier());
@@ -7976,27 +8112,27 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3572:2: ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3594:2: ( ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )* )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( ((LA39_0>=RULE_INT && LA39_0<=RULE_STRING)||LA39_0==25||(LA39_0>=49 && LA39_0<=50)||(LA39_0>=59 && LA39_0<=73)||(LA39_0>=75 && LA39_0<=95)) ) {
-                alt39=1;
+            if ( ((LA42_0>=RULE_INT && LA42_0<=RULE_STRING)||LA42_0==25||(LA42_0>=49 && LA42_0<=50)||(LA42_0>=59 && LA42_0<=73)||(LA42_0>=75 && LA42_0<=95)) ) {
+                alt42=1;
             }
-            switch (alt39) {
+            switch (alt42) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3572:3: ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )*
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3594:3: ( (lv_expressions_1_0= ruleExpression ) ) ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )*
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3572:3: ( (lv_expressions_1_0= ruleExpression ) )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3573:1: (lv_expressions_1_0= ruleExpression )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3594:3: ( (lv_expressions_1_0= ruleExpression ) )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3595:1: (lv_expressions_1_0= ruleExpression )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3573:1: (lv_expressions_1_0= ruleExpression )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3574:3: lv_expressions_1_0= ruleExpression
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3595:1: (lv_expressions_1_0= ruleExpression )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3596:3: lv_expressions_1_0= ruleExpression
                     {
                      
                     	        currentNode=createCompositeNode(grammarAccess.getExpressionSequenceAccess().getExpressionsExpressionParserRuleCall_1_0_0(), currentNode); 
                     	    
-                    pushFollow(FOLLOW_ruleExpression_in_ruleExpressionSequence6800);
+                    pushFollow(FOLLOW_ruleExpression_in_ruleExpressionSequence6797);
                     lv_expressions_1_0=ruleExpression();
                     _fsp--;
 
@@ -8023,35 +8159,35 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3596:2: ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )*
-                    loop38:
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3618:2: ( ',' ( (lv_expressions_3_0= ruleExpression ) ) )*
+                    loop41:
                     do {
-                        int alt38=2;
-                        int LA38_0 = input.LA(1);
+                        int alt41=2;
+                        int LA41_0 = input.LA(1);
 
-                        if ( (LA38_0==40) ) {
-                            alt38=1;
+                        if ( (LA41_0==40) ) {
+                            alt41=1;
                         }
 
 
-                        switch (alt38) {
+                        switch (alt41) {
                     	case 1 :
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3596:4: ',' ( (lv_expressions_3_0= ruleExpression ) )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3618:4: ',' ( (lv_expressions_3_0= ruleExpression ) )
                     	    {
-                    	    match(input,40,FOLLOW_40_in_ruleExpressionSequence6811); 
+                    	    match(input,40,FOLLOW_40_in_ruleExpressionSequence6808); 
 
                     	            createLeafNode(grammarAccess.getExpressionSequenceAccess().getCommaKeyword_1_1_0(), null); 
                     	        
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3600:1: ( (lv_expressions_3_0= ruleExpression ) )
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3601:1: (lv_expressions_3_0= ruleExpression )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3622:1: ( (lv_expressions_3_0= ruleExpression ) )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3623:1: (lv_expressions_3_0= ruleExpression )
                     	    {
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3601:1: (lv_expressions_3_0= ruleExpression )
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3602:3: lv_expressions_3_0= ruleExpression
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3623:1: (lv_expressions_3_0= ruleExpression )
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3624:3: lv_expressions_3_0= ruleExpression
                     	    {
                     	     
                     	    	        currentNode=createCompositeNode(grammarAccess.getExpressionSequenceAccess().getExpressionsExpressionParserRuleCall_1_1_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleExpression_in_ruleExpressionSequence6832);
+                    	    pushFollow(FOLLOW_ruleExpression_in_ruleExpressionSequence6829);
                     	    lv_expressions_3_0=ruleExpression();
                     	    _fsp--;
 
@@ -8083,7 +8219,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop38;
+                    	    break loop41;
                         }
                     } while (true);
 
@@ -8116,7 +8252,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleComparison
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3632:1: entryRuleComparison returns [String current=null] : iv_ruleComparison= ruleComparison EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3654:1: entryRuleComparison returns [String current=null] : iv_ruleComparison= ruleComparison EOF ;
     public final String entryRuleComparison() throws RecognitionException {
         String current = null;
 
@@ -8124,16 +8260,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3633:2: (iv_ruleComparison= ruleComparison EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3634:2: iv_ruleComparison= ruleComparison EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3655:2: (iv_ruleComparison= ruleComparison EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3656:2: iv_ruleComparison= ruleComparison EOF
             {
              currentNode = createCompositeNode(grammarAccess.getComparisonRule(), currentNode); 
-            pushFollow(FOLLOW_ruleComparison_in_entryRuleComparison6873);
+            pushFollow(FOLLOW_ruleComparison_in_entryRuleComparison6870);
             iv_ruleComparison=ruleComparison();
             _fsp--;
 
              current =iv_ruleComparison.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComparison6884); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComparison6881); 
 
             }
 
@@ -8151,7 +8287,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleComparison
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3641:1: ruleComparison returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3663:1: ruleComparison returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' ) ;
     public final AntlrDatatypeRuleToken ruleComparison() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8160,65 +8296,65 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3646:6: ( (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3647:1: (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3668:6: ( (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3669:1: (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3647:1: (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' )
-            int alt40=8;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3669:1: (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' )
+            int alt43=8;
             switch ( input.LA(1) ) {
             case 51:
                 {
-                alt40=1;
+                alt43=1;
                 }
                 break;
             case 24:
                 {
-                alt40=2;
+                alt43=2;
                 }
                 break;
             case 52:
                 {
-                alt40=3;
+                alt43=3;
                 }
                 break;
             case 53:
                 {
-                alt40=4;
+                alt43=4;
                 }
                 break;
             case 54:
                 {
-                alt40=5;
+                alt43=5;
                 }
                 break;
             case 55:
                 {
-                alt40=6;
+                alt43=6;
                 }
                 break;
             case 56:
                 {
-                alt40=7;
+                alt43=7;
                 }
                 break;
             case 57:
                 {
-                alt40=8;
+                alt43=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("3647:1: (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' )", 40, 0, input);
+                    new NoViableAltException("3669:1: (kw= '==' | kw= '=' | kw= '!=' | kw= '<>' | kw= '<' | kw= '<=' | kw= '>' | kw= '>=' )", 43, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt40) {
+            switch (alt43) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3648:2: kw= '=='
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3670:2: kw= '=='
                     {
                     kw=(Token)input.LT(1);
-                    match(input,51,FOLLOW_51_in_ruleComparison6922); 
+                    match(input,51,FOLLOW_51_in_ruleComparison6919); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getEqualsSignEqualsSignKeyword_0(), null); 
@@ -8227,10 +8363,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3655:2: kw= '='
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3677:2: kw= '='
                     {
                     kw=(Token)input.LT(1);
-                    match(input,24,FOLLOW_24_in_ruleComparison6941); 
+                    match(input,24,FOLLOW_24_in_ruleComparison6938); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getEqualsSignKeyword_1(), null); 
@@ -8239,10 +8375,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3662:2: kw= '!='
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3684:2: kw= '!='
                     {
                     kw=(Token)input.LT(1);
-                    match(input,52,FOLLOW_52_in_ruleComparison6960); 
+                    match(input,52,FOLLOW_52_in_ruleComparison6957); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getExclamationMarkEqualsSignKeyword_2(), null); 
@@ -8251,10 +8387,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3669:2: kw= '<>'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3691:2: kw= '<>'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,53,FOLLOW_53_in_ruleComparison6979); 
+                    match(input,53,FOLLOW_53_in_ruleComparison6976); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getLessThanSignGreaterThanSignKeyword_3(), null); 
@@ -8263,10 +8399,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3676:2: kw= '<'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3698:2: kw= '<'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,54,FOLLOW_54_in_ruleComparison6998); 
+                    match(input,54,FOLLOW_54_in_ruleComparison6995); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getLessThanSignKeyword_4(), null); 
@@ -8275,10 +8411,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3683:2: kw= '<='
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3705:2: kw= '<='
                     {
                     kw=(Token)input.LT(1);
-                    match(input,55,FOLLOW_55_in_ruleComparison7017); 
+                    match(input,55,FOLLOW_55_in_ruleComparison7014); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getLessThanSignEqualsSignKeyword_5(), null); 
@@ -8287,10 +8423,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3690:2: kw= '>'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3712:2: kw= '>'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,56,FOLLOW_56_in_ruleComparison7036); 
+                    match(input,56,FOLLOW_56_in_ruleComparison7033); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getGreaterThanSignKeyword_6(), null); 
@@ -8299,10 +8435,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3697:2: kw= '>='
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3719:2: kw= '>='
                     {
                     kw=(Token)input.LT(1);
-                    match(input,57,FOLLOW_57_in_ruleComparison7055); 
+                    match(input,57,FOLLOW_57_in_ruleComparison7052); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getComparisonAccess().getGreaterThanSignEqualsSignKeyword_7(), null); 
@@ -8333,7 +8469,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRulePlusOrMinus
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3710:1: entryRulePlusOrMinus returns [String current=null] : iv_rulePlusOrMinus= rulePlusOrMinus EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3732:1: entryRulePlusOrMinus returns [String current=null] : iv_rulePlusOrMinus= rulePlusOrMinus EOF ;
     public final String entryRulePlusOrMinus() throws RecognitionException {
         String current = null;
 
@@ -8341,16 +8477,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3711:2: (iv_rulePlusOrMinus= rulePlusOrMinus EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3712:2: iv_rulePlusOrMinus= rulePlusOrMinus EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3733:2: (iv_rulePlusOrMinus= rulePlusOrMinus EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3734:2: iv_rulePlusOrMinus= rulePlusOrMinus EOF
             {
              currentNode = createCompositeNode(grammarAccess.getPlusOrMinusRule(), currentNode); 
-            pushFollow(FOLLOW_rulePlusOrMinus_in_entryRulePlusOrMinus7096);
+            pushFollow(FOLLOW_rulePlusOrMinus_in_entryRulePlusOrMinus7093);
             iv_rulePlusOrMinus=rulePlusOrMinus();
             _fsp--;
 
              current =iv_rulePlusOrMinus.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePlusOrMinus7107); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePlusOrMinus7104); 
 
             }
 
@@ -8368,7 +8504,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start rulePlusOrMinus
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3719:1: rulePlusOrMinus returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '+' | kw= '-' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3741:1: rulePlusOrMinus returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '+' | kw= '-' ) ;
     public final AntlrDatatypeRuleToken rulePlusOrMinus() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8377,31 +8513,31 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3724:6: ( (kw= '+' | kw= '-' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3725:1: (kw= '+' | kw= '-' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3746:6: ( (kw= '+' | kw= '-' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3747:1: (kw= '+' | kw= '-' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3725:1: (kw= '+' | kw= '-' )
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3747:1: (kw= '+' | kw= '-' )
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA41_0==11) ) {
-                alt41=1;
+            if ( (LA44_0==11) ) {
+                alt44=1;
             }
-            else if ( (LA41_0==12) ) {
-                alt41=2;
+            else if ( (LA44_0==12) ) {
+                alt44=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("3725:1: (kw= '+' | kw= '-' )", 41, 0, input);
+                    new NoViableAltException("3747:1: (kw= '+' | kw= '-' )", 44, 0, input);
 
                 throw nvae;
             }
-            switch (alt41) {
+            switch (alt44) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3726:2: kw= '+'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3748:2: kw= '+'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,11,FOLLOW_11_in_rulePlusOrMinus7145); 
+                    match(input,11,FOLLOW_11_in_rulePlusOrMinus7142); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getPlusOrMinusAccess().getPlusSignKeyword_0(), null); 
@@ -8410,10 +8546,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3733:2: kw= '-'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3755:2: kw= '-'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,12,FOLLOW_12_in_rulePlusOrMinus7164); 
+                    match(input,12,FOLLOW_12_in_rulePlusOrMinus7161); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getPlusOrMinusAccess().getHyphenMinusKeyword_1(), null); 
@@ -8444,7 +8580,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleTimesOrDivide
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3746:1: entryRuleTimesOrDivide returns [String current=null] : iv_ruleTimesOrDivide= ruleTimesOrDivide EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3768:1: entryRuleTimesOrDivide returns [String current=null] : iv_ruleTimesOrDivide= ruleTimesOrDivide EOF ;
     public final String entryRuleTimesOrDivide() throws RecognitionException {
         String current = null;
 
@@ -8452,16 +8588,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3747:2: (iv_ruleTimesOrDivide= ruleTimesOrDivide EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3748:2: iv_ruleTimesOrDivide= ruleTimesOrDivide EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3769:2: (iv_ruleTimesOrDivide= ruleTimesOrDivide EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3770:2: iv_ruleTimesOrDivide= ruleTimesOrDivide EOF
             {
              currentNode = createCompositeNode(grammarAccess.getTimesOrDivideRule(), currentNode); 
-            pushFollow(FOLLOW_ruleTimesOrDivide_in_entryRuleTimesOrDivide7205);
+            pushFollow(FOLLOW_ruleTimesOrDivide_in_entryRuleTimesOrDivide7202);
             iv_ruleTimesOrDivide=ruleTimesOrDivide();
             _fsp--;
 
              current =iv_ruleTimesOrDivide.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTimesOrDivide7216); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTimesOrDivide7213); 
 
             }
 
@@ -8479,7 +8615,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleTimesOrDivide
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3755:1: ruleTimesOrDivide returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' | kw= '/' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3777:1: ruleTimesOrDivide returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '*' | kw= '/' ) ;
     public final AntlrDatatypeRuleToken ruleTimesOrDivide() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8488,31 +8624,31 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3760:6: ( (kw= '*' | kw= '/' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3761:1: (kw= '*' | kw= '/' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3782:6: ( (kw= '*' | kw= '/' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3783:1: (kw= '*' | kw= '/' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3761:1: (kw= '*' | kw= '/' )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3783:1: (kw= '*' | kw= '/' )
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA42_0==41) ) {
-                alt42=1;
+            if ( (LA45_0==41) ) {
+                alt45=1;
             }
-            else if ( (LA42_0==58) ) {
-                alt42=2;
+            else if ( (LA45_0==58) ) {
+                alt45=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("3761:1: (kw= '*' | kw= '/' )", 42, 0, input);
+                    new NoViableAltException("3783:1: (kw= '*' | kw= '/' )", 45, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt45) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3762:2: kw= '*'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3784:2: kw= '*'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,41,FOLLOW_41_in_ruleTimesOrDivide7254); 
+                    match(input,41,FOLLOW_41_in_ruleTimesOrDivide7251); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getTimesOrDivideAccess().getAsteriskKeyword_0(), null); 
@@ -8521,10 +8657,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3769:2: kw= '/'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3791:2: kw= '/'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,58,FOLLOW_58_in_ruleTimesOrDivide7273); 
+                    match(input,58,FOLLOW_58_in_ruleTimesOrDivide7270); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getTimesOrDivideAccess().getSolidusKeyword_1(), null); 
@@ -8555,7 +8691,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start entryRuleOperatorName
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3782:1: entryRuleOperatorName returns [String current=null] : iv_ruleOperatorName= ruleOperatorName EOF ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3804:1: entryRuleOperatorName returns [String current=null] : iv_ruleOperatorName= ruleOperatorName EOF ;
     public final String entryRuleOperatorName() throws RecognitionException {
         String current = null;
 
@@ -8563,16 +8699,16 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3783:2: (iv_ruleOperatorName= ruleOperatorName EOF )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3784:2: iv_ruleOperatorName= ruleOperatorName EOF
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3805:2: (iv_ruleOperatorName= ruleOperatorName EOF )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3806:2: iv_ruleOperatorName= ruleOperatorName EOF
             {
              currentNode = createCompositeNode(grammarAccess.getOperatorNameRule(), currentNode); 
-            pushFollow(FOLLOW_ruleOperatorName_in_entryRuleOperatorName7314);
+            pushFollow(FOLLOW_ruleOperatorName_in_entryRuleOperatorName7311);
             iv_ruleOperatorName=ruleOperatorName();
             _fsp--;
 
              current =iv_ruleOperatorName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOperatorName7325); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOperatorName7322); 
 
             }
 
@@ -8590,7 +8726,7 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleOperatorName
-    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3791:1: ruleOperatorName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' ) ;
+    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3813:1: ruleOperatorName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' ) ;
     public final AntlrDatatypeRuleToken ruleOperatorName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8599,205 +8735,205 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
          setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3796:6: ( (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3797:1: (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3818:6: ( (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3819:1: (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3797:1: (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' )
-            int alt43=36;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3819:1: (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' )
+            int alt46=36;
             switch ( input.LA(1) ) {
             case 59:
                 {
-                alt43=1;
+                alt46=1;
                 }
                 break;
             case 60:
                 {
-                alt43=2;
+                alt46=2;
                 }
                 break;
             case 61:
                 {
-                alt43=3;
+                alt46=3;
                 }
                 break;
             case 62:
                 {
-                alt43=4;
+                alt46=4;
                 }
                 break;
             case 63:
                 {
-                alt43=5;
+                alt46=5;
                 }
                 break;
             case 64:
                 {
-                alt43=6;
+                alt46=6;
                 }
                 break;
             case 65:
                 {
-                alt43=7;
+                alt46=7;
                 }
                 break;
             case 66:
                 {
-                alt43=8;
+                alt46=8;
                 }
                 break;
             case 67:
                 {
-                alt43=9;
+                alt46=9;
                 }
                 break;
             case 68:
                 {
-                alt43=10;
+                alt46=10;
                 }
                 break;
             case 69:
                 {
-                alt43=11;
+                alt46=11;
                 }
                 break;
             case 70:
                 {
-                alt43=12;
+                alt46=12;
                 }
                 break;
             case 71:
                 {
-                alt43=13;
+                alt46=13;
                 }
                 break;
             case 72:
                 {
-                alt43=14;
+                alt46=14;
                 }
                 break;
             case 73:
                 {
-                alt43=15;
+                alt46=15;
                 }
                 break;
             case 75:
                 {
-                alt43=16;
+                alt46=16;
                 }
                 break;
             case 76:
                 {
-                alt43=17;
+                alt46=17;
                 }
                 break;
             case 77:
                 {
-                alt43=18;
+                alt46=18;
                 }
                 break;
             case 78:
                 {
-                alt43=19;
+                alt46=19;
                 }
                 break;
             case 79:
                 {
-                alt43=20;
+                alt46=20;
                 }
                 break;
             case 80:
                 {
-                alt43=21;
+                alt46=21;
                 }
                 break;
             case 81:
                 {
-                alt43=22;
+                alt46=22;
                 }
                 break;
             case 82:
                 {
-                alt43=23;
+                alt46=23;
                 }
                 break;
             case 83:
                 {
-                alt43=24;
+                alt46=24;
                 }
                 break;
             case 84:
                 {
-                alt43=25;
+                alt46=25;
                 }
                 break;
             case 85:
                 {
-                alt43=26;
+                alt46=26;
                 }
                 break;
             case 86:
                 {
-                alt43=27;
+                alt46=27;
                 }
                 break;
             case 87:
                 {
-                alt43=28;
+                alt46=28;
                 }
                 break;
             case 88:
                 {
-                alt43=29;
+                alt46=29;
                 }
                 break;
             case 89:
                 {
-                alt43=30;
+                alt46=30;
                 }
                 break;
             case 90:
                 {
-                alt43=31;
+                alt46=31;
                 }
                 break;
             case 91:
                 {
-                alt43=32;
+                alt46=32;
                 }
                 break;
             case 92:
                 {
-                alt43=33;
+                alt46=33;
                 }
                 break;
             case 93:
                 {
-                alt43=34;
+                alt46=34;
                 }
                 break;
             case 94:
                 {
-                alt43=35;
+                alt46=35;
                 }
                 break;
             case 95:
                 {
-                alt43=36;
+                alt46=36;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("3797:1: (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' )", 43, 0, input);
+                    new NoViableAltException("3819:1: (kw= 'truncate' | kw= 'Normal' | kw= 'LogNormal' | kw= 'Beta' | kw= 'Gamma' | kw= 'Exponential' | kw= 'Weibull' | kw= 'Uniform' | kw= 'Triangular' | kw= 'PERT' | kw= 'Binomial' | kw= 'Poisson' | kw= 'NegativeBinomial' | kw= 'Geometric' | (kw= 'Distribution' kw= 'NoisyOR' ) | kw= 'min' | kw= 'max' | kw= 'log' | kw= 'log2' | kw= 'log10' | kw= 'exp' | kw= 'sin' | kw= 'cos' | kw= 'tan' | kw= 'sinh' | kw= 'cosh' | kw= 'tanh' | kw= 'sqrt' | kw= 'abs' | kw= 'floor' | kw= 'ceil' | kw= 'mod' | kw= 'if' | kw= 'and' | kw= 'or' | kw= 'not' )", 46, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt43) {
+            switch (alt46) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3798:2: kw= 'truncate'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3820:2: kw= 'truncate'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,59,FOLLOW_59_in_ruleOperatorName7363); 
+                    match(input,59,FOLLOW_59_in_ruleOperatorName7360); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getTruncateKeyword_0(), null); 
@@ -8806,10 +8942,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3805:2: kw= 'Normal'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3827:2: kw= 'Normal'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,60,FOLLOW_60_in_ruleOperatorName7382); 
+                    match(input,60,FOLLOW_60_in_ruleOperatorName7379); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getNormalKeyword_1(), null); 
@@ -8818,10 +8954,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3812:2: kw= 'LogNormal'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3834:2: kw= 'LogNormal'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,61,FOLLOW_61_in_ruleOperatorName7401); 
+                    match(input,61,FOLLOW_61_in_ruleOperatorName7398); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getLogNormalKeyword_2(), null); 
@@ -8830,10 +8966,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3819:2: kw= 'Beta'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3841:2: kw= 'Beta'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,62,FOLLOW_62_in_ruleOperatorName7420); 
+                    match(input,62,FOLLOW_62_in_ruleOperatorName7417); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getBetaKeyword_3(), null); 
@@ -8842,10 +8978,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3826:2: kw= 'Gamma'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3848:2: kw= 'Gamma'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,63,FOLLOW_63_in_ruleOperatorName7439); 
+                    match(input,63,FOLLOW_63_in_ruleOperatorName7436); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getGammaKeyword_4(), null); 
@@ -8854,10 +8990,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3833:2: kw= 'Exponential'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3855:2: kw= 'Exponential'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,64,FOLLOW_64_in_ruleOperatorName7458); 
+                    match(input,64,FOLLOW_64_in_ruleOperatorName7455); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getExponentialKeyword_5(), null); 
@@ -8866,10 +9002,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3840:2: kw= 'Weibull'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3862:2: kw= 'Weibull'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,65,FOLLOW_65_in_ruleOperatorName7477); 
+                    match(input,65,FOLLOW_65_in_ruleOperatorName7474); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getWeibullKeyword_6(), null); 
@@ -8878,10 +9014,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3847:2: kw= 'Uniform'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3869:2: kw= 'Uniform'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,66,FOLLOW_66_in_ruleOperatorName7496); 
+                    match(input,66,FOLLOW_66_in_ruleOperatorName7493); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getUniformKeyword_7(), null); 
@@ -8890,10 +9026,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3854:2: kw= 'Triangular'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3876:2: kw= 'Triangular'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,67,FOLLOW_67_in_ruleOperatorName7515); 
+                    match(input,67,FOLLOW_67_in_ruleOperatorName7512); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getTriangularKeyword_8(), null); 
@@ -8902,10 +9038,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3861:2: kw= 'PERT'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3883:2: kw= 'PERT'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,68,FOLLOW_68_in_ruleOperatorName7534); 
+                    match(input,68,FOLLOW_68_in_ruleOperatorName7531); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getPERTKeyword_9(), null); 
@@ -8914,10 +9050,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3868:2: kw= 'Binomial'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3890:2: kw= 'Binomial'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,69,FOLLOW_69_in_ruleOperatorName7553); 
+                    match(input,69,FOLLOW_69_in_ruleOperatorName7550); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getBinomialKeyword_10(), null); 
@@ -8926,10 +9062,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3875:2: kw= 'Poisson'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3897:2: kw= 'Poisson'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,70,FOLLOW_70_in_ruleOperatorName7572); 
+                    match(input,70,FOLLOW_70_in_ruleOperatorName7569); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getPoissonKeyword_11(), null); 
@@ -8938,10 +9074,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3882:2: kw= 'NegativeBinomial'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3904:2: kw= 'NegativeBinomial'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,71,FOLLOW_71_in_ruleOperatorName7591); 
+                    match(input,71,FOLLOW_71_in_ruleOperatorName7588); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getNegativeBinomialKeyword_12(), null); 
@@ -8950,10 +9086,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3889:2: kw= 'Geometric'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3911:2: kw= 'Geometric'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,72,FOLLOW_72_in_ruleOperatorName7610); 
+                    match(input,72,FOLLOW_72_in_ruleOperatorName7607); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getGeometricKeyword_13(), null); 
@@ -8962,19 +9098,19 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3895:6: (kw= 'Distribution' kw= 'NoisyOR' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3917:6: (kw= 'Distribution' kw= 'NoisyOR' )
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3895:6: (kw= 'Distribution' kw= 'NoisyOR' )
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3896:2: kw= 'Distribution' kw= 'NoisyOR'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3917:6: (kw= 'Distribution' kw= 'NoisyOR' )
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3918:2: kw= 'Distribution' kw= 'NoisyOR'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,73,FOLLOW_73_in_ruleOperatorName7630); 
+                    match(input,73,FOLLOW_73_in_ruleOperatorName7627); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getDistributionKeyword_14_0(), null); 
                         
                     kw=(Token)input.LT(1);
-                    match(input,74,FOLLOW_74_in_ruleOperatorName7643); 
+                    match(input,74,FOLLOW_74_in_ruleOperatorName7640); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getNoisyORKeyword_14_1(), null); 
@@ -8986,10 +9122,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3909:2: kw= 'min'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3931:2: kw= 'min'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,75,FOLLOW_75_in_ruleOperatorName7663); 
+                    match(input,75,FOLLOW_75_in_ruleOperatorName7660); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getMinKeyword_15(), null); 
@@ -8998,10 +9134,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3916:2: kw= 'max'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3938:2: kw= 'max'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,76,FOLLOW_76_in_ruleOperatorName7682); 
+                    match(input,76,FOLLOW_76_in_ruleOperatorName7679); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getMaxKeyword_16(), null); 
@@ -9010,10 +9146,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3923:2: kw= 'log'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3945:2: kw= 'log'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,77,FOLLOW_77_in_ruleOperatorName7701); 
+                    match(input,77,FOLLOW_77_in_ruleOperatorName7698); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getLogKeyword_17(), null); 
@@ -9022,10 +9158,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3930:2: kw= 'log2'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3952:2: kw= 'log2'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,78,FOLLOW_78_in_ruleOperatorName7720); 
+                    match(input,78,FOLLOW_78_in_ruleOperatorName7717); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getLog2Keyword_18(), null); 
@@ -9034,10 +9170,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3937:2: kw= 'log10'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3959:2: kw= 'log10'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,79,FOLLOW_79_in_ruleOperatorName7739); 
+                    match(input,79,FOLLOW_79_in_ruleOperatorName7736); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getLog10Keyword_19(), null); 
@@ -9046,10 +9182,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3944:2: kw= 'exp'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3966:2: kw= 'exp'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,80,FOLLOW_80_in_ruleOperatorName7758); 
+                    match(input,80,FOLLOW_80_in_ruleOperatorName7755); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getExpKeyword_20(), null); 
@@ -9058,10 +9194,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3951:2: kw= 'sin'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3973:2: kw= 'sin'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,81,FOLLOW_81_in_ruleOperatorName7777); 
+                    match(input,81,FOLLOW_81_in_ruleOperatorName7774); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getSinKeyword_21(), null); 
@@ -9070,10 +9206,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3958:2: kw= 'cos'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3980:2: kw= 'cos'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,82,FOLLOW_82_in_ruleOperatorName7796); 
+                    match(input,82,FOLLOW_82_in_ruleOperatorName7793); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getCosKeyword_22(), null); 
@@ -9082,10 +9218,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3965:2: kw= 'tan'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3987:2: kw= 'tan'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,83,FOLLOW_83_in_ruleOperatorName7815); 
+                    match(input,83,FOLLOW_83_in_ruleOperatorName7812); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getTanKeyword_23(), null); 
@@ -9094,10 +9230,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3972:2: kw= 'sinh'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3994:2: kw= 'sinh'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,84,FOLLOW_84_in_ruleOperatorName7834); 
+                    match(input,84,FOLLOW_84_in_ruleOperatorName7831); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getSinhKeyword_24(), null); 
@@ -9106,10 +9242,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3979:2: kw= 'cosh'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4001:2: kw= 'cosh'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,85,FOLLOW_85_in_ruleOperatorName7853); 
+                    match(input,85,FOLLOW_85_in_ruleOperatorName7850); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getCoshKeyword_25(), null); 
@@ -9118,10 +9254,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3986:2: kw= 'tanh'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4008:2: kw= 'tanh'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,86,FOLLOW_86_in_ruleOperatorName7872); 
+                    match(input,86,FOLLOW_86_in_ruleOperatorName7869); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getTanhKeyword_26(), null); 
@@ -9130,10 +9266,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:3993:2: kw= 'sqrt'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4015:2: kw= 'sqrt'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,87,FOLLOW_87_in_ruleOperatorName7891); 
+                    match(input,87,FOLLOW_87_in_ruleOperatorName7888); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getSqrtKeyword_27(), null); 
@@ -9142,10 +9278,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4000:2: kw= 'abs'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4022:2: kw= 'abs'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,88,FOLLOW_88_in_ruleOperatorName7910); 
+                    match(input,88,FOLLOW_88_in_ruleOperatorName7907); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getAbsKeyword_28(), null); 
@@ -9154,10 +9290,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4007:2: kw= 'floor'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4029:2: kw= 'floor'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,89,FOLLOW_89_in_ruleOperatorName7929); 
+                    match(input,89,FOLLOW_89_in_ruleOperatorName7926); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getFloorKeyword_29(), null); 
@@ -9166,10 +9302,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4014:2: kw= 'ceil'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4036:2: kw= 'ceil'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,90,FOLLOW_90_in_ruleOperatorName7948); 
+                    match(input,90,FOLLOW_90_in_ruleOperatorName7945); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getCeilKeyword_30(), null); 
@@ -9178,10 +9314,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4021:2: kw= 'mod'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4043:2: kw= 'mod'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,91,FOLLOW_91_in_ruleOperatorName7967); 
+                    match(input,91,FOLLOW_91_in_ruleOperatorName7964); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getModKeyword_31(), null); 
@@ -9190,10 +9326,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4028:2: kw= 'if'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4050:2: kw= 'if'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,92,FOLLOW_92_in_ruleOperatorName7986); 
+                    match(input,92,FOLLOW_92_in_ruleOperatorName7983); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getIfKeyword_32(), null); 
@@ -9202,10 +9338,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4035:2: kw= 'and'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4057:2: kw= 'and'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,93,FOLLOW_93_in_ruleOperatorName8005); 
+                    match(input,93,FOLLOW_93_in_ruleOperatorName8002); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getAndKeyword_33(), null); 
@@ -9214,10 +9350,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4042:2: kw= 'or'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4064:2: kw= 'or'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,94,FOLLOW_94_in_ruleOperatorName8024); 
+                    match(input,94,FOLLOW_94_in_ruleOperatorName8021); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getOrKeyword_34(), null); 
@@ -9226,10 +9362,10 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4049:2: kw= 'not'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4071:2: kw= 'not'
                     {
                     kw=(Token)input.LT(1);
-                    match(input,95,FOLLOW_95_in_ruleOperatorName8043); 
+                    match(input,95,FOLLOW_95_in_ruleOperatorName8040); 
 
                             current.merge(kw);
                             createLeafNode(grammarAccess.getOperatorNameAccess().getNotKeyword_35(), null); 
@@ -9268,342 +9404,341 @@ public class InternalNetDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleSign184 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_ruleSign226 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_ruleSign245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloat_in_entryRuleFloat296 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFloat307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSign_in_ruleFloat359 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleFloat381 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_13_in_ruleFloat400 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleFloat415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDomainDefinition_in_entryRuleDomainDefinition466 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDomainDefinition476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDomainHeader_in_ruleDomainDefinition522 = new BitSet(new long[]{0x00002010007E0002L});
-    public static final BitSet FOLLOW_ruleDomainElement_in_ruleDomainDefinition543 = new BitSet(new long[]{0x00002010007E0002L});
-    public static final BitSet FOLLOW_ruleDomainHeader_in_entryRuleDomainHeader580 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDomainHeader590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleDomainHeader634 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleDomainHeader644 = new BitSet(new long[]{0x0000000C70810020L});
-    public static final BitSet FOLLOW_ruleAttribute_in_ruleDomainHeader665 = new BitSet(new long[]{0x0000000C70810020L});
-    public static final BitSet FOLLOW_16_in_ruleDomainHeader676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDomainElement_in_entryRuleDomainElement712 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDomainElement722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBasicNode_in_ruleDomainElement769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotential_in_ruleDomainElement796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassDefinition_in_ruleDomainElement823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute858 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttribute868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatesAttribute_in_ruleAttribute915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabelAttribute_in_ruleAttribute942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePositionAttribute_in_ruleAttribute969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSubtypeAttribute_in_ruleAttribute996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStateValuesAttribute_in_ruleAttribute1023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleAttribute1050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeSizeAttribute_in_ruleAttribute1077 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBasicNode_in_entryRuleBasicNode1112 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBasicNode1122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBasicNodeKeyword_in_ruleBasicNode1168 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBasicNode1185 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleBasicNode1201 = new BitSet(new long[]{0x0000000C70810020L});
-    public static final BitSet FOLLOW_ruleAttribute_in_ruleBasicNode1222 = new BitSet(new long[]{0x0000000C70810020L});
-    public static final BitSet FOLLOW_16_in_ruleBasicNode1233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBasicNodeKeyword_in_entryRuleBasicNodeKeyword1270 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBasicNodeKeyword1281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleBasicNodeKeyword1321 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_18_in_ruleBasicNodeKeyword1340 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleBasicNodeKeyword1355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleBasicNodeKeyword1375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleBasicNodeKeyword1394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleBasicNodeKeyword1413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatesAttribute_in_entryRuleStatesAttribute1453 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStatesAttribute1463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleStatesAttribute1507 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleStatesAttribute1517 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleStatesAttribute1527 = new BitSet(new long[]{0x0000000004000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStatesAttribute1544 = new BitSet(new long[]{0x0000000004000040L});
-    public static final BitSet FOLLOW_26_in_ruleStatesAttribute1560 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleStatesAttribute1570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabelAttribute_in_entryRuleLabelAttribute1606 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLabelAttribute1616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleLabelAttribute1651 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleLabelAttribute1661 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleLabelAttribute1678 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleLabelAttribute1693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePositionAttribute_in_entryRulePositionAttribute1729 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePositionAttribute1739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rulePositionAttribute1774 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_rulePositionAttribute1784 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_rulePositionAttribute1794 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_rulePositionAttribute1811 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_rulePositionAttribute1833 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_rulePositionAttribute1848 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_rulePositionAttribute1858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSubtypeAttribute_in_entryRuleSubtypeAttribute1894 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSubtypeAttribute1904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleSubtypeAttribute1939 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleSubtypeAttribute1949 = new BitSet(new long[]{0x0000000390000000L});
-    public static final BitSet FOLLOW_28_in_ruleSubtypeAttribute1969 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_31_in_ruleSubtypeAttribute1998 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_32_in_ruleSubtypeAttribute2027 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_33_in_ruleSubtypeAttribute2056 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleSubtypeAttribute2082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStateValuesAttribute_in_entryRuleStateValuesAttribute2118 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStateValuesAttribute2128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleStateValuesAttribute2163 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleStateValuesAttribute2173 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleStateValuesAttribute2183 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleStateValuesAttribute2200 = new BitSet(new long[]{0x0000000004000010L});
-    public static final BitSet FOLLOW_26_in_ruleStateValuesAttribute2216 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleStateValuesAttribute2226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute2262 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationAttribute2272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleApplicationAttribute2314 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleApplicationAttribute2329 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleApplicationAttribute2346 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleApplicationAttribute2361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeSizeAttribute_in_entryRuleNodeSizeAttribute2397 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNodeSizeAttribute2407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleNodeSizeAttribute2442 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleNodeSizeAttribute2452 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleNodeSizeAttribute2462 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2479 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2501 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleNodeSizeAttribute2516 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleNodeSizeAttribute2526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotential_in_entryRulePotential2562 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePotential2572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rulePotential2607 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rulePotentialGraph_in_rulePotential2628 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rulePotentialModel_in_rulePotential2649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotentialGraph_in_entryRulePotentialGraph2685 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePotentialGraph2695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rulePotentialGraph2739 = new BitSet(new long[]{0x0000002004000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePotentialGraph2756 = new BitSet(new long[]{0x0000002004000020L});
-    public static final BitSet FOLLOW_37_in_rulePotentialGraph2773 = new BitSet(new long[]{0x0000000004000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_rulePotentialGraph2790 = new BitSet(new long[]{0x0000000004000020L});
-    public static final BitSet FOLLOW_26_in_rulePotentialGraph2808 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotentialModel_in_entryRulePotentialModel2844 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePotentialModel2854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rulePotentialModel2898 = new BitSet(new long[]{0x0000044000010000L});
-    public static final BitSet FOLLOW_rulePotentialAttribute_in_rulePotentialModel2919 = new BitSet(new long[]{0x0000044000010000L});
-    public static final BitSet FOLLOW_16_in_rulePotentialModel2930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotentialAttribute_in_entryRulePotentialAttribute2966 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePotentialAttribute2976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotentialDataAttribute_in_rulePotentialAttribute3023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotentialTableAttribute_in_rulePotentialAttribute3050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotentialDataAttribute_in_entryRulePotentialDataAttribute3085 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePotentialDataAttribute3095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rulePotentialDataAttribute3139 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_rulePotentialDataAttribute3149 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_rulePotentialDataAttribute3159 = new BitSet(new long[]{0x0000008006001810L});
-    public static final BitSet FOLLOW_ruleUnstructuredDataList_in_rulePotentialDataAttribute3181 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_ruleStructuredDataList_in_rulePotentialDataAttribute3208 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_rulePotentialDataAttribute3219 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_rulePotentialDataAttribute3229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnstructuredDataList_in_entryRuleUnstructuredDataList3265 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnstructuredDataList3275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloat_in_ruleUnstructuredDataList3331 = new BitSet(new long[]{0x0000000000001812L});
-    public static final BitSet FOLLOW_ruleNormalDistribution_in_ruleUnstructuredDataList3361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStructuredDataList_in_entryRuleStructuredDataList3396 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStructuredDataList3406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleStructuredDataList3450 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_ruleFloatDataList_in_ruleStructuredDataList3471 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleStructuredDataList3481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloatDataList_in_entryRuleFloatDataList3517 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFloatDataList3527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleFloatDataList3571 = new BitSet(new long[]{0x0000008004001810L});
-    public static final BitSet FOLLOW_ruleUnstructuredDataList_in_ruleFloatDataList3592 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleFloatDataList3602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNormalDistribution_in_entryRuleNormalDistribution3638 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNormalDistribution3648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleNormalDistribution3683 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleNormalDistribution3693 = new BitSet(new long[]{0x0000000000001830L});
-    public static final BitSet FOLLOW_ruleMeanExpression_in_ruleNormalDistribution3714 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleNormalDistribution3724 = new BitSet(new long[]{0x0000000000001810L});
-    public static final BitSet FOLLOW_ruleFloat_in_ruleNormalDistribution3745 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleNormalDistribution3755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMeanExpression_in_entryRuleMeanExpression3792 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMeanExpression3803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMeanTerm_in_ruleMeanExpression3850 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_11_in_ruleMeanExpression3869 = new BitSet(new long[]{0x0000000000001830L});
-    public static final BitSet FOLLOW_ruleMeanTerm_in_ruleMeanExpression3891 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_ruleMeanTerm_in_entryRuleMeanTerm3939 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMeanTerm3950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloat_in_ruleMeanTerm3997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFloat_in_ruleMeanTerm4031 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_ruleMeanTerm4049 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMeanTerm4064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMeanTerm4091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePotentialTableAttribute_in_entryRulePotentialTableAttribute4136 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePotentialTableAttribute4146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModelNodesAttribute_in_rulePotentialTableAttribute4192 = new BitSet(new long[]{0x0000180000000000L});
-    public static final BitSet FOLLOW_ruleSamplesAttribute_in_rulePotentialTableAttribute4213 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_ruleModelDataAttribute_in_rulePotentialTableAttribute4235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModelNodesAttribute_in_entryRuleModelNodesAttribute4271 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleModelNodesAttribute4281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleModelNodesAttribute4325 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleModelNodesAttribute4335 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleModelNodesAttribute4345 = new BitSet(new long[]{0x0000000004000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleModelNodesAttribute4362 = new BitSet(new long[]{0x0000000004000020L});
-    public static final BitSet FOLLOW_26_in_ruleModelNodesAttribute4378 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleModelNodesAttribute4388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSamplesAttribute_in_entryRuleSamplesAttribute4424 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSamplesAttribute4434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleSamplesAttribute4469 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleSamplesAttribute4479 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSamplesAttribute4496 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleSamplesAttribute4511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModelDataAttribute_in_entryRuleModelDataAttribute4547 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleModelDataAttribute4557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleModelDataAttribute4601 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleModelDataAttribute4611 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleModelDataAttribute4621 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleModelDataAttribute4631 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleModelDataAttribute4641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassDefinition_in_entryRuleClassDefinition4677 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClassDefinition4687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleClassDefinition4722 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleClassDefinition4739 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleClassDefinition4754 = new BitSet(new long[]{0x0000601C70FF0020L});
-    public static final BitSet FOLLOW_ruleClassElement_in_ruleClassDefinition4775 = new BitSet(new long[]{0x0000601C70FF0020L});
-    public static final BitSet FOLLOW_16_in_ruleClassDefinition4786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassElement_in_entryRuleClassElement4822 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClassElement4832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDomainElement_in_ruleClassElement4879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribute_in_ruleClassElement4906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassInstance_in_ruleClassElement4933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClassInstance_in_entryRuleClassInstance4968 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClassInstance4978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleClassInstance5013 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleClassInstance5030 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_ruleClassInstance5045 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleClassInstance5062 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleClassInstance5077 = new BitSet(new long[]{0x000000000C000020L});
-    public static final BitSet FOLLOW_ruleInputBindings_in_ruleClassInstance5098 = new BitSet(new long[]{0x000000000C000000L});
-    public static final BitSet FOLLOW_27_in_ruleClassInstance5110 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleOutputBindings_in_ruleClassInstance5131 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleClassInstance5143 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleClassInstance5153 = new BitSet(new long[]{0x0000000030000020L});
-    public static final BitSet FOLLOW_ruleNodeAttributes_in_ruleClassInstance5174 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleClassInstance5184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInputBindings_in_entryRuleInputBindings5220 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInputBindings5230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInputBinding_in_ruleInputBindings5276 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleInputBindings5286 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleInputBindings_in_ruleInputBindings5307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInputBinding_in_entryRuleInputBinding5343 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInputBinding5353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInputBinding5395 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleInputBinding5410 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInputBinding5427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutputBindings_in_entryRuleOutputBindings5468 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutputBindings5478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutputBinding_in_ruleOutputBindings5524 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleOutputBindings5534 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleOutputBindings_in_ruleOutputBindings5555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutputBinding_in_entryRuleOutputBinding5591 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutputBinding5601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleOutputBinding5643 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleOutputBinding5658 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleOutputBinding5675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeAttributes_in_entryRuleNodeAttributes5716 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNodeAttributes5726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabelAttribute_in_ruleNodeAttributes5773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePositionAttribute_in_ruleNodeAttributes5800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleNodeAttributes5827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression5862 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpression5872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleExpression_in_ruleExpression5918 = new BitSet(new long[]{0x03F8000001000002L});
-    public static final BitSet FOLLOW_ruleComparison_in_ruleExpression5935 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
-    public static final BitSet FOLLOW_ruleSimpleExpression_in_ruleExpression5955 = new BitSet(new long[]{0x03F8000001000002L});
-    public static final BitSet FOLLOW_ruleSimpleExpression_in_entryRuleSimpleExpression5993 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleExpression6003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTerm_in_ruleSimpleExpression6049 = new BitSet(new long[]{0x0000000000001802L});
-    public static final BitSet FOLLOW_rulePlusOrMinus_in_ruleSimpleExpression6066 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
-    public static final BitSet FOLLOW_ruleSimpleExpression_in_ruleSimpleExpression6086 = new BitSet(new long[]{0x0000000000001802L});
-    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm6124 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTerm6134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpFactor_in_ruleTerm6180 = new BitSet(new long[]{0x0400020000000002L});
-    public static final BitSet FOLLOW_ruleTimesOrDivide_in_ruleTerm6197 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
-    public static final BitSet FOLLOW_ruleTerm_in_ruleTerm6217 = new BitSet(new long[]{0x0400020000000002L});
-    public static final BitSet FOLLOW_ruleExpFactor_in_entryRuleExpFactor6255 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpFactor6265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFactor_in_ruleExpFactor6311 = new BitSet(new long[]{0x0001000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleExpFactor6322 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
-    public static final BitSet FOLLOW_ruleExpFactor_in_ruleExpFactor6343 = new BitSet(new long[]{0x0001000000000002L});
-    public static final BitSet FOLLOW_ruleFactor_in_entryRuleFactor6381 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFactor6391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleFactor6443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFactor6472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleFactor6500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleFactor6529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleFactor6566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleFactor6596 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleFactor6617 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleFactor6627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperatorName_in_ruleFactor6656 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleFactor6666 = new BitSet(new long[]{0xF806000006000070L,0x00000000FFFFFBFFL});
-    public static final BitSet FOLLOW_ruleExpressionSequence_in_ruleFactor6687 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleFactor6697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressionSequence_in_entryRuleExpressionSequence6734 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionSequence6744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionSequence6800 = new BitSet(new long[]{0x0000010000000002L});
-    public static final BitSet FOLLOW_40_in_ruleExpressionSequence6811 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionSequence6832 = new BitSet(new long[]{0x0000010000000002L});
-    public static final BitSet FOLLOW_ruleComparison_in_entryRuleComparison6873 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComparison6884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleComparison6922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleComparison6941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleComparison6960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleComparison6979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleComparison6998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleComparison7017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleComparison7036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_ruleComparison7055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlusOrMinus_in_entryRulePlusOrMinus7096 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePlusOrMinus7107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rulePlusOrMinus7145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rulePlusOrMinus7164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimesOrDivide_in_entryRuleTimesOrDivide7205 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTimesOrDivide7216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleTimesOrDivide7254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleTimesOrDivide7273 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperatorName_in_entryRuleOperatorName7314 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOperatorName7325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleOperatorName7363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleOperatorName7382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleOperatorName7401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleOperatorName7420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleOperatorName7439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleOperatorName7458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleOperatorName7477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_ruleOperatorName7496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_ruleOperatorName7515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_ruleOperatorName7534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleOperatorName7553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_ruleOperatorName7572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleOperatorName7591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleOperatorName7610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_ruleOperatorName7630 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_74_in_ruleOperatorName7643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleOperatorName7663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_ruleOperatorName7682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_ruleOperatorName7701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_ruleOperatorName7720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleOperatorName7739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleOperatorName7758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_ruleOperatorName7777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleOperatorName7796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleOperatorName7815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_ruleOperatorName7834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleOperatorName7853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleOperatorName7872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleOperatorName7891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_ruleOperatorName7910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleOperatorName7929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleOperatorName7948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleOperatorName7967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleOperatorName7986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_ruleOperatorName8005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_ruleOperatorName8024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleOperatorName8043 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloat_in_entryRuleFloat290 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFloat301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSign_in_ruleFloat349 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFloat371 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_ruleFloat390 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFloat405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDomainDefinition_in_entryRuleDomainDefinition452 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDomainDefinition462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDomainHeader_in_ruleDomainDefinition508 = new BitSet(new long[]{0x00002010007E0002L});
+    public static final BitSet FOLLOW_ruleDomainElement_in_ruleDomainDefinition529 = new BitSet(new long[]{0x00002010007E0002L});
+    public static final BitSet FOLLOW_ruleDomainHeader_in_entryRuleDomainHeader566 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDomainHeader576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleDomainHeader620 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleDomainHeader630 = new BitSet(new long[]{0x0000000C70810020L});
+    public static final BitSet FOLLOW_ruleAttribute_in_ruleDomainHeader651 = new BitSet(new long[]{0x0000000C70810020L});
+    public static final BitSet FOLLOW_16_in_ruleDomainHeader662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDomainElement_in_entryRuleDomainElement698 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDomainElement708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBasicNode_in_ruleDomainElement755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotential_in_ruleDomainElement782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassDefinition_in_ruleDomainElement809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute844 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttribute854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatesAttribute_in_ruleAttribute901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabelAttribute_in_ruleAttribute928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositionAttribute_in_ruleAttribute955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubtypeAttribute_in_ruleAttribute982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStateValuesAttribute_in_ruleAttribute1009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleAttribute1036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeSizeAttribute_in_ruleAttribute1063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBasicNode_in_entryRuleBasicNode1098 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBasicNode1108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBasicNodeKeyword_in_ruleBasicNode1154 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBasicNode1171 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleBasicNode1187 = new BitSet(new long[]{0x0000000C70810020L});
+    public static final BitSet FOLLOW_ruleAttribute_in_ruleBasicNode1208 = new BitSet(new long[]{0x0000000C70810020L});
+    public static final BitSet FOLLOW_16_in_ruleBasicNode1219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBasicNodeKeyword_in_entryRuleBasicNodeKeyword1256 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBasicNodeKeyword1267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleBasicNodeKeyword1307 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_18_in_ruleBasicNodeKeyword1326 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleBasicNodeKeyword1341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleBasicNodeKeyword1361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleBasicNodeKeyword1380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleBasicNodeKeyword1399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatesAttribute_in_entryRuleStatesAttribute1439 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStatesAttribute1449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleStatesAttribute1493 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleStatesAttribute1503 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleStatesAttribute1513 = new BitSet(new long[]{0x0000000004000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStatesAttribute1530 = new BitSet(new long[]{0x0000000004000040L});
+    public static final BitSet FOLLOW_26_in_ruleStatesAttribute1546 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleStatesAttribute1556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabelAttribute_in_entryRuleLabelAttribute1592 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLabelAttribute1602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleLabelAttribute1637 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleLabelAttribute1647 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleLabelAttribute1664 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleLabelAttribute1679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositionAttribute_in_entryRulePositionAttribute1715 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePositionAttribute1725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rulePositionAttribute1760 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_rulePositionAttribute1770 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_rulePositionAttribute1780 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_rulePositionAttribute1797 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_rulePositionAttribute1819 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_rulePositionAttribute1834 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_rulePositionAttribute1844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubtypeAttribute_in_entryRuleSubtypeAttribute1880 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSubtypeAttribute1890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleSubtypeAttribute1925 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleSubtypeAttribute1935 = new BitSet(new long[]{0x0000000390000000L});
+    public static final BitSet FOLLOW_28_in_ruleSubtypeAttribute1955 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_31_in_ruleSubtypeAttribute1984 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_32_in_ruleSubtypeAttribute2013 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_33_in_ruleSubtypeAttribute2042 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleSubtypeAttribute2068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStateValuesAttribute_in_entryRuleStateValuesAttribute2104 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStateValuesAttribute2114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleStateValuesAttribute2149 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleStateValuesAttribute2159 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleStateValuesAttribute2169 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleStateValuesAttribute2186 = new BitSet(new long[]{0x0000000004000010L});
+    public static final BitSet FOLLOW_26_in_ruleStateValuesAttribute2202 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleStateValuesAttribute2212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute2248 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationAttribute2258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleApplicationAttribute2300 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleApplicationAttribute2315 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleApplicationAttribute2332 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleApplicationAttribute2347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeSizeAttribute_in_entryRuleNodeSizeAttribute2383 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNodeSizeAttribute2393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleNodeSizeAttribute2428 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleNodeSizeAttribute2438 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleNodeSizeAttribute2448 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2465 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNodeSizeAttribute2487 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleNodeSizeAttribute2502 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleNodeSizeAttribute2512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotential_in_entryRulePotential2548 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePotential2558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rulePotential2593 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rulePotentialGraph_in_rulePotential2614 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rulePotentialModel_in_rulePotential2635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotentialGraph_in_entryRulePotentialGraph2671 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePotentialGraph2681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rulePotentialGraph2725 = new BitSet(new long[]{0x0000002004000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePotentialGraph2742 = new BitSet(new long[]{0x0000002004000020L});
+    public static final BitSet FOLLOW_37_in_rulePotentialGraph2759 = new BitSet(new long[]{0x0000000004000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_rulePotentialGraph2776 = new BitSet(new long[]{0x0000000004000020L});
+    public static final BitSet FOLLOW_26_in_rulePotentialGraph2794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotentialModel_in_entryRulePotentialModel2830 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePotentialModel2840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rulePotentialModel2884 = new BitSet(new long[]{0x0000044000010000L});
+    public static final BitSet FOLLOW_rulePotentialAttribute_in_rulePotentialModel2905 = new BitSet(new long[]{0x0000044000010000L});
+    public static final BitSet FOLLOW_16_in_rulePotentialModel2916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotentialAttribute_in_entryRulePotentialAttribute2952 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePotentialAttribute2962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotentialDataAttribute_in_rulePotentialAttribute3009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotentialTableAttribute_in_rulePotentialAttribute3036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotentialDataAttribute_in_entryRulePotentialDataAttribute3071 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePotentialDataAttribute3081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rulePotentialDataAttribute3125 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_rulePotentialDataAttribute3135 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_rulePotentialDataAttribute3145 = new BitSet(new long[]{0x0000008006001810L});
+    public static final BitSet FOLLOW_ruleUnstructuredDataList_in_rulePotentialDataAttribute3167 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_ruleStructuredDataList_in_rulePotentialDataAttribute3194 = new BitSet(new long[]{0x0000000006000000L});
+    public static final BitSet FOLLOW_26_in_rulePotentialDataAttribute3206 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_rulePotentialDataAttribute3216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnstructuredDataList_in_entryRuleUnstructuredDataList3252 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnstructuredDataList3262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatDataList_in_ruleUnstructuredDataList3318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNormalDistribution_in_ruleUnstructuredDataList3346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStructuredDataList_in_entryRuleStructuredDataList3382 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStructuredDataList3392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleStructuredDataList3436 = new BitSet(new long[]{0x0000000006001810L});
+    public static final BitSet FOLLOW_ruleFloatDataList_in_ruleStructuredDataList3458 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_ruleStructuredDataList_in_ruleStructuredDataList3485 = new BitSet(new long[]{0x0000000006000000L});
+    public static final BitSet FOLLOW_26_in_ruleStructuredDataList3497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloatDataList_in_entryRuleFloatDataList3533 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFloatDataList3543 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloat_in_ruleFloatDataList3598 = new BitSet(new long[]{0x0000000000001812L});
+    public static final BitSet FOLLOW_ruleNormalDistribution_in_entryRuleNormalDistribution3635 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNormalDistribution3645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleNormalDistribution3680 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleNormalDistribution3690 = new BitSet(new long[]{0x0000000000001830L});
+    public static final BitSet FOLLOW_ruleMeanExpression_in_ruleNormalDistribution3711 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleNormalDistribution3721 = new BitSet(new long[]{0x0000000000001810L});
+    public static final BitSet FOLLOW_ruleFloat_in_ruleNormalDistribution3742 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleNormalDistribution3752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMeanExpression_in_entryRuleMeanExpression3789 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMeanExpression3800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMeanTerm_in_ruleMeanExpression3847 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_11_in_ruleMeanExpression3866 = new BitSet(new long[]{0x0000000000001830L});
+    public static final BitSet FOLLOW_ruleMeanTerm_in_ruleMeanExpression3888 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_ruleMeanTerm_in_entryRuleMeanTerm3936 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMeanTerm3947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloat_in_ruleMeanTerm3994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFloat_in_ruleMeanTerm4028 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleMeanTerm4046 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMeanTerm4061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMeanTerm4088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePotentialTableAttribute_in_entryRulePotentialTableAttribute4133 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePotentialTableAttribute4143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModelNodesAttribute_in_rulePotentialTableAttribute4189 = new BitSet(new long[]{0x0000180000000000L});
+    public static final BitSet FOLLOW_ruleSamplesAttribute_in_rulePotentialTableAttribute4210 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_ruleModelDataAttribute_in_rulePotentialTableAttribute4232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModelNodesAttribute_in_entryRuleModelNodesAttribute4268 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleModelNodesAttribute4278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleModelNodesAttribute4322 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleModelNodesAttribute4332 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleModelNodesAttribute4342 = new BitSet(new long[]{0x0000000004000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleModelNodesAttribute4359 = new BitSet(new long[]{0x0000000004000020L});
+    public static final BitSet FOLLOW_26_in_ruleModelNodesAttribute4375 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleModelNodesAttribute4385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSamplesAttribute_in_entryRuleSamplesAttribute4421 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSamplesAttribute4431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleSamplesAttribute4466 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleSamplesAttribute4476 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSamplesAttribute4493 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleSamplesAttribute4508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModelDataAttribute_in_entryRuleModelDataAttribute4544 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleModelDataAttribute4554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleModelDataAttribute4598 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleModelDataAttribute4608 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleModelDataAttribute4618 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleModelDataAttribute4628 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleModelDataAttribute4638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassDefinition_in_entryRuleClassDefinition4674 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClassDefinition4684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleClassDefinition4719 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleClassDefinition4736 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleClassDefinition4751 = new BitSet(new long[]{0x0000601C70FF0020L});
+    public static final BitSet FOLLOW_ruleClassElement_in_ruleClassDefinition4772 = new BitSet(new long[]{0x0000601C70FF0020L});
+    public static final BitSet FOLLOW_16_in_ruleClassDefinition4783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassElement_in_entryRuleClassElement4819 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClassElement4829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDomainElement_in_ruleClassElement4876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribute_in_ruleClassElement4903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassInstance_in_ruleClassElement4930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassInstance_in_entryRuleClassInstance4965 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClassInstance4975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_ruleClassInstance5010 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleClassInstance5027 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_47_in_ruleClassInstance5042 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleClassInstance5059 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleClassInstance5074 = new BitSet(new long[]{0x000000000C000020L});
+    public static final BitSet FOLLOW_ruleInputBindings_in_ruleClassInstance5095 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_27_in_ruleClassInstance5107 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleOutputBindings_in_ruleClassInstance5128 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleClassInstance5140 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleClassInstance5150 = new BitSet(new long[]{0x0000000030000020L});
+    public static final BitSet FOLLOW_ruleNodeAttributes_in_ruleClassInstance5171 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleClassInstance5181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInputBindings_in_entryRuleInputBindings5217 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInputBindings5227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInputBinding_in_ruleInputBindings5273 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleInputBindings5283 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleInputBindings_in_ruleInputBindings5304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInputBinding_in_entryRuleInputBinding5340 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInputBinding5350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInputBinding5392 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleInputBinding5407 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInputBinding5424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutputBindings_in_entryRuleOutputBindings5465 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOutputBindings5475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutputBinding_in_ruleOutputBindings5521 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleOutputBindings5531 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleOutputBindings_in_ruleOutputBindings5552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutputBinding_in_entryRuleOutputBinding5588 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOutputBinding5598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleOutputBinding5640 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleOutputBinding5655 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleOutputBinding5672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeAttributes_in_entryRuleNodeAttributes5713 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNodeAttributes5723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabelAttribute_in_ruleNodeAttributes5770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePositionAttribute_in_ruleNodeAttributes5797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleNodeAttributes5824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression5859 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpression5869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleExpression_in_ruleExpression5915 = new BitSet(new long[]{0x03F8000001000002L});
+    public static final BitSet FOLLOW_ruleComparison_in_ruleExpression5932 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
+    public static final BitSet FOLLOW_ruleSimpleExpression_in_ruleExpression5952 = new BitSet(new long[]{0x03F8000001000002L});
+    public static final BitSet FOLLOW_ruleSimpleExpression_in_entryRuleSimpleExpression5990 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleExpression6000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTerm_in_ruleSimpleExpression6046 = new BitSet(new long[]{0x0000000000001802L});
+    public static final BitSet FOLLOW_rulePlusOrMinus_in_ruleSimpleExpression6063 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
+    public static final BitSet FOLLOW_ruleSimpleExpression_in_ruleSimpleExpression6083 = new BitSet(new long[]{0x0000000000001802L});
+    public static final BitSet FOLLOW_ruleTerm_in_entryRuleTerm6121 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTerm6131 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpFactor_in_ruleTerm6177 = new BitSet(new long[]{0x0400020000000002L});
+    public static final BitSet FOLLOW_ruleTimesOrDivide_in_ruleTerm6194 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
+    public static final BitSet FOLLOW_ruleTerm_in_ruleTerm6214 = new BitSet(new long[]{0x0400020000000002L});
+    public static final BitSet FOLLOW_ruleExpFactor_in_entryRuleExpFactor6252 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpFactor6262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFactor_in_ruleExpFactor6308 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleExpFactor6319 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
+    public static final BitSet FOLLOW_ruleExpFactor_in_ruleExpFactor6340 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_ruleFactor_in_entryRuleFactor6378 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFactor6388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleFactor6440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFactor6469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleFactor6497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleFactor6526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleFactor6563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleFactor6593 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleFactor6614 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleFactor6624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperatorName_in_ruleFactor6653 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleFactor6663 = new BitSet(new long[]{0xF806000006000070L,0x00000000FFFFFBFFL});
+    public static final BitSet FOLLOW_ruleExpressionSequence_in_ruleFactor6684 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleFactor6694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressionSequence_in_entryRuleExpressionSequence6731 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionSequence6741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionSequence6797 = new BitSet(new long[]{0x0000010000000002L});
+    public static final BitSet FOLLOW_40_in_ruleExpressionSequence6808 = new BitSet(new long[]{0xF806000002000070L,0x00000000FFFFFBFFL});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleExpressionSequence6829 = new BitSet(new long[]{0x0000010000000002L});
+    public static final BitSet FOLLOW_ruleComparison_in_entryRuleComparison6870 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComparison6881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleComparison6919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleComparison6938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleComparison6957 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleComparison6976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleComparison6995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleComparison7014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleComparison7033 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleComparison7052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePlusOrMinus_in_entryRulePlusOrMinus7093 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePlusOrMinus7104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rulePlusOrMinus7142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rulePlusOrMinus7161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimesOrDivide_in_entryRuleTimesOrDivide7202 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTimesOrDivide7213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleTimesOrDivide7251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleTimesOrDivide7270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperatorName_in_entryRuleOperatorName7311 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOperatorName7322 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleOperatorName7360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleOperatorName7379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleOperatorName7398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleOperatorName7417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleOperatorName7436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_ruleOperatorName7455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleOperatorName7474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleOperatorName7493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_ruleOperatorName7512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_ruleOperatorName7531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_ruleOperatorName7550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_ruleOperatorName7569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_ruleOperatorName7588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_ruleOperatorName7607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_ruleOperatorName7627 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_74_in_ruleOperatorName7640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_ruleOperatorName7660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_ruleOperatorName7679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_ruleOperatorName7698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_ruleOperatorName7717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_ruleOperatorName7736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_ruleOperatorName7755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleOperatorName7774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleOperatorName7793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_ruleOperatorName7812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_84_in_ruleOperatorName7831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleOperatorName7850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_ruleOperatorName7869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_ruleOperatorName7888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_88_in_ruleOperatorName7907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_89_in_ruleOperatorName7926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_ruleOperatorName7945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleOperatorName7964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_92_in_ruleOperatorName7983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_93_in_ruleOperatorName8002 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_94_in_ruleOperatorName8021 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleOperatorName8040 = new BitSet(new long[]{0x0000000000000002L});
 
 }

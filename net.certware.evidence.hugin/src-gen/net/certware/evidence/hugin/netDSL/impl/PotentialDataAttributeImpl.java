@@ -5,6 +5,8 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
+import java.util.Collection;
+
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.PotentialDataAttribute;
 import net.certware.evidence.hugin.netDSL.StructuredDataList;
@@ -13,10 +15,15 @@ import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.evidence.hugin.netDSL.impl.PotentialDataAttributeImpl#getUnstructured <em>Unstructured</em>}</li>
- *   <li>{@link net.certware.evidence.hugin.netDSL.impl.PotentialDataAttributeImpl#getStructured <em>Structured</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.impl.PotentialDataAttributeImpl#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,14 +52,14 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
   protected UnstructuredDataList unstructured;
 
   /**
-   * The cached value of the '{@link #getStructured() <em>Structured</em>}' containment reference.
+   * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStructured()
+   * @see #getItems()
    * @generated
    * @ordered
    */
-  protected StructuredDataList structured;
+  protected EList<StructuredDataList> items;
 
   /**
    * <!-- begin-user-doc -->
@@ -128,47 +135,13 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public StructuredDataList getStructured()
+  public EList<StructuredDataList> getItems()
   {
-    return structured;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetStructured(StructuredDataList newStructured, NotificationChain msgs)
-  {
-    StructuredDataList oldStructured = structured;
-    structured = newStructured;
-    if (eNotificationRequired())
+    if (items == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED, oldStructured, newStructured);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      items = new EObjectContainmentEList<StructuredDataList>(StructuredDataList.class, this, NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setStructured(StructuredDataList newStructured)
-  {
-    if (newStructured != structured)
-    {
-      NotificationChain msgs = null;
-      if (structured != null)
-        msgs = ((InternalEObject)structured).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED, null, msgs);
-      if (newStructured != null)
-        msgs = ((InternalEObject)newStructured).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED, null, msgs);
-      msgs = basicSetStructured(newStructured, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED, newStructured, newStructured));
+    return items;
   }
 
   /**
@@ -183,8 +156,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
     {
       case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED:
         return basicSetUnstructured(null, msgs);
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED:
-        return basicSetStructured(null, msgs);
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
+        return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -201,8 +174,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
     {
       case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED:
         return getUnstructured();
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED:
-        return getStructured();
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
+        return getItems();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -212,6 +185,7 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -220,8 +194,9 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
       case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED:
         setUnstructured((UnstructuredDataList)newValue);
         return;
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED:
-        setStructured((StructuredDataList)newValue);
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
+        getItems().clear();
+        getItems().addAll((Collection<? extends StructuredDataList>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,8 +215,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
       case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED:
         setUnstructured((UnstructuredDataList)null);
         return;
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED:
-        setStructured((StructuredDataList)null);
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
+        getItems().clear();
         return;
     }
     super.eUnset(featureID);
@@ -259,8 +234,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
     {
       case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED:
         return unstructured != null;
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__STRUCTURED:
-        return structured != null;
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
+        return items != null && !items.isEmpty();
     }
     return super.eIsSet(featureID);
   }

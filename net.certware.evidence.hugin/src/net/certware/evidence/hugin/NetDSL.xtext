@@ -15,7 +15,7 @@ Model:
 	
 Sign returns ecore::EString hidden(): '+' | '-' ;
 
-Float returns ecore::EString hidden(): Sign? INT ('.' INT)? ;
+Float returns ecore::EString : Sign? INT ('.' INT)? ;
 
 // UnsignedNumber returns ecore::EString hidden(): INT ('.' INT)? ;
 
@@ -100,18 +100,19 @@ PotentialAttribute :
 	;
 	
 PotentialDataAttribute : {PotentialDataAttribute}
-	'data' '=' '(' (unstructured=UnstructuredDataList | structured=StructuredDataList) ')' ';'
+	'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
 	;
 	 
 UnstructuredDataList : {UnstructuredDataList}
-	items+=Float* | NormalDistribution;
+	list=FloatDataList | 
+	normal=NormalDistribution;
 
 StructuredDataList : {StructuredDataList}
-	'(' list=FloatDataList ')'
+	'(' (list=FloatDataList | items+=StructuredDataList*) ')'
 	;
 	
 FloatDataList : {FloatDataList}
-	'(' list=UnstructuredDataList ')'
+	items+=Float*
 	;
 	
 NormalDistribution :

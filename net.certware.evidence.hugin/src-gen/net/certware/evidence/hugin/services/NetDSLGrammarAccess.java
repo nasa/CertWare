@@ -62,7 +62,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
-		//Float returns ecore::EString hidden():
+		//Float returns ecore::EString:
 		//	Sign? INT ("." INT)?;
 		public ParserRule getRule() { return rule; }
 
@@ -742,16 +742,16 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
 		private final Assignment cUnstructuredAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
 		private final RuleCall cUnstructuredUnstructuredDataListParserRuleCall_4_0_0 = (RuleCall)cUnstructuredAssignment_4_0.eContents().get(0);
-		private final Assignment cStructuredAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
-		private final RuleCall cStructuredStructuredDataListParserRuleCall_4_1_0 = (RuleCall)cStructuredAssignment_4_1.eContents().get(0);
+		private final Assignment cItemsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
+		private final RuleCall cItemsStructuredDataListParserRuleCall_4_1_0 = (RuleCall)cItemsAssignment_4_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//PotentialDataAttribute:
-		//	{PotentialDataAttribute} "data" "=" "(" (unstructured=UnstructuredDataList | structured=StructuredDataList) ")" ";";
+		//	{PotentialDataAttribute} "data" "=" "(" (unstructured=UnstructuredDataList | items+=StructuredDataList*) ")" ";";
 		public ParserRule getRule() { return rule; }
 
-		//{PotentialDataAttribute} "data" "=" "(" (unstructured=UnstructuredDataList | structured=StructuredDataList) ")" ";"
+		//{PotentialDataAttribute} "data" "=" "(" (unstructured=UnstructuredDataList | items+=StructuredDataList*) ")" ";"
 		public Group getGroup() { return cGroup; }
 
 		//{PotentialDataAttribute}
@@ -766,7 +766,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
 
-		//unstructured=UnstructuredDataList | structured=StructuredDataList
+		//unstructured=UnstructuredDataList | items+=StructuredDataList*
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 
 		//unstructured=UnstructuredDataList
@@ -775,11 +775,11 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//UnstructuredDataList
 		public RuleCall getUnstructuredUnstructuredDataListParserRuleCall_4_0_0() { return cUnstructuredUnstructuredDataListParserRuleCall_4_0_0; }
 
-		//structured=StructuredDataList
-		public Assignment getStructuredAssignment_4_1() { return cStructuredAssignment_4_1; }
+		//items+=StructuredDataList*
+		public Assignment getItemsAssignment_4_1() { return cItemsAssignment_4_1; }
 
 		//StructuredDataList
-		public RuleCall getStructuredStructuredDataListParserRuleCall_4_1_0() { return cStructuredStructuredDataListParserRuleCall_4_1_0; }
+		public RuleCall getItemsStructuredDataListParserRuleCall_4_1_0() { return cItemsStructuredDataListParserRuleCall_4_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
@@ -793,31 +793,35 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cUnstructuredDataListAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cItemsAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cItemsFloatParserRuleCall_0_1_0 = (RuleCall)cItemsAssignment_0_1.eContents().get(0);
-		private final RuleCall cNormalDistributionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cListAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cListFloatDataListParserRuleCall_0_1_0 = (RuleCall)cListAssignment_0_1.eContents().get(0);
+		private final Assignment cNormalAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cNormalNormalDistributionParserRuleCall_1_0 = (RuleCall)cNormalAssignment_1.eContents().get(0);
 		
 		//UnstructuredDataList:
-		//	{UnstructuredDataList} items+=Float* | NormalDistribution;
+		//	{UnstructuredDataList} list=FloatDataList | normal=NormalDistribution;
 		public ParserRule getRule() { return rule; }
 
-		//{UnstructuredDataList} items+=Float* | NormalDistribution
+		//{UnstructuredDataList} list=FloatDataList | normal=NormalDistribution
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{UnstructuredDataList} items+=Float*
+		//{UnstructuredDataList} list=FloatDataList
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{UnstructuredDataList}
 		public Action getUnstructuredDataListAction_0_0() { return cUnstructuredDataListAction_0_0; }
 
-		//items+=Float*
-		public Assignment getItemsAssignment_0_1() { return cItemsAssignment_0_1; }
+		//list=FloatDataList
+		public Assignment getListAssignment_0_1() { return cListAssignment_0_1; }
 
-		//Float
-		public RuleCall getItemsFloatParserRuleCall_0_1_0() { return cItemsFloatParserRuleCall_0_1_0; }
+		//FloatDataList
+		public RuleCall getListFloatDataListParserRuleCall_0_1_0() { return cListFloatDataListParserRuleCall_0_1_0; }
+
+		//normal=NormalDistribution
+		public Assignment getNormalAssignment_1() { return cNormalAssignment_1; }
 
 		//NormalDistribution
-		public RuleCall getNormalDistributionParserRuleCall_1() { return cNormalDistributionParserRuleCall_1; }
+		public RuleCall getNormalNormalDistributionParserRuleCall_1_0() { return cNormalNormalDistributionParserRuleCall_1_0; }
 	}
 
 	public class StructuredDataListElements extends AbstractParserRuleElementFinder {
@@ -825,15 +829,18 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStructuredDataListAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cListAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cListFloatDataListParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cListAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cListFloatDataListParserRuleCall_2_0_0 = (RuleCall)cListAssignment_2_0.eContents().get(0);
+		private final Assignment cItemsAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cItemsStructuredDataListParserRuleCall_2_1_0 = (RuleCall)cItemsAssignment_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//StructuredDataList:
-		//	{StructuredDataList} "(" list=FloatDataList ")";
+		//	{StructuredDataList} "(" (list=FloatDataList | items+=StructuredDataList*) ")";
 		public ParserRule getRule() { return rule; }
 
-		//{StructuredDataList} "(" list=FloatDataList ")"
+		//{StructuredDataList} "(" (list=FloatDataList | items+=StructuredDataList*) ")"
 		public Group getGroup() { return cGroup; }
 
 		//{StructuredDataList}
@@ -842,11 +849,20 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
+		//list=FloatDataList | items+=StructuredDataList*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
 		//list=FloatDataList
-		public Assignment getListAssignment_2() { return cListAssignment_2; }
+		public Assignment getListAssignment_2_0() { return cListAssignment_2_0; }
 
 		//FloatDataList
-		public RuleCall getListFloatDataListParserRuleCall_2_0() { return cListFloatDataListParserRuleCall_2_0; }
+		public RuleCall getListFloatDataListParserRuleCall_2_0_0() { return cListFloatDataListParserRuleCall_2_0_0; }
+
+		//items+=StructuredDataList*
+		public Assignment getItemsAssignment_2_1() { return cItemsAssignment_2_1; }
+
+		//StructuredDataList
+		public RuleCall getItemsStructuredDataListParserRuleCall_2_1_0() { return cItemsStructuredDataListParserRuleCall_2_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -856,32 +872,24 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FloatDataList");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFloatDataListAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cListAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cListUnstructuredDataListParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cItemsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cItemsFloatParserRuleCall_1_0 = (RuleCall)cItemsAssignment_1.eContents().get(0);
 		
 		//FloatDataList:
-		//	{FloatDataList} "(" list=UnstructuredDataList ")";
+		//	{FloatDataList} items+=Float*;
 		public ParserRule getRule() { return rule; }
 
-		//{FloatDataList} "(" list=UnstructuredDataList ")"
+		//{FloatDataList} items+=Float*
 		public Group getGroup() { return cGroup; }
 
 		//{FloatDataList}
 		public Action getFloatDataListAction_0() { return cFloatDataListAction_0; }
 
-		//"("
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//items+=Float*
+		public Assignment getItemsAssignment_1() { return cItemsAssignment_1; }
 
-		//list=UnstructuredDataList
-		public Assignment getListAssignment_2() { return cListAssignment_2; }
-
-		//UnstructuredDataList
-		public RuleCall getListUnstructuredDataListParserRuleCall_2_0() { return cListUnstructuredDataListParserRuleCall_2_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		//Float
+		public RuleCall getItemsFloatParserRuleCall_1_0() { return cItemsFloatParserRuleCall_1_0; }
 	}
 
 	public class NormalDistributionElements extends AbstractParserRuleElementFinder {
@@ -2123,7 +2131,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getSignAccess().getRule();
 	}
 
-	//Float returns ecore::EString hidden():
+	//Float returns ecore::EString:
 	//	Sign? INT ("." INT)?;
 	public FloatElements getFloatAccess() {
 		return (pFloat != null) ? pFloat : (pFloat = new FloatElements());
@@ -2316,7 +2324,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PotentialDataAttribute:
-	//	{PotentialDataAttribute} "data" "=" "(" (unstructured=UnstructuredDataList | structured=StructuredDataList) ")" ";";
+	//	{PotentialDataAttribute} "data" "=" "(" (unstructured=UnstructuredDataList | items+=StructuredDataList*) ")" ";";
 	public PotentialDataAttributeElements getPotentialDataAttributeAccess() {
 		return (pPotentialDataAttribute != null) ? pPotentialDataAttribute : (pPotentialDataAttribute = new PotentialDataAttributeElements());
 	}
@@ -2326,7 +2334,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UnstructuredDataList:
-	//	{UnstructuredDataList} items+=Float* | NormalDistribution;
+	//	{UnstructuredDataList} list=FloatDataList | normal=NormalDistribution;
 	public UnstructuredDataListElements getUnstructuredDataListAccess() {
 		return (pUnstructuredDataList != null) ? pUnstructuredDataList : (pUnstructuredDataList = new UnstructuredDataListElements());
 	}
@@ -2336,7 +2344,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StructuredDataList:
-	//	{StructuredDataList} "(" list=FloatDataList ")";
+	//	{StructuredDataList} "(" (list=FloatDataList | items+=StructuredDataList*) ")";
 	public StructuredDataListElements getStructuredDataListAccess() {
 		return (pStructuredDataList != null) ? pStructuredDataList : (pStructuredDataList = new StructuredDataListElements());
 	}
@@ -2346,7 +2354,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FloatDataList:
-	//	{FloatDataList} "(" list=UnstructuredDataList ")";
+	//	{FloatDataList} items+=Float*;
 	public FloatDataListElements getFloatDataListAccess() {
 		return (pFloatDataList != null) ? pFloatDataList : (pFloatDataList = new FloatDataListElements());
 	}

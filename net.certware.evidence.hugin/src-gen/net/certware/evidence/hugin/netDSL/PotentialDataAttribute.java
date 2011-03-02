@@ -5,6 +5,7 @@
  */
 package net.certware.evidence.hugin.netDSL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +16,7 @@ package net.certware.evidence.hugin.netDSL;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getUnstructured <em>Unstructured</em>}</li>
- *   <li>{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getStructured <em>Structured</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,29 +53,19 @@ public interface PotentialDataAttribute extends PotentialAttribute
   void setUnstructured(UnstructuredDataList value);
 
   /**
-   * Returns the value of the '<em><b>Structured</b></em>' containment reference.
+   * Returns the value of the '<em><b>Items</b></em>' containment reference list.
+   * The list contents are of type {@link net.certware.evidence.hugin.netDSL.StructuredDataList}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Structured</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Items</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Structured</em>' containment reference.
-   * @see #setStructured(StructuredDataList)
-   * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getPotentialDataAttribute_Structured()
+   * @return the value of the '<em>Items</em>' containment reference list.
+   * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getPotentialDataAttribute_Items()
    * @model containment="true"
    * @generated
    */
-  StructuredDataList getStructured();
-
-  /**
-   * Sets the value of the '{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getStructured <em>Structured</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Structured</em>' containment reference.
-   * @see #getStructured()
-   * @generated
-   */
-  void setStructured(StructuredDataList value);
+  EList<StructuredDataList> getItems();
 
 } // PotentialDataAttribute

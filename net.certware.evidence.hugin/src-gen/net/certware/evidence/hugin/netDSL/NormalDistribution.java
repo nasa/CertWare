@@ -5,6 +5,7 @@
  */
 package net.certware.evidence.hugin.netDSL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +24,7 @@ package net.certware.evidence.hugin.netDSL;
  * @model
  * @generated
  */
-public interface NormalDistribution extends UnstructuredDataList
+public interface NormalDistribution extends EObject
 {
   /**
    * Returns the value of the '<em><b>Mean</b></em>' attribute.

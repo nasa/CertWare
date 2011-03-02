@@ -58,6 +58,8 @@ public interface ICertWareConstants {
 	public static final String PDF_EXTENSION = "pdf"; //$NON-NLS-1$
 	/** file extension for Hugin NET files */
 	public static final String NET_EXTENSION = "net"; //$NON-NLS-1$
+	/** file extension for OMG SAEM files */
+	public static final String SAEM_EXTENSION = "evidence"; //$NON-NLS-1$
 
 	/** a list of all application file extensions */
 	public static final List<String> FILE_EXTENSIONS = 
@@ -68,7 +70,7 @@ public interface ICertWareConstants {
 				EUR_EXTENSION,EUZ_EXTENSION,EUZ_DIAGRAM_EXTENSION,
 				VCL_EXTENSION,SFP_EXTENSION,SMM_EXTENSION,MPX_EXTENSION,MSPDI_EXTENSION,
 				CPN_EXTENSION,SCO_EXTENSION,SPM_EXTENSION,
-				NET_EXTENSION));
+				SAEM_EXTENSION, NET_EXTENSION));
 	
 	/** backend configuration parameter tag */
 	public static final String CONFIG_PARAMETER = "config";	//$NON-NLS-1$

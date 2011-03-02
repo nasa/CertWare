@@ -24,7 +24,7 @@
         <elements xsi:type="xtext:Keyword" value="-"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="Float" definesHiddenTokens="true">
+    <rules xsi:type="xtext:ParserRule" name="Float">
       <type metamodel="/0/@metamodelDeclarations.1">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
@@ -342,7 +342,7 @@
           <elements xsi:type="xtext:Assignment" feature="unstructured" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
           </elements>
-          <elements xsi:type="xtext:Assignment" feature="structured" operator="=">
+          <elements xsi:type="xtext:Assignment" cardinality="*" feature="items" operator="+=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
           </elements>
         </elements>
@@ -361,11 +361,13 @@
               <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//UnstructuredDataList"/>
             </type>
           </elements>
-          <elements xsi:type="xtext:Assignment" cardinality="*" feature="items" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+          <elements xsi:type="xtext:Assignment" feature="list" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
           </elements>
         </elements>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
+        <elements xsi:type="xtext:Assignment" feature="normal" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
+        </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="StructuredDataList">
@@ -379,8 +381,13 @@
           </type>
         </elements>
         <elements xsi:type="xtext:Keyword" value="("/>
-        <elements xsi:type="xtext:Assignment" feature="list" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="list" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" cardinality="*" feature="items" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+          </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>
@@ -395,11 +402,9 @@
             <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//FloatDataList"/>
           </type>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="("/>
-        <elements xsi:type="xtext:Assignment" feature="list" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="items" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="NormalDistribution">

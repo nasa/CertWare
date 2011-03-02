@@ -619,13 +619,13 @@ public interface NetDSLPackage extends EPackage
   int POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Structured</b></em>' containment reference.
+   * The feature id for the '<em><b>Items</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POTENTIAL_DATA_ATTRIBUTE__STRUCTURED = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 1;
+  int POTENTIAL_DATA_ATTRIBUTE__ITEMS = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Potential Data Attribute</em>' class.
@@ -647,13 +647,22 @@ public interface NetDSLPackage extends EPackage
   int UNSTRUCTURED_DATA_LIST = 18;
 
   /**
-   * The feature id for the '<em><b>Items</b></em>' attribute list.
+   * The feature id for the '<em><b>List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNSTRUCTURED_DATA_LIST__ITEMS = 0;
+  int UNSTRUCTURED_DATA_LIST__LIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Normal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNSTRUCTURED_DATA_LIST__NORMAL = 1;
 
   /**
    * The number of structural features of the '<em>Unstructured Data List</em>' class.
@@ -662,7 +671,7 @@ public interface NetDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNSTRUCTURED_DATA_LIST_FEATURE_COUNT = 1;
+  int UNSTRUCTURED_DATA_LIST_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.StructuredDataListImpl <em>Structured Data List</em>}' class.
@@ -684,13 +693,22 @@ public interface NetDSLPackage extends EPackage
   int STRUCTURED_DATA_LIST__LIST = 0;
 
   /**
+   * The feature id for the '<em><b>Items</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURED_DATA_LIST__ITEMS = 1;
+
+  /**
    * The number of structural features of the '<em>Structured Data List</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRUCTURED_DATA_LIST_FEATURE_COUNT = 1;
+  int STRUCTURED_DATA_LIST_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl <em>Float Data List</em>}' class.
@@ -703,13 +721,13 @@ public interface NetDSLPackage extends EPackage
   int FLOAT_DATA_LIST = 20;
 
   /**
-   * The feature id for the '<em><b>List</b></em>' containment reference.
+   * The feature id for the '<em><b>Items</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOAT_DATA_LIST__LIST = 0;
+  int FLOAT_DATA_LIST__ITEMS = 0;
 
   /**
    * The number of structural features of the '<em>Float Data List</em>' class.
@@ -731,22 +749,13 @@ public interface NetDSLPackage extends EPackage
   int NORMAL_DISTRIBUTION = 21;
 
   /**
-   * The feature id for the '<em><b>Items</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_DISTRIBUTION__ITEMS = UNSTRUCTURED_DATA_LIST__ITEMS;
-
-  /**
    * The feature id for the '<em><b>Mean</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NORMAL_DISTRIBUTION__MEAN = UNSTRUCTURED_DATA_LIST_FEATURE_COUNT + 0;
+  int NORMAL_DISTRIBUTION__MEAN = 0;
 
   /**
    * The feature id for the '<em><b>Variance</b></em>' attribute.
@@ -755,7 +764,7 @@ public interface NetDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NORMAL_DISTRIBUTION__VARIANCE = UNSTRUCTURED_DATA_LIST_FEATURE_COUNT + 1;
+  int NORMAL_DISTRIBUTION__VARIANCE = 1;
 
   /**
    * The number of structural features of the '<em>Normal Distribution</em>' class.
@@ -764,7 +773,7 @@ public interface NetDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NORMAL_DISTRIBUTION_FEATURE_COUNT = UNSTRUCTURED_DATA_LIST_FEATURE_COUNT + 2;
+  int NORMAL_DISTRIBUTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.PotentialTableAttributeImpl <em>Potential Table Attribute</em>}' class.
@@ -1839,15 +1848,15 @@ public interface NetDSLPackage extends EPackage
   EReference getPotentialDataAttribute_Unstructured();
 
   /**
-   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getStructured <em>Structured</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getItems <em>Items</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Structured</em>'.
-   * @see net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getStructured()
+   * @return the meta object for the containment reference list '<em>Items</em>'.
+   * @see net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getItems()
    * @see #getPotentialDataAttribute()
    * @generated
    */
-  EReference getPotentialDataAttribute_Structured();
+  EReference getPotentialDataAttribute_Items();
 
   /**
    * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.UnstructuredDataList <em>Unstructured Data List</em>}'.
@@ -1860,15 +1869,26 @@ public interface NetDSLPackage extends EPackage
   EClass getUnstructuredDataList();
 
   /**
-   * Returns the meta object for the attribute list '{@link net.certware.evidence.hugin.netDSL.UnstructuredDataList#getItems <em>Items</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.UnstructuredDataList#getList <em>List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Items</em>'.
-   * @see net.certware.evidence.hugin.netDSL.UnstructuredDataList#getItems()
+   * @return the meta object for the containment reference '<em>List</em>'.
+   * @see net.certware.evidence.hugin.netDSL.UnstructuredDataList#getList()
    * @see #getUnstructuredDataList()
    * @generated
    */
-  EAttribute getUnstructuredDataList_Items();
+  EReference getUnstructuredDataList_List();
+
+  /**
+   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.UnstructuredDataList#getNormal <em>Normal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Normal</em>'.
+   * @see net.certware.evidence.hugin.netDSL.UnstructuredDataList#getNormal()
+   * @see #getUnstructuredDataList()
+   * @generated
+   */
+  EReference getUnstructuredDataList_Normal();
 
   /**
    * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.StructuredDataList <em>Structured Data List</em>}'.
@@ -1892,6 +1912,17 @@ public interface NetDSLPackage extends EPackage
   EReference getStructuredDataList_List();
 
   /**
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.StructuredDataList#getItems <em>Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Items</em>'.
+   * @see net.certware.evidence.hugin.netDSL.StructuredDataList#getItems()
+   * @see #getStructuredDataList()
+   * @generated
+   */
+  EReference getStructuredDataList_Items();
+
+  /**
    * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.FloatDataList <em>Float Data List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1902,15 +1933,15 @@ public interface NetDSLPackage extends EPackage
   EClass getFloatDataList();
 
   /**
-   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.FloatDataList#getList <em>List</em>}'.
+   * Returns the meta object for the attribute list '{@link net.certware.evidence.hugin.netDSL.FloatDataList#getItems <em>Items</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>List</em>'.
-   * @see net.certware.evidence.hugin.netDSL.FloatDataList#getList()
+   * @return the meta object for the attribute list '<em>Items</em>'.
+   * @see net.certware.evidence.hugin.netDSL.FloatDataList#getItems()
    * @see #getFloatDataList()
    * @generated
    */
-  EReference getFloatDataList_List();
+  EAttribute getFloatDataList_Items();
 
   /**
    * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.NormalDistribution <em>Normal Distribution</em>}'.
@@ -2897,12 +2928,12 @@ public interface NetDSLPackage extends EPackage
     EReference POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED = eINSTANCE.getPotentialDataAttribute_Unstructured();
 
     /**
-     * The meta object literal for the '<em><b>Structured</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POTENTIAL_DATA_ATTRIBUTE__STRUCTURED = eINSTANCE.getPotentialDataAttribute_Structured();
+    EReference POTENTIAL_DATA_ATTRIBUTE__ITEMS = eINSTANCE.getPotentialDataAttribute_Items();
 
     /**
      * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.UnstructuredDataListImpl <em>Unstructured Data List</em>}' class.
@@ -2915,12 +2946,20 @@ public interface NetDSLPackage extends EPackage
     EClass UNSTRUCTURED_DATA_LIST = eINSTANCE.getUnstructuredDataList();
 
     /**
-     * The meta object literal for the '<em><b>Items</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute UNSTRUCTURED_DATA_LIST__ITEMS = eINSTANCE.getUnstructuredDataList_Items();
+    EReference UNSTRUCTURED_DATA_LIST__LIST = eINSTANCE.getUnstructuredDataList_List();
+
+    /**
+     * The meta object literal for the '<em><b>Normal</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNSTRUCTURED_DATA_LIST__NORMAL = eINSTANCE.getUnstructuredDataList_Normal();
 
     /**
      * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.StructuredDataListImpl <em>Structured Data List</em>}' class.
@@ -2941,6 +2980,14 @@ public interface NetDSLPackage extends EPackage
     EReference STRUCTURED_DATA_LIST__LIST = eINSTANCE.getStructuredDataList_List();
 
     /**
+     * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRUCTURED_DATA_LIST__ITEMS = eINSTANCE.getStructuredDataList_Items();
+
+    /**
      * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl <em>Float Data List</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2951,12 +2998,12 @@ public interface NetDSLPackage extends EPackage
     EClass FLOAT_DATA_LIST = eINSTANCE.getFloatDataList();
 
     /**
-     * The meta object literal for the '<em><b>List</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Items</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLOAT_DATA_LIST__LIST = eINSTANCE.getFloatDataList_List();
+    EAttribute FLOAT_DATA_LIST__ITEMS = eINSTANCE.getFloatDataList_Items();
 
     /**
      * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.

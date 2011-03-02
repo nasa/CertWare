@@ -821,7 +821,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPotentialDataAttribute_Structured()
+  public EReference getPotentialDataAttribute_Items()
   {
     return (EReference)potentialDataAttributeEClass.getEStructuralFeatures().get(1);
   }
@@ -841,9 +841,19 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUnstructuredDataList_Items()
+  public EReference getUnstructuredDataList_List()
   {
-    return (EAttribute)unstructuredDataListEClass.getEStructuralFeatures().get(0);
+    return (EReference)unstructuredDataListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnstructuredDataList_Normal()
+  {
+    return (EReference)unstructuredDataListEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -871,6 +881,16 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStructuredDataList_Items()
+  {
+    return (EReference)structuredDataListEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFloatDataList()
   {
     return floatDataListEClass;
@@ -881,9 +901,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFloatDataList_List()
+  public EAttribute getFloatDataList_Items()
   {
-    return (EReference)floatDataListEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)floatDataListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1534,16 +1554,18 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
 
     potentialDataAttributeEClass = createEClass(POTENTIAL_DATA_ATTRIBUTE);
     createEReference(potentialDataAttributeEClass, POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED);
-    createEReference(potentialDataAttributeEClass, POTENTIAL_DATA_ATTRIBUTE__STRUCTURED);
+    createEReference(potentialDataAttributeEClass, POTENTIAL_DATA_ATTRIBUTE__ITEMS);
 
     unstructuredDataListEClass = createEClass(UNSTRUCTURED_DATA_LIST);
-    createEAttribute(unstructuredDataListEClass, UNSTRUCTURED_DATA_LIST__ITEMS);
+    createEReference(unstructuredDataListEClass, UNSTRUCTURED_DATA_LIST__LIST);
+    createEReference(unstructuredDataListEClass, UNSTRUCTURED_DATA_LIST__NORMAL);
 
     structuredDataListEClass = createEClass(STRUCTURED_DATA_LIST);
     createEReference(structuredDataListEClass, STRUCTURED_DATA_LIST__LIST);
+    createEReference(structuredDataListEClass, STRUCTURED_DATA_LIST__ITEMS);
 
     floatDataListEClass = createEClass(FLOAT_DATA_LIST);
-    createEReference(floatDataListEClass, FLOAT_DATA_LIST__LIST);
+    createEAttribute(floatDataListEClass, FLOAT_DATA_LIST__ITEMS);
 
     normalDistributionEClass = createEClass(NORMAL_DISTRIBUTION);
     createEAttribute(normalDistributionEClass, NORMAL_DISTRIBUTION__MEAN);
@@ -1665,7 +1687,6 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     nodeSizeAttributeEClass.getESuperTypes().add(this.getAttribute());
     potentialEClass.getESuperTypes().add(this.getDomainElement());
     potentialDataAttributeEClass.getESuperTypes().add(this.getPotentialAttribute());
-    normalDistributionEClass.getESuperTypes().add(this.getUnstructuredDataList());
     potentialTableAttributeEClass.getESuperTypes().add(this.getPotentialAttribute());
     classDefinitionEClass.getESuperTypes().add(this.getDomainElement());
     classInstanceEClass.getESuperTypes().add(this.getClassElement());
@@ -1729,16 +1750,18 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
 
     initEClass(potentialDataAttributeEClass, PotentialDataAttribute.class, "PotentialDataAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPotentialDataAttribute_Unstructured(), this.getUnstructuredDataList(), null, "unstructured", null, 0, 1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPotentialDataAttribute_Structured(), this.getStructuredDataList(), null, "structured", null, 0, 1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPotentialDataAttribute_Items(), this.getStructuredDataList(), null, "items", null, 0, -1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unstructuredDataListEClass, UnstructuredDataList.class, "UnstructuredDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUnstructuredDataList_Items(), ecorePackage.getEString(), "items", null, 0, -1, UnstructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnstructuredDataList_List(), this.getFloatDataList(), null, "list", null, 0, 1, UnstructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnstructuredDataList_Normal(), this.getNormalDistribution(), null, "normal", null, 0, 1, UnstructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(structuredDataListEClass, StructuredDataList.class, "StructuredDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStructuredDataList_List(), this.getFloatDataList(), null, "list", null, 0, 1, StructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStructuredDataList_Items(), this.getStructuredDataList(), null, "items", null, 0, -1, StructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(floatDataListEClass, FloatDataList.class, "FloatDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFloatDataList_List(), this.getUnstructuredDataList(), null, "list", null, 0, 1, FloatDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFloatDataList_Items(), ecorePackage.getEString(), "items", null, 0, -1, FloatDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(normalDistributionEClass, NormalDistribution.class, "NormalDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNormalDistribution_Mean(), ecorePackage.getEString(), "mean", null, 0, 1, NormalDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

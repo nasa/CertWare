@@ -5,6 +5,8 @@
  */
 package net.certware.evidence.hugin.netDSL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.evidence.hugin.netDSL.StructuredDataList#getList <em>List</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.StructuredDataList#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,5 +53,21 @@ public interface StructuredDataList extends EObject
    * @generated
    */
   void setList(FloatDataList value);
+
+  /**
+   * Returns the value of the '<em><b>Items</b></em>' containment reference list.
+   * The list contents are of type {@link net.certware.evidence.hugin.netDSL.StructuredDataList}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Items</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Items</em>' containment reference list.
+   * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getStructuredDataList_Items()
+   * @model containment="true"
+   * @generated
+   */
+  EList<StructuredDataList> getItems();
 
 } // StructuredDataList

@@ -270,7 +270,6 @@ public class NetDSLSwitch<T>
       {
         NormalDistribution normalDistribution = (NormalDistribution)theEObject;
         T result = caseNormalDistribution(normalDistribution);
-        if (result == null) result = caseUnstructuredDataList(normalDistribution);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

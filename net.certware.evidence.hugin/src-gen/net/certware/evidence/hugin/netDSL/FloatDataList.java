@@ -5,6 +5,8 @@
  */
 package net.certware.evidence.hugin.netDSL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.certware.evidence.hugin.netDSL.FloatDataList#getList <em>List</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.FloatDataList#getItems <em>Items</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,29 +28,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface FloatDataList extends EObject
 {
   /**
-   * Returns the value of the '<em><b>List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Items</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Items</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>List</em>' containment reference.
-   * @see #setList(UnstructuredDataList)
-   * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getFloatDataList_List()
-   * @model containment="true"
+   * @return the value of the '<em>Items</em>' attribute list.
+   * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getFloatDataList_Items()
+   * @model unique="false"
    * @generated
    */
-  UnstructuredDataList getList();
-
-  /**
-   * Sets the value of the '{@link net.certware.evidence.hugin.netDSL.FloatDataList#getList <em>List</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>List</em>' containment reference.
-   * @see #getList()
-   * @generated
-   */
-  void setList(UnstructuredDataList value);
+  EList<String> getItems();
 
 } // FloatDataList

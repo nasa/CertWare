@@ -46,6 +46,7 @@ public class NetDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPotentialAttributeAccess().getAlternatives(), "rule__PotentialAttribute__Alternatives");
 					put(grammarAccess.getPotentialDataAttributeAccess().getAlternatives_4(), "rule__PotentialDataAttribute__Alternatives_4");
 					put(grammarAccess.getUnstructuredDataListAccess().getAlternatives(), "rule__UnstructuredDataList__Alternatives");
+					put(grammarAccess.getStructuredDataListAccess().getAlternatives_2(), "rule__StructuredDataList__Alternatives_2");
 					put(grammarAccess.getMeanTermAccess().getAlternatives(), "rule__MeanTerm__Alternatives");
 					put(grammarAccess.getClassElementAccess().getAlternatives(), "rule__ClassElement__Alternatives");
 					put(grammarAccess.getNodeAttributesAccess().getAlternatives(), "rule__NodeAttributes__Alternatives");
@@ -128,10 +129,12 @@ public class NetDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPotentialGraphAccess().getParentsAssignment_3_1(), "rule__PotentialGraph__ParentsAssignment_3_1");
 					put(grammarAccess.getPotentialModelAccess().getAttributesAssignment_2(), "rule__PotentialModel__AttributesAssignment_2");
 					put(grammarAccess.getPotentialDataAttributeAccess().getUnstructuredAssignment_4_0(), "rule__PotentialDataAttribute__UnstructuredAssignment_4_0");
-					put(grammarAccess.getPotentialDataAttributeAccess().getStructuredAssignment_4_1(), "rule__PotentialDataAttribute__StructuredAssignment_4_1");
-					put(grammarAccess.getUnstructuredDataListAccess().getItemsAssignment_0_1(), "rule__UnstructuredDataList__ItemsAssignment_0_1");
-					put(grammarAccess.getStructuredDataListAccess().getListAssignment_2(), "rule__StructuredDataList__ListAssignment_2");
-					put(grammarAccess.getFloatDataListAccess().getListAssignment_2(), "rule__FloatDataList__ListAssignment_2");
+					put(grammarAccess.getPotentialDataAttributeAccess().getItemsAssignment_4_1(), "rule__PotentialDataAttribute__ItemsAssignment_4_1");
+					put(grammarAccess.getUnstructuredDataListAccess().getListAssignment_0_1(), "rule__UnstructuredDataList__ListAssignment_0_1");
+					put(grammarAccess.getUnstructuredDataListAccess().getNormalAssignment_1(), "rule__UnstructuredDataList__NormalAssignment_1");
+					put(grammarAccess.getStructuredDataListAccess().getListAssignment_2_0(), "rule__StructuredDataList__ListAssignment_2_0");
+					put(grammarAccess.getStructuredDataListAccess().getItemsAssignment_2_1(), "rule__StructuredDataList__ItemsAssignment_2_1");
+					put(grammarAccess.getFloatDataListAccess().getItemsAssignment_1(), "rule__FloatDataList__ItemsAssignment_1");
 					put(grammarAccess.getNormalDistributionAccess().getMeanAssignment_2(), "rule__NormalDistribution__MeanAssignment_2");
 					put(grammarAccess.getNormalDistributionAccess().getVarianceAssignment_4(), "rule__NormalDistribution__VarianceAssignment_4");
 					put(grammarAccess.getPotentialTableAttributeAccess().getNodesAssignment_0(), "rule__PotentialTableAttribute__NodesAssignment_0");

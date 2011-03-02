@@ -123,23 +123,16 @@ finally {
 
 // Entry rule entryRuleFloat
 entryRuleFloat 
-@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-}
 :
 { before(grammarAccess.getFloatRule()); }
 	 ruleFloat
 { after(grammarAccess.getFloatRule()); } 
 	 EOF 
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule Float
 ruleFloat
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 		int stackSize = keepStackSize();
     }
 	:
@@ -152,7 +145,6 @@ ruleFloat
 ;
 finally {
 	restoreStackSize(stackSize);
-	myHiddenTokenState.restore();
 }
 
 
@@ -1694,9 +1686,9 @@ rule__PotentialDataAttribute__Alternatives_4
 )
 
     |(
-{ before(grammarAccess.getPotentialDataAttributeAccess().getStructuredAssignment_4_1()); }
-(rule__PotentialDataAttribute__StructuredAssignment_4_1)
-{ after(grammarAccess.getPotentialDataAttributeAccess().getStructuredAssignment_4_1()); }
+{ before(grammarAccess.getPotentialDataAttributeAccess().getItemsAssignment_4_1()); }
+(rule__PotentialDataAttribute__ItemsAssignment_4_1)*
+{ after(grammarAccess.getPotentialDataAttributeAccess().getItemsAssignment_4_1()); }
 )
 
 ;
@@ -1716,9 +1708,31 @@ rule__UnstructuredDataList__Alternatives
 )
 
     |(
-{ before(grammarAccess.getUnstructuredDataListAccess().getNormalDistributionParserRuleCall_1()); }
-	ruleNormalDistribution
-{ after(grammarAccess.getUnstructuredDataListAccess().getNormalDistributionParserRuleCall_1()); }
+{ before(grammarAccess.getUnstructuredDataListAccess().getNormalAssignment_1()); }
+(rule__UnstructuredDataList__NormalAssignment_1)
+{ after(grammarAccess.getUnstructuredDataListAccess().getNormalAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__StructuredDataList__Alternatives_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getStructuredDataListAccess().getListAssignment_2_0()); }
+(rule__StructuredDataList__ListAssignment_2_0)
+{ after(grammarAccess.getStructuredDataListAccess().getListAssignment_2_0()); }
+)
+
+    |(
+{ before(grammarAccess.getStructuredDataListAccess().getItemsAssignment_2_1()); }
+(rule__StructuredDataList__ItemsAssignment_2_1)*
+{ after(grammarAccess.getStructuredDataListAccess().getItemsAssignment_2_1()); }
 )
 
 ;
@@ -4874,9 +4888,9 @@ rule__UnstructuredDataList__Group_0__1__Impl
     }
 :
 (
-{ before(grammarAccess.getUnstructuredDataListAccess().getItemsAssignment_0_1()); }
-(rule__UnstructuredDataList__ItemsAssignment_0_1)*
-{ after(grammarAccess.getUnstructuredDataListAccess().getItemsAssignment_0_1()); }
+{ before(grammarAccess.getUnstructuredDataListAccess().getListAssignment_0_1()); }
+(rule__UnstructuredDataList__ListAssignment_0_1)
+{ after(grammarAccess.getUnstructuredDataListAccess().getListAssignment_0_1()); }
 )
 
 ;
@@ -4969,9 +4983,9 @@ rule__StructuredDataList__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getStructuredDataListAccess().getListAssignment_2()); }
-(rule__StructuredDataList__ListAssignment_2)
-{ after(grammarAccess.getStructuredDataListAccess().getListAssignment_2()); }
+{ before(grammarAccess.getStructuredDataListAccess().getAlternatives_2()); }
+(rule__StructuredDataList__Alternatives_2)
+{ after(grammarAccess.getStructuredDataListAccess().getAlternatives_2()); }
 )
 
 ;
@@ -5055,7 +5069,6 @@ rule__FloatDataList__Group__1
     }
 :
 	rule__FloatDataList__Group__1__Impl
-	rule__FloatDataList__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5067,80 +5080,15 @@ rule__FloatDataList__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getFloatDataListAccess().getLeftParenthesisKeyword_1()); }
-
-	'(' 
-
-{ after(grammarAccess.getFloatDataListAccess().getLeftParenthesisKeyword_1()); }
+{ before(grammarAccess.getFloatDataListAccess().getItemsAssignment_1()); }
+(rule__FloatDataList__ItemsAssignment_1)*
+{ after(grammarAccess.getFloatDataListAccess().getItemsAssignment_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-rule__FloatDataList__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__FloatDataList__Group__2__Impl
-	rule__FloatDataList__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__FloatDataList__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getFloatDataListAccess().getListAssignment_2()); }
-(rule__FloatDataList__ListAssignment_2)
-{ after(grammarAccess.getFloatDataListAccess().getListAssignment_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__FloatDataList__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__FloatDataList__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__FloatDataList__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getFloatDataListAccess().getRightParenthesisKeyword_3()); }
-
-	')' 
-
-{ after(grammarAccess.getFloatDataListAccess().getRightParenthesisKeyword_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
 
 
 
@@ -8530,14 +8478,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__PotentialDataAttribute__StructuredAssignment_4_1
+rule__PotentialDataAttribute__ItemsAssignment_4_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getPotentialDataAttributeAccess().getStructuredStructuredDataListParserRuleCall_4_1_0()); }
-	ruleStructuredDataList{ after(grammarAccess.getPotentialDataAttributeAccess().getStructuredStructuredDataListParserRuleCall_4_1_0()); }
+{ before(grammarAccess.getPotentialDataAttributeAccess().getItemsStructuredDataListParserRuleCall_4_1_0()); }
+	ruleStructuredDataList{ after(grammarAccess.getPotentialDataAttributeAccess().getItemsStructuredDataListParserRuleCall_4_1_0()); }
 )
 
 ;
@@ -8545,14 +8493,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__UnstructuredDataList__ItemsAssignment_0_1
+rule__UnstructuredDataList__ListAssignment_0_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getUnstructuredDataListAccess().getItemsFloatParserRuleCall_0_1_0()); }
-	ruleFloat{ after(grammarAccess.getUnstructuredDataListAccess().getItemsFloatParserRuleCall_0_1_0()); }
+{ before(grammarAccess.getUnstructuredDataListAccess().getListFloatDataListParserRuleCall_0_1_0()); }
+	ruleFloatDataList{ after(grammarAccess.getUnstructuredDataListAccess().getListFloatDataListParserRuleCall_0_1_0()); }
 )
 
 ;
@@ -8560,14 +8508,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StructuredDataList__ListAssignment_2
+rule__UnstructuredDataList__NormalAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0()); }
-	ruleFloatDataList{ after(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0()); }
+{ before(grammarAccess.getUnstructuredDataListAccess().getNormalNormalDistributionParserRuleCall_1_0()); }
+	ruleNormalDistribution{ after(grammarAccess.getUnstructuredDataListAccess().getNormalNormalDistributionParserRuleCall_1_0()); }
 )
 
 ;
@@ -8575,14 +8523,44 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FloatDataList__ListAssignment_2
+rule__StructuredDataList__ListAssignment_2_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFloatDataListAccess().getListUnstructuredDataListParserRuleCall_2_0()); }
-	ruleUnstructuredDataList{ after(grammarAccess.getFloatDataListAccess().getListUnstructuredDataListParserRuleCall_2_0()); }
+{ before(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0_0()); }
+	ruleFloatDataList{ after(grammarAccess.getStructuredDataListAccess().getListFloatDataListParserRuleCall_2_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__StructuredDataList__ItemsAssignment_2_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getStructuredDataListAccess().getItemsStructuredDataListParserRuleCall_2_1_0()); }
+	ruleStructuredDataList{ after(grammarAccess.getStructuredDataListAccess().getItemsStructuredDataListParserRuleCall_2_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FloatDataList__ItemsAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFloatDataListAccess().getItemsFloatParserRuleCall_1_0()); }
+	ruleFloat{ after(grammarAccess.getFloatDataListAccess().getItemsFloatParserRuleCall_1_0()); }
 )
 
 ;
