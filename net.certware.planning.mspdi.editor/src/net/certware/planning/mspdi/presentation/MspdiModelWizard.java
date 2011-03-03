@@ -71,6 +71,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
+import net.certware.core.ui.CertWareUI;
 import net.certware.planning.mspdi.MspdiFactory;
 import net.certware.planning.mspdi.MspdiPackage;
 import net.certware.planning.mspdi.provider.MspdiEditPlugin;
@@ -176,14 +177,19 @@ public class MspdiModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
+	 * Retrieves the wizard banner from the CertWare UI registry.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(MspdiEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MspdiEditorPlugin.INSTANCE.getImage("full/wizban/NewMspdi")));
+		//setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(MspdiEditorPlugin.INSTANCE.getImage("full/wizban/NewMspdi")));
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**

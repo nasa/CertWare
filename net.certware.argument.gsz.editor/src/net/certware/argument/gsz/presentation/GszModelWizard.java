@@ -17,6 +17,7 @@ import java.util.StringTokenizer;
 import net.certware.argument.gsz.GszFactory;
 import net.certware.argument.gsz.GszPackage;
 import net.certware.argument.gsz.provider.GszEditPlugin;
+import net.certware.core.ui.CertWareUI;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -146,14 +147,19 @@ public class GszModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
+	 * Retrieves the wizard banner from the CertWare UI registry.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(GszEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(GszEditorPlugin.INSTANCE.getImage("full/wizban/NewGsz"))); //$NON-NLS-1$
+		//setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(GszEditorPlugin.INSTANCE.getImage("full/wizban/NewGsz"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**

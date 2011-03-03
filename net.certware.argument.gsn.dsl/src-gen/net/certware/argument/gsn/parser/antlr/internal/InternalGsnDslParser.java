@@ -62,7 +62,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
         
         @Override
         protected String getFirstRuleName() {
-        	return "Goal";	
+        	return "ModelGoal";	
        	}
        	
        	@Override
@@ -72,25 +72,25 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start entryRuleGoal
-    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:77:1: entryRuleGoal returns [EObject current=null] : iv_ruleGoal= ruleGoal EOF ;
-    public final EObject entryRuleGoal() throws RecognitionException {
+    // $ANTLR start entryRuleModelGoal
+    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:77:1: entryRuleModelGoal returns [EObject current=null] : iv_ruleModelGoal= ruleModelGoal EOF ;
+    public final EObject entryRuleModelGoal() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleGoal = null;
+        EObject iv_ruleModelGoal = null;
 
 
         try {
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:78:2: (iv_ruleGoal= ruleGoal EOF )
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:79:2: iv_ruleGoal= ruleGoal EOF
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:78:2: (iv_ruleModelGoal= ruleModelGoal EOF )
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:79:2: iv_ruleModelGoal= ruleModelGoal EOF
             {
-             currentNode = createCompositeNode(grammarAccess.getGoalRule(), currentNode); 
-            pushFollow(FollowSets000.FOLLOW_ruleGoal_in_entryRuleGoal75);
-            iv_ruleGoal=ruleGoal();
+             currentNode = createCompositeNode(grammarAccess.getModelGoalRule(), currentNode); 
+            pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_entryRuleModelGoal75);
+            iv_ruleModelGoal=ruleModelGoal();
             _fsp--;
 
-             current =iv_ruleGoal; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleGoal85); 
+             current =iv_ruleModelGoal; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleModelGoal85); 
 
             }
 
@@ -104,12 +104,12 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end entryRuleGoal
+    // $ANTLR end entryRuleModelGoal
 
 
-    // $ANTLR start ruleGoal
-    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:86:1: ruleGoal returns [EObject current=null] : ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' ) ;
-    public final EObject ruleGoal() throws RecognitionException {
+    // $ANTLR start ruleModelGoal
+    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:86:1: ruleModelGoal returns [EObject current=null] : ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleModelGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' ) ;
+    public final EObject ruleModelGoal() throws RecognitionException {
         EObject current = null;
 
         Token lv_assumed_1_0=null;
@@ -149,20 +149,20 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:91:6: ( ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' ) )
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:92:1: ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' )
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:91:6: ( ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleModelGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' ) )
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:92:1: ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleModelGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' )
             {
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:92:1: ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' )
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:92:2: () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}'
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:92:1: ( () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleModelGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}' )
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:92:2: () ( (lv_assumed_1_0= 'assumed' ) )? 'Goal' '{' ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )? ( 'description' ( (lv_description_7_0= ruleEString ) ) )? ( 'content' ( (lv_content_9_0= ruleEString ) ) )? ( 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) ) )? ( 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}' )? ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleModelGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )* '}' )? ( 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}' )? ( 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}' )? ( 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}' )? ( 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}' )? '}'
             {
             // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:92:2: ()
             // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:93:5: 
             {
              
-                    temp=factory.create(grammarAccess.getGoalAccess().getGoalAction_0().getType().getClassifier());
+                    temp=factory.create(grammarAccess.getModelGoalAccess().getGoalAction_0().getType().getClassifier());
                     current = temp; 
                     temp = null;
-                    CompositeNode newNode = createCompositeNode(grammarAccess.getGoalAccess().getGoalAction_0(), currentNode.getParent());
+                    CompositeNode newNode = createCompositeNode(grammarAccess.getModelGoalAccess().getGoalAction_0(), currentNode.getParent());
                 newNode.getChildren().add(currentNode);
                 moveLookaheadInfo(currentNode, newNode);
                 currentNode = newNode; 
@@ -186,13 +186,13 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:105:3: lv_assumed_1_0= 'assumed'
                     {
                     lv_assumed_1_0=(Token)input.LT(1);
-                    match(input,11,FollowSets000.FOLLOW_11_in_ruleGoal137); 
+                    match(input,11,FollowSets000.FOLLOW_11_in_ruleModelGoal137); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getAssumedAssumedKeyword_1_0(), "assumed"); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getAssumedAssumedKeyword_1_0(), "assumed"); 
                         
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode, current);
                     	        }
                     	        
@@ -211,13 +211,13 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,12,FollowSets000.FOLLOW_12_in_ruleGoal161); 
+            match(input,12,FollowSets000.FOLLOW_12_in_ruleModelGoal161); 
 
-                    createLeafNode(grammarAccess.getGoalAccess().getGoalKeyword_2(), null); 
+                    createLeafNode(grammarAccess.getModelGoalAccess().getGoalKeyword_2(), null); 
                 
-            match(input,13,FollowSets000.FOLLOW_13_in_ruleGoal171); 
+            match(input,13,FollowSets000.FOLLOW_13_in_ruleModelGoal171); 
 
-                    createLeafNode(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_3(), null); 
+                    createLeafNode(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_3(), null); 
                 
             // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:132:1: ( 'identifier' ( (lv_identifier_5_0= ruleEString ) ) )?
             int alt2=2;
@@ -230,9 +230,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:132:3: 'identifier' ( (lv_identifier_5_0= ruleEString ) )
                     {
-                    match(input,14,FollowSets000.FOLLOW_14_in_ruleGoal182); 
+                    match(input,14,FollowSets000.FOLLOW_14_in_ruleModelGoal182); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getIdentifierKeyword_4_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getIdentifierKeyword_4_0(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:136:1: ( (lv_identifier_5_0= ruleEString ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:137:1: (lv_identifier_5_0= ruleEString )
@@ -241,15 +241,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:138:3: lv_identifier_5_0= ruleEString
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getIdentifierEStringParserRuleCall_4_1_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getIdentifierEStringParserRuleCall_4_1_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleGoal203);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleModelGoal203);
                     lv_identifier_5_0=ruleEString();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -287,9 +287,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:160:6: 'description' ( (lv_description_7_0= ruleEString ) )
                     {
-                    match(input,15,FollowSets000.FOLLOW_15_in_ruleGoal216); 
+                    match(input,15,FollowSets000.FOLLOW_15_in_ruleModelGoal216); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getDescriptionKeyword_5_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getDescriptionKeyword_5_0(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:164:1: ( (lv_description_7_0= ruleEString ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:165:1: (lv_description_7_0= ruleEString )
@@ -298,15 +298,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:166:3: lv_description_7_0= ruleEString
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getDescriptionEStringParserRuleCall_5_1_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getDescriptionEStringParserRuleCall_5_1_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleGoal237);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleModelGoal237);
                     lv_description_7_0=ruleEString();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -344,9 +344,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:188:6: 'content' ( (lv_content_9_0= ruleEString ) )
                     {
-                    match(input,16,FollowSets000.FOLLOW_16_in_ruleGoal250); 
+                    match(input,16,FollowSets000.FOLLOW_16_in_ruleModelGoal250); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getContentKeyword_6_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getContentKeyword_6_0(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:192:1: ( (lv_content_9_0= ruleEString ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:193:1: (lv_content_9_0= ruleEString )
@@ -355,15 +355,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:194:3: lv_content_9_0= ruleEString
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getContentEStringParserRuleCall_6_1_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getContentEStringParserRuleCall_6_1_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleGoal271);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleModelGoal271);
                     lv_content_9_0=ruleEString();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -401,9 +401,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:216:6: 'toBeSupported' ( (lv_toBeSupported_11_0= ruleEBoolean ) )
                     {
-                    match(input,17,FollowSets000.FOLLOW_17_in_ruleGoal284); 
+                    match(input,17,FollowSets000.FOLLOW_17_in_ruleModelGoal284); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getToBeSupportedKeyword_7_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getToBeSupportedKeyword_7_0(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:220:1: ( (lv_toBeSupported_11_0= ruleEBoolean ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:221:1: (lv_toBeSupported_11_0= ruleEBoolean )
@@ -412,15 +412,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:222:3: lv_toBeSupported_11_0= ruleEBoolean
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_ruleGoal305);
+                    pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_ruleModelGoal305);
                     lv_toBeSupported_11_0=ruleEBoolean();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -458,13 +458,13 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:244:6: 'isTagged' '{' ( (lv_isTagged_14_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_16_0= ruleTaggedValue ) ) )* '}'
                     {
-                    match(input,18,FollowSets000.FOLLOW_18_in_ruleGoal318); 
+                    match(input,18,FollowSets000.FOLLOW_18_in_ruleModelGoal318); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getIsTaggedKeyword_8_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getIsTaggedKeyword_8_0(), null); 
                         
-                    match(input,13,FollowSets000.FOLLOW_13_in_ruleGoal328); 
+                    match(input,13,FollowSets000.FOLLOW_13_in_ruleModelGoal328); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_8_1(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_8_1(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:252:1: ( (lv_isTagged_14_0= ruleTaggedValue ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:253:1: (lv_isTagged_14_0= ruleTaggedValue )
@@ -473,15 +473,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:254:3: lv_isTagged_14_0= ruleTaggedValue
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_ruleGoal349);
+                    pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_ruleModelGoal349);
                     lv_isTagged_14_0=ruleTaggedValue();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -517,9 +517,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:276:4: ',' ( (lv_isTagged_16_0= ruleTaggedValue ) )
                     	    {
-                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleGoal360); 
+                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleModelGoal360); 
 
-                    	            createLeafNode(grammarAccess.getGoalAccess().getCommaKeyword_8_3_0(), null); 
+                    	            createLeafNode(grammarAccess.getModelGoalAccess().getCommaKeyword_8_3_0(), null); 
                     	        
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:280:1: ( (lv_isTagged_16_0= ruleTaggedValue ) )
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:281:1: (lv_isTagged_16_0= ruleTaggedValue )
@@ -528,15 +528,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:282:3: lv_isTagged_16_0= ruleTaggedValue
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0(), currentNode); 
+                    	    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_ruleGoal381);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_ruleModelGoal381);
                     	    lv_isTagged_16_0=ruleTaggedValue();
                     	    _fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	    	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	    	        }
                     	    	        try {
@@ -566,9 +566,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    match(input,20,FollowSets000.FOLLOW_20_in_ruleGoal393); 
+                    match(input,20,FollowSets000.FOLLOW_20_in_ruleModelGoal393); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_8_4(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_8_4(), null); 
                         
 
                     }
@@ -576,7 +576,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:308:3: ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )* '}' )?
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:308:3: ( 'subGoals' '{' ( (lv_subGoals_20_0= ruleModelGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )* '}' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -585,32 +585,32 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:308:5: 'subGoals' '{' ( (lv_subGoals_20_0= ruleGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )* '}'
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:308:5: 'subGoals' '{' ( (lv_subGoals_20_0= ruleModelGoal ) ) ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )* '}'
                     {
-                    match(input,21,FollowSets000.FOLLOW_21_in_ruleGoal406); 
+                    match(input,21,FollowSets000.FOLLOW_21_in_ruleModelGoal406); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getSubGoalsKeyword_9_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getSubGoalsKeyword_9_0(), null); 
                         
-                    match(input,13,FollowSets000.FOLLOW_13_in_ruleGoal416); 
+                    match(input,13,FollowSets000.FOLLOW_13_in_ruleModelGoal416); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_9_1(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_9_1(), null); 
                         
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:316:1: ( (lv_subGoals_20_0= ruleGoal ) )
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:317:1: (lv_subGoals_20_0= ruleGoal )
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:316:1: ( (lv_subGoals_20_0= ruleModelGoal ) )
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:317:1: (lv_subGoals_20_0= ruleModelGoal )
                     {
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:317:1: (lv_subGoals_20_0= ruleGoal )
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:318:3: lv_subGoals_20_0= ruleGoal
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:317:1: (lv_subGoals_20_0= ruleModelGoal )
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:318:3: lv_subGoals_20_0= ruleModelGoal
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_2_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_2_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleGoal_in_ruleGoal437);
-                    lv_subGoals_20_0=ruleGoal();
+                    pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_ruleModelGoal437);
+                    lv_subGoals_20_0=ruleModelGoal();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -618,7 +618,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	       			current, 
                     	       			"subGoals",
                     	        		lv_subGoals_20_0, 
-                    	        		"Goal", 
+                    	        		"ModelGoal", 
                     	        		currentNode);
                     	        } catch (ValueConverterException vce) {
                     				handleValueConverterException(vce);
@@ -631,7 +631,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:340:2: ( ',' ( (lv_subGoals_22_0= ruleGoal ) ) )*
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:340:2: ( ',' ( (lv_subGoals_22_0= ruleModelGoal ) ) )*
                     loop8:
                     do {
                         int alt8=2;
@@ -644,28 +644,28 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:340:4: ',' ( (lv_subGoals_22_0= ruleGoal ) )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:340:4: ',' ( (lv_subGoals_22_0= ruleModelGoal ) )
                     	    {
-                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleGoal448); 
+                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleModelGoal448); 
 
-                    	            createLeafNode(grammarAccess.getGoalAccess().getCommaKeyword_9_3_0(), null); 
+                    	            createLeafNode(grammarAccess.getModelGoalAccess().getCommaKeyword_9_3_0(), null); 
                     	        
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:344:1: ( (lv_subGoals_22_0= ruleGoal ) )
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:345:1: (lv_subGoals_22_0= ruleGoal )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:344:1: ( (lv_subGoals_22_0= ruleModelGoal ) )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:345:1: (lv_subGoals_22_0= ruleModelGoal )
                     	    {
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:345:1: (lv_subGoals_22_0= ruleGoal )
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:346:3: lv_subGoals_22_0= ruleGoal
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:345:1: (lv_subGoals_22_0= ruleModelGoal )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:346:3: lv_subGoals_22_0= ruleModelGoal
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_3_1_0(), currentNode); 
+                    	    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleGoal_in_ruleGoal469);
-                    	    lv_subGoals_22_0=ruleGoal();
+                    	    pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_ruleModelGoal469);
+                    	    lv_subGoals_22_0=ruleModelGoal();
                     	    _fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	    	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	    	        }
                     	    	        try {
@@ -673,7 +673,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	    	       			current, 
                     	    	       			"subGoals",
                     	    	        		lv_subGoals_22_0, 
-                    	    	        		"Goal", 
+                    	    	        		"ModelGoal", 
                     	    	        		currentNode);
                     	    	        } catch (ValueConverterException vce) {
                     	    				handleValueConverterException(vce);
@@ -695,9 +695,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    match(input,20,FollowSets000.FOLLOW_20_in_ruleGoal481); 
+                    match(input,20,FollowSets000.FOLLOW_20_in_ruleModelGoal481); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_9_4(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_9_4(), null); 
                         
 
                     }
@@ -716,13 +716,13 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:372:5: 'strategies' '{' ( (lv_strategies_26_0= ruleStrategy ) ) ( ',' ( (lv_strategies_28_0= ruleStrategy ) ) )* '}'
                     {
-                    match(input,22,FollowSets000.FOLLOW_22_in_ruleGoal494); 
+                    match(input,22,FollowSets000.FOLLOW_22_in_ruleModelGoal494); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getStrategiesKeyword_10_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getStrategiesKeyword_10_0(), null); 
                         
-                    match(input,13,FollowSets000.FOLLOW_13_in_ruleGoal504); 
+                    match(input,13,FollowSets000.FOLLOW_13_in_ruleModelGoal504); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_10_1(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_10_1(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:380:1: ( (lv_strategies_26_0= ruleStrategy ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:381:1: (lv_strategies_26_0= ruleStrategy )
@@ -731,15 +731,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:382:3: lv_strategies_26_0= ruleStrategy
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_ruleGoal525);
+                    pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_ruleModelGoal525);
                     lv_strategies_26_0=ruleStrategy();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -775,9 +775,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:404:4: ',' ( (lv_strategies_28_0= ruleStrategy ) )
                     	    {
-                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleGoal536); 
+                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleModelGoal536); 
 
-                    	            createLeafNode(grammarAccess.getGoalAccess().getCommaKeyword_10_3_0(), null); 
+                    	            createLeafNode(grammarAccess.getModelGoalAccess().getCommaKeyword_10_3_0(), null); 
                     	        
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:408:1: ( (lv_strategies_28_0= ruleStrategy ) )
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:409:1: (lv_strategies_28_0= ruleStrategy )
@@ -786,15 +786,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:410:3: lv_strategies_28_0= ruleStrategy
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0(), currentNode); 
+                    	    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_ruleGoal557);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_ruleModelGoal557);
                     	    lv_strategies_28_0=ruleStrategy();
                     	    _fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	    	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	    	        }
                     	    	        try {
@@ -824,9 +824,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    match(input,20,FollowSets000.FOLLOW_20_in_ruleGoal569); 
+                    match(input,20,FollowSets000.FOLLOW_20_in_ruleModelGoal569); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_10_4(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_10_4(), null); 
                         
 
                     }
@@ -845,13 +845,13 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:436:5: 'goalContexts' '{' ( (lv_goalContexts_32_0= ruleContext ) ) ( ',' ( (lv_goalContexts_34_0= ruleContext ) ) )* '}'
                     {
-                    match(input,23,FollowSets000.FOLLOW_23_in_ruleGoal582); 
+                    match(input,23,FollowSets000.FOLLOW_23_in_ruleModelGoal582); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getGoalContextsKeyword_11_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getGoalContextsKeyword_11_0(), null); 
                         
-                    match(input,13,FollowSets000.FOLLOW_13_in_ruleGoal592); 
+                    match(input,13,FollowSets000.FOLLOW_13_in_ruleModelGoal592); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_11_1(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_11_1(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:444:1: ( (lv_goalContexts_32_0= ruleContext ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:445:1: (lv_goalContexts_32_0= ruleContext )
@@ -860,15 +860,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:446:3: lv_goalContexts_32_0= ruleContext
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_2_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_2_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleContext_in_ruleGoal613);
+                    pushFollow(FollowSets000.FOLLOW_ruleContext_in_ruleModelGoal613);
                     lv_goalContexts_32_0=ruleContext();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -904,9 +904,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:468:4: ',' ( (lv_goalContexts_34_0= ruleContext ) )
                     	    {
-                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleGoal624); 
+                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleModelGoal624); 
 
-                    	            createLeafNode(grammarAccess.getGoalAccess().getCommaKeyword_11_3_0(), null); 
+                    	            createLeafNode(grammarAccess.getModelGoalAccess().getCommaKeyword_11_3_0(), null); 
                     	        
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:472:1: ( (lv_goalContexts_34_0= ruleContext ) )
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:473:1: (lv_goalContexts_34_0= ruleContext )
@@ -915,15 +915,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:474:3: lv_goalContexts_34_0= ruleContext
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0(), currentNode); 
+                    	    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleContext_in_ruleGoal645);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleContext_in_ruleModelGoal645);
                     	    lv_goalContexts_34_0=ruleContext();
                     	    _fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	    	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	    	        }
                     	    	        try {
@@ -953,9 +953,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    match(input,20,FollowSets000.FOLLOW_20_in_ruleGoal657); 
+                    match(input,20,FollowSets000.FOLLOW_20_in_ruleModelGoal657); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_11_4(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_11_4(), null); 
                         
 
                     }
@@ -974,13 +974,13 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:500:5: 'assumptions' '{' ( (lv_assumptions_38_0= ruleAssumption ) ) ( ',' ( (lv_assumptions_40_0= ruleAssumption ) ) )* '}'
                     {
-                    match(input,24,FollowSets000.FOLLOW_24_in_ruleGoal670); 
+                    match(input,24,FollowSets000.FOLLOW_24_in_ruleModelGoal670); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getAssumptionsKeyword_12_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getAssumptionsKeyword_12_0(), null); 
                         
-                    match(input,13,FollowSets000.FOLLOW_13_in_ruleGoal680); 
+                    match(input,13,FollowSets000.FOLLOW_13_in_ruleModelGoal680); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_12_1(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_12_1(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:508:1: ( (lv_assumptions_38_0= ruleAssumption ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:509:1: (lv_assumptions_38_0= ruleAssumption )
@@ -989,15 +989,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:510:3: lv_assumptions_38_0= ruleAssumption
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_ruleGoal701);
+                    pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_ruleModelGoal701);
                     lv_assumptions_38_0=ruleAssumption();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -1033,9 +1033,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:532:4: ',' ( (lv_assumptions_40_0= ruleAssumption ) )
                     	    {
-                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleGoal712); 
+                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleModelGoal712); 
 
-                    	            createLeafNode(grammarAccess.getGoalAccess().getCommaKeyword_12_3_0(), null); 
+                    	            createLeafNode(grammarAccess.getModelGoalAccess().getCommaKeyword_12_3_0(), null); 
                     	        
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:536:1: ( (lv_assumptions_40_0= ruleAssumption ) )
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:537:1: (lv_assumptions_40_0= ruleAssumption )
@@ -1044,15 +1044,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:538:3: lv_assumptions_40_0= ruleAssumption
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0(), currentNode); 
+                    	    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_ruleGoal733);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_ruleModelGoal733);
                     	    lv_assumptions_40_0=ruleAssumption();
                     	    _fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	    	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	    	        }
                     	    	        try {
@@ -1082,9 +1082,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    match(input,20,FollowSets000.FOLLOW_20_in_ruleGoal745); 
+                    match(input,20,FollowSets000.FOLLOW_20_in_ruleModelGoal745); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_12_4(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_12_4(), null); 
                         
 
                     }
@@ -1103,13 +1103,13 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:564:5: 'goalSolutions' '{' ( (lv_goalSolutions_44_0= ruleSolution ) ) ( ',' ( (lv_goalSolutions_46_0= ruleSolution ) ) )* '}'
                     {
-                    match(input,25,FollowSets000.FOLLOW_25_in_ruleGoal758); 
+                    match(input,25,FollowSets000.FOLLOW_25_in_ruleModelGoal758); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getGoalSolutionsKeyword_13_0(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getGoalSolutionsKeyword_13_0(), null); 
                         
-                    match(input,13,FollowSets000.FOLLOW_13_in_ruleGoal768); 
+                    match(input,13,FollowSets000.FOLLOW_13_in_ruleModelGoal768); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_13_1(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_13_1(), null); 
                         
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:572:1: ( (lv_goalSolutions_44_0= ruleSolution ) )
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:573:1: (lv_goalSolutions_44_0= ruleSolution )
@@ -1118,15 +1118,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:574:3: lv_goalSolutions_44_0= ruleSolution
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleSolution_in_ruleGoal789);
+                    pushFollow(FollowSets000.FOLLOW_ruleSolution_in_ruleModelGoal789);
                     lv_goalSolutions_44_0=ruleSolution();
                     _fsp--;
 
 
                     	        if (current==null) {
-                    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	        }
                     	        try {
@@ -1162,9 +1162,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:596:4: ',' ( (lv_goalSolutions_46_0= ruleSolution ) )
                     	    {
-                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleGoal800); 
+                    	    match(input,19,FollowSets000.FOLLOW_19_in_ruleModelGoal800); 
 
-                    	            createLeafNode(grammarAccess.getGoalAccess().getCommaKeyword_13_3_0(), null); 
+                    	            createLeafNode(grammarAccess.getModelGoalAccess().getCommaKeyword_13_3_0(), null); 
                     	        
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:600:1: ( (lv_goalSolutions_46_0= ruleSolution ) )
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:601:1: (lv_goalSolutions_46_0= ruleSolution )
@@ -1173,15 +1173,15 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:602:3: lv_goalSolutions_46_0= ruleSolution
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0(), currentNode); 
+                    	    	        currentNode=createCompositeNode(grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleSolution_in_ruleGoal821);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleSolution_in_ruleModelGoal821);
                     	    lv_goalSolutions_46_0=ruleSolution();
                     	    _fsp--;
 
 
                     	    	        if (current==null) {
-                    	    	            current = factory.create(grammarAccess.getGoalRule().getType().getClassifier());
+                    	    	            current = factory.create(grammarAccess.getModelGoalRule().getType().getClassifier());
                     	    	            associateNodeWithAstElement(currentNode.getParent(), current);
                     	    	        }
                     	    	        try {
@@ -1211,9 +1211,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    match(input,20,FollowSets000.FOLLOW_20_in_ruleGoal833); 
+                    match(input,20,FollowSets000.FOLLOW_20_in_ruleModelGoal833); 
 
-                            createLeafNode(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_13_4(), null); 
+                            createLeafNode(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_13_4(), null); 
                         
 
                     }
@@ -1221,9 +1221,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            match(input,20,FollowSets000.FOLLOW_20_in_ruleGoal845); 
+            match(input,20,FollowSets000.FOLLOW_20_in_ruleModelGoal845); 
 
-                    createLeafNode(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_14(), null); 
+                    createLeafNode(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_14(), null); 
                 
 
             }
@@ -1244,7 +1244,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end ruleGoal
+    // $ANTLR end ruleModelGoal
 
 
     // $ANTLR start entryRuleArgumentElement
@@ -2170,7 +2170,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start ruleStrategy
-    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:981:1: ruleStrategy returns [EObject current=null] : ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleGoal ) ) ( ',' ( (lv_goals_19_0= ruleGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' ) ;
+    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:981:1: ruleStrategy returns [EObject current=null] : ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleModelGoal ) ) ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' ) ;
     public final EObject ruleStrategy() throws RecognitionException {
         EObject current = null;
 
@@ -2204,11 +2204,11 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
          EObject temp=null; setCurrentLookahead(); resetLookahead(); 
             
         try {
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:986:6: ( ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleGoal ) ) ( ',' ( (lv_goals_19_0= ruleGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' ) )
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:987:1: ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleGoal ) ) ( ',' ( (lv_goals_19_0= ruleGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' )
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:986:6: ( ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleModelGoal ) ) ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' ) )
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:987:1: ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleModelGoal ) ) ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' )
             {
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:987:1: ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleGoal ) ) ( ',' ( (lv_goals_19_0= ruleGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' )
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:987:2: () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleGoal ) ) ( ',' ( (lv_goals_19_0= ruleGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}'
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:987:1: ( () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleModelGoal ) ) ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}' )
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:987:2: () 'Strategy' '{' ( 'identifier' ( (lv_identifier_4_0= ruleEString ) ) )? ( 'description' ( (lv_description_6_0= ruleEString ) ) )? ( 'content' ( (lv_content_8_0= ruleEString ) ) )? ( 'isTagged' '{' ( (lv_isTagged_11_0= ruleTaggedValue ) ) ( ',' ( (lv_isTagged_13_0= ruleTaggedValue ) ) )* '}' )? ( 'goals' '{' ( (lv_goals_17_0= ruleModelGoal ) ) ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )* '}' )? ( 'justifications' '{' ( (lv_justifications_23_0= ruleJustification ) ) ( ',' ( (lv_justifications_25_0= ruleJustification ) ) )* '}' )? ( 'strategyContexts' '{' ( (lv_strategyContexts_29_0= ruleContext ) ) ( ',' ( (lv_strategyContexts_31_0= ruleContext ) ) )* '}' )? ( 'strategySolutions' '{' ( (lv_strategySolutions_35_0= ruleSolution ) ) ( ',' ( (lv_strategySolutions_37_0= ruleSolution ) ) )* '}' )? '}'
             {
             // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:987:2: ()
             // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:988:5: 
@@ -2534,7 +2534,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1154:3: ( 'goals' '{' ( (lv_goals_17_0= ruleGoal ) ) ( ',' ( (lv_goals_19_0= ruleGoal ) ) )* '}' )?
+            // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1154:3: ( 'goals' '{' ( (lv_goals_17_0= ruleModelGoal ) ) ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )* '}' )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -2543,7 +2543,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt30) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1154:5: 'goals' '{' ( (lv_goals_17_0= ruleGoal ) ) ( ',' ( (lv_goals_19_0= ruleGoal ) ) )* '}'
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1154:5: 'goals' '{' ( (lv_goals_17_0= ruleModelGoal ) ) ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )* '}'
                     {
                     match(input,32,FollowSets000.FOLLOW_32_in_ruleStrategy1985); 
 
@@ -2553,17 +2553,17 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
                             createLeafNode(grammarAccess.getStrategyAccess().getLeftCurlyBracketKeyword_7_1(), null); 
                         
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1162:1: ( (lv_goals_17_0= ruleGoal ) )
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1163:1: (lv_goals_17_0= ruleGoal )
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1162:1: ( (lv_goals_17_0= ruleModelGoal ) )
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1163:1: (lv_goals_17_0= ruleModelGoal )
                     {
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1163:1: (lv_goals_17_0= ruleGoal )
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1164:3: lv_goals_17_0= ruleGoal
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1163:1: (lv_goals_17_0= ruleModelGoal )
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1164:3: lv_goals_17_0= ruleModelGoal
                     {
                      
-                    	        currentNode=createCompositeNode(grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_2_0(), currentNode); 
+                    	        currentNode=createCompositeNode(grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_2_0(), currentNode); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleGoal_in_ruleStrategy2016);
-                    lv_goals_17_0=ruleGoal();
+                    pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_ruleStrategy2016);
+                    lv_goals_17_0=ruleModelGoal();
                     _fsp--;
 
 
@@ -2576,7 +2576,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	       			current, 
                     	       			"goals",
                     	        		lv_goals_17_0, 
-                    	        		"Goal", 
+                    	        		"ModelGoal", 
                     	        		currentNode);
                     	        } catch (ValueConverterException vce) {
                     				handleValueConverterException(vce);
@@ -2589,7 +2589,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1186:2: ( ',' ( (lv_goals_19_0= ruleGoal ) ) )*
+                    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1186:2: ( ',' ( (lv_goals_19_0= ruleModelGoal ) ) )*
                     loop29:
                     do {
                         int alt29=2;
@@ -2602,23 +2602,23 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
                         switch (alt29) {
                     	case 1 :
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1186:4: ',' ( (lv_goals_19_0= ruleGoal ) )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1186:4: ',' ( (lv_goals_19_0= ruleModelGoal ) )
                     	    {
                     	    match(input,19,FollowSets000.FOLLOW_19_in_ruleStrategy2027); 
 
                     	            createLeafNode(grammarAccess.getStrategyAccess().getCommaKeyword_7_3_0(), null); 
                     	        
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1190:1: ( (lv_goals_19_0= ruleGoal ) )
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1191:1: (lv_goals_19_0= ruleGoal )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1190:1: ( (lv_goals_19_0= ruleModelGoal ) )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1191:1: (lv_goals_19_0= ruleModelGoal )
                     	    {
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1191:1: (lv_goals_19_0= ruleGoal )
-                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1192:3: lv_goals_19_0= ruleGoal
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1191:1: (lv_goals_19_0= ruleModelGoal )
+                    	    // ../net.certware.argument.gsn.dsl/src-gen/net/certware/argument/gsn/parser/antlr/internal/InternalGsnDsl.g:1192:3: lv_goals_19_0= ruleModelGoal
                     	    {
                     	     
-                    	    	        currentNode=createCompositeNode(grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_3_1_0(), currentNode); 
+                    	    	        currentNode=createCompositeNode(grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_3_1_0(), currentNode); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleGoal_in_ruleStrategy2048);
-                    	    lv_goals_19_0=ruleGoal();
+                    	    pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_ruleStrategy2048);
+                    	    lv_goals_19_0=ruleModelGoal();
                     	    _fsp--;
 
 
@@ -2631,7 +2631,7 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
                     	    	       			current, 
                     	    	       			"goals",
                     	    	        		lv_goals_19_0, 
-                    	    	        		"Goal", 
+                    	    	        		"ModelGoal", 
                     	    	        		currentNode);
                     	    	        } catch (ValueConverterException vce) {
                     	    				handleValueConverterException(vce);
@@ -12983,56 +12983,56 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
 
     
     private static class FollowSets000 {
-        public static final BitSet FOLLOW_ruleGoal_in_entryRuleGoal75 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleGoal85 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_11_in_ruleGoal137 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleGoal161 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleGoal171 = new BitSet(new long[]{0x0000000003F7C000L});
-        public static final BitSet FOLLOW_14_in_ruleGoal182 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleGoal203 = new BitSet(new long[]{0x0000000003F78000L});
-        public static final BitSet FOLLOW_15_in_ruleGoal216 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleGoal237 = new BitSet(new long[]{0x0000000003F70000L});
-        public static final BitSet FOLLOW_16_in_ruleGoal250 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleGoal271 = new BitSet(new long[]{0x0000000003F60000L});
-        public static final BitSet FOLLOW_17_in_ruleGoal284 = new BitSet(new long[]{0x0000000060000000L});
-        public static final BitSet FOLLOW_ruleEBoolean_in_ruleGoal305 = new BitSet(new long[]{0x0000000003F40000L});
-        public static final BitSet FOLLOW_18_in_ruleGoal318 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleGoal328 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_ruleTaggedValue_in_ruleGoal349 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_19_in_ruleGoal360 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_ruleTaggedValue_in_ruleGoal381 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_20_in_ruleGoal393 = new BitSet(new long[]{0x0000000003F00000L});
-        public static final BitSet FOLLOW_21_in_ruleGoal406 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleGoal416 = new BitSet(new long[]{0x0000000000001800L});
-        public static final BitSet FOLLOW_ruleGoal_in_ruleGoal437 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_19_in_ruleGoal448 = new BitSet(new long[]{0x0000000000001800L});
-        public static final BitSet FOLLOW_ruleGoal_in_ruleGoal469 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_20_in_ruleGoal481 = new BitSet(new long[]{0x0000000003D00000L});
-        public static final BitSet FOLLOW_22_in_ruleGoal494 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleGoal504 = new BitSet(new long[]{0x0000000080000000L});
-        public static final BitSet FOLLOW_ruleStrategy_in_ruleGoal525 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_19_in_ruleGoal536 = new BitSet(new long[]{0x0000000080000000L});
-        public static final BitSet FOLLOW_ruleStrategy_in_ruleGoal557 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_20_in_ruleGoal569 = new BitSet(new long[]{0x0000000003900000L});
-        public static final BitSet FOLLOW_23_in_ruleGoal582 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleGoal592 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_ruleContext_in_ruleGoal613 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_19_in_ruleGoal624 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_ruleContext_in_ruleGoal645 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_20_in_ruleGoal657 = new BitSet(new long[]{0x0000000003100000L});
-        public static final BitSet FOLLOW_24_in_ruleGoal670 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleGoal680 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_ruleAssumption_in_ruleGoal701 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_19_in_ruleGoal712 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_ruleAssumption_in_ruleGoal733 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_20_in_ruleGoal745 = new BitSet(new long[]{0x0000000002100000L});
-        public static final BitSet FOLLOW_25_in_ruleGoal758 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleGoal768 = new BitSet(new long[]{0x0000004000000000L});
-        public static final BitSet FOLLOW_ruleSolution_in_ruleGoal789 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_19_in_ruleGoal800 = new BitSet(new long[]{0x0000004000000000L});
-        public static final BitSet FOLLOW_ruleSolution_in_ruleGoal821 = new BitSet(new long[]{0x0000000000180000L});
-        public static final BitSet FOLLOW_20_in_ruleGoal833 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_20_in_ruleGoal845 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_entryRuleModelGoal75 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleModelGoal85 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_11_in_ruleModelGoal137 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleModelGoal161 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleModelGoal171 = new BitSet(new long[]{0x0000000003F7C000L});
+        public static final BitSet FOLLOW_14_in_ruleModelGoal182 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleModelGoal203 = new BitSet(new long[]{0x0000000003F78000L});
+        public static final BitSet FOLLOW_15_in_ruleModelGoal216 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleModelGoal237 = new BitSet(new long[]{0x0000000003F70000L});
+        public static final BitSet FOLLOW_16_in_ruleModelGoal250 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleModelGoal271 = new BitSet(new long[]{0x0000000003F60000L});
+        public static final BitSet FOLLOW_17_in_ruleModelGoal284 = new BitSet(new long[]{0x0000000060000000L});
+        public static final BitSet FOLLOW_ruleEBoolean_in_ruleModelGoal305 = new BitSet(new long[]{0x0000000003F40000L});
+        public static final BitSet FOLLOW_18_in_ruleModelGoal318 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleModelGoal328 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_ruleTaggedValue_in_ruleModelGoal349 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleModelGoal360 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_ruleTaggedValue_in_ruleModelGoal381 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleModelGoal393 = new BitSet(new long[]{0x0000000003F00000L});
+        public static final BitSet FOLLOW_21_in_ruleModelGoal406 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleModelGoal416 = new BitSet(new long[]{0x0000000000001800L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_ruleModelGoal437 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleModelGoal448 = new BitSet(new long[]{0x0000000000001800L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_ruleModelGoal469 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleModelGoal481 = new BitSet(new long[]{0x0000000003D00000L});
+        public static final BitSet FOLLOW_22_in_ruleModelGoal494 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleModelGoal504 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_ruleStrategy_in_ruleModelGoal525 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleModelGoal536 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_ruleStrategy_in_ruleModelGoal557 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleModelGoal569 = new BitSet(new long[]{0x0000000003900000L});
+        public static final BitSet FOLLOW_23_in_ruleModelGoal582 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleModelGoal592 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_ruleContext_in_ruleModelGoal613 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleModelGoal624 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_ruleContext_in_ruleModelGoal645 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleModelGoal657 = new BitSet(new long[]{0x0000000003100000L});
+        public static final BitSet FOLLOW_24_in_ruleModelGoal670 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleModelGoal680 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_ruleAssumption_in_ruleModelGoal701 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleModelGoal712 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_ruleAssumption_in_ruleModelGoal733 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleModelGoal745 = new BitSet(new long[]{0x0000000002100000L});
+        public static final BitSet FOLLOW_25_in_ruleModelGoal758 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleModelGoal768 = new BitSet(new long[]{0x0000004000000000L});
+        public static final BitSet FOLLOW_ruleSolution_in_ruleModelGoal789 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleModelGoal800 = new BitSet(new long[]{0x0000004000000000L});
+        public static final BitSet FOLLOW_ruleSolution_in_ruleModelGoal821 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleModelGoal833 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_20_in_ruleModelGoal845 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleArgumentElement_in_entryRuleArgumentElement883 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleArgumentElement893 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleClaim_Impl_in_ruleArgumentElement940 = new BitSet(new long[]{0x0000000000000002L});
@@ -13083,9 +13083,9 @@ public class InternalGsnDslParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_20_in_ruleStrategy1972 = new BitSet(new long[]{0x0000000F00100000L});
         public static final BitSet FOLLOW_32_in_ruleStrategy1985 = new BitSet(new long[]{0x0000000000002000L});
         public static final BitSet FOLLOW_13_in_ruleStrategy1995 = new BitSet(new long[]{0x0000000000001800L});
-        public static final BitSet FOLLOW_ruleGoal_in_ruleStrategy2016 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_ruleStrategy2016 = new BitSet(new long[]{0x0000000000180000L});
         public static final BitSet FOLLOW_19_in_ruleStrategy2027 = new BitSet(new long[]{0x0000000000001800L});
-        public static final BitSet FOLLOW_ruleGoal_in_ruleStrategy2048 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_ruleStrategy2048 = new BitSet(new long[]{0x0000000000180000L});
         public static final BitSet FOLLOW_20_in_ruleStrategy2060 = new BitSet(new long[]{0x0000000E00100000L});
         public static final BitSet FOLLOW_33_in_ruleStrategy2073 = new BitSet(new long[]{0x0000000000002000L});
         public static final BitSet FOLLOW_13_in_ruleStrategy2083 = new BitSet(new long[]{0x0000200000000000L});

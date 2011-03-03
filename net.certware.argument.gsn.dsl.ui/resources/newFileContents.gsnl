@@ -1,0 +1,22 @@
+Goal { 
+	identifier "G1" 
+	content "Test content"
+	strategies {
+		Strategy {
+			identifier "G1S1"
+			content "Strategy for developing evidence to support G1"
+			strategySolutions {
+				Solution {
+					identifier "G1S1N1"
+					content "Solution for the main strategy"
+					solutionEvidence {
+						Evidence {
+							identifier "E1"
+							content "Main evidence for the solution"
+						}
+					}
+				}
+			}
+		}
+	}
+}

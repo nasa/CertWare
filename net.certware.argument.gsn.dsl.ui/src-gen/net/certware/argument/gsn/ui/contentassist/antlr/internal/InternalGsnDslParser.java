@@ -63,20 +63,20 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
 
 
-    // $ANTLR start entryRuleGoal
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:61:1: entryRuleGoal : ruleGoal EOF ;
-    public final void entryRuleGoal() throws RecognitionException {
+    // $ANTLR start entryRuleModelGoal
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:61:1: entryRuleModelGoal : ruleModelGoal EOF ;
+    public final void entryRuleModelGoal() throws RecognitionException {
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:62:1: ( ruleGoal EOF )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:63:1: ruleGoal EOF
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:62:1: ( ruleModelGoal EOF )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:63:1: ruleModelGoal EOF
             {
-             before(grammarAccess.getGoalRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleGoal_in_entryRuleGoal61);
-            ruleGoal();
+             before(grammarAccess.getModelGoalRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_entryRuleModelGoal61);
+            ruleModelGoal();
             _fsp--;
 
-             after(grammarAccess.getGoalRule()); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleGoal68); 
+             after(grammarAccess.getModelGoalRule()); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleModelGoal68); 
 
             }
 
@@ -89,34 +89,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end entryRuleGoal
+    // $ANTLR end entryRuleModelGoal
 
 
-    // $ANTLR start ruleGoal
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:70:1: ruleGoal : ( ( rule__Goal__Group__0 ) ) ;
-    public final void ruleGoal() throws RecognitionException {
+    // $ANTLR start ruleModelGoal
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:70:1: ruleModelGoal : ( ( rule__ModelGoal__Group__0 ) ) ;
+    public final void ruleModelGoal() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:74:2: ( ( ( rule__Goal__Group__0 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:75:1: ( ( rule__Goal__Group__0 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:74:2: ( ( ( rule__ModelGoal__Group__0 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:75:1: ( ( rule__ModelGoal__Group__0 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:75:1: ( ( rule__Goal__Group__0 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:76:1: ( rule__Goal__Group__0 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:75:1: ( ( rule__ModelGoal__Group__0 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:76:1: ( rule__ModelGoal__Group__0 )
             {
-             before(grammarAccess.getGoalAccess().getGroup()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:77:1: ( rule__Goal__Group__0 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:77:2: rule__Goal__Group__0
+             before(grammarAccess.getModelGoalAccess().getGroup()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:77:1: ( rule__ModelGoal__Group__0 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:77:2: rule__ModelGoal__Group__0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__0_in_ruleGoal94);
-            rule__Goal__Group__0();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__0_in_ruleModelGoal94);
+            rule__ModelGoal__Group__0();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup()); 
+             after(grammarAccess.getModelGoalAccess().getGroup()); 
 
             }
 
@@ -135,7 +135,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end ruleGoal
+    // $ANTLR end ruleModelGoal
 
 
     // $ANTLR start entryRuleArgumentElement
@@ -2346,22 +2346,22 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end rule__EString__Alternatives
 
 
-    // $ANTLR start rule__Goal__Group__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:872:1: rule__Goal__Group__0 : rule__Goal__Group__0__Impl rule__Goal__Group__1 ;
-    public final void rule__Goal__Group__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:872:1: rule__ModelGoal__Group__0 : rule__ModelGoal__Group__0__Impl rule__ModelGoal__Group__1 ;
+    public final void rule__ModelGoal__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:876:1: ( rule__Goal__Group__0__Impl rule__Goal__Group__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:877:2: rule__Goal__Group__0__Impl rule__Goal__Group__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:876:1: ( rule__ModelGoal__Group__0__Impl rule__ModelGoal__Group__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:877:2: rule__ModelGoal__Group__0__Impl rule__ModelGoal__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__0__Impl_in_rule__Goal__Group__01832);
-            rule__Goal__Group__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__0__Impl_in_rule__ModelGoal__Group__01832);
+            rule__ModelGoal__Group__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__1_in_rule__Goal__Group__01835);
-            rule__Goal__Group__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__1_in_rule__ModelGoal__Group__01835);
+            rule__ModelGoal__Group__1();
             _fsp--;
 
 
@@ -2379,12 +2379,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__0
+    // $ANTLR end rule__ModelGoal__Group__0
 
 
-    // $ANTLR start rule__Goal__Group__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:884:1: rule__Goal__Group__0__Impl : ( () ) ;
-    public final void rule__Goal__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:884:1: rule__ModelGoal__Group__0__Impl : ( () ) ;
+    public final void rule__ModelGoal__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -2395,13 +2395,13 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:889:1: ( () )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:890:1: ()
             {
-             before(grammarAccess.getGoalAccess().getGoalAction_0()); 
+             before(grammarAccess.getModelGoalAccess().getGoalAction_0()); 
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:891:1: ()
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:893:1: 
             {
             }
 
-             after(grammarAccess.getGoalAccess().getGoalAction_0()); 
+             after(grammarAccess.getModelGoalAccess().getGoalAction_0()); 
 
             }
 
@@ -2416,25 +2416,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__0__Impl
+    // $ANTLR end rule__ModelGoal__Group__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:903:1: rule__Goal__Group__1 : rule__Goal__Group__1__Impl rule__Goal__Group__2 ;
-    public final void rule__Goal__Group__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:903:1: rule__ModelGoal__Group__1 : rule__ModelGoal__Group__1__Impl rule__ModelGoal__Group__2 ;
+    public final void rule__ModelGoal__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:907:1: ( rule__Goal__Group__1__Impl rule__Goal__Group__2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:908:2: rule__Goal__Group__1__Impl rule__Goal__Group__2
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:907:1: ( rule__ModelGoal__Group__1__Impl rule__ModelGoal__Group__2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:908:2: rule__ModelGoal__Group__1__Impl rule__ModelGoal__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__1__Impl_in_rule__Goal__Group__11893);
-            rule__Goal__Group__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__1__Impl_in_rule__ModelGoal__Group__11893);
+            rule__ModelGoal__Group__1__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__2_in_rule__Goal__Group__11896);
-            rule__Goal__Group__2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__2_in_rule__ModelGoal__Group__11896);
+            rule__ModelGoal__Group__2();
             _fsp--;
 
 
@@ -2452,24 +2452,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__1
+    // $ANTLR end rule__ModelGoal__Group__1
 
 
-    // $ANTLR start rule__Goal__Group__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:915:1: rule__Goal__Group__1__Impl : ( ( rule__Goal__AssumedAssignment_1 )? ) ;
-    public final void rule__Goal__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:915:1: rule__ModelGoal__Group__1__Impl : ( ( rule__ModelGoal__AssumedAssignment_1 )? ) ;
+    public final void rule__ModelGoal__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:919:1: ( ( ( rule__Goal__AssumedAssignment_1 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:920:1: ( ( rule__Goal__AssumedAssignment_1 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:919:1: ( ( ( rule__ModelGoal__AssumedAssignment_1 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:920:1: ( ( rule__ModelGoal__AssumedAssignment_1 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:920:1: ( ( rule__Goal__AssumedAssignment_1 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:921:1: ( rule__Goal__AssumedAssignment_1 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:920:1: ( ( rule__ModelGoal__AssumedAssignment_1 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:921:1: ( rule__ModelGoal__AssumedAssignment_1 )?
             {
-             before(grammarAccess.getGoalAccess().getAssumedAssignment_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:922:1: ( rule__Goal__AssumedAssignment_1 )?
+             before(grammarAccess.getModelGoalAccess().getAssumedAssignment_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:922:1: ( rule__ModelGoal__AssumedAssignment_1 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2478,10 +2478,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:922:2: rule__Goal__AssumedAssignment_1
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:922:2: rule__ModelGoal__AssumedAssignment_1
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__AssumedAssignment_1_in_rule__Goal__Group__1__Impl1923);
-                    rule__Goal__AssumedAssignment_1();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__AssumedAssignment_1_in_rule__ModelGoal__Group__1__Impl1923);
+                    rule__ModelGoal__AssumedAssignment_1();
                     _fsp--;
 
 
@@ -2490,7 +2490,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getAssumedAssignment_1()); 
+             after(grammarAccess.getModelGoalAccess().getAssumedAssignment_1()); 
 
             }
 
@@ -2509,25 +2509,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__1__Impl
+    // $ANTLR end rule__ModelGoal__Group__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group__2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:932:1: rule__Goal__Group__2 : rule__Goal__Group__2__Impl rule__Goal__Group__3 ;
-    public final void rule__Goal__Group__2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:932:1: rule__ModelGoal__Group__2 : rule__ModelGoal__Group__2__Impl rule__ModelGoal__Group__3 ;
+    public final void rule__ModelGoal__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:936:1: ( rule__Goal__Group__2__Impl rule__Goal__Group__3 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:937:2: rule__Goal__Group__2__Impl rule__Goal__Group__3
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:936:1: ( rule__ModelGoal__Group__2__Impl rule__ModelGoal__Group__3 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:937:2: rule__ModelGoal__Group__2__Impl rule__ModelGoal__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__2__Impl_in_rule__Goal__Group__21954);
-            rule__Goal__Group__2__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__2__Impl_in_rule__ModelGoal__Group__21954);
+            rule__ModelGoal__Group__2__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__3_in_rule__Goal__Group__21957);
-            rule__Goal__Group__3();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__3_in_rule__ModelGoal__Group__21957);
+            rule__ModelGoal__Group__3();
             _fsp--;
 
 
@@ -2545,12 +2545,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__2
+    // $ANTLR end rule__ModelGoal__Group__2
 
 
-    // $ANTLR start rule__Goal__Group__2__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:944:1: rule__Goal__Group__2__Impl : ( 'Goal' ) ;
-    public final void rule__Goal__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__2__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:944:1: rule__ModelGoal__Group__2__Impl : ( 'Goal' ) ;
+    public final void rule__ModelGoal__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -2561,9 +2561,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:949:1: ( 'Goal' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:950:1: 'Goal'
             {
-             before(grammarAccess.getGoalAccess().getGoalKeyword_2()); 
-            match(input,13,FollowSets000.FOLLOW_13_in_rule__Goal__Group__2__Impl1985); 
-             after(grammarAccess.getGoalAccess().getGoalKeyword_2()); 
+             before(grammarAccess.getModelGoalAccess().getGoalKeyword_2()); 
+            match(input,13,FollowSets000.FOLLOW_13_in_rule__ModelGoal__Group__2__Impl1985); 
+             after(grammarAccess.getModelGoalAccess().getGoalKeyword_2()); 
 
             }
 
@@ -2582,25 +2582,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__2__Impl
+    // $ANTLR end rule__ModelGoal__Group__2__Impl
 
 
-    // $ANTLR start rule__Goal__Group__3
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:963:1: rule__Goal__Group__3 : rule__Goal__Group__3__Impl rule__Goal__Group__4 ;
-    public final void rule__Goal__Group__3() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__3
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:963:1: rule__ModelGoal__Group__3 : rule__ModelGoal__Group__3__Impl rule__ModelGoal__Group__4 ;
+    public final void rule__ModelGoal__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:967:1: ( rule__Goal__Group__3__Impl rule__Goal__Group__4 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:968:2: rule__Goal__Group__3__Impl rule__Goal__Group__4
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:967:1: ( rule__ModelGoal__Group__3__Impl rule__ModelGoal__Group__4 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:968:2: rule__ModelGoal__Group__3__Impl rule__ModelGoal__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__3__Impl_in_rule__Goal__Group__32016);
-            rule__Goal__Group__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__3__Impl_in_rule__ModelGoal__Group__32016);
+            rule__ModelGoal__Group__3__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__4_in_rule__Goal__Group__32019);
-            rule__Goal__Group__4();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__4_in_rule__ModelGoal__Group__32019);
+            rule__ModelGoal__Group__4();
             _fsp--;
 
 
@@ -2618,12 +2618,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__3
+    // $ANTLR end rule__ModelGoal__Group__3
 
 
-    // $ANTLR start rule__Goal__Group__3__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:975:1: rule__Goal__Group__3__Impl : ( '{' ) ;
-    public final void rule__Goal__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__3__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:975:1: rule__ModelGoal__Group__3__Impl : ( '{' ) ;
+    public final void rule__ModelGoal__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -2634,9 +2634,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:980:1: ( '{' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:981:1: '{'
             {
-             before(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Goal__Group__3__Impl2047); 
-             after(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__ModelGoal__Group__3__Impl2047); 
+             after(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -2655,25 +2655,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__3__Impl
+    // $ANTLR end rule__ModelGoal__Group__3__Impl
 
 
-    // $ANTLR start rule__Goal__Group__4
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:994:1: rule__Goal__Group__4 : rule__Goal__Group__4__Impl rule__Goal__Group__5 ;
-    public final void rule__Goal__Group__4() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__4
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:994:1: rule__ModelGoal__Group__4 : rule__ModelGoal__Group__4__Impl rule__ModelGoal__Group__5 ;
+    public final void rule__ModelGoal__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:998:1: ( rule__Goal__Group__4__Impl rule__Goal__Group__5 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:999:2: rule__Goal__Group__4__Impl rule__Goal__Group__5
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:998:1: ( rule__ModelGoal__Group__4__Impl rule__ModelGoal__Group__5 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:999:2: rule__ModelGoal__Group__4__Impl rule__ModelGoal__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__4__Impl_in_rule__Goal__Group__42078);
-            rule__Goal__Group__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__4__Impl_in_rule__ModelGoal__Group__42078);
+            rule__ModelGoal__Group__4__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__5_in_rule__Goal__Group__42081);
-            rule__Goal__Group__5();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__5_in_rule__ModelGoal__Group__42081);
+            rule__ModelGoal__Group__5();
             _fsp--;
 
 
@@ -2691,24 +2691,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__4
+    // $ANTLR end rule__ModelGoal__Group__4
 
 
-    // $ANTLR start rule__Goal__Group__4__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1006:1: rule__Goal__Group__4__Impl : ( ( rule__Goal__Group_4__0 )? ) ;
-    public final void rule__Goal__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__4__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1006:1: rule__ModelGoal__Group__4__Impl : ( ( rule__ModelGoal__Group_4__0 )? ) ;
+    public final void rule__ModelGoal__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1010:1: ( ( ( rule__Goal__Group_4__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1011:1: ( ( rule__Goal__Group_4__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1010:1: ( ( ( rule__ModelGoal__Group_4__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1011:1: ( ( rule__ModelGoal__Group_4__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1011:1: ( ( rule__Goal__Group_4__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1012:1: ( rule__Goal__Group_4__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1011:1: ( ( rule__ModelGoal__Group_4__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1012:1: ( rule__ModelGoal__Group_4__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_4()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1013:1: ( rule__Goal__Group_4__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_4()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1013:1: ( rule__ModelGoal__Group_4__0 )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2717,10 +2717,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1013:2: rule__Goal__Group_4__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1013:2: rule__ModelGoal__Group_4__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_4__0_in_rule__Goal__Group__4__Impl2108);
-                    rule__Goal__Group_4__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_4__0_in_rule__ModelGoal__Group__4__Impl2108);
+                    rule__ModelGoal__Group_4__0();
                     _fsp--;
 
 
@@ -2729,7 +2729,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_4()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_4()); 
 
             }
 
@@ -2748,25 +2748,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__4__Impl
+    // $ANTLR end rule__ModelGoal__Group__4__Impl
 
 
-    // $ANTLR start rule__Goal__Group__5
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1023:1: rule__Goal__Group__5 : rule__Goal__Group__5__Impl rule__Goal__Group__6 ;
-    public final void rule__Goal__Group__5() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__5
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1023:1: rule__ModelGoal__Group__5 : rule__ModelGoal__Group__5__Impl rule__ModelGoal__Group__6 ;
+    public final void rule__ModelGoal__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1027:1: ( rule__Goal__Group__5__Impl rule__Goal__Group__6 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1028:2: rule__Goal__Group__5__Impl rule__Goal__Group__6
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1027:1: ( rule__ModelGoal__Group__5__Impl rule__ModelGoal__Group__6 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1028:2: rule__ModelGoal__Group__5__Impl rule__ModelGoal__Group__6
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__5__Impl_in_rule__Goal__Group__52139);
-            rule__Goal__Group__5__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__5__Impl_in_rule__ModelGoal__Group__52139);
+            rule__ModelGoal__Group__5__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__6_in_rule__Goal__Group__52142);
-            rule__Goal__Group__6();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__6_in_rule__ModelGoal__Group__52142);
+            rule__ModelGoal__Group__6();
             _fsp--;
 
 
@@ -2784,24 +2784,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__5
+    // $ANTLR end rule__ModelGoal__Group__5
 
 
-    // $ANTLR start rule__Goal__Group__5__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1035:1: rule__Goal__Group__5__Impl : ( ( rule__Goal__Group_5__0 )? ) ;
-    public final void rule__Goal__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__5__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1035:1: rule__ModelGoal__Group__5__Impl : ( ( rule__ModelGoal__Group_5__0 )? ) ;
+    public final void rule__ModelGoal__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1039:1: ( ( ( rule__Goal__Group_5__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1040:1: ( ( rule__Goal__Group_5__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1039:1: ( ( ( rule__ModelGoal__Group_5__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1040:1: ( ( rule__ModelGoal__Group_5__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1040:1: ( ( rule__Goal__Group_5__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1041:1: ( rule__Goal__Group_5__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1040:1: ( ( rule__ModelGoal__Group_5__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1041:1: ( rule__ModelGoal__Group_5__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_5()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1042:1: ( rule__Goal__Group_5__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_5()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1042:1: ( rule__ModelGoal__Group_5__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2810,10 +2810,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1042:2: rule__Goal__Group_5__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1042:2: rule__ModelGoal__Group_5__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_5__0_in_rule__Goal__Group__5__Impl2169);
-                    rule__Goal__Group_5__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_5__0_in_rule__ModelGoal__Group__5__Impl2169);
+                    rule__ModelGoal__Group_5__0();
                     _fsp--;
 
 
@@ -2822,7 +2822,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_5()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_5()); 
 
             }
 
@@ -2841,25 +2841,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__5__Impl
+    // $ANTLR end rule__ModelGoal__Group__5__Impl
 
 
-    // $ANTLR start rule__Goal__Group__6
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1052:1: rule__Goal__Group__6 : rule__Goal__Group__6__Impl rule__Goal__Group__7 ;
-    public final void rule__Goal__Group__6() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__6
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1052:1: rule__ModelGoal__Group__6 : rule__ModelGoal__Group__6__Impl rule__ModelGoal__Group__7 ;
+    public final void rule__ModelGoal__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1056:1: ( rule__Goal__Group__6__Impl rule__Goal__Group__7 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1057:2: rule__Goal__Group__6__Impl rule__Goal__Group__7
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1056:1: ( rule__ModelGoal__Group__6__Impl rule__ModelGoal__Group__7 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1057:2: rule__ModelGoal__Group__6__Impl rule__ModelGoal__Group__7
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__6__Impl_in_rule__Goal__Group__62200);
-            rule__Goal__Group__6__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__6__Impl_in_rule__ModelGoal__Group__62200);
+            rule__ModelGoal__Group__6__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__7_in_rule__Goal__Group__62203);
-            rule__Goal__Group__7();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__7_in_rule__ModelGoal__Group__62203);
+            rule__ModelGoal__Group__7();
             _fsp--;
 
 
@@ -2877,24 +2877,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__6
+    // $ANTLR end rule__ModelGoal__Group__6
 
 
-    // $ANTLR start rule__Goal__Group__6__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1064:1: rule__Goal__Group__6__Impl : ( ( rule__Goal__Group_6__0 )? ) ;
-    public final void rule__Goal__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__6__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1064:1: rule__ModelGoal__Group__6__Impl : ( ( rule__ModelGoal__Group_6__0 )? ) ;
+    public final void rule__ModelGoal__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1068:1: ( ( ( rule__Goal__Group_6__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1069:1: ( ( rule__Goal__Group_6__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1068:1: ( ( ( rule__ModelGoal__Group_6__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1069:1: ( ( rule__ModelGoal__Group_6__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1069:1: ( ( rule__Goal__Group_6__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1070:1: ( rule__Goal__Group_6__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1069:1: ( ( rule__ModelGoal__Group_6__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1070:1: ( rule__ModelGoal__Group_6__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_6()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1071:1: ( rule__Goal__Group_6__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_6()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1071:1: ( rule__ModelGoal__Group_6__0 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2903,10 +2903,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1071:2: rule__Goal__Group_6__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1071:2: rule__ModelGoal__Group_6__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_6__0_in_rule__Goal__Group__6__Impl2230);
-                    rule__Goal__Group_6__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_6__0_in_rule__ModelGoal__Group__6__Impl2230);
+                    rule__ModelGoal__Group_6__0();
                     _fsp--;
 
 
@@ -2915,7 +2915,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_6()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_6()); 
 
             }
 
@@ -2934,25 +2934,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__6__Impl
+    // $ANTLR end rule__ModelGoal__Group__6__Impl
 
 
-    // $ANTLR start rule__Goal__Group__7
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1081:1: rule__Goal__Group__7 : rule__Goal__Group__7__Impl rule__Goal__Group__8 ;
-    public final void rule__Goal__Group__7() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__7
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1081:1: rule__ModelGoal__Group__7 : rule__ModelGoal__Group__7__Impl rule__ModelGoal__Group__8 ;
+    public final void rule__ModelGoal__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1085:1: ( rule__Goal__Group__7__Impl rule__Goal__Group__8 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1086:2: rule__Goal__Group__7__Impl rule__Goal__Group__8
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1085:1: ( rule__ModelGoal__Group__7__Impl rule__ModelGoal__Group__8 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1086:2: rule__ModelGoal__Group__7__Impl rule__ModelGoal__Group__8
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__7__Impl_in_rule__Goal__Group__72261);
-            rule__Goal__Group__7__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__7__Impl_in_rule__ModelGoal__Group__72261);
+            rule__ModelGoal__Group__7__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__8_in_rule__Goal__Group__72264);
-            rule__Goal__Group__8();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__8_in_rule__ModelGoal__Group__72264);
+            rule__ModelGoal__Group__8();
             _fsp--;
 
 
@@ -2970,24 +2970,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__7
+    // $ANTLR end rule__ModelGoal__Group__7
 
 
-    // $ANTLR start rule__Goal__Group__7__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1093:1: rule__Goal__Group__7__Impl : ( ( rule__Goal__Group_7__0 )? ) ;
-    public final void rule__Goal__Group__7__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__7__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1093:1: rule__ModelGoal__Group__7__Impl : ( ( rule__ModelGoal__Group_7__0 )? ) ;
+    public final void rule__ModelGoal__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1097:1: ( ( ( rule__Goal__Group_7__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1098:1: ( ( rule__Goal__Group_7__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1097:1: ( ( ( rule__ModelGoal__Group_7__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1098:1: ( ( rule__ModelGoal__Group_7__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1098:1: ( ( rule__Goal__Group_7__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1099:1: ( rule__Goal__Group_7__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1098:1: ( ( rule__ModelGoal__Group_7__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1099:1: ( rule__ModelGoal__Group_7__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_7()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1100:1: ( rule__Goal__Group_7__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_7()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1100:1: ( rule__ModelGoal__Group_7__0 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2996,10 +2996,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1100:2: rule__Goal__Group_7__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1100:2: rule__ModelGoal__Group_7__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_7__0_in_rule__Goal__Group__7__Impl2291);
-                    rule__Goal__Group_7__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_7__0_in_rule__ModelGoal__Group__7__Impl2291);
+                    rule__ModelGoal__Group_7__0();
                     _fsp--;
 
 
@@ -3008,7 +3008,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_7()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_7()); 
 
             }
 
@@ -3027,25 +3027,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__7__Impl
+    // $ANTLR end rule__ModelGoal__Group__7__Impl
 
 
-    // $ANTLR start rule__Goal__Group__8
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1110:1: rule__Goal__Group__8 : rule__Goal__Group__8__Impl rule__Goal__Group__9 ;
-    public final void rule__Goal__Group__8() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__8
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1110:1: rule__ModelGoal__Group__8 : rule__ModelGoal__Group__8__Impl rule__ModelGoal__Group__9 ;
+    public final void rule__ModelGoal__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1114:1: ( rule__Goal__Group__8__Impl rule__Goal__Group__9 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1115:2: rule__Goal__Group__8__Impl rule__Goal__Group__9
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1114:1: ( rule__ModelGoal__Group__8__Impl rule__ModelGoal__Group__9 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1115:2: rule__ModelGoal__Group__8__Impl rule__ModelGoal__Group__9
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__8__Impl_in_rule__Goal__Group__82322);
-            rule__Goal__Group__8__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__8__Impl_in_rule__ModelGoal__Group__82322);
+            rule__ModelGoal__Group__8__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__9_in_rule__Goal__Group__82325);
-            rule__Goal__Group__9();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__9_in_rule__ModelGoal__Group__82325);
+            rule__ModelGoal__Group__9();
             _fsp--;
 
 
@@ -3063,24 +3063,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__8
+    // $ANTLR end rule__ModelGoal__Group__8
 
 
-    // $ANTLR start rule__Goal__Group__8__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1122:1: rule__Goal__Group__8__Impl : ( ( rule__Goal__Group_8__0 )? ) ;
-    public final void rule__Goal__Group__8__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__8__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1122:1: rule__ModelGoal__Group__8__Impl : ( ( rule__ModelGoal__Group_8__0 )? ) ;
+    public final void rule__ModelGoal__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1126:1: ( ( ( rule__Goal__Group_8__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1127:1: ( ( rule__Goal__Group_8__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1126:1: ( ( ( rule__ModelGoal__Group_8__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1127:1: ( ( rule__ModelGoal__Group_8__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1127:1: ( ( rule__Goal__Group_8__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1128:1: ( rule__Goal__Group_8__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1127:1: ( ( rule__ModelGoal__Group_8__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1128:1: ( rule__ModelGoal__Group_8__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_8()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1129:1: ( rule__Goal__Group_8__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_8()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1129:1: ( rule__ModelGoal__Group_8__0 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3089,10 +3089,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1129:2: rule__Goal__Group_8__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1129:2: rule__ModelGoal__Group_8__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__0_in_rule__Goal__Group__8__Impl2352);
-                    rule__Goal__Group_8__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__0_in_rule__ModelGoal__Group__8__Impl2352);
+                    rule__ModelGoal__Group_8__0();
                     _fsp--;
 
 
@@ -3101,7 +3101,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_8()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_8()); 
 
             }
 
@@ -3120,25 +3120,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__8__Impl
+    // $ANTLR end rule__ModelGoal__Group__8__Impl
 
 
-    // $ANTLR start rule__Goal__Group__9
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1139:1: rule__Goal__Group__9 : rule__Goal__Group__9__Impl rule__Goal__Group__10 ;
-    public final void rule__Goal__Group__9() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__9
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1139:1: rule__ModelGoal__Group__9 : rule__ModelGoal__Group__9__Impl rule__ModelGoal__Group__10 ;
+    public final void rule__ModelGoal__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1143:1: ( rule__Goal__Group__9__Impl rule__Goal__Group__10 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1144:2: rule__Goal__Group__9__Impl rule__Goal__Group__10
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1143:1: ( rule__ModelGoal__Group__9__Impl rule__ModelGoal__Group__10 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1144:2: rule__ModelGoal__Group__9__Impl rule__ModelGoal__Group__10
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__9__Impl_in_rule__Goal__Group__92383);
-            rule__Goal__Group__9__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__9__Impl_in_rule__ModelGoal__Group__92383);
+            rule__ModelGoal__Group__9__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__10_in_rule__Goal__Group__92386);
-            rule__Goal__Group__10();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__10_in_rule__ModelGoal__Group__92386);
+            rule__ModelGoal__Group__10();
             _fsp--;
 
 
@@ -3156,24 +3156,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__9
+    // $ANTLR end rule__ModelGoal__Group__9
 
 
-    // $ANTLR start rule__Goal__Group__9__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1151:1: rule__Goal__Group__9__Impl : ( ( rule__Goal__Group_9__0 )? ) ;
-    public final void rule__Goal__Group__9__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__9__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1151:1: rule__ModelGoal__Group__9__Impl : ( ( rule__ModelGoal__Group_9__0 )? ) ;
+    public final void rule__ModelGoal__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1155:1: ( ( ( rule__Goal__Group_9__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1156:1: ( ( rule__Goal__Group_9__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1155:1: ( ( ( rule__ModelGoal__Group_9__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1156:1: ( ( rule__ModelGoal__Group_9__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1156:1: ( ( rule__Goal__Group_9__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1157:1: ( rule__Goal__Group_9__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1156:1: ( ( rule__ModelGoal__Group_9__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1157:1: ( rule__ModelGoal__Group_9__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_9()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1158:1: ( rule__Goal__Group_9__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_9()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1158:1: ( rule__ModelGoal__Group_9__0 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -3182,10 +3182,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1158:2: rule__Goal__Group_9__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1158:2: rule__ModelGoal__Group_9__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__0_in_rule__Goal__Group__9__Impl2413);
-                    rule__Goal__Group_9__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__0_in_rule__ModelGoal__Group__9__Impl2413);
+                    rule__ModelGoal__Group_9__0();
                     _fsp--;
 
 
@@ -3194,7 +3194,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_9()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_9()); 
 
             }
 
@@ -3213,25 +3213,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__9__Impl
+    // $ANTLR end rule__ModelGoal__Group__9__Impl
 
 
-    // $ANTLR start rule__Goal__Group__10
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1168:1: rule__Goal__Group__10 : rule__Goal__Group__10__Impl rule__Goal__Group__11 ;
-    public final void rule__Goal__Group__10() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__10
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1168:1: rule__ModelGoal__Group__10 : rule__ModelGoal__Group__10__Impl rule__ModelGoal__Group__11 ;
+    public final void rule__ModelGoal__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1172:1: ( rule__Goal__Group__10__Impl rule__Goal__Group__11 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1173:2: rule__Goal__Group__10__Impl rule__Goal__Group__11
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1172:1: ( rule__ModelGoal__Group__10__Impl rule__ModelGoal__Group__11 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1173:2: rule__ModelGoal__Group__10__Impl rule__ModelGoal__Group__11
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__10__Impl_in_rule__Goal__Group__102444);
-            rule__Goal__Group__10__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__10__Impl_in_rule__ModelGoal__Group__102444);
+            rule__ModelGoal__Group__10__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__11_in_rule__Goal__Group__102447);
-            rule__Goal__Group__11();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__11_in_rule__ModelGoal__Group__102447);
+            rule__ModelGoal__Group__11();
             _fsp--;
 
 
@@ -3249,24 +3249,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__10
+    // $ANTLR end rule__ModelGoal__Group__10
 
 
-    // $ANTLR start rule__Goal__Group__10__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1180:1: rule__Goal__Group__10__Impl : ( ( rule__Goal__Group_10__0 )? ) ;
-    public final void rule__Goal__Group__10__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__10__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1180:1: rule__ModelGoal__Group__10__Impl : ( ( rule__ModelGoal__Group_10__0 )? ) ;
+    public final void rule__ModelGoal__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1184:1: ( ( ( rule__Goal__Group_10__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1185:1: ( ( rule__Goal__Group_10__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1184:1: ( ( ( rule__ModelGoal__Group_10__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1185:1: ( ( rule__ModelGoal__Group_10__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1185:1: ( ( rule__Goal__Group_10__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1186:1: ( rule__Goal__Group_10__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1185:1: ( ( rule__ModelGoal__Group_10__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1186:1: ( rule__ModelGoal__Group_10__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_10()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1187:1: ( rule__Goal__Group_10__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_10()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1187:1: ( rule__ModelGoal__Group_10__0 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -3275,10 +3275,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1187:2: rule__Goal__Group_10__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1187:2: rule__ModelGoal__Group_10__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__0_in_rule__Goal__Group__10__Impl2474);
-                    rule__Goal__Group_10__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__0_in_rule__ModelGoal__Group__10__Impl2474);
+                    rule__ModelGoal__Group_10__0();
                     _fsp--;
 
 
@@ -3287,7 +3287,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_10()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_10()); 
 
             }
 
@@ -3306,25 +3306,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__10__Impl
+    // $ANTLR end rule__ModelGoal__Group__10__Impl
 
 
-    // $ANTLR start rule__Goal__Group__11
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1197:1: rule__Goal__Group__11 : rule__Goal__Group__11__Impl rule__Goal__Group__12 ;
-    public final void rule__Goal__Group__11() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__11
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1197:1: rule__ModelGoal__Group__11 : rule__ModelGoal__Group__11__Impl rule__ModelGoal__Group__12 ;
+    public final void rule__ModelGoal__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1201:1: ( rule__Goal__Group__11__Impl rule__Goal__Group__12 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1202:2: rule__Goal__Group__11__Impl rule__Goal__Group__12
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1201:1: ( rule__ModelGoal__Group__11__Impl rule__ModelGoal__Group__12 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1202:2: rule__ModelGoal__Group__11__Impl rule__ModelGoal__Group__12
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__11__Impl_in_rule__Goal__Group__112505);
-            rule__Goal__Group__11__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__11__Impl_in_rule__ModelGoal__Group__112505);
+            rule__ModelGoal__Group__11__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__12_in_rule__Goal__Group__112508);
-            rule__Goal__Group__12();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__12_in_rule__ModelGoal__Group__112508);
+            rule__ModelGoal__Group__12();
             _fsp--;
 
 
@@ -3342,24 +3342,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__11
+    // $ANTLR end rule__ModelGoal__Group__11
 
 
-    // $ANTLR start rule__Goal__Group__11__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1209:1: rule__Goal__Group__11__Impl : ( ( rule__Goal__Group_11__0 )? ) ;
-    public final void rule__Goal__Group__11__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__11__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1209:1: rule__ModelGoal__Group__11__Impl : ( ( rule__ModelGoal__Group_11__0 )? ) ;
+    public final void rule__ModelGoal__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1213:1: ( ( ( rule__Goal__Group_11__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1214:1: ( ( rule__Goal__Group_11__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1213:1: ( ( ( rule__ModelGoal__Group_11__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1214:1: ( ( rule__ModelGoal__Group_11__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1214:1: ( ( rule__Goal__Group_11__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1215:1: ( rule__Goal__Group_11__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1214:1: ( ( rule__ModelGoal__Group_11__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1215:1: ( rule__ModelGoal__Group_11__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_11()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1216:1: ( rule__Goal__Group_11__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_11()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1216:1: ( rule__ModelGoal__Group_11__0 )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -3368,10 +3368,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1216:2: rule__Goal__Group_11__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1216:2: rule__ModelGoal__Group_11__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__0_in_rule__Goal__Group__11__Impl2535);
-                    rule__Goal__Group_11__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__0_in_rule__ModelGoal__Group__11__Impl2535);
+                    rule__ModelGoal__Group_11__0();
                     _fsp--;
 
 
@@ -3380,7 +3380,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_11()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_11()); 
 
             }
 
@@ -3399,25 +3399,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__11__Impl
+    // $ANTLR end rule__ModelGoal__Group__11__Impl
 
 
-    // $ANTLR start rule__Goal__Group__12
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1226:1: rule__Goal__Group__12 : rule__Goal__Group__12__Impl rule__Goal__Group__13 ;
-    public final void rule__Goal__Group__12() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__12
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1226:1: rule__ModelGoal__Group__12 : rule__ModelGoal__Group__12__Impl rule__ModelGoal__Group__13 ;
+    public final void rule__ModelGoal__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1230:1: ( rule__Goal__Group__12__Impl rule__Goal__Group__13 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1231:2: rule__Goal__Group__12__Impl rule__Goal__Group__13
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1230:1: ( rule__ModelGoal__Group__12__Impl rule__ModelGoal__Group__13 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1231:2: rule__ModelGoal__Group__12__Impl rule__ModelGoal__Group__13
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__12__Impl_in_rule__Goal__Group__122566);
-            rule__Goal__Group__12__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__12__Impl_in_rule__ModelGoal__Group__122566);
+            rule__ModelGoal__Group__12__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__13_in_rule__Goal__Group__122569);
-            rule__Goal__Group__13();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__13_in_rule__ModelGoal__Group__122569);
+            rule__ModelGoal__Group__13();
             _fsp--;
 
 
@@ -3435,24 +3435,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__12
+    // $ANTLR end rule__ModelGoal__Group__12
 
 
-    // $ANTLR start rule__Goal__Group__12__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1238:1: rule__Goal__Group__12__Impl : ( ( rule__Goal__Group_12__0 )? ) ;
-    public final void rule__Goal__Group__12__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__12__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1238:1: rule__ModelGoal__Group__12__Impl : ( ( rule__ModelGoal__Group_12__0 )? ) ;
+    public final void rule__ModelGoal__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1242:1: ( ( ( rule__Goal__Group_12__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1243:1: ( ( rule__Goal__Group_12__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1242:1: ( ( ( rule__ModelGoal__Group_12__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1243:1: ( ( rule__ModelGoal__Group_12__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1243:1: ( ( rule__Goal__Group_12__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1244:1: ( rule__Goal__Group_12__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1243:1: ( ( rule__ModelGoal__Group_12__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1244:1: ( rule__ModelGoal__Group_12__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_12()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1245:1: ( rule__Goal__Group_12__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_12()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1245:1: ( rule__ModelGoal__Group_12__0 )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -3461,10 +3461,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1245:2: rule__Goal__Group_12__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1245:2: rule__ModelGoal__Group_12__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__0_in_rule__Goal__Group__12__Impl2596);
-                    rule__Goal__Group_12__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__0_in_rule__ModelGoal__Group__12__Impl2596);
+                    rule__ModelGoal__Group_12__0();
                     _fsp--;
 
 
@@ -3473,7 +3473,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_12()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_12()); 
 
             }
 
@@ -3492,25 +3492,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__12__Impl
+    // $ANTLR end rule__ModelGoal__Group__12__Impl
 
 
-    // $ANTLR start rule__Goal__Group__13
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1255:1: rule__Goal__Group__13 : rule__Goal__Group__13__Impl rule__Goal__Group__14 ;
-    public final void rule__Goal__Group__13() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__13
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1255:1: rule__ModelGoal__Group__13 : rule__ModelGoal__Group__13__Impl rule__ModelGoal__Group__14 ;
+    public final void rule__ModelGoal__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1259:1: ( rule__Goal__Group__13__Impl rule__Goal__Group__14 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1260:2: rule__Goal__Group__13__Impl rule__Goal__Group__14
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1259:1: ( rule__ModelGoal__Group__13__Impl rule__ModelGoal__Group__14 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1260:2: rule__ModelGoal__Group__13__Impl rule__ModelGoal__Group__14
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__13__Impl_in_rule__Goal__Group__132627);
-            rule__Goal__Group__13__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__13__Impl_in_rule__ModelGoal__Group__132627);
+            rule__ModelGoal__Group__13__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__14_in_rule__Goal__Group__132630);
-            rule__Goal__Group__14();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__14_in_rule__ModelGoal__Group__132630);
+            rule__ModelGoal__Group__14();
             _fsp--;
 
 
@@ -3528,24 +3528,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__13
+    // $ANTLR end rule__ModelGoal__Group__13
 
 
-    // $ANTLR start rule__Goal__Group__13__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1267:1: rule__Goal__Group__13__Impl : ( ( rule__Goal__Group_13__0 )? ) ;
-    public final void rule__Goal__Group__13__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__13__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1267:1: rule__ModelGoal__Group__13__Impl : ( ( rule__ModelGoal__Group_13__0 )? ) ;
+    public final void rule__ModelGoal__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1271:1: ( ( ( rule__Goal__Group_13__0 )? ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1272:1: ( ( rule__Goal__Group_13__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1271:1: ( ( ( rule__ModelGoal__Group_13__0 )? ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1272:1: ( ( rule__ModelGoal__Group_13__0 )? )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1272:1: ( ( rule__Goal__Group_13__0 )? )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1273:1: ( rule__Goal__Group_13__0 )?
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1272:1: ( ( rule__ModelGoal__Group_13__0 )? )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1273:1: ( rule__ModelGoal__Group_13__0 )?
             {
-             before(grammarAccess.getGoalAccess().getGroup_13()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1274:1: ( rule__Goal__Group_13__0 )?
+             before(grammarAccess.getModelGoalAccess().getGroup_13()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1274:1: ( rule__ModelGoal__Group_13__0 )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -3554,10 +3554,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1274:2: rule__Goal__Group_13__0
+                    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1274:2: rule__ModelGoal__Group_13__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__0_in_rule__Goal__Group__13__Impl2657);
-                    rule__Goal__Group_13__0();
+                    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__0_in_rule__ModelGoal__Group__13__Impl2657);
+                    rule__ModelGoal__Group_13__0();
                     _fsp--;
 
 
@@ -3566,7 +3566,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getGoalAccess().getGroup_13()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_13()); 
 
             }
 
@@ -3585,21 +3585,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__13__Impl
+    // $ANTLR end rule__ModelGoal__Group__13__Impl
 
 
-    // $ANTLR start rule__Goal__Group__14
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1284:1: rule__Goal__Group__14 : rule__Goal__Group__14__Impl ;
-    public final void rule__Goal__Group__14() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__14
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1284:1: rule__ModelGoal__Group__14 : rule__ModelGoal__Group__14__Impl ;
+    public final void rule__ModelGoal__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1288:1: ( rule__Goal__Group__14__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1289:2: rule__Goal__Group__14__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1288:1: ( rule__ModelGoal__Group__14__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1289:2: rule__ModelGoal__Group__14__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group__14__Impl_in_rule__Goal__Group__142688);
-            rule__Goal__Group__14__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group__14__Impl_in_rule__ModelGoal__Group__142688);
+            rule__ModelGoal__Group__14__Impl();
             _fsp--;
 
 
@@ -3617,12 +3617,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__14
+    // $ANTLR end rule__ModelGoal__Group__14
 
 
-    // $ANTLR start rule__Goal__Group__14__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1295:1: rule__Goal__Group__14__Impl : ( '}' ) ;
-    public final void rule__Goal__Group__14__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group__14__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1295:1: rule__ModelGoal__Group__14__Impl : ( '}' ) ;
+    public final void rule__ModelGoal__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -3633,9 +3633,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1300:1: ( '}' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1301:1: '}'
             {
-             before(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_14()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Goal__Group__14__Impl2716); 
-             after(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_14()); 
+             before(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_14()); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__ModelGoal__Group__14__Impl2716); 
+             after(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_14()); 
 
             }
 
@@ -3654,25 +3654,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group__14__Impl
+    // $ANTLR end rule__ModelGoal__Group__14__Impl
 
 
-    // $ANTLR start rule__Goal__Group_4__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1344:1: rule__Goal__Group_4__0 : rule__Goal__Group_4__0__Impl rule__Goal__Group_4__1 ;
-    public final void rule__Goal__Group_4__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_4__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1344:1: rule__ModelGoal__Group_4__0 : rule__ModelGoal__Group_4__0__Impl rule__ModelGoal__Group_4__1 ;
+    public final void rule__ModelGoal__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1348:1: ( rule__Goal__Group_4__0__Impl rule__Goal__Group_4__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1349:2: rule__Goal__Group_4__0__Impl rule__Goal__Group_4__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1348:1: ( rule__ModelGoal__Group_4__0__Impl rule__ModelGoal__Group_4__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1349:2: rule__ModelGoal__Group_4__0__Impl rule__ModelGoal__Group_4__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_4__0__Impl_in_rule__Goal__Group_4__02777);
-            rule__Goal__Group_4__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_4__0__Impl_in_rule__ModelGoal__Group_4__02777);
+            rule__ModelGoal__Group_4__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_4__1_in_rule__Goal__Group_4__02780);
-            rule__Goal__Group_4__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_4__1_in_rule__ModelGoal__Group_4__02780);
+            rule__ModelGoal__Group_4__1();
             _fsp--;
 
 
@@ -3690,12 +3690,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_4__0
+    // $ANTLR end rule__ModelGoal__Group_4__0
 
 
-    // $ANTLR start rule__Goal__Group_4__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1356:1: rule__Goal__Group_4__0__Impl : ( 'identifier' ) ;
-    public final void rule__Goal__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_4__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1356:1: rule__ModelGoal__Group_4__0__Impl : ( 'identifier' ) ;
+    public final void rule__ModelGoal__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -3706,9 +3706,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1361:1: ( 'identifier' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1362:1: 'identifier'
             {
-             before(grammarAccess.getGoalAccess().getIdentifierKeyword_4_0()); 
-            match(input,16,FollowSets000.FOLLOW_16_in_rule__Goal__Group_4__0__Impl2808); 
-             after(grammarAccess.getGoalAccess().getIdentifierKeyword_4_0()); 
+             before(grammarAccess.getModelGoalAccess().getIdentifierKeyword_4_0()); 
+            match(input,16,FollowSets000.FOLLOW_16_in_rule__ModelGoal__Group_4__0__Impl2808); 
+             after(grammarAccess.getModelGoalAccess().getIdentifierKeyword_4_0()); 
 
             }
 
@@ -3727,21 +3727,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_4__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_4__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_4__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1375:1: rule__Goal__Group_4__1 : rule__Goal__Group_4__1__Impl ;
-    public final void rule__Goal__Group_4__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_4__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1375:1: rule__ModelGoal__Group_4__1 : rule__ModelGoal__Group_4__1__Impl ;
+    public final void rule__ModelGoal__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1379:1: ( rule__Goal__Group_4__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1380:2: rule__Goal__Group_4__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1379:1: ( rule__ModelGoal__Group_4__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1380:2: rule__ModelGoal__Group_4__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_4__1__Impl_in_rule__Goal__Group_4__12839);
-            rule__Goal__Group_4__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_4__1__Impl_in_rule__ModelGoal__Group_4__12839);
+            rule__ModelGoal__Group_4__1__Impl();
             _fsp--;
 
 
@@ -3759,34 +3759,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_4__1
+    // $ANTLR end rule__ModelGoal__Group_4__1
 
 
-    // $ANTLR start rule__Goal__Group_4__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1386:1: rule__Goal__Group_4__1__Impl : ( ( rule__Goal__IdentifierAssignment_4_1 ) ) ;
-    public final void rule__Goal__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_4__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1386:1: rule__ModelGoal__Group_4__1__Impl : ( ( rule__ModelGoal__IdentifierAssignment_4_1 ) ) ;
+    public final void rule__ModelGoal__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1390:1: ( ( ( rule__Goal__IdentifierAssignment_4_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1391:1: ( ( rule__Goal__IdentifierAssignment_4_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1390:1: ( ( ( rule__ModelGoal__IdentifierAssignment_4_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1391:1: ( ( rule__ModelGoal__IdentifierAssignment_4_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1391:1: ( ( rule__Goal__IdentifierAssignment_4_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1392:1: ( rule__Goal__IdentifierAssignment_4_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1391:1: ( ( rule__ModelGoal__IdentifierAssignment_4_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1392:1: ( rule__ModelGoal__IdentifierAssignment_4_1 )
             {
-             before(grammarAccess.getGoalAccess().getIdentifierAssignment_4_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1393:1: ( rule__Goal__IdentifierAssignment_4_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1393:2: rule__Goal__IdentifierAssignment_4_1
+             before(grammarAccess.getModelGoalAccess().getIdentifierAssignment_4_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1393:1: ( rule__ModelGoal__IdentifierAssignment_4_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1393:2: rule__ModelGoal__IdentifierAssignment_4_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__IdentifierAssignment_4_1_in_rule__Goal__Group_4__1__Impl2866);
-            rule__Goal__IdentifierAssignment_4_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__IdentifierAssignment_4_1_in_rule__ModelGoal__Group_4__1__Impl2866);
+            rule__ModelGoal__IdentifierAssignment_4_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getIdentifierAssignment_4_1()); 
+             after(grammarAccess.getModelGoalAccess().getIdentifierAssignment_4_1()); 
 
             }
 
@@ -3805,25 +3805,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_4__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_4__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_5__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1407:1: rule__Goal__Group_5__0 : rule__Goal__Group_5__0__Impl rule__Goal__Group_5__1 ;
-    public final void rule__Goal__Group_5__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_5__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1407:1: rule__ModelGoal__Group_5__0 : rule__ModelGoal__Group_5__0__Impl rule__ModelGoal__Group_5__1 ;
+    public final void rule__ModelGoal__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1411:1: ( rule__Goal__Group_5__0__Impl rule__Goal__Group_5__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1412:2: rule__Goal__Group_5__0__Impl rule__Goal__Group_5__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1411:1: ( rule__ModelGoal__Group_5__0__Impl rule__ModelGoal__Group_5__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1412:2: rule__ModelGoal__Group_5__0__Impl rule__ModelGoal__Group_5__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_5__0__Impl_in_rule__Goal__Group_5__02900);
-            rule__Goal__Group_5__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_5__0__Impl_in_rule__ModelGoal__Group_5__02900);
+            rule__ModelGoal__Group_5__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_5__1_in_rule__Goal__Group_5__02903);
-            rule__Goal__Group_5__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_5__1_in_rule__ModelGoal__Group_5__02903);
+            rule__ModelGoal__Group_5__1();
             _fsp--;
 
 
@@ -3841,12 +3841,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_5__0
+    // $ANTLR end rule__ModelGoal__Group_5__0
 
 
-    // $ANTLR start rule__Goal__Group_5__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1419:1: rule__Goal__Group_5__0__Impl : ( 'description' ) ;
-    public final void rule__Goal__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_5__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1419:1: rule__ModelGoal__Group_5__0__Impl : ( 'description' ) ;
+    public final void rule__ModelGoal__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -3857,9 +3857,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1424:1: ( 'description' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1425:1: 'description'
             {
-             before(grammarAccess.getGoalAccess().getDescriptionKeyword_5_0()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__Goal__Group_5__0__Impl2931); 
-             after(grammarAccess.getGoalAccess().getDescriptionKeyword_5_0()); 
+             before(grammarAccess.getModelGoalAccess().getDescriptionKeyword_5_0()); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__ModelGoal__Group_5__0__Impl2931); 
+             after(grammarAccess.getModelGoalAccess().getDescriptionKeyword_5_0()); 
 
             }
 
@@ -3878,21 +3878,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_5__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_5__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_5__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1438:1: rule__Goal__Group_5__1 : rule__Goal__Group_5__1__Impl ;
-    public final void rule__Goal__Group_5__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_5__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1438:1: rule__ModelGoal__Group_5__1 : rule__ModelGoal__Group_5__1__Impl ;
+    public final void rule__ModelGoal__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1442:1: ( rule__Goal__Group_5__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1443:2: rule__Goal__Group_5__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1442:1: ( rule__ModelGoal__Group_5__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1443:2: rule__ModelGoal__Group_5__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_5__1__Impl_in_rule__Goal__Group_5__12962);
-            rule__Goal__Group_5__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_5__1__Impl_in_rule__ModelGoal__Group_5__12962);
+            rule__ModelGoal__Group_5__1__Impl();
             _fsp--;
 
 
@@ -3910,34 +3910,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_5__1
+    // $ANTLR end rule__ModelGoal__Group_5__1
 
 
-    // $ANTLR start rule__Goal__Group_5__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1449:1: rule__Goal__Group_5__1__Impl : ( ( rule__Goal__DescriptionAssignment_5_1 ) ) ;
-    public final void rule__Goal__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_5__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1449:1: rule__ModelGoal__Group_5__1__Impl : ( ( rule__ModelGoal__DescriptionAssignment_5_1 ) ) ;
+    public final void rule__ModelGoal__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1453:1: ( ( ( rule__Goal__DescriptionAssignment_5_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1454:1: ( ( rule__Goal__DescriptionAssignment_5_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1453:1: ( ( ( rule__ModelGoal__DescriptionAssignment_5_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1454:1: ( ( rule__ModelGoal__DescriptionAssignment_5_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1454:1: ( ( rule__Goal__DescriptionAssignment_5_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1455:1: ( rule__Goal__DescriptionAssignment_5_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1454:1: ( ( rule__ModelGoal__DescriptionAssignment_5_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1455:1: ( rule__ModelGoal__DescriptionAssignment_5_1 )
             {
-             before(grammarAccess.getGoalAccess().getDescriptionAssignment_5_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1456:1: ( rule__Goal__DescriptionAssignment_5_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1456:2: rule__Goal__DescriptionAssignment_5_1
+             before(grammarAccess.getModelGoalAccess().getDescriptionAssignment_5_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1456:1: ( rule__ModelGoal__DescriptionAssignment_5_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1456:2: rule__ModelGoal__DescriptionAssignment_5_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__DescriptionAssignment_5_1_in_rule__Goal__Group_5__1__Impl2989);
-            rule__Goal__DescriptionAssignment_5_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__DescriptionAssignment_5_1_in_rule__ModelGoal__Group_5__1__Impl2989);
+            rule__ModelGoal__DescriptionAssignment_5_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getDescriptionAssignment_5_1()); 
+             after(grammarAccess.getModelGoalAccess().getDescriptionAssignment_5_1()); 
 
             }
 
@@ -3956,25 +3956,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_5__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_5__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_6__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1470:1: rule__Goal__Group_6__0 : rule__Goal__Group_6__0__Impl rule__Goal__Group_6__1 ;
-    public final void rule__Goal__Group_6__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_6__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1470:1: rule__ModelGoal__Group_6__0 : rule__ModelGoal__Group_6__0__Impl rule__ModelGoal__Group_6__1 ;
+    public final void rule__ModelGoal__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1474:1: ( rule__Goal__Group_6__0__Impl rule__Goal__Group_6__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1475:2: rule__Goal__Group_6__0__Impl rule__Goal__Group_6__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1474:1: ( rule__ModelGoal__Group_6__0__Impl rule__ModelGoal__Group_6__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1475:2: rule__ModelGoal__Group_6__0__Impl rule__ModelGoal__Group_6__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_6__0__Impl_in_rule__Goal__Group_6__03023);
-            rule__Goal__Group_6__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_6__0__Impl_in_rule__ModelGoal__Group_6__03023);
+            rule__ModelGoal__Group_6__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_6__1_in_rule__Goal__Group_6__03026);
-            rule__Goal__Group_6__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_6__1_in_rule__ModelGoal__Group_6__03026);
+            rule__ModelGoal__Group_6__1();
             _fsp--;
 
 
@@ -3992,12 +3992,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_6__0
+    // $ANTLR end rule__ModelGoal__Group_6__0
 
 
-    // $ANTLR start rule__Goal__Group_6__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1482:1: rule__Goal__Group_6__0__Impl : ( 'content' ) ;
-    public final void rule__Goal__Group_6__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_6__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1482:1: rule__ModelGoal__Group_6__0__Impl : ( 'content' ) ;
+    public final void rule__ModelGoal__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4008,9 +4008,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1487:1: ( 'content' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1488:1: 'content'
             {
-             before(grammarAccess.getGoalAccess().getContentKeyword_6_0()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__Goal__Group_6__0__Impl3054); 
-             after(grammarAccess.getGoalAccess().getContentKeyword_6_0()); 
+             before(grammarAccess.getModelGoalAccess().getContentKeyword_6_0()); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__ModelGoal__Group_6__0__Impl3054); 
+             after(grammarAccess.getModelGoalAccess().getContentKeyword_6_0()); 
 
             }
 
@@ -4029,21 +4029,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_6__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_6__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_6__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1501:1: rule__Goal__Group_6__1 : rule__Goal__Group_6__1__Impl ;
-    public final void rule__Goal__Group_6__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_6__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1501:1: rule__ModelGoal__Group_6__1 : rule__ModelGoal__Group_6__1__Impl ;
+    public final void rule__ModelGoal__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1505:1: ( rule__Goal__Group_6__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1506:2: rule__Goal__Group_6__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1505:1: ( rule__ModelGoal__Group_6__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1506:2: rule__ModelGoal__Group_6__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_6__1__Impl_in_rule__Goal__Group_6__13085);
-            rule__Goal__Group_6__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_6__1__Impl_in_rule__ModelGoal__Group_6__13085);
+            rule__ModelGoal__Group_6__1__Impl();
             _fsp--;
 
 
@@ -4061,34 +4061,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_6__1
+    // $ANTLR end rule__ModelGoal__Group_6__1
 
 
-    // $ANTLR start rule__Goal__Group_6__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1512:1: rule__Goal__Group_6__1__Impl : ( ( rule__Goal__ContentAssignment_6_1 ) ) ;
-    public final void rule__Goal__Group_6__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_6__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1512:1: rule__ModelGoal__Group_6__1__Impl : ( ( rule__ModelGoal__ContentAssignment_6_1 ) ) ;
+    public final void rule__ModelGoal__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1516:1: ( ( ( rule__Goal__ContentAssignment_6_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1517:1: ( ( rule__Goal__ContentAssignment_6_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1516:1: ( ( ( rule__ModelGoal__ContentAssignment_6_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1517:1: ( ( rule__ModelGoal__ContentAssignment_6_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1517:1: ( ( rule__Goal__ContentAssignment_6_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1518:1: ( rule__Goal__ContentAssignment_6_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1517:1: ( ( rule__ModelGoal__ContentAssignment_6_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1518:1: ( rule__ModelGoal__ContentAssignment_6_1 )
             {
-             before(grammarAccess.getGoalAccess().getContentAssignment_6_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1519:1: ( rule__Goal__ContentAssignment_6_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1519:2: rule__Goal__ContentAssignment_6_1
+             before(grammarAccess.getModelGoalAccess().getContentAssignment_6_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1519:1: ( rule__ModelGoal__ContentAssignment_6_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1519:2: rule__ModelGoal__ContentAssignment_6_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__ContentAssignment_6_1_in_rule__Goal__Group_6__1__Impl3112);
-            rule__Goal__ContentAssignment_6_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__ContentAssignment_6_1_in_rule__ModelGoal__Group_6__1__Impl3112);
+            rule__ModelGoal__ContentAssignment_6_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getContentAssignment_6_1()); 
+             after(grammarAccess.getModelGoalAccess().getContentAssignment_6_1()); 
 
             }
 
@@ -4107,25 +4107,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_6__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_6__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_7__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1533:1: rule__Goal__Group_7__0 : rule__Goal__Group_7__0__Impl rule__Goal__Group_7__1 ;
-    public final void rule__Goal__Group_7__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_7__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1533:1: rule__ModelGoal__Group_7__0 : rule__ModelGoal__Group_7__0__Impl rule__ModelGoal__Group_7__1 ;
+    public final void rule__ModelGoal__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1537:1: ( rule__Goal__Group_7__0__Impl rule__Goal__Group_7__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1538:2: rule__Goal__Group_7__0__Impl rule__Goal__Group_7__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1537:1: ( rule__ModelGoal__Group_7__0__Impl rule__ModelGoal__Group_7__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1538:2: rule__ModelGoal__Group_7__0__Impl rule__ModelGoal__Group_7__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_7__0__Impl_in_rule__Goal__Group_7__03146);
-            rule__Goal__Group_7__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_7__0__Impl_in_rule__ModelGoal__Group_7__03146);
+            rule__ModelGoal__Group_7__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_7__1_in_rule__Goal__Group_7__03149);
-            rule__Goal__Group_7__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_7__1_in_rule__ModelGoal__Group_7__03149);
+            rule__ModelGoal__Group_7__1();
             _fsp--;
 
 
@@ -4143,12 +4143,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_7__0
+    // $ANTLR end rule__ModelGoal__Group_7__0
 
 
-    // $ANTLR start rule__Goal__Group_7__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1545:1: rule__Goal__Group_7__0__Impl : ( 'toBeSupported' ) ;
-    public final void rule__Goal__Group_7__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_7__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1545:1: rule__ModelGoal__Group_7__0__Impl : ( 'toBeSupported' ) ;
+    public final void rule__ModelGoal__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4159,9 +4159,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1550:1: ( 'toBeSupported' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1551:1: 'toBeSupported'
             {
-             before(grammarAccess.getGoalAccess().getToBeSupportedKeyword_7_0()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__Goal__Group_7__0__Impl3177); 
-             after(grammarAccess.getGoalAccess().getToBeSupportedKeyword_7_0()); 
+             before(grammarAccess.getModelGoalAccess().getToBeSupportedKeyword_7_0()); 
+            match(input,19,FollowSets000.FOLLOW_19_in_rule__ModelGoal__Group_7__0__Impl3177); 
+             after(grammarAccess.getModelGoalAccess().getToBeSupportedKeyword_7_0()); 
 
             }
 
@@ -4180,21 +4180,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_7__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_7__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_7__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1564:1: rule__Goal__Group_7__1 : rule__Goal__Group_7__1__Impl ;
-    public final void rule__Goal__Group_7__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_7__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1564:1: rule__ModelGoal__Group_7__1 : rule__ModelGoal__Group_7__1__Impl ;
+    public final void rule__ModelGoal__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1568:1: ( rule__Goal__Group_7__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1569:2: rule__Goal__Group_7__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1568:1: ( rule__ModelGoal__Group_7__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1569:2: rule__ModelGoal__Group_7__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_7__1__Impl_in_rule__Goal__Group_7__13208);
-            rule__Goal__Group_7__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_7__1__Impl_in_rule__ModelGoal__Group_7__13208);
+            rule__ModelGoal__Group_7__1__Impl();
             _fsp--;
 
 
@@ -4212,34 +4212,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_7__1
+    // $ANTLR end rule__ModelGoal__Group_7__1
 
 
-    // $ANTLR start rule__Goal__Group_7__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1575:1: rule__Goal__Group_7__1__Impl : ( ( rule__Goal__ToBeSupportedAssignment_7_1 ) ) ;
-    public final void rule__Goal__Group_7__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_7__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1575:1: rule__ModelGoal__Group_7__1__Impl : ( ( rule__ModelGoal__ToBeSupportedAssignment_7_1 ) ) ;
+    public final void rule__ModelGoal__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1579:1: ( ( ( rule__Goal__ToBeSupportedAssignment_7_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1580:1: ( ( rule__Goal__ToBeSupportedAssignment_7_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1579:1: ( ( ( rule__ModelGoal__ToBeSupportedAssignment_7_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1580:1: ( ( rule__ModelGoal__ToBeSupportedAssignment_7_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1580:1: ( ( rule__Goal__ToBeSupportedAssignment_7_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1581:1: ( rule__Goal__ToBeSupportedAssignment_7_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1580:1: ( ( rule__ModelGoal__ToBeSupportedAssignment_7_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1581:1: ( rule__ModelGoal__ToBeSupportedAssignment_7_1 )
             {
-             before(grammarAccess.getGoalAccess().getToBeSupportedAssignment_7_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1582:1: ( rule__Goal__ToBeSupportedAssignment_7_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1582:2: rule__Goal__ToBeSupportedAssignment_7_1
+             before(grammarAccess.getModelGoalAccess().getToBeSupportedAssignment_7_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1582:1: ( rule__ModelGoal__ToBeSupportedAssignment_7_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1582:2: rule__ModelGoal__ToBeSupportedAssignment_7_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__ToBeSupportedAssignment_7_1_in_rule__Goal__Group_7__1__Impl3235);
-            rule__Goal__ToBeSupportedAssignment_7_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__ToBeSupportedAssignment_7_1_in_rule__ModelGoal__Group_7__1__Impl3235);
+            rule__ModelGoal__ToBeSupportedAssignment_7_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getToBeSupportedAssignment_7_1()); 
+             after(grammarAccess.getModelGoalAccess().getToBeSupportedAssignment_7_1()); 
 
             }
 
@@ -4258,25 +4258,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_7__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_7__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_8__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1596:1: rule__Goal__Group_8__0 : rule__Goal__Group_8__0__Impl rule__Goal__Group_8__1 ;
-    public final void rule__Goal__Group_8__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1596:1: rule__ModelGoal__Group_8__0 : rule__ModelGoal__Group_8__0__Impl rule__ModelGoal__Group_8__1 ;
+    public final void rule__ModelGoal__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1600:1: ( rule__Goal__Group_8__0__Impl rule__Goal__Group_8__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1601:2: rule__Goal__Group_8__0__Impl rule__Goal__Group_8__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1600:1: ( rule__ModelGoal__Group_8__0__Impl rule__ModelGoal__Group_8__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1601:2: rule__ModelGoal__Group_8__0__Impl rule__ModelGoal__Group_8__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__0__Impl_in_rule__Goal__Group_8__03269);
-            rule__Goal__Group_8__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__0__Impl_in_rule__ModelGoal__Group_8__03269);
+            rule__ModelGoal__Group_8__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__1_in_rule__Goal__Group_8__03272);
-            rule__Goal__Group_8__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__1_in_rule__ModelGoal__Group_8__03272);
+            rule__ModelGoal__Group_8__1();
             _fsp--;
 
 
@@ -4294,12 +4294,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__0
+    // $ANTLR end rule__ModelGoal__Group_8__0
 
 
-    // $ANTLR start rule__Goal__Group_8__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1608:1: rule__Goal__Group_8__0__Impl : ( 'isTagged' ) ;
-    public final void rule__Goal__Group_8__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1608:1: rule__ModelGoal__Group_8__0__Impl : ( 'isTagged' ) ;
+    public final void rule__ModelGoal__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4310,9 +4310,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1613:1: ( 'isTagged' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1614:1: 'isTagged'
             {
-             before(grammarAccess.getGoalAccess().getIsTaggedKeyword_8_0()); 
-            match(input,20,FollowSets000.FOLLOW_20_in_rule__Goal__Group_8__0__Impl3300); 
-             after(grammarAccess.getGoalAccess().getIsTaggedKeyword_8_0()); 
+             before(grammarAccess.getModelGoalAccess().getIsTaggedKeyword_8_0()); 
+            match(input,20,FollowSets000.FOLLOW_20_in_rule__ModelGoal__Group_8__0__Impl3300); 
+             after(grammarAccess.getModelGoalAccess().getIsTaggedKeyword_8_0()); 
 
             }
 
@@ -4331,25 +4331,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_8__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_8__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1627:1: rule__Goal__Group_8__1 : rule__Goal__Group_8__1__Impl rule__Goal__Group_8__2 ;
-    public final void rule__Goal__Group_8__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1627:1: rule__ModelGoal__Group_8__1 : rule__ModelGoal__Group_8__1__Impl rule__ModelGoal__Group_8__2 ;
+    public final void rule__ModelGoal__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1631:1: ( rule__Goal__Group_8__1__Impl rule__Goal__Group_8__2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1632:2: rule__Goal__Group_8__1__Impl rule__Goal__Group_8__2
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1631:1: ( rule__ModelGoal__Group_8__1__Impl rule__ModelGoal__Group_8__2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1632:2: rule__ModelGoal__Group_8__1__Impl rule__ModelGoal__Group_8__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__1__Impl_in_rule__Goal__Group_8__13331);
-            rule__Goal__Group_8__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__1__Impl_in_rule__ModelGoal__Group_8__13331);
+            rule__ModelGoal__Group_8__1__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__2_in_rule__Goal__Group_8__13334);
-            rule__Goal__Group_8__2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__2_in_rule__ModelGoal__Group_8__13334);
+            rule__ModelGoal__Group_8__2();
             _fsp--;
 
 
@@ -4367,12 +4367,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__1
+    // $ANTLR end rule__ModelGoal__Group_8__1
 
 
-    // $ANTLR start rule__Goal__Group_8__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1639:1: rule__Goal__Group_8__1__Impl : ( '{' ) ;
-    public final void rule__Goal__Group_8__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1639:1: rule__ModelGoal__Group_8__1__Impl : ( '{' ) ;
+    public final void rule__ModelGoal__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4383,9 +4383,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1644:1: ( '{' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1645:1: '{'
             {
-             before(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_8_1()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Goal__Group_8__1__Impl3362); 
-             after(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_8_1()); 
+             before(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_8_1()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__ModelGoal__Group_8__1__Impl3362); 
+             after(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_8_1()); 
 
             }
 
@@ -4404,25 +4404,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_8__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_8__2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1658:1: rule__Goal__Group_8__2 : rule__Goal__Group_8__2__Impl rule__Goal__Group_8__3 ;
-    public final void rule__Goal__Group_8__2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1658:1: rule__ModelGoal__Group_8__2 : rule__ModelGoal__Group_8__2__Impl rule__ModelGoal__Group_8__3 ;
+    public final void rule__ModelGoal__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1662:1: ( rule__Goal__Group_8__2__Impl rule__Goal__Group_8__3 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1663:2: rule__Goal__Group_8__2__Impl rule__Goal__Group_8__3
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1662:1: ( rule__ModelGoal__Group_8__2__Impl rule__ModelGoal__Group_8__3 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1663:2: rule__ModelGoal__Group_8__2__Impl rule__ModelGoal__Group_8__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__2__Impl_in_rule__Goal__Group_8__23393);
-            rule__Goal__Group_8__2__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__2__Impl_in_rule__ModelGoal__Group_8__23393);
+            rule__ModelGoal__Group_8__2__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__3_in_rule__Goal__Group_8__23396);
-            rule__Goal__Group_8__3();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__3_in_rule__ModelGoal__Group_8__23396);
+            rule__ModelGoal__Group_8__3();
             _fsp--;
 
 
@@ -4440,34 +4440,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__2
+    // $ANTLR end rule__ModelGoal__Group_8__2
 
 
-    // $ANTLR start rule__Goal__Group_8__2__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1670:1: rule__Goal__Group_8__2__Impl : ( ( rule__Goal__IsTaggedAssignment_8_2 ) ) ;
-    public final void rule__Goal__Group_8__2__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__2__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1670:1: rule__ModelGoal__Group_8__2__Impl : ( ( rule__ModelGoal__IsTaggedAssignment_8_2 ) ) ;
+    public final void rule__ModelGoal__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1674:1: ( ( ( rule__Goal__IsTaggedAssignment_8_2 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1675:1: ( ( rule__Goal__IsTaggedAssignment_8_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1674:1: ( ( ( rule__ModelGoal__IsTaggedAssignment_8_2 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1675:1: ( ( rule__ModelGoal__IsTaggedAssignment_8_2 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1675:1: ( ( rule__Goal__IsTaggedAssignment_8_2 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1676:1: ( rule__Goal__IsTaggedAssignment_8_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1675:1: ( ( rule__ModelGoal__IsTaggedAssignment_8_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1676:1: ( rule__ModelGoal__IsTaggedAssignment_8_2 )
             {
-             before(grammarAccess.getGoalAccess().getIsTaggedAssignment_8_2()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1677:1: ( rule__Goal__IsTaggedAssignment_8_2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1677:2: rule__Goal__IsTaggedAssignment_8_2
+             before(grammarAccess.getModelGoalAccess().getIsTaggedAssignment_8_2()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1677:1: ( rule__ModelGoal__IsTaggedAssignment_8_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1677:2: rule__ModelGoal__IsTaggedAssignment_8_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__IsTaggedAssignment_8_2_in_rule__Goal__Group_8__2__Impl3423);
-            rule__Goal__IsTaggedAssignment_8_2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__IsTaggedAssignment_8_2_in_rule__ModelGoal__Group_8__2__Impl3423);
+            rule__ModelGoal__IsTaggedAssignment_8_2();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getIsTaggedAssignment_8_2()); 
+             after(grammarAccess.getModelGoalAccess().getIsTaggedAssignment_8_2()); 
 
             }
 
@@ -4486,25 +4486,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__2__Impl
+    // $ANTLR end rule__ModelGoal__Group_8__2__Impl
 
 
-    // $ANTLR start rule__Goal__Group_8__3
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1687:1: rule__Goal__Group_8__3 : rule__Goal__Group_8__3__Impl rule__Goal__Group_8__4 ;
-    public final void rule__Goal__Group_8__3() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__3
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1687:1: rule__ModelGoal__Group_8__3 : rule__ModelGoal__Group_8__3__Impl rule__ModelGoal__Group_8__4 ;
+    public final void rule__ModelGoal__Group_8__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1691:1: ( rule__Goal__Group_8__3__Impl rule__Goal__Group_8__4 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1692:2: rule__Goal__Group_8__3__Impl rule__Goal__Group_8__4
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1691:1: ( rule__ModelGoal__Group_8__3__Impl rule__ModelGoal__Group_8__4 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1692:2: rule__ModelGoal__Group_8__3__Impl rule__ModelGoal__Group_8__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__3__Impl_in_rule__Goal__Group_8__33453);
-            rule__Goal__Group_8__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__3__Impl_in_rule__ModelGoal__Group_8__33453);
+            rule__ModelGoal__Group_8__3__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__4_in_rule__Goal__Group_8__33456);
-            rule__Goal__Group_8__4();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__4_in_rule__ModelGoal__Group_8__33456);
+            rule__ModelGoal__Group_8__4();
             _fsp--;
 
 
@@ -4522,24 +4522,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__3
+    // $ANTLR end rule__ModelGoal__Group_8__3
 
 
-    // $ANTLR start rule__Goal__Group_8__3__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1699:1: rule__Goal__Group_8__3__Impl : ( ( rule__Goal__Group_8_3__0 )* ) ;
-    public final void rule__Goal__Group_8__3__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__3__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1699:1: rule__ModelGoal__Group_8__3__Impl : ( ( rule__ModelGoal__Group_8_3__0 )* ) ;
+    public final void rule__ModelGoal__Group_8__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1703:1: ( ( ( rule__Goal__Group_8_3__0 )* ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1704:1: ( ( rule__Goal__Group_8_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1703:1: ( ( ( rule__ModelGoal__Group_8_3__0 )* ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1704:1: ( ( rule__ModelGoal__Group_8_3__0 )* )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1704:1: ( ( rule__Goal__Group_8_3__0 )* )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1705:1: ( rule__Goal__Group_8_3__0 )*
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1704:1: ( ( rule__ModelGoal__Group_8_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1705:1: ( rule__ModelGoal__Group_8_3__0 )*
             {
-             before(grammarAccess.getGoalAccess().getGroup_8_3()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1706:1: ( rule__Goal__Group_8_3__0 )*
+             before(grammarAccess.getModelGoalAccess().getGroup_8_3()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1706:1: ( rule__ModelGoal__Group_8_3__0 )*
             loop16:
             do {
                 int alt16=2;
@@ -4552,10 +4552,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1706:2: rule__Goal__Group_8_3__0
+            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1706:2: rule__ModelGoal__Group_8_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8_3__0_in_rule__Goal__Group_8__3__Impl3483);
-            	    rule__Goal__Group_8_3__0();
+            	    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8_3__0_in_rule__ModelGoal__Group_8__3__Impl3483);
+            	    rule__ModelGoal__Group_8_3__0();
             	    _fsp--;
 
 
@@ -4567,7 +4567,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getGoalAccess().getGroup_8_3()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_8_3()); 
 
             }
 
@@ -4586,21 +4586,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__3__Impl
+    // $ANTLR end rule__ModelGoal__Group_8__3__Impl
 
 
-    // $ANTLR start rule__Goal__Group_8__4
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1716:1: rule__Goal__Group_8__4 : rule__Goal__Group_8__4__Impl ;
-    public final void rule__Goal__Group_8__4() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__4
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1716:1: rule__ModelGoal__Group_8__4 : rule__ModelGoal__Group_8__4__Impl ;
+    public final void rule__ModelGoal__Group_8__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1720:1: ( rule__Goal__Group_8__4__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1721:2: rule__Goal__Group_8__4__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1720:1: ( rule__ModelGoal__Group_8__4__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1721:2: rule__ModelGoal__Group_8__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8__4__Impl_in_rule__Goal__Group_8__43514);
-            rule__Goal__Group_8__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8__4__Impl_in_rule__ModelGoal__Group_8__43514);
+            rule__ModelGoal__Group_8__4__Impl();
             _fsp--;
 
 
@@ -4618,12 +4618,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__4
+    // $ANTLR end rule__ModelGoal__Group_8__4
 
 
-    // $ANTLR start rule__Goal__Group_8__4__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1727:1: rule__Goal__Group_8__4__Impl : ( '}' ) ;
-    public final void rule__Goal__Group_8__4__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8__4__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1727:1: rule__ModelGoal__Group_8__4__Impl : ( '}' ) ;
+    public final void rule__ModelGoal__Group_8__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4634,9 +4634,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1732:1: ( '}' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1733:1: '}'
             {
-             before(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_8_4()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Goal__Group_8__4__Impl3542); 
-             after(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_8_4()); 
+             before(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_8_4()); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__ModelGoal__Group_8__4__Impl3542); 
+             after(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_8_4()); 
 
             }
 
@@ -4655,25 +4655,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8__4__Impl
+    // $ANTLR end rule__ModelGoal__Group_8__4__Impl
 
 
-    // $ANTLR start rule__Goal__Group_8_3__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1756:1: rule__Goal__Group_8_3__0 : rule__Goal__Group_8_3__0__Impl rule__Goal__Group_8_3__1 ;
-    public final void rule__Goal__Group_8_3__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8_3__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1756:1: rule__ModelGoal__Group_8_3__0 : rule__ModelGoal__Group_8_3__0__Impl rule__ModelGoal__Group_8_3__1 ;
+    public final void rule__ModelGoal__Group_8_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1760:1: ( rule__Goal__Group_8_3__0__Impl rule__Goal__Group_8_3__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1761:2: rule__Goal__Group_8_3__0__Impl rule__Goal__Group_8_3__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1760:1: ( rule__ModelGoal__Group_8_3__0__Impl rule__ModelGoal__Group_8_3__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1761:2: rule__ModelGoal__Group_8_3__0__Impl rule__ModelGoal__Group_8_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8_3__0__Impl_in_rule__Goal__Group_8_3__03583);
-            rule__Goal__Group_8_3__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8_3__0__Impl_in_rule__ModelGoal__Group_8_3__03583);
+            rule__ModelGoal__Group_8_3__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8_3__1_in_rule__Goal__Group_8_3__03586);
-            rule__Goal__Group_8_3__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8_3__1_in_rule__ModelGoal__Group_8_3__03586);
+            rule__ModelGoal__Group_8_3__1();
             _fsp--;
 
 
@@ -4691,12 +4691,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8_3__0
+    // $ANTLR end rule__ModelGoal__Group_8_3__0
 
 
-    // $ANTLR start rule__Goal__Group_8_3__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1768:1: rule__Goal__Group_8_3__0__Impl : ( ',' ) ;
-    public final void rule__Goal__Group_8_3__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8_3__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1768:1: rule__ModelGoal__Group_8_3__0__Impl : ( ',' ) ;
+    public final void rule__ModelGoal__Group_8_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4707,9 +4707,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1773:1: ( ',' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1774:1: ','
             {
-             before(grammarAccess.getGoalAccess().getCommaKeyword_8_3_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Goal__Group_8_3__0__Impl3614); 
-             after(grammarAccess.getGoalAccess().getCommaKeyword_8_3_0()); 
+             before(grammarAccess.getModelGoalAccess().getCommaKeyword_8_3_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__ModelGoal__Group_8_3__0__Impl3614); 
+             after(grammarAccess.getModelGoalAccess().getCommaKeyword_8_3_0()); 
 
             }
 
@@ -4728,21 +4728,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8_3__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_8_3__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_8_3__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1787:1: rule__Goal__Group_8_3__1 : rule__Goal__Group_8_3__1__Impl ;
-    public final void rule__Goal__Group_8_3__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8_3__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1787:1: rule__ModelGoal__Group_8_3__1 : rule__ModelGoal__Group_8_3__1__Impl ;
+    public final void rule__ModelGoal__Group_8_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1791:1: ( rule__Goal__Group_8_3__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1792:2: rule__Goal__Group_8_3__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1791:1: ( rule__ModelGoal__Group_8_3__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1792:2: rule__ModelGoal__Group_8_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_8_3__1__Impl_in_rule__Goal__Group_8_3__13645);
-            rule__Goal__Group_8_3__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_8_3__1__Impl_in_rule__ModelGoal__Group_8_3__13645);
+            rule__ModelGoal__Group_8_3__1__Impl();
             _fsp--;
 
 
@@ -4760,34 +4760,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8_3__1
+    // $ANTLR end rule__ModelGoal__Group_8_3__1
 
 
-    // $ANTLR start rule__Goal__Group_8_3__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1798:1: rule__Goal__Group_8_3__1__Impl : ( ( rule__Goal__IsTaggedAssignment_8_3_1 ) ) ;
-    public final void rule__Goal__Group_8_3__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_8_3__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1798:1: rule__ModelGoal__Group_8_3__1__Impl : ( ( rule__ModelGoal__IsTaggedAssignment_8_3_1 ) ) ;
+    public final void rule__ModelGoal__Group_8_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1802:1: ( ( ( rule__Goal__IsTaggedAssignment_8_3_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1803:1: ( ( rule__Goal__IsTaggedAssignment_8_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1802:1: ( ( ( rule__ModelGoal__IsTaggedAssignment_8_3_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1803:1: ( ( rule__ModelGoal__IsTaggedAssignment_8_3_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1803:1: ( ( rule__Goal__IsTaggedAssignment_8_3_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1804:1: ( rule__Goal__IsTaggedAssignment_8_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1803:1: ( ( rule__ModelGoal__IsTaggedAssignment_8_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1804:1: ( rule__ModelGoal__IsTaggedAssignment_8_3_1 )
             {
-             before(grammarAccess.getGoalAccess().getIsTaggedAssignment_8_3_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1805:1: ( rule__Goal__IsTaggedAssignment_8_3_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1805:2: rule__Goal__IsTaggedAssignment_8_3_1
+             before(grammarAccess.getModelGoalAccess().getIsTaggedAssignment_8_3_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1805:1: ( rule__ModelGoal__IsTaggedAssignment_8_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1805:2: rule__ModelGoal__IsTaggedAssignment_8_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__IsTaggedAssignment_8_3_1_in_rule__Goal__Group_8_3__1__Impl3672);
-            rule__Goal__IsTaggedAssignment_8_3_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__IsTaggedAssignment_8_3_1_in_rule__ModelGoal__Group_8_3__1__Impl3672);
+            rule__ModelGoal__IsTaggedAssignment_8_3_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getIsTaggedAssignment_8_3_1()); 
+             after(grammarAccess.getModelGoalAccess().getIsTaggedAssignment_8_3_1()); 
 
             }
 
@@ -4806,25 +4806,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_8_3__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_8_3__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_9__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1819:1: rule__Goal__Group_9__0 : rule__Goal__Group_9__0__Impl rule__Goal__Group_9__1 ;
-    public final void rule__Goal__Group_9__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1819:1: rule__ModelGoal__Group_9__0 : rule__ModelGoal__Group_9__0__Impl rule__ModelGoal__Group_9__1 ;
+    public final void rule__ModelGoal__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1823:1: ( rule__Goal__Group_9__0__Impl rule__Goal__Group_9__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1824:2: rule__Goal__Group_9__0__Impl rule__Goal__Group_9__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1823:1: ( rule__ModelGoal__Group_9__0__Impl rule__ModelGoal__Group_9__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1824:2: rule__ModelGoal__Group_9__0__Impl rule__ModelGoal__Group_9__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__0__Impl_in_rule__Goal__Group_9__03706);
-            rule__Goal__Group_9__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__0__Impl_in_rule__ModelGoal__Group_9__03706);
+            rule__ModelGoal__Group_9__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__1_in_rule__Goal__Group_9__03709);
-            rule__Goal__Group_9__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__1_in_rule__ModelGoal__Group_9__03709);
+            rule__ModelGoal__Group_9__1();
             _fsp--;
 
 
@@ -4842,12 +4842,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__0
+    // $ANTLR end rule__ModelGoal__Group_9__0
 
 
-    // $ANTLR start rule__Goal__Group_9__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1831:1: rule__Goal__Group_9__0__Impl : ( 'subGoals' ) ;
-    public final void rule__Goal__Group_9__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1831:1: rule__ModelGoal__Group_9__0__Impl : ( 'subGoals' ) ;
+    public final void rule__ModelGoal__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4858,9 +4858,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1836:1: ( 'subGoals' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1837:1: 'subGoals'
             {
-             before(grammarAccess.getGoalAccess().getSubGoalsKeyword_9_0()); 
-            match(input,22,FollowSets000.FOLLOW_22_in_rule__Goal__Group_9__0__Impl3737); 
-             after(grammarAccess.getGoalAccess().getSubGoalsKeyword_9_0()); 
+             before(grammarAccess.getModelGoalAccess().getSubGoalsKeyword_9_0()); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__ModelGoal__Group_9__0__Impl3737); 
+             after(grammarAccess.getModelGoalAccess().getSubGoalsKeyword_9_0()); 
 
             }
 
@@ -4879,25 +4879,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_9__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_9__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1850:1: rule__Goal__Group_9__1 : rule__Goal__Group_9__1__Impl rule__Goal__Group_9__2 ;
-    public final void rule__Goal__Group_9__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1850:1: rule__ModelGoal__Group_9__1 : rule__ModelGoal__Group_9__1__Impl rule__ModelGoal__Group_9__2 ;
+    public final void rule__ModelGoal__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1854:1: ( rule__Goal__Group_9__1__Impl rule__Goal__Group_9__2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1855:2: rule__Goal__Group_9__1__Impl rule__Goal__Group_9__2
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1854:1: ( rule__ModelGoal__Group_9__1__Impl rule__ModelGoal__Group_9__2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1855:2: rule__ModelGoal__Group_9__1__Impl rule__ModelGoal__Group_9__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__1__Impl_in_rule__Goal__Group_9__13768);
-            rule__Goal__Group_9__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__1__Impl_in_rule__ModelGoal__Group_9__13768);
+            rule__ModelGoal__Group_9__1__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__2_in_rule__Goal__Group_9__13771);
-            rule__Goal__Group_9__2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__2_in_rule__ModelGoal__Group_9__13771);
+            rule__ModelGoal__Group_9__2();
             _fsp--;
 
 
@@ -4915,12 +4915,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__1
+    // $ANTLR end rule__ModelGoal__Group_9__1
 
 
-    // $ANTLR start rule__Goal__Group_9__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1862:1: rule__Goal__Group_9__1__Impl : ( '{' ) ;
-    public final void rule__Goal__Group_9__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1862:1: rule__ModelGoal__Group_9__1__Impl : ( '{' ) ;
+    public final void rule__ModelGoal__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4931,9 +4931,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1867:1: ( '{' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1868:1: '{'
             {
-             before(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_9_1()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Goal__Group_9__1__Impl3799); 
-             after(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_9_1()); 
+             before(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_9_1()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__ModelGoal__Group_9__1__Impl3799); 
+             after(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_9_1()); 
 
             }
 
@@ -4952,25 +4952,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_9__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_9__2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1881:1: rule__Goal__Group_9__2 : rule__Goal__Group_9__2__Impl rule__Goal__Group_9__3 ;
-    public final void rule__Goal__Group_9__2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1881:1: rule__ModelGoal__Group_9__2 : rule__ModelGoal__Group_9__2__Impl rule__ModelGoal__Group_9__3 ;
+    public final void rule__ModelGoal__Group_9__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1885:1: ( rule__Goal__Group_9__2__Impl rule__Goal__Group_9__3 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1886:2: rule__Goal__Group_9__2__Impl rule__Goal__Group_9__3
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1885:1: ( rule__ModelGoal__Group_9__2__Impl rule__ModelGoal__Group_9__3 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1886:2: rule__ModelGoal__Group_9__2__Impl rule__ModelGoal__Group_9__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__2__Impl_in_rule__Goal__Group_9__23830);
-            rule__Goal__Group_9__2__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__2__Impl_in_rule__ModelGoal__Group_9__23830);
+            rule__ModelGoal__Group_9__2__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__3_in_rule__Goal__Group_9__23833);
-            rule__Goal__Group_9__3();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__3_in_rule__ModelGoal__Group_9__23833);
+            rule__ModelGoal__Group_9__3();
             _fsp--;
 
 
@@ -4988,34 +4988,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__2
+    // $ANTLR end rule__ModelGoal__Group_9__2
 
 
-    // $ANTLR start rule__Goal__Group_9__2__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1893:1: rule__Goal__Group_9__2__Impl : ( ( rule__Goal__SubGoalsAssignment_9_2 ) ) ;
-    public final void rule__Goal__Group_9__2__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__2__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1893:1: rule__ModelGoal__Group_9__2__Impl : ( ( rule__ModelGoal__SubGoalsAssignment_9_2 ) ) ;
+    public final void rule__ModelGoal__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1897:1: ( ( ( rule__Goal__SubGoalsAssignment_9_2 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1898:1: ( ( rule__Goal__SubGoalsAssignment_9_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1897:1: ( ( ( rule__ModelGoal__SubGoalsAssignment_9_2 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1898:1: ( ( rule__ModelGoal__SubGoalsAssignment_9_2 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1898:1: ( ( rule__Goal__SubGoalsAssignment_9_2 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1899:1: ( rule__Goal__SubGoalsAssignment_9_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1898:1: ( ( rule__ModelGoal__SubGoalsAssignment_9_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1899:1: ( rule__ModelGoal__SubGoalsAssignment_9_2 )
             {
-             before(grammarAccess.getGoalAccess().getSubGoalsAssignment_9_2()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1900:1: ( rule__Goal__SubGoalsAssignment_9_2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1900:2: rule__Goal__SubGoalsAssignment_9_2
+             before(grammarAccess.getModelGoalAccess().getSubGoalsAssignment_9_2()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1900:1: ( rule__ModelGoal__SubGoalsAssignment_9_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1900:2: rule__ModelGoal__SubGoalsAssignment_9_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__SubGoalsAssignment_9_2_in_rule__Goal__Group_9__2__Impl3860);
-            rule__Goal__SubGoalsAssignment_9_2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__SubGoalsAssignment_9_2_in_rule__ModelGoal__Group_9__2__Impl3860);
+            rule__ModelGoal__SubGoalsAssignment_9_2();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getSubGoalsAssignment_9_2()); 
+             after(grammarAccess.getModelGoalAccess().getSubGoalsAssignment_9_2()); 
 
             }
 
@@ -5034,25 +5034,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__2__Impl
+    // $ANTLR end rule__ModelGoal__Group_9__2__Impl
 
 
-    // $ANTLR start rule__Goal__Group_9__3
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1910:1: rule__Goal__Group_9__3 : rule__Goal__Group_9__3__Impl rule__Goal__Group_9__4 ;
-    public final void rule__Goal__Group_9__3() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__3
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1910:1: rule__ModelGoal__Group_9__3 : rule__ModelGoal__Group_9__3__Impl rule__ModelGoal__Group_9__4 ;
+    public final void rule__ModelGoal__Group_9__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1914:1: ( rule__Goal__Group_9__3__Impl rule__Goal__Group_9__4 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1915:2: rule__Goal__Group_9__3__Impl rule__Goal__Group_9__4
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1914:1: ( rule__ModelGoal__Group_9__3__Impl rule__ModelGoal__Group_9__4 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1915:2: rule__ModelGoal__Group_9__3__Impl rule__ModelGoal__Group_9__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__3__Impl_in_rule__Goal__Group_9__33890);
-            rule__Goal__Group_9__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__3__Impl_in_rule__ModelGoal__Group_9__33890);
+            rule__ModelGoal__Group_9__3__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__4_in_rule__Goal__Group_9__33893);
-            rule__Goal__Group_9__4();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__4_in_rule__ModelGoal__Group_9__33893);
+            rule__ModelGoal__Group_9__4();
             _fsp--;
 
 
@@ -5070,24 +5070,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__3
+    // $ANTLR end rule__ModelGoal__Group_9__3
 
 
-    // $ANTLR start rule__Goal__Group_9__3__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1922:1: rule__Goal__Group_9__3__Impl : ( ( rule__Goal__Group_9_3__0 )* ) ;
-    public final void rule__Goal__Group_9__3__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__3__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1922:1: rule__ModelGoal__Group_9__3__Impl : ( ( rule__ModelGoal__Group_9_3__0 )* ) ;
+    public final void rule__ModelGoal__Group_9__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1926:1: ( ( ( rule__Goal__Group_9_3__0 )* ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1927:1: ( ( rule__Goal__Group_9_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1926:1: ( ( ( rule__ModelGoal__Group_9_3__0 )* ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1927:1: ( ( rule__ModelGoal__Group_9_3__0 )* )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1927:1: ( ( rule__Goal__Group_9_3__0 )* )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1928:1: ( rule__Goal__Group_9_3__0 )*
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1927:1: ( ( rule__ModelGoal__Group_9_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1928:1: ( rule__ModelGoal__Group_9_3__0 )*
             {
-             before(grammarAccess.getGoalAccess().getGroup_9_3()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1929:1: ( rule__Goal__Group_9_3__0 )*
+             before(grammarAccess.getModelGoalAccess().getGroup_9_3()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1929:1: ( rule__ModelGoal__Group_9_3__0 )*
             loop17:
             do {
                 int alt17=2;
@@ -5100,10 +5100,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1929:2: rule__Goal__Group_9_3__0
+            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1929:2: rule__ModelGoal__Group_9_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9_3__0_in_rule__Goal__Group_9__3__Impl3920);
-            	    rule__Goal__Group_9_3__0();
+            	    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9_3__0_in_rule__ModelGoal__Group_9__3__Impl3920);
+            	    rule__ModelGoal__Group_9_3__0();
             	    _fsp--;
 
 
@@ -5115,7 +5115,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getGoalAccess().getGroup_9_3()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_9_3()); 
 
             }
 
@@ -5134,21 +5134,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__3__Impl
+    // $ANTLR end rule__ModelGoal__Group_9__3__Impl
 
 
-    // $ANTLR start rule__Goal__Group_9__4
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1939:1: rule__Goal__Group_9__4 : rule__Goal__Group_9__4__Impl ;
-    public final void rule__Goal__Group_9__4() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__4
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1939:1: rule__ModelGoal__Group_9__4 : rule__ModelGoal__Group_9__4__Impl ;
+    public final void rule__ModelGoal__Group_9__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1943:1: ( rule__Goal__Group_9__4__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1944:2: rule__Goal__Group_9__4__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1943:1: ( rule__ModelGoal__Group_9__4__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1944:2: rule__ModelGoal__Group_9__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9__4__Impl_in_rule__Goal__Group_9__43951);
-            rule__Goal__Group_9__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9__4__Impl_in_rule__ModelGoal__Group_9__43951);
+            rule__ModelGoal__Group_9__4__Impl();
             _fsp--;
 
 
@@ -5166,12 +5166,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__4
+    // $ANTLR end rule__ModelGoal__Group_9__4
 
 
-    // $ANTLR start rule__Goal__Group_9__4__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1950:1: rule__Goal__Group_9__4__Impl : ( '}' ) ;
-    public final void rule__Goal__Group_9__4__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9__4__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1950:1: rule__ModelGoal__Group_9__4__Impl : ( '}' ) ;
+    public final void rule__ModelGoal__Group_9__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5182,9 +5182,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1955:1: ( '}' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1956:1: '}'
             {
-             before(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_9_4()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Goal__Group_9__4__Impl3979); 
-             after(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_9_4()); 
+             before(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_9_4()); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__ModelGoal__Group_9__4__Impl3979); 
+             after(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_9_4()); 
 
             }
 
@@ -5203,25 +5203,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9__4__Impl
+    // $ANTLR end rule__ModelGoal__Group_9__4__Impl
 
 
-    // $ANTLR start rule__Goal__Group_9_3__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1979:1: rule__Goal__Group_9_3__0 : rule__Goal__Group_9_3__0__Impl rule__Goal__Group_9_3__1 ;
-    public final void rule__Goal__Group_9_3__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9_3__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1979:1: rule__ModelGoal__Group_9_3__0 : rule__ModelGoal__Group_9_3__0__Impl rule__ModelGoal__Group_9_3__1 ;
+    public final void rule__ModelGoal__Group_9_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1983:1: ( rule__Goal__Group_9_3__0__Impl rule__Goal__Group_9_3__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1984:2: rule__Goal__Group_9_3__0__Impl rule__Goal__Group_9_3__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1983:1: ( rule__ModelGoal__Group_9_3__0__Impl rule__ModelGoal__Group_9_3__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1984:2: rule__ModelGoal__Group_9_3__0__Impl rule__ModelGoal__Group_9_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9_3__0__Impl_in_rule__Goal__Group_9_3__04020);
-            rule__Goal__Group_9_3__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9_3__0__Impl_in_rule__ModelGoal__Group_9_3__04020);
+            rule__ModelGoal__Group_9_3__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9_3__1_in_rule__Goal__Group_9_3__04023);
-            rule__Goal__Group_9_3__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9_3__1_in_rule__ModelGoal__Group_9_3__04023);
+            rule__ModelGoal__Group_9_3__1();
             _fsp--;
 
 
@@ -5239,12 +5239,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9_3__0
+    // $ANTLR end rule__ModelGoal__Group_9_3__0
 
 
-    // $ANTLR start rule__Goal__Group_9_3__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1991:1: rule__Goal__Group_9_3__0__Impl : ( ',' ) ;
-    public final void rule__Goal__Group_9_3__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9_3__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1991:1: rule__ModelGoal__Group_9_3__0__Impl : ( ',' ) ;
+    public final void rule__ModelGoal__Group_9_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5255,9 +5255,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1996:1: ( ',' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:1997:1: ','
             {
-             before(grammarAccess.getGoalAccess().getCommaKeyword_9_3_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Goal__Group_9_3__0__Impl4051); 
-             after(grammarAccess.getGoalAccess().getCommaKeyword_9_3_0()); 
+             before(grammarAccess.getModelGoalAccess().getCommaKeyword_9_3_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__ModelGoal__Group_9_3__0__Impl4051); 
+             after(grammarAccess.getModelGoalAccess().getCommaKeyword_9_3_0()); 
 
             }
 
@@ -5276,21 +5276,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9_3__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_9_3__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_9_3__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2010:1: rule__Goal__Group_9_3__1 : rule__Goal__Group_9_3__1__Impl ;
-    public final void rule__Goal__Group_9_3__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9_3__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2010:1: rule__ModelGoal__Group_9_3__1 : rule__ModelGoal__Group_9_3__1__Impl ;
+    public final void rule__ModelGoal__Group_9_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2014:1: ( rule__Goal__Group_9_3__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2015:2: rule__Goal__Group_9_3__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2014:1: ( rule__ModelGoal__Group_9_3__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2015:2: rule__ModelGoal__Group_9_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_9_3__1__Impl_in_rule__Goal__Group_9_3__14082);
-            rule__Goal__Group_9_3__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_9_3__1__Impl_in_rule__ModelGoal__Group_9_3__14082);
+            rule__ModelGoal__Group_9_3__1__Impl();
             _fsp--;
 
 
@@ -5308,34 +5308,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9_3__1
+    // $ANTLR end rule__ModelGoal__Group_9_3__1
 
 
-    // $ANTLR start rule__Goal__Group_9_3__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2021:1: rule__Goal__Group_9_3__1__Impl : ( ( rule__Goal__SubGoalsAssignment_9_3_1 ) ) ;
-    public final void rule__Goal__Group_9_3__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_9_3__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2021:1: rule__ModelGoal__Group_9_3__1__Impl : ( ( rule__ModelGoal__SubGoalsAssignment_9_3_1 ) ) ;
+    public final void rule__ModelGoal__Group_9_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2025:1: ( ( ( rule__Goal__SubGoalsAssignment_9_3_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2026:1: ( ( rule__Goal__SubGoalsAssignment_9_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2025:1: ( ( ( rule__ModelGoal__SubGoalsAssignment_9_3_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2026:1: ( ( rule__ModelGoal__SubGoalsAssignment_9_3_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2026:1: ( ( rule__Goal__SubGoalsAssignment_9_3_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2027:1: ( rule__Goal__SubGoalsAssignment_9_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2026:1: ( ( rule__ModelGoal__SubGoalsAssignment_9_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2027:1: ( rule__ModelGoal__SubGoalsAssignment_9_3_1 )
             {
-             before(grammarAccess.getGoalAccess().getSubGoalsAssignment_9_3_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2028:1: ( rule__Goal__SubGoalsAssignment_9_3_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2028:2: rule__Goal__SubGoalsAssignment_9_3_1
+             before(grammarAccess.getModelGoalAccess().getSubGoalsAssignment_9_3_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2028:1: ( rule__ModelGoal__SubGoalsAssignment_9_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2028:2: rule__ModelGoal__SubGoalsAssignment_9_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__SubGoalsAssignment_9_3_1_in_rule__Goal__Group_9_3__1__Impl4109);
-            rule__Goal__SubGoalsAssignment_9_3_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__SubGoalsAssignment_9_3_1_in_rule__ModelGoal__Group_9_3__1__Impl4109);
+            rule__ModelGoal__SubGoalsAssignment_9_3_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getSubGoalsAssignment_9_3_1()); 
+             after(grammarAccess.getModelGoalAccess().getSubGoalsAssignment_9_3_1()); 
 
             }
 
@@ -5354,25 +5354,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_9_3__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_9_3__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_10__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2042:1: rule__Goal__Group_10__0 : rule__Goal__Group_10__0__Impl rule__Goal__Group_10__1 ;
-    public final void rule__Goal__Group_10__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2042:1: rule__ModelGoal__Group_10__0 : rule__ModelGoal__Group_10__0__Impl rule__ModelGoal__Group_10__1 ;
+    public final void rule__ModelGoal__Group_10__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2046:1: ( rule__Goal__Group_10__0__Impl rule__Goal__Group_10__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2047:2: rule__Goal__Group_10__0__Impl rule__Goal__Group_10__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2046:1: ( rule__ModelGoal__Group_10__0__Impl rule__ModelGoal__Group_10__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2047:2: rule__ModelGoal__Group_10__0__Impl rule__ModelGoal__Group_10__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__0__Impl_in_rule__Goal__Group_10__04143);
-            rule__Goal__Group_10__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__0__Impl_in_rule__ModelGoal__Group_10__04143);
+            rule__ModelGoal__Group_10__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__1_in_rule__Goal__Group_10__04146);
-            rule__Goal__Group_10__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__1_in_rule__ModelGoal__Group_10__04146);
+            rule__ModelGoal__Group_10__1();
             _fsp--;
 
 
@@ -5390,12 +5390,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__0
+    // $ANTLR end rule__ModelGoal__Group_10__0
 
 
-    // $ANTLR start rule__Goal__Group_10__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2054:1: rule__Goal__Group_10__0__Impl : ( 'strategies' ) ;
-    public final void rule__Goal__Group_10__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2054:1: rule__ModelGoal__Group_10__0__Impl : ( 'strategies' ) ;
+    public final void rule__ModelGoal__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5406,9 +5406,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2059:1: ( 'strategies' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2060:1: 'strategies'
             {
-             before(grammarAccess.getGoalAccess().getStrategiesKeyword_10_0()); 
-            match(input,23,FollowSets000.FOLLOW_23_in_rule__Goal__Group_10__0__Impl4174); 
-             after(grammarAccess.getGoalAccess().getStrategiesKeyword_10_0()); 
+             before(grammarAccess.getModelGoalAccess().getStrategiesKeyword_10_0()); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__ModelGoal__Group_10__0__Impl4174); 
+             after(grammarAccess.getModelGoalAccess().getStrategiesKeyword_10_0()); 
 
             }
 
@@ -5427,25 +5427,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_10__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_10__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2073:1: rule__Goal__Group_10__1 : rule__Goal__Group_10__1__Impl rule__Goal__Group_10__2 ;
-    public final void rule__Goal__Group_10__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2073:1: rule__ModelGoal__Group_10__1 : rule__ModelGoal__Group_10__1__Impl rule__ModelGoal__Group_10__2 ;
+    public final void rule__ModelGoal__Group_10__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2077:1: ( rule__Goal__Group_10__1__Impl rule__Goal__Group_10__2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2078:2: rule__Goal__Group_10__1__Impl rule__Goal__Group_10__2
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2077:1: ( rule__ModelGoal__Group_10__1__Impl rule__ModelGoal__Group_10__2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2078:2: rule__ModelGoal__Group_10__1__Impl rule__ModelGoal__Group_10__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__1__Impl_in_rule__Goal__Group_10__14205);
-            rule__Goal__Group_10__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__1__Impl_in_rule__ModelGoal__Group_10__14205);
+            rule__ModelGoal__Group_10__1__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__2_in_rule__Goal__Group_10__14208);
-            rule__Goal__Group_10__2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__2_in_rule__ModelGoal__Group_10__14208);
+            rule__ModelGoal__Group_10__2();
             _fsp--;
 
 
@@ -5463,12 +5463,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__1
+    // $ANTLR end rule__ModelGoal__Group_10__1
 
 
-    // $ANTLR start rule__Goal__Group_10__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2085:1: rule__Goal__Group_10__1__Impl : ( '{' ) ;
-    public final void rule__Goal__Group_10__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2085:1: rule__ModelGoal__Group_10__1__Impl : ( '{' ) ;
+    public final void rule__ModelGoal__Group_10__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5479,9 +5479,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2090:1: ( '{' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2091:1: '{'
             {
-             before(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_10_1()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Goal__Group_10__1__Impl4236); 
-             after(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_10_1()); 
+             before(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_10_1()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__ModelGoal__Group_10__1__Impl4236); 
+             after(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_10_1()); 
 
             }
 
@@ -5500,25 +5500,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_10__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_10__2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2104:1: rule__Goal__Group_10__2 : rule__Goal__Group_10__2__Impl rule__Goal__Group_10__3 ;
-    public final void rule__Goal__Group_10__2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2104:1: rule__ModelGoal__Group_10__2 : rule__ModelGoal__Group_10__2__Impl rule__ModelGoal__Group_10__3 ;
+    public final void rule__ModelGoal__Group_10__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2108:1: ( rule__Goal__Group_10__2__Impl rule__Goal__Group_10__3 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2109:2: rule__Goal__Group_10__2__Impl rule__Goal__Group_10__3
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2108:1: ( rule__ModelGoal__Group_10__2__Impl rule__ModelGoal__Group_10__3 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2109:2: rule__ModelGoal__Group_10__2__Impl rule__ModelGoal__Group_10__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__2__Impl_in_rule__Goal__Group_10__24267);
-            rule__Goal__Group_10__2__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__2__Impl_in_rule__ModelGoal__Group_10__24267);
+            rule__ModelGoal__Group_10__2__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__3_in_rule__Goal__Group_10__24270);
-            rule__Goal__Group_10__3();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__3_in_rule__ModelGoal__Group_10__24270);
+            rule__ModelGoal__Group_10__3();
             _fsp--;
 
 
@@ -5536,34 +5536,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__2
+    // $ANTLR end rule__ModelGoal__Group_10__2
 
 
-    // $ANTLR start rule__Goal__Group_10__2__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2116:1: rule__Goal__Group_10__2__Impl : ( ( rule__Goal__StrategiesAssignment_10_2 ) ) ;
-    public final void rule__Goal__Group_10__2__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__2__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2116:1: rule__ModelGoal__Group_10__2__Impl : ( ( rule__ModelGoal__StrategiesAssignment_10_2 ) ) ;
+    public final void rule__ModelGoal__Group_10__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2120:1: ( ( ( rule__Goal__StrategiesAssignment_10_2 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2121:1: ( ( rule__Goal__StrategiesAssignment_10_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2120:1: ( ( ( rule__ModelGoal__StrategiesAssignment_10_2 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2121:1: ( ( rule__ModelGoal__StrategiesAssignment_10_2 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2121:1: ( ( rule__Goal__StrategiesAssignment_10_2 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2122:1: ( rule__Goal__StrategiesAssignment_10_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2121:1: ( ( rule__ModelGoal__StrategiesAssignment_10_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2122:1: ( rule__ModelGoal__StrategiesAssignment_10_2 )
             {
-             before(grammarAccess.getGoalAccess().getStrategiesAssignment_10_2()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2123:1: ( rule__Goal__StrategiesAssignment_10_2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2123:2: rule__Goal__StrategiesAssignment_10_2
+             before(grammarAccess.getModelGoalAccess().getStrategiesAssignment_10_2()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2123:1: ( rule__ModelGoal__StrategiesAssignment_10_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2123:2: rule__ModelGoal__StrategiesAssignment_10_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__StrategiesAssignment_10_2_in_rule__Goal__Group_10__2__Impl4297);
-            rule__Goal__StrategiesAssignment_10_2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__StrategiesAssignment_10_2_in_rule__ModelGoal__Group_10__2__Impl4297);
+            rule__ModelGoal__StrategiesAssignment_10_2();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getStrategiesAssignment_10_2()); 
+             after(grammarAccess.getModelGoalAccess().getStrategiesAssignment_10_2()); 
 
             }
 
@@ -5582,25 +5582,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__2__Impl
+    // $ANTLR end rule__ModelGoal__Group_10__2__Impl
 
 
-    // $ANTLR start rule__Goal__Group_10__3
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2133:1: rule__Goal__Group_10__3 : rule__Goal__Group_10__3__Impl rule__Goal__Group_10__4 ;
-    public final void rule__Goal__Group_10__3() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__3
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2133:1: rule__ModelGoal__Group_10__3 : rule__ModelGoal__Group_10__3__Impl rule__ModelGoal__Group_10__4 ;
+    public final void rule__ModelGoal__Group_10__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2137:1: ( rule__Goal__Group_10__3__Impl rule__Goal__Group_10__4 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2138:2: rule__Goal__Group_10__3__Impl rule__Goal__Group_10__4
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2137:1: ( rule__ModelGoal__Group_10__3__Impl rule__ModelGoal__Group_10__4 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2138:2: rule__ModelGoal__Group_10__3__Impl rule__ModelGoal__Group_10__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__3__Impl_in_rule__Goal__Group_10__34327);
-            rule__Goal__Group_10__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__3__Impl_in_rule__ModelGoal__Group_10__34327);
+            rule__ModelGoal__Group_10__3__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__4_in_rule__Goal__Group_10__34330);
-            rule__Goal__Group_10__4();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__4_in_rule__ModelGoal__Group_10__34330);
+            rule__ModelGoal__Group_10__4();
             _fsp--;
 
 
@@ -5618,24 +5618,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__3
+    // $ANTLR end rule__ModelGoal__Group_10__3
 
 
-    // $ANTLR start rule__Goal__Group_10__3__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2145:1: rule__Goal__Group_10__3__Impl : ( ( rule__Goal__Group_10_3__0 )* ) ;
-    public final void rule__Goal__Group_10__3__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__3__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2145:1: rule__ModelGoal__Group_10__3__Impl : ( ( rule__ModelGoal__Group_10_3__0 )* ) ;
+    public final void rule__ModelGoal__Group_10__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2149:1: ( ( ( rule__Goal__Group_10_3__0 )* ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2150:1: ( ( rule__Goal__Group_10_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2149:1: ( ( ( rule__ModelGoal__Group_10_3__0 )* ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2150:1: ( ( rule__ModelGoal__Group_10_3__0 )* )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2150:1: ( ( rule__Goal__Group_10_3__0 )* )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2151:1: ( rule__Goal__Group_10_3__0 )*
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2150:1: ( ( rule__ModelGoal__Group_10_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2151:1: ( rule__ModelGoal__Group_10_3__0 )*
             {
-             before(grammarAccess.getGoalAccess().getGroup_10_3()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2152:1: ( rule__Goal__Group_10_3__0 )*
+             before(grammarAccess.getModelGoalAccess().getGroup_10_3()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2152:1: ( rule__ModelGoal__Group_10_3__0 )*
             loop18:
             do {
                 int alt18=2;
@@ -5648,10 +5648,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2152:2: rule__Goal__Group_10_3__0
+            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2152:2: rule__ModelGoal__Group_10_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10_3__0_in_rule__Goal__Group_10__3__Impl4357);
-            	    rule__Goal__Group_10_3__0();
+            	    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10_3__0_in_rule__ModelGoal__Group_10__3__Impl4357);
+            	    rule__ModelGoal__Group_10_3__0();
             	    _fsp--;
 
 
@@ -5663,7 +5663,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getGoalAccess().getGroup_10_3()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_10_3()); 
 
             }
 
@@ -5682,21 +5682,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__3__Impl
+    // $ANTLR end rule__ModelGoal__Group_10__3__Impl
 
 
-    // $ANTLR start rule__Goal__Group_10__4
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2162:1: rule__Goal__Group_10__4 : rule__Goal__Group_10__4__Impl ;
-    public final void rule__Goal__Group_10__4() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__4
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2162:1: rule__ModelGoal__Group_10__4 : rule__ModelGoal__Group_10__4__Impl ;
+    public final void rule__ModelGoal__Group_10__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2166:1: ( rule__Goal__Group_10__4__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2167:2: rule__Goal__Group_10__4__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2166:1: ( rule__ModelGoal__Group_10__4__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2167:2: rule__ModelGoal__Group_10__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10__4__Impl_in_rule__Goal__Group_10__44388);
-            rule__Goal__Group_10__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10__4__Impl_in_rule__ModelGoal__Group_10__44388);
+            rule__ModelGoal__Group_10__4__Impl();
             _fsp--;
 
 
@@ -5714,12 +5714,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__4
+    // $ANTLR end rule__ModelGoal__Group_10__4
 
 
-    // $ANTLR start rule__Goal__Group_10__4__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2173:1: rule__Goal__Group_10__4__Impl : ( '}' ) ;
-    public final void rule__Goal__Group_10__4__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10__4__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2173:1: rule__ModelGoal__Group_10__4__Impl : ( '}' ) ;
+    public final void rule__ModelGoal__Group_10__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5730,9 +5730,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2178:1: ( '}' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2179:1: '}'
             {
-             before(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_10_4()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Goal__Group_10__4__Impl4416); 
-             after(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_10_4()); 
+             before(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_10_4()); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__ModelGoal__Group_10__4__Impl4416); 
+             after(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_10_4()); 
 
             }
 
@@ -5751,25 +5751,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10__4__Impl
+    // $ANTLR end rule__ModelGoal__Group_10__4__Impl
 
 
-    // $ANTLR start rule__Goal__Group_10_3__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2202:1: rule__Goal__Group_10_3__0 : rule__Goal__Group_10_3__0__Impl rule__Goal__Group_10_3__1 ;
-    public final void rule__Goal__Group_10_3__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10_3__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2202:1: rule__ModelGoal__Group_10_3__0 : rule__ModelGoal__Group_10_3__0__Impl rule__ModelGoal__Group_10_3__1 ;
+    public final void rule__ModelGoal__Group_10_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2206:1: ( rule__Goal__Group_10_3__0__Impl rule__Goal__Group_10_3__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2207:2: rule__Goal__Group_10_3__0__Impl rule__Goal__Group_10_3__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2206:1: ( rule__ModelGoal__Group_10_3__0__Impl rule__ModelGoal__Group_10_3__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2207:2: rule__ModelGoal__Group_10_3__0__Impl rule__ModelGoal__Group_10_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10_3__0__Impl_in_rule__Goal__Group_10_3__04457);
-            rule__Goal__Group_10_3__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10_3__0__Impl_in_rule__ModelGoal__Group_10_3__04457);
+            rule__ModelGoal__Group_10_3__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10_3__1_in_rule__Goal__Group_10_3__04460);
-            rule__Goal__Group_10_3__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10_3__1_in_rule__ModelGoal__Group_10_3__04460);
+            rule__ModelGoal__Group_10_3__1();
             _fsp--;
 
 
@@ -5787,12 +5787,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10_3__0
+    // $ANTLR end rule__ModelGoal__Group_10_3__0
 
 
-    // $ANTLR start rule__Goal__Group_10_3__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2214:1: rule__Goal__Group_10_3__0__Impl : ( ',' ) ;
-    public final void rule__Goal__Group_10_3__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10_3__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2214:1: rule__ModelGoal__Group_10_3__0__Impl : ( ',' ) ;
+    public final void rule__ModelGoal__Group_10_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5803,9 +5803,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2219:1: ( ',' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2220:1: ','
             {
-             before(grammarAccess.getGoalAccess().getCommaKeyword_10_3_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Goal__Group_10_3__0__Impl4488); 
-             after(grammarAccess.getGoalAccess().getCommaKeyword_10_3_0()); 
+             before(grammarAccess.getModelGoalAccess().getCommaKeyword_10_3_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__ModelGoal__Group_10_3__0__Impl4488); 
+             after(grammarAccess.getModelGoalAccess().getCommaKeyword_10_3_0()); 
 
             }
 
@@ -5824,21 +5824,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10_3__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_10_3__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_10_3__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2233:1: rule__Goal__Group_10_3__1 : rule__Goal__Group_10_3__1__Impl ;
-    public final void rule__Goal__Group_10_3__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10_3__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2233:1: rule__ModelGoal__Group_10_3__1 : rule__ModelGoal__Group_10_3__1__Impl ;
+    public final void rule__ModelGoal__Group_10_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2237:1: ( rule__Goal__Group_10_3__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2238:2: rule__Goal__Group_10_3__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2237:1: ( rule__ModelGoal__Group_10_3__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2238:2: rule__ModelGoal__Group_10_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_10_3__1__Impl_in_rule__Goal__Group_10_3__14519);
-            rule__Goal__Group_10_3__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_10_3__1__Impl_in_rule__ModelGoal__Group_10_3__14519);
+            rule__ModelGoal__Group_10_3__1__Impl();
             _fsp--;
 
 
@@ -5856,34 +5856,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10_3__1
+    // $ANTLR end rule__ModelGoal__Group_10_3__1
 
 
-    // $ANTLR start rule__Goal__Group_10_3__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2244:1: rule__Goal__Group_10_3__1__Impl : ( ( rule__Goal__StrategiesAssignment_10_3_1 ) ) ;
-    public final void rule__Goal__Group_10_3__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_10_3__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2244:1: rule__ModelGoal__Group_10_3__1__Impl : ( ( rule__ModelGoal__StrategiesAssignment_10_3_1 ) ) ;
+    public final void rule__ModelGoal__Group_10_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2248:1: ( ( ( rule__Goal__StrategiesAssignment_10_3_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2249:1: ( ( rule__Goal__StrategiesAssignment_10_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2248:1: ( ( ( rule__ModelGoal__StrategiesAssignment_10_3_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2249:1: ( ( rule__ModelGoal__StrategiesAssignment_10_3_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2249:1: ( ( rule__Goal__StrategiesAssignment_10_3_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2250:1: ( rule__Goal__StrategiesAssignment_10_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2249:1: ( ( rule__ModelGoal__StrategiesAssignment_10_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2250:1: ( rule__ModelGoal__StrategiesAssignment_10_3_1 )
             {
-             before(grammarAccess.getGoalAccess().getStrategiesAssignment_10_3_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2251:1: ( rule__Goal__StrategiesAssignment_10_3_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2251:2: rule__Goal__StrategiesAssignment_10_3_1
+             before(grammarAccess.getModelGoalAccess().getStrategiesAssignment_10_3_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2251:1: ( rule__ModelGoal__StrategiesAssignment_10_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2251:2: rule__ModelGoal__StrategiesAssignment_10_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__StrategiesAssignment_10_3_1_in_rule__Goal__Group_10_3__1__Impl4546);
-            rule__Goal__StrategiesAssignment_10_3_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__StrategiesAssignment_10_3_1_in_rule__ModelGoal__Group_10_3__1__Impl4546);
+            rule__ModelGoal__StrategiesAssignment_10_3_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getStrategiesAssignment_10_3_1()); 
+             after(grammarAccess.getModelGoalAccess().getStrategiesAssignment_10_3_1()); 
 
             }
 
@@ -5902,25 +5902,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_10_3__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_10_3__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_11__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2265:1: rule__Goal__Group_11__0 : rule__Goal__Group_11__0__Impl rule__Goal__Group_11__1 ;
-    public final void rule__Goal__Group_11__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2265:1: rule__ModelGoal__Group_11__0 : rule__ModelGoal__Group_11__0__Impl rule__ModelGoal__Group_11__1 ;
+    public final void rule__ModelGoal__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2269:1: ( rule__Goal__Group_11__0__Impl rule__Goal__Group_11__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2270:2: rule__Goal__Group_11__0__Impl rule__Goal__Group_11__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2269:1: ( rule__ModelGoal__Group_11__0__Impl rule__ModelGoal__Group_11__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2270:2: rule__ModelGoal__Group_11__0__Impl rule__ModelGoal__Group_11__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__0__Impl_in_rule__Goal__Group_11__04580);
-            rule__Goal__Group_11__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__0__Impl_in_rule__ModelGoal__Group_11__04580);
+            rule__ModelGoal__Group_11__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__1_in_rule__Goal__Group_11__04583);
-            rule__Goal__Group_11__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__1_in_rule__ModelGoal__Group_11__04583);
+            rule__ModelGoal__Group_11__1();
             _fsp--;
 
 
@@ -5938,12 +5938,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__0
+    // $ANTLR end rule__ModelGoal__Group_11__0
 
 
-    // $ANTLR start rule__Goal__Group_11__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2277:1: rule__Goal__Group_11__0__Impl : ( 'goalContexts' ) ;
-    public final void rule__Goal__Group_11__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2277:1: rule__ModelGoal__Group_11__0__Impl : ( 'goalContexts' ) ;
+    public final void rule__ModelGoal__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -5954,9 +5954,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2282:1: ( 'goalContexts' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2283:1: 'goalContexts'
             {
-             before(grammarAccess.getGoalAccess().getGoalContextsKeyword_11_0()); 
-            match(input,24,FollowSets000.FOLLOW_24_in_rule__Goal__Group_11__0__Impl4611); 
-             after(grammarAccess.getGoalAccess().getGoalContextsKeyword_11_0()); 
+             before(grammarAccess.getModelGoalAccess().getGoalContextsKeyword_11_0()); 
+            match(input,24,FollowSets000.FOLLOW_24_in_rule__ModelGoal__Group_11__0__Impl4611); 
+             after(grammarAccess.getModelGoalAccess().getGoalContextsKeyword_11_0()); 
 
             }
 
@@ -5975,25 +5975,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_11__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_11__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2296:1: rule__Goal__Group_11__1 : rule__Goal__Group_11__1__Impl rule__Goal__Group_11__2 ;
-    public final void rule__Goal__Group_11__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2296:1: rule__ModelGoal__Group_11__1 : rule__ModelGoal__Group_11__1__Impl rule__ModelGoal__Group_11__2 ;
+    public final void rule__ModelGoal__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2300:1: ( rule__Goal__Group_11__1__Impl rule__Goal__Group_11__2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2301:2: rule__Goal__Group_11__1__Impl rule__Goal__Group_11__2
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2300:1: ( rule__ModelGoal__Group_11__1__Impl rule__ModelGoal__Group_11__2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2301:2: rule__ModelGoal__Group_11__1__Impl rule__ModelGoal__Group_11__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__1__Impl_in_rule__Goal__Group_11__14642);
-            rule__Goal__Group_11__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__1__Impl_in_rule__ModelGoal__Group_11__14642);
+            rule__ModelGoal__Group_11__1__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__2_in_rule__Goal__Group_11__14645);
-            rule__Goal__Group_11__2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__2_in_rule__ModelGoal__Group_11__14645);
+            rule__ModelGoal__Group_11__2();
             _fsp--;
 
 
@@ -6011,12 +6011,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__1
+    // $ANTLR end rule__ModelGoal__Group_11__1
 
 
-    // $ANTLR start rule__Goal__Group_11__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2308:1: rule__Goal__Group_11__1__Impl : ( '{' ) ;
-    public final void rule__Goal__Group_11__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2308:1: rule__ModelGoal__Group_11__1__Impl : ( '{' ) ;
+    public final void rule__ModelGoal__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -6027,9 +6027,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2313:1: ( '{' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2314:1: '{'
             {
-             before(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_11_1()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Goal__Group_11__1__Impl4673); 
-             after(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_11_1()); 
+             before(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_11_1()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__ModelGoal__Group_11__1__Impl4673); 
+             after(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_11_1()); 
 
             }
 
@@ -6048,25 +6048,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_11__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_11__2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2327:1: rule__Goal__Group_11__2 : rule__Goal__Group_11__2__Impl rule__Goal__Group_11__3 ;
-    public final void rule__Goal__Group_11__2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2327:1: rule__ModelGoal__Group_11__2 : rule__ModelGoal__Group_11__2__Impl rule__ModelGoal__Group_11__3 ;
+    public final void rule__ModelGoal__Group_11__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2331:1: ( rule__Goal__Group_11__2__Impl rule__Goal__Group_11__3 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2332:2: rule__Goal__Group_11__2__Impl rule__Goal__Group_11__3
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2331:1: ( rule__ModelGoal__Group_11__2__Impl rule__ModelGoal__Group_11__3 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2332:2: rule__ModelGoal__Group_11__2__Impl rule__ModelGoal__Group_11__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__2__Impl_in_rule__Goal__Group_11__24704);
-            rule__Goal__Group_11__2__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__2__Impl_in_rule__ModelGoal__Group_11__24704);
+            rule__ModelGoal__Group_11__2__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__3_in_rule__Goal__Group_11__24707);
-            rule__Goal__Group_11__3();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__3_in_rule__ModelGoal__Group_11__24707);
+            rule__ModelGoal__Group_11__3();
             _fsp--;
 
 
@@ -6084,34 +6084,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__2
+    // $ANTLR end rule__ModelGoal__Group_11__2
 
 
-    // $ANTLR start rule__Goal__Group_11__2__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2339:1: rule__Goal__Group_11__2__Impl : ( ( rule__Goal__GoalContextsAssignment_11_2 ) ) ;
-    public final void rule__Goal__Group_11__2__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__2__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2339:1: rule__ModelGoal__Group_11__2__Impl : ( ( rule__ModelGoal__GoalContextsAssignment_11_2 ) ) ;
+    public final void rule__ModelGoal__Group_11__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2343:1: ( ( ( rule__Goal__GoalContextsAssignment_11_2 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2344:1: ( ( rule__Goal__GoalContextsAssignment_11_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2343:1: ( ( ( rule__ModelGoal__GoalContextsAssignment_11_2 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2344:1: ( ( rule__ModelGoal__GoalContextsAssignment_11_2 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2344:1: ( ( rule__Goal__GoalContextsAssignment_11_2 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2345:1: ( rule__Goal__GoalContextsAssignment_11_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2344:1: ( ( rule__ModelGoal__GoalContextsAssignment_11_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2345:1: ( rule__ModelGoal__GoalContextsAssignment_11_2 )
             {
-             before(grammarAccess.getGoalAccess().getGoalContextsAssignment_11_2()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2346:1: ( rule__Goal__GoalContextsAssignment_11_2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2346:2: rule__Goal__GoalContextsAssignment_11_2
+             before(grammarAccess.getModelGoalAccess().getGoalContextsAssignment_11_2()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2346:1: ( rule__ModelGoal__GoalContextsAssignment_11_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2346:2: rule__ModelGoal__GoalContextsAssignment_11_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__GoalContextsAssignment_11_2_in_rule__Goal__Group_11__2__Impl4734);
-            rule__Goal__GoalContextsAssignment_11_2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__GoalContextsAssignment_11_2_in_rule__ModelGoal__Group_11__2__Impl4734);
+            rule__ModelGoal__GoalContextsAssignment_11_2();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getGoalContextsAssignment_11_2()); 
+             after(grammarAccess.getModelGoalAccess().getGoalContextsAssignment_11_2()); 
 
             }
 
@@ -6130,25 +6130,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__2__Impl
+    // $ANTLR end rule__ModelGoal__Group_11__2__Impl
 
 
-    // $ANTLR start rule__Goal__Group_11__3
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2356:1: rule__Goal__Group_11__3 : rule__Goal__Group_11__3__Impl rule__Goal__Group_11__4 ;
-    public final void rule__Goal__Group_11__3() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__3
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2356:1: rule__ModelGoal__Group_11__3 : rule__ModelGoal__Group_11__3__Impl rule__ModelGoal__Group_11__4 ;
+    public final void rule__ModelGoal__Group_11__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2360:1: ( rule__Goal__Group_11__3__Impl rule__Goal__Group_11__4 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2361:2: rule__Goal__Group_11__3__Impl rule__Goal__Group_11__4
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2360:1: ( rule__ModelGoal__Group_11__3__Impl rule__ModelGoal__Group_11__4 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2361:2: rule__ModelGoal__Group_11__3__Impl rule__ModelGoal__Group_11__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__3__Impl_in_rule__Goal__Group_11__34764);
-            rule__Goal__Group_11__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__3__Impl_in_rule__ModelGoal__Group_11__34764);
+            rule__ModelGoal__Group_11__3__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__4_in_rule__Goal__Group_11__34767);
-            rule__Goal__Group_11__4();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__4_in_rule__ModelGoal__Group_11__34767);
+            rule__ModelGoal__Group_11__4();
             _fsp--;
 
 
@@ -6166,24 +6166,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__3
+    // $ANTLR end rule__ModelGoal__Group_11__3
 
 
-    // $ANTLR start rule__Goal__Group_11__3__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2368:1: rule__Goal__Group_11__3__Impl : ( ( rule__Goal__Group_11_3__0 )* ) ;
-    public final void rule__Goal__Group_11__3__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__3__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2368:1: rule__ModelGoal__Group_11__3__Impl : ( ( rule__ModelGoal__Group_11_3__0 )* ) ;
+    public final void rule__ModelGoal__Group_11__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2372:1: ( ( ( rule__Goal__Group_11_3__0 )* ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2373:1: ( ( rule__Goal__Group_11_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2372:1: ( ( ( rule__ModelGoal__Group_11_3__0 )* ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2373:1: ( ( rule__ModelGoal__Group_11_3__0 )* )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2373:1: ( ( rule__Goal__Group_11_3__0 )* )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2374:1: ( rule__Goal__Group_11_3__0 )*
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2373:1: ( ( rule__ModelGoal__Group_11_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2374:1: ( rule__ModelGoal__Group_11_3__0 )*
             {
-             before(grammarAccess.getGoalAccess().getGroup_11_3()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2375:1: ( rule__Goal__Group_11_3__0 )*
+             before(grammarAccess.getModelGoalAccess().getGroup_11_3()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2375:1: ( rule__ModelGoal__Group_11_3__0 )*
             loop19:
             do {
                 int alt19=2;
@@ -6196,10 +6196,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2375:2: rule__Goal__Group_11_3__0
+            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2375:2: rule__ModelGoal__Group_11_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11_3__0_in_rule__Goal__Group_11__3__Impl4794);
-            	    rule__Goal__Group_11_3__0();
+            	    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11_3__0_in_rule__ModelGoal__Group_11__3__Impl4794);
+            	    rule__ModelGoal__Group_11_3__0();
             	    _fsp--;
 
 
@@ -6211,7 +6211,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getGoalAccess().getGroup_11_3()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_11_3()); 
 
             }
 
@@ -6230,21 +6230,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__3__Impl
+    // $ANTLR end rule__ModelGoal__Group_11__3__Impl
 
 
-    // $ANTLR start rule__Goal__Group_11__4
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2385:1: rule__Goal__Group_11__4 : rule__Goal__Group_11__4__Impl ;
-    public final void rule__Goal__Group_11__4() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__4
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2385:1: rule__ModelGoal__Group_11__4 : rule__ModelGoal__Group_11__4__Impl ;
+    public final void rule__ModelGoal__Group_11__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2389:1: ( rule__Goal__Group_11__4__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2390:2: rule__Goal__Group_11__4__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2389:1: ( rule__ModelGoal__Group_11__4__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2390:2: rule__ModelGoal__Group_11__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11__4__Impl_in_rule__Goal__Group_11__44825);
-            rule__Goal__Group_11__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11__4__Impl_in_rule__ModelGoal__Group_11__44825);
+            rule__ModelGoal__Group_11__4__Impl();
             _fsp--;
 
 
@@ -6262,12 +6262,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__4
+    // $ANTLR end rule__ModelGoal__Group_11__4
 
 
-    // $ANTLR start rule__Goal__Group_11__4__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2396:1: rule__Goal__Group_11__4__Impl : ( '}' ) ;
-    public final void rule__Goal__Group_11__4__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11__4__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2396:1: rule__ModelGoal__Group_11__4__Impl : ( '}' ) ;
+    public final void rule__ModelGoal__Group_11__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -6278,9 +6278,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2401:1: ( '}' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2402:1: '}'
             {
-             before(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_11_4()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Goal__Group_11__4__Impl4853); 
-             after(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_11_4()); 
+             before(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_11_4()); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__ModelGoal__Group_11__4__Impl4853); 
+             after(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_11_4()); 
 
             }
 
@@ -6299,25 +6299,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11__4__Impl
+    // $ANTLR end rule__ModelGoal__Group_11__4__Impl
 
 
-    // $ANTLR start rule__Goal__Group_11_3__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2425:1: rule__Goal__Group_11_3__0 : rule__Goal__Group_11_3__0__Impl rule__Goal__Group_11_3__1 ;
-    public final void rule__Goal__Group_11_3__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11_3__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2425:1: rule__ModelGoal__Group_11_3__0 : rule__ModelGoal__Group_11_3__0__Impl rule__ModelGoal__Group_11_3__1 ;
+    public final void rule__ModelGoal__Group_11_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2429:1: ( rule__Goal__Group_11_3__0__Impl rule__Goal__Group_11_3__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2430:2: rule__Goal__Group_11_3__0__Impl rule__Goal__Group_11_3__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2429:1: ( rule__ModelGoal__Group_11_3__0__Impl rule__ModelGoal__Group_11_3__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2430:2: rule__ModelGoal__Group_11_3__0__Impl rule__ModelGoal__Group_11_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11_3__0__Impl_in_rule__Goal__Group_11_3__04894);
-            rule__Goal__Group_11_3__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11_3__0__Impl_in_rule__ModelGoal__Group_11_3__04894);
+            rule__ModelGoal__Group_11_3__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11_3__1_in_rule__Goal__Group_11_3__04897);
-            rule__Goal__Group_11_3__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11_3__1_in_rule__ModelGoal__Group_11_3__04897);
+            rule__ModelGoal__Group_11_3__1();
             _fsp--;
 
 
@@ -6335,12 +6335,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11_3__0
+    // $ANTLR end rule__ModelGoal__Group_11_3__0
 
 
-    // $ANTLR start rule__Goal__Group_11_3__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2437:1: rule__Goal__Group_11_3__0__Impl : ( ',' ) ;
-    public final void rule__Goal__Group_11_3__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11_3__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2437:1: rule__ModelGoal__Group_11_3__0__Impl : ( ',' ) ;
+    public final void rule__ModelGoal__Group_11_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -6351,9 +6351,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2442:1: ( ',' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2443:1: ','
             {
-             before(grammarAccess.getGoalAccess().getCommaKeyword_11_3_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Goal__Group_11_3__0__Impl4925); 
-             after(grammarAccess.getGoalAccess().getCommaKeyword_11_3_0()); 
+             before(grammarAccess.getModelGoalAccess().getCommaKeyword_11_3_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__ModelGoal__Group_11_3__0__Impl4925); 
+             after(grammarAccess.getModelGoalAccess().getCommaKeyword_11_3_0()); 
 
             }
 
@@ -6372,21 +6372,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11_3__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_11_3__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_11_3__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2456:1: rule__Goal__Group_11_3__1 : rule__Goal__Group_11_3__1__Impl ;
-    public final void rule__Goal__Group_11_3__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11_3__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2456:1: rule__ModelGoal__Group_11_3__1 : rule__ModelGoal__Group_11_3__1__Impl ;
+    public final void rule__ModelGoal__Group_11_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2460:1: ( rule__Goal__Group_11_3__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2461:2: rule__Goal__Group_11_3__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2460:1: ( rule__ModelGoal__Group_11_3__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2461:2: rule__ModelGoal__Group_11_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_11_3__1__Impl_in_rule__Goal__Group_11_3__14956);
-            rule__Goal__Group_11_3__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_11_3__1__Impl_in_rule__ModelGoal__Group_11_3__14956);
+            rule__ModelGoal__Group_11_3__1__Impl();
             _fsp--;
 
 
@@ -6404,34 +6404,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11_3__1
+    // $ANTLR end rule__ModelGoal__Group_11_3__1
 
 
-    // $ANTLR start rule__Goal__Group_11_3__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2467:1: rule__Goal__Group_11_3__1__Impl : ( ( rule__Goal__GoalContextsAssignment_11_3_1 ) ) ;
-    public final void rule__Goal__Group_11_3__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_11_3__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2467:1: rule__ModelGoal__Group_11_3__1__Impl : ( ( rule__ModelGoal__GoalContextsAssignment_11_3_1 ) ) ;
+    public final void rule__ModelGoal__Group_11_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2471:1: ( ( ( rule__Goal__GoalContextsAssignment_11_3_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2472:1: ( ( rule__Goal__GoalContextsAssignment_11_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2471:1: ( ( ( rule__ModelGoal__GoalContextsAssignment_11_3_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2472:1: ( ( rule__ModelGoal__GoalContextsAssignment_11_3_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2472:1: ( ( rule__Goal__GoalContextsAssignment_11_3_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2473:1: ( rule__Goal__GoalContextsAssignment_11_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2472:1: ( ( rule__ModelGoal__GoalContextsAssignment_11_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2473:1: ( rule__ModelGoal__GoalContextsAssignment_11_3_1 )
             {
-             before(grammarAccess.getGoalAccess().getGoalContextsAssignment_11_3_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2474:1: ( rule__Goal__GoalContextsAssignment_11_3_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2474:2: rule__Goal__GoalContextsAssignment_11_3_1
+             before(grammarAccess.getModelGoalAccess().getGoalContextsAssignment_11_3_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2474:1: ( rule__ModelGoal__GoalContextsAssignment_11_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2474:2: rule__ModelGoal__GoalContextsAssignment_11_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__GoalContextsAssignment_11_3_1_in_rule__Goal__Group_11_3__1__Impl4983);
-            rule__Goal__GoalContextsAssignment_11_3_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__GoalContextsAssignment_11_3_1_in_rule__ModelGoal__Group_11_3__1__Impl4983);
+            rule__ModelGoal__GoalContextsAssignment_11_3_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getGoalContextsAssignment_11_3_1()); 
+             after(grammarAccess.getModelGoalAccess().getGoalContextsAssignment_11_3_1()); 
 
             }
 
@@ -6450,25 +6450,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_11_3__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_11_3__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_12__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2488:1: rule__Goal__Group_12__0 : rule__Goal__Group_12__0__Impl rule__Goal__Group_12__1 ;
-    public final void rule__Goal__Group_12__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2488:1: rule__ModelGoal__Group_12__0 : rule__ModelGoal__Group_12__0__Impl rule__ModelGoal__Group_12__1 ;
+    public final void rule__ModelGoal__Group_12__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2492:1: ( rule__Goal__Group_12__0__Impl rule__Goal__Group_12__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2493:2: rule__Goal__Group_12__0__Impl rule__Goal__Group_12__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2492:1: ( rule__ModelGoal__Group_12__0__Impl rule__ModelGoal__Group_12__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2493:2: rule__ModelGoal__Group_12__0__Impl rule__ModelGoal__Group_12__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__0__Impl_in_rule__Goal__Group_12__05017);
-            rule__Goal__Group_12__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__0__Impl_in_rule__ModelGoal__Group_12__05017);
+            rule__ModelGoal__Group_12__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__1_in_rule__Goal__Group_12__05020);
-            rule__Goal__Group_12__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__1_in_rule__ModelGoal__Group_12__05020);
+            rule__ModelGoal__Group_12__1();
             _fsp--;
 
 
@@ -6486,12 +6486,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__0
+    // $ANTLR end rule__ModelGoal__Group_12__0
 
 
-    // $ANTLR start rule__Goal__Group_12__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2500:1: rule__Goal__Group_12__0__Impl : ( 'assumptions' ) ;
-    public final void rule__Goal__Group_12__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2500:1: rule__ModelGoal__Group_12__0__Impl : ( 'assumptions' ) ;
+    public final void rule__ModelGoal__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -6502,9 +6502,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2505:1: ( 'assumptions' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2506:1: 'assumptions'
             {
-             before(grammarAccess.getGoalAccess().getAssumptionsKeyword_12_0()); 
-            match(input,25,FollowSets000.FOLLOW_25_in_rule__Goal__Group_12__0__Impl5048); 
-             after(grammarAccess.getGoalAccess().getAssumptionsKeyword_12_0()); 
+             before(grammarAccess.getModelGoalAccess().getAssumptionsKeyword_12_0()); 
+            match(input,25,FollowSets000.FOLLOW_25_in_rule__ModelGoal__Group_12__0__Impl5048); 
+             after(grammarAccess.getModelGoalAccess().getAssumptionsKeyword_12_0()); 
 
             }
 
@@ -6523,25 +6523,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_12__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_12__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2519:1: rule__Goal__Group_12__1 : rule__Goal__Group_12__1__Impl rule__Goal__Group_12__2 ;
-    public final void rule__Goal__Group_12__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2519:1: rule__ModelGoal__Group_12__1 : rule__ModelGoal__Group_12__1__Impl rule__ModelGoal__Group_12__2 ;
+    public final void rule__ModelGoal__Group_12__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2523:1: ( rule__Goal__Group_12__1__Impl rule__Goal__Group_12__2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2524:2: rule__Goal__Group_12__1__Impl rule__Goal__Group_12__2
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2523:1: ( rule__ModelGoal__Group_12__1__Impl rule__ModelGoal__Group_12__2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2524:2: rule__ModelGoal__Group_12__1__Impl rule__ModelGoal__Group_12__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__1__Impl_in_rule__Goal__Group_12__15079);
-            rule__Goal__Group_12__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__1__Impl_in_rule__ModelGoal__Group_12__15079);
+            rule__ModelGoal__Group_12__1__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__2_in_rule__Goal__Group_12__15082);
-            rule__Goal__Group_12__2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__2_in_rule__ModelGoal__Group_12__15082);
+            rule__ModelGoal__Group_12__2();
             _fsp--;
 
 
@@ -6559,12 +6559,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__1
+    // $ANTLR end rule__ModelGoal__Group_12__1
 
 
-    // $ANTLR start rule__Goal__Group_12__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2531:1: rule__Goal__Group_12__1__Impl : ( '{' ) ;
-    public final void rule__Goal__Group_12__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2531:1: rule__ModelGoal__Group_12__1__Impl : ( '{' ) ;
+    public final void rule__ModelGoal__Group_12__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -6575,9 +6575,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2536:1: ( '{' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2537:1: '{'
             {
-             before(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_12_1()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Goal__Group_12__1__Impl5110); 
-             after(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_12_1()); 
+             before(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_12_1()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__ModelGoal__Group_12__1__Impl5110); 
+             after(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_12_1()); 
 
             }
 
@@ -6596,25 +6596,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_12__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_12__2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2550:1: rule__Goal__Group_12__2 : rule__Goal__Group_12__2__Impl rule__Goal__Group_12__3 ;
-    public final void rule__Goal__Group_12__2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2550:1: rule__ModelGoal__Group_12__2 : rule__ModelGoal__Group_12__2__Impl rule__ModelGoal__Group_12__3 ;
+    public final void rule__ModelGoal__Group_12__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2554:1: ( rule__Goal__Group_12__2__Impl rule__Goal__Group_12__3 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2555:2: rule__Goal__Group_12__2__Impl rule__Goal__Group_12__3
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2554:1: ( rule__ModelGoal__Group_12__2__Impl rule__ModelGoal__Group_12__3 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2555:2: rule__ModelGoal__Group_12__2__Impl rule__ModelGoal__Group_12__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__2__Impl_in_rule__Goal__Group_12__25141);
-            rule__Goal__Group_12__2__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__2__Impl_in_rule__ModelGoal__Group_12__25141);
+            rule__ModelGoal__Group_12__2__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__3_in_rule__Goal__Group_12__25144);
-            rule__Goal__Group_12__3();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__3_in_rule__ModelGoal__Group_12__25144);
+            rule__ModelGoal__Group_12__3();
             _fsp--;
 
 
@@ -6632,34 +6632,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__2
+    // $ANTLR end rule__ModelGoal__Group_12__2
 
 
-    // $ANTLR start rule__Goal__Group_12__2__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2562:1: rule__Goal__Group_12__2__Impl : ( ( rule__Goal__AssumptionsAssignment_12_2 ) ) ;
-    public final void rule__Goal__Group_12__2__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__2__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2562:1: rule__ModelGoal__Group_12__2__Impl : ( ( rule__ModelGoal__AssumptionsAssignment_12_2 ) ) ;
+    public final void rule__ModelGoal__Group_12__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2566:1: ( ( ( rule__Goal__AssumptionsAssignment_12_2 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2567:1: ( ( rule__Goal__AssumptionsAssignment_12_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2566:1: ( ( ( rule__ModelGoal__AssumptionsAssignment_12_2 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2567:1: ( ( rule__ModelGoal__AssumptionsAssignment_12_2 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2567:1: ( ( rule__Goal__AssumptionsAssignment_12_2 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2568:1: ( rule__Goal__AssumptionsAssignment_12_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2567:1: ( ( rule__ModelGoal__AssumptionsAssignment_12_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2568:1: ( rule__ModelGoal__AssumptionsAssignment_12_2 )
             {
-             before(grammarAccess.getGoalAccess().getAssumptionsAssignment_12_2()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2569:1: ( rule__Goal__AssumptionsAssignment_12_2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2569:2: rule__Goal__AssumptionsAssignment_12_2
+             before(grammarAccess.getModelGoalAccess().getAssumptionsAssignment_12_2()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2569:1: ( rule__ModelGoal__AssumptionsAssignment_12_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2569:2: rule__ModelGoal__AssumptionsAssignment_12_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__AssumptionsAssignment_12_2_in_rule__Goal__Group_12__2__Impl5171);
-            rule__Goal__AssumptionsAssignment_12_2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__AssumptionsAssignment_12_2_in_rule__ModelGoal__Group_12__2__Impl5171);
+            rule__ModelGoal__AssumptionsAssignment_12_2();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getAssumptionsAssignment_12_2()); 
+             after(grammarAccess.getModelGoalAccess().getAssumptionsAssignment_12_2()); 
 
             }
 
@@ -6678,25 +6678,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__2__Impl
+    // $ANTLR end rule__ModelGoal__Group_12__2__Impl
 
 
-    // $ANTLR start rule__Goal__Group_12__3
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2579:1: rule__Goal__Group_12__3 : rule__Goal__Group_12__3__Impl rule__Goal__Group_12__4 ;
-    public final void rule__Goal__Group_12__3() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__3
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2579:1: rule__ModelGoal__Group_12__3 : rule__ModelGoal__Group_12__3__Impl rule__ModelGoal__Group_12__4 ;
+    public final void rule__ModelGoal__Group_12__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2583:1: ( rule__Goal__Group_12__3__Impl rule__Goal__Group_12__4 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2584:2: rule__Goal__Group_12__3__Impl rule__Goal__Group_12__4
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2583:1: ( rule__ModelGoal__Group_12__3__Impl rule__ModelGoal__Group_12__4 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2584:2: rule__ModelGoal__Group_12__3__Impl rule__ModelGoal__Group_12__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__3__Impl_in_rule__Goal__Group_12__35201);
-            rule__Goal__Group_12__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__3__Impl_in_rule__ModelGoal__Group_12__35201);
+            rule__ModelGoal__Group_12__3__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__4_in_rule__Goal__Group_12__35204);
-            rule__Goal__Group_12__4();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__4_in_rule__ModelGoal__Group_12__35204);
+            rule__ModelGoal__Group_12__4();
             _fsp--;
 
 
@@ -6714,24 +6714,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__3
+    // $ANTLR end rule__ModelGoal__Group_12__3
 
 
-    // $ANTLR start rule__Goal__Group_12__3__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2591:1: rule__Goal__Group_12__3__Impl : ( ( rule__Goal__Group_12_3__0 )* ) ;
-    public final void rule__Goal__Group_12__3__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__3__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2591:1: rule__ModelGoal__Group_12__3__Impl : ( ( rule__ModelGoal__Group_12_3__0 )* ) ;
+    public final void rule__ModelGoal__Group_12__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2595:1: ( ( ( rule__Goal__Group_12_3__0 )* ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2596:1: ( ( rule__Goal__Group_12_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2595:1: ( ( ( rule__ModelGoal__Group_12_3__0 )* ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2596:1: ( ( rule__ModelGoal__Group_12_3__0 )* )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2596:1: ( ( rule__Goal__Group_12_3__0 )* )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2597:1: ( rule__Goal__Group_12_3__0 )*
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2596:1: ( ( rule__ModelGoal__Group_12_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2597:1: ( rule__ModelGoal__Group_12_3__0 )*
             {
-             before(grammarAccess.getGoalAccess().getGroup_12_3()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2598:1: ( rule__Goal__Group_12_3__0 )*
+             before(grammarAccess.getModelGoalAccess().getGroup_12_3()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2598:1: ( rule__ModelGoal__Group_12_3__0 )*
             loop20:
             do {
                 int alt20=2;
@@ -6744,10 +6744,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt20) {
             	case 1 :
-            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2598:2: rule__Goal__Group_12_3__0
+            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2598:2: rule__ModelGoal__Group_12_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12_3__0_in_rule__Goal__Group_12__3__Impl5231);
-            	    rule__Goal__Group_12_3__0();
+            	    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12_3__0_in_rule__ModelGoal__Group_12__3__Impl5231);
+            	    rule__ModelGoal__Group_12_3__0();
             	    _fsp--;
 
 
@@ -6759,7 +6759,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getGoalAccess().getGroup_12_3()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_12_3()); 
 
             }
 
@@ -6778,21 +6778,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__3__Impl
+    // $ANTLR end rule__ModelGoal__Group_12__3__Impl
 
 
-    // $ANTLR start rule__Goal__Group_12__4
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2608:1: rule__Goal__Group_12__4 : rule__Goal__Group_12__4__Impl ;
-    public final void rule__Goal__Group_12__4() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__4
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2608:1: rule__ModelGoal__Group_12__4 : rule__ModelGoal__Group_12__4__Impl ;
+    public final void rule__ModelGoal__Group_12__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2612:1: ( rule__Goal__Group_12__4__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2613:2: rule__Goal__Group_12__4__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2612:1: ( rule__ModelGoal__Group_12__4__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2613:2: rule__ModelGoal__Group_12__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12__4__Impl_in_rule__Goal__Group_12__45262);
-            rule__Goal__Group_12__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12__4__Impl_in_rule__ModelGoal__Group_12__45262);
+            rule__ModelGoal__Group_12__4__Impl();
             _fsp--;
 
 
@@ -6810,12 +6810,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__4
+    // $ANTLR end rule__ModelGoal__Group_12__4
 
 
-    // $ANTLR start rule__Goal__Group_12__4__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2619:1: rule__Goal__Group_12__4__Impl : ( '}' ) ;
-    public final void rule__Goal__Group_12__4__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12__4__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2619:1: rule__ModelGoal__Group_12__4__Impl : ( '}' ) ;
+    public final void rule__ModelGoal__Group_12__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -6826,9 +6826,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2624:1: ( '}' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2625:1: '}'
             {
-             before(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_12_4()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Goal__Group_12__4__Impl5290); 
-             after(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_12_4()); 
+             before(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_12_4()); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__ModelGoal__Group_12__4__Impl5290); 
+             after(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_12_4()); 
 
             }
 
@@ -6847,25 +6847,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12__4__Impl
+    // $ANTLR end rule__ModelGoal__Group_12__4__Impl
 
 
-    // $ANTLR start rule__Goal__Group_12_3__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2648:1: rule__Goal__Group_12_3__0 : rule__Goal__Group_12_3__0__Impl rule__Goal__Group_12_3__1 ;
-    public final void rule__Goal__Group_12_3__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12_3__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2648:1: rule__ModelGoal__Group_12_3__0 : rule__ModelGoal__Group_12_3__0__Impl rule__ModelGoal__Group_12_3__1 ;
+    public final void rule__ModelGoal__Group_12_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2652:1: ( rule__Goal__Group_12_3__0__Impl rule__Goal__Group_12_3__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2653:2: rule__Goal__Group_12_3__0__Impl rule__Goal__Group_12_3__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2652:1: ( rule__ModelGoal__Group_12_3__0__Impl rule__ModelGoal__Group_12_3__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2653:2: rule__ModelGoal__Group_12_3__0__Impl rule__ModelGoal__Group_12_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12_3__0__Impl_in_rule__Goal__Group_12_3__05331);
-            rule__Goal__Group_12_3__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12_3__0__Impl_in_rule__ModelGoal__Group_12_3__05331);
+            rule__ModelGoal__Group_12_3__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12_3__1_in_rule__Goal__Group_12_3__05334);
-            rule__Goal__Group_12_3__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12_3__1_in_rule__ModelGoal__Group_12_3__05334);
+            rule__ModelGoal__Group_12_3__1();
             _fsp--;
 
 
@@ -6883,12 +6883,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12_3__0
+    // $ANTLR end rule__ModelGoal__Group_12_3__0
 
 
-    // $ANTLR start rule__Goal__Group_12_3__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2660:1: rule__Goal__Group_12_3__0__Impl : ( ',' ) ;
-    public final void rule__Goal__Group_12_3__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12_3__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2660:1: rule__ModelGoal__Group_12_3__0__Impl : ( ',' ) ;
+    public final void rule__ModelGoal__Group_12_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -6899,9 +6899,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2665:1: ( ',' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2666:1: ','
             {
-             before(grammarAccess.getGoalAccess().getCommaKeyword_12_3_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Goal__Group_12_3__0__Impl5362); 
-             after(grammarAccess.getGoalAccess().getCommaKeyword_12_3_0()); 
+             before(grammarAccess.getModelGoalAccess().getCommaKeyword_12_3_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__ModelGoal__Group_12_3__0__Impl5362); 
+             after(grammarAccess.getModelGoalAccess().getCommaKeyword_12_3_0()); 
 
             }
 
@@ -6920,21 +6920,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12_3__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_12_3__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_12_3__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2679:1: rule__Goal__Group_12_3__1 : rule__Goal__Group_12_3__1__Impl ;
-    public final void rule__Goal__Group_12_3__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12_3__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2679:1: rule__ModelGoal__Group_12_3__1 : rule__ModelGoal__Group_12_3__1__Impl ;
+    public final void rule__ModelGoal__Group_12_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2683:1: ( rule__Goal__Group_12_3__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2684:2: rule__Goal__Group_12_3__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2683:1: ( rule__ModelGoal__Group_12_3__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2684:2: rule__ModelGoal__Group_12_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_12_3__1__Impl_in_rule__Goal__Group_12_3__15393);
-            rule__Goal__Group_12_3__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_12_3__1__Impl_in_rule__ModelGoal__Group_12_3__15393);
+            rule__ModelGoal__Group_12_3__1__Impl();
             _fsp--;
 
 
@@ -6952,34 +6952,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12_3__1
+    // $ANTLR end rule__ModelGoal__Group_12_3__1
 
 
-    // $ANTLR start rule__Goal__Group_12_3__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2690:1: rule__Goal__Group_12_3__1__Impl : ( ( rule__Goal__AssumptionsAssignment_12_3_1 ) ) ;
-    public final void rule__Goal__Group_12_3__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_12_3__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2690:1: rule__ModelGoal__Group_12_3__1__Impl : ( ( rule__ModelGoal__AssumptionsAssignment_12_3_1 ) ) ;
+    public final void rule__ModelGoal__Group_12_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2694:1: ( ( ( rule__Goal__AssumptionsAssignment_12_3_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2695:1: ( ( rule__Goal__AssumptionsAssignment_12_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2694:1: ( ( ( rule__ModelGoal__AssumptionsAssignment_12_3_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2695:1: ( ( rule__ModelGoal__AssumptionsAssignment_12_3_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2695:1: ( ( rule__Goal__AssumptionsAssignment_12_3_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2696:1: ( rule__Goal__AssumptionsAssignment_12_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2695:1: ( ( rule__ModelGoal__AssumptionsAssignment_12_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2696:1: ( rule__ModelGoal__AssumptionsAssignment_12_3_1 )
             {
-             before(grammarAccess.getGoalAccess().getAssumptionsAssignment_12_3_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2697:1: ( rule__Goal__AssumptionsAssignment_12_3_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2697:2: rule__Goal__AssumptionsAssignment_12_3_1
+             before(grammarAccess.getModelGoalAccess().getAssumptionsAssignment_12_3_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2697:1: ( rule__ModelGoal__AssumptionsAssignment_12_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2697:2: rule__ModelGoal__AssumptionsAssignment_12_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__AssumptionsAssignment_12_3_1_in_rule__Goal__Group_12_3__1__Impl5420);
-            rule__Goal__AssumptionsAssignment_12_3_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__AssumptionsAssignment_12_3_1_in_rule__ModelGoal__Group_12_3__1__Impl5420);
+            rule__ModelGoal__AssumptionsAssignment_12_3_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getAssumptionsAssignment_12_3_1()); 
+             after(grammarAccess.getModelGoalAccess().getAssumptionsAssignment_12_3_1()); 
 
             }
 
@@ -6998,25 +6998,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_12_3__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_12_3__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_13__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2711:1: rule__Goal__Group_13__0 : rule__Goal__Group_13__0__Impl rule__Goal__Group_13__1 ;
-    public final void rule__Goal__Group_13__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2711:1: rule__ModelGoal__Group_13__0 : rule__ModelGoal__Group_13__0__Impl rule__ModelGoal__Group_13__1 ;
+    public final void rule__ModelGoal__Group_13__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2715:1: ( rule__Goal__Group_13__0__Impl rule__Goal__Group_13__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2716:2: rule__Goal__Group_13__0__Impl rule__Goal__Group_13__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2715:1: ( rule__ModelGoal__Group_13__0__Impl rule__ModelGoal__Group_13__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2716:2: rule__ModelGoal__Group_13__0__Impl rule__ModelGoal__Group_13__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__0__Impl_in_rule__Goal__Group_13__05454);
-            rule__Goal__Group_13__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__0__Impl_in_rule__ModelGoal__Group_13__05454);
+            rule__ModelGoal__Group_13__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__1_in_rule__Goal__Group_13__05457);
-            rule__Goal__Group_13__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__1_in_rule__ModelGoal__Group_13__05457);
+            rule__ModelGoal__Group_13__1();
             _fsp--;
 
 
@@ -7034,12 +7034,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__0
+    // $ANTLR end rule__ModelGoal__Group_13__0
 
 
-    // $ANTLR start rule__Goal__Group_13__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2723:1: rule__Goal__Group_13__0__Impl : ( 'goalSolutions' ) ;
-    public final void rule__Goal__Group_13__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2723:1: rule__ModelGoal__Group_13__0__Impl : ( 'goalSolutions' ) ;
+    public final void rule__ModelGoal__Group_13__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7050,9 +7050,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2728:1: ( 'goalSolutions' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2729:1: 'goalSolutions'
             {
-             before(grammarAccess.getGoalAccess().getGoalSolutionsKeyword_13_0()); 
-            match(input,26,FollowSets000.FOLLOW_26_in_rule__Goal__Group_13__0__Impl5485); 
-             after(grammarAccess.getGoalAccess().getGoalSolutionsKeyword_13_0()); 
+             before(grammarAccess.getModelGoalAccess().getGoalSolutionsKeyword_13_0()); 
+            match(input,26,FollowSets000.FOLLOW_26_in_rule__ModelGoal__Group_13__0__Impl5485); 
+             after(grammarAccess.getModelGoalAccess().getGoalSolutionsKeyword_13_0()); 
 
             }
 
@@ -7071,25 +7071,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_13__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_13__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2742:1: rule__Goal__Group_13__1 : rule__Goal__Group_13__1__Impl rule__Goal__Group_13__2 ;
-    public final void rule__Goal__Group_13__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2742:1: rule__ModelGoal__Group_13__1 : rule__ModelGoal__Group_13__1__Impl rule__ModelGoal__Group_13__2 ;
+    public final void rule__ModelGoal__Group_13__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2746:1: ( rule__Goal__Group_13__1__Impl rule__Goal__Group_13__2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2747:2: rule__Goal__Group_13__1__Impl rule__Goal__Group_13__2
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2746:1: ( rule__ModelGoal__Group_13__1__Impl rule__ModelGoal__Group_13__2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2747:2: rule__ModelGoal__Group_13__1__Impl rule__ModelGoal__Group_13__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__1__Impl_in_rule__Goal__Group_13__15516);
-            rule__Goal__Group_13__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__1__Impl_in_rule__ModelGoal__Group_13__15516);
+            rule__ModelGoal__Group_13__1__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__2_in_rule__Goal__Group_13__15519);
-            rule__Goal__Group_13__2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__2_in_rule__ModelGoal__Group_13__15519);
+            rule__ModelGoal__Group_13__2();
             _fsp--;
 
 
@@ -7107,12 +7107,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__1
+    // $ANTLR end rule__ModelGoal__Group_13__1
 
 
-    // $ANTLR start rule__Goal__Group_13__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2754:1: rule__Goal__Group_13__1__Impl : ( '{' ) ;
-    public final void rule__Goal__Group_13__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2754:1: rule__ModelGoal__Group_13__1__Impl : ( '{' ) ;
+    public final void rule__ModelGoal__Group_13__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7123,9 +7123,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2759:1: ( '{' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2760:1: '{'
             {
-             before(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_13_1()); 
-            match(input,14,FollowSets000.FOLLOW_14_in_rule__Goal__Group_13__1__Impl5547); 
-             after(grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_13_1()); 
+             before(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_13_1()); 
+            match(input,14,FollowSets000.FOLLOW_14_in_rule__ModelGoal__Group_13__1__Impl5547); 
+             after(grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_13_1()); 
 
             }
 
@@ -7144,25 +7144,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_13__1__Impl
 
 
-    // $ANTLR start rule__Goal__Group_13__2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2773:1: rule__Goal__Group_13__2 : rule__Goal__Group_13__2__Impl rule__Goal__Group_13__3 ;
-    public final void rule__Goal__Group_13__2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2773:1: rule__ModelGoal__Group_13__2 : rule__ModelGoal__Group_13__2__Impl rule__ModelGoal__Group_13__3 ;
+    public final void rule__ModelGoal__Group_13__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2777:1: ( rule__Goal__Group_13__2__Impl rule__Goal__Group_13__3 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2778:2: rule__Goal__Group_13__2__Impl rule__Goal__Group_13__3
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2777:1: ( rule__ModelGoal__Group_13__2__Impl rule__ModelGoal__Group_13__3 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2778:2: rule__ModelGoal__Group_13__2__Impl rule__ModelGoal__Group_13__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__2__Impl_in_rule__Goal__Group_13__25578);
-            rule__Goal__Group_13__2__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__2__Impl_in_rule__ModelGoal__Group_13__25578);
+            rule__ModelGoal__Group_13__2__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__3_in_rule__Goal__Group_13__25581);
-            rule__Goal__Group_13__3();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__3_in_rule__ModelGoal__Group_13__25581);
+            rule__ModelGoal__Group_13__3();
             _fsp--;
 
 
@@ -7180,34 +7180,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__2
+    // $ANTLR end rule__ModelGoal__Group_13__2
 
 
-    // $ANTLR start rule__Goal__Group_13__2__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2785:1: rule__Goal__Group_13__2__Impl : ( ( rule__Goal__GoalSolutionsAssignment_13_2 ) ) ;
-    public final void rule__Goal__Group_13__2__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__2__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2785:1: rule__ModelGoal__Group_13__2__Impl : ( ( rule__ModelGoal__GoalSolutionsAssignment_13_2 ) ) ;
+    public final void rule__ModelGoal__Group_13__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2789:1: ( ( ( rule__Goal__GoalSolutionsAssignment_13_2 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2790:1: ( ( rule__Goal__GoalSolutionsAssignment_13_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2789:1: ( ( ( rule__ModelGoal__GoalSolutionsAssignment_13_2 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2790:1: ( ( rule__ModelGoal__GoalSolutionsAssignment_13_2 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2790:1: ( ( rule__Goal__GoalSolutionsAssignment_13_2 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2791:1: ( rule__Goal__GoalSolutionsAssignment_13_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2790:1: ( ( rule__ModelGoal__GoalSolutionsAssignment_13_2 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2791:1: ( rule__ModelGoal__GoalSolutionsAssignment_13_2 )
             {
-             before(grammarAccess.getGoalAccess().getGoalSolutionsAssignment_13_2()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2792:1: ( rule__Goal__GoalSolutionsAssignment_13_2 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2792:2: rule__Goal__GoalSolutionsAssignment_13_2
+             before(grammarAccess.getModelGoalAccess().getGoalSolutionsAssignment_13_2()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2792:1: ( rule__ModelGoal__GoalSolutionsAssignment_13_2 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2792:2: rule__ModelGoal__GoalSolutionsAssignment_13_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__GoalSolutionsAssignment_13_2_in_rule__Goal__Group_13__2__Impl5608);
-            rule__Goal__GoalSolutionsAssignment_13_2();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__GoalSolutionsAssignment_13_2_in_rule__ModelGoal__Group_13__2__Impl5608);
+            rule__ModelGoal__GoalSolutionsAssignment_13_2();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getGoalSolutionsAssignment_13_2()); 
+             after(grammarAccess.getModelGoalAccess().getGoalSolutionsAssignment_13_2()); 
 
             }
 
@@ -7226,25 +7226,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__2__Impl
+    // $ANTLR end rule__ModelGoal__Group_13__2__Impl
 
 
-    // $ANTLR start rule__Goal__Group_13__3
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2802:1: rule__Goal__Group_13__3 : rule__Goal__Group_13__3__Impl rule__Goal__Group_13__4 ;
-    public final void rule__Goal__Group_13__3() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__3
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2802:1: rule__ModelGoal__Group_13__3 : rule__ModelGoal__Group_13__3__Impl rule__ModelGoal__Group_13__4 ;
+    public final void rule__ModelGoal__Group_13__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2806:1: ( rule__Goal__Group_13__3__Impl rule__Goal__Group_13__4 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2807:2: rule__Goal__Group_13__3__Impl rule__Goal__Group_13__4
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2806:1: ( rule__ModelGoal__Group_13__3__Impl rule__ModelGoal__Group_13__4 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2807:2: rule__ModelGoal__Group_13__3__Impl rule__ModelGoal__Group_13__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__3__Impl_in_rule__Goal__Group_13__35638);
-            rule__Goal__Group_13__3__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__3__Impl_in_rule__ModelGoal__Group_13__35638);
+            rule__ModelGoal__Group_13__3__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__4_in_rule__Goal__Group_13__35641);
-            rule__Goal__Group_13__4();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__4_in_rule__ModelGoal__Group_13__35641);
+            rule__ModelGoal__Group_13__4();
             _fsp--;
 
 
@@ -7262,24 +7262,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__3
+    // $ANTLR end rule__ModelGoal__Group_13__3
 
 
-    // $ANTLR start rule__Goal__Group_13__3__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2814:1: rule__Goal__Group_13__3__Impl : ( ( rule__Goal__Group_13_3__0 )* ) ;
-    public final void rule__Goal__Group_13__3__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__3__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2814:1: rule__ModelGoal__Group_13__3__Impl : ( ( rule__ModelGoal__Group_13_3__0 )* ) ;
+    public final void rule__ModelGoal__Group_13__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2818:1: ( ( ( rule__Goal__Group_13_3__0 )* ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2819:1: ( ( rule__Goal__Group_13_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2818:1: ( ( ( rule__ModelGoal__Group_13_3__0 )* ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2819:1: ( ( rule__ModelGoal__Group_13_3__0 )* )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2819:1: ( ( rule__Goal__Group_13_3__0 )* )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2820:1: ( rule__Goal__Group_13_3__0 )*
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2819:1: ( ( rule__ModelGoal__Group_13_3__0 )* )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2820:1: ( rule__ModelGoal__Group_13_3__0 )*
             {
-             before(grammarAccess.getGoalAccess().getGroup_13_3()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2821:1: ( rule__Goal__Group_13_3__0 )*
+             before(grammarAccess.getModelGoalAccess().getGroup_13_3()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2821:1: ( rule__ModelGoal__Group_13_3__0 )*
             loop21:
             do {
                 int alt21=2;
@@ -7292,10 +7292,10 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2821:2: rule__Goal__Group_13_3__0
+            	    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2821:2: rule__ModelGoal__Group_13_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13_3__0_in_rule__Goal__Group_13__3__Impl5668);
-            	    rule__Goal__Group_13_3__0();
+            	    pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13_3__0_in_rule__ModelGoal__Group_13__3__Impl5668);
+            	    rule__ModelGoal__Group_13_3__0();
             	    _fsp--;
 
 
@@ -7307,7 +7307,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getGoalAccess().getGroup_13_3()); 
+             after(grammarAccess.getModelGoalAccess().getGroup_13_3()); 
 
             }
 
@@ -7326,21 +7326,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__3__Impl
+    // $ANTLR end rule__ModelGoal__Group_13__3__Impl
 
 
-    // $ANTLR start rule__Goal__Group_13__4
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2831:1: rule__Goal__Group_13__4 : rule__Goal__Group_13__4__Impl ;
-    public final void rule__Goal__Group_13__4() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__4
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2831:1: rule__ModelGoal__Group_13__4 : rule__ModelGoal__Group_13__4__Impl ;
+    public final void rule__ModelGoal__Group_13__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2835:1: ( rule__Goal__Group_13__4__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2836:2: rule__Goal__Group_13__4__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2835:1: ( rule__ModelGoal__Group_13__4__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2836:2: rule__ModelGoal__Group_13__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13__4__Impl_in_rule__Goal__Group_13__45699);
-            rule__Goal__Group_13__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13__4__Impl_in_rule__ModelGoal__Group_13__45699);
+            rule__ModelGoal__Group_13__4__Impl();
             _fsp--;
 
 
@@ -7358,12 +7358,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__4
+    // $ANTLR end rule__ModelGoal__Group_13__4
 
 
-    // $ANTLR start rule__Goal__Group_13__4__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2842:1: rule__Goal__Group_13__4__Impl : ( '}' ) ;
-    public final void rule__Goal__Group_13__4__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13__4__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2842:1: rule__ModelGoal__Group_13__4__Impl : ( '}' ) ;
+    public final void rule__ModelGoal__Group_13__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7374,9 +7374,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2847:1: ( '}' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2848:1: '}'
             {
-             before(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_13_4()); 
-            match(input,15,FollowSets000.FOLLOW_15_in_rule__Goal__Group_13__4__Impl5727); 
-             after(grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_13_4()); 
+             before(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_13_4()); 
+            match(input,15,FollowSets000.FOLLOW_15_in_rule__ModelGoal__Group_13__4__Impl5727); 
+             after(grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_13_4()); 
 
             }
 
@@ -7395,25 +7395,25 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13__4__Impl
+    // $ANTLR end rule__ModelGoal__Group_13__4__Impl
 
 
-    // $ANTLR start rule__Goal__Group_13_3__0
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2871:1: rule__Goal__Group_13_3__0 : rule__Goal__Group_13_3__0__Impl rule__Goal__Group_13_3__1 ;
-    public final void rule__Goal__Group_13_3__0() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13_3__0
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2871:1: rule__ModelGoal__Group_13_3__0 : rule__ModelGoal__Group_13_3__0__Impl rule__ModelGoal__Group_13_3__1 ;
+    public final void rule__ModelGoal__Group_13_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2875:1: ( rule__Goal__Group_13_3__0__Impl rule__Goal__Group_13_3__1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2876:2: rule__Goal__Group_13_3__0__Impl rule__Goal__Group_13_3__1
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2875:1: ( rule__ModelGoal__Group_13_3__0__Impl rule__ModelGoal__Group_13_3__1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2876:2: rule__ModelGoal__Group_13_3__0__Impl rule__ModelGoal__Group_13_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13_3__0__Impl_in_rule__Goal__Group_13_3__05768);
-            rule__Goal__Group_13_3__0__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13_3__0__Impl_in_rule__ModelGoal__Group_13_3__05768);
+            rule__ModelGoal__Group_13_3__0__Impl();
             _fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13_3__1_in_rule__Goal__Group_13_3__05771);
-            rule__Goal__Group_13_3__1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13_3__1_in_rule__ModelGoal__Group_13_3__05771);
+            rule__ModelGoal__Group_13_3__1();
             _fsp--;
 
 
@@ -7431,12 +7431,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13_3__0
+    // $ANTLR end rule__ModelGoal__Group_13_3__0
 
 
-    // $ANTLR start rule__Goal__Group_13_3__0__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2883:1: rule__Goal__Group_13_3__0__Impl : ( ',' ) ;
-    public final void rule__Goal__Group_13_3__0__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13_3__0__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2883:1: rule__ModelGoal__Group_13_3__0__Impl : ( ',' ) ;
+    public final void rule__ModelGoal__Group_13_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7447,9 +7447,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2888:1: ( ',' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2889:1: ','
             {
-             before(grammarAccess.getGoalAccess().getCommaKeyword_13_3_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Goal__Group_13_3__0__Impl5799); 
-             after(grammarAccess.getGoalAccess().getCommaKeyword_13_3_0()); 
+             before(grammarAccess.getModelGoalAccess().getCommaKeyword_13_3_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__ModelGoal__Group_13_3__0__Impl5799); 
+             after(grammarAccess.getModelGoalAccess().getCommaKeyword_13_3_0()); 
 
             }
 
@@ -7468,21 +7468,21 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13_3__0__Impl
+    // $ANTLR end rule__ModelGoal__Group_13_3__0__Impl
 
 
-    // $ANTLR start rule__Goal__Group_13_3__1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2902:1: rule__Goal__Group_13_3__1 : rule__Goal__Group_13_3__1__Impl ;
-    public final void rule__Goal__Group_13_3__1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13_3__1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2902:1: rule__ModelGoal__Group_13_3__1 : rule__ModelGoal__Group_13_3__1__Impl ;
+    public final void rule__ModelGoal__Group_13_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2906:1: ( rule__Goal__Group_13_3__1__Impl )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2907:2: rule__Goal__Group_13_3__1__Impl
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2906:1: ( rule__ModelGoal__Group_13_3__1__Impl )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2907:2: rule__ModelGoal__Group_13_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__Group_13_3__1__Impl_in_rule__Goal__Group_13_3__15830);
-            rule__Goal__Group_13_3__1__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__Group_13_3__1__Impl_in_rule__ModelGoal__Group_13_3__15830);
+            rule__ModelGoal__Group_13_3__1__Impl();
             _fsp--;
 
 
@@ -7500,34 +7500,34 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13_3__1
+    // $ANTLR end rule__ModelGoal__Group_13_3__1
 
 
-    // $ANTLR start rule__Goal__Group_13_3__1__Impl
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2913:1: rule__Goal__Group_13_3__1__Impl : ( ( rule__Goal__GoalSolutionsAssignment_13_3_1 ) ) ;
-    public final void rule__Goal__Group_13_3__1__Impl() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__Group_13_3__1__Impl
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2913:1: rule__ModelGoal__Group_13_3__1__Impl : ( ( rule__ModelGoal__GoalSolutionsAssignment_13_3_1 ) ) ;
+    public final void rule__ModelGoal__Group_13_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2917:1: ( ( ( rule__Goal__GoalSolutionsAssignment_13_3_1 ) ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2918:1: ( ( rule__Goal__GoalSolutionsAssignment_13_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2917:1: ( ( ( rule__ModelGoal__GoalSolutionsAssignment_13_3_1 ) ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2918:1: ( ( rule__ModelGoal__GoalSolutionsAssignment_13_3_1 ) )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2918:1: ( ( rule__Goal__GoalSolutionsAssignment_13_3_1 ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2919:1: ( rule__Goal__GoalSolutionsAssignment_13_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2918:1: ( ( rule__ModelGoal__GoalSolutionsAssignment_13_3_1 ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2919:1: ( rule__ModelGoal__GoalSolutionsAssignment_13_3_1 )
             {
-             before(grammarAccess.getGoalAccess().getGoalSolutionsAssignment_13_3_1()); 
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2920:1: ( rule__Goal__GoalSolutionsAssignment_13_3_1 )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2920:2: rule__Goal__GoalSolutionsAssignment_13_3_1
+             before(grammarAccess.getModelGoalAccess().getGoalSolutionsAssignment_13_3_1()); 
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2920:1: ( rule__ModelGoal__GoalSolutionsAssignment_13_3_1 )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:2920:2: rule__ModelGoal__GoalSolutionsAssignment_13_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Goal__GoalSolutionsAssignment_13_3_1_in_rule__Goal__Group_13_3__1__Impl5857);
-            rule__Goal__GoalSolutionsAssignment_13_3_1();
+            pushFollow(FollowSets000.FOLLOW_rule__ModelGoal__GoalSolutionsAssignment_13_3_1_in_rule__ModelGoal__Group_13_3__1__Impl5857);
+            rule__ModelGoal__GoalSolutionsAssignment_13_3_1();
             _fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getGoalSolutionsAssignment_13_3_1()); 
+             after(grammarAccess.getModelGoalAccess().getGoalSolutionsAssignment_13_3_1()); 
 
             }
 
@@ -7546,7 +7546,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__Group_13_3__1__Impl
+    // $ANTLR end rule__ModelGoal__Group_13_3__1__Impl
 
 
     // $ANTLR start rule__TaggedValue__Group__0
@@ -56295,9 +56295,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end rule__CitationElement__Group_8_3__1__Impl
 
 
-    // $ANTLR start rule__Goal__AssumedAssignment_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22396:1: rule__Goal__AssumedAssignment_1 : ( ( 'assumed' ) ) ;
-    public final void rule__Goal__AssumedAssignment_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__AssumedAssignment_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22396:1: rule__ModelGoal__AssumedAssignment_1 : ( ( 'assumed' ) ) ;
+    public final void rule__ModelGoal__AssumedAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56308,17 +56308,17 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22401:1: ( ( 'assumed' ) )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22402:1: ( 'assumed' )
             {
-             before(grammarAccess.getGoalAccess().getAssumedAssumedKeyword_1_0()); 
+             before(grammarAccess.getModelGoalAccess().getAssumedAssumedKeyword_1_0()); 
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22403:1: ( 'assumed' )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22404:1: 'assumed'
             {
-             before(grammarAccess.getGoalAccess().getAssumedAssumedKeyword_1_0()); 
-            match(input,65,FollowSets000.FOLLOW_65_in_rule__Goal__AssumedAssignment_144161); 
-             after(grammarAccess.getGoalAccess().getAssumedAssumedKeyword_1_0()); 
+             before(grammarAccess.getModelGoalAccess().getAssumedAssumedKeyword_1_0()); 
+            match(input,65,FollowSets000.FOLLOW_65_in_rule__ModelGoal__AssumedAssignment_144161); 
+             after(grammarAccess.getModelGoalAccess().getAssumedAssumedKeyword_1_0()); 
 
             }
 
-             after(grammarAccess.getGoalAccess().getAssumedAssumedKeyword_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getAssumedAssumedKeyword_1_0()); 
 
             }
 
@@ -56337,12 +56337,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__AssumedAssignment_1
+    // $ANTLR end rule__ModelGoal__AssumedAssignment_1
 
 
-    // $ANTLR start rule__Goal__IdentifierAssignment_4_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22419:1: rule__Goal__IdentifierAssignment_4_1 : ( ruleEString ) ;
-    public final void rule__Goal__IdentifierAssignment_4_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__IdentifierAssignment_4_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22419:1: rule__ModelGoal__IdentifierAssignment_4_1 : ( ruleEString ) ;
+    public final void rule__ModelGoal__IdentifierAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56353,12 +56353,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22424:1: ( ruleEString )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22425:1: ruleEString
             {
-             before(grammarAccess.getGoalAccess().getIdentifierEStringParserRuleCall_4_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Goal__IdentifierAssignment_4_144200);
+             before(grammarAccess.getModelGoalAccess().getIdentifierEStringParserRuleCall_4_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__ModelGoal__IdentifierAssignment_4_144200);
             ruleEString();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getIdentifierEStringParserRuleCall_4_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getIdentifierEStringParserRuleCall_4_1_0()); 
 
             }
 
@@ -56377,12 +56377,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__IdentifierAssignment_4_1
+    // $ANTLR end rule__ModelGoal__IdentifierAssignment_4_1
 
 
-    // $ANTLR start rule__Goal__DescriptionAssignment_5_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22434:1: rule__Goal__DescriptionAssignment_5_1 : ( ruleEString ) ;
-    public final void rule__Goal__DescriptionAssignment_5_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__DescriptionAssignment_5_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22434:1: rule__ModelGoal__DescriptionAssignment_5_1 : ( ruleEString ) ;
+    public final void rule__ModelGoal__DescriptionAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56393,12 +56393,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22439:1: ( ruleEString )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22440:1: ruleEString
             {
-             before(grammarAccess.getGoalAccess().getDescriptionEStringParserRuleCall_5_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Goal__DescriptionAssignment_5_144231);
+             before(grammarAccess.getModelGoalAccess().getDescriptionEStringParserRuleCall_5_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__ModelGoal__DescriptionAssignment_5_144231);
             ruleEString();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getDescriptionEStringParserRuleCall_5_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getDescriptionEStringParserRuleCall_5_1_0()); 
 
             }
 
@@ -56417,12 +56417,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__DescriptionAssignment_5_1
+    // $ANTLR end rule__ModelGoal__DescriptionAssignment_5_1
 
 
-    // $ANTLR start rule__Goal__ContentAssignment_6_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22449:1: rule__Goal__ContentAssignment_6_1 : ( ruleEString ) ;
-    public final void rule__Goal__ContentAssignment_6_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__ContentAssignment_6_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22449:1: rule__ModelGoal__ContentAssignment_6_1 : ( ruleEString ) ;
+    public final void rule__ModelGoal__ContentAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56433,12 +56433,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22454:1: ( ruleEString )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22455:1: ruleEString
             {
-             before(grammarAccess.getGoalAccess().getContentEStringParserRuleCall_6_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Goal__ContentAssignment_6_144262);
+             before(grammarAccess.getModelGoalAccess().getContentEStringParserRuleCall_6_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__ModelGoal__ContentAssignment_6_144262);
             ruleEString();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getContentEStringParserRuleCall_6_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getContentEStringParserRuleCall_6_1_0()); 
 
             }
 
@@ -56457,12 +56457,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__ContentAssignment_6_1
+    // $ANTLR end rule__ModelGoal__ContentAssignment_6_1
 
 
-    // $ANTLR start rule__Goal__ToBeSupportedAssignment_7_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22464:1: rule__Goal__ToBeSupportedAssignment_7_1 : ( ruleEBoolean ) ;
-    public final void rule__Goal__ToBeSupportedAssignment_7_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__ToBeSupportedAssignment_7_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22464:1: rule__ModelGoal__ToBeSupportedAssignment_7_1 : ( ruleEBoolean ) ;
+    public final void rule__ModelGoal__ToBeSupportedAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56473,12 +56473,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22469:1: ( ruleEBoolean )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22470:1: ruleEBoolean
             {
-             before(grammarAccess.getGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_rule__Goal__ToBeSupportedAssignment_7_144293);
+             before(grammarAccess.getModelGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEBoolean_in_rule__ModelGoal__ToBeSupportedAssignment_7_144293);
             ruleEBoolean();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0()); 
 
             }
 
@@ -56497,12 +56497,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__ToBeSupportedAssignment_7_1
+    // $ANTLR end rule__ModelGoal__ToBeSupportedAssignment_7_1
 
 
-    // $ANTLR start rule__Goal__IsTaggedAssignment_8_2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22479:1: rule__Goal__IsTaggedAssignment_8_2 : ( ruleTaggedValue ) ;
-    public final void rule__Goal__IsTaggedAssignment_8_2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__IsTaggedAssignment_8_2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22479:1: rule__ModelGoal__IsTaggedAssignment_8_2 : ( ruleTaggedValue ) ;
+    public final void rule__ModelGoal__IsTaggedAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56513,12 +56513,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22484:1: ( ruleTaggedValue )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22485:1: ruleTaggedValue
             {
-             before(grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_rule__Goal__IsTaggedAssignment_8_244324);
+             before(grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_rule__ModelGoal__IsTaggedAssignment_8_244324);
             ruleTaggedValue();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0()); 
+             after(grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0()); 
 
             }
 
@@ -56537,12 +56537,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__IsTaggedAssignment_8_2
+    // $ANTLR end rule__ModelGoal__IsTaggedAssignment_8_2
 
 
-    // $ANTLR start rule__Goal__IsTaggedAssignment_8_3_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22494:1: rule__Goal__IsTaggedAssignment_8_3_1 : ( ruleTaggedValue ) ;
-    public final void rule__Goal__IsTaggedAssignment_8_3_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__IsTaggedAssignment_8_3_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22494:1: rule__ModelGoal__IsTaggedAssignment_8_3_1 : ( ruleTaggedValue ) ;
+    public final void rule__ModelGoal__IsTaggedAssignment_8_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56553,12 +56553,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22499:1: ( ruleTaggedValue )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22500:1: ruleTaggedValue
             {
-             before(grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_rule__Goal__IsTaggedAssignment_8_3_144355);
+             before(grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleTaggedValue_in_rule__ModelGoal__IsTaggedAssignment_8_3_144355);
             ruleTaggedValue();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0()); 
 
             }
 
@@ -56577,28 +56577,28 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__IsTaggedAssignment_8_3_1
+    // $ANTLR end rule__ModelGoal__IsTaggedAssignment_8_3_1
 
 
-    // $ANTLR start rule__Goal__SubGoalsAssignment_9_2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22509:1: rule__Goal__SubGoalsAssignment_9_2 : ( ruleGoal ) ;
-    public final void rule__Goal__SubGoalsAssignment_9_2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__SubGoalsAssignment_9_2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22509:1: rule__ModelGoal__SubGoalsAssignment_9_2 : ( ruleModelGoal ) ;
+    public final void rule__ModelGoal__SubGoalsAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22513:1: ( ( ruleGoal ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22514:1: ( ruleGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22513:1: ( ( ruleModelGoal ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22514:1: ( ruleModelGoal )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22514:1: ( ruleGoal )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22515:1: ruleGoal
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22514:1: ( ruleModelGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22515:1: ruleModelGoal
             {
-             before(grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleGoal_in_rule__Goal__SubGoalsAssignment_9_244386);
-            ruleGoal();
+             before(grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_rule__ModelGoal__SubGoalsAssignment_9_244386);
+            ruleModelGoal();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_2_0()); 
+             after(grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_2_0()); 
 
             }
 
@@ -56617,28 +56617,28 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__SubGoalsAssignment_9_2
+    // $ANTLR end rule__ModelGoal__SubGoalsAssignment_9_2
 
 
-    // $ANTLR start rule__Goal__SubGoalsAssignment_9_3_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22524:1: rule__Goal__SubGoalsAssignment_9_3_1 : ( ruleGoal ) ;
-    public final void rule__Goal__SubGoalsAssignment_9_3_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__SubGoalsAssignment_9_3_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22524:1: rule__ModelGoal__SubGoalsAssignment_9_3_1 : ( ruleModelGoal ) ;
+    public final void rule__ModelGoal__SubGoalsAssignment_9_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22528:1: ( ( ruleGoal ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22529:1: ( ruleGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22528:1: ( ( ruleModelGoal ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22529:1: ( ruleModelGoal )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22529:1: ( ruleGoal )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22530:1: ruleGoal
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22529:1: ( ruleModelGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22530:1: ruleModelGoal
             {
-             before(grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleGoal_in_rule__Goal__SubGoalsAssignment_9_3_144417);
-            ruleGoal();
+             before(grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_rule__ModelGoal__SubGoalsAssignment_9_3_144417);
+            ruleModelGoal();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_3_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_3_1_0()); 
 
             }
 
@@ -56657,12 +56657,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__SubGoalsAssignment_9_3_1
+    // $ANTLR end rule__ModelGoal__SubGoalsAssignment_9_3_1
 
 
-    // $ANTLR start rule__Goal__StrategiesAssignment_10_2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22539:1: rule__Goal__StrategiesAssignment_10_2 : ( ruleStrategy ) ;
-    public final void rule__Goal__StrategiesAssignment_10_2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__StrategiesAssignment_10_2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22539:1: rule__ModelGoal__StrategiesAssignment_10_2 : ( ruleStrategy ) ;
+    public final void rule__ModelGoal__StrategiesAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56673,12 +56673,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22544:1: ( ruleStrategy )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22545:1: ruleStrategy
             {
-             before(grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_rule__Goal__StrategiesAssignment_10_244448);
+             before(grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_rule__ModelGoal__StrategiesAssignment_10_244448);
             ruleStrategy();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0()); 
+             after(grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0()); 
 
             }
 
@@ -56697,12 +56697,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__StrategiesAssignment_10_2
+    // $ANTLR end rule__ModelGoal__StrategiesAssignment_10_2
 
 
-    // $ANTLR start rule__Goal__StrategiesAssignment_10_3_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22554:1: rule__Goal__StrategiesAssignment_10_3_1 : ( ruleStrategy ) ;
-    public final void rule__Goal__StrategiesAssignment_10_3_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__StrategiesAssignment_10_3_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22554:1: rule__ModelGoal__StrategiesAssignment_10_3_1 : ( ruleStrategy ) ;
+    public final void rule__ModelGoal__StrategiesAssignment_10_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56713,12 +56713,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22559:1: ( ruleStrategy )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22560:1: ruleStrategy
             {
-             before(grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_rule__Goal__StrategiesAssignment_10_3_144479);
+             before(grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleStrategy_in_rule__ModelGoal__StrategiesAssignment_10_3_144479);
             ruleStrategy();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0()); 
 
             }
 
@@ -56737,12 +56737,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__StrategiesAssignment_10_3_1
+    // $ANTLR end rule__ModelGoal__StrategiesAssignment_10_3_1
 
 
-    // $ANTLR start rule__Goal__GoalContextsAssignment_11_2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22569:1: rule__Goal__GoalContextsAssignment_11_2 : ( ruleContext ) ;
-    public final void rule__Goal__GoalContextsAssignment_11_2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__GoalContextsAssignment_11_2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22569:1: rule__ModelGoal__GoalContextsAssignment_11_2 : ( ruleContext ) ;
+    public final void rule__ModelGoal__GoalContextsAssignment_11_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56753,12 +56753,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22574:1: ( ruleContext )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22575:1: ruleContext
             {
-             before(grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleContext_in_rule__Goal__GoalContextsAssignment_11_244510);
+             before(grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleContext_in_rule__ModelGoal__GoalContextsAssignment_11_244510);
             ruleContext();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_2_0()); 
+             after(grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_2_0()); 
 
             }
 
@@ -56777,12 +56777,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__GoalContextsAssignment_11_2
+    // $ANTLR end rule__ModelGoal__GoalContextsAssignment_11_2
 
 
-    // $ANTLR start rule__Goal__GoalContextsAssignment_11_3_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22584:1: rule__Goal__GoalContextsAssignment_11_3_1 : ( ruleContext ) ;
-    public final void rule__Goal__GoalContextsAssignment_11_3_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__GoalContextsAssignment_11_3_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22584:1: rule__ModelGoal__GoalContextsAssignment_11_3_1 : ( ruleContext ) ;
+    public final void rule__ModelGoal__GoalContextsAssignment_11_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56793,12 +56793,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22589:1: ( ruleContext )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22590:1: ruleContext
             {
-             before(grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleContext_in_rule__Goal__GoalContextsAssignment_11_3_144541);
+             before(grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleContext_in_rule__ModelGoal__GoalContextsAssignment_11_3_144541);
             ruleContext();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0()); 
 
             }
 
@@ -56817,12 +56817,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__GoalContextsAssignment_11_3_1
+    // $ANTLR end rule__ModelGoal__GoalContextsAssignment_11_3_1
 
 
-    // $ANTLR start rule__Goal__AssumptionsAssignment_12_2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22599:1: rule__Goal__AssumptionsAssignment_12_2 : ( ruleAssumption ) ;
-    public final void rule__Goal__AssumptionsAssignment_12_2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__AssumptionsAssignment_12_2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22599:1: rule__ModelGoal__AssumptionsAssignment_12_2 : ( ruleAssumption ) ;
+    public final void rule__ModelGoal__AssumptionsAssignment_12_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56833,12 +56833,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22604:1: ( ruleAssumption )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22605:1: ruleAssumption
             {
-             before(grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_rule__Goal__AssumptionsAssignment_12_244572);
+             before(grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_rule__ModelGoal__AssumptionsAssignment_12_244572);
             ruleAssumption();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0()); 
+             after(grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0()); 
 
             }
 
@@ -56857,12 +56857,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__AssumptionsAssignment_12_2
+    // $ANTLR end rule__ModelGoal__AssumptionsAssignment_12_2
 
 
-    // $ANTLR start rule__Goal__AssumptionsAssignment_12_3_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22614:1: rule__Goal__AssumptionsAssignment_12_3_1 : ( ruleAssumption ) ;
-    public final void rule__Goal__AssumptionsAssignment_12_3_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__AssumptionsAssignment_12_3_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22614:1: rule__ModelGoal__AssumptionsAssignment_12_3_1 : ( ruleAssumption ) ;
+    public final void rule__ModelGoal__AssumptionsAssignment_12_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56873,12 +56873,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22619:1: ( ruleAssumption )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22620:1: ruleAssumption
             {
-             before(grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_rule__Goal__AssumptionsAssignment_12_3_144603);
+             before(grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleAssumption_in_rule__ModelGoal__AssumptionsAssignment_12_3_144603);
             ruleAssumption();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0()); 
 
             }
 
@@ -56897,12 +56897,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__AssumptionsAssignment_12_3_1
+    // $ANTLR end rule__ModelGoal__AssumptionsAssignment_12_3_1
 
 
-    // $ANTLR start rule__Goal__GoalSolutionsAssignment_13_2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22629:1: rule__Goal__GoalSolutionsAssignment_13_2 : ( ruleSolution ) ;
-    public final void rule__Goal__GoalSolutionsAssignment_13_2() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__GoalSolutionsAssignment_13_2
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22629:1: rule__ModelGoal__GoalSolutionsAssignment_13_2 : ( ruleSolution ) ;
+    public final void rule__ModelGoal__GoalSolutionsAssignment_13_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56913,12 +56913,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22634:1: ( ruleSolution )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22635:1: ruleSolution
             {
-             before(grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleSolution_in_rule__Goal__GoalSolutionsAssignment_13_244634);
+             before(grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleSolution_in_rule__ModelGoal__GoalSolutionsAssignment_13_244634);
             ruleSolution();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0()); 
+             after(grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0()); 
 
             }
 
@@ -56937,12 +56937,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__GoalSolutionsAssignment_13_2
+    // $ANTLR end rule__ModelGoal__GoalSolutionsAssignment_13_2
 
 
-    // $ANTLR start rule__Goal__GoalSolutionsAssignment_13_3_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22644:1: rule__Goal__GoalSolutionsAssignment_13_3_1 : ( ruleSolution ) ;
-    public final void rule__Goal__GoalSolutionsAssignment_13_3_1() throws RecognitionException {
+    // $ANTLR start rule__ModelGoal__GoalSolutionsAssignment_13_3_1
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22644:1: rule__ModelGoal__GoalSolutionsAssignment_13_3_1 : ( ruleSolution ) ;
+    public final void rule__ModelGoal__GoalSolutionsAssignment_13_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56953,12 +56953,12 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22649:1: ( ruleSolution )
             // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22650:1: ruleSolution
             {
-             before(grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleSolution_in_rule__Goal__GoalSolutionsAssignment_13_3_144665);
+             before(grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleSolution_in_rule__ModelGoal__GoalSolutionsAssignment_13_3_144665);
             ruleSolution();
             _fsp--;
 
-             after(grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0()); 
+             after(grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0()); 
 
             }
 
@@ -56977,7 +56977,7 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end rule__Goal__GoalSolutionsAssignment_13_3_1
+    // $ANTLR end rule__ModelGoal__GoalSolutionsAssignment_13_3_1
 
 
     // $ANTLR start rule__TaggedValue__KeyAssignment_3_1
@@ -57261,24 +57261,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Strategy__GoalsAssignment_7_2
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22764:1: rule__Strategy__GoalsAssignment_7_2 : ( ruleGoal ) ;
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22764:1: rule__Strategy__GoalsAssignment_7_2 : ( ruleModelGoal ) ;
     public final void rule__Strategy__GoalsAssignment_7_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22768:1: ( ( ruleGoal ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22769:1: ( ruleGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22768:1: ( ( ruleModelGoal ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22769:1: ( ruleModelGoal )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22769:1: ( ruleGoal )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22770:1: ruleGoal
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22769:1: ( ruleModelGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22770:1: ruleModelGoal
             {
-             before(grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleGoal_in_rule__Strategy__GoalsAssignment_7_244913);
-            ruleGoal();
+             before(grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_rule__Strategy__GoalsAssignment_7_244913);
+            ruleModelGoal();
             _fsp--;
 
-             after(grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_2_0()); 
+             after(grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_2_0()); 
 
             }
 
@@ -57301,24 +57301,24 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start rule__Strategy__GoalsAssignment_7_3_1
-    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22779:1: rule__Strategy__GoalsAssignment_7_3_1 : ( ruleGoal ) ;
+    // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22779:1: rule__Strategy__GoalsAssignment_7_3_1 : ( ruleModelGoal ) ;
     public final void rule__Strategy__GoalsAssignment_7_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22783:1: ( ( ruleGoal ) )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22784:1: ( ruleGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22783:1: ( ( ruleModelGoal ) )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22784:1: ( ruleModelGoal )
             {
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22784:1: ( ruleGoal )
-            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22785:1: ruleGoal
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22784:1: ( ruleModelGoal )
+            // ../net.certware.argument.gsn.dsl.ui/src-gen/net/certware/argument/gsn/ui/contentassist/antlr/internal/InternalGsnDsl.g:22785:1: ruleModelGoal
             {
-             before(grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleGoal_in_rule__Strategy__GoalsAssignment_7_3_144944);
-            ruleGoal();
+             before(grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleModelGoal_in_rule__Strategy__GoalsAssignment_7_3_144944);
+            ruleModelGoal();
             _fsp--;
 
-             after(grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_3_1_0()); 
+             after(grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_3_1_0()); 
 
             }
 
@@ -63330,9 +63330,9 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
 
     
     private static class FollowSets000 {
-        public static final BitSet FOLLOW_ruleGoal_in_entryRuleGoal61 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleGoal68 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__0_in_ruleGoal94 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_entryRuleModelGoal61 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleModelGoal68 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__0_in_ruleModelGoal94 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleArgumentElement_in_entryRuleArgumentElement123 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleArgumentElement130 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__ArgumentElement__Alternatives_in_ruleArgumentElement156 = new BitSet(new long[]{0x0000000000000002L});
@@ -63417,183 +63417,183 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_12_in_rule__EBoolean__Alternatives1751 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_STRING_in_rule__EString__Alternatives1785 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_ID_in_rule__EString__Alternatives1802 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__0__Impl_in_rule__Goal__Group__01832 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__1_in_rule__Goal__Group__01835 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__1__Impl_in_rule__Goal__Group__11893 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__2_in_rule__Goal__Group__11896 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__AssumedAssignment_1_in_rule__Goal__Group__1__Impl1923 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__2__Impl_in_rule__Goal__Group__21954 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__3_in_rule__Goal__Group__21957 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__Goal__Group__2__Impl1985 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__3__Impl_in_rule__Goal__Group__32016 = new BitSet(new long[]{0x0000000007DF8000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__4_in_rule__Goal__Group__32019 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Goal__Group__3__Impl2047 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__4__Impl_in_rule__Goal__Group__42078 = new BitSet(new long[]{0x0000000007DE8000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__5_in_rule__Goal__Group__42081 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_4__0_in_rule__Goal__Group__4__Impl2108 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__5__Impl_in_rule__Goal__Group__52139 = new BitSet(new long[]{0x0000000007DC8000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__6_in_rule__Goal__Group__52142 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_5__0_in_rule__Goal__Group__5__Impl2169 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__6__Impl_in_rule__Goal__Group__62200 = new BitSet(new long[]{0x0000000007D88000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__7_in_rule__Goal__Group__62203 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_6__0_in_rule__Goal__Group__6__Impl2230 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__7__Impl_in_rule__Goal__Group__72261 = new BitSet(new long[]{0x0000000007D08000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__8_in_rule__Goal__Group__72264 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_7__0_in_rule__Goal__Group__7__Impl2291 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__8__Impl_in_rule__Goal__Group__82322 = new BitSet(new long[]{0x0000000007C08000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__9_in_rule__Goal__Group__82325 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__0_in_rule__Goal__Group__8__Impl2352 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__9__Impl_in_rule__Goal__Group__92383 = new BitSet(new long[]{0x0000000007808000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__10_in_rule__Goal__Group__92386 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__0_in_rule__Goal__Group__9__Impl2413 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__10__Impl_in_rule__Goal__Group__102444 = new BitSet(new long[]{0x0000000007008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__11_in_rule__Goal__Group__102447 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__0_in_rule__Goal__Group__10__Impl2474 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__11__Impl_in_rule__Goal__Group__112505 = new BitSet(new long[]{0x0000000006008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__12_in_rule__Goal__Group__112508 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__0_in_rule__Goal__Group__11__Impl2535 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__12__Impl_in_rule__Goal__Group__122566 = new BitSet(new long[]{0x0000000004008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__13_in_rule__Goal__Group__122569 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__0_in_rule__Goal__Group__12__Impl2596 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__13__Impl_in_rule__Goal__Group__132627 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group__14_in_rule__Goal__Group__132630 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__0_in_rule__Goal__Group__13__Impl2657 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group__14__Impl_in_rule__Goal__Group__142688 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Goal__Group__14__Impl2716 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_4__0__Impl_in_rule__Goal__Group_4__02777 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Goal__Group_4__1_in_rule__Goal__Group_4__02780 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_rule__Goal__Group_4__0__Impl2808 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_4__1__Impl_in_rule__Goal__Group_4__12839 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__IdentifierAssignment_4_1_in_rule__Goal__Group_4__1__Impl2866 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_5__0__Impl_in_rule__Goal__Group_5__02900 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Goal__Group_5__1_in_rule__Goal__Group_5__02903 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__Goal__Group_5__0__Impl2931 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_5__1__Impl_in_rule__Goal__Group_5__12962 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__DescriptionAssignment_5_1_in_rule__Goal__Group_5__1__Impl2989 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_6__0__Impl_in_rule__Goal__Group_6__03023 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Goal__Group_6__1_in_rule__Goal__Group_6__03026 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__Goal__Group_6__0__Impl3054 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_6__1__Impl_in_rule__Goal__Group_6__13085 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__ContentAssignment_6_1_in_rule__Goal__Group_6__1__Impl3112 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_7__0__Impl_in_rule__Goal__Group_7__03146 = new BitSet(new long[]{0x0000000000001800L});
-        public static final BitSet FOLLOW_rule__Goal__Group_7__1_in_rule__Goal__Group_7__03149 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__Goal__Group_7__0__Impl3177 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_7__1__Impl_in_rule__Goal__Group_7__13208 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__ToBeSupportedAssignment_7_1_in_rule__Goal__Group_7__1__Impl3235 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__0__Impl_in_rule__Goal__Group_8__03269 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__1_in_rule__Goal__Group_8__03272 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_rule__Goal__Group_8__0__Impl3300 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__1__Impl_in_rule__Goal__Group_8__13331 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__2_in_rule__Goal__Group_8__13334 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Goal__Group_8__1__Impl3362 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__2__Impl_in_rule__Goal__Group_8__23393 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__3_in_rule__Goal__Group_8__23396 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__IsTaggedAssignment_8_2_in_rule__Goal__Group_8__2__Impl3423 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__3__Impl_in_rule__Goal__Group_8__33453 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__4_in_rule__Goal__Group_8__33456 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8_3__0_in_rule__Goal__Group_8__3__Impl3483 = new BitSet(new long[]{0x0000000000200002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8__4__Impl_in_rule__Goal__Group_8__43514 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Goal__Group_8__4__Impl3542 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8_3__0__Impl_in_rule__Goal__Group_8_3__03583 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8_3__1_in_rule__Goal__Group_8_3__03586 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Goal__Group_8_3__0__Impl3614 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_8_3__1__Impl_in_rule__Goal__Group_8_3__13645 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__IsTaggedAssignment_8_3_1_in_rule__Goal__Group_8_3__1__Impl3672 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__0__Impl_in_rule__Goal__Group_9__03706 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__1_in_rule__Goal__Group_9__03709 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_rule__Goal__Group_9__0__Impl3737 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__1__Impl_in_rule__Goal__Group_9__13768 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__2_in_rule__Goal__Group_9__13771 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Goal__Group_9__1__Impl3799 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__2__Impl_in_rule__Goal__Group_9__23830 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__3_in_rule__Goal__Group_9__23833 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__SubGoalsAssignment_9_2_in_rule__Goal__Group_9__2__Impl3860 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__3__Impl_in_rule__Goal__Group_9__33890 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__4_in_rule__Goal__Group_9__33893 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9_3__0_in_rule__Goal__Group_9__3__Impl3920 = new BitSet(new long[]{0x0000000000200002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9__4__Impl_in_rule__Goal__Group_9__43951 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Goal__Group_9__4__Impl3979 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9_3__0__Impl_in_rule__Goal__Group_9_3__04020 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9_3__1_in_rule__Goal__Group_9_3__04023 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Goal__Group_9_3__0__Impl4051 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_9_3__1__Impl_in_rule__Goal__Group_9_3__14082 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__SubGoalsAssignment_9_3_1_in_rule__Goal__Group_9_3__1__Impl4109 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__0__Impl_in_rule__Goal__Group_10__04143 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__1_in_rule__Goal__Group_10__04146 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_23_in_rule__Goal__Group_10__0__Impl4174 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__1__Impl_in_rule__Goal__Group_10__14205 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__2_in_rule__Goal__Group_10__14208 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Goal__Group_10__1__Impl4236 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__2__Impl_in_rule__Goal__Group_10__24267 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__3_in_rule__Goal__Group_10__24270 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__StrategiesAssignment_10_2_in_rule__Goal__Group_10__2__Impl4297 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__3__Impl_in_rule__Goal__Group_10__34327 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__4_in_rule__Goal__Group_10__34330 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10_3__0_in_rule__Goal__Group_10__3__Impl4357 = new BitSet(new long[]{0x0000000000200002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10__4__Impl_in_rule__Goal__Group_10__44388 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Goal__Group_10__4__Impl4416 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10_3__0__Impl_in_rule__Goal__Group_10_3__04457 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10_3__1_in_rule__Goal__Group_10_3__04460 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Goal__Group_10_3__0__Impl4488 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_10_3__1__Impl_in_rule__Goal__Group_10_3__14519 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__StrategiesAssignment_10_3_1_in_rule__Goal__Group_10_3__1__Impl4546 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__0__Impl_in_rule__Goal__Group_11__04580 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__1_in_rule__Goal__Group_11__04583 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_24_in_rule__Goal__Group_11__0__Impl4611 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__1__Impl_in_rule__Goal__Group_11__14642 = new BitSet(new long[]{0x0000000800000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__2_in_rule__Goal__Group_11__14645 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Goal__Group_11__1__Impl4673 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__2__Impl_in_rule__Goal__Group_11__24704 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__3_in_rule__Goal__Group_11__24707 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__GoalContextsAssignment_11_2_in_rule__Goal__Group_11__2__Impl4734 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__3__Impl_in_rule__Goal__Group_11__34764 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__4_in_rule__Goal__Group_11__34767 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11_3__0_in_rule__Goal__Group_11__3__Impl4794 = new BitSet(new long[]{0x0000000000200002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11__4__Impl_in_rule__Goal__Group_11__44825 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Goal__Group_11__4__Impl4853 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11_3__0__Impl_in_rule__Goal__Group_11_3__04894 = new BitSet(new long[]{0x0000000800000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11_3__1_in_rule__Goal__Group_11_3__04897 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Goal__Group_11_3__0__Impl4925 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_11_3__1__Impl_in_rule__Goal__Group_11_3__14956 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__GoalContextsAssignment_11_3_1_in_rule__Goal__Group_11_3__1__Impl4983 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__0__Impl_in_rule__Goal__Group_12__05017 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__1_in_rule__Goal__Group_12__05020 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_rule__Goal__Group_12__0__Impl5048 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__1__Impl_in_rule__Goal__Group_12__15079 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__2_in_rule__Goal__Group_12__15082 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Goal__Group_12__1__Impl5110 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__2__Impl_in_rule__Goal__Group_12__25141 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__3_in_rule__Goal__Group_12__25144 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__AssumptionsAssignment_12_2_in_rule__Goal__Group_12__2__Impl5171 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__3__Impl_in_rule__Goal__Group_12__35201 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__4_in_rule__Goal__Group_12__35204 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12_3__0_in_rule__Goal__Group_12__3__Impl5231 = new BitSet(new long[]{0x0000000000200002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12__4__Impl_in_rule__Goal__Group_12__45262 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Goal__Group_12__4__Impl5290 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12_3__0__Impl_in_rule__Goal__Group_12_3__05331 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12_3__1_in_rule__Goal__Group_12_3__05334 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Goal__Group_12_3__0__Impl5362 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_12_3__1__Impl_in_rule__Goal__Group_12_3__15393 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__AssumptionsAssignment_12_3_1_in_rule__Goal__Group_12_3__1__Impl5420 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__0__Impl_in_rule__Goal__Group_13__05454 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__1_in_rule__Goal__Group_13__05457 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_rule__Goal__Group_13__0__Impl5485 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__1__Impl_in_rule__Goal__Group_13__15516 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__2_in_rule__Goal__Group_13__15519 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__Goal__Group_13__1__Impl5547 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__2__Impl_in_rule__Goal__Group_13__25578 = new BitSet(new long[]{0x0000000000208000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__3_in_rule__Goal__Group_13__25581 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__GoalSolutionsAssignment_13_2_in_rule__Goal__Group_13__2__Impl5608 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__3__Impl_in_rule__Goal__Group_13__35638 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__4_in_rule__Goal__Group_13__35641 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13_3__0_in_rule__Goal__Group_13__3__Impl5668 = new BitSet(new long[]{0x0000000000200002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13__4__Impl_in_rule__Goal__Group_13__45699 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__Goal__Group_13__4__Impl5727 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13_3__0__Impl_in_rule__Goal__Group_13_3__05768 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13_3__1_in_rule__Goal__Group_13_3__05771 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Goal__Group_13_3__0__Impl5799 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__Group_13_3__1__Impl_in_rule__Goal__Group_13_3__15830 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Goal__GoalSolutionsAssignment_13_3_1_in_rule__Goal__Group_13_3__1__Impl5857 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__0__Impl_in_rule__ModelGoal__Group__01832 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__1_in_rule__ModelGoal__Group__01835 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__1__Impl_in_rule__ModelGoal__Group__11893 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__2_in_rule__ModelGoal__Group__11896 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__AssumedAssignment_1_in_rule__ModelGoal__Group__1__Impl1923 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__2__Impl_in_rule__ModelGoal__Group__21954 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__3_in_rule__ModelGoal__Group__21957 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__ModelGoal__Group__2__Impl1985 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__3__Impl_in_rule__ModelGoal__Group__32016 = new BitSet(new long[]{0x0000000007DF8000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__4_in_rule__ModelGoal__Group__32019 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__ModelGoal__Group__3__Impl2047 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__4__Impl_in_rule__ModelGoal__Group__42078 = new BitSet(new long[]{0x0000000007DE8000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__5_in_rule__ModelGoal__Group__42081 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_4__0_in_rule__ModelGoal__Group__4__Impl2108 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__5__Impl_in_rule__ModelGoal__Group__52139 = new BitSet(new long[]{0x0000000007DC8000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__6_in_rule__ModelGoal__Group__52142 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_5__0_in_rule__ModelGoal__Group__5__Impl2169 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__6__Impl_in_rule__ModelGoal__Group__62200 = new BitSet(new long[]{0x0000000007D88000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__7_in_rule__ModelGoal__Group__62203 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_6__0_in_rule__ModelGoal__Group__6__Impl2230 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__7__Impl_in_rule__ModelGoal__Group__72261 = new BitSet(new long[]{0x0000000007D08000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__8_in_rule__ModelGoal__Group__72264 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_7__0_in_rule__ModelGoal__Group__7__Impl2291 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__8__Impl_in_rule__ModelGoal__Group__82322 = new BitSet(new long[]{0x0000000007C08000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__9_in_rule__ModelGoal__Group__82325 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__0_in_rule__ModelGoal__Group__8__Impl2352 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__9__Impl_in_rule__ModelGoal__Group__92383 = new BitSet(new long[]{0x0000000007808000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__10_in_rule__ModelGoal__Group__92386 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__0_in_rule__ModelGoal__Group__9__Impl2413 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__10__Impl_in_rule__ModelGoal__Group__102444 = new BitSet(new long[]{0x0000000007008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__11_in_rule__ModelGoal__Group__102447 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__0_in_rule__ModelGoal__Group__10__Impl2474 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__11__Impl_in_rule__ModelGoal__Group__112505 = new BitSet(new long[]{0x0000000006008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__12_in_rule__ModelGoal__Group__112508 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__0_in_rule__ModelGoal__Group__11__Impl2535 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__12__Impl_in_rule__ModelGoal__Group__122566 = new BitSet(new long[]{0x0000000004008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__13_in_rule__ModelGoal__Group__122569 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__0_in_rule__ModelGoal__Group__12__Impl2596 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__13__Impl_in_rule__ModelGoal__Group__132627 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__14_in_rule__ModelGoal__Group__132630 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__0_in_rule__ModelGoal__Group__13__Impl2657 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group__14__Impl_in_rule__ModelGoal__Group__142688 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__ModelGoal__Group__14__Impl2716 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_4__0__Impl_in_rule__ModelGoal__Group_4__02777 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_4__1_in_rule__ModelGoal__Group_4__02780 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_rule__ModelGoal__Group_4__0__Impl2808 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_4__1__Impl_in_rule__ModelGoal__Group_4__12839 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__IdentifierAssignment_4_1_in_rule__ModelGoal__Group_4__1__Impl2866 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_5__0__Impl_in_rule__ModelGoal__Group_5__02900 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_5__1_in_rule__ModelGoal__Group_5__02903 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__ModelGoal__Group_5__0__Impl2931 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_5__1__Impl_in_rule__ModelGoal__Group_5__12962 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__DescriptionAssignment_5_1_in_rule__ModelGoal__Group_5__1__Impl2989 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_6__0__Impl_in_rule__ModelGoal__Group_6__03023 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_6__1_in_rule__ModelGoal__Group_6__03026 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__ModelGoal__Group_6__0__Impl3054 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_6__1__Impl_in_rule__ModelGoal__Group_6__13085 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__ContentAssignment_6_1_in_rule__ModelGoal__Group_6__1__Impl3112 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_7__0__Impl_in_rule__ModelGoal__Group_7__03146 = new BitSet(new long[]{0x0000000000001800L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_7__1_in_rule__ModelGoal__Group_7__03149 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_rule__ModelGoal__Group_7__0__Impl3177 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_7__1__Impl_in_rule__ModelGoal__Group_7__13208 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__ToBeSupportedAssignment_7_1_in_rule__ModelGoal__Group_7__1__Impl3235 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__0__Impl_in_rule__ModelGoal__Group_8__03269 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__1_in_rule__ModelGoal__Group_8__03272 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_20_in_rule__ModelGoal__Group_8__0__Impl3300 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__1__Impl_in_rule__ModelGoal__Group_8__13331 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__2_in_rule__ModelGoal__Group_8__13334 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__ModelGoal__Group_8__1__Impl3362 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__2__Impl_in_rule__ModelGoal__Group_8__23393 = new BitSet(new long[]{0x0000000000208000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__3_in_rule__ModelGoal__Group_8__23396 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__IsTaggedAssignment_8_2_in_rule__ModelGoal__Group_8__2__Impl3423 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__3__Impl_in_rule__ModelGoal__Group_8__33453 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__4_in_rule__ModelGoal__Group_8__33456 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8_3__0_in_rule__ModelGoal__Group_8__3__Impl3483 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8__4__Impl_in_rule__ModelGoal__Group_8__43514 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__ModelGoal__Group_8__4__Impl3542 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8_3__0__Impl_in_rule__ModelGoal__Group_8_3__03583 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8_3__1_in_rule__ModelGoal__Group_8_3__03586 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__ModelGoal__Group_8_3__0__Impl3614 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_8_3__1__Impl_in_rule__ModelGoal__Group_8_3__13645 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__IsTaggedAssignment_8_3_1_in_rule__ModelGoal__Group_8_3__1__Impl3672 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__0__Impl_in_rule__ModelGoal__Group_9__03706 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__1_in_rule__ModelGoal__Group_9__03709 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__ModelGoal__Group_9__0__Impl3737 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__1__Impl_in_rule__ModelGoal__Group_9__13768 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__2_in_rule__ModelGoal__Group_9__13771 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__ModelGoal__Group_9__1__Impl3799 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__2__Impl_in_rule__ModelGoal__Group_9__23830 = new BitSet(new long[]{0x0000000000208000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__3_in_rule__ModelGoal__Group_9__23833 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__SubGoalsAssignment_9_2_in_rule__ModelGoal__Group_9__2__Impl3860 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__3__Impl_in_rule__ModelGoal__Group_9__33890 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__4_in_rule__ModelGoal__Group_9__33893 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9_3__0_in_rule__ModelGoal__Group_9__3__Impl3920 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9__4__Impl_in_rule__ModelGoal__Group_9__43951 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__ModelGoal__Group_9__4__Impl3979 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9_3__0__Impl_in_rule__ModelGoal__Group_9_3__04020 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9_3__1_in_rule__ModelGoal__Group_9_3__04023 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__ModelGoal__Group_9_3__0__Impl4051 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_9_3__1__Impl_in_rule__ModelGoal__Group_9_3__14082 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__SubGoalsAssignment_9_3_1_in_rule__ModelGoal__Group_9_3__1__Impl4109 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__0__Impl_in_rule__ModelGoal__Group_10__04143 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__1_in_rule__ModelGoal__Group_10__04146 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__ModelGoal__Group_10__0__Impl4174 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__1__Impl_in_rule__ModelGoal__Group_10__14205 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__2_in_rule__ModelGoal__Group_10__14208 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__ModelGoal__Group_10__1__Impl4236 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__2__Impl_in_rule__ModelGoal__Group_10__24267 = new BitSet(new long[]{0x0000000000208000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__3_in_rule__ModelGoal__Group_10__24270 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__StrategiesAssignment_10_2_in_rule__ModelGoal__Group_10__2__Impl4297 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__3__Impl_in_rule__ModelGoal__Group_10__34327 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__4_in_rule__ModelGoal__Group_10__34330 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10_3__0_in_rule__ModelGoal__Group_10__3__Impl4357 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10__4__Impl_in_rule__ModelGoal__Group_10__44388 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__ModelGoal__Group_10__4__Impl4416 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10_3__0__Impl_in_rule__ModelGoal__Group_10_3__04457 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10_3__1_in_rule__ModelGoal__Group_10_3__04460 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__ModelGoal__Group_10_3__0__Impl4488 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_10_3__1__Impl_in_rule__ModelGoal__Group_10_3__14519 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__StrategiesAssignment_10_3_1_in_rule__ModelGoal__Group_10_3__1__Impl4546 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__0__Impl_in_rule__ModelGoal__Group_11__04580 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__1_in_rule__ModelGoal__Group_11__04583 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_rule__ModelGoal__Group_11__0__Impl4611 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__1__Impl_in_rule__ModelGoal__Group_11__14642 = new BitSet(new long[]{0x0000000800000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__2_in_rule__ModelGoal__Group_11__14645 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__ModelGoal__Group_11__1__Impl4673 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__2__Impl_in_rule__ModelGoal__Group_11__24704 = new BitSet(new long[]{0x0000000000208000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__3_in_rule__ModelGoal__Group_11__24707 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__GoalContextsAssignment_11_2_in_rule__ModelGoal__Group_11__2__Impl4734 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__3__Impl_in_rule__ModelGoal__Group_11__34764 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__4_in_rule__ModelGoal__Group_11__34767 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11_3__0_in_rule__ModelGoal__Group_11__3__Impl4794 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11__4__Impl_in_rule__ModelGoal__Group_11__44825 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__ModelGoal__Group_11__4__Impl4853 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11_3__0__Impl_in_rule__ModelGoal__Group_11_3__04894 = new BitSet(new long[]{0x0000000800000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11_3__1_in_rule__ModelGoal__Group_11_3__04897 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__ModelGoal__Group_11_3__0__Impl4925 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_11_3__1__Impl_in_rule__ModelGoal__Group_11_3__14956 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__GoalContextsAssignment_11_3_1_in_rule__ModelGoal__Group_11_3__1__Impl4983 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__0__Impl_in_rule__ModelGoal__Group_12__05017 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__1_in_rule__ModelGoal__Group_12__05020 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_rule__ModelGoal__Group_12__0__Impl5048 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__1__Impl_in_rule__ModelGoal__Group_12__15079 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__2_in_rule__ModelGoal__Group_12__15082 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__ModelGoal__Group_12__1__Impl5110 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__2__Impl_in_rule__ModelGoal__Group_12__25141 = new BitSet(new long[]{0x0000000000208000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__3_in_rule__ModelGoal__Group_12__25144 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__AssumptionsAssignment_12_2_in_rule__ModelGoal__Group_12__2__Impl5171 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__3__Impl_in_rule__ModelGoal__Group_12__35201 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__4_in_rule__ModelGoal__Group_12__35204 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12_3__0_in_rule__ModelGoal__Group_12__3__Impl5231 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12__4__Impl_in_rule__ModelGoal__Group_12__45262 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__ModelGoal__Group_12__4__Impl5290 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12_3__0__Impl_in_rule__ModelGoal__Group_12_3__05331 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12_3__1_in_rule__ModelGoal__Group_12_3__05334 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__ModelGoal__Group_12_3__0__Impl5362 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_12_3__1__Impl_in_rule__ModelGoal__Group_12_3__15393 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__AssumptionsAssignment_12_3_1_in_rule__ModelGoal__Group_12_3__1__Impl5420 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__0__Impl_in_rule__ModelGoal__Group_13__05454 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__1_in_rule__ModelGoal__Group_13__05457 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_rule__ModelGoal__Group_13__0__Impl5485 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__1__Impl_in_rule__ModelGoal__Group_13__15516 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__2_in_rule__ModelGoal__Group_13__15519 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__ModelGoal__Group_13__1__Impl5547 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__2__Impl_in_rule__ModelGoal__Group_13__25578 = new BitSet(new long[]{0x0000000000208000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__3_in_rule__ModelGoal__Group_13__25581 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__GoalSolutionsAssignment_13_2_in_rule__ModelGoal__Group_13__2__Impl5608 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__3__Impl_in_rule__ModelGoal__Group_13__35638 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__4_in_rule__ModelGoal__Group_13__35641 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13_3__0_in_rule__ModelGoal__Group_13__3__Impl5668 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13__4__Impl_in_rule__ModelGoal__Group_13__45699 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__ModelGoal__Group_13__4__Impl5727 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13_3__0__Impl_in_rule__ModelGoal__Group_13_3__05768 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13_3__1_in_rule__ModelGoal__Group_13_3__05771 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__ModelGoal__Group_13_3__0__Impl5799 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__Group_13_3__1__Impl_in_rule__ModelGoal__Group_13_3__15830 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ModelGoal__GoalSolutionsAssignment_13_3_1_in_rule__ModelGoal__Group_13_3__1__Impl5857 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__TaggedValue__Group__0__Impl_in_rule__TaggedValue__Group__05891 = new BitSet(new long[]{0x0000000008000000L});
         public static final BitSet FOLLOW_rule__TaggedValue__Group__1_in_rule__TaggedValue__Group__05894 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__TaggedValue__Group__1__Impl_in_rule__TaggedValue__Group__15952 = new BitSet(new long[]{0x0000000000004000L});
@@ -65246,23 +65246,23 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_21_in_rule__CitationElement__Group_8_3__0__Impl44059 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__CitationElement__Group_8_3__1__Impl_in_rule__CitationElement__Group_8_3__144090 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__CitationElement__IsTaggedAssignment_8_3_1_in_rule__CitationElement__Group_8_3__1__Impl44117 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_65_in_rule__Goal__AssumedAssignment_144161 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Goal__IdentifierAssignment_4_144200 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Goal__DescriptionAssignment_5_144231 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Goal__ContentAssignment_6_144262 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEBoolean_in_rule__Goal__ToBeSupportedAssignment_7_144293 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTaggedValue_in_rule__Goal__IsTaggedAssignment_8_244324 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTaggedValue_in_rule__Goal__IsTaggedAssignment_8_3_144355 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleGoal_in_rule__Goal__SubGoalsAssignment_9_244386 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleGoal_in_rule__Goal__SubGoalsAssignment_9_3_144417 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleStrategy_in_rule__Goal__StrategiesAssignment_10_244448 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleStrategy_in_rule__Goal__StrategiesAssignment_10_3_144479 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleContext_in_rule__Goal__GoalContextsAssignment_11_244510 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleContext_in_rule__Goal__GoalContextsAssignment_11_3_144541 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAssumption_in_rule__Goal__AssumptionsAssignment_12_244572 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAssumption_in_rule__Goal__AssumptionsAssignment_12_3_144603 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSolution_in_rule__Goal__GoalSolutionsAssignment_13_244634 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSolution_in_rule__Goal__GoalSolutionsAssignment_13_3_144665 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_65_in_rule__ModelGoal__AssumedAssignment_144161 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__ModelGoal__IdentifierAssignment_4_144200 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__ModelGoal__DescriptionAssignment_5_144231 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__ModelGoal__ContentAssignment_6_144262 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEBoolean_in_rule__ModelGoal__ToBeSupportedAssignment_7_144293 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTaggedValue_in_rule__ModelGoal__IsTaggedAssignment_8_244324 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTaggedValue_in_rule__ModelGoal__IsTaggedAssignment_8_3_144355 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_rule__ModelGoal__SubGoalsAssignment_9_244386 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_rule__ModelGoal__SubGoalsAssignment_9_3_144417 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleStrategy_in_rule__ModelGoal__StrategiesAssignment_10_244448 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleStrategy_in_rule__ModelGoal__StrategiesAssignment_10_3_144479 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleContext_in_rule__ModelGoal__GoalContextsAssignment_11_244510 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleContext_in_rule__ModelGoal__GoalContextsAssignment_11_3_144541 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAssumption_in_rule__ModelGoal__AssumptionsAssignment_12_244572 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAssumption_in_rule__ModelGoal__AssumptionsAssignment_12_3_144603 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSolution_in_rule__ModelGoal__GoalSolutionsAssignment_13_244634 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSolution_in_rule__ModelGoal__GoalSolutionsAssignment_13_3_144665 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__TaggedValue__KeyAssignment_3_144696 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__TaggedValue__ValueAssignment_4_144727 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEString_in_rule__Strategy__IdentifierAssignment_3_144758 = new BitSet(new long[]{0x0000000000000002L});
@@ -65270,8 +65270,8 @@ public class InternalGsnDslParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_ruleEString_in_rule__Strategy__ContentAssignment_5_144820 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTaggedValue_in_rule__Strategy__IsTaggedAssignment_6_244851 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTaggedValue_in_rule__Strategy__IsTaggedAssignment_6_3_144882 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleGoal_in_rule__Strategy__GoalsAssignment_7_244913 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleGoal_in_rule__Strategy__GoalsAssignment_7_3_144944 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_rule__Strategy__GoalsAssignment_7_244913 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleModelGoal_in_rule__Strategy__GoalsAssignment_7_3_144944 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleJustification_in_rule__Strategy__JustificationsAssignment_8_244975 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleJustification_in_rule__Strategy__JustificationsAssignment_8_3_145006 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleContext_in_rule__Strategy__StrategyContextsAssignment_9_245037 = new BitSet(new long[]{0x0000000000000002L});

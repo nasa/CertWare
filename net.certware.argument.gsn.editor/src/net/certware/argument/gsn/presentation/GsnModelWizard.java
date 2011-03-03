@@ -18,6 +18,7 @@ import net.certware.argument.gsn.GsnFactory;
 import net.certware.argument.gsn.GsnPackage;
 import net.certware.argument.gsn.editor.presentation.GsnEditorPlugin;
 import net.certware.argument.gsn.provider.GsnEditPlugin;
+import net.certware.core.ui.CertWareUI;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -148,13 +149,17 @@ public class GsnModelWizard extends Wizard implements INewWizard {
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(GsnEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(GsnEditorPlugin.INSTANCE.getImage("full/wizban/NewGsn"))); //$NON-NLS-1$
+		//setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(GsnEditorPlugin.INSTANCE.getImage("full/wizban/NewGsn"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**

@@ -123,10 +123,6 @@ public abstract class AbstractCpnDslUiModule extends DefaultUiModule {
 		binder.bind(org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.CONTENT_ASSIST)).to(net.certware.planning.cpn.ui.contentassist.antlr.internal.InternalCpnDslLexer.class);
 	}
 
-	// contributed by org.eclipse.xtext.ui.generator.projectWizard.SimpleProjectWizardFragment
-	public Class<? extends org.eclipse.xtext.ui.wizard.IProjectCreator> bindIProjectCreator() {
-		return net.certware.planning.cpn.ui.wizard.CpnDslProjectCreator.class;
-	}
 
 
 }

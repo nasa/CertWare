@@ -1,0 +1,70 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+// CertWare representative complex proof file content
+// modify to suit case argument
+//////////////////////////////////////////////////////////////////////////////////////////
+// Lemma 1: (conj(S1) -> k1) ^ ... ^ (Conj(Sm) -> km) -> conj(S1 U...U Sm) -> k1 ^...^ km.
+// Lemma 2: (conj(S) -> x) -> (conj(S|{S1,...,sm}) -> (s1^...^sm) -> x)).
+// Definition: An inference (c,{j1,...,jn}) is sound if the proposition j1^...^jn -> c is true.
+// Definition: A proof P is a valid proof of x if all inferences of P are sound and P is a structurally valid proof of x.
+// Definition: P is a structurally valid proof of x if P proves x relative to {}.
+
+Theorem: "Given a proof P, in which all inferences are sound, and proposition x, 
+if ConP(x,{j1,...,jn}) gotten by finitely many application of rules 1, 2, or 3 
+then j1^...^jn -> is true" (13,1^14 -> 33)
+
+1. "Suppose we have a proof P, in which all inferences are sound, 
+and suppose x is a proposition" (hypothesis)
+
+2. "Suppose ConP(x,{j1,...,jn}) is gotten by 1 application of rules 1 or 2 or 3" (hypothesis)
+3. "ConP(x,{}) holds by application of either rule 1, or rule 2 with n=0" (2)
+4. "Suppose ConP(x,{j1,...,jn}) is gotten by 1 application of rule 1" (hypothesis)
+5. "ConP(x,{j1,...,jn}) = ConP(x,{x})" (4)
+6. "x -> x is true" ("Definition of implication")
+7. "Hence j1^...^jn -> x is true" (5,6)
+8. "Suppose ConP(x,{j1,...,jn}) is gotten by 1 application of rule 2 with n=0" (hypothesis)
+9. "(x,{}) is an inference of P" (8)
+10. "True -> x is true" (1,9,"Definition of sound inference")
+11. "Hence j1^...^jn -> x is true" (8,9,10)
+12. "Hence j1^...^jn -> x is true" (3,4->7,8->11)
+
+13. "Whenever P is a proof all of whose inferences are sound, 
+and ConP(x,{j1,...,jn}) is gotten by 1 application of rules 1 or 2 or 3, 
+then j1^...^jn -> x is true" (1^2 -> 12)
+
+14. "By induction hypothesis, we suppose that P is a proof all of whose inferences are sound, 
+and if ConP(x,{j1,...,jn}) is gotten by N application of rules 1 or 2 or 3, 
+then j1^...^jn -> x is true" (hypothesis)
+
+15. "Suppose ConP(x,{j1,...,jn}) is gotten by N+1 application of rules 1 or 2 or 3" (hypothesis)
+16. "Suppose ConP(x',{j1,...,jn}) is gotten by N+1 application of rules 1 or 2 or 3" (hypothesis)
+17. "ConP(x',{j1,...,jn}) = ConP(x',{x'})" (16)
+18. "x' -> x' is true" (17,"Definition of implication")
+19. "Hence j1^...^jn -> x' is true" (17,18)
+20. "Suppose ConP(x',{j1,...,jn}) is gotten by N+1 applications, 
+the last of which is rule 2" (hypothesis)
+
+21. "(X1,{j1,...,jm}) is a sound inference of P, and ConP(Ji,Si) 
+for i in 1..m is derived by N or fewer applications of rules 1-3 
+and {j1,...,jm} = S1 U...U Sm" (1,20)
+
+22. "j1^...^jm -> x'" (21, "Definition of sound inference")
+23. "(conj(S1) -> j1) ^ ... ^ (conj(Sm) -> jm) is true" (14)
+24. "conj(S1 U...U Sm) -> j1 ^...^ jm" (23, "Lemma 1")
+25. "conj(S1 U...U Sm) -> x' is true" (22,24)
+26. "Hence j1 ^ ... ^ jm -> x' is true" (21,25)
+
+27. "Suppose ConP(x',{j1,...,jn}) is gotten by N+1 applications, 
+the last of which is rule 3" (hypothesis)
+
+28. "There exists {s1,...,sn}, S and proposition x, where x' is 
+of the form s1 ^...^ sn -> x and ConP(x,S) is derived in N or fewer 
+applications of Rules 1-3, and S|{s1,...,sn} = {j1,...,jn}" (27,"Definition of Rule 3")
+
+29. "conj(S) -> x is true" (14,28)
+30. "conj(S|{s1,...,sn}) -> (s1^...^sn -> x) is true" (29,"Lemma 2")
+31. "Hence j1^...^jn -> x' is true" (28,30)
+32. "Hence j1^...^jn -> x1 is true" (15,16->19,20->26,27->31)
+
+33. "Whenever ConP(x,{j1,...,jn}) is gotten by N+1 application 
+of rules 1 or 2 or 3, then j1^...^jn -> x is true" (15->32)
+

@@ -71,6 +71,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
+import net.certware.core.ui.CertWareUI;
 import net.certware.evidence.evidence.EvidenceFactory;
 import net.certware.evidence.evidence.EvidencePackage;
 import net.certware.evidence.evidence.provider.SaemEditPlugin;
@@ -171,14 +172,19 @@ public class EvidenceModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
+	 * Retrieves the wizard banner image from the CertWare UI registry.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(SaemEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(SaemEditorPlugin.INSTANCE.getImage("full/wizban/NewEvidence"))); //$NON-NLS-1$
+		//setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(SaemEditorPlugin.INSTANCE.getImage("full/wizban/NewEvidence"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**

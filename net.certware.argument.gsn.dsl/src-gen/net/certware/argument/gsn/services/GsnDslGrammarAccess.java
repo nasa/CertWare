@@ -17,8 +17,8 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class GoalElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Goal");
+	public class ModelGoalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModelGoal");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGoalAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cAssumedAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -55,11 +55,11 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSubGoalsKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Assignment cSubGoalsAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cSubGoalsGoalParserRuleCall_9_2_0 = (RuleCall)cSubGoalsAssignment_9_2.eContents().get(0);
+		private final RuleCall cSubGoalsModelGoalParserRuleCall_9_2_0 = (RuleCall)cSubGoalsAssignment_9_2.eContents().get(0);
 		private final Group cGroup_9_3 = (Group)cGroup_9.eContents().get(3);
 		private final Keyword cCommaKeyword_9_3_0 = (Keyword)cGroup_9_3.eContents().get(0);
 		private final Assignment cSubGoalsAssignment_9_3_1 = (Assignment)cGroup_9_3.eContents().get(1);
-		private final RuleCall cSubGoalsGoalParserRuleCall_9_3_1_0 = (RuleCall)cSubGoalsAssignment_9_3_1.eContents().get(0);
+		private final RuleCall cSubGoalsModelGoalParserRuleCall_9_3_1_0 = (RuleCall)cSubGoalsAssignment_9_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_9_4 = (Keyword)cGroup_9.eContents().get(4);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cStrategiesKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
@@ -103,10 +103,10 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_13_4 = (Keyword)cGroup_13.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
-		//Goal:
+		//ModelGoal returns Goal:
 		//	{Goal} assumed?="assumed"? "Goal" "{" ("identifier" identifier=EString)? ("description" description=EString)?
 		//	("content" content=EString)? ("toBeSupported" toBeSupported=EBoolean)? ("isTagged" "{" isTagged+=TaggedValue (","
-		//	isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=Goal ("," subGoals+=Goal)* "}")? ("strategies" "{"
+		//	isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=ModelGoal ("," subGoals+=ModelGoal)* "}")? ("strategies" "{"
 		//	strategies+=Strategy ("," strategies+=Strategy)* "}")? ("goalContexts" "{" goalContexts+=Context (","
 		//	goalContexts+=Context)* "}")? ("assumptions" "{" assumptions+=Assumption ("," assumptions+=Assumption)* "}")?
 		//	("goalSolutions" "{" goalSolutions+=Solution ("," goalSolutions+=Solution)* "}")? "}";
@@ -114,7 +114,7 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//{Goal} assumed?="assumed"? "Goal" "{" ("identifier" identifier=EString)? ("description" description=EString)? ("content"
 		//content=EString)? ("toBeSupported" toBeSupported=EBoolean)? ("isTagged" "{" isTagged+=TaggedValue (","
-		//isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=Goal ("," subGoals+=Goal)* "}")? ("strategies" "{"
+		//isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=ModelGoal ("," subGoals+=ModelGoal)* "}")? ("strategies" "{"
 		//strategies+=Strategy ("," strategies+=Strategy)* "}")? ("goalContexts" "{" goalContexts+=Context (","
 		//goalContexts+=Context)* "}")? ("assumptions" "{" assumptions+=Assumption ("," assumptions+=Assumption)* "}")?
 		//("goalSolutions" "{" goalSolutions+=Solution ("," goalSolutions+=Solution)* "}")? "}"
@@ -213,7 +213,7 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8_4() { return cRightCurlyBracketKeyword_8_4; }
 
-		//("subGoals" "{" subGoals+=Goal ("," subGoals+=Goal)* "}")?
+		//("subGoals" "{" subGoals+=ModelGoal ("," subGoals+=ModelGoal)* "}")?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//"subGoals"
@@ -222,23 +222,23 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_9_1() { return cLeftCurlyBracketKeyword_9_1; }
 
-		//subGoals+=Goal
+		//subGoals+=ModelGoal
 		public Assignment getSubGoalsAssignment_9_2() { return cSubGoalsAssignment_9_2; }
 
-		//Goal
-		public RuleCall getSubGoalsGoalParserRuleCall_9_2_0() { return cSubGoalsGoalParserRuleCall_9_2_0; }
+		//ModelGoal
+		public RuleCall getSubGoalsModelGoalParserRuleCall_9_2_0() { return cSubGoalsModelGoalParserRuleCall_9_2_0; }
 
-		//("," subGoals+=Goal)*
+		//("," subGoals+=ModelGoal)*
 		public Group getGroup_9_3() { return cGroup_9_3; }
 
 		//","
 		public Keyword getCommaKeyword_9_3_0() { return cCommaKeyword_9_3_0; }
 
-		//subGoals+=Goal
+		//subGoals+=ModelGoal
 		public Assignment getSubGoalsAssignment_9_3_1() { return cSubGoalsAssignment_9_3_1; }
 
-		//Goal
-		public RuleCall getSubGoalsGoalParserRuleCall_9_3_1_0() { return cSubGoalsGoalParserRuleCall_9_3_1_0; }
+		//ModelGoal
+		public RuleCall getSubGoalsModelGoalParserRuleCall_9_3_1_0() { return cSubGoalsModelGoalParserRuleCall_9_3_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_9_4() { return cRightCurlyBracketKeyword_9_4; }
@@ -629,11 +629,11 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGoalsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cGoalsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cGoalsGoalParserRuleCall_7_2_0 = (RuleCall)cGoalsAssignment_7_2.eContents().get(0);
+		private final RuleCall cGoalsModelGoalParserRuleCall_7_2_0 = (RuleCall)cGoalsAssignment_7_2.eContents().get(0);
 		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
 		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
 		private final Assignment cGoalsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cGoalsGoalParserRuleCall_7_3_1_0 = (RuleCall)cGoalsAssignment_7_3_1.eContents().get(0);
+		private final RuleCall cGoalsModelGoalParserRuleCall_7_3_1_0 = (RuleCall)cGoalsAssignment_7_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cJustificationsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
@@ -669,17 +669,19 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Strategy:
 		//	{Strategy} "Strategy" "{" ("identifier" identifier=EString)? ("description" description=EString)? ("content"
-		//	content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{" goals+=Goal
-		//	("," goals+=Goal)* "}")? ("justifications" "{" justifications+=Justification ("," justifications+=Justification)*
-		//	"}")? ("strategyContexts" "{" strategyContexts+=Context ("," strategyContexts+=Context)* "}")? ("strategySolutions"
-		//	"{" strategySolutions+=Solution ("," strategySolutions+=Solution)* "}")? "}";
+		//	content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{"
+		//	goals+=ModelGoal ("," goals+=ModelGoal)* "}")? ("justifications" "{" justifications+=Justification (","
+		//	justifications+=Justification)* "}")? ("strategyContexts" "{" strategyContexts+=Context (","
+		//	strategyContexts+=Context)* "}")? ("strategySolutions" "{" strategySolutions+=Solution (","
+		//	strategySolutions+=Solution)* "}")? "}";
 		public ParserRule getRule() { return rule; }
 
 		//{Strategy} "Strategy" "{" ("identifier" identifier=EString)? ("description" description=EString)? ("content"
-		//content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{" goals+=Goal
-		//("," goals+=Goal)* "}")? ("justifications" "{" justifications+=Justification ("," justifications+=Justification)* "}")?
-		//("strategyContexts" "{" strategyContexts+=Context ("," strategyContexts+=Context)* "}")? ("strategySolutions" "{"
-		//strategySolutions+=Solution ("," strategySolutions+=Solution)* "}")? "}"
+		//content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{"
+		//goals+=ModelGoal ("," goals+=ModelGoal)* "}")? ("justifications" "{" justifications+=Justification (","
+		//justifications+=Justification)* "}")? ("strategyContexts" "{" strategyContexts+=Context (","
+		//strategyContexts+=Context)* "}")? ("strategySolutions" "{" strategySolutions+=Solution (","
+		//strategySolutions+=Solution)* "}")? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Strategy}
@@ -757,7 +759,7 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
 
-		//("goals" "{" goals+=Goal ("," goals+=Goal)* "}")?
+		//("goals" "{" goals+=ModelGoal ("," goals+=ModelGoal)* "}")?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"goals"
@@ -766,23 +768,23 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
 
-		//goals+=Goal
+		//goals+=ModelGoal
 		public Assignment getGoalsAssignment_7_2() { return cGoalsAssignment_7_2; }
 
-		//Goal
-		public RuleCall getGoalsGoalParserRuleCall_7_2_0() { return cGoalsGoalParserRuleCall_7_2_0; }
+		//ModelGoal
+		public RuleCall getGoalsModelGoalParserRuleCall_7_2_0() { return cGoalsModelGoalParserRuleCall_7_2_0; }
 
-		//("," goals+=Goal)*
+		//("," goals+=ModelGoal)*
 		public Group getGroup_7_3() { return cGroup_7_3; }
 
 		//","
 		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
 
-		//goals+=Goal
+		//goals+=ModelGoal
 		public Assignment getGoalsAssignment_7_3_1() { return cGoalsAssignment_7_3_1; }
 
-		//Goal
-		public RuleCall getGoalsGoalParserRuleCall_7_3_1_0() { return cGoalsGoalParserRuleCall_7_3_1_0; }
+		//ModelGoal
+		public RuleCall getGoalsModelGoalParserRuleCall_7_3_1_0() { return cGoalsModelGoalParserRuleCall_7_3_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
@@ -4079,7 +4081,7 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private GoalElements pGoal;
+	private ModelGoalElements pModelGoal;
 	private ModelElementElements pModelElement;
 	private ArgumentElementElements pArgumentElement;
 	private ArgumentLinkElements pArgumentLink;
@@ -4126,19 +4128,19 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Goal:
+	//ModelGoal returns Goal:
 	//	{Goal} assumed?="assumed"? "Goal" "{" ("identifier" identifier=EString)? ("description" description=EString)?
 	//	("content" content=EString)? ("toBeSupported" toBeSupported=EBoolean)? ("isTagged" "{" isTagged+=TaggedValue (","
-	//	isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=Goal ("," subGoals+=Goal)* "}")? ("strategies" "{"
+	//	isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=ModelGoal ("," subGoals+=ModelGoal)* "}")? ("strategies" "{"
 	//	strategies+=Strategy ("," strategies+=Strategy)* "}")? ("goalContexts" "{" goalContexts+=Context (","
 	//	goalContexts+=Context)* "}")? ("assumptions" "{" assumptions+=Assumption ("," assumptions+=Assumption)* "}")?
 	//	("goalSolutions" "{" goalSolutions+=Solution ("," goalSolutions+=Solution)* "}")? "}";
-	public GoalElements getGoalAccess() {
-		return (pGoal != null) ? pGoal : (pGoal = new GoalElements());
+	public ModelGoalElements getModelGoalAccess() {
+		return (pModelGoal != null) ? pModelGoal : (pModelGoal = new ModelGoalElements());
 	}
 	
-	public ParserRule getGoalRule() {
-		return getGoalAccess().getRule();
+	public ParserRule getModelGoalRule() {
+		return getModelGoalAccess().getRule();
 	}
 
 	//ModelElement returns arm::ModelElement:
@@ -4204,10 +4206,11 @@ public class GsnDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Strategy:
 	//	{Strategy} "Strategy" "{" ("identifier" identifier=EString)? ("description" description=EString)? ("content"
-	//	content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{" goals+=Goal
-	//	("," goals+=Goal)* "}")? ("justifications" "{" justifications+=Justification ("," justifications+=Justification)*
-	//	"}")? ("strategyContexts" "{" strategyContexts+=Context ("," strategyContexts+=Context)* "}")? ("strategySolutions"
-	//	"{" strategySolutions+=Solution ("," strategySolutions+=Solution)* "}")? "}";
+	//	content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{"
+	//	goals+=ModelGoal ("," goals+=ModelGoal)* "}")? ("justifications" "{" justifications+=Justification (","
+	//	justifications+=Justification)* "}")? ("strategyContexts" "{" strategyContexts+=Context (","
+	//	strategyContexts+=Context)* "}")? ("strategySolutions" "{" strategySolutions+=Solution (","
+	//	strategySolutions+=Solution)* "}")? "}";
 	public StrategyElements getStrategyAccess() {
 		return (pStrategy != null) ? pStrategy : (pStrategy = new StrategyElements());
 	}

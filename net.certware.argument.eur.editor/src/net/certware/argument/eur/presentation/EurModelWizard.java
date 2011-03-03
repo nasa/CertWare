@@ -18,6 +18,7 @@ import net.certware.argument.eur.EurFactory;
 import net.certware.argument.eur.EurPackage;
 import net.certware.argument.eur.edit.provider.EurEditPlugin;
 import net.certware.argument.eur.editor.presentation.EurEditorPlugin;
+import net.certware.core.ui.CertWareUI;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -148,13 +149,17 @@ public class EurModelWizard extends Wizard implements INewWizard {
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(EurEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(EurEditorPlugin.INSTANCE.getImage("full/wizban/NewEur")));
+		//setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(EurEditorPlugin.INSTANCE.getImage("full/wizban/NewEur")));
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**

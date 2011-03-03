@@ -182,5 +182,33 @@
             class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
    </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.evidence.hugin.ui.wizard.NewHuginFileWizard"
+            hasPages="true"
+            icon="icons/obj16/hugin-icon.png"
+            id="net.certware.evidence.hugin.ui.wizard"
+            name="Hugin NET File"
+            project="false">
+         <description>
+            Creates a new Hugin NET file in the selected container.  Initializes file with representative content.
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.evidence.hugin.ui.wizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>

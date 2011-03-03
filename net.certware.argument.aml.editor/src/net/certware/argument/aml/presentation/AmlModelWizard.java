@@ -73,6 +73,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 import net.certware.argument.aml.AmlFactory;
 import net.certware.argument.aml.AmlPackage;
 import net.certware.argument.aml.provider.AmlEditPlugin;
+import net.certware.core.ui.CertWareUI;
 
 
 import org.eclipse.core.runtime.Path;
@@ -182,14 +183,18 @@ public class AmlModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
+	 * Retrieves the wizard banner from the CertWare UI registry.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(AmlEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(AmlEditorPlugin.INSTANCE.getImage("full/wizban/NewAml"))); //$NON-NLS-1$
+		// setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(AmlEditorPlugin.INSTANCE.getImage("full/wizban/NewAml"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
 	}
 
 	/**

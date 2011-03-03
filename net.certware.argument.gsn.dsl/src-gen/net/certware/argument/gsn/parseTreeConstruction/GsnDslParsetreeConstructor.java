@@ -31,7 +31,7 @@ protected class ThisRootNode extends RootToken {
 	@Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group(this, this, 0, inst);
+			case 0: return new ModelGoal_Group(this, this, 0, inst);
 			case 1: return new ModelElement_Alternatives(this, this, 1, inst);
 			case 2: return new ArgumentElement_Alternatives(this, this, 2, inst);
 			case 3: return new ArgumentLink_Alternatives(this, this, 3, inst);
@@ -60,12 +60,12 @@ protected class ThisRootNode extends RootToken {
 }
 	
 
-/************ begin Rule Goal ****************
+/************ begin Rule ModelGoal ****************
  *
- * Goal:
+ * ModelGoal returns Goal:
  * 	{Goal} assumed?="assumed"? "Goal" "{" ("identifier" identifier=EString)? ("description" description=EString)?
  * 	("content" content=EString)? ("toBeSupported" toBeSupported=EBoolean)? ("isTagged" "{" isTagged+=TaggedValue (","
- * 	isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=Goal ("," subGoals+=Goal)* "}")? ("strategies" "{"
+ * 	isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=ModelGoal ("," subGoals+=ModelGoal)* "}")? ("strategies" "{"
  * 	strategies+=Strategy ("," strategies+=Strategy)* "}")? ("goalContexts" "{" goalContexts+=Context (","
  * 	goalContexts+=Context)* "}")? ("assumptions" "{" assumptions+=Assumption ("," assumptions+=Assumption)* "}")?
  * 	("goalSolutions" "{" goalSolutions+=Solution ("," goalSolutions+=Solution)* "}")? "}";
@@ -74,32 +74,32 @@ protected class ThisRootNode extends RootToken {
 
 // {Goal} assumed?="assumed"? "Goal" "{" ("identifier" identifier=EString)? ("description" description=EString)? ("content"
 // content=EString)? ("toBeSupported" toBeSupported=EBoolean)? ("isTagged" "{" isTagged+=TaggedValue (","
-// isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=Goal ("," subGoals+=Goal)* "}")? ("strategies" "{"
+// isTagged+=TaggedValue)* "}")? ("subGoals" "{" subGoals+=ModelGoal ("," subGoals+=ModelGoal)* "}")? ("strategies" "{"
 // strategies+=Strategy ("," strategies+=Strategy)* "}")? ("goalContexts" "{" goalContexts+=Context (","
 // goalContexts+=Context)* "}")? ("assumptions" "{" assumptions+=Assumption ("," assumptions+=Assumption)* "}")?
 // ("goalSolutions" "{" goalSolutions+=Solution ("," goalSolutions+=Solution)* "}")? "}"
-protected class Goal_Group extends GroupToken {
+protected class ModelGoal_Group extends GroupToken {
 	
-	public Goal_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup();
+		return grammarAccess.getModelGoalAccess().getGroup();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_RightCurlyBracketKeyword_14(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_RightCurlyBracketKeyword_14(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getGoalAccess().getGoalAction_0().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getModelGoalAccess().getGoalAction_0().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -107,15 +107,15 @@ protected class Goal_Group extends GroupToken {
 }
 
 // {Goal}
-protected class Goal_GoalAction_0 extends ActionToken  {
+protected class ModelGoal_GoalAction_0 extends ActionToken  {
 
-	public Goal_GoalAction_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalAction_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Action getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalAction_0();
+		return grammarAccess.getModelGoalAccess().getGoalAction_0();
 	}
 
     @Override
@@ -133,21 +133,21 @@ protected class Goal_GoalAction_0 extends ActionToken  {
 }
 
 // assumed?="assumed"?
-protected class Goal_AssumedAssignment_1 extends AssignmentToken  {
+protected class ModelGoal_AssumedAssignment_1 extends AssignmentToken  {
 	
-	public Goal_AssumedAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_AssumedAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getAssumedAssignment_1();
+		return grammarAccess.getModelGoalAccess().getAssumedAssignment_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_GoalAction_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_GoalAction_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -158,7 +158,7 @@ protected class Goal_AssumedAssignment_1 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("assumed");
 		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getGoalAccess().getAssumedAssumedKeyword_1_0();
+			element = grammarAccess.getModelGoalAccess().getAssumedAssumedKeyword_1_0();
 			return obj;
 		}
 		return null;
@@ -167,22 +167,22 @@ protected class Goal_AssumedAssignment_1 extends AssignmentToken  {
 }
 
 // "Goal"
-protected class Goal_GoalKeyword_2 extends KeywordToken  {
+protected class ModelGoal_GoalKeyword_2 extends KeywordToken  {
 	
-	public Goal_GoalKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalKeyword_2();
+		return grammarAccess.getModelGoalAccess().getGoalKeyword_2();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_AssumedAssignment_1(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_GoalAction_0(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_AssumedAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_GoalAction_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -190,21 +190,21 @@ protected class Goal_GoalKeyword_2 extends KeywordToken  {
 }
 
 // "{"
-protected class Goal_LeftCurlyBracketKeyword_3 extends KeywordToken  {
+protected class ModelGoal_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 	
-	public Goal_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_LeftCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_3();
+		return grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_GoalKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_GoalKeyword_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -212,21 +212,21 @@ protected class Goal_LeftCurlyBracketKeyword_3 extends KeywordToken  {
 }
 
 // ("identifier" identifier=EString)?
-protected class Goal_Group_4 extends GroupToken {
+protected class ModelGoal_Group_4 extends GroupToken {
 	
-	public Goal_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_4();
+		return grammarAccess.getModelGoalAccess().getGroup_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_IdentifierAssignment_4_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_IdentifierAssignment_4_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -234,21 +234,21 @@ protected class Goal_Group_4 extends GroupToken {
 }
 
 // "identifier"
-protected class Goal_IdentifierKeyword_4_0 extends KeywordToken  {
+protected class ModelGoal_IdentifierKeyword_4_0 extends KeywordToken  {
 	
-	public Goal_IdentifierKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_IdentifierKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getIdentifierKeyword_4_0();
+		return grammarAccess.getModelGoalAccess().getIdentifierKeyword_4_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -256,21 +256,21 @@ protected class Goal_IdentifierKeyword_4_0 extends KeywordToken  {
 }
 
 // identifier=EString
-protected class Goal_IdentifierAssignment_4_1 extends AssignmentToken  {
+protected class ModelGoal_IdentifierAssignment_4_1 extends AssignmentToken  {
 	
-	public Goal_IdentifierAssignment_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_IdentifierAssignment_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getIdentifierAssignment_4_1();
+		return grammarAccess.getModelGoalAccess().getIdentifierAssignment_4_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_IdentifierKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_IdentifierKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -279,9 +279,9 @@ protected class Goal_IdentifierAssignment_4_1 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("identifier",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("identifier");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getGoalAccess().getIdentifierEStringParserRuleCall_4_1_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getModelGoalAccess().getIdentifierEStringParserRuleCall_4_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getGoalAccess().getIdentifierEStringParserRuleCall_4_1_0();
+			element = grammarAccess.getModelGoalAccess().getIdentifierEStringParserRuleCall_4_1_0();
 			return obj;
 		}
 		return null;
@@ -291,21 +291,21 @@ protected class Goal_IdentifierAssignment_4_1 extends AssignmentToken  {
 
 
 // ("description" description=EString)?
-protected class Goal_Group_5 extends GroupToken {
+protected class ModelGoal_Group_5 extends GroupToken {
 	
-	public Goal_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_5();
+		return grammarAccess.getModelGoalAccess().getGroup_5();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_DescriptionAssignment_5_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_DescriptionAssignment_5_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -313,22 +313,22 @@ protected class Goal_Group_5 extends GroupToken {
 }
 
 // "description"
-protected class Goal_DescriptionKeyword_5_0 extends KeywordToken  {
+protected class ModelGoal_DescriptionKeyword_5_0 extends KeywordToken  {
 	
-	public Goal_DescriptionKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_DescriptionKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getDescriptionKeyword_5_0();
+		return grammarAccess.getModelGoalAccess().getDescriptionKeyword_5_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_4(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -336,21 +336,21 @@ protected class Goal_DescriptionKeyword_5_0 extends KeywordToken  {
 }
 
 // description=EString
-protected class Goal_DescriptionAssignment_5_1 extends AssignmentToken  {
+protected class ModelGoal_DescriptionAssignment_5_1 extends AssignmentToken  {
 	
-	public Goal_DescriptionAssignment_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_DescriptionAssignment_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getDescriptionAssignment_5_1();
+		return grammarAccess.getModelGoalAccess().getDescriptionAssignment_5_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_DescriptionKeyword_5_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_DescriptionKeyword_5_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -359,9 +359,9 @@ protected class Goal_DescriptionAssignment_5_1 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("description",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("description");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getGoalAccess().getDescriptionEStringParserRuleCall_5_1_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getModelGoalAccess().getDescriptionEStringParserRuleCall_5_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getGoalAccess().getDescriptionEStringParserRuleCall_5_1_0();
+			element = grammarAccess.getModelGoalAccess().getDescriptionEStringParserRuleCall_5_1_0();
 			return obj;
 		}
 		return null;
@@ -371,21 +371,21 @@ protected class Goal_DescriptionAssignment_5_1 extends AssignmentToken  {
 
 
 // ("content" content=EString)?
-protected class Goal_Group_6 extends GroupToken {
+protected class ModelGoal_Group_6 extends GroupToken {
 	
-	public Goal_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_6();
+		return grammarAccess.getModelGoalAccess().getGroup_6();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_ContentAssignment_6_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_ContentAssignment_6_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -393,23 +393,23 @@ protected class Goal_Group_6 extends GroupToken {
 }
 
 // "content"
-protected class Goal_ContentKeyword_6_0 extends KeywordToken  {
+protected class ModelGoal_ContentKeyword_6_0 extends KeywordToken  {
 	
-	public Goal_ContentKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_ContentKeyword_6_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getContentKeyword_6_0();
+		return grammarAccess.getModelGoalAccess().getContentKeyword_6_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_5(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_4(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 2, inst);
+			case 0: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
@@ -417,21 +417,21 @@ protected class Goal_ContentKeyword_6_0 extends KeywordToken  {
 }
 
 // content=EString
-protected class Goal_ContentAssignment_6_1 extends AssignmentToken  {
+protected class ModelGoal_ContentAssignment_6_1 extends AssignmentToken  {
 	
-	public Goal_ContentAssignment_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_ContentAssignment_6_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getContentAssignment_6_1();
+		return grammarAccess.getModelGoalAccess().getContentAssignment_6_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_ContentKeyword_6_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_ContentKeyword_6_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -440,9 +440,9 @@ protected class Goal_ContentAssignment_6_1 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("content",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("content");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getGoalAccess().getContentEStringParserRuleCall_6_1_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getModelGoalAccess().getContentEStringParserRuleCall_6_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getGoalAccess().getContentEStringParserRuleCall_6_1_0();
+			element = grammarAccess.getModelGoalAccess().getContentEStringParserRuleCall_6_1_0();
 			return obj;
 		}
 		return null;
@@ -452,21 +452,21 @@ protected class Goal_ContentAssignment_6_1 extends AssignmentToken  {
 
 
 // ("toBeSupported" toBeSupported=EBoolean)?
-protected class Goal_Group_7 extends GroupToken {
+protected class ModelGoal_Group_7 extends GroupToken {
 	
-	public Goal_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_7();
+		return grammarAccess.getModelGoalAccess().getGroup_7();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_ToBeSupportedAssignment_7_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_ToBeSupportedAssignment_7_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -474,24 +474,24 @@ protected class Goal_Group_7 extends GroupToken {
 }
 
 // "toBeSupported"
-protected class Goal_ToBeSupportedKeyword_7_0 extends KeywordToken  {
+protected class ModelGoal_ToBeSupportedKeyword_7_0 extends KeywordToken  {
 	
-	public Goal_ToBeSupportedKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_ToBeSupportedKeyword_7_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getToBeSupportedKeyword_7_0();
+		return grammarAccess.getModelGoalAccess().getToBeSupportedKeyword_7_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_6(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_5(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_4(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 3, inst);
+			case 0: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 3, inst);
 			default: return null;
 		}	
 	}
@@ -499,21 +499,21 @@ protected class Goal_ToBeSupportedKeyword_7_0 extends KeywordToken  {
 }
 
 // toBeSupported=EBoolean
-protected class Goal_ToBeSupportedAssignment_7_1 extends AssignmentToken  {
+protected class ModelGoal_ToBeSupportedAssignment_7_1 extends AssignmentToken  {
 	
-	public Goal_ToBeSupportedAssignment_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_ToBeSupportedAssignment_7_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getToBeSupportedAssignment_7_1();
+		return grammarAccess.getModelGoalAccess().getToBeSupportedAssignment_7_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_ToBeSupportedKeyword_7_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_ToBeSupportedKeyword_7_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -522,9 +522,9 @@ protected class Goal_ToBeSupportedAssignment_7_1 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("toBeSupported",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("toBeSupported");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getModelGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0();
+			element = grammarAccess.getModelGoalAccess().getToBeSupportedEBooleanParserRuleCall_7_1_0();
 			return obj;
 		}
 		return null;
@@ -534,21 +534,21 @@ protected class Goal_ToBeSupportedAssignment_7_1 extends AssignmentToken  {
 
 
 // ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")?
-protected class Goal_Group_8 extends GroupToken {
+protected class ModelGoal_Group_8 extends GroupToken {
 	
-	public Goal_Group_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_8();
+		return grammarAccess.getModelGoalAccess().getGroup_8();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_RightCurlyBracketKeyword_8_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_RightCurlyBracketKeyword_8_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -556,25 +556,25 @@ protected class Goal_Group_8 extends GroupToken {
 }
 
 // "isTagged"
-protected class Goal_IsTaggedKeyword_8_0 extends KeywordToken  {
+protected class ModelGoal_IsTaggedKeyword_8_0 extends KeywordToken  {
 	
-	public Goal_IsTaggedKeyword_8_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_IsTaggedKeyword_8_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getIsTaggedKeyword_8_0();
+		return grammarAccess.getModelGoalAccess().getIsTaggedKeyword_8_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_7(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_6(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_5(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_Group_4(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 4, inst);
+			case 0: return new ModelGoal_Group_7(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 4, inst);
 			default: return null;
 		}	
 	}
@@ -582,21 +582,21 @@ protected class Goal_IsTaggedKeyword_8_0 extends KeywordToken  {
 }
 
 // "{"
-protected class Goal_LeftCurlyBracketKeyword_8_1 extends KeywordToken  {
+protected class ModelGoal_LeftCurlyBracketKeyword_8_1 extends KeywordToken  {
 	
-	public Goal_LeftCurlyBracketKeyword_8_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_LeftCurlyBracketKeyword_8_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_8_1();
+		return grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_8_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_IsTaggedKeyword_8_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_IsTaggedKeyword_8_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -604,15 +604,15 @@ protected class Goal_LeftCurlyBracketKeyword_8_1 extends KeywordToken  {
 }
 
 // isTagged+=TaggedValue
-protected class Goal_IsTaggedAssignment_8_2 extends AssignmentToken  {
+protected class ModelGoal_IsTaggedAssignment_8_2 extends AssignmentToken  {
 	
-	public Goal_IsTaggedAssignment_8_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_IsTaggedAssignment_8_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getIsTaggedAssignment_8_2();
+		return grammarAccess.getModelGoalAccess().getIsTaggedAssignment_8_2();
 	}
 
     @Override
@@ -631,7 +631,7 @@ protected class Goal_IsTaggedAssignment_8_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getTaggedValueRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0(); 
+				element = grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -643,28 +643,28 @@ protected class Goal_IsTaggedAssignment_8_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_LeftCurlyBracketKeyword_8_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_LeftCurlyBracketKeyword_8_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // ("," isTagged+=TaggedValue)*
-protected class Goal_Group_8_3 extends GroupToken {
+protected class ModelGoal_Group_8_3 extends GroupToken {
 	
-	public Goal_Group_8_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_8_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_8_3();
+		return grammarAccess.getModelGoalAccess().getGroup_8_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_IsTaggedAssignment_8_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_IsTaggedAssignment_8_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -672,22 +672,22 @@ protected class Goal_Group_8_3 extends GroupToken {
 }
 
 // ","
-protected class Goal_CommaKeyword_8_3_0 extends KeywordToken  {
+protected class ModelGoal_CommaKeyword_8_3_0 extends KeywordToken  {
 	
-	public Goal_CommaKeyword_8_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_CommaKeyword_8_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getCommaKeyword_8_3_0();
+		return grammarAccess.getModelGoalAccess().getCommaKeyword_8_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_8_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_IsTaggedAssignment_8_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_8_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_IsTaggedAssignment_8_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -695,15 +695,15 @@ protected class Goal_CommaKeyword_8_3_0 extends KeywordToken  {
 }
 
 // isTagged+=TaggedValue
-protected class Goal_IsTaggedAssignment_8_3_1 extends AssignmentToken  {
+protected class ModelGoal_IsTaggedAssignment_8_3_1 extends AssignmentToken  {
 	
-	public Goal_IsTaggedAssignment_8_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_IsTaggedAssignment_8_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getIsTaggedAssignment_8_3_1();
+		return grammarAccess.getModelGoalAccess().getIsTaggedAssignment_8_3_1();
 	}
 
     @Override
@@ -722,7 +722,7 @@ protected class Goal_IsTaggedAssignment_8_3_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getTaggedValueRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0(); 
+				element = grammarAccess.getModelGoalAccess().getIsTaggedTaggedValueParserRuleCall_8_3_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -734,7 +734,7 @@ protected class Goal_IsTaggedAssignment_8_3_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_CommaKeyword_8_3_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_CommaKeyword_8_3_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -742,22 +742,22 @@ protected class Goal_IsTaggedAssignment_8_3_1 extends AssignmentToken  {
 
 
 // "}"
-protected class Goal_RightCurlyBracketKeyword_8_4 extends KeywordToken  {
+protected class ModelGoal_RightCurlyBracketKeyword_8_4 extends KeywordToken  {
 	
-	public Goal_RightCurlyBracketKeyword_8_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_RightCurlyBracketKeyword_8_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_8_4();
+		return grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_8_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_8_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_IsTaggedAssignment_8_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_8_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_IsTaggedAssignment_8_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -765,22 +765,22 @@ protected class Goal_RightCurlyBracketKeyword_8_4 extends KeywordToken  {
 }
 
 
-// ("subGoals" "{" subGoals+=Goal ("," subGoals+=Goal)* "}")?
-protected class Goal_Group_9 extends GroupToken {
+// ("subGoals" "{" subGoals+=ModelGoal ("," subGoals+=ModelGoal)* "}")?
+protected class ModelGoal_Group_9 extends GroupToken {
 	
-	public Goal_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_9(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_9();
+		return grammarAccess.getModelGoalAccess().getGroup_9();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_RightCurlyBracketKeyword_9_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_RightCurlyBracketKeyword_9_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -788,26 +788,26 @@ protected class Goal_Group_9 extends GroupToken {
 }
 
 // "subGoals"
-protected class Goal_SubGoalsKeyword_9_0 extends KeywordToken  {
+protected class ModelGoal_SubGoalsKeyword_9_0 extends KeywordToken  {
 	
-	public Goal_SubGoalsKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_SubGoalsKeyword_9_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getSubGoalsKeyword_9_0();
+		return grammarAccess.getModelGoalAccess().getSubGoalsKeyword_9_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_8(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_7(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_6(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_Group_5(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Goal_Group_4(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 5, inst);
+			case 0: return new ModelGoal_Group_8(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_7(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 5, inst);
 			default: return null;
 		}	
 	}
@@ -815,43 +815,43 @@ protected class Goal_SubGoalsKeyword_9_0 extends KeywordToken  {
 }
 
 // "{"
-protected class Goal_LeftCurlyBracketKeyword_9_1 extends KeywordToken  {
+protected class ModelGoal_LeftCurlyBracketKeyword_9_1 extends KeywordToken  {
 	
-	public Goal_LeftCurlyBracketKeyword_9_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_LeftCurlyBracketKeyword_9_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_9_1();
+		return grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_9_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_SubGoalsKeyword_9_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_SubGoalsKeyword_9_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// subGoals+=Goal
-protected class Goal_SubGoalsAssignment_9_2 extends AssignmentToken  {
+// subGoals+=ModelGoal
+protected class ModelGoal_SubGoalsAssignment_9_2 extends AssignmentToken  {
 	
-	public Goal_SubGoalsAssignment_9_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_SubGoalsAssignment_9_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getSubGoalsAssignment_9_2();
+		return grammarAccess.getModelGoalAccess().getSubGoalsAssignment_9_2();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group(this, this, 0, inst);
+			case 0: return new ModelGoal_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -862,9 +862,9 @@ protected class Goal_SubGoalsAssignment_9_2 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("subGoals");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getGoalRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getModelGoalRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_2_0(); 
+				element = grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -876,28 +876,28 @@ protected class Goal_SubGoalsAssignment_9_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_LeftCurlyBracketKeyword_9_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_LeftCurlyBracketKeyword_9_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
-// ("," subGoals+=Goal)*
-protected class Goal_Group_9_3 extends GroupToken {
+// ("," subGoals+=ModelGoal)*
+protected class ModelGoal_Group_9_3 extends GroupToken {
 	
-	public Goal_Group_9_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_9_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_9_3();
+		return grammarAccess.getModelGoalAccess().getGroup_9_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_SubGoalsAssignment_9_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_SubGoalsAssignment_9_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -905,44 +905,44 @@ protected class Goal_Group_9_3 extends GroupToken {
 }
 
 // ","
-protected class Goal_CommaKeyword_9_3_0 extends KeywordToken  {
+protected class ModelGoal_CommaKeyword_9_3_0 extends KeywordToken  {
 	
-	public Goal_CommaKeyword_9_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_CommaKeyword_9_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getCommaKeyword_9_3_0();
+		return grammarAccess.getModelGoalAccess().getCommaKeyword_9_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_9_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_SubGoalsAssignment_9_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_9_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_SubGoalsAssignment_9_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// subGoals+=Goal
-protected class Goal_SubGoalsAssignment_9_3_1 extends AssignmentToken  {
+// subGoals+=ModelGoal
+protected class ModelGoal_SubGoalsAssignment_9_3_1 extends AssignmentToken  {
 	
-	public Goal_SubGoalsAssignment_9_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_SubGoalsAssignment_9_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getSubGoalsAssignment_9_3_1();
+		return grammarAccess.getModelGoalAccess().getSubGoalsAssignment_9_3_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group(this, this, 0, inst);
+			case 0: return new ModelGoal_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -953,9 +953,9 @@ protected class Goal_SubGoalsAssignment_9_3_1 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("subGoals");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getGoalRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getModelGoalRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getSubGoalsGoalParserRuleCall_9_3_1_0(); 
+				element = grammarAccess.getModelGoalAccess().getSubGoalsModelGoalParserRuleCall_9_3_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -967,7 +967,7 @@ protected class Goal_SubGoalsAssignment_9_3_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_CommaKeyword_9_3_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_CommaKeyword_9_3_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -975,22 +975,22 @@ protected class Goal_SubGoalsAssignment_9_3_1 extends AssignmentToken  {
 
 
 // "}"
-protected class Goal_RightCurlyBracketKeyword_9_4 extends KeywordToken  {
+protected class ModelGoal_RightCurlyBracketKeyword_9_4 extends KeywordToken  {
 	
-	public Goal_RightCurlyBracketKeyword_9_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_RightCurlyBracketKeyword_9_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_9_4();
+		return grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_9_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_9_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_SubGoalsAssignment_9_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_9_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_SubGoalsAssignment_9_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -999,21 +999,21 @@ protected class Goal_RightCurlyBracketKeyword_9_4 extends KeywordToken  {
 
 
 // ("strategies" "{" strategies+=Strategy ("," strategies+=Strategy)* "}")?
-protected class Goal_Group_10 extends GroupToken {
+protected class ModelGoal_Group_10 extends GroupToken {
 	
-	public Goal_Group_10(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_10(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_10();
+		return grammarAccess.getModelGoalAccess().getGroup_10();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_RightCurlyBracketKeyword_10_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_RightCurlyBracketKeyword_10_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1021,27 +1021,27 @@ protected class Goal_Group_10 extends GroupToken {
 }
 
 // "strategies"
-protected class Goal_StrategiesKeyword_10_0 extends KeywordToken  {
+protected class ModelGoal_StrategiesKeyword_10_0 extends KeywordToken  {
 	
-	public Goal_StrategiesKeyword_10_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_StrategiesKeyword_10_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getStrategiesKeyword_10_0();
+		return grammarAccess.getModelGoalAccess().getStrategiesKeyword_10_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_9(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_8(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_7(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_Group_6(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Goal_Group_5(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Goal_Group_4(lastRuleCallOrigin, this, 5, inst);
-			case 6: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 6, inst);
+			case 0: return new ModelGoal_Group_9(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_8(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_7(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 5, inst);
+			case 6: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 6, inst);
 			default: return null;
 		}	
 	}
@@ -1049,21 +1049,21 @@ protected class Goal_StrategiesKeyword_10_0 extends KeywordToken  {
 }
 
 // "{"
-protected class Goal_LeftCurlyBracketKeyword_10_1 extends KeywordToken  {
+protected class ModelGoal_LeftCurlyBracketKeyword_10_1 extends KeywordToken  {
 	
-	public Goal_LeftCurlyBracketKeyword_10_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_LeftCurlyBracketKeyword_10_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_10_1();
+		return grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_10_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_StrategiesKeyword_10_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_StrategiesKeyword_10_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1071,15 +1071,15 @@ protected class Goal_LeftCurlyBracketKeyword_10_1 extends KeywordToken  {
 }
 
 // strategies+=Strategy
-protected class Goal_StrategiesAssignment_10_2 extends AssignmentToken  {
+protected class ModelGoal_StrategiesAssignment_10_2 extends AssignmentToken  {
 	
-	public Goal_StrategiesAssignment_10_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_StrategiesAssignment_10_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getStrategiesAssignment_10_2();
+		return grammarAccess.getModelGoalAccess().getStrategiesAssignment_10_2();
 	}
 
     @Override
@@ -1098,7 +1098,7 @@ protected class Goal_StrategiesAssignment_10_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getStrategyRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0(); 
+				element = grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1110,28 +1110,28 @@ protected class Goal_StrategiesAssignment_10_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_LeftCurlyBracketKeyword_10_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_LeftCurlyBracketKeyword_10_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // ("," strategies+=Strategy)*
-protected class Goal_Group_10_3 extends GroupToken {
+protected class ModelGoal_Group_10_3 extends GroupToken {
 	
-	public Goal_Group_10_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_10_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_10_3();
+		return grammarAccess.getModelGoalAccess().getGroup_10_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_StrategiesAssignment_10_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_StrategiesAssignment_10_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1139,22 +1139,22 @@ protected class Goal_Group_10_3 extends GroupToken {
 }
 
 // ","
-protected class Goal_CommaKeyword_10_3_0 extends KeywordToken  {
+protected class ModelGoal_CommaKeyword_10_3_0 extends KeywordToken  {
 	
-	public Goal_CommaKeyword_10_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_CommaKeyword_10_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getCommaKeyword_10_3_0();
+		return grammarAccess.getModelGoalAccess().getCommaKeyword_10_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_10_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_StrategiesAssignment_10_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_10_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_StrategiesAssignment_10_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1162,15 +1162,15 @@ protected class Goal_CommaKeyword_10_3_0 extends KeywordToken  {
 }
 
 // strategies+=Strategy
-protected class Goal_StrategiesAssignment_10_3_1 extends AssignmentToken  {
+protected class ModelGoal_StrategiesAssignment_10_3_1 extends AssignmentToken  {
 	
-	public Goal_StrategiesAssignment_10_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_StrategiesAssignment_10_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getStrategiesAssignment_10_3_1();
+		return grammarAccess.getModelGoalAccess().getStrategiesAssignment_10_3_1();
 	}
 
     @Override
@@ -1189,7 +1189,7 @@ protected class Goal_StrategiesAssignment_10_3_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getStrategyRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0(); 
+				element = grammarAccess.getModelGoalAccess().getStrategiesStrategyParserRuleCall_10_3_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1201,7 +1201,7 @@ protected class Goal_StrategiesAssignment_10_3_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_CommaKeyword_10_3_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_CommaKeyword_10_3_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -1209,22 +1209,22 @@ protected class Goal_StrategiesAssignment_10_3_1 extends AssignmentToken  {
 
 
 // "}"
-protected class Goal_RightCurlyBracketKeyword_10_4 extends KeywordToken  {
+protected class ModelGoal_RightCurlyBracketKeyword_10_4 extends KeywordToken  {
 	
-	public Goal_RightCurlyBracketKeyword_10_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_RightCurlyBracketKeyword_10_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_10_4();
+		return grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_10_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_10_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_StrategiesAssignment_10_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_10_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_StrategiesAssignment_10_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1233,21 +1233,21 @@ protected class Goal_RightCurlyBracketKeyword_10_4 extends KeywordToken  {
 
 
 // ("goalContexts" "{" goalContexts+=Context ("," goalContexts+=Context)* "}")?
-protected class Goal_Group_11 extends GroupToken {
+protected class ModelGoal_Group_11 extends GroupToken {
 	
-	public Goal_Group_11(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_11(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_11();
+		return grammarAccess.getModelGoalAccess().getGroup_11();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_RightCurlyBracketKeyword_11_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_RightCurlyBracketKeyword_11_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1255,28 +1255,28 @@ protected class Goal_Group_11 extends GroupToken {
 }
 
 // "goalContexts"
-protected class Goal_GoalContextsKeyword_11_0 extends KeywordToken  {
+protected class ModelGoal_GoalContextsKeyword_11_0 extends KeywordToken  {
 	
-	public Goal_GoalContextsKeyword_11_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalContextsKeyword_11_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalContextsKeyword_11_0();
+		return grammarAccess.getModelGoalAccess().getGoalContextsKeyword_11_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_10(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_9(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_8(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_Group_7(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Goal_Group_6(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Goal_Group_5(lastRuleCallOrigin, this, 5, inst);
-			case 6: return new Goal_Group_4(lastRuleCallOrigin, this, 6, inst);
-			case 7: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 7, inst);
+			case 0: return new ModelGoal_Group_10(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_9(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_8(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_Group_7(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 5, inst);
+			case 6: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 6, inst);
+			case 7: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 7, inst);
 			default: return null;
 		}	
 	}
@@ -1284,21 +1284,21 @@ protected class Goal_GoalContextsKeyword_11_0 extends KeywordToken  {
 }
 
 // "{"
-protected class Goal_LeftCurlyBracketKeyword_11_1 extends KeywordToken  {
+protected class ModelGoal_LeftCurlyBracketKeyword_11_1 extends KeywordToken  {
 	
-	public Goal_LeftCurlyBracketKeyword_11_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_LeftCurlyBracketKeyword_11_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_11_1();
+		return grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_11_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_GoalContextsKeyword_11_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_GoalContextsKeyword_11_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1306,15 +1306,15 @@ protected class Goal_LeftCurlyBracketKeyword_11_1 extends KeywordToken  {
 }
 
 // goalContexts+=Context
-protected class Goal_GoalContextsAssignment_11_2 extends AssignmentToken  {
+protected class ModelGoal_GoalContextsAssignment_11_2 extends AssignmentToken  {
 	
-	public Goal_GoalContextsAssignment_11_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalContextsAssignment_11_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalContextsAssignment_11_2();
+		return grammarAccess.getModelGoalAccess().getGoalContextsAssignment_11_2();
 	}
 
     @Override
@@ -1333,7 +1333,7 @@ protected class Goal_GoalContextsAssignment_11_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getContextRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_2_0(); 
+				element = grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1345,28 +1345,28 @@ protected class Goal_GoalContextsAssignment_11_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_LeftCurlyBracketKeyword_11_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_LeftCurlyBracketKeyword_11_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // ("," goalContexts+=Context)*
-protected class Goal_Group_11_3 extends GroupToken {
+protected class ModelGoal_Group_11_3 extends GroupToken {
 	
-	public Goal_Group_11_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_11_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_11_3();
+		return grammarAccess.getModelGoalAccess().getGroup_11_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_GoalContextsAssignment_11_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_GoalContextsAssignment_11_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1374,22 +1374,22 @@ protected class Goal_Group_11_3 extends GroupToken {
 }
 
 // ","
-protected class Goal_CommaKeyword_11_3_0 extends KeywordToken  {
+protected class ModelGoal_CommaKeyword_11_3_0 extends KeywordToken  {
 	
-	public Goal_CommaKeyword_11_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_CommaKeyword_11_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getCommaKeyword_11_3_0();
+		return grammarAccess.getModelGoalAccess().getCommaKeyword_11_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_11_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_GoalContextsAssignment_11_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_11_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_GoalContextsAssignment_11_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1397,15 +1397,15 @@ protected class Goal_CommaKeyword_11_3_0 extends KeywordToken  {
 }
 
 // goalContexts+=Context
-protected class Goal_GoalContextsAssignment_11_3_1 extends AssignmentToken  {
+protected class ModelGoal_GoalContextsAssignment_11_3_1 extends AssignmentToken  {
 	
-	public Goal_GoalContextsAssignment_11_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalContextsAssignment_11_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalContextsAssignment_11_3_1();
+		return grammarAccess.getModelGoalAccess().getGoalContextsAssignment_11_3_1();
 	}
 
     @Override
@@ -1424,7 +1424,7 @@ protected class Goal_GoalContextsAssignment_11_3_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getContextRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0(); 
+				element = grammarAccess.getModelGoalAccess().getGoalContextsContextParserRuleCall_11_3_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1436,7 +1436,7 @@ protected class Goal_GoalContextsAssignment_11_3_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_CommaKeyword_11_3_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_CommaKeyword_11_3_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -1444,22 +1444,22 @@ protected class Goal_GoalContextsAssignment_11_3_1 extends AssignmentToken  {
 
 
 // "}"
-protected class Goal_RightCurlyBracketKeyword_11_4 extends KeywordToken  {
+protected class ModelGoal_RightCurlyBracketKeyword_11_4 extends KeywordToken  {
 	
-	public Goal_RightCurlyBracketKeyword_11_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_RightCurlyBracketKeyword_11_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_11_4();
+		return grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_11_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_11_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_GoalContextsAssignment_11_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_11_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_GoalContextsAssignment_11_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1468,21 +1468,21 @@ protected class Goal_RightCurlyBracketKeyword_11_4 extends KeywordToken  {
 
 
 // ("assumptions" "{" assumptions+=Assumption ("," assumptions+=Assumption)* "}")?
-protected class Goal_Group_12 extends GroupToken {
+protected class ModelGoal_Group_12 extends GroupToken {
 	
-	public Goal_Group_12(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_12(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_12();
+		return grammarAccess.getModelGoalAccess().getGroup_12();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_RightCurlyBracketKeyword_12_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_RightCurlyBracketKeyword_12_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1490,29 +1490,29 @@ protected class Goal_Group_12 extends GroupToken {
 }
 
 // "assumptions"
-protected class Goal_AssumptionsKeyword_12_0 extends KeywordToken  {
+protected class ModelGoal_AssumptionsKeyword_12_0 extends KeywordToken  {
 	
-	public Goal_AssumptionsKeyword_12_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_AssumptionsKeyword_12_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getAssumptionsKeyword_12_0();
+		return grammarAccess.getModelGoalAccess().getAssumptionsKeyword_12_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_11(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_10(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_9(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_Group_8(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Goal_Group_7(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Goal_Group_6(lastRuleCallOrigin, this, 5, inst);
-			case 6: return new Goal_Group_5(lastRuleCallOrigin, this, 6, inst);
-			case 7: return new Goal_Group_4(lastRuleCallOrigin, this, 7, inst);
-			case 8: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 8, inst);
+			case 0: return new ModelGoal_Group_11(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_10(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_9(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_Group_8(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ModelGoal_Group_7(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 5, inst);
+			case 6: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 6, inst);
+			case 7: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 7, inst);
+			case 8: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 8, inst);
 			default: return null;
 		}	
 	}
@@ -1520,21 +1520,21 @@ protected class Goal_AssumptionsKeyword_12_0 extends KeywordToken  {
 }
 
 // "{"
-protected class Goal_LeftCurlyBracketKeyword_12_1 extends KeywordToken  {
+protected class ModelGoal_LeftCurlyBracketKeyword_12_1 extends KeywordToken  {
 	
-	public Goal_LeftCurlyBracketKeyword_12_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_LeftCurlyBracketKeyword_12_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_12_1();
+		return grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_12_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_AssumptionsKeyword_12_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_AssumptionsKeyword_12_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1542,15 +1542,15 @@ protected class Goal_LeftCurlyBracketKeyword_12_1 extends KeywordToken  {
 }
 
 // assumptions+=Assumption
-protected class Goal_AssumptionsAssignment_12_2 extends AssignmentToken  {
+protected class ModelGoal_AssumptionsAssignment_12_2 extends AssignmentToken  {
 	
-	public Goal_AssumptionsAssignment_12_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_AssumptionsAssignment_12_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getAssumptionsAssignment_12_2();
+		return grammarAccess.getModelGoalAccess().getAssumptionsAssignment_12_2();
 	}
 
     @Override
@@ -1569,7 +1569,7 @@ protected class Goal_AssumptionsAssignment_12_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getAssumptionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0(); 
+				element = grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1581,28 +1581,28 @@ protected class Goal_AssumptionsAssignment_12_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_LeftCurlyBracketKeyword_12_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_LeftCurlyBracketKeyword_12_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // ("," assumptions+=Assumption)*
-protected class Goal_Group_12_3 extends GroupToken {
+protected class ModelGoal_Group_12_3 extends GroupToken {
 	
-	public Goal_Group_12_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_12_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_12_3();
+		return grammarAccess.getModelGoalAccess().getGroup_12_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_AssumptionsAssignment_12_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_AssumptionsAssignment_12_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1610,22 +1610,22 @@ protected class Goal_Group_12_3 extends GroupToken {
 }
 
 // ","
-protected class Goal_CommaKeyword_12_3_0 extends KeywordToken  {
+protected class ModelGoal_CommaKeyword_12_3_0 extends KeywordToken  {
 	
-	public Goal_CommaKeyword_12_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_CommaKeyword_12_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getCommaKeyword_12_3_0();
+		return grammarAccess.getModelGoalAccess().getCommaKeyword_12_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_12_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_AssumptionsAssignment_12_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_12_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_AssumptionsAssignment_12_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1633,15 +1633,15 @@ protected class Goal_CommaKeyword_12_3_0 extends KeywordToken  {
 }
 
 // assumptions+=Assumption
-protected class Goal_AssumptionsAssignment_12_3_1 extends AssignmentToken  {
+protected class ModelGoal_AssumptionsAssignment_12_3_1 extends AssignmentToken  {
 	
-	public Goal_AssumptionsAssignment_12_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_AssumptionsAssignment_12_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getAssumptionsAssignment_12_3_1();
+		return grammarAccess.getModelGoalAccess().getAssumptionsAssignment_12_3_1();
 	}
 
     @Override
@@ -1660,7 +1660,7 @@ protected class Goal_AssumptionsAssignment_12_3_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getAssumptionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0(); 
+				element = grammarAccess.getModelGoalAccess().getAssumptionsAssumptionParserRuleCall_12_3_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1672,7 +1672,7 @@ protected class Goal_AssumptionsAssignment_12_3_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_CommaKeyword_12_3_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_CommaKeyword_12_3_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -1680,22 +1680,22 @@ protected class Goal_AssumptionsAssignment_12_3_1 extends AssignmentToken  {
 
 
 // "}"
-protected class Goal_RightCurlyBracketKeyword_12_4 extends KeywordToken  {
+protected class ModelGoal_RightCurlyBracketKeyword_12_4 extends KeywordToken  {
 	
-	public Goal_RightCurlyBracketKeyword_12_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_RightCurlyBracketKeyword_12_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_12_4();
+		return grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_12_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_12_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_AssumptionsAssignment_12_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_12_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_AssumptionsAssignment_12_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1704,21 +1704,21 @@ protected class Goal_RightCurlyBracketKeyword_12_4 extends KeywordToken  {
 
 
 // ("goalSolutions" "{" goalSolutions+=Solution ("," goalSolutions+=Solution)* "}")?
-protected class Goal_Group_13 extends GroupToken {
+protected class ModelGoal_Group_13 extends GroupToken {
 	
-	public Goal_Group_13(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_13(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_13();
+		return grammarAccess.getModelGoalAccess().getGroup_13();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_RightCurlyBracketKeyword_13_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_RightCurlyBracketKeyword_13_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1726,30 +1726,30 @@ protected class Goal_Group_13 extends GroupToken {
 }
 
 // "goalSolutions"
-protected class Goal_GoalSolutionsKeyword_13_0 extends KeywordToken  {
+protected class ModelGoal_GoalSolutionsKeyword_13_0 extends KeywordToken  {
 	
-	public Goal_GoalSolutionsKeyword_13_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalSolutionsKeyword_13_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalSolutionsKeyword_13_0();
+		return grammarAccess.getModelGoalAccess().getGoalSolutionsKeyword_13_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_12(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_11(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_10(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_Group_9(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Goal_Group_8(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Goal_Group_7(lastRuleCallOrigin, this, 5, inst);
-			case 6: return new Goal_Group_6(lastRuleCallOrigin, this, 6, inst);
-			case 7: return new Goal_Group_5(lastRuleCallOrigin, this, 7, inst);
-			case 8: return new Goal_Group_4(lastRuleCallOrigin, this, 8, inst);
-			case 9: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 9, inst);
+			case 0: return new ModelGoal_Group_12(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_11(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_10(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_Group_9(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ModelGoal_Group_8(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new ModelGoal_Group_7(lastRuleCallOrigin, this, 5, inst);
+			case 6: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 6, inst);
+			case 7: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 7, inst);
+			case 8: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 8, inst);
+			case 9: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 9, inst);
 			default: return null;
 		}	
 	}
@@ -1757,21 +1757,21 @@ protected class Goal_GoalSolutionsKeyword_13_0 extends KeywordToken  {
 }
 
 // "{"
-protected class Goal_LeftCurlyBracketKeyword_13_1 extends KeywordToken  {
+protected class ModelGoal_LeftCurlyBracketKeyword_13_1 extends KeywordToken  {
 	
-	public Goal_LeftCurlyBracketKeyword_13_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_LeftCurlyBracketKeyword_13_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getLeftCurlyBracketKeyword_13_1();
+		return grammarAccess.getModelGoalAccess().getLeftCurlyBracketKeyword_13_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_GoalSolutionsKeyword_13_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_GoalSolutionsKeyword_13_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1779,15 +1779,15 @@ protected class Goal_LeftCurlyBracketKeyword_13_1 extends KeywordToken  {
 }
 
 // goalSolutions+=Solution
-protected class Goal_GoalSolutionsAssignment_13_2 extends AssignmentToken  {
+protected class ModelGoal_GoalSolutionsAssignment_13_2 extends AssignmentToken  {
 	
-	public Goal_GoalSolutionsAssignment_13_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalSolutionsAssignment_13_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalSolutionsAssignment_13_2();
+		return grammarAccess.getModelGoalAccess().getGoalSolutionsAssignment_13_2();
 	}
 
     @Override
@@ -1806,7 +1806,7 @@ protected class Goal_GoalSolutionsAssignment_13_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSolutionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0(); 
+				element = grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1818,28 +1818,28 @@ protected class Goal_GoalSolutionsAssignment_13_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_LeftCurlyBracketKeyword_13_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_LeftCurlyBracketKeyword_13_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // ("," goalSolutions+=Solution)*
-protected class Goal_Group_13_3 extends GroupToken {
+protected class ModelGoal_Group_13_3 extends GroupToken {
 	
-	public Goal_Group_13_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_Group_13_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Group getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGroup_13_3();
+		return grammarAccess.getModelGoalAccess().getGroup_13_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_GoalSolutionsAssignment_13_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ModelGoal_GoalSolutionsAssignment_13_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1847,22 +1847,22 @@ protected class Goal_Group_13_3 extends GroupToken {
 }
 
 // ","
-protected class Goal_CommaKeyword_13_3_0 extends KeywordToken  {
+protected class ModelGoal_CommaKeyword_13_3_0 extends KeywordToken  {
 	
-	public Goal_CommaKeyword_13_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_CommaKeyword_13_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getCommaKeyword_13_3_0();
+		return grammarAccess.getModelGoalAccess().getCommaKeyword_13_3_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_13_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_GoalSolutionsAssignment_13_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_13_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_GoalSolutionsAssignment_13_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1870,15 +1870,15 @@ protected class Goal_CommaKeyword_13_3_0 extends KeywordToken  {
 }
 
 // goalSolutions+=Solution
-protected class Goal_GoalSolutionsAssignment_13_3_1 extends AssignmentToken  {
+protected class ModelGoal_GoalSolutionsAssignment_13_3_1 extends AssignmentToken  {
 	
-	public Goal_GoalSolutionsAssignment_13_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_GoalSolutionsAssignment_13_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getGoalAccess().getGoalSolutionsAssignment_13_3_1();
+		return grammarAccess.getModelGoalAccess().getGoalSolutionsAssignment_13_3_1();
 	}
 
     @Override
@@ -1897,7 +1897,7 @@ protected class Goal_GoalSolutionsAssignment_13_3_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getSolutionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0(); 
+				element = grammarAccess.getModelGoalAccess().getGoalSolutionsSolutionParserRuleCall_13_3_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -1909,7 +1909,7 @@ protected class Goal_GoalSolutionsAssignment_13_3_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Goal_CommaKeyword_13_3_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ModelGoal_CommaKeyword_13_3_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -1917,22 +1917,22 @@ protected class Goal_GoalSolutionsAssignment_13_3_1 extends AssignmentToken  {
 
 
 // "}"
-protected class Goal_RightCurlyBracketKeyword_13_4 extends KeywordToken  {
+protected class ModelGoal_RightCurlyBracketKeyword_13_4 extends KeywordToken  {
 	
-	public Goal_RightCurlyBracketKeyword_13_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_RightCurlyBracketKeyword_13_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_13_4();
+		return grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_13_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_13_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_GoalSolutionsAssignment_13_2(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new ModelGoal_Group_13_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_GoalSolutionsAssignment_13_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -1941,31 +1941,31 @@ protected class Goal_RightCurlyBracketKeyword_13_4 extends KeywordToken  {
 
 
 // "}"
-protected class Goal_RightCurlyBracketKeyword_14 extends KeywordToken  {
+protected class ModelGoal_RightCurlyBracketKeyword_14 extends KeywordToken  {
 	
-	public Goal_RightCurlyBracketKeyword_14(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ModelGoal_RightCurlyBracketKeyword_14(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getGoalAccess().getRightCurlyBracketKeyword_14();
+		return grammarAccess.getModelGoalAccess().getRightCurlyBracketKeyword_14();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group_13(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Goal_Group_12(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Goal_Group_11(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Goal_Group_10(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Goal_Group_9(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Goal_Group_8(lastRuleCallOrigin, this, 5, inst);
-			case 6: return new Goal_Group_7(lastRuleCallOrigin, this, 6, inst);
-			case 7: return new Goal_Group_6(lastRuleCallOrigin, this, 7, inst);
-			case 8: return new Goal_Group_5(lastRuleCallOrigin, this, 8, inst);
-			case 9: return new Goal_Group_4(lastRuleCallOrigin, this, 9, inst);
-			case 10: return new Goal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 10, inst);
+			case 0: return new ModelGoal_Group_13(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ModelGoal_Group_12(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ModelGoal_Group_11(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ModelGoal_Group_10(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ModelGoal_Group_9(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new ModelGoal_Group_8(lastRuleCallOrigin, this, 5, inst);
+			case 6: return new ModelGoal_Group_7(lastRuleCallOrigin, this, 6, inst);
+			case 7: return new ModelGoal_Group_6(lastRuleCallOrigin, this, 7, inst);
+			case 8: return new ModelGoal_Group_5(lastRuleCallOrigin, this, 8, inst);
+			case 9: return new ModelGoal_Group_4(lastRuleCallOrigin, this, 9, inst);
+			case 10: return new ModelGoal_LeftCurlyBracketKeyword_3(lastRuleCallOrigin, this, 10, inst);
 			default: return null;
 		}	
 	}
@@ -1973,7 +1973,7 @@ protected class Goal_RightCurlyBracketKeyword_14 extends KeywordToken  {
 }
 
 
-/************ end Rule Goal ****************/
+/************ end Rule ModelGoal ****************/
 
 
 /************ begin Rule ModelElement ****************
@@ -3265,18 +3265,20 @@ protected class TaggedValue_RightCurlyBracketKeyword_5 extends KeywordToken  {
  *
  * Strategy:
  * 	{Strategy} "Strategy" "{" ("identifier" identifier=EString)? ("description" description=EString)? ("content"
- * 	content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{" goals+=Goal
- * 	("," goals+=Goal)* "}")? ("justifications" "{" justifications+=Justification ("," justifications+=Justification)*
- * 	"}")? ("strategyContexts" "{" strategyContexts+=Context ("," strategyContexts+=Context)* "}")? ("strategySolutions"
- * 	"{" strategySolutions+=Solution ("," strategySolutions+=Solution)* "}")? "}";
+ * 	content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{"
+ * 	goals+=ModelGoal ("," goals+=ModelGoal)* "}")? ("justifications" "{" justifications+=Justification (","
+ * 	justifications+=Justification)* "}")? ("strategyContexts" "{" strategyContexts+=Context (","
+ * 	strategyContexts+=Context)* "}")? ("strategySolutions" "{" strategySolutions+=Solution (","
+ * 	strategySolutions+=Solution)* "}")? "}";
  *
  **/
 
 // {Strategy} "Strategy" "{" ("identifier" identifier=EString)? ("description" description=EString)? ("content"
-// content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{" goals+=Goal
-// ("," goals+=Goal)* "}")? ("justifications" "{" justifications+=Justification ("," justifications+=Justification)* "}")?
-// ("strategyContexts" "{" strategyContexts+=Context ("," strategyContexts+=Context)* "}")? ("strategySolutions" "{"
-// strategySolutions+=Solution ("," strategySolutions+=Solution)* "}")? "}"
+// content=EString)? ("isTagged" "{" isTagged+=TaggedValue ("," isTagged+=TaggedValue)* "}")? ("goals" "{"
+// goals+=ModelGoal ("," goals+=ModelGoal)* "}")? ("justifications" "{" justifications+=Justification (","
+// justifications+=Justification)* "}")? ("strategyContexts" "{" strategyContexts+=Context (","
+// strategyContexts+=Context)* "}")? ("strategySolutions" "{" strategySolutions+=Solution (","
+// strategySolutions+=Solution)* "}")? "}"
 protected class Strategy_Group extends GroupToken {
 	
 	public Strategy_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3846,7 +3848,7 @@ protected class Strategy_RightCurlyBracketKeyword_6_4 extends KeywordToken  {
 }
 
 
-// ("goals" "{" goals+=Goal ("," goals+=Goal)* "}")?
+// ("goals" "{" goals+=ModelGoal ("," goals+=ModelGoal)* "}")?
 protected class Strategy_Group_7 extends GroupToken {
 	
 	public Strategy_Group_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3916,7 +3918,7 @@ protected class Strategy_LeftCurlyBracketKeyword_7_1 extends KeywordToken  {
 
 }
 
-// goals+=Goal
+// goals+=ModelGoal
 protected class Strategy_GoalsAssignment_7_2 extends AssignmentToken  {
 	
 	public Strategy_GoalsAssignment_7_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3931,7 +3933,7 @@ protected class Strategy_GoalsAssignment_7_2 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group(this, this, 0, inst);
+			case 0: return new ModelGoal_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3942,9 +3944,9 @@ protected class Strategy_GoalsAssignment_7_2 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("goals");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getGoalRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getModelGoalRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_2_0(); 
+				element = grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -3962,7 +3964,7 @@ protected class Strategy_GoalsAssignment_7_2 extends AssignmentToken  {
 	}	
 }
 
-// ("," goals+=Goal)*
+// ("," goals+=ModelGoal)*
 protected class Strategy_Group_7_3 extends GroupToken {
 	
 	public Strategy_Group_7_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4007,7 +4009,7 @@ protected class Strategy_CommaKeyword_7_3_0 extends KeywordToken  {
 
 }
 
-// goals+=Goal
+// goals+=ModelGoal
 protected class Strategy_GoalsAssignment_7_3_1 extends AssignmentToken  {
 	
 	public Strategy_GoalsAssignment_7_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4022,7 +4024,7 @@ protected class Strategy_GoalsAssignment_7_3_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Goal_Group(this, this, 0, inst);
+			case 0: return new ModelGoal_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4033,9 +4035,9 @@ protected class Strategy_GoalsAssignment_7_3_1 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("goals");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getGoalRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getModelGoalRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getStrategyAccess().getGoalsGoalParserRuleCall_7_3_1_0(); 
+				element = grammarAccess.getStrategyAccess().getGoalsModelGoalParserRuleCall_7_3_1_0(); 
 				consumed = obj;
 				return param;
 			}

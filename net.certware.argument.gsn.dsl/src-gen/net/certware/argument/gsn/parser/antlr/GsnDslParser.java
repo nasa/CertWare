@@ -42,7 +42,7 @@ public class GsnDslParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPa
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Goal";
+		return "ModelGoal";
 	}
 	
 	public GsnDslGrammarAccess getGrammarAccess() {

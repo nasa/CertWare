@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
+import net.certware.core.ui.CertWareUI;
 import net.certware.measurement.sco.ScoFactory;
 import net.certware.measurement.sco.ScoPackage;
 import net.certware.measurement.sco.impl.CommitHistoryImpl;
@@ -148,13 +149,17 @@ public class ScoModelWizard extends Wizard implements INewWizard {
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(ScoEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ScoEditorPlugin.INSTANCE.getImage("full/wizban/NewSco"))); //$NON-NLS-1$
+		//setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ScoEditorPlugin.INSTANCE.getImage("full/wizban/NewSco"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**

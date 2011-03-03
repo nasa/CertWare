@@ -12,7 +12,8 @@ Require-Bundle: net.certware.evidence.hugin;visibility:=reexport,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.eclipse.xtext.builder,
- org.antlr.runtime
+ org.antlr.runtime,
+ net.certware.core.ui;bundle-version="1.1.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.evidence.hugin.ui.contentassist.antlr

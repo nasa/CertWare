@@ -152,7 +152,28 @@
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
             targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.gsn.dsl.ui.wizard">
+         </newWizardShortcut>
       </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.argument.gsn.ui.wizard.NewGoalFileWizard"
+            hasPages="true"
+            icon="icons/obj16/oval.png"
+            id="net.certware.argument.gsn.dsl.ui.wizard"
+            name="GSN DSL File">
+         <description>
+            Creates a new GSN file using the DSL syntax.  Provides example content for populating the file.
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
    </extension>
 
 </plugin>

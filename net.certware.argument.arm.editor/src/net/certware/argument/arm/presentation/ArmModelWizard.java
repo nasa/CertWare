@@ -18,6 +18,7 @@ import java.util.StringTokenizer;
 import net.certware.argument.arm.ArmFactory;
 import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.provider.ArmEditPlugin;
+import net.certware.core.ui.CertWareUI;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -154,14 +155,19 @@ public class ArmModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
+	 * Retrieves wizard banner image from CertWare UI registry.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(ArmEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ArmEditorPlugin.INSTANCE.getImage("full/wizban/NewArm"))); //$NON-NLS-1$
+		// setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ArmEditorPlugin.INSTANCE.getImage("full/wizban/NewArm"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**

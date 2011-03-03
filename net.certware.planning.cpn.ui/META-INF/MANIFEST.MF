@@ -18,7 +18,8 @@ Require-Bundle: net.certware.planning.cpn;visibility:=reexport,
  org.eclipse.xtend,
  org.eclipse.xpand,
  net.certware.argument.arm
-Import-Package: org.apache.log4j
+Import-Package: net.certware.core.ui,
+ org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.planning.cpn.ui.contentassist.antlr
 Bundle-Activator: net.certware.planning.cpn.ui.internal.CpnDslActivator

@@ -17,6 +17,7 @@ import java.util.StringTokenizer;
 import net.certware.argument.cae.CaeFactory;
 import net.certware.argument.cae.CaePackage;
 import net.certware.argument.cae.provider.CaeEditPlugin;
+import net.certware.core.ui.CertWareUI;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -153,14 +154,19 @@ public class CaeModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
+	 * Retrieves the wizard banner image from the CertWare UI registry.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(CaeEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(CaeEditorPlugin.INSTANCE.getImage("full/wizban/NewCae"))); //$NON-NLS-1$
+		// setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(CaeEditorPlugin.INSTANCE.getImage("full/wizban/NewCae"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
+
 	}
 
 	/**
