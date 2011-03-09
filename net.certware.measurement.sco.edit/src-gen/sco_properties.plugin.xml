@@ -1,45 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 
-<!--
- Copyright (c) 2011 Kestrel Technology LLC
--->
+ <plugin>
 
-<plugin>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <wizard
-            id="net.certware.measurement.sco.presentation.ScoModelWizardID"
-            name="%_UI_ScoModelWizard_label"
-            class="net.certware.measurement.sco.presentation.ScoModelWizard"
-            category="net.certware.core.ui.newwizard.category"
-            icon="icons/full/obj16/sco.gif">
-         <description>%_UI_ScoModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <editor
-            id="net.certware.measurement.sco.presentation.ScoEditorID"
-            name="%_UI_ScoEditor_label"
-            icon="icons/full/obj16/sco.gif"
-            extensions="sco"
-            class="net.certware.measurement.sco.presentation.ScoEditor"
-            contributorClass="net.certware.measurement.sco.presentation.ScoActionBarContributor">
-      </editor>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="net.certware.perspective">
-         <newWizardShortcut
-               id="net.certware.measurement.sco.presentation.ScoModelWizardID">
-         </newWizardShortcut>
-      </perspectiveExtension>
-   </extension>
-
-<extension
+  <!-- EEF extensions -->
+  <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
       <PropertiesEditionComponentProvider
             providerClass="net.certware.measurement.sco.providers.ScoPackagePropertiesEditionProvider">
@@ -147,4 +112,4 @@
          </propertySection>
       </propertySections>
    </extension>
-</plugin>
+ </plugin>

@@ -136,8 +136,8 @@ We use the Eclipse Extended Editing Framework to provide better properties sheet
 # Add @org.eclipse.emf.eef.runtime@ as a plugin dependency, and in its properties select the re-export dependency option so that the @EMF.editor@ project can see it.  
 # Run the @eefgen@ to create the new packages. 
 # In the @EMF.edit@ plugin expose all of the packages in the runtime tab.  
-# In the @EMF.editor@ plugin add the three standard provider extensions to enable the EEF contributions (see the generated plugin fragment for the class name references), then add individual extensions for the tabbed property parts for example.  
-# In the generated editor file make it implement the tabbed properties interface @org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor@ and implement the one method that returns the contributor ID as defined in the plugin extension. 
+# In the @EMF.editor@ plugin add the three standard provider extensions to enable the EEF contributions (see the generated plugin fragment in the @src-gen@ folder of the @EMF.edit@ plugin for the class name references), then add individual extensions for the tabbed property parts for example.  
+# In the generated editor file make it implement the tabbed properties interface @org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor@ and implement the one method that returns the contributor ID as defined in the plugin extension @org.eclipse.ui.views.properties.tabbed.propertyContributor@.  
 # Change the @PropertySheetPage@ reference type to @TabbedPropertySheetPage@ and modify the @getPropertySheetPage()@ method to work with the tabbed property sheet.  
 # Add the double-click listener on the selection viewer.    
 
@@ -247,6 +247,8 @@ h3. Plugins Summary
 * @net.certware.core@ Core project content.
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  
 * @net.certware.doc@ General project to contain various documentation files including the wiki.
+* @net.certware.evidence.hugin.*@ Hugin NET DSL definition and generation.
+* @net.certware.evidence.saem.*@ Evidence model and editor support for SAEM from OMG. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  
 * @net.certware.example@ Example wizard and host plugin for contributing fragments.
 * @net.certware.export@ Exporting model resources to other formats.  
 * @net.certware.help@ Project help files, cheat sheets and dynamic context support.
@@ -254,11 +256,12 @@ h3. Plugins Summary
 * @net.certware.launch@ Launch configuration shared files.
 * @net.certware.libs.doc@ Plugin packaging of docx4J 2.5 libraries.
 * @net.certware.libs.poi@ Plugin packaging of Apache POI 3.6 libraries.
-* @net.certware.measurement.sco.*@ Software change order model and editor support.  Supports the SPM metrics.  Other collectors can be added for different metrics suites.
+* @net.certware.measurement.sco.*@ Software change order model and editor support.  Supports the SPM metrics.  Other collectors can be added for different metrics suites.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.measurement.smm.*@ Measurement model and editor support the OMG SMM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * @net.certware.measurement.spm.*@ Software product management metrics model and editor support for Royce SPM metrics.  Uses the SMM metamodel.
 * @net.certware.planning.cpn.*@ A planning content DSL serving as a project management data overlay on argument models.
 * @net.certware.planning.mspdi.*@ Planning content model using Microsoft project data schema. The Microsoft MSPDI schema was coerced into an Ecore model, then the EMF plugins generated from this model.    
+* @net.certware.product@ Product definition for stand-alone application. 
 * @net.certware.target@ CertWare project target definition.
 * @net.certware.update@ Update site definition project (currently unused).
 * @net.certware.verification.checklist.*@ Verification model and editor support for generic check lists. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
@@ -274,10 +277,12 @@ h3. File Names and Extensions
 * @*.caz@ and @*.caz_diagram@ are CAE diagram model and diagram files
 * @*.eur@ EUROCONTROL model files
 * @*.euz@ and @*.euz_diagram@ are EUROCONTROL diagram model and diagram files
-* @*.mspdi@ and @*.mpx@ are Microsoft Project (MSPDI) model files.
-* @*.sco@ SCO change order model files.
-* @*.smm@ OMG Software Measurement Metamodel files.
-* @*.spm@ Software Project Management metrics files. 
+* @*.mspdi@ and @*.mpx@ are Microsoft Project (MSPDI) model files
+* @*.net@ and @*.hugin@ Hugin NET files
+* @*.saem@ SAEM model files
+* @*.sco@ SCO change order model files
+* @*.smm@ OMG Software Measurement Metamodel files
+* @*.spm@ Software Project Management metrics files 
 * @*.vcl@ Verification checklist model files
 
 h3. Target Platform
