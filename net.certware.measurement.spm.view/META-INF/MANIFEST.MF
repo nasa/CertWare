@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Measurement SPM Details View
 Bundle-SymbolicName: net.certware.measurement.spm.view;singleton:=true
-Bundle-Version: 1.1.1.qualifier
+Bundle-Version: 1.2.0.qualifier
 Bundle-Activator: net.certware.measurement.spm.view.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

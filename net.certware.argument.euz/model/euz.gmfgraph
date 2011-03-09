@@ -130,11 +130,6 @@
       <actualFigure
           xsi:type="gmfgraph:RoundedRectangle"
           name="CriteriaFigure">
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="250"
-            green="250"
-            blue="250"/>
         <preferredSize
             dx="100"
             dy="60"/>

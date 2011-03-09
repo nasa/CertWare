@@ -63,6 +63,9 @@ public class EuzNavigatorLinkHelper implements ILinkHelper {
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
+		if (diagram == null || diagram.eResource() == null) {
+			return StructuredSelection.EMPTY;
+		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
 			EuzNavigatorItem item = new EuzNavigatorItem(diagram, file, false);

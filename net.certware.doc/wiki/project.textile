@@ -6,7 +6,7 @@ h1{color:red}. CertWare Implementation and Integration Notes
 
 h2. Version History
 
-h3. Version 1.1.3
+h3. Version 1.2.0
 
 _Bugs Fixed_:
 * Moved diagram preference page root into the CertWare preference page tree. 

@@ -41,8 +41,7 @@
           className="ArgumentFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureArgumentLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureArgumentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureArgumentLabelFigure.setText(&quot;Argument&quot;);&#xA;&#xA;this.add(fFigureArgumentLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureArgumentLabelFigure() {&#xA;&#x9;&#x9;return fFigureArgumentLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 152, 251, 152);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -115,8 +114,7 @@
           className="SolutionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SolutionFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSolutionLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SolutionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSolutionLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureSolutionLabelFigure.setText(&quot;Solution&quot;);&#xA;&#xA;this.add(fFigureSolutionLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSolutionLabelFigure() {&#xA;&#x9;&#x9;return fFigureSolutionLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 250, 250, 250);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -189,8 +187,7 @@
           className="EvidenceFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EvidenceFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEvidenceLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EvidenceFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEvidenceLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureEvidenceLabelFigure.setText(&quot;Evidence&quot;);&#xA;&#xA;this.add(fFigureEvidenceLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEvidenceLabelFigure() {&#xA;&#x9;&#x9;return fFigureEvidenceLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 135, 206, 250);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -263,8 +260,7 @@
           className="StrategyFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StrategyFigure extends net.certware.argument.diagram.figures.ParallelogramFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStrategyLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StrategyFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureStrategyLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStrategyLabelFigure.setText(&quot;Strategy&quot;);&#xA;&#xA;this.add(fFigureStrategyLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStrategyLabelFigure() {&#xA;&#x9;&#x9;return fFigureStrategyLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 250, 250, 250);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -337,8 +333,7 @@
           className="AssumptionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssumptionFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAssumptionLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssumptionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAssumptionLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureAssumptionLabelFigure.setText(&quot;Assumption&quot;);&#xA;&#xA;this.add(fFigureAssumptionLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAssumptionLabelFigure() {&#xA;&#x9;&#x9;return fFigureAssumptionLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 0, 240, 240);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -411,8 +406,7 @@
           className="JustificationFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class JustificationFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureJustificationLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public JustificationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureJustificationLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureJustificationLabelFigure.setText(&quot;Justification&quot;);&#xA;&#xA;this.add(fFigureJustificationLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureJustificationLabelFigure() {&#xA;&#x9;&#x9;return fFigureJustificationLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 250, 250, 250);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -485,8 +479,7 @@
           className="ContextFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContextFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureContextLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContextFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureContextLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureContextLabelFigure.setText(&quot;Context&quot;);&#xA;&#xA;this.add(fFigureContextLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureContextLabelFigure() {&#xA;&#x9;&#x9;return fFigureContextLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 250, 250, 250);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -547,6 +540,7 @@
         itemSemanticEditPolicyClassName="CriteriaItemSemanticEditPolicy"
         notationViewFactoryClassName="CriteriaViewFactory"
         canonicalEditPolicyClassName="CriteriaCanonicalEditPolicy"
+        primaryDragEditPolicyQualifiedClassName=""
         graphicalNodeEditPolicyClassName="CriteriaGraphicalNodeEditPolicy"
         createCommandClassName="CriteriaCreateCommand">
       <diagramRunTimeClass
@@ -559,8 +553,7 @@
           className="CriteriaFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CriteriaFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCriteriaLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureModelElementContentLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CriteriaFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(60)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCriteriaLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureCriteriaLabelFigure.setText(&quot;Criteria&quot;);&#xA;&#xA;this.add(fFigureCriteriaLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureModelElementContentLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureModelElementContentLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureModelElementContentLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCriteriaLabelFigure() {&#xA;&#x9;&#x9;return fFigureCriteriaLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureModelElementContentLabelFigure() {&#xA;&#x9;&#x9;return fFigureModelElementContentLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 250, 250, 250);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -631,8 +624,7 @@
           className="ArgumentArgumentStrategiesFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentArgumentStrategiesFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentArgumentStrategiesFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -675,8 +667,7 @@
           className="ArgumentArgumentAssumptionsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentArgumentAssumptionsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentArgumentAssumptionsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -719,8 +710,7 @@
           className="ArgumentArgumentContextsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentArgumentContextsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentArgumentContextsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -763,8 +753,7 @@
           className="ArgumentArgumentSolutionsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentArgumentSolutionsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentArgumentSolutionsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -807,8 +796,7 @@
           className="ArgumentArgumentCriteriaFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentArgumentCriteriaFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentArgumentCriteriaFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -851,8 +839,7 @@
           className="ArgumentArgumentJustificationsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentArgumentJustificationsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentArgumentJustificationsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -895,8 +882,7 @@
           className="ArgumentSubArgumentsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArgumentSubArgumentsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArgumentSubArgumentsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -939,8 +925,7 @@
           className="ContextContextAssumptionsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ContextContextAssumptionsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ContextContextAssumptionsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -983,8 +968,7 @@
           className="CriteriaCriteriaContextsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CriteriaCriteriaContextsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CriteriaCriteriaContextsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1027,8 +1011,7 @@
           className="CriteriaCriteriaAssumptionsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CriteriaCriteriaAssumptionsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CriteriaCriteriaAssumptionsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1071,8 +1054,7 @@
           className="StrategyStrategyArgumentsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StrategyStrategyArgumentsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StrategyStrategyArgumentsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1115,8 +1097,7 @@
           className="StrategyStrategyJustificationsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StrategyStrategyJustificationsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StrategyStrategyJustificationsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1159,8 +1140,7 @@
           className="StrategyStrategyCriteriaFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StrategyStrategyCriteriaFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StrategyStrategyCriteriaFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1203,8 +1183,7 @@
           className="StrategyStrategyAssumptionsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StrategyStrategyAssumptionsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StrategyStrategyAssumptionsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1246,8 +1225,7 @@
           className="StrategyStrategyStrategiesFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StrategyStrategyStrategiesFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StrategyStrategyStrategiesFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1288,8 +1266,7 @@
           className="StrategyStrategyContextsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StrategyStrategyContextsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StrategyStrategyContextsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1331,8 +1308,7 @@
           className="SolutionSolutionContextsFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SolutionSolutionContextsFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SolutionSolutionContextsFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1375,8 +1351,7 @@
           className="SolutionSolutionEvidenceFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SolutionSolutionEvidenceFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SolutionSolutionEvidenceFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1419,8 +1394,7 @@
           className="SolutionSolutionCriteriaFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SolutionSolutionCriteriaFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SolutionSolutionCriteriaFigure() {&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;">
         <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
+            xsi:type="gmfgen:StyleAttributes"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
@@ -1672,7 +1646,9 @@
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin>
+  <plugin
+      provider="Kestrel Technology LLC"
+      printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>

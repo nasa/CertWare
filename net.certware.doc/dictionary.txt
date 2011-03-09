@@ -83,3 +83,5 @@ provenance
 curator
 releasability
 semiformal
+royce
+narrated

@@ -86,6 +86,16 @@ Copyright (c) 2010 Kestrel Technology LLC
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="EuzPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="net.certware.argument.euz.diagram.part.EuzDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="EuzPresentationIDE">
          <Priority name="Lowest"/>
@@ -129,7 +139,7 @@ Copyright (c) 2010 Kestrel Technology LLC
       <?gmfgen generated="true"?>
       <decoratorProvider class="net.certware.argument.euz.diagram.providers.EuzValidationDecoratorProvider">
          <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart" id="PRIMARY_VIEW"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>

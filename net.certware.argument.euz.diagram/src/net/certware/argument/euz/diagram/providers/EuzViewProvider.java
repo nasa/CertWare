@@ -90,6 +90,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -387,11 +388,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createArgument_2001(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(ArgumentEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -420,6 +417,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5001 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(ArgumentIdentifierEditPart.VISUAL_ID));
@@ -434,11 +436,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createSolution_2002(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(SolutionEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -467,6 +465,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5003 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(SolutionIdentifierEditPart.VISUAL_ID));
@@ -481,11 +484,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createEvidence_2003(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(EvidenceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -514,6 +513,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5005 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(EvidenceIdentifierEditPart.VISUAL_ID));
@@ -528,11 +532,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createStrategy_2004(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(StrategyEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -561,6 +561,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5007 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(StrategyIdentifierEditPart.VISUAL_ID));
@@ -576,11 +581,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	public Node createAssumption_2005(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(AssumptionEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -609,6 +610,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5009 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(AssumptionIdentifierEditPart.VISUAL_ID));
@@ -625,11 +631,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	public Node createJustification_2006(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry
 				.getType(JustificationEditPart.VISUAL_ID));
@@ -659,6 +661,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5011 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(JustificationIdentifierEditPart.VISUAL_ID));
@@ -674,11 +681,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createContext_2007(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(ContextEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -707,6 +710,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5013 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(ContextIdentifierEditPart.VISUAL_ID));
@@ -721,11 +729,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	@SuppressWarnings("unused")
 	public Node createCriteria_2008(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Node node = NotationFactory.eINSTANCE.createNode();
-		node.getStyles()
-				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
+		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(EuzVisualIDRegistry.getType(CriteriaEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -754,6 +758,11 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5015 = createLabel(node,
 				EuzVisualIDRegistry
 						.getType(CriteriaIdentifierEditPart.VISUAL_ID));
@@ -767,8 +776,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createArgumentArgumentStrategies_4001(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -785,6 +793,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -825,8 +839,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createArgumentArgumentAssumptions_4002(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -843,6 +856,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -883,8 +902,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createArgumentArgumentContexts_4003(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -901,6 +919,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -941,8 +965,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createArgumentArgumentSolutions_4004(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -959,6 +982,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -999,8 +1028,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createArgumentArgumentCriteria_4005(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1017,6 +1045,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1057,8 +1091,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createArgumentArgumentJustifications_4006(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1075,6 +1108,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1115,8 +1154,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createArgumentSubArguments_4017(View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1133,6 +1171,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1173,8 +1217,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createContextContextAssumptions_4007(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1191,6 +1234,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1231,8 +1280,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createCriteriaCriteriaContexts_4008(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1249,6 +1297,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1289,8 +1343,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createCriteriaCriteriaAssumptions_4009(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1307,6 +1360,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1347,8 +1406,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createStrategyStrategyArguments_4010(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1365,6 +1423,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1405,8 +1469,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createStrategyStrategyJustifications_4011(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1423,6 +1486,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1463,8 +1532,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createStrategyStrategyCriteria_4012(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1481,6 +1549,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1521,8 +1595,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createStrategyStrategyAssumptions_4013(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1539,6 +1612,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1579,8 +1658,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createStrategyStrategyStrategies_4018(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1597,6 +1675,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1635,8 +1719,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createStrategyStrategyContexts_4019(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1653,6 +1736,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1691,8 +1780,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createSolutionSolutionContexts_4014(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1709,6 +1797,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1749,8 +1843,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createSolutionSolutionEvidence_4015(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1767,6 +1860,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {
@@ -1807,8 +1906,7 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Edge createSolutionSolutionCriteria_4016(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Edge edge = NotationFactory.eINSTANCE.createEdge();
-		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
 				.createRelativeBendpoints();
@@ -1825,6 +1923,12 @@ public class EuzViewProvider extends AbstractProvider implements IViewProvider {
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
 		FontStyle edgeFontStyle = (FontStyle) edge
 				.getStyle(NotationPackage.Literals.FONT_STYLE);
 		if (edgeFontStyle != null) {

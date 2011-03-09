@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare docx4j Libraries
 Bundle-SymbolicName: net.certware.libs.doc
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.2.0.qualifier
 Bundle-ClassPath: commons-vfs-patched-1.9.1.jar,
  docx4j-2.5.0.jar,
  fop-patched-0.95.756437.jar,

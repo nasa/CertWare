@@ -232,14 +232,14 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 				// save the selection if it's an SCO file
 				if ( object instanceof IFile ) {
 					IFile f = (IFile)object;
-					// skip if already loaded
-					if ( f == selectedFile )
-						return;
 
-					if ( f.getFileExtension().equalsIgnoreCase( ICertWareConstants.SCO_EXTENSION )) {
-						setSelectedFile((IFile)f);
-						return;
+					if ( f != selectedFile ) {
+						if ( f.getFileExtension().equalsIgnoreCase( ICertWareConstants.SCO_EXTENSION )) {
+							setSelectedFile((IFile)f);
+						}
 					}
+
+					return;
 				}
 
 				// save the resource if it's an editor object
@@ -321,7 +321,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 	        }
 	      });
 	    } catch( CoreException ce ) {
-	      CertWareLog.logWarning("Refreshing SCO file" + ce.getMessage());
+	      CertWareLog.logWarning("Refreshing SCO file" + ' ' + ce.getMessage());
 	    }
 
 		
@@ -396,7 +396,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 		protected void createToolBarActions(IManagedForm managedForm) {
 			final ScrolledForm form = managedForm.getForm();
 
-			Action haction = new Action("hor", Action.AS_RADIO_BUTTON) {
+			Action haction = new Action("hor", Action.AS_RADIO_BUTTON) { //$NON-NLS-1$
 				public void run() {
 					sashForm.setOrientation(SWT.HORIZONTAL);
 					form.reflow(true);
@@ -408,7 +408,7 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 					.getImageRegistry()
 					.getDescriptor(Activator.HORIZONTAL_IMAGE));
 			
-			Action vaction = new Action("ver", Action.AS_RADIO_BUTTON) {
+			Action vaction = new Action("ver", Action.AS_RADIO_BUTTON) { //$NON-NLS-1$
 				public void run() {
 					sashForm.setOrientation(SWT.VERTICAL);
 					form.reflow(true);
@@ -628,9 +628,11 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 		public void selectionChanged(IFormPart part, ISelection selection) {
 			if ( selection instanceof TreeSelection ) {
 				TreeSelection ts = (TreeSelection)selection;
-				changeOrder = (ChangeOrderCount)ts.getFirstElement();
-				stale = true;
-				setFormInput(changeOrder);
+				if ( ts.getFirstElement() instanceof ChangeOrderCount ) {
+					changeOrder = (ChangeOrderCount)ts.getFirstElement();
+					stale = true;
+					setFormInput(changeOrder);
+				}
 			}
 		}
 
@@ -749,9 +751,11 @@ public class ScoViewMasterDetails extends ViewPart implements ISelectionListener
 		public void selectionChanged(IFormPart part, ISelection selection) {
 			if ( selection instanceof TreeSelection ) {
 				TreeSelection ts = (TreeSelection)selection;
-				artifactCommit = (ArtifactCommit)ts.getFirstElement();
-				stale = true;
-				setFormInput(artifactCommit);
+				if ( ts.getFirstElement() instanceof ArtifactCommit ) {
+					artifactCommit = (ArtifactCommit)ts.getFirstElement();
+					stale = true;
+					setFormInput(artifactCommit);
+				}
 			}
 		}
 
