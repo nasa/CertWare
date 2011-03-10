@@ -17,6 +17,8 @@ _Enhancements_:
 * Added new file wizards for the CPN DSL, SFP DSL, GSN DSL, and Hugin NET DSL.  Added these to the CertWare perspective wizard shortcuts.
 * Updated graphics images, icons, and splash page.   
 * Provided initial universal welcome contribution when run as a product. 
+* Installed universal intro contributions that merely point to the web site. 
+* Updated license language per NASA evaluation terms.
 
 h3. Version 1.1.2
 

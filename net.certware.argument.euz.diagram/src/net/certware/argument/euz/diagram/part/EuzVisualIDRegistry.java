@@ -65,10 +65,10 @@ import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaEdit
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyCriteriaExternalLabelEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsEditPart;
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyJustificationsExternalLabelEditPart;
-
 import net.certware.argument.euz.diagram.edit.parts.StrategyStrategyStrategiesEditPart;
 import net.certware.argument.euz.diagram.edit.parts.WrappingLabel2EditPart;
 import net.certware.argument.euz.diagram.edit.parts.WrappingLabelEditPart;
+
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;

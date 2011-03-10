@@ -139,7 +139,7 @@ Copyright (c) 2010 Kestrel Technology LLC
       <?gmfgen generated="true"?>
       <decoratorProvider class="net.certware.argument.euz.diagram.providers.EuzValidationDecoratorProvider">
          <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>
