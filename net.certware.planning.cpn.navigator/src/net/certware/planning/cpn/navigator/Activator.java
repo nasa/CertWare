@@ -5,7 +5,7 @@ import org.osgi.framework.BundleContext;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Activator for navigator plugin.
+ * CertWareUIPlugin for navigator plugin.
  * @author mrb
  * @since 1.0
  */

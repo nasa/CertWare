@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Core UI
 Bundle-SymbolicName: net.certware.core.ui;singleton:=true
-Bundle-Version: 1.2.0.qualifier
+Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.core.ui.CertWareUI
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -18,10 +18,16 @@ Require-Bundle: net.certware.core,
  org.eclipse.ui.ide,
  org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.ui.cheatsheets
+ org.eclipse.ui.cheatsheets,
+ org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench
 Export-Package: net.certware.core.ui,
  net.certware.core.ui.dialog,
+ net.certware.core.ui.handlers,
  net.certware.core.ui.help,
+ net.certware.core.ui.listeners,
  net.certware.core.ui.log,
  net.certware.core.ui.preferences,
- net.certware.core.ui.resources
+ net.certware.core.ui.resources,
+ net.certware.core.ui.views

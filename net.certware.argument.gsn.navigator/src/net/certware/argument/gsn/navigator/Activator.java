@@ -4,7 +4,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 /**
- * Activator for navigator plugin.
+ * CertWareUIPlugin for navigator plugin.
  * @author mrb
  * @since 1.0
  */

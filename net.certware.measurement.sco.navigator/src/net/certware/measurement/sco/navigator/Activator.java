@@ -15,7 +15,7 @@ import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Activator for navigator plugin.
+ * CertWareUIPlugin for navigator plugin.
  * @author mrb
  * @since 1.0
  */

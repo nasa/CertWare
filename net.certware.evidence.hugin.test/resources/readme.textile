@@ -1,0 +1,12 @@
+h1. CertWare Bayesian Network Tests
+
+This test plugin contains resources for exercising the Hugin DSL implementation.  Test files have been copied from one or more public test file repositories as listed below:
+
+
+* "Bayesian Network Repository":http://www.cs.huji.ac.il/~galel/Repository/
+* "Hugin Developer Samples":http://www.hugin.com/developer/samples
+
+March 1, 2011
+
+
+

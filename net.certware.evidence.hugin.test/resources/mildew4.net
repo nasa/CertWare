@@ -1,0 +1,237 @@
+net
+{
+    node_size = (80 40);
+    HR_Grid_X = "10";
+    HR_Grid_Y = "10";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "0";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DiscreteChance = "16";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+    HRUNTIME_Monitor_InitStates = "5";
+    HRUNTIME_Monitor_OpenGraph = "0";
+    HRUNTIME_Monitor_GraphPrecision = "100";
+    HRUNTIME_Monitor_AutoUpdGraph = "0";
+    HRUNTIME_Compile_ApproxEpsilon = "0.00001";
+    HRUNTIME_Compile_Approximate = "0";
+    HRUNTIME_Compile_Compress = "0";
+    HRUNTIME_Compile_TriangMethod = "0";
+    HRUNTIME_Propagate_AutoNormal = "1";
+    HRUNTIME_Propagate_AutoSum = "1";
+    HRUNTIME_Propagate_Auto = "0";
+    HRUNTIME_Font_Italic = "0";
+    HRUNTIME_Font_Weight = "400";
+    HRUNTIME_Font_Size = "-12";
+    HRUNTIME_Font_Name = "Arial";
+    HRUNTIME_Grid_GridShow = "0";
+    HRUNTIME_Grid_GridSnap = "1";
+    HRUNTIME_Grid_Y = "10";
+    HRUNTIME_Grid_X = "10";
+}
+
+node C11
+{
+    label = "OH";
+    position = (370 400);
+    states = ("r" "b" "p" "f" "a" "g" "v");
+}
+
+decision D10
+{
+    label = "T";
+    position = (440 320);
+    states = ("now" "wait 1 week" "wait 2 weeks");
+}
+
+utility C
+{
+    position = (150 0);
+}
+
+node OM
+{
+    label = "OM";
+    position = (0 30);
+    states = ("no" "l" "m" "s");
+}
+
+decision A
+{
+    label = "A";
+    position = (150 110);
+    states = ("no" "l" "m" "h");
+}
+
+utility U
+{
+    label = "U";
+    position = (360 210);
+}
+
+node Ms
+{
+    label = "M*";
+    position = (150 220);
+    states = ("no" "l" "m" "s");
+}
+
+node M
+{
+    label = "M";
+    position = (0 150);
+    states = ("no" "l" "m" "s");
+}
+
+node H
+{
+    label = "H";
+    position = (300 320);
+    states = ("r" "b" "p" "f" "a" "g" "v");
+}
+
+node OQ
+{
+    position = (0 240);
+    states = ("f" "a" "g" "v");
+}
+
+node Q
+{
+    label = "Q";
+    position = (0 340);
+    states = ("f" "a" "g" "v");
+}
+
+potential (C11 | H)
+{
+ data = (( 0.75 0.1 0.08 0.04 0.03 0 0 )	%  r
+	 ( 0.1 0.75 0.1 0.03 0.02 0 0 )	%  b
+	 ( 0.02 0.1 0.75 0.1 0.03 0 0 )	%  p
+	 ( 0 0.02 0.1 0.75 0.1 0.03 0 )	%  f
+	 ( 0 0 0.02 0.1 0.75 0.1 0.03 )	%  a
+	 ( 0 0 0 0.05 0.1 0.75 0.1 )	%  g
+	 ( 1 1 0.02 0.05 0.08 0.1 0.75 ));	%  v
+}
+
+potential (D10 | C11) {}
+
+potential (C | A)
+{
+ data = ( 0	%  no
+	  -2	%  l
+	  -3	%  m
+	  -4 );	%  h
+}
+
+potential (OM | M)
+{
+ data = (( 0.9 0.1 0 0 )	%  no
+	 ( 0.2 0.5 0.2 0.1 )	%  l
+	 ( 0.1 0.2 0.5 0.2 )	%  m
+	 ( 0 0.1 0.3 0.6 ));	%  s
+}
+
+potential (A | OM OQ) {}
+
+potential (U | D10 H)
+{
+ data = (( -1	%  now  r
+	   1	%  now  b
+	   5	%  now  p
+	   8	%  now  f
+	   10	%  now  a
+	   12	%  now  g
+	   13 )	%  now  v
+	 ( -1	%  wait 1 week  r
+	   1	%  wait 1 week  b
+	   5	%  wait 1 week  p
+	   8	%  wait 1 week  f
+	   10	%  wait 1 week  a
+	   12	%  wait 1 week  g
+	   13 )	%  wait 1 week  v
+	 ( -1	%  wait 2 weeks  r
+	   1	%  wait 2 weeks  b
+	   5	%  wait 2 weeks  p
+	   8	%  wait 2 weeks  f
+	   10	%  wait 2 weeks  a
+	   12	%  wait 2 weeks  g
+	   13 ));	%  wait 2 weeks  v
+}
+
+potential (Ms | A M)
+{
+ data = ((( 1 0 0 0 )	%  no  no
+	  ( 0 1 0 0 )	%  no  l
+	  ( 0 0 1 0 )	%  no  m
+	  ( 0 0 0 1 ))	%  no  s
+	 (( 1 0 0 0 )	%  l  no
+	  ( 0.8 0.2 0 0 )	%  l  l
+	  ( 0 0.8 0.2 0 )	%  l  m
+	  ( 0 0 0.8 0.2 ))	%  l  s
+	 (( 1 0 0 0 )	%  m  no
+	  ( 1 0 0 0 )	%  m  l
+	  ( 0.8 0.2 0 0 )	%  m  m
+	  ( 0 0.8 0.2 0 ))	%  m  s
+	 (( 1 0 0 0 )	%  h  no
+	  ( 1 0 0 0 )	%  h  l
+	  ( 1 0 0 0 )	%  h  m
+	  ( 0.8 0.2 0 0 )));	%  h  s
+}
+
+potential (M)
+{
+ data = ( 0.4 0.3 0.2 0.1 );
+}
+
+potential (H | Ms Q)
+{
+ data = ((( 0 0.05 0.1 0.7 0.1 0.05 0 )	%  no  f
+	  ( 0 0 0.05 0.1 0.7 0.1 0.05 )	%  no  a
+	  ( 0 0 0 0.05 0.1 0.7 0.15 )	%  no  g
+	  ( 0 0 0 0 0.1 0.2 0.7 ))	%  no  v
+	 (( 0.05 0.1 0.7 0.1 0.05 0 0 )	%  l  f
+	  ( 0 0 0.05 0.1 0.7 0.1 0.05 )	%  l  a
+	  ( 0 0 0.05 0.1 0.7 0.15 0 )	%  l  g
+	  ( 0 0 0 0.05 0.15 0.7 0.1 ))	%  l  v
+	 (( 0.15 0.7 0.1 0.05 0 0 0 )	%  m  f
+	  ( 0.05 0.1 0.7 0.1 0.05 0 0 )	%  m  a
+	  ( 0 0.05 0.1 0.7 0.1 0.05 0 )	%  m  g
+	  ( 0 0 0.05 0.1 0.7 0.15 0 ))	%  m  v
+	 (( 0.9 0.1 0 0 0 0 0 )	%  s  f
+	  ( 0.15 0.7 0.1 0.05 0 0 0 )	%  s  a
+	  ( 0.05 0.1 0.7 0.1 0.05 0 0 )	%  s  g
+	  ( 0 0.05 0.1 0.7 0.1 0.05 0 )));	%  s  v
+}
+
+potential (OQ | Q)
+{
+ data = (( 0.8 0.15 0.05 0 )	%  f
+	 ( 0.3 0.6 0.1 0 )	%  a
+	 ( 0.1 0.2 0.6 0.1 )	%  g
+	 ( 0 0.1 0.4 0.5 ));	%  v
+}
+
+potential (Q)
+{
+ data = ( 0.2 0.4 0.3 0.1 );
+}

@@ -4,7 +4,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 /**
- * Activator for the task list history provider.
+ * CertWareUIPlugin for the task list history provider.
  * @author mrb
  * @since 1.1
  */

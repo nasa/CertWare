@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="splashExtension" name="Splash Extensions" schema="schema/splashExtension.exsd"/>
    <extension
          point="org.eclipse.ui.newWizards">
       <category
@@ -158,4 +159,15 @@
             icon="icons/obj16/cheatsheet.gif">
       </image>
    </extension>
+ <extension
+       point="org.eclipse.ui.splashHandlers">
+    <splashHandler
+          class="net.certware.core.ui.splash.OverlaySplashHandler"
+          id="net.certware.core.ui.splash.overlay">
+    </splashHandler>
+    <splashHandlerProductBinding
+          productId="net.certware.product.CertWare"
+          splashId="net.certware.core.ui.splash.overlay">
+    </splashHandlerProductBinding>
+ </extension>
 </plugin>

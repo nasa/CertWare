@@ -8,8 +8,8 @@
     colorProviders="true">
   <foreignModel>file:/Users/mrbarryold/Downloads/saem.ecore</foreignModel>
   <genPackages prefix="Evidence" basePackage="net.certware.evidence" resource="XMI"
-      disposableProviderFactory="true" generateExampleClass="false" contentTypeIdentifier=""
-      ecorePackage="saem.ecore#/">
+      disposableProviderFactory="true" generateExampleClass="false" multipleEditorPages="false"
+      contentTypeIdentifier="" ecorePackage="saem.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="saem.ecore#//ConsistencyLevel">
       <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConsistencyLevel/unknown"/>
       <genEnumLiterals ecoreEnumLiteral="saem.ecore#//ConsistencyLevel/informal"/>

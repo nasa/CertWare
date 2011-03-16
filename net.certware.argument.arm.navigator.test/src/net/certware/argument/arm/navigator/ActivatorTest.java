@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.osgi.framework.BundleContext;
 
 /**
- * The class <code>ActivatorTest</code> contains tests for the class <code>{@link Activator}</code>.
+ * The class <code>ActivatorTest</code> contains tests for the class <code>{@link CertWareUIPlugin}</code>.
  *
  * @generatedBy CodePro at 9/17/10 12:24 PM
  * @author mrb

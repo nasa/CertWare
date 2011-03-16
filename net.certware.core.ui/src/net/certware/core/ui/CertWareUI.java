@@ -44,6 +44,8 @@ public class CertWareUI extends AbstractUIPlugin implements BundleActivator {
 	public static final String CERTWARE_SCRIPT_IMAGE = "certware.script.image"; //$NON-NLS-1$
 	/** wizard banner */
 	public static final String CERTWARE_WIZARD_BANNER = "certware.wizban"; //$NON-NLS-1$
+	/** export image */
+	public static final String CERTWARE_EXPORT_IMAGE = "certware.export"; //$NON-NLS-1$
 	
 	/**
 	 * Returns the shared instance
@@ -91,6 +93,7 @@ public class CertWareUI extends AbstractUIPlugin implements BundleActivator {
         initializeImage(registry,bundle,"icons/obj16/certware-open.gif",CERTWARE_OPEN_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/certware-run.gif",CERTWARE_RUN_IMAGE);
         initializeImage(registry,bundle,"icons/obj16/certware-script.gif",CERTWARE_SCRIPT_IMAGE);
+        initializeImage(registry,bundle,"icons/obj16/export_wiz.gif",CERTWARE_EXPORT_IMAGE);
         initializeImage(registry,bundle,"icons/wizban/certware-wizban.png",CERTWARE_WIZARD_BANNER);
         
 		// register an icon for the job family

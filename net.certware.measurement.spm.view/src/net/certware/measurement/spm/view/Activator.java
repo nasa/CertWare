@@ -13,7 +13,7 @@ import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
- * Activator for SPM view plugin.
+ * CertWareUIPlugin for SPM view plugin.
  * Loads the image registry with keys exposed as public and static here.
  * @author mrb
  * @since 1.1

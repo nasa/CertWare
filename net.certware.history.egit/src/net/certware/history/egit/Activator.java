@@ -4,7 +4,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
 
 /**
- * Activator for the history provider.
+ * CertWareUIPlugin for the history provider.
  * @author mrb
  * @since 1.0
  */

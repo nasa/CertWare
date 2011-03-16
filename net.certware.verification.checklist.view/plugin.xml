@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            category="net.certware.core.ui.view.category"
+            class="net.certware.verification.checklist.view.ViewList"
+            icon="icons/view16/checklist.png"
+            id="net.certware.verification.checklist.view.list"
+            name="Verification Checklist"
+            restorable="true">
+         <description>
+            Checklist model list view with line item buttons.
+         </description>
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <view
+               id="net.certware.verification.checklist.view.list"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ContentOutline">
+         </view>
+         <viewShortcut
+               id="net.certware.verification.checklist.view.list">
+         </viewShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="java.lang.Object"
+            id="net.certware.verification.checklist.view.loadedTester"
+            namespace="net.certware.verification.checklist"
+            properties="isLoaded,isNotLoaded"
+            type="net.certware.verification.checklist.view.testers.LoadedTester">
+      </propertyTester>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="net.certware.verification.checklist.view.objectContribution"
+            nameFilter="*.vcl"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="certware"
+               label="CertWare"
+               path="group.build">
+            <separator
+                  name="markers">
+            </separator>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="net.certware.verification.checklist.view.actions.OpenView"
+               enablesFor="1"
+               icon="icons/view16/checklist.png"
+               id="net.certware.verification.checklist.view.open"
+               label="Open in Checklist View"
+               menubarPath="certware/additions"
+               tooltip="Open the verification checklist content in its view">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="certware"
+            class="net.certware.verification.checklist.view.preferences.ViewListPreferencePage"
+            id="net.certware.verification.checklist.view.page"
+            name="Checklist View">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.certware.verification.checklist.view.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

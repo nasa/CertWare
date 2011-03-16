@@ -17,7 +17,9 @@ reserved.
    </copyright>
 
    <license url="http://certware-update.s3-website-us-east-1.amazonaws.com/license.html">
-      This use of this software is governed by the CertWare Safety
+      Copyright (c) 2011 United States Government as represented by the National Aeronautics and Space Administration.  All rights reserved.
+      
+This use of this software is governed by the CertWare Safety
 Case Workbench BETA-TEST AGREEMENT OF EXPERIMENTAL COMPUTER CODE.
 Use of this software is limited to beta-testing only.  No modifications
 to the software or further development of the software are permitted.
@@ -27,7 +29,8 @@ notices identify the governing open source license and use of
 such open source software is governed by the terms and conditions
 of the governing open source license.  NASA disclaims all warranties
 and liabilities regarding open source software and distributes
-it &quot;as is&quot; under this Agreement.&#13;&#10;
+it &quot;as is&quot; under this Agreement.
+
 This software shall not be exported outside the United Kingdom,
 except to the United States, without the express permission of
 NASA. Access to the SOFTWARE within the United Kingdom to TESTER’s
@@ -43,7 +46,8 @@ Trade Controls, List of Statutorily Debarred Parties; U.S. Department
 of Commerce, Bureau of Industry and Security, Denied Persons
 List; U.S. Department of Commerce, Bureau of Industry and Security,
 Entity List).  Violations may result in criminal liability under
-U.S. laws.&#13;&#10;
+U.S. laws.
+
 THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; WITHOUT ANY WARRANTY OF ANY
 KIND, EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT
 NOT LIMITED TO, ANY WARRANTY THAT THE SOFTWARE WILL CONFORM TO
@@ -66,7 +70,8 @@ HAVE OTHER REASON TO KNOW, OR IN FACT SHALL KNOW OF THE POSSIBILITY
 OF THE FOREGOING.  THE UNITED STATES GOVERNMENT DISCLAIMS ALL
 WARRANTIES AND LIABILITIES REGARDING THIRD PARTY SOFTWARE, IF
 PRESENT IN THE NASA GENERATED SOFTWARE, AND DISTRIBUTES IT ‘AS
-IS.”&#13;&#10;
+IS.
+
 USE OF THIS SOFTWARE IS AN AGREEMENT TO WAIVE ANY AND ALL CLAIMS
 AGAINST THE UNITED STATES GOVERNMENT, AND ITS CONTRACTORS AND
 SUBCONTRACTORS, AND TO  INDEMNIFY AND HOLD HARMLESS THE UNITED

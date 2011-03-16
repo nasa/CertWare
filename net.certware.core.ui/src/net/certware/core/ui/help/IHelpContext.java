@@ -94,6 +94,8 @@ public interface IHelpContext {
 	public static String VCL_EDITOR_ITEM = PREFIX + "vcl_editor_item_context"; //$NON-NLS-1$
 	/** VCL editor choices context ID */
 	public static String VCL_EDITOR_CHOICES = PREFIX + "vcl_editor_choices_context"; //$NON-NLS-1$
+	/** VCL view context ID */
+	public static String VCL_VIEW = PREFIX + "vcl_view_context"; //$NON-NLS-1$
 	
 	
 	// model agnostic context IDs

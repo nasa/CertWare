@@ -30,7 +30,7 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 
 		/*
 	    ImageDescriptor id = null;
-	    id = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "icons/obj16/safe.gif");
+	    id = CertWareUIPlugin.imageDescriptorFromPlugin(CertWareUIPlugin.PLUGIN_ID, "icons/obj16/safe.gif");
 	    if ( id != null ) 
 	      safeImage = id.createImage();
 		 */
