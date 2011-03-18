@@ -72,5 +72,20 @@
             icon="icons/obj16/certware-run.gif">
       </image>
    </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.certware.argument.sfp.review.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="certware"
+            class="net.certware.argument.sfp.review.preferences.SfpReviewPreferencePage"
+            id="net.certware.argument.sfp.review.page"
+            name="Semi-Formal Proof Review">
+      </page>
+   </extension>
 
 </plugin>

@@ -14,7 +14,8 @@ import net.certware.verification.checklist.view.filters.ResultFilter;
 import net.certware.verification.checklist.view.help.ContextProvider;
 import net.certware.verification.checklist.view.preferences.PreferenceConstants;
 import net.certware.verification.checklist.view.table.ChecklistModel;
-import net.certware.verification.checklist.view.table.ChecklistTableViewer;
+import net.certware.verification.checklist.view.table.ChecklistModelList;
+import net.certware.verification.checklist.view.table.ChecklistSorter;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -34,8 +35,21 @@ import org.eclipse.help.IContextProvider;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.CellEditor;
+import org.eclipse.jface.viewers.ColumnViewer;
+import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.ComboBoxViewerCellEditor;
+import org.eclipse.jface.viewers.EditingSupport;
+import org.eclipse.jface.viewers.ICellEditorListener;
+import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ITableLabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.TableLayout;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTException;
@@ -48,12 +62,12 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPartListener2;
 import org.eclipse.ui.ISaveablePart2;
@@ -73,6 +87,7 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.forms.widgets.TableWrapData;
 import org.eclipse.ui.forms.widgets.TableWrapLayout;
+import org.eclipse.ui.handlers.IHandlerService;
 import org.eclipse.ui.help.IWorkbenchHelpSystem;
 import org.eclipse.ui.part.ViewPart;
 
@@ -101,7 +116,7 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	private IPartListener2 activeEditorListener = null;
 	/** context provider for help system adapter */
 	static ContextProvider contextprovider = null;
-	private ChecklistTableViewer tableViewer = null;
+	private TableViewer tableViewer = null;
 	private Section context;
 	private Section items;
 	private Hyperlink checklistText;
@@ -109,7 +124,10 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	private MenuItem itemNoFilterMenuItem;
 	private MenuItem itemUnknownFilterMenuItem;
 	private MenuItem itemNaFilterMenuItem;
+	private Label checklistVersion;
+	protected boolean dirty = false;
 	private static final String CHECKLIST_LABEL = "Checklist: ";
+	private static final String CHECKLIST_VERSION = "Version: ";
 	private static final String CHECKLIST_TOOL_TIP = "Checklist model name";
 	private static final String MEMENTO_COLUMN_CATEGORY = "memento.category"; //$NON-NLS-1$
 	private static final String MEMENTO_COLUMN_ID = "memento.id"; //$NON-NLS-1$
@@ -180,46 +198,32 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	}
 
 	/**
-	 * Convenience method to add a column to the results table.
-	 * @param columnNumber column number starting from zero
-	 * @param table table destination
-	 * @param menu menu parent for column header menus
-	 * @param width initial column width
-	 * @param style SWT style bits for the column
-	 * @param id column ID for the model, from the viewers
-	 * @param image a label image or null
-	 * @return the new column 
+	 * Selection listener to sort columns.
+	 * @param table table
+	 * @param tvc table column
+	 * @param sorter sorter to apply
 	 */
-	private TableColumn addColumn(int columnNumber, final Table table, Menu menu, int width, int style, final String id, Image image) {
-		TableColumn column = new TableColumn(table, style, columnNumber );     
-		column.setText(tableViewer.columnNames[columnNumber]);
-		column.setWidth(width);
-		column.setResizable(true);
-		column.setMoveable(true);
-		column.setImage(image);
-		createMenuItem(menu,column);
-		column.addSelectionListener(new SelectionAdapter() {
+	private void addSelectionSorter(final Table table, final TableViewerColumn tvc, final ChecklistSorter sorter) {
+		tvc.getColumn().addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				tableViewer.getSorter().setColumn(id);
+				sorter.setColumn(tvc.getColumn().getText());
 				tableViewer.refresh(true,true);
 				TableColumn c = (TableColumn)e.getSource();
-				setColumnImages(tableViewer,table,c);
+				setColumnImages(sorter,table,c);
 				tableViewer.getControl().redraw();
 				form.layout(true);
 			}
 		});
-
-		return column;
 	}
-
+	
 	/**
 	 * Set the column header images according to sort direction.
 	 * @param tv table viewer for sorter access
 	 * @param t table for column access
 	 * @param sc selected column to assign image
 	 */
-	private void setColumnImages(ChecklistTableViewer tv, Table t, TableColumn sc) {
+	private void setColumnImages(ChecklistSorter sorter, Table t, TableColumn sc) {
 		// clear all current images
 		for ( int c = 0; c < t.getColumnCount(); c++ ) {
 			TableColumn tc = t.getColumn(c);
@@ -227,7 +231,7 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		}
 
 		// set the selected column's image according to sort direction
-		if ( tv.getSorter().getDirection() == SWT.UP )
+		if ( sorter.getDirection() == SWT.UP )
 			sc.setImage(Activator.getDefault().getImageRegistry().get(Activator.ASCENDING_IMAGE));
 		else
 			sc.setImage(Activator.getDefault().getImageRegistry().get(Activator.DESCENDING_IMAGE));
@@ -285,6 +289,8 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		twd = new TableWrapData(TableWrapData.FILL);
 		twd.colspan = 2;
 		context.setLayoutData(twd);
+		context.setText("Checklist Context");
+		context.setToolTipText("Checklist identification content");
 		context.addExpansionListener(new ExpansionAdapter() {
 			@Override
 			public void expansionStateChanged(ExpansionEvent e) {
@@ -292,10 +298,11 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 				form.reflow(true);
 			}
 		});
-		context.setText("Checklist Context");
-		context.setToolTipText("Checklist identification content");
+
 		Composite contextClient = toolkit.createComposite(context);
 		contextClient.setLayout(new GridLayout());
+		
+		// checklist name
 		checklistText = toolkit.createHyperlink(contextClient, CHECKLIST_LABEL, SWT.WRAP);
 		checklistText.setEnabled(false);
 		checklistText.setToolTipText(CHECKLIST_TOOL_TIP);
@@ -303,20 +310,20 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		checklistText.addHyperlinkListener(new HyperlinkAdapter() {
 			@Override
 			public void linkActivated(HyperlinkEvent e) {
-				String sourceFile = (String)e.getHref(); // null until file selected, already contains extension
-				if ( sourceFile == null ) return;
-				IFile myFile = FileFinder.findResourceByName(sourceFile);
-				FileOpener.findResourceEditor(myFile);
+				FileOpener.findResourceEditor((IFile)e.getHref()); // Href contains the IFile from selection
 			}
 		});
 
-		//startTimeLabel = toolkit.createLabel(contextClient, START_TIME_LABEL);
-		//startTimeLabel.setToolTipText(START_TIME_TOOL_TIP);
+		// checklist version
+		checklistVersion = toolkit.createLabel(contextClient, CHECKLIST_VERSION, SWT.WRAP);
+		checklistVersion.setEnabled(true);
+		checklistVersion.setToolTipText("Version identified in model");
+		checklistVersion.setFont(JFaceResources.getDialogFont());
+		
 		context.setClient(contextClient);
 
 		// results table section
-		items = toolkit.createSection(form.getBody(), 
-				Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		items = toolkit.createSection(form.getBody(), Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		twd = new TableWrapData(TableWrapData.FILL_GRAB);
 		twd.colspan = 2;
 		twd.maxHeight = 500; 
@@ -333,45 +340,42 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		Composite resultsClient2 = toolkit.createComposite(items);
 		resultsClient2.setLayout(new FillLayout());
 
-		int tableStyle = SWT.SINGLE | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.HIDE_SELECTION;
+		// create the table
+		int tableStyle = SWT.SINGLE | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL | SWT.HIDE_SELECTION | SWT.FULL_SELECTION;
 		final Table table = new Table(resultsClient2,tableStyle);
 		GridData gridData = new GridData(GridData.FILL_BOTH);
 		gridData.grabExcessVerticalSpace = true;
 		gridData.horizontalSpan = 3;
 		final Menu headerMenu = new Menu(table);
 
+		TableLayout tableLayout = new TableLayout();
+		tableLayout.addColumnData(new ColumnWeightData(2)); // category
+		tableLayout.addColumnData(new ColumnWeightData(1)); // id
+		tableLayout.addColumnData(new ColumnWeightData(3)); // description
+		tableLayout.addColumnData(new ColumnWeightData(2)); // reference
+		tableLayout.addColumnData(new ColumnWeightData(2)); // comment
+		tableLayout.addColumnData(new ColumnWeightData(1)); // result
+		table.setLayout(tableLayout);
 		table.setLinesVisible(true);
 		table.setHeaderVisible(true);
-		table.addSelectionListener(new SelectionAdapter(){
-			// position the file editor at the line number selected in the table
-			@SuppressWarnings("unused")
-			@Override
-			public void widgetSelected(SelectionEvent e) {
+		
+		tableViewer = new TableViewer(table);
+		// tableViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		
+		TableViewerColumn categoryColumn = new TableViewerColumn(tableViewer, SWT.NONE);
+		TableViewerColumn idColumn = new TableViewerColumn(tableViewer, SWT.NONE);
+		TableViewerColumn descriptionColumn = new TableViewerColumn(tableViewer, SWT.NONE);
+		TableViewerColumn referenceColumn = new TableViewerColumn(tableViewer, SWT.NONE);
+		TableViewerColumn commentColumn = new TableViewerColumn(tableViewer, SWT.NONE);
+		TableViewerColumn resultColumn = new TableViewerColumn(tableViewer, SWT.NONE);
 
-				if ( !(getLinkingEditor()) || selectedChecklist == null )
-					return;
-
-				// table item data contains the model object
-				TableItem ti = (TableItem)e.item;
-				if ( ti == null ) return;
-				ChecklistModel cm = (ChecklistModel)ti.getData();
-
-				// find the file name
-				/*
-				try {
-					int lineNumber = Integer.parseInt(lvm.getLine());
-
-					// opens the editor if necessary, reveals and selects line
-					FileOpener.editAtLineNumber(header.getFilename(),
-							lineNumber,
-							Activator.getDefault().getLog(),
-							Activator.PLUGIN_ID);
-				} catch(NumberFormatException nfe) {
-					CertWareLog.logWarning("Exception parsing line number");
-				}
-				 */
-			}});
-
+		setColumnProperties(categoryColumn,"Category",headerMenu,true,true);
+		setColumnProperties(idColumn,"ID",headerMenu,true,true);
+		setColumnProperties(descriptionColumn,"Description",headerMenu,true,true);
+		setColumnProperties(referenceColumn,"Reference",headerMenu,true,true);
+		setColumnProperties(commentColumn,"Comment",headerMenu,true,true);
+		setColumnProperties(resultColumn,"Result",headerMenu,true,true);
+		
 		// menu for column widths
 		table.addListener(SWT.MenuDetect, new Listener() {
 			public void handleEvent(Event event) {
@@ -379,11 +383,30 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 			}
 		});
 
-		// set the viewer to the table and initialize
-		tableViewer = new ChecklistTableViewer(table);
-		tableViewer.initialize(null);
-
+		// table sorting on columns
+		ChecklistSorter sorter = new ChecklistSorter(tableViewer);
+		tableViewer.setSorter(sorter);
+		addSelectionSorter(table, categoryColumn, sorter);
+		addSelectionSorter(table, idColumn, sorter);
+		addSelectionSorter(table, descriptionColumn, sorter);
+		addSelectionSorter(table, referenceColumn, sorter);
+		addSelectionSorter(table, commentColumn, sorter);
+		addSelectionSorter(table, resultColumn, sorter);
+		setColumnImages(sorter, table, categoryColumn.getColumn());
+		
+		// recover widths if available
+		if ( memento != null && memento.getAttributeKeys().length < ChecklistModel.COLUMN_COUNT) {
+			setColumnWidth(categoryColumn,memento.getInteger(MEMENTO_COLUMN_CATEGORY));
+			setColumnWidth(idColumn,memento.getInteger(MEMENTO_COLUMN_ID));
+			setColumnWidth(descriptionColumn,memento.getInteger(MEMENTO_COLUMN_DESCRIPTION));
+			setColumnWidth(referenceColumn,memento.getInteger(MEMENTO_COLUMN_REFERENCE));
+			setColumnWidth(commentColumn,memento.getInteger(MEMENTO_COLUMN_COMMENT));
+			setColumnWidth(resultColumn,memento.getInteger(MEMENTO_COLUMN_CHOICES));
+		}
+		
 		// id column
+		/*
+		TableViewerColumn choicesColumn;
 		int columnNumber = 0;
 		Image ascending = Activator.getDefault().getImageRegistry().get(Activator.ASCENDING_IMAGE);
 		if ( memento == null || memento.getAttributeKeys().length < 6) {
@@ -391,17 +414,71 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 			addColumn(columnNumber++,table,headerMenu, 50,SWT.LEFT,ChecklistTableViewer.COLUMN_ID,null);
 			addColumn(columnNumber++,table,headerMenu,150,SWT.LEFT,ChecklistTableViewer.COLUMN_DESCRIPTION,null);
 			addColumn(columnNumber++,table,headerMenu,  0,SWT.LEFT,ChecklistTableViewer.COLUMN_REFERENCE,null);
-			addColumn(columnNumber++,table,headerMenu,  0,SWT.LEFT,ChecklistTableViewer.COLUMN_COMMENT,null);
-			addColumn(columnNumber++,table,headerMenu, 50,SWT.LEFT,ChecklistTableViewer.COLUMN_CHOICES,null);
+			choicesColumn = addColumn(columnNumber++,table,headerMenu,  0,SWT.LEFT,ChecklistTableViewer.COLUMN_COMMENT,null);
+			// choicesColumn = addColumn(columnNumber++,table,headerMenu, 50,SWT.LEFT,ChecklistTableViewer.COLUMN_CHOICES,null);
 		} else {
 			addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_CATEGORY),SWT.LEFT,ChecklistTableViewer.COLUMN_CATEGORY,ascending);
 			addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_ID),SWT.LEFT,ChecklistTableViewer.COLUMN_ID,null);
 			addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_DESCRIPTION),SWT.LEFT,ChecklistTableViewer.COLUMN_DESCRIPTION,null);
 			addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_REFERENCE),SWT.LEFT,ChecklistTableViewer.COLUMN_REFERENCE,null);
-			addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_COMMENT),SWT.LEFT,ChecklistTableViewer.COLUMN_COMMENT,null);
-			addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_CHOICES),SWT.LEFT,ChecklistTableViewer.COLUMN_CHOICES,null);
+			choicesColumn = addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_COMMENT),SWT.LEFT,ChecklistTableViewer.COLUMN_COMMENT,null);
+			//choicesColumn = addColumn(columnNumber++,table,headerMenu,memento.getInteger(MEMENTO_COLUMN_CHOICES),SWT.LEFT,ChecklistTableViewer.COLUMN_CHOICES,null);
 		}
+		*/
+		
+		// add combo box editor for the choices column
+		EditingSupport choicesEditingSupport = new ResultEditingSupport(tableViewer);
+		resultColumn.setEditingSupport(choicesEditingSupport);
 
+		// table content provider
+		tableViewer.setContentProvider(new ArrayContentProvider());
+		if ( selectedChecklist != null ) {
+			ChecklistModelList list = new ChecklistModelList();
+			list.initialize(selectedChecklist);
+			tableViewer.setInput(list.getItems());
+		}
+		
+		// table label provider
+		tableViewer.setLabelProvider(new ITableLabelProvider() {
+			@Override
+			public void addListener(ILabelProviderListener listener) {
+			}
+
+			@Override
+			public void dispose() {
+			}
+
+			@Override
+			public boolean isLabelProperty(Object element, String property) {
+				return false;
+			}
+
+			@Override
+			public void removeListener(ILabelProviderListener listener) {
+			}
+
+			@Override
+			public Image getColumnImage(Object element, int columnIndex) {
+				return null;
+			}
+
+			@Override
+			public String getColumnText(Object element, int columnIndex) {
+				ChecklistModel cm = (ChecklistModel)element;
+				switch( columnIndex ) {
+				case 0: return cm.getCategory();
+				case 1: return cm.getId();
+				case 2: return cm.getDescription();
+				case 3: return cm.getReference();
+				case 4: return cm.getComment();
+				case 5: return cm.getResult().toString();
+				default:
+					System.err.println("Label provider unknown index " + columnIndex);
+				}
+				return ""; //$NON-NLS-1$
+			}
+		});
+		
 		// add filters to the header menu 
 		createMenuSeparator(headerMenu);
 		ViewerFilter yesFilter = new ResultFilter(Choices.YES_VALUE);
@@ -480,6 +557,25 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		form.layout();
 	}
 
+	private void setColumnProperties(TableViewerColumn tvc, String title, Menu menu, boolean moveable, boolean resizeable) {
+		TableColumn tc = tvc.getColumn();
+		tc.setText(title);
+		tc.setMoveable(moveable);
+		tc.setResizable(resizeable);
+		createMenuItem(menu,tc);
+	}
+
+	/**
+	 * Sets a column width.
+	 * @param tvc table column
+	 * @param width new width
+	 */
+	private void setColumnWidth(TableViewerColumn tvc, Integer width) {
+		if ( width != null && tvc != null ) {
+			tvc.getColumn().setWidth( width.intValue() );
+		}
+	}
+
 	/**
 	 * Creates a menu item separator for the column header.
 	 * @param parent column header menu
@@ -535,8 +631,7 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 
 		// if the file is the right type, open it and update the view
 		String extension = ifile.getFileExtension();
-		if (extension != null && ICertWareConstants.FILE_EXTENSIONS.contains(extension)) {
-
+		if (extension != null && ICertWareConstants.VCL_EXTENSION.equals(extension)) {
 			try {
 				// load the XML file through the EMF resource set implementation
 				ResourceSet resourceSet = new ResourceSetImpl();
@@ -577,7 +672,15 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 
 	@Override
 	public void doSave(IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
+	    String commandId = "net.certware.verification.checklist.view.save"; //$NON-NLS-1$
+
+	    try {
+	      IHandlerService handlerService = (IHandlerService) getSite().getService(IHandlerService.class); 
+	      handlerService.executeCommand(commandId, null);
+	      setDirty(false);
+	    } catch( Exception e ) {
+	      CertWareLog.logError("Saving checklist model",e);
+	    }
 
 	}
 
@@ -588,10 +691,13 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 
 	@Override
 	public boolean isDirty() {
-		// TODO Auto-generated method stub
-		return false;
+		return dirty;
 	}
 
+	public void setDirty(boolean d) {
+		dirty = d;
+	}
+	
 	@Override
 	public boolean isSaveAsAllowed() {
 		return false;
@@ -608,7 +714,6 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 
 		try {
 			event.getDelta().accept(new IResourceDeltaVisitor() {
-
 				public boolean visit(IResourceDelta delta) throws CoreException {
 					if ( delta.getKind() == IResourceDelta.REMOVED ) {
 						// selected results file
@@ -633,18 +738,19 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		} catch( CoreException ce ) {
 			CertWareLog.logWarning(String.format("%s: %s","Exception refreshing selected checklist file",ce.getMessage()));
 		}
-
 	}
 
 	/**
 	 * Updates the checklist table content.
 	 */
 	protected void updateChecklistTable() {
+		
 		if ( selectedChecklist == null )
 			return;
 
-		tableViewer.initialize(selectedChecklist);
-		tableViewer.setInput(selectedChecklist);
+		ChecklistModelList list = new ChecklistModelList();
+		list.initialize(selectedChecklist);
+		tableViewer.setInput( list.getItems() ); // array content provider
 		tableViewer.refresh();
 		tableViewer.getControl().pack(true);
 	}
@@ -663,6 +769,9 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 			public void run() {
 				checklistText.setText(CHECKLIST_LABEL + "<none>");
 				checklistText.setEnabled(false);
+				
+				checklistVersion.setText(CHECKLIST_VERSION + "<none>");
+				checklistVersion.setEnabled(false);
 
 				tableViewer.setItemCount(0);
 				tableViewer.refresh();
@@ -676,6 +785,7 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	 * Update the view.
 	 */
 	protected void updateView() {
+		
 		if ( selectedChecklist == null ) 
 			return;
 
@@ -684,20 +794,17 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 			public void run() {
 				try {
 					// update the context section
-					String checklistName = selectedChecklist.getName();
-					String programString = null;
-
-					if ( checklistName != null ) {
-						programString = checklistName + ' ' + selectedChecklist.getVersion();
-					}
-
 					// always redraw the strings to erase any previous content
 					// the form composite requires re-packing to reflect the new boundaries
-					checklistText.setText(CHECKLIST_LABEL + programString);
-					checklistText.setHref(programString);
+					checklistText.setText(CHECKLIST_LABEL + selectedChecklist.getName());
+					checklistText.setHref( selectedFile );
 					checklistText.setEnabled(true);
 					checklistText.pack(true);
 
+					checklistVersion.setText(CHECKLIST_VERSION + selectedChecklist.getVersion()); 
+					checklistVersion.setEnabled(true);
+					checklistVersion.pack(true);
+					
 					updateChecklistTable();
 
 					// refresh the form layout
@@ -715,14 +822,12 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 
 	/**
 	 * Prompt to save on close.
-	 * @return always returns yes
+	 * @return default prompt for workbench
 	 */
 	@Override
 	public int promptToSaveOnClose() {
-		if ( isDirty() )
-			return ISaveablePart2.YES;
-		else
-			return ISaveablePart2.NO;
+	    // use the workbench default prompt
+	    return ISaveablePart2.DEFAULT;
 	}
 
 	/**
@@ -739,8 +844,9 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 
 		// selecting from the explorer without the file open
 		if ( iss.getFirstElement() instanceof IFile ) { 
-			if ( setSelectedFile((IFile)iss.getFirstElement()) )
+			if ( setSelectedFile((IFile)iss.getFirstElement()) ) {
 				latestSelection = selection;
+			}
 		} 
 
 		// otherwise select from the active model editor
@@ -769,7 +875,8 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	@Override
 	public void dispose() {
 		getSite().getWorkbenchWindow().getSelectionService().removeSelectionListener(this);
-		getSite().getPage().removePartListener(activeEditorListener);
+		if ( activeEditorListener != null )
+			getSite().getPage().removePartListener(activeEditorListener);
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(this);
 		super.dispose();
 	}
@@ -813,5 +920,67 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		return ICertWareConstants.VCL_EXTENSION;
 	}
 
+	/**
+	 * Editing support for the choices column.
+	 * @author mrb
+	 */
+	public final class ResultEditingSupport extends EditingSupport {
 
+		private ComboBoxViewerCellEditor cellEditor = null;
+		private ColumnViewer columnViewer = null;
+		
+		public ResultEditingSupport(ColumnViewer viewer) {
+			super(viewer);
+			columnViewer = viewer;
+			cellEditor = new ComboBoxViewerCellEditor((Composite) getViewer().getControl(), SWT.NONE);
+			cellEditor.setContenProvider(new ArrayContentProvider());
+			cellEditor.setInput( Choices.VALUES.toArray() );
+			cellEditor.setLabelProvider(new LabelProvider());
+			cellEditor.addListener(new ICellEditorListener(){
+				@Override
+				public void applyEditorValue() {
+				}
+
+				@Override
+				public void cancelEditor() {
+				}
+
+				@Override
+				public void editorValueChanged(boolean oldValidState,boolean newValidState) {
+				}});
+		}
+
+		@Override
+		protected CellEditor getCellEditor(Object element) {
+			return cellEditor;
+		}
+
+		@Override
+		protected boolean canEdit(Object element) {
+			return true;
+		}
+
+		@Override
+		protected Object getValue(Object element) {
+			if (element instanceof ChecklistModel) {
+				ChecklistModel data = (ChecklistModel)element;
+				return data.getResult();
+			}
+			return null;
+		}
+
+		@Override
+		protected void setValue(Object element, Object value) {
+			if (element instanceof ChecklistModel && value instanceof Choices) {
+				ChecklistModel data = (ChecklistModel) element;
+				Choices newValue = (Choices) value;
+				data.setResult(newValue); // changes the list
+				data.getItem().setResult(newValue); // changes the model
+				setDirty(true);
+				columnViewer.update(element, null); // update editor display
+				System.err.println("changed to " + newValue);
+			}
+		}
+
+	}
 }

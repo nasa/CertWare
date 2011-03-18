@@ -52,6 +52,8 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	private TreeViewer viewer;
 	/** model container */
 	private ModelContainer model;
+	private ProofDetailPage proofDetailPage;
+	private StatementDetailPage statementDetailPage;
 	
 	/**
 	 * Creates the scrolled properties block.
@@ -74,6 +76,10 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	 * Disposes of resources used by this block.
 	 */
 	public void dispose() {
+		if ( proofDetailPage != null )
+			proofDetailPage.dispose();
+		if ( statementDetailPage != null )
+			statementDetailPage.dispose();
 	}
 
 	/**
@@ -350,8 +356,10 @@ public class ScrolledPropertiesBlock extends MasterDetailsBlock {
 	 * There are pages for statements and proofs.
 	 */
 	protected void registerPages(DetailsPart detailsPart) {
-		detailsPart.registerPage(ProofImpl.class, new ProofDetailPage(proof,viewer,validatePage,setupPage));
-		detailsPart.registerPage(StatementImpl.class, new StatementDetailPage(proof,viewer,validatePage,setupPage));
+		proofDetailPage = new ProofDetailPage(proof,viewer,validatePage,setupPage);
+		statementDetailPage = new StatementDetailPage(proof,viewer,validatePage,setupPage);
+		detailsPart.registerPage(ProofImpl.class, proofDetailPage);
+		detailsPart.registerPage(StatementImpl.class, statementDetailPage );
 	}
 
 	class ModelContainer {

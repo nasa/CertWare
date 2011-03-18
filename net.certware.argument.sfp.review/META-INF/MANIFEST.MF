@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Argument Semi-Formal Proof Review
 Bundle-SymbolicName: net.certware.argument.sfp.review;singleton:=true
-Bundle-Version: 1.2.0.qualifier
+Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.argument.sfp.review.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -26,6 +26,7 @@ Import-Package: net.certware.argument.sfp,
  org.eclipse.jface.action,
  org.eclipse.jface.dialogs,
  org.eclipse.jface.resource,
+ org.eclipse.jface.text,
  org.eclipse.jface.viewers,
  org.eclipse.jface.wizard,
  org.eclipse.ui,

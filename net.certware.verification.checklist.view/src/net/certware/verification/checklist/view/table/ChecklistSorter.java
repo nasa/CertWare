@@ -1,5 +1,6 @@
 package net.certware.verification.checklist.view.table;
 
+import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
@@ -15,13 +16,14 @@ public class ChecklistSorter extends ViewerSorter {
 	/** direction of sort, up is ascending */
 	private int direction = SWT.UP;
 	/** table viewer reference */
-	private final ChecklistTableViewer tableViewer;
+	private final TableViewer tableViewer;
+
 
 	/**
 	 * Constructor sets first column sort ascending.
 	 * @param tableViewer reference to table viewer
 	 */
-	public ChecklistSorter(ChecklistTableViewer tableViewer) {
+	public ChecklistSorter(TableViewer tableViewer) {
 		this.propertyIndex = 0;
 		this.tableViewer = tableViewer;
 		direction = SWT.UP;
@@ -29,13 +31,12 @@ public class ChecklistSorter extends ViewerSorter {
 
 	/**
 	 * Sets the sort column given the column name.
-	 * The name should be from the column names in <code>LineValueTableViewer</code>
 	 * Calls <code>setColumn(int)</code> with the associated column number.
 	 * @param columnName column name
 	 */
 	public void setColumn(String columnName) {
-		for ( int i = 0; i < tableViewer.columnNames.length; i++ ) {
-			if ( tableViewer.columnNames[i].equalsIgnoreCase(columnName)) {
+		for ( int i = 0; i < ChecklistModel.COLUMN_COUNT; i++ ) {
+			if ( tableViewer.getTable().getColumn(i).getText().equalsIgnoreCase(columnName)) {
 				setColumn(i);
 				return;
 			}
@@ -96,26 +97,35 @@ public class ChecklistSorter extends ViewerSorter {
 			rc = p1.getCategory().compareTo(p2.getCategory());
 			break;
 		case 1: // id
-			rc = p1.getId().compareTo(p2.getId());
+			if ( p1.getId() != null && p2.getId() != null )
+				rc = p1.getId().compareTo(p2.getId());
 			break;
 		case 2: // description
-			rc = p1.getDescription().compareTo(p2.getDescription());
+			if ( p1.getDescription() != null && p2.getDescription() != null )
+				rc = p1.getDescription().compareTo(p2.getDescription());
 			break;
 		case 3: // references
-			rc = p1.getReference().compareTo(p2.getReference());
+			if ( p1.getReference() != null && p2.getReference() != null )
+				rc = p1.getReference().compareTo(p2.getReference());
 			break;
 		case 4: // comment
-			rc = p1.getComment().compareTo(p2.getComment());
+			if ( p1.getComment() != null && p2.getComment() != null ) {
+				rc = p1.getComment().compareTo(p2.getComment());
+			}
 			break;
 		case 5: // choice
-			int v1 = p1.getResult().getValue();
-			int v2 = p2.getResult().getValue();
-			if ( v1 == v2 ) rc = 0;
-			else
-				rc = v1 > v2 ? 1 : -1;
+			if ( p1.getResult() != null && p2.getResult() != null ) {
+				int v1 = p1.getResult().getValue();
+				int v2 = p2.getResult().getValue();
+				if ( v1 == v2 ) rc = 0;
+				else
+					rc = v1 > v2 ? 1 : -1;
+			}
+			break;
 		default:
 			rc = 0;
 		}
+		
 		// if descending order, flip the direction
 		if (direction == SWT.DOWN) {
 			rc = -rc;

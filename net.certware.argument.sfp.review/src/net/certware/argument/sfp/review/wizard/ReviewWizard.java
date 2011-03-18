@@ -125,6 +125,10 @@ public class ReviewWizard extends Wizard implements IHelpContext {
 		IDialogSettings ds = getDialogSettings();
 		ds.put(REVIEW_WIZARD_WIDTH,p.x);
 		ds.put(REVIEW_WIZARD_HEIGHT,p.y);
+		if ( pageSetup != null ) 
+			pageSetup.dispose();
+		if ( pageValidate != null )
+			pageValidate.dispose();
 		super.dispose();
 	}
 
@@ -204,16 +208,13 @@ public class ReviewWizard extends Wizard implements IHelpContext {
 	 * We will accept the selection in the workbench to see if we can initialize from it.
 	 * @see IWorkbenchWizard#init(IWorkbench, IStructuredSelection)
 	 */
-	public void init(IWorkbench workbench, IStructuredSelection selection) {
+	public void init(IWorkbench workbench, IFile ifile) {
 
-		if ( selection == null || (selection.getFirstElement() instanceof IFile) == false) {
-			String message = "Wizard must have a proof file selection for review";
-			CertWareLog.logWarning(message);
-			MessageDialog.openWarning(getShell(), TITLE, message);
+		if ( ifile == null ) {
+			CertWareLog.logWarning("Review wizard launched without file reference");
 			return;
 		}
-
-		IFile ifile = (IFile)selection.getFirstElement();
+		
 		if ( ifile.isAccessible() ) {
 		      ResourceSet resourceSet = new ResourceSetImpl();
 		      resource = resourceSet.getResource( 

@@ -6,12 +6,13 @@
     modelName="checklist" editPluginClass="net.certware.verification.checklist.edit.provider.ChecklistEditPlugin"
     editorPluginClass="net.certware.verification.checklist.presentation.ChecklistEditorPlugin"
     nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" colorProviders="true">
+    complianceLevel="6.0" providerRootExtendsClass="" tableProviders="true" colorProviders="true">
   <foreignModel>checklist.ecore</foreignModel>
   <genPackages prefix="Checklist" basePackage="net.certware.verification" resource="XMI"
       disposableProviderFactory="true" multipleEditorPages="false" fileExtensions="vcl"
       ecorePackage="checklist.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="checklist.ecore#//Choices">
+      <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/unknown"/>
       <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/no"/>
       <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/yes"/>
       <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/not_applicable"/>

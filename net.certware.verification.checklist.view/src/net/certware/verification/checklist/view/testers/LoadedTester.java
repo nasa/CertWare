@@ -21,7 +21,7 @@ public class LoadedTester extends PropertyTester
   }
 
   /**
-   * Tests whether the buffer overflow view has been loaded with value tool results.
+   * Tests whether the view has been loaded with model content.
    * Use <code>isLoaded</code> appended as property to extension name space for test.
    * @param receiver unused
    * @param property test string "isLoaded" or "isNotLoaded"
@@ -45,10 +45,10 @@ public class LoadedTester extends PropertyTester
     }
     
     try {
-      ViewList bos = (ViewList)wp;
-      loaded = bos.getSelectedChecklist() != null;
+      ViewList viewList = (ViewList)wp;
+      loaded = viewList.getSelectedChecklist() != null;
     } catch( Exception e ) {
-      System.err.println(String.format("%s %s", "view list property tester" + e.getMessage())); //$NON-NLS-1$
+      System.err.println(String.format("%s %s", "view list loaded tester" + e.getMessage())); //$NON-NLS-1$
     }
     
     if ( "isLoaded".equals(property) ) //$NON-NLS-1$

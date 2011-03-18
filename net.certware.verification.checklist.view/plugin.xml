@@ -8,7 +8,7 @@
             category="net.certware.core.ui.view.category"
             class="net.certware.verification.checklist.view.ViewList"
             icon="icons/view16/checklist.png"
-            id="net.certware.verification.checklist.view.list"
+            id="net.certware.verification.checklist.view.ViewList"
             name="Verification Checklist"
             restorable="true">
          <description>
@@ -21,24 +21,31 @@
       <perspectiveExtension
             targetID="net.certware.perspective">
          <view
-               id="net.certware.verification.checklist.view.list"
+               id="net.certware.verification.checklist.view.ViewList"
                minimized="false"
                relationship="stack"
                relative="org.eclipse.ui.views.ContentOutline">
          </view>
          <viewShortcut
-               id="net.certware.verification.checklist.view.list">
+               id="net.certware.verification.checklist.view.ViewList">
          </viewShortcut>
       </perspectiveExtension>
    </extension>
    <extension
          point="org.eclipse.core.expressions.propertyTesters">
       <propertyTester
-            class="java.lang.Object"
+            class="net.certware.verification.checklist.view.testers.LoadedTester"
             id="net.certware.verification.checklist.view.loadedTester"
             namespace="net.certware.verification.checklist"
             properties="isLoaded,isNotLoaded"
-            type="net.certware.verification.checklist.view.testers.LoadedTester">
+            type="java.lang.Object">
+      </propertyTester>
+      <propertyTester
+            class="net.certware.verification.checklist.view.testers.DirtyTester"
+            id="net.certware.verification.checklist.view.dirtyTester"
+            namespace="net.certware.verification.checklist"
+            properties="isDirty,isNotDirty"
+            type="java.lang.Object">
       </propertyTester>
    </extension>
    <extension
@@ -85,6 +92,149 @@
       <initializer
             class="net.certware.verification.checklist.view.preferences.PreferenceInitializer">
       </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Save the list model content to its file"
+            id="net.certware.verification.checklist.view.save"
+            name="Save">
+      </command>
+      <command
+            categoryId="net.certware.export.category"
+            description="Writes the checklist to an Excel file"
+            id="net.certware.verification.checklist.view.export"
+            name="Export to Excel">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="net.certware.verification.checklist.view.save"
+            disabledIcon="icons/dtool16/save_edit.gif"
+            icon="icons/etool16/save_edit.gif">
+      </image>
+      <image
+            commandId="net.certware.verification.checklist.view.export"
+            disabledIcon="icons/dtool16/export_wiz.gif"
+            icon="icons/etool16/export_wiz.gif">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="net.certware.verification.checklist.view.handlers.SaveHandler"
+            commandId="net.certware.verification.checklist.view.save">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.verification.checklist.isDirty">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.verification.checklist.view.handlers.ExportChecklistHandler"
+            commandId="net.certware.verification.checklist.view.export">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.verification.checklist.isLoaded">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:net.certware.verification.checklist.view.ViewList?after=additions">
+         <command
+               commandId="net.certware.verification.checklist.view.save"
+               label="Save"
+               mnemonic="S"
+               style="push"
+               tooltip="Write the checklist changes back to the file">
+         </command>
+         <separator
+               name="markers"
+               visible="false">
+         </separator>
+         <separator
+               name="help"
+               visible="false">
+         </separator>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:net.certware.verification.checklist.view.ViewList?after=additions">
+         <command
+               commandId="net.certware.verification.checklist.view.save"
+               label="Save"
+               mnemonic="S"
+               style="push"
+               tooltip="Write the checklist changes back to the file">
+         </command>
+         <command
+               commandId="net.certware.verification.checklist.view.export"
+               label="Export"
+               mnemonic="E"
+               style="push"
+               tooltip="Write the checklist to an Excel file">
+         </command>
+         <separator
+               name="markers"
+               visible="false">
+         </separator>
+         <separator
+               name="help"
+               visible="false">
+         </separator>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:net.certware.verification.checklist.view.ViewList?after=additions">
+         <command
+               commandId="net.certware.verification.checklist.view.save"
+               label="Save"
+               mnemonic="S"
+               style="push"
+               tooltip="Write the checklist changes back to the file">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.verification.checklist.isDirty">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.verification.checklist.view.export"
+               label="Export"
+               mnemonic="E"
+               style="push"
+               tooltip="Write the checklist to an Excel file">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.verification.checklist.isLoaded">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <separator
+               name="markers"
+               visible="false">
+         </separator>
+         <separator
+               name="help"
+               visible="false">
+         </separator>
+      </menuContribution>
    </extension>
 
 </plugin>

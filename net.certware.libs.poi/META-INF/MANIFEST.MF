@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Apache POI Libraries
 Bundle-SymbolicName: net.certware.libs.poi
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.2.1.qualifier
 Bundle-ClassPath: poi-3.6-20091214.jar,
  poi-contrib-3.6-20091214.jar,
  poi-ooxml-3.6-20091214.jar,

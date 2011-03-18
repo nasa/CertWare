@@ -1,6 +1,7 @@
 package net.certware.argument.sfp.review.wizard;
 
 import net.certware.argument.sfp.review.Activator;
+import net.certware.argument.sfp.review.preferences.PreferenceConstants;
 import net.certware.argument.sfp.semiFormalProof.Entailment;
 import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.SemiFormalProofFactory;
@@ -10,6 +11,8 @@ import net.certware.argument.sfp.util.ProofUtil;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -64,14 +67,17 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 	private Section deductionSection;
 	/** client for deduction section */
 	private Composite deductionClient;
-
+	/** whether to show premise validity */
+	private boolean showPremiseValidity = true;
+	/** preference change listener */
+	private ReviewPropertyChangeListener reviewPropertyChangeListener;
+	
 	/**
 	 * Constructor saves the contributions for name search.
 	 * @param proof proof to display
 	 */
 	public ReviewDetailPage(Proof proof,TreeViewer viewer, ReviewValidatePage validate, ReviewSetupPage setup) {
 		super(proof,viewer,validate,setup);
-		// TODO determine how to invalidate all downstream statements
 		// TODO add an insert line command to the editor, inserting numbered line and renumbering those following?
 		// TODO fix the save resource on finish
 	}
@@ -170,6 +176,26 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 		populateButtons();
 
 		parent.setSize(300, 100);
+
+		
+		// listen to preference changes
+		reviewPropertyChangeListener = new ReviewPropertyChangeListener();
+		Activator.getDefault().getPreferenceStore().addPropertyChangeListener(reviewPropertyChangeListener);
+		
+		Boolean b = Activator.getDefault().getPreferenceStore().getBoolean(PreferenceConstants.P_SHOW_PREMISE_VALIDITY);
+		if ( b != null )
+			setPremiseValidity(b.booleanValue());
+	}
+
+	/**
+	 * Dispose of resources and listeners.
+	 */
+	@Override
+	public void dispose() {
+		if ( reviewPropertyChangeListener != null ) {
+			Activator.getDefault().getPreferenceStore().removePropertyChangeListener(reviewPropertyChangeListener);
+		}
+		super.dispose();
 	}
 
 	/**
@@ -402,7 +428,7 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 		authorComposite.setLayout(authorCompositeLayout);
 		
 		// buttons on the buttons client
-		validButton = toolkit.createButton(buttonsComposite, "Valid", SWT.PUSH);
+		validButton = toolkit.createButton(buttonsComposite, getItemValidLabel(), SWT.PUSH);
 		validButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
 		validButton.setImage( imageRegistry.get( Activator.REVIEW_VALID_IMAGE ));
 		validButton.addSelectionListener(new SelectionAdapter() {
@@ -411,7 +437,7 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 				updateButtons();
 			}
 		});
-		invalidButton = toolkit.createButton(buttonsComposite, "Invalid", SWT.PUSH);
+		invalidButton = toolkit.createButton(buttonsComposite, getItemInvalidLabel(), SWT.PUSH);
 		invalidButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
 		invalidButton.setImage( imageRegistry.get( Activator.REVIEW_INVALID_IMAGE ));
 		invalidButton.addSelectionListener(new SelectionAdapter() {
@@ -420,7 +446,7 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 				updateButtons();
 			}
 		});
-		unknownButton = toolkit.createButton(buttonsComposite, "Unknown", SWT.PUSH);
+		unknownButton = toolkit.createButton(buttonsComposite, getItemUnknownLabel(), SWT.PUSH);
 		unknownButton.setLayoutData(new TableWrapData(TableWrapData.LEFT,TableWrapData.TOP));
 		unknownButton.setImage( imageRegistry.get( Activator.REVIEW_UNKNOWN_IMAGE ));
 		unknownButton.addSelectionListener(new SelectionAdapter() {
@@ -519,7 +545,12 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 		Label idValue = toolkit.createLabel(client,s.getId());
 		idValue.setFont(normalFont);
 		idValue.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.TOP));
-		idValue.setImage( getImageForStatement(s) );
+		if ( this.showPremiseValidity ) {
+			idValue.setImage( getImageForStatement(s) );
+		} else {
+			idValue.setImage(null);
+			idValue.setText(" "); //$NON-NLS-1$
+		}
 		idValue.setToolTipText( s.getId() );
 
 		FormText bodyValue = toolkit.createFormText(client, false);
@@ -617,4 +648,38 @@ public abstract class ReviewDetailPage extends GenericDetailPage
 		update();
 	}
 
+	/**
+	 * Sets the premise validity flag for review page.
+	 * @param value new value
+	 */
+	private void setPremiseValidity(boolean value) {
+		this.showPremiseValidity = value;
+	}
+	
+	
+	/**
+	 * Preference change listener.
+	 */
+	class ReviewPropertyChangeListener implements IPropertyChangeListener {
+		
+		/**
+		 * Captures changes and refreshes display if necessary.
+		 */
+		@Override
+		public void propertyChange(PropertyChangeEvent event) {
+			boolean needUpdate = false;
+			if ( event.getProperty().equals(PreferenceConstants.P_SHOW_PREMISE_VALIDITY )) {
+				Boolean v = (Boolean)event.getNewValue();
+				if ( showPremiseValidity != v.booleanValue() ) {
+					setPremiseValidity(v.booleanValue());
+					needUpdate = true;
+				}
+			}
+
+			// refresh once for all preference changes
+			if ( needUpdate )
+				update();
+		}
+		
+	}
 }

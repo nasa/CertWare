@@ -7,7 +7,8 @@ h3. Version 1.2.1
 
 _Bugs Fixed_:
 _Enhancements_:
-* Added checklist view with results editor.
+* Added checklist view with results editor, including editor linking, state mementi, model save, and export to Excel.
+* Added preference values for semi-formal proof review wizard options.
 * Added overlay splash handler for product version identification.
 * Changed SAEM editor to single page.  
 

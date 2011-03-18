@@ -6,7 +6,9 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.jface.text.TextSelection;
 
 /**
  * Handles the command to launch the review wizard.
@@ -20,22 +22,34 @@ public class ReviewWizardHandler extends AbstractHandler {
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		
+
 		ISelection selection = HandlerUtil.getCurrentSelectionChecked(event);
+
+		// launched from the editor context menu
+		if ( selection instanceof TextSelection ) {
+			IEditorInput input = HandlerUtil.getActiveEditor(event).getEditorInput();
+			IFile f = (IFile) input.getAdapter(IFile.class); // wizard catches null and reports
+			ReviewWizard wizard = new ReviewWizard();
+			wizard.init(HandlerUtil.getActiveWorkbenchWindowChecked(event).getWorkbench(), f);
+			WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveShellChecked(event), wizard);
+			dialog.create();
+			dialog.open();
+		}
+
+		// launched from the explorer
 		if ( selection instanceof IStructuredSelection ) {
 			IStructuredSelection iss = (IStructuredSelection)selection;
 			Object first = iss.getFirstElement();
 			if ( first instanceof IFile ) {
+				IFile f = (IFile)first;
 				ReviewWizard wizard = new ReviewWizard();
-				wizard.init(HandlerUtil.getActiveWorkbenchWindowChecked(event).getWorkbench(), iss);
+				wizard.init(HandlerUtil.getActiveWorkbenchWindowChecked(event).getWorkbench(), f);
 				WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveShellChecked(event), wizard);
 				dialog.create();
 				dialog.open();
-			} else {
-				System.err.println("selected something else: " + first);
-			}
+			} 
 		}
+
 		return null;
 	}
-
 }

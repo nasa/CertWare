@@ -1,7 +1,5 @@
 package net.certware.verification.checklist.navigator;
 
-import java.io.File;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -23,7 +21,7 @@ public class Activator implements BundleActivator {
 	 * @return bundle symbolic name
 	 */
 	static public String getPluginId() {
-		File f = context.getDataFile("icons/obj16/yesResult.gif");
+		// File f = context.getDataFile("icons/obj16/yesResult.gif");
 		return context.getBundle().getSymbolicName();
 	}
 

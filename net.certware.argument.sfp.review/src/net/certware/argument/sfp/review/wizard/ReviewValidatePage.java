@@ -43,6 +43,8 @@ public class ReviewValidatePage extends WizardPage implements IHelpContext {
 	boolean isModified = false;
 	/** setup page for validation field access */
 	ReviewSetupPage setupPage;
+	/** scrolled properties block */
+	ScrolledPropertiesBlock block;
 	
 	/**
 	 * Constructor for the review wizard validate page.
@@ -74,13 +76,21 @@ public class ReviewValidatePage extends WizardPage implements IHelpContext {
     	form.setLayoutData(new GridData(GridData.FILL_BOTH));
 
     	// block for the master-details pages
-    	ScrolledPropertiesBlock block = new ScrolledPropertiesBlock(proof,this,setupPage);
+    	block = new ScrolledPropertiesBlock(proof,this,setupPage);
     	block.createContent(managedForm);
 		
 		setMessage("Select a statement to review", DialogPage.INFORMATION);
 		setControl(composite);
 		setHelpContextIDs(composite);
 		setPageComplete(false);
+	}
+	
+	@Override
+	public void dispose() {
+		if ( block != null ) {
+			block.dispose();
+		}
+		super.dispose();
 	}
 
 	/**

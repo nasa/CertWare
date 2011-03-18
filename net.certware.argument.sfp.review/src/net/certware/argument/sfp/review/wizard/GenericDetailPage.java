@@ -1,15 +1,19 @@
 package net.certware.argument.sfp.review.wizard;
 
 import net.certware.argument.sfp.review.Activator;
+import net.certware.argument.sfp.review.preferences.PreferenceConstants;
 import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.Statement;
 import net.certware.argument.sfp.semiFormalProof.ValidationKind;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.help.IContextProvider;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
@@ -57,7 +61,15 @@ abstract public class GenericDetailPage implements IDetailsPage, IAdaptable
 	ReviewValidatePage validatePage;
 	/** help context provider */
 	ReviewContextProvider contextprovider;
-
+	/** label for 'valid' inference */
+	String itemValidLabel = "Valid";
+	/** label for 'invalid' inference */
+	String itemInvalidLabel = "Invalid";
+	/** label for 'unknown' inference */
+	String itemUnknownLabel = "Unknown";
+	/** preference change listener */
+	GenericPropertyChangeListener gpcl = null;
+	
 	/**
 	 * Generic detail page constructor.
 	 * @param proof proof object
@@ -71,6 +83,12 @@ abstract public class GenericDetailPage implements IDetailsPage, IAdaptable
 		this.validatePage = validate;
 		this.setupPage = setup;
 		this.imageRegistry = Activator.getDefault().getImageRegistry();
+		this.gpcl = new GenericPropertyChangeListener();
+		
+		IPreferenceStore ps = Activator.getDefault().getPreferenceStore();
+		ps.addPropertyChangeListener(gpcl);
+		itemValidLabel = ps.getString(PreferenceConstants.P_ITEM_VALID_LABEL);
+		itemInvalidLabel = ps.getString(PreferenceConstants.P_ITEM_INVALID_LABEL);
 	}
 	
 	/**
@@ -91,6 +109,7 @@ abstract public class GenericDetailPage implements IDetailsPage, IAdaptable
 	public void dispose() {
 		if ( normalFont != null ) normalFont.dispose();
 		if ( boldFont != null ) boldFont.dispose();
+		if ( gpcl != null )	Activator.getDefault().getPreferenceStore().removePropertyChangeListener(gpcl);
 	}
 
 	/**
@@ -115,7 +134,7 @@ abstract public class GenericDetailPage implements IDetailsPage, IAdaptable
 	 */
 	protected void populateHeader(Composite client) {
 		Label idLabel = new Label(client, SWT.NONE);
-		idLabel.setText("Valid");
+		idLabel.setText( getItemValidLabel() );
 		idLabel.setFont(boldFont);
 		idLabel.setLayoutData(new TableWrapData(TableWrapData.LEFT, TableWrapData.MIDDLE));
 
@@ -264,5 +283,95 @@ abstract public class GenericDetailPage implements IDetailsPage, IAdaptable
 	 * @param c parent control
 	 */
 	abstract void setHelpContext(Control c);
+
+	/**
+	 * Sets the item valid label.
+	 * @param label new label
+	 */
+	protected void setItemValidLabel(String label) {
+		this.itemValidLabel = label;
+	}
 	
+	/**
+	 * Gets the item valid label.
+	 * @return string from last preference fetch
+	 */
+	protected String getItemValidLabel() {
+		if ( itemValidLabel == null )
+			return "";
+		return itemValidLabel;
+	}
+
+	/**
+	 * Gets the item invalid label.
+	 * @return string from last preference fetch
+	 */
+	protected String getItemInvalidLabel() {
+		if ( itemInvalidLabel == null )
+			return "";
+		return itemInvalidLabel;
+	}
+	
+	/**
+	 * Sets the item unknown label.
+	 * @param label new label
+	 */
+	protected void setItemUnknownLabel(String label) {
+		this.itemUnknownLabel = label;
+	}
+
+	/**
+	 * Gets the item unknown label.
+	 * @return string from last preference fetch
+	 */
+	protected String getItemUnknownLabel() {
+		if ( itemUnknownLabel == null )
+			return "";
+		return itemUnknownLabel;
+	}
+	
+	/**
+	 * Sets the item invalid label.
+	 * @param label new label
+	 */
+	protected void setItemInvalidLabel(String label) {
+		this.itemInvalidLabel = label;
+	}
+
+	/**
+	 * Preference change listener.
+	 */
+	class GenericPropertyChangeListener implements IPropertyChangeListener {
+		/**
+		 * Captures changes and refreshes display if necessary.
+		 */
+		@Override
+		public void propertyChange(PropertyChangeEvent event) {
+			
+			boolean needUpdate = false;
+			
+			if ( event.getProperty().equals(PreferenceConstants.P_ITEM_VALID_LABEL)) {
+				if ( itemValidLabel.equals((String)event.getNewValue()) == false) {
+					setItemValidLabel((String)event.getNewValue());
+					needUpdate = true;
+				}
+			}
+			if ( event.getProperty().equals(PreferenceConstants.P_ITEM_INVALID_LABEL)) {
+				if ( itemInvalidLabel.equals((String)event.getNewValue()) == false) {
+					setItemInvalidLabel((String)event.getNewValue());
+					needUpdate = true;
+				}
+			}
+			if ( event.getProperty().equals(PreferenceConstants.P_ITEM_UNKNOWN_LABEL)) {
+				if ( itemUnknownLabel.equals((String)event.getNewValue()) == false) {
+					setItemUnknownLabel((String)event.getNewValue());
+					needUpdate = true;
+				}
+			}
+			
+			if ( needUpdate )
+				update();
+		}
+		
+	}
 }
