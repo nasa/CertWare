@@ -8,10 +8,8 @@ import net.certware.evidence.evidence.EvidencePackage;
 import net.certware.evidence.evidence.IsA;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

@@ -48,7 +48,7 @@ public class LoadedTester extends PropertyTester
       ViewList viewList = (ViewList)wp;
       loaded = viewList.getSelectedChecklist() != null;
     } catch( Exception e ) {
-      System.err.println(String.format("%s %s", "view list loaded tester" + e.getMessage())); //$NON-NLS-1$
+      System.err.println(String.format("%s %s", "View list loaded tester",e.getMessage())); //$NON-NLS-1$
     }
     
     if ( "isLoaded".equals(property) ) //$NON-NLS-1$

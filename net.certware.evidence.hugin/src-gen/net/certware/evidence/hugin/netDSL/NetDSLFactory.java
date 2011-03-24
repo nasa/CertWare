@@ -35,6 +35,15 @@ public interface NetDSLFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Integer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer</em>'.
+   * @generated
+   */
+  Integer createInteger();
+
+  /**
    * Returns a new object of class '<em>Domain Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -188,6 +197,15 @@ public interface NetDSLFactory extends EFactory
   PotentialDataAttribute createPotentialDataAttribute();
 
   /**
+   * Returns a new object of class '<em>Data Item List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Item List</em>'.
+   * @generated
+   */
+  DataItemList createDataItemList();
+
+  /**
    * Returns a new object of class '<em>Unstructured Data List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -332,6 +350,15 @@ public interface NetDSLFactory extends EFactory
   NodeAttributes createNodeAttributes();
 
   /**
+   * Returns a new object of class '<em>Expression Sequence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Sequence</em>'.
+   * @generated
+   */
+  ExpressionSequence createExpressionSequence();
+
+  /**
    * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -341,49 +368,202 @@ public interface NetDSLFactory extends EFactory
   Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>Simple Expression</em>'.
+   * Returns a new object of class '<em>assignment Op Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Simple Expression</em>'.
+   * @return a new object of class '<em>assignment Op Expression</em>'.
    * @generated
    */
-  SimpleExpression createSimpleExpression();
+  assignmentOpExpression createassignmentOpExpression();
 
   /**
-   * Returns a new object of class '<em>Term</em>'.
+   * Returns a new object of class '<em>or Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Term</em>'.
+   * @return a new object of class '<em>or Expression</em>'.
    * @generated
    */
-  Term createTerm();
+  orExpression createorExpression();
 
   /**
-   * Returns a new object of class '<em>Exp Factor</em>'.
+   * Returns a new object of class '<em>and Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Exp Factor</em>'.
+   * @return a new object of class '<em>and Expression</em>'.
    * @generated
    */
-  ExpFactor createExpFactor();
+  andExpression createandExpression();
 
   /**
-   * Returns a new object of class '<em>Factor</em>'.
+   * Returns a new object of class '<em>relational Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Factor</em>'.
+   * @return a new object of class '<em>relational Expression</em>'.
    * @generated
    */
-  Factor createFactor();
+  relationalExpression createrelationalExpression();
 
   /**
-   * Returns a new object of class '<em>Expression Sequence</em>'.
+   * Returns a new object of class '<em>additive Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression Sequence</em>'.
+   * @return a new object of class '<em>additive Expression</em>'.
    * @generated
    */
-  ExpressionSequence createExpressionSequence();
+  additiveExpression createadditiveExpression();
+
+  /**
+   * Returns a new object of class '<em>multiplicative Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>multiplicative Expression</em>'.
+   * @generated
+   */
+  multiplicativeExpression createmultiplicativeExpression();
+
+  /**
+   * Returns a new object of class '<em>unary Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>unary Expression</em>'.
+   * @generated
+   */
+  unaryExpression createunaryExpression();
+
+  /**
+   * Returns a new object of class '<em>Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operator</em>'.
+   * @generated
+   */
+  Operator createOperator();
+
+  /**
+   * Returns a new object of class '<em>Term Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Term Expression</em>'.
+   * @generated
+   */
+  TermExpression createTermExpression();
+
+  /**
+   * Returns a new object of class '<em>Term Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Term Literal</em>'.
+   * @generated
+   */
+  TermLiteral createTermLiteral();
+
+  /**
+   * Returns a new object of class '<em>Integer Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer Literal</em>'.
+   * @generated
+   */
+  IntegerLiteral createIntegerLiteral();
+
+  /**
+   * Returns a new object of class '<em>Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment</em>'.
+   * @generated
+   */
+  Assignment createAssignment();
+
+  /**
+   * Returns a new object of class '<em>Assignment Op</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment Op</em>'.
+   * @generated
+   */
+  AssignmentOp createAssignmentOp();
+
+  /**
+   * Returns a new object of class '<em>Or Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or Exp</em>'.
+   * @generated
+   */
+  OrExp createOrExp();
+
+  /**
+   * Returns a new object of class '<em>And Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And Exp</em>'.
+   * @generated
+   */
+  AndExp createAndExp();
+
+  /**
+   * Returns a new object of class '<em>Relational Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relational Exp</em>'.
+   * @generated
+   */
+  RelationalExp createRelationalExp();
+
+  /**
+   * Returns a new object of class '<em>Additive Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Additive Exp</em>'.
+   * @generated
+   */
+  AdditiveExp createAdditiveExp();
+
+  /**
+   * Returns a new object of class '<em>Multiplicative Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicative Exp</em>'.
+   * @generated
+   */
+  MultiplicativeExp createMultiplicativeExp();
+
+  /**
+   * Returns a new object of class '<em>Var Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Ref</em>'.
+   * @generated
+   */
+  VarRef createVarRef();
+
+  /**
+   * Returns a new object of class '<em>Boolean Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Literal</em>'.
+   * @generated
+   */
+  BooleanLiteral createBooleanLiteral();
+
+  /**
+   * Returns a new object of class '<em>String Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Literal</em>'.
+   * @generated
+   */
+  StringLiteral createStringLiteral();
+
+  /**
+   * Returns a new object of class '<em>Double Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double Literal</em>'.
+   * @generated
+   */
+  DoubleLiteral createDoubleLiteral();
 
   /**
    * Returns the package supported by this factory.

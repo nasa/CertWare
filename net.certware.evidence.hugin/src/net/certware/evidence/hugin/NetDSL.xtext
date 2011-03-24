@@ -1,10 +1,11 @@
 // Developed from information in the Hugin API Manual
-// Does not include grammar for class specifications in the NET language
 // @author mrb
 // @date 2/28/11
 // @since 1.1.3
 
-grammar net.certware.evidence.hugin.NetDSL with org.eclipse.xtext.common.Terminals
+// grammar net.certware.evidence.hugin.NetDSL with org.eclipse.xtext.common.Terminals
+grammar net.certware.evidence.hugin.NetDSL
+	hidden(WS, ML_COMMENT, SL_COMMENT)
 
 generate netDSL "http://www.certware.net/evidence/hugin/NetDSL"
 
@@ -13,18 +14,51 @@ import "http://www.eclipse.org/emf/2002/Ecore"as ecore
 Model:
 	domain=DomainDefinition?;
 	
-Sign returns ecore::EString hidden(): '+' | '-' ;
+terminal BOOLEAN returns ecore::EBoolean : 'true' | 'false';
+terminal ID returns ecore::EString : '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ;
+//terminal DOUBLE returns ecore::EDouble
+//	: '-'? ('0'..'9')+ ('.' ('0'..'9')+ (('e'|'E') ('-')? ('0'..'9')+)?)?;
+// terminal INT returns ecore::EInt: ('0'..'9')+ ;
+terminal INT returns ecore::EInt: '0' | ('1'..'9' ('0'..'9')*); 
+//terminal DOUBLE returns ecore::EDouble :  
+//	'1'..'9' ('0'..'9')* ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)?
+//	| '0' ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)? ;
+//terminal STRING :
+//'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+//"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'"; 
+terminal STRING returns ecore::EString : '"' -> '"' ;
+terminal ML_COMMENT : '/*' -> '*/' ; 
+terminal SL_COMMENT : '%' !('\n'|'\r')* ('\r'? '\n')? ;
+// terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')? ; 
+terminal WS : (' '|'\t'|'\r'|'\n')+ ;
+DOUBLE: INT '.' (EXT_INT | INT);
+terminal EXT_INT: INT ('e'|'E')('-'|'+') INT;
+terminal ANY_OTHER: . ;
 
-Float returns ecore::EString : Sign? INT ('.' INT)? ;
 
-// UnsignedNumber returns ecore::EString hidden(): INT ('.' INT)? ;
-
+//terminal INT returns ecore::EInt
+//	: '-'? ('0'..'9')+;
+//terminal UINT returns ecore::EInt
+//	: ('0'..'9')+;
+// Sign returns ecore::EString : '+' | '-' ;
+	
 // single-line comment style leading with %
 // the built-in version allows // as indicator, overridden here
+// hidden declaration in the common grammar
 // multi-line comments are also built-in but should be overridden
-terminal SL_COMMENT : '%' !('\n'|'\r')* ('\r'? '\n')? ;
 
+//	'"' ( !'"' )* '"';
+// '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | '-' | '.' | !('\\'|'"') )* '"' ;
+// "'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
 
+//DOUBLE :
+//	'-'? INT+ ('.' INT+ (('e'|'E') ('-')? INT+)?)?
+//	;
+	
+Integer :
+	i=INT
+	;
+	
 DomainDefinition :
 	header=DomainHeader elements+=DomainElement*
 	;
@@ -63,7 +97,7 @@ LabelAttribute :
 	;
 	
 PositionAttribute :
-	'position' '=' '(' x=INT y=INT ')' ';'
+	'position' '=' '(' {IntegerLiteral} x=Integer y=Integer ')' ';'
 	;
 	
 SubtypeAttribute :
@@ -94,39 +128,46 @@ PotentialModel : {PotentialModel}
 	'{' attributes+=PotentialAttribute* '}'
 	;
 	
-PotentialAttribute :
-	PotentialDataAttribute |
-	PotentialTableAttribute
+PotentialAttribute 
+	: PotentialDataAttribute 
+	// | PotentialTableAttribute // TODO RECOVER
 	;
 	
 PotentialDataAttribute : {PotentialDataAttribute}
-	'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
+	// 'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
+	'data' '=' '(' items=DataItemList ')' ';'
 	;
 	 
+DataItemList :
+	UnstructuredDataList 
+	| StructuredDataList
+	;
+	
 UnstructuredDataList : {UnstructuredDataList}
-	list=FloatDataList | 
-	normal=NormalDistribution;
+	list=FloatDataList 
+	// | normal=NormalDistribution
+	;
 
 StructuredDataList : {StructuredDataList}
-	'(' (list=FloatDataList | items+=StructuredDataList*) ')'
+	'(' (list=FloatDataList | (items+=StructuredDataList)+) ')'
 	;
 	
 FloatDataList : {FloatDataList}
-	items+=Float*
+	items+=DOUBLE*
 	;
 	
-NormalDistribution :
-	'normal' '(' mean=MeanExpression ',' variance=Float ')'
+NormalDistribution 
+	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
 	;
 	
-MeanExpression :
-	MeanTerm ('+' MeanTerm)*
+MeanExpression 
+	: MeanTerm ('+' MeanTerm)*
 	;
 	
-MeanTerm :
-	Float |
-	(Float '*' ID) |
-	ID
+MeanTerm 
+	: DOUBLE 
+	| (DOUBLE '*' ID) 
+	| ID
 	; 
 
 PotentialTableAttribute :
@@ -144,7 +185,7 @@ SamplesAttribute :
 	;
 	
 ModelDataAttribute : {ModelDataAttribute}
-	'model_data' '=' '(' ')' ';' // TODO add expression sequence, introduces left recursion
+	'model_data' '=' '(' sequence=ExpressionSequence ')' ';' 
 	;
 	
 
@@ -190,91 +231,143 @@ NodeAttributes :
 // expressions
 ///////////////////////////////////////////////////
 
-Expression :
-	lhs=SimpleExpression (Comparison rhs+=SimpleExpression)* // |
-	// simple=SimpleExpression
-	;
-	
-SimpleExpression :
-	lhs=Term (PlusOrMinus rhs+=SimpleExpression)* // | // was swapped
-	// PlusOrMinus single=Term // |
-	// lhs=Term
-	;
-	
-Term :
-	lhs=ExpFactor (TimesOrDivide rhs+=Term)* // |
-	// lhs=ExpFactor
-	;
-	
-ExpFactor :
-	lhs=Factor ('^' rhs+=ExpFactor)* // |
-	// factor=Factor
-	;
-
-Factor : {Factor}
-	number=INT | // should be unsigned
-	nodeName=ID |
-	value=STRING |
-	value='false' |
-	value='true' |
-	'(' expression=Expression ')' |
-	op=OperatorName '(' sequence=ExpressionSequence ')'
-	;
-	
 ExpressionSequence : {ExpressionSequence}
 	(expressions+=Expression (',' expressions+=Expression)*)?
-	;	
+	;
 
-Comparison :
-	'==' | '=' | '!=' | '<>' | '<' | '<=' | '>' | '>='
+Expression
+	: assignmentOpExpression
+	( {Assignment.left=current} op='=' right=orExpression
+	)?;
+	
+assignmentOpExpression
+	: orExpression
+	({AssignmentOp.left=current} op=assignOp right=orExpression
+	)?;
+		
+assignOp
+	: '+='
+	| '-='
+	| '*='
+	| '/='
+	| '%='
+	;
+
+orExpression
+	: andExpression
+	({OrExp.left=current}
+		op='||' right=orExpression
+		)?;
+		
+andExpression
+	: relationalExpression
+	({AndExp.left=current}
+		op='&&' right=andExpression
+		)?;
+		
+relationalExpression
+	: additiveExpression
+	({RelationalExp.left=current}
+		op=relOps right=relationalExpression
+		)?;
+
+relOps
+	: '!='
+	| '=='
+	| '<='
+	| '<>'
+	| '>='
+	| '<'
+	| '>'
+	;
+
+additiveExpression
+	: multiplicativeExpression
+	({AdditiveExp.left=current}
+		op=arithOps right=additiveExpression
+		)?;
+		
+arithOps
+	: '+'
+	| '-'
 	;
 	
-PlusOrMinus :
-	'+' | '-'
+multiplicativeExpression
+	: unaryExpression
+	({MultiplicativeExp.left=current}
+		op=multOps right=multiplicativeExpression
+		)?;
+
+multOps
+	: '*'
+	| '/'
 	;
 	
-TimesOrDivide :
-	'*' | '/'
+unaryExpression 
+	: TermExpression
+	| op=unaryOps expr=TermExpression
+	;
+
+unaryOps
+	: '-'
+	| '!'
+	;			
+
+Operator 
+	: op=OperatorName '(' sequence=ExpressionSequence ')'
+	;
+
+TermExpression
+	: TermLiteral
+	| Operator
+	;
+
+TermLiteral
+	: {VarRef} value=ID
+	| {IntegerLiteral} value=INT
+	| {BooleanLiteral} value=BOOLEAN
+	| {StringLiteral}  value=STRING
+	| {DoubleLiteral}  value=DOUBLE
 	;
 	
-OperatorName :
-	'truncate' |
-	'Normal' |
-	'LogNormal' |
-	'Beta' |
-	'Gamma' |
-	'Exponential' |
-	'Weibull' |
-	'Uniform' |
-	'Triangular' |
-	'PERT' |
-	'Binomial' |
-	'Poisson' |
-	'NegativeBinomial' |
-	'Geometric' |
-	'Distribution' 
-	'NoisyOR' |
-	'min' |
-	'max' |
-	'log' |
-	'log2' |
-	'log10' |
-	'exp' |
-	'sin' |
-	'cos' |
-	'tan' |
-	'sinh' |
-	'cosh' |
-	'tanh' |
-	'sqrt' |
-	'abs' |
-	'floor' |
-	'ceil' |
-	'mod' |
-	'if' |
-	'and' |
-	'or' |
-	'not'
+OperatorName 
+	: 'truncate' 
+	| 'Normal' 
+	| 'LogNormal' 
+	| 'Beta' 
+	| 'Gamma' 
+	| 'Exponential' 
+	| 'Weibull' 
+	| 'Uniform' 
+	| 'Triangular' 
+	| 'PERT' 
+	| 'Binomial' 
+	| 'Poisson' 
+	| 'NegativeBinomial' 
+	| 'Geometric' 
+	| 'Distribution'
+	| 'NoisyOR' 
+	| 'min' 
+	| 'max' 
+	| 'log' 
+	| 'log2' 
+	| 'log10' 
+	| 'exp' 
+	| 'sin' 
+	| 'cos' 
+	| 'tan' 
+	| 'sinh' 
+	| 'cosh' 
+	| 'tanh' 
+	| 'sqrt' 
+	| 'abs' 
+	| 'floor' 
+	| 'ceil' 
+	| 'mod' 
+	| 'if' 
+	| 'and' 
+	| 'or' 
+	| 'not'
 	;
 	
 ///////////////////////////////////////////////////	

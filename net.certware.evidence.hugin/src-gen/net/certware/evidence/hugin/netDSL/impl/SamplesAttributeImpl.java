@@ -5,6 +5,8 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
+import java.lang.Integer;
+
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.SamplesAttribute;
 

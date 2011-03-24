@@ -7,8 +7,6 @@ package net.certware.evidence.hugin.parser.antlr.internal;
 import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
-T11 : '+' ;
-T12 : '-' ;
 T13 : '.' ;
 T14 : 'net' ;
 T15 : '{' ;
@@ -35,83 +33,95 @@ T35 : 'node_size' ;
 T36 : 'potential' ;
 T37 : '|' ;
 T38 : 'data' ;
-T39 : 'normal' ;
-T40 : ',' ;
-T41 : '*' ;
-T42 : 'model_nodes' ;
-T43 : 'samples_per_interval' ;
-T44 : 'model_data' ;
-T45 : 'class' ;
-T46 : 'instance' ;
-T47 : ':' ;
-T48 : '^' ;
-T49 : 'false' ;
-T50 : 'true' ;
-T51 : '==' ;
-T52 : '!=' ;
-T53 : '<>' ;
-T54 : '<' ;
-T55 : '<=' ;
-T56 : '>' ;
-T57 : '>=' ;
-T58 : '/' ;
-T59 : 'truncate' ;
-T60 : 'Normal' ;
-T61 : 'LogNormal' ;
-T62 : 'Beta' ;
-T63 : 'Gamma' ;
-T64 : 'Exponential' ;
-T65 : 'Weibull' ;
-T66 : 'Uniform' ;
-T67 : 'Triangular' ;
-T68 : 'PERT' ;
-T69 : 'Binomial' ;
-T70 : 'Poisson' ;
-T71 : 'NegativeBinomial' ;
-T72 : 'Geometric' ;
-T73 : 'Distribution' ;
-T74 : 'NoisyOR' ;
-T75 : 'min' ;
-T76 : 'max' ;
-T77 : 'log' ;
-T78 : 'log2' ;
-T79 : 'log10' ;
-T80 : 'exp' ;
-T81 : 'sin' ;
-T82 : 'cos' ;
-T83 : 'tan' ;
-T84 : 'sinh' ;
-T85 : 'cosh' ;
-T86 : 'tanh' ;
-T87 : 'sqrt' ;
-T88 : 'abs' ;
-T89 : 'floor' ;
-T90 : 'ceil' ;
-T91 : 'mod' ;
-T92 : 'if' ;
-T93 : 'and' ;
-T94 : 'or' ;
-T95 : 'not' ;
+T39 : '+' ;
+T40 : '*' ;
+T41 : 'model_nodes' ;
+T42 : 'samples_per_interval' ;
+T43 : 'model_data' ;
+T44 : 'class' ;
+T45 : 'instance' ;
+T46 : ':' ;
+T47 : ',' ;
+T48 : '+=' ;
+T49 : '-=' ;
+T50 : '*=' ;
+T51 : '/=' ;
+T52 : '%=' ;
+T53 : '||' ;
+T54 : '&&' ;
+T55 : '!=' ;
+T56 : '==' ;
+T57 : '<=' ;
+T58 : '<>' ;
+T59 : '>=' ;
+T60 : '<' ;
+T61 : '>' ;
+T62 : '-' ;
+T63 : '/' ;
+T64 : '!' ;
+T65 : 'truncate' ;
+T66 : 'Normal' ;
+T67 : 'LogNormal' ;
+T68 : 'Beta' ;
+T69 : 'Gamma' ;
+T70 : 'Exponential' ;
+T71 : 'Weibull' ;
+T72 : 'Uniform' ;
+T73 : 'Triangular' ;
+T74 : 'PERT' ;
+T75 : 'Binomial' ;
+T76 : 'Poisson' ;
+T77 : 'NegativeBinomial' ;
+T78 : 'Geometric' ;
+T79 : 'Distribution' ;
+T80 : 'NoisyOR' ;
+T81 : 'min' ;
+T82 : 'max' ;
+T83 : 'log' ;
+T84 : 'log2' ;
+T85 : 'log10' ;
+T86 : 'exp' ;
+T87 : 'sin' ;
+T88 : 'cos' ;
+T89 : 'tan' ;
+T90 : 'sinh' ;
+T91 : 'cosh' ;
+T92 : 'tanh' ;
+T93 : 'sqrt' ;
+T94 : 'abs' ;
+T95 : 'floor' ;
+T96 : 'ceil' ;
+T97 : 'mod' ;
+T98 : 'if' ;
+T99 : 'and' ;
+T100 : 'or' ;
+T101 : 'not' ;
 
-// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4083
-RULE_SL_COMMENT : '%' ~(('\n'|'\r'))* ('\r'? '\n')?;
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4520
+RULE_BOOLEAN : ('true'|'false');
 
-// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4085
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4522
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4087
-RULE_INT : ('0'..'9')+;
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4524
+RULE_INT : ('0'|'1'..'9' ('0'..'9')*);
 
-// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4089
-RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4526
+RULE_STRING : '"' ( options {greedy=false;} : . )*'"';
 
-// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4091
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4528
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
-// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4093
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4530
+RULE_SL_COMMENT : '%' ~(('\n'|'\r'))* ('\r'? '\n')?;
+
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4532
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
-// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4095
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4534
+RULE_EXT_INT : RULE_INT ('e'|'E') ('-'|'+') RULE_INT;
+
+// $ANTLR src "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g" 4536
 RULE_ANY_OTHER : .;
 
 

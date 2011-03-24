@@ -9,10 +9,8 @@ import net.certware.evidence.evidence.ProjectObjective;
 import net.certware.evidence.evidence.Satisfies;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

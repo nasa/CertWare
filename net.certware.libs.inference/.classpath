@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path=""/>
-	<classpathentry exported="true" kind="lib" path="inflib.jar"/>
+	<classpathentry exported="true" kind="lib" path="inflib.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/mrbarryold/Applications/samiam/library_javadocs/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/JVM 1.6.0 (MacOS X Default)"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path=""/>

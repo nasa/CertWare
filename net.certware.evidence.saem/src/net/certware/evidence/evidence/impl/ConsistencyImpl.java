@@ -9,9 +9,7 @@ import net.certware.evidence.evidence.ConsistencyLevel;
 import net.certware.evidence.evidence.EvidencePackage;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

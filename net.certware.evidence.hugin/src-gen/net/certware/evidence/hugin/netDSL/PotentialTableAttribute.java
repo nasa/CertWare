@@ -5,6 +5,7 @@
  */
 package net.certware.evidence.hugin.netDSL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +25,7 @@ package net.certware.evidence.hugin.netDSL;
  * @model
  * @generated
  */
-public interface PotentialTableAttribute extends PotentialAttribute
+public interface PotentialTableAttribute extends EObject
 {
   /**
    * Returns the value of the '<em><b>Nodes</b></em>' containment reference.

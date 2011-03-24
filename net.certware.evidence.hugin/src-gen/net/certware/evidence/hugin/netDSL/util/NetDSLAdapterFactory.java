@@ -5,7 +5,66 @@
  */
 package net.certware.evidence.hugin.netDSL.util;
 
-import net.certware.evidence.hugin.netDSL.*;
+import net.certware.evidence.hugin.netDSL.AdditiveExp;
+import net.certware.evidence.hugin.netDSL.AndExp;
+import net.certware.evidence.hugin.netDSL.ApplicationAttribute;
+import net.certware.evidence.hugin.netDSL.Assignment;
+import net.certware.evidence.hugin.netDSL.AssignmentOp;
+import net.certware.evidence.hugin.netDSL.Attribute;
+import net.certware.evidence.hugin.netDSL.BasicNode;
+import net.certware.evidence.hugin.netDSL.BooleanLiteral;
+import net.certware.evidence.hugin.netDSL.ClassDefinition;
+import net.certware.evidence.hugin.netDSL.ClassElement;
+import net.certware.evidence.hugin.netDSL.ClassInstance;
+import net.certware.evidence.hugin.netDSL.DataItemList;
+import net.certware.evidence.hugin.netDSL.DomainDefinition;
+import net.certware.evidence.hugin.netDSL.DomainElement;
+import net.certware.evidence.hugin.netDSL.DomainHeader;
+import net.certware.evidence.hugin.netDSL.DoubleLiteral;
+import net.certware.evidence.hugin.netDSL.Expression;
+import net.certware.evidence.hugin.netDSL.ExpressionSequence;
+import net.certware.evidence.hugin.netDSL.FloatDataList;
+import net.certware.evidence.hugin.netDSL.InputBinding;
+import net.certware.evidence.hugin.netDSL.InputBindings;
+import net.certware.evidence.hugin.netDSL.IntegerLiteral;
+import net.certware.evidence.hugin.netDSL.LabelAttribute;
+import net.certware.evidence.hugin.netDSL.Model;
+import net.certware.evidence.hugin.netDSL.ModelDataAttribute;
+import net.certware.evidence.hugin.netDSL.ModelNodesAttribute;
+import net.certware.evidence.hugin.netDSL.MultiplicativeExp;
+import net.certware.evidence.hugin.netDSL.NetDSLPackage;
+import net.certware.evidence.hugin.netDSL.NodeAttributes;
+import net.certware.evidence.hugin.netDSL.NodeSizeAttribute;
+import net.certware.evidence.hugin.netDSL.NormalDistribution;
+import net.certware.evidence.hugin.netDSL.Operator;
+import net.certware.evidence.hugin.netDSL.OrExp;
+import net.certware.evidence.hugin.netDSL.OutputBinding;
+import net.certware.evidence.hugin.netDSL.OutputBindings;
+import net.certware.evidence.hugin.netDSL.PositionAttribute;
+import net.certware.evidence.hugin.netDSL.Potential;
+import net.certware.evidence.hugin.netDSL.PotentialAttribute;
+import net.certware.evidence.hugin.netDSL.PotentialDataAttribute;
+import net.certware.evidence.hugin.netDSL.PotentialGraph;
+import net.certware.evidence.hugin.netDSL.PotentialModel;
+import net.certware.evidence.hugin.netDSL.PotentialTableAttribute;
+import net.certware.evidence.hugin.netDSL.RelationalExp;
+import net.certware.evidence.hugin.netDSL.SamplesAttribute;
+import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
+import net.certware.evidence.hugin.netDSL.StatesAttribute;
+import net.certware.evidence.hugin.netDSL.StringLiteral;
+import net.certware.evidence.hugin.netDSL.StructuredDataList;
+import net.certware.evidence.hugin.netDSL.SubtypeAttribute;
+import net.certware.evidence.hugin.netDSL.TermExpression;
+import net.certware.evidence.hugin.netDSL.TermLiteral;
+import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
+import net.certware.evidence.hugin.netDSL.VarRef;
+import net.certware.evidence.hugin.netDSL.additiveExpression;
+import net.certware.evidence.hugin.netDSL.andExpression;
+import net.certware.evidence.hugin.netDSL.assignmentOpExpression;
+import net.certware.evidence.hugin.netDSL.multiplicativeExpression;
+import net.certware.evidence.hugin.netDSL.orExpression;
+import net.certware.evidence.hugin.netDSL.relationalExpression;
+import net.certware.evidence.hugin.netDSL.unaryExpression;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -81,6 +140,11 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseModel(Model object)
       {
         return createModelAdapter();
+      }
+      @Override
+      public Adapter caseInteger(net.certware.evidence.hugin.netDSL.Integer object)
+      {
+        return createIntegerAdapter();
       }
       @Override
       public Adapter caseDomainDefinition(DomainDefinition object)
@@ -168,6 +232,11 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
         return createPotentialDataAttributeAdapter();
       }
       @Override
+      public Adapter caseDataItemList(DataItemList object)
+      {
+        return createDataItemListAdapter();
+      }
+      @Override
       public Adapter caseUnstructuredDataList(UnstructuredDataList object)
       {
         return createUnstructuredDataListAdapter();
@@ -248,34 +317,124 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
         return createNodeAttributesAdapter();
       }
       @Override
+      public Adapter caseExpressionSequence(ExpressionSequence object)
+      {
+        return createExpressionSequenceAdapter();
+      }
+      @Override
       public Adapter caseExpression(Expression object)
       {
         return createExpressionAdapter();
       }
       @Override
-      public Adapter caseSimpleExpression(SimpleExpression object)
+      public Adapter caseassignmentOpExpression(assignmentOpExpression object)
       {
-        return createSimpleExpressionAdapter();
+        return createassignmentOpExpressionAdapter();
       }
       @Override
-      public Adapter caseTerm(Term object)
+      public Adapter caseorExpression(orExpression object)
       {
-        return createTermAdapter();
+        return createorExpressionAdapter();
       }
       @Override
-      public Adapter caseExpFactor(ExpFactor object)
+      public Adapter caseandExpression(andExpression object)
       {
-        return createExpFactorAdapter();
+        return createandExpressionAdapter();
       }
       @Override
-      public Adapter caseFactor(Factor object)
+      public Adapter caserelationalExpression(relationalExpression object)
       {
-        return createFactorAdapter();
+        return createrelationalExpressionAdapter();
       }
       @Override
-      public Adapter caseExpressionSequence(ExpressionSequence object)
+      public Adapter caseadditiveExpression(additiveExpression object)
       {
-        return createExpressionSequenceAdapter();
+        return createadditiveExpressionAdapter();
+      }
+      @Override
+      public Adapter casemultiplicativeExpression(multiplicativeExpression object)
+      {
+        return createmultiplicativeExpressionAdapter();
+      }
+      @Override
+      public Adapter caseunaryExpression(unaryExpression object)
+      {
+        return createunaryExpressionAdapter();
+      }
+      @Override
+      public Adapter caseOperator(Operator object)
+      {
+        return createOperatorAdapter();
+      }
+      @Override
+      public Adapter caseTermExpression(TermExpression object)
+      {
+        return createTermExpressionAdapter();
+      }
+      @Override
+      public Adapter caseTermLiteral(TermLiteral object)
+      {
+        return createTermLiteralAdapter();
+      }
+      @Override
+      public Adapter caseIntegerLiteral(IntegerLiteral object)
+      {
+        return createIntegerLiteralAdapter();
+      }
+      @Override
+      public Adapter caseAssignment(Assignment object)
+      {
+        return createAssignmentAdapter();
+      }
+      @Override
+      public Adapter caseAssignmentOp(AssignmentOp object)
+      {
+        return createAssignmentOpAdapter();
+      }
+      @Override
+      public Adapter caseOrExp(OrExp object)
+      {
+        return createOrExpAdapter();
+      }
+      @Override
+      public Adapter caseAndExp(AndExp object)
+      {
+        return createAndExpAdapter();
+      }
+      @Override
+      public Adapter caseRelationalExp(RelationalExp object)
+      {
+        return createRelationalExpAdapter();
+      }
+      @Override
+      public Adapter caseAdditiveExp(AdditiveExp object)
+      {
+        return createAdditiveExpAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicativeExp(MultiplicativeExp object)
+      {
+        return createMultiplicativeExpAdapter();
+      }
+      @Override
+      public Adapter caseVarRef(VarRef object)
+      {
+        return createVarRefAdapter();
+      }
+      @Override
+      public Adapter caseBooleanLiteral(BooleanLiteral object)
+      {
+        return createBooleanLiteralAdapter();
+      }
+      @Override
+      public Adapter caseStringLiteral(StringLiteral object)
+      {
+        return createStringLiteralAdapter();
+      }
+      @Override
+      public Adapter caseDoubleLiteral(DoubleLiteral object)
+      {
+        return createDoubleLiteralAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -310,6 +469,21 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.Integer <em>Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.Integer
+   * @generated
+   */
+  public Adapter createIntegerAdapter()
   {
     return null;
   }
@@ -570,6 +744,21 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.DataItemList <em>Data Item List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.DataItemList
+   * @generated
+   */
+  public Adapter createDataItemListAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.UnstructuredDataList <em>Unstructured Data List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -810,6 +999,21 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.ExpressionSequence <em>Expression Sequence</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.ExpressionSequence
+   * @generated
+   */
+  public Adapter createExpressionSequenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -825,76 +1029,331 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.SimpleExpression <em>Simple Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.assignmentOpExpression <em>assignment Op Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.SimpleExpression
+   * @see net.certware.evidence.hugin.netDSL.assignmentOpExpression
    * @generated
    */
-  public Adapter createSimpleExpressionAdapter()
+  public Adapter createassignmentOpExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.Term <em>Term</em>}'.
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.orExpression <em>or Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.Term
+   * @see net.certware.evidence.hugin.netDSL.orExpression
    * @generated
    */
-  public Adapter createTermAdapter()
+  public Adapter createorExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.ExpFactor <em>Exp Factor</em>}'.
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.andExpression <em>and Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.ExpFactor
+   * @see net.certware.evidence.hugin.netDSL.andExpression
    * @generated
    */
-  public Adapter createExpFactorAdapter()
+  public Adapter createandExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.Factor <em>Factor</em>}'.
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.relationalExpression <em>relational Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.Factor
+   * @see net.certware.evidence.hugin.netDSL.relationalExpression
    * @generated
    */
-  public Adapter createFactorAdapter()
+  public Adapter createrelationalExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.ExpressionSequence <em>Expression Sequence</em>}'.
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.additiveExpression <em>additive Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.ExpressionSequence
+   * @see net.certware.evidence.hugin.netDSL.additiveExpression
    * @generated
    */
-  public Adapter createExpressionSequenceAdapter()
+  public Adapter createadditiveExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.multiplicativeExpression <em>multiplicative Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.multiplicativeExpression
+   * @generated
+   */
+  public Adapter createmultiplicativeExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.unaryExpression <em>unary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.unaryExpression
+   * @generated
+   */
+  public Adapter createunaryExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.Operator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.Operator
+   * @generated
+   */
+  public Adapter createOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.TermExpression <em>Term Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.TermExpression
+   * @generated
+   */
+  public Adapter createTermExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.TermLiteral <em>Term Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.TermLiteral
+   * @generated
+   */
+  public Adapter createTermLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.IntegerLiteral <em>Integer Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.IntegerLiteral
+   * @generated
+   */
+  public Adapter createIntegerLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.Assignment <em>Assignment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.Assignment
+   * @generated
+   */
+  public Adapter createAssignmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.AssignmentOp <em>Assignment Op</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.AssignmentOp
+   * @generated
+   */
+  public Adapter createAssignmentOpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.OrExp <em>Or Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.OrExp
+   * @generated
+   */
+  public Adapter createOrExpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.AndExp <em>And Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.AndExp
+   * @generated
+   */
+  public Adapter createAndExpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.RelationalExp <em>Relational Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.RelationalExp
+   * @generated
+   */
+  public Adapter createRelationalExpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.AdditiveExp <em>Additive Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.AdditiveExp
+   * @generated
+   */
+  public Adapter createAdditiveExpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.MultiplicativeExp <em>Multiplicative Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.MultiplicativeExp
+   * @generated
+   */
+  public Adapter createMultiplicativeExpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.VarRef <em>Var Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.VarRef
+   * @generated
+   */
+  public Adapter createVarRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.BooleanLiteral <em>Boolean Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.BooleanLiteral
+   * @generated
+   */
+  public Adapter createBooleanLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.StringLiteral <em>String Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.StringLiteral
+   * @generated
+   */
+  public Adapter createStringLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.DoubleLiteral <em>Double Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.DoubleLiteral
+   * @generated
+   */
+  public Adapter createDoubleLiteralAdapter()
   {
     return null;
   }

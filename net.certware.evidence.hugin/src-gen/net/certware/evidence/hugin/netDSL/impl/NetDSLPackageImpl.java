@@ -5,31 +5,40 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
+import net.certware.evidence.hugin.netDSL.AdditiveExp;
+import net.certware.evidence.hugin.netDSL.AndExp;
 import net.certware.evidence.hugin.netDSL.ApplicationAttribute;
+import net.certware.evidence.hugin.netDSL.Assignment;
+import net.certware.evidence.hugin.netDSL.AssignmentOp;
 import net.certware.evidence.hugin.netDSL.Attribute;
 import net.certware.evidence.hugin.netDSL.BasicNode;
+import net.certware.evidence.hugin.netDSL.BooleanLiteral;
 import net.certware.evidence.hugin.netDSL.ClassDefinition;
 import net.certware.evidence.hugin.netDSL.ClassElement;
 import net.certware.evidence.hugin.netDSL.ClassInstance;
+import net.certware.evidence.hugin.netDSL.DataItemList;
 import net.certware.evidence.hugin.netDSL.DomainDefinition;
 import net.certware.evidence.hugin.netDSL.DomainElement;
 import net.certware.evidence.hugin.netDSL.DomainHeader;
-import net.certware.evidence.hugin.netDSL.ExpFactor;
+import net.certware.evidence.hugin.netDSL.DoubleLiteral;
 import net.certware.evidence.hugin.netDSL.Expression;
 import net.certware.evidence.hugin.netDSL.ExpressionSequence;
-import net.certware.evidence.hugin.netDSL.Factor;
 import net.certware.evidence.hugin.netDSL.FloatDataList;
 import net.certware.evidence.hugin.netDSL.InputBinding;
 import net.certware.evidence.hugin.netDSL.InputBindings;
+import net.certware.evidence.hugin.netDSL.IntegerLiteral;
 import net.certware.evidence.hugin.netDSL.LabelAttribute;
 import net.certware.evidence.hugin.netDSL.Model;
 import net.certware.evidence.hugin.netDSL.ModelDataAttribute;
 import net.certware.evidence.hugin.netDSL.ModelNodesAttribute;
+import net.certware.evidence.hugin.netDSL.MultiplicativeExp;
 import net.certware.evidence.hugin.netDSL.NetDSLFactory;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.NodeAttributes;
 import net.certware.evidence.hugin.netDSL.NodeSizeAttribute;
 import net.certware.evidence.hugin.netDSL.NormalDistribution;
+import net.certware.evidence.hugin.netDSL.Operator;
+import net.certware.evidence.hugin.netDSL.OrExp;
 import net.certware.evidence.hugin.netDSL.OutputBinding;
 import net.certware.evidence.hugin.netDSL.OutputBindings;
 import net.certware.evidence.hugin.netDSL.PositionAttribute;
@@ -39,14 +48,24 @@ import net.certware.evidence.hugin.netDSL.PotentialDataAttribute;
 import net.certware.evidence.hugin.netDSL.PotentialGraph;
 import net.certware.evidence.hugin.netDSL.PotentialModel;
 import net.certware.evidence.hugin.netDSL.PotentialTableAttribute;
+import net.certware.evidence.hugin.netDSL.RelationalExp;
 import net.certware.evidence.hugin.netDSL.SamplesAttribute;
-import net.certware.evidence.hugin.netDSL.SimpleExpression;
 import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
 import net.certware.evidence.hugin.netDSL.StatesAttribute;
+import net.certware.evidence.hugin.netDSL.StringLiteral;
 import net.certware.evidence.hugin.netDSL.StructuredDataList;
 import net.certware.evidence.hugin.netDSL.SubtypeAttribute;
-import net.certware.evidence.hugin.netDSL.Term;
+import net.certware.evidence.hugin.netDSL.TermExpression;
+import net.certware.evidence.hugin.netDSL.TermLiteral;
 import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
+import net.certware.evidence.hugin.netDSL.VarRef;
+import net.certware.evidence.hugin.netDSL.additiveExpression;
+import net.certware.evidence.hugin.netDSL.andExpression;
+import net.certware.evidence.hugin.netDSL.assignmentOpExpression;
+import net.certware.evidence.hugin.netDSL.multiplicativeExpression;
+import net.certware.evidence.hugin.netDSL.orExpression;
+import net.certware.evidence.hugin.netDSL.relationalExpression;
+import net.certware.evidence.hugin.netDSL.unaryExpression;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -69,6 +88,13 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass integerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -194,6 +220,13 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass dataItemListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass unstructuredDataListEClass = null;
 
   /**
@@ -306,6 +339,13 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass expressionSequenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass expressionEClass = null;
 
   /**
@@ -313,35 +353,154 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass simpleExpressionEClass = null;
+  private EClass assignmentOpExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass termEClass = null;
+  private EClass orExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expFactorEClass = null;
+  private EClass andExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass factorEClass = null;
+  private EClass relationalExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expressionSequenceEClass = null;
+  private EClass additiveExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicativeExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unaryExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass termExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass termLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass integerLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass assignmentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass assignmentOpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass orExpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass andExpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationalExpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass additiveExpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicativeExpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass varRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass doubleLiteralEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -424,6 +583,26 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
   public EReference getModel_Domain()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInteger()
+  {
+    return integerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInteger_I()
+  {
+    return (EAttribute)integerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -584,26 +763,6 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
   public EClass getPositionAttribute()
   {
     return positionAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPositionAttribute_X()
-  {
-    return (EAttribute)positionAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPositionAttribute_Y()
-  {
-    return (EAttribute)positionAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -811,7 +970,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPotentialDataAttribute_Unstructured()
+  public EReference getPotentialDataAttribute_Items()
   {
     return (EReference)potentialDataAttributeEClass.getEStructuralFeatures().get(0);
   }
@@ -821,9 +980,19 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPotentialDataAttribute_Items()
+  public EClass getDataItemList()
   {
-    return (EReference)potentialDataAttributeEClass.getEStructuralFeatures().get(1);
+    return dataItemListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDataItemList_List()
+  {
+    return (EReference)dataItemListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -841,26 +1010,6 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUnstructuredDataList_List()
-  {
-    return (EReference)unstructuredDataListEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUnstructuredDataList_Normal()
-  {
-    return (EReference)unstructuredDataListEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getStructuredDataList()
   {
     return structuredDataListEClass;
@@ -871,19 +1020,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStructuredDataList_List()
-  {
-    return (EReference)structuredDataListEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getStructuredDataList_Items()
   {
-    return (EReference)structuredDataListEClass.getEStructuralFeatures().get(1);
+    return (EReference)structuredDataListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1024,6 +1163,16 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
   public EClass getModelDataAttribute()
   {
     return modelDataAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModelDataAttribute_Sequence()
+  {
+    return (EReference)modelDataAttributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1261,196 +1410,6 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpression()
-  {
-    return expressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpression_Lhs()
-  {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpression_Rhs()
-  {
-    return (EReference)expressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSimpleExpression()
-  {
-    return simpleExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSimpleExpression_Lhs()
-  {
-    return (EReference)simpleExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSimpleExpression_Rhs()
-  {
-    return (EReference)simpleExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTerm()
-  {
-    return termEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTerm_Lhs()
-  {
-    return (EReference)termEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTerm_Rhs()
-  {
-    return (EReference)termEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getExpFactor()
-  {
-    return expFactorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpFactor_Lhs()
-  {
-    return (EReference)expFactorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpFactor_Rhs()
-  {
-    return (EReference)expFactorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFactor()
-  {
-    return factorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFactor_Number()
-  {
-    return (EAttribute)factorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFactor_NodeName()
-  {
-    return (EAttribute)factorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFactor_Value()
-  {
-    return (EAttribute)factorEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFactor_Expression()
-  {
-    return (EReference)factorEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFactor_Op()
-  {
-    return (EAttribute)factorEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFactor_Sequence()
-  {
-    return (EReference)factorEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getExpressionSequence()
   {
     return expressionSequenceEClass;
@@ -1464,6 +1423,476 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
   public EReference getExpressionSequence_Expressions()
   {
     return (EReference)expressionSequenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpression()
+  {
+    return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpression_Op()
+  {
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getassignmentOpExpression()
+  {
+    return assignmentOpExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getorExpression()
+  {
+    return orExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getandExpression()
+  {
+    return andExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getrelationalExpression()
+  {
+    return relationalExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getadditiveExpression()
+  {
+    return additiveExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getmultiplicativeExpression()
+  {
+    return multiplicativeExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getunaryExpression()
+  {
+    return unaryExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getunaryExpression_Expr()
+  {
+    return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOperator()
+  {
+    return operatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOperator_Sequence()
+  {
+    return (EReference)operatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTermExpression()
+  {
+    return termExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTermLiteral()
+  {
+    return termLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIntegerLiteral()
+  {
+    return integerLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIntegerLiteral_X()
+  {
+    return (EReference)integerLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIntegerLiteral_Y()
+  {
+    return (EReference)integerLiteralEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIntegerLiteral_Value()
+  {
+    return (EAttribute)integerLiteralEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAssignment()
+  {
+    return assignmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAssignment_Left()
+  {
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAssignment_Right()
+  {
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAssignmentOp()
+  {
+    return assignmentOpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAssignmentOp_Left()
+  {
+    return (EReference)assignmentOpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAssignmentOp_Right()
+  {
+    return (EReference)assignmentOpEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOrExp()
+  {
+    return orExpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOrExp_Left()
+  {
+    return (EReference)orExpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOrExp_Right()
+  {
+    return (EReference)orExpEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAndExp()
+  {
+    return andExpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAndExp_Left()
+  {
+    return (EReference)andExpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAndExp_Right()
+  {
+    return (EReference)andExpEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationalExp()
+  {
+    return relationalExpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationalExp_Left()
+  {
+    return (EReference)relationalExpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationalExp_Right()
+  {
+    return (EReference)relationalExpEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAdditiveExp()
+  {
+    return additiveExpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdditiveExp_Left()
+  {
+    return (EReference)additiveExpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdditiveExp_Right()
+  {
+    return (EReference)additiveExpEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultiplicativeExp()
+  {
+    return multiplicativeExpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicativeExp_Left()
+  {
+    return (EReference)multiplicativeExpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicativeExp_Right()
+  {
+    return (EReference)multiplicativeExpEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVarRef()
+  {
+    return varRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getVarRef_Value()
+  {
+    return (EAttribute)varRefEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanLiteral()
+  {
+    return booleanLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBooleanLiteral_Value()
+  {
+    return (EAttribute)booleanLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringLiteral()
+  {
+    return stringLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringLiteral_Value()
+  {
+    return (EAttribute)stringLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDoubleLiteral()
+  {
+    return doubleLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDoubleLiteral_Value()
+  {
+    return (EAttribute)doubleLiteralEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1499,6 +1928,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__DOMAIN);
 
+    integerEClass = createEClass(INTEGER);
+    createEAttribute(integerEClass, INTEGER__I);
+
     domainDefinitionEClass = createEClass(DOMAIN_DEFINITION);
     createEReference(domainDefinitionEClass, DOMAIN_DEFINITION__HEADER);
     createEReference(domainDefinitionEClass, DOMAIN_DEFINITION__ELEMENTS);
@@ -1522,8 +1954,6 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     createEAttribute(labelAttributeEClass, LABEL_ATTRIBUTE__VALUE);
 
     positionAttributeEClass = createEClass(POSITION_ATTRIBUTE);
-    createEAttribute(positionAttributeEClass, POSITION_ATTRIBUTE__X);
-    createEAttribute(positionAttributeEClass, POSITION_ATTRIBUTE__Y);
 
     subtypeAttributeEClass = createEClass(SUBTYPE_ATTRIBUTE);
     createEAttribute(subtypeAttributeEClass, SUBTYPE_ATTRIBUTE__SUBTYPE);
@@ -1553,15 +1983,14 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     potentialAttributeEClass = createEClass(POTENTIAL_ATTRIBUTE);
 
     potentialDataAttributeEClass = createEClass(POTENTIAL_DATA_ATTRIBUTE);
-    createEReference(potentialDataAttributeEClass, POTENTIAL_DATA_ATTRIBUTE__UNSTRUCTURED);
     createEReference(potentialDataAttributeEClass, POTENTIAL_DATA_ATTRIBUTE__ITEMS);
 
+    dataItemListEClass = createEClass(DATA_ITEM_LIST);
+    createEReference(dataItemListEClass, DATA_ITEM_LIST__LIST);
+
     unstructuredDataListEClass = createEClass(UNSTRUCTURED_DATA_LIST);
-    createEReference(unstructuredDataListEClass, UNSTRUCTURED_DATA_LIST__LIST);
-    createEReference(unstructuredDataListEClass, UNSTRUCTURED_DATA_LIST__NORMAL);
 
     structuredDataListEClass = createEClass(STRUCTURED_DATA_LIST);
-    createEReference(structuredDataListEClass, STRUCTURED_DATA_LIST__LIST);
     createEReference(structuredDataListEClass, STRUCTURED_DATA_LIST__ITEMS);
 
     floatDataListEClass = createEClass(FLOAT_DATA_LIST);
@@ -1583,6 +2012,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     createEAttribute(samplesAttributeEClass, SAMPLES_ATTRIBUTE__VALUE);
 
     modelDataAttributeEClass = createEClass(MODEL_DATA_ATTRIBUTE);
+    createEReference(modelDataAttributeEClass, MODEL_DATA_ATTRIBUTE__SEQUENCE);
 
     classDefinitionEClass = createEClass(CLASS_DEFINITION);
     createEAttribute(classDefinitionEClass, CLASS_DEFINITION__NAME);
@@ -1615,32 +2045,78 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
 
     nodeAttributesEClass = createEClass(NODE_ATTRIBUTES);
 
-    expressionEClass = createEClass(EXPRESSION);
-    createEReference(expressionEClass, EXPRESSION__LHS);
-    createEReference(expressionEClass, EXPRESSION__RHS);
-
-    simpleExpressionEClass = createEClass(SIMPLE_EXPRESSION);
-    createEReference(simpleExpressionEClass, SIMPLE_EXPRESSION__LHS);
-    createEReference(simpleExpressionEClass, SIMPLE_EXPRESSION__RHS);
-
-    termEClass = createEClass(TERM);
-    createEReference(termEClass, TERM__LHS);
-    createEReference(termEClass, TERM__RHS);
-
-    expFactorEClass = createEClass(EXP_FACTOR);
-    createEReference(expFactorEClass, EXP_FACTOR__LHS);
-    createEReference(expFactorEClass, EXP_FACTOR__RHS);
-
-    factorEClass = createEClass(FACTOR);
-    createEAttribute(factorEClass, FACTOR__NUMBER);
-    createEAttribute(factorEClass, FACTOR__NODE_NAME);
-    createEAttribute(factorEClass, FACTOR__VALUE);
-    createEReference(factorEClass, FACTOR__EXPRESSION);
-    createEAttribute(factorEClass, FACTOR__OP);
-    createEReference(factorEClass, FACTOR__SEQUENCE);
-
     expressionSequenceEClass = createEClass(EXPRESSION_SEQUENCE);
     createEReference(expressionSequenceEClass, EXPRESSION_SEQUENCE__EXPRESSIONS);
+
+    expressionEClass = createEClass(EXPRESSION);
+    createEAttribute(expressionEClass, EXPRESSION__OP);
+
+    assignmentOpExpressionEClass = createEClass(ASSIGNMENT_OP_EXPRESSION);
+
+    orExpressionEClass = createEClass(OR_EXPRESSION);
+
+    andExpressionEClass = createEClass(AND_EXPRESSION);
+
+    relationalExpressionEClass = createEClass(RELATIONAL_EXPRESSION);
+
+    additiveExpressionEClass = createEClass(ADDITIVE_EXPRESSION);
+
+    multiplicativeExpressionEClass = createEClass(MULTIPLICATIVE_EXPRESSION);
+
+    unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
+    createEReference(unaryExpressionEClass, UNARY_EXPRESSION__EXPR);
+
+    operatorEClass = createEClass(OPERATOR);
+    createEReference(operatorEClass, OPERATOR__SEQUENCE);
+
+    termExpressionEClass = createEClass(TERM_EXPRESSION);
+
+    termLiteralEClass = createEClass(TERM_LITERAL);
+
+    integerLiteralEClass = createEClass(INTEGER_LITERAL);
+    createEReference(integerLiteralEClass, INTEGER_LITERAL__X);
+    createEReference(integerLiteralEClass, INTEGER_LITERAL__Y);
+    createEAttribute(integerLiteralEClass, INTEGER_LITERAL__VALUE);
+
+    assignmentEClass = createEClass(ASSIGNMENT);
+    createEReference(assignmentEClass, ASSIGNMENT__LEFT);
+    createEReference(assignmentEClass, ASSIGNMENT__RIGHT);
+
+    assignmentOpEClass = createEClass(ASSIGNMENT_OP);
+    createEReference(assignmentOpEClass, ASSIGNMENT_OP__LEFT);
+    createEReference(assignmentOpEClass, ASSIGNMENT_OP__RIGHT);
+
+    orExpEClass = createEClass(OR_EXP);
+    createEReference(orExpEClass, OR_EXP__LEFT);
+    createEReference(orExpEClass, OR_EXP__RIGHT);
+
+    andExpEClass = createEClass(AND_EXP);
+    createEReference(andExpEClass, AND_EXP__LEFT);
+    createEReference(andExpEClass, AND_EXP__RIGHT);
+
+    relationalExpEClass = createEClass(RELATIONAL_EXP);
+    createEReference(relationalExpEClass, RELATIONAL_EXP__LEFT);
+    createEReference(relationalExpEClass, RELATIONAL_EXP__RIGHT);
+
+    additiveExpEClass = createEClass(ADDITIVE_EXP);
+    createEReference(additiveExpEClass, ADDITIVE_EXP__LEFT);
+    createEReference(additiveExpEClass, ADDITIVE_EXP__RIGHT);
+
+    multiplicativeExpEClass = createEClass(MULTIPLICATIVE_EXP);
+    createEReference(multiplicativeExpEClass, MULTIPLICATIVE_EXP__LEFT);
+    createEReference(multiplicativeExpEClass, MULTIPLICATIVE_EXP__RIGHT);
+
+    varRefEClass = createEClass(VAR_REF);
+    createEAttribute(varRefEClass, VAR_REF__VALUE);
+
+    booleanLiteralEClass = createEClass(BOOLEAN_LITERAL);
+    createEAttribute(booleanLiteralEClass, BOOLEAN_LITERAL__VALUE);
+
+    stringLiteralEClass = createEClass(STRING_LITERAL);
+    createEAttribute(stringLiteralEClass, STRING_LITERAL__VALUE);
+
+    doubleLiteralEClass = createEClass(DOUBLE_LITERAL);
+    createEAttribute(doubleLiteralEClass, DOUBLE_LITERAL__VALUE);
   }
 
   /**
@@ -1687,13 +2163,40 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     nodeSizeAttributeEClass.getESuperTypes().add(this.getAttribute());
     potentialEClass.getESuperTypes().add(this.getDomainElement());
     potentialDataAttributeEClass.getESuperTypes().add(this.getPotentialAttribute());
-    potentialTableAttributeEClass.getESuperTypes().add(this.getPotentialAttribute());
+    unstructuredDataListEClass.getESuperTypes().add(this.getDataItemList());
+    structuredDataListEClass.getESuperTypes().add(this.getDataItemList());
     classDefinitionEClass.getESuperTypes().add(this.getDomainElement());
     classInstanceEClass.getESuperTypes().add(this.getClassElement());
+    assignmentOpExpressionEClass.getESuperTypes().add(this.getExpression());
+    orExpressionEClass.getESuperTypes().add(this.getassignmentOpExpression());
+    andExpressionEClass.getESuperTypes().add(this.getorExpression());
+    relationalExpressionEClass.getESuperTypes().add(this.getandExpression());
+    additiveExpressionEClass.getESuperTypes().add(this.getrelationalExpression());
+    multiplicativeExpressionEClass.getESuperTypes().add(this.getadditiveExpression());
+    unaryExpressionEClass.getESuperTypes().add(this.getmultiplicativeExpression());
+    operatorEClass.getESuperTypes().add(this.getTermExpression());
+    termExpressionEClass.getESuperTypes().add(this.getunaryExpression());
+    termLiteralEClass.getESuperTypes().add(this.getTermExpression());
+    integerLiteralEClass.getESuperTypes().add(this.getPositionAttribute());
+    integerLiteralEClass.getESuperTypes().add(this.getTermLiteral());
+    assignmentEClass.getESuperTypes().add(this.getExpression());
+    assignmentOpEClass.getESuperTypes().add(this.getassignmentOpExpression());
+    orExpEClass.getESuperTypes().add(this.getorExpression());
+    andExpEClass.getESuperTypes().add(this.getandExpression());
+    relationalExpEClass.getESuperTypes().add(this.getrelationalExpression());
+    additiveExpEClass.getESuperTypes().add(this.getadditiveExpression());
+    multiplicativeExpEClass.getESuperTypes().add(this.getmultiplicativeExpression());
+    varRefEClass.getESuperTypes().add(this.getTermLiteral());
+    booleanLiteralEClass.getESuperTypes().add(this.getTermLiteral());
+    stringLiteralEClass.getESuperTypes().add(this.getTermLiteral());
+    doubleLiteralEClass.getESuperTypes().add(this.getTermLiteral());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Domain(), this.getDomainDefinition(), null, "domain", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(integerEClass, net.certware.evidence.hugin.netDSL.Integer.class, "Integer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInteger_I(), ecorePackage.getEInt(), "i", null, 0, 1, net.certware.evidence.hugin.netDSL.Integer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(domainDefinitionEClass, DomainDefinition.class, "DomainDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDomainDefinition_Header(), this.getDomainHeader(), null, "header", null, 0, 1, DomainDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1718,8 +2221,6 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     initEAttribute(getLabelAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, LabelAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(positionAttributeEClass, PositionAttribute.class, "PositionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPositionAttribute_X(), ecorePackage.getEInt(), "x", null, 0, 1, PositionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPositionAttribute_Y(), ecorePackage.getEInt(), "y", null, 0, 1, PositionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subtypeAttributeEClass, SubtypeAttribute.class, "SubtypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSubtypeAttribute_Subtype(), ecorePackage.getEString(), "subtype", null, 0, 1, SubtypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1749,15 +2250,14 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     initEClass(potentialAttributeEClass, PotentialAttribute.class, "PotentialAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(potentialDataAttributeEClass, PotentialDataAttribute.class, "PotentialDataAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPotentialDataAttribute_Unstructured(), this.getUnstructuredDataList(), null, "unstructured", null, 0, 1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPotentialDataAttribute_Items(), this.getStructuredDataList(), null, "items", null, 0, -1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPotentialDataAttribute_Items(), this.getDataItemList(), null, "items", null, 0, 1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataItemListEClass, DataItemList.class, "DataItemList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDataItemList_List(), this.getFloatDataList(), null, "list", null, 0, 1, DataItemList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unstructuredDataListEClass, UnstructuredDataList.class, "UnstructuredDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUnstructuredDataList_List(), this.getFloatDataList(), null, "list", null, 0, 1, UnstructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUnstructuredDataList_Normal(), this.getNormalDistribution(), null, "normal", null, 0, 1, UnstructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(structuredDataListEClass, StructuredDataList.class, "StructuredDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStructuredDataList_List(), this.getFloatDataList(), null, "list", null, 0, 1, StructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStructuredDataList_Items(), this.getStructuredDataList(), null, "items", null, 0, -1, StructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(floatDataListEClass, FloatDataList.class, "FloatDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1779,6 +2279,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     initEAttribute(getSamplesAttribute_Value(), ecorePackage.getEInt(), "value", null, 0, 1, SamplesAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(modelDataAttributeEClass, ModelDataAttribute.class, "ModelDataAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModelDataAttribute_Sequence(), this.getExpressionSequence(), null, "sequence", null, 0, 1, ModelDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(classDefinitionEClass, ClassDefinition.class, "ClassDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getClassDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClassDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1811,32 +2312,78 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
 
     initEClass(nodeAttributesEClass, NodeAttributes.class, "NodeAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpression_Lhs(), this.getSimpleExpression(), null, "lhs", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpression_Rhs(), this.getSimpleExpression(), null, "rhs", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(simpleExpressionEClass, SimpleExpression.class, "SimpleExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSimpleExpression_Lhs(), this.getTerm(), null, "lhs", null, 0, 1, SimpleExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSimpleExpression_Rhs(), this.getSimpleExpression(), null, "rhs", null, 0, -1, SimpleExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTerm_Lhs(), this.getExpFactor(), null, "lhs", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTerm_Rhs(), this.getTerm(), null, "rhs", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(expFactorEClass, ExpFactor.class, "ExpFactor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpFactor_Lhs(), this.getFactor(), null, "lhs", null, 0, 1, ExpFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpFactor_Rhs(), this.getExpFactor(), null, "rhs", null, 0, -1, ExpFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(factorEClass, Factor.class, "Factor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFactor_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFactor_NodeName(), ecorePackage.getEString(), "nodeName", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFactor_Value(), ecorePackage.getEString(), "value", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFactor_Expression(), this.getExpression(), null, "expression", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFactor_Op(), ecorePackage.getEString(), "op", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFactor_Sequence(), this.getExpressionSequence(), null, "sequence", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(expressionSequenceEClass, ExpressionSequence.class, "ExpressionSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpressionSequence_Expressions(), this.getExpression(), null, "expressions", null, 0, -1, ExpressionSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(assignmentOpExpressionEClass, assignmentOpExpression.class, "assignmentOpExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(orExpressionEClass, orExpression.class, "orExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(andExpressionEClass, andExpression.class, "andExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(relationalExpressionEClass, relationalExpression.class, "relationalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(additiveExpressionEClass, additiveExpression.class, "additiveExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(multiplicativeExpressionEClass, multiplicativeExpression.class, "multiplicativeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(unaryExpressionEClass, unaryExpression.class, "unaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getunaryExpression_Expr(), this.getTermExpression(), null, "expr", null, 0, 1, unaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOperator_Sequence(), this.getExpressionSequence(), null, "sequence", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(termExpressionEClass, TermExpression.class, "TermExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(termLiteralEClass, TermLiteral.class, "TermLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(integerLiteralEClass, IntegerLiteral.class, "IntegerLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIntegerLiteral_X(), this.getInteger(), null, "x", null, 0, 1, IntegerLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIntegerLiteral_Y(), this.getInteger(), null, "y", null, 0, 1, IntegerLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIntegerLiteral_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAssignment_Left(), this.getassignmentOpExpression(), null, "left", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignment_Right(), this.getorExpression(), null, "right", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(assignmentOpEClass, AssignmentOp.class, "AssignmentOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAssignmentOp_Left(), this.getorExpression(), null, "left", null, 0, 1, AssignmentOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAssignmentOp_Right(), this.getorExpression(), null, "right", null, 0, 1, AssignmentOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(orExpEClass, OrExp.class, "OrExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrExp_Left(), this.getandExpression(), null, "left", null, 0, 1, OrExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOrExp_Right(), this.getorExpression(), null, "right", null, 0, 1, OrExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(andExpEClass, AndExp.class, "AndExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAndExp_Left(), this.getrelationalExpression(), null, "left", null, 0, 1, AndExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAndExp_Right(), this.getandExpression(), null, "right", null, 0, 1, AndExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relationalExpEClass, RelationalExp.class, "RelationalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRelationalExp_Left(), this.getadditiveExpression(), null, "left", null, 0, 1, RelationalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationalExp_Right(), this.getrelationalExpression(), null, "right", null, 0, 1, RelationalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(additiveExpEClass, AdditiveExp.class, "AdditiveExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAdditiveExp_Left(), this.getmultiplicativeExpression(), null, "left", null, 0, 1, AdditiveExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdditiveExp_Right(), this.getadditiveExpression(), null, "right", null, 0, 1, AdditiveExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiplicativeExpEClass, MultiplicativeExp.class, "MultiplicativeExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMultiplicativeExp_Left(), this.getunaryExpression(), null, "left", null, 0, 1, MultiplicativeExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicativeExp_Right(), this.getmultiplicativeExpression(), null, "right", null, 0, 1, MultiplicativeExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(varRefEClass, VarRef.class, "VarRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVarRef_Value(), ecorePackage.getEString(), "value", null, 0, 1, VarRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanLiteralEClass, BooleanLiteral.class, "BooleanLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBooleanLiteral_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, BooleanLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringLiteralEClass, StringLiteral.class, "StringLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(doubleLiteralEClass, DoubleLiteral.class, "DoubleLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDoubleLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, DoubleLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

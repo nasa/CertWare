@@ -5,7 +5,67 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
-import net.certware.evidence.hugin.netDSL.*;
+import net.certware.evidence.hugin.netDSL.AdditiveExp;
+import net.certware.evidence.hugin.netDSL.AndExp;
+import net.certware.evidence.hugin.netDSL.ApplicationAttribute;
+import net.certware.evidence.hugin.netDSL.Assignment;
+import net.certware.evidence.hugin.netDSL.AssignmentOp;
+import net.certware.evidence.hugin.netDSL.Attribute;
+import net.certware.evidence.hugin.netDSL.BasicNode;
+import net.certware.evidence.hugin.netDSL.BooleanLiteral;
+import net.certware.evidence.hugin.netDSL.ClassDefinition;
+import net.certware.evidence.hugin.netDSL.ClassElement;
+import net.certware.evidence.hugin.netDSL.ClassInstance;
+import net.certware.evidence.hugin.netDSL.DataItemList;
+import net.certware.evidence.hugin.netDSL.DomainDefinition;
+import net.certware.evidence.hugin.netDSL.DomainElement;
+import net.certware.evidence.hugin.netDSL.DomainHeader;
+import net.certware.evidence.hugin.netDSL.DoubleLiteral;
+import net.certware.evidence.hugin.netDSL.Expression;
+import net.certware.evidence.hugin.netDSL.ExpressionSequence;
+import net.certware.evidence.hugin.netDSL.FloatDataList;
+import net.certware.evidence.hugin.netDSL.InputBinding;
+import net.certware.evidence.hugin.netDSL.InputBindings;
+import net.certware.evidence.hugin.netDSL.IntegerLiteral;
+import net.certware.evidence.hugin.netDSL.LabelAttribute;
+import net.certware.evidence.hugin.netDSL.Model;
+import net.certware.evidence.hugin.netDSL.ModelDataAttribute;
+import net.certware.evidence.hugin.netDSL.ModelNodesAttribute;
+import net.certware.evidence.hugin.netDSL.MultiplicativeExp;
+import net.certware.evidence.hugin.netDSL.NetDSLFactory;
+import net.certware.evidence.hugin.netDSL.NetDSLPackage;
+import net.certware.evidence.hugin.netDSL.NodeAttributes;
+import net.certware.evidence.hugin.netDSL.NodeSizeAttribute;
+import net.certware.evidence.hugin.netDSL.NormalDistribution;
+import net.certware.evidence.hugin.netDSL.Operator;
+import net.certware.evidence.hugin.netDSL.OrExp;
+import net.certware.evidence.hugin.netDSL.OutputBinding;
+import net.certware.evidence.hugin.netDSL.OutputBindings;
+import net.certware.evidence.hugin.netDSL.PositionAttribute;
+import net.certware.evidence.hugin.netDSL.Potential;
+import net.certware.evidence.hugin.netDSL.PotentialAttribute;
+import net.certware.evidence.hugin.netDSL.PotentialDataAttribute;
+import net.certware.evidence.hugin.netDSL.PotentialGraph;
+import net.certware.evidence.hugin.netDSL.PotentialModel;
+import net.certware.evidence.hugin.netDSL.PotentialTableAttribute;
+import net.certware.evidence.hugin.netDSL.RelationalExp;
+import net.certware.evidence.hugin.netDSL.SamplesAttribute;
+import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
+import net.certware.evidence.hugin.netDSL.StatesAttribute;
+import net.certware.evidence.hugin.netDSL.StringLiteral;
+import net.certware.evidence.hugin.netDSL.StructuredDataList;
+import net.certware.evidence.hugin.netDSL.SubtypeAttribute;
+import net.certware.evidence.hugin.netDSL.TermExpression;
+import net.certware.evidence.hugin.netDSL.TermLiteral;
+import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
+import net.certware.evidence.hugin.netDSL.VarRef;
+import net.certware.evidence.hugin.netDSL.additiveExpression;
+import net.certware.evidence.hugin.netDSL.andExpression;
+import net.certware.evidence.hugin.netDSL.assignmentOpExpression;
+import net.certware.evidence.hugin.netDSL.multiplicativeExpression;
+import net.certware.evidence.hugin.netDSL.orExpression;
+import net.certware.evidence.hugin.netDSL.relationalExpression;
+import net.certware.evidence.hugin.netDSL.unaryExpression;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -68,6 +128,7 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
     switch (eClass.getClassifierID())
     {
       case NetDSLPackage.MODEL: return createModel();
+      case NetDSLPackage.INTEGER: return createInteger();
       case NetDSLPackage.DOMAIN_DEFINITION: return createDomainDefinition();
       case NetDSLPackage.DOMAIN_HEADER: return createDomainHeader();
       case NetDSLPackage.DOMAIN_ELEMENT: return createDomainElement();
@@ -85,6 +146,7 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
       case NetDSLPackage.POTENTIAL_MODEL: return createPotentialModel();
       case NetDSLPackage.POTENTIAL_ATTRIBUTE: return createPotentialAttribute();
       case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE: return createPotentialDataAttribute();
+      case NetDSLPackage.DATA_ITEM_LIST: return createDataItemList();
       case NetDSLPackage.UNSTRUCTURED_DATA_LIST: return createUnstructuredDataList();
       case NetDSLPackage.STRUCTURED_DATA_LIST: return createStructuredDataList();
       case NetDSLPackage.FLOAT_DATA_LIST: return createFloatDataList();
@@ -101,12 +163,30 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
       case NetDSLPackage.OUTPUT_BINDINGS: return createOutputBindings();
       case NetDSLPackage.OUTPUT_BINDING: return createOutputBinding();
       case NetDSLPackage.NODE_ATTRIBUTES: return createNodeAttributes();
-      case NetDSLPackage.EXPRESSION: return createExpression();
-      case NetDSLPackage.SIMPLE_EXPRESSION: return createSimpleExpression();
-      case NetDSLPackage.TERM: return createTerm();
-      case NetDSLPackage.EXP_FACTOR: return createExpFactor();
-      case NetDSLPackage.FACTOR: return createFactor();
       case NetDSLPackage.EXPRESSION_SEQUENCE: return createExpressionSequence();
+      case NetDSLPackage.EXPRESSION: return createExpression();
+      case NetDSLPackage.ASSIGNMENT_OP_EXPRESSION: return createassignmentOpExpression();
+      case NetDSLPackage.OR_EXPRESSION: return createorExpression();
+      case NetDSLPackage.AND_EXPRESSION: return createandExpression();
+      case NetDSLPackage.RELATIONAL_EXPRESSION: return createrelationalExpression();
+      case NetDSLPackage.ADDITIVE_EXPRESSION: return createadditiveExpression();
+      case NetDSLPackage.MULTIPLICATIVE_EXPRESSION: return createmultiplicativeExpression();
+      case NetDSLPackage.UNARY_EXPRESSION: return createunaryExpression();
+      case NetDSLPackage.OPERATOR: return createOperator();
+      case NetDSLPackage.TERM_EXPRESSION: return createTermExpression();
+      case NetDSLPackage.TERM_LITERAL: return createTermLiteral();
+      case NetDSLPackage.INTEGER_LITERAL: return createIntegerLiteral();
+      case NetDSLPackage.ASSIGNMENT: return createAssignment();
+      case NetDSLPackage.ASSIGNMENT_OP: return createAssignmentOp();
+      case NetDSLPackage.OR_EXP: return createOrExp();
+      case NetDSLPackage.AND_EXP: return createAndExp();
+      case NetDSLPackage.RELATIONAL_EXP: return createRelationalExp();
+      case NetDSLPackage.ADDITIVE_EXP: return createAdditiveExp();
+      case NetDSLPackage.MULTIPLICATIVE_EXP: return createMultiplicativeExp();
+      case NetDSLPackage.VAR_REF: return createVarRef();
+      case NetDSLPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
+      case NetDSLPackage.STRING_LITERAL: return createStringLiteral();
+      case NetDSLPackage.DOUBLE_LITERAL: return createDoubleLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -121,6 +201,17 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public net.certware.evidence.hugin.netDSL.Integer createInteger()
+  {
+    IntegerImpl integer = new IntegerImpl();
+    return integer;
   }
 
   /**
@@ -315,6 +406,17 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public DataItemList createDataItemList()
+  {
+    DataItemListImpl dataItemList = new DataItemListImpl();
+    return dataItemList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public UnstructuredDataList createUnstructuredDataList()
   {
     UnstructuredDataListImpl unstructuredDataList = new UnstructuredDataListImpl();
@@ -491,6 +593,17 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ExpressionSequence createExpressionSequence()
+  {
+    ExpressionSequenceImpl expressionSequence = new ExpressionSequenceImpl();
+    return expressionSequence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expression createExpression()
   {
     ExpressionImpl expression = new ExpressionImpl();
@@ -502,10 +615,10 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SimpleExpression createSimpleExpression()
+  public assignmentOpExpression createassignmentOpExpression()
   {
-    SimpleExpressionImpl simpleExpression = new SimpleExpressionImpl();
-    return simpleExpression;
+    assignmentOpExpressionImpl assignmentOpExpression = new assignmentOpExpressionImpl();
+    return assignmentOpExpression;
   }
 
   /**
@@ -513,10 +626,10 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Term createTerm()
+  public orExpression createorExpression()
   {
-    TermImpl term = new TermImpl();
-    return term;
+    orExpressionImpl orExpression = new orExpressionImpl();
+    return orExpression;
   }
 
   /**
@@ -524,10 +637,10 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpFactor createExpFactor()
+  public andExpression createandExpression()
   {
-    ExpFactorImpl expFactor = new ExpFactorImpl();
-    return expFactor;
+    andExpressionImpl andExpression = new andExpressionImpl();
+    return andExpression;
   }
 
   /**
@@ -535,10 +648,10 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Factor createFactor()
+  public relationalExpression createrelationalExpression()
   {
-    FactorImpl factor = new FactorImpl();
-    return factor;
+    relationalExpressionImpl relationalExpression = new relationalExpressionImpl();
+    return relationalExpression;
   }
 
   /**
@@ -546,10 +659,197 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpressionSequence createExpressionSequence()
+  public additiveExpression createadditiveExpression()
   {
-    ExpressionSequenceImpl expressionSequence = new ExpressionSequenceImpl();
-    return expressionSequence;
+    additiveExpressionImpl additiveExpression = new additiveExpressionImpl();
+    return additiveExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public multiplicativeExpression createmultiplicativeExpression()
+  {
+    multiplicativeExpressionImpl multiplicativeExpression = new multiplicativeExpressionImpl();
+    return multiplicativeExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public unaryExpression createunaryExpression()
+  {
+    unaryExpressionImpl unaryExpression = new unaryExpressionImpl();
+    return unaryExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operator createOperator()
+  {
+    OperatorImpl operator = new OperatorImpl();
+    return operator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TermExpression createTermExpression()
+  {
+    TermExpressionImpl termExpression = new TermExpressionImpl();
+    return termExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TermLiteral createTermLiteral()
+  {
+    TermLiteralImpl termLiteral = new TermLiteralImpl();
+    return termLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntegerLiteral createIntegerLiteral()
+  {
+    IntegerLiteralImpl integerLiteral = new IntegerLiteralImpl();
+    return integerLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Assignment createAssignment()
+  {
+    AssignmentImpl assignment = new AssignmentImpl();
+    return assignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AssignmentOp createAssignmentOp()
+  {
+    AssignmentOpImpl assignmentOp = new AssignmentOpImpl();
+    return assignmentOp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OrExp createOrExp()
+  {
+    OrExpImpl orExp = new OrExpImpl();
+    return orExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndExp createAndExp()
+  {
+    AndExpImpl andExp = new AndExpImpl();
+    return andExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationalExp createRelationalExp()
+  {
+    RelationalExpImpl relationalExp = new RelationalExpImpl();
+    return relationalExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AdditiveExp createAdditiveExp()
+  {
+    AdditiveExpImpl additiveExp = new AdditiveExpImpl();
+    return additiveExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiplicativeExp createMultiplicativeExp()
+  {
+    MultiplicativeExpImpl multiplicativeExp = new MultiplicativeExpImpl();
+    return multiplicativeExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarRef createVarRef()
+  {
+    VarRefImpl varRef = new VarRefImpl();
+    return varRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanLiteral createBooleanLiteral()
+  {
+    BooleanLiteralImpl booleanLiteral = new BooleanLiteralImpl();
+    return booleanLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringLiteral createStringLiteral()
+  {
+    StringLiteralImpl stringLiteral = new StringLiteralImpl();
+    return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DoubleLiteral createDoubleLiteral()
+  {
+    DoubleLiteralImpl doubleLiteral = new DoubleLiteralImpl();
+    return doubleLiteral;
   }
 
   /**

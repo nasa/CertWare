@@ -6,7 +6,6 @@ import java.util.Map;
 
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.verification.checklist.Checklist;
-import net.certware.verification.checklist.ChecklistPackage;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -52,8 +51,8 @@ public class ReadModelFile
 	 * @param checklist checklist object to write
 	 */
 	static public void writeChecklist(final IFile ifile, Checklist checklist) {
-		@SuppressWarnings("unused") // ensures the package is registered
-		ChecklistPackage checklistPackage = ChecklistPackage.eINSTANCE;
+		//@SuppressWarnings("unused") // ensures the package is registered
+		//ChecklistPackage checklistPackage = ChecklistPackage.eINSTANCE;
 
 		// ResourceSet resourceSet = new ResourceSetImpl();
 		final Resource resource = checklist.eResource();

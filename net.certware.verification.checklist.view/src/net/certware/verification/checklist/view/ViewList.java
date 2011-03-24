@@ -92,7 +92,7 @@ import org.eclipse.ui.help.IWorkbenchHelpSystem;
 import org.eclipse.ui.part.ViewPart;
 
 /**
- * Provides a list view of a checklist model, including buttons for updating the content.
+ * Provides a list view of a checklist model, including combo box editor for updating the result field.
  * @author mrb
  * @since 1.2.1
  */
@@ -116,31 +116,57 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	private IPartListener2 activeEditorListener = null;
 	/** context provider for help system adapter */
 	static ContextProvider contextprovider = null;
+	/** table viewer */
 	private TableViewer tableViewer = null;
+	/** context heading form section */
 	private Section context;
+	/** table items form section */
 	private Section items;
+	/** checklist name link */
 	private Hyperlink checklistText;
+	/** yes item filter */
 	private MenuItem itemYesFilterMenuItem;
+	/** no item filter */
 	private MenuItem itemNoFilterMenuItem;
+	/** unknown item filter */
 	private MenuItem itemUnknownFilterMenuItem;
+	/** N/A item filter */
 	private MenuItem itemNaFilterMenuItem;
+	/** version label */
 	private Label checklistVersion;
+	/** whether the model is dirty */
 	protected boolean dirty = false;
+	/** checklist name prefix */
 	private static final String CHECKLIST_LABEL = "Checklist: ";
+	/** checklist version prefix */
 	private static final String CHECKLIST_VERSION = "Version: ";
+	/** checklist name tool tip */
 	private static final String CHECKLIST_TOOL_TIP = "Checklist model name";
+	/** memento for column width */
 	private static final String MEMENTO_COLUMN_CATEGORY = "memento.category"; //$NON-NLS-1$
+	/** memento for column width */
 	private static final String MEMENTO_COLUMN_ID = "memento.id"; //$NON-NLS-1$
+	/** memento for column width */
 	private static final String MEMENTO_COLUMN_DESCRIPTION = "memento.description"; //$NON-NLS-1$
+	/** memento for column width */
 	private static final String MEMENTO_COLUMN_REFERENCE = "memento.reference"; //$NON-NLS-1$
+	/** memento for column width */
 	private static final String MEMENTO_COLUMN_COMMENT = "memento.comment"; //$NON-NLS-1$
+	/** memento for column width */
 	private static final String MEMENTO_COLUMN_CHOICES = "memento.choices"; //$NON-NLS-1$
+	/** memento for section expanded */
 	private static final String MEMENTO_SECTION_CONTEXT = "memento.context"; //$NON-NLS-1$
+	/** memento for section expanded */
 	private static final String MEMENTO_SECTION_ITEMS = "memento.items"; //$NON-NLS-1$
+	/** memento for file selection */
 	private static final String MEMENTO_FILE = "memento.file"; //$NON-NLS-1$
+	/** memento for filter state */
 	private static final String MEMENTO_FILTER_YES = "memento.filter.yes"; //$NON-NLS-1$
+	/** memento for filter state */
 	private static final String MEMENTO_FILTER_NO = "memento.filter.no"; //$NON-NLS-1$
+	/** memento for filter state */
 	private static final String MEMENTO_FILTER_UNKNOWN = "memento.filter.unknown"; //$NON-NLS-1$
+	/** memento for filter state */
 	private static final String MEMENTO_FILTER_NA = "memento.filter.na"; //$NON-NLS-1$
 
 	/**
@@ -163,7 +189,8 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	 * Saves the view state.  
 	 * The selected file and messages file are saved as a memento by file name.
 	 * @param memento memento to save
-	 * @see org.eclipse.ui.IViewPart#saveState(IMemento) */
+	 * @see org.eclipse.ui.IViewPart#saveState(IMemento) 
+	 */
 	@Override
 	public void saveState(IMemento memento)
 	{
@@ -670,6 +697,10 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		form.setFocus();
 	}
 
+	/**
+	 * Run the save handler.
+	 * @param progress monitor, unused
+	 */
 	@Override
 	public void doSave(IProgressMonitor monitor) {
 	    String commandId = "net.certware.verification.checklist.view.save"; //$NON-NLS-1$
@@ -684,30 +715,56 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 
 	}
 
+	/**
+	 * Save as not supported.  Copy the resource instead.
+	 */
 	@Override
 	public void doSaveAs() {
 		// not needed
 	}
 
+	/**
+	 * Returns the dirty flag.
+	 * @return dirty flag
+	 */
 	@Override
 	public boolean isDirty() {
 		return dirty;
 	}
 
+	/**
+	 * Sets the dirty flag
+	 * @param d dirty flag new value
+	 */
 	public void setDirty(boolean d) {
 		dirty = d;
 	}
 	
+	/**
+	 * Whether save as allowed.
+	 * @return always returns false
+	 */
 	@Override
 	public boolean isSaveAsAllowed() {
 		return false;
 	}
 
+	/**
+	 * Whether save on close is needed.
+	 * @return defers to isDirty()
+	 */
 	@Override
 	public boolean isSaveOnCloseNeeded() {
 		return isDirty();
 	}
 
+	/**
+	 * Responds to resource changed events.
+	 * Listens to removed and changed events.
+	 * If removed, clears the view.
+	 * If changed, updates the display with previous selection and new content.
+	 * @param event resource change event
+	 */
 	@Override
 	public void resourceChanged(IResourceChangeEvent event) {
 		final IPreferenceStore ps = Activator.getDefault().getPreferenceStore();
@@ -925,10 +982,15 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	 * @author mrb
 	 */
 	public final class ResultEditingSupport extends EditingSupport {
-
+		/** cell editor */
 		private ComboBoxViewerCellEditor cellEditor = null;
+		/** column viewer */
 		private ColumnViewer columnViewer = null;
-		
+
+		/**
+		 * Constructor sets the editor content, input, and label providers.
+		 * @param viewer column viewer for the column requiring this editor
+		 */
 		public ResultEditingSupport(ColumnViewer viewer) {
 			super(viewer);
 			columnViewer = viewer;
@@ -972,15 +1034,13 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		@Override
 		protected void setValue(Object element, Object value) {
 			if (element instanceof ChecklistModel && value instanceof Choices) {
-				ChecklistModel data = (ChecklistModel) element;
-				Choices newValue = (Choices) value;
+				ChecklistModel data = (ChecklistModel)element;
+				Choices newValue = (Choices)value;
 				data.setResult(newValue); // changes the list
 				data.getItem().setResult(newValue); // changes the model
+				columnViewer.update(element, null); // changes the display
 				setDirty(true);
-				columnViewer.update(element, null); // update editor display
-				System.err.println("changed to " + newValue);
 			}
 		}
-
 	}
 }

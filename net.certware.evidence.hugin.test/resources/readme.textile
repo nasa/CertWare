@@ -5,8 +5,9 @@ This test plugin contains resources for exercising the Hugin DSL implementation.
 
 * "Bayesian Network Repository":http://www.cs.huji.ac.il/~galel/Repository/
 * "Hugin Developer Samples":http://www.hugin.com/developer/samples
+* UCLA SamIam network samples folder.
 
-March 1, 2011
+March 23, 2011
 
 
 

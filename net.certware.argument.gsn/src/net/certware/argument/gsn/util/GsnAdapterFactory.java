@@ -11,7 +11,6 @@ import net.certware.argument.arm.Claim;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.ReasoningElement;
-import net.certware.argument.gsn.*;
 import net.certware.argument.gsn.Assumption;
 import net.certware.argument.gsn.Context;
 import net.certware.argument.gsn.Evidence;

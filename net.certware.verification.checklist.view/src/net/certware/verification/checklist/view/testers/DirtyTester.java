@@ -48,7 +48,7 @@ public class DirtyTester extends PropertyTester
       ViewList viewList = (ViewList)wp;
       dirty = viewList.isDirty();
     } catch( Exception e ) {
-      System.err.println(String.format("%s %s", "view list dirty tester" + e.getMessage())); //$NON-NLS-1$
+      System.err.println(String.format("%s %s", "view list dirty tester", e.getMessage())); //$NON-NLS-1$
     }
     
     if ( "isDirty".equals(property) ) //$NON-NLS-1$

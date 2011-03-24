@@ -137,14 +137,6 @@
                     type="net.certware.measurement.sco.ArtifactIdentifier">
              </input>
          </propertySection>
-         <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id=".section."
-               tab="Base">
-             <input
-                    type=".">
-             </input>
-         </propertySection>
       </propertySections>
    </extension>
 </plugin>

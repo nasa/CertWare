@@ -5,25 +5,15 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
-import java.util.Collection;
-
 import net.certware.evidence.hugin.netDSL.Expression;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
-import net.certware.evidence.hugin.netDSL.SimpleExpression;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,8 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.evidence.hugin.netDSL.impl.ExpressionImpl#getLhs <em>Lhs</em>}</li>
- *   <li>{@link net.certware.evidence.hugin.netDSL.impl.ExpressionImpl#getRhs <em>Rhs</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.impl.ExpressionImpl#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,24 +31,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
 {
   /**
-   * The cached value of the '{@link #getLhs() <em>Lhs</em>}' containment reference.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLhs()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected SimpleExpression lhs;
+  protected static final String OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getRhs() <em>Rhs</em>}' containment reference list.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRhs()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected EList<SimpleExpression> rhs;
+  protected String op = OP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -87,9 +76,9 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public SimpleExpression getLhs()
+  public String getOp()
   {
-    return lhs;
+    return op;
   }
 
   /**
@@ -97,69 +86,12 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLhs(SimpleExpression newLhs, NotificationChain msgs)
+  public void setOp(String newOp)
   {
-    SimpleExpression oldLhs = lhs;
-    lhs = newLhs;
+    String oldOp = op;
+    op = newOp;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetDSLPackage.EXPRESSION__LHS, oldLhs, newLhs);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLhs(SimpleExpression newLhs)
-  {
-    if (newLhs != lhs)
-    {
-      NotificationChain msgs = null;
-      if (lhs != null)
-        msgs = ((InternalEObject)lhs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.EXPRESSION__LHS, null, msgs);
-      if (newLhs != null)
-        msgs = ((InternalEObject)newLhs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.EXPRESSION__LHS, null, msgs);
-      msgs = basicSetLhs(newLhs, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, NetDSLPackage.EXPRESSION__LHS, newLhs, newLhs));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<SimpleExpression> getRhs()
-  {
-    if (rhs == null)
-    {
-      rhs = new EObjectContainmentEList<SimpleExpression>(SimpleExpression.class, this, NetDSLPackage.EXPRESSION__RHS);
-    }
-    return rhs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case NetDSLPackage.EXPRESSION__LHS:
-        return basicSetLhs(null, msgs);
-      case NetDSLPackage.EXPRESSION__RHS:
-        return ((InternalEList<?>)getRhs()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, NetDSLPackage.EXPRESSION__OP, oldOp, op));
   }
 
   /**
@@ -172,10 +104,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case NetDSLPackage.EXPRESSION__LHS:
-        return getLhs();
-      case NetDSLPackage.EXPRESSION__RHS:
-        return getRhs();
+      case NetDSLPackage.EXPRESSION__OP:
+        return getOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -185,18 +115,13 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case NetDSLPackage.EXPRESSION__LHS:
-        setLhs((SimpleExpression)newValue);
-        return;
-      case NetDSLPackage.EXPRESSION__RHS:
-        getRhs().clear();
-        getRhs().addAll((Collection<? extends SimpleExpression>)newValue);
+      case NetDSLPackage.EXPRESSION__OP:
+        setOp((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,11 +137,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case NetDSLPackage.EXPRESSION__LHS:
-        setLhs((SimpleExpression)null);
-        return;
-      case NetDSLPackage.EXPRESSION__RHS:
-        getRhs().clear();
+      case NetDSLPackage.EXPRESSION__OP:
+        setOp(OP_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -232,12 +154,27 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case NetDSLPackage.EXPRESSION__LHS:
-        return lhs != null;
-      case NetDSLPackage.EXPRESSION__RHS:
-        return rhs != null && !rhs.isEmpty();
+      case NetDSLPackage.EXPRESSION__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (op: ");
+    result.append(op);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExpressionImpl

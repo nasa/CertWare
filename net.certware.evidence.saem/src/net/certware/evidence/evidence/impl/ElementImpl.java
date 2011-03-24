@@ -8,7 +8,6 @@ import net.certware.evidence.evidence.Element;
 import net.certware.evidence.evidence.EvidencePackage;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**

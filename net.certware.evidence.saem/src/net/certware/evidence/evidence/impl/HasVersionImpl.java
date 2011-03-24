@@ -8,9 +8,7 @@ import net.certware.evidence.evidence.EvidencePackage;
 import net.certware.evidence.evidence.HasVersion;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
