@@ -69,27 +69,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PotentialAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="PotentialDataAttribute" eSuperTypes="#//PotentialAttribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" eType="#//DataItemList"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//MatrixRow"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataItemList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//FloatDataList"
+  <eClassifiers xsi:type="ecore:EClass" name="MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r5" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r4" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r3" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r2" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r1" eType="#//MatrixRow"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnstructuredDataList" eSuperTypes="#//DataItemList"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StructuredDataList" eSuperTypes="#//DataItemList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
-        eType="#//StructuredDataList" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FloatDataList">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="items" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mean" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PotentialTableAttribute">
+  <eClassifiers xsi:type="ecore:EClass" name="PotentialTableAttribute" eSuperTypes="#//PotentialAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" eType="#//ModelNodesAttribute"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="samples" eType="#//SamplesAttribute"
@@ -173,6 +168,26 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="y" eType="#//Integer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List5" eSuperTypes="#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List4" eSuperTypes="#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List3" eSuperTypes="#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List2" eSuperTypes="#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List1" eSuperTypes="#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//unaryExpression" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//assignmentOpExpression"
         containment="true"/>
@@ -225,6 +240,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DoubleLiteral" eSuperTypes="#//TermLiteral">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
 </ecore:EPackage>

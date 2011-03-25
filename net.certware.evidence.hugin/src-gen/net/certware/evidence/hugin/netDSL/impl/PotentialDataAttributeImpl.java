@@ -5,7 +5,7 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
-import net.certware.evidence.hugin.netDSL.DataItemList;
+import net.certware.evidence.hugin.netDSL.MatrixRow;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.PotentialDataAttribute;
 
@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.evidence.hugin.netDSL.impl.PotentialDataAttributeImpl#getItems <em>Items</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.impl.PotentialDataAttributeImpl#getData <em>Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,14 +33,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class PotentialDataAttributeImpl extends PotentialAttributeImpl implements PotentialDataAttribute
 {
   /**
-   * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference.
+   * The cached value of the '{@link #getData() <em>Data</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItems()
+   * @see #getData()
    * @generated
    * @ordered
    */
-  protected DataItemList items;
+  protected MatrixRow data;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataItemList getItems()
+  public MatrixRow getData()
   {
-    return items;
+    return data;
   }
 
   /**
@@ -78,13 +78,13 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetItems(DataItemList newItems, NotificationChain msgs)
+  public NotificationChain basicSetData(MatrixRow newData, NotificationChain msgs)
   {
-    DataItemList oldItems = items;
-    items = newItems;
+    MatrixRow oldData = data;
+    data = newData;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS, oldItems, newItems);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA, oldData, newData);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -95,20 +95,20 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setItems(DataItemList newItems)
+  public void setData(MatrixRow newData)
   {
-    if (newItems != items)
+    if (newData != data)
     {
       NotificationChain msgs = null;
-      if (items != null)
-        msgs = ((InternalEObject)items).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS, null, msgs);
-      if (newItems != null)
-        msgs = ((InternalEObject)newItems).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS, null, msgs);
-      msgs = basicSetItems(newItems, msgs);
+      if (data != null)
+        msgs = ((InternalEObject)data).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA, null, msgs);
+      if (newData != null)
+        msgs = ((InternalEObject)newData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA, null, msgs);
+      msgs = basicSetData(newData, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS, newItems, newItems));
+      eNotify(new ENotificationImpl(this, Notification.SET, NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA, newData, newData));
   }
 
   /**
@@ -121,8 +121,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
   {
     switch (featureID)
     {
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
-        return basicSetItems(null, msgs);
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA:
+        return basicSetData(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,8 +137,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
   {
     switch (featureID)
     {
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
-        return getItems();
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA:
+        return getData();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +153,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
   {
     switch (featureID)
     {
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
-        setItems((DataItemList)newValue);
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA:
+        setData((MatrixRow)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +170,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
   {
     switch (featureID)
     {
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
-        setItems((DataItemList)null);
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA:
+        setData((MatrixRow)null);
         return;
     }
     super.eUnset(featureID);
@@ -187,8 +187,8 @@ public class PotentialDataAttributeImpl extends PotentialAttributeImpl implement
   {
     switch (featureID)
     {
-      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__ITEMS:
-        return items != null;
+      case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE__DATA:
+        return data != null;
     }
     return super.eIsSet(featureID);
   }

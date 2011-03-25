@@ -18,18 +18,22 @@ import net.certware.evidence.hugin.netDSL.BooleanLiteral;
 import net.certware.evidence.hugin.netDSL.ClassDefinition;
 import net.certware.evidence.hugin.netDSL.ClassElement;
 import net.certware.evidence.hugin.netDSL.ClassInstance;
-import net.certware.evidence.hugin.netDSL.DataItemList;
 import net.certware.evidence.hugin.netDSL.DomainDefinition;
 import net.certware.evidence.hugin.netDSL.DomainElement;
 import net.certware.evidence.hugin.netDSL.DomainHeader;
 import net.certware.evidence.hugin.netDSL.DoubleLiteral;
 import net.certware.evidence.hugin.netDSL.Expression;
 import net.certware.evidence.hugin.netDSL.ExpressionSequence;
-import net.certware.evidence.hugin.netDSL.FloatDataList;
 import net.certware.evidence.hugin.netDSL.InputBinding;
 import net.certware.evidence.hugin.netDSL.InputBindings;
 import net.certware.evidence.hugin.netDSL.IntegerLiteral;
 import net.certware.evidence.hugin.netDSL.LabelAttribute;
+import net.certware.evidence.hugin.netDSL.List1;
+import net.certware.evidence.hugin.netDSL.List2;
+import net.certware.evidence.hugin.netDSL.List3;
+import net.certware.evidence.hugin.netDSL.List4;
+import net.certware.evidence.hugin.netDSL.List5;
+import net.certware.evidence.hugin.netDSL.MatrixRow;
 import net.certware.evidence.hugin.netDSL.Model;
 import net.certware.evidence.hugin.netDSL.ModelDataAttribute;
 import net.certware.evidence.hugin.netDSL.ModelNodesAttribute;
@@ -37,7 +41,6 @@ import net.certware.evidence.hugin.netDSL.MultiplicativeExp;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.NodeAttributes;
 import net.certware.evidence.hugin.netDSL.NodeSizeAttribute;
-import net.certware.evidence.hugin.netDSL.NormalDistribution;
 import net.certware.evidence.hugin.netDSL.Operator;
 import net.certware.evidence.hugin.netDSL.OrExp;
 import net.certware.evidence.hugin.netDSL.OutputBinding;
@@ -54,11 +57,9 @@ import net.certware.evidence.hugin.netDSL.SamplesAttribute;
 import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
 import net.certware.evidence.hugin.netDSL.StatesAttribute;
 import net.certware.evidence.hugin.netDSL.StringLiteral;
-import net.certware.evidence.hugin.netDSL.StructuredDataList;
 import net.certware.evidence.hugin.netDSL.SubtypeAttribute;
 import net.certware.evidence.hugin.netDSL.TermExpression;
 import net.certware.evidence.hugin.netDSL.TermLiteral;
-import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
 import net.certware.evidence.hugin.netDSL.VarRef;
 import net.certware.evidence.hugin.netDSL.additiveExpression;
 import net.certware.evidence.hugin.netDSL.andExpression;
@@ -311,40 +312,10 @@ public class NetDSLSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case NetDSLPackage.DATA_ITEM_LIST:
+      case NetDSLPackage.MATRIX_ROW:
       {
-        DataItemList dataItemList = (DataItemList)theEObject;
-        T result = caseDataItemList(dataItemList);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case NetDSLPackage.UNSTRUCTURED_DATA_LIST:
-      {
-        UnstructuredDataList unstructuredDataList = (UnstructuredDataList)theEObject;
-        T result = caseUnstructuredDataList(unstructuredDataList);
-        if (result == null) result = caseDataItemList(unstructuredDataList);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case NetDSLPackage.STRUCTURED_DATA_LIST:
-      {
-        StructuredDataList structuredDataList = (StructuredDataList)theEObject;
-        T result = caseStructuredDataList(structuredDataList);
-        if (result == null) result = caseDataItemList(structuredDataList);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case NetDSLPackage.FLOAT_DATA_LIST:
-      {
-        FloatDataList floatDataList = (FloatDataList)theEObject;
-        T result = caseFloatDataList(floatDataList);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case NetDSLPackage.NORMAL_DISTRIBUTION:
-      {
-        NormalDistribution normalDistribution = (NormalDistribution)theEObject;
-        T result = caseNormalDistribution(normalDistribution);
+        MatrixRow matrixRow = (MatrixRow)theEObject;
+        T result = caseMatrixRow(matrixRow);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -352,6 +323,7 @@ public class NetDSLSwitch<T>
       {
         PotentialTableAttribute potentialTableAttribute = (PotentialTableAttribute)theEObject;
         T result = casePotentialTableAttribute(potentialTableAttribute);
+        if (result == null) result = casePotentialAttribute(potentialTableAttribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -591,6 +563,46 @@ public class NetDSLSwitch<T>
         if (result == null) result = caseorExpression(integerLiteral);
         if (result == null) result = caseassignmentOpExpression(integerLiteral);
         if (result == null) result = caseExpression(integerLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case NetDSLPackage.LIST5:
+      {
+        List5 list5 = (List5)theEObject;
+        T result = caseList5(list5);
+        if (result == null) result = caseMatrixRow(list5);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case NetDSLPackage.LIST4:
+      {
+        List4 list4 = (List4)theEObject;
+        T result = caseList4(list4);
+        if (result == null) result = caseMatrixRow(list4);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case NetDSLPackage.LIST3:
+      {
+        List3 list3 = (List3)theEObject;
+        T result = caseList3(list3);
+        if (result == null) result = caseMatrixRow(list3);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case NetDSLPackage.LIST2:
+      {
+        List2 list2 = (List2)theEObject;
+        T result = caseList2(list2);
+        if (result == null) result = caseMatrixRow(list2);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case NetDSLPackage.LIST1:
+      {
+        List1 list1 = (List1)theEObject;
+        T result = caseList1(list1);
+        if (result == null) result = caseMatrixRow(list1);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1048,81 +1060,17 @@ public class NetDSLSwitch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Item List</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Matrix Row</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Item List</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Matrix Row</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataItemList(DataItemList object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Unstructured Data List</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unstructured Data List</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnstructuredDataList(UnstructuredDataList object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Structured Data List</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Structured Data List</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStructuredDataList(StructuredDataList object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Float Data List</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Float Data List</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFloatDataList(FloatDataList object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Normal Distribution</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Normal Distribution</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNormalDistribution(NormalDistribution object)
+  public T caseMatrixRow(MatrixRow object)
   {
     return null;
   }
@@ -1523,6 +1471,86 @@ public class NetDSLSwitch<T>
    * @generated
    */
   public T caseIntegerLiteral(IntegerLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List5</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List5</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseList5(List5 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List4</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List4</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseList4(List4 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List3</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List3</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseList3(List3 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List2</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List2</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseList2(List2 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List1</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List1</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseList1(List1 object)
   {
     return null;
   }

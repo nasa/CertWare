@@ -16,18 +16,22 @@ import net.certware.evidence.hugin.netDSL.BooleanLiteral;
 import net.certware.evidence.hugin.netDSL.ClassDefinition;
 import net.certware.evidence.hugin.netDSL.ClassElement;
 import net.certware.evidence.hugin.netDSL.ClassInstance;
-import net.certware.evidence.hugin.netDSL.DataItemList;
 import net.certware.evidence.hugin.netDSL.DomainDefinition;
 import net.certware.evidence.hugin.netDSL.DomainElement;
 import net.certware.evidence.hugin.netDSL.DomainHeader;
 import net.certware.evidence.hugin.netDSL.DoubleLiteral;
 import net.certware.evidence.hugin.netDSL.Expression;
 import net.certware.evidence.hugin.netDSL.ExpressionSequence;
-import net.certware.evidence.hugin.netDSL.FloatDataList;
 import net.certware.evidence.hugin.netDSL.InputBinding;
 import net.certware.evidence.hugin.netDSL.InputBindings;
 import net.certware.evidence.hugin.netDSL.IntegerLiteral;
 import net.certware.evidence.hugin.netDSL.LabelAttribute;
+import net.certware.evidence.hugin.netDSL.List1;
+import net.certware.evidence.hugin.netDSL.List2;
+import net.certware.evidence.hugin.netDSL.List3;
+import net.certware.evidence.hugin.netDSL.List4;
+import net.certware.evidence.hugin.netDSL.List5;
+import net.certware.evidence.hugin.netDSL.MatrixRow;
 import net.certware.evidence.hugin.netDSL.Model;
 import net.certware.evidence.hugin.netDSL.ModelDataAttribute;
 import net.certware.evidence.hugin.netDSL.ModelNodesAttribute;
@@ -36,7 +40,6 @@ import net.certware.evidence.hugin.netDSL.NetDSLFactory;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.NodeAttributes;
 import net.certware.evidence.hugin.netDSL.NodeSizeAttribute;
-import net.certware.evidence.hugin.netDSL.NormalDistribution;
 import net.certware.evidence.hugin.netDSL.Operator;
 import net.certware.evidence.hugin.netDSL.OrExp;
 import net.certware.evidence.hugin.netDSL.OutputBinding;
@@ -53,11 +56,9 @@ import net.certware.evidence.hugin.netDSL.SamplesAttribute;
 import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
 import net.certware.evidence.hugin.netDSL.StatesAttribute;
 import net.certware.evidence.hugin.netDSL.StringLiteral;
-import net.certware.evidence.hugin.netDSL.StructuredDataList;
 import net.certware.evidence.hugin.netDSL.SubtypeAttribute;
 import net.certware.evidence.hugin.netDSL.TermExpression;
 import net.certware.evidence.hugin.netDSL.TermLiteral;
-import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
 import net.certware.evidence.hugin.netDSL.VarRef;
 import net.certware.evidence.hugin.netDSL.additiveExpression;
 import net.certware.evidence.hugin.netDSL.andExpression;
@@ -220,35 +221,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dataItemListEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass unstructuredDataListEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass structuredDataListEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass floatDataListEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass normalDistributionEClass = null;
+  private EClass matrixRowEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -424,6 +397,41 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * @generated
    */
   private EClass integerLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass list5EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass list4EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass list3EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass list2EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass list1EClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -970,7 +978,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPotentialDataAttribute_Items()
+  public EReference getPotentialDataAttribute_Data()
   {
     return (EReference)potentialDataAttributeEClass.getEStructuralFeatures().get(0);
   }
@@ -980,9 +988,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDataItemList()
+  public EClass getMatrixRow()
   {
-    return dataItemListEClass;
+    return matrixRowEClass;
   }
 
   /**
@@ -990,9 +998,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDataItemList_List()
+  public EReference getMatrixRow_R5()
   {
-    return (EReference)dataItemListEClass.getEStructuralFeatures().get(0);
+    return (EReference)matrixRowEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1000,9 +1008,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUnstructuredDataList()
+  public EReference getMatrixRow_R4()
   {
-    return unstructuredDataListEClass;
+    return (EReference)matrixRowEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1010,9 +1018,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStructuredDataList()
+  public EReference getMatrixRow_R3()
   {
-    return structuredDataListEClass;
+    return (EReference)matrixRowEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1020,9 +1028,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStructuredDataList_Items()
+  public EReference getMatrixRow_R2()
   {
-    return (EReference)structuredDataListEClass.getEStructuralFeatures().get(0);
+    return (EReference)matrixRowEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1030,49 +1038,9 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFloatDataList()
+  public EReference getMatrixRow_R1()
   {
-    return floatDataListEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFloatDataList_Items()
-  {
-    return (EAttribute)floatDataListEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getNormalDistribution()
-  {
-    return normalDistributionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getNormalDistribution_Mean()
-  {
-    return (EAttribute)normalDistributionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getNormalDistribution_Variance()
-  {
-    return (EAttribute)normalDistributionEClass.getEStructuralFeatures().get(1);
+    return (EReference)matrixRowEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1610,6 +1578,106 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getList5()
+  {
+    return list5EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getList5_List()
+  {
+    return (EReference)list5EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getList4()
+  {
+    return list4EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getList4_List()
+  {
+    return (EReference)list4EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getList3()
+  {
+    return list3EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getList3_List()
+  {
+    return (EReference)list3EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getList2()
+  {
+    return list2EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getList2_List()
+  {
+    return (EReference)list2EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getList1()
+  {
+    return list1EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getList1_Items()
+  {
+    return (EReference)list1EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAssignment()
   {
     return assignmentEClass;
@@ -1983,22 +2051,14 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     potentialAttributeEClass = createEClass(POTENTIAL_ATTRIBUTE);
 
     potentialDataAttributeEClass = createEClass(POTENTIAL_DATA_ATTRIBUTE);
-    createEReference(potentialDataAttributeEClass, POTENTIAL_DATA_ATTRIBUTE__ITEMS);
+    createEReference(potentialDataAttributeEClass, POTENTIAL_DATA_ATTRIBUTE__DATA);
 
-    dataItemListEClass = createEClass(DATA_ITEM_LIST);
-    createEReference(dataItemListEClass, DATA_ITEM_LIST__LIST);
-
-    unstructuredDataListEClass = createEClass(UNSTRUCTURED_DATA_LIST);
-
-    structuredDataListEClass = createEClass(STRUCTURED_DATA_LIST);
-    createEReference(structuredDataListEClass, STRUCTURED_DATA_LIST__ITEMS);
-
-    floatDataListEClass = createEClass(FLOAT_DATA_LIST);
-    createEAttribute(floatDataListEClass, FLOAT_DATA_LIST__ITEMS);
-
-    normalDistributionEClass = createEClass(NORMAL_DISTRIBUTION);
-    createEAttribute(normalDistributionEClass, NORMAL_DISTRIBUTION__MEAN);
-    createEAttribute(normalDistributionEClass, NORMAL_DISTRIBUTION__VARIANCE);
+    matrixRowEClass = createEClass(MATRIX_ROW);
+    createEReference(matrixRowEClass, MATRIX_ROW__R5);
+    createEReference(matrixRowEClass, MATRIX_ROW__R4);
+    createEReference(matrixRowEClass, MATRIX_ROW__R3);
+    createEReference(matrixRowEClass, MATRIX_ROW__R2);
+    createEReference(matrixRowEClass, MATRIX_ROW__R1);
 
     potentialTableAttributeEClass = createEClass(POTENTIAL_TABLE_ATTRIBUTE);
     createEReference(potentialTableAttributeEClass, POTENTIAL_TABLE_ATTRIBUTE__NODES);
@@ -2077,6 +2137,21 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     createEReference(integerLiteralEClass, INTEGER_LITERAL__X);
     createEReference(integerLiteralEClass, INTEGER_LITERAL__Y);
     createEAttribute(integerLiteralEClass, INTEGER_LITERAL__VALUE);
+
+    list5EClass = createEClass(LIST5);
+    createEReference(list5EClass, LIST5__LIST);
+
+    list4EClass = createEClass(LIST4);
+    createEReference(list4EClass, LIST4__LIST);
+
+    list3EClass = createEClass(LIST3);
+    createEReference(list3EClass, LIST3__LIST);
+
+    list2EClass = createEClass(LIST2);
+    createEReference(list2EClass, LIST2__LIST);
+
+    list1EClass = createEClass(LIST1);
+    createEReference(list1EClass, LIST1__ITEMS);
 
     assignmentEClass = createEClass(ASSIGNMENT);
     createEReference(assignmentEClass, ASSIGNMENT__LEFT);
@@ -2163,8 +2238,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     nodeSizeAttributeEClass.getESuperTypes().add(this.getAttribute());
     potentialEClass.getESuperTypes().add(this.getDomainElement());
     potentialDataAttributeEClass.getESuperTypes().add(this.getPotentialAttribute());
-    unstructuredDataListEClass.getESuperTypes().add(this.getDataItemList());
-    structuredDataListEClass.getESuperTypes().add(this.getDataItemList());
+    potentialTableAttributeEClass.getESuperTypes().add(this.getPotentialAttribute());
     classDefinitionEClass.getESuperTypes().add(this.getDomainElement());
     classInstanceEClass.getESuperTypes().add(this.getClassElement());
     assignmentOpExpressionEClass.getESuperTypes().add(this.getExpression());
@@ -2179,6 +2253,11 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     termLiteralEClass.getESuperTypes().add(this.getTermExpression());
     integerLiteralEClass.getESuperTypes().add(this.getPositionAttribute());
     integerLiteralEClass.getESuperTypes().add(this.getTermLiteral());
+    list5EClass.getESuperTypes().add(this.getMatrixRow());
+    list4EClass.getESuperTypes().add(this.getMatrixRow());
+    list3EClass.getESuperTypes().add(this.getMatrixRow());
+    list2EClass.getESuperTypes().add(this.getMatrixRow());
+    list1EClass.getESuperTypes().add(this.getMatrixRow());
     assignmentEClass.getESuperTypes().add(this.getExpression());
     assignmentOpEClass.getESuperTypes().add(this.getassignmentOpExpression());
     orExpEClass.getESuperTypes().add(this.getorExpression());
@@ -2250,22 +2329,14 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     initEClass(potentialAttributeEClass, PotentialAttribute.class, "PotentialAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(potentialDataAttributeEClass, PotentialDataAttribute.class, "PotentialDataAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPotentialDataAttribute_Items(), this.getDataItemList(), null, "items", null, 0, 1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPotentialDataAttribute_Data(), this.getMatrixRow(), null, "data", null, 0, 1, PotentialDataAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(dataItemListEClass, DataItemList.class, "DataItemList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataItemList_List(), this.getFloatDataList(), null, "list", null, 0, 1, DataItemList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(unstructuredDataListEClass, UnstructuredDataList.class, "UnstructuredDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(structuredDataListEClass, StructuredDataList.class, "StructuredDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStructuredDataList_Items(), this.getStructuredDataList(), null, "items", null, 0, -1, StructuredDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(floatDataListEClass, FloatDataList.class, "FloatDataList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFloatDataList_Items(), ecorePackage.getEString(), "items", null, 0, -1, FloatDataList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(normalDistributionEClass, NormalDistribution.class, "NormalDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNormalDistribution_Mean(), ecorePackage.getEString(), "mean", null, 0, 1, NormalDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNormalDistribution_Variance(), ecorePackage.getEString(), "variance", null, 0, 1, NormalDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(matrixRowEClass, MatrixRow.class, "MatrixRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMatrixRow_R5(), this.getMatrixRow(), null, "r5", null, 0, -1, MatrixRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMatrixRow_R4(), this.getMatrixRow(), null, "r4", null, 0, -1, MatrixRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMatrixRow_R3(), this.getMatrixRow(), null, "r3", null, 0, -1, MatrixRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMatrixRow_R2(), this.getMatrixRow(), null, "r2", null, 0, -1, MatrixRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMatrixRow_R1(), this.getMatrixRow(), null, "r1", null, 0, 1, MatrixRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(potentialTableAttributeEClass, PotentialTableAttribute.class, "PotentialTableAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPotentialTableAttribute_Nodes(), this.getModelNodesAttribute(), null, "nodes", null, 0, 1, PotentialTableAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2345,6 +2416,21 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     initEReference(getIntegerLiteral_Y(), this.getInteger(), null, "y", null, 0, 1, IntegerLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIntegerLiteral_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(list5EClass, List5.class, "List5", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getList5_List(), this.getMatrixRow(), null, "list", null, 0, -1, List5.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(list4EClass, List4.class, "List4", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getList4_List(), this.getMatrixRow(), null, "list", null, 0, -1, List4.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(list3EClass, List3.class, "List3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getList3_List(), this.getMatrixRow(), null, "list", null, 0, -1, List3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(list2EClass, List2.class, "List2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getList2_List(), this.getMatrixRow(), null, "list", null, 0, -1, List2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(list1EClass, List1.class, "List1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getList1_Items(), this.getunaryExpression(), null, "items", null, 0, -1, List1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAssignment_Left(), this.getassignmentOpExpression(), null, "left", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAssignment_Right(), this.getorExpression(), null, "right", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2383,7 +2469,7 @@ public class NetDSLPackageImpl extends EPackageImpl implements NetDSLPackage
     initEAttribute(getStringLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(doubleLiteralEClass, DoubleLiteral.class, "DoubleLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDoubleLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, DoubleLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDoubleLiteral_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

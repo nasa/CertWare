@@ -63,21 +63,14 @@
     </genClasses>
     <genClasses ecoreClass="NetDSL.ecore#//PotentialAttribute"/>
     <genClasses ecoreClass="NetDSL.ecore#//PotentialDataAttribute">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialDataAttribute/items"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialDataAttribute/data"/>
     </genClasses>
-    <genClasses ecoreClass="NetDSL.ecore#//DataItemList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//DataItemList/list"/>
-    </genClasses>
-    <genClasses ecoreClass="NetDSL.ecore#//UnstructuredDataList"/>
-    <genClasses ecoreClass="NetDSL.ecore#//StructuredDataList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//StructuredDataList/items"/>
-    </genClasses>
-    <genClasses ecoreClass="NetDSL.ecore#//FloatDataList">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//FloatDataList/items"/>
-    </genClasses>
-    <genClasses ecoreClass="NetDSL.ecore#//NormalDistribution">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//NormalDistribution/mean"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//NormalDistribution/variance"/>
+    <genClasses ecoreClass="NetDSL.ecore#//MatrixRow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r1"/>
     </genClasses>
     <genClasses ecoreClass="NetDSL.ecore#//PotentialTableAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialTableAttribute/nodes"/>
@@ -146,6 +139,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//IntegerLiteral/x"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//IntegerLiteral/y"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//IntegerLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List5">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List5/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List4">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List4/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List3">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List3/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List2/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List1/items"/>
     </genClasses>
     <genClasses ecoreClass="NetDSL.ecore#//Assignment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//Assignment/left"/>

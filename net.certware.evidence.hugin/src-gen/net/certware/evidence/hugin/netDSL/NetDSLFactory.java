@@ -197,49 +197,13 @@ public interface NetDSLFactory extends EFactory
   PotentialDataAttribute createPotentialDataAttribute();
 
   /**
-   * Returns a new object of class '<em>Data Item List</em>'.
+   * Returns a new object of class '<em>Matrix Row</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Item List</em>'.
+   * @return a new object of class '<em>Matrix Row</em>'.
    * @generated
    */
-  DataItemList createDataItemList();
-
-  /**
-   * Returns a new object of class '<em>Unstructured Data List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unstructured Data List</em>'.
-   * @generated
-   */
-  UnstructuredDataList createUnstructuredDataList();
-
-  /**
-   * Returns a new object of class '<em>Structured Data List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Structured Data List</em>'.
-   * @generated
-   */
-  StructuredDataList createStructuredDataList();
-
-  /**
-   * Returns a new object of class '<em>Float Data List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Float Data List</em>'.
-   * @generated
-   */
-  FloatDataList createFloatDataList();
-
-  /**
-   * Returns a new object of class '<em>Normal Distribution</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Normal Distribution</em>'.
-   * @generated
-   */
-  NormalDistribution createNormalDistribution();
+  MatrixRow createMatrixRow();
 
   /**
    * Returns a new object of class '<em>Potential Table Attribute</em>'.
@@ -465,6 +429,51 @@ public interface NetDSLFactory extends EFactory
    * @generated
    */
   IntegerLiteral createIntegerLiteral();
+
+  /**
+   * Returns a new object of class '<em>List5</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List5</em>'.
+   * @generated
+   */
+  List5 createList5();
+
+  /**
+   * Returns a new object of class '<em>List4</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List4</em>'.
+   * @generated
+   */
+  List4 createList4();
+
+  /**
+   * Returns a new object of class '<em>List3</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List3</em>'.
+   * @generated
+   */
+  List3 createList3();
+
+  /**
+   * Returns a new object of class '<em>List2</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List2</em>'.
+   * @generated
+   */
+  List2 createList2();
+
+  /**
+   * Returns a new object of class '<em>List1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List1</em>'.
+   * @generated
+   */
+  List1 createList1();
 
   /**
    * Returns a new object of class '<em>Assignment</em>'.

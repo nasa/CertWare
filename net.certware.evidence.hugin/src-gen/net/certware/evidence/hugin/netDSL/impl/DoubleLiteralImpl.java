@@ -37,7 +37,7 @@ public class DoubleLiteralImpl extends TermLiteralImpl implements DoubleLiteral
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
+  protected static final double VALUE_EDEFAULT = 0.0;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -47,7 +47,7 @@ public class DoubleLiteralImpl extends TermLiteralImpl implements DoubleLiteral
    * @generated
    * @ordered
    */
-  protected String value = VALUE_EDEFAULT;
+  protected double value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public class DoubleLiteralImpl extends TermLiteralImpl implements DoubleLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public double getValue()
   {
     return value;
   }
@@ -85,9 +85,9 @@ public class DoubleLiteralImpl extends TermLiteralImpl implements DoubleLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public void setValue(double newValue)
   {
-    String oldValue = value;
+    double oldValue = value;
     value = newValue;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, NetDSLPackage.DOUBLE_LITERAL__VALUE, oldValue, value));
@@ -120,7 +120,7 @@ public class DoubleLiteralImpl extends TermLiteralImpl implements DoubleLiteral
     switch (featureID)
     {
       case NetDSLPackage.DOUBLE_LITERAL__VALUE:
-        setValue((String)newValue);
+        setValue((Double)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class DoubleLiteralImpl extends TermLiteralImpl implements DoubleLiteral
     switch (featureID)
     {
       case NetDSLPackage.DOUBLE_LITERAL__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        return value != VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

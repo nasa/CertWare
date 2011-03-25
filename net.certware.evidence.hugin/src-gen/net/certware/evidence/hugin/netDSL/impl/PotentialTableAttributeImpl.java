@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class PotentialTableAttributeImpl extends MinimalEObjectImpl.Container implements PotentialTableAttribute
+public class PotentialTableAttributeImpl extends PotentialAttributeImpl implements PotentialTableAttribute
 {
   /**
    * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference.

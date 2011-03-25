@@ -16,18 +16,22 @@ import net.certware.evidence.hugin.netDSL.BooleanLiteral;
 import net.certware.evidence.hugin.netDSL.ClassDefinition;
 import net.certware.evidence.hugin.netDSL.ClassElement;
 import net.certware.evidence.hugin.netDSL.ClassInstance;
-import net.certware.evidence.hugin.netDSL.DataItemList;
 import net.certware.evidence.hugin.netDSL.DomainDefinition;
 import net.certware.evidence.hugin.netDSL.DomainElement;
 import net.certware.evidence.hugin.netDSL.DomainHeader;
 import net.certware.evidence.hugin.netDSL.DoubleLiteral;
 import net.certware.evidence.hugin.netDSL.Expression;
 import net.certware.evidence.hugin.netDSL.ExpressionSequence;
-import net.certware.evidence.hugin.netDSL.FloatDataList;
 import net.certware.evidence.hugin.netDSL.InputBinding;
 import net.certware.evidence.hugin.netDSL.InputBindings;
 import net.certware.evidence.hugin.netDSL.IntegerLiteral;
 import net.certware.evidence.hugin.netDSL.LabelAttribute;
+import net.certware.evidence.hugin.netDSL.List1;
+import net.certware.evidence.hugin.netDSL.List2;
+import net.certware.evidence.hugin.netDSL.List3;
+import net.certware.evidence.hugin.netDSL.List4;
+import net.certware.evidence.hugin.netDSL.List5;
+import net.certware.evidence.hugin.netDSL.MatrixRow;
 import net.certware.evidence.hugin.netDSL.Model;
 import net.certware.evidence.hugin.netDSL.ModelDataAttribute;
 import net.certware.evidence.hugin.netDSL.ModelNodesAttribute;
@@ -35,7 +39,6 @@ import net.certware.evidence.hugin.netDSL.MultiplicativeExp;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.NodeAttributes;
 import net.certware.evidence.hugin.netDSL.NodeSizeAttribute;
-import net.certware.evidence.hugin.netDSL.NormalDistribution;
 import net.certware.evidence.hugin.netDSL.Operator;
 import net.certware.evidence.hugin.netDSL.OrExp;
 import net.certware.evidence.hugin.netDSL.OutputBinding;
@@ -52,11 +55,9 @@ import net.certware.evidence.hugin.netDSL.SamplesAttribute;
 import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
 import net.certware.evidence.hugin.netDSL.StatesAttribute;
 import net.certware.evidence.hugin.netDSL.StringLiteral;
-import net.certware.evidence.hugin.netDSL.StructuredDataList;
 import net.certware.evidence.hugin.netDSL.SubtypeAttribute;
 import net.certware.evidence.hugin.netDSL.TermExpression;
 import net.certware.evidence.hugin.netDSL.TermLiteral;
-import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
 import net.certware.evidence.hugin.netDSL.VarRef;
 import net.certware.evidence.hugin.netDSL.additiveExpression;
 import net.certware.evidence.hugin.netDSL.andExpression;
@@ -232,29 +233,9 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
         return createPotentialDataAttributeAdapter();
       }
       @Override
-      public Adapter caseDataItemList(DataItemList object)
+      public Adapter caseMatrixRow(MatrixRow object)
       {
-        return createDataItemListAdapter();
-      }
-      @Override
-      public Adapter caseUnstructuredDataList(UnstructuredDataList object)
-      {
-        return createUnstructuredDataListAdapter();
-      }
-      @Override
-      public Adapter caseStructuredDataList(StructuredDataList object)
-      {
-        return createStructuredDataListAdapter();
-      }
-      @Override
-      public Adapter caseFloatDataList(FloatDataList object)
-      {
-        return createFloatDataListAdapter();
-      }
-      @Override
-      public Adapter caseNormalDistribution(NormalDistribution object)
-      {
-        return createNormalDistributionAdapter();
+        return createMatrixRowAdapter();
       }
       @Override
       public Adapter casePotentialTableAttribute(PotentialTableAttribute object)
@@ -380,6 +361,31 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIntegerLiteral(IntegerLiteral object)
       {
         return createIntegerLiteralAdapter();
+      }
+      @Override
+      public Adapter caseList5(List5 object)
+      {
+        return createList5Adapter();
+      }
+      @Override
+      public Adapter caseList4(List4 object)
+      {
+        return createList4Adapter();
+      }
+      @Override
+      public Adapter caseList3(List3 object)
+      {
+        return createList3Adapter();
+      }
+      @Override
+      public Adapter caseList2(List2 object)
+      {
+        return createList2Adapter();
+      }
+      @Override
+      public Adapter caseList1(List1 object)
+      {
+        return createList1Adapter();
       }
       @Override
       public Adapter caseAssignment(Assignment object)
@@ -744,76 +750,16 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.DataItemList <em>Data Item List</em>}'.
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.MatrixRow <em>Matrix Row</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.DataItemList
+   * @see net.certware.evidence.hugin.netDSL.MatrixRow
    * @generated
    */
-  public Adapter createDataItemListAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.UnstructuredDataList <em>Unstructured Data List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.UnstructuredDataList
-   * @generated
-   */
-  public Adapter createUnstructuredDataListAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.StructuredDataList <em>Structured Data List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.StructuredDataList
-   * @generated
-   */
-  public Adapter createStructuredDataListAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.FloatDataList <em>Float Data List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.FloatDataList
-   * @generated
-   */
-  public Adapter createFloatDataListAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.NormalDistribution <em>Normal Distribution</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see net.certware.evidence.hugin.netDSL.NormalDistribution
-   * @generated
-   */
-  public Adapter createNormalDistributionAdapter()
+  public Adapter createMatrixRowAdapter()
   {
     return null;
   }
@@ -1189,6 +1135,81 @@ public class NetDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIntegerLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.List5 <em>List5</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.List5
+   * @generated
+   */
+  public Adapter createList5Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.List4 <em>List4</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.List4
+   * @generated
+   */
+  public Adapter createList4Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.List3 <em>List3</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.List3
+   * @generated
+   */
+  public Adapter createList3Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.List2 <em>List2</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.List2
+   * @generated
+   */
+  public Adapter createList2Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.evidence.hugin.netDSL.List1 <em>List1</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.evidence.hugin.netDSL.List1
+   * @generated
+   */
+  public Adapter createList1Adapter()
   {
     return null;
   }

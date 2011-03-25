@@ -33,12 +33,12 @@ public interface DoubleLiteral extends TermLiteral
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
+   * @see #setValue(double)
    * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getDoubleLiteral_Value()
    * @model
    * @generated
    */
-  String getValue();
+  double getValue();
 
   /**
    * Sets the value of the '{@link net.certware.evidence.hugin.netDSL.DoubleLiteral#getValue <em>Value</em>}' attribute.
@@ -48,6 +48,6 @@ public interface DoubleLiteral extends TermLiteral
    * @see #getValue()
    * @generated
    */
-  void setValue(String value);
+  void setValue(double value);
 
 } // DoubleLiteral

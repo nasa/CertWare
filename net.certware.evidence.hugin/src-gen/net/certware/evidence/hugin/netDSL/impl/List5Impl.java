@@ -7,48 +7,51 @@ package net.certware.evidence.hugin.netDSL.impl;
 
 import java.util.Collection;
 
-import net.certware.evidence.hugin.netDSL.FloatDataList;
+import net.certware.evidence.hugin.netDSL.List5;
+import net.certware.evidence.hugin.netDSL.MatrixRow;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
+
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Float Data List</b></em>'.
+ * An implementation of the model object '<em><b>List5</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl#getItems <em>Items</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.impl.List5Impl#getList <em>List</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FloatDataListImpl extends MinimalEObjectImpl.Container implements FloatDataList
+public class List5Impl extends MatrixRowImpl implements List5
 {
   /**
-   * The cached value of the '{@link #getItems() <em>Items</em>}' attribute list.
+   * The cached value of the '{@link #getList() <em>List</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItems()
+   * @see #getList()
    * @generated
    * @ordered
    */
-  protected EList<String> items;
+  protected EList<MatrixRow> list;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FloatDataListImpl()
+  protected List5Impl()
   {
     super();
   }
@@ -61,7 +64,7 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   @Override
   protected EClass eStaticClass()
   {
-    return NetDSLPackage.Literals.FLOAT_DATA_LIST;
+    return NetDSLPackage.Literals.LIST5;
   }
 
   /**
@@ -69,13 +72,29 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getItems()
+  public EList<MatrixRow> getList()
   {
-    if (items == null)
+    if (list == null)
     {
-      items = new EDataTypeEList<String>(String.class, this, NetDSLPackage.FLOAT_DATA_LIST__ITEMS);
+      list = new EObjectContainmentEList<MatrixRow>(MatrixRow.class, this, NetDSLPackage.LIST5__LIST);
     }
-    return items;
+    return list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case NetDSLPackage.LIST5__LIST:
+        return ((InternalEList<?>)getList()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -88,8 +107,8 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
-        return getItems();
+      case NetDSLPackage.LIST5__LIST:
+        return getList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -105,9 +124,9 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
-        getItems().clear();
-        getItems().addAll((Collection<? extends String>)newValue);
+      case NetDSLPackage.LIST5__LIST:
+        getList().clear();
+        getList().addAll((Collection<? extends MatrixRow>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -123,8 +142,8 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
-        getItems().clear();
+      case NetDSLPackage.LIST5__LIST:
+        getList().clear();
         return;
     }
     super.eUnset(featureID);
@@ -140,27 +159,10 @@ public class FloatDataListImpl extends MinimalEObjectImpl.Container implements F
   {
     switch (featureID)
     {
-      case NetDSLPackage.FLOAT_DATA_LIST__ITEMS:
-        return items != null && !items.isEmpty();
+      case NetDSLPackage.LIST5__LIST:
+        return list != null && !list.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (items: ");
-    result.append(items);
-    result.append(')');
-    return result.toString();
-  }
-
-} //FloatDataListImpl
+} //List5Impl

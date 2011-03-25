@@ -16,18 +16,22 @@ import net.certware.evidence.hugin.netDSL.BooleanLiteral;
 import net.certware.evidence.hugin.netDSL.ClassDefinition;
 import net.certware.evidence.hugin.netDSL.ClassElement;
 import net.certware.evidence.hugin.netDSL.ClassInstance;
-import net.certware.evidence.hugin.netDSL.DataItemList;
 import net.certware.evidence.hugin.netDSL.DomainDefinition;
 import net.certware.evidence.hugin.netDSL.DomainElement;
 import net.certware.evidence.hugin.netDSL.DomainHeader;
 import net.certware.evidence.hugin.netDSL.DoubleLiteral;
 import net.certware.evidence.hugin.netDSL.Expression;
 import net.certware.evidence.hugin.netDSL.ExpressionSequence;
-import net.certware.evidence.hugin.netDSL.FloatDataList;
 import net.certware.evidence.hugin.netDSL.InputBinding;
 import net.certware.evidence.hugin.netDSL.InputBindings;
 import net.certware.evidence.hugin.netDSL.IntegerLiteral;
 import net.certware.evidence.hugin.netDSL.LabelAttribute;
+import net.certware.evidence.hugin.netDSL.List1;
+import net.certware.evidence.hugin.netDSL.List2;
+import net.certware.evidence.hugin.netDSL.List3;
+import net.certware.evidence.hugin.netDSL.List4;
+import net.certware.evidence.hugin.netDSL.List5;
+import net.certware.evidence.hugin.netDSL.MatrixRow;
 import net.certware.evidence.hugin.netDSL.Model;
 import net.certware.evidence.hugin.netDSL.ModelDataAttribute;
 import net.certware.evidence.hugin.netDSL.ModelNodesAttribute;
@@ -36,7 +40,6 @@ import net.certware.evidence.hugin.netDSL.NetDSLFactory;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.NodeAttributes;
 import net.certware.evidence.hugin.netDSL.NodeSizeAttribute;
-import net.certware.evidence.hugin.netDSL.NormalDistribution;
 import net.certware.evidence.hugin.netDSL.Operator;
 import net.certware.evidence.hugin.netDSL.OrExp;
 import net.certware.evidence.hugin.netDSL.OutputBinding;
@@ -53,11 +56,9 @@ import net.certware.evidence.hugin.netDSL.SamplesAttribute;
 import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
 import net.certware.evidence.hugin.netDSL.StatesAttribute;
 import net.certware.evidence.hugin.netDSL.StringLiteral;
-import net.certware.evidence.hugin.netDSL.StructuredDataList;
 import net.certware.evidence.hugin.netDSL.SubtypeAttribute;
 import net.certware.evidence.hugin.netDSL.TermExpression;
 import net.certware.evidence.hugin.netDSL.TermLiteral;
-import net.certware.evidence.hugin.netDSL.UnstructuredDataList;
 import net.certware.evidence.hugin.netDSL.VarRef;
 import net.certware.evidence.hugin.netDSL.additiveExpression;
 import net.certware.evidence.hugin.netDSL.andExpression;
@@ -146,11 +147,7 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
       case NetDSLPackage.POTENTIAL_MODEL: return createPotentialModel();
       case NetDSLPackage.POTENTIAL_ATTRIBUTE: return createPotentialAttribute();
       case NetDSLPackage.POTENTIAL_DATA_ATTRIBUTE: return createPotentialDataAttribute();
-      case NetDSLPackage.DATA_ITEM_LIST: return createDataItemList();
-      case NetDSLPackage.UNSTRUCTURED_DATA_LIST: return createUnstructuredDataList();
-      case NetDSLPackage.STRUCTURED_DATA_LIST: return createStructuredDataList();
-      case NetDSLPackage.FLOAT_DATA_LIST: return createFloatDataList();
-      case NetDSLPackage.NORMAL_DISTRIBUTION: return createNormalDistribution();
+      case NetDSLPackage.MATRIX_ROW: return createMatrixRow();
       case NetDSLPackage.POTENTIAL_TABLE_ATTRIBUTE: return createPotentialTableAttribute();
       case NetDSLPackage.MODEL_NODES_ATTRIBUTE: return createModelNodesAttribute();
       case NetDSLPackage.SAMPLES_ATTRIBUTE: return createSamplesAttribute();
@@ -176,6 +173,11 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
       case NetDSLPackage.TERM_EXPRESSION: return createTermExpression();
       case NetDSLPackage.TERM_LITERAL: return createTermLiteral();
       case NetDSLPackage.INTEGER_LITERAL: return createIntegerLiteral();
+      case NetDSLPackage.LIST5: return createList5();
+      case NetDSLPackage.LIST4: return createList4();
+      case NetDSLPackage.LIST3: return createList3();
+      case NetDSLPackage.LIST2: return createList2();
+      case NetDSLPackage.LIST1: return createList1();
       case NetDSLPackage.ASSIGNMENT: return createAssignment();
       case NetDSLPackage.ASSIGNMENT_OP: return createAssignmentOp();
       case NetDSLPackage.OR_EXP: return createOrExp();
@@ -406,54 +408,10 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataItemList createDataItemList()
+  public MatrixRow createMatrixRow()
   {
-    DataItemListImpl dataItemList = new DataItemListImpl();
-    return dataItemList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UnstructuredDataList createUnstructuredDataList()
-  {
-    UnstructuredDataListImpl unstructuredDataList = new UnstructuredDataListImpl();
-    return unstructuredDataList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StructuredDataList createStructuredDataList()
-  {
-    StructuredDataListImpl structuredDataList = new StructuredDataListImpl();
-    return structuredDataList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FloatDataList createFloatDataList()
-  {
-    FloatDataListImpl floatDataList = new FloatDataListImpl();
-    return floatDataList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NormalDistribution createNormalDistribution()
-  {
-    NormalDistributionImpl normalDistribution = new NormalDistributionImpl();
-    return normalDistribution;
+    MatrixRowImpl matrixRow = new MatrixRowImpl();
+    return matrixRow;
   }
 
   /**
@@ -729,6 +687,61 @@ public class NetDSLFactoryImpl extends EFactoryImpl implements NetDSLFactory
   {
     IntegerLiteralImpl integerLiteral = new IntegerLiteralImpl();
     return integerLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public List5 createList5()
+  {
+    List5Impl list5 = new List5Impl();
+    return list5;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public List4 createList4()
+  {
+    List4Impl list4 = new List4Impl();
+    return list4;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public List3 createList3()
+  {
+    List3Impl list3 = new List3Impl();
+    return list3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public List2 createList2()
+  {
+    List2Impl list2 = new List2Impl();
+    return list2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public List1 createList1()
+  {
+    List1Impl list1 = new List1Impl();
+    return list1;
   }
 
   /**

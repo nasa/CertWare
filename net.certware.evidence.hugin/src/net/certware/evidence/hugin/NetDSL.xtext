@@ -20,9 +20,10 @@ terminal ID returns ecore::EString : '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..
 //	: '-'? ('0'..'9')+ ('.' ('0'..'9')+ (('e'|'E') ('-')? ('0'..'9')+)?)?;
 // terminal INT returns ecore::EInt: ('0'..'9')+ ;
 terminal INT returns ecore::EInt: '0' | ('1'..'9' ('0'..'9')*); 
-//terminal DOUBLE returns ecore::EDouble :  
-//	'1'..'9' ('0'..'9')* ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)?
-//	| '0' ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)? ;
+terminal DOUBLE returns ecore::EDouble :  
+	'1'..'9' ('0'..'9')* ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)?
+	| '0' ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)? 
+	;
 //terminal STRING :
 //'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
 //"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'"; 
@@ -31,29 +32,10 @@ terminal ML_COMMENT : '/*' -> '*/' ;
 terminal SL_COMMENT : '%' !('\n'|'\r')* ('\r'? '\n')? ;
 // terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')? ; 
 terminal WS : (' '|'\t'|'\r'|'\n')+ ;
-DOUBLE: INT '.' (EXT_INT | INT);
-terminal EXT_INT: INT ('e'|'E')('-'|'+') INT;
+//DOUBLE: INT '.' (EXT_INT | INT);
+//terminal EXT_INT: INT ('e'|'E')('-'|'+') INT;
 terminal ANY_OTHER: . ;
 
-
-//terminal INT returns ecore::EInt
-//	: '-'? ('0'..'9')+;
-//terminal UINT returns ecore::EInt
-//	: ('0'..'9')+;
-// Sign returns ecore::EString : '+' | '-' ;
-	
-// single-line comment style leading with %
-// the built-in version allows // as indicator, overridden here
-// hidden declaration in the common grammar
-// multi-line comments are also built-in but should be overridden
-
-//	'"' ( !'"' )* '"';
-// '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | '-' | '.' | !('\\'|'"') )* '"' ;
-// "'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
-
-//DOUBLE :
-//	'-'? INT+ ('.' INT+ (('e'|'E') ('-')? INT+)?)?
-//	;
 	
 Integer :
 	i=INT
@@ -130,35 +112,48 @@ PotentialModel : {PotentialModel}
 	
 PotentialAttribute 
 	: PotentialDataAttribute 
-	// | PotentialTableAttribute // TODO RECOVER
+	| PotentialTableAttribute // TODO fragile
 	;
 	
 PotentialDataAttribute : {PotentialDataAttribute}
-	// 'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
-	'data' '=' '(' items=DataItemList ')' ';'
-	;
-	 
-DataItemList :
-	UnstructuredDataList 
-	| StructuredDataList
+	'data' '=' data=MatrixRow ';'
 	;
 	
-UnstructuredDataList : {UnstructuredDataList}
-	list=FloatDataList 
-	// | normal=NormalDistribution
+// tough to do arbitrary nesting in xtext, so do reasonably deep rules
+// validation rules should check content patterns
+MatrixRow
+	: {MatrixRow} r5+=List5+ // trying for big enough to handle barley
+	| {MatrixRow} r4+=List4+ // '(' '(' '(' r31+=List1+ ')' '(' r32+=List1+ ')' '(' r33+=List1+ ')' ')' ')'
+	| {MatrixRow} r3+=List3+ //'(' '(' r21+=List+ ')' '(' r22+=List+ ')' ')'
+	| {MatrixRow} r2+=List2+ // '(' r11+=List+ ')'
+	| {MatrixRow} r1=List1
 	;
 
-StructuredDataList : {StructuredDataList}
-	'(' (list=FloatDataList | (items+=StructuredDataList)+) ')'
+List5 returns MatrixRow
+	: {List5} '(' list+=List4+ ')'
 	;
 	
-FloatDataList : {FloatDataList}
-	items+=DOUBLE*
+List4 returns MatrixRow
+	: {List4} '(' list+=List3+ ')'
 	;
 	
-NormalDistribution 
-	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
+List3 returns MatrixRow
+	: {List3} '(' list+=List2+ ')'
 	;
+	
+List2 returns MatrixRow
+	: {List2} '(' list+=List1+ ')' 
+	;
+	
+List1 returns MatrixRow
+	: {List1} '(' items+=unaryExpression* ')' 
+	// TODO add normal distribution as an expression operation
+	;
+	
+// TODO redefine as an operator so it matches unary expressions
+//NormalDistribution 
+//	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
+//	;
 	
 MeanExpression 
 	: MeanTerm ('+' MeanTerm)*
@@ -270,7 +265,7 @@ relationalExpression
 	({RelationalExp.left=current}
 		op=relOps right=relationalExpression
 		)?;
-
+	
 relOps
 	: '!='
 	| '=='

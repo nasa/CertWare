@@ -14,7 +14,7 @@ package net.certware.evidence.hugin.netDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getItems <em>Items</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getData <em>Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,29 +25,29 @@ package net.certware.evidence.hugin.netDSL;
 public interface PotentialDataAttribute extends PotentialAttribute
 {
   /**
-   * Returns the value of the '<em><b>Items</b></em>' containment reference.
+   * Returns the value of the '<em><b>Data</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Items</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Data</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Items</em>' containment reference.
-   * @see #setItems(DataItemList)
-   * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getPotentialDataAttribute_Items()
+   * @return the value of the '<em>Data</em>' containment reference.
+   * @see #setData(MatrixRow)
+   * @see net.certware.evidence.hugin.netDSL.NetDSLPackage#getPotentialDataAttribute_Data()
    * @model containment="true"
    * @generated
    */
-  DataItemList getItems();
+  MatrixRow getData();
 
   /**
-   * Sets the value of the '{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getItems <em>Items</em>}' containment reference.
+   * Sets the value of the '{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getData <em>Data</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Items</em>' containment reference.
-   * @see #getItems()
+   * @param value the new value of the '<em>Data</em>' containment reference.
+   * @see #getData()
    * @generated
    */
-  void setItems(DataItemList value);
+  void setData(MatrixRow value);
 
 } // PotentialDataAttribute

@@ -70,58 +70,57 @@ T72 : 'if' ;
 T73 : 'and' ;
 T74 : 'or' ;
 T75 : 'not' ;
-T76 : '.' ;
-T77 : 'net' ;
-T78 : '{' ;
-T79 : '}' ;
-T80 : 'node' ;
-T81 : 'states' ;
-T82 : '=' ;
-T83 : '(' ;
-T84 : ')' ;
-T85 : ';' ;
-T86 : 'position' ;
-T87 : 'subtype' ;
-T88 : 'state_values' ;
-T89 : 'node_size' ;
-T90 : 'potential' ;
-T91 : '|' ;
-T92 : 'data' ;
-T93 : 'model_nodes' ;
-T94 : 'samples_per_interval' ;
-T95 : 'model_data' ;
-T96 : 'class' ;
-T97 : 'instance' ;
-T98 : ':' ;
-T99 : ',' ;
-T100 : '||' ;
-T101 : '&&' ;
+T76 : 'net' ;
+T77 : '{' ;
+T78 : '}' ;
+T79 : 'node' ;
+T80 : 'states' ;
+T81 : '=' ;
+T82 : '(' ;
+T83 : ')' ;
+T84 : ';' ;
+T85 : 'position' ;
+T86 : 'subtype' ;
+T87 : 'state_values' ;
+T88 : 'node_size' ;
+T89 : 'potential' ;
+T90 : '|' ;
+T91 : 'data' ;
+T92 : 'model_nodes' ;
+T93 : 'samples_per_interval' ;
+T94 : 'model_data' ;
+T95 : 'class' ;
+T96 : 'instance' ;
+T97 : ':' ;
+T98 : ',' ;
+T99 : '||' ;
+T100 : '&&' ;
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9959
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10673
 RULE_BOOLEAN : ('true'|'false');
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9961
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10675
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9963
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10677
 RULE_INT : ('0'|'1'..'9' ('0'..'9')*);
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9965
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10679
+RULE_DOUBLE : ('1'..'9' ('0'..'9')* ('.' ('0'..'9')+)? (('E'|'e') ('+'|'-')? ('0'..'9')+)?|'0' ('.' ('0'..'9')+)? (('E'|'e') ('+'|'-')? ('0'..'9')+)?);
+
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10681
 RULE_STRING : '"' ( options {greedy=false;} : . )*'"';
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9967
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10683
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9969
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10685
 RULE_SL_COMMENT : '%' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9971
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10687
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9973
-RULE_EXT_INT : RULE_INT ('e'|'E') ('-'|'+') RULE_INT;
-
-// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 9975
+// $ANTLR src "../net.certware.evidence.hugin.ui/src-gen/net/certware/evidence/hugin/ui/contentassist/antlr/internal/InternalNetDSL.g" 10689
 RULE_ANY_OTHER : .;
 
 

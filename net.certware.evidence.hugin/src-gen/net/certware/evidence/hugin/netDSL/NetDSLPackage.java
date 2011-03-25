@@ -188,7 +188,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getClassElement()
    * @generated
    */
-  int CLASS_ELEMENT = 29;
+  int CLASS_ELEMENT = 25;
 
   /**
    * The number of structural features of the '<em>Class Element</em>' class.
@@ -620,13 +620,13 @@ public interface NetDSLPackage extends EPackage
   int POTENTIAL_DATA_ATTRIBUTE = 18;
 
   /**
-   * The feature id for the '<em><b>Items</b></em>' containment reference.
+   * The feature id for the '<em><b>Data</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POTENTIAL_DATA_ATTRIBUTE__ITEMS = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 0;
+  int POTENTIAL_DATA_ATTRIBUTE__DATA = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Potential Data Attribute</em>' class.
@@ -638,162 +638,68 @@ public interface NetDSLPackage extends EPackage
   int POTENTIAL_DATA_ATTRIBUTE_FEATURE_COUNT = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.DataItemListImpl <em>Data Item List</em>}' class.
+   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.MatrixRowImpl <em>Matrix Row</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see net.certware.evidence.hugin.netDSL.impl.DataItemListImpl
-   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getDataItemList()
+   * @see net.certware.evidence.hugin.netDSL.impl.MatrixRowImpl
+   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getMatrixRow()
    * @generated
    */
-  int DATA_ITEM_LIST = 19;
+  int MATRIX_ROW = 19;
 
   /**
-   * The feature id for the '<em><b>List</b></em>' containment reference.
+   * The feature id for the '<em><b>R5</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_ITEM_LIST__LIST = 0;
+  int MATRIX_ROW__R5 = 0;
 
   /**
-   * The number of structural features of the '<em>Data Item List</em>' class.
+   * The feature id for the '<em><b>R4</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_ITEM_LIST_FEATURE_COUNT = 1;
+  int MATRIX_ROW__R4 = 1;
 
   /**
-   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.UnstructuredDataListImpl <em>Unstructured Data List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see net.certware.evidence.hugin.netDSL.impl.UnstructuredDataListImpl
-   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getUnstructuredDataList()
-   * @generated
-   */
-  int UNSTRUCTURED_DATA_LIST = 20;
-
-  /**
-   * The feature id for the '<em><b>List</b></em>' containment reference.
+   * The feature id for the '<em><b>R3</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNSTRUCTURED_DATA_LIST__LIST = DATA_ITEM_LIST__LIST;
+  int MATRIX_ROW__R3 = 2;
 
   /**
-   * The number of structural features of the '<em>Unstructured Data List</em>' class.
+   * The feature id for the '<em><b>R2</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNSTRUCTURED_DATA_LIST_FEATURE_COUNT = DATA_ITEM_LIST_FEATURE_COUNT + 0;
+  int MATRIX_ROW__R2 = 3;
 
   /**
-   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.StructuredDataListImpl <em>Structured Data List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see net.certware.evidence.hugin.netDSL.impl.StructuredDataListImpl
-   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getStructuredDataList()
-   * @generated
-   */
-  int STRUCTURED_DATA_LIST = 21;
-
-  /**
-   * The feature id for the '<em><b>List</b></em>' containment reference.
+   * The feature id for the '<em><b>R1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRUCTURED_DATA_LIST__LIST = DATA_ITEM_LIST__LIST;
+  int MATRIX_ROW__R1 = 4;
 
   /**
-   * The feature id for the '<em><b>Items</b></em>' containment reference list.
+   * The number of structural features of the '<em>Matrix Row</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRUCTURED_DATA_LIST__ITEMS = DATA_ITEM_LIST_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Structured Data List</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRUCTURED_DATA_LIST_FEATURE_COUNT = DATA_ITEM_LIST_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl <em>Float Data List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl
-   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getFloatDataList()
-   * @generated
-   */
-  int FLOAT_DATA_LIST = 22;
-
-  /**
-   * The feature id for the '<em><b>Items</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_DATA_LIST__ITEMS = 0;
-
-  /**
-   * The number of structural features of the '<em>Float Data List</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOAT_DATA_LIST_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see net.certware.evidence.hugin.netDSL.impl.NormalDistributionImpl
-   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getNormalDistribution()
-   * @generated
-   */
-  int NORMAL_DISTRIBUTION = 23;
-
-  /**
-   * The feature id for the '<em><b>Mean</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_DISTRIBUTION__MEAN = 0;
-
-  /**
-   * The feature id for the '<em><b>Variance</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_DISTRIBUTION__VARIANCE = 1;
-
-  /**
-   * The number of structural features of the '<em>Normal Distribution</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NORMAL_DISTRIBUTION_FEATURE_COUNT = 2;
+  int MATRIX_ROW_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.PotentialTableAttributeImpl <em>Potential Table Attribute</em>}' class.
@@ -803,7 +709,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getPotentialTableAttribute()
    * @generated
    */
-  int POTENTIAL_TABLE_ATTRIBUTE = 24;
+  int POTENTIAL_TABLE_ATTRIBUTE = 20;
 
   /**
    * The feature id for the '<em><b>Nodes</b></em>' containment reference.
@@ -812,7 +718,7 @@ public interface NetDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POTENTIAL_TABLE_ATTRIBUTE__NODES = 0;
+  int POTENTIAL_TABLE_ATTRIBUTE__NODES = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Samples</b></em>' containment reference.
@@ -821,7 +727,7 @@ public interface NetDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POTENTIAL_TABLE_ATTRIBUTE__SAMPLES = 1;
+  int POTENTIAL_TABLE_ATTRIBUTE__SAMPLES = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Data</b></em>' containment reference.
@@ -830,7 +736,7 @@ public interface NetDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POTENTIAL_TABLE_ATTRIBUTE__DATA = 2;
+  int POTENTIAL_TABLE_ATTRIBUTE__DATA = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Potential Table Attribute</em>' class.
@@ -839,7 +745,7 @@ public interface NetDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POTENTIAL_TABLE_ATTRIBUTE_FEATURE_COUNT = 3;
+  int POTENTIAL_TABLE_ATTRIBUTE_FEATURE_COUNT = POTENTIAL_ATTRIBUTE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.ModelNodesAttributeImpl <em>Model Nodes Attribute</em>}' class.
@@ -849,7 +755,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getModelNodesAttribute()
    * @generated
    */
-  int MODEL_NODES_ATTRIBUTE = 25;
+  int MODEL_NODES_ATTRIBUTE = 21;
 
   /**
    * The feature id for the '<em><b>Configurations</b></em>' attribute list.
@@ -877,7 +783,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getSamplesAttribute()
    * @generated
    */
-  int SAMPLES_ATTRIBUTE = 26;
+  int SAMPLES_ATTRIBUTE = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -905,7 +811,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getModelDataAttribute()
    * @generated
    */
-  int MODEL_DATA_ATTRIBUTE = 27;
+  int MODEL_DATA_ATTRIBUTE = 23;
 
   /**
    * The feature id for the '<em><b>Sequence</b></em>' containment reference.
@@ -933,7 +839,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getClassDefinition()
    * @generated
    */
-  int CLASS_DEFINITION = 28;
+  int CLASS_DEFINITION = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -970,7 +876,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getClassInstance()
    * @generated
    */
-  int CLASS_INSTANCE = 30;
+  int CLASS_INSTANCE = 26;
 
   /**
    * The feature id for the '<em><b>Instance Name</b></em>' attribute.
@@ -1034,7 +940,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getInputBindings()
    * @generated
    */
-  int INPUT_BINDINGS = 31;
+  int INPUT_BINDINGS = 27;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' containment reference.
@@ -1071,7 +977,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getInputBinding()
    * @generated
    */
-  int INPUT_BINDING = 32;
+  int INPUT_BINDING = 28;
 
   /**
    * The feature id for the '<em><b>Formal</b></em>' attribute.
@@ -1108,7 +1014,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getOutputBindings()
    * @generated
    */
-  int OUTPUT_BINDINGS = 33;
+  int OUTPUT_BINDINGS = 29;
 
   /**
    * The feature id for the '<em><b>Lhs</b></em>' containment reference.
@@ -1145,7 +1051,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getOutputBinding()
    * @generated
    */
-  int OUTPUT_BINDING = 34;
+  int OUTPUT_BINDING = 30;
 
   /**
    * The feature id for the '<em><b>Actual</b></em>' attribute.
@@ -1182,7 +1088,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getNodeAttributes()
    * @generated
    */
-  int NODE_ATTRIBUTES = 35;
+  int NODE_ATTRIBUTES = 31;
 
   /**
    * The number of structural features of the '<em>Node Attributes</em>' class.
@@ -1201,7 +1107,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getExpressionSequence()
    * @generated
    */
-  int EXPRESSION_SEQUENCE = 36;
+  int EXPRESSION_SEQUENCE = 32;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -1229,7 +1135,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 37;
+  int EXPRESSION = 33;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1257,7 +1163,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getassignmentOpExpression()
    * @generated
    */
-  int ASSIGNMENT_OP_EXPRESSION = 38;
+  int ASSIGNMENT_OP_EXPRESSION = 34;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1285,7 +1191,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getorExpression()
    * @generated
    */
-  int OR_EXPRESSION = 39;
+  int OR_EXPRESSION = 35;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1313,7 +1219,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getandExpression()
    * @generated
    */
-  int AND_EXPRESSION = 40;
+  int AND_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1341,7 +1247,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getrelationalExpression()
    * @generated
    */
-  int RELATIONAL_EXPRESSION = 41;
+  int RELATIONAL_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1369,7 +1275,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getadditiveExpression()
    * @generated
    */
-  int ADDITIVE_EXPRESSION = 42;
+  int ADDITIVE_EXPRESSION = 38;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1397,7 +1303,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getmultiplicativeExpression()
    * @generated
    */
-  int MULTIPLICATIVE_EXPRESSION = 43;
+  int MULTIPLICATIVE_EXPRESSION = 39;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1425,7 +1331,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getunaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 44;
+  int UNARY_EXPRESSION = 40;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1462,7 +1368,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getTermExpression()
    * @generated
    */
-  int TERM_EXPRESSION = 46;
+  int TERM_EXPRESSION = 42;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1499,7 +1405,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getOperator()
    * @generated
    */
-  int OPERATOR = 45;
+  int OPERATOR = 41;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1545,7 +1451,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getTermLiteral()
    * @generated
    */
-  int TERM_LITERAL = 47;
+  int TERM_LITERAL = 43;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1582,7 +1488,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getIntegerLiteral()
    * @generated
    */
-  int INTEGER_LITERAL = 48;
+  int INTEGER_LITERAL = 44;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1639,6 +1545,371 @@ public interface NetDSLPackage extends EPackage
   int INTEGER_LITERAL_FEATURE_COUNT = POSITION_ATTRIBUTE_FEATURE_COUNT + 5;
 
   /**
+   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.List5Impl <em>List5</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.evidence.hugin.netDSL.impl.List5Impl
+   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList5()
+   * @generated
+   */
+  int LIST5 = 45;
+
+  /**
+   * The feature id for the '<em><b>R5</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST5__R5 = MATRIX_ROW__R5;
+
+  /**
+   * The feature id for the '<em><b>R4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST5__R4 = MATRIX_ROW__R4;
+
+  /**
+   * The feature id for the '<em><b>R3</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST5__R3 = MATRIX_ROW__R3;
+
+  /**
+   * The feature id for the '<em><b>R2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST5__R2 = MATRIX_ROW__R2;
+
+  /**
+   * The feature id for the '<em><b>R1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST5__R1 = MATRIX_ROW__R1;
+
+  /**
+   * The feature id for the '<em><b>List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST5__LIST = MATRIX_ROW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>List5</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST5_FEATURE_COUNT = MATRIX_ROW_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.List4Impl <em>List4</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.evidence.hugin.netDSL.impl.List4Impl
+   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList4()
+   * @generated
+   */
+  int LIST4 = 46;
+
+  /**
+   * The feature id for the '<em><b>R5</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST4__R5 = MATRIX_ROW__R5;
+
+  /**
+   * The feature id for the '<em><b>R4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST4__R4 = MATRIX_ROW__R4;
+
+  /**
+   * The feature id for the '<em><b>R3</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST4__R3 = MATRIX_ROW__R3;
+
+  /**
+   * The feature id for the '<em><b>R2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST4__R2 = MATRIX_ROW__R2;
+
+  /**
+   * The feature id for the '<em><b>R1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST4__R1 = MATRIX_ROW__R1;
+
+  /**
+   * The feature id for the '<em><b>List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST4__LIST = MATRIX_ROW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>List4</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST4_FEATURE_COUNT = MATRIX_ROW_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.List3Impl <em>List3</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.evidence.hugin.netDSL.impl.List3Impl
+   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList3()
+   * @generated
+   */
+  int LIST3 = 47;
+
+  /**
+   * The feature id for the '<em><b>R5</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST3__R5 = MATRIX_ROW__R5;
+
+  /**
+   * The feature id for the '<em><b>R4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST3__R4 = MATRIX_ROW__R4;
+
+  /**
+   * The feature id for the '<em><b>R3</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST3__R3 = MATRIX_ROW__R3;
+
+  /**
+   * The feature id for the '<em><b>R2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST3__R2 = MATRIX_ROW__R2;
+
+  /**
+   * The feature id for the '<em><b>R1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST3__R1 = MATRIX_ROW__R1;
+
+  /**
+   * The feature id for the '<em><b>List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST3__LIST = MATRIX_ROW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>List3</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST3_FEATURE_COUNT = MATRIX_ROW_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.List2Impl <em>List2</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.evidence.hugin.netDSL.impl.List2Impl
+   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList2()
+   * @generated
+   */
+  int LIST2 = 48;
+
+  /**
+   * The feature id for the '<em><b>R5</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST2__R5 = MATRIX_ROW__R5;
+
+  /**
+   * The feature id for the '<em><b>R4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST2__R4 = MATRIX_ROW__R4;
+
+  /**
+   * The feature id for the '<em><b>R3</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST2__R3 = MATRIX_ROW__R3;
+
+  /**
+   * The feature id for the '<em><b>R2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST2__R2 = MATRIX_ROW__R2;
+
+  /**
+   * The feature id for the '<em><b>R1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST2__R1 = MATRIX_ROW__R1;
+
+  /**
+   * The feature id for the '<em><b>List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST2__LIST = MATRIX_ROW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>List2</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST2_FEATURE_COUNT = MATRIX_ROW_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.List1Impl <em>List1</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.evidence.hugin.netDSL.impl.List1Impl
+   * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList1()
+   * @generated
+   */
+  int LIST1 = 49;
+
+  /**
+   * The feature id for the '<em><b>R5</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST1__R5 = MATRIX_ROW__R5;
+
+  /**
+   * The feature id for the '<em><b>R4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST1__R4 = MATRIX_ROW__R4;
+
+  /**
+   * The feature id for the '<em><b>R3</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST1__R3 = MATRIX_ROW__R3;
+
+  /**
+   * The feature id for the '<em><b>R2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST1__R2 = MATRIX_ROW__R2;
+
+  /**
+   * The feature id for the '<em><b>R1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST1__R1 = MATRIX_ROW__R1;
+
+  /**
+   * The feature id for the '<em><b>Items</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST1__ITEMS = MATRIX_ROW_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>List1</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST1_FEATURE_COUNT = MATRIX_ROW_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link net.certware.evidence.hugin.netDSL.impl.AssignmentImpl <em>Assignment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1646,7 +1917,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getAssignment()
    * @generated
    */
-  int ASSIGNMENT = 49;
+  int ASSIGNMENT = 50;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1692,7 +1963,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getAssignmentOp()
    * @generated
    */
-  int ASSIGNMENT_OP = 50;
+  int ASSIGNMENT_OP = 51;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1738,7 +2009,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getOrExp()
    * @generated
    */
-  int OR_EXP = 51;
+  int OR_EXP = 52;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1784,7 +2055,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getAndExp()
    * @generated
    */
-  int AND_EXP = 52;
+  int AND_EXP = 53;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1830,7 +2101,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getRelationalExp()
    * @generated
    */
-  int RELATIONAL_EXP = 53;
+  int RELATIONAL_EXP = 54;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1876,7 +2147,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getAdditiveExp()
    * @generated
    */
-  int ADDITIVE_EXP = 54;
+  int ADDITIVE_EXP = 55;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1922,7 +2193,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getMultiplicativeExp()
    * @generated
    */
-  int MULTIPLICATIVE_EXP = 55;
+  int MULTIPLICATIVE_EXP = 56;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1968,7 +2239,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getVarRef()
    * @generated
    */
-  int VAR_REF = 56;
+  int VAR_REF = 57;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2014,7 +2285,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 57;
+  int BOOLEAN_LITERAL = 58;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2060,7 +2331,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 58;
+  int STRING_LITERAL = 59;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2106,7 +2377,7 @@ public interface NetDSLPackage extends EPackage
    * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getDoubleLiteral()
    * @generated
    */
-  int DOUBLE_LITERAL = 59;
+  int DOUBLE_LITERAL = 60;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2567,120 +2838,80 @@ public interface NetDSLPackage extends EPackage
   EClass getPotentialDataAttribute();
 
   /**
-   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getItems <em>Items</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getData <em>Data</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Items</em>'.
-   * @see net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getItems()
+   * @return the meta object for the containment reference '<em>Data</em>'.
+   * @see net.certware.evidence.hugin.netDSL.PotentialDataAttribute#getData()
    * @see #getPotentialDataAttribute()
    * @generated
    */
-  EReference getPotentialDataAttribute_Items();
+  EReference getPotentialDataAttribute_Data();
 
   /**
-   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.DataItemList <em>Data Item List</em>}'.
+   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.MatrixRow <em>Matrix Row</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Item List</em>'.
-   * @see net.certware.evidence.hugin.netDSL.DataItemList
+   * @return the meta object for class '<em>Matrix Row</em>'.
+   * @see net.certware.evidence.hugin.netDSL.MatrixRow
    * @generated
    */
-  EClass getDataItemList();
+  EClass getMatrixRow();
 
   /**
-   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.DataItemList#getList <em>List</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.MatrixRow#getR5 <em>R5</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>List</em>'.
-   * @see net.certware.evidence.hugin.netDSL.DataItemList#getList()
-   * @see #getDataItemList()
+   * @return the meta object for the containment reference list '<em>R5</em>'.
+   * @see net.certware.evidence.hugin.netDSL.MatrixRow#getR5()
+   * @see #getMatrixRow()
    * @generated
    */
-  EReference getDataItemList_List();
+  EReference getMatrixRow_R5();
 
   /**
-   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.UnstructuredDataList <em>Unstructured Data List</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.MatrixRow#getR4 <em>R4</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Unstructured Data List</em>'.
-   * @see net.certware.evidence.hugin.netDSL.UnstructuredDataList
+   * @return the meta object for the containment reference list '<em>R4</em>'.
+   * @see net.certware.evidence.hugin.netDSL.MatrixRow#getR4()
+   * @see #getMatrixRow()
    * @generated
    */
-  EClass getUnstructuredDataList();
+  EReference getMatrixRow_R4();
 
   /**
-   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.StructuredDataList <em>Structured Data List</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.MatrixRow#getR3 <em>R3</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Structured Data List</em>'.
-   * @see net.certware.evidence.hugin.netDSL.StructuredDataList
+   * @return the meta object for the containment reference list '<em>R3</em>'.
+   * @see net.certware.evidence.hugin.netDSL.MatrixRow#getR3()
+   * @see #getMatrixRow()
    * @generated
    */
-  EClass getStructuredDataList();
+  EReference getMatrixRow_R3();
 
   /**
-   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.StructuredDataList#getItems <em>Items</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.MatrixRow#getR2 <em>R2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Items</em>'.
-   * @see net.certware.evidence.hugin.netDSL.StructuredDataList#getItems()
-   * @see #getStructuredDataList()
+   * @return the meta object for the containment reference list '<em>R2</em>'.
+   * @see net.certware.evidence.hugin.netDSL.MatrixRow#getR2()
+   * @see #getMatrixRow()
    * @generated
    */
-  EReference getStructuredDataList_Items();
+  EReference getMatrixRow_R2();
 
   /**
-   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.FloatDataList <em>Float Data List</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.evidence.hugin.netDSL.MatrixRow#getR1 <em>R1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Float Data List</em>'.
-   * @see net.certware.evidence.hugin.netDSL.FloatDataList
+   * @return the meta object for the containment reference '<em>R1</em>'.
+   * @see net.certware.evidence.hugin.netDSL.MatrixRow#getR1()
+   * @see #getMatrixRow()
    * @generated
    */
-  EClass getFloatDataList();
-
-  /**
-   * Returns the meta object for the attribute list '{@link net.certware.evidence.hugin.netDSL.FloatDataList#getItems <em>Items</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Items</em>'.
-   * @see net.certware.evidence.hugin.netDSL.FloatDataList#getItems()
-   * @see #getFloatDataList()
-   * @generated
-   */
-  EAttribute getFloatDataList_Items();
-
-  /**
-   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.NormalDistribution <em>Normal Distribution</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Normal Distribution</em>'.
-   * @see net.certware.evidence.hugin.netDSL.NormalDistribution
-   * @generated
-   */
-  EClass getNormalDistribution();
-
-  /**
-   * Returns the meta object for the attribute '{@link net.certware.evidence.hugin.netDSL.NormalDistribution#getMean <em>Mean</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Mean</em>'.
-   * @see net.certware.evidence.hugin.netDSL.NormalDistribution#getMean()
-   * @see #getNormalDistribution()
-   * @generated
-   */
-  EAttribute getNormalDistribution_Mean();
-
-  /**
-   * Returns the meta object for the attribute '{@link net.certware.evidence.hugin.netDSL.NormalDistribution#getVariance <em>Variance</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Variance</em>'.
-   * @see net.certware.evidence.hugin.netDSL.NormalDistribution#getVariance()
-   * @see #getNormalDistribution()
-   * @generated
-   */
-  EAttribute getNormalDistribution_Variance();
+  EReference getMatrixRow_R1();
 
   /**
    * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.PotentialTableAttribute <em>Potential Table Attribute</em>}'.
@@ -3239,6 +3470,111 @@ public interface NetDSLPackage extends EPackage
    * @generated
    */
   EAttribute getIntegerLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.List5 <em>List5</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List5</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List5
+   * @generated
+   */
+  EClass getList5();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.List5#getList <em>List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>List</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List5#getList()
+   * @see #getList5()
+   * @generated
+   */
+  EReference getList5_List();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.List4 <em>List4</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List4</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List4
+   * @generated
+   */
+  EClass getList4();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.List4#getList <em>List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>List</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List4#getList()
+   * @see #getList4()
+   * @generated
+   */
+  EReference getList4_List();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.List3 <em>List3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List3</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List3
+   * @generated
+   */
+  EClass getList3();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.List3#getList <em>List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>List</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List3#getList()
+   * @see #getList3()
+   * @generated
+   */
+  EReference getList3_List();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.List2 <em>List2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List2</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List2
+   * @generated
+   */
+  EClass getList2();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.List2#getList <em>List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>List</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List2#getList()
+   * @see #getList2()
+   * @generated
+   */
+  EReference getList2_List();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.List1 <em>List1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List1</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List1
+   * @generated
+   */
+  EClass getList1();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.evidence.hugin.netDSL.List1#getItems <em>Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Items</em>'.
+   * @see net.certware.evidence.hugin.netDSL.List1#getItems()
+   * @see #getList1()
+   * @generated
+   */
+  EReference getList1_Items();
 
   /**
    * Returns the meta object for class '{@link net.certware.evidence.hugin.netDSL.Assignment <em>Assignment</em>}'.
@@ -3930,102 +4266,62 @@ public interface NetDSLPackage extends EPackage
     EClass POTENTIAL_DATA_ATTRIBUTE = eINSTANCE.getPotentialDataAttribute();
 
     /**
-     * The meta object literal for the '<em><b>Items</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Data</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POTENTIAL_DATA_ATTRIBUTE__ITEMS = eINSTANCE.getPotentialDataAttribute_Items();
+    EReference POTENTIAL_DATA_ATTRIBUTE__DATA = eINSTANCE.getPotentialDataAttribute_Data();
 
     /**
-     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.DataItemListImpl <em>Data Item List</em>}' class.
+     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.MatrixRowImpl <em>Matrix Row</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see net.certware.evidence.hugin.netDSL.impl.DataItemListImpl
-     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getDataItemList()
+     * @see net.certware.evidence.hugin.netDSL.impl.MatrixRowImpl
+     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getMatrixRow()
      * @generated
      */
-    EClass DATA_ITEM_LIST = eINSTANCE.getDataItemList();
+    EClass MATRIX_ROW = eINSTANCE.getMatrixRow();
 
     /**
-     * The meta object literal for the '<em><b>List</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>R5</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DATA_ITEM_LIST__LIST = eINSTANCE.getDataItemList_List();
+    EReference MATRIX_ROW__R5 = eINSTANCE.getMatrixRow_R5();
 
     /**
-     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.UnstructuredDataListImpl <em>Unstructured Data List</em>}' class.
+     * The meta object literal for the '<em><b>R4</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see net.certware.evidence.hugin.netDSL.impl.UnstructuredDataListImpl
-     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getUnstructuredDataList()
      * @generated
      */
-    EClass UNSTRUCTURED_DATA_LIST = eINSTANCE.getUnstructuredDataList();
+    EReference MATRIX_ROW__R4 = eINSTANCE.getMatrixRow_R4();
 
     /**
-     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.StructuredDataListImpl <em>Structured Data List</em>}' class.
+     * The meta object literal for the '<em><b>R3</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see net.certware.evidence.hugin.netDSL.impl.StructuredDataListImpl
-     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getStructuredDataList()
      * @generated
      */
-    EClass STRUCTURED_DATA_LIST = eINSTANCE.getStructuredDataList();
+    EReference MATRIX_ROW__R3 = eINSTANCE.getMatrixRow_R3();
 
     /**
-     * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>R2</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STRUCTURED_DATA_LIST__ITEMS = eINSTANCE.getStructuredDataList_Items();
+    EReference MATRIX_ROW__R2 = eINSTANCE.getMatrixRow_R2();
 
     /**
-     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl <em>Float Data List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see net.certware.evidence.hugin.netDSL.impl.FloatDataListImpl
-     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getFloatDataList()
-     * @generated
-     */
-    EClass FLOAT_DATA_LIST = eINSTANCE.getFloatDataList();
-
-    /**
-     * The meta object literal for the '<em><b>Items</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>R1</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FLOAT_DATA_LIST__ITEMS = eINSTANCE.getFloatDataList_Items();
-
-    /**
-     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see net.certware.evidence.hugin.netDSL.impl.NormalDistributionImpl
-     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getNormalDistribution()
-     * @generated
-     */
-    EClass NORMAL_DISTRIBUTION = eINSTANCE.getNormalDistribution();
-
-    /**
-     * The meta object literal for the '<em><b>Mean</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NORMAL_DISTRIBUTION__MEAN = eINSTANCE.getNormalDistribution_Mean();
-
-    /**
-     * The meta object literal for the '<em><b>Variance</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NORMAL_DISTRIBUTION__VARIANCE = eINSTANCE.getNormalDistribution_Variance();
+    EReference MATRIX_ROW__R1 = eINSTANCE.getMatrixRow_R1();
 
     /**
      * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.PotentialTableAttributeImpl <em>Potential Table Attribute</em>}' class.
@@ -4500,6 +4796,96 @@ public interface NetDSLPackage extends EPackage
      * @generated
      */
     EAttribute INTEGER_LITERAL__VALUE = eINSTANCE.getIntegerLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.List5Impl <em>List5</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.evidence.hugin.netDSL.impl.List5Impl
+     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList5()
+     * @generated
+     */
+    EClass LIST5 = eINSTANCE.getList5();
+
+    /**
+     * The meta object literal for the '<em><b>List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST5__LIST = eINSTANCE.getList5_List();
+
+    /**
+     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.List4Impl <em>List4</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.evidence.hugin.netDSL.impl.List4Impl
+     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList4()
+     * @generated
+     */
+    EClass LIST4 = eINSTANCE.getList4();
+
+    /**
+     * The meta object literal for the '<em><b>List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST4__LIST = eINSTANCE.getList4_List();
+
+    /**
+     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.List3Impl <em>List3</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.evidence.hugin.netDSL.impl.List3Impl
+     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList3()
+     * @generated
+     */
+    EClass LIST3 = eINSTANCE.getList3();
+
+    /**
+     * The meta object literal for the '<em><b>List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST3__LIST = eINSTANCE.getList3_List();
+
+    /**
+     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.List2Impl <em>List2</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.evidence.hugin.netDSL.impl.List2Impl
+     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList2()
+     * @generated
+     */
+    EClass LIST2 = eINSTANCE.getList2();
+
+    /**
+     * The meta object literal for the '<em><b>List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST2__LIST = eINSTANCE.getList2_List();
+
+    /**
+     * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.List1Impl <em>List1</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.evidence.hugin.netDSL.impl.List1Impl
+     * @see net.certware.evidence.hugin.netDSL.impl.NetDSLPackageImpl#getList1()
+     * @generated
+     */
+    EClass LIST1 = eINSTANCE.getList1();
+
+    /**
+     * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST1__ITEMS = eINSTANCE.getList1_Items();
 
     /**
      * The meta object literal for the '{@link net.certware.evidence.hugin.netDSL.impl.AssignmentImpl <em>Assignment</em>}' class.

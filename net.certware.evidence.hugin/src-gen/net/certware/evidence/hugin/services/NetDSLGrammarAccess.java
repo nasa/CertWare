@@ -32,58 +32,11 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getDomainDomainDefinitionParserRuleCall_0() { return cDomainDomainDefinitionParserRuleCall_0; }
 	}
 
-	public class DOUBLEElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final RuleCall cEXT_INTTerminalRuleCall_2_0 = (RuleCall)cAlternatives_2.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_2_1 = (RuleCall)cAlternatives_2.eContents().get(1);
-		
-		//DOUBLE returns ecore::EString:
-		//	INT "." (EXT_INT | INT);
-		public ParserRule getRule() { return rule; }
-
-		//INT "." (EXT_INT | INT)
-		public Group getGroup() { return cGroup; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
-
-		//"."
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
-
-		//EXT_INT | INT
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
-
-		//EXT_INT
-		public RuleCall getEXT_INTTerminalRuleCall_2_0() { return cEXT_INTTerminalRuleCall_2_0; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_2_1() { return cINTTerminalRuleCall_2_1; }
-	}
-
 	public class IntegerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Integer");
 		private final Assignment cIAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cIINTTerminalRuleCall_0 = (RuleCall)cIAssignment.eContents().get(0);
 		
-		////terminal INT returns ecore::EInt
-		////	: '-'? ('0'..'9')+;
-		////terminal UINT returns ecore::EInt
-		////	: ('0'..'9')+;
-		//// Sign returns ecore::EString : '+' | '-' ;
-		//// single-line comment style leading with %
-		//// the built-in version allows // as indicator, overridden here
-		//// hidden declaration in the common grammar
-		//// multi-line comments are also built-in but should be overridden
-		////	'"' ( !'"' )* '"';
-		//// '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | '-' | '.' | !('\\'|'"') )* '"' ;
-		//// "'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
-		////DOUBLE :
-		////	'-'? INT+ ('.' INT+ (('e'|'E') ('-')? INT+)?)?
-		////	;
 		//Integer:
 		//	i=INT;
 		public ParserRule getRule() { return rule; }
@@ -728,15 +681,25 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class PotentialAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PotentialAttribute");
-		private final RuleCall cPotentialDataAttributeParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPotentialDataAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPotentialTableAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//// | PotentialTableAttribute // TODO RECOVER
 		//PotentialAttribute:
-		//	PotentialDataAttribute;
+		//	PotentialDataAttribute | // TODO fragile
+		//	PotentialTableAttribute;
 		public ParserRule getRule() { return rule; }
 
+		//PotentialDataAttribute | // TODO fragile
+		//PotentialTableAttribute
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//PotentialDataAttribute
-		public RuleCall getPotentialDataAttributeParserRuleCall() { return cPotentialDataAttributeParserRuleCall; }
+		public RuleCall getPotentialDataAttributeParserRuleCall_0() { return cPotentialDataAttributeParserRuleCall_0; }
+
+		//// TODO fragile
+		//PotentialTableAttribute
+		public RuleCall getPotentialTableAttributeParserRuleCall_1() { return cPotentialTableAttributeParserRuleCall_1; }
 	}
 
 	public class PotentialDataAttributeElements extends AbstractParserRuleElementFinder {
@@ -745,202 +708,305 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cPotentialDataAttributeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDataKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cItemsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cItemsDataItemListParserRuleCall_4_0 = (RuleCall)cItemsAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cDataAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDataMatrixRowParserRuleCall_3_0 = (RuleCall)cDataAssignment_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//PotentialDataAttribute:
-		//	{PotentialDataAttribute} // 'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
-		//	"data" "=" "(" items=DataItemList ")" ";";
+		//	{PotentialDataAttribute} "data" "=" data=MatrixRow ";";
 		public ParserRule getRule() { return rule; }
 
-		//{PotentialDataAttribute} // 'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
-		//"data" "=" "(" items=DataItemList ")" ";"
+		//{PotentialDataAttribute} "data" "=" data=MatrixRow ";"
 		public Group getGroup() { return cGroup; }
 
 		//{PotentialDataAttribute}
 		public Action getPotentialDataAttributeAction_0() { return cPotentialDataAttributeAction_0; }
 
-		//// 'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
 		//"data"
 		public Keyword getDataKeyword_1() { return cDataKeyword_1; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
 
-		//"("
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		//data=MatrixRow
+		public Assignment getDataAssignment_3() { return cDataAssignment_3; }
 
-		//items=DataItemList
-		public Assignment getItemsAssignment_4() { return cItemsAssignment_4; }
-
-		//DataItemList
-		public RuleCall getItemsDataItemListParserRuleCall_4_0() { return cItemsDataItemListParserRuleCall_4_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		//MatrixRow
+		public RuleCall getDataMatrixRowParserRuleCall_3_0() { return cDataMatrixRowParserRuleCall_3_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
 	}
 
-	public class DataItemListElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataItemList");
+	public class MatrixRowElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MatrixRow");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cUnstructuredDataListParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cStructuredDataListParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cMatrixRowAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Assignment cR5Assignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cR5List5ParserRuleCall_0_1_0 = (RuleCall)cR5Assignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cMatrixRowAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cR4Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cR4List4ParserRuleCall_1_1_0 = (RuleCall)cR4Assignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cMatrixRowAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Assignment cR3Assignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cR3List3ParserRuleCall_2_1_0 = (RuleCall)cR3Assignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cMatrixRowAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cR2Assignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cR2List2ParserRuleCall_3_1_0 = (RuleCall)cR2Assignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cMatrixRowAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Assignment cR1Assignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cR1List1ParserRuleCall_4_1_0 = (RuleCall)cR1Assignment_4_1.eContents().get(0);
 		
-		//DataItemList:
-		//	UnstructuredDataList | StructuredDataList;
+		//// tough to do arbitrary nesting in xtext, so do reasonably deep rules
+		//// validation rules should check content patterns
+		//MatrixRow:
+		//	{MatrixRow} // trying for big enough to handle barley
+		//	r5+=List5+ | {MatrixRow} // '(' '(' '(' r31+=List1+ ')' '(' r32+=List1+ ')' '(' r33+=List1+ ')' ')' ')'
+		//	r4+=List4+ | {MatrixRow} //'(' '(' r21+=List+ ')' '(' r22+=List+ ')' ')'
+		//	r3+=List3+ | {MatrixRow} // '(' r11+=List+ ')'
+		//	r2+=List2+ | {MatrixRow} r1=List1;
 		public ParserRule getRule() { return rule; }
 
-		//UnstructuredDataList | StructuredDataList
+		//{MatrixRow} // trying for big enough to handle barley
+		//r5+=List5+ | {MatrixRow} // '(' '(' '(' r31+=List1+ ')' '(' r32+=List1+ ')' '(' r33+=List1+ ')' ')' ')'
+		//r4+=List4+ | {MatrixRow} //'(' '(' r21+=List+ ')' '(' r22+=List+ ')' ')'
+		//r3+=List3+ | {MatrixRow} // '(' r11+=List+ ')'
+		//r2+=List2+ | {MatrixRow} r1=List1
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//UnstructuredDataList
-		public RuleCall getUnstructuredDataListParserRuleCall_0() { return cUnstructuredDataListParserRuleCall_0; }
+		//{MatrixRow} // trying for big enough to handle barley
+		//r5+=List5+
+		public Group getGroup_0() { return cGroup_0; }
 
-		//StructuredDataList
-		public RuleCall getStructuredDataListParserRuleCall_1() { return cStructuredDataListParserRuleCall_1; }
+		//{MatrixRow}
+		public Action getMatrixRowAction_0_0() { return cMatrixRowAction_0_0; }
+
+		//// trying for big enough to handle barley
+		//r5+=List5+
+		public Assignment getR5Assignment_0_1() { return cR5Assignment_0_1; }
+
+		//List5
+		public RuleCall getR5List5ParserRuleCall_0_1_0() { return cR5List5ParserRuleCall_0_1_0; }
+
+		//{MatrixRow} // '(' '(' '(' r31+=List1+ ')' '(' r32+=List1+ ')' '(' r33+=List1+ ')' ')' ')'
+		//r4+=List4+
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{MatrixRow}
+		public Action getMatrixRowAction_1_0() { return cMatrixRowAction_1_0; }
+
+		//// '(' '(' '(' r31+=List1+ ')' '(' r32+=List1+ ')' '(' r33+=List1+ ')' ')' ')'
+		//r4+=List4+
+		public Assignment getR4Assignment_1_1() { return cR4Assignment_1_1; }
+
+		//List4
+		public RuleCall getR4List4ParserRuleCall_1_1_0() { return cR4List4ParserRuleCall_1_1_0; }
+
+		//{MatrixRow} //'(' '(' r21+=List+ ')' '(' r22+=List+ ')' ')'
+		//r3+=List3+
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{MatrixRow}
+		public Action getMatrixRowAction_2_0() { return cMatrixRowAction_2_0; }
+
+		////'(' '(' r21+=List+ ')' '(' r22+=List+ ')' ')'
+		//r3+=List3+
+		public Assignment getR3Assignment_2_1() { return cR3Assignment_2_1; }
+
+		//List3
+		public RuleCall getR3List3ParserRuleCall_2_1_0() { return cR3List3ParserRuleCall_2_1_0; }
+
+		//{MatrixRow} // '(' r11+=List+ ')'
+		//r2+=List2+
+		public Group getGroup_3() { return cGroup_3; }
+
+		//{MatrixRow}
+		public Action getMatrixRowAction_3_0() { return cMatrixRowAction_3_0; }
+
+		//// '(' r11+=List+ ')'
+		//r2+=List2+
+		public Assignment getR2Assignment_3_1() { return cR2Assignment_3_1; }
+
+		//List2
+		public RuleCall getR2List2ParserRuleCall_3_1_0() { return cR2List2ParserRuleCall_3_1_0; }
+
+		//{MatrixRow} r1=List1
+		public Group getGroup_4() { return cGroup_4; }
+
+		//{MatrixRow}
+		public Action getMatrixRowAction_4_0() { return cMatrixRowAction_4_0; }
+
+		//r1=List1
+		public Assignment getR1Assignment_4_1() { return cR1Assignment_4_1; }
+
+		//List1
+		public RuleCall getR1List1ParserRuleCall_4_1_0() { return cR1List1ParserRuleCall_4_1_0; }
 	}
 
-	public class UnstructuredDataListElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UnstructuredDataList");
+	public class List5Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "List5");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cUnstructuredDataListAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cListAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cListFloatDataListParserRuleCall_1_0 = (RuleCall)cListAssignment_1.eContents().get(0);
-		
-		//// | normal=NormalDistribution
-		//UnstructuredDataList:
-		//	{UnstructuredDataList} list=FloatDataList;
-		public ParserRule getRule() { return rule; }
-
-		//{UnstructuredDataList} list=FloatDataList
-		public Group getGroup() { return cGroup; }
-
-		//{UnstructuredDataList}
-		public Action getUnstructuredDataListAction_0() { return cUnstructuredDataListAction_0; }
-
-		//list=FloatDataList
-		public Assignment getListAssignment_1() { return cListAssignment_1; }
-
-		//FloatDataList
-		public RuleCall getListFloatDataListParserRuleCall_1_0() { return cListFloatDataListParserRuleCall_1_0; }
-	}
-
-	public class StructuredDataListElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StructuredDataList");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cStructuredDataListAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cList5Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cListAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final RuleCall cListFloatDataListParserRuleCall_2_0_0 = (RuleCall)cListAssignment_2_0.eContents().get(0);
-		private final Assignment cItemsAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final RuleCall cItemsStructuredDataListParserRuleCall_2_1_0 = (RuleCall)cItemsAssignment_2_1.eContents().get(0);
+		private final Assignment cListAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cListList4ParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//StructuredDataList:
-		//	{StructuredDataList} "(" (list=FloatDataList | items+=StructuredDataList+) ")";
+		//List5 returns MatrixRow:
+		//	{List5} "(" list+=List4+ ")";
 		public ParserRule getRule() { return rule; }
 
-		//{StructuredDataList} "(" (list=FloatDataList | items+=StructuredDataList+) ")"
+		//{List5} "(" list+=List4+ ")"
 		public Group getGroup() { return cGroup; }
 
-		//{StructuredDataList}
-		public Action getStructuredDataListAction_0() { return cStructuredDataListAction_0; }
+		//{List5}
+		public Action getList5Action_0() { return cList5Action_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//list=FloatDataList | items+=StructuredDataList+
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		//list+=List4+
+		public Assignment getListAssignment_2() { return cListAssignment_2; }
 
-		//list=FloatDataList
-		public Assignment getListAssignment_2_0() { return cListAssignment_2_0; }
-
-		//FloatDataList
-		public RuleCall getListFloatDataListParserRuleCall_2_0_0() { return cListFloatDataListParserRuleCall_2_0_0; }
-
-		//items+=StructuredDataList+
-		public Assignment getItemsAssignment_2_1() { return cItemsAssignment_2_1; }
-
-		//StructuredDataList
-		public RuleCall getItemsStructuredDataListParserRuleCall_2_1_0() { return cItemsStructuredDataListParserRuleCall_2_1_0; }
+		//List4
+		public RuleCall getListList4ParserRuleCall_2_0() { return cListList4ParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
-	public class FloatDataListElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FloatDataList");
+	public class List4Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "List4");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cFloatDataListAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cItemsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cItemsDOUBLEParserRuleCall_1_0 = (RuleCall)cItemsAssignment_1.eContents().get(0);
-		
-		//FloatDataList:
-		//	{FloatDataList} items+=DOUBLE*;
-		public ParserRule getRule() { return rule; }
-
-		//{FloatDataList} items+=DOUBLE*
-		public Group getGroup() { return cGroup; }
-
-		//{FloatDataList}
-		public Action getFloatDataListAction_0() { return cFloatDataListAction_0; }
-
-		//items+=DOUBLE*
-		public Assignment getItemsAssignment_1() { return cItemsAssignment_1; }
-
-		//DOUBLE
-		public RuleCall getItemsDOUBLEParserRuleCall_1_0() { return cItemsDOUBLEParserRuleCall_1_0; }
-	}
-
-	public class NormalDistributionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NormalDistribution");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNormalKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Action cList4Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cMeanAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMeanMeanExpressionParserRuleCall_2_0 = (RuleCall)cMeanAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cVarianceAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cVarianceDOUBLEParserRuleCall_4_0 = (RuleCall)cVarianceAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cListAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cListList3ParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//NormalDistribution:
-		//	"normal" "(" mean=MeanExpression "," variance=DOUBLE ")";
+		//List4 returns MatrixRow:
+		//	{List4} "(" list+=List3+ ")";
 		public ParserRule getRule() { return rule; }
 
-		//"normal" "(" mean=MeanExpression "," variance=DOUBLE ")"
+		//{List4} "(" list+=List3+ ")"
 		public Group getGroup() { return cGroup; }
 
-		//"normal"
-		public Keyword getNormalKeyword_0() { return cNormalKeyword_0; }
+		//{List4}
+		public Action getList4Action_0() { return cList4Action_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//mean=MeanExpression
-		public Assignment getMeanAssignment_2() { return cMeanAssignment_2; }
+		//list+=List3+
+		public Assignment getListAssignment_2() { return cListAssignment_2; }
 
-		//MeanExpression
-		public RuleCall getMeanMeanExpressionParserRuleCall_2_0() { return cMeanMeanExpressionParserRuleCall_2_0; }
-
-		//","
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-
-		//variance=DOUBLE
-		public Assignment getVarianceAssignment_4() { return cVarianceAssignment_4; }
-
-		//DOUBLE
-		public RuleCall getVarianceDOUBLEParserRuleCall_4_0() { return cVarianceDOUBLEParserRuleCall_4_0; }
+		//List3
+		public RuleCall getListList3ParserRuleCall_2_0() { return cListList3ParserRuleCall_2_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+
+	public class List3Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "List3");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cList3Action_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cListAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cListList2ParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//List3 returns MatrixRow:
+		//	{List3} "(" list+=List2+ ")";
+		public ParserRule getRule() { return rule; }
+
+		//{List3} "(" list+=List2+ ")"
+		public Group getGroup() { return cGroup; }
+
+		//{List3}
+		public Action getList3Action_0() { return cList3Action_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//list+=List2+
+		public Assignment getListAssignment_2() { return cListAssignment_2; }
+
+		//List2
+		public RuleCall getListList2ParserRuleCall_2_0() { return cListList2ParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+
+	public class List2Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "List2");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cList2Action_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cListAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cListList1ParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//List2 returns MatrixRow:
+		//	{List2} "(" list+=List1+ ")";
+		public ParserRule getRule() { return rule; }
+
+		//{List2} "(" list+=List1+ ")"
+		public Group getGroup() { return cGroup; }
+
+		//{List2}
+		public Action getList2Action_0() { return cList2Action_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//list+=List1+
+		public Assignment getListAssignment_2() { return cListAssignment_2; }
+
+		//List1
+		public RuleCall getListList1ParserRuleCall_2_0() { return cListList1ParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+
+	public class List1Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "List1");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cList1Action_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cItemsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cItemsUnaryExpressionParserRuleCall_2_0 = (RuleCall)cItemsAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//// TODO add normal distribution as an expression operation
+		//List1 returns MatrixRow:
+		//	{List1} "(" items+=unaryExpression* ")";
+		public ParserRule getRule() { return rule; }
+
+		//{List1} "(" items+=unaryExpression* ")"
+		public Group getGroup() { return cGroup; }
+
+		//{List1}
+		public Action getList1Action_0() { return cList1Action_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//items+=unaryExpression*
+		public Assignment getItemsAssignment_2() { return cItemsAssignment_2; }
+
+		//unaryExpression
+		public RuleCall getItemsUnaryExpressionParserRuleCall_2_0() { return cItemsUnaryExpressionParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
 	public class MeanExpressionElements extends AbstractParserRuleElementFinder {
@@ -951,6 +1017,10 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPlusSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cMeanTermParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
+		//// TODO redefine as an operator so it matches unary expressions
+		////NormalDistribution 
+		////	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
+		////	;
 		//MeanExpression returns ecore::EString:
 		//	MeanTerm ("+" MeanTerm)*;
 		public ParserRule getRule() { return rule; }
@@ -974,9 +1044,9 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class MeanTermElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MeanTerm");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDOUBLEParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cDOUBLETerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cDOUBLEParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final RuleCall cDOUBLETerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final Keyword cAsteriskKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
 		private final RuleCall cIDTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
@@ -989,13 +1059,13 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//DOUBLE
-		public RuleCall getDOUBLEParserRuleCall_0() { return cDOUBLEParserRuleCall_0; }
+		public RuleCall getDOUBLETerminalRuleCall_0() { return cDOUBLETerminalRuleCall_0; }
 
 		//DOUBLE "*" ID
 		public Group getGroup_1() { return cGroup_1; }
 
 		//DOUBLE
-		public RuleCall getDOUBLEParserRuleCall_1_0() { return cDOUBLEParserRuleCall_1_0; }
+		public RuleCall getDOUBLETerminalRuleCall_1_0() { return cDOUBLETerminalRuleCall_1_0; }
 
 		//"*"
 		public Keyword getAsteriskKeyword_1_1() { return cAsteriskKeyword_1_1; }
@@ -2041,7 +2111,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Action cDoubleLiteralAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValueDOUBLEParserRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
+		private final RuleCall cValueDOUBLETerminalRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
 		
 		//TermLiteral:
 		//	{VarRef} value=ID | {IntegerLiteral} value=INT | {BooleanLiteral} value=BOOLEAN | {StringLiteral} value=STRING |
@@ -2110,7 +2180,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
 
 		//DOUBLE
-		public RuleCall getValueDOUBLEParserRuleCall_4_1_0() { return cValueDOUBLEParserRuleCall_4_1_0; }
+		public RuleCall getValueDOUBLETerminalRuleCall_4_1_0() { return cValueDOUBLETerminalRuleCall_4_1_0; }
 	}
 
 	public class OperatorNameElements extends AbstractParserRuleElementFinder {
@@ -2300,12 +2370,11 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tBOOLEAN;
 	private TerminalRule tID;
 	private TerminalRule tINT;
+	private TerminalRule tDOUBLE;
 	private TerminalRule tSTRING;
 	private TerminalRule tML_COMMENT;
 	private TerminalRule tSL_COMMENT;
 	private TerminalRule tWS;
-	private DOUBLEElements pDOUBLE;
-	private TerminalRule tEXT_INT;
 	private TerminalRule tANY_OTHER;
 	private IntegerElements pInteger;
 	private DomainDefinitionElements pDomainDefinition;
@@ -2326,11 +2395,12 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private PotentialModelElements pPotentialModel;
 	private PotentialAttributeElements pPotentialAttribute;
 	private PotentialDataAttributeElements pPotentialDataAttribute;
-	private DataItemListElements pDataItemList;
-	private UnstructuredDataListElements pUnstructuredDataList;
-	private StructuredDataListElements pStructuredDataList;
-	private FloatDataListElements pFloatDataList;
-	private NormalDistributionElements pNormalDistribution;
+	private MatrixRowElements pMatrixRow;
+	private List5Elements pList5;
+	private List4Elements pList4;
+	private List3Elements pList3;
+	private List2Elements pList2;
+	private List1Elements pList1;
 	private MeanExpressionElements pMeanExpression;
 	private MeanTermElements pMeanTerm;
 	private PotentialTableAttributeElements pPotentialTableAttribute;
@@ -2408,9 +2478,13 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
 	} 
 
-	////terminal DOUBLE returns ecore::EDouble :  
-	////	'1'..'9' ('0'..'9')* ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)?
-	////	| '0' ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)? ;
+	//terminal DOUBLE returns ecore::EDouble:
+	//	"1".."9" "0".."9"* ("." "0".."9"+)? (("E" | "e") ("+" | "-")? "0".."9"+)? | "0" ("." "0".."9"+)? (("E" | "e") ("+" |
+	//	"-")? "0".."9"+)?;
+	public TerminalRule getDOUBLERule() {
+		return (tDOUBLE != null) ? tDOUBLE : (tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE"));
+	} 
+
 	////terminal STRING :
 	////'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
 	////"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'"; 
@@ -2439,43 +2513,14 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
 	} 
 
-	//DOUBLE returns ecore::EString:
-	//	INT "." (EXT_INT | INT);
-	public DOUBLEElements getDOUBLEAccess() {
-		return (pDOUBLE != null) ? pDOUBLE : (pDOUBLE = new DOUBLEElements());
-	}
-	
-	public ParserRule getDOUBLERule() {
-		return getDOUBLEAccess().getRule();
-	}
-
-	//terminal EXT_INT:
-	//	INT ("e" | "E") ("-" | "+") INT;
-	public TerminalRule getEXT_INTRule() {
-		return (tEXT_INT != null) ? tEXT_INT : (tEXT_INT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EXT_INT"));
-	} 
-
+	////DOUBLE: INT '.' (EXT_INT | INT);
+	////terminal EXT_INT: INT ('e'|'E')('-'|'+') INT;
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
 		return (tANY_OTHER != null) ? tANY_OTHER : (tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER"));
 	} 
 
-	////terminal INT returns ecore::EInt
-	////	: '-'? ('0'..'9')+;
-	////terminal UINT returns ecore::EInt
-	////	: ('0'..'9')+;
-	//// Sign returns ecore::EString : '+' | '-' ;
-	//// single-line comment style leading with %
-	//// the built-in version allows // as indicator, overridden here
-	//// hidden declaration in the common grammar
-	//// multi-line comments are also built-in but should be overridden
-	////	'"' ( !'"' )* '"';
-	//// '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | '-' | '.' | !('\\'|'"') )* '"' ;
-	//// "'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
-	////DOUBLE :
-	////	'-'? INT+ ('.' INT+ (('e'|'E') ('-')? INT+)?)?
-	////	;
 	//Integer:
 	//	i=INT;
 	public IntegerElements getIntegerAccess() {
@@ -2648,9 +2693,9 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getPotentialModelAccess().getRule();
 	}
 
-	//// | PotentialTableAttribute // TODO RECOVER
 	//PotentialAttribute:
-	//	PotentialDataAttribute;
+	//	PotentialDataAttribute | // TODO fragile
+	//	PotentialTableAttribute;
 	public PotentialAttributeElements getPotentialAttributeAccess() {
 		return (pPotentialAttribute != null) ? pPotentialAttribute : (pPotentialAttribute = new PotentialAttributeElements());
 	}
@@ -2660,8 +2705,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PotentialDataAttribute:
-	//	{PotentialDataAttribute} // 'data' '=' '(' (unstructured=UnstructuredDataList | items+=StructuredDataList*) ')' ';'
-	//	"data" "=" "(" items=DataItemList ")" ";";
+	//	{PotentialDataAttribute} "data" "=" data=MatrixRow ";";
 	public PotentialDataAttributeElements getPotentialDataAttributeAccess() {
 		return (pPotentialDataAttribute != null) ? pPotentialDataAttribute : (pPotentialDataAttribute = new PotentialDataAttributeElements());
 	}
@@ -2670,57 +2714,77 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getPotentialDataAttributeAccess().getRule();
 	}
 
-	//DataItemList:
-	//	UnstructuredDataList | StructuredDataList;
-	public DataItemListElements getDataItemListAccess() {
-		return (pDataItemList != null) ? pDataItemList : (pDataItemList = new DataItemListElements());
+	//// tough to do arbitrary nesting in xtext, so do reasonably deep rules
+	//// validation rules should check content patterns
+	//MatrixRow:
+	//	{MatrixRow} // trying for big enough to handle barley
+	//	r5+=List5+ | {MatrixRow} // '(' '(' '(' r31+=List1+ ')' '(' r32+=List1+ ')' '(' r33+=List1+ ')' ')' ')'
+	//	r4+=List4+ | {MatrixRow} //'(' '(' r21+=List+ ')' '(' r22+=List+ ')' ')'
+	//	r3+=List3+ | {MatrixRow} // '(' r11+=List+ ')'
+	//	r2+=List2+ | {MatrixRow} r1=List1;
+	public MatrixRowElements getMatrixRowAccess() {
+		return (pMatrixRow != null) ? pMatrixRow : (pMatrixRow = new MatrixRowElements());
 	}
 	
-	public ParserRule getDataItemListRule() {
-		return getDataItemListAccess().getRule();
+	public ParserRule getMatrixRowRule() {
+		return getMatrixRowAccess().getRule();
 	}
 
-	//// | normal=NormalDistribution
-	//UnstructuredDataList:
-	//	{UnstructuredDataList} list=FloatDataList;
-	public UnstructuredDataListElements getUnstructuredDataListAccess() {
-		return (pUnstructuredDataList != null) ? pUnstructuredDataList : (pUnstructuredDataList = new UnstructuredDataListElements());
+	//List5 returns MatrixRow:
+	//	{List5} "(" list+=List4+ ")";
+	public List5Elements getList5Access() {
+		return (pList5 != null) ? pList5 : (pList5 = new List5Elements());
 	}
 	
-	public ParserRule getUnstructuredDataListRule() {
-		return getUnstructuredDataListAccess().getRule();
+	public ParserRule getList5Rule() {
+		return getList5Access().getRule();
 	}
 
-	//StructuredDataList:
-	//	{StructuredDataList} "(" (list=FloatDataList | items+=StructuredDataList+) ")";
-	public StructuredDataListElements getStructuredDataListAccess() {
-		return (pStructuredDataList != null) ? pStructuredDataList : (pStructuredDataList = new StructuredDataListElements());
+	//List4 returns MatrixRow:
+	//	{List4} "(" list+=List3+ ")";
+	public List4Elements getList4Access() {
+		return (pList4 != null) ? pList4 : (pList4 = new List4Elements());
 	}
 	
-	public ParserRule getStructuredDataListRule() {
-		return getStructuredDataListAccess().getRule();
+	public ParserRule getList4Rule() {
+		return getList4Access().getRule();
 	}
 
-	//FloatDataList:
-	//	{FloatDataList} items+=DOUBLE*;
-	public FloatDataListElements getFloatDataListAccess() {
-		return (pFloatDataList != null) ? pFloatDataList : (pFloatDataList = new FloatDataListElements());
+	//List3 returns MatrixRow:
+	//	{List3} "(" list+=List2+ ")";
+	public List3Elements getList3Access() {
+		return (pList3 != null) ? pList3 : (pList3 = new List3Elements());
 	}
 	
-	public ParserRule getFloatDataListRule() {
-		return getFloatDataListAccess().getRule();
+	public ParserRule getList3Rule() {
+		return getList3Access().getRule();
 	}
 
-	//NormalDistribution:
-	//	"normal" "(" mean=MeanExpression "," variance=DOUBLE ")";
-	public NormalDistributionElements getNormalDistributionAccess() {
-		return (pNormalDistribution != null) ? pNormalDistribution : (pNormalDistribution = new NormalDistributionElements());
+	//List2 returns MatrixRow:
+	//	{List2} "(" list+=List1+ ")";
+	public List2Elements getList2Access() {
+		return (pList2 != null) ? pList2 : (pList2 = new List2Elements());
 	}
 	
-	public ParserRule getNormalDistributionRule() {
-		return getNormalDistributionAccess().getRule();
+	public ParserRule getList2Rule() {
+		return getList2Access().getRule();
 	}
 
+	//// TODO add normal distribution as an expression operation
+	//List1 returns MatrixRow:
+	//	{List1} "(" items+=unaryExpression* ")";
+	public List1Elements getList1Access() {
+		return (pList1 != null) ? pList1 : (pList1 = new List1Elements());
+	}
+	
+	public ParserRule getList1Rule() {
+		return getList1Access().getRule();
+	}
+
+	//// TODO redefine as an operator so it matches unary expressions
+	////NormalDistribution 
+	////	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
+	////	;
 	//MeanExpression returns ecore::EString:
 	//	MeanTerm ("+" MeanTerm)*;
 	public MeanExpressionElements getMeanExpressionAccess() {

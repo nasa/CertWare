@@ -7,8 +7,9 @@ package net.certware.evidence.hugin.netDSL.impl;
 
 import java.util.Collection;
 
+import net.certware.evidence.hugin.netDSL.List2;
+import net.certware.evidence.hugin.netDSL.MatrixRow;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
-import net.certware.evidence.hugin.netDSL.StructuredDataList;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -22,35 +23,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Structured Data List</b></em>'.
+ * An implementation of the model object '<em><b>List2</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.evidence.hugin.netDSL.impl.StructuredDataListImpl#getItems <em>Items</em>}</li>
+ *   <li>{@link net.certware.evidence.hugin.netDSL.impl.List2Impl#getList <em>List</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StructuredDataListImpl extends DataItemListImpl implements StructuredDataList
+public class List2Impl extends MatrixRowImpl implements List2
 {
   /**
-   * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
+   * The cached value of the '{@link #getList() <em>List</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItems()
+   * @see #getList()
    * @generated
    * @ordered
    */
-  protected EList<StructuredDataList> items;
+  protected EList<MatrixRow> list;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StructuredDataListImpl()
+  protected List2Impl()
   {
     super();
   }
@@ -63,7 +64,7 @@ public class StructuredDataListImpl extends DataItemListImpl implements Structur
   @Override
   protected EClass eStaticClass()
   {
-    return NetDSLPackage.Literals.STRUCTURED_DATA_LIST;
+    return NetDSLPackage.Literals.LIST2;
   }
 
   /**
@@ -71,13 +72,13 @@ public class StructuredDataListImpl extends DataItemListImpl implements Structur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StructuredDataList> getItems()
+  public EList<MatrixRow> getList()
   {
-    if (items == null)
+    if (list == null)
     {
-      items = new EObjectContainmentEList<StructuredDataList>(StructuredDataList.class, this, NetDSLPackage.STRUCTURED_DATA_LIST__ITEMS);
+      list = new EObjectContainmentEList<MatrixRow>(MatrixRow.class, this, NetDSLPackage.LIST2__LIST);
     }
-    return items;
+    return list;
   }
 
   /**
@@ -90,8 +91,8 @@ public class StructuredDataListImpl extends DataItemListImpl implements Structur
   {
     switch (featureID)
     {
-      case NetDSLPackage.STRUCTURED_DATA_LIST__ITEMS:
-        return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
+      case NetDSLPackage.LIST2__LIST:
+        return ((InternalEList<?>)getList()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +107,8 @@ public class StructuredDataListImpl extends DataItemListImpl implements Structur
   {
     switch (featureID)
     {
-      case NetDSLPackage.STRUCTURED_DATA_LIST__ITEMS:
-        return getItems();
+      case NetDSLPackage.LIST2__LIST:
+        return getList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +124,9 @@ public class StructuredDataListImpl extends DataItemListImpl implements Structur
   {
     switch (featureID)
     {
-      case NetDSLPackage.STRUCTURED_DATA_LIST__ITEMS:
-        getItems().clear();
-        getItems().addAll((Collection<? extends StructuredDataList>)newValue);
+      case NetDSLPackage.LIST2__LIST:
+        getList().clear();
+        getList().addAll((Collection<? extends MatrixRow>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +142,8 @@ public class StructuredDataListImpl extends DataItemListImpl implements Structur
   {
     switch (featureID)
     {
-      case NetDSLPackage.STRUCTURED_DATA_LIST__ITEMS:
-        getItems().clear();
+      case NetDSLPackage.LIST2__LIST:
+        getList().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +159,10 @@ public class StructuredDataListImpl extends DataItemListImpl implements Structur
   {
     switch (featureID)
     {
-      case NetDSLPackage.STRUCTURED_DATA_LIST__ITEMS:
-        return items != null && !items.isEmpty();
+      case NetDSLPackage.LIST2__LIST:
+        return list != null && !list.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //StructuredDataListImpl
+} //List2Impl
