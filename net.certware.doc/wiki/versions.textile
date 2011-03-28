@@ -11,6 +11,8 @@ _Enhancements_:
 * Added preference values for semi-formal proof review wizard options.
 * Added overlay splash handler for product version identification.
 * Changed SAEM editor to single page.
+* Updated Hugin NET DSL to handle all content of test networks.  
+* Added unit tests for various inference library usage scenarios.
 _Commit_:
 * TBD.
 

@@ -22,7 +22,7 @@ import edu.ucla.belief.FiniteVariable;
 import edu.ucla.belief.InferenceEngine;
 import edu.ucla.belief.PartialDerivativeEngine;
 import edu.ucla.belief.StateNotFoundException;
-import edu.ucla.belief.VariableInstance;
+import edu.ucla.belief.TableIndex;
 import edu.ucla.belief.inference.RCEngineGenerator;
 import edu.ucla.belief.inference.RCSettings;
 import edu.ucla.belief.io.NetworkIO;
@@ -168,11 +168,11 @@ public class CancerSensitivity {
 		System.out.println( "Single CPT (multiple parameter) suggestions:\n{" );
 		FiniteVariable target = null;
 		SingleCPTSuggestion suggestion = null;
-		ProbabilityInterval[] intervals = null;
+		//ProbabilityInterval[] intervals = null;
 		for( Iterator iterator = mapFiniteVariablesToSingleCPTSuggestions.keySet().iterator(); iterator.hasNext(); ){
 			target = (FiniteVariable)iterator.next();
 			suggestion = (SingleCPTSuggestion) mapFiniteVariablesToSingleCPTSuggestions.get( target );
-			intervals = suggestion.probabilityIntervals();
+			//intervals = suggestion.probabilityIntervals();
 			System.out.println( "Suggestion for " + target.getID() + "'s CPT, log odds change " + suggestion.getLogOddsChange() );
 			System.out.print( suggestion.toString() );
 			System.out.println();
@@ -200,28 +200,54 @@ public class CancerSensitivity {
 		}
 
 		// multiple result
-		// TODO missing other parameters of multiple parameter
 		SingleCPTSuggestion c2 = (SingleCPTSuggestion) mapFiniteVariablesToSingleCPTSuggestions.get(mapFiniteVariablesToSingleCPTSuggestions.keySet().toArray()[1]);
-		ProbabilityInterval[] c2intervals = c2.probabilityIntervals();
 		assertSame(varB,c2.getVariable());
 		assertEquals(2.51159,c2.getLogOddsChange(),epsilon);
-		FiniteVariable f2 = c2.getVariable();
-		CPTShell shell2 = f2.getCPTShell();
-		System.err.println("Suggested " + f2 + " log odds change " + c2.getLogOddsChange() );
-		System.err.println("" + f2 + '\t' + "Current value" + '\t' + "Suggested value");
-		x = 0;
-		for ( CPTParameter ptp : shell2.getCPTParameters() ) {
-			VariableInstance vi = ptp.getJointInstance();
-			System.err.println(
-					"" + vi.getInstance()
-					+ '\t' + ptp.getValue() 
-					+ '\t' + c2intervals[x++].toString());
-		}
 
+		// full table assertions
+		CPTShell shell = c2.getCPTShell();
+		TableIndex index = shell.index();
+		List variables = index.variables();
+		assertEquals("A",variables.get(0).toString());
+		assertEquals("B",variables.get(1).toString());
+		TableIndex.Iterator iter = shell.index().iterator();
+
+		// index 0
+		int i = iter.next();
+		int[] inds = iter.current();
+		assertEquals("Present",((FiniteVariable)variables.get(0)).instance(inds[0]));
+		assertEquals("Increased",((FiniteVariable)variables.get(1)).instance(inds[1]));
+		assertEquals(0.8,c2.getProb(i),epsilon);
+		assertEquals(0.980118,c2.probabilityInterval(i).closestToZero(),epsilon);
+		
+		// index 1
+		i = iter.next();
+		inds = iter.current();
+		assertEquals("Present",((FiniteVariable)variables.get(0)).instance(inds[0]));
+		assertEquals("Not increased",((FiniteVariable)variables.get(1)).instance(inds[1]));
+		assertEquals(0.2,c2.getProb(i),epsilon);
+		assertEquals(0.019881,c2.probabilityInterval(i).closestToZero(),epsilon);
+
+		// index 2
+		i = iter.next();
+		inds = iter.current();
+		assertEquals("Absent",((FiniteVariable)variables.get(0)).instance(inds[0]));
+		assertEquals("Increased",((FiniteVariable)variables.get(1)).instance(inds[1]));
+		assertEquals(0.2,c2.getProb(i),epsilon);
+		assertEquals(0.75497,c2.probabilityInterval(i).closestToZero(),epsilon);
+
+		// index 3
+		i = iter.next();
+		inds = iter.current();
+		assertEquals("Absent",((FiniteVariable)variables.get(0)).instance(inds[0]));
+		assertEquals("Not increased",((FiniteVariable)variables.get(1)).instance(inds[1]));
+		assertEquals(0.8,c2.getProb(i),epsilon);
+		assertEquals(0.245029,c2.probabilityInterval(i).closestToZero(),epsilon);
 
 		engine.die();
 	}
-
+	
+	
 	/**
 	 * Read the network from a resource file.
 	 */
