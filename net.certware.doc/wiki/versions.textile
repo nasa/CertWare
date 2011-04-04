@@ -13,6 +13,7 @@ _Enhancements_:
 * Changed SAEM editor to single page.
 * Updated Hugin NET DSL to handle all content of test networks.  
 * Added unit tests for various inference library usage scenarios.
+* Added example contribution for Hugin NET DSL.
 _Commit_:
 * TBD.
 

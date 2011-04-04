@@ -90,3 +90,4 @@ mementi
 href
 combo
 dynamator
+bayesian

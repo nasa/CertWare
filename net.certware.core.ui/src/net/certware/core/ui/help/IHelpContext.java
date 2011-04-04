@@ -97,6 +97,10 @@ public interface IHelpContext {
 	/** VCL view context ID */
 	public static String VCL_VIEW = PREFIX + "vcl_view_context"; //$NON-NLS-1$
 	
+	// NET-related context IDs
+	/** NET view context ID */
+	public static String NET_VIEW = PREFIX + "net_view_context"; //$NON-NLS-1$
+	
 	
 	// model agnostic context IDs
 	/** export wizard page context */
