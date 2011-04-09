@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 National Aeronautics and Space Administration.  All rights reserved."
+    modelDirectory="/net.certware.evidence.hugin.instance/src" modelPluginID="net.certware.evidence.hugin.instance"
+    modelName="Instance" nonNLSMarkers="true" testsDirectory="" testSuiteClass=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    testsPluginID="net.certware.evidence.hugin.instance.tests">
+  <foreignModel>instance.ecore</foreignModel>
+  <genPackages prefix="Instance" basePackage="net.certware.evidence.hugin" resource="XMI"
+      disposableProviderFactory="true" generateExampleClass="false" multipleEditorPages="false"
+      generateModelWizard="false" fileExtensions="hev" ecorePackage="instance.ecore#/">
+    <genClasses ecoreClass="instance.ecore#//InstanceVariable">
+      <genFeatures createChild="false" propertyDescription="The network variable name"
+          ecoreFeature="ecore:EAttribute instance.ecore#//InstanceVariable/variableName"/>
+      <genFeatures notify="false" createChild="false" propertyDescription="The states set for the evidence instance record"
+          propertySortChoices="true" ecoreFeature="ecore:EReference instance.ecore#//InstanceVariable/states"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//InstanceState">
+      <genFeatures createChild="false" propertyDescription="The state name corresponding to a variable state value"
+          ecoreFeature="ecore:EAttribute instance.ecore#//InstanceState/stateName"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//InstanceNetwork">
+      <genFeatures children="true" createChild="true" propertyDescription="The network variables containing state values to record"
+          ecoreFeature="ecore:EReference instance.ecore#//InstanceNetwork/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//EngineSettings">
+      <genFeatures property="None" children="true" createChild="true" propertyDescription="Engine setting parameters, a map of string keys and values"
+          ecoreFeature="ecore:EReference instance.ecore#//EngineSettings/settings"/>
+    </genClasses>
+    <genClasses ecoreClass="instance.ecore#//StringToStringMap">
+      <genFeatures createChild="false" propertyDescription="Engine setting key string"
+          ecoreFeature="ecore:EAttribute instance.ecore#//StringToStringMap/key"/>
+      <genFeatures createChild="false" propertyDescription="Engine setting value for the associated key"
+          ecoreFeature="ecore:EAttribute instance.ecore#//StringToStringMap/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

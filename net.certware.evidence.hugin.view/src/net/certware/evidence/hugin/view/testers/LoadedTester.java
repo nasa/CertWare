@@ -1,6 +1,6 @@
 package net.certware.evidence.hugin.view.testers;
 
-import net.certware.evidence.hugin.view.ViewList;
+import net.certware.evidence.hugin.view.ViewTree;
 
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.ui.IWorkbenchPart;
@@ -38,14 +38,14 @@ public class LoadedTester extends PropertyTester
     try {
       // some can be null during launch
       wp = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
-      if ( ! (wp instanceof ViewList) )
+      if ( ! (wp instanceof ViewTree) )
         return false;
     } catch( Exception e ) { // $codepro.audit.disable logExceptions
       return false;
     }
     
     try {
-      ViewList viewList = (ViewList)wp;
+      ViewTree viewList = (ViewTree)wp;
       loaded = viewList.getSelectedNetwork() != null;
     } catch( Exception e ) {
       System.err.println(String.format("%s %s", "View list loaded tester",e.getMessage())); //$NON-NLS-1$

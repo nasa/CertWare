@@ -13,7 +13,9 @@ import org.junit.runners.Suite;
 	CancerManualTest.class, 
 	CancerReadTest.class,
 	CancerMAPTest.class,
+	CancerExactMAPTest.class,
 	CancerSensitivity.class,
+	CancerProbabilityQuery.class,
 	BarleyReadTest.class
 	})
 public class AllTests {

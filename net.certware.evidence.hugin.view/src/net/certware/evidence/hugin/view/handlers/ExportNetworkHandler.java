@@ -1,6 +1,6 @@
 package net.certware.evidence.hugin.view.handlers;
 
-import net.certware.evidence.hugin.view.ViewList;
+import net.certware.evidence.hugin.view.ViewTree;
 import net.certware.evidence.hugin.view.jobs.ExportNetworkJob;
 import net.certware.export.excel.WriteExcel;
 
@@ -26,7 +26,7 @@ public class ExportNetworkHandler extends AbstractHandler
   
   /**
    * Handles the export command request.  
-   * Presumes the command came from the value tool summary view.
+   * Presumes the command came from the network view.
    * @param event used to find shell
    * @return always returns null  
    * @throws ExecutionException if export job fails  
@@ -36,7 +36,7 @@ public class ExportNetworkHandler extends AbstractHandler
   {
     // get context information
     Shell shell = HandlerUtil.getActiveShellChecked(event);
-    final ViewList view = (ViewList)HandlerUtil.getActivePartChecked(event);
+    final ViewTree view = (ViewTree)HandlerUtil.getActivePartChecked(event);
     BeliefNetwork network = view.getSelectedNetwork();
     if ( network == null ) 
       return null;

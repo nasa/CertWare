@@ -5,17 +5,17 @@
          point="net.certware.example">
       <pattern
             applicability="Hugin NET Bayesian network model example"
-            author="Hugin Expert A/S"
-            consequences="Rework of argument structure"
-            idp="net.certware.example.patterns.net.mildew"
-            implementation="See more at http://www.hugin.com/developer/samples/mildew"
+            author="Matt Barry"
+            consequences="Rework of argument structure and probability tables"
+            idp="net.certware.example.patterns.net.rtos"
+            implementation="Use Hugin DSL editor for structure, Network Analysis View for analysis"
             intent="Demonstrate basic structure of BN for evidence inference"
             motivation="Initialize the NET DSL editor with working content, editable to suit safety case evidence structure."
-            name="Mildew Analysis"
-            version="Mildew I">
+            name="RTOS Software Analysis"
+            version="RTOS 1">
          <resource
                description="Model file for DSL editor"
-               structure="resources/mildew.net">
+               structure="resources/software_test.net">
          </resource>
       </pattern>
    </extension>

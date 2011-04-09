@@ -6,7 +6,7 @@ package net.certware.evidence.hugin.view.handlers;
 import java.lang.reflect.InvocationTargetException;
 
 import net.certware.core.ui.log.CertWareLog;
-import net.certware.evidence.hugin.view.ViewList;
+import net.certware.evidence.hugin.view.ViewTree;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -32,7 +32,7 @@ public class SaveHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
-		final ViewList vl = (ViewList)HandlerUtil.getActivePartChecked(event);
+		final ViewTree vl = (ViewTree)HandlerUtil.getActivePartChecked(event);
 		if ( vl != null ) {
 
 			final BeliefNetwork bn = vl.getSelectedNetwork();

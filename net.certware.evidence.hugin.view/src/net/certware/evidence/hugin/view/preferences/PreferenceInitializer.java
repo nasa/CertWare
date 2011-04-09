@@ -26,6 +26,13 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
     store.setDefault(PreferenceConstants.P_NETWORK_VIEW_REFRESH_ON_RESOURCE_CHANGE, true);
     
+    store.setDefault(PreferenceConstants.P_MAP_SEARCH_METHOD, PreferenceConstants.P_MAP_SEARCH_METHOD_TABOO);
+    store.setDefault(PreferenceConstants.P_MAP_COMPUTATION_METHOD, PreferenceConstants.P_MAP_COMPUTATION_METHOD_APPROXIMATE);
+    store.setDefault(PreferenceConstants.P_MAP_INITIALIZATION_METHOD, PreferenceConstants.P_MAP_INITIALIZATION_RANDOM);
+    store.setDefault(PreferenceConstants.P_MAP_SEARCH_STEPS,25);
+    store.setDefault(PreferenceConstants.P_MAP_WIDTH_BARRIER,0);
+    store.setDefault(PreferenceConstants.P_MAP_TIMEOUT,60);
+    
     //PreferenceConverter.setDefault(store, PreferenceConstants.P_LABEL_DECORATOR_FOREGROUND, new RGB(105,105,105));
     //store.setDefault(PreferenceConstants.P_LABEL_DECORATOR_SUFFIX, " network");
 

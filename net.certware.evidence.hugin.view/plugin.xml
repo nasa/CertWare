@@ -6,22 +6,10 @@
       <view
             allowMultiple="true"
             category="net.certware.core.ui.view.category"
-            class="net.certware.evidence.hugin.view.ViewList"
-            icon="icons/view16/hugin-icon.png"
-            id="net.certware.evidence.hugin.view.ViewList"
-            name="Hugin Network List"
-            restorable="true">
-         <description>
-            Hugin network node structure view as node list.
-         </description>
-      </view>
-      <view
-            allowMultiple="true"
-            category="net.certware.core.ui.view.category"
             class="net.certware.evidence.hugin.view.ViewTree"
             icon="icons/view16/hugin-icon.png"
             id="net.certware.evidence.hugin.view.ViewTree"
-            name="Hugin Network Structure"
+            name="Hugin Network Analysis"
             restorable="true">
          <description>
             Hugin network node structure view as tree with nodes and values.
@@ -32,15 +20,6 @@
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
             targetID="net.certware.perspective">
-         <view
-               id="net.certware.evidence.hugin.view.ViewList"
-               minimized="false"
-               relationship="stack"
-               relative="org.eclipse.ui.views.ContentOutline">
-         </view>
-         <viewShortcut
-               id="net.certware.evidence.hugin.view.ViewList">
-         </viewShortcut>
          <view
                id="net.certware.evidence.hugin.view.ViewTree"
                minimized="false"
@@ -66,6 +45,13 @@
             id="net.certware.evidence.hugin.view.dirtyTester"
             namespace="net.certware.evidence.hugin"
             properties="isDirty,isNotDirty"
+            type="java.lang.Object">
+      </propertyTester>
+      <propertyTester
+            class="net.certware.evidence.hugin.view.testers.SelectedTester"
+            id="net.certware.evidence.hugin.view.selectedTester"
+            namespace="net.certware.evidence.hugin"
+            properties="isSelected,isNotSelected"
             type="java.lang.Object">
       </propertyTester>
    </extension>
@@ -103,9 +89,9 @@
          point="org.eclipse.ui.preferencePages">
       <page
             category="certware"
-            class="net.certware.evidence.hugin.view.preferences.ViewListPreferencePage"
+            class="net.certware.evidence.hugin.view.preferences.ViewTreePreferencePage"
             id="net.certware.evidence.hugin.view.page"
-            name="Hugin Network Structure">
+            name="Hugin Network Analysis">
       </page>
    </extension>
    <extension
@@ -128,6 +114,42 @@
             id="net.certware.evidence.hugin.view.save"
             name="Save">
       </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Perform MAP calculation on selected variables"
+            id="net.certware.evidence.hugin.view.map"
+            name="Perform MAP analysis">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Perform MPE calculation on selected variables"
+            id="net.certware.evidence.hugin.view.mpe"
+            name="Perform MPE analysis">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Deselects all variable and state selections in the tree"
+            id="net.certware.evidence.hugin.view.deselect"
+            name="Deselect all">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Selects all variable nodes in the network"
+            id="net.certware.evidence.hugin.view.selectnodes"
+            name="Select all nodes">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Writes evidence selections to a resource"
+            id="net.certware.evidence.hugin.view.evidence.save"
+            name="Write evidence">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Restores evidence selections from a resource"
+            id="net.certware.evidence.hugin.view.evidence.restore"
+            name="Restore evidence">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.commandImages">
@@ -140,6 +162,34 @@
             commandId="net.certware.evidence.hugin.view.save"
             disabledIcon="icons/dtool16/save_edit.gif"
             icon="icons/etool16/save_edit.gif">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.map"
+            disabledIcon="icons/dtool16/certware-run-d16.gif"
+            icon="icons/obj16/certware-run.png">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.mpe"
+            disabledIcon="icons/dtool16/certware-run-d16.gif"
+            icon="icons/obj16/certware-run.png">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.selectnodes"
+            icon="icons/obj16/select_nodes.gif">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.deselect"
+            icon="icons/obj16/deselect_all.gif">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.evidence.save"
+            disabledIcon="icons/dtool16/annotate.gif"
+            icon="icons/obj16/annotate.gif">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.evidence.restore"
+            disabledIcon="icons/dtool16/restore.gif"
+            icon="icons/obj16/restore.gif">
       </image>
    </extension>
    <extension
@@ -166,105 +216,98 @@
             </and>
          </enabledWhen>
       </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.MapCalculationHandler"
+            commandId="net.certware.evidence.hugin.view.map">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isSelected">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.MpeCalculationHandler"
+            commandId="net.certware.evidence.hugin.view.mpe">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isSelected">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.SelectNodesHandler"
+            commandId="net.certware.evidence.hugin.view.selectnodes">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isLoaded">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.DeselectHandler"
+            commandId="net.certware.evidence.hugin.view.deselect">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isSelected">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.SaveAsEvidenceHandler"
+            commandId="net.certware.evidence.hugin.view.evidence.save">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isLoaded">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.RestoreEvidenceHandler"
+            commandId="net.certware.evidence.hugin.view.evidence.restore">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isLoaded">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="toolbar:net.certware.evidence.hugin.view.ViewList?after=additions">
-         <command
-               commandId="net.certware.evidence.hugin.view.save"
-               label="Save"
-               mnemonic="S"
-               style="push"
-               tooltip="Write the network changes back to the file">
-         </command>
-         <separator
-               name="markers"
-               visible="false">
-         </separator>
-         <separator
-               name="help"
-               visible="false">
-         </separator>
-      </menuContribution>
-      <menuContribution
-            allPopups="false"
-            locationURI="menu:net.certware.evidence.hugin.view.ViewList?after=additions">
-         <command
-               commandId="net.certware.evidence.hugin.view.save"
-               label="Save"
-               mnemonic="S"
-               style="push"
-               tooltip="Write the network changes back to the file">
-         </command>
-         <command
-               commandId="net.certware.evidence.hugin.view.export"
-               label="Export"
-               mnemonic="E"
-               style="push"
-               tooltip="Write the network structure to an Excel file">
-         </command>
-         <separator
-               name="markers"
-               visible="false">
-         </separator>
-         <separator
-               name="help"
-               visible="false">
-         </separator>
-      </menuContribution>
-      <menuContribution
-            allPopups="false"
-            locationURI="popup:net.certware.evidence.hugin.view.ViewList?after=additions">
-         <command
-               commandId="net.certware.evidence.hugin.view.save"
-               label="Save"
-               mnemonic="S"
-               style="push"
-               tooltip="Write the network changes back to the file">
-            <visibleWhen
-                  checkEnabled="false">
-               <and>
-                  <test
-                        property="net.certware.evidence.hugin.isDirty">
-                  </test>
-               </and>
-            </visibleWhen>
-         </command>
-         <command
-               commandId="net.certware.evidence.hugin.view.export"
-               label="Export"
-               mnemonic="E"
-               style="push"
-               tooltip="Write the network structure to an Excel file">
-            <visibleWhen
-                  checkEnabled="false">
-               <and>
-                  <test
-                        property="net.certware.evidence.hugin.isLoaded">
-                  </test>
-               </and>
-            </visibleWhen>
-         </command>
-         <separator
-               name="markers"
-               visible="false">
-         </separator>
-         <separator
-               name="help"
-               visible="false">
-         </separator>
-      </menuContribution>
-      <menuContribution
-            allPopups="false"
             locationURI="toolbar:net.certware.evidence.hugin.view.ViewTree?after=additions">
          <command
-               commandId="net.certware.evidence.hugin.view.save"
-               label="Save"
-               mnemonic="S"
+               commandId="net.certware.evidence.hugin.view.map"
+               label="MAP Analysis"
+               mnemonic="M"
                style="push"
-               tooltip="Write the network changes back to the file">
+               tooltip="Compute the maximum a posteriori values">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.mpe"
+               label="MPE Analysis"
+               mnemonic="E"
+               style="push"
+               tooltip="Compute the most probable explanation (MPE) values">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.evidence.save"
+               label="Evidence"
+               mnemonic="E"
+               style="push"
+               tooltip="Save the evidence selections to a file">
          </command>
          <separator
                name="markers"
@@ -279,11 +322,32 @@
             allPopups="false"
             locationURI="menu:net.certware.evidence.hugin.view.ViewTree?after=additions">
          <command
-               commandId="net.certware.evidence.hugin.view.save"
-               label="Save"
+               commandId="net.certware.evidence.hugin.view.map"
+               label="MAP Analysis"
+               mnemonic="M"
+               style="push"
+               tooltip="Compute the maximum a posteriori estimate">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.mpe"
+               label="MPE Analysis"
+               mnemonic="E"
+               style="push"
+               tooltip="Compute the most probable explanation (MPE) values">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.evidence.save"
+               label="Save Evidence As..."
                mnemonic="S"
                style="push"
-               tooltip="Write the network changes back to the file">
+               tooltip="Save the evidence selections to a file">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.evidence.restore"
+               label="Restore Evidence From..."
+               mnemonic="R"
+               style="push"
+               tooltip="Restore the evidence selections from a file">
          </command>
          <command
                commandId="net.certware.evidence.hugin.view.export"
@@ -296,6 +360,20 @@
                name="markers"
                visible="false">
          </separator>
+         <command
+               commandId="net.certware.evidence.hugin.view.selectnodes"
+               label="Select variable nodes"
+               mnemonic="S"
+               style="push"
+               tooltip="Selects all variable nodes in the tree">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.deselect"
+               label="Deselect all"
+               mnemonic="D"
+               style="push"
+               tooltip="Deselects all variable and state nodes in the tree">
+         </command>
          <separator
                name="help"
                visible="false">
@@ -305,16 +383,61 @@
             allPopups="false"
             locationURI="popup:net.certware.evidence.hugin.view.ViewTree?after=additions">
          <command
-               commandId="net.certware.evidence.hugin.view.save"
-               label="Save"
-               mnemonic="S"
+               commandId="net.certware.evidence.hugin.view.map"
+               label="MAP Estimate"
+               mnemonic="M"
                style="push"
-               tooltip="Write the network changes back to the file">
+               tooltip="Compute the maximum a posteriori estimate">
             <visibleWhen
                   checkEnabled="false">
                <and>
                   <test
-                        property="net.certware.evidence.hugin.isDirty">
+                        property="net.certware.evidence.hugin.isSelected">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.mpe"
+               label="MPE Estimate"
+               mnemonic="P"
+               style="push"
+               tooltip="Compute the most probable explanation (MPE) values">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.evidence.hugin.isSelected">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.evidence.save"
+               label="Save Evidence As..."
+               mnemonic="S"
+               style="push"
+               tooltip="Save the evidence selections to a file">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.evidence.hugin.isLoaded">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.evidence.restore"
+               label="Restore Evidence From..."
+               mnemonic="R"
+               style="push"
+               tooltip="Restore the evidence selections from a file">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.evidence.hugin.isLoaded">
                   </test>
                </and>
             </visibleWhen>
@@ -338,6 +461,36 @@
                name="markers"
                visible="false">
          </separator>
+         <command
+               commandId="net.certware.evidence.hugin.view.selectnodes"
+               label="Select variable nodes"
+               mnemonic="S"
+               style="push"
+               tooltip="Selects all variable nodes in the tree">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.evidence.hugin.isLoaded">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.deselect"
+               label="Deselect all"
+               mnemonic="D"
+               style="push"
+               tooltip="Deselects all variable and state nodes in the tree">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.evidence.hugin.isSelected">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
          <separator
                name="help"
                visible="false">

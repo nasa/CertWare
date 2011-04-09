@@ -2,8 +2,6 @@ package net.certware.evidence.hugin.view.help;
 
 import net.certware.core.ui.help.IHelpContext;
 import net.certware.core.ui.views.ICertWareView;
-import net.certware.evidence.hugin.view.ViewList;
-import net.certware.evidence.hugin.view.ViewTree;
 
 import org.eclipse.help.HelpSystem;
 import org.eclipse.help.IContext;

@@ -1,5 +1,6 @@
 package net.certware.evidence.hugin.view;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -12,9 +13,10 @@ import net.certware.core.ui.log.CertWareLog;
 import net.certware.core.ui.resources.FileFinder;
 import net.certware.core.ui.resources.FileOpener;
 import net.certware.core.ui.views.ICertWareView;
-import net.certware.evidence.hugin.view.filters.ResultFilter;
 import net.certware.evidence.hugin.view.help.ContextProvider;
 import net.certware.evidence.hugin.view.preferences.PreferenceConstants;
+import net.certware.evidence.hugin.view.tree.VariableNode;
+import net.certware.evidence.hugin.view.tree.VariableNodeState;
 import net.certware.evidence.hugin.view.util.ReadModelFile;
 
 import org.eclipse.core.resources.IFile;
@@ -57,7 +59,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
@@ -84,8 +88,11 @@ import org.eclipse.ui.forms.widgets.TableWrapLayout;
 import org.eclipse.ui.handlers.IHandlerService;
 import org.eclipse.ui.help.IWorkbenchHelpSystem;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.services.IEvaluationService;
 
 import edu.ucla.belief.BeliefNetwork;
+import edu.ucla.belief.inference.map.InitializationMethod;
+import edu.ucla.belief.inference.map.SearchMethod;
 import edu.ucla.belief.io.hugin.HuginNode;
 
 /**
@@ -95,6 +102,10 @@ import edu.ucla.belief.io.hugin.HuginNode;
  */
 public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareView, ISelectionListener, ISaveablePart2, IResourceChangeListener, IAdaptable, IHelpContext {
 
+	/** maximum fraction formatting digits */
+	private static final int MAX_DIGITS = 8;
+	/** minimum fraction formatting digits */
+	private static final int MIN_DIGITS = 3;
 	/** the forms toolkit, borrowed from plugin's shared instance */
 	private FormToolkit toolkit;
 	/** the top-level scrolled form installed as the view control */
@@ -117,6 +128,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private TreeViewer treeViewer;
 	/** context heading form section */
 	private Section context;
+	/** analysis results form section */
+	private Section results;
 	/** table items form section */
 	private Section items;
 	/** network name link */
@@ -131,12 +144,30 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private MenuItem itemUtilityFilterMenuItem;
 	/** whether the model is dirty */
 	protected boolean dirty = false;
+	/** probability map and evidence */
+	private Label probabilityValue;
+	/** MAP search steps */
+	private Label stepsValue;
+	/** MAP search method */
+	private Label searchValue;
+	/** MAP instantiation */
+	private Label instantiationValue;
+	/** MAP initialization */
+	private Label initializationValue;
+	/** probability map given evidence */
+	private Label evidenceValue;
+	private Label initializationTimeValue;
+	private Label searchTimeValue;
+	private Label probabilityLabel;
+	private Label evidenceLabel;
 	/** network name prefix */
 	private static final String NETWORK_LABEL = "Network: ";
 	/** network name tool tip */
 	private static final String NETWORK_TOOL_TIP = "Network model name";
 	/** memento for section expanded */
 	private static final String MEMENTO_SECTION_CONTEXT = "memento.context"; //$NON-NLS-1$
+	/** memento for section expanded */
+	private static final String MEMENTO_SECTION_RESULTS = "memento.results"; //$NON-NLS-1$
 	/** memento for section expanded */
 	private static final String MEMENTO_SECTION_ITEMS = "memento.items"; //$NON-NLS-1$
 	/** memento for file selection */
@@ -178,6 +209,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		super.saveState(memento);
 		memento.putString(MEMENTO_FILE, selectedFile == null ? null : selectedFile.getName());
 		memento.putBoolean(MEMENTO_SECTION_CONTEXT, context.isExpanded() );
+		memento.putBoolean(MEMENTO_SECTION_RESULTS, results.isExpanded() );
 		memento.putBoolean(MEMENTO_SECTION_ITEMS, items.isExpanded() );
 
 		memento.putBoolean(MEMENTO_FILTER_DISCRETE, itemDiscreteFilterMenuItem.getSelection());
@@ -197,6 +229,15 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	}
 
 	/**
+	 * Get the tree viewer. 
+	 * Normally used for refreshing content from handlers.
+	 * @return tree viewer
+	 */
+	public TreeViewer getTreeViewer() {
+		return treeViewer;
+	}
+	
+	/**
 	 * Selection listener to sort columns.
 	 * @param tvc table column
 	 * @param sorter sorter to apply
@@ -214,7 +255,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			}
 		});
 	}
-	
+
 	/**
 	 * Set the column header images according to sort direction.
 	 * @param sorter tree sorter
@@ -228,10 +269,9 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		}
 
 		// set the selected column's image according to sort direction
-		if ( sorter.getDirection() == SWT.UP )
-			sc.setImage(Activator.getDefault().getImageRegistry().get(Activator.ASCENDING_IMAGE));
-		else
-			sc.setImage(Activator.getDefault().getImageRegistry().get(Activator.DESCENDING_IMAGE));
+		sc.setImage(Activator.getDefault().getImageRegistry().get( sorter.getDirection() == SWT.UP ? 
+					Activator.ASCENDING_IMAGE :
+					Activator.DESCENDING_IMAGE ));
 	}
 
 	/**
@@ -260,7 +300,350 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		});
 	}
 
+	/**
+	 * Set the instantiation display value.
+	 * @param instantiation used for computation
+	 */
+	public void setInstantiation(final String i) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					instantiationValue.setText( i );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting instantiation setting",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
 
+	/**
+	 * Set the search display value.
+	 * @param search method used in computation 
+	 */
+	public void setSearch(final SearchMethod sm) {
+		setSearch( sm == SearchMethod.HILL ? "Hill Climbing" : "Taboo" );
+	}
+
+	/**
+	 * Set the search display value.
+	 * @param s search message
+	 */
+	public void setSearch(final String s) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					searchValue.setText( s );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting search setting",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Set the search initialization display value.
+	 * @param search initialization used in computation 
+	 */
+	public void setInitialization(final InitializationMethod im) {
+		String s = "Random";
+		if ( im == InitializationMethod.MPE ) {
+			s = "MPE";
+		} else if ( im == InitializationMethod.SEQ ) {
+			s = "Sequential";
+		} else if ( im == InitializationMethod.ML ) {
+			s = "Maximum Likelihood";
+		}
+		setInitialization(s);
+	}
+
+	/**
+	 * Set the search initialization display value.
+	 * @param s search initialization message
+	 */
+	public void setInitialization(final String s) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					initializationValue.setText( s );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting search setting",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Set the steps display value.
+	 * @param i steps preference value used
+	 */
+	public void setSteps(final int i) {
+		final NumberFormat nf = NumberFormat.getIntegerInstance();
+		nf.setGroupingUsed(true);
+		setSteps( nf.format(i) );
+	}
+
+	/**
+	 * Set the steps display value.
+	 * @param s steps message
+	 */
+	public void setSteps(final String s) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					stepsValue.setText( s );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting steps setting",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Set the search time result value.  Provides both profiled (CPU) and elapsed times.
+	 * @param profiled profiled time in milliseconds
+	 * @param elapsed elapsed time in milliseconds
+	 */
+	public void setSearchTime(final double profiled, final double elapsed) {
+		final NumberFormat nf = NumberFormat.getNumberInstance();
+		nf.setGroupingUsed(true);
+		nf.setMaximumFractionDigits(MAX_DIGITS);
+		nf.setMinimumFractionDigits(MIN_DIGITS);
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					String profiledTime = String.format("%s %s",nf.format(profiled),"ms");
+					String elapsedTime = String.format("%s %s",nf.format(elapsed),"ms");
+					searchTimeValue.setText( String.format("%s CPU, %s elapsed",profiledTime,elapsedTime));
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting search time result",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Set the exact calculation time result value. 
+	 * @param s string value
+	 */
+	public void setSearchTime(final String s) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					searchTimeValue.setText( s );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting search time",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+	
+	/**
+	 * Set the exact calculation time result value. 
+	 * @param elapsed elapsed time in milliseconds
+	 */
+	public void setSearchTime(final long elapsed) {
+		final NumberFormat nf = NumberFormat.getIntegerInstance();
+		nf.setGroupingUsed(true);
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					String elapsedTime = String.format("%s %s",nf.format(elapsed),"ms");
+					searchTimeValue.setText( String.format("%s elapsed",elapsedTime));
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting search time result",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Set the initialization time result value.  Provides both profiled (CPU) and elapsed times.
+	 * @param profiled profiled time in milliseconds
+	 * @param elapsed elapsed time in milliseconds
+	 */
+	public void setInitializationTime(final double profiled, final double elapsed) {
+		final NumberFormat nf = NumberFormat.getNumberInstance();
+		nf.setGroupingUsed(true);
+		nf.setMaximumFractionDigits(MAX_DIGITS);
+		nf.setMinimumFractionDigits(MIN_DIGITS);
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					String profiledTime = String.format("%s %s",nf.format(profiled),"ms");
+					String elapsedTime = String.format("%s %s",nf.format(elapsed),"ms");
+					initializationTimeValue.setText( String.format("%s CPU, %s elapsed",profiledTime,elapsedTime));
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting initialization time result",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Set the initialization time result value as empty.
+	 */
+	public void setInitializationTime(final String s) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					initializationTimeValue.setText( s ); 
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Updating initialization time result",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * 
+	 * @param label
+	 * @param s
+	 */
+	protected void setLabel(final Label label, final String s, final String message) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					label.setText( s );
+				}});
+		} catch( Exception e ) {
+			String warning = String.format("%s %s",message,e.toString());
+			this.setWarningMessage(warning);
+			CertWareLog.logWarning(warning);
+		}
+	}
+
+	/**
+	 * Set the probability row label.
+	 * @param s new label, not null
+	 */
+	public void setProbabilityLabel(String s) {
+		setLabel(probabilityLabel,s,"Updating probability label");
+	}
+	
+	/**
+	 * Set the evidence row label.
+	 * @param s new label, not null
+	 */
+	public void setEvidenceLabel(String s) {
+		setLabel(evidenceLabel,s,"Updating evidence label");
+	}
+	
+	
+	/**
+	 * Set the probability p(map,e) or p(mpe,e) result value.
+	 * @param d new value
+	 */
+	public void setProbability(final double d) {
+		final NumberFormat nf = NumberFormat.getNumberInstance();
+		nf.setGroupingUsed(true);
+		nf.setMaximumFractionDigits(MAX_DIGITS);
+		nf.setMinimumFractionDigits(MIN_DIGITS);
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					probabilityValue.setText( nf.format(d) );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting probability result",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+	
+	/**
+	 * Set the evidence p(map|e) result value.
+	 * @param d new value
+	 */
+	public void setEvidence(final double d) {
+		final NumberFormat nf = NumberFormat.getNumberInstance();
+		nf.setGroupingUsed(true);
+		nf.setMaximumFractionDigits(MAX_DIGITS);
+		nf.setMinimumFractionDigits(MIN_DIGITS);
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					evidenceValue.setText( nf.format(d) );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Formatting p(map|e) result",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Set the evidence p(map|e) result value.
+	 * @param d new value
+	 */
+	public void setEvidence(final String s) {
+		try {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					evidenceValue.setText( s );
+				}});
+		} catch( Exception e ) {
+			String message = String.format("%s %s","Updating evidence result",e.toString());
+			this.setWarningMessage(message);
+			CertWareLog.logWarning(message);
+		}
+	}
+
+	/**
+	 * Refreshes the state object and its siblings in the tree view.
+	 * @param state state to refresh
+	 */
+	public void refreshViewerState(VariableNodeState state) {
+		VariableNode parent = state.getContainer();
+		for ( VariableNodeState child : parent.states ) {
+			treeViewer.refresh(child); // forces image change
+		}
+	}
+
+	/**
+	 * Forces a re-evaluation of the properties for contribution states.
+	 * Evaluates the {@code isSelected} property.
+	 */
+	public void refreshViewProperties() {
+		String property = "net.certware.evidence.hugin.isSelected"; //$NON-NLS-1$
+		IEvaluationService es = (IEvaluationService) PlatformUI.getWorkbench().getService(IEvaluationService.class);
+		es.requestEvaluation(property);
+	}
+	
+	/**
+	 * Layout the form after computations.
+	 */
+	public void layout() {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				// form.reflow(true);
+				results.getClient().pack(true);
+				results.getParent().layout(true);
+			}
+		});
+	}
+	
 	/**
 	 * Create the view content using the forms widgets.
 	 */
@@ -271,19 +654,20 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		toolkit = Activator.getDefault().getFormToolkit(parent.getDisplay());
 		toolkit.getHyperlinkGroup().setHyperlinkUnderlineMode(HyperlinkSettings.UNDERLINE_HOVER);
 		form = toolkit.createScrolledForm(parent);
-		form.setText("Network Structure");
-		form.setMessage(null,IMessageProvider.NONE);
+		form.setText("Network Analysis");
 		form.setToolTipText("Select a Hugin network model");
 		toolkit.decorateFormHeading(form.getForm());
 		form.setImage(Activator.getDefault().getImageRegistry().getDescriptor(Activator.NETWORK_IMAGE).createImage());
+		clearMessage();
 
 		// layout
 		TableWrapLayout layout = new TableWrapLayout();
 		layout.numColumns = 2;
 		form.getBody().setLayout(layout);
-
+		int sectionStyle = Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED; // Section.DESCRIPTION
+		
 		// context section
-		context = toolkit.createSection(form.getBody(),	Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		context = toolkit.createSection(form.getBody(),	sectionStyle);
 		twd = new TableWrapData(TableWrapData.FILL);
 		twd.colspan = 2;
 		context.setLayoutData(twd);
@@ -299,7 +683,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 		Composite contextClient = toolkit.createComposite(context);
 		contextClient.setLayout(new GridLayout());
-		
+
 		// network name
 		networkHyperlink = toolkit.createHyperlink(contextClient, NETWORK_LABEL, SWT.WRAP);
 		networkHyperlink.setEnabled(false);
@@ -314,8 +698,93 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 		context.setClient(contextClient);
 
-		// results table section
-		items = toolkit.createSection(form.getBody(), Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		// results section 
+		results = toolkit.createSection(form.getBody(), sectionStyle);
+		twd = new TableWrapData(TableWrapData.FILL);
+		twd.colspan = 2;
+		results.setLayoutData(twd);
+		results.setText("Analysis Results");
+		results.setToolTipText("Results from latest analysis");
+		results.addExpansionListener(new ExpansionAdapter() {
+			@Override
+			public void expansionStateChanged(ExpansionEvent e) {
+				form.layout(true);
+				form.reflow(true);
+			}
+		});
+
+		Composite resultsClient = toolkit.createComposite(results);
+		resultsClient.setLayout(new GridLayout(2,false));
+
+		// probability value p(map,e)
+		probabilityLabel = toolkit.createLabel(resultsClient, "P(MAP,e)");
+		probabilityLabel.setFont(JFaceResources.getDialogFont());
+		probabilityLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		probabilityValue = toolkit.createLabel(resultsClient, "<TBS>");
+		probabilityValue.setFont(JFaceResources.getDialogFont());
+		probabilityValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+
+		// probability value p(map|e)
+		evidenceLabel = toolkit.createLabel(resultsClient, "P(MAP|e)");
+		evidenceLabel.setFont(JFaceResources.getDialogFont());
+		evidenceLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		evidenceValue = toolkit.createLabel(resultsClient, "<TBS>");
+		evidenceValue.setFont(JFaceResources.getDialogFont());
+		evidenceValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+
+		// instantiation value
+		Label instantiationLabel = toolkit.createLabel(resultsClient, "Instantiation");
+		instantiationLabel.setFont(JFaceResources.getDialogFont());
+		instantiationLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		instantiationValue = toolkit.createLabel(resultsClient, "<TBS>");
+		instantiationValue.setFont(JFaceResources.getDialogFont());
+		instantiationValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+
+		// search value
+		Label searchLabel = toolkit.createLabel(resultsClient, "Search Method");
+		searchLabel.setFont(JFaceResources.getDialogFont());
+		searchLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		searchValue = toolkit.createLabel(resultsClient, "<pref>");
+		searchValue.setFont(JFaceResources.getDialogFont());
+		searchValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+
+		// steps value
+		Label stepsLabel = toolkit.createLabel(resultsClient, "Max Search Steps");
+		stepsLabel.setFont(JFaceResources.getDialogFont());
+		stepsLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		stepsValue = toolkit.createLabel(resultsClient, "<pref>");
+		stepsValue.setFont(JFaceResources.getDialogFont());
+		stepsValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+
+		// search time
+		Label searchTimeLabel = toolkit.createLabel(resultsClient, "Search Time");
+		searchTimeLabel.setFont(JFaceResources.getDialogFont());
+		searchTimeLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		searchTimeValue = toolkit.createLabel(resultsClient, "<TBS>");
+		searchTimeValue.setFont(JFaceResources.getDialogFont());
+		searchTimeValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+
+		// initialization value
+		Label initializationLabel = toolkit.createLabel(resultsClient, "Initialization Method");
+		initializationLabel.setFont(JFaceResources.getDialogFont());
+		initializationLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		initializationValue = toolkit.createLabel(resultsClient, "<pref>");
+		initializationValue.setFont(JFaceResources.getDialogFont());
+		initializationValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+
+		// initialization time
+		Label initializationTime = toolkit.createLabel(resultsClient, "Initialization Time");
+		initializationTime.setFont(JFaceResources.getDialogFont());
+		initializationTime.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
+		initializationTimeValue = toolkit.createLabel(resultsClient, "<TBS>");
+		initializationTimeValue.setFont(JFaceResources.getDialogFont());
+		initializationTimeValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
+		
+
+		results.setClient(resultsClient);
+		
+		// items section
+		items = toolkit.createSection(form.getBody(), sectionStyle );
 		twd = new TableWrapData(TableWrapData.FILL_GRAB);
 		twd.colspan = 2;
 		twd.maxHeight = 500; 
@@ -329,11 +798,11 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		});
 		items.setText("Structure Items");
 		items.setToolTipText("Network nodes");
-		Composite resultsClient2 = toolkit.createComposite(items);
-		resultsClient2.setLayout(new FillLayout());
+		Composite treeClient = toolkit.createComposite(items);
+		treeClient.setLayout(new FillLayout());
 
 		// create the table
-		treeViewer = new TreeViewer(resultsClient2, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL | SWT.FULL_SELECTION);
+		treeViewer = new TreeViewer(treeClient, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL | SWT.FULL_SELECTION);
 		treeViewer.getTree().setLinesVisible(true);
 		treeViewer.getTree().setHeaderVisible(true);
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener(){
@@ -344,29 +813,24 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				if ( selection instanceof IStructuredSelection ) {
 					IStructuredSelection iss = (IStructuredSelection)selection;
 					Object first = iss.getFirstElement();
-					if ( first instanceof MyNode ) {
-						MyNode n = (MyNode)first;
-						// HuginNode selectedNode = n.getNode();
-						//Map properties = selectedNode.getProperties();
-						//System.err.println("first pmap " + properties);
-						//properties = selectedNode.getEnumProperties();
-						//System.err.println("first enum " + properties);
-						
-						//System.err.println("default state " + selectedNode.getDefaultStateIndex());
-						//System.err.println("is specified dimension " + selectedNode.isSpecifiedDimension());
-						//System.err.println("is MAP variable " + selectedNode.isMAPVariable());
-						//System.err.println("diagnosis type " + selectedNode.getDiagnosisType());
-						//System.err.println("dsl node type " + selectedNode.getDSLNodeType());
-						//System.err.println("already selected? " + ((MyNode)first).isSelected());
+					if ( first instanceof VariableNode ) {
+						VariableNode n = (VariableNode)first;
 						n.setSelected( ! n.isSelected() ); // toggle
 						treeViewer.refresh(n); // forces image change
 					}
-					if ( first instanceof MyState ) {
-						MyState s = (MyState)first;
+					if ( first instanceof VariableNodeState ) {
+						VariableNodeState s = (VariableNodeState)first;
+						s.clearSiblings(); // clear other states, mutually exclusive
 						s.setSelected( ! s.isSelected() ); // toggle
-						treeViewer.refresh(s); // forces image change
+
+						// update images in the container set
+						refreshViewerState(s);
 					}
+					
+					// force refresh of menu item conditional tests
+					refreshViewProperties();
 				}
+				
 			}});
 		GridData gridData = new GridData(GridData.FILL_BOTH);
 		gridData.grabExcessVerticalSpace = true;
@@ -381,18 +845,18 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			new ColumnViewerEditorActivationStrategy(treeViewer) {
 			protected boolean isEditorActivationEvent(ColumnViewerEditorActivationEvent event) {
 				return event.eventType == ColumnViewerEditorActivationEvent.TRAVERSAL
-						|| event.eventType == ColumnViewerEditorActivationEvent.MOUSE_DOUBLE_CLICK_SELECTION
-						|| (event.eventType == ColumnViewerEditorActivationEvent.KEY_PRESSED && event.keyCode == SWT.CR)
-						|| event.eventType == ColumnViewerEditorActivationEvent.PROGRAMMATIC;
+				|| event.eventType == ColumnViewerEditorActivationEvent.MOUSE_DOUBLE_CLICK_SELECTION
+				|| (event.eventType == ColumnViewerEditorActivationEvent.KEY_PRESSED && event.keyCode == SWT.CR)
+				|| event.eventType == ColumnViewerEditorActivationEvent.PROGRAMMATIC;
 			}
 		};
-		
+
 		TreeViewerEditor.create(treeViewer, focusCellManager, actSupport, 
-				  ColumnViewerEditor.TABBING_HORIZONTAL
+				ColumnViewerEditor.TABBING_HORIZONTAL
 				| ColumnViewerEditor.TABBING_MOVE_TO_ROW_NEIGHBOR
 				| ColumnViewerEditor.TABBING_VERTICAL 
 				| ColumnViewerEditor.KEYBOARD_ACTIVATION);
-		
+
 		// final TextCellEditor textCellEditor = new TextCellEditor(treeViewer.getTree());
 
 		// column 0
@@ -405,30 +869,24 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		idColumn.setLabelProvider(new ColumnLabelProvider() {
 			/**
 			 * Get the column cell image.
+			 * If item is selected, return a distinguishing image.
 			 */
 			public Image getImage(Object element) {
 
-				if ( element instanceof MyNode ) {
-					/*
-					HuginNode hn = ((MyNode)element).getNode();
-					if ( hn.getValueType() == HuginNode.DISCRETE )
-						return Activator.getDefault().getImageRegistry().get(Activator.DISCRETE_IMAGE);
-					if ( hn.getValueType() == HuginNode.CONTINUOUS )
-						return Activator.getDefault().getImageRegistry().get(Activator.CONTINUOUS_IMAGE);
-					*/
-					if ( ((MyNode)element).isSelected() ) {
+				if ( element instanceof VariableNode ) {
+					if ( ((VariableNode)element).isSelected() ) {
 						return Activator.getDefault().getImageRegistry().get(Activator.SELECTED_NODE_IMAGE);
 					}
 					return Activator.getDefault().getImageRegistry().get(Activator.UNSELECTED_NODE_IMAGE);
 				}
-				
-				if ( element instanceof MyState ) {
-					if ( ((MyState)element).isSelected() ) { 
+
+				if ( element instanceof VariableNodeState ) {
+					if ( ((VariableNodeState)element).isSelected() ) { 
 						return Activator.getDefault().getImageRegistry().get(Activator.SELECTED_NODE_IMAGE);
 					}
 					return Activator.getDefault().getImageRegistry().get(Activator.UNSELECTED_NODE_IMAGE);
 				}
-				
+
 				return null;
 			}
 
@@ -436,14 +894,13 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			 * Get the column cell text.
 			 */
 			public String getText(Object element) {
-				if ( element instanceof MyNode ) {
-					HuginNode hn = ((MyNode)element).getNode();
+				if ( element instanceof VariableNode ) {
+					HuginNode hn = ((VariableNode)element).getNode();
 					return hn.getID();
 				}
-				if ( element instanceof MyState ) {
-					return ((MyState)element).getStateName();
+				if ( element instanceof VariableNodeState ) {
+					return ((VariableNodeState)element).getStateName();
 				}
-				System.err.println("object for c0 is " + element + " class " + element.getClass());
 				return "c0"; //$NON-NLS-1$
 			}
 		});
@@ -464,8 +921,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				treeViewer.update(element, null);
 			}
 		});
-		*/		
-		
+		 */		
+
 		// column 1
 		TreeViewerColumn labelColumn = new TreeViewerColumn(treeViewer, SWT.NONE);
 		labelColumn.getColumn().setWidth(200);
@@ -474,8 +931,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		createMenuItem(headerMenu,labelColumn);
 		labelColumn.setLabelProvider(new ColumnLabelProvider() {
 			public String getText(Object element) {
-				if ( element instanceof MyNode ) {
-					HuginNode hn = ((MyNode)element).getNode();
+				if ( element instanceof VariableNode ) {
+					HuginNode hn = ((VariableNode)element).getNode();
 					return hn.getLabel();
 				}
 				return ""; //$NON-NLS-1$
@@ -501,8 +958,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				treeViewer.update(element, null);
 			}
 		});
-		*/
-		
+		 */
+
 		// column 2
 		TreeViewerColumn typeColumn = new TreeViewerColumn(treeViewer, SWT.NONE);
 		typeColumn.getColumn().setWidth(200);
@@ -510,10 +967,10 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		typeColumn.getColumn().setText("Type");
 		createMenuItem(headerMenu,typeColumn);
 		typeColumn.setLabelProvider(new ColumnLabelProvider() {
-			
+
 			public String getText(Object element) {
-				if ( element instanceof MyNode ) {
-					HuginNode hn = ((MyNode)element).getNode();
+				if ( element instanceof VariableNode ) {
+					HuginNode hn = ((VariableNode)element).getNode();
 					int type = hn.getValueType();
 					switch( type ) {
 					case HuginNode.DISCRETE: return "Discrete";
@@ -545,8 +1002,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				treeViewer.update(element, null);
 			}
 		});
-		*/
-		
+		 */
+
 		// table sorting on columns
 		TreeSorter sorter = new TreeSorter(treeViewer);
 		treeViewer.setSorter(sorter);
@@ -556,9 +1013,9 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		setColumnImages(sorter, idColumn.getColumn());
 
 		// content
-		treeViewer.setContentProvider(new MyContentProvider());
+		treeViewer.setContentProvider(new NetworkContentProvider());
 		treeViewer.setInput(selectedNetwork);		
-		
+
 		// add filters to the header menu 
 		createMenuSeparator(headerMenu);
 		ViewerFilter discreteFilter = new ResultFilter(0);
@@ -570,7 +1027,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		itemDecisionFilterMenuItem = createMenuFilterItem(headerMenu,"Hide Decision",decisionFilter,false);
 		itemUtilityFilterMenuItem = createMenuFilterItem(headerMenu,"Hide Utility",utilityFilter,false);
 
-		items.setClient(resultsClient2);
+		items.setClient(treeClient);
 
 		// create the help context id for the viewer's control
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(form, IHelpContext.NET_VIEW); 
@@ -629,7 +1086,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 		form.layout();
 	}
-	
+
 	/**
 	 * Creates a menu item separator for the column header.
 	 * @param parent column header menu
@@ -665,7 +1122,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		return itemName;
 	}
 
-
 	/**
 	 * Return the selected file.
 	 * @return selected file, or null
@@ -682,6 +1138,49 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		this.selectedNetwork = bn;
 	}
 
+	/**
+	 * Sets the form information message.
+	 * @param message message for form header
+	 */
+	public void setInfoMessage(final String message) {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				form.setMessage(message, IMessageProvider.INFORMATION);
+		}});
+	}
+	
+	/**
+	 * Sets the form warning message.
+	 * @param message message for form header
+	 */
+	public void setWarningMessage(final String message) {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				form.setMessage(message, IMessageProvider.WARNING);
+			}});
+	}
+	
+	/**
+	 * Sets the form error message.
+	 * @param message message for form header
+	 */
+	public void setErrorMessage(final String message) {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				form.setMessage(message, IMessageProvider.ERROR);
+			}});
+	}
+	
+	/**
+	 * Clears the form information message.
+	 */
+	public void clearMessage() {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				form.setMessage(null, IMessageProvider.NONE); //$NON-NLS-1$
+			}});
+	}
+	
 	/**
 	 * Sets the selected file.
 	 * @param f selected file
@@ -705,43 +1204,42 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 							CertWareLog.logWarning(s);
 						}
 					}
-					
+
 					@Override
 					public void handleProgress(ProgressMonitorable readTask, Estimate estimate) {
 					}
-					
+
 					@Override
 					public void handleNewBeliefNetwork(BeliefNetwork bn, File f) {
 						// threadNetwork = bn;
 						setSelectedNetwork(bn);
 					}
-					
+
 					@Override
 					public void handleCancelation() {
 					}
-					
+
 					@Override
 					public void handleBeliefNetworkIOError(String msg) {
 						CertWareLog.logWarning(String.format("%s %s",msg,ifile.getName()));
 					}
-					
+
 					@Override
 					public ThreadGroup getThreadGroup() {
 						return null;
 					}
 				};
-				*/
+				 */
 
 				//Thread thread = NetworkIO.readHuginNet(ifile.getContents(),ifile.getName(),bnil);
 				//thread.run();
-				
+
 				// this version handles influence diagram nodes better than Hugin network read
 				// BeliefNetwork bn = NetworkIO.read( ifile.getFullPath().toFile() );
 				BeliefNetwork bn = ReadModelFile.readNetwork(ifile);
 				setSelectedNetwork(bn);
 				System.err.println("set selected network to " + bn);
-				System.err.println("top order " + bn.topologicalOrder());
-				
+
 				if ( getSelectedNetwork() != null ) {
 					selectedFile = ifile;
 					// selectedNetwork = threadNetwork;
@@ -783,20 +1281,20 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 */
 	@Override
 	public void doSave(IProgressMonitor monitor) {
-	    String commandId = "net.certware.evidence.hugin.view.save"; //$NON-NLS-1$
+		String commandId = "net.certware.evidence.hugin.view.save"; //$NON-NLS-1$
 
-	    try {
-	      IHandlerService handlerService = (IHandlerService) getSite().getService(IHandlerService.class); 
-	      handlerService.executeCommand(commandId, null);
-	      setDirty(false);
-	    } catch( Exception e ) {
-	      CertWareLog.logError("Saving network model",e);
-	    }
+		try {
+			IHandlerService handlerService = (IHandlerService) getSite().getService(IHandlerService.class); 
+			handlerService.executeCommand(commandId, null);
+			setDirty(false);
+		} catch( Exception e ) {
+			CertWareLog.logError("Saving network model",e);
+		}
 
 	}
 
 	/**
-	 * Save as not supported.  Copy the resource instead.
+	 * Save as not supported, no changes to model made here.  Copy the resource instead.
 	 */
 	@Override
 	public void doSaveAs() {
@@ -819,7 +1317,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	public void setDirty(boolean d) {
 		dirty = d;
 	}
-	
+
 	/**
 	 * Whether save as allowed.
 	 * @return always returns false
@@ -881,13 +1379,18 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 * Updates the network table content.
 	 */
 	protected void updateNetworkTable() {
-		
+
+		System.err.println("update network table with " + selectedNetwork);
 		if ( selectedNetwork == null )
 			return;
 
+		System.err.println("setting input table with " + selectedNetwork);
 		treeViewer.setInput( selectedNetwork ); 
+		System.err.println("refreshing table with " + selectedNetwork);
 		treeViewer.refresh();
+		System.err.println("packing table with " + selectedNetwork);
 		treeViewer.getControl().pack(true);
+		System.err.println("returning from updateNetworkTable()");
 	}
 
 
@@ -904,7 +1407,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			public void run() {
 				networkHyperlink.setText(NETWORK_LABEL + "<none>");
 				networkHyperlink.setEnabled(false);
-				
+
 				treeViewer.getTree().setItemCount(0);
 				treeViewer.refresh();
 
@@ -917,23 +1420,27 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 * Update the view.
 	 */
 	protected void updateView() {
-		
+
 		if ( selectedNetwork == null ) 
 			return;
 
+		
 		networkHyperlink.getDisplay().asyncExec(new Runnable() {
-
 			public void run() {
 				try {
 					// update the context section
 					// always redraw the strings to erase any previous content
 					// the form composite requires re-packing to reflect the new boundaries
+					System.err.println("updating view " + selectedFile.getName());
+
 					networkHyperlink.setText(NETWORK_LABEL + selectedFile.getName());
 					networkHyperlink.setHref( selectedFile );
 					networkHyperlink.setEnabled(true);
 					networkHyperlink.pack(true);
 
+					System.err.println("updating network table");
 					updateNetworkTable();
+					System.err.println("completed updating network table");
 
 					// refresh the form layout
 					form.reflow(true);
@@ -953,8 +1460,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 */
 	@Override
 	public int promptToSaveOnClose() {
-	    // use the workbench default prompt
-	    return ISaveablePart2.DEFAULT;
+		// use the workbench default prompt
+		return ISaveablePart2.DEFAULT;
 	}
 
 	/**
@@ -964,53 +1471,47 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 */
 	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+		
+		// skip selection if not structured
 		if ( ! (selection instanceof IStructuredSelection ))
 			return;
 
+		// skip repeat selections
+		if ( latestSelection == selection ) {
+			return;
+		}
+
 		IStructuredSelection iss = (IStructuredSelection)selection;
 
-		// selecting from the explorer without the file open
-		if ( iss.getFirstElement() instanceof IFile ) { 
-			if ( setSelectedFile((IFile)iss.getFirstElement()) ) {
-				latestSelection = selection;
-				updateView();
-				return;
+		// selecting from the explorer
+		if ( iss.getFirstElement() instanceof IFile ) {
+			IFile newSelection = (IFile)iss.getFirstElement();
+			System.err.println("incoming selection ifile " + newSelection);
+			if ( newSelection.getFileExtension().endsWith(ICertWareConstants.NET_EXTENSION) ) {
+				System.err.println("matched selection ifile " + newSelection);
+				if ( setSelectedFile(newSelection) ) {
+					latestSelection = selection;
+					System.err.println("new selection file returning");
+				}
 			}
+			return;
 		} 
 
+		// selecting from our node tree
 		for ( Iterator<Object> i = iss.iterator(); i.hasNext(); ) {
 			Object o = i.next();
-			if ( o instanceof MyNode ) {
-				((MyNode)o).setSelected(true);
+			if ( o instanceof VariableNode ) {
+				((VariableNode)o).setSelected(true);
 				continue;
 			}
-			if ( o instanceof MyState ) {
-				((MyState)o).setSelected(true);
+			if ( o instanceof VariableNodeState ) {
+				VariableNodeState vns = (VariableNodeState)o;
+				vns.setSelected(true);
 				continue;
 			}
-			System.err.println("unknown selection " + o);
-			// TODO refresh display necessary?
-		}
-		
-		
-		/* don't want to import the hugin DSL items here 
-		// otherwise select from the active model editor
-		if ( ! (iss.getFirstElement() instanceof EObject) ) 
-			return;
 
-		EObject eo = (EObject)iss.getFirstElement();
-
-		// find the containing document object for results objects
-		while( eo != null ) {
-			if ( eo instanceof Checklist ) {
-				selectedNetwork = (Checklist)eo;
-				updateView();
-				latestSelection = selection;
-				return;
-			}
-			eo = eo.eContainer();
+			// System.err.println("unknown selection " + o);
 		}
-		*/
 	}
 
 	/**
@@ -1027,6 +1528,14 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		super.dispose();
 	}
 
+	/**
+	 * Return the latest selection, an {@code IStructuredSelection}.
+	 * @return latest selection
+	 */
+	public ISelection getSelection() {
+		return this.latestSelection;
+	}
+	
 	/**
 	 * Returns whether the view is linking the editor.
 	 * @return true if linking editor
@@ -1067,158 +1576,166 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	}
 
 	/**
-	 * Tree node class.
-	 * Merely a container for a network node and its tree selection state.
+	 * Whether the tree content has selected variable items.
+	 * @return true if any variable selected
 	 */
-	private class MyNode {
-		/** network node */
-		public HuginNode node;
-		/** whether the cell is selected */
-		public boolean selected = false;
-		/** children states (instances) associated with this node */
-		public List<MyState> states;
-		
-		/**
-		 * Construct and initialize the node.
-		 * Creates the list of states from the node's instance list.
-		 * @param hn hugin node
-		 */
-		public MyNode(HuginNode hn) {
-			setNode(hn);
-			setSelected(false);
-			states = new ArrayList<MyState>();
-			for ( Object o : hn.instances() ) {
-				states.add( new MyState((String)o));
+	public boolean hasVariableSelections() {
+		if ( treeViewer != null ) {
+			NetworkContentProvider ncp = (NetworkContentProvider)treeViewer.getContentProvider();
+			if ( ncp != null ) {
+				for ( VariableNode v : ncp.roots ) {
+					if ( v.isSelected() ) {
+						return true;
+					}
+				}
 			}
 		}
-		public void setSelected(boolean s) {
-			selected = s;
-		}
-		public boolean isSelected() {
-			return selected;
-		}
-		public void setNode(HuginNode h) {
-			node = h;
-		}
-		public HuginNode getNode() {
-			return node;
-		}
-		public Object[] getStates() {
-			return states.toArray();
-		}
+		return false;
 	}
-	
+
 	/**
-	 * A leaf in the tree display, representing a state in a network variable.
-	 * Used to keep track of selections.
-	 * Selections are always empty when table is initially loaded.
-	 * Selections are not kept in the model directly, but certain wizards 
-	 * may change associated parameters that are then saved.
+	 * Whether the tree content has selected variable state items.
+	 * @return true if any variable selected
 	 */
-	private class MyState {
-		/** state name for instance */
-		public String stateName;
-		/* whether the cell is selected */
-		public boolean selected = false;
-		
-		public MyState(String name) {
-			setStateName(name);
-			setSelected(false);
+	public boolean hasVariableStateSelections() {
+		if ( treeViewer != null ) {
+			NetworkContentProvider ncp = (NetworkContentProvider)treeViewer.getContentProvider();
+			if ( ncp != null ) {
+				for ( VariableNode v : ncp.roots ) {
+					for ( VariableNodeState s : v.states ) {
+						if ( s.isSelected() ) {
+							return true;
+						}
+					}
+				}
+			}
 		}
-		public void setSelected(boolean s) {
-			selected = s;
-		}
-		public boolean isSelected() {
-			return selected;
-		}
-		public void setStateName(String s) {
-			stateName = s;
-		}
-		public String getStateName() {
-			return stateName;
-		}
+		return false;
 	}
-	
+
 	/**
-	 * Tree content provider.
+	 * Returns the list of variable nodes from the tree viewer.
+	 * @return list of variable nodes or null if viewer or content provider not established
+	 */
+	public List<VariableNode> getVariableNodes() {
+		if ( treeViewer != null ) {
+			NetworkContentProvider ncp = (NetworkContentProvider)treeViewer.getContentProvider();
+			if ( ncp != null ) {
+				return ncp.roots;
+			}
+		}
+		
+		return null;
+	}
+
+	/**
+	 * Tree network content provider.
 	 * @author mrb
 	 */
-	private class MyContentProvider implements ITreeContentProvider {
+	private class NetworkContentProvider implements ITreeContentProvider {
 		/** the master model behind the tree */
 		private BeliefNetwork input = null;
 		/** the top-level items in the viewer are the network variables */
-		ArrayList<MyNode> roots = new ArrayList<MyNode>();
-		
+		ArrayList<VariableNode> roots = new ArrayList<VariableNode>();
+
 		/**
 		 * Translates the belief network node list into our local array for display.
 		 * @param inputElement the selected resource, presumed to be a {@code BeliefNetwork}
 		 * @return array of {@code MyNode} elements, or empty object list
 		 */
 		public Object[] getElements(Object inputElement) {
-			System.err.println("get elements input element " + inputElement);
 			if ( inputElement instanceof BeliefNetwork ) {
 				BeliefNetwork bn = (BeliefNetwork)inputElement;
 				roots.clear();
 				for ( Object o : bn.topologicalOrder().toArray() ) {
-					roots.add(new MyNode((HuginNode)o));
+					roots.add(new VariableNode((HuginNode)o));
 				}
-				//return bn.topologicalOrder().toArray(); // probably HuginNode
 				return roots.toArray();
 			}
-			
-			System.err.println("unknown input element " + inputElement);
+
 			return new Object[0];
 		}
 
+		/**
+		 * Dispose of the content provider.  Unused.
+		 */
 		public void dispose() {
 		}
 
+		/**
+		 * Model input changed.  Saves the reference to the new input model.
+		 * @param viewer tree viewer, unused
+		 * @param oldInput old input model, unused
+		 * @param newInput new input model, reference saved, presumed to be a {@code BeliefNetwork} item
+		 */
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-			input = (BeliefNetwork)newInput;
+			System.err.println("tcp input changed new input " + newInput);
+			if ( newInput instanceof BeliefNetwork ) {
+				input = (BeliefNetwork)newInput;
+			} else {
+				System.err.println("tcp input changed invalid input " + newInput);
+			}
 		}
 
+		/**
+		 * Get the children of the given parent element.
+		 * @param parentElement parent element reference
+		 * @return {@getElements} if {@code BeliefNetwork}, list of {@code MyState} if {@code MyNode}, empty array otherwise
+		 */
+		@Override
 		public Object[] getChildren(Object parentElement) {
-			
+
 			if ( parentElement instanceof BeliefNetwork ) {
 				return getElements(parentElement);
 			}
 
-			if ( parentElement instanceof MyNode ) {
-				MyNode n = (MyNode)parentElement;
+			if ( parentElement instanceof VariableNode ) {
+				VariableNode n = (VariableNode)parentElement;
 				return n.getStates();
 			}
-			if ( parentElement instanceof MyState ) {
+			if ( parentElement instanceof VariableNodeState ) {
 				return new Object[0];
 			}
 
 			return new Object[0];
 		}
 
+		/**
+		 * Get the parent of the given element.
+		 * @param element tree element reference
+		 * @return {@code MyNode} if element is {@code MyState}, {@code input} if {@code MyNode}, null if null
+		 */
 		public Object getParent(Object element) {
 
 			if (element == null) {
 				return null;
 			}
-			
-			if ( element instanceof MyState ) {
-				for ( MyNode n : roots ) {
-					if ( n.states.contains((MyState)element)) {
+
+			// find the parent by linear search
+			if ( element instanceof VariableNodeState ) {
+				for ( VariableNode n : roots ) {
+					if ( n.states.contains((VariableNodeState)element)) {
 						return n;
 					}
 				}
 			}
-			
+
 			// node returns the network parent
 			return input;
 		}
 
+		/**
+		 * Whether the given element has children
+		 * @param element element expecting {@code BeliefNetwork} or {@code MyNode}
+		 * @return true if element has array children, false otherwise
+		 */
 		public boolean hasChildren(Object element) {
-			
+
 			if ( element instanceof BeliefNetwork ) {
 				return roots.size() > 0;
 			}
-			if ( element instanceof MyNode ) {
-				MyNode n = (MyNode)element;
+			if ( element instanceof VariableNode ) {
+				VariableNode n = (VariableNode)element;
 				return n.states.size() > 0;
 			}
 
@@ -1226,13 +1743,13 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		}
 
 	}
-	
-	
+
+
 	/**
 	 * A viewer sorter for the <code>ViewTree</code> viewer model.
 	 * @author mrb
 	 */
-	public class TreeSorter extends ViewerSorter {
+	static public class TreeSorter extends ViewerSorter {
 
 		/** which column number to sort */
 		private int propertyIndex = 0;
@@ -1312,16 +1829,16 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		 */
 		@Override
 		public int compare(Viewer viewer, Object e1, Object e2) {
-			
-			if ( e1 instanceof MyState ) {
-				MyState s1 = (MyState)e1;
-				MyState s2 = (MyState)e2;
+
+			if ( e1 instanceof VariableNodeState ) {
+				VariableNodeState s1 = (VariableNodeState)e1;
+				VariableNodeState s2 = (VariableNodeState)e2;
 				return s1.getStateName().compareTo(s2.getStateName());
 			}
-			
-			MyNode p1 = (MyNode)e1;
-			MyNode p2 = (MyNode)e2;
-			
+
+			VariableNode p1 = (VariableNode)e1;
+			VariableNode p2 = (VariableNode)e2;
+
 			int rc = 0;
 			switch (propertyIndex) {
 			case 0: // id
@@ -1337,7 +1854,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				if ( v1 == v2 ) rc = 0;
 				else
 					rc = v1 > v2 ? 1 : -1;
-				break;
+					break;
 			default:
 				rc = 0;
 			}
@@ -1349,13 +1866,42 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			return rc;
 		}
 	}
-	
-	/*
-	 	Map evidence = new HashMap(2);
-		FiniteVariable var = null;
-		var = (FiniteVariable) beliefNetwork.forID( "C" );
-		evidence.put( var, var.instance( "Present" ) );
-		var = (FiniteVariable) beliefNetwork.forID( "B" );
-		evidence.put( var, var.instance( "Increased" ) );
+
+
+	/**
+	 * Provides a viewer filter for node type choice values.
 	 */
+	static public class ResultFilter extends ViewerFilter {
+
+		/** choice code from result value type enumeration */
+		int type;
+		
+		/**
+		 * Result filter creates viewer filter and sets its type.
+		 * The type is expected to be one of the {@code HuginNode} node type constants.
+		 * @param type
+		 */
+		public ResultFilter(int type) {
+			super();
+			this.type = type;
+		}
+
+		/**
+		 * Applies the filter on the selection.
+		 * Matches the model's result field value to the value type from the constructor.
+		 * @return false if selected line model matches choice, true otherwise
+		 */
+		@Override
+		public boolean select(Viewer viewer, Object parentElement,	Object element) {
+		    VariableNode p = (VariableNode) element;
+		    if ( p == null ) 
+		      return true;
+		    
+		    if ( p.getNode().getValueType() == type )
+		      return false;
+		    
+		    return true;
+		}
+	}
+
 }

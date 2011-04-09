@@ -12,6 +12,8 @@ _Enhancements_:
 * Added overlay splash handler for product version identification.
 * Changed SAEM editor to single page.
 * Updated Hugin NET DSL to handle all content of test networks.  
+* Added Hugin Evidence metamodel to handle saving and restoring evidence instantiations from Hugin models in analysis view.
+* Added Hugin network view with analysis support.  Uses associated preference page for calculation settings.  Analysis provided for maximum a posteriori (MAP) calculation using either exact (slow) or approximate (fast) methods.
 * Added unit tests for various inference library usage scenarios.
 * Added example contribution for Hugin NET DSL.
 _Commit_:

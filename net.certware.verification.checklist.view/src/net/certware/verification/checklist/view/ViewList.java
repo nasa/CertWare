@@ -904,6 +904,7 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 			if ( setSelectedFile((IFile)iss.getFirstElement()) ) {
 				latestSelection = selection;
 			}
+			return;
 		} 
 
 		// otherwise select from the active model editor

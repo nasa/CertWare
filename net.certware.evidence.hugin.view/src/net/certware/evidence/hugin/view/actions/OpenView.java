@@ -1,7 +1,7 @@
 package net.certware.evidence.hugin.view.actions;
 
 import net.certware.core.ui.log.CertWareLog;
-import net.certware.evidence.hugin.view.ViewList;
+import net.certware.evidence.hugin.view.ViewTree;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.action.IAction;
@@ -20,7 +20,7 @@ import org.eclipse.ui.PartInitException;
  */
 public class OpenView implements IObjectActionDelegate
 {
-  static private final String PROJECT_VIEW_ID = "net.certware.evidence.hugin.view.list"; //$NON-NLS-1$
+  static private final String PROJECT_VIEW_ID = "net.certware.evidence.hugin.view.tree"; //$NON-NLS-1$
   
   /**
    * Latest selected part.
@@ -56,7 +56,7 @@ public class OpenView implements IObjectActionDelegate
           
           if ( obj instanceof IFile ) {
             IFile ifile = (IFile)latestSelection.getFirstElement();
-            ViewList view = (ViewList)viewPart;
+            ViewTree view = (ViewTree)viewPart;
             view.setSelectedFile(ifile);
           }
         }
