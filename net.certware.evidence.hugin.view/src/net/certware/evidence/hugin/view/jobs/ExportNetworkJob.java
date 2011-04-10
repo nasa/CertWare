@@ -16,7 +16,7 @@ import edu.ucla.belief.BeliefNetwork;
 import edu.ucla.belief.io.hugin.HuginNode;
 
 /**
- * A job to checklist data to an Excel workbook.
+ * A job to write network data to an Excel workbook.
  * Commits the workbook to a file system file when complete.
  * @author mrb
  * @since 1.2.1
@@ -29,13 +29,15 @@ public class ExportNetworkJob extends Job
 	private final WriteExcel excel;
 	/** network model */
 	private final BeliefNetwork network;
-
+	/** variable ID column */
 	protected static final int COLUMN_ID = 0;
+	/** variable label column */
 	protected static final int COLUMN_LABEL = 1;
+	/** variable type column */
 	protected static final int COLUMN_VALUE_TYPE = 2;
 
 	/**
-	 * Constructor saves the workbook and value tool data.
+	 * Constructor saves the workbook and network model data.
 	 * Excel workbook should already have destination file name set.
 	 * @param jobName export job name for reporting
 	 * @param excel Excel processing utility
@@ -50,8 +52,8 @@ public class ExportNetworkJob extends Job
 	/**
 	 * Job family membership.
 	 * @param family family ID, test against core CodeHawk ID    
-
-	 * @return true if ID matches, otherwise returns value from superclass  */
+	 * @return true if ID matches, otherwise returns value from superclass  
+	 */
 	public boolean belongsTo(final Object family) {
 		if (family.equals(CertWareUI.PLUGIN_ID)) {
 			return true;
@@ -112,7 +114,8 @@ public class ExportNetworkJob extends Job
 
 				excel.writeCellString(COLUMN_ID, item.getID() );
 				excel.writeCellString(COLUMN_LABEL, item.getLabel() );
-				excel.writeCellInt(COLUMN_VALUE_TYPE, item.getValueType() );
+				excel.writeCellString(COLUMN_VALUE_TYPE, getText(item));
+				// excel.writeCellInt(COLUMN_VALUE_TYPE, item.getValueType() );
 
 				excel.incrementAndCreateRow(1);
 
@@ -130,6 +133,21 @@ public class ExportNetworkJob extends Job
 		return Status.OK_STATUS;
 	}
 
+	/**
+	 * Translate the item's type code to text.
+	 * @param element expecting a VariableNode
+	 * @return text version, or code value as string
+	 */
+	private String getText(HuginNode hn) {
+		int type = hn.getValueType();
+		switch( type ) {
+			case HuginNode.DISCRETE: return "Discrete";
+			case HuginNode.CONTINUOUS: return "Continuous";
+			case HuginNode.DECISION: return "Decision";
+			case HuginNode.UTILITY: return "Utility";
+			default: return Integer.toString(type);
+		}
+	}
 
 	/**
 	 * Runs the generator job, reporting to the given progress monitor.

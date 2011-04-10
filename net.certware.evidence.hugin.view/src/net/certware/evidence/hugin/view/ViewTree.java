@@ -1238,7 +1238,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				// BeliefNetwork bn = NetworkIO.read( ifile.getFullPath().toFile() );
 				BeliefNetwork bn = ReadModelFile.readNetwork(ifile);
 				setSelectedNetwork(bn);
-				System.err.println("set selected network to " + bn);
 
 				if ( getSelectedNetwork() != null ) {
 					selectedFile = ifile;
@@ -1380,17 +1379,12 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 */
 	protected void updateNetworkTable() {
 
-		System.err.println("update network table with " + selectedNetwork);
 		if ( selectedNetwork == null )
 			return;
 
-		System.err.println("setting input table with " + selectedNetwork);
 		treeViewer.setInput( selectedNetwork ); 
-		System.err.println("refreshing table with " + selectedNetwork);
 		treeViewer.refresh();
-		System.err.println("packing table with " + selectedNetwork);
 		treeViewer.getControl().pack(true);
-		System.err.println("returning from updateNetworkTable()");
 	}
 
 
@@ -1431,16 +1425,11 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 					// update the context section
 					// always redraw the strings to erase any previous content
 					// the form composite requires re-packing to reflect the new boundaries
-					System.err.println("updating view " + selectedFile.getName());
-
 					networkHyperlink.setText(NETWORK_LABEL + selectedFile.getName());
 					networkHyperlink.setHref( selectedFile );
 					networkHyperlink.setEnabled(true);
 					networkHyperlink.pack(true);
-
-					System.err.println("updating network table");
 					updateNetworkTable();
-					System.err.println("completed updating network table");
 
 					// refresh the form layout
 					form.reflow(true);
@@ -1486,12 +1475,9 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		// selecting from the explorer
 		if ( iss.getFirstElement() instanceof IFile ) {
 			IFile newSelection = (IFile)iss.getFirstElement();
-			System.err.println("incoming selection ifile " + newSelection);
 			if ( newSelection.getFileExtension().endsWith(ICertWareConstants.NET_EXTENSION) ) {
-				System.err.println("matched selection ifile " + newSelection);
 				if ( setSelectedFile(newSelection) ) {
 					latestSelection = selection;
-					System.err.println("new selection file returning");
 				}
 			}
 			return;
@@ -1509,8 +1495,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				vns.setSelected(true);
 				continue;
 			}
-
-			// System.err.println("unknown selection " + o);
 		}
 	}
 
@@ -1669,7 +1653,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		 * @param newInput new input model, reference saved, presumed to be a {@code BeliefNetwork} item
 		 */
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-			System.err.println("tcp input changed new input " + newInput);
 			if ( newInput instanceof BeliefNetwork ) {
 				input = (BeliefNetwork)newInput;
 			} else {

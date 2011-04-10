@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Argument Transformation GSN to ARM
 Bundle-SymbolicName: net.certware.argument.transform.gsn2arm;singleton:=true
-Bundle-Version: 1.2.0.qualifier
+Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.argument.transform.gsn2arm.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Require-Bundle: org.eclipse.core.runtime,

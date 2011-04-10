@@ -17,7 +17,7 @@ _Enhancements_:
 * Added unit tests for various inference library usage scenarios.
 * Added example contribution for Hugin NET DSL.
 _Commit_:
-* TBD.
+* Committed as reference branch @M7@ with @1.2.1@ tag.
 
 
 h3. Version 1.2.0
