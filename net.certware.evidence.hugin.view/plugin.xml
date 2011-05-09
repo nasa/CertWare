@@ -128,6 +128,12 @@
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
+            description="Perform Pr(e) query on given evidence"
+            id="net.certware.evidence.hugin.view.pre"
+            name="Perform Pr(e) analysis">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
             description="Deselects all variable and state selections in the tree"
             id="net.certware.evidence.hugin.view.deselect"
             name="Deselect all">
@@ -170,6 +176,11 @@
       </image>
       <image
             commandId="net.certware.evidence.hugin.view.mpe"
+            disabledIcon="icons/dtool16/certware-run-d16.gif"
+            icon="icons/obj16/certware-run.png">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.pre"
             disabledIcon="icons/dtool16/certware-run-d16.gif"
             icon="icons/obj16/certware-run.png">
       </image>
@@ -230,6 +241,17 @@
       <handler
             class="net.certware.evidence.hugin.view.handlers.MpeCalculationHandler"
             commandId="net.certware.evidence.hugin.view.mpe">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isSelected">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.PreCalculationHandler"
+            commandId="net.certware.evidence.hugin.view.pre">
          <enabledWhen>
             <and>
                <test
@@ -303,6 +325,13 @@
                tooltip="Compute the most probable explanation (MPE) values">
          </command>
          <command
+               commandId="net.certware.evidence.hugin.view.pre"
+               label="Pr(e) Query"
+               mnemonic="P"
+               style="push"
+               tooltip="Compute the probability of evidence Pr(e) and marginals">
+         </command>
+         <command
                commandId="net.certware.evidence.hugin.view.evidence.save"
                label="Evidence"
                mnemonic="E"
@@ -335,6 +364,17 @@
                style="push"
                tooltip="Compute the most probable explanation (MPE) values">
          </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.pre"
+               label="Pr(e) Query"
+               mnemonic="P"
+               style="push"
+               tooltip="Compute the probability of evidence Pr(e) and marginals">
+         </command>
+         <separator
+               name="calculations"
+               visible="true">
+         </separator>
          <command
                commandId="net.certware.evidence.hugin.view.evidence.save"
                label="Save Evidence As..."
@@ -403,6 +443,21 @@
                mnemonic="P"
                style="push"
                tooltip="Compute the most probable explanation (MPE) values">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.evidence.hugin.isSelected">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.pre"
+               label="Pr(e) Estimate"
+               mnemonic="P"
+               style="push"
+               tooltip="Compute the probability of evidence Pr(e) and marginals">
             <visibleWhen
                   checkEnabled="false">
                <and>

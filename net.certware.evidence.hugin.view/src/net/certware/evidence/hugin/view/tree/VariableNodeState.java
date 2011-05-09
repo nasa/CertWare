@@ -17,6 +17,8 @@ public class VariableNodeState {
 	protected boolean selected = false;
 	/** variable node container for sibling reference */
 	protected VariableNode container;
+	/** marginal probability */
+	protected double marginal;
 	
 	/**
 	 * Constructor sets name and selected state to false.
@@ -84,5 +86,21 @@ public class VariableNodeState {
 	 */
 	public void setContainer(VariableNode container) {
 		this.container = container;
+	}
+	
+	/**
+	 * Returns the latest marginal probability value.
+	 * @return marginal probability
+	 */
+	public double getMarginal() {
+		return marginal;
+	}
+
+	/**
+	 * Set the marginal probability.
+	 * @param d marginal probability
+	 */
+	public void setMarginal(double d) {
+		marginal = d;
 	}
 }

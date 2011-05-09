@@ -13,6 +13,7 @@ import org.junit.runners.Suite;
 	CancerManualTest.class, 
 	CancerReadTest.class,
 	CancerMAPTest.class,
+	CancerJoinTest.class,
 	CancerExactMAPTest.class,
 	CancerSensitivity.class,
 	CancerProbabilityQuery.class,

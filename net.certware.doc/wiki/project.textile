@@ -22,11 +22,11 @@ h3. Meta-Models
 * @ARM@ OMG argument metamodel and its Ecore implementation
 * @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
 * @CAZ@ A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
-* @EV@ Evidence settings for Bayesian networks.
 * @EUR@ A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
 * @EUZ@ A diagram for EUROCONTROL notation derived from EUR and ARM metamodels. 
 * @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
 * @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
+* @HEV@ Evidence settings for Hugin Bayesian networks.
 * @NET@ Hugin Network models.
 * @SFP@ A semi-formal proof metamodel derived from an Xtext grammar for these proofs.
 * @SMM@ OMG software measurement metamodel and its Ecore implementation.
@@ -192,7 +192,7 @@ h3. File Names and Extensions
 * @*.caz@ and @*.caz_diagram@ are CAE diagram model and diagram files
 * @*.eur@ EUROCONTROL model files
 * @*.euz@ and @*.euz_diagram@ are EUROCONTROL diagram model and diagram files
-* @*.ev@ Hugin evidence setting model files
+* @*.hev@ Hugin evidence setting model files
 * @*.mspdi@ and @*.mpx@ are Microsoft Project (MSPDI) model files
 * @*.net@ and @*.hugin@ Hugin NET files
 * @*.saem@ SAEM model files

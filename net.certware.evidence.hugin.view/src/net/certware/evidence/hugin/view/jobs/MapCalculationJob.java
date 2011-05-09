@@ -4,22 +4,20 @@ import il2.inf.map.MapSearch;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-import net.certware.core.ui.CertWareUI;
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.evidence.hugin.view.Activator;
 import net.certware.evidence.hugin.view.ViewTree;
+import net.certware.evidence.hugin.view.preferences.PreferenceConstants;
 import net.certware.evidence.hugin.view.tree.VariableNode;
 import net.certware.evidence.hugin.view.tree.VariableNodeState;
-import net.certware.evidence.hugin.view.preferences.PreferenceConstants;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 import edu.ucla.belief.BeliefNetwork;
@@ -41,16 +39,8 @@ import edu.ucla.util.AbstractStringifier;
  * @author mrb
  * @since 1.2.1
  */
-public class MapCalculationJob extends Job
+public class MapCalculationJob extends AbstractCalculationJob
 {
-	/** bail-out message */
-	private final static String CANCEL_MSG = "Canceled MAP estimate before completion";
-	/** network model */
-	private final BeliefNetwork initialNetwork;
-	/** view for reporting and model access */
-	private ViewTree view;
-	/** tree viewer nodes for selection access */
-	private List<VariableNode> nodes;
 
 	/**
 	 * Constructor saves the network and view references.
@@ -58,23 +48,7 @@ public class MapCalculationJob extends Job
 	 * @param view view part reference
 	 */
 	public MapCalculationJob(String jobName, ViewTree view) {
-		super(jobName);
-		assert(view !=  null);
-		this.view = view;
-		this.initialNetwork = view.getSelectedNetwork();
-		this.nodes = view.getVariableNodes();
-	}
-
-	/**
-	 * Job family membership.
-	 * @param family family ID, test against core CertWare ID    
-	 * @return true if ID matches, otherwise returns value from superclass  
-	 */
-	public boolean belongsTo(final Object family) {
-		if (family.equals(CertWareUI.PLUGIN_ID)) {
-			return true;
-		}
-		return super.belongsTo(family);
+		super(jobName,view);
 	}
 
 	/**
@@ -165,20 +139,19 @@ public class MapCalculationJob extends Job
 					return Status.CANCEL_STATUS;
 				}
 
+				// clear marginals // TODO can compute these?
+				clearMarginals();
+				//setMarginals(engine);
+
 				// update results in view
 				// job runs in a different thread, so ensure updates done in UI thread
-				view.setProbabilityLabel("p(MAP,e)");
-				view.setProbability( exactmapresult.score ); // p(map,e)
-				view.setEvidenceLabel("p(MAP|e)");
-				view.setEvidence( mapinfo.finished ? "Result is exact" : "Computation did not finish" ); // p(map|e)
-				view.setSearchTime( exactmapresult.foundTime );
-				view.setInitializationTime("N/A");
-				view.setInstantiation(instantiation.toString());
-				view.setSearch("N/A");
-				view.setInitialization("N/A");
-				view.setSteps("N/A");
-				view.layout();
-
+				LinkedHashMap rows = new LinkedHashMap<String,String>();
+				rows.put("p(MAP,e)", getProbability(exactmapresult.score));
+				rows.put("p(MAP|e)", mapinfo.finished ? "Result is exact" : "Computation did not finish" );
+				rows.put("Instantiation", instantiation.toString());
+				rows.put("Search time", getSearchTime(exactmapresult.foundTime));
+				view.addResult(rows);
+				
 			} // exact
 			else 
 			{ // approximate
@@ -247,19 +220,22 @@ public class MapCalculationJob extends Job
 					return Status.CANCEL_STATUS;
 				}
 
+				// clear marginals // TODO can compute these?
+				// clearMarginals();
+				setMarginals(engine);
+
 				// update results in view
 				// job runs in a different thread, so ensure updates done in UI thread
-				view.setProbabilityLabel("p(MAP,e)");
-				view.setProbability( mapresult.score ); // p(map,e)
-				view.setEvidenceLabel("p(MAP|e)");
-				view.setEvidence( mapresult.score / engine.probability() ); // p(map|e), exceptions caught
-				view.setSearchTime( mapresult.searchDurationMillisProfiled, mapresult.searchDurationMillisElapsed);
-				view.setInitializationTime( mapresult.initDurationMillisProfiled, mapresult.initDurationMillisElapsed);
-				view.setInstantiation(instantiation.toString());
-				view.setSearch( searchmethod );
-				view.setInitialization(initializationmethod);
-				view.setSteps(steps);
-				view.layout();
+				LinkedHashMap rows = new LinkedHashMap<String,String>();
+				rows.put("p(MAP,e)", getProbability(mapresult.score));
+				rows.put("p(MAP|e)", getEvidence( mapresult.score / engine.probability() ));
+				rows.put("Instantiation", instantiation.toString());
+				rows.put("Initialization time", getInitializationTime(mapresult.initDurationMillisProfiled, mapresult.initDurationMillisElapsed));
+				rows.put("Initialization method", getInitialization(initializationmethod));
+				rows.put("Search time", getSearchTime(mapresult.searchDurationMillisProfiled, mapresult.searchDurationMillisElapsed));
+				rows.put("Search method", getSearch( searchmethod ));
+				rows.put("Search steps", getSteps(steps));
+				view.addResult(rows);
 
 				// clean up
 				engine.die();

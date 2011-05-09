@@ -2,6 +2,12 @@ h1{color:blue}. CertWare Version History
 
 !certware-32.gif!
 
+h3. Version 1.2.2
+
+_Bugs Fixed_:
+_Enhancements_:
+* Modified Network Analysis view to make results section content dynamic according to analysis computation.  Combined the view's label and node columns to one, and added marginal probability column.  Modified certain calculations to produce the marginal values.
+_Commit_:
 
 h3. Version 1.2.1
 

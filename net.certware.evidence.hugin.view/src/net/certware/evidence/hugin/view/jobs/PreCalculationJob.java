@@ -3,7 +3,6 @@ package net.certware.evidence.hugin.view.jobs;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Set;
 
 import net.certware.core.ui.log.CertWareLog;
@@ -15,24 +14,29 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 
+import edu.ucla.belief.EliminationHeuristic;
 import edu.ucla.belief.FiniteVariable;
+import edu.ucla.belief.InferenceEngine;
+import edu.ucla.belief.StateNotFoundException;
 import edu.ucla.belief.VariableImpl;
-import edu.ucla.belief.inference.map.MapEngine;
+import edu.ucla.belief.inference.JEngineGenerator;
+import edu.ucla.belief.inference.JoinTreeSettings;
+import edu.ucla.belief.io.PropertySuperintendent;
 import edu.ucla.util.AbstractStringifier;
 
 /**
- * A job to perform the MPE calculation.
+ * A job to perform the Pr(e) calculation and marginals.
  * @author mrb
  * @since 1.2.1
  */
-public class MpeCalculationJob extends AbstractCalculationJob
+public class PreCalculationJob extends AbstractCalculationJob
 {
 	/**
 	 * Constructor saves network and view references.
 	 * @param jobName export job name for reporting
 	 * @param view view part for reference
 	 */
-	public MpeCalculationJob(String jobName, ViewTree view) {
+	public PreCalculationJob(String jobName, ViewTree view) {
 		super(jobName,view);
 	}
 
@@ -55,7 +59,7 @@ public class MpeCalculationJob extends AbstractCalculationJob
 
 			if ( nodes.isEmpty() ) {
 				cancel();
-				CertWareLog.logWarning("No variable selections available for MPE calculation");
+				CertWareLog.logWarning("No variable selections available for Pr(e) calculation");
 				view.setWarningMessage(CANCEL_MSG);
 				return Status.CANCEL_STATUS;
 			}
@@ -63,11 +67,11 @@ public class MpeCalculationJob extends AbstractCalculationJob
 			// network name from loaded file
 			networkName = view.getSelectedFile().getName();
 
-			// initialize MPE variables from selections
-			Set setMPEVariables = new HashSet();
+			// initialize variables from selections
+			Set setPreVariables = new HashSet();
 			for ( VariableNode v : nodes ) {
 				if ( v.isSelected() ) {
-					setMPEVariables.add( v.getNode() ); 
+					setPreVariables.add( v.getNode() ); 
 				}
 			}
 
@@ -92,6 +96,7 @@ public class MpeCalculationJob extends AbstractCalculationJob
 				return Status.CANCEL_STATUS;
 			}
 
+			/*
 		    // create a new set of variables and remove those whose evidence have set keys
 		    Set allVarsMinusEvidence = new HashSet( initialNetwork );
 		    allVarsMinusEvidence.removeAll( evidence.keySet() );
@@ -99,10 +104,32 @@ public class MpeCalculationJob extends AbstractCalculationJob
 		    // initialize a MapEngine and perform the MPE computation
 		    MapEngine mpe = new MapEngine( initialNetwork, allVarsMinusEvidence, evidence );
 			VariableImpl.setStringifier( AbstractStringifier.VARIABLE_ID );
+			*/
+			
+		    // create the dynamator
+		    JEngineGenerator dynamator = new JEngineGenerator();
+
+		    // edit settings
+		    JoinTreeSettings settings = dynamator.getSettings( (PropertySuperintendent)initialNetwork, true );
+
+		    // define the elimination order heuristic used to create the join tree
+		    settings.setEliminationHeuristic( EliminationHeuristic.MIN_FILL );
+
+		    // create the inference engine
+		    InferenceEngine engine = dynamator.manufactureInferenceEngine( initialNetwork );
+
+		    // set the observations
+		    try {
+		      initialNetwork.getEvidenceController().setObservations( evidence );
+		    } catch( StateNotFoundException e ) {
+		    	CertWareLog.logError("Performing Pr(e) query",e);
+		    	view.setErrorMessage(e.getMessage());
+		    	return null;
+		    };
 
 		    // results
-		    double score = mpe.probability();
-		    Map instantiation = mpe.getInstance();
+		    double score = engine.probability();
+		    // Map instantiation = engine.getInstance();
 
 			monitor.worked(2);
 			if ( monitor.isCanceled() ) {
@@ -110,23 +137,23 @@ public class MpeCalculationJob extends AbstractCalculationJob
 				return Status.CANCEL_STATUS;
 			}
 			
-			// clear marginals // TODO can compute these?
-			clearMarginals();
+			// reset marginals 
+			// clearMarginals();
+			setMarginals(engine);
 			
 			// update results in view
 			LinkedHashMap<String,String> rows = new LinkedHashMap<String,String>();
-			rows.put("p(MPE,e)",getProbability(score));
-			rows.put("Instantiation",instantiation.toString());
+			rows.put("Pr(e)",getProbability(score));
 			view.addResult(rows);
 			
 			monitor.worked(1);
 
 		} catch( Exception e ) {
-			CertWareLog.logError(String.format("%s %s","MPE calculation for",networkName), e);
+			CertWareLog.logError(String.format("%s %s","Pr(e) query for",networkName), e);
 			return Status.CANCEL_STATUS;
 		}
 
-		String doneMessage = String.format("%s %s %s","MPE calculation for", networkName, "complete.");
+		String doneMessage = String.format("%s %s %s","Pr(e) query for", networkName, "complete.");
 		CertWareLog.logInfo( doneMessage );
 		return Status.OK_STATUS;
 	}
@@ -140,11 +167,11 @@ public class MpeCalculationJob extends AbstractCalculationJob
 	protected IStatus run(IProgressMonitor monitor) {
 
 		int count = 5;
-		monitor.beginTask("Computing MPE", count);
+		monitor.beginTask("Computing Pr(e)", count);
 		IStatus rv = produce(monitor);
 
 		if ( rv == Status.OK_STATUS ) {
-			view.setInfoMessage("Completed MPE calculation");
+			view.setInfoMessage("Completed Pr(e) calculation");
 			monitor.done();
 		}
 

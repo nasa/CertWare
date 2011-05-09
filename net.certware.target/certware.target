@@ -4,51 +4,13 @@
 <target name="CertWare Target">
 <locations>
 <location path="${workspace_loc}/net.certware.target/delta.pack/eclipse" type="Directory"/>
-<location id="org.eclipse.epsilon.feature" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.epsilon.hutn.feature" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.epsilon.evl.emf.validation.feature" path="${eclipse_home}" type="Feature"/>
-<location id="org.eclipse.epsilon.gmf.feature" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epsilon.gmf.feature" path="/Users/mrbarryold/Applications/Eclipse-3.6-Model-64" type="Feature"/>
+<location id="org.eclipse.epsilon.eugenia.feature" path="/Users/mrbarryold/Applications/Eclipse-3.6-Model-64" type="Feature"/>
 <location path="${workspace_loc}/net.certware.target/testing" type="Directory"/>
-<location id="org.eclipse.epsilon.eugenia.feature" path="${eclipse_home}" type="Feature"/>
-<location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
-<unit id="org.eclipse.acceleo.runtime.feature.group" version="3.0.2.v20110217-1127"/>
-<unit id="org.eclipse.acceleo.sdk.feature.group" version="3.0.2.v20110217-1127"/>
-<unit id="org.eclipse.acceleo.ui.capabilities.feature.group" version="3.0.2.v20110217-1127"/>
-<unit id="org.eclipse.tptp.platform.jakarta.log4j.feature.group" version="4.5.0.v201005032111-217E7w312116191611"/>
-<unit id="org.eclipse.m2m.atl.feature.group" version="3.1.2.v20110119-0755"/>
-<unit id="org.eclipse.m2m.atl.doc.feature.group" version="3.1.2.v20110119-0755"/>
-<unit id="org.eclipse.m2m.atl.sdk.feature.group" version="3.1.2.v20110119-0755"/>
-<unit id="org.eclipse.ecf.core.feature.group" version="3.3.1.v20100913-1814"/>
-<unit id="org.eclipse.egit.feature.group" version="0.11.1"/>
-<unit id="org.eclipse.help.feature.group" version="1.2.1.r362_v20101111-7e7jEVFDr6xg-LSlC_z0w1D"/>
-<unit id="org.eclipse.jgit.feature.group" version="0.11.1"/>
-<unit id="org.eclipse.pde.source.feature.group" version="3.6.2.r362_v20110203-7b7mFL2FET3dhHalh1iNZtL"/>
-<unit id="org.eclipse.platform.sdk" version="3.6.2.M20110210-1200"/>
-<unit id="org.eclipse.sdk.ide" version="3.6.2.M20110210-1200"/>
-<unit id="org.eclipse.emf.sdk.feature.group" version="2.6.1.v20100914-1218"/>
-<unit id="org.eclipse.emf.validation.sdk.feature.group" version="1.4.0.v20100428-2315-67J-96SGR35WNqZRZfmQnghI6uFA"/>
-<unit id="org.eclipse.equinox.core.sdk.feature.group" version="3.6.1.r36x_v20110210-7sF99FsNFS-Ci4TSP4RDFHLIA5B3"/>
-<unit id="org.eclipse.equinox.p2.sdk.feature.group" version="3.6.2.R36x_v20110120-9I7VGEAG438GhnfSLuLz0FXP9NYJ"/>
-<unit id="org.eclipse.equinox.sdk.feature.group" version="3.6.2.r362_v20110210b-7H7R67v9rtOv_dTCawtb0WQnN92B"/>
-<unit id="org.eclipse.emf.eef.edt.feature.group" version="0.8.2.v201101310604-18s7TFCB-_hoNk7iWmWO45HB98x4"/>
-<unit id="org.eclipse.emf.eef.runtime.feature.group" version="0.8.2.v201101310604-17717w312212421715"/>
-<unit id="org.eclipse.emf.eef.runtime.source.feature.group" version="0.8.2.v201101310604-17717w312212421715"/>
-<unit id="org.eclipse.gmf.runtime.notation.source.feature.group" version="1.4.1.v20100909-1000-37708s73533F5C1479I"/>
-<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.4.2.v20110201-1000-67G49E9QYBfkXgwmVt5ksk7w9Vqi"/>
-<unit id="org.eclipse.gmf.doc.feature.group" version="1.4.0.v20100518-2359-35-8s733L3H7L17395"/>
-<unit id="org.eclipse.gmf.source.feature.group" version="1.4.2.v20110201-1000-7d9A7FFYnmMD7_nYQqNhbc2tsgXc"/>
-<unit id="org.eclipse.gmf.sdk.feature.group" version="2.3.0.v20100508-1742-777B-95pDcLakRvph3PMwwfmjSTZ"/>
-<unit id="org.eclipse.jetty.slf4jlogback.feature.group" version="7.1.6.v20100831"/>
-<unit id="org.eclipse.mylyn.pde_feature.feature.group" version="3.4.3.v20110131-0100-e3x-43-7w31211719012110f4y"/>
-<unit id="org.eclipse.mylyn.commons.feature.group" version="3.4.3.v20110131-0200-e3x-7Z7j6FGpAasic6jpTQsxM7JSm"/>
-<unit id="org.eclipse.mylyn.sdk_feature.feature.group" version="3.4.3.v20110131-0200-e3x-8j9F7_FXiI9jRBM4_bFl96vsIL"/>
-<unit id="org.eclipse.mylyn_feature.feature.group" version="3.4.3.v20110131-0100-e3x-7Z7f7AFBBoPbVQ7iNFebXJDypa"/>
-<unit id="org.eclipse.mylyn.wikitext_feature.feature.group" version="1.3.2.v20100916-0100-e3x-7F7e1FC7sReRSnX-DReRRMHHM"/>
-<unit id="org.eclipse.mylyn.wikitext.sdk.feature.group" version="1.3.2.v20100916-0100-e3x-7U8M4FQCnvLuxi66SxLuukDef"/>
-<unit id="org.eclipse.xtext.runtime.feature.group" version="1.0.2.v201102150722"/>
-<unit id="org.eclipse.xtext.sdk.feature.group" version="1.0.2.v201102150722"/>
-<unit id="org.eclipse.xtext.ui.feature.group" version="1.0.2.v201102150722"/>
-<repository location="http://download.eclipse.org/releases/helios/"/>
-</location>
+<location id="org.eclipse.equinox.p2.user.ui" path="${eclipse_home}" type="Feature"/>
+<location id="org.eclipse.epsilon.evl.emf.validation.feature" path="/Users/mrbarryold/Applications/Eclipse-3.6-Model-64" type="Feature"/>
+<location id="org.eclipse.epsilon.feature" path="/Users/mrbarryold/Applications/Eclipse-3.6-Model-64" type="Feature"/>
+<location id="org.eclipse.epsilon.hutn.feature" path="/Users/mrbarryold/Applications/Eclipse-3.6-Model-64" type="Feature"/>
+<location path="${eclipse_home}" type="Profile"/>
 </locations>
 </target>

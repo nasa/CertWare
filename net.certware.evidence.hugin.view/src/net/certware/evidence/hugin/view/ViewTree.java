@@ -1,9 +1,10 @@
 package net.certware.evidence.hugin.view;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Set;
 
 import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.handlers.LinkEditor;
@@ -91,8 +92,6 @@ import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.services.IEvaluationService;
 
 import edu.ucla.belief.BeliefNetwork;
-import edu.ucla.belief.inference.map.InitializationMethod;
-import edu.ucla.belief.inference.map.SearchMethod;
 import edu.ucla.belief.io.hugin.HuginNode;
 
 /**
@@ -102,10 +101,6 @@ import edu.ucla.belief.io.hugin.HuginNode;
  */
 public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareView, ISelectionListener, ISaveablePart2, IResourceChangeListener, IAdaptable, IHelpContext {
 
-	/** maximum fraction formatting digits */
-	private static final int MAX_DIGITS = 8;
-	/** minimum fraction formatting digits */
-	private static final int MIN_DIGITS = 3;
 	/** the forms toolkit, borrowed from plugin's shared instance */
 	private FormToolkit toolkit;
 	/** the top-level scrolled form installed as the view control */
@@ -144,22 +139,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private MenuItem itemUtilityFilterMenuItem;
 	/** whether the model is dirty */
 	protected boolean dirty = false;
-	/** probability map and evidence */
-	private Label probabilityValue;
-	/** MAP search steps */
-	private Label stepsValue;
-	/** MAP search method */
-	private Label searchValue;
-	/** MAP instantiation */
-	private Label instantiationValue;
-	/** MAP initialization */
-	private Label initializationValue;
-	/** probability map given evidence */
-	private Label evidenceValue;
-	private Label initializationTimeValue;
-	private Label searchTimeValue;
-	private Label probabilityLabel;
-	private Label evidenceLabel;
+	/** results client composite for dynamic update */
+	private Composite resultsClient;
 	/** network name prefix */
 	private static final String NETWORK_LABEL = "Network: ";
 	/** network name tool tip */
@@ -180,6 +161,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private static final String MEMENTO_FILTER_DECISION = "memento.filter.decision"; //$NON-NLS-1$
 	/** memento for filter state */
 	private static final String MEMENTO_FILTER_UTILITY = "memento.filter.utility"; //$NON-NLS-1$
+	/** number of columns */
+	private static final int COLUMN_COUNT = 2;
 
 	/**
 	 * Initializes the part.
@@ -236,7 +219,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	public TreeViewer getTreeViewer() {
 		return treeViewer;
 	}
-	
+
 	/**
 	 * Selection listener to sort columns.
 	 * @param tvc table column
@@ -270,7 +253,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 		// set the selected column's image according to sort direction
 		sc.setImage(Activator.getDefault().getImageRegistry().get( sorter.getDirection() == SWT.UP ? 
-					Activator.ASCENDING_IMAGE :
+				Activator.ASCENDING_IMAGE :
 					Activator.DESCENDING_IMAGE ));
 	}
 
@@ -300,315 +283,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		});
 	}
 
-	/**
-	 * Set the instantiation display value.
-	 * @param instantiation used for computation
-	 */
-	public void setInstantiation(final String i) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					instantiationValue.setText( i );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting instantiation setting",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
 
-	/**
-	 * Set the search display value.
-	 * @param search method used in computation 
-	 */
-	public void setSearch(final SearchMethod sm) {
-		setSearch( sm == SearchMethod.HILL ? "Hill Climbing" : "Taboo" );
-	}
-
-	/**
-	 * Set the search display value.
-	 * @param s search message
-	 */
-	public void setSearch(final String s) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					searchValue.setText( s );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting search setting",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * Set the search initialization display value.
-	 * @param search initialization used in computation 
-	 */
-	public void setInitialization(final InitializationMethod im) {
-		String s = "Random";
-		if ( im == InitializationMethod.MPE ) {
-			s = "MPE";
-		} else if ( im == InitializationMethod.SEQ ) {
-			s = "Sequential";
-		} else if ( im == InitializationMethod.ML ) {
-			s = "Maximum Likelihood";
-		}
-		setInitialization(s);
-	}
-
-	/**
-	 * Set the search initialization display value.
-	 * @param s search initialization message
-	 */
-	public void setInitialization(final String s) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					initializationValue.setText( s );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting search setting",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * Set the steps display value.
-	 * @param i steps preference value used
-	 */
-	public void setSteps(final int i) {
-		final NumberFormat nf = NumberFormat.getIntegerInstance();
-		nf.setGroupingUsed(true);
-		setSteps( nf.format(i) );
-	}
-
-	/**
-	 * Set the steps display value.
-	 * @param s steps message
-	 */
-	public void setSteps(final String s) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					stepsValue.setText( s );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting steps setting",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * Set the search time result value.  Provides both profiled (CPU) and elapsed times.
-	 * @param profiled profiled time in milliseconds
-	 * @param elapsed elapsed time in milliseconds
-	 */
-	public void setSearchTime(final double profiled, final double elapsed) {
-		final NumberFormat nf = NumberFormat.getNumberInstance();
-		nf.setGroupingUsed(true);
-		nf.setMaximumFractionDigits(MAX_DIGITS);
-		nf.setMinimumFractionDigits(MIN_DIGITS);
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					String profiledTime = String.format("%s %s",nf.format(profiled),"ms");
-					String elapsedTime = String.format("%s %s",nf.format(elapsed),"ms");
-					searchTimeValue.setText( String.format("%s CPU, %s elapsed",profiledTime,elapsedTime));
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting search time result",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * Set the exact calculation time result value. 
-	 * @param s string value
-	 */
-	public void setSearchTime(final String s) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					searchTimeValue.setText( s );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting search time",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-	
-	/**
-	 * Set the exact calculation time result value. 
-	 * @param elapsed elapsed time in milliseconds
-	 */
-	public void setSearchTime(final long elapsed) {
-		final NumberFormat nf = NumberFormat.getIntegerInstance();
-		nf.setGroupingUsed(true);
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					String elapsedTime = String.format("%s %s",nf.format(elapsed),"ms");
-					searchTimeValue.setText( String.format("%s elapsed",elapsedTime));
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting search time result",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * Set the initialization time result value.  Provides both profiled (CPU) and elapsed times.
-	 * @param profiled profiled time in milliseconds
-	 * @param elapsed elapsed time in milliseconds
-	 */
-	public void setInitializationTime(final double profiled, final double elapsed) {
-		final NumberFormat nf = NumberFormat.getNumberInstance();
-		nf.setGroupingUsed(true);
-		nf.setMaximumFractionDigits(MAX_DIGITS);
-		nf.setMinimumFractionDigits(MIN_DIGITS);
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					String profiledTime = String.format("%s %s",nf.format(profiled),"ms");
-					String elapsedTime = String.format("%s %s",nf.format(elapsed),"ms");
-					initializationTimeValue.setText( String.format("%s CPU, %s elapsed",profiledTime,elapsedTime));
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting initialization time result",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * Set the initialization time result value as empty.
-	 */
-	public void setInitializationTime(final String s) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					initializationTimeValue.setText( s ); 
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Updating initialization time result",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * 
-	 * @param label
-	 * @param s
-	 */
-	protected void setLabel(final Label label, final String s, final String message) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					label.setText( s );
-				}});
-		} catch( Exception e ) {
-			String warning = String.format("%s %s",message,e.toString());
-			this.setWarningMessage(warning);
-			CertWareLog.logWarning(warning);
-		}
-	}
-
-	/**
-	 * Set the probability row label.
-	 * @param s new label, not null
-	 */
-	public void setProbabilityLabel(String s) {
-		setLabel(probabilityLabel,s,"Updating probability label");
-	}
-	
-	/**
-	 * Set the evidence row label.
-	 * @param s new label, not null
-	 */
-	public void setEvidenceLabel(String s) {
-		setLabel(evidenceLabel,s,"Updating evidence label");
-	}
-	
-	
-	/**
-	 * Set the probability p(map,e) or p(mpe,e) result value.
-	 * @param d new value
-	 */
-	public void setProbability(final double d) {
-		final NumberFormat nf = NumberFormat.getNumberInstance();
-		nf.setGroupingUsed(true);
-		nf.setMaximumFractionDigits(MAX_DIGITS);
-		nf.setMinimumFractionDigits(MIN_DIGITS);
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					probabilityValue.setText( nf.format(d) );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting probability result",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-	
-	/**
-	 * Set the evidence p(map|e) result value.
-	 * @param d new value
-	 */
-	public void setEvidence(final double d) {
-		final NumberFormat nf = NumberFormat.getNumberInstance();
-		nf.setGroupingUsed(true);
-		nf.setMaximumFractionDigits(MAX_DIGITS);
-		nf.setMinimumFractionDigits(MIN_DIGITS);
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					evidenceValue.setText( nf.format(d) );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Formatting p(map|e) result",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
-
-	/**
-	 * Set the evidence p(map|e) result value.
-	 * @param d new value
-	 */
-	public void setEvidence(final String s) {
-		try {
-			Display.getDefault().asyncExec(new Runnable() {
-				@Override
-				public void run() {
-					evidenceValue.setText( s );
-				}});
-		} catch( Exception e ) {
-			String message = String.format("%s %s","Updating evidence result",e.toString());
-			this.setWarningMessage(message);
-			CertWareLog.logWarning(message);
-		}
-	}
 
 	/**
 	 * Refreshes the state object and its siblings in the tree view.
@@ -630,7 +305,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		IEvaluationService es = (IEvaluationService) PlatformUI.getWorkbench().getService(IEvaluationService.class);
 		es.requestEvaluation(property);
 	}
-	
+
 	/**
 	 * Layout the form after computations.
 	 */
@@ -643,7 +318,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			}
 		});
 	}
-	
+
 	/**
 	 * Create the view content using the forms widgets.
 	 */
@@ -665,7 +340,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		layout.numColumns = 2;
 		form.getBody().setLayout(layout);
 		int sectionStyle = Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED; // Section.DESCRIPTION
-		
+
 		// context section
 		context = toolkit.createSection(form.getBody(),	sectionStyle);
 		twd = new TableWrapData(TableWrapData.FILL);
@@ -713,8 +388,10 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			}
 		});
 
-		Composite resultsClient = toolkit.createComposite(results);
+		resultsClient = toolkit.createComposite(results);
 		resultsClient.setLayout(new GridLayout(2,false));
+
+		/*
 
 		// probability value p(map,e)
 		probabilityLabel = toolkit.createLabel(resultsClient, "P(MAP,e)");
@@ -779,10 +456,10 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		initializationTimeValue = toolkit.createLabel(resultsClient, "<TBS>");
 		initializationTimeValue.setFont(JFaceResources.getDialogFont());
 		initializationTimeValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-		
+		 */
 
 		results.setClient(resultsClient);
-		
+
 		// items section
 		items = toolkit.createSection(form.getBody(), sectionStyle );
 		twd = new TableWrapData(TableWrapData.FILL_GRAB);
@@ -826,11 +503,11 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 						// update images in the container set
 						refreshViewerState(s);
 					}
-					
+
 					// force refresh of menu item conditional tests
 					refreshViewProperties();
 				}
-				
+
 			}});
 		GridData gridData = new GridData(GridData.FILL_BOTH);
 		gridData.grabExcessVerticalSpace = true;
@@ -896,7 +573,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			public String getText(Object element) {
 				if ( element instanceof VariableNode ) {
 					HuginNode hn = ((VariableNode)element).getNode();
-					return hn.getID();
+					String text = String.format("%s: %s",hn.getID(),hn.getLabel());
+					return text;
 				}
 				if ( element instanceof VariableNodeState ) {
 					return ((VariableNodeState)element).getStateName();
@@ -923,44 +601,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		});
 		 */		
 
+
 		// column 1
-		TreeViewerColumn labelColumn = new TreeViewerColumn(treeViewer, SWT.NONE);
-		labelColumn.getColumn().setWidth(200);
-		labelColumn.getColumn().setMoveable(true);
-		labelColumn.getColumn().setText("Label");
-		createMenuItem(headerMenu,labelColumn);
-		labelColumn.setLabelProvider(new ColumnLabelProvider() {
-			public String getText(Object element) {
-				if ( element instanceof VariableNode ) {
-					HuginNode hn = ((VariableNode)element).getNode();
-					return hn.getLabel();
-				}
-				return ""; //$NON-NLS-1$
-			}
-		});
-		/*
-		labelColumn.setEditingSupport(new EditingSupport(treeViewer) {
-			protected boolean canEdit(Object element) {
-				return false;
-			}
-
-			protected CellEditor getCellEditor(Object element) {
-				return textCellEditor;
-			}
-
-			protected Object getValue(Object element) {
-				return ((MyModel) element).counter + "";
-			}
-
-			protected void setValue(Object element, Object value) {
-				((MyModel) element).counter = Integer
-						.parseInt(value.toString());
-				treeViewer.update(element, null);
-			}
-		});
-		 */
-
-		// column 2
 		TreeViewerColumn typeColumn = new TreeViewerColumn(treeViewer, SWT.NONE);
 		typeColumn.getColumn().setWidth(200);
 		typeColumn.getColumn().setMoveable(true);
@@ -1004,12 +646,28 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		});
 		 */
 
+		// column 2
+		TreeViewerColumn marginalColumn = new TreeViewerColumn(treeViewer, SWT.NONE);
+		marginalColumn.getColumn().setWidth(200);
+		marginalColumn.getColumn().setMoveable(true);
+		marginalColumn.getColumn().setText("Marginal");
+		createMenuItem(headerMenu,marginalColumn);
+		marginalColumn.setLabelProvider(new ColumnLabelProvider() {
+			public String getText(Object element) {
+				if ( element instanceof VariableNodeState ) {
+					VariableNodeState vns = (VariableNodeState)element;
+					return Double.toString(vns.getMarginal());
+				}
+				return ""; //$NON-NLS-1$
+			}
+		});
+
 		// table sorting on columns
 		TreeSorter sorter = new TreeSorter(treeViewer);
 		treeViewer.setSorter(sorter);
 		addSelectionSorter(idColumn, sorter);
-		addSelectionSorter(labelColumn, sorter);
 		addSelectionSorter(typeColumn, sorter);
+		addSelectionSorter(marginalColumn, sorter);
 		setColumnImages(sorter, idColumn.getColumn());
 
 		// content
@@ -1088,6 +746,64 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	}
 
 	/**
+	 * Clears the results client by disposing of its children.
+	 */
+	public void clearResults() {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				for ( Control c : resultsClient.getChildren() ) {
+					c.dispose();
+				}
+				results.layout(true);
+			}
+		});
+	}
+
+	/**
+	 * Adds a results client entry of one label and one value.
+	 * Presumes a grid layout with two columns.
+	 * @param label row label, first column
+	 * @param value row value, second column
+	 */
+	public void addResult(final String label, final String value) {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				Label l1 = toolkit.createLabel(resultsClient, label);
+				l1.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false,1,1));
+				Label l2 = toolkit.createLabel(resultsClient, value);
+				l2.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false,1,1));
+			}
+		});
+	}
+
+	/**
+	 * Adds all results client entries of one label and one value.
+	 * Presumes a grid layout with two columns.
+	 * We use a {@code LinkedHashMap} here so results appear in same order as loaded.
+	 * @param rows map of labels and values
+	 */
+	public void addResult(final LinkedHashMap rows) {
+		Display.getDefault().asyncExec(new Runnable(){
+			public void run() {
+				for ( Control c : resultsClient.getChildren() ) {
+					c.dispose();
+				}
+				Set keys = rows.keySet();
+				for ( Object s : keys.toArray() ) {
+					String label = (String)s;
+					String value = (String)rows.get(s);
+					Label l1 = toolkit.createLabel(resultsClient, label);
+					l1.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false,1,1));
+					Label l2 = toolkit.createLabel(resultsClient, value);
+					l2.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false,1,1));
+				}
+				results.layout(true);
+				form.reflow(true);
+			}});
+	}
+
+
+	/**
 	 * Creates a menu item separator for the column header.
 	 * @param parent column header menu
 	 */
@@ -1146,9 +862,9 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		Display.getDefault().asyncExec(new Runnable(){
 			public void run() {
 				form.setMessage(message, IMessageProvider.INFORMATION);
-		}});
+			}});
 	}
-	
+
 	/**
 	 * Sets the form warning message.
 	 * @param message message for form header
@@ -1159,7 +875,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				form.setMessage(message, IMessageProvider.WARNING);
 			}});
 	}
-	
+
 	/**
 	 * Sets the form error message.
 	 * @param message message for form header
@@ -1170,7 +886,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				form.setMessage(message, IMessageProvider.ERROR);
 			}});
 	}
-	
+
 	/**
 	 * Clears the form information message.
 	 */
@@ -1180,7 +896,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				form.setMessage(null, IMessageProvider.NONE); //$NON-NLS-1$
 			}});
 	}
-	
+
 	/**
 	 * Sets the selected file.
 	 * @param f selected file
@@ -1418,7 +1134,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		if ( selectedNetwork == null ) 
 			return;
 
-		
+
 		networkHyperlink.getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				try {
@@ -1460,7 +1176,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 */
 	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		
+
 		// skip selection if not structured
 		if ( ! (selection instanceof IStructuredSelection ))
 			return;
@@ -1519,7 +1235,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	public ISelection getSelection() {
 		return this.latestSelection;
 	}
-	
+
 	/**
 	 * Returns whether the view is linking the editor.
 	 * @return true if linking editor
@@ -1608,7 +1324,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				return ncp.roots;
 			}
 		}
-		
+
 		return null;
 	}
 
@@ -1656,7 +1372,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			if ( newInput instanceof BeliefNetwork ) {
 				input = (BeliefNetwork)newInput;
 			} else {
-				System.err.println("tcp input changed invalid input " + newInput);
+				// System.err.println("tcp input changed invalid input " + newInput);
 			}
 		}
 
@@ -1741,7 +1457,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		/** table viewer reference */
 		private final TreeViewer treeViewer;
 
-
 		/**
 		 * Constructor sets first column sort ascending.
 		 * @param tableViewer reference to table viewer
@@ -1758,7 +1473,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		 * @param columnName column name
 		 */
 		public void setColumn(String columnName) {
-			for ( int i = 0; i < 3 ; i++ ) {
+			for ( int i = 0; i < COLUMN_COUNT ; i++ ) {
 				if ( treeViewer.getTree().getColumn(i).getText().equalsIgnoreCase(columnName)) {
 					setColumn(i);
 					return;
@@ -1816,6 +1531,9 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			if ( e1 instanceof VariableNodeState ) {
 				VariableNodeState s1 = (VariableNodeState)e1;
 				VariableNodeState s2 = (VariableNodeState)e2;
+				if ( propertyIndex == 2 ) {
+					return s1.getMarginal() > s2.getMarginal() ? 1 : -1;
+				}
 				return s1.getStateName().compareTo(s2.getStateName());
 			}
 
@@ -1827,11 +1545,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			case 0: // id
 				rc = p1.getNode().getID().compareTo(p2.getNode().getID());
 				break;
-			case 1: // label
-				if ( p1.getNode().getLabel() != null && p2.getNode().getLabel() != null )
-					rc = p1.getNode().getLabel().compareTo(p2.getNode().getLabel());
-				break;
-			case 2: // value type
+			case 1: // value type
 				int v1 = p1.getNode().getValueType();
 				int v2 = p2.getNode().getValueType();
 				if ( v1 == v2 ) rc = 0;
@@ -1858,7 +1572,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 		/** choice code from result value type enumeration */
 		int type;
-		
+
 		/**
 		 * Result filter creates viewer filter and sets its type.
 		 * The type is expected to be one of the {@code HuginNode} node type constants.
@@ -1876,14 +1590,14 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		 */
 		@Override
 		public boolean select(Viewer viewer, Object parentElement,	Object element) {
-		    VariableNode p = (VariableNode) element;
-		    if ( p == null ) 
-		      return true;
-		    
-		    if ( p.getNode().getValueType() == type )
-		      return false;
-		    
-		    return true;
+			VariableNode p = (VariableNode) element;
+			if ( p == null ) 
+				return true;
+
+			if ( p.getNode().getValueType() == type )
+				return false;
+
+			return true;
 		}
 	}
 
