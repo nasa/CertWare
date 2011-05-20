@@ -240,8 +240,8 @@ public class CpnViewMasterDetails extends ViewPart implements ISelectionListener
 
 					if ( f.getFileExtension().equalsIgnoreCase( ICertWareConstants.CPN_EXTENSION )) {
 						setSelectedFile((IFile)f);
-						return;
 					}
+					return;
 				}
 
 				// save the resource if it's an editor object

@@ -99,7 +99,7 @@ public class LabelProviderTest {
 		Image result = fixture.getImage(element);
 
 		// TODO: add additional test code here
-		assertNotNull(result);
+		 assertNotNull(result);
 	}
 
 	/**

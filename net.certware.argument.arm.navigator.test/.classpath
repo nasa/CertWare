@@ -4,8 +4,5 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm.navigator.test/lib/easymock-2.5.1.jar"/>
-	<classpathentry kind="lib" path="/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm.navigator.test/lib/easymockclassextension-2.4.jar"/>
-	<classpathentry kind="lib" path="/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.arm.navigator.test/lib/cglib-nodep-2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

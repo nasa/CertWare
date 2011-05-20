@@ -6,6 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Kestrel Technology LLC
 Fragment-Host: net.certware.argument.cae.navigator;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.easymock,
+Import-Package: org.easymock;version="3.0.0",
  org.eclipse.swt,
  org.eclipse.swt.widgets

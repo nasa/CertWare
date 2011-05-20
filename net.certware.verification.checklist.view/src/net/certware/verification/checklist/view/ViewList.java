@@ -900,9 +900,12 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		IStructuredSelection iss = (IStructuredSelection)selection;
 
 		// selecting from the explorer without the file open
-		if ( iss.getFirstElement() instanceof IFile ) { 
-			if ( setSelectedFile((IFile)iss.getFirstElement()) ) {
-				latestSelection = selection;
+		if ( iss.getFirstElement() instanceof IFile ) {
+			IFile sf = (IFile)iss.getFirstElement();
+			if ( sf.getFileExtension().endsWith( ICertWareConstants.VCL_EXTENSION )) {
+				if ( setSelectedFile(sf) ) {
+					latestSelection = selection;
+				}
 			}
 			return;
 		} 

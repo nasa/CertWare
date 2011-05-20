@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="CertWare" uid="net.certware.product" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="CertWare" uid="net.certware.product" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="1.1.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/net.certware.product/icons/obj256/certware-250.png"/>
@@ -106,9 +106,12 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
    </license>
 
    <plugins>
+      <plugin id="ch.qos.logback.classic"/>
+      <plugin id="ch.qos.logback.core"/>
+      <plugin id="ch.qos.logback.slf4j" fragment="true"/>
+      <plugin id="com.google.collect"/>
+      <plugin id="com.google.inject"/>
       <plugin id="com.ibm.icu"/>
-      <plugin id="com.instantiations.assist.eclipse.fragment.swt" fragment="true"/>
-      <plugin id="com.instantiations.assist.eclipse.fragment.ui.workbench" fragment="true"/>
       <plugin id="com.jcraft.jsch"/>
       <plugin id="javax.el"/>
       <plugin id="javax.servlet"/>
@@ -116,23 +119,148 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="javax.servlet.jsp.jstl"/>
       <plugin id="javax.transaction" fragment="true"/>
       <plugin id="lpg.runtime.java"/>
+      <plugin id="net.certware.argument.aml"/>
+      <plugin id="net.certware.argument.aml.edit"/>
+      <plugin id="net.certware.argument.aml.editor"/>
+      <plugin id="net.certware.argument.aml.navigator"/>
       <plugin id="net.certware.argument.arm"/>
       <plugin id="net.certware.argument.arm.edit"/>
       <plugin id="net.certware.argument.arm.editor"/>
+      <plugin id="net.certware.argument.arm.help"/>
+      <plugin id="net.certware.argument.arm.navigator"/>
+      <plugin id="net.certware.argument.arm.navigator.test" fragment="true"/>
+      <plugin id="net.certware.argument.arm.test" fragment="true"/>
       <plugin id="net.certware.argument.cae"/>
       <plugin id="net.certware.argument.cae.edit"/>
       <plugin id="net.certware.argument.cae.editor"/>
+      <plugin id="net.certware.argument.cae.help"/>
+      <plugin id="net.certware.argument.cae.navigator"/>
+      <plugin id="net.certware.argument.cae.navigator.test" fragment="true"/>
+      <plugin id="net.certware.argument.cae.test.example" fragment="true"/>
+      <plugin id="net.certware.argument.caz"/>
+      <plugin id="net.certware.argument.caz.diagram"/>
+      <plugin id="net.certware.argument.caz.edit"/>
+      <plugin id="net.certware.argument.caz.editor"/>
+      <plugin id="net.certware.argument.caz.validator"/>
+      <plugin id="net.certware.argument.diagram.figures"/>
+      <plugin id="net.certware.argument.eur"/>
+      <plugin id="net.certware.argument.eur.edit"/>
+      <plugin id="net.certware.argument.eur.editor"/>
+      <plugin id="net.certware.argument.eur.help"/>
+      <plugin id="net.certware.argument.eur.navigator"/>
+      <plugin id="net.certware.argument.eur.navigator.test" fragment="true"/>
+      <plugin id="net.certware.argument.eur.test" fragment="true"/>
+      <plugin id="net.certware.argument.euz"/>
+      <plugin id="net.certware.argument.euz.diagram"/>
+      <plugin id="net.certware.argument.euz.edit"/>
+      <plugin id="net.certware.argument.euz.editor"/>
+      <plugin id="net.certware.argument.euz.validator"/>
       <plugin id="net.certware.argument.gsn"/>
+      <plugin id="net.certware.argument.gsn.dsl"/>
+      <plugin id="net.certware.argument.gsn.dsl.ui"/>
       <plugin id="net.certware.argument.gsn.edit"/>
       <plugin id="net.certware.argument.gsn.editor"/>
+      <plugin id="net.certware.argument.gsn.help"/>
+      <plugin id="net.certware.argument.gsn.navigator"/>
+      <plugin id="net.certware.argument.gsn.navigator.test" fragment="true"/>
+      <plugin id="net.certware.argument.gsn.test" fragment="true"/>
       <plugin id="net.certware.argument.gsn.validator"/>
+      <plugin id="net.certware.argument.gsz"/>
+      <plugin id="net.certware.argument.gsz.diagram"/>
+      <plugin id="net.certware.argument.gsz.edit"/>
+      <plugin id="net.certware.argument.gsz.editor"/>
+      <plugin id="net.certware.argument.gsz.validator"/>
+      <plugin id="net.certware.argument.sfp"/>
+      <plugin id="net.certware.argument.sfp.help"/>
+      <plugin id="net.certware.argument.sfp.navigator"/>
+      <plugin id="net.certware.argument.sfp.review"/>
+      <plugin id="net.certware.argument.sfp.ui"/>
+      <plugin id="net.certware.argument.transform.gsn2arm"/>
+      <plugin id="net.certware.argument.transform.gsn2arm.test" fragment="true"/>
       <plugin id="net.certware.branding"/>
       <plugin id="net.certware.core"/>
       <plugin id="net.certware.core.ui"/>
+      <plugin id="net.certware.evidence.hugin"/>
+      <plugin id="net.certware.evidence.hugin.instance"/>
+      <plugin id="net.certware.evidence.hugin.instance.edit"/>
+      <plugin id="net.certware.evidence.hugin.instance.editor"/>
+      <plugin id="net.certware.evidence.hugin.ui"/>
+      <plugin id="net.certware.evidence.hugin.view"/>
+      <plugin id="net.certware.evidence.saem"/>
+      <plugin id="net.certware.evidence.saem.edit"/>
+      <plugin id="net.certware.evidence.saem.editor"/>
+      <plugin id="net.certware.example"/>
+      <plugin id="net.certware.example.aml" fragment="true"/>
+      <plugin id="net.certware.example.arm" fragment="true"/>
+      <plugin id="net.certware.example.cae" fragment="true"/>
+      <plugin id="net.certware.example.checklist" fragment="true"/>
+      <plugin id="net.certware.example.eur" fragment="true"/>
+      <plugin id="net.certware.example.gsn" fragment="true"/>
+      <plugin id="net.certware.example.net" fragment="true"/>
+      <plugin id="net.certware.example.spm" fragment="true"/>
+      <plugin id="net.certware.example.ssei" fragment="true"/>
+      <plugin id="net.certware.export"/>
+      <plugin id="net.certware.export.arm"/>
+      <plugin id="net.certware.export.excel"/>
+      <plugin id="net.certware.export.gsn"/>
+      <plugin id="net.certware.help"/>
+      <plugin id="net.certware.history"/>
+      <plugin id="net.certware.history.egit"/>
+      <plugin id="net.certware.history.tasks"/>
+      <plugin id="net.certware.intro"/>
       <plugin id="net.certware.libs.doc"/>
+      <plugin id="net.certware.libs.inference"/>
+      <plugin id="net.certware.libs.poi"/>
+      <plugin id="net.certware.measurement.sco"/>
+      <plugin id="net.certware.measurement.sco.edit"/>
+      <plugin id="net.certware.measurement.sco.editor"/>
+      <plugin id="net.certware.measurement.sco.navigator"/>
+      <plugin id="net.certware.measurement.sco.tests"/>
+      <plugin id="net.certware.measurement.sco.view"/>
+      <plugin id="net.certware.measurement.smm"/>
+      <plugin id="net.certware.measurement.smm.edit"/>
+      <plugin id="net.certware.measurement.smm.editor"/>
+      <plugin id="net.certware.measurement.spm"/>
+      <plugin id="net.certware.measurement.spm.edit"/>
+      <plugin id="net.certware.measurement.spm.editor"/>
+      <plugin id="net.certware.measurement.spm.navigator"/>
+      <plugin id="net.certware.measurement.spm.view"/>
+      <plugin id="net.certware.planning"/>
+      <plugin id="net.certware.planning.cpn"/>
+      <plugin id="net.certware.planning.cpn.generator"/>
+      <plugin id="net.certware.planning.cpn.navigator"/>
+      <plugin id="net.certware.planning.cpn.ui"/>
+      <plugin id="net.certware.planning.cpn.view"/>
+      <plugin id="net.certware.planning.mspdi"/>
+      <plugin id="net.certware.planning.mspdi.edit"/>
+      <plugin id="net.certware.planning.mspdi.editor"/>
       <plugin id="net.certware.product"/>
+      <plugin id="net.certware.verification.checklist"/>
+      <plugin id="net.certware.verification.checklist.edit"/>
+      <plugin id="net.certware.verification.checklist.editor"/>
+      <plugin id="net.certware.verification.checklist.navigator"/>
+      <plugin id="net.certware.verification.checklist.view"/>
+      <plugin id="org.antlr.runtime"/>
+      <plugin id="org.aopalliance"/>
       <plugin id="org.apache.ant"/>
+      <plugin id="org.apache.batik.bridge"/>
+      <plugin id="org.apache.batik.css"/>
+      <plugin id="org.apache.batik.dom"/>
+      <plugin id="org.apache.batik.dom.svg"/>
+      <plugin id="org.apache.batik.ext.awt"/>
+      <plugin id="org.apache.batik.parser"/>
+      <plugin id="org.apache.batik.pdf"/>
+      <plugin id="org.apache.batik.svggen"/>
+      <plugin id="org.apache.batik.transcoder"/>
+      <plugin id="org.apache.batik.util"/>
+      <plugin id="org.apache.batik.util.gui"/>
+      <plugin id="org.apache.batik.xml"/>
+      <plugin id="org.apache.commons.cli"/>
+      <plugin id="org.apache.commons.codec"/>
+      <plugin id="org.apache.commons.httpclient"/>
+      <plugin id="org.apache.commons.lang"/>
       <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.log4j"/>
       <plugin id="org.apache.lucene"/>
       <plugin id="org.apache.lucene.analysis"/>
       <plugin id="org.easymock"/>
@@ -142,6 +270,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
       <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.databinding.beans"/>
       <plugin id="org.eclipse.core.databinding.observable"/>
       <plugin id="org.eclipse.core.databinding.property"/>
       <plugin id="org.eclipse.core.expressions"/>
@@ -170,6 +299,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.core.variables"/>
       <plugin id="org.eclipse.debug.core"/>
       <plugin id="org.eclipse.debug.ui"/>
+      <plugin id="org.eclipse.draw2d"/>
       <plugin id="org.eclipse.ecf"/>
       <plugin id="org.eclipse.ecf.filetransfer"/>
       <plugin id="org.eclipse.ecf.identity"/>
@@ -180,29 +310,57 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.egit.core"/>
       <plugin id="org.eclipse.egit.doc"/>
       <plugin id="org.eclipse.egit.ui"/>
+      <plugin id="org.eclipse.emf"/>
+      <plugin id="org.eclipse.emf.codegen"/>
+      <plugin id="org.eclipse.emf.codegen.ecore"/>
+      <plugin id="org.eclipse.emf.codegen.ecore.ui"/>
       <plugin id="org.eclipse.emf.common"/>
       <plugin id="org.eclipse.emf.common.ui"/>
       <plugin id="org.eclipse.emf.ecore"/>
       <plugin id="org.eclipse.emf.ecore.change"/>
+      <plugin id="org.eclipse.emf.ecore.edit"/>
+      <plugin id="org.eclipse.emf.ecore.editor"/>
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.emf.edit"/>
       <plugin id="org.eclipse.emf.edit.ui"/>
       <plugin id="org.eclipse.emf.eef.runtime"/>
+      <plugin id="org.eclipse.emf.mwe.core"/>
+      <plugin id="org.eclipse.emf.mwe.utils"/>
+      <plugin id="org.eclipse.emf.mwe2.runtime"/>
+      <plugin id="org.eclipse.emf.transaction"/>
       <plugin id="org.eclipse.emf.validation"/>
       <plugin id="org.eclipse.emf.validation.ocl"/>
+      <plugin id="org.eclipse.emf.validation.ui"/>
+      <plugin id="org.eclipse.emf.validation.ui.ide"/>
+      <plugin id="org.eclipse.emf.workspace"/>
+      <plugin id="org.eclipse.epsilon.antlr"/>
+      <plugin id="org.eclipse.epsilon.common.dt"/>
+      <plugin id="org.eclipse.epsilon.commons"/>
+      <plugin id="org.eclipse.epsilon.dependencies"/>
+      <plugin id="org.eclipse.epsilon.emc.emf"/>
+      <plugin id="org.eclipse.epsilon.eol.dt"/>
+      <plugin id="org.eclipse.epsilon.eol.engine"/>
+      <plugin id="org.eclipse.epsilon.erl.engine"/>
+      <plugin id="org.eclipse.epsilon.evl.emf.validation"/>
+      <plugin id="org.eclipse.epsilon.evl.engine"/>
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.frameworkadmin"/>
+      <plugin id="org.eclipse.equinox.frameworkadmin.equinox"/>
       <plugin id="org.eclipse.equinox.http.jetty"/>
       <plugin id="org.eclipse.equinox.http.servlet"/>
       <plugin id="org.eclipse.equinox.p2.artifact.repository"/>
       <plugin id="org.eclipse.equinox.p2.core"/>
       <plugin id="org.eclipse.equinox.p2.director"/>
+      <plugin id="org.eclipse.equinox.p2.director.app"/>
       <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.garbagecollector"/>
       <plugin id="org.eclipse.equinox.p2.jarprocessor"/>
       <plugin id="org.eclipse.equinox.p2.metadata"/>
       <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
       <plugin id="org.eclipse.equinox.p2.operations"/>
       <plugin id="org.eclipse.equinox.p2.repository"/>
+      <plugin id="org.eclipse.equinox.p2.touchpoint.eclipse"/>
       <plugin id="org.eclipse.equinox.p2.ui"/>
       <plugin id="org.eclipse.equinox.preferences"/>
       <plugin id="org.eclipse.equinox.registry"/>
@@ -212,8 +370,41 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.equinox.security.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.equinox.servletbridge.extensionbundle" fragment="true"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator"/>
+      <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
       <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
+      <plugin id="org.eclipse.gef"/>
+      <plugin id="org.eclipse.gmf.runtime.common.core"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.action"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.action.ide"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.printing"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.printing.win32" fragment="true"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.services"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.services.action"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.services.properties"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.core"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.actions"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <plugin id="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render"/>
+      <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render.awt"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.clipboard.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.commands.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.type.core"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <plugin id="org.eclipse.gmf.runtime.gef.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.notation"/>
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.help.base"/>
       <plugin id="org.eclipse.help.ui"/>
@@ -232,10 +423,24 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.jsch.ui"/>
       <plugin id="org.eclipse.ltk.core.refactoring"/>
       <plugin id="org.eclipse.ltk.ui.refactoring"/>
+      <plugin id="org.eclipse.m2m.atl.common"/>
+      <plugin id="org.eclipse.m2m.atl.core"/>
+      <plugin id="org.eclipse.m2m.atl.core.emf"/>
+      <plugin id="org.eclipse.m2m.atl.engine.emfvm"/>
+      <plugin id="org.eclipse.mylyn.commons.core"/>
+      <plugin id="org.eclipse.mylyn.commons.net"/>
+      <plugin id="org.eclipse.mylyn.commons.ui"/>
+      <plugin id="org.eclipse.mylyn.context.core"/>
+      <plugin id="org.eclipse.mylyn.monitor.core"/>
+      <plugin id="org.eclipse.mylyn.monitor.ui"/>
+      <plugin id="org.eclipse.mylyn.tasks.core"/>
+      <plugin id="org.eclipse.mylyn.tasks.ui"/>
       <plugin id="org.eclipse.ocl"/>
       <plugin id="org.eclipse.ocl.ecore"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.services"/>
+      <plugin id="org.eclipse.pde.build"/>
+      <plugin id="org.eclipse.pde.core"/>
       <plugin id="org.eclipse.sdk"/>
       <plugin id="org.eclipse.search"/>
       <plugin id="org.eclipse.swt"/>
@@ -261,6 +466,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.team.ui"/>
       <plugin id="org.eclipse.text"/>
       <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.browser"/>
       <plugin id="org.eclipse.ui.carbon" fragment="true"/>
       <plugin id="org.eclipse.ui.cheatsheets"/>
       <plugin id="org.eclipse.ui.cocoa" fragment="true"/>
@@ -270,6 +476,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.ui.ide"/>
       <plugin id="org.eclipse.ui.ide.application"/>
       <plugin id="org.eclipse.ui.intro"/>
+      <plugin id="org.eclipse.ui.intro.universal"/>
       <plugin id="org.eclipse.ui.navigator"/>
       <plugin id="org.eclipse.ui.navigator.resources"/>
       <plugin id="org.eclipse.ui.views"/>
@@ -283,13 +490,27 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.update.core.linux" fragment="true"/>
       <plugin id="org.eclipse.update.core.win32" fragment="true"/>
       <plugin id="org.eclipse.update.ui"/>
-      <plugin id="org.eclipselabs.p2.rcpupdate.utils" fragment=""/>
+      <plugin id="org.eclipse.xpand"/>
+      <plugin id="org.eclipse.xtend"/>
+      <plugin id="org.eclipse.xtend.typesystem.emf"/>
+      <plugin id="org.eclipse.xtext"/>
+      <plugin id="org.eclipse.xtext.builder"/>
+      <plugin id="org.eclipse.xtext.logging" fragment="true"/>
+      <plugin id="org.eclipse.xtext.ui"/>
+      <plugin id="org.eclipse.xtext.ui.shared"/>
+      <plugin id="org.eclipse.xtext.util"/>
       <plugin id="org.hamcrest.core"/>
       <plugin id="org.junit"/>
       <plugin id="org.mortbay.jetty.server"/>
       <plugin id="org.mortbay.jetty.util"/>
       <plugin id="org.sat4j.core"/>
       <plugin id="org.sat4j.pb"/>
+      <plugin id="org.slf4j.api"/>
+      <plugin id="org.slf4j.log4j"/>
+      <plugin id="org.w3c.css.sac"/>
+      <plugin id="org.w3c.dom.events"/>
+      <plugin id="org.w3c.dom.smil"/>
+      <plugin id="org.w3c.dom.svg"/>
    </plugins>
 
    <configurations>

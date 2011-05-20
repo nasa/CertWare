@@ -10,3 +10,4 @@ Import-Package: org.eclipse.core.internal.events,
  org.eclipse.core.internal.resources.mapping,
  org.eclipse.swt,
  org.eclipse.swt.widgets
+Require-Bundle: org.easymock

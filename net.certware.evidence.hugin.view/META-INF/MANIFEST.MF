@@ -2,23 +2,19 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Hugin Network View
 Bundle-SymbolicName: net.certware.evidence.hugin.view;singleton:=true
-Bundle-Version: 1.2.2.qualifier
+Bundle-Version: 1.2.4.qualifier
 Bundle-Activator: net.certware.evidence.hugin.view.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.poi.ss.util,
  org.eclipse.core.expressions,
  org.eclipse.core.runtime,
- org.eclipse.core.runtime.adaptor,
- org.eclipse.core.runtime.content,
  org.eclipse.core.runtime.jobs,
  org.eclipse.core.runtime.preferences,
  org.eclipse.emf.common.util,
- org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.resource,
  org.eclipse.emf.ecore.resource.impl,
  org.eclipse.help,
- org.eclipse.jface,
  org.eclipse.jface.preference,
  org.eclipse.swt,
  org.eclipse.ui,
@@ -36,9 +32,6 @@ Require-Bundle: net.certware.core;bundle-version="1.2.0",
  net.certware.core.ui;bundle-version="1.2.1",
  net.certware.export.excel;bundle-version="1.2.1",
  net.certware.libs.inference;bundle-version="1.0.0",
- org.eclipse.jface,
- org.eclipse.ui.workbench,
  org.eclipse.core.resources,
  net.certware.evidence.hugin.instance;bundle-version="1.0.0",
- org.eclipse.emf.common.ui,
  org.eclipse.emf.common.ui

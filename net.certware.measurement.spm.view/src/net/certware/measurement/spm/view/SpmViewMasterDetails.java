@@ -263,8 +263,8 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 
 					if ( f.getFileExtension().equalsIgnoreCase( ICertWareConstants.SPM_EXTENSION )) {
 						setSelectedFile((IFile)f);
-						return;
 					}
+					return;
 				}
 
 				// save the resource if it's an editor object

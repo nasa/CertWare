@@ -52,12 +52,15 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTException;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
@@ -66,6 +69,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPartListener2;
@@ -93,6 +97,7 @@ import org.eclipse.ui.services.IEvaluationService;
 
 import edu.ucla.belief.BeliefNetwork;
 import edu.ucla.belief.io.hugin.HuginNode;
+import edu.ucla.belief.sensitivity.SensitivityEngine;
 
 /**
  * Provides a tree view of a network model.
@@ -123,6 +128,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private TreeViewer treeViewer;
 	/** context heading form section */
 	private Section context;
+	/** sensitivity settings */
+	private Section sensitivity;
 	/** analysis results form section */
 	private Section results;
 	/** table items form section */
@@ -139,6 +146,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private MenuItem itemUtilityFilterMenuItem;
 	/** whether the model is dirty */
 	protected boolean dirty = false;
+	/** sensitivity client composite */
+	private Composite sensitivityClient;
 	/** results client composite for dynamic update */
 	private Composite resultsClient;
 	/** network name prefix */
@@ -149,6 +158,8 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private static final String MEMENTO_SECTION_CONTEXT = "memento.context"; //$NON-NLS-1$
 	/** memento for section expanded */
 	private static final String MEMENTO_SECTION_RESULTS = "memento.results"; //$NON-NLS-1$
+	/** memento for section expanded */
+	private static final String MEMENTO_SECTION_SENSITIVITY = "memento.sensitivity"; //$NON-NLS-1$
 	/** memento for section expanded */
 	private static final String MEMENTO_SECTION_ITEMS = "memento.items"; //$NON-NLS-1$
 	/** memento for file selection */
@@ -163,6 +174,11 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	private static final String MEMENTO_FILTER_UTILITY = "memento.filter.utility"; //$NON-NLS-1$
 	/** number of columns */
 	private static final int COLUMN_COUNT = 2;
+	/** sensitivity operator */
+	private String sensitivityOperator = SensitivityEngine.OPERATOR_GTE;
+	/** sensitivity threshold text field */
+	private Text thresholdText;
+
 
 	/**
 	 * Initializes the part.
@@ -192,6 +208,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		super.saveState(memento);
 		memento.putString(MEMENTO_FILE, selectedFile == null ? null : selectedFile.getName());
 		memento.putBoolean(MEMENTO_SECTION_CONTEXT, context.isExpanded() );
+		memento.putBoolean(MEMENTO_SECTION_SENSITIVITY, sensitivity.isExpanded() );
 		memento.putBoolean(MEMENTO_SECTION_RESULTS, results.isExpanded() );
 		memento.putBoolean(MEMENTO_SECTION_ITEMS, items.isExpanded() );
 
@@ -283,8 +300,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		});
 	}
 
-
-
 	/**
 	 * Refreshes the state object and its siblings in the tree view.
 	 * @param state state to refresh
@@ -373,6 +388,126 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 		context.setClient(contextClient);
 
+		// sensitivity section
+		sensitivity = toolkit.createSection(form.getBody(), sectionStyle);
+		twd = new TableWrapData(TableWrapData.FILL);
+		twd.colspan = 2;
+		sensitivity.setLayoutData(twd);
+		sensitivity.setText("Sentivity Analysis Settings");
+		sensitivity.setToolTipText("Calculation parameters for next analysis");
+		sensitivity.addExpansionListener(new ExpansionAdapter() {
+			@Override
+			public void expansionStateChanged(ExpansionEvent e) {
+				form.layout(true);
+				form.reflow(true);
+			}
+		});
+
+		sensitivityClient = toolkit.createComposite(sensitivity);
+		sensitivityClient.setLayout(new GridLayout(2,false));
+
+		// sensitivity comparison
+		Label operatorLabel = toolkit.createLabel(sensitivityClient, "Comparison Operator");
+		operatorLabel.setFont(JFaceResources.getDialogFont());
+		operatorLabel.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false));
+		Composite operatorGroup = toolkit.createComposite(sensitivityClient);
+		operatorGroup.setLayoutData(new GridData(SWT.BEGINNING,SWT.FILL,true,false));
+		operatorGroup.setLayout(new GridLayout(3,true));
+
+		Button operatorButtonEquals = toolkit.createButton(operatorGroup, "==",SWT.RADIO);
+		operatorButtonEquals.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false));
+		operatorButtonEquals.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(final SelectionEvent se) {
+				se.display.asyncExec(new Runnable(){
+					@Override
+					public void run() {
+						Button b = (Button)se.widget;
+						if ( b.getSelection() ) {
+							sensitivityOperator = SensitivityEngine.OPERATOR_EQUALS;
+						}
+			}});}});
+		Button operatorButtonLessthan = toolkit.createButton(operatorGroup, "<=",SWT.RADIO);
+		operatorButtonLessthan.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false));
+		operatorButtonLessthan.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(final SelectionEvent se) {
+				se.display.asyncExec(new Runnable(){
+					@Override
+					public void run() {
+						Button b = (Button)se.widget;
+						if ( b.getSelection() ) {
+							sensitivityOperator = SensitivityEngine.OPERATOR_LTE;
+						}
+			}});}});
+		Button operatorButtonGreaterthan = toolkit.createButton(operatorGroup, ">=",SWT.RADIO);
+		operatorButtonGreaterthan.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false));
+		operatorButtonGreaterthan.setSelection(true); // should align with field default
+		operatorButtonGreaterthan.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(final SelectionEvent se) {
+				se.display.asyncExec(new Runnable(){
+					@Override
+					public void run() {
+						Button b = (Button)se.widget;
+						if ( b.getSelection() ) {
+							sensitivityOperator = SensitivityEngine.OPERATOR_GTE;
+						}
+			}});}});
+
+		// sensitivity threshold
+		Label thresholdLabel = toolkit.createLabel(sensitivityClient, "Comparison Threshold");
+		thresholdLabel.setFont(JFaceResources.getDialogFont());
+		thresholdLabel.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false));
+
+		thresholdText = toolkit.createText(sensitivityClient, "0.8");
+		thresholdText.setFont(JFaceResources.getTextFont());
+		thresholdText.setLayoutData(new GridData(SWT.BEGINNING,SWT.CENTER,false,false));
+		thresholdText.setEditable(true);
+		thresholdText.setMessage("Enter threshold value");
+		thresholdText.setTextLimit(8);
+		thresholdText.setToolTipText("Enter threshold decimal value (0-1)");
+		thresholdText.addKeyListener(new KeyListener(){
+			/**
+			 * Allow only numbers and a period, along with traversals.
+			 * Idea is to help ensure parsing as double succeeds later when fetched.
+			 */
+			@Override
+			public void keyPressed(KeyEvent ke) {
+				ke.doit = true;
+				if ( ke.character == '.') {
+					// disallow more than one decimal point
+					if ( thresholdText.getText().indexOf('.') >= 0 ) {
+						ke.doit = false;
+					}
+					return;
+				}
+				if ( Character.isLetter( ke.character )) {
+					ke.doit = false;
+				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+			}});
+		/*
+		thresholdText.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent me) {
+				String t = thresholdText.getText();
+				if ( t == null || t == "" ) {
+					return;
+				}
+				try {
+					Double.parseDouble(t);
+					thresholdText.setMessage("");
+				} catch( NumberFormatException nfe ) {
+					thresholdText.setMessage("Value must be decimal value");
+				}
+			}});
+		 */
+
+		sensitivity.setClient(sensitivityClient);
+		sensitivity.setExpanded(false);
+
 		// results section 
 		results = toolkit.createSection(form.getBody(), sectionStyle);
 		twd = new TableWrapData(TableWrapData.FILL);
@@ -390,74 +525,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 		resultsClient = toolkit.createComposite(results);
 		resultsClient.setLayout(new GridLayout(2,false));
-
-		/*
-
-		// probability value p(map,e)
-		probabilityLabel = toolkit.createLabel(resultsClient, "P(MAP,e)");
-		probabilityLabel.setFont(JFaceResources.getDialogFont());
-		probabilityLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		probabilityValue = toolkit.createLabel(resultsClient, "<TBS>");
-		probabilityValue.setFont(JFaceResources.getDialogFont());
-		probabilityValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-
-		// probability value p(map|e)
-		evidenceLabel = toolkit.createLabel(resultsClient, "P(MAP|e)");
-		evidenceLabel.setFont(JFaceResources.getDialogFont());
-		evidenceLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		evidenceValue = toolkit.createLabel(resultsClient, "<TBS>");
-		evidenceValue.setFont(JFaceResources.getDialogFont());
-		evidenceValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-
-		// instantiation value
-		Label instantiationLabel = toolkit.createLabel(resultsClient, "Instantiation");
-		instantiationLabel.setFont(JFaceResources.getDialogFont());
-		instantiationLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		instantiationValue = toolkit.createLabel(resultsClient, "<TBS>");
-		instantiationValue.setFont(JFaceResources.getDialogFont());
-		instantiationValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-
-		// search value
-		Label searchLabel = toolkit.createLabel(resultsClient, "Search Method");
-		searchLabel.setFont(JFaceResources.getDialogFont());
-		searchLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		searchValue = toolkit.createLabel(resultsClient, "<pref>");
-		searchValue.setFont(JFaceResources.getDialogFont());
-		searchValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-
-		// steps value
-		Label stepsLabel = toolkit.createLabel(resultsClient, "Max Search Steps");
-		stepsLabel.setFont(JFaceResources.getDialogFont());
-		stepsLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		stepsValue = toolkit.createLabel(resultsClient, "<pref>");
-		stepsValue.setFont(JFaceResources.getDialogFont());
-		stepsValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-
-		// search time
-		Label searchTimeLabel = toolkit.createLabel(resultsClient, "Search Time");
-		searchTimeLabel.setFont(JFaceResources.getDialogFont());
-		searchTimeLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		searchTimeValue = toolkit.createLabel(resultsClient, "<TBS>");
-		searchTimeValue.setFont(JFaceResources.getDialogFont());
-		searchTimeValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-
-		// initialization value
-		Label initializationLabel = toolkit.createLabel(resultsClient, "Initialization Method");
-		initializationLabel.setFont(JFaceResources.getDialogFont());
-		initializationLabel.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		initializationValue = toolkit.createLabel(resultsClient, "<pref>");
-		initializationValue.setFont(JFaceResources.getDialogFont());
-		initializationValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-
-		// initialization time
-		Label initializationTime = toolkit.createLabel(resultsClient, "Initialization Time");
-		initializationTime.setFont(JFaceResources.getDialogFont());
-		initializationTime.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,false,false,1,1));
-		initializationTimeValue = toolkit.createLabel(resultsClient, "<TBS>");
-		initializationTimeValue.setFont(JFaceResources.getDialogFont());
-		initializationTimeValue.setLayoutData(new GridData(GridData.BEGINNING,GridData.CENTER,true,false,1,1));
-		 */
-
 		results.setClient(resultsClient);
 
 		// items section
@@ -719,6 +786,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			// sections expanded
 			context.setExpanded( memento.getBoolean(MEMENTO_SECTION_CONTEXT) );
 			items.setExpanded( memento.getBoolean(MEMENTO_SECTION_ITEMS) );
+			sensitivity.setExpanded( memento.getBoolean( MEMENTO_SECTION_SENSITIVITY));
 
 			// filter states
 			// set the menu item toggle and add the filter
@@ -800,6 +868,32 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 				results.layout(true);
 				form.reflow(true);
 			}});
+	}
+
+	/**
+	 * Sensitivity analysis operator selection.
+	 * @return operator, one of values from {@code SensitivityEngine}
+	 */
+	public String getSensitivityOperator() {
+		return sensitivityOperator;
+	}
+
+	/**
+	 * Sensitivity analysis threshold value.
+	 * Writes to widget message if parsing fails.
+	 * @return value, if parsed from text string as double
+	 */
+	public double getSensitivityThreshold() {
+		double rv = 0.0;
+		String sv = thresholdText.getText();
+		if ( sv != null && sv != "" ) {
+			try {
+				rv = Double.parseDouble(sv);
+			} catch( NumberFormatException nfe ) {
+				thresholdText.setMessage("Threshold value invalid");
+			}
+		}
+		return rv;
 	}
 
 
@@ -1294,6 +1388,15 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	}
 
 	/**
+	 * Whether settings for sensitivity calculations are selected.
+	 * @return true if settings sufficient, false otherwise
+	 */
+	public boolean hasSensitivitySelections() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	/**
 	 * Whether the tree content has selected variable state items.
 	 * @return true if any variable selected
 	 */
@@ -1600,5 +1703,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 			return true;
 		}
 	}
+
+
 
 }

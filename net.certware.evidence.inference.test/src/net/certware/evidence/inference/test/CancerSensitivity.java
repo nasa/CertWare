@@ -152,7 +152,7 @@ public class CancerSensitivity {
 		assertEquals(2,singleParameterSuggestions.size());
 		
 		SingleParamSuggestion s1 = (SingleParamSuggestion) singleParameterSuggestions.toArray()[0];
-		assertEquals("Pr( A = Present )", s1.getCPTParameter().toString());
+		assertEquals("Pr( HuginNode A = Present )", s1.getCPTParameter().toString());
 		assertSame(varA, s1.getCPTParameter().getVariable());
 		assertEquals(0.2,(Double)s1.getCurrentValue(),epsilon);
 		assertEquals(0.9999, s1.getSuggestedParameterValue(), epsilon);
@@ -183,21 +183,23 @@ public class CancerSensitivity {
 		assertEquals(2,mapFiniteVariablesToSingleCPTSuggestions.size());
 
 		// single result
+		System.out.println( "Single CPT (single parameter) suggestions:\n{" );
 		SingleCPTSuggestion c1 = (SingleCPTSuggestion) mapFiniteVariablesToSingleCPTSuggestions.get(mapFiniteVariablesToSingleCPTSuggestions.keySet().toArray()[0]);
 		ProbabilityInterval[] c1intervals = c1.probabilityIntervals();
 		assertSame(varA,c1.getVariable());
 		assertEquals(36.3313,c1.getLogOddsChange(),epsilon);
 		FiniteVariable f1 = c1.getVariable();
 		CPTShell shell1 = f1.getCPTShell();
-		System.err.println("Suggested " + f1 + " log odds change " + c1.getLogOddsChange() );
-		System.err.println("" + f1 + '\t' + "Current value" + '\t' + "Suggested value");
+		System.out.println("Suggested " + f1 + " log odds change " + c1.getLogOddsChange() );
+		System.out.println("" + f1 + '\t' + "Current value" + '\t' + "Suggested value");
 		int x = 0;
 		for ( CPTParameter ptp : shell1.getCPTParameters() ) {
-			System.err.println(
+			System.out.println(
 					"" + ptp.getJointInstance().getInstance() 
 					+ '\t' + ptp.getValue() 
 					+ '\t' + c1intervals[x++].toString());
 		}
+		System.out.println("}");
 
 		// multiple result
 		SingleCPTSuggestion c2 = (SingleCPTSuggestion) mapFiniteVariablesToSingleCPTSuggestions.get(mapFiniteVariablesToSingleCPTSuggestions.keySet().toArray()[1]);
@@ -208,8 +210,8 @@ public class CancerSensitivity {
 		CPTShell shell = c2.getCPTShell();
 		TableIndex index = shell.index();
 		List variables = index.variables();
-		assertEquals("A",variables.get(0).toString());
-		assertEquals("B",variables.get(1).toString());
+		assertEquals("HuginNode A",variables.get(0).toString());
+		assertEquals("HuginNode B",variables.get(1).toString());
 		TableIndex.Iterator iter = shell.index().iterator();
 
 		// index 0

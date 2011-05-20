@@ -15,9 +15,7 @@ Import-Package: org.eclipse.core.commands,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.libs.poi;bundle-version="1.0.0",
  net.certware.core.ui;bundle-version="1.2.1",
- net.certware.core;bundle-version="1.2.0",
  org.eclipse.core.runtime;bundle-version="3.6.0",
- org.eclipse.core.resources;bundle-version="3.6.1",
  org.eclipse.jface;bundle-version="3.6.2",
  org.eclipse.ui.workbench;bundle-version="3.6.2"
 Export-Package: net.certware.export.excel

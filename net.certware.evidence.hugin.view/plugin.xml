@@ -134,6 +134,12 @@
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
+            description="Perform sensitivity query on given evidence"
+            id="net.certware.evidence.hugin.view.sensitivity"
+            name="Perform sensitivity analysis">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
             description="Deselects all variable and state selections in the tree"
             id="net.certware.evidence.hugin.view.deselect"
             name="Deselect all">
@@ -201,6 +207,11 @@
             commandId="net.certware.evidence.hugin.view.evidence.restore"
             disabledIcon="icons/dtool16/restore.gif"
             icon="icons/obj16/restore.gif">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.sensitivity"
+            disabledIcon="icons/dtool16/certware-run-d16.gif"
+            icon="icons/obj16/certware-run.png">
       </image>
    </extension>
    <extension
@@ -304,6 +315,17 @@
             </and>
          </enabledWhen>
       </handler>
+      <handler
+            class="net.certware.evidence.hugin.view.handlers.SensitivityCalculationHandler"
+            commandId="net.certware.evidence.hugin.view.sensitivity">
+         <enabledWhen>
+            <and>
+               <test
+                     property="net.certware.evidence.hugin.isSelected">
+               </test>
+            </and>
+         </enabledWhen>
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -330,6 +352,13 @@
                mnemonic="P"
                style="push"
                tooltip="Compute the probability of evidence Pr(e) and marginals">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.sensitivity"
+               label="Sensitivity"
+               mnemonic="S"
+               style="push"
+               tooltip="Compute the sensitivity analysis for the selected value">
          </command>
          <command
                commandId="net.certware.evidence.hugin.view.evidence.save"
@@ -370,6 +399,13 @@
                mnemonic="P"
                style="push"
                tooltip="Compute the probability of evidence Pr(e) and marginals">
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.sensitivity"
+               label="Sensitivity"
+               mnemonic="S"
+               style="push"
+               tooltip="Compute the sensitivity analysis for the selected value">
          </command>
          <separator
                name="calculations"
@@ -458,6 +494,21 @@
                mnemonic="P"
                style="push"
                tooltip="Compute the probability of evidence Pr(e) and marginals">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <test
+                        property="net.certware.evidence.hugin.isSelected">
+                  </test>
+               </and>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.evidence.hugin.view.sensitivity"
+               label="Sensitivity"
+               mnemonic="S"
+               style="push"
+               tooltip="Compute the sensitivity analysis for the selected value">
             <visibleWhen
                   checkEnabled="false">
                <and>
