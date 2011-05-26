@@ -17,7 +17,7 @@ import org.junit.Test;
  * The class <code>ArmAdapterFactoryTest</code> contains tests for the class <code>{@link ArmAdapterFactory}</code>.
  * <p>
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
  *
  * @generatedBy CodePro at 10/12/10 1:34 PM
  * @author mrb

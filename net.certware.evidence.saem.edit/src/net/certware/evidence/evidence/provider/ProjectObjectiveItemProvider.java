@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2011 Object Management Group (SAEM metamodel)
- * Copyright (c) 2011 Kestrel Technology LLC (generated models) 
+ * Copyright (c) 2011 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
  */
 package net.certware.evidence.evidence.provider;
 

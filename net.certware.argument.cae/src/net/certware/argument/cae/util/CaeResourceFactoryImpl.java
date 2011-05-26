@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.argument.cae.util;
 
@@ -22,7 +22,7 @@ public class CaeResourceFactoryImpl extends ResourceFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
 
 	/**
 	 * Creates an instance of the resource factory.

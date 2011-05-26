@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.argument.cae.presentation;
 
@@ -75,7 +75,7 @@ public class CaeModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
 
 	/**
 	 * The supported extensions for created files.

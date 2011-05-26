@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2010 Object Management Group (ARM metamodel)
- * Copyright (c) 2010 Kestrel Technology LLC (generated models) 
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
  */
 package net.certware.argument.arm;
 
@@ -29,7 +29,7 @@ public interface TaggedValue extends EObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 Kestrel Technology LLC (generated models) "; //$NON-NLS-1$
+	String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) "; //$NON-NLS-1$
 
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.

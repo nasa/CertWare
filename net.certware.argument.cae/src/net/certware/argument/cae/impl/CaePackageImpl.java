@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration
  */
 package net.certware.argument.cae.impl;
 
@@ -32,7 +32,7 @@ public class CaePackageImpl extends EPackageImpl implements CaePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
 
 	/**
 	 * <!-- begin-user-doc -->

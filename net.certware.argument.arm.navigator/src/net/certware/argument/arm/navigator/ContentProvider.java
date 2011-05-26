@@ -1,7 +1,7 @@
 // $codepro.audit.disable importOrder, localDeclaration
 /**
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration
  */
 package net.certware.argument.arm.navigator;
 

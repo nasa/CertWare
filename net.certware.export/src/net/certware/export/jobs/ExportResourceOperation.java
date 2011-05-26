@@ -1,6 +1,6 @@
 /**
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.export.jobs;
 

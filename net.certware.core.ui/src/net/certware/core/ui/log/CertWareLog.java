@@ -1,6 +1,6 @@
 /**
  * CertWare core UI log utility
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.core.ui.log;
 

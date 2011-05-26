@@ -6,7 +6,7 @@ package net.certware.argument.arm.impl;
  * The class <code>ModelElementImplFactory</code> implements static methods that return instances of the class <code>{@link ModelElementImpl}</code>.
  * <p>
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
  *
  * @generatedBy CodePro at 10/12/10 1:29 PM
  * @author mrb

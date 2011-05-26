@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.argument.cae.presentation;
 
@@ -131,7 +131,7 @@ public class CaeEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
 	/** property contributor ID as defined in the edit plugin extension */
 	public static final String PROPERTY_CONTRIBUTOR = "net.certware.argument.cae.properties"; //$NON-NLS-1$
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 Kestrel Technology LLC"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 National Aeronautics and Space Administration"
     modelDirectory="/net.certware.measurement.sco/src" modelPluginID="net.certware.measurement.sco"
     templateDirectory="" redirection="" modelName="Sco" generateSchema="true" nonNLSMarkers="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
@@ -56,14 +56,13 @@
           propertyDescription="The total number of change orders summed from the individual types"
           propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactIdentifier/totalChangeOrders"/>
     </genClasses>
-    <genClasses ecoreClass="sco.ecore#//ArtifactList">
-      <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Basic"
-          propertyDescription="The list of artifacts included in this commit record"
-          propertySortChoices="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactList/artifactIdentifiers"/>
-      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="An identifier for the commit record for associating team provider records"
-          ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactList/commitIdentifier"/>
-      <genFeatures createChild="false" propertyCategory="Basic" propertyDescription="The usage time in hours for the commit baseline under realistic operation"
-          ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactList/usageTime"/>
+    <genClasses ecoreClass="sco.ecore#//ArtifactCommit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sco.ecore#//ArtifactCommit/artifactIdentifiers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactCommit/commitIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sco.ecore#//ArtifactCommit/usageTime"/>
+    </genClasses>
+    <genClasses ecoreClass="sco.ecore#//CommitHistory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sco.ecore#//CommitHistory/commitRecord"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

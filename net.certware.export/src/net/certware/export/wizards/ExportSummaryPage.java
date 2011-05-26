@@ -1,6 +1,6 @@
 /**
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  * Original source from IBM data transfer internal package
  */
 package net.certware.export.wizards;

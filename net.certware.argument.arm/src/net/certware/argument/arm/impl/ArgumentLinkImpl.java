@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2010 Object Management Group (ARM metamodel)
- * Copyright (c) 2010 Kestrel Technology LLC (generated models) 
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
  */
 package net.certware.argument.arm.impl;
 
@@ -34,7 +34,7 @@ public abstract class ArgumentLinkImpl extends ModelElementImpl implements Argum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 Kestrel Technology LLC (generated models) "; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) "; //$NON-NLS-1$
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference list.

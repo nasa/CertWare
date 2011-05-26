@@ -1,6 +1,6 @@
 /**
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.verification.checklist.edit.provider;
 
@@ -20,7 +20,7 @@ public final class ChecklistEditPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "CertWare Project\nCopyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
 
 	/**
 	 * Keep track of the singleton.

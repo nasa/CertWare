@@ -23,7 +23,7 @@ import org.junit.Test;
  * The class <code>ArgumentImplTest</code> contains tests for the class <code>{@link ArgumentImpl}</code>.
  * <p>
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  *
  * @generatedBy CodePro at 10/12/10 1:34 PM
  * @author mrb

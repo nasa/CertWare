@@ -1,6 +1,6 @@
 /**
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.verification.checklist.presentation;
 
@@ -131,7 +131,7 @@ public class ChecklistEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "CertWare Project\nCopyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
 	
 	/** properties contributor ID from plugin extension */
 	public static final String PROPERTIES_CONTRIBUTOR = "net.certware.verification.checklist.properties"; //$NON-NLS-1$

@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * The class <code>ClaimTest</code> contains tests for the class <code>{@link Claim}</code>.
  * <p>
- * Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
  *
  * @generatedBy CodePro at 10/13/10 4:49 PM
  * @author mrb

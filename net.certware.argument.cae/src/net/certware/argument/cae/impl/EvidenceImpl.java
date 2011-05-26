@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration
  */
 package net.certware.argument.cae.impl;
 
@@ -44,7 +44,7 @@ public class EvidenceImpl extends AssertedEvidenceImpl implements Evidence {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
 
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference list.

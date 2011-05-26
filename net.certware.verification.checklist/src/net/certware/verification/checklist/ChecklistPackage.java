@@ -1,6 +1,6 @@
 /**
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
  */
 package net.certware.verification.checklist;
 
@@ -31,7 +31,7 @@ public interface ChecklistPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "CertWare Project\nCopyright (c) 2010 Kestrel Technology LLC"; //$NON-NLS-1$
+	String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
 
 	/**
 	 * The package name.

@@ -20,7 +20,7 @@ import org.junit.Test;
  * The class <code>ModelElementImplTest</code> contains tests for the class <code>{@link ModelElementImpl}</code>.
  * <p>
  * CertWare Project
- * Copyright (c) 2010 Kestrel Technology LLC.  All rights reserved.
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
  *
  * @generatedBy CodePro at 10/12/10 1:33 PM
  * @author mrb

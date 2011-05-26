@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2010 Object Management Group (ARM metamodel)
- * Copyright (c) 2010 Kestrel Technology LLC (generated models) 
+ * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
  */
 package net.certware.argument.arm.provider;
 
@@ -42,7 +42,7 @@ public class ReasoningElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 Kestrel Technology LLC (generated models) "; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) "; //$NON-NLS-1$
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
