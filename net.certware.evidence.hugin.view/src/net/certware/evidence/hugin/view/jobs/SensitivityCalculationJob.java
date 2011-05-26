@@ -107,10 +107,10 @@ public class SensitivityCalculationJob extends AbstractCalculationJob
 			// TODO bail out if more than one selected?  
 			VariableNode firstNode = nodes.get(0);
 			FiniteVariable firstVariable = firstNode.getNode();
-			Object firstValue = null;
+			Object referenceValue = null;
 			for ( VariableNodeState vns : firstNode.states ) {
 				if ( vns.isSelected() ) {
-					firstValue = firstVariable.instance( vns.getStateName() );
+					referenceValue = firstVariable.instance( vns.getStateName() );
 				}
 			}
 
@@ -120,16 +120,19 @@ public class SensitivityCalculationJob extends AbstractCalculationJob
 				for ( VariableNodeState vns : vn.states ) {
 					if ( vns.isSelected() ) {
 						FiniteVariable fv = vn.getNode();
-						evidence.put( fv, fv.instance(vns.getStateName()) );
+						Object ev = fv.instance( vns.getStateName() );
+						// skip this value if it is the reference value
+						// if we include the reference value as evidence, sensitivity is always satisfied
+						if ( ev != referenceValue ) {
+							evidence.put( fv, fv.instance(vns.getStateName()) );
+						}
 					}
 				}
 			}
 
-			// TODO make the exception from evidence that the selected variable's state is not included; otherwise always satisfied
-			
 			// TODO remove
 			System.err.println("using evidence " + evidence);
-			System.err.println("using variable " + firstVariable + " value " + firstValue );
+			System.err.println("using variable " + firstVariable + " value " + referenceValue );
 			System.err.println("using operator " + comparisonOperator + " constant " + comparisonConstant);
 			
 			// instantiation formatter
@@ -172,7 +175,7 @@ public class SensitivityCalculationJob extends AbstractCalculationJob
 			// get the results
 			SensitivityReport report = sensitivityengine.getResults( 
 							/* varY */ firstVariable, 
-							/* valueY */ firstValue, 
+							/* valueY */ referenceValue, 
 							/* varZ */ (FiniteVariable)null, 
 							/* valueZ */ (Object)null, 
 							/* arithmetic operator */ (Object)null, 

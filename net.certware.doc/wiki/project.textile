@@ -161,10 +161,12 @@ h3. Plugins Summary
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  
 * @net.certware.doc@ General project to contain various documentation files including the wiki.
 * @net.certware.evidence.hugin.*@ Hugin NET DSL definition and generation.
-* @net.certware.evidence.hugin.instance.@ Hugin NET evidence model definition and generation. 
+* @net.certware.evidence.hugin.instance.*@ Hugin NET evidence model definition and generation. 
+* @net.certware.evidence.hugin.view.*@ Hugin NET analysis view.
 * @net.certware.evidence.saem.*@ Evidence model and editor support for SAEM from OMG. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  
 * @net.certware.example@ Example wizard and host plugin for contributing fragments.
 * @net.certware.export@ Exporting model resources to other formats.  
+* @net.certware.feature.*@ Feature packaging by core, argument style, and functionality features for update site publication.
 * @net.certware.help@ Project help files, cheat sheets and dynamic context support.
 * @net.certware.history.*@ History contributions for version control analysis.
 * @net.certware.launch@ Launch configuration shared files.
@@ -180,6 +182,7 @@ h3. Plugins Summary
 * @net.certware.target@ CertWare project target definition.
 * @net.certware.update@ Update site definition project (currently unused).
 * @net.certware.verification.checklist.*@ Verification model and editor support for generic check lists. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* @net.certware.verification.checklist.view@ Verification model checklist view with update support.  
 
 
 h3. File Names and Extensions
@@ -204,9 +207,11 @@ h3. File Names and Extensions
 h3. Target Platform
 
 * Eclipse Helios baseline
-* EGit, requiring JGit as well
-* Eclipse RCP delta pack for multi-platform exports.
-* EasyMock 3.0 and JUnit 4.8.1 for testing
+* Eclipse EGit, requiring JGit as dependency
+* Eclipse Epsilon features, pre-1.0 bundles
+* Eclipse Extended Editing Framework, pre-1.0 bundles
+* Eclipse RCP delta pack for multi-platform exports
+* JUnit 4.8.1 for testing
 
 
 h3. Implementation Features
@@ -218,11 +223,6 @@ h3. Implementation Features
 
 <hr/>
 
-h2. Implementation Notes
-
-* Platform trace debugging features turned on but not yet used in any CertWare plugin.
-
-<hr/>
 
 h2. Packaging
 
@@ -230,17 +230,30 @@ The CertWare plug-ins and fragments
 
 h3. Delivery as a Feature
 
-The several @net.certware.*@ plug-ins and fragments (not including the testing fragments) are combined into a feature and category definition in @net.certware.feature@.  Use the automated dependency calculation of the feature editor to identify the installation dependencies, then ensure there are no spurious plug-ins identified; if so, identify the source and repair the issue.  For complete feature deliveries, use the version tool in the feature editor to push the feature version identifier into the plugins and fragments.  Export to either a folder or archive file.  There are no platform-dependent requirements.  
+The several @net.certware.*@ plug-ins and fragments (not including the testing fragments) are combined into several features and a single category definition.  Use the automated dependency calculation of the feature editors to identify the installation dependencies, then ensure there are no spurious plug-ins identified; if so, identify the source and repair the issue.  For complete feature deliveries, use the version tool in the feature editor to push the feature version identifier into the plugins and fragments.  Export to either a folder or archive file.  There are no platform-dependent requirements.  There are several features available, each bundling distinct functionality and identifying dependencies if necessary.  All features use the @core@ feature for shared functionality.  
 
-To use the delivery, import the feature into an existing Eclipse workbench installation.  The feature will identify missing dependencies if any and prompt the user to install these prerequisites.  The feature and its contents are not digitally signed.  After installation, restart the workbench to update the commands and workbench parts.    
+* @net.certware.feature@ Core feature used by all other features, providing logging, extensions, and other basic functionality.
+* @net.certware.feature.aml@ Support for AML arguments.
+* @net.certware.feature.arm@ Support for ARM arguments, and required by GSN, CAE, and EUROCONTROL arguments.
+* @net.certware.feature.bayes@ Support for Bayesian models of evidence.
+* @net.certware.feature.cae@ Support for CAE arguments.
+* @net.certware.feature.check@ Support for verification checklists.
+* @net.certware.feature.eur@ Support for EUROCONTROL arguments.
+* @net.certware.feature.gsn@ Support for GSN arguments.
+* @net.certware.feature.measure@ Support for measurement collection and metrics.
+* @net.certware.feature.planning@ Support for time and resource planning notation.
+* @net.certware.feature.saem@ Support for SAEM evidence.
+* @net.certware.feature.sfp@ Support for semi-formal proof arguments.
+
+To use the delivery, import the desired features into an existing Eclipse workbench installation.  The installer will identify missing dependencies if any and prompt the user to install these prerequisites.  The features and contents are not digitally signed.  After installation, restart the workbench to update the commands and workbench parts.    
 
 h3. Delivery as a Product
 
-A stand-alone product definition has not yet been configured.
+The project @net.certware.product@ provides a product definition and p2 configuration.  This product uses all of the plugins and the basic workbench configuration.  This configuration is not expected to be the preferred method of delivery owing to the variety of user platforms, but it can be used to build initial installation packaging for later update via update sites. The preferred method is to first install some version of Eclipse for the user's platform, and then install CertWare features from update sites.  CertWare has no platform-specific dependencies.
 
 h3. Update Site Publishing
 
-To prepare an update site, first regenerate the latest feature as described above from the @net.certware.feature@ project.  Then go to the update site project at @net.certware.feature.updatesite@ and open the @site.xml@ definition file.  Use the site definition editor to add the new feature with its updated version identifier.  Click build all to build the update site.  At this writing the Internet site for hosting the update site is an Amazon S3 bucket.  Upload the new update site content (everything in the project) to this bucket.  The content will be available for downloading by users as soon as the S3 services refresh the site, which most of the time is nearly instantly.      
+To prepare an update site, first regenerate the latest features as described above from the @net.certware.feature@ project.  Then go to the update site project at @net.certware.feature.updatesite@ and open the @site.xml@ definition file.  Use the site definition editor to add the new features with their updated version identifier.  Click build all to build the update site.  At this writing the Internet site for hosting the update site is an Amazon S3 bucket.  Upload the new update site content (everything in the project) to this bucket.  The content will be available for downloading by users as soon as the S3 services refresh the site, which most of the time is nearly instantly.
 
 <hr/>
 
@@ -248,9 +261,9 @@ h2. Testing
 
 h3. Unit Tests
 
-* @net.certware.argument.arm.test@ fragment contains tests for ARM models.  Includes two structural tests for examples provided in the OMG standard.
-* @net.certware.argument.gsn.test@ fragment contains tests for GSN models.  Includes one structural test for example provided in the OMG standard.
-* @net.certware.argument.cae.test@ fragment contains tests for CAE models.  Includes one structural test for example provided in the OMG standard.
+* @net.certware.argument.arm.test@ fragment contains tests for ARM models.  Includes structural tests for examples provided in the OMG standard.
+* @net.certware.argument.gsn.test@ fragment contains tests for GSN models.  Includes structural tests for examples provided in the OMG standard.
+* @net.certware.argument.cae.test@ fragment contains tests for CAE models.  Includes structural tests for examples provided in the OMG standard.
 * @net.certware.argument.transform.gsn2arm.text@ fragment contains tests for the ATL GSN to ARM translation models.
 * @net.certware.evidence.inference.test@ plugin contains tests of the @inference@ library.
 * @net.certware.measurement.sco.tests@ plugin contains tests for the SCO models.
@@ -258,8 +271,5 @@ h3. Unit Tests
 
 h3. Automated Analysis
 
-* Uses CodePro AnalytiX for manually-generated code with full rule set.  Follow the majority of rule recommendations including Javadoc.
+* Uses CodePro AnalytiX in some case for manually-generated code with full rule set.  Follow the majority of rule recommendations including Javadoc.
 * FindBugs used on all code including automatically-generated code with nearly full rule set.  Some style rules disabled.       
-
-
-

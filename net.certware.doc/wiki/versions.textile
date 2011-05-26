@@ -9,6 +9,7 @@ _Enhancements_:
 * Modified Network Analysis view to make results section content dynamic according to analysis computation.  Combined the view's label and node columns to one, and added marginal probability column.  Modified certain calculations to produce the marginal values.
 * Added sensitivity analysis to the inference view.  Uses both single-variable and multiple-variable combinations for analysis.  
 _Commit_:
+* Committed as reference branch @M8@ with @1.2.2@ tag.
 
 h3. Version 1.2.1
 
