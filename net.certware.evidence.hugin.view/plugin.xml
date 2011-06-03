@@ -105,60 +105,70 @@
       <command
             categoryId="net.certware.export.category"
             description="Writes the network to an Excel file"
+            helpContextId="export_wizard_page_context"
             id="net.certware.evidence.hugin.view.export"
             name="Export to Excel">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Save the network model content to its file"
+            helpContextId="hugin_analysis_context"
             id="net.certware.evidence.hugin.view.save"
             name="Save">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Perform MAP calculation on selected variables"
+            helpContextId="hugin_analysis_context"
             id="net.certware.evidence.hugin.view.map"
             name="Perform MAP analysis">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Perform MPE calculation on selected variables"
+            helpContextId="hugin_analysis_context"
             id="net.certware.evidence.hugin.view.mpe"
             name="Perform MPE analysis">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Perform Pr(e) query on given evidence"
+            helpContextId="hugin_analysis_context"
             id="net.certware.evidence.hugin.view.pre"
             name="Perform Pr(e) analysis">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Perform sensitivity query on given evidence"
+            helpContextId="hugin_analysis_context"
             id="net.certware.evidence.hugin.view.sensitivity"
             name="Perform sensitivity analysis">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Deselects all variable and state selections in the tree"
+            helpContextId="hugin_analysis_context"
             id="net.certware.evidence.hugin.view.deselect"
             name="Deselect all">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Selects all variable nodes in the network"
+            helpContextId="hugin_analysis_context"
             id="net.certware.evidence.hugin.view.selectnodes"
             name="Select all nodes">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Writes evidence selections to a resource"
+            helpContextId="hugin_instance_context"
             id="net.certware.evidence.hugin.view.evidence.save"
             name="Write evidence">
       </command>
       <command
             categoryId="net.certware.core.ui.command.category"
             description="Restores evidence selections from a resource"
+            helpContextId="hugin_instance_context"
             id="net.certware.evidence.hugin.view.evidence.restore"
             name="Restore evidence">
       </command>
@@ -334,6 +344,7 @@
             locationURI="toolbar:net.certware.evidence.hugin.view.ViewTree?after=additions">
          <command
                commandId="net.certware.evidence.hugin.view.map"
+               helpContextId="hugin_analysis_context"
                label="MAP Analysis"
                mnemonic="M"
                style="push"
@@ -341,6 +352,7 @@
          </command>
          <command
                commandId="net.certware.evidence.hugin.view.mpe"
+               helpContextId="hugin_analysis_context"
                label="MPE Analysis"
                mnemonic="E"
                style="push"
@@ -348,6 +360,7 @@
          </command>
          <command
                commandId="net.certware.evidence.hugin.view.pre"
+               helpContextId="hugin_analysis_context"
                label="Pr(e) Query"
                mnemonic="P"
                style="push"
@@ -355,6 +368,7 @@
          </command>
          <command
                commandId="net.certware.evidence.hugin.view.sensitivity"
+               helpContextId="hugin_analysis_context"
                label="Sensitivity"
                mnemonic="S"
                style="push"
@@ -362,6 +376,7 @@
          </command>
          <command
                commandId="net.certware.evidence.hugin.view.evidence.save"
+               helpContextId="hugin_instance_context"
                label="Evidence"
                mnemonic="E"
                style="push"

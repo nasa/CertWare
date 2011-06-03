@@ -97,11 +97,6 @@ public interface IHelpContext {
 	/** VCL view context ID */
 	public static String VCL_VIEW = PREFIX + "vcl_view_context"; //$NON-NLS-1$
 	
-	// NET-related context IDs
-	/** NET view context ID */
-	public static String NET_VIEW = PREFIX + "net_view_context"; //$NON-NLS-1$
-	
-	
 	// model agnostic context IDs
 	/** export wizard page context */
 	public static String EXPORT_WIZARD_PAGE = PREFIX + "export_wizard_page_context"; //$NON-NLS-1$ 
@@ -127,5 +122,11 @@ public interface IHelpContext {
 	public static String REVIEW_WIZARD_HYPOTHESIS = PREFIX + "review_wizard_hypothesis_context"; //$NON-NLS-1$
 	/** review wizard setup page */
 	public static String REVIEW_WIZARD_SETUP_PAGE = PREFIX + "review_wizard_setup_context"; //$NON-NLS-1$
+	
+	// hugin analysis context IDs
+	/** hugin analysis view */
+	public static String HUGIN_ANALYSIS_VIEW = PREFIX + "hugin_analysis_context"; //$NON-NLS-1$
+	/** hugin evidence instance model */
+	public static String HUGIN_INSTANCE_MODEL = PREFIX + "hugin_instance_context"; //$NON-NLS-1$
 	
 }

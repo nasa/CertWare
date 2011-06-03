@@ -225,7 +225,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 */
 	private void setHelpContextIDs(Control control) {
 		IWorkbenchHelpSystem helpSystem = getSite().getWorkbenchWindow().getWorkbench().getHelpSystem();
-		helpSystem.setHelp(control, IHelpContext.NET_VIEW);
+		helpSystem.setHelp(control, IHelpContext.HUGIN_ANALYSIS_VIEW);
 	}
 
 	/**
@@ -755,7 +755,7 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 		items.setClient(treeClient);
 
 		// create the help context id for the viewer's control
-		PlatformUI.getWorkbench().getHelpSystem().setHelp(form, IHelpContext.NET_VIEW); 
+		PlatformUI.getWorkbench().getHelpSystem().setHelp(form, IHelpContext.HUGIN_ANALYSIS_VIEW); 
 
 		// add the selection listener
 		// add the resource listener
@@ -1348,20 +1348,20 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 
 	/**
 	 * Adapter to identify context provider.
-	 * @param key context provider type desired
+	 * @param adapter context provider type desired
 	 * @return context provider 
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(Class)
 	 */
 	@Override
-	public Object getAdapter(@SuppressWarnings("rawtypes") Class key) {
+	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
 
-		if (key.equals(IContextProvider.class)) {
-			if (contextprovider == null)
-				contextprovider = new ContextProvider(this);
-			return contextprovider;
+		if (IContextProvider.class.equals(adapter)) {
+			return new ContextProvider(this, 
+					IHelpContext.HUGIN_ANALYSIS_VIEW,
+					(IStructuredSelection) getSelection());
 		}
 
-		return super.getAdapter(key);
+		return super.getAdapter(adapter);
 	}
 
 	@Override
@@ -1392,7 +1392,6 @@ public class ViewTree extends ViewPart implements ICertWareConstants, ICertWareV
 	 * @return true if settings sufficient, false otherwise
 	 */
 	public boolean hasSensitivitySelections() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
