@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2010 Object Management Group (ARM metamodel)
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
+ */
+
 package net.certware.argument.arm;
 
 import org.junit.After;
@@ -5,10 +10,6 @@ import org.junit.Before;
 
 /**
  * The class <code>AssertedEvidenceTest</code> contains tests for the class <code>{@link AssertedEvidence}</code>.
- * <p>
- * CertWare Project
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
- *
  * @generatedBy CodePro at 10/12/10 1:17 PM
  * @author mrb
  */

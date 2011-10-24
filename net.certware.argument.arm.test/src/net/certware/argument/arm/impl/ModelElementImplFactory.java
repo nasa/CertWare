@@ -1,13 +1,14 @@
+/*
+ * Copyright (c) 2010 Object Management Group (ARM metamodel)
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
+ */
+
 package net.certware.argument.arm.impl;
 
 
 
 /**
  * The class <code>ModelElementImplFactory</code> implements static methods that return instances of the class <code>{@link ModelElementImpl}</code>.
- * <p>
- * CertWare Project
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
- *
  * @generatedBy CodePro at 10/12/10 1:29 PM
  * @author mrb
  */

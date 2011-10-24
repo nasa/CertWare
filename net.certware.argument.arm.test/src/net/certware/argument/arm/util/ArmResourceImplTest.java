@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2010 Object Management Group (ARM metamodel)
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
+ */
+
 package net.certware.argument.arm.util;
 
 import static org.junit.Assert.assertEquals;
@@ -15,10 +20,6 @@ import org.junit.Test;
 
 /**
  * The class <code>ArmResourceImplTest</code> contains tests for the class <code>{@link ArmResourceImpl}</code>.
- * <p>
- * CertWare Project
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
- *
  * @generatedBy CodePro at 10/12/10 1:34 PM
  * @author mrb
  */
