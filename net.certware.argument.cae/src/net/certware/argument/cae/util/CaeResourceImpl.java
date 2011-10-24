@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ * 
  */
 package net.certware.argument.cae.util;
 
@@ -20,7 +21,7 @@ public class CaeResourceImpl extends XMIResourceImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.\n"; //$NON-NLS-1$
 
 	/**
 	 * Creates an instance of the resource.

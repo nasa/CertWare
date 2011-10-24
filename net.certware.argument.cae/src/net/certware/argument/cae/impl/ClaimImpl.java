@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2010 National Aeronautics and Space Administration
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ * 
  */
 package net.certware.argument.cae.impl;
 
@@ -44,7 +45,7 @@ public class ClaimImpl extends net.certware.argument.arm.impl.ClaimImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.\n"; //$NON-NLS-1$
 
 	/**
 	 * The cached value of the '{@link #getStrategy() <em>Strategy</em>}' containment reference list.

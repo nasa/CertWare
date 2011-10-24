@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2010 National Aeronautics and Space Administration
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ * 
  */
 package net.certware.argument.cae;
 
@@ -30,7 +31,7 @@ public interface CaePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
+	String copyright = "Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.\n"; //$NON-NLS-1$
 
 	/**
 	 * The package name.

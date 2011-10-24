@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ * 
  */
 package net.certware.argument.cae.presentation;
 
@@ -14,10 +15,23 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
-import net.certware.argument.cae.CaeFactory;
-import net.certware.argument.cae.CaePackage;
-import net.certware.argument.cae.provider.CaeEditPlugin;
-import net.certware.core.ui.CertWareUI;
+import org.eclipse.emf.common.CommonPlugin;
+
+import org.eclipse.emf.common.util.URI;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.xmi.XMLResource;
+
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -25,42 +39,52 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.CommonPlugin;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
+
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
+
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
+
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
+
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.ModifyEvent;
+
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
+import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+
+import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.ui.part.ISetSelectionTarget;
+
+import net.certware.argument.cae.CaeFactory;
+import net.certware.argument.cae.CaePackage;
+import net.certware.argument.cae.provider.CaeEditPlugin;
+
+
+import org.eclipse.core.runtime.Path;
+
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
+
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.part.ISetSelectionTarget;
 
 
 /**
@@ -75,7 +99,7 @@ public class CaeModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.\n"; //$NON-NLS-1$
 
 	/**
 	 * The supported extensions for created files.
@@ -154,19 +178,14 @@ public class CaeModelWizard extends Wizard implements INewWizard {
 	/**
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
-	 * Retrieves the wizard banner image from the CertWare UI registry.
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(CaeEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		// setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(CaeEditorPlugin.INSTANCE.getImage("full/wizban/NewCae"))); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(
-				ExtendedImageRegistry.INSTANCE.getImageDescriptor(
-						CertWareUI.getDefault().getImageRegistry().get(CertWareUI.CERTWARE_WIZARD_BANNER)));
-
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(CaeEditorPlugin.INSTANCE.getImage("full/wizban/NewCae"))); //$NON-NLS-1$
 	}
 
 	/**
@@ -385,7 +404,8 @@ public class CaeModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;

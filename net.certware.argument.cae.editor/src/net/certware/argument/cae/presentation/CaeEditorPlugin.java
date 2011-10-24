@@ -1,12 +1,15 @@
 /**
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved.
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ * 
  */
 package net.certware.argument.cae.presentation;
 
 import net.certware.argument.arm.provider.ArmEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
@@ -21,7 +24,7 @@ public final class CaeEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.\n"; //$NON-NLS-1$
 	
 	/**
 	 * Keep track of the singleton.
