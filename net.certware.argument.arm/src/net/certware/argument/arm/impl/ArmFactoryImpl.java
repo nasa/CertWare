@@ -1,30 +1,18 @@
 /**
  * Copyright (c) 2010 Object Management Group (ARM metamodel)
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
  */
 package net.certware.argument.arm.impl;
 
-import net.certware.argument.arm.Annotation;
-import net.certware.argument.arm.Argument;
-import net.certware.argument.arm.ArgumentReasoning;
-import net.certware.argument.arm.ArmFactory;
-import net.certware.argument.arm.ArmPackage;
-import net.certware.argument.arm.AssertedChallenge;
-import net.certware.argument.arm.AssertedContext;
-import net.certware.argument.arm.AssertedCounterEvidence;
-import net.certware.argument.arm.AssertedEvidence;
-import net.certware.argument.arm.AssertedInference;
-import net.certware.argument.arm.CitationElement;
-import net.certware.argument.arm.Claim;
-import net.certware.argument.arm.EvidenceAssertion;
-import net.certware.argument.arm.InformationElement;
-import net.certware.argument.arm.TaggedValue;
+import net.certware.argument.arm.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
@@ -39,7 +27,7 @@ public class ArmFactoryImpl extends EFactoryImpl implements ArmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) "; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) "; //$NON-NLS-1$
 
 	/**
 	 * Creates the default factory implementation.

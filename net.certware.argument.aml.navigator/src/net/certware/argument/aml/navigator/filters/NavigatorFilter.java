@@ -1,5 +1,6 @@
 /**
- * 
+ * AML metamodel copyright © 2000-2005 SRI International.
+ * Implementation into plugin copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.   
  */
 package net.certware.argument.aml.navigator.filters;
 

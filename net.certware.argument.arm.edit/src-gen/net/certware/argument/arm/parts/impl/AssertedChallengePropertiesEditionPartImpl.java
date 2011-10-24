@@ -1,4 +1,6 @@
-
+/*
+ * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+ */
 package net.certware.argument.arm.parts.impl;
 
 // Start of user code for imports
@@ -111,8 +113,8 @@ public class AssertedChallengePropertiesEditionPartImpl extends CompositePropert
 
 
 		// Start of user code for additional ui definition
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**
@@ -498,8 +500,8 @@ public class AssertedChallengePropertiesEditionPartImpl extends CompositePropert
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**

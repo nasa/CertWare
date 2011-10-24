@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2010 Object Management Group (ARM metamodel)
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
  */
 package net.certware.argument.arm.impl;
 
@@ -8,7 +8,9 @@ import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.TaggedValue;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
@@ -32,7 +34,7 @@ public class TaggedValueImpl extends EObjectImpl implements TaggedValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) "; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) "; //$NON-NLS-1$
 
 	/**
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.

@@ -1,11 +1,13 @@
 /**
  * Copyright (c) 2010 Object Management Group (ARM metamodel)
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
  */
 package net.certware.argument.arm.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
@@ -20,7 +22,7 @@ public final class ArmEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) "; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) "; //$NON-NLS-1$
 	
 	/**
 	 * Keep track of the singleton.

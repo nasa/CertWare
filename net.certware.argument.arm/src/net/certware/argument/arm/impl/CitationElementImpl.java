@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2010 Object Management Group (ARM metamodel)
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) 
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
  */
 package net.certware.argument.arm.impl;
 
@@ -10,8 +10,10 @@ import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.CitationElement;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,7 +36,7 @@ public class CitationElementImpl extends ArgumentElementImpl implements Citation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved. (generated models) "; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 Object Management Group (ARM metamodel)\nCopyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) "; //$NON-NLS-1$
 
 	/**
 	 * The cached value of the '{@link #getRefersToArgumentElement() <em>Refers To Argument Element</em>}' reference.

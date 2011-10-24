@@ -1,4 +1,6 @@
-
+/*
+ * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+ */
 package net.certware.argument.arm.parts.forms;
 
 // Start of user code for imports
@@ -110,8 +112,8 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 		createPropertiesGroup(widgetFactory, view);
 
 		// Start of user code for additional ui definition
-		
-		// End of user code
+
+// End of user code
 	}
 	/**
 	 * 
@@ -396,8 +398,8 @@ public class CitationElementPropertiesEditionPartForm extends CompositePropertie
 	 */
 	public void firePropertiesChanged(IPropertiesEditionEvent event) {
 		// Start of user code for tab synchronization
-		
-		// End of user code
+
+// End of user code
 	}
 
 	/**
