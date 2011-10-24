@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ */
+
 package net.certware.argument.cae.impl;
 
 import static org.junit.Assert.assertEquals;
@@ -10,9 +14,6 @@ import org.junit.Test;
 
 /**
  * The class <code>CaePackageImplTest</code> contains tests for the class <code>{@link CaePackageImpl}</code>.
- * <p>
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
- *
  * @generatedBy CodePro at 10/13/10 4:49 PM
  * @author mrb
  */

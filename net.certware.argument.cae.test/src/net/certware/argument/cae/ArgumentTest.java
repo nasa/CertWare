@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ */
 package net.certware.argument.cae;
 
 import org.eclipse.emf.common.util.EList;
@@ -6,9 +9,6 @@ import static org.junit.Assert.*;
 
 /**
  * The class <code>ArgumentTest</code> contains tests for the class <code>{@link Argument}</code>.
- * <p>
- * Copyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved..  All rights reserved.
- *
  * @generatedBy CodePro at 10/13/10 4:48 PM
  * @author mrb
  */
