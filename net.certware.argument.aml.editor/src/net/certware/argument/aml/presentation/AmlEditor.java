@@ -163,7 +163,7 @@ public class AmlEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright © 2000-2005 SRI International."; //$NON-NLS-1$
+	public static final String copyright = "AML metamodel copyright © 2000-2005 SRI International.\nImplementation into plugin copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.   \n"; //$NON-NLS-1$
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.

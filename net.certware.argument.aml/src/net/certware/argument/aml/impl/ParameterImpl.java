@@ -1,5 +1,7 @@
 /**
- * Copyright © 2000-2005 SRI International.
+ * AML metamodel copyright © 2000-2005 SRI International.
+ * Implementation into plugin copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.   
+ * 
  */
 package net.certware.argument.aml.impl;
 
@@ -36,7 +38,7 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright © 2000-2005 SRI International."; //$NON-NLS-1$
+	public static final String copyright = "AML metamodel copyright © 2000-2005 SRI International.\nImplementation into plugin copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.   \n"; //$NON-NLS-1$
 
 	/**
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.

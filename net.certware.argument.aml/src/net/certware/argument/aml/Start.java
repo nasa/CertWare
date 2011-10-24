@@ -1,5 +1,7 @@
 /**
- * Copyright © 2000-2005 SRI International.
+ * AML metamodel copyright © 2000-2005 SRI International.
+ * Implementation into plugin copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.   
+ * 
  */
 package net.certware.argument.aml;
 
@@ -28,7 +30,7 @@ public interface Start extends EObject {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright © 2000-2005 SRI International."; //$NON-NLS-1$
+	String copyright = "AML metamodel copyright © 2000-2005 SRI International.\nImplementation into plugin copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.   \n"; //$NON-NLS-1$
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

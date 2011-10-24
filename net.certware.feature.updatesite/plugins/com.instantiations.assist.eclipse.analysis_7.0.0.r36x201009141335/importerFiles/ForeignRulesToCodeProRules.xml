@@ -1,0 +1,3073 @@
+<importerMappings>
+	<program id="FB">
+		<sourceRule id="BC_EQUALS_METHOD_SHOULD_WORK_FOR_ALL_OBJECTS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.checkTypeInEquals">
+				<param targetID="allowGetClass" default="true" />
+				<param targetID="allowInstanceOf" default="true" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="CN_IDIOM">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.cloneableWithoutClone">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.cloneWithoutCloneable">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="CN_IDIOM_NO_SUPER_CALL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.cloneMethodUsage">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="CO_ABSTRACT_SELF">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.incorrectUseOfEqualsAndCompareTo">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="CO_SELF_NO_OBJECT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.incorrectUseOfEqualsAndCompareTo">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DE_MIGHT_DROP">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyCatchClause">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DE_MIGHT_IGNORE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyCatchClause">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_EXIT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.noExplicitExit">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_RUN_FINALIZERS_ON_EXIT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.runtimeMethodUsage">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ES_COMPARING_PARAMETER_STRING_WITH_EQ">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useEquals">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ES_COMPARING_STRINGS_WITH_EQ">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useEquals">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_ABSTRACT_SELF">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.obeyEqualsContract.obeyGeneralContractOfEquals">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_COMPARETO_USE_OBJECT_EQUALS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.incorrectUseOfEqualsAndCompareTo">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_SELF_NO_OBJECT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.obeyEqualsContract.obeyGeneralContractOfEquals">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_SELF_USE_OBJECT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.obeyEqualsContract.obeyGeneralContractOfEquals">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="FI_EMPTY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyFinalizeMethod">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="FI_EXPLICIT_INVOCATION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.explicitInvocationOfFinalize">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="FI_MISSING_SUPER_CALL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.invokeInheritedMethod">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="FI_USELESS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryOverride">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="HE_EQUALS_NO_HASHCODE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.overridingEqualsAndHashCode">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="HE_EQUALS_USE_HASHCODE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.overridingEqualsAndHashCode">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="HE_HASHCODE_NO_EQUALS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.overridingEqualsAndHashCode">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="HE_HASHCODE_USE_OBJECT_EQUALS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.overridingEqualsAndHashCode">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="HE_INHERITS_EQUALS_USE_HASHCODE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.overridingEqualsAndHashCode">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IMSE_DONT_CATCH_IMSE">
+			<targetRule 
+				id="com.instantiations.assist.eclipse.audit.doNotCatchIllegalMonitorStateException">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<!-- <targetRule
+				id="com.instantiations.assist.eclipse.audit.caughtExceptions">
+				<param targetID="disallowedExceptions"
+					default="java.lang.IllegalMonitorStateException" />
+				<param targetID="severity" default="1" />
+			</targetRule> -->
+		</sourceRule>
+		<sourceRule id="ISC_INSTANTIATE_STATIC_CLASS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.staticInstantiation">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IT_NO_SUCH_ELEMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useNoSuchElementException">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_CLONE_COULD_RETURN_NULL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.returnValue">
+				<param targetID="returnValue.allowObjects"
+					default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_EQUALS_SHOULD_HANDLE_NULL_ARGUMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.obeyEqualsContract.obeyGeneralContractOfEquals">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_TOSTRING_COULD_RETURN_NULL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.returnValue">
+				<param targetID="returnValue.allowObjects"
+					default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_CLASS_NAMING_CONVENTION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.classNamingConvention">
+				<param targetID="namingConvention"
+					default=";1;31;t;17;;f;1;f;45" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_CLASS_NOT_EXCEPTION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.consistentSuffixUsage">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_CONFUSING">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidSimilarNames">
+				<param targetID="checkVariablePlural" default="false" />
+				<param targetID="checkFieldPlural" default="false" />
+				<param targetID="checkMethodPlural" default="false" />
+				<param targetID="checkTypePlural" default="false" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="2" />
+				<param targetID="checkMethodCase" default="true" />
+				<param targetID="checkTypeCase" default="true" />
+				<param targetID="checkVariableCase" default="true" />
+				<param targetID="checkFieldCase" default="true" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_VERY_CONFUSING_INTENTIONAL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidSimilarNames">
+				<param targetID="checkVariablePlural" default="false" />
+				<param targetID="checkFieldPlural" default="false" />
+				<param targetID="checkMethodPlural" default="false" />
+				<param targetID="checkTypePlural" default="false" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="2" />
+				<param targetID="checkMethodCase" default="true" />
+				<param targetID="checkTypeCase" default="true" />
+				<param targetID="checkVariableCase" default="true" />
+				<param targetID="checkFieldCase" default="true" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_SAME_SIMPLE_NAME_AS_INTERFACE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidSimilarNames">
+				<param targetID="checkVariablePlural" default="false" />
+				<param targetID="checkFieldPlural" default="false" />
+				<param targetID="checkMethodPlural" default="false" />
+				<param targetID="checkTypePlural" default="false" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="2" />
+				<param targetID="checkMethodCase" default="false" />
+				<param targetID="checkTypeCase" default="true" />
+				<param targetID="checkVariableCase" default="false" />
+				<param targetID="checkFieldCase" default="false" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidSimilarNames">
+				<param targetID="checkVariablePlural" default="false" />
+				<param targetID="checkFieldPlural" default="false" />
+				<param targetID="checkMethodPlural" default="false" />
+				<param targetID="checkTypePlural" default="false" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="2" />
+				<param targetID="checkMethodCase" default="false" />
+				<param targetID="checkTypeCase" default="true" />
+				<param targetID="checkVariableCase" default="false" />
+				<param targetID="checkFieldCase" default="false" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_FIELD_NAMING_CONVENTION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.instanceFieldNamingConvention">
+				<param targetID="namingConvention"
+					default=";2;31;t;15;;f;1;f;45" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_METHOD_NAMING_CONVENTION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.methodNamingConvention">
+				<param targetID="namingConvention"
+					default=";2;31;t;15;;f;1;f;45" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_FUTURE_KEYWORD_USED_AS_IDENTIFIER">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidFutureKeywords">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_FUTURE_KEYWORD_USED_AS_MEMBER_IDENTIFIER">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidFutureKeywords">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ODR_OPEN_DATABASE_RESOURCE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeConnectionWhereCreated">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeStatementWhereCreated">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeResultSetWhereCreated">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ODR_OPEN_DATABASE_RESOURCE_EXCEPTION_PATH">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeConnectionWhereCreated">
+				<param targetID="closeMustBeInFinally" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeStatementWhereCreated">
+				<param targetID="closeMustBeInFinally" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeResultSetWhereCreated">
+				<param targetID="closeMustBeInFinally" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="OS_OPEN_STREAM">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeWhereCreated">
+				<param targetID="closeMustBeInFinally" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="OS_OPEN_STREAM_EXCEPTION_PATH">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeWhereCreated">
+				<param targetID="closeMustBeInFinally" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RC_REF_COMPARISON">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useEquals">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RR_NOT_CHECKED">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.unusedReturnValue">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SR_NOT_CHECKED">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.unusedReturnValue">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RR_NOT_CHECKED">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.unusedReturnValue">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidQueriesFromUser">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SE_NONFINAL_SERIALVERSIONID">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.serializableUsage">
+				<param targetID="noInstanceFields" default="false" />
+				<param targetID="serialVersionUID" default="true" />
+				<param targetID="invalidBaseClass" default="false" />
+				<param targetID="readObject" default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SE_NONLONG_SERIALVERSIONID">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.serializableUsage">
+				<param targetID="noInstanceFields" default="false" />
+				<param targetID="serialVersionUID" default="true" />
+				<param targetID="invalidBaseClass" default="false" />
+				<param targetID="readObject" default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SE_NONSTATIC_SERIALVERSIONID">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.serializableUsage">
+				<param targetID="noInstanceFields" default="false" />
+				<param targetID="serialVersionUID" default="true" />
+				<param targetID="invalidBaseClass" default="false" />
+				<param targetID="readObject" default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SE_NO_SUITABLE_CONSTRUCTOR">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.serializableUsage">
+				<param targetID="noInstanceFields" default="false" />
+				<param targetID="serialVersionUID" default="false" />
+				<param targetID="invalidBaseClass" default="true" />
+				<param targetID="readObject" default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SE_NO_SERIALVERSIONID">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.serializableUsage">
+				<param targetID="noInstanceFields" default="false" />
+				<param targetID="serialVersionUID" default="true" />
+				<param targetID="invalidBaseClass" default="false" />
+				<param targetID="readObject" default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="BC_IMPOSSIBLE_CAST">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unknownCast">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DMI_COLLECTIONS_SHOULD_NOT_CONTAIN_THEMSELVES">
+			<targetRule
+				id="com.instantiations.eclipse.analysis.audit.security.containerShouldNotContainItselfAsElement">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DMI_INVOKING_TOSTRING_ON_ARRAY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.improperConversionOfArrayToString">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DMI_INVOKING_TOSTRING_ON_ANONYMOUS_ARRAY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.improperConversionOfArrayToString">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EC_ARRAY_AND_NONARRAY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.arrayAndNonArrayComparison">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EC_BAD_ARRAY_COMPARE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.arrayComparison">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EC_NULL_ARG">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useIdentityToCompareNull">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EC_UNRELATED_CLASS_AND_INTERFACE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.incompatibleComparisonOfTypes">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EC_UNRELATED_INTERFACES">
+			<targetRule
+				id="com.instantiations.assist.eclipse.incompatibleComparisonOfTypes">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EC_UNRELATED_TYPES">
+			<targetRule
+				id="com.instantiations.assist.eclipse.incompatibleComparisonOfTypes">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EC_UNRELATED_TYPES_USING_POINTER_EQUALITY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.incompatibleComparisonOfTypes">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_COMPARING_CLASS_NAMES">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidComparingClassesByStrings">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="GC_UNRELATED_TYPES">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.incorrectArgumentType">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_OTHER_NO_OBJECT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.obeyEqualsContract.obeyGeneralContractOfEquals">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_OTHER_USE_OBJECT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.obeyEqualsContract.obeyGeneralContractOfEquals">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="FI_MISSING_SUPER_CALL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.invokeInheritedMethod">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="HE_USE_OF_UNHASHABLE_CLASS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unhashableClassInHashedCollection">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IJU_BAD_SUITE_METHOD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.jUnitChecks">
+				<param targetID="checkTearDown" default="false" />
+				<param targetID="checkSetUp" default="true" />
+				<param targetID="checkSuite" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IJU_SUITE_NOT_STATIC">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.jUnitChecks">
+				<param targetID="checkTearDown" default="false" />
+				<param targetID="checkSetUp" default="true" />
+				<param targetID="checkSuite" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IJU_SETUP_NO_SUPER">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.invokeSuperSetUp">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IJU_TEARDOWN_NO_SUPER">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.invokeSuperTearDown">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IL_CONTAINER_ADDED_TO_ITSELF">
+			<targetRule
+				id="com.instantiations.eclipse.analysis.audit.security.containerShouldNotContainItselfAsElement">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IL_INFINITE_LOOP">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.potentialInfiniteLoop">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IL_INFINITE_RECURSIVE_LOOP">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.recursiveCallWithNoCheck">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IP_PARAMETER_IS_DEAD_BUT_OVERWRITTEN">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableUsage">
+				<param targetID="parameterNotUsed" default="true" />
+				<param targetID="parameterNotReferenced" default="true" />
+				<param targetID="parameterShadows" default="true" />
+				<param targetID="variableNotUsed" default="false" />
+				<param targetID="variableNotReferenced" default="false" />
+				<param targetID="variableShadows" default="false" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MF_CLASS_MASKS_FIELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.hidingInheritedFields">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MF_METHOD_MASKS_FIELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableUsage">
+				<param targetID="parameterNotUsed" default="false" />
+				<param targetID="parameterNotReferenced"
+					default="false" />
+				<param targetID="parameterShadows" default="true" />
+				<param targetID="variableNotUsed" default="false" />
+				<param targetID="variableNotReferenced" default="false" />
+				<param targetID="variableShadows" default="true" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_ALWAYS_NULL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.possibleNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_ALWAYS_NULL_EXCEPTION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.possibleNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_ARGUMENT_MIGHT_BE_NULL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.possibleNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_NULL_ON_SOME_PATH">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.possibleNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_NULL_ON_SOME_PATH_EXCEPTION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.possibleNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_NULL_PARAM_DEREF">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.possibleNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_GUARANTEED_DEREF">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.dereferencingNullPointer">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_GUARANTEED_DEREF_ON_EXCEPTION_PATH">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.dereferencingNullPointer">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_NULL_INSTANCEOF">
+			<targetRule
+				id="com.instantiations.eclipse.analysis.audit.security.variableShouldNotHaveNullValue">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NS_DANGEROUS_NON_SHORT_CIRCUIT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.dereferencingNullPointer">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NS_NON_SHORT_CIRCUIT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.dereferencingNullPointer">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_BAD_EQUAL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.misspelledMethodName">
+				<param targetID="checkInterfaces" default="true" />
+				<param targetID="percentSimilar" default="100" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="1" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_LCASE_HASHCODE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.misspelledMethodName">
+				<param targetID="checkInterfaces" default="true" />
+				<param targetID="percentSimilar" default="100" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="1" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_LCASE_TOSTRING">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.misspelledMethodName">
+				<param targetID="checkInterfaces" default="true" />
+				<param targetID="percentSimilar" default="100" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="1" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_METHOD_CONSTRUCTOR_CONFUSION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.methodNamingConvention">
+				<param targetID="namingConvention"
+					default=";2;31;t;15;;f;1;f;45" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NM_VERY_CONFUSING">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidSimilarNames">
+				<param targetID="checkVariablePlural" default="false" />
+				<param targetID="checkFieldPlural" default="false" />
+				<param targetID="checkMethodPlural" default="false" />
+				<param targetID="checkTypePlural" default="false" />
+				<param targetID="minLength" default="5" />
+				<param targetID="editDistance" default="2" />
+				<param targetID="checkMethodCase" default="true" />
+				<param targetID="checkTypeCase" default="true" />
+				<param targetID="checkVariableCase" default="true" />
+				<param targetID="checkFieldCase" default="true" />
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="QBA_QUESTIONABLE_BOOLEAN_ASSIGNMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.assignmentInCondition">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RC_REF_COMPARISON">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useEquals">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule
+			id="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryNullCheck">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RV_RETURN_VALUE_IGNORED">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.unusedReturnValue">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.unusedReturnValue">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SA_FIELD_DOUBLE_ASSIGNMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.repeatedAssignment">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.redundantAssignment">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SA_LOCAL_DOUBLE_ASSIGNMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.repeatedAssignment">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.redundantAssignment">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SA_FIELD_SELF_ASSIGNMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.repeatedAssignment">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.redundantAssignment">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SIO_SUPERFLUOUS_INSTANCEOF">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryInstanceof">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="STI_INTERRUPTED_ON_CURRENTTHREAD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useOfThreadInterrupted">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="STI_INTERRUPTED_ON_UNKNOWNTHREAD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useOfThreadInterrupted">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UCF_USELESS_CONTROL_FLOW_NEXT_LINE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UMAC_UNCALLABLE_METHOD_OF_ANONYMOUS_CLASS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.anonymousClassMemberVisibility">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unusedMethod">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UWF_UNWRITTEN_FIELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unusedField">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="OBL_UNSATISFIED_OBLIGATION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeConnectionWhereCreated">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeResultSetWhereCreated">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeStatementWhereCreated">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeWhereCreated">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.javaserverfaces.closeElementsInRenderer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeInFinally">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EI_EXPOSE_REP">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.disallowReturnMutable">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_CONVERT_CASE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.internationalization.useLocaleSpecificMethods">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="FI_PUBLIC_SHOULD_BE_PROTECTED">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.finalizeShouldNotBePublic">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="EI_EXPOSE_STATIC_REP2">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.mutableConstantField">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MS_MUTABLE_ARRAY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.mutableConstantField">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MS_MUTABLE_HASHTABLE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.mutableConstantField">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MS_EXPOSE_REP">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.disallowReturnMutable">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.mutabilityOfArrays">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MS_FINAL_PKGPROTECT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.staticFieldSecurity">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MS_SHOULD_BE_FINAL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.staticFieldSecurity">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DC_DOUBLECHECK">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.doubleCheckLocking">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_MONITOR_WAIT_ON_CONDITION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.waitInvokedInsteadOfAwait">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_USELESS_THREAD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.noRunMethod">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ESync_EMPTY_SYNC">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptySynchronizedStatement">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="IS2_INCONSISTENT_SYNC">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.fieldAccessProtection">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="LI_LAZY_INIT_STATIC">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useThreadSafeLazyInitialization">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="LI_LAZY_INIT_UPDATE_STATIC"><!-- LI_LAZY_INIT__UPDATE_STATIC?  -->
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useThreadSafeLazyInitialization">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ML_SYNC_ON_FIELD_TO_GUARD_CHANGING_THAT_FIELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.synchronizationOnNonFinalFields">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ML_SYNC_ON_UPDATED_FIELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.synchronizationOnNonFinalFields">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NO_NOTIFY_NOT_NOTIFYALL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.disallowNotifyUsage">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RU_INVOKE_RUN">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useStartRatherThanRun">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SWL_SLEEP_WITH_LOCK_HELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.callSleepInLocks">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="TLW_TWO_LOCK_WAIT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.callWaitInDoubleLocks">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="UL_UNRELEASED_LOCK">
+			<targetRule
+				id="com.instantiations.assist.eclipse.callLockWithoutUnlock">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UL_UNRELEASED_LOCK_EXCEPTION_PATH">
+			<targetRule
+				id="com.instantiations.assist.eclipse.callLockWithoutUnlock">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="WA_NOT_IN_LOOP">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.waitInsideWhile">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_BOXED_PRIMITIVE_TOSTRING">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.temporaryObjectCreation">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_FP_NUMBER_CTOR">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.performance.useValueOf">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_NUMBER_CTOR">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.performance.useValueOf">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DMI_BLOCKING_METHODS_ON_URL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.bewareOfURLEqualsAndHashCode">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DMI_COLLECTION_OF_URLS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.bewareOfURLEqualsAndHashCode">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_BOOLEAN_CTOR">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.preferredExpression">
+				<param targetID="checkBoolean" default="true" />
+				<param targetID="useValueOf" default="true" />
+				<param targetID="checkColor" default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_GC">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.runtimeMethodUsage">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_NEW_FOR_GETCLASS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidInstantiationToGetClass">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DM_STRING_CTOR">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.stringCreatedFromLiteral">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<!-- This rule used to exist, but seems to have vanished. -David Masulis 5/12/2009 -->
+		<!--<sourceRule id="DM_STRING_EMPTY_EQUALS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyStringDetection">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>-->
+		<sourceRule id="DM_STRING_TOSTRING">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.unnecessaryToString">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ITA_INEFFICIENT_TO_ARRAY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.inefficientUseOfToArray">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SBSC_USE_STRINGBUFFER_CONCATENATION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.stringConcatenationInLoop">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SIC_INNER_SHOULD_BE_STATIC">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.favorStaticMemberClassesOverNonStatic">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SS_SHOULD_BE_STATIC">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.nonBlankFinalInstanceField">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UM_UNNECESSARY_MATH">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.precomputeConstantCalculations">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UPM_UNCALLED_PRIVATE_METHOD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unusedMethod">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UUF_UNUSED_FIELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unusedField">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DMI_CONSTANT_DB_PASSWORD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.hardcodedPassword">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DMI_EMPTY_DB_PASSWORD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.blankPassword">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="HRS_REQUEST_PARAMETER_TO_COOKIE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.httpResponseSplitting">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.httpResponseSplitting">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.sqlInjection">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SQL_PREPARED_STATEMENT_GENERATED_FROM_NONCONSTANT_STRING">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.sqlInjection">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="XSS_REQUEST_PARAMETER_TO_JSP_WRITER">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.codeInjection">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.crossSiteScripting">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="XSS_REQUEST_PARAMETER_TO_SEND_ERROR">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.codeInjection">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.crossSiteScripting">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="XSS_REQUEST_PARAMETER_TO_SERVLET_WRITER">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.codeInjection">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.crossSiteScripting">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="BC_UNCONFIRMED_CAST">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unknownCast">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="BC_VACUOUS_INSTANCEOF">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryInstanceof">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="CI_CONFUSED_INHERITANCE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.protectedInFinalClass">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DLS_DEAD_LOCAL_STORE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableUsage">
+				<param targetID="variableNotUsed" default="true" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="DLS_DEAD_LOCAL_STORE_OF_NULL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableUsage">
+				<param targetID="variableNotUsed" default="true" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="EQ_UNUSUAL">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.checkTypeInEquals">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="FE_FLOATING_POINT_EQUALITY">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.floatComparison">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ICAST_IDIV_CAST_TO_DOUBLE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.integerDivisionInFloatingPointExpression">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="MTIA_SUSPECT_SERVLET_INSTANCE_FIELD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.noInstanceFieldsInServlets">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_LOAD_OF_KNOWN_NULL_VALUE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.dereferencingNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.possibleNullPointer">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="PZLA_PREFER_ZERO_LENGTH_ARRAYS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.returnValue">
+				<param targetID="allowArrays" default="false" />
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryNullCheck">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RCN_REDUNDANT_NULLCHECK_OF_NULL_VALUE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryNullCheck">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="REC_CATCH_EXCEPTION">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.caughtExceptions">
+				<param targetID="disallowedExceptions"
+					default="java.lang.Exception,java.lang.RuntimeException" />
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="RV_CHECK_FOR_POSITIVE_INDEXOF">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.stringIndexOfUse">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SA_LOCAL_SELF_ASSIGNMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.repeatedAssignment">
+				<param targetID="severity" default="1" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.redundantAssignment">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SA_LOCAL_DOUBLE_ASSIGNMENT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.repeatedAssignment">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SF_SWITCH_FALLTHROUGH">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.nonTerminatedCaseClause">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SF_SWITCH_NO_DEFAULT">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingDefaultInSwitch">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.assignmentToNonFinalStatic">
+				<param targetID="severity" default="1" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="SE_TRANSIENT_FIELD_OF_NONSERIALIZABLE_CLASS">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.transientFieldInNonSerializable">
+				<param targetID="severity" default="0" />
+			</targetRule>
+		</sourceRule>
+		<sourceRule id="UCF_USELESS_CONTROL_FLOW">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyDoStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyEnhancedForStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyFinallyClause">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyForStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyIfStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptySwitchStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyTryStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyWhileStatement">
+				<param targetID="severity" default="2" />
+			</targetRule>
+		</sourceRule>
+	</program>
+	<program id="PMD">
+
+		<sourceRule id="EmptyCatchBlock">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyCatchClause">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="allowsCommentOnly"
+					sourceID="allowCommentedBlocks" default="false" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EmptyIfStmt">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyIfStatement">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EmptyWhileStmt">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyWhileStatement">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EmptyTryBlock">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyTryStatement">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EmptyFinallyBlock">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyFinallyClause">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EmptySwitchStatements">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyFinallyClause">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnnecessaryConversionTemporary">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.temporaryObjectCreation">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="OverrideBothEqualsAndHashcode">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.overridingEqualsAndHashCode">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="DoubleCheckedLocking">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.doubleCheckLocking">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ReturnFromFinallyBlock">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.returnInFinally">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EmptySynchronizedBlock">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptySynchronizedStatement">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnnecessaryReturn">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryReturn">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="EmptyStaticInitializer">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyInitializer">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="UnconditionalIfStatement">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.constantCondition">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.constantConditionalExpression">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="EmptyStatementNotInLoop">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyStatement">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UselessOverridingMethod">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryOverride">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnnecessaryFinalModifier">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryFinalMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="BooleanInstantiation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.preferredExpression">
+				<param targetID="checkBoolean" default="true" />
+				<param targetID="useValueOf" default="true" />
+				<param targetID="checkColor" default="false" />
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="ClassCastExceptionWithToArray">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.inconsistentConversionUsingToArray">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="MisplacedNullCheck">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryNullCheck">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="BrokenNullCheck">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.dereferencingNullPointer">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidThreadGroup">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.disallowThreadGroupUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="BigIntegerInstantiation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useAvailableConstants">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidUsingOctalValues">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidOctalLiterals">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="IfStmtsMustUseBraces">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingBlock">
+				<param targetID="requiredForIf" default="true" />
+				<param targetID="requiredForDo" default="false" />
+				<param targetID="requiredForWhile" default="false" />
+				<param targetID="requiredForFor" default="false" />
+				<param targetID="ignoreSingleStatementsOnSameLine"
+					default="false" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="WhileLoopsMustUseBraces">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingBlock">
+				<param targetID="requiredForIf" default="false" />
+				<param targetID="requiredForDo" default="true" />
+				<param targetID="requiredForWhile" default="true" />
+				<param targetID="requiredForFor" default="false" />
+				<param targetID="ignoreSingleStatementsOnSameLine"
+					default="false" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="IfElseStmtsMustUseBraces">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingBlock">
+				<param targetID="requiredForIf" default="true" />
+				<param targetID="requiredForDo" default="false" />
+				<param targetID="requiredForWhile" default="false" />
+				<param targetID="requiredForFor" default="false" />
+				<param targetID="ignoreSingleStatementsOnSameLine"
+					default="false" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ForLoopsMustUseBraces">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingBlock">
+				<param targetID="requiredForIf" default="false" />
+				<param targetID="requiredForDo" default="false" />
+				<param targetID="requiredForWhile" default="false" />
+				<param targetID="requiredForFor" default="true" />
+				<param targetID="ignoreSingleStatementsOnSameLine"
+					default="false" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ExcessiveMethodLength">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.sourceLength">
+				<param targetID="countEmptyLines" default="false" />
+				<param targetID="countLinesWithComments"
+					default="false" />
+				<param targetID="checkConstructorLength" default="true" />
+				<param targetID="maxConstructorLength"
+					sourceID="minimum" default="100" />
+				<param targetID="checkInitializerLength"
+					default="false" />
+				<param targetID="checkMethodLength" default="true" />
+				<param targetID="maxMethodLength" sourceID="minimum"
+					default="100" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ExcessiveParameterList">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.largeNumberOfParameters">
+				<param targetID="maxParameterCount" sourceID="minimum"
+					default="10severity" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ExcessiveClassLength">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.largeNumberOfMethods">
+				<param targetID="maxMethodCount" default="50" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="CyclomaticComplexity">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.cyclomaticComplexity">
+				<param targetID="maxComplexity" sourceID="reportLevel"
+					default="10" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="TooManyFields">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.largeNumberOfFields">
+				<param targetID="maxFieldCount" sourceID="maxfields"
+					default="15" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="TooManyMethods">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.largeNumberOfMethods">
+				<param targetID="maxMethodCount" sourceID="maxmethods"
+					default="10" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="UnnecessaryConstructor">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryDefaultConstructor">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="OnlyOneReturn">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.multipleReturns">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnusedModifier">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.obsoleteModifierUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AssignmentInOperand">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.assignmentInCondition">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="DontImportSun">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.restrictedPackages">
+				<param targetID="restrictedNames" default="sun.*" />
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnnecessaryParentheses">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryReturnStatementParentheses">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="DefaultPackage">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidPackageScopeAuditRule">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="AvoidUsingNativeCode">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.commandExecution">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.disallowNativeMethods">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="AvoidAccessibilityAlteration">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.reflectionMethodUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.usePrivilegedCodeSparingly">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="DoNotCallGarbageCollectionExplicitly">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.runtimeMethodUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="LooseCoupling">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.declareAsInterface">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="SimplifyBooleanExpressions">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.equalityTestWithBooleanLiteral">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="SimplifyBooleanReturns">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.codingStyle.returnBooleanExpressionValue">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="SwitchStmtsShouldHaveDefault">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingDefaultInSwitch">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidDeeplyNestedIfStmts">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.blockDepth">
+				<param targetID="maxBlockDepth" sourceID="problemDepth"
+					default="3" />
+				<param targetID="includeTryCatchFinallyClauses"
+					default="false" />
+				<param targetID="includeSynchronizedClauses"
+					default="false" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="AvoidReassigningParameters">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.questionableAssignment">
+				<param targetID="showForLoopVariables" default="false" />
+				<param targetID="showMethodParameters" default="true" />
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="ConstructorCallsOverridableMethod">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.constructorsOnlyInvokeFinalMethods">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="FinalFieldCouldBeStatic">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.nonBlankFinalInstanceField">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="NonStaticInitializer">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.avoidInstanceInitializers">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="CloseResource">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeConnectionWhereCreated">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="closeMustBeInFinally" default="false" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeResultSetWhereCreated">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="closeMustBeInFinally" default="false" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.closeStatementWhereCreated">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="closeMustBeInFinally" default="false" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="DefaultLabelNotLastInSwitchStmt">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.defaultNotLastInSwitch">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="NonCaseLabelInSwitchStatement">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.nonCaseLabelInSwitch">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="OptimizableToArrayCall">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.inefficientUseOfToArray">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="BadComparison">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.floatComparison">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EqualsNull">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useIdentityToCompareNull">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="InstantiationToGetClass">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidInstantiationToGetClass">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="IdempotentOperations">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.repeatedAssignment">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.redundantAssignment">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ImmutableField">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableShouldBeFinal">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UseLocaleWithCaseConversions">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.internationalization.useLocaleSpecificMethods">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AssignmentToNonFinalStatic">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.assignmentToNonFinalStatic">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="AvoidProtectedFieldInFinalClass">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.protectedInFinalClass">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="MissingStaticMethodInNonInstantiatableClass">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingStaticMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidSynchronizedAtMethodLevel">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.synchronizedMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="AvoidInstanceofChecksInCatchClause">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useOfInstanceOfInCatchBlock">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="MissingBreakInSwitch">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.nonTerminatedCaseClause">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="canEndWithBreak" default="true" />
+				<param targetID="canEndWithContinue" default="false" />
+				<param targetID="canEndWithReturn" default="false" />
+				<param targetID="canEndWithThrow" default="false" />
+				<param targetID="canEndWithComment" default="false" />
+				<param targetID="requiredForEmptyCases" default="true" />
+				<param targetID="requiredForLastCase" default="false" />
+				<param targetID="requiredForDefaultCase" default="true" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UseNotifyAllInsteadOfNotify">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.disallowNotifyUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="AbstractClassWithoutAbstractMethod">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.noAbstractMethods">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="CompareObjectsWithEquals">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useEquals">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="NonThreadSafeSingleton">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useThreadSafeLazyInitialization">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.doubleCheckLocking">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UncommentedEmptyMethod">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="ignoreComments" default="true" />
+				<param targetID="ignoreConstructors" default="true" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UncommentedEmptyConstructor">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="ignoreComments" default="true" />
+				<param targetID="ignoreConstructors" default="false" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidConstantsInterface">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.useInterfacesOnlyToDefineTypes">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="EmptyFinalizer">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.emptyFinalizeMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="FinalizeOverloaded">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.finalizeMethodDefinition">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="FinalizeDoesNotCallSuperFinalize">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.invokeInheritedMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="FinalizeShouldBeProtected">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.finalizeShouldNotBePublic">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.finalizeMethodDefinition">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidCallingFinalize">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.explicitInvocationOfFinalize">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="DuplicateImports">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.duplicateImport">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="DontImportJavaLang">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.importOfImplicitPackage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnusedImports">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unnecessaryImport">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ImportFromSamePackage">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.importOfImplicitPackage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="MDBAndSessionBeanNamingConvention">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.messagebean">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.sessionbean">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="DoNotCallSystemExit">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.noExplicitExit">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="StaticEJBFieldShouldBeFinal">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.staticFieldSecurity">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="DoNotUseThreads">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidManagingThreads">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="MissingSerialVersionUID">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.serializableUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="noInstanceFields" default="false" />
+				<param targetID="onlyTransient" default="false" />
+				<param targetID="invalidBaseClass" default="false" />
+				<param targetID="serialVersionUID" default="true" />
+				<param targetID="readObject" default="false" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="JUnitStaticSuite">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.jUnitChecks">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="checkSuite" default="true" />
+				<param targetID="checkSetUp" default="false" />
+				<param targetID="checkTearDown" default="false" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="JUnitSpelling">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.jUnitChecks">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="checkSuite" default="true" />
+				<param targetID="checkSetUp" default="true" />
+				<param targetID="checkTearDown" default="true" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="JUnitAssertionsShouldIncludeMessage">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingMessageInAssert">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="JUnitTestsShouldIncludeAssert">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.missingAssertInTestMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ProperLogger">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.nonStaticLogger">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="MoreThanOneLogger">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.moreThanOneLogger">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="LoggerIsNotStaticFinal">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.nonStaticLogger">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="SystemPrintln">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.debuggingCode">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidPrintStackTrace">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.debuggingCode">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ReplaceVectorWithList">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.replaceSynchronizedClasses">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UseArrayListInsteadOfVector">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.replaceSynchronizedClasses">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ReplaceHashtableWithMap">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.replaceSynchronizedClasses">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ReplaceEnumerationWithIterator">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.doNotImplementOutdatedInterfaces">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidEnumAsIdentifier">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidFutureKeywords">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidAssertAsIdentifier">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidFutureKeywords">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="IntegerInstantiation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.performance.useValueOf">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ByteInstantiation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.performance.useValueOf">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ShortInstantiation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.performance.useValueOf">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="LongInstantiation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.performance.useValueOf">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="JUnit4TestShouldUseBeforeAnnotation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useBeforeAnnotationRatherThanSetup">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="JUnit4TestShouldUseAfterAnnotation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useAfterAnnotationRatherThanTeardown">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+		
+		<sourceRule id="JUnit4TestShouldUseTestAnnotation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useTestAnnotationForJunitTest">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="JUnit4SuitesShouldUseSuiteAnnotation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useRunWithAnnotationRatherThanSuite">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="ShortVariable">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.questionableName">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="shortName" default="true" />
+				<param targetID="longName" default="false" />
+				<param targetID="shorNameLength" default="2" />
+				<param targetID="nameInList" default="false" />
+				<param targetID="acceptableNames" default="" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="LongVariable">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.questionableName">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="shortName" default="false" />
+				<param targetID="longName" default="true" />
+				<param targetID="longNameLength" sourceID="minimum"
+					default="17" />
+				<param targetID="nameInList" default="false" />
+				<param targetID="acceptableNames" default="blah" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="VariableNamingConventions">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.constantNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention" default=";1;29;t;1;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.localVariableNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention" default=";2;23;t;1;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.instanceFieldNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention" default=";2;23;t;1;"
+					transform="substituteParams('%memberPrefix%;2;23;t;1;%memberSuffix%')" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.staticFieldNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";31;31;t;31;"
+					transform="substituteParams('%staticPrefix%;31;31;t;31;%staticSuffix%')" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="MethodNamingConventions">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.methodNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention" default=";2;23;t;1;" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ClassNamingConventions">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.classNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention" default=";1;31;t;1;" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidDollarSigns">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.annotationTypeNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.classNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.constantNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.enumeratedTypeNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.enumerationConstantNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.exceptionParameterNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.instanceFieldNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.interfaceNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.labelNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.localVariableNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.methodNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.methodParameterNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.packageNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.staticFieldNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.typeParameterNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";15;15;t;15;" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="MethodWithSameNameAsEnclosingClass">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.methodNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";31;31;t;31;" />
+				<param targetID="notSameAsClassName" default="true" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="SuspiciousHashcodeMethodName">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.misspelledMethodName">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="SuspiciousEqualsMethodName">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.misspelledMethodName">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="NoPackage">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.disallowDefaultPackage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="PackageCase">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.packageNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";30;30;t;30;" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="MisleadingVariableName">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.localVariableNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="namingConvention"
+					default=";23;23;t;23;" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="BooleanGetMethodName">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.booleanMethodNamingConvention">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="LocalVariableCouldBeFinal">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableShouldBeFinal">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="MethodArgumentCouldBeFinal">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableShouldBeFinal">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidInstantiatingObjectsInLoops">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidInstantiationInLoops">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="SimplifyStartsWith">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useCharAtRatherThanStartsWith">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UseStringBufferForStringAppends">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.stringConcatenationInLoop">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidArrayLoops">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useArraycopyRatherThanALoop">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnnecessaryWrapperObjectCreation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.efficientExpression">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AddEmptyString">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.performance.doNotUseConcatenationToConvertToString">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidCatchingThrowable">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.caughtExceptions">
+				<param targetID="disallowedExceptions"
+					default="java.lang.Throwable" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="AvoidCatchingNPE">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.caughtExceptions">
+				<param targetID="disallowedExceptions"
+					default="java.lang.NullPointerException" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="SignatureDeclareThrowsException">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.declaredExceptions">
+				<param targetID="disallowedExceptions"
+					default="java.lang.Exception" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AvoidThrowingRawExceptionTypes">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.thrownExceptions">
+				<param targetID="disallowedExceptions"
+					default="java.lang.Exception;java.lang.RuntimeException;java.lang.Throwable;java.lang.Error" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="AvoidThrowingNullPointerException">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.thrownExceptions">
+				<param targetID="disallowedExceptions"
+					default="java.lang.NullPointerException" />
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="DoNotExtendJavaLangError">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.restrictedSuperclasses">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="DoNotThrowExceptionInFinally">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.throwInFinally">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="StringInstantiation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.stringCreatedFromLiteral">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="InefficientStringBuffering">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.concatenationInAppend">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="StringToString">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.unnecessaryToString">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="DoNotCallGarbageCollectionExplicitly">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.runtimeMethodUsage">
+				<param targetID="severity" sourceID="priority"
+					default="2" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="AppendCharacterWithChar">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.appendString">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UseStringBufferLength">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.useStringBufferLength">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="InsufficientStringBufferDeclaration">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.defineInitialCapacity">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="StringBufferInstantiationWithChar">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.avoidStringBufferInstantiationWithChar">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="MethodReturnsInternalArray">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.mutabilityOfArrays">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ArrayIsStoredDirectly">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.mutabilityOfArrays">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="ProperCloneImplementation">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.cloneMethodUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="CloneThrowsCloneNotSupportedException">
+			<targetRule
+				id="com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.overrideCloneJudiciously">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnusedLocalVariable">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="parameterNotUsed" default="false" />
+				<param targetID="parameterNotReferenced"
+					default="false" />
+				<param targetID="parameterShadows" default="false" />
+				<param targetID="variableNotUsed" default="true" />
+				<param targetID="variableNotReferenced" default="true" />
+				<param targetID="variableShadows" default="false" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnusedPrivateField">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unusedField">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnusedPrivateMethod">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.unusedMethod">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+
+		<sourceRule id="UnusedFormalParameter">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.variableUsage">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="parameterNotUsed" default="true" />
+				<param targetID="parameterNotReferenced" default="true" />
+				<param targetID="parameterShadows" default="false" />
+				<param targetID="variableNotUsed" default="false" />
+				<param targetID="variableNotReferenced" default="false" />
+				<param targetID="variableShadows" default="false" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="NoHtmlComments">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.disallowHTMLComments">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="UseEqualsToCompareStrings">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.stringComparison">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+			</targetRule>
+		</sourceRule>
+
+		<sourceRule id="ReturnEmptyArrayRatherThanNull">
+			<targetRule
+				id="com.instantiations.assist.eclipse.audit.returnValue">
+				<param targetID="severity" sourceID="priority"
+					default="1" transform="PMDPriority" />
+				<param targetID="allowArrays" default="false" />
+				<param targetID="allowEnumerations" default="true" />
+				<param targetID="allowIterators" default="true" />
+				<param targetID="allowObjects" default="true" />
+			</targetRule>
+		</sourceRule>
+
+
+	</program>
+</importerMappings>

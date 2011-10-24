@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.instantiations.assist.eclipse.analysis">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="com.instantiations.assist.eclipse.analysis" id="audit_rule_group" name="CodePro Audit Rule Group"/>
+      </appInfo>
+      <documentation>
+         &lt;p&gt;
+The CodePro audit rule group extension point allows new audit rule groups to be added to the list of groups that can be associated with audit rules.
+&lt;/p&gt;
+&lt;p&gt;
+Each group must have a unique identifier. Audit rules are added to a group by specifying this id as the value of the &lt;code&gt;group&lt;/code&gt; attribute of the &lt;code&gt;auditRule&lt;/code&gt; tag.
+&lt;/p&gt;
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="auditRuleGroup" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="auditRuleGroup">
+      <annotation>
+         <documentation>
+            The &lt;code&gt;auditRuleGroup&lt;/code&gt; tag defines a single audit rule group.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The identifier used to associate audit rules with this group. The identifiers must be unique across all groups.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The localized name of the group. This is the name that will be presented to the user within the user interface.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The localized description of the group. This is the description that will be presented to the user within the user interface.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="parent" type="string">
+            <annotation>
+               <documentation>
+                  The id of the parent of the group. If the parrent is not specified then the group is a top-level group.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         &lt;p&gt;
+The following is an example of the extension point usage:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;pre&gt;
+&lt;extension point=&quot;com.instantiations.assist.eclipse.audit_rule_group&quot;&gt;
+   &lt;auditRuleGroup
+         id=&quot;com.xyz.audit.myAuditRuleGroup&quot;
+         name=&quot;%myAuditRuleGroup.name&quot;
+         description=&quot;%myAuditRuleGroup.description&quot;/&gt;
+&lt;/extension&gt;
+&lt;/pre&gt;
+&lt;/p&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright &amp;copy; 2003-2010 Google, Inc.
+All Rights Reserved
+      </documentation>
+   </annotation>
+
+</schema>

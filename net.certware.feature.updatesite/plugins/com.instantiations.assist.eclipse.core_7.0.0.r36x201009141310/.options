@@ -1,0 +1,5 @@
+com.instantiations.assist.eclipse.core/debug = false
+com.instantiations.assist.eclipse.core/debug/startup.log = false
+com.instantiations.assist.eclipse.core/debug/startup.debug = false
+com.instantiations.assist.eclipse.core/debug/scheduler = false
+com.instantiations.assist.eclipse.core/debug/preferencesutilities = false

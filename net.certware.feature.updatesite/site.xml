@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="CertWare" url="http://certware-update.s3.amazonaws.com">
+      CertWare safety case workbench.
+   </description>
+   <feature url="features/net.certware.feature_1.2.1.201105122130.jar" id="net.certware.feature" version="1.2.1.201105122130">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.aml_1.2.0.201106031439.jar" id="net.certware.feature.aml" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.arm_1.2.0.201106031439.jar" id="net.certware.feature.arm" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.bayes_1.2.0.201106031439.jar" id="net.certware.feature.bayes" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.cae_1.2.0.201106031439.jar" id="net.certware.feature.cae" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.check_1.2.0.201106031439.jar" id="net.certware.feature.check" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.eur_1.2.0.201106031439.jar" id="net.certware.feature.eur" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.gsn_1.2.0.201106031439.jar" id="net.certware.feature.gsn" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.measure_1.2.0.201106031439.jar" id="net.certware.feature.measure" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.planning_1.2.0.201106031439.jar" id="net.certware.feature.planning" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.saem_1.2.0.201106031439.jar" id="net.certware.feature.saem" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <feature url="features/net.certware.feature.sfp_1.2.0.201106031439.jar" id="net.certware.feature.sfp" version="1.2.0.201106031439">
+      <category name="certware_update"/>
+   </feature>
+   <category-def name="certware_update" label="CertWare">
+      <description>
+         CertWare safety case workbench feature.
+      </description>
+   </category-def>
+</site>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright © 2000-2005 SRI International."
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="AML metamodel copyright © 2000-2005 SRI International.&#xA;Implementation into plugin copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.   &#xA;"
     modelDirectory="/net.certware.argument.aml/src" modelPluginID="net.certware.argument.aml"
     modelName="aml" editPluginClass="net.certware.argument.aml.provider.AmlEditPlugin"
     editorPluginClass="net.certware.argument.aml.presentation.AmlEditorPlugin" nonNLSMarkers="true"

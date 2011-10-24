@@ -2,6 +2,13 @@ h1{color:blue}. CertWare Version History
 
 !certware-32.gif!
 
+h3. Version 1.2.3
+
+_Update_:
+* Updated copyright language per NASA legal direction.
+_Commit_:
+* Committed with @1.2.3@ tag in reference branch @M8@.
+
 h3. Version 1.2.2
 
 _Bugs Fixed_:

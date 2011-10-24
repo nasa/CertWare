@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<ruleset name="36" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+  <description>
+This ruleset contains links to rules that are new in PMD v3.6
+  </description>
+
+  <rule ref="rulesets/strings.xml/InefficientEmptyStringCheck"/>
+  <rule ref="rulesets/design.xml/UnsynchronizedStaticDateFormatter"/>
+  <rule ref="rulesets/strings.xml/InsufficientStringBufferDeclaration"/>
+  <rule ref="rulesets/junit.xml/SimplifyBooleanAssertion"/>
+  <rule ref="rulesets/basic.xml/AvoidThreadGroup"/>
+  <rule ref="rulesets/basic-jsf.xml/DontNestJsfInJstlIteration"/>
+  <rule ref="rulesets/basic-jsp.xml/NoLongScripts"/>
+  <rule ref="rulesets/basic-jsp.xml/NoScriptlets"/>
+  <rule ref="rulesets/basic-jsp.xml/NoInlineStyleInformation"/>
+  <rule ref="rulesets/basic-jsp.xml/NoJspForward"/>
+  <rule ref="rulesets/basic-jsp.xml/NoClassAttribute"/>
+  <rule ref="rulesets/basic-jsp.xml/IframeMissingSrcAttribute"/>
+  <rule ref="rulesets/basic-jsp.xml/NoHtmlComments"/>
+</ruleset>
+
+
+
