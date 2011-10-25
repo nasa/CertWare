@@ -1,7 +1,7 @@
 /**
- * CertWare Project.
- * Copyright (c) 2011 National Aeronautics and Space Administration.  All rights reserved..
+ * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved. 
  */
+
 package net.certware.measurement.spm.view;
 
 import net.certware.core.ICertWareConstants;
