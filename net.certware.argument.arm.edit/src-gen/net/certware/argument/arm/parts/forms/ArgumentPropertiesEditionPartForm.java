@@ -1,19 +1,12 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.parts.forms;
 
 // Start of user code for imports
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import net.certware.argument.arm.Argument;
-import net.certware.argument.arm.ArgumentElement;
-import net.certware.argument.arm.ArgumentLink;
-import net.certware.argument.arm.ArmFactory;
-import net.certware.argument.arm.ArmPackage;
-import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.arm.parts.ArgumentPropertiesEditionPart;
 import net.certware.argument.arm.parts.ArmViewsRepository;
 import net.certware.argument.arm.providers.ArmMessages;
@@ -23,28 +16,29 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.policies.EReferencePropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -55,7 +49,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author
+ * 
  * 
  */
 public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ArgumentPropertiesEditionPart {
@@ -63,22 +57,18 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	protected Text identifier;
 	protected Text description;
 	protected Text content;
-	protected EMFListEditUtil isTaggedEditUtil;
-		protected ReferencesTable<? extends EObject> isTagged;
-		protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil containsArgumentElementEditUtil;
-		protected ReferencesTable<? extends EObject> containsArgumentElement;
-		protected List<ViewerFilter> containsArgumentElementBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> containsArgumentElementFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil containsArgumentLinkEditUtil;
-		protected ReferencesTable<? extends EObject> containsArgumentLink;
-		protected List<ViewerFilter> containsArgumentLinkBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> containsArgumentLinkFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil containsArgumentEditUtil;
-		protected ReferencesTable<? extends EObject> containsArgument;
-		protected List<ViewerFilter> containsArgumentBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> containsArgumentFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable isTagged;
+	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable containsArgumentElement;
+	protected List<ViewerFilter> containsArgumentElementBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> containsArgumentElementFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable containsArgumentLink;
+	protected List<ViewerFilter> containsArgumentLinkBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> containsArgumentLinkFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable containsArgument;
+	protected List<ViewerFilter> containsArgumentBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> containsArgumentFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -117,17 +107,55 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
+		CompositionSequence argumentStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = argumentStep.addStep(ArmViewsRepository.Argument.Properties.class);
+		propertiesStep.addStep(ArmViewsRepository.Argument.Properties.identifier);
+		propertiesStep.addStep(ArmViewsRepository.Argument.Properties.description);
+		propertiesStep.addStep(ArmViewsRepository.Argument.Properties.content);
+		propertiesStep.addStep(ArmViewsRepository.Argument.Properties.isTagged);
+		propertiesStep.addStep(ArmViewsRepository.Argument.Properties.containsArgumentElement);
+		propertiesStep.addStep(ArmViewsRepository.Argument.Properties.containsArgumentLink);
+		propertiesStep.addStep(ArmViewsRepository.Argument.Properties.containsArgument);
+		
+		
+		composer = new PartComposer(argumentStep) {
 
-		// Start of user code for additional ui definition
-
-// End of user code
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == ArmViewsRepository.Argument.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == ArmViewsRepository.Argument.Properties.identifier) {
+					return 		createIdentifierText(widgetFactory, parent);
+				}
+				if (key == ArmViewsRepository.Argument.Properties.description) {
+					return 		createDescriptionText(widgetFactory, parent);
+				}
+				if (key == ArmViewsRepository.Argument.Properties.content) {
+					return 		createContentText(widgetFactory, parent);
+				}
+				if (key == ArmViewsRepository.Argument.Properties.isTagged) {
+					return createIsTaggedTableComposition(widgetFactory, parent);
+				}
+				if (key == ArmViewsRepository.Argument.Properties.containsArgumentElement) {
+					return createContainsArgumentElementTableComposition(widgetFactory, parent);
+				}
+				if (key == ArmViewsRepository.Argument.Properties.containsArgumentLink) {
+					return createContainsArgumentLinkTableComposition(widgetFactory, parent);
+				}
+				if (key == ArmViewsRepository.Argument.Properties.containsArgument) {
+					return createContainsArgumentTableComposition(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(ArmMessages.ArgumentPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -136,19 +164,13 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createIdentifierText(widgetFactory, propertiesGroup);
-		createDescriptionText(widgetFactory, propertiesGroup);
-		createContentTextarea(widgetFactory, propertiesGroup);
-		createIsTaggedTableComposition(widgetFactory, propertiesGroup);
-		createContainsArgumentElementTableComposition(widgetFactory, propertiesGroup);
-		createContainsArgumentLinkTableComposition(widgetFactory, propertiesGroup);
-		createContainsArgumentTableComposition(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createIdentifierText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ArmMessages.ArgumentPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.Argument.identifier, ArmViewsRepository.FORM_KIND));
+	protected Composite createIdentifierText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ArmMessages.ArgumentPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.Argument.Properties.identifier, ArmViewsRepository.FORM_KIND));
 		identifier = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		identifier.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -163,7 +185,7 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 			}
 		});
 		identifier.addKeyListener(new KeyAdapter() {
@@ -176,18 +198,19 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(identifier, ArmViewsRepository.Argument.identifier);
+		EditingUtils.setID(identifier, ArmViewsRepository.Argument.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.identifier, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.Properties.identifier, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createDescriptionText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ArmMessages.ArgumentPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.Argument.description, ArmViewsRepository.FORM_KIND));
+	protected Composite createDescriptionText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ArmMessages.ArgumentPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.Argument.Properties.description, ArmViewsRepository.FORM_KIND));
 		description = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		description.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -202,7 +225,7 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 			}
 		});
 		description.addKeyListener(new KeyAdapter() {
@@ -215,386 +238,246 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(description, ArmViewsRepository.Argument.description);
+		EditingUtils.setID(description, ArmViewsRepository.Argument.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.description, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.Properties.description, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createContentTextarea(FormToolkit widgetFactory, Composite parent) {
-		Label contentLabel = FormUtils.createPartLabel(widgetFactory, parent, ArmMessages.ArgumentPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.Argument.content, ArmViewsRepository.FORM_KIND));
-		GridData contentLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		contentLabelData.horizontalSpan = 3;
-		contentLabel.setLayoutData(contentLabelData);
-		content = widgetFactory.createText(parent, "", SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL); //$NON-NLS-1$
+	protected Composite createContentText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ArmMessages.ArgumentPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(ArmViewsRepository.Argument.Properties.content, ArmViewsRepository.FORM_KIND));
+		content = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		content.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
-		contentData.horizontalSpan = 2;
-		contentData.heightHint = 80;
-		contentData.widthHint = 200;
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
-
 			/**
-			 * {@inheritDoc}
-			 * 
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 * 
 			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
 			}
-
 		});
-		EditingUtils.setID(content, ArmViewsRepository.Argument.content);
-		EditingUtils.setEEFtype(content, "eef::Textarea"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.content, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		content.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(content, ArmViewsRepository.Argument.Properties.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.Properties.content, ArmViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createIsTaggedTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.isTagged = new ReferencesTable<TaggedValue>(ArmMessages.ArgumentPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener<TaggedValue>() {			
-			public void handleAdd() { addToIsTagged();}
-			public void handleEdit(TaggedValue element) { editIsTagged(element); }
-			public void handleMove(TaggedValue element, int oldIndex, int newIndex) { moveIsTagged(element, oldIndex, newIndex); }
-			public void handleRemove(TaggedValue element) { removeFromIsTagged(element); }
-			public void navigateTo(TaggedValue element) { }
+	protected Composite createIsTaggedTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.isTagged = new ReferencesTable(ArmMessages.ArgumentPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				isTagged.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				isTagged.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				isTagged.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				isTagged.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.isTagged.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.isTagged, ArmViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.isTaggedFilters) {
+			this.isTagged.addFilter(filter);
+		}
+		this.isTagged.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.Properties.isTagged, ArmViewsRepository.FORM_KIND));
 		this.isTagged.createControls(parent, widgetFactory);
+		this.isTagged.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData isTaggedData = new GridData(GridData.FILL_HORIZONTAL);
 		isTaggedData.horizontalSpan = 3;
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
-		isTagged.setID(ArmViewsRepository.Argument.isTagged);
+		isTagged.setID(ArmViewsRepository.Argument.Properties.isTagged);
 		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveIsTagged(TaggedValue element, int oldIndex, int newIndex) {
-		EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-		isTaggedEditUtil.moveElement(element, oldIndex, newIndex);
-		isTagged.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToIsTagged() {
-		// Start of user code addToIsTagged() method body
-				TaggedValue eObject = ArmFactory.eINSTANCE.createTaggedValue();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						isTaggedEditUtil.addElement(propertiesEditionObject);
-						isTagged.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromIsTagged(TaggedValue element) {
-		// Start of user code for the removeFromIsTagged() method body
-				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-				isTaggedEditUtil.removeElement(element);
-				isTagged.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editIsTagged(TaggedValue element) {
-		// Start of user code editIsTagged() method body
-				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						isTaggedEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						isTagged.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createContainsArgumentElementTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.containsArgumentElement = new ReferencesTable<ArgumentElement>(ArmMessages.ArgumentPropertiesEditionPart_ContainsArgumentElementLabel, new ReferencesTableListener<ArgumentElement>() {			
-			public void handleAdd() { addToContainsArgumentElement();}
-			public void handleEdit(ArgumentElement element) { editContainsArgumentElement(element); }
-			public void handleMove(ArgumentElement element, int oldIndex, int newIndex) { moveContainsArgumentElement(element, oldIndex, newIndex); }
-			public void handleRemove(ArgumentElement element) { removeFromContainsArgumentElement(element); }
-			public void navigateTo(ArgumentElement element) { }
+	protected Composite createContainsArgumentElementTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.containsArgumentElement = new ReferencesTable(ArmMessages.ArgumentPropertiesEditionPart_ContainsArgumentElementLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentElement, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				containsArgumentElement.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentElement, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				containsArgumentElement.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentElement, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				containsArgumentElement.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentElement, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				containsArgumentElement.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.containsArgumentElement.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.containsArgumentElement, ArmViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.containsArgumentElementFilters) {
+			this.containsArgumentElement.addFilter(filter);
+		}
+		this.containsArgumentElement.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.Properties.containsArgumentElement, ArmViewsRepository.FORM_KIND));
 		this.containsArgumentElement.createControls(parent, widgetFactory);
+		this.containsArgumentElement.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentElement, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData containsArgumentElementData = new GridData(GridData.FILL_HORIZONTAL);
 		containsArgumentElementData.horizontalSpan = 3;
 		this.containsArgumentElement.setLayoutData(containsArgumentElementData);
 		this.containsArgumentElement.setLowerBound(0);
 		this.containsArgumentElement.setUpperBound(-1);
-		containsArgumentElement.setID(ArmViewsRepository.Argument.containsArgumentElement);
+		containsArgumentElement.setID(ArmViewsRepository.Argument.Properties.containsArgumentElement);
 		containsArgumentElement.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveContainsArgumentElement(ArgumentElement element, int oldIndex, int newIndex) {
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToContainsArgumentElement() {
-		// Start of user code addToContainsArgumentElement() method body
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(current);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(current);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EReferencePropertiesEditionContext(propertiesEditionComponent, ArmPackage.eINSTANCE.getArgument_ContainsArgumentElement(), resourceSet));
-					if (propertiesEditionObject != null) {
-						containsArgumentElementEditUtil.addElement(propertiesEditionObject);
-						containsArgumentElement.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgumentElement, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromContainsArgumentElement(ArgumentElement element) {
-		// Start of user code for the removeFromContainsArgumentElement() method body
-				EObject editedElement = containsArgumentElementEditUtil.foundCorrespondingEObject(element);
-				containsArgumentElementEditUtil.removeElement(element);
-				containsArgumentElement.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgumentElement, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editContainsArgumentElement(ArgumentElement element) {
-		// Start of user code editContainsArgumentElement() method body
-				EObject editedElement = containsArgumentElementEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						containsArgumentElementEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						containsArgumentElement.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgumentElement, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createContainsArgumentLinkTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.containsArgumentLink = new ReferencesTable<ArgumentLink>(ArmMessages.ArgumentPropertiesEditionPart_ContainsArgumentLinkLabel, new ReferencesTableListener<ArgumentLink>() {			
-			public void handleAdd() { addToContainsArgumentLink();}
-			public void handleEdit(ArgumentLink element) { editContainsArgumentLink(element); }
-			public void handleMove(ArgumentLink element, int oldIndex, int newIndex) { moveContainsArgumentLink(element, oldIndex, newIndex); }
-			public void handleRemove(ArgumentLink element) { removeFromContainsArgumentLink(element); }
-			public void navigateTo(ArgumentLink element) { }
+	protected Composite createContainsArgumentLinkTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.containsArgumentLink = new ReferencesTable(ArmMessages.ArgumentPropertiesEditionPart_ContainsArgumentLinkLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentLink, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				containsArgumentLink.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentLink, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				containsArgumentLink.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentLink, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				containsArgumentLink.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentLink, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				containsArgumentLink.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.containsArgumentLink.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.containsArgumentLink, ArmViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.containsArgumentLinkFilters) {
+			this.containsArgumentLink.addFilter(filter);
+		}
+		this.containsArgumentLink.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.Properties.containsArgumentLink, ArmViewsRepository.FORM_KIND));
 		this.containsArgumentLink.createControls(parent, widgetFactory);
+		this.containsArgumentLink.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgumentLink, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData containsArgumentLinkData = new GridData(GridData.FILL_HORIZONTAL);
 		containsArgumentLinkData.horizontalSpan = 3;
 		this.containsArgumentLink.setLayoutData(containsArgumentLinkData);
 		this.containsArgumentLink.setLowerBound(0);
 		this.containsArgumentLink.setUpperBound(-1);
-		containsArgumentLink.setID(ArmViewsRepository.Argument.containsArgumentLink);
+		containsArgumentLink.setID(ArmViewsRepository.Argument.Properties.containsArgumentLink);
 		containsArgumentLink.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveContainsArgumentLink(ArgumentLink element, int oldIndex, int newIndex) {
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToContainsArgumentLink() {
-		// Start of user code addToContainsArgumentLink() method body
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(current);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(current);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EReferencePropertiesEditionContext(propertiesEditionComponent, ArmPackage.eINSTANCE.getArgument_ContainsArgumentLink(), resourceSet));
-					if (propertiesEditionObject != null) {
-						containsArgumentLinkEditUtil.addElement(propertiesEditionObject);
-						containsArgumentLink.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgumentLink, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromContainsArgumentLink(ArgumentLink element) {
-		// Start of user code for the removeFromContainsArgumentLink() method body
-				EObject editedElement = containsArgumentLinkEditUtil.foundCorrespondingEObject(element);
-				containsArgumentLinkEditUtil.removeElement(element);
-				containsArgumentLink.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgumentLink, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editContainsArgumentLink(ArgumentLink element) {
-		// Start of user code editContainsArgumentLink() method body
-				EObject editedElement = containsArgumentLinkEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						containsArgumentLinkEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						containsArgumentLink.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgumentLink, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createContainsArgumentTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.containsArgument = new ReferencesTable<Argument>(ArmMessages.ArgumentPropertiesEditionPart_ContainsArgumentLabel, new ReferencesTableListener<Argument>() {			
-			public void handleAdd() { addToContainsArgument();}
-			public void handleEdit(Argument element) { editContainsArgument(element); }
-			public void handleMove(Argument element, int oldIndex, int newIndex) { moveContainsArgument(element, oldIndex, newIndex); }
-			public void handleRemove(Argument element) { removeFromContainsArgument(element); }
-			public void navigateTo(Argument element) { }
+	protected Composite createContainsArgumentTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.containsArgument = new ReferencesTable(ArmMessages.ArgumentPropertiesEditionPart_ContainsArgumentLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				containsArgument.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				containsArgument.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				containsArgument.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				containsArgument.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.containsArgument.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.containsArgument, ArmViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.containsArgumentFilters) {
+			this.containsArgument.addFilter(filter);
+		}
+		this.containsArgument.setHelpText(propertiesEditionComponent.getHelpContent(ArmViewsRepository.Argument.Properties.containsArgument, ArmViewsRepository.FORM_KIND));
 		this.containsArgument.createControls(parent, widgetFactory);
+		this.containsArgument.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.Properties.containsArgument, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData containsArgumentData = new GridData(GridData.FILL_HORIZONTAL);
 		containsArgumentData.horizontalSpan = 3;
 		this.containsArgument.setLayoutData(containsArgumentData);
 		this.containsArgument.setLowerBound(0);
 		this.containsArgument.setUpperBound(-1);
-		containsArgument.setID(ArmViewsRepository.Argument.containsArgument);
+		containsArgument.setID(ArmViewsRepository.Argument.Properties.containsArgument);
 		containsArgument.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveContainsArgument(Argument element, int oldIndex, int newIndex) {
-		EObject editedElement = containsArgumentEditUtil.foundCorrespondingEObject(element);
-		containsArgumentEditUtil.moveElement(element, oldIndex, newIndex);
-		containsArgument.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToContainsArgument() {
-		// Start of user code addToContainsArgument() method body
-				Argument eObject = ArmFactory.eINSTANCE.createArgument();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						containsArgumentEditUtil.addElement(propertiesEditionObject);
-						containsArgument.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromContainsArgument(Argument element) {
-		// Start of user code for the removeFromContainsArgument() method body
-				EObject editedElement = containsArgumentEditUtil.foundCorrespondingEObject(element);
-				containsArgumentEditUtil.removeElement(element);
-				containsArgument.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editContainsArgument(Argument element) {
-		// Start of user code editContainsArgument() method body
-				EObject editedElement = containsArgumentEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						containsArgumentEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						containsArgument.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, ArmViewsRepository.Argument.containsArgument, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 
@@ -681,88 +564,35 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		if (newValue != null) {
 			content.setText(newValue);
 		} else {
-			content.setText("");  //$NON-NLS-1$
+			content.setText(""); //$NON-NLS-1$
 		}
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getIsTaggedToAdd()
-	 * 
-	 */
-	public List getIsTaggedToAdd() {
-		return isTaggedEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getIsTaggedToRemove()
-	 * 
-	 */
-	public List getIsTaggedToRemove() {
-		return isTaggedEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getIsTaggedToEdit()
-	 * 
-	 */
-	public Map getIsTaggedToEdit() {
-		return isTaggedEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getIsTaggedToMove()
-	 * 
-	 */
-	public List getIsTaggedToMove() {
-		return isTaggedEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getIsTaggedTable()
-	 * 
-	 */
-	public List getIsTaggedTable() {
-		return isTaggedEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#initIsTagged(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature) {
+	public void initIsTagged(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			isTaggedEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			isTaggedEditUtil = new EMFListEditUtil(current, feature);
-		this.isTagged.setInput(isTaggedEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		isTagged.setContentProvider(contentProvider);
+		isTagged.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateIsTagged(EObject newValue)
+	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateIsTagged()
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue) {
-		if(isTaggedEditUtil != null){
-			isTaggedEditUtil.reinit(newValue);
-			isTagged.refresh();
-		}
-	}
+	public void updateIsTagged() {
+	isTagged.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -772,6 +602,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToIsTagged(ViewerFilter filter) {
 		isTaggedFilters.add(filter);
+		if (this.isTagged != null) {
+			this.isTagged.addFilter(filter);
+		}
 	}
 
 	/**
@@ -791,87 +624,34 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInIsTaggedTable(EObject element) {
-		return isTaggedEditUtil.contains(element);
+		return ((ReferencesTableSettings)isTagged.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentElementToAdd()
-	 * 
-	 */
-	public List getContainsArgumentElementToAdd() {
-		return containsArgumentElementEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentElementToRemove()
-	 * 
-	 */
-	public List getContainsArgumentElementToRemove() {
-		return containsArgumentElementEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentElementToEdit()
-	 * 
-	 */
-	public Map getContainsArgumentElementToEdit() {
-		return containsArgumentElementEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentElementToMove()
-	 * 
-	 */
-	public List getContainsArgumentElementToMove() {
-		return containsArgumentElementEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentElementTable()
-	 * 
-	 */
-	public List getContainsArgumentElementTable() {
-		return containsArgumentElementEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#initContainsArgumentElement(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initContainsArgumentElement(EObject current, EReference containingFeature, EReference feature) {
+	public void initContainsArgumentElement(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			containsArgumentElementEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			containsArgumentElementEditUtil = new EMFListEditUtil(current, feature);
-		this.containsArgumentElement.setInput(containsArgumentElementEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		containsArgumentElement.setContentProvider(contentProvider);
+		containsArgumentElement.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateContainsArgumentElement(EObject newValue)
+	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateContainsArgumentElement()
 	 * 
 	 */
-	public void updateContainsArgumentElement(EObject newValue) {
-		if(containsArgumentElementEditUtil != null){
-			containsArgumentElementEditUtil.reinit(newValue);
-			containsArgumentElement.refresh();
-		}
-	}
+	public void updateContainsArgumentElement() {
+	containsArgumentElement.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -881,6 +661,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToContainsArgumentElement(ViewerFilter filter) {
 		containsArgumentElementFilters.add(filter);
+		if (this.containsArgumentElement != null) {
+			this.containsArgumentElement.addFilter(filter);
+		}
 	}
 
 	/**
@@ -900,87 +683,34 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInContainsArgumentElementTable(EObject element) {
-		return containsArgumentElementEditUtil.contains(element);
+		return ((ReferencesTableSettings)containsArgumentElement.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentLinkToAdd()
-	 * 
-	 */
-	public List getContainsArgumentLinkToAdd() {
-		return containsArgumentLinkEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentLinkToRemove()
-	 * 
-	 */
-	public List getContainsArgumentLinkToRemove() {
-		return containsArgumentLinkEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentLinkToEdit()
-	 * 
-	 */
-	public Map getContainsArgumentLinkToEdit() {
-		return containsArgumentLinkEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentLinkToMove()
-	 * 
-	 */
-	public List getContainsArgumentLinkToMove() {
-		return containsArgumentLinkEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentLinkTable()
-	 * 
-	 */
-	public List getContainsArgumentLinkTable() {
-		return containsArgumentLinkEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#initContainsArgumentLink(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initContainsArgumentLink(EObject current, EReference containingFeature, EReference feature) {
+	public void initContainsArgumentLink(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			containsArgumentLinkEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			containsArgumentLinkEditUtil = new EMFListEditUtil(current, feature);
-		this.containsArgumentLink.setInput(containsArgumentLinkEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		containsArgumentLink.setContentProvider(contentProvider);
+		containsArgumentLink.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateContainsArgumentLink(EObject newValue)
+	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateContainsArgumentLink()
 	 * 
 	 */
-	public void updateContainsArgumentLink(EObject newValue) {
-		if(containsArgumentLinkEditUtil != null){
-			containsArgumentLinkEditUtil.reinit(newValue);
-			containsArgumentLink.refresh();
-		}
-	}
+	public void updateContainsArgumentLink() {
+	containsArgumentLink.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -990,6 +720,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToContainsArgumentLink(ViewerFilter filter) {
 		containsArgumentLinkFilters.add(filter);
+		if (this.containsArgumentLink != null) {
+			this.containsArgumentLink.addFilter(filter);
+		}
 	}
 
 	/**
@@ -1009,87 +742,34 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInContainsArgumentLinkTable(EObject element) {
-		return containsArgumentLinkEditUtil.contains(element);
+		return ((ReferencesTableSettings)containsArgumentLink.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentToAdd()
-	 * 
-	 */
-	public List getContainsArgumentToAdd() {
-		return containsArgumentEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentToRemove()
-	 * 
-	 */
-	public List getContainsArgumentToRemove() {
-		return containsArgumentEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentToEdit()
-	 * 
-	 */
-	public Map getContainsArgumentToEdit() {
-		return containsArgumentEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentToMove()
-	 * 
-	 */
-	public List getContainsArgumentToMove() {
-		return containsArgumentEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#getContainsArgumentTable()
-	 * 
-	 */
-	public List getContainsArgumentTable() {
-		return containsArgumentEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#initContainsArgument(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initContainsArgument(EObject current, EReference containingFeature, EReference feature) {
+	public void initContainsArgument(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			containsArgumentEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			containsArgumentEditUtil = new EMFListEditUtil(current, feature);
-		this.containsArgument.setInput(containsArgumentEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		containsArgument.setContentProvider(contentProvider);
+		containsArgument.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateContainsArgument(EObject newValue)
+	 * @see net.certware.argument.arm.parts.ArgumentPropertiesEditionPart#updateContainsArgument()
 	 * 
 	 */
-	public void updateContainsArgument(EObject newValue) {
-		if(containsArgumentEditUtil != null){
-			containsArgumentEditUtil.reinit(newValue);
-			containsArgument.refresh();
-		}
-	}
+	public void updateContainsArgument() {
+	containsArgument.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -1099,6 +779,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToContainsArgument(ViewerFilter filter) {
 		containsArgumentFilters.add(filter);
+		if (this.containsArgument != null) {
+			this.containsArgument.addFilter(filter);
+		}
 	}
 
 	/**
@@ -1118,7 +801,7 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInContainsArgumentTable(EObject element) {
-		return containsArgumentEditUtil.contains(element);
+		return ((ReferencesTableSettings)containsArgument.getInput()).contains(element);
 	}
 
 

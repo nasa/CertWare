@@ -1,14 +1,11 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -16,7 +13,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author
+ * 
  * 
  */
 public interface ArgumentPropertiesEditionPart {
@@ -63,35 +60,7 @@ public interface ArgumentPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -99,14 +68,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -135,35 +104,7 @@ public interface ArgumentPropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the containsArgumentElement to add
-	 * 
-	 */
-	public List getContainsArgumentElementToAdd();
 
-	/**
-	 * @return the containsArgumentElement to remove
-	 * 
-	 */
-	public List getContainsArgumentElementToRemove();
-
-	/**
-	 * @return the containsArgumentElement to move
-	 * 
-	 */
-	public List getContainsArgumentElementToMove();
-
-	/**
-	 * @return the containsArgumentElement to edit
-	 * 
-	 */
-	public Map getContainsArgumentElementToEdit();
-
-	/**
-	 * @return the current containsArgumentElement table
-	 * 
-	 */
-	public List getContainsArgumentElementTable();
 
 	/**
 	 * Init the containsArgumentElement
@@ -171,14 +112,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContainsArgumentElement(EObject current, EReference containingFeature, EReference feature);
+	public void initContainsArgumentElement(ReferencesTableSettings settings);
 
 	/**
 	 * Update the containsArgumentElement
 	 * @param newValue the containsArgumentElement to update
 	 * 
 	 */
-	public void updateContainsArgumentElement(EObject newValue);
+	public void updateContainsArgumentElement();
 
 	/**
 	 * Adds the given filter to the containsArgumentElement edition editor.
@@ -207,35 +148,7 @@ public interface ArgumentPropertiesEditionPart {
 	public boolean isContainedInContainsArgumentElementTable(EObject element);
 
 
-	/**
-	 * @return the containsArgumentLink to add
-	 * 
-	 */
-	public List getContainsArgumentLinkToAdd();
 
-	/**
-	 * @return the containsArgumentLink to remove
-	 * 
-	 */
-	public List getContainsArgumentLinkToRemove();
-
-	/**
-	 * @return the containsArgumentLink to move
-	 * 
-	 */
-	public List getContainsArgumentLinkToMove();
-
-	/**
-	 * @return the containsArgumentLink to edit
-	 * 
-	 */
-	public Map getContainsArgumentLinkToEdit();
-
-	/**
-	 * @return the current containsArgumentLink table
-	 * 
-	 */
-	public List getContainsArgumentLinkTable();
 
 	/**
 	 * Init the containsArgumentLink
@@ -243,14 +156,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContainsArgumentLink(EObject current, EReference containingFeature, EReference feature);
+	public void initContainsArgumentLink(ReferencesTableSettings settings);
 
 	/**
 	 * Update the containsArgumentLink
 	 * @param newValue the containsArgumentLink to update
 	 * 
 	 */
-	public void updateContainsArgumentLink(EObject newValue);
+	public void updateContainsArgumentLink();
 
 	/**
 	 * Adds the given filter to the containsArgumentLink edition editor.
@@ -279,35 +192,7 @@ public interface ArgumentPropertiesEditionPart {
 	public boolean isContainedInContainsArgumentLinkTable(EObject element);
 
 
-	/**
-	 * @return the containsArgument to add
-	 * 
-	 */
-	public List getContainsArgumentToAdd();
 
-	/**
-	 * @return the containsArgument to remove
-	 * 
-	 */
-	public List getContainsArgumentToRemove();
-
-	/**
-	 * @return the containsArgument to move
-	 * 
-	 */
-	public List getContainsArgumentToMove();
-
-	/**
-	 * @return the containsArgument to edit
-	 * 
-	 */
-	public Map getContainsArgumentToEdit();
-
-	/**
-	 * @return the current containsArgument table
-	 * 
-	 */
-	public List getContainsArgumentTable();
 
 	/**
 	 * Init the containsArgument
@@ -315,14 +200,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContainsArgument(EObject current, EReference containingFeature, EReference feature);
+	public void initContainsArgument(ReferencesTableSettings settings);
 
 	/**
 	 * Update the containsArgument
 	 * @param newValue the containsArgument to update
 	 * 
 	 */
-	public void updateContainsArgument(EObject newValue);
+	public void updateContainsArgument();
 
 	/**
 	 * Adds the given filter to the containsArgument edition editor.

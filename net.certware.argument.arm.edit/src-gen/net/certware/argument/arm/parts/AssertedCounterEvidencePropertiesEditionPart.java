@@ -1,14 +1,11 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -16,7 +13,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author
+ * 
  * 
  */
 public interface AssertedCounterEvidencePropertiesEditionPart {
@@ -63,35 +60,7 @@ public interface AssertedCounterEvidencePropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -99,14 +68,14 @@ public interface AssertedCounterEvidencePropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -135,38 +104,20 @@ public interface AssertedCounterEvidencePropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the target to add
-	 * 
-	 */
-	public List getTargetToAdd();
 
-	/**
-	 * @return the target to remove
-	 * 
-	 */
-	public List getTargetToRemove();
-
-	/**
-	 * @return the current target table
-	 * 
-	 */
-	public List getTargetTable();
 
 	/**
 	 * Init the target
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the target ReferencesTable 
 	 */
-	public void initTarget(EObject current, EReference containingFeature, EReference feature);
+	public void initTarget(ReferencesTableSettings settings);
 
 	/**
 	 * Update the target
 	 * @param newValue the target to update
 	 * 
 	 */
-	public void updateTarget(EObject newValue);
+	public void updateTarget();
 
 	/**
 	 * Adds the given filter to the target edition editor.
@@ -195,38 +146,20 @@ public interface AssertedCounterEvidencePropertiesEditionPart {
 	public boolean isContainedInTargetTable(EObject element);
 
 
-	/**
-	 * @return the source to add
-	 * 
-	 */
-	public List getSourceToAdd();
 
-	/**
-	 * @return the source to remove
-	 * 
-	 */
-	public List getSourceToRemove();
-
-	/**
-	 * @return the current source table
-	 * 
-	 */
-	public List getSourceTable();
 
 	/**
 	 * Init the source
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the source ReferencesTable 
 	 */
-	public void initSource(EObject current, EReference containingFeature, EReference feature);
+	public void initSource(ReferencesTableSettings settings);
 
 	/**
 	 * Update the source
 	 * @param newValue the source to update
 	 * 
 	 */
-	public void updateSource(EObject newValue);
+	public void updateSource();
 
 	/**
 	 * Adds the given filter to the source edition editor.

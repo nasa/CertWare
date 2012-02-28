@@ -1,16 +1,13 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
+import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -18,7 +15,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author
+ * 
  * 
  */
 public interface ArgumentReasoningPropertiesEditionPart {
@@ -65,35 +62,7 @@ public interface ArgumentReasoningPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -101,14 +70,14 @@ public interface ArgumentReasoningPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -137,38 +106,20 @@ public interface ArgumentReasoningPropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the describes to add
-	 * 
-	 */
-	public List getDescribesToAdd();
 
-	/**
-	 * @return the describes to remove
-	 * 
-	 */
-	public List getDescribesToRemove();
-
-	/**
-	 * @return the current describes table
-	 * 
-	 */
-	public List getDescribesTable();
 
 	/**
 	 * Init the describes
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the describes ReferencesTable 
 	 */
-	public void initDescribes(EObject current, EReference containingFeature, EReference feature);
+	public void initDescribes(ReferencesTableSettings settings);
 
 	/**
 	 * Update the describes
 	 * @param newValue the describes to update
 	 * 
 	 */
-	public void updateDescribes(EObject newValue);
+	public void updateDescribes();
 
 	/**
 	 * Adds the given filter to the describes edition editor.
@@ -205,10 +156,9 @@ public interface ArgumentReasoningPropertiesEditionPart {
 
 	/**
 	 * Init the hasStructure
-	 * @param allResources the ResourceSet where the widget have to process
-	 * @param current the current value
+	 * @param settings the combo setting
 	 */
-	public void initHasStructure(ResourceSet allResources, EObject current);
+	public void initHasStructure(EObjectFlatComboSettings settings);
 
 	/**
 	 * Defines a new hasStructure

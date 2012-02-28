@@ -1,261 +1,130 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.components;
 
 // Start of user code for imports
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import net.certware.argument.arm.Argument;
 import net.certware.argument.arm.ArgumentElement;
+import net.certware.argument.arm.ArmFactory;
 import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.CitationElement;
 import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.arm.parts.ArmViewsRepository;
 import net.certware.argument.arm.parts.CitationElementPropertiesEditionPart;
 
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.command.AddCommand;
-import org.eclipse.emf.edit.command.DeleteCommand;
-import org.eclipse.emf.edit.command.MoveCommand;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
+import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
 	
 
 // End of user code
 
 /**
- * @author
+ * 
  * 
  */
-public class CitationElementPropertiesEditionComponent extends StandardPropertiesEditionComponent {
+public class CitationElementPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	private String[] parts = {BASE_PART};
-
 	/**
-	 * The EObject to edit
-	 * 
+	 * Settings for isTagged ReferencesTable
 	 */
-	private CitationElement citationElement;
-
+	protected ReferencesTableSettings isTaggedSettings;
+	
 	/**
-	 * The Base part
-	 * 
+	 * Settings for refersToArgumentElement EObjectFlatComboViewer
 	 */
-	protected CitationElementPropertiesEditionPart basePart;
-
+	private	EObjectFlatComboSettings refersToArgumentElementSettings;
+	
+	/**
+	 * Settings for refersToArgument EObjectFlatComboViewer
+	 */
+	private	EObjectFlatComboSettings refersToArgumentSettings;
+	
+	
 	/**
 	 * Default constructor
 	 * 
 	 */
-	public CitationElementPropertiesEditionComponent(EObject citationElement, String editing_mode) {
-		if (citationElement instanceof CitationElement) {
-			this.citationElement = (CitationElement)citationElement;
-			if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode)) {
-				semanticAdapter = initializeSemanticAdapter();
-				this.citationElement.eAdapters().add(semanticAdapter);
-			}
-		}
-		this.editing_mode = editing_mode;
-	}
-
-	/**
-	 * Initialize the semantic model listener for live editing mode
-	 * 
-	 * @return the semantic model listener
-	 * 
-	 */
-	private AdapterImpl initializeSemanticAdapter() {
-		return new EContentAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
-			 */
-			public void notifyChanged(final Notification msg) {
-				if (basePart == null)
-					CitationElementPropertiesEditionComponent.this.dispose();
-				else {
-					Runnable updateRunnable = new Runnable() {
-						public void run() {
-							runUpdateRunnable(msg);
-						}
-					};
-					if (null == Display.getCurrent()) {
-						PlatformUI.getWorkbench().getDisplay().syncExec(updateRunnable);
-					} else {
-						updateRunnable.run();
-					}
-				}
-			}
-
-		};
-	}
-
-	/**
-	 * Used to update the views
-	 * 
-	 */
-	protected void runUpdateRunnable(final Notification msg) {
-		if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setIdentifier("");
-			}
-		}
-		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setDescription("");
-			}
-		}
-		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setContent("");
-			}
-		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
-			basePart.updateIsTagged(citationElement);
-		}
-		if (ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement().equals(msg.getFeature()) && basePart != null)
-			basePart.setRefersToArgumentElement((EObject)msg.getNewValue());
-		if (ArmPackage.eINSTANCE.getCitationElement_RefersToArgument().equals(msg.getFeature()) && basePart != null)
-			basePart.setRefersToArgument((EObject)msg.getNewValue());
-
+	public CitationElementPropertiesEditionComponent(PropertiesEditingContext editingContext, EObject citationElement, String editing_mode) {
+		super(editingContext, citationElement, editing_mode);
+		parts = new String[] { BASE_PART };
+		repositoryKey = ArmViewsRepository.class;
+		partKey = ArmViewsRepository.CitationElement.class;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#translatePart(java.lang.String)
-	 * 
-	 */
-	public java.lang.Class translatePart(String key) {
-		if (BASE_PART.equals(key))
-			return ArmViewsRepository.CitationElement.class;
-		return super.translatePart(key);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#partsList()
-	 * 
-	 */
-	public String[] partsList() {
-		return parts;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionPart
-	 *  (java.lang.String, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
-		if (citationElement != null && BASE_PART.equals(key)) {
-			if (basePart == null) {
-				IPropertiesEditionPartProvider provider = PropertiesEditionPartProviderService.getInstance().getProvider(ArmViewsRepository.class);
-				if (provider != null) {
-					basePart = (CitationElementPropertiesEditionPart)provider.getPropertiesEditionPart(ArmViewsRepository.CitationElement.class, kind, this);
-					addListener((IPropertiesEditionListener)basePart);
-				}
-			}
-			return (IPropertiesEditionPart)basePart;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#
-	 *      setPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
-	 * 
-	 */
-	public void setPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionPart propertiesEditionPart) {
-		if (key == ArmViewsRepository.CitationElement.class)
-			this.basePart = (CitationElementPropertiesEditionPart) propertiesEditionPart;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Class, int, org.eclipse.emf.ecore.EObject, 
+	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	public void initPart(java.lang.Class key, int kind, EObject elt, ResourceSet allResource) {
+	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
-		if (basePart != null && key == ArmViewsRepository.CitationElement.class) {
-			((IPropertiesEditionPart)basePart).setContext(elt, allResource);
+		if (editingPart != null && key == partKey) {
+			editingPart.setContext(elt, allResource);
 			final CitationElement citationElement = (CitationElement)elt;
+			final CitationElementPropertiesEditionPart basePart = (CitationElementPropertiesEditionPart)editingPart;
 			// init values
-			if (citationElement.getIdentifier() != null)
+			if (citationElement.getIdentifier() != null && isAccessible(ArmViewsRepository.CitationElement.Properties.identifier))
 				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), citationElement.getIdentifier()));
-
-			if (citationElement.getDescription() != null)
+			
+			if (citationElement.getDescription() != null && isAccessible(ArmViewsRepository.CitationElement.Properties.description))
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), citationElement.getDescription()));
-
-			if (citationElement.getContent() != null)
-				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), citationElement.getContent()));
-			basePart.initIsTagged(citationElement, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
-			// init part
-			basePart.initRefersToArgumentElement(allResource, citationElement.getRefersToArgumentElement());
-			// set the button mode
-			basePart.setRefersToArgumentElementButtonMode(ButtonsModeEnum.BROWSE);
-			// init part
-			basePart.initRefersToArgument(allResource, citationElement.getRefersToArgument());
-			// set the button mode
-			basePart.setRefersToArgumentButtonMode(ButtonsModeEnum.BROWSE);
+			
+			if (citationElement.getContent() != null && isAccessible(ArmViewsRepository.CitationElement.Properties.content))
+				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), citationElement.getContent()));
+			
+			if (isAccessible(ArmViewsRepository.CitationElement.Properties.isTagged)) {
+				isTaggedSettings = new ReferencesTableSettings(citationElement, ArmPackage.eINSTANCE.getModelElement_IsTagged());
+				basePart.initIsTagged(isTaggedSettings);
+			}
+			if (isAccessible(ArmViewsRepository.CitationElement.Properties.refersToArgumentElement)) {
+				// init part
+				refersToArgumentElementSettings = new EObjectFlatComboSettings(citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement());
+				basePart.initRefersToArgumentElement(refersToArgumentElementSettings);
+				// set the button mode
+				basePart.setRefersToArgumentElementButtonMode(ButtonsModeEnum.BROWSE);
+			}
+			if (isAccessible(ArmViewsRepository.CitationElement.Properties.refersToArgument)) {
+				// init part
+				refersToArgumentSettings = new EObjectFlatComboSettings(citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgument());
+				basePart.initRefersToArgument(refersToArgumentSettings);
+				// set the button mode
+				basePart.setRefersToArgumentButtonMode(ButtonsModeEnum.BROWSE);
+			}
 			// init filters
-
-
-
+			
+			
+			
 			basePart.addFilterToIsTagged(new ViewerFilter() {
-
+			
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -263,50 +132,50 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 					 */
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
 						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
-				}
-
+					}
+			
 			});
 			// Start of user code for additional businessfilters for isTagged
 			
 			// End of user code
-
+			
 			basePart.addFilterToRefersToArgumentElement(new ViewerFilter() {
-
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					return (element instanceof String && element.equals("")) || (element instanceof ArgumentElement); //$NON-NLS-1$ 
+			
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+			 */
+			public boolean select(Viewer viewer, Object parentElement, Object element) {
+				return (element instanceof String && element.equals("")) || (element instanceof ArgumentElement); //$NON-NLS-1$ 
 				}
-
+			
 			});
 			// Start of user code for additional businessfilters for refersToArgumentElement
 			
 			// End of user code
-
+			
 			basePart.addFilterToRefersToArgument(new ViewerFilter() {
-
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					return (element instanceof String && element.equals("")) || (element instanceof Argument); //$NON-NLS-1$ 
+			
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+			 */
+			public boolean select(Viewer viewer, Object parentElement, Object element) {
+				return (element instanceof String && element.equals("")) || (element instanceof Argument); //$NON-NLS-1$ 
 				}
-
+			
 			});
 			// Start of user code for additional businessfilters for refersToArgument
 			
 			// End of user code
-
+			
+			// init values for referenced views
+			
+			// init filters for referenced views
+			
 		}
-		// init values for referenced views
-
-		// init filters for referenced views
-
 		setInitializing(false);
 	}
 
@@ -320,134 +189,141 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionCommand
-	 *     (org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	public CompoundCommand getPropertiesEditionCommand(EditingDomain editingDomain) {
-		CompoundCommand cc = new CompoundCommand();
-		if ((citationElement != null) && (basePart != null)) { 
-			cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
-			cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
-			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
-			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
-			Map isTaggedToRefreshFromIsTagged = basePart.getIsTaggedToEdit();
-			for (Iterator iter = isTaggedToRefreshFromIsTagged.keySet().iterator(); iter.hasNext();) {
-				TaggedValue nextElement = (TaggedValue) iter.next();
-				TaggedValue isTagged = (TaggedValue) isTaggedToRefreshFromIsTagged.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, isTagged.eGet(feature)));
-					}
-				}
-			}
-			List isTaggedToRemoveFromIsTagged = basePart.getIsTaggedToRemove();
-			for (Iterator iter = isTaggedToRemoveFromIsTagged.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List isTaggedToMoveFromIsTagged = basePart.getIsTaggedToMove();
-			for (Iterator iter = isTaggedToMoveFromIsTagged.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getTaggedValue(), moveElement.getElement(), moveElement.getIndex()));
-			}
-			if (citationElement.eGet(ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement()) == null || !citationElement.eGet(ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement()).equals(basePart.getRefersToArgumentElement())) {
-				cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement(), basePart.getRefersToArgumentElement()));
-			}
-			if (citationElement.eGet(ArmPackage.eINSTANCE.getCitationElement_RefersToArgument()) == null || !citationElement.eGet(ArmPackage.eINSTANCE.getCitationElement_RefersToArgument()).equals(basePart.getRefersToArgument())) {
-				cc.append(SetCommand.create(editingDomain, citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgument(), basePart.getRefersToArgument()));
-			}
-
+	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == ArmViewsRepository.CitationElement.Properties.identifier) {
+			return ArmPackage.eINSTANCE.getModelElement_Identifier();
 		}
-		if (!cc.isEmpty())
-			return cc;
-		cc.append(IdentityCommand.INSTANCE);
-		return cc;
+		if (editorKey == ArmViewsRepository.CitationElement.Properties.description) {
+			return ArmPackage.eINSTANCE.getModelElement_Description();
+		}
+		if (editorKey == ArmViewsRepository.CitationElement.Properties.content) {
+			return ArmPackage.eINSTANCE.getModelElement_Content();
+		}
+		if (editorKey == ArmViewsRepository.CitationElement.Properties.isTagged) {
+			return ArmPackage.eINSTANCE.getModelElement_IsTagged();
+		}
+		if (editorKey == ArmViewsRepository.CitationElement.Properties.refersToArgumentElement) {
+			return ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement();
+		}
+		if (editorKey == ArmViewsRepository.CitationElement.Properties.refersToArgument) {
+			return ArmPackage.eINSTANCE.getCitationElement_RefersToArgument();
+		}
+		return super.associatedFeature(editorKey);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionObject()
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	public EObject getPropertiesEditionObject(EObject source) {
-		if (source instanceof CitationElement) {
-			CitationElement citationElementToUpdate = (CitationElement)source;
-			citationElementToUpdate.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier()));
-
-			citationElementToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
-
-			citationElementToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-			citationElementToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
-			citationElementToUpdate.setRefersToArgumentElement((ArgumentElement)basePart.getRefersToArgumentElement());
-			citationElementToUpdate.setRefersToArgument((Argument)basePart.getRefersToArgument());
-
-			return citationElementToUpdate;
+	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		CitationElement citationElement = (CitationElement)semanticObject;
+		if (ArmViewsRepository.CitationElement.Properties.identifier == event.getAffectedEditor()) {
+			citationElement.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
 		}
-		else
-			return null;
+		if (ArmViewsRepository.CitationElement.Properties.description == event.getAffectedEditor()) {
+			citationElement.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (ArmViewsRepository.CitationElement.Properties.content == event.getAffectedEditor()) {
+			citationElement.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (ArmViewsRepository.CitationElement.Properties.isTagged == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, isTaggedSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				isTaggedSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				isTaggedSettings.move(event.getNewIndex(), (TaggedValue) event.getNewValue());
+			}
+		}
+		if (ArmViewsRepository.CitationElement.Properties.refersToArgumentElement == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.SET) {
+				refersToArgumentElementSettings.setToReference((ArgumentElement)event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, refersToArgumentElementSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			}
+		}
+		if (ArmViewsRepository.CitationElement.Properties.refersToArgument == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.SET) {
+				refersToArgumentSettings.setToReference((Argument)event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.ADD) {
+				Argument eObject = ArmFactory.eINSTANCE.createArgument();
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, eObject, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(eObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy != null) {
+						policy.execute();
+					}
+				}
+				refersToArgumentSettings.setToReference(eObject);
+			}
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	public void firePropertiesChanged(IPropertiesEditionEvent event) {
-		if (!isInitializing()) {
-			Diagnostic valueDiagnostic = validateValue(event);
-			if (PropertiesEditionEvent.COMMIT == event.getState() && IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode) && valueDiagnostic.getSeverity() == Diagnostic.OK) {
-				CompoundCommand command = new CompoundCommand();
-			if (ArmViewsRepository.CitationElement.identifier == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (ArmViewsRepository.CitationElement.description == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (ArmViewsRepository.CitationElement.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (ArmViewsRepository.CitationElement.isTagged == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					TaggedValue oldValue = (TaggedValue)event.getOldValue();
-					TaggedValue newValue = (TaggedValue)event.getNewValue();
-					// TODO: Complete the citationElement update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getModelElement_IsTagged(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getTaggedValue(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (ArmViewsRepository.CitationElement.refersToArgumentElement == event.getAffectedEditor())
-				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement(), event.getNewValue()));
-			if (ArmViewsRepository.CitationElement.refersToArgument == event.getAffectedEditor())
-				command.append(SetCommand.create(liveEditingDomain, citationElement, ArmPackage.eINSTANCE.getCitationElement_RefersToArgument(), event.getNewValue()));
-
-				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+	public void updatePart(Notification msg) {
+		if (editingPart.isVisible()) {	
+			CitationElementPropertiesEditionPart basePart = (CitationElementPropertiesEditionPart)editingPart;
+			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.CitationElement.Properties.identifier)) {
+				if (msg.getNewValue() != null) {
+					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 				} else {
-					liveEditingDomain.getCommandStack().execute(command);
+					basePart.setIdentifier("");
 				}
 			}
-			if (valueDiagnostic.getSeverity() != Diagnostic.OK && valueDiagnostic instanceof BasicDiagnostic)
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, valueDiagnostic));
-			else {
-				Diagnostic validate = validate();
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, validate));
+			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.CitationElement.Properties.description)) {
+				if (msg.getNewValue() != null) {
+					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setDescription("");
+				}
 			}
-			super.firePropertiesChanged(event);
+			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.CitationElement.Properties.content)) {
+				if (msg.getNewValue() != null) {
+					basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setContent("");
+				}
+			}
+			if (ArmPackage.eINSTANCE.getModelElement_IsTagged().equals(msg.getFeature()) && isAccessible(ArmViewsRepository.CitationElement.Properties.isTagged))
+				basePart.updateIsTagged();
+			if (ArmPackage.eINSTANCE.getCitationElement_RefersToArgumentElement().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.CitationElement.Properties.refersToArgumentElement))
+				basePart.setRefersToArgumentElement((EObject)msg.getNewValue());
+			if (ArmPackage.eINSTANCE.getCitationElement_RefersToArgument().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.CitationElement.Properties.refersToArgument))
+				basePart.setRefersToArgument((EObject)msg.getNewValue());
+			
 		}
 	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -458,18 +334,26 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
-			String newStringValue = event.getNewValue().toString();
 			try {
-				if (ArmViewsRepository.CitationElement.identifier == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newStringValue);
+				if (ArmViewsRepository.CitationElement.Properties.identifier == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newValue);
 				}
-				if (ArmViewsRepository.CitationElement.description == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newStringValue);
+				if (ArmViewsRepository.CitationElement.Properties.description == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newValue);
 				}
-				if (ArmViewsRepository.CitationElement.content == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newStringValue);
+				if (ArmViewsRepository.CitationElement.Properties.content == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
@@ -481,45 +365,4 @@ public class CitationElementPropertiesEditionComponent extends StandardPropertie
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validate()
-	 * 
-	 */
-	public Diagnostic validate() {
-		Diagnostic validate = Diagnostic.OK_INSTANCE;
-		if (IPropertiesEditionComponent.BATCH_MODE.equals(editing_mode)) {
-			EObject copy = EcoreUtil.copy(citationElement);
-			copy = getPropertiesEditionObject(copy);
-			validate =  EEFRuntimePlugin.getEEFValidator().validate(copy);
-		}
-		else if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode))
-			validate = EEFRuntimePlugin.getEEFValidator().validate(citationElement);
-		// Start of user code for custom validation check
-		
-		// End of user code
-		return validate;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#dispose()
-	 * 
-	 */
-	public void dispose() {
-		if (semanticAdapter != null)
-			citationElement.eAdapters().remove(semanticAdapter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getTabText(java.lang.String)
-	 * 
-	 */
-	public String getTabText(String p_key) {
-		return basePart.getTitle();
-	}
 }

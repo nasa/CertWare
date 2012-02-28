@@ -1,255 +1,122 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.components;
 
 // Start of user code for imports
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import net.certware.argument.arm.Annotation;
 import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.arm.parts.AnnotationPropertiesEditionPart;
 import net.certware.argument.arm.parts.ArmViewsRepository;
 
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.command.AddCommand;
-import org.eclipse.emf.edit.command.DeleteCommand;
-import org.eclipse.emf.edit.command.MoveCommand;
-import org.eclipse.emf.edit.command.RemoveCommand;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
 	
 
 // End of user code
 
 /**
- * @author
+ * 
  * 
  */
-public class AnnotationPropertiesEditionComponent extends StandardPropertiesEditionComponent {
+public class AnnotationPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	private String[] parts = {BASE_PART};
-
 	/**
-	 * The EObject to edit
-	 * 
+	 * Settings for isTagged ReferencesTable
 	 */
-	private Annotation annotation;
-
+	protected ReferencesTableSettings isTaggedSettings;
+	
 	/**
-	 * The Base part
-	 * 
+	 * Settings for target ReferencesTable
 	 */
-	protected AnnotationPropertiesEditionPart basePart;
-
+	private	ReferencesTableSettings targetSettings;
+	
+	/**
+	 * Settings for source ReferencesTable
+	 */
+	private	ReferencesTableSettings sourceSettings;
+	
+	
 	/**
 	 * Default constructor
 	 * 
 	 */
-	public AnnotationPropertiesEditionComponent(EObject annotation, String editing_mode) {
-		if (annotation instanceof Annotation) {
-			this.annotation = (Annotation)annotation;
-			if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode)) {
-				semanticAdapter = initializeSemanticAdapter();
-				this.annotation.eAdapters().add(semanticAdapter);
-			}
-		}
-		this.editing_mode = editing_mode;
-	}
-
-	/**
-	 * Initialize the semantic model listener for live editing mode
-	 * 
-	 * @return the semantic model listener
-	 * 
-	 */
-	private AdapterImpl initializeSemanticAdapter() {
-		return new EContentAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
-			 */
-			public void notifyChanged(final Notification msg) {
-				if (basePart == null)
-					AnnotationPropertiesEditionComponent.this.dispose();
-				else {
-					Runnable updateRunnable = new Runnable() {
-						public void run() {
-							runUpdateRunnable(msg);
-						}
-					};
-					if (null == Display.getCurrent()) {
-						PlatformUI.getWorkbench().getDisplay().syncExec(updateRunnable);
-					} else {
-						updateRunnable.run();
-					}
-				}
-			}
-
-		};
-	}
-
-	/**
-	 * Used to update the views
-	 * 
-	 */
-	protected void runUpdateRunnable(final Notification msg) {
-		if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setIdentifier("");
-			}
-		}
-		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setDescription("");
-			}
-		}
-		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setContent("");
-			}
-		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
-			basePart.updateIsTagged(annotation);
-		}
-		if (ArmPackage.eINSTANCE.getArgumentLink_Target().equals(msg.getFeature()))
-			basePart.updateTarget(annotation);
-		if (ArmPackage.eINSTANCE.getArgumentLink_Source().equals(msg.getFeature()))
-			basePart.updateSource(annotation);
-
+	public AnnotationPropertiesEditionComponent(PropertiesEditingContext editingContext, EObject annotation, String editing_mode) {
+		super(editingContext, annotation, editing_mode);
+		parts = new String[] { BASE_PART };
+		repositoryKey = ArmViewsRepository.class;
+		partKey = ArmViewsRepository.Annotation.class;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#translatePart(java.lang.String)
-	 * 
-	 */
-	public java.lang.Class translatePart(String key) {
-		if (BASE_PART.equals(key))
-			return ArmViewsRepository.Annotation.class;
-		return super.translatePart(key);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#partsList()
-	 * 
-	 */
-	public String[] partsList() {
-		return parts;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionPart
-	 *  (java.lang.String, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
-		if (annotation != null && BASE_PART.equals(key)) {
-			if (basePart == null) {
-				IPropertiesEditionPartProvider provider = PropertiesEditionPartProviderService.getInstance().getProvider(ArmViewsRepository.class);
-				if (provider != null) {
-					basePart = (AnnotationPropertiesEditionPart)provider.getPropertiesEditionPart(ArmViewsRepository.Annotation.class, kind, this);
-					addListener((IPropertiesEditionListener)basePart);
-				}
-			}
-			return (IPropertiesEditionPart)basePart;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#
-	 *      setPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
-	 * 
-	 */
-	public void setPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionPart propertiesEditionPart) {
-		if (key == ArmViewsRepository.Annotation.class)
-			this.basePart = (AnnotationPropertiesEditionPart) propertiesEditionPart;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Class, int, org.eclipse.emf.ecore.EObject, 
+	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	public void initPart(java.lang.Class key, int kind, EObject elt, ResourceSet allResource) {
+	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
-		if (basePart != null && key == ArmViewsRepository.Annotation.class) {
-			((IPropertiesEditionPart)basePart).setContext(elt, allResource);
+		if (editingPart != null && key == partKey) {
+			editingPart.setContext(elt, allResource);
 			final Annotation annotation = (Annotation)elt;
+			final AnnotationPropertiesEditionPart basePart = (AnnotationPropertiesEditionPart)editingPart;
 			// init values
-			if (annotation.getIdentifier() != null)
+			if (annotation.getIdentifier() != null && isAccessible(ArmViewsRepository.Annotation.Properties.identifier))
 				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), annotation.getIdentifier()));
-
-			if (annotation.getDescription() != null)
+			
+			if (annotation.getDescription() != null && isAccessible(ArmViewsRepository.Annotation.Properties.description))
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), annotation.getDescription()));
-
-			if (annotation.getContent() != null)
-				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), annotation.getContent()));
-			basePart.initIsTagged(annotation, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
-			basePart.initTarget(annotation, null, ArmPackage.eINSTANCE.getArgumentLink_Target());
-			basePart.initSource(annotation, null, ArmPackage.eINSTANCE.getArgumentLink_Source());
+			
+			if (annotation.getContent() != null && isAccessible(ArmViewsRepository.Annotation.Properties.content))
+				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), annotation.getContent()));
+			
+			if (isAccessible(ArmViewsRepository.Annotation.Properties.isTagged)) {
+				isTaggedSettings = new ReferencesTableSettings(annotation, ArmPackage.eINSTANCE.getModelElement_IsTagged());
+				basePart.initIsTagged(isTaggedSettings);
+			}
+			if (isAccessible(ArmViewsRepository.Annotation.Properties.target)) {
+				targetSettings = new ReferencesTableSettings(annotation, ArmPackage.eINSTANCE.getArgumentLink_Target());
+				basePart.initTarget(targetSettings);
+			}
+			if (isAccessible(ArmViewsRepository.Annotation.Properties.source)) {
+				sourceSettings = new ReferencesTableSettings(annotation, ArmPackage.eINSTANCE.getArgumentLink_Source());
+				basePart.initSource(sourceSettings);
+			}
 			// init filters
-
-
-
+			
+			
+			
 			basePart.addFilterToIsTagged(new ViewerFilter() {
-
+			
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -257,15 +124,15 @@ public class AnnotationPropertiesEditionComponent extends StandardPropertiesEdit
 					 */
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
 						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
-				}
-
+					}
+			
 			});
 			// Start of user code for additional businessfilters for isTagged
 			
 			// End of user code
-
+			
 			basePart.addFilterToTarget(new ViewerFilter() {
-
+			
 				/**
 				 * {@inheritDoc}
 				 * 
@@ -276,15 +143,15 @@ public class AnnotationPropertiesEditionComponent extends StandardPropertiesEdit
 						return (!basePart.isContainedInTargetTable((EObject)element));
 					return element instanceof Resource;
 				}
-
+			
 			});
 			basePart.addFilterToTarget(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
 			// Start of user code for additional businessfilters for target
 			
 			// End of user code
-
+			
 			basePart.addFilterToSource(new ViewerFilter() {
-
+			
 				/**
 				 * {@inheritDoc}
 				 * 
@@ -295,18 +162,18 @@ public class AnnotationPropertiesEditionComponent extends StandardPropertiesEdit
 						return (!basePart.isContainedInSourceTable((EObject)element));
 					return element instanceof Resource;
 				}
-
+			
 			});
 			basePart.addFilterToSource(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
 			// Start of user code for additional businessfilters for source
 			
 			// End of user code
-
+			
+			// init values for referenced views
+			
+			// init filters for referenced views
+			
 		}
-		// init values for referenced views
-
-		// init filters for referenced views
-
 		setInitializing(false);
 	}
 
@@ -320,162 +187,133 @@ public class AnnotationPropertiesEditionComponent extends StandardPropertiesEdit
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionCommand
-	 *     (org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	public CompoundCommand getPropertiesEditionCommand(EditingDomain editingDomain) {
-		CompoundCommand cc = new CompoundCommand();
-		if ((annotation != null) && (basePart != null)) { 
-			cc.append(SetCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
-			cc.append(SetCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
-			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
-			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
-			Map isTaggedToRefreshFromIsTagged = basePart.getIsTaggedToEdit();
-			for (Iterator iter = isTaggedToRefreshFromIsTagged.keySet().iterator(); iter.hasNext();) {
-				TaggedValue nextElement = (TaggedValue) iter.next();
-				TaggedValue isTagged = (TaggedValue) isTaggedToRefreshFromIsTagged.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, isTagged.eGet(feature)));
-					}
-				}
-			}
-			List isTaggedToRemoveFromIsTagged = basePart.getIsTaggedToRemove();
-			for (Iterator iter = isTaggedToRemoveFromIsTagged.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List isTaggedToMoveFromIsTagged = basePart.getIsTaggedToMove();
-			for (Iterator iter = isTaggedToMoveFromIsTagged.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getTaggedValue(), moveElement.getElement(), moveElement.getIndex()));
-			}
-			List targetToAddFromTarget = basePart.getTargetToAdd();
-			for (Iterator iter = targetToAddFromTarget.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Target(), iter.next()));
-			List targetToRemoveFromTarget = basePart.getTargetToRemove();
-			for (Iterator iter = targetToRemoveFromTarget.iterator(); iter.hasNext();)
-				cc.append(RemoveCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Target(), iter.next()));
-			//List targetToMoveFromTarget = basePart.getTargetToMove();
-			//for (Iterator iter = targetToMoveFromTarget.iterator(); iter.hasNext();){
-			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-			//	cc.append(MoveCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getModelElement(), moveElement.getElement(), moveElement.getIndex()));
-			//}
-			List sourceToAddFromSource = basePart.getSourceToAdd();
-			for (Iterator iter = sourceToAddFromSource.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Source(), iter.next()));
-			List sourceToRemoveFromSource = basePart.getSourceToRemove();
-			for (Iterator iter = sourceToRemoveFromSource.iterator(); iter.hasNext();)
-				cc.append(RemoveCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Source(), iter.next()));
-			//List sourceToMoveFromSource = basePart.getSourceToMove();
-			//for (Iterator iter = sourceToMoveFromSource.iterator(); iter.hasNext();){
-			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-			//	cc.append(MoveCommand.create(editingDomain, annotation, ArmPackage.eINSTANCE.getModelElement(), moveElement.getElement(), moveElement.getIndex()));
-			//}
-
+	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == ArmViewsRepository.Annotation.Properties.identifier) {
+			return ArmPackage.eINSTANCE.getModelElement_Identifier();
 		}
-		if (!cc.isEmpty())
-			return cc;
-		cc.append(IdentityCommand.INSTANCE);
-		return cc;
+		if (editorKey == ArmViewsRepository.Annotation.Properties.description) {
+			return ArmPackage.eINSTANCE.getModelElement_Description();
+		}
+		if (editorKey == ArmViewsRepository.Annotation.Properties.content) {
+			return ArmPackage.eINSTANCE.getModelElement_Content();
+		}
+		if (editorKey == ArmViewsRepository.Annotation.Properties.isTagged) {
+			return ArmPackage.eINSTANCE.getModelElement_IsTagged();
+		}
+		if (editorKey == ArmViewsRepository.Annotation.Properties.target) {
+			return ArmPackage.eINSTANCE.getArgumentLink_Target();
+		}
+		if (editorKey == ArmViewsRepository.Annotation.Properties.source) {
+			return ArmPackage.eINSTANCE.getArgumentLink_Source();
+		}
+		return super.associatedFeature(editorKey);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionObject()
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	public EObject getPropertiesEditionObject(EObject source) {
-		if (source instanceof Annotation) {
-			Annotation annotationToUpdate = (Annotation)source;
-			annotationToUpdate.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier()));
-
-			annotationToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
-
-			annotationToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-			annotationToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
-			annotationToUpdate.getTarget().addAll(basePart.getTargetToAdd());
-			annotationToUpdate.getSource().addAll(basePart.getSourceToAdd());
-
-			return annotationToUpdate;
+	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		Annotation annotation = (Annotation)semanticObject;
+		if (ArmViewsRepository.Annotation.Properties.identifier == event.getAffectedEditor()) {
+			annotation.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
 		}
-		else
-			return null;
+		if (ArmViewsRepository.Annotation.Properties.description == event.getAffectedEditor()) {
+			annotation.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (ArmViewsRepository.Annotation.Properties.content == event.getAffectedEditor()) {
+			annotation.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (ArmViewsRepository.Annotation.Properties.isTagged == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, isTaggedSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				isTaggedSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				isTaggedSettings.move(event.getNewIndex(), (TaggedValue) event.getNewValue());
+			}
+		}
+		if (ArmViewsRepository.Annotation.Properties.target == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				if (event.getNewValue() instanceof ModelElement) {
+					targetSettings.addToReference((EObject) event.getNewValue());
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				targetSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				targetSettings.move(event.getNewIndex(), (ModelElement) event.getNewValue());
+			}
+		}
+		if (ArmViewsRepository.Annotation.Properties.source == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				if (event.getNewValue() instanceof ModelElement) {
+					sourceSettings.addToReference((EObject) event.getNewValue());
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				sourceSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				sourceSettings.move(event.getNewIndex(), (ModelElement) event.getNewValue());
+			}
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	public void firePropertiesChanged(IPropertiesEditionEvent event) {
-		if (!isInitializing()) {
-			Diagnostic valueDiagnostic = validateValue(event);
-			if (PropertiesEditionEvent.COMMIT == event.getState() && IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode) && valueDiagnostic.getSeverity() == Diagnostic.OK) {
-				CompoundCommand command = new CompoundCommand();
-			if (ArmViewsRepository.Annotation.identifier == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (ArmViewsRepository.Annotation.description == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (ArmViewsRepository.Annotation.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (ArmViewsRepository.Annotation.isTagged == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					TaggedValue oldValue = (TaggedValue)event.getOldValue();
-					TaggedValue newValue = (TaggedValue)event.getNewValue();
-					// TODO: Complete the annotation update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getModelElement_IsTagged(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getTaggedValue(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (ArmViewsRepository.Annotation.target == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Target(), event.getNewValue()));
-				if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(RemoveCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Target(), event.getNewValue()));
-				if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Target(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (ArmViewsRepository.Annotation.source == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Source(), event.getNewValue()));
-				if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(RemoveCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Source(), event.getNewValue()));
-				if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, annotation, ArmPackage.eINSTANCE.getArgumentLink_Source(), event.getNewValue(), event.getNewIndex()));
-			}
-
-				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+	public void updatePart(Notification msg) {
+		if (editingPart.isVisible()) {	
+			AnnotationPropertiesEditionPart basePart = (AnnotationPropertiesEditionPart)editingPart;
+			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.Annotation.Properties.identifier)) {
+				if (msg.getNewValue() != null) {
+					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 				} else {
-					liveEditingDomain.getCommandStack().execute(command);
+					basePart.setIdentifier("");
 				}
 			}
-			if (valueDiagnostic.getSeverity() != Diagnostic.OK && valueDiagnostic instanceof BasicDiagnostic)
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, valueDiagnostic));
-			else {
-				Diagnostic validate = validate();
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, validate));
+			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.Annotation.Properties.description)) {
+				if (msg.getNewValue() != null) {
+					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setDescription("");
+				}
 			}
-			super.firePropertiesChanged(event);
+			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null && isAccessible(ArmViewsRepository.Annotation.Properties.content)) {
+				if (msg.getNewValue() != null) {
+					basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setContent("");
+				}
+			}
+			if (ArmPackage.eINSTANCE.getModelElement_IsTagged().equals(msg.getFeature()) && isAccessible(ArmViewsRepository.Annotation.Properties.isTagged))
+				basePart.updateIsTagged();
+			if (ArmPackage.eINSTANCE.getArgumentLink_Target().equals(msg.getFeature())  && isAccessible(ArmViewsRepository.Annotation.Properties.target))
+				basePart.updateTarget();
+			if (ArmPackage.eINSTANCE.getArgumentLink_Source().equals(msg.getFeature())  && isAccessible(ArmViewsRepository.Annotation.Properties.source))
+				basePart.updateSource();
+			
 		}
 	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -486,18 +324,26 @@ public class AnnotationPropertiesEditionComponent extends StandardPropertiesEdit
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
-			String newStringValue = event.getNewValue().toString();
 			try {
-				if (ArmViewsRepository.Annotation.identifier == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newStringValue);
+				if (ArmViewsRepository.Annotation.Properties.identifier == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newValue);
 				}
-				if (ArmViewsRepository.Annotation.description == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newStringValue);
+				if (ArmViewsRepository.Annotation.Properties.description == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newValue);
 				}
-				if (ArmViewsRepository.Annotation.content == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newStringValue);
+				if (ArmViewsRepository.Annotation.Properties.content == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
@@ -509,45 +355,4 @@ public class AnnotationPropertiesEditionComponent extends StandardPropertiesEdit
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validate()
-	 * 
-	 */
-	public Diagnostic validate() {
-		Diagnostic validate = Diagnostic.OK_INSTANCE;
-		if (IPropertiesEditionComponent.BATCH_MODE.equals(editing_mode)) {
-			EObject copy = EcoreUtil.copy(annotation);
-			copy = getPropertiesEditionObject(copy);
-			validate =  EEFRuntimePlugin.getEEFValidator().validate(copy);
-		}
-		else if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode))
-			validate = EEFRuntimePlugin.getEEFValidator().validate(annotation);
-		// Start of user code for custom validation check
-		
-		// End of user code
-		return validate;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#dispose()
-	 * 
-	 */
-	public void dispose() {
-		if (semanticAdapter != null)
-			annotation.eAdapters().remove(semanticAdapter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getTabText(java.lang.String)
-	 * 
-	 */
-	public String getTabText(String p_key) {
-		return basePart.getTitle();
-	}
 }

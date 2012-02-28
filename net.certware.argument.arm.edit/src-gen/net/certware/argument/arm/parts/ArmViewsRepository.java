@@ -1,10 +1,10 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.parts;
 
 /**
- * @author
+ * 
  * 
  */
 public class ArmViewsRepository {
@@ -19,12 +19,16 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class TaggedValue {
-		
-		public static String key = "arm::TaggedValue::key";
-		
-		
-		public static String value = "arm::TaggedValue::value";
-		
+		public static class Properties {
+	
+			
+			public static String key = "arm::TaggedValue::properties::key";
+			
+			
+			public static String value = "arm::TaggedValue::properties::value";
+			
+	
+		}
 	
 	}
 
@@ -33,27 +37,31 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class Argument {
-		
-		public static String identifier = "arm::Argument::identifier";
-		
-		
-		public static String description = "arm::Argument::description";
-		
-		
-		public static String content = "arm::Argument::content";
-		
-		
-		public static String isTagged = "arm::Argument::isTagged";
-		
-		
-		public static String containsArgumentElement = "arm::Argument::containsArgumentElement";
-		
-		
-		public static String containsArgumentLink = "arm::Argument::containsArgumentLink";
-		
-		
-		public static String containsArgument = "arm::Argument::containsArgument";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::Argument::properties::identifier";
+			
+			
+			public static String description = "arm::Argument::properties::description";
+			
+			
+			public static String content = "arm::Argument::properties::content";
+			
+			
+			public static String isTagged = "arm::Argument::properties::isTagged";
+			
+			
+			public static String containsArgumentElement = "arm::Argument::properties::containsArgumentElement";
+			
+			
+			public static String containsArgumentLink = "arm::Argument::properties::containsArgumentLink";
+			
+			
+			public static String containsArgument = "arm::Argument::properties::containsArgument";
+			
+	
+		}
 	
 	}
 
@@ -62,24 +70,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class Annotation {
-		
-		public static String identifier = "arm::Annotation::identifier";
-		
-		
-		public static String description = "arm::Annotation::description";
-		
-		
-		public static String content = "arm::Annotation::content";
-		
-		
-		public static String isTagged = "arm::Annotation::isTagged";
-		
-		
-		public static String target = "arm::Annotation::target";
-		
-		
-		public static String source = "arm::Annotation::source";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::Annotation::properties::identifier";
+			
+			
+			public static String description = "arm::Annotation::properties::description";
+			
+			
+			public static String content = "arm::Annotation::properties::content";
+			
+			
+			public static String isTagged = "arm::Annotation::properties::isTagged";
+			
+			
+			public static String target = "arm::Annotation::properties::target";
+			
+			
+			public static String source = "arm::Annotation::properties::source";
+			
+	
+		}
 	
 	}
 
@@ -88,24 +100,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class AssertedInference {
-		
-		public static String identifier = "arm::AssertedInference::identifier";
-		
-		
-		public static String description = "arm::AssertedInference::description";
-		
-		
-		public static String content = "arm::AssertedInference::content";
-		
-		
-		public static String isTagged = "arm::AssertedInference::isTagged";
-		
-		
-		public static String target = "arm::AssertedInference::target";
-		
-		
-		public static String source = "arm::AssertedInference::source";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::AssertedInference::properties::identifier";
+			
+			
+			public static String description = "arm::AssertedInference::properties::description";
+			
+			
+			public static String content = "arm::AssertedInference::properties::content";
+			
+			
+			public static String isTagged = "arm::AssertedInference::properties::isTagged";
+			
+			
+			public static String target = "arm::AssertedInference::properties::target";
+			
+			
+			public static String source = "arm::AssertedInference::properties::source";
+			
+	
+		}
 	
 	}
 
@@ -114,24 +130,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class AssertedEvidence {
-		
-		public static String identifier = "arm::AssertedEvidence::identifier";
-		
-		
-		public static String description = "arm::AssertedEvidence::description";
-		
-		
-		public static String content = "arm::AssertedEvidence::content";
-		
-		
-		public static String isTagged = "arm::AssertedEvidence::isTagged";
-		
-		
-		public static String target = "arm::AssertedEvidence::target";
-		
-		
-		public static String source = "arm::AssertedEvidence::source";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::AssertedEvidence::properties::identifier";
+			
+			
+			public static String description = "arm::AssertedEvidence::properties::description";
+			
+			
+			public static String content = "arm::AssertedEvidence::properties::content";
+			
+			
+			public static String isTagged = "arm::AssertedEvidence::properties::isTagged";
+			
+			
+			public static String target = "arm::AssertedEvidence::properties::target";
+			
+			
+			public static String source = "arm::AssertedEvidence::properties::source";
+			
+	
+		}
 	
 	}
 
@@ -140,24 +160,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class AssertedContext {
-		
-		public static String identifier = "arm::AssertedContext::identifier";
-		
-		
-		public static String description = "arm::AssertedContext::description";
-		
-		
-		public static String content = "arm::AssertedContext::content";
-		
-		
-		public static String isTagged = "arm::AssertedContext::isTagged";
-		
-		
-		public static String target = "arm::AssertedContext::target";
-		
-		
-		public static String source = "arm::AssertedContext::source";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::AssertedContext::properties::identifier";
+			
+			
+			public static String description = "arm::AssertedContext::properties::description";
+			
+			
+			public static String content = "arm::AssertedContext::properties::content";
+			
+			
+			public static String isTagged = "arm::AssertedContext::properties::isTagged";
+			
+			
+			public static String target = "arm::AssertedContext::properties::target";
+			
+			
+			public static String source = "arm::AssertedContext::properties::source";
+			
+	
+		}
 	
 	}
 
@@ -166,24 +190,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class AssertedCounterEvidence {
-		
-		public static String identifier = "arm::AssertedCounterEvidence::identifier";
-		
-		
-		public static String description = "arm::AssertedCounterEvidence::description";
-		
-		
-		public static String content = "arm::AssertedCounterEvidence::content";
-		
-		
-		public static String isTagged = "arm::AssertedCounterEvidence::isTagged";
-		
-		
-		public static String target = "arm::AssertedCounterEvidence::target";
-		
-		
-		public static String source = "arm::AssertedCounterEvidence::source";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::AssertedCounterEvidence::properties::identifier";
+			
+			
+			public static String description = "arm::AssertedCounterEvidence::properties::description";
+			
+			
+			public static String content = "arm::AssertedCounterEvidence::properties::content";
+			
+			
+			public static String isTagged = "arm::AssertedCounterEvidence::properties::isTagged";
+			
+			
+			public static String target = "arm::AssertedCounterEvidence::properties::target";
+			
+			
+			public static String source = "arm::AssertedCounterEvidence::properties::source";
+			
+	
+		}
 	
 	}
 
@@ -192,24 +220,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class AssertedChallenge {
-		
-		public static String identifier = "arm::AssertedChallenge::identifier";
-		
-		
-		public static String description = "arm::AssertedChallenge::description";
-		
-		
-		public static String content = "arm::AssertedChallenge::content";
-		
-		
-		public static String isTagged = "arm::AssertedChallenge::isTagged";
-		
-		
-		public static String target = "arm::AssertedChallenge::target";
-		
-		
-		public static String source = "arm::AssertedChallenge::source";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::AssertedChallenge::properties::identifier";
+			
+			
+			public static String description = "arm::AssertedChallenge::properties::description";
+			
+			
+			public static String content = "arm::AssertedChallenge::properties::content";
+			
+			
+			public static String isTagged = "arm::AssertedChallenge::properties::isTagged";
+			
+			
+			public static String target = "arm::AssertedChallenge::properties::target";
+			
+			
+			public static String source = "arm::AssertedChallenge::properties::source";
+			
+	
+		}
 	
 	}
 
@@ -218,24 +250,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class Claim {
-		
-		public static String identifier = "arm::Claim::identifier";
-		
-		
-		public static String description = "arm::Claim::description";
-		
-		
-		public static String content = "arm::Claim::content";
-		
-		
-		public static String isTagged = "arm::Claim::isTagged";
-		
-		
-		public static String assumed = "arm::Claim::assumed";
-		
-		
-		public static String toBeSupported = "arm::Claim::toBeSupported";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::Claim::properties::identifier";
+			
+			
+			public static String description = "arm::Claim::properties::description";
+			
+			
+			public static String content = "arm::Claim::properties::content";
+			
+			
+			public static String isTagged = "arm::Claim::properties::isTagged";
+			
+			
+			public static String assumed = "arm::Claim::properties::assumed";
+			
+			
+			public static String toBeSupported = "arm::Claim::properties::toBeSupported";
+			
+	
+		}
 	
 	}
 
@@ -244,24 +280,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class EvidenceAssertion {
-		
-		public static String identifier = "arm::EvidenceAssertion::identifier";
-		
-		
-		public static String description = "arm::EvidenceAssertion::description";
-		
-		
-		public static String content = "arm::EvidenceAssertion::content";
-		
-		
-		public static String isTagged = "arm::EvidenceAssertion::isTagged";
-		
-		
-		public static String assumed = "arm::EvidenceAssertion::assumed";
-		
-		
-		public static String toBeSupported = "arm::EvidenceAssertion::toBeSupported";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::EvidenceAssertion::properties::identifier";
+			
+			
+			public static String description = "arm::EvidenceAssertion::properties::description";
+			
+			
+			public static String content = "arm::EvidenceAssertion::properties::content";
+			
+			
+			public static String isTagged = "arm::EvidenceAssertion::properties::isTagged";
+			
+			
+			public static String assumed = "arm::EvidenceAssertion::properties::assumed";
+			
+			
+			public static String toBeSupported = "arm::EvidenceAssertion::properties::toBeSupported";
+			
+	
+		}
 	
 	}
 
@@ -270,18 +310,22 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class InformationElement {
-		
-		public static String identifier = "arm::InformationElement::identifier";
-		
-		
-		public static String description = "arm::InformationElement::description";
-		
-		
-		public static String content = "arm::InformationElement::content";
-		
-		
-		public static String isTagged = "arm::InformationElement::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::InformationElement::properties::identifier";
+			
+			
+			public static String description = "arm::InformationElement::properties::description";
+			
+			
+			public static String content = "arm::InformationElement::properties::content";
+			
+			
+			public static String isTagged = "arm::InformationElement::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -290,24 +334,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class ArgumentReasoning {
-		
-		public static String identifier = "arm::ArgumentReasoning::identifier";
-		
-		
-		public static String description = "arm::ArgumentReasoning::description";
-		
-		
-		public static String content = "arm::ArgumentReasoning::content";
-		
-		
-		public static String isTagged = "arm::ArgumentReasoning::isTagged";
-		
-		
-		public static String describes = "arm::ArgumentReasoning::describes";
-		
-		
-		public static String hasStructure = "arm::ArgumentReasoning::hasStructure";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::ArgumentReasoning::properties::identifier";
+			
+			
+			public static String description = "arm::ArgumentReasoning::properties::description";
+			
+			
+			public static String content = "arm::ArgumentReasoning::properties::content";
+			
+			
+			public static String isTagged = "arm::ArgumentReasoning::properties::isTagged";
+			
+			
+			public static String describes = "arm::ArgumentReasoning::properties::describes";
+			
+			
+			public static String hasStructure = "arm::ArgumentReasoning::properties::hasStructure";
+			
+	
+		}
 	
 	}
 
@@ -316,24 +364,28 @@ public class ArmViewsRepository {
 	 * 
 	 */
 	public static class CitationElement {
-		
-		public static String identifier = "arm::CitationElement::identifier";
-		
-		
-		public static String description = "arm::CitationElement::description";
-		
-		
-		public static String content = "arm::CitationElement::content";
-		
-		
-		public static String isTagged = "arm::CitationElement::isTagged";
-		
-		
-		public static String refersToArgumentElement = "arm::CitationElement::refersToArgumentElement";
-		
-		
-		public static String refersToArgument = "arm::CitationElement::refersToArgument";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "arm::CitationElement::properties::identifier";
+			
+			
+			public static String description = "arm::CitationElement::properties::description";
+			
+			
+			public static String content = "arm::CitationElement::properties::content";
+			
+			
+			public static String isTagged = "arm::CitationElement::properties::isTagged";
+			
+			
+			public static String refersToArgumentElement = "arm::CitationElement::properties::refersToArgumentElement";
+			
+			
+			public static String refersToArgument = "arm::CitationElement::properties::refersToArgument";
+			
+	
+		}
 	
 	}
 

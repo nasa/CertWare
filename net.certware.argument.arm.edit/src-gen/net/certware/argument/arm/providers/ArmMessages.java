@@ -1,12 +1,12 @@
-/*
- * Copyright © 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.arm.providers;
 
 import org.eclipse.osgi.util.NLS;
 
 /**
- * @author
+ * 
  * 
  */
 public class ArmMessages extends NLS {
@@ -396,7 +396,7 @@ public class ArmMessages extends NLS {
 
 	
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
-	
+
 	// Start of user code for additionnal NLS Constants
 
 // End of user code
