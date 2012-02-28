@@ -3,103 +3,114 @@
  */
 package net.certware.measurement.sco.providers;
 
+import java.util.List;
+
 import net.certware.measurement.sco.ScoPackage;
 import net.certware.measurement.sco.TotalChangeOrders;
 import net.certware.measurement.sco.components.TotalChangeOrdersPropertiesEditionComponent;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class TotalChangeOrdersPropertiesEditionProvider implements IPropertiesEditionProvider {
+public class TotalChangeOrdersPropertiesEditionProvider extends PropertiesEditingProviderImpl {
 
 	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject)
-	 * 
+	 * Constructor without provider for super types.
 	 */
-	public boolean provides(EObject eObject) {
-		return (eObject instanceof TotalChangeOrders) && (ScoPackage.eINSTANCE.getTotalChangeOrders() == eObject.eClass());
+	public TotalChangeOrdersPropertiesEditionProvider() {
+		super();
+	}
+
+	/**
+	 * Constructor with providers for super types.
+	 * @param superProviders providers to use for super types.
+	 */
+	public TotalChangeOrdersPropertiesEditionProvider(List<PropertiesEditingProvider> superProviders) {
+		super(superProviders);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part) {
-		return (eObject instanceof TotalChangeOrders) && (TotalChangeOrdersPropertiesEditionComponent.BASE_PART.equals(part));
+	public boolean provides(PropertiesEditingContext editingContext) {
+		return (editingContext.getEObject() instanceof TotalChangeOrders) 
+					&& (ScoPackage.eINSTANCE.getTotalChangeOrders() == editingContext.getEObject().eClass());
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
-	public boolean provides(EObject eObject, java.lang.Class refinement) {
-		return (eObject instanceof TotalChangeOrders) && (refinement == TotalChangeOrdersPropertiesEditionComponent.class);
+	public boolean provides(PropertiesEditingContext editingContext, String part) {
+		return (editingContext.getEObject() instanceof TotalChangeOrders) && (TotalChangeOrdersPropertiesEditionComponent.BASE_PART.equals(part));
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.Class)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part, java.lang.Class refinement) {
-		return (eObject instanceof TotalChangeOrders) && ((TotalChangeOrdersPropertiesEditionComponent.BASE_PART.equals(part) && refinement == TotalChangeOrdersPropertiesEditionComponent.class));
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof TotalChangeOrders) && (refinement == TotalChangeOrdersPropertiesEditionComponent.class);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.Class)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode) {
-		if (eObject instanceof TotalChangeOrders) {
-			return new TotalChangeOrdersPropertiesEditionComponent(eObject, editing_mode);
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof TotalChangeOrders) && ((TotalChangeOrdersPropertiesEditionComponent.BASE_PART.equals(part) && refinement == TotalChangeOrdersPropertiesEditionComponent.class));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
+	 * 
+	 */
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
+		if (editingContext.getEObject() instanceof TotalChangeOrders) {
+			return new TotalChangeOrdersPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part) {
-		if (eObject instanceof TotalChangeOrders) {
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
+		if (editingContext.getEObject() instanceof TotalChangeOrders) {
 			if (TotalChangeOrdersPropertiesEditionComponent.BASE_PART.equals(part))
-				return new TotalChangeOrdersPropertiesEditionComponent(eObject, editing_mode);
+				return new TotalChangeOrdersPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String, java.lang.Class)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String, java.lang.Class)
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part, java.lang.Class refinement) {
-		if (eObject instanceof TotalChangeOrders) {
+	@SuppressWarnings("rawtypes")
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
+		if (editingContext.getEObject() instanceof TotalChangeOrders) {
 			if (TotalChangeOrdersPropertiesEditionComponent.BASE_PART.equals(part)
 				&& refinement == TotalChangeOrdersPropertiesEditionComponent.class)
-				return new TotalChangeOrdersPropertiesEditionComponent(eObject, editing_mode);
+				return new TotalChangeOrdersPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}
 
 }

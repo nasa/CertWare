@@ -3,14 +3,9 @@
 */
 package net.certware.argument.sfp.parser.antlr;
 
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.TokenSource;
-import org.eclipse.xtext.parser.IParseResult;
-import org.eclipse.xtext.parser.ParseException;
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-
 import com.google.inject.Inject;
 
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import net.certware.argument.sfp.services.SemiFormalProofGrammarAccess;
 
 public class SemiFormalProofParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
@@ -19,25 +14,13 @@ public class SemiFormalProofParser extends org.eclipse.xtext.parser.antlr.Abstra
 	private SemiFormalProofGrammarAccess grammarAccess;
 	
 	@Override
-	protected IParseResult parse(String ruleName, CharStream in) {
-		TokenSource tokenSource = createLexer(in);
-		XtextTokenStream tokenStream = createTokenStream(tokenSource);
+	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
 		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
-		net.certware.argument.sfp.parser.antlr.internal.InternalSemiFormalProofParser parser = createParser(tokenStream);
-		parser.setTokenTypeMap(getTokenDefProvider().getTokenDefMap());
-		parser.setSyntaxErrorProvider(getSyntaxErrorProvider());
-		parser.setUnorderedGroupHelper(getUnorderedGroupHelper().get());
-		try {
-			if(ruleName != null)
-				return parser.parse(ruleName);
-			return parser.parse();
-		} catch (Exception re) {
-			throw new ParseException(re.getMessage(),re);
-		}
 	}
 	
+	@Override
 	protected net.certware.argument.sfp.parser.antlr.internal.InternalSemiFormalProofParser createParser(XtextTokenStream stream) {
-		return new net.certware.argument.sfp.parser.antlr.internal.InternalSemiFormalProofParser(stream, getElementFactory(), getGrammarAccess());
+		return new net.certware.argument.sfp.parser.antlr.internal.InternalSemiFormalProofParser(stream, getGrammarAccess());
 	}
 	
 	@Override 

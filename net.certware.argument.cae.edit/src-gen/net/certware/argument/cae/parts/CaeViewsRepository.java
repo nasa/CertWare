@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.cae.parts;
 
@@ -19,36 +19,40 @@ public class CaeViewsRepository {
 	 * 
 	 */
 	public static class Claim {
-		
-		public static String identifier = "cae::Claim::identifier";
-		
-		
-		public static String description = "cae::Claim::description";
-		
-		
-		public static String content = "cae::Claim::content";
-		
-		
-		public static String isTagged = "cae::Claim::isTagged";
-		
-		
-		public static String assumed = "cae::Claim::assumed";
-		
-		
-		public static String toBeSupported = "cae::Claim::toBeSupported";
-		
-		
-		public static String strategy = "cae::Claim::strategy";
-		
-		
-		public static String assumption = "cae::Claim::assumption";
-		
-		
-		public static String context = "cae::Claim::context";
-		
-		
-		public static String solution = "cae::Claim::solution";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "cae::Claim::properties::identifier";
+			
+			
+			public static String description = "cae::Claim::properties::description";
+			
+			
+			public static String content = "cae::Claim::properties::content";
+			
+			
+			public static String isTagged = "cae::Claim::properties::isTagged";
+			
+			
+			public static String assumed = "cae::Claim::properties::assumed";
+			
+			
+			public static String toBeSupported = "cae::Claim::properties::toBeSupported";
+			
+			
+			public static String strategy = "cae::Claim::properties::strategy";
+			
+			
+			public static String assumption = "cae::Claim::properties::assumption";
+			
+			
+			public static String context = "cae::Claim::properties::context";
+			
+			
+			public static String solution = "cae::Claim::properties::solution";
+			
+	
+		}
 	
 	}
 
@@ -57,27 +61,31 @@ public class CaeViewsRepository {
 	 * 
 	 */
 	public static class Argument {
-		
-		public static String identifier = "cae::Argument::identifier";
-		
-		
-		public static String description = "cae::Argument::description";
-		
-		
-		public static String content = "cae::Argument::content";
-		
-		
-		public static String isTagged = "cae::Argument::isTagged";
-		
-		
-		public static String justification = "cae::Argument::justification";
-		
-		
-		public static String evidence = "cae::Argument::evidence";
-		
-		
-		public static String claims = "cae::Argument::claims";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "cae::Argument::properties::identifier";
+			
+			
+			public static String description = "cae::Argument::properties::description";
+			
+			
+			public static String content = "cae::Argument::properties::content";
+			
+			
+			public static String isTagged = "cae::Argument::properties::isTagged";
+			
+			
+			public static String justification = "cae::Argument::properties::justification";
+			
+			
+			public static String evidence = "cae::Argument::properties::evidence";
+			
+			
+			public static String claims = "cae::Argument::properties::claims";
+			
+	
+		}
 	
 	}
 
@@ -86,30 +94,34 @@ public class CaeViewsRepository {
 	 * 
 	 */
 	public static class Evidence {
-		
-		public static String identifier = "cae::Evidence::identifier";
-		
-		
-		public static String description = "cae::Evidence::description";
-		
-		
-		public static String content = "cae::Evidence::content";
-		
-		
-		public static String isTagged = "cae::Evidence::isTagged";
-		
-		
-		public static String target = "cae::Evidence::target";
-		
-		
-		public static String source = "cae::Evidence::source";
-		
-		
-		public static String context = "cae::Evidence::context";
-		
-		
-		public static String evidence = "cae::Evidence::evidence";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "cae::Evidence::properties::identifier";
+			
+			
+			public static String description = "cae::Evidence::properties::description";
+			
+			
+			public static String content = "cae::Evidence::properties::content";
+			
+			
+			public static String isTagged = "cae::Evidence::properties::isTagged";
+			
+			
+			public static String target = "cae::Evidence::properties::target";
+			
+			
+			public static String source = "cae::Evidence::properties::source";
+			
+			
+			public static String context = "cae::Evidence::properties::context";
+			
+			
+			public static String evidence_ = "cae::Evidence::properties::evidence_";
+			
+	
+		}
 	
 	}
 
@@ -118,18 +130,22 @@ public class CaeViewsRepository {
 	 * 
 	 */
 	public static class Assumption {
-		
-		public static String identifier = "cae::Assumption::identifier";
-		
-		
-		public static String description = "cae::Assumption::description";
-		
-		
-		public static String content = "cae::Assumption::content";
-		
-		
-		public static String isTagged = "cae::Assumption::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "cae::Assumption::properties::identifier";
+			
+			
+			public static String description = "cae::Assumption::properties::description";
+			
+			
+			public static String content = "cae::Assumption::properties::content";
+			
+			
+			public static String isTagged = "cae::Assumption::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -138,18 +154,22 @@ public class CaeViewsRepository {
 	 * 
 	 */
 	public static class Context {
-		
-		public static String identifier = "cae::Context::identifier";
-		
-		
-		public static String description = "cae::Context::description";
-		
-		
-		public static String content = "cae::Context::content";
-		
-		
-		public static String isTagged = "cae::Context::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "cae::Context::properties::identifier";
+			
+			
+			public static String description = "cae::Context::properties::description";
+			
+			
+			public static String content = "cae::Context::properties::content";
+			
+			
+			public static String isTagged = "cae::Context::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -158,18 +178,22 @@ public class CaeViewsRepository {
 	 * 
 	 */
 	public static class Justification {
-		
-		public static String identifier = "cae::Justification::identifier";
-		
-		
-		public static String description = "cae::Justification::description";
-		
-		
-		public static String content = "cae::Justification::content";
-		
-		
-		public static String isTagged = "cae::Justification::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "cae::Justification::properties::identifier";
+			
+			
+			public static String description = "cae::Justification::properties::description";
+			
+			
+			public static String content = "cae::Justification::properties::content";
+			
+			
+			public static String isTagged = "cae::Justification::properties::isTagged";
+			
+	
+		}
 	
 	}
 

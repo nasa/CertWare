@@ -1,10 +1,11 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import net.certware.argument.aml.AmlPackage;
 import net.certware.argument.aml.parts.AmlViewsRepository;
@@ -15,25 +16,23 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
-import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesContextService;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.EEFFeatureEditorDialog;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
@@ -47,7 +46,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -58,7 +56,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, DocumentRootPropertiesEditionPart {
@@ -66,14 +64,12 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 	protected Text mixed;
 		protected Button editMixed;
 		private EList mixedList;
-	protected EMFListEditUtil xMLNSPrefixMapEditUtil;
-		protected ReferencesTable<? extends EObject> xMLNSPrefixMap;
-		protected List<ViewerFilter> xMLNSPrefixMapBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> xMLNSPrefixMapFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil xSISchemaLocationEditUtil;
-		protected ReferencesTable<? extends EObject> xSISchemaLocation;
-		protected List<ViewerFilter> xSISchemaLocationBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> xSISchemaLocationFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable xMLNSPrefixMap;
+	protected List<ViewerFilter> xMLNSPrefixMapBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> xMLNSPrefixMapFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable xSISchemaLocation;
+	protected List<ViewerFilter> xSISchemaLocationBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> xSISchemaLocationFilters = new ArrayList<ViewerFilter>();
 	protected Text description1;
 	protected Text id;
 	protected Text idRef;
@@ -116,17 +112,55 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence documentRootStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = documentRootStep.addStep(AmlViewsRepository.DocumentRoot.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.DocumentRoot.Properties.mixed);
+		propertiesStep.addStep(AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap);
+		propertiesStep.addStep(AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation);
+		propertiesStep.addStep(AmlViewsRepository.DocumentRoot.Properties.description1);
+		propertiesStep.addStep(AmlViewsRepository.DocumentRoot.Properties.id);
+		propertiesStep.addStep(AmlViewsRepository.DocumentRoot.Properties.idRef);
+		propertiesStep.addStep(AmlViewsRepository.DocumentRoot.Properties.label1);
 		
-		// End of user code
+		
+		composer = new PartComposer(documentRootStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.DocumentRoot.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DocumentRoot.Properties.mixed) {
+					return createMixedMultiValuedEditor(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap) {
+					return createXMLNSPrefixMapTableComposition(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation) {
+					return createXSISchemaLocationTableComposition(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DocumentRoot.Properties.description1) {
+					return 		createDescription1Text(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DocumentRoot.Properties.id) {
+					return 		createIdText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DocumentRoot.Properties.idRef) {
+					return 		createIdRefText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DocumentRoot.Properties.label1) {
+					return 		createLabel1Text(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.DocumentRootPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -135,25 +169,19 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createMixedMultiValuedEditor(widgetFactory, propertiesGroup);
-		createXMLNSPrefixMapTableComposition(widgetFactory, propertiesGroup);
-		createXSISchemaLocationTableComposition(widgetFactory, propertiesGroup);
-		createDescription1Text(widgetFactory, propertiesGroup);
-		createIdText(widgetFactory, propertiesGroup);
-		createIdRefText(widgetFactory, propertiesGroup);
-		createLabel1Text(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	/**
 	 * 
 	 */
-	protected void createMixedMultiValuedEditor(FormToolkit widgetFactory, Composite parent) {
+	protected Composite createMixedMultiValuedEditor(FormToolkit widgetFactory, Composite parent) {
 		mixed = widgetFactory.createText(parent, "", SWT.READ_ONLY); //$NON-NLS-1$
 		GridData mixedData = new GridData(GridData.FILL_HORIZONTAL);
 		mixedData.horizontalSpan = 2;
 		mixed.setLayoutData(mixedData);
-		EditingUtils.setID(mixed, AmlViewsRepository.DocumentRoot.mixed);
+		EditingUtils.setID(mixed, AmlViewsRepository.DocumentRoot.Properties.mixed);
 		EditingUtils.setEEFtype(mixed, "eef::MultiValuedEditor::field"); //$NON-NLS-1$
 		editMixed = widgetFactory.createButton(parent, AmlMessages.DocumentRootPropertiesEditionPart_MixedLabel, SWT.NONE);
 		GridData editMixedData = new GridData();
@@ -167,205 +195,126 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			 * 
 			 */
 			public void widgetSelected(SelectionEvent e) {
-				EObject documentRoot = PropertiesContextService.getInstance().lastElement();
-				FeatureEditorDialog dialog = new FeatureEditorDialog(Display.getDefault().getActiveShell(), new AdapterFactoryLabelProvider(adapterFactory), documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_Mixed().getEType(), 
-						mixedList, "DocumentRoot", null, false, false); //$NON-NLS-1$
+				EEFFeatureEditorDialog dialog = new EEFFeatureEditorDialog(
+						mixed.getShell(), "DocumentRoot", new AdapterFactoryLabelProvider(adapterFactory), //$NON-NLS-1$
+						mixedList, AmlPackage.eINSTANCE.getDocumentRoot_Mixed().getEType(), null,
+						false, true, 
+						null, null);
 				if (dialog.open() == Window.OK) {
 					mixedList = dialog.getResult();
 					if (mixedList == null) {
 						mixedList = new BasicEList();
 					}
 					mixed.setText(mixedList.toString());
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.mixed, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, mixedList));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.mixed, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new BasicEList(mixedList)));
 					setHasChanged(true);
 				}
 			}
 		});
-		EditingUtils.setID(editMixed, AmlViewsRepository.DocumentRoot.mixed);
+		EditingUtils.setID(editMixed, AmlViewsRepository.DocumentRoot.Properties.mixed);
 		EditingUtils.setEEFtype(editMixed, "eef::MultiValuedEditor::browsebutton"); //$NON-NLS-1$
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createXMLNSPrefixMapTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.xMLNSPrefixMap = new ReferencesTable<EStringToStringMapEntryImpl>(AmlMessages.DocumentRootPropertiesEditionPart_XMLNSPrefixMapLabel, new ReferencesTableListener<EStringToStringMapEntryImpl>() {			
-			public void handleAdd() { addToXMLNSPrefixMap();}
-			public void handleEdit(EStringToStringMapEntryImpl element) { editXMLNSPrefixMap(element); }
-			public void handleMove(EStringToStringMapEntryImpl element, int oldIndex, int newIndex) { moveXMLNSPrefixMap(element, oldIndex, newIndex); }
-			public void handleRemove(EStringToStringMapEntryImpl element) { removeFromXMLNSPrefixMap(element); }
-			public void navigateTo(EStringToStringMapEntryImpl element) { }
+	protected Composite createXMLNSPrefixMapTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.xMLNSPrefixMap = new ReferencesTable(AmlMessages.DocumentRootPropertiesEditionPart_XMLNSPrefixMapLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				xMLNSPrefixMap.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				xMLNSPrefixMap.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				xMLNSPrefixMap.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				xMLNSPrefixMap.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.xMLNSPrefixMap.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.xMLNSPrefixMap, AmlViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.xMLNSPrefixMapFilters) {
+			this.xMLNSPrefixMap.addFilter(filter);
+		}
+		this.xMLNSPrefixMap.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap, AmlViewsRepository.FORM_KIND));
 		this.xMLNSPrefixMap.createControls(parent, widgetFactory);
+		this.xMLNSPrefixMap.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData xMLNSPrefixMapData = new GridData(GridData.FILL_HORIZONTAL);
 		xMLNSPrefixMapData.horizontalSpan = 3;
 		this.xMLNSPrefixMap.setLayoutData(xMLNSPrefixMapData);
 		this.xMLNSPrefixMap.setLowerBound(0);
 		this.xMLNSPrefixMap.setUpperBound(-1);
-		xMLNSPrefixMap.setID(AmlViewsRepository.DocumentRoot.xMLNSPrefixMap);
+		xMLNSPrefixMap.setID(AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap);
 		xMLNSPrefixMap.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveXMLNSPrefixMap(EStringToStringMapEntryImpl element, int oldIndex, int newIndex) {
-		EObject editedElement = xMLNSPrefixMapEditUtil.foundCorrespondingEObject(element);
-		xMLNSPrefixMapEditUtil.moveElement(element, oldIndex, newIndex);
-		xMLNSPrefixMap.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToXMLNSPrefixMap() {
-		// Start of user code addToXMLNSPrefixMap() method body
-		EStringToStringMapEntryImpl eObject = (EStringToStringMapEntryImpl) EcorePackage.eINSTANCE.getEStringToStringMapEntry();
-				// EStringToStringMapEntryImpl eObject = EcoreFactory.eINSTANCE.createEStringToStringMapEntry();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						xMLNSPrefixMapEditUtil.addElement(propertiesEditionObject);
-						xMLNSPrefixMap.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromXMLNSPrefixMap(EStringToStringMapEntryImpl element) {
-		// Start of user code for the removeFromXMLNSPrefixMap() method body
-				EObject editedElement = xMLNSPrefixMapEditUtil.foundCorrespondingEObject(element);
-				xMLNSPrefixMapEditUtil.removeElement(element);
-				xMLNSPrefixMap.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editXMLNSPrefixMap(EStringToStringMapEntryImpl element) {
-		// Start of user code editXMLNSPrefixMap() method body
-				EObject editedElement = xMLNSPrefixMapEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						xMLNSPrefixMapEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						xMLNSPrefixMap.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xMLNSPrefixMap, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createXSISchemaLocationTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.xSISchemaLocation = new ReferencesTable<EStringToStringMapEntryImpl>(AmlMessages.DocumentRootPropertiesEditionPart_XSISchemaLocationLabel, new ReferencesTableListener<EStringToStringMapEntryImpl>() {			
-			public void handleAdd() { addToXSISchemaLocation();}
-			public void handleEdit(EStringToStringMapEntryImpl element) { editXSISchemaLocation(element); }
-			public void handleMove(EStringToStringMapEntryImpl element, int oldIndex, int newIndex) { moveXSISchemaLocation(element, oldIndex, newIndex); }
-			public void handleRemove(EStringToStringMapEntryImpl element) { removeFromXSISchemaLocation(element); }
-			public void navigateTo(EStringToStringMapEntryImpl element) { }
+	protected Composite createXSISchemaLocationTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.xSISchemaLocation = new ReferencesTable(AmlMessages.DocumentRootPropertiesEditionPart_XSISchemaLocationLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				xSISchemaLocation.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				xSISchemaLocation.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				xSISchemaLocation.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				xSISchemaLocation.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.xSISchemaLocation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.xSISchemaLocation, AmlViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.xSISchemaLocationFilters) {
+			this.xSISchemaLocation.addFilter(filter);
+		}
+		this.xSISchemaLocation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation, AmlViewsRepository.FORM_KIND));
 		this.xSISchemaLocation.createControls(parent, widgetFactory);
+		this.xSISchemaLocation.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData xSISchemaLocationData = new GridData(GridData.FILL_HORIZONTAL);
 		xSISchemaLocationData.horizontalSpan = 3;
 		this.xSISchemaLocation.setLayoutData(xSISchemaLocationData);
 		this.xSISchemaLocation.setLowerBound(0);
 		this.xSISchemaLocation.setUpperBound(-1);
-		xSISchemaLocation.setID(AmlViewsRepository.DocumentRoot.xSISchemaLocation);
+		xSISchemaLocation.setID(AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation);
 		xSISchemaLocation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveXSISchemaLocation(EStringToStringMapEntryImpl element, int oldIndex, int newIndex) {
-		EObject editedElement = xSISchemaLocationEditUtil.foundCorrespondingEObject(element);
-		xSISchemaLocationEditUtil.moveElement(element, oldIndex, newIndex);
-		xSISchemaLocation.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToXSISchemaLocation() {
-		// Start of user code addToXSISchemaLocation() method body
-		EStringToStringMapEntryImpl eObject = (EStringToStringMapEntryImpl) EcorePackage.eINSTANCE.getEStringToStringMapEntry();
-		// EStringToStringMapEntryImpl eObject = EcoreFactory.eINSTANCE.createEStringToStringMapEntry();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						xSISchemaLocationEditUtil.addElement(propertiesEditionObject);
-						xSISchemaLocation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromXSISchemaLocation(EStringToStringMapEntryImpl element) {
-		// Start of user code for the removeFromXSISchemaLocation() method body
-				EObject editedElement = xSISchemaLocationEditUtil.foundCorrespondingEObject(element);
-				xSISchemaLocationEditUtil.removeElement(element);
-				xSISchemaLocation.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editXSISchemaLocation(EStringToStringMapEntryImpl element) {
-		// Start of user code editXSISchemaLocation() method body
-				EObject editedElement = xSISchemaLocationEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						xSISchemaLocationEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						xSISchemaLocation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.xSISchemaLocation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	
-	protected void createDescription1Text(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_Description1Label, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.description1, AmlViewsRepository.FORM_KIND));
+	protected Composite createDescription1Text(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_Description1Label, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.Properties.description1, AmlViewsRepository.FORM_KIND));
 		description1 = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		description1.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -380,7 +329,7 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.description1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description1.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.description1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description1.getText()));
 			}
 		});
 		description1.addKeyListener(new KeyAdapter() {
@@ -393,18 +342,19 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.description1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description1.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.description1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description1.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(description1, AmlViewsRepository.DocumentRoot.description1);
+		EditingUtils.setID(description1, AmlViewsRepository.DocumentRoot.Properties.description1);
 		EditingUtils.setEEFtype(description1, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.description1, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.Properties.description1, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createIdText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.id, AmlViewsRepository.FORM_KIND));
+	protected Composite createIdText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.Properties.id, AmlViewsRepository.FORM_KIND));
 		id = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		id.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -419,7 +369,7 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 			}
 		});
 		id.addKeyListener(new KeyAdapter() {
@@ -432,18 +382,19 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(id, AmlViewsRepository.DocumentRoot.id);
+		EditingUtils.setID(id, AmlViewsRepository.DocumentRoot.Properties.id);
 		EditingUtils.setEEFtype(id, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.id, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.Properties.id, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createIdRefText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_IdRefLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.idRef, AmlViewsRepository.FORM_KIND));
+	protected Composite createIdRefText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_IdRefLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.Properties.idRef, AmlViewsRepository.FORM_KIND));
 		idRef = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		idRef.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -458,7 +409,7 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
 			}
 		});
 		idRef.addKeyListener(new KeyAdapter() {
@@ -471,18 +422,19 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(idRef, AmlViewsRepository.DocumentRoot.idRef);
+		EditingUtils.setID(idRef, AmlViewsRepository.DocumentRoot.Properties.idRef);
 		EditingUtils.setEEFtype(idRef, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.idRef, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.Properties.idRef, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createLabel1Text(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_Label1Label, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.label1, AmlViewsRepository.FORM_KIND));
+	protected Composite createLabel1Text(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DocumentRootPropertiesEditionPart_Label1Label, propertiesEditionComponent.isRequired(AmlViewsRepository.DocumentRoot.Properties.label1, AmlViewsRepository.FORM_KIND));
 		label1 = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		label1.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -497,7 +449,7 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.label1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label1.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.label1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label1.getText()));
 			}
 		});
 		label1.addKeyListener(new KeyAdapter() {
@@ -510,13 +462,14 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.label1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label1.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DocumentRootPropertiesEditionPartForm.this, AmlViewsRepository.DocumentRoot.Properties.label1, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label1.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(label1, AmlViewsRepository.DocumentRoot.label1);
+		EditingUtils.setID(label1, AmlViewsRepository.DocumentRoot.Properties.label1);
 		EditingUtils.setEEFtype(label1, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.label1, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DocumentRoot.Properties.label1, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -557,18 +510,9 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 			mixed.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void addToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		mixedList.add(newValue);		
-		if (newValue != null) {
-			mixed.setText(mixedList.toString());
-		} else {
-			mixed.setText(""); //$NON-NLS-1$
-		}
-	}
-	
-	public void removeToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		mixedList.remove(newValue);		
+
+	public void addToMixed(Object newValue) {
+		mixedList.add(newValue);
 		if (newValue != null) {
 			mixed.setText(mixedList.toString());
 		} else {
@@ -576,84 +520,40 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 		}
 	}
 
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXMLNSPrefixMapToAdd()
-	 * 
-	 */
-	public List getXMLNSPrefixMapToAdd() {
-		return xMLNSPrefixMapEditUtil.getElementsToAdd();
+	public void removeToMixed(Object newValue) {
+		mixedList.remove(newValue);
+		if (newValue != null) {
+			mixed.setText(mixedList.toString());
+		} else {
+			mixed.setText(""); //$NON-NLS-1$
+		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXMLNSPrefixMapToRemove()
-	 * 
-	 */
-	public List getXMLNSPrefixMapToRemove() {
-		return xMLNSPrefixMapEditUtil.getElementsToRemove();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXMLNSPrefixMapToEdit()
-	 * 
-	 */
-	public Map getXMLNSPrefixMapToEdit() {
-		return xMLNSPrefixMapEditUtil.getElementsToRefresh();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXMLNSPrefixMapToMove()
-	 * 
-	 */
-	public List getXMLNSPrefixMapToMove() {
-		return xMLNSPrefixMapEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXMLNSPrefixMapTable()
-	 * 
-	 */
-	public List getXMLNSPrefixMapTable() {
-		return xMLNSPrefixMapEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#initXMLNSPrefixMap(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initXMLNSPrefixMap(EObject current, EReference containingFeature, EReference feature) {
+	public void initXMLNSPrefixMap(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			xMLNSPrefixMapEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			xMLNSPrefixMapEditUtil = new EMFListEditUtil(current, feature);
-		this.xMLNSPrefixMap.setInput(xMLNSPrefixMapEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		xMLNSPrefixMap.setContentProvider(contentProvider);
+		xMLNSPrefixMap.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#updateXMLNSPrefixMap(EObject newValue)
+	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#updateXMLNSPrefixMap()
 	 * 
 	 */
-	public void updateXMLNSPrefixMap(EObject newValue) {
-		if(xMLNSPrefixMapEditUtil != null){
-			xMLNSPrefixMapEditUtil.reinit(newValue);
-			xMLNSPrefixMap.refresh();
-		}
-	}
+	public void updateXMLNSPrefixMap() {
+	xMLNSPrefixMap.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -663,6 +563,9 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 	 */
 	public void addFilterToXMLNSPrefixMap(ViewerFilter filter) {
 		xMLNSPrefixMapFilters.add(filter);
+		if (this.xMLNSPrefixMap != null) {
+			this.xMLNSPrefixMap.addFilter(filter);
+		}
 	}
 
 	/**
@@ -682,87 +585,34 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 	 * 
 	 */
 	public boolean isContainedInXMLNSPrefixMapTable(EObject element) {
-		return xMLNSPrefixMapEditUtil.contains(element);
+		return ((ReferencesTableSettings)xMLNSPrefixMap.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXSISchemaLocationToAdd()
-	 * 
-	 */
-	public List getXSISchemaLocationToAdd() {
-		return xSISchemaLocationEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXSISchemaLocationToRemove()
-	 * 
-	 */
-	public List getXSISchemaLocationToRemove() {
-		return xSISchemaLocationEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXSISchemaLocationToEdit()
-	 * 
-	 */
-	public Map getXSISchemaLocationToEdit() {
-		return xSISchemaLocationEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXSISchemaLocationToMove()
-	 * 
-	 */
-	public List getXSISchemaLocationToMove() {
-		return xSISchemaLocationEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#getXSISchemaLocationTable()
-	 * 
-	 */
-	public List getXSISchemaLocationTable() {
-		return xSISchemaLocationEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#initXSISchemaLocation(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initXSISchemaLocation(EObject current, EReference containingFeature, EReference feature) {
+	public void initXSISchemaLocation(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			xSISchemaLocationEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			xSISchemaLocationEditUtil = new EMFListEditUtil(current, feature);
-		this.xSISchemaLocation.setInput(xSISchemaLocationEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		xSISchemaLocation.setContentProvider(contentProvider);
+		xSISchemaLocation.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#updateXSISchemaLocation(EObject newValue)
+	 * @see net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart#updateXSISchemaLocation()
 	 * 
 	 */
-	public void updateXSISchemaLocation(EObject newValue) {
-		if(xSISchemaLocationEditUtil != null){
-			xSISchemaLocationEditUtil.reinit(newValue);
-			xSISchemaLocation.refresh();
-		}
-	}
+	public void updateXSISchemaLocation() {
+	xSISchemaLocation.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -772,6 +622,9 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 	 */
 	public void addFilterToXSISchemaLocation(ViewerFilter filter) {
 		xSISchemaLocationFilters.add(filter);
+		if (this.xSISchemaLocation != null) {
+			this.xSISchemaLocation.addFilter(filter);
+		}
 	}
 
 	/**
@@ -791,7 +644,7 @@ public class DocumentRootPropertiesEditionPartForm extends CompositePropertiesEd
 	 * 
 	 */
 	public boolean isContainedInXSISchemaLocationTable(EObject element) {
-		return xSISchemaLocationEditUtil.contains(element);
+		return ((ReferencesTableSettings)xSISchemaLocation.getInput()).contains(element);
 	}
 
 

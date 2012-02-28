@@ -916,7 +916,7 @@ public class EurEditor
 			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 
 			// added for EEF tabbed properties
-			selectionViewer.addDoubleClickListener(new OpenWizardOnDoubleClick(editingDomain));
+			selectionViewer.addDoubleClickListener(new OpenWizardOnDoubleClick(editingDomain,adapterFactory));
 
 			new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 

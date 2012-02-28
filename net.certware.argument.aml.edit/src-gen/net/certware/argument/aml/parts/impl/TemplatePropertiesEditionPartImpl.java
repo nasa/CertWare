@@ -1,14 +1,12 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import net.certware.argument.aml.AmlFactory;
-import net.certware.argument.aml.Annotation;
-import net.certware.argument.aml.Question;
 import net.certware.argument.aml.parts.AmlViewsRepository;
 import net.certware.argument.aml.parts.TemplatePropertiesEditionPart;
 import net.certware.argument.aml.providers.AmlMessages;
@@ -18,23 +16,26 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -43,22 +44,20 @@ import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, TemplatePropertiesEditionPart {
 
-	protected EMFListEditUtil annotationEditUtil;
-	protected ReferencesTable<? extends EObject> annotation;
-	protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil questionEditUtil;
-	protected ReferencesTable<? extends EObject> question;
-	protected List<ViewerFilter> questionBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> questionFilters = new ArrayList<ViewerFilter>();
+protected ReferencesTable annotation;
+protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
+protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
+protected ReferencesTable question;
+protected List<ViewerFilter> questionBusinessFilters = new ArrayList<ViewerFilter>();
+protected List<ViewerFilter> questionFilters = new ArrayList<ViewerFilter>();
 	protected Text id;
 
 
@@ -96,18 +95,39 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence templateStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = templateStep.addStep(AmlViewsRepository.Template.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Template.Properties.annotation);
+		propertiesStep.addStep(AmlViewsRepository.Template.Properties.question);
+		propertiesStep.addStep(AmlViewsRepository.Template.Properties.id);
 		
-		// End of user code
+		
+		composer = new PartComposer(templateStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Template.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Template.Properties.annotation) {
+					return createAnnotationAdvancedTableComposition(parent);
+				}
+				if (key == AmlViewsRepository.Template.Properties.question) {
+					return createQuestionAdvancedTableComposition(parent);
+				}
+				if (key == AmlViewsRepository.Template.Properties.id) {
+					return createIdText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.TemplatePropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -116,182 +136,108 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createAnnotationAdvancedTableComposition(propertiesGroup);
-		createQuestionAdvancedTableComposition(propertiesGroup);
-		createIdText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createAnnotationAdvancedTableComposition(Composite parent) {
-		this.annotation = new ReferencesTable<Annotation>(AmlMessages.TemplatePropertiesEditionPart_AnnotationLabel, new ReferencesTableListener<Annotation>() {			
-			public void handleAdd() { addToAnnotation();}
-			public void handleEdit(Annotation element) { editAnnotation(element); }
-			public void handleMove(Annotation element, int oldIndex, int newIndex) { moveAnnotation(element, oldIndex, newIndex); }
-			public void handleRemove(Annotation element) { removeFromAnnotation(element); }
-			public void navigateTo(Annotation element) { }
+	protected Composite createAnnotationAdvancedTableComposition(Composite parent) {
+		this.annotation = new ReferencesTable(AmlMessages.TemplatePropertiesEditionPart_AnnotationLabel, new ReferencesTableListener() {
+			public void handleAdd() { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				annotation.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				annotation.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				annotation.refresh();
+			}
+			public void handleRemove(EObject element) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				annotation.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.annotation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.Template.annotation, AmlViewsRepository.SWT_KIND));
+		for (ViewerFilter filter : this.annotationFilters) {
+			this.annotation.addFilter(filter);
+		}
+		this.annotation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.Template.Properties.annotation, AmlViewsRepository.SWT_KIND));
 		this.annotation.createControls(parent);
+		this.annotation.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
 		this.annotation.setLowerBound(0);
 		this.annotation.setUpperBound(-1);
-		annotation.setID(AmlViewsRepository.Template.annotation);
+		annotation.setID(AmlViewsRepository.Template.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 *  
-	 */
-	protected void moveAnnotation(Annotation element, int oldIndex, int newIndex) {
-		EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-		annotationEditUtil.moveElement(element, oldIndex, newIndex);
-		annotation.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 *  
-	 */
-	protected void addToAnnotation() {
-		// Start of user code addToAnnotation() method body
-				Annotation eObject = AmlFactory.eINSTANCE.createAnnotation();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						annotationEditUtil.addElement(propertiesEditionObject);
-						annotation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void removeFromAnnotation(Annotation element) {
-		// Start of user code removeFromAnnotation() method body
-				EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-				annotationEditUtil.removeElement(element);
-				annotation.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void editAnnotation(Annotation element) {
-		// Start of user code editAnnotation() method body
-				EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						annotationEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						annotation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createQuestionAdvancedTableComposition(Composite parent) {
-		this.question = new ReferencesTable<Question>(AmlMessages.TemplatePropertiesEditionPart_QuestionLabel, new ReferencesTableListener<Question>() {			
-			public void handleAdd() { addToQuestion();}
-			public void handleEdit(Question element) { editQuestion(element); }
-			public void handleMove(Question element, int oldIndex, int newIndex) { moveQuestion(element, oldIndex, newIndex); }
-			public void handleRemove(Question element) { removeFromQuestion(element); }
-			public void navigateTo(Question element) { }
+	protected Composite createQuestionAdvancedTableComposition(Composite parent) {
+		this.question = new ReferencesTable(AmlMessages.TemplatePropertiesEditionPart_QuestionLabel, new ReferencesTableListener() {
+			public void handleAdd() { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.question, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				question.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.question, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				question.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.question, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				question.refresh();
+			}
+			public void handleRemove(EObject element) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.question, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				question.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.question.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.Template.question, AmlViewsRepository.SWT_KIND));
+		for (ViewerFilter filter : this.questionFilters) {
+			this.question.addFilter(filter);
+		}
+		this.question.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.Template.Properties.question, AmlViewsRepository.SWT_KIND));
 		this.question.createControls(parent);
+		this.question.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.question, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData questionData = new GridData(GridData.FILL_HORIZONTAL);
 		questionData.horizontalSpan = 3;
 		this.question.setLayoutData(questionData);
 		this.question.setLowerBound(0);
 		this.question.setUpperBound(-1);
-		question.setID(AmlViewsRepository.Template.question);
+		question.setID(AmlViewsRepository.Template.Properties.question);
 		question.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 *  
-	 */
-	protected void moveQuestion(Question element, int oldIndex, int newIndex) {
-		EObject editedElement = questionEditUtil.foundCorrespondingEObject(element);
-		questionEditUtil.moveElement(element, oldIndex, newIndex);
-		question.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.question, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 *  
-	 */
-	protected void addToQuestion() {
-		// Start of user code addToQuestion() method body
-				Question eObject = AmlFactory.eINSTANCE.createQuestion();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						questionEditUtil.addElement(propertiesEditionObject);
-						question.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.question, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void removeFromQuestion(Question element) {
-		// Start of user code removeFromQuestion() method body
-				EObject editedElement = questionEditUtil.foundCorrespondingEObject(element);
-				questionEditUtil.removeElement(element);
-				question.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.question, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void editQuestion(Question element) {
-		// Start of user code editQuestion() method body
-				EObject editedElement = questionEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						questionEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						question.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.question, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		// End of user code
+		return parent;
 	}
 
 	
-	protected void createIdText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.TemplatePropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Template.id, AmlViewsRepository.SWT_KIND));
+	protected Composite createIdText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.TemplatePropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Template.Properties.id, AmlViewsRepository.SWT_KIND));
 		id = new Text(parent, SWT.BORDER);
 		GridData idData = new GridData(GridData.FILL_HORIZONTAL);
 		id.setLayoutData(idData);
@@ -307,7 +253,7 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 			}
 
 		});
@@ -324,14 +270,15 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TemplatePropertiesEditionPartImpl.this, AmlViewsRepository.Template.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(id, AmlViewsRepository.Template.id);
+		EditingUtils.setID(id, AmlViewsRepository.Template.Properties.id);
 		EditingUtils.setEEFtype(id, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Template.id, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Template.Properties.id, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -348,83 +295,30 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 		// End of user code
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getAnnotationToAdd()
-	 * 
-	 */
-	public List getAnnotationToAdd() {
-		return annotationEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getAnnotationToRemove()
-	 * 
-	 */
-	public List getAnnotationToRemove() {
-		return annotationEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getAnnotationToEdit()
-	 * 
-	 */
-	public Map getAnnotationToEdit() {
-		return annotationEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getAnnotationToMove()
-	 * 
-	 */
-	public List getAnnotationToMove() {
-		return annotationEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getAnnotationTable()
-	 * 
-	 */
-	public List getAnnotationTable() {
-		return annotationEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#initAnnotation(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initAnnotation(EObject current, EReference containingFeature, EReference feature) {
+	public void initAnnotation(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			annotationEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			annotationEditUtil = new EMFListEditUtil(current, feature);
-		this.annotation.setInput(annotationEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		annotation.setContentProvider(contentProvider);
+		annotation.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#updateAnnotation(EObject newValue)
+	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#updateAnnotation()
 	 * 
 	 */
-	public void updateAnnotation(EObject newValue) {
-		if(annotationEditUtil != null){
-			annotationEditUtil.reinit(newValue);
-			annotation.refresh();
-		}
-	}
+	public void updateAnnotation() {
+	annotation.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -434,6 +328,9 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 	 */
 	public void addFilterToAnnotation(ViewerFilter filter) {
 		annotationFilters.add(filter);
+		if (this.annotation != null) {
+			this.annotation.addFilter(filter);
+		}
 	}
 
 	/**
@@ -453,87 +350,34 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInAnnotationTable(EObject element) {
-		return annotationEditUtil.contains(element);
+		return ((ReferencesTableSettings)annotation.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getQuestionToAdd()
-	 * 
-	 */
-	public List getQuestionToAdd() {
-		return questionEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getQuestionToRemove()
-	 * 
-	 */
-	public List getQuestionToRemove() {
-		return questionEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getQuestionToEdit()
-	 * 
-	 */
-	public Map getQuestionToEdit() {
-		return questionEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getQuestionToMove()
-	 * 
-	 */
-	public List getQuestionToMove() {
-		return questionEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#getQuestionTable()
-	 * 
-	 */
-	public List getQuestionTable() {
-		return questionEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#initQuestion(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initQuestion(EObject current, EReference containingFeature, EReference feature) {
+	public void initQuestion(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			questionEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			questionEditUtil = new EMFListEditUtil(current, feature);
-		this.question.setInput(questionEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		question.setContentProvider(contentProvider);
+		question.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#updateQuestion(EObject newValue)
+	 * @see net.certware.argument.aml.parts.TemplatePropertiesEditionPart#updateQuestion()
 	 * 
 	 */
-	public void updateQuestion(EObject newValue) {
-		if(questionEditUtil != null){
-			questionEditUtil.reinit(newValue);
-			question.refresh();
-		}
-	}
+	public void updateQuestion() {
+	question.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -543,6 +387,9 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 	 */
 	public void addFilterToQuestion(ViewerFilter filter) {
 		questionFilters.add(filter);
+		if (this.question != null) {
+			this.question.addFilter(filter);
+		}
 	}
 
 	/**
@@ -562,7 +409,7 @@ public class TemplatePropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInQuestionTable(EObject element) {
-		return questionEditUtil.contains(element);
+		return ((ReferencesTableSettings)question.getInput()).contains(element);
 	}
 
 

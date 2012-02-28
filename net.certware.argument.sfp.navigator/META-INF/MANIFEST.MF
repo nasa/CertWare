@@ -30,4 +30,5 @@ Import-Package: net.certware.argument.arm,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.ui.navigator,
  net.certware.argument.sfp,
- org.eclipse.ui.workbench
+ org.eclipse.ui.workbench,
+ org.eclipse.emf.ecore

@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
@@ -11,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.swt.SWT;
@@ -31,7 +37,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, CreatingToolPropertiesEditionPart {
@@ -77,17 +83,39 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence creatingToolStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = creatingToolStep.addStep(AmlViewsRepository.CreatingTool.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.CreatingTool.Properties.label);
+		propertiesStep.addStep(AmlViewsRepository.CreatingTool.Properties.toolType);
+		propertiesStep.addStep(AmlViewsRepository.CreatingTool.Properties.version);
 		
-		// End of user code
+		
+		composer = new PartComposer(creatingToolStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.CreatingTool.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.CreatingTool.Properties.label) {
+					return 		createLabelText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.CreatingTool.Properties.toolType) {
+					return 		createToolTypeText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.CreatingTool.Properties.version) {
+					return 		createVersionText(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.CreatingToolPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -96,15 +124,13 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createLabelText(widgetFactory, propertiesGroup);
-		createToolTypeText(widgetFactory, propertiesGroup);
-		createVersionText(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createLabelText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.CreatingToolPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.CreatingTool.label, AmlViewsRepository.FORM_KIND));
+	protected Composite createLabelText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.CreatingToolPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.CreatingTool.Properties.label, AmlViewsRepository.FORM_KIND));
 		label = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		label.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -119,7 +145,7 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 			}
 		});
 		label.addKeyListener(new KeyAdapter() {
@@ -132,18 +158,19 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(label, AmlViewsRepository.CreatingTool.label);
+		EditingUtils.setID(label, AmlViewsRepository.CreatingTool.Properties.label);
 		EditingUtils.setEEFtype(label, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.CreatingTool.label, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.CreatingTool.Properties.label, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createToolTypeText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.CreatingToolPropertiesEditionPart_ToolTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.CreatingTool.toolType, AmlViewsRepository.FORM_KIND));
+	protected Composite createToolTypeText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.CreatingToolPropertiesEditionPart_ToolTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.CreatingTool.Properties.toolType, AmlViewsRepository.FORM_KIND));
 		toolType = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		toolType.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -158,7 +185,7 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.toolType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, toolType.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.Properties.toolType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, toolType.getText()));
 			}
 		});
 		toolType.addKeyListener(new KeyAdapter() {
@@ -171,18 +198,19 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.toolType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, toolType.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.Properties.toolType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, toolType.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(toolType, AmlViewsRepository.CreatingTool.toolType);
+		EditingUtils.setID(toolType, AmlViewsRepository.CreatingTool.Properties.toolType);
 		EditingUtils.setEEFtype(toolType, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.CreatingTool.toolType, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.CreatingTool.Properties.toolType, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createVersionText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.CreatingToolPropertiesEditionPart_VersionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.CreatingTool.version, AmlViewsRepository.FORM_KIND));
+	protected Composite createVersionText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.CreatingToolPropertiesEditionPart_VersionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.CreatingTool.Properties.version, AmlViewsRepository.FORM_KIND));
 		version = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		version.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -197,7 +225,7 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.version, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, version.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.Properties.version, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, version.getText()));
 			}
 		});
 		version.addKeyListener(new KeyAdapter() {
@@ -210,13 +238,14 @@ public class CreatingToolPropertiesEditionPartForm extends CompositePropertiesEd
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.version, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, version.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CreatingToolPropertiesEditionPartForm.this, AmlViewsRepository.CreatingTool.Properties.version, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, version.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(version, AmlViewsRepository.CreatingTool.version);
+		EditingUtils.setID(version, AmlViewsRepository.CreatingTool.Properties.version);
 		EditingUtils.setEEFtype(version, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.CreatingTool.version, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.CreatingTool.Properties.version, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

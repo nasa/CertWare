@@ -41,7 +41,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
       <PropertiesEditionPolicyProvider
-            providerClass="net.certware.verification.checklist.providers.ChecklistPackagePropertiesEditionPolicyProvider">
+            providerClass="net.certware.verification.checklist.providers.ChecklistPackagePropertiesEditionProvider">
       </PropertiesEditionPolicyProvider>
    </extension>
    <extension

@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.components;
 
 // Start of user code for imports
@@ -7,213 +9,74 @@ import net.certware.argument.aml.Start;
 import net.certware.argument.aml.parts.AmlViewsRepository;
 import net.certware.argument.aml.parts.StartPropertiesEditionPart;
 
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
 	
 
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class StartPropertiesEditionComponent extends StandardPropertiesEditionComponent {
+public class StartPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	private String[] parts = {BASE_PART};
-
-	/**
-	 * The EObject to edit
-	 * 
-	 */
-	private Start start;
-
-	/**
-	 * The Base part
-	 * 
-	 */
-	protected StartPropertiesEditionPart basePart;
-
+	
 	/**
 	 * Default constructor
 	 * 
 	 */
-	public StartPropertiesEditionComponent(EObject start, String editing_mode) {
-		if (start instanceof Start) {
-			this.start = (Start)start;
-			if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode)) {
-				semanticAdapter = initializeSemanticAdapter();
-				this.start.eAdapters().add(semanticAdapter);
-			}
-		}
-		this.editing_mode = editing_mode;
-	}
-
-	/**
-	 * Initialize the semantic model listener for live editing mode
-	 * 
-	 * @return the semantic model listener
-	 * 
-	 */
-	private AdapterImpl initializeSemanticAdapter() {
-		return new EContentAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
-			 */
-			public void notifyChanged(final Notification msg) {
-				if (basePart == null)
-					StartPropertiesEditionComponent.this.dispose();
-				else {
-					Runnable updateRunnable = new Runnable() {
-						public void run() {
-							runUpdateRunnable(msg);
-						}
-					};
-					if (null == Display.getCurrent()) {
-						PlatformUI.getWorkbench().getDisplay().syncExec(updateRunnable);
-					} else {
-						updateRunnable.run();
-					}
-				}
-			}
-
-		};
-	}
-
-	/**
-	 * Used to update the views
-	 * 
-	 */
-	protected void runUpdateRunnable(final Notification msg) {
-		if (AmlPackage.eINSTANCE.getStart_Value().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setValue(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setValue("");
-			}
-		}
-		if (AmlPackage.eINSTANCE.getStart_Scheme().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setScheme(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setScheme("");
-			}
-		}
-
+	public StartPropertiesEditionComponent(PropertiesEditingContext editingContext, EObject start, String editing_mode) {
+		super(editingContext, start, editing_mode);
+		parts = new String[] { BASE_PART };
+		repositoryKey = AmlViewsRepository.class;
+		partKey = AmlViewsRepository.Start.class;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#translatePart(java.lang.String)
-	 * 
-	 */
-	public java.lang.Class translatePart(String key) {
-		if (BASE_PART.equals(key))
-			return AmlViewsRepository.Start.class;
-		return super.translatePart(key);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#partsList()
-	 * 
-	 */
-	public String[] partsList() {
-		return parts;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionPart
-	 *  (java.lang.String, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
-		if (start != null && BASE_PART.equals(key)) {
-			if (basePart == null) {
-				IPropertiesEditionPartProvider provider = PropertiesEditionPartProviderService.getInstance().getProvider(AmlViewsRepository.class);
-				if (provider != null) {
-					basePart = (StartPropertiesEditionPart)provider.getPropertiesEditionPart(AmlViewsRepository.Start.class, kind, this);
-					addListener((IPropertiesEditionListener)basePart);
-				}
-			}
-			return (IPropertiesEditionPart)basePart;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#
-	 *      setPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
-	 * 
-	 */
-	public void setPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionPart propertiesEditionPart) {
-		if (key == AmlViewsRepository.Start.class)
-			this.basePart = (StartPropertiesEditionPart) propertiesEditionPart;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Class, int, org.eclipse.emf.ecore.EObject, 
+	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	public void initPart(java.lang.Class key, int kind, EObject elt, ResourceSet allResource) {
+	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
-		if (basePart != null && key == AmlViewsRepository.Start.class) {
-			((IPropertiesEditionPart)basePart).setContext(elt, allResource);
+		if (editingPart != null && key == partKey) {
+			editingPart.setContext(elt, allResource);
 			final Start start = (Start)elt;
+			final StartPropertiesEditionPart basePart = (StartPropertiesEditionPart)editingPart;
 			// init values
-			if (start.getValue() != null)
-				basePart.setValue(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), start.getValue()));
-			if (start.getScheme() != null)
-				basePart.setScheme(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), start.getScheme()));
+			if (start.getValue() != null && isAccessible(AmlViewsRepository.Start.Properties.value))
+				basePart.setValue(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), start.getValue()));
+			
+			if (start.getScheme() != null && isAccessible(AmlViewsRepository.Start.Properties.scheme))
+				basePart.setScheme(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), start.getScheme()));
+			
 			// init filters
-
-
+			
+			
+			// init values for referenced views
+			
+			// init filters for referenced views
+			
 		}
-		// init values for referenced views
-
-		// init filters for referenced views
-
 		setInitializing(false);
 	}
 
@@ -223,75 +86,58 @@ public class StartPropertiesEditionComponent extends StandardPropertiesEditionCo
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionCommand
-	 *     (org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	public CompoundCommand getPropertiesEditionCommand(EditingDomain editingDomain) {
-		CompoundCommand cc = new CompoundCommand();
-		if ((start != null) && (basePart != null)) { 
-			cc.append(SetCommand.create(editingDomain, start, AmlPackage.eINSTANCE.getStart_Value(), EcoreUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getValue())));
-			cc.append(SetCommand.create(editingDomain, start, AmlPackage.eINSTANCE.getStart_Scheme(), EcoreUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getScheme())));
-
+	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == AmlViewsRepository.Start.Properties.value) {
+			return AmlPackage.eINSTANCE.getStart_Value();
 		}
-		if (!cc.isEmpty())
-			return cc;
-		cc.append(IdentityCommand.INSTANCE);
-		return cc;
+		if (editorKey == AmlViewsRepository.Start.Properties.scheme) {
+			return AmlPackage.eINSTANCE.getStart_Scheme();
+		}
+		return super.associatedFeature(editorKey);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionObject()
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	public EObject getPropertiesEditionObject(EObject source) {
-		if (source instanceof Start) {
-			Start startToUpdate = (Start)source;
-			startToUpdate.setValue((java.lang.String)EcoreUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getValue()));
-			startToUpdate.setScheme((java.lang.String)EcoreUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getScheme()));
-
-			return startToUpdate;
+	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		Start start = (Start)semanticObject;
+		if (AmlViewsRepository.Start.Properties.value == event.getAffectedEditor()) {
+			start.setValue((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
 		}
-		else
-			return null;
+		if (AmlViewsRepository.Start.Properties.scheme == event.getAffectedEditor()) {
+			start.setScheme((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	public void firePropertiesChanged(IPropertiesEditionEvent event) {
-		if (!isInitializing()) {
-			Diagnostic valueDiagnostic = validateValue(event);
-			if (PropertiesEditionEvent.COMMIT == event.getState() && IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode) && valueDiagnostic.getSeverity() == Diagnostic.OK) {
-				CompoundCommand command = new CompoundCommand();
-			if (AmlViewsRepository.Start.value == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, start, AmlPackage.eINSTANCE.getStart_Value(), EcoreUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (AmlViewsRepository.Start.scheme == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, start, AmlPackage.eINSTANCE.getStart_Scheme(), EcoreUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-
-				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+	public void updatePart(Notification msg) {
+		if (editingPart.isVisible()) {	
+			StartPropertiesEditionPart basePart = (StartPropertiesEditionPart)editingPart;
+			if (AmlPackage.eINSTANCE.getStart_Value().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.Start.Properties.value)) {
+				if (msg.getNewValue() != null) {
+					basePart.setValue(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
 				} else {
-					liveEditingDomain.getCommandStack().execute(command);
+					basePart.setValue("");
 				}
 			}
-			if (valueDiagnostic.getSeverity() != Diagnostic.OK && valueDiagnostic instanceof BasicDiagnostic)
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, valueDiagnostic));
-			else {
-				Diagnostic validate = validate();
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, validate));
+			if (AmlPackage.eINSTANCE.getStart_Scheme().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.Start.Properties.scheme)) {
+				if (msg.getNewValue() != null) {
+					basePart.setScheme(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setScheme("");
+				}
 			}
-			super.firePropertiesChanged(event);
+			
 		}
 	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -302,14 +148,19 @@ public class StartPropertiesEditionComponent extends StandardPropertiesEditionCo
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
-			String newStringValue = event.getNewValue().toString();
 			try {
-				if (AmlViewsRepository.Start.value == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getStart_Value().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.Start.Properties.value == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getStart_Value().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getStart_Value().getEAttributeType(), newValue);
 				}
-				if (AmlViewsRepository.Start.scheme == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getStart_Scheme().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.Start.Properties.scheme == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getStart_Scheme().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getStart_Scheme().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
@@ -321,45 +172,4 @@ public class StartPropertiesEditionComponent extends StandardPropertiesEditionCo
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validate()
-	 * 
-	 */
-	public Diagnostic validate() {
-		Diagnostic validate = Diagnostic.OK_INSTANCE;
-		if (IPropertiesEditionComponent.BATCH_MODE.equals(editing_mode)) {
-			EObject copy = EcoreUtil.copy(start);
-			copy = getPropertiesEditionObject(copy);
-			validate =  EEFRuntimePlugin.getEEFValidator().validate(copy);
-		}
-		else if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode))
-			validate = EEFRuntimePlugin.getEEFValidator().validate(start);
-		// Start of user code for custom validation check
-		
-		// End of user code
-		return validate;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#dispose()
-	 * 
-	 */
-	public void dispose() {
-		if (semanticAdapter != null)
-			start.eAdapters().remove(semanticAdapter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getTabText(java.lang.String)
-	 * 
-	 */
-	public String getTabText(String p_key) {
-		return basePart.getTitle();
-	}
 }

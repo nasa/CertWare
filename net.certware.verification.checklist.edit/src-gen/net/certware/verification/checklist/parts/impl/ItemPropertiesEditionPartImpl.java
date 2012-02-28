@@ -18,10 +18,16 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -36,7 +42,7 @@ import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
  * 
@@ -85,18 +91,47 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence itemStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = itemStep.addStep(ChecklistViewsRepository.Item.Properties.class);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.identifier);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.description);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.reference);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.result);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.comment);
 		
-		// End of user code
+		
+		composer = new PartComposer(itemStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == ChecklistViewsRepository.Item.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.identifier) {
+					return createIdentifierText(parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.description) {
+					return createDescriptionText(parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.reference) {
+					return createReferenceText(parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.result) {
+					return createResultEMFComboViewer(parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.comment) {
+					return createCommentText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(ChecklistMessages.ItemPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -105,16 +140,12 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createIdentifierText(propertiesGroup);
-		createDescriptionText(propertiesGroup);
-		createReferenceText(propertiesGroup);
-		createResultEMFComboViewer(propertiesGroup);
-		createCommentText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createIdentifierText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.identifier, ChecklistViewsRepository.SWT_KIND));
+	protected Composite createIdentifierText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.identifier, ChecklistViewsRepository.SWT_KIND));
 		identifier = new Text(parent, SWT.BORDER);
 		GridData identifierData = new GridData(GridData.FILL_HORIZONTAL);
 		identifier.setLayoutData(identifierData);
@@ -130,7 +161,7 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 			}
 
 		});
@@ -147,19 +178,20 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(identifier, ChecklistViewsRepository.Item.identifier);
+		EditingUtils.setID(identifier, ChecklistViewsRepository.Item.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.identifier, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.identifier, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createDescriptionText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.description, ChecklistViewsRepository.SWT_KIND));
+	protected Composite createDescriptionText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.description, ChecklistViewsRepository.SWT_KIND));
 		description = new Text(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
 		description.setLayoutData(descriptionData);
@@ -175,7 +207,7 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 			}
 
 		});
@@ -192,19 +224,20 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(description, ChecklistViewsRepository.Item.description);
+		EditingUtils.setID(description, ChecklistViewsRepository.Item.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.description, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.description, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createReferenceText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_ReferenceLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.reference, ChecklistViewsRepository.SWT_KIND));
+	protected Composite createReferenceText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_ReferenceLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.reference, ChecklistViewsRepository.SWT_KIND));
 		reference = new Text(parent, SWT.BORDER);
 		GridData referenceData = new GridData(GridData.FILL_HORIZONTAL);
 		reference.setLayoutData(referenceData);
@@ -220,7 +253,7 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
 			}
 
 		});
@@ -237,31 +270,47 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(reference, ChecklistViewsRepository.Item.reference);
+		EditingUtils.setID(reference, ChecklistViewsRepository.Item.Properties.reference);
 		EditingUtils.setEEFtype(reference, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.reference, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.reference, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createResultEMFComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_ResultLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.result, ChecklistViewsRepository.SWT_KIND));
+	protected Composite createResultEMFComboViewer(Composite parent) {
+		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_ResultLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.result, ChecklistViewsRepository.SWT_KIND));
 		result = new EMFComboViewer(parent);
 		result.setContentProvider(new ArrayContentProvider());
 		result.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
 		GridData resultData = new GridData(GridData.FILL_HORIZONTAL);
 		result.getCombo().setLayoutData(resultData);
-		result.setID(ChecklistViewsRepository.Item.result);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.result, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		result.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.result, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getResult()));
+			}
+
+		});
+		result.setID(ChecklistViewsRepository.Item.Properties.result);
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.result, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createCommentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.comment, ChecklistViewsRepository.SWT_KIND));
+	protected Composite createCommentText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ChecklistMessages.ItemPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.comment, ChecklistViewsRepository.SWT_KIND));
 		comment = new Text(parent, SWT.BORDER);
 		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
 		comment.setLayoutData(commentData);
@@ -277,7 +326,7 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
 			}
 
 		});
@@ -294,14 +343,15 @@ public class ItemPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartImpl.this, ChecklistViewsRepository.Item.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(comment, ChecklistViewsRepository.Item.comment);
+		EditingUtils.setID(comment, ChecklistViewsRepository.Item.Properties.comment);
 		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.comment, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.comment, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

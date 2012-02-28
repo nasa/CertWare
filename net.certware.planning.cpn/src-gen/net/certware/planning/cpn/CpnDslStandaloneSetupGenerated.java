@@ -39,6 +39,5 @@ public class CpnDslStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

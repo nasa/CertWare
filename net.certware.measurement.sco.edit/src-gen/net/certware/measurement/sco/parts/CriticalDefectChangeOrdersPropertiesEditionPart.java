@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EEnum;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface CriticalDefectChangeOrdersPropertiesEditionPart {

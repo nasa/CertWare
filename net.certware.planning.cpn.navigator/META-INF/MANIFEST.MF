@@ -27,4 +27,5 @@ Import-Package: net.certware.core,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.ui.navigator,
  org.eclipse.ui.workbench,
- net.certware.planning.cpn
+ net.certware.planning.cpn,
+ org.eclipse.emf.ecore

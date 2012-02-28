@@ -1,103 +1,116 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.providers;
+
+import java.util.List;
 
 import net.certware.argument.aml.AmlPackage;
 import net.certware.argument.aml.Choice;
 import net.certware.argument.aml.components.ChoicePropertiesEditionComponent;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class ChoicePropertiesEditionProvider implements IPropertiesEditionProvider {
+public class ChoicePropertiesEditionProvider extends PropertiesEditingProviderImpl {
 
 	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject)
-	 * 
+	 * Constructor without provider for super types.
 	 */
-	public boolean provides(EObject eObject) {
-		return (eObject instanceof Choice) && (AmlPackage.eINSTANCE.getChoice() == eObject.eClass());
+	public ChoicePropertiesEditionProvider() {
+		super();
+	}
+
+	/**
+	 * Constructor with providers for super types.
+	 * @param superProviders providers to use for super types.
+	 */
+	public ChoicePropertiesEditionProvider(List<PropertiesEditingProvider> superProviders) {
+		super(superProviders);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part) {
-		return (eObject instanceof Choice) && (ChoicePropertiesEditionComponent.BASE_PART.equals(part));
+	public boolean provides(PropertiesEditingContext editingContext) {
+		return (editingContext.getEObject() instanceof Choice) 
+					&& (AmlPackage.eINSTANCE.getChoice() == editingContext.getEObject().eClass());
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
-	public boolean provides(EObject eObject, java.lang.Class refinement) {
-		return (eObject instanceof Choice) && (refinement == ChoicePropertiesEditionComponent.class);
+	public boolean provides(PropertiesEditingContext editingContext, String part) {
+		return (editingContext.getEObject() instanceof Choice) && (ChoicePropertiesEditionComponent.BASE_PART.equals(part));
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.Class)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part, java.lang.Class refinement) {
-		return (eObject instanceof Choice) && ((ChoicePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ChoicePropertiesEditionComponent.class));
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof Choice) && (refinement == ChoicePropertiesEditionComponent.class);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.Class)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode) {
-		if (eObject instanceof Choice) {
-			return new ChoicePropertiesEditionComponent(eObject, editing_mode);
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof Choice) && ((ChoicePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ChoicePropertiesEditionComponent.class));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
+	 * 
+	 */
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
+		if (editingContext.getEObject() instanceof Choice) {
+			return new ChoicePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part) {
-		if (eObject instanceof Choice) {
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
+		if (editingContext.getEObject() instanceof Choice) {
 			if (ChoicePropertiesEditionComponent.BASE_PART.equals(part))
-				return new ChoicePropertiesEditionComponent(eObject, editing_mode);
+				return new ChoicePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String, java.lang.Class)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String, java.lang.Class)
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part, java.lang.Class refinement) {
-		if (eObject instanceof Choice) {
+	@SuppressWarnings("rawtypes")
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
+		if (editingContext.getEObject() instanceof Choice) {
 			if (ChoicePropertiesEditionComponent.BASE_PART.equals(part)
 				&& refinement == ChoicePropertiesEditionComponent.class)
-				return new ChoicePropertiesEditionComponent(eObject, editing_mode);
+				return new ChoicePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}
 
 }

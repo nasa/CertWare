@@ -234,7 +234,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cUtilityKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final Keyword cFunctionKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
-		//BasicNodeKeyword returns ecore::EString:
+		//BasicNodeKeyword:
 		//	("discrete" | "continuous")? "node" | "decision" | "utility" | "function";
 		public ParserRule getRule() { return rule; }
 
@@ -1021,7 +1021,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		////NormalDistribution 
 		////	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
 		////	;
-		//MeanExpression returns ecore::EString:
+		//MeanExpression:
 		//	MeanTerm ("+" MeanTerm)*;
 		public ParserRule getRule() { return rule; }
 
@@ -1051,7 +1051,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
 		private final RuleCall cIDTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//MeanTerm returns ecore::EString:
+		//MeanTerm:
 		//	DOUBLE | DOUBLE "*" ID | ID;
 		public ParserRule getRule() { return rule; }
 
@@ -1674,7 +1674,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSolidusEqualsSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		private final Keyword cPercentSignEqualsSignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		
-		//assignOp returns ecore::EString:
+		//assignOp:
 		//	"+=" | "-=" | "*=" | "/=" | "%=";
 		public ParserRule getRule() { return rule; }
 
@@ -1828,7 +1828,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLessThanSignKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		private final Keyword cGreaterThanSignKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
 		
-		//relOps returns ecore::EString:
+		//relOps:
 		//	"!=" | "==" | "<=" | "<>" | ">=" | "<" | ">";
 		public ParserRule getRule() { return rule; }
 
@@ -1903,7 +1903,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//arithOps returns ecore::EString:
+		//arithOps:
 		//	"+" | "-";
 		public ParserRule getRule() { return rule; }
 
@@ -1963,7 +1963,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAsteriskKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cSolidusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//multOps returns ecore::EString:
+		//multOps:
 		//	"*" | "/";
 		public ParserRule getRule() { return rule; }
 
@@ -2019,7 +2019,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//unaryOps returns ecore::EString:
+		//unaryOps:
 		//	"-" | "!";
 		public ParserRule getRule() { return rule; }
 
@@ -2240,7 +2240,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//// TODO mean value of normal distribution must be linear function of continuous graph parents, each term must be numeric constant, name of continuous parent, or constant followed by '*' followed by name of continuous parent
 		//// TODO formal input name must refer to a node listed in the inputs attribute of the class with name
 		//// TODO the node referred to by the actual input name must be defined somewhere in the class containing the class instance
-		//OperatorName returns ecore::EString:
+		//OperatorName:
 		//	"truncate" | "Normal" | "LogNormal" | "Beta" | "Gamma" | "Exponential" | "Weibull" | "Uniform" | "Triangular" | "PERT"
 		//	| "Binomial" | "Poisson" | "NegativeBinomial" | "Geometric" | "Distribution" | "NoisyOR" | "min" | "max" | "log" |
 		//	"log2" | "log10" | "exp" | "sin" | "cos" | "tan" | "sinh" | "cosh" | "tanh" | "sqrt" | "abs" | "floor" | "ceil" |
@@ -2582,7 +2582,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getBasicNodeAccess().getRule();
 	}
 
-	//BasicNodeKeyword returns ecore::EString:
+	//BasicNodeKeyword:
 	//	("discrete" | "continuous")? "node" | "decision" | "utility" | "function";
 	public BasicNodeKeywordElements getBasicNodeKeywordAccess() {
 		return (pBasicNodeKeyword != null) ? pBasicNodeKeyword : (pBasicNodeKeyword = new BasicNodeKeywordElements());
@@ -2785,7 +2785,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	////NormalDistribution 
 	////	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
 	////	;
-	//MeanExpression returns ecore::EString:
+	//MeanExpression:
 	//	MeanTerm ("+" MeanTerm)*;
 	public MeanExpressionElements getMeanExpressionAccess() {
 		return (pMeanExpression != null) ? pMeanExpression : (pMeanExpression = new MeanExpressionElements());
@@ -2795,7 +2795,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getMeanExpressionAccess().getRule();
 	}
 
-	//MeanTerm returns ecore::EString:
+	//MeanTerm:
 	//	DOUBLE | DOUBLE "*" ID | ID;
 	public MeanTermElements getMeanTermAccess() {
 		return (pMeanTerm != null) ? pMeanTerm : (pMeanTerm = new MeanTermElements());
@@ -2962,7 +2962,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAssignmentOpExpressionAccess().getRule();
 	}
 
-	//assignOp returns ecore::EString:
+	//assignOp:
 	//	"+=" | "-=" | "*=" | "/=" | "%=";
 	public AssignOpElements getAssignOpAccess() {
 		return (pAssignOp != null) ? pAssignOp : (pAssignOp = new AssignOpElements());
@@ -3002,7 +3002,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelationalExpressionAccess().getRule();
 	}
 
-	//relOps returns ecore::EString:
+	//relOps:
 	//	"!=" | "==" | "<=" | "<>" | ">=" | "<" | ">";
 	public RelOpsElements getRelOpsAccess() {
 		return (pRelOps != null) ? pRelOps : (pRelOps = new RelOpsElements());
@@ -3022,7 +3022,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAdditiveExpressionAccess().getRule();
 	}
 
-	//arithOps returns ecore::EString:
+	//arithOps:
 	//	"+" | "-";
 	public ArithOpsElements getArithOpsAccess() {
 		return (pArithOps != null) ? pArithOps : (pArithOps = new ArithOpsElements());
@@ -3042,7 +3042,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getMultiplicativeExpressionAccess().getRule();
 	}
 
-	//multOps returns ecore::EString:
+	//multOps:
 	//	"*" | "/";
 	public MultOpsElements getMultOpsAccess() {
 		return (pMultOps != null) ? pMultOps : (pMultOps = new MultOpsElements());
@@ -3062,7 +3062,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getUnaryExpressionAccess().getRule();
 	}
 
-	//unaryOps returns ecore::EString:
+	//unaryOps:
 	//	"-" | "!";
 	public UnaryOpsElements getUnaryOpsAccess() {
 		return (pUnaryOps != null) ? pUnaryOps : (pUnaryOps = new UnaryOpsElements());
@@ -3119,7 +3119,7 @@ public class NetDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//// TODO mean value of normal distribution must be linear function of continuous graph parents, each term must be numeric constant, name of continuous parent, or constant followed by '*' followed by name of continuous parent
 	//// TODO formal input name must refer to a node listed in the inputs attribute of the class with name
 	//// TODO the node referred to by the actual input name must be defined somewhere in the class containing the class instance
-	//OperatorName returns ecore::EString:
+	//OperatorName:
 	//	"truncate" | "Normal" | "LogNormal" | "Beta" | "Gamma" | "Exponential" | "Weibull" | "Uniform" | "Triangular" | "PERT"
 	//	| "Binomial" | "Poisson" | "NegativeBinomial" | "Geometric" | "Distribution" | "NoisyOR" | "min" | "max" | "log" |
 	//	"log2" | "log10" | "exp" | "sin" | "cos" | "tan" | "sinh" | "cosh" | "tanh" | "sqrt" | "abs" | "floor" | "ceil" |

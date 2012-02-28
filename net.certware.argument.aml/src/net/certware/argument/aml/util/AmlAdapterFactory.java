@@ -165,7 +165,7 @@ public class AmlAdapterFactory extends AdapterFactoryImpl {
 			public Adapter caseInterval(Interval object) {
 				return createIntervalAdapter();
 			}
-			@Override
+			@SuppressWarnings("unused")
 			public Adapter caseList(List object) {
 				return createListAdapter();
 			}

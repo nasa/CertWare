@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
@@ -9,16 +11,18 @@ import net.certware.argument.aml.providers.AmlMessages;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesContextService;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.EEFFeatureEditorDialog;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
@@ -32,16 +36,15 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class PeriodPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, PeriodPropertiesEditionPart {
@@ -86,18 +89,35 @@ public class PeriodPropertiesEditionPartImpl extends CompositePropertiesEditionP
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence periodStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = periodStep.addStep(AmlViewsRepository.Period.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Period.Properties.group);
+		propertiesStep.addStep(AmlViewsRepository.Period.Properties.label);
 		
-		// End of user code
+		
+		composer = new PartComposer(periodStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Period.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Period.Properties.group) {
+					return createGroupMultiValuedEditor(parent);
+				}
+				if (key == AmlViewsRepository.Period.Properties.label) {
+					return createLabelText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.PeriodPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -106,16 +126,15 @@ public class PeriodPropertiesEditionPartImpl extends CompositePropertiesEditionP
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createGroupMultiValuedEditor(propertiesGroup);
-		createLabelText(propertiesGroup);
+		return propertiesGroup;
 	}
 
-	protected void createGroupMultiValuedEditor(Composite parent) {
+	protected Composite createGroupMultiValuedEditor(Composite parent) {
 		group = new Text(parent, SWT.BORDER | SWT.READ_ONLY);
 		GridData groupData = new GridData(GridData.FILL_HORIZONTAL);
 		groupData.horizontalSpan = 2;
 		group.setLayoutData(groupData);
-		EditingUtils.setID(group, AmlViewsRepository.Period.group);
+		EditingUtils.setID(group, AmlViewsRepository.Period.Properties.group);
 		EditingUtils.setEEFtype(group, "eef::MultiValuedEditor::field"); //$NON-NLS-1$
 		editGroup = new Button(parent, SWT.NONE);
 		editGroup.setText(AmlMessages.PeriodPropertiesEditionPart_GroupLabel);
@@ -129,28 +148,30 @@ public class PeriodPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
 			 */
 			public void widgetSelected(SelectionEvent e) {
-				EObject period = PropertiesContextService.getInstance().lastElement();
-				FeatureEditorDialog dialog = new FeatureEditorDialog(Display.getDefault().getActiveShell(), new AdapterFactoryLabelProvider(adapterFactory), period, AmlPackage.eINSTANCE.getPeriod_Group().getEType(), 
-						groupList, "Period", null, false, false); //$NON-NLS-1$
-						
+				EEFFeatureEditorDialog dialog = new EEFFeatureEditorDialog(
+						group.getShell(), "Period", new AdapterFactoryLabelProvider(adapterFactory), //$NON-NLS-1$
+						groupList, AmlPackage.eINSTANCE.getPeriod_Group().getEType(), null,
+						false, true, 
+						null, null);
 				if (dialog.open() == Window.OK) {
 					groupList = dialog.getResult();
 					if (groupList == null) {
 						groupList = new BasicEList();
 					}
 					group.setText(groupList.toString());
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(PeriodPropertiesEditionPartImpl.this, AmlViewsRepository.Period.group, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, groupList));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(PeriodPropertiesEditionPartImpl.this, AmlViewsRepository.Period.Properties.group, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new BasicEList(groupList)));
 					setHasChanged(true);
 				}
 			}
 		});
-		EditingUtils.setID(editGroup, AmlViewsRepository.Period.group);
+		EditingUtils.setID(editGroup, AmlViewsRepository.Period.Properties.group);
 		EditingUtils.setEEFtype(editGroup, "eef::MultiValuedEditor::browsebutton"); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createLabelText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.PeriodPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Period.label, AmlViewsRepository.SWT_KIND));
+	protected Composite createLabelText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.PeriodPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Period.Properties.label, AmlViewsRepository.SWT_KIND));
 		label = new Text(parent, SWT.BORDER);
 		GridData labelData = new GridData(GridData.FILL_HORIZONTAL);
 		label.setLayoutData(labelData);
@@ -166,7 +187,7 @@ public class PeriodPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(PeriodPropertiesEditionPartImpl.this, AmlViewsRepository.Period.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(PeriodPropertiesEditionPartImpl.this, AmlViewsRepository.Period.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 			}
 
 		});
@@ -183,14 +204,15 @@ public class PeriodPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(PeriodPropertiesEditionPartImpl.this, AmlViewsRepository.Period.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(PeriodPropertiesEditionPartImpl.this, AmlViewsRepository.Period.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(label, AmlViewsRepository.Period.label);
+		EditingUtils.setID(label, AmlViewsRepository.Period.Properties.label);
 		EditingUtils.setEEFtype(label, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Period.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Period.Properties.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -231,18 +253,18 @@ public class PeriodPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			group.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void addToGroup(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		groupList.add(newValue);		
+
+	public void addToGroup(Object newValue) {
+		groupList.add(newValue);
 		if (newValue != null) {
 			group.setText(groupList.toString());
 		} else {
 			group.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void removeToGroup(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		groupList.remove(newValue);		
+
+	public void removeToGroup(Object newValue) {
+		groupList.remove(newValue);
 		if (newValue != null) {
 			group.setText(groupList.toString());
 		} else {

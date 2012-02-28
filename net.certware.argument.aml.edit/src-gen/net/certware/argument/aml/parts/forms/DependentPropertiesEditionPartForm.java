@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
@@ -11,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.swt.SWT;
@@ -31,7 +37,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class DependentPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, DependentPropertiesEditionPart {
@@ -76,17 +82,35 @@ public class DependentPropertiesEditionPartForm extends CompositePropertiesEditi
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence dependentStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = dependentStep.addStep(AmlViewsRepository.Dependent.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Dependent.Properties.idRef);
+		propertiesStep.addStep(AmlViewsRepository.Dependent.Properties.ordinal);
 		
-		// End of user code
+		
+		composer = new PartComposer(dependentStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Dependent.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Dependent.Properties.idRef) {
+					return 		createIdRefText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Dependent.Properties.ordinal) {
+					return 		createOrdinalText(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.DependentPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -95,14 +119,13 @@ public class DependentPropertiesEditionPartForm extends CompositePropertiesEditi
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createIdRefText(widgetFactory, propertiesGroup);
-		createOrdinalText(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createIdRefText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DependentPropertiesEditionPart_IdRefLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Dependent.idRef, AmlViewsRepository.FORM_KIND));
+	protected Composite createIdRefText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DependentPropertiesEditionPart_IdRefLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Dependent.Properties.idRef, AmlViewsRepository.FORM_KIND));
 		idRef = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		idRef.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -117,7 +140,7 @@ public class DependentPropertiesEditionPartForm extends CompositePropertiesEditi
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.Properties.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
 			}
 		});
 		idRef.addKeyListener(new KeyAdapter() {
@@ -130,18 +153,19 @@ public class DependentPropertiesEditionPartForm extends CompositePropertiesEditi
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.Properties.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(idRef, AmlViewsRepository.Dependent.idRef);
+		EditingUtils.setID(idRef, AmlViewsRepository.Dependent.Properties.idRef);
 		EditingUtils.setEEFtype(idRef, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Dependent.idRef, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Dependent.Properties.idRef, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createOrdinalText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DependentPropertiesEditionPart_OrdinalLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Dependent.ordinal, AmlViewsRepository.FORM_KIND));
+	protected Composite createOrdinalText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DependentPropertiesEditionPart_OrdinalLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Dependent.Properties.ordinal, AmlViewsRepository.FORM_KIND));
 		ordinal = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		ordinal.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -156,7 +180,7 @@ public class DependentPropertiesEditionPartForm extends CompositePropertiesEditi
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.Properties.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
 			}
 		});
 		ordinal.addKeyListener(new KeyAdapter() {
@@ -169,13 +193,14 @@ public class DependentPropertiesEditionPartForm extends CompositePropertiesEditi
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DependentPropertiesEditionPartForm.this, AmlViewsRepository.Dependent.Properties.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(ordinal, AmlViewsRepository.Dependent.ordinal);
+		EditingUtils.setID(ordinal, AmlViewsRepository.Dependent.Properties.ordinal);
 		EditingUtils.setEEFtype(ordinal, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Dependent.ordinal, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Dependent.Properties.ordinal, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

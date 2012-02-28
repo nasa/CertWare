@@ -39,6 +39,5 @@ public class SemiFormalProofStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

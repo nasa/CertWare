@@ -44,7 +44,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 				justification.getEntailment().eContents().isEmpty() &&
 				justification.getNumeral().isEmpty() ) {
 			error("Justification has no assertion, entailment, or numeral",
-					SemiFormalProofPackage.JUSTIFICATION);
+					SemiFormalProofPackage.Literals.JUSTIFICATION__ENTAILMENT);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 	public void proofHasProofSteps(Proof proof) {
 		if ( proof.getProofSteps().getStatements().isEmpty() ) {
 			error(String.format("Proof %s has no proof steps", proof.getTitle() ),
-					SemiFormalProofPackage.PROOF);
+					SemiFormalProofPackage.Literals.PROOF__PROOF_STEPS);
 		}
 	}
 
@@ -81,7 +81,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 		for ( Justification j : justifications.getJustifications() ) {
 			if ( id.equalsIgnoreCase(j.getNumeral())) {
 				warning(String.format("Statement %s justification refers to itself", id), 
-						SemiFormalProofPackage.JUSTIFICATION);
+						SemiFormalProofPackage.Literals.JUSTIFICATIONS__JUSTIFICATIONS);
 			}
 		}
 	}
@@ -109,7 +109,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 
 			if ( found == false ) {
 				error(String.format("Justification refers to missing statement %s",j.getNumeral()),
-						SemiFormalProofPackage.JUSTIFICATION__NUMERAL);
+						SemiFormalProofPackage.Literals.JUSTIFICATION__NUMERAL);
 			}
 		}
 	}
@@ -136,7 +136,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 
 		if ( found == false ) {
 			warning(String.format("Entailment tail refers to missing statement %s",tail),
-					SemiFormalProofPackage.ENTAILMENT__TAIL);
+					SemiFormalProofPackage.Literals.ENTAILMENT__TAIL);
 		}
 	}
 
@@ -164,7 +164,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 
 			if ( found == false ) {
 				warning(String.format("Entailment head refers to missing statement %s",id),
-						SemiFormalProofPackage.ENTAILMENT__HEAD);
+						SemiFormalProofPackage.Literals.ENTAILMENT__HEAD);
 			}
 		}
 	}
@@ -192,11 +192,11 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 			Entailment e = j.getEntailment();
 			if ( ProofUtil.isTail(e,id) ) {
 				warning(String.format("Statement %s entailment tail refers to itself", id),
-						SemiFormalProofPackage.ENTAILMENT__TAIL);
+						SemiFormalProofPackage.Literals.ENTAILMENT__TAIL);
 			}
 			if ( ProofUtil.isInHead(e,id) ) {
 				warning(String.format("Statement %s entailment head contains itself", id),
-						SemiFormalProofPackage.ENTAILMENT__HEAD);
+						SemiFormalProofPackage.Literals.ENTAILMENT__HEAD);
 			}
 		}
 	}
@@ -235,7 +235,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 			String result = graph.isAcyclic();
 			if ( result != null ) {
 				warning(String.format("%s %s", "Proof:", result),
-						SemiFormalProofPackage.PROOF__PROOF_STEPS);
+						SemiFormalProofPackage.Literals.PROOF__PROOF_STEPS);
 				return;
 			}
 
@@ -247,7 +247,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 					warning(String.format("Entailment invalid at statement %s context %s",
 							s.getId(),
 							context.toString()),
-							SemiFormalProofPackage.PROOF__PROOF_STEPS);
+							SemiFormalProofPackage.Literals.PROOF__PROOF_STEPS);
 				} // if
 			} // for
 		} else {

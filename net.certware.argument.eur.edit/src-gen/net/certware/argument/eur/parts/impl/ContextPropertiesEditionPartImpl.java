@@ -1,6 +1,5 @@
 /**
- * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
- * All rights reserved.
+ * Generated with Acceleo
  */
 package net.certware.argument.eur.parts.impl;
 
@@ -8,12 +7,7 @@ package net.certware.argument.eur.parts.impl;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
-import net.certware.argument.arm.ArmFactory;
-import net.certware.argument.arm.TaggedValue;
-import net.certware.argument.eur.Assumption;
-import net.certware.argument.eur.EurPackage;
 import net.certware.argument.eur.parts.ContextPropertiesEditionPart;
 import net.certware.argument.eur.parts.EurViewsRepository;
 import net.certware.argument.eur.providers.EurMessages;
@@ -23,18 +17,22 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
+import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.TabElementTreeSelectionDialog;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
@@ -42,19 +40,20 @@ import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ContextPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ContextPropertiesEditionPart {
@@ -62,12 +61,10 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 	protected Text identifier;
 	protected Text description;
 	protected Text content;
-	protected EMFListEditUtil isTaggedEditUtil;
-	protected ReferencesTable<? extends EObject> isTagged;
-	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil assumptionEditUtil;
-	protected ReferencesTable<? extends EObject> assumption;
+protected ReferencesTable isTagged;
+protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
+protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable assumption;
 	protected List<ViewerFilter> assumptionBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> assumptionFilters = new ArrayList<ViewerFilter>();
 
@@ -106,18 +103,47 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence contextStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = contextStep.addStep(EurViewsRepository.Context.Properties.class);
+		propertiesStep.addStep(EurViewsRepository.Context.Properties.identifier);
+		propertiesStep.addStep(EurViewsRepository.Context.Properties.description);
+		propertiesStep.addStep(EurViewsRepository.Context.Properties.content);
+		propertiesStep.addStep(EurViewsRepository.Context.Properties.isTagged);
+		propertiesStep.addStep(EurViewsRepository.Context.Properties.assumption);
 		
-		// End of user code
+		
+		composer = new PartComposer(contextStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == EurViewsRepository.Context.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == EurViewsRepository.Context.Properties.identifier) {
+					return createIdentifierText(parent);
+				}
+				if (key == EurViewsRepository.Context.Properties.description) {
+					return createDescriptionText(parent);
+				}
+				if (key == EurViewsRepository.Context.Properties.content) {
+					return createContentText(parent);
+				}
+				if (key == EurViewsRepository.Context.Properties.isTagged) {
+					return createIsTaggedAdvancedTableComposition(parent);
+				}
+				if (key == EurViewsRepository.Context.Properties.assumption) {
+					return createAssumptionAdvancedReferencesTable(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(EurMessages.ContextPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -126,16 +152,12 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createIdentifierText(propertiesGroup);
-		createDescriptionText(propertiesGroup);
-		createContentTextarea(propertiesGroup);
-		createIsTaggedAdvancedTableComposition(propertiesGroup);
-		createAssumptionAdvancedReferencesTable(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createIdentifierText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.ContextPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.identifier, EurViewsRepository.SWT_KIND));
+	protected Composite createIdentifierText(Composite parent) {
+		SWTUtils.createPartLabel(parent, EurMessages.ContextPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.Properties.identifier, EurViewsRepository.SWT_KIND));
 		identifier = new Text(parent, SWT.BORDER);
 		GridData identifierData = new GridData(GridData.FILL_HORIZONTAL);
 		identifier.setLayoutData(identifierData);
@@ -151,7 +173,7 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 			}
 
 		});
@@ -168,19 +190,20 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(identifier, EurViewsRepository.Context.identifier);
+		EditingUtils.setID(identifier, EurViewsRepository.Context.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.identifier, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.Properties.identifier, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createDescriptionText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.ContextPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.description, EurViewsRepository.SWT_KIND));
+	protected Composite createDescriptionText(Composite parent) {
+		SWTUtils.createPartLabel(parent, EurMessages.ContextPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.Properties.description, EurViewsRepository.SWT_KIND));
 		description = new Text(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
 		description.setLayoutData(descriptionData);
@@ -196,7 +219,7 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 			}
 
 		});
@@ -213,200 +236,190 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(description, EurViewsRepository.Context.description);
+		EditingUtils.setID(description, EurViewsRepository.Context.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.description, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.Properties.description, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createContentTextarea(Composite parent) {
-		Label contentLabel = SWTUtils.createPartLabel(parent, EurMessages.ContextPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.content, EurViewsRepository.SWT_KIND));
-		GridData contentLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		contentLabelData.horizontalSpan = 3;
-		contentLabel.setLayoutData(contentLabelData);
-		content = new Text(parent, SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL);
+	protected Composite createContentText(Composite parent) {
+		SWTUtils.createPartLabel(parent, EurMessages.ContextPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Context.Properties.content, EurViewsRepository.SWT_KIND));
+		content = new Text(parent, SWT.BORDER);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
-		contentData.horizontalSpan = 2;
-		contentData.heightHint = 80;
-		contentData.widthHint = 200;
 		content.setLayoutData(contentData);
-		EditingUtils.setID(content, EurViewsRepository.Context.content);
-		EditingUtils.setEEFtype(content, "eef::Textarea"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.content, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		content.addFocusListener(new FocusAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+			}
+
+		});
+		content.addKeyListener(new KeyAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+				}
+			}
+
+		});
+		EditingUtils.setID(content, EurViewsRepository.Context.Properties.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.Properties.content, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createIsTaggedAdvancedTableComposition(Composite parent) {
-		this.isTagged = new ReferencesTable<TaggedValue>(EurMessages.ContextPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener<TaggedValue>() {			
-			public void handleAdd() { addToIsTagged();}
-			public void handleEdit(TaggedValue element) { editIsTagged(element); }
-			public void handleMove(TaggedValue element, int oldIndex, int newIndex) { moveIsTagged(element, oldIndex, newIndex); }
-			public void handleRemove(TaggedValue element) { removeFromIsTagged(element); }
-			public void navigateTo(TaggedValue element) { }
+	protected Composite createIsTaggedAdvancedTableComposition(Composite parent) {
+		this.isTagged = new ReferencesTable(EurMessages.ContextPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+			public void handleAdd() { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				isTagged.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				isTagged.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				isTagged.refresh();
+			}
+			public void handleRemove(EObject element) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				isTagged.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.isTagged.setHelpText(propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.isTagged, EurViewsRepository.SWT_KIND));
+		for (ViewerFilter filter : this.isTaggedFilters) {
+			this.isTagged.addFilter(filter);
+		}
+		this.isTagged.setHelpText(propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.Properties.isTagged, EurViewsRepository.SWT_KIND));
 		this.isTagged.createControls(parent);
+		this.isTagged.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.isTagged, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData isTaggedData = new GridData(GridData.FILL_HORIZONTAL);
 		isTaggedData.horizontalSpan = 3;
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
-		isTagged.setID(EurViewsRepository.Context.isTagged);
+		isTagged.setID(EurViewsRepository.Context.Properties.isTagged);
 		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 *  
-	 */
-	protected void moveIsTagged(TaggedValue element, int oldIndex, int newIndex) {
-		EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-		isTaggedEditUtil.moveElement(element, oldIndex, newIndex);
-		isTagged.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 *  
-	 */
-	protected void addToIsTagged() {
-		// Start of user code addToIsTagged() method body
-				TaggedValue eObject = ArmFactory.eINSTANCE.createTaggedValue();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						isTaggedEditUtil.addElement(propertiesEditionObject);
-						isTagged.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void removeFromIsTagged(TaggedValue element) {
-		// Start of user code removeFromIsTagged() method body
-				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-				isTaggedEditUtil.removeElement(element);
-				isTagged.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.isTagged, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void editIsTagged(TaggedValue element) {
-		// Start of user code editIsTagged() method body
-				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						isTaggedEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						isTagged.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.isTagged, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * 
 	 */
-	protected void createAssumptionAdvancedReferencesTable(Composite parent) {
-		this.assumption = new ReferencesTable<Assumption>(EurMessages.ContextPropertiesEditionPart_AssumptionLabel, new ReferencesTableListener<Assumption>() {
-			public void handleAdd() {
-				TabElementTreeSelectionDialog<Assumption> dialog = new TabElementTreeSelectionDialog<Assumption>(resourceSet, assumptionFilters, assumptionBusinessFilters,
-				"Assumption", EurPackage.eINSTANCE.getAssumption(), current.eResource()) {
-
-					public void process(IStructuredSelection selection) {
-						for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
-							EObject elem = (EObject) iter.next();
-							if (!assumptionEditUtil.getVirtualList().contains(elem))
-								assumptionEditUtil.addElement(elem);
-							propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.assumption,
-								PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
-						}
-						assumption.refresh();
-					}
-
-				};
-				dialog.open();
-			}
-			public void handleEdit(Assumption element) { editAssumption(element); }
-			public void handleMove(Assumption element, int oldIndex, int newIndex) { moveAssumption(element, oldIndex, newIndex); }
-			public void handleRemove(Assumption element) { removeFromAssumption(element); }
-			public void navigateTo(Assumption element) { }
+	protected Composite createAssumptionAdvancedReferencesTable(Composite parent) {
+		this.assumption = new ReferencesTable(EurMessages.ContextPropertiesEditionPart_AssumptionLabel, new ReferencesTableListener() {
+			public void handleAdd() { addAssumption(); }
+			public void handleEdit(EObject element) { editAssumption(element); }
+			public void handleMove(EObject element, int oldIndex, int newIndex) { moveAssumption(element, oldIndex, newIndex); }
+			public void handleRemove(EObject element) { removeFromAssumption(element); }
+			public void navigateTo(EObject element) { }
 		});
-		this.assumption.setHelpText(propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.assumption, EurViewsRepository.SWT_KIND));
+		this.assumption.setHelpText(propertiesEditionComponent.getHelpContent(EurViewsRepository.Context.Properties.assumption, EurViewsRepository.SWT_KIND));
 		this.assumption.createControls(parent);
+		this.assumption.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.assumption, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData assumptionData = new GridData(GridData.FILL_HORIZONTAL);
 		assumptionData.horizontalSpan = 3;
 		this.assumption.setLayoutData(assumptionData);
 		this.assumption.disableMove();
-		assumption.setID(EurViewsRepository.Context.assumption);
+		assumption.setID(EurViewsRepository.Context.Properties.assumption);
 		assumption.setEEFType("eef::AdvancedReferencesTable"); //$NON-NLS-1$
+		return parent;
 	}
 
 	/**
 	 * 
 	 */
-	protected void moveAssumption(Assumption element, int oldIndex, int newIndex) {
-		EObject editedElement = assumptionEditUtil.foundCorrespondingEObject(element);
-		assumptionEditUtil.moveElement(element, oldIndex, newIndex);
-		assumption.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.assumption, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromAssumption(Assumption element) {
-
-		// Start of user code removeFromAssumption() method body
-				EObject editedElement = assumptionEditUtil.foundCorrespondingEObject(element);
-				assumptionEditUtil.removeElement(element);
-				assumption.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.assumption, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-				
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void editAssumption(Assumption element) {
-
-		// Start of user code editAssumption() method body
-				EObject editedElement = assumptionEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						assumptionEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						assumption.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.assumption, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
+	protected void addAssumption() {
+		TabElementTreeSelectionDialog dialog = new TabElementTreeSelectionDialog(assumption.getInput(), assumptionFilters, assumptionBusinessFilters,
+		"assumption", propertiesEditionComponent.getEditingContext().getAdapterFactory(), current.eResource()) {
+			@Override
+			public void process(IStructuredSelection selection) {
+				for (Iterator<?> iter = selection.iterator(); iter.hasNext();) {
+					EObject elem = (EObject) iter.next();
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.assumption,
+						PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, elem));
 				}
-				
-		// End of user code
+				assumption.refresh();
+			}
+		};
+		dialog.open();
+	}
 
+	/**
+	 * 
+	 */
+	protected void moveAssumption(EObject element, int oldIndex, int newIndex) {
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.assumption, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+		assumption.refresh();
+	}
+
+	/**
+	 * 
+	 */
+	protected void removeFromAssumption(EObject element) {
+		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ContextPropertiesEditionPartImpl.this, EurViewsRepository.Context.Properties.assumption, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+		assumption.refresh();
+	}
+
+	/**
+	 * 
+	 */
+	protected void editAssumption(EObject element) {
+		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
+		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
+		if (provider != null) {
+			PropertiesEditingPolicy policy = provider.getPolicy(context);
+			if (policy != null) {
+				policy.execute();
+				assumption.refresh();
+			}
+		}
 	}
 
 
@@ -493,88 +506,35 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 		if (newValue != null) {
 			content.setText(newValue);
 		} else {
-			content.setText("");  //$NON-NLS-1$
+			content.setText(""); //$NON-NLS-1$
 		}
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getIsTaggedToAdd()
-	 * 
-	 */
-	public List getIsTaggedToAdd() {
-		return isTaggedEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getIsTaggedToRemove()
-	 * 
-	 */
-	public List getIsTaggedToRemove() {
-		return isTaggedEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getIsTaggedToEdit()
-	 * 
-	 */
-	public Map getIsTaggedToEdit() {
-		return isTaggedEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getIsTaggedToMove()
-	 * 
-	 */
-	public List getIsTaggedToMove() {
-		return isTaggedEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getIsTaggedTable()
-	 * 
-	 */
-	public List getIsTaggedTable() {
-		return isTaggedEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#initIsTagged(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature) {
+	public void initIsTagged(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			isTaggedEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			isTaggedEditUtil = new EMFListEditUtil(current, feature);
-		this.isTagged.setInput(isTaggedEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		isTagged.setContentProvider(contentProvider);
+		isTagged.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#updateIsTagged(EObject newValue)
+	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#updateIsTagged()
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue) {
-		if(isTaggedEditUtil != null){
-			isTaggedEditUtil.reinit(newValue);
-			isTagged.refresh();
-		}
-	}
+	public void updateIsTagged() {
+	isTagged.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -584,6 +544,9 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 	 */
 	public void addFilterToIsTagged(ViewerFilter filter) {
 		isTaggedFilters.add(filter);
+		if (this.isTagged != null) {
+			this.isTagged.addFilter(filter);
+		}
 	}
 
 	/**
@@ -603,68 +566,34 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 	 * 
 	 */
 	public boolean isContainedInIsTaggedTable(EObject element) {
-		return isTaggedEditUtil.contains(element);
+		return ((ReferencesTableSettings)isTagged.getInput()).contains(element);
 	}
+
+
 
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getAssumptionToAdd()
-	 * 
+	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#initAssumption(org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings)
 	 */
-	public List getAssumptionToAdd() {
-		return assumptionEditUtil.getElementsToAdd();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getAssumptionToRemove()
-	 * 
-	 */
-	public List getAssumptionToRemove() {
-		return assumptionEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#getAssumptionTable()
-	 * 
-	 */
-	public List getAssumptionTable() {
-		return assumptionEditUtil.getVirtualList();
-	}
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#initAssumption(EObject current, EReference containingFeature, EReference feature)
-	 */
-	public void initAssumption(EObject current, EReference containingFeature, EReference feature) {
+	public void initAssumption(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			assumptionEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			assumptionEditUtil = new EMFListEditUtil(current, feature);
-		this.assumption.setInput(assumptionEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		assumption.setContentProvider(contentProvider);
+		assumption.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#updateAssumption(EObject newValue)
+	 * @see net.certware.argument.eur.parts.ContextPropertiesEditionPart#updateAssumption()
 	 * 
 	 */
-	public void updateAssumption(EObject newValue) {
-		if(assumptionEditUtil != null){
-			assumptionEditUtil.reinit(newValue);
-			assumption.refresh();
-		}
-	}
+	public void updateAssumption() {
+	assumption.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -693,7 +622,7 @@ public class ContextPropertiesEditionPartImpl extends CompositePropertiesEdition
 	 * 
 	 */
 	public boolean isContainedInAssumptionTable(EObject element) {
-		return assumptionEditUtil.contains(element);
+		return ((ReferencesTableSettings)assumption.getInput()).contains(element);
 	}
 
 

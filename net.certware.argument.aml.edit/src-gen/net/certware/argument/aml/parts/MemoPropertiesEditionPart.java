@@ -1,12 +1,11 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -14,40 +13,12 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface MemoPropertiesEditionPart {
 
-	/**
-	 * @return the creator to add
-	 * 
-	 */
-	public List getCreatorToAdd();
 
-	/**
-	 * @return the creator to remove
-	 * 
-	 */
-	public List getCreatorToRemove();
-
-	/**
-	 * @return the creator to move
-	 * 
-	 */
-	public List getCreatorToMove();
-
-	/**
-	 * @return the creator to edit
-	 * 
-	 */
-	public Map getCreatorToEdit();
-
-	/**
-	 * @return the current creator table
-	 * 
-	 */
-	public List getCreatorTable();
 
 	/**
 	 * Init the creator
@@ -55,14 +26,14 @@ public interface MemoPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initCreator(EObject current, EReference containingFeature, EReference feature);
+	public void initCreator(ReferencesTableSettings settings);
 
 	/**
 	 * Update the creator
 	 * @param newValue the creator to update
 	 * 
 	 */
-	public void updateCreator(EObject newValue);
+	public void updateCreator();
 
 	/**
 	 * Adds the given filter to the creator edition editor.
@@ -91,35 +62,7 @@ public interface MemoPropertiesEditionPart {
 	public boolean isContainedInCreatorTable(EObject element);
 
 
-	/**
-	 * @return the reader to add
-	 * 
-	 */
-	public List getReaderToAdd();
 
-	/**
-	 * @return the reader to remove
-	 * 
-	 */
-	public List getReaderToRemove();
-
-	/**
-	 * @return the reader to move
-	 * 
-	 */
-	public List getReaderToMove();
-
-	/**
-	 * @return the reader to edit
-	 * 
-	 */
-	public Map getReaderToEdit();
-
-	/**
-	 * @return the current reader table
-	 * 
-	 */
-	public List getReaderTable();
 
 	/**
 	 * Init the reader
@@ -127,14 +70,14 @@ public interface MemoPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initReader(EObject current, EReference containingFeature, EReference feature);
+	public void initReader(ReferencesTableSettings settings);
 
 	/**
 	 * Update the reader
 	 * @param newValue the reader to update
 	 * 
 	 */
-	public void updateReader(EObject newValue);
+	public void updateReader();
 
 	/**
 	 * Adds the given filter to the reader edition editor.

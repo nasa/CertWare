@@ -19,39 +19,43 @@ public class GsnViewsRepository {
 	 * 
 	 */
 	public static class Goal {
-		
-		public static String identifier = "gsn::Goal::identifier";
-		
-		
-		public static String description = "gsn::Goal::description";
-		
-		
-		public static String content = "gsn::Goal::content";
-		
-		
-		public static String isTagged = "gsn::Goal::isTagged";
-		
-		
-		public static String assumed = "gsn::Goal::assumed";
-		
-		
-		public static String toBeSupported = "gsn::Goal::toBeSupported";
-		
-		
-		public static String subGoals = "gsn::Goal::subGoals";
-		
-		
-		public static String strategies = "gsn::Goal::strategies";
-		
-		
-		public static String goalContexts = "gsn::Goal::goalContexts";
-		
-		
-		public static String assumptions = "gsn::Goal::assumptions";
-		
-		
-		public static String goalSolutions = "gsn::Goal::goalSolutions";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "gsn::Goal::properties::identifier";
+			
+			
+			public static String description = "gsn::Goal::properties::description";
+			
+			
+			public static String content = "gsn::Goal::properties::content";
+			
+			
+			public static String isTagged = "gsn::Goal::properties::isTagged";
+			
+			
+			public static String assumed = "gsn::Goal::properties::assumed";
+			
+			
+			public static String toBeSupported = "gsn::Goal::properties::toBeSupported";
+			
+			
+			public static String subGoals = "gsn::Goal::properties::subGoals";
+			
+			
+			public static String strategies = "gsn::Goal::properties::strategies";
+			
+			
+			public static String goalContexts = "gsn::Goal::properties::goalContexts";
+			
+			
+			public static String assumptions = "gsn::Goal::properties::assumptions";
+			
+			
+			public static String goalSolutions = "gsn::Goal::properties::goalSolutions";
+			
+	
+		}
 	
 	}
 
@@ -60,30 +64,34 @@ public class GsnViewsRepository {
 	 * 
 	 */
 	public static class Strategy {
-		
-		public static String identifier = "gsn::Strategy::identifier";
-		
-		
-		public static String description = "gsn::Strategy::description";
-		
-		
-		public static String content = "gsn::Strategy::content";
-		
-		
-		public static String isTagged = "gsn::Strategy::isTagged";
-		
-		
-		public static String goals = "gsn::Strategy::goals";
-		
-		
-		public static String justifications = "gsn::Strategy::justifications";
-		
-		
-		public static String strategyContexts = "gsn::Strategy::strategyContexts";
-		
-		
-		public static String strategySolutions = "gsn::Strategy::strategySolutions";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "gsn::Strategy::properties::identifier";
+			
+			
+			public static String description = "gsn::Strategy::properties::description";
+			
+			
+			public static String content = "gsn::Strategy::properties::content";
+			
+			
+			public static String isTagged = "gsn::Strategy::properties::isTagged";
+			
+			
+			public static String goals = "gsn::Strategy::properties::goals";
+			
+			
+			public static String justifications = "gsn::Strategy::properties::justifications";
+			
+			
+			public static String strategyContexts = "gsn::Strategy::properties::strategyContexts";
+			
+			
+			public static String strategySolutions = "gsn::Strategy::properties::strategySolutions";
+			
+	
+		}
 	
 	}
 
@@ -92,18 +100,22 @@ public class GsnViewsRepository {
 	 * 
 	 */
 	public static class Justification {
-		
-		public static String identifier = "gsn::Justification::identifier";
-		
-		
-		public static String description = "gsn::Justification::description";
-		
-		
-		public static String content = "gsn::Justification::content";
-		
-		
-		public static String isTagged = "gsn::Justification::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "gsn::Justification::properties::identifier";
+			
+			
+			public static String description = "gsn::Justification::properties::description";
+			
+			
+			public static String content = "gsn::Justification::properties::content";
+			
+			
+			public static String isTagged = "gsn::Justification::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -112,18 +124,22 @@ public class GsnViewsRepository {
 	 * 
 	 */
 	public static class Context {
-		
-		public static String identifier = "gsn::Context::identifier";
-		
-		
-		public static String description = "gsn::Context::description";
-		
-		
-		public static String content = "gsn::Context::content";
-		
-		
-		public static String isTagged = "gsn::Context::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "gsn::Context::properties::identifier";
+			
+			
+			public static String description = "gsn::Context::properties::description";
+			
+			
+			public static String content = "gsn::Context::properties::content";
+			
+			
+			public static String isTagged = "gsn::Context::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -132,18 +148,22 @@ public class GsnViewsRepository {
 	 * 
 	 */
 	public static class Assumption {
-		
-		public static String identifier = "gsn::Assumption::identifier";
-		
-		
-		public static String description = "gsn::Assumption::description";
-		
-		
-		public static String content = "gsn::Assumption::content";
-		
-		
-		public static String isTagged = "gsn::Assumption::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "gsn::Assumption::properties::identifier";
+			
+			
+			public static String description = "gsn::Assumption::properties::description";
+			
+			
+			public static String content = "gsn::Assumption::properties::content";
+			
+			
+			public static String isTagged = "gsn::Assumption::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -152,30 +172,34 @@ public class GsnViewsRepository {
 	 * 
 	 */
 	public static class Solution {
-		
-		public static String identifier = "gsn::Solution::identifier";
-		
-		
-		public static String description = "gsn::Solution::description";
-		
-		
-		public static String content = "gsn::Solution::content";
-		
-		
-		public static String isTagged = "gsn::Solution::isTagged";
-		
-		
-		public static String target = "gsn::Solution::target";
-		
-		
-		public static String source = "gsn::Solution::source";
-		
-		
-		public static String solutionEvidence = "gsn::Solution::solutionEvidence";
-		
-		
-		public static String solutionContexts = "gsn::Solution::solutionContexts";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "gsn::Solution::properties::identifier";
+			
+			
+			public static String description = "gsn::Solution::properties::description";
+			
+			
+			public static String content = "gsn::Solution::properties::content";
+			
+			
+			public static String isTagged = "gsn::Solution::properties::isTagged";
+			
+			
+			public static String target = "gsn::Solution::properties::target";
+			
+			
+			public static String source = "gsn::Solution::properties::source";
+			
+			
+			public static String solutionEvidence = "gsn::Solution::properties::solutionEvidence";
+			
+			
+			public static String solutionContexts = "gsn::Solution::properties::solutionContexts";
+			
+	
+		}
 	
 	}
 
@@ -184,24 +208,28 @@ public class GsnViewsRepository {
 	 * 
 	 */
 	public static class Evidence {
-		
-		public static String identifier = "gsn::Evidence::identifier";
-		
-		
-		public static String description = "gsn::Evidence::description";
-		
-		
-		public static String content = "gsn::Evidence::content";
-		
-		
-		public static String isTagged = "gsn::Evidence::isTagged";
-		
-		
-		public static String target = "gsn::Evidence::target";
-		
-		
-		public static String source = "gsn::Evidence::source";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "gsn::Evidence::properties::identifier";
+			
+			
+			public static String description = "gsn::Evidence::properties::description";
+			
+			
+			public static String content = "gsn::Evidence::properties::content";
+			
+			
+			public static String isTagged = "gsn::Evidence::properties::isTagged";
+			
+			
+			public static String target = "gsn::Evidence::properties::target";
+			
+			
+			public static String source = "gsn::Evidence::properties::source";
+			
+	
+		}
 	
 	}
 

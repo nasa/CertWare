@@ -1,14 +1,11 @@
-/*
- * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.cae.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -63,35 +60,7 @@ public interface EvidencePropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -99,14 +68,14 @@ public interface EvidencePropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -135,38 +104,20 @@ public interface EvidencePropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the target to add
-	 * 
-	 */
-	public List getTargetToAdd();
 
-	/**
-	 * @return the target to remove
-	 * 
-	 */
-	public List getTargetToRemove();
-
-	/**
-	 * @return the current target table
-	 * 
-	 */
-	public List getTargetTable();
 
 	/**
 	 * Init the target
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the target ReferencesTable 
 	 */
-	public void initTarget(EObject current, EReference containingFeature, EReference feature);
+	public void initTarget(ReferencesTableSettings settings);
 
 	/**
 	 * Update the target
 	 * @param newValue the target to update
 	 * 
 	 */
-	public void updateTarget(EObject newValue);
+	public void updateTarget();
 
 	/**
 	 * Adds the given filter to the target edition editor.
@@ -195,38 +146,20 @@ public interface EvidencePropertiesEditionPart {
 	public boolean isContainedInTargetTable(EObject element);
 
 
-	/**
-	 * @return the source to add
-	 * 
-	 */
-	public List getSourceToAdd();
 
-	/**
-	 * @return the source to remove
-	 * 
-	 */
-	public List getSourceToRemove();
-
-	/**
-	 * @return the current source table
-	 * 
-	 */
-	public List getSourceTable();
 
 	/**
 	 * Init the source
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the source ReferencesTable 
 	 */
-	public void initSource(EObject current, EReference containingFeature, EReference feature);
+	public void initSource(ReferencesTableSettings settings);
 
 	/**
 	 * Update the source
 	 * @param newValue the source to update
 	 * 
 	 */
-	public void updateSource(EObject newValue);
+	public void updateSource();
 
 	/**
 	 * Adds the given filter to the source edition editor.
@@ -255,35 +188,7 @@ public interface EvidencePropertiesEditionPart {
 	public boolean isContainedInSourceTable(EObject element);
 
 
-	/**
-	 * @return the context to add
-	 * 
-	 */
-	public List getContextToAdd();
 
-	/**
-	 * @return the context to remove
-	 * 
-	 */
-	public List getContextToRemove();
-
-	/**
-	 * @return the context to move
-	 * 
-	 */
-	public List getContextToMove();
-
-	/**
-	 * @return the context to edit
-	 * 
-	 */
-	public Map getContextToEdit();
-
-	/**
-	 * @return the current context table
-	 * 
-	 */
-	public List getContextTable();
 
 	/**
 	 * Init the context
@@ -291,14 +196,14 @@ public interface EvidencePropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature);
+	public void initContext(ReferencesTableSettings settings);
 
 	/**
 	 * Update the context
 	 * @param newValue the context to update
 	 * 
 	 */
-	public void updateContext(EObject newValue);
+	public void updateContext();
 
 	/**
 	 * Adds the given filter to the context edition editor.
@@ -327,38 +232,20 @@ public interface EvidencePropertiesEditionPart {
 	public boolean isContainedInContextTable(EObject element);
 
 
-	/**
-	 * @return the evidence to add
-	 * 
-	 */
-	public List getEvidenceToAdd();
 
-	/**
-	 * @return the evidence to remove
-	 * 
-	 */
-	public List getEvidenceToRemove();
-
-	/**
-	 * @return the current evidence table
-	 * 
-	 */
-	public List getEvidenceTable();
 
 	/**
 	 * Init the evidence
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the evidence ReferencesTable 
 	 */
-	public void initEvidence(EObject current, EReference containingFeature, EReference feature);
+	public void initEvidence(ReferencesTableSettings settings);
 
 	/**
 	 * Update the evidence
 	 * @param newValue the evidence to update
 	 * 
 	 */
-	public void updateEvidence(EObject newValue);
+	public void updateEvidence();
 
 	/**
 	 * Adds the given filter to the evidence edition editor.

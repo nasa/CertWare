@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
@@ -11,6 +13,9 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.swt.SWT;
@@ -26,10 +31,10 @@ import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ParameterPropertiesEditionPart {
@@ -71,18 +76,32 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence parameterStep = new BindingCompositionSequence(propertiesEditionComponent);
+		parameterStep
+			.addStep(AmlViewsRepository.Parameter.Properties.class)
+			.addStep(AmlViewsRepository.Parameter.Properties.symbol);
 		
-		// End of user code
+		
+		composer = new PartComposer(parameterStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Parameter.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Parameter.Properties.symbol) {
+					return createSymbolText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.ParameterPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -91,12 +110,12 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createSymbolText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createSymbolText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.ParameterPropertiesEditionPart_SymbolLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Parameter.symbol, AmlViewsRepository.SWT_KIND));
+	protected Composite createSymbolText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.ParameterPropertiesEditionPart_SymbolLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Parameter.Properties.symbol, AmlViewsRepository.SWT_KIND));
 		symbol = new Text(parent, SWT.BORDER);
 		GridData symbolData = new GridData(GridData.FILL_HORIZONTAL);
 		symbol.setLayoutData(symbolData);
@@ -112,7 +131,7 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ParameterPropertiesEditionPartImpl.this, AmlViewsRepository.Parameter.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ParameterPropertiesEditionPartImpl.this, AmlViewsRepository.Parameter.Properties.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
 			}
 
 		});
@@ -129,14 +148,15 @@ public class ParameterPropertiesEditionPartImpl extends CompositePropertiesEditi
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ParameterPropertiesEditionPartImpl.this, AmlViewsRepository.Parameter.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ParameterPropertiesEditionPartImpl.this, AmlViewsRepository.Parameter.Properties.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(symbol, AmlViewsRepository.Parameter.symbol);
+		EditingUtils.setID(symbol, AmlViewsRepository.Parameter.Properties.symbol);
 		EditingUtils.setEEFtype(symbol, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Parameter.symbol, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Parameter.Properties.symbol, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

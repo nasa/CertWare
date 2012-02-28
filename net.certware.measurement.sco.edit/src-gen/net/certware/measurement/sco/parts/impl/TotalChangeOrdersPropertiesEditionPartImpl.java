@@ -18,10 +18,16 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -36,10 +42,10 @@ import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, TotalChangeOrdersPropertiesEditionPart {
@@ -86,18 +92,51 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence totalChangeOrdersStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = totalChangeOrdersStep.addStep(ScoViewsRepository.TotalChangeOrders.Properties.class);
+		propertiesStep.addStep(ScoViewsRepository.TotalChangeOrders.Properties.name);
+		propertiesStep.addStep(ScoViewsRepository.TotalChangeOrders.Properties.value);
+		propertiesStep.addStep(ScoViewsRepository.TotalChangeOrders.Properties.type);
+		propertiesStep.addStep(ScoViewsRepository.TotalChangeOrders.Properties.brokenLines);
+		propertiesStep.addStep(ScoViewsRepository.TotalChangeOrders.Properties.fixedLines);
+		propertiesStep.addStep(ScoViewsRepository.TotalChangeOrders.Properties.repairEffort);
 		
-		// End of user code
+		
+		composer = new PartComposer(totalChangeOrdersStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == ScoViewsRepository.TotalChangeOrders.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == ScoViewsRepository.TotalChangeOrders.Properties.name) {
+					return createNameText(parent);
+				}
+				if (key == ScoViewsRepository.TotalChangeOrders.Properties.value) {
+					return createValueText(parent);
+				}
+				if (key == ScoViewsRepository.TotalChangeOrders.Properties.type) {
+					return createTypeEMFComboViewer(parent);
+				}
+				if (key == ScoViewsRepository.TotalChangeOrders.Properties.brokenLines) {
+					return createBrokenLinesText(parent);
+				}
+				if (key == ScoViewsRepository.TotalChangeOrders.Properties.fixedLines) {
+					return createFixedLinesText(parent);
+				}
+				if (key == ScoViewsRepository.TotalChangeOrders.Properties.repairEffort) {
+					return createRepairEffortText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(ScoMessages.TotalChangeOrdersPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -106,17 +145,12 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createNameText(propertiesGroup);
-		createValueText(propertiesGroup);
-		createTypeEMFComboViewer(propertiesGroup);
-		createBrokenLinesText(propertiesGroup);
-		createFixedLinesText(propertiesGroup);
-		createRepairEffortText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createNameText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.name, ScoViewsRepository.SWT_KIND));
+	protected Composite createNameText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.Properties.name, ScoViewsRepository.SWT_KIND));
 		name = new Text(parent, SWT.BORDER);
 		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
 		name.setLayoutData(nameData);
@@ -132,7 +166,7 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
 			}
 
 		});
@@ -149,19 +183,20 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(name, ScoViewsRepository.TotalChangeOrders.name);
+		EditingUtils.setID(name, ScoViewsRepository.TotalChangeOrders.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.name, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.Properties.name, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createValueText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_ValueLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.value, ScoViewsRepository.SWT_KIND));
+	protected Composite createValueText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_ValueLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.Properties.value, ScoViewsRepository.SWT_KIND));
 		value = new Text(parent, SWT.BORDER);
 		GridData valueData = new GridData(GridData.FILL_HORIZONTAL);
 		value.setLayoutData(valueData);
@@ -177,7 +212,7 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.value, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.value, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
 			}
 
 		});
@@ -194,31 +229,47 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.value, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.value, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(value, ScoViewsRepository.TotalChangeOrders.value);
+		EditingUtils.setID(value, ScoViewsRepository.TotalChangeOrders.Properties.value);
 		EditingUtils.setEEFtype(value, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.value, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.Properties.value, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createTypeEMFComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.type, ScoViewsRepository.SWT_KIND));
+	protected Composite createTypeEMFComboViewer(Composite parent) {
+		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.Properties.type, ScoViewsRepository.SWT_KIND));
 		type = new EMFComboViewer(parent);
 		type.setContentProvider(new ArrayContentProvider());
 		type.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
 		GridData typeData = new GridData(GridData.FILL_HORIZONTAL);
 		type.getCombo().setLayoutData(typeData);
-		type.setID(ScoViewsRepository.TotalChangeOrders.type);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.type, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		type.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getType()));
+			}
+
+		});
+		type.setID(ScoViewsRepository.TotalChangeOrders.Properties.type);
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.Properties.type, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createBrokenLinesText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_BrokenLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.brokenLines, ScoViewsRepository.SWT_KIND));
+	protected Composite createBrokenLinesText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_BrokenLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.Properties.brokenLines, ScoViewsRepository.SWT_KIND));
 		brokenLines = new Text(parent, SWT.BORDER);
 		GridData brokenLinesData = new GridData(GridData.FILL_HORIZONTAL);
 		brokenLines.setLayoutData(brokenLinesData);
@@ -234,7 +285,7 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.brokenLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.brokenLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
 			}
 
 		});
@@ -251,19 +302,20 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.brokenLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.brokenLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(brokenLines, ScoViewsRepository.TotalChangeOrders.brokenLines);
+		EditingUtils.setID(brokenLines, ScoViewsRepository.TotalChangeOrders.Properties.brokenLines);
 		EditingUtils.setEEFtype(brokenLines, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.brokenLines, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.Properties.brokenLines, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createFixedLinesText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_FixedLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.fixedLines, ScoViewsRepository.SWT_KIND));
+	protected Composite createFixedLinesText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_FixedLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.Properties.fixedLines, ScoViewsRepository.SWT_KIND));
 		fixedLines = new Text(parent, SWT.BORDER);
 		GridData fixedLinesData = new GridData(GridData.FILL_HORIZONTAL);
 		fixedLines.setLayoutData(fixedLinesData);
@@ -279,7 +331,7 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.fixedLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.fixedLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
 			}
 
 		});
@@ -296,19 +348,20 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.fixedLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.fixedLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(fixedLines, ScoViewsRepository.TotalChangeOrders.fixedLines);
+		EditingUtils.setID(fixedLines, ScoViewsRepository.TotalChangeOrders.Properties.fixedLines);
 		EditingUtils.setEEFtype(fixedLines, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.fixedLines, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.Properties.fixedLines, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createRepairEffortText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_RepairEffortLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.repairEffort, ScoViewsRepository.SWT_KIND));
+	protected Composite createRepairEffortText(Composite parent) {
+		SWTUtils.createPartLabel(parent, ScoMessages.TotalChangeOrdersPropertiesEditionPart_RepairEffortLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.TotalChangeOrders.Properties.repairEffort, ScoViewsRepository.SWT_KIND));
 		repairEffort = new Text(parent, SWT.BORDER);
 		GridData repairEffortData = new GridData(GridData.FILL_HORIZONTAL);
 		repairEffort.setLayoutData(repairEffortData);
@@ -324,7 +377,7 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.repairEffort, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.repairEffort, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
 			}
 
 		});
@@ -341,14 +394,15 @@ public class TotalChangeOrdersPropertiesEditionPartImpl extends CompositePropert
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.repairEffort, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(TotalChangeOrdersPropertiesEditionPartImpl.this, ScoViewsRepository.TotalChangeOrders.Properties.repairEffort, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(repairEffort, ScoViewsRepository.TotalChangeOrders.repairEffort);
+		EditingUtils.setID(repairEffort, ScoViewsRepository.TotalChangeOrders.Properties.repairEffort);
 		EditingUtils.setEEFtype(repairEffort, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.repairEffort, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.TotalChangeOrders.Properties.repairEffort, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

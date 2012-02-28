@@ -139,7 +139,6 @@
 
 
 
-
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">
@@ -179,18 +178,6 @@
       <markerResolutionGenerator
             class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
-   </extension>
-
-   <extension
-         point="org.eclipse.ui.newWizards">
-      <wizard
-            category="org.eclipse.xtext.projectwiz"
-            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
-            icon="icons/editor.gif"
-            id="net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
-            name="CpnDsl Project"
-            project="true">
-      </wizard>
    </extension>
 
 </plugin>

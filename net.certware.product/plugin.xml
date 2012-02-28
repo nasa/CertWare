@@ -58,16 +58,8 @@
                value="Web Resources">
          </property>
          <property
-               name="aboutImage"
-               value="icons/obj256/certware-250.png">
-         </property>
-         <property
-               name="aboutText"
-               value="CertWare Safety Case Workbench Desktop Application.">
-         </property>
-         <property
-               name="windowImages"
-               value="icons/obj16/certware.gif,icons/obj32/certware-32.gif,icons/obj48/certware-48.gif,icons/obj64/certware-64.gif,icons/obj128/certware-128.gif">
+               name="startupProgressRect"
+               value="5,275,445,15">
          </property>
       </product>
    </extension>

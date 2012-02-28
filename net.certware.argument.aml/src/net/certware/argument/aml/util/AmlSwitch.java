@@ -7,10 +7,49 @@ package net.certware.argument.aml.util;
 
 import java.util.List;
 
-import net.certware.argument.aml.*;
+import net.certware.argument.aml.AggregationRule;
+import net.certware.argument.aml.AmlDocument;
+import net.certware.argument.aml.AmlPackage;
+import net.certware.argument.aml.Annotation;
+import net.certware.argument.aml.Answer;
+import net.certware.argument.aml.Argument;
+import net.certware.argument.aml.ArgumentTemplate;
+import net.certware.argument.aml.Belief;
+import net.certware.argument.aml.Choice;
+import net.certware.argument.aml.Collection;
+import net.certware.argument.aml.CollectionItem;
+import net.certware.argument.aml.Coverage;
+import net.certware.argument.aml.CreatingTool;
+import net.certware.argument.aml.Creator;
+import net.certware.argument.aml.Dependent;
+import net.certware.argument.aml.DiscoveryMethod;
+import net.certware.argument.aml.DocumentRoot;
+import net.certware.argument.aml.End;
+import net.certware.argument.aml.Evidence;
+import net.certware.argument.aml.EvidenceExhibit;
+import net.certware.argument.aml.Exhibit;
+import net.certware.argument.aml.Flag;
+import net.certware.argument.aml.Interval;
+import net.certware.argument.aml.Memo;
+import net.certware.argument.aml.MetaData;
+import net.certware.argument.aml.NationState;
+import net.certware.argument.aml.Parameter;
+import net.certware.argument.aml.Period;
+import net.certware.argument.aml.Person;
+import net.certware.argument.aml.Publisher;
+import net.certware.argument.aml.Question;
+import net.certware.argument.aml.QuestionRelationships;
+import net.certware.argument.aml.Reader;
+import net.certware.argument.aml.Relevance;
+import net.certware.argument.aml.Reliability;
+import net.certware.argument.aml.Start;
+import net.certware.argument.aml.Template;
+import net.certware.argument.aml.Value;
+import net.certware.argument.aml.Witness;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +64,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see net.certware.argument.aml.AmlPackage
  * @generated
  */
-public class AmlSwitch<T> {
+public class AmlSwitch<T> extends Switch<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -54,14 +93,16 @@ public class AmlSwitch<T> {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -71,26 +112,7 @@ public class AmlSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case AmlPackage.AGGREGATION_RULE: {
@@ -226,7 +248,7 @@ public class AmlSwitch<T> {
 				return result;
 			}
 			case AmlPackage.LIST: {
-				net.certware.argument.aml.List list = (net.certware.argument.aml.List)theEObject;
+				List list = (List)theEObject;
 				T result = caseList(list);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -672,7 +694,7 @@ public class AmlSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseList(net.certware.argument.aml.List object) {
+	public T caseList(List object) {
 		return null;
 	}
 
@@ -927,6 +949,7 @@ public class AmlSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

@@ -1,103 +1,116 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.providers;
+
+import java.util.List;
 
 import net.certware.argument.aml.AmlPackage;
 import net.certware.argument.aml.QuestionRelationships;
 import net.certware.argument.aml.components.QuestionRelationshipsPropertiesEditionComponent;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class QuestionRelationshipsPropertiesEditionProvider implements IPropertiesEditionProvider {
+public class QuestionRelationshipsPropertiesEditionProvider extends PropertiesEditingProviderImpl {
 
 	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject)
-	 * 
+	 * Constructor without provider for super types.
 	 */
-	public boolean provides(EObject eObject) {
-		return (eObject instanceof QuestionRelationships) && (AmlPackage.eINSTANCE.getQuestionRelationships() == eObject.eClass());
+	public QuestionRelationshipsPropertiesEditionProvider() {
+		super();
+	}
+
+	/**
+	 * Constructor with providers for super types.
+	 * @param superProviders providers to use for super types.
+	 */
+	public QuestionRelationshipsPropertiesEditionProvider(List<PropertiesEditingProvider> superProviders) {
+		super(superProviders);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part) {
-		return (eObject instanceof QuestionRelationships) && (QuestionRelationshipsPropertiesEditionComponent.BASE_PART.equals(part));
+	public boolean provides(PropertiesEditingContext editingContext) {
+		return (editingContext.getEObject() instanceof QuestionRelationships) 
+					&& (AmlPackage.eINSTANCE.getQuestionRelationships() == editingContext.getEObject().eClass());
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
-	public boolean provides(EObject eObject, java.lang.Class refinement) {
-		return (eObject instanceof QuestionRelationships) && (refinement == QuestionRelationshipsPropertiesEditionComponent.class);
+	public boolean provides(PropertiesEditingContext editingContext, String part) {
+		return (editingContext.getEObject() instanceof QuestionRelationships) && (QuestionRelationshipsPropertiesEditionComponent.BASE_PART.equals(part));
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.Class)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part, java.lang.Class refinement) {
-		return (eObject instanceof QuestionRelationships) && ((QuestionRelationshipsPropertiesEditionComponent.BASE_PART.equals(part) && refinement == QuestionRelationshipsPropertiesEditionComponent.class));
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof QuestionRelationships) && (refinement == QuestionRelationshipsPropertiesEditionComponent.class);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.Class)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode) {
-		if (eObject instanceof QuestionRelationships) {
-			return new QuestionRelationshipsPropertiesEditionComponent(eObject, editing_mode);
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof QuestionRelationships) && ((QuestionRelationshipsPropertiesEditionComponent.BASE_PART.equals(part) && refinement == QuestionRelationshipsPropertiesEditionComponent.class));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
+	 * 
+	 */
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
+		if (editingContext.getEObject() instanceof QuestionRelationships) {
+			return new QuestionRelationshipsPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part) {
-		if (eObject instanceof QuestionRelationships) {
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
+		if (editingContext.getEObject() instanceof QuestionRelationships) {
 			if (QuestionRelationshipsPropertiesEditionComponent.BASE_PART.equals(part))
-				return new QuestionRelationshipsPropertiesEditionComponent(eObject, editing_mode);
+				return new QuestionRelationshipsPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String, java.lang.Class)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String, java.lang.Class)
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part, java.lang.Class refinement) {
-		if (eObject instanceof QuestionRelationships) {
+	@SuppressWarnings("rawtypes")
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
+		if (editingContext.getEObject() instanceof QuestionRelationships) {
 			if (QuestionRelationshipsPropertiesEditionComponent.BASE_PART.equals(part)
 				&& refinement == QuestionRelationshipsPropertiesEditionComponent.class)
-				return new QuestionRelationshipsPropertiesEditionComponent(eObject, editing_mode);
+				return new QuestionRelationshipsPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}
 
 }

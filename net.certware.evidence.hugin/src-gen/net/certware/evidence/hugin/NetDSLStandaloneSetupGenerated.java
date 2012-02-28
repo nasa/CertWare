@@ -47,6 +47,5 @@ public class NetDSLStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

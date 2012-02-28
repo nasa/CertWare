@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import org.eclipse.core.resources.FileInfoMatcherDescription;
+import org.eclipse.core.resources.IBuildConfiguration;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFileState;
@@ -895,10 +896,10 @@ public class ResourceDelegates {
 			fProject.build(kind, monitor);
 		}
 
-		public void build(int kind, String builderName, Map args, IProgressMonitor monitor) throws CoreException {
+		public void build(int kind, String builderName, Map<String,String> args, IProgressMonitor monitor) throws CoreException {
 			fProject.build(kind, builderName, args, monitor);
 		}
-
+		
 		public void clearHistory(IProgressMonitor monitor) throws CoreException {
 			fProject.clearHistory(monitor);
 		}
@@ -1360,6 +1361,45 @@ public class ResourceDelegates {
 		public void saveSnapshot(int options, URI snapshotLocation,
 				IProgressMonitor monitor) throws CoreException {
 			fProject.saveSnapshot(options, snapshotLocation, monitor);
+		}
+
+		@Override
+		public void build(IBuildConfiguration config, int kind,
+				IProgressMonitor monitor) throws CoreException {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public IBuildConfiguration getActiveBuildConfig() throws CoreException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public IBuildConfiguration getBuildConfig(String configName)
+				throws CoreException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public IBuildConfiguration[] getBuildConfigs() throws CoreException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public IBuildConfiguration[] getReferencedBuildConfigs(
+				String configName, boolean includeMissing) throws CoreException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public boolean hasBuildConfig(String configName) throws CoreException {
+			// TODO Auto-generated method stub
+			return false;
 		}
 	}
 	

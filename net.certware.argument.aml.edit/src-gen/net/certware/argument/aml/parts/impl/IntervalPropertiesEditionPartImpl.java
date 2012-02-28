@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
@@ -11,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.swt.SWT;
@@ -26,10 +32,10 @@ import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class IntervalPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, IntervalPropertiesEditionPart {
@@ -72,18 +78,35 @@ public class IntervalPropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence intervalStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = intervalStep.addStep(AmlViewsRepository.Interval.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Interval.Properties.max);
+		propertiesStep.addStep(AmlViewsRepository.Interval.Properties.min);
 		
-		// End of user code
+		
+		composer = new PartComposer(intervalStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Interval.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Interval.Properties.max) {
+					return createMaxText(parent);
+				}
+				if (key == AmlViewsRepository.Interval.Properties.min) {
+					return createMinText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.IntervalPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -92,13 +115,12 @@ public class IntervalPropertiesEditionPartImpl extends CompositePropertiesEditio
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createMaxText(propertiesGroup);
-		createMinText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createMaxText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.IntervalPropertiesEditionPart_MaxLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Interval.max, AmlViewsRepository.SWT_KIND));
+	protected Composite createMaxText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.IntervalPropertiesEditionPart_MaxLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Interval.Properties.max, AmlViewsRepository.SWT_KIND));
 		max = new Text(parent, SWT.BORDER);
 		GridData maxData = new GridData(GridData.FILL_HORIZONTAL);
 		max.setLayoutData(maxData);
@@ -114,7 +136,7 @@ public class IntervalPropertiesEditionPartImpl extends CompositePropertiesEditio
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.max, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, max.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.Properties.max, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, max.getText()));
 			}
 
 		});
@@ -131,19 +153,20 @@ public class IntervalPropertiesEditionPartImpl extends CompositePropertiesEditio
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.max, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, max.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.Properties.max, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, max.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(max, AmlViewsRepository.Interval.max);
+		EditingUtils.setID(max, AmlViewsRepository.Interval.Properties.max);
 		EditingUtils.setEEFtype(max, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Interval.max, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Interval.Properties.max, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createMinText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.IntervalPropertiesEditionPart_MinLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Interval.min, AmlViewsRepository.SWT_KIND));
+	protected Composite createMinText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.IntervalPropertiesEditionPart_MinLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Interval.Properties.min, AmlViewsRepository.SWT_KIND));
 		min = new Text(parent, SWT.BORDER);
 		GridData minData = new GridData(GridData.FILL_HORIZONTAL);
 		min.setLayoutData(minData);
@@ -159,7 +182,7 @@ public class IntervalPropertiesEditionPartImpl extends CompositePropertiesEditio
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.min, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, min.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.Properties.min, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, min.getText()));
 			}
 
 		});
@@ -176,14 +199,15 @@ public class IntervalPropertiesEditionPartImpl extends CompositePropertiesEditio
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.min, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, min.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(IntervalPropertiesEditionPartImpl.this, AmlViewsRepository.Interval.Properties.min, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, min.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(min, AmlViewsRepository.Interval.min);
+		EditingUtils.setID(min, AmlViewsRepository.Interval.Properties.min);
 		EditingUtils.setEEFtype(min, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Interval.min, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Interval.Properties.min, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

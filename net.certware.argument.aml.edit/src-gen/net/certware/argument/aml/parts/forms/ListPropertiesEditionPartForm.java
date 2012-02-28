@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
@@ -9,16 +11,17 @@ import net.certware.argument.aml.providers.AmlMessages;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesContextService;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.EEFFeatureEditorDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -27,7 +30,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -38,7 +40,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ListPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ListPropertiesEditionPart {
@@ -84,17 +86,32 @@ public class ListPropertiesEditionPartForm extends CompositePropertiesEditionPar
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence listStep = new BindingCompositionSequence(propertiesEditionComponent);
+		listStep
+			.addStep(AmlViewsRepository.List.Properties.class)
+			.addStep(AmlViewsRepository.List.Properties.group);
 		
-		// End of user code
+		
+		composer = new PartComposer(listStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.List.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.List.Properties.group) {
+					return createGroupMultiValuedEditor(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.ListPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -103,19 +120,19 @@ public class ListPropertiesEditionPartForm extends CompositePropertiesEditionPar
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createGroupMultiValuedEditor(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	/**
 	 * 
 	 */
-	protected void createGroupMultiValuedEditor(FormToolkit widgetFactory, Composite parent) {
+	protected Composite createGroupMultiValuedEditor(FormToolkit widgetFactory, Composite parent) {
 		group = widgetFactory.createText(parent, "", SWT.READ_ONLY); //$NON-NLS-1$
 		GridData groupData = new GridData(GridData.FILL_HORIZONTAL);
 		groupData.horizontalSpan = 2;
 		group.setLayoutData(groupData);
-		EditingUtils.setID(group, AmlViewsRepository.List.group);
+		EditingUtils.setID(group, AmlViewsRepository.List.Properties.group);
 		EditingUtils.setEEFtype(group, "eef::MultiValuedEditor::field"); //$NON-NLS-1$
 		editGroup = widgetFactory.createButton(parent, AmlMessages.ListPropertiesEditionPart_GroupLabel, SWT.NONE);
 		GridData editGroupData = new GridData();
@@ -129,22 +146,25 @@ public class ListPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			 * 
 			 */
 			public void widgetSelected(SelectionEvent e) {
-				EObject list = PropertiesContextService.getInstance().lastElement();
-				FeatureEditorDialog dialog = new FeatureEditorDialog(Display.getDefault().getActiveShell(), new AdapterFactoryLabelProvider(adapterFactory), list, AmlPackage.eINSTANCE.getList_Group().getEType(), 
-						groupList, "List", null, false, false); //$NON-NLS-1$
+				EEFFeatureEditorDialog dialog = new EEFFeatureEditorDialog(
+						group.getShell(), "List", new AdapterFactoryLabelProvider(adapterFactory), //$NON-NLS-1$
+						groupList, AmlPackage.eINSTANCE.getList_Group().getEType(), null,
+						false, true, 
+						null, null);
 				if (dialog.open() == Window.OK) {
 					groupList = dialog.getResult();
 					if (groupList == null) {
 						groupList = new BasicEList();
 					}
 					group.setText(groupList.toString());
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ListPropertiesEditionPartForm.this, AmlViewsRepository.List.group, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, groupList));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ListPropertiesEditionPartForm.this, AmlViewsRepository.List.Properties.group, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new BasicEList(groupList)));
 					setHasChanged(true);
 				}
 			}
 		});
-		EditingUtils.setID(editGroup, AmlViewsRepository.List.group);
+		EditingUtils.setID(editGroup, AmlViewsRepository.List.Properties.group);
 		EditingUtils.setEEFtype(editGroup, "eef::MultiValuedEditor::browsebutton"); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -185,18 +205,18 @@ public class ListPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			group.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void addToGroup(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		groupList.add(newValue);		
+
+	public void addToGroup(Object newValue) {
+		groupList.add(newValue);
 		if (newValue != null) {
 			group.setText(groupList.toString());
 		} else {
 			group.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void removeToGroup(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		groupList.remove(newValue);		
+
+	public void removeToGroup(Object newValue) {
+		groupList.remove(newValue);
 		if (newValue != null) {
 			group.setText(groupList.toString());
 		} else {

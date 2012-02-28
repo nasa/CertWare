@@ -11,7 +11,7 @@ package net.certware.measurement.sco.parts;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface ArtifactIdentifierPropertiesEditionPart {

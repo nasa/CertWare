@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
@@ -11,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.swt.SWT;
@@ -22,15 +28,14 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, BeliefPropertiesEditionPart {
@@ -75,18 +80,43 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence beliefStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = beliefStep.addStep(AmlViewsRepository.Belief.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.description);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.label);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.ordinal);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.symbol);
 		
-		// End of user code
+		
+		composer = new PartComposer(beliefStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Belief.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.description) {
+					return createDescriptionText(parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.label) {
+					return createLabelText(parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.ordinal) {
+					return createOrdinalText(parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.symbol) {
+					return createSymbolText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.BeliefPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -95,32 +125,58 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createDescriptionTextarea(propertiesGroup);
-		createLabelText(propertiesGroup);
-		createOrdinalText(propertiesGroup);
-		createSymbolText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createDescriptionTextarea(Composite parent) {
-		Label descriptionLabel = SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.description, AmlViewsRepository.SWT_KIND));
-		GridData descriptionLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionLabelData.horizontalSpan = 3;
-		descriptionLabel.setLayoutData(descriptionLabelData);
-		description = new Text(parent, SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL);
+	protected Composite createDescriptionText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.description, AmlViewsRepository.SWT_KIND));
+		description = new Text(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionData.horizontalSpan = 2;
-		descriptionData.heightHint = 80;
-		descriptionData.widthHint = 200;
 		description.setLayoutData(descriptionData);
-		EditingUtils.setID(description, AmlViewsRepository.Belief.description);
-		EditingUtils.setEEFtype(description, "eef::Textarea"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		description.addFocusListener(new FocusAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+			}
+
+		});
+		description.addKeyListener(new KeyAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				}
+			}
+
+		});
+		EditingUtils.setID(description, AmlViewsRepository.Belief.Properties.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createLabelText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.label, AmlViewsRepository.SWT_KIND));
+	protected Composite createLabelText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.label, AmlViewsRepository.SWT_KIND));
 		label = new Text(parent, SWT.BORDER);
 		GridData labelData = new GridData(GridData.FILL_HORIZONTAL);
 		label.setLayoutData(labelData);
@@ -136,7 +192,7 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 			}
 
 		});
@@ -153,19 +209,20 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(label, AmlViewsRepository.Belief.label);
+		EditingUtils.setID(label, AmlViewsRepository.Belief.Properties.label);
 		EditingUtils.setEEFtype(label, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createOrdinalText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_OrdinalLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.ordinal, AmlViewsRepository.SWT_KIND));
+	protected Composite createOrdinalText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_OrdinalLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.ordinal, AmlViewsRepository.SWT_KIND));
 		ordinal = new Text(parent, SWT.BORDER);
 		GridData ordinalData = new GridData(GridData.FILL_HORIZONTAL);
 		ordinal.setLayoutData(ordinalData);
@@ -181,7 +238,7 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
 			}
 
 		});
@@ -198,19 +255,20 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(ordinal, AmlViewsRepository.Belief.ordinal);
+		EditingUtils.setID(ordinal, AmlViewsRepository.Belief.Properties.ordinal);
 		EditingUtils.setEEFtype(ordinal, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.ordinal, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.ordinal, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createSymbolText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_SymbolLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.symbol, AmlViewsRepository.SWT_KIND));
+	protected Composite createSymbolText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.BeliefPropertiesEditionPart_SymbolLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.symbol, AmlViewsRepository.SWT_KIND));
 		symbol = new Text(parent, SWT.BORDER);
 		GridData symbolData = new GridData(GridData.FILL_HORIZONTAL);
 		symbol.setLayoutData(symbolData);
@@ -226,7 +284,7 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
 			}
 
 		});
@@ -243,14 +301,15 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartImpl.this, AmlViewsRepository.Belief.Properties.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(symbol, AmlViewsRepository.Belief.symbol);
+		EditingUtils.setID(symbol, AmlViewsRepository.Belief.Properties.symbol);
 		EditingUtils.setEEFtype(symbol, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.symbol, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.symbol, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -287,7 +346,7 @@ public class BeliefPropertiesEditionPartImpl extends CompositePropertiesEditionP
 		if (newValue != null) {
 			description.setText(newValue);
 		} else {
-			description.setText("");  //$NON-NLS-1$
+			description.setText(""); //$NON-NLS-1$
 		}
 	}
 

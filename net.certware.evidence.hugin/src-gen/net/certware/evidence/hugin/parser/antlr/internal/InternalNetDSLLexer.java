@@ -13,1774 +13,1958 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalNetDSLLexer extends Lexer {
     public static final int RULE_ID=5;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
     public static final int RULE_ANY_OTHER=12;
-    public static final int T29=29;
-    public static final int T28=28;
-    public static final int T27=27;
-    public static final int T26=26;
-    public static final int T25=25;
-    public static final int T24=24;
+    public static final int T__21=21;
+    public static final int T__20=20;
     public static final int EOF=-1;
-    public static final int T23=23;
-    public static final int T22=22;
-    public static final int T21=21;
-    public static final int T20=20;
-    public static final int T38=38;
-    public static final int T37=37;
-    public static final int T39=39;
-    public static final int T34=34;
-    public static final int T33=33;
-    public static final int T36=36;
-    public static final int T35=35;
-    public static final int T30=30;
-    public static final int T32=32;
-    public static final int T31=31;
-    public static final int T49=49;
-    public static final int T48=48;
-    public static final int T100=100;
-    public static final int T43=43;
-    public static final int T42=42;
-    public static final int T41=41;
-    public static final int T40=40;
-    public static final int T47=47;
-    public static final int T46=46;
+    public static final int T__93=93;
+    public static final int T__19=19;
+    public static final int T__94=94;
+    public static final int T__91=91;
+    public static final int T__92=92;
+    public static final int T__16=16;
+    public static final int T__90=90;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int T__99=99;
+    public static final int T__98=98;
+    public static final int T__97=97;
+    public static final int T__96=96;
+    public static final int T__95=95;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int T__85=85;
+    public static final int T__84=84;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
+    public static final int T__88=88;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T45=45;
-    public static final int T44=44;
     public static final int RULE_STRING=6;
-    public static final int T50=50;
-    public static final int T59=59;
-    public static final int T52=52;
-    public static final int T51=51;
-    public static final int T54=54;
-    public static final int T53=53;
-    public static final int T56=56;
-    public static final int T55=55;
-    public static final int T58=58;
-    public static final int T57=57;
-    public static final int T75=75;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int T__70=70;
+    public static final int T__76=76;
+    public static final int T__75=75;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int T__77=77;
+    public static final int T__68=68;
     public static final int RULE_BOOLEAN=8;
-    public static final int T76=76;
-    public static final int T73=73;
-    public static final int T74=74;
-    public static final int T79=79;
-    public static final int T77=77;
-    public static final int T78=78;
-    public static final int T72=72;
-    public static final int T71=71;
-    public static final int T70=70;
-    public static final int T62=62;
-    public static final int T63=63;
-    public static final int T64=64;
-    public static final int T65=65;
-    public static final int T66=66;
-    public static final int T67=67;
-    public static final int T68=68;
-    public static final int T69=69;
+    public static final int T__69=69;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__61=61;
+    public static final int T__60=60;
+    public static final int T__55=55;
+    public static final int T__56=56;
+    public static final int T__57=57;
+    public static final int T__58=58;
+    public static final int T__51=51;
+    public static final int T__52=52;
+    public static final int T__53=53;
+    public static final int T__54=54;
+    public static final int T__59=59;
     public static final int RULE_INT=4;
-    public static final int T61=61;
-    public static final int T60=60;
-    public static final int T99=99;
-    public static final int T97=97;
-    public static final int T98=98;
-    public static final int T95=95;
-    public static final int T96=96;
-    public static final int T94=94;
-    public static final int Tokens=101;
-    public static final int T93=93;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__100=100;
     public static final int RULE_SL_COMMENT=10;
-    public static final int T92=92;
     public static final int RULE_DOUBLE=7;
-    public static final int T91=91;
-    public static final int T90=90;
-    public static final int T88=88;
-    public static final int T89=89;
-    public static final int T84=84;
-    public static final int T85=85;
-    public static final int T86=86;
-    public static final int T87=87;
-    public static final int T13=13;
-    public static final int T14=14;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=11;
-    public static final int T15=15;
-    public static final int T81=81;
-    public static final int T16=16;
-    public static final int T80=80;
-    public static final int T17=17;
-    public static final int T83=83;
-    public static final int T18=18;
-    public static final int T82=82;
-    public static final int T19=19;
+
+    // delegates
+    // delegators
+
     public InternalNetDSLLexer() {;} 
     public InternalNetDSLLexer(CharStream input) {
-        super(input);
+        this(input, new RecognizerSharedState());
+    }
+    public InternalNetDSLLexer(CharStream input, RecognizerSharedState state) {
+        super(input,state);
+
     }
     public String getGrammarFileName() { return "../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g"; }
 
-    // $ANTLR start T13
-    public final void mT13() throws RecognitionException {
+    // $ANTLR start "T__13"
+    public final void mT__13() throws RecognitionException {
         try {
-            int _type = T13;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:10:5: ( 'net' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:10:7: 'net'
+            int _type = T__13;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:11:7: ( 'net' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:11:9: 'net'
             {
             match("net"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T13
+    // $ANTLR end "T__13"
 
-    // $ANTLR start T14
-    public final void mT14() throws RecognitionException {
+    // $ANTLR start "T__14"
+    public final void mT__14() throws RecognitionException {
         try {
-            int _type = T14;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:11:5: ( '{' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:11:7: '{'
+            int _type = T__14;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:12:7: ( '{' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:12:9: '{'
             {
             match('{'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T14
+    // $ANTLR end "T__14"
 
-    // $ANTLR start T15
-    public final void mT15() throws RecognitionException {
+    // $ANTLR start "T__15"
+    public final void mT__15() throws RecognitionException {
         try {
-            int _type = T15;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:12:5: ( '}' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:12:7: '}'
+            int _type = T__15;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:13:7: ( '}' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:13:9: '}'
             {
             match('}'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T15
+    // $ANTLR end "T__15"
 
-    // $ANTLR start T16
-    public final void mT16() throws RecognitionException {
+    // $ANTLR start "T__16"
+    public final void mT__16() throws RecognitionException {
         try {
-            int _type = T16;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:13:5: ( 'discrete' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:13:7: 'discrete'
+            int _type = T__16;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:14:7: ( 'discrete' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:14:9: 'discrete'
             {
             match("discrete"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T16
+    // $ANTLR end "T__16"
 
-    // $ANTLR start T17
-    public final void mT17() throws RecognitionException {
+    // $ANTLR start "T__17"
+    public final void mT__17() throws RecognitionException {
         try {
-            int _type = T17;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:14:5: ( 'continuous' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:14:7: 'continuous'
+            int _type = T__17;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:15:7: ( 'continuous' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:15:9: 'continuous'
             {
             match("continuous"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T17
+    // $ANTLR end "T__17"
 
-    // $ANTLR start T18
-    public final void mT18() throws RecognitionException {
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
         try {
-            int _type = T18;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:15:5: ( 'node' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:15:7: 'node'
+            int _type = T__18;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:16:7: ( 'node' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:16:9: 'node'
             {
             match("node"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T18
+    // $ANTLR end "T__18"
 
-    // $ANTLR start T19
-    public final void mT19() throws RecognitionException {
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
         try {
-            int _type = T19;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:16:5: ( 'decision' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:16:7: 'decision'
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:17:7: ( 'decision' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:17:9: 'decision'
             {
             match("decision"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T19
+    // $ANTLR end "T__19"
 
-    // $ANTLR start T20
-    public final void mT20() throws RecognitionException {
+    // $ANTLR start "T__20"
+    public final void mT__20() throws RecognitionException {
         try {
-            int _type = T20;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:17:5: ( 'utility' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:17:7: 'utility'
+            int _type = T__20;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:18:7: ( 'utility' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:18:9: 'utility'
             {
             match("utility"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T20
+    // $ANTLR end "T__20"
 
-    // $ANTLR start T21
-    public final void mT21() throws RecognitionException {
+    // $ANTLR start "T__21"
+    public final void mT__21() throws RecognitionException {
         try {
-            int _type = T21;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:18:5: ( 'function' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:18:7: 'function'
+            int _type = T__21;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:19:7: ( 'function' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:19:9: 'function'
             {
             match("function"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T21
+    // $ANTLR end "T__21"
 
-    // $ANTLR start T22
-    public final void mT22() throws RecognitionException {
+    // $ANTLR start "T__22"
+    public final void mT__22() throws RecognitionException {
         try {
-            int _type = T22;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:19:5: ( 'states' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:19:7: 'states'
+            int _type = T__22;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:20:7: ( 'states' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:20:9: 'states'
             {
             match("states"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T22
+    // $ANTLR end "T__22"
 
-    // $ANTLR start T23
-    public final void mT23() throws RecognitionException {
+    // $ANTLR start "T__23"
+    public final void mT__23() throws RecognitionException {
         try {
-            int _type = T23;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:20:5: ( '=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:20:7: '='
+            int _type = T__23;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:21:7: ( '=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:21:9: '='
             {
             match('='); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T23
+    // $ANTLR end "T__23"
 
-    // $ANTLR start T24
-    public final void mT24() throws RecognitionException {
+    // $ANTLR start "T__24"
+    public final void mT__24() throws RecognitionException {
         try {
-            int _type = T24;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:21:5: ( '(' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:21:7: '('
+            int _type = T__24;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:22:7: ( '(' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:22:9: '('
             {
             match('('); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T24
+    // $ANTLR end "T__24"
 
-    // $ANTLR start T25
-    public final void mT25() throws RecognitionException {
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
         try {
-            int _type = T25;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:22:5: ( ')' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:22:7: ')'
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:23:7: ( ')' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:23:9: ')'
             {
             match(')'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T25
+    // $ANTLR end "T__25"
 
-    // $ANTLR start T26
-    public final void mT26() throws RecognitionException {
+    // $ANTLR start "T__26"
+    public final void mT__26() throws RecognitionException {
         try {
-            int _type = T26;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:23:5: ( ';' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:23:7: ';'
+            int _type = T__26;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:24:7: ( ';' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:24:9: ';'
             {
             match(';'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T26
+    // $ANTLR end "T__26"
 
-    // $ANTLR start T27
-    public final void mT27() throws RecognitionException {
+    // $ANTLR start "T__27"
+    public final void mT__27() throws RecognitionException {
         try {
-            int _type = T27;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:24:5: ( 'label' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:24:7: 'label'
+            int _type = T__27;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:25:7: ( 'label' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:25:9: 'label'
             {
             match("label"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T27
+    // $ANTLR end "T__27"
 
-    // $ANTLR start T28
-    public final void mT28() throws RecognitionException {
+    // $ANTLR start "T__28"
+    public final void mT__28() throws RecognitionException {
         try {
-            int _type = T28;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:25:5: ( 'position' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:25:7: 'position'
+            int _type = T__28;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:26:7: ( 'position' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:26:9: 'position'
             {
             match("position"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T28
+    // $ANTLR end "T__28"
 
-    // $ANTLR start T29
-    public final void mT29() throws RecognitionException {
+    // $ANTLR start "T__29"
+    public final void mT__29() throws RecognitionException {
         try {
-            int _type = T29;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:26:5: ( 'subtype' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:26:7: 'subtype'
+            int _type = T__29;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:27:7: ( 'subtype' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:27:9: 'subtype'
             {
             match("subtype"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T29
+    // $ANTLR end "T__29"
 
-    // $ANTLR start T30
-    public final void mT30() throws RecognitionException {
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
         try {
-            int _type = T30;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:27:5: ( 'boolean' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:27:7: 'boolean'
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:28:7: ( 'boolean' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:28:9: 'boolean'
             {
             match("boolean"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T30
+    // $ANTLR end "T__30"
 
-    // $ANTLR start T31
-    public final void mT31() throws RecognitionException {
+    // $ANTLR start "T__31"
+    public final void mT__31() throws RecognitionException {
         try {
-            int _type = T31;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:28:5: ( 'number' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:28:7: 'number'
+            int _type = T__31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:29:7: ( 'number' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:29:9: 'number'
             {
             match("number"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T31
+    // $ANTLR end "T__31"
 
-    // $ANTLR start T32
-    public final void mT32() throws RecognitionException {
+    // $ANTLR start "T__32"
+    public final void mT__32() throws RecognitionException {
         try {
-            int _type = T32;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:29:5: ( 'interval' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:29:7: 'interval'
+            int _type = T__32;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:30:7: ( 'interval' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:30:9: 'interval'
             {
             match("interval"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T32
+    // $ANTLR end "T__32"
 
-    // $ANTLR start T33
-    public final void mT33() throws RecognitionException {
+    // $ANTLR start "T__33"
+    public final void mT__33() throws RecognitionException {
         try {
-            int _type = T33;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:30:5: ( 'state_values' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:30:7: 'state_values'
+            int _type = T__33;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:31:7: ( 'state_values' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:31:9: 'state_values'
             {
             match("state_values"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T33
+    // $ANTLR end "T__33"
 
-    // $ANTLR start T34
-    public final void mT34() throws RecognitionException {
+    // $ANTLR start "T__34"
+    public final void mT__34() throws RecognitionException {
         try {
-            int _type = T34;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:31:5: ( 'node_size' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:31:7: 'node_size'
+            int _type = T__34;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:32:7: ( 'node_size' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:32:9: 'node_size'
             {
             match("node_size"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T34
+    // $ANTLR end "T__34"
 
-    // $ANTLR start T35
-    public final void mT35() throws RecognitionException {
+    // $ANTLR start "T__35"
+    public final void mT__35() throws RecognitionException {
         try {
-            int _type = T35;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:32:5: ( 'potential' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:32:7: 'potential'
+            int _type = T__35;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:33:7: ( 'potential' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:33:9: 'potential'
             {
             match("potential"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T35
+    // $ANTLR end "T__35"
 
-    // $ANTLR start T36
-    public final void mT36() throws RecognitionException {
+    // $ANTLR start "T__36"
+    public final void mT__36() throws RecognitionException {
         try {
-            int _type = T36;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:33:5: ( '|' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:33:7: '|'
+            int _type = T__36;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:34:7: ( '|' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:34:9: '|'
             {
             match('|'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T36
+    // $ANTLR end "T__36"
 
-    // $ANTLR start T37
-    public final void mT37() throws RecognitionException {
+    // $ANTLR start "T__37"
+    public final void mT__37() throws RecognitionException {
         try {
-            int _type = T37;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:34:5: ( 'data' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:34:7: 'data'
+            int _type = T__37;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:35:7: ( 'data' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:35:9: 'data'
             {
             match("data"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T37
+    // $ANTLR end "T__37"
 
-    // $ANTLR start T38
-    public final void mT38() throws RecognitionException {
+    // $ANTLR start "T__38"
+    public final void mT__38() throws RecognitionException {
         try {
-            int _type = T38;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:35:5: ( '*' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:35:7: '*'
+            int _type = T__38;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:36:7: ( '*' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:36:9: '*'
             {
             match('*'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T38
+    // $ANTLR end "T__38"
 
-    // $ANTLR start T39
-    public final void mT39() throws RecognitionException {
+    // $ANTLR start "T__39"
+    public final void mT__39() throws RecognitionException {
         try {
-            int _type = T39;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:36:5: ( 'model_nodes' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:36:7: 'model_nodes'
+            int _type = T__39;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:37:7: ( 'model_nodes' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:37:9: 'model_nodes'
             {
             match("model_nodes"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T39
+    // $ANTLR end "T__39"
 
-    // $ANTLR start T40
-    public final void mT40() throws RecognitionException {
+    // $ANTLR start "T__40"
+    public final void mT__40() throws RecognitionException {
         try {
-            int _type = T40;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:37:5: ( 'samples_per_interval' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:37:7: 'samples_per_interval'
+            int _type = T__40;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:38:7: ( 'samples_per_interval' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:38:9: 'samples_per_interval'
             {
             match("samples_per_interval"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T40
+    // $ANTLR end "T__40"
 
-    // $ANTLR start T41
-    public final void mT41() throws RecognitionException {
+    // $ANTLR start "T__41"
+    public final void mT__41() throws RecognitionException {
         try {
-            int _type = T41;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:38:5: ( 'model_data' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:38:7: 'model_data'
+            int _type = T__41;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:39:7: ( 'model_data' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:39:9: 'model_data'
             {
             match("model_data"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T41
+    // $ANTLR end "T__41"
 
-    // $ANTLR start T42
-    public final void mT42() throws RecognitionException {
+    // $ANTLR start "T__42"
+    public final void mT__42() throws RecognitionException {
         try {
-            int _type = T42;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:39:5: ( 'class' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:39:7: 'class'
+            int _type = T__42;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:40:7: ( 'class' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:40:9: 'class'
             {
             match("class"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T42
+    // $ANTLR end "T__42"
 
-    // $ANTLR start T43
-    public final void mT43() throws RecognitionException {
+    // $ANTLR start "T__43"
+    public final void mT__43() throws RecognitionException {
         try {
-            int _type = T43;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:40:5: ( 'instance' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:40:7: 'instance'
+            int _type = T__43;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:41:7: ( 'instance' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:41:9: 'instance'
             {
             match("instance"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T43
+    // $ANTLR end "T__43"
 
-    // $ANTLR start T44
-    public final void mT44() throws RecognitionException {
+    // $ANTLR start "T__44"
+    public final void mT__44() throws RecognitionException {
         try {
-            int _type = T44;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:41:5: ( ':' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:41:7: ':'
+            int _type = T__44;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:42:7: ( ':' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:42:9: ':'
             {
             match(':'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T44
+    // $ANTLR end "T__44"
 
-    // $ANTLR start T45
-    public final void mT45() throws RecognitionException {
+    // $ANTLR start "T__45"
+    public final void mT__45() throws RecognitionException {
         try {
-            int _type = T45;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:42:5: ( ',' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:42:7: ','
+            int _type = T__45;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:43:7: ( ',' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:43:9: ','
             {
             match(','); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T45
+    // $ANTLR end "T__45"
 
-    // $ANTLR start T46
-    public final void mT46() throws RecognitionException {
+    // $ANTLR start "T__46"
+    public final void mT__46() throws RecognitionException {
         try {
-            int _type = T46;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:43:5: ( '+=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:43:7: '+='
+            int _type = T__46;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:44:7: ( '+=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:44:9: '+='
             {
             match("+="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T46
+    // $ANTLR end "T__46"
 
-    // $ANTLR start T47
-    public final void mT47() throws RecognitionException {
+    // $ANTLR start "T__47"
+    public final void mT__47() throws RecognitionException {
         try {
-            int _type = T47;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:44:5: ( '-=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:44:7: '-='
+            int _type = T__47;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:45:7: ( '-=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:45:9: '-='
             {
             match("-="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T47
+    // $ANTLR end "T__47"
 
-    // $ANTLR start T48
-    public final void mT48() throws RecognitionException {
+    // $ANTLR start "T__48"
+    public final void mT__48() throws RecognitionException {
         try {
-            int _type = T48;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:45:5: ( '*=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:45:7: '*='
+            int _type = T__48;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:46:7: ( '*=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:46:9: '*='
             {
             match("*="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T48
+    // $ANTLR end "T__48"
 
-    // $ANTLR start T49
-    public final void mT49() throws RecognitionException {
+    // $ANTLR start "T__49"
+    public final void mT__49() throws RecognitionException {
         try {
-            int _type = T49;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:46:5: ( '/=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:46:7: '/='
+            int _type = T__49;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:47:7: ( '/=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:47:9: '/='
             {
             match("/="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T49
+    // $ANTLR end "T__49"
 
-    // $ANTLR start T50
-    public final void mT50() throws RecognitionException {
+    // $ANTLR start "T__50"
+    public final void mT__50() throws RecognitionException {
         try {
-            int _type = T50;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:47:5: ( '%=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:47:7: '%='
+            int _type = T__50;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:48:7: ( '%=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:48:9: '%='
             {
             match("%="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T50
+    // $ANTLR end "T__50"
 
-    // $ANTLR start T51
-    public final void mT51() throws RecognitionException {
+    // $ANTLR start "T__51"
+    public final void mT__51() throws RecognitionException {
         try {
-            int _type = T51;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:48:5: ( '||' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:48:7: '||'
+            int _type = T__51;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:49:7: ( '||' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:49:9: '||'
             {
             match("||"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T51
+    // $ANTLR end "T__51"
 
-    // $ANTLR start T52
-    public final void mT52() throws RecognitionException {
+    // $ANTLR start "T__52"
+    public final void mT__52() throws RecognitionException {
         try {
-            int _type = T52;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:49:5: ( '&&' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:49:7: '&&'
+            int _type = T__52;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:50:7: ( '&&' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:50:9: '&&'
             {
             match("&&"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T52
+    // $ANTLR end "T__52"
 
-    // $ANTLR start T53
-    public final void mT53() throws RecognitionException {
+    // $ANTLR start "T__53"
+    public final void mT__53() throws RecognitionException {
         try {
-            int _type = T53;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:50:5: ( '!=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:50:7: '!='
+            int _type = T__53;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:51:7: ( '!=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:51:9: '!='
             {
             match("!="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T53
+    // $ANTLR end "T__53"
 
-    // $ANTLR start T54
-    public final void mT54() throws RecognitionException {
+    // $ANTLR start "T__54"
+    public final void mT__54() throws RecognitionException {
         try {
-            int _type = T54;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:51:5: ( '==' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:51:7: '=='
+            int _type = T__54;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:52:7: ( '==' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:52:9: '=='
             {
             match("=="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T54
+    // $ANTLR end "T__54"
 
-    // $ANTLR start T55
-    public final void mT55() throws RecognitionException {
+    // $ANTLR start "T__55"
+    public final void mT__55() throws RecognitionException {
         try {
-            int _type = T55;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:52:5: ( '<=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:52:7: '<='
+            int _type = T__55;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:53:7: ( '<=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:53:9: '<='
             {
             match("<="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T55
+    // $ANTLR end "T__55"
 
-    // $ANTLR start T56
-    public final void mT56() throws RecognitionException {
+    // $ANTLR start "T__56"
+    public final void mT__56() throws RecognitionException {
         try {
-            int _type = T56;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:53:5: ( '<>' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:53:7: '<>'
+            int _type = T__56;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:54:7: ( '<>' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:54:9: '<>'
             {
             match("<>"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T56
+    // $ANTLR end "T__56"
 
-    // $ANTLR start T57
-    public final void mT57() throws RecognitionException {
+    // $ANTLR start "T__57"
+    public final void mT__57() throws RecognitionException {
         try {
-            int _type = T57;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:54:5: ( '>=' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:54:7: '>='
+            int _type = T__57;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:55:7: ( '>=' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:55:9: '>='
             {
             match(">="); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T57
+    // $ANTLR end "T__57"
 
-    // $ANTLR start T58
-    public final void mT58() throws RecognitionException {
+    // $ANTLR start "T__58"
+    public final void mT__58() throws RecognitionException {
         try {
-            int _type = T58;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:55:5: ( '<' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:55:7: '<'
+            int _type = T__58;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:56:7: ( '<' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:56:9: '<'
             {
             match('<'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T58
+    // $ANTLR end "T__58"
 
-    // $ANTLR start T59
-    public final void mT59() throws RecognitionException {
+    // $ANTLR start "T__59"
+    public final void mT__59() throws RecognitionException {
         try {
-            int _type = T59;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:56:5: ( '>' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:56:7: '>'
+            int _type = T__59;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:57:7: ( '>' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:57:9: '>'
             {
             match('>'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T59
+    // $ANTLR end "T__59"
 
-    // $ANTLR start T60
-    public final void mT60() throws RecognitionException {
+    // $ANTLR start "T__60"
+    public final void mT__60() throws RecognitionException {
         try {
-            int _type = T60;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:57:5: ( '+' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:57:7: '+'
+            int _type = T__60;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:58:7: ( '+' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:58:9: '+'
             {
             match('+'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T60
+    // $ANTLR end "T__60"
 
-    // $ANTLR start T61
-    public final void mT61() throws RecognitionException {
+    // $ANTLR start "T__61"
+    public final void mT__61() throws RecognitionException {
         try {
-            int _type = T61;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:58:5: ( '-' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:58:7: '-'
+            int _type = T__61;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:59:7: ( '-' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:59:9: '-'
             {
             match('-'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T61
+    // $ANTLR end "T__61"
 
-    // $ANTLR start T62
-    public final void mT62() throws RecognitionException {
+    // $ANTLR start "T__62"
+    public final void mT__62() throws RecognitionException {
         try {
-            int _type = T62;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:59:5: ( '/' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:59:7: '/'
+            int _type = T__62;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:60:7: ( '/' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:60:9: '/'
             {
             match('/'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T62
+    // $ANTLR end "T__62"
 
-    // $ANTLR start T63
-    public final void mT63() throws RecognitionException {
+    // $ANTLR start "T__63"
+    public final void mT__63() throws RecognitionException {
         try {
-            int _type = T63;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:60:5: ( '!' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:60:7: '!'
+            int _type = T__63;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:61:7: ( '!' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:61:9: '!'
             {
             match('!'); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T63
+    // $ANTLR end "T__63"
 
-    // $ANTLR start T64
-    public final void mT64() throws RecognitionException {
+    // $ANTLR start "T__64"
+    public final void mT__64() throws RecognitionException {
         try {
-            int _type = T64;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:61:5: ( 'truncate' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:61:7: 'truncate'
+            int _type = T__64;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:62:7: ( 'truncate' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:62:9: 'truncate'
             {
             match("truncate"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T64
+    // $ANTLR end "T__64"
 
-    // $ANTLR start T65
-    public final void mT65() throws RecognitionException {
+    // $ANTLR start "T__65"
+    public final void mT__65() throws RecognitionException {
         try {
-            int _type = T65;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:62:5: ( 'Normal' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:62:7: 'Normal'
+            int _type = T__65;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:63:7: ( 'Normal' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:63:9: 'Normal'
             {
             match("Normal"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T65
+    // $ANTLR end "T__65"
 
-    // $ANTLR start T66
-    public final void mT66() throws RecognitionException {
+    // $ANTLR start "T__66"
+    public final void mT__66() throws RecognitionException {
         try {
-            int _type = T66;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:63:5: ( 'LogNormal' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:63:7: 'LogNormal'
+            int _type = T__66;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:64:7: ( 'LogNormal' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:64:9: 'LogNormal'
             {
             match("LogNormal"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T66
+    // $ANTLR end "T__66"
 
-    // $ANTLR start T67
-    public final void mT67() throws RecognitionException {
+    // $ANTLR start "T__67"
+    public final void mT__67() throws RecognitionException {
         try {
-            int _type = T67;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:64:5: ( 'Beta' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:64:7: 'Beta'
+            int _type = T__67;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:65:7: ( 'Beta' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:65:9: 'Beta'
             {
             match("Beta"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T67
+    // $ANTLR end "T__67"
 
-    // $ANTLR start T68
-    public final void mT68() throws RecognitionException {
+    // $ANTLR start "T__68"
+    public final void mT__68() throws RecognitionException {
         try {
-            int _type = T68;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:65:5: ( 'Gamma' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:65:7: 'Gamma'
+            int _type = T__68;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:66:7: ( 'Gamma' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:66:9: 'Gamma'
             {
             match("Gamma"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T68
+    // $ANTLR end "T__68"
 
-    // $ANTLR start T69
-    public final void mT69() throws RecognitionException {
+    // $ANTLR start "T__69"
+    public final void mT__69() throws RecognitionException {
         try {
-            int _type = T69;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:66:5: ( 'Exponential' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:66:7: 'Exponential'
+            int _type = T__69;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:67:7: ( 'Exponential' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:67:9: 'Exponential'
             {
             match("Exponential"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T69
+    // $ANTLR end "T__69"
 
-    // $ANTLR start T70
-    public final void mT70() throws RecognitionException {
+    // $ANTLR start "T__70"
+    public final void mT__70() throws RecognitionException {
         try {
-            int _type = T70;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:67:5: ( 'Weibull' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:67:7: 'Weibull'
+            int _type = T__70;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:68:7: ( 'Weibull' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:68:9: 'Weibull'
             {
             match("Weibull"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T70
+    // $ANTLR end "T__70"
 
-    // $ANTLR start T71
-    public final void mT71() throws RecognitionException {
+    // $ANTLR start "T__71"
+    public final void mT__71() throws RecognitionException {
         try {
-            int _type = T71;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:68:5: ( 'Uniform' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:68:7: 'Uniform'
+            int _type = T__71;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:69:7: ( 'Uniform' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:69:9: 'Uniform'
             {
             match("Uniform"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T71
+    // $ANTLR end "T__71"
 
-    // $ANTLR start T72
-    public final void mT72() throws RecognitionException {
+    // $ANTLR start "T__72"
+    public final void mT__72() throws RecognitionException {
         try {
-            int _type = T72;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:69:5: ( 'Triangular' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:69:7: 'Triangular'
+            int _type = T__72;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:70:7: ( 'Triangular' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:70:9: 'Triangular'
             {
             match("Triangular"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T72
+    // $ANTLR end "T__72"
 
-    // $ANTLR start T73
-    public final void mT73() throws RecognitionException {
+    // $ANTLR start "T__73"
+    public final void mT__73() throws RecognitionException {
         try {
-            int _type = T73;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:70:5: ( 'PERT' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:70:7: 'PERT'
+            int _type = T__73;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:71:7: ( 'PERT' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:71:9: 'PERT'
             {
             match("PERT"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T73
+    // $ANTLR end "T__73"
 
-    // $ANTLR start T74
-    public final void mT74() throws RecognitionException {
+    // $ANTLR start "T__74"
+    public final void mT__74() throws RecognitionException {
         try {
-            int _type = T74;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:71:5: ( 'Binomial' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:71:7: 'Binomial'
+            int _type = T__74;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:72:7: ( 'Binomial' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:72:9: 'Binomial'
             {
             match("Binomial"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T74
+    // $ANTLR end "T__74"
 
-    // $ANTLR start T75
-    public final void mT75() throws RecognitionException {
+    // $ANTLR start "T__75"
+    public final void mT__75() throws RecognitionException {
         try {
-            int _type = T75;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:72:5: ( 'Poisson' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:72:7: 'Poisson'
+            int _type = T__75;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:73:7: ( 'Poisson' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:73:9: 'Poisson'
             {
             match("Poisson"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T75
+    // $ANTLR end "T__75"
 
-    // $ANTLR start T76
-    public final void mT76() throws RecognitionException {
+    // $ANTLR start "T__76"
+    public final void mT__76() throws RecognitionException {
         try {
-            int _type = T76;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:73:5: ( 'NegativeBinomial' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:73:7: 'NegativeBinomial'
+            int _type = T__76;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:74:7: ( 'NegativeBinomial' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:74:9: 'NegativeBinomial'
             {
             match("NegativeBinomial"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T76
+    // $ANTLR end "T__76"
 
-    // $ANTLR start T77
-    public final void mT77() throws RecognitionException {
+    // $ANTLR start "T__77"
+    public final void mT__77() throws RecognitionException {
         try {
-            int _type = T77;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:74:5: ( 'Geometric' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:74:7: 'Geometric'
+            int _type = T__77;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:75:7: ( 'Geometric' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:75:9: 'Geometric'
             {
             match("Geometric"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T77
+    // $ANTLR end "T__77"
 
-    // $ANTLR start T78
-    public final void mT78() throws RecognitionException {
+    // $ANTLR start "T__78"
+    public final void mT__78() throws RecognitionException {
         try {
-            int _type = T78;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:75:5: ( 'Distribution' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:75:7: 'Distribution'
+            int _type = T__78;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:76:7: ( 'Distribution' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:76:9: 'Distribution'
             {
             match("Distribution"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T78
+    // $ANTLR end "T__78"
 
-    // $ANTLR start T79
-    public final void mT79() throws RecognitionException {
+    // $ANTLR start "T__79"
+    public final void mT__79() throws RecognitionException {
         try {
-            int _type = T79;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:76:5: ( 'NoisyOR' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:76:7: 'NoisyOR'
+            int _type = T__79;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:77:7: ( 'NoisyOR' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:77:9: 'NoisyOR'
             {
             match("NoisyOR"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T79
+    // $ANTLR end "T__79"
 
-    // $ANTLR start T80
-    public final void mT80() throws RecognitionException {
+    // $ANTLR start "T__80"
+    public final void mT__80() throws RecognitionException {
         try {
-            int _type = T80;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:77:5: ( 'min' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:77:7: 'min'
+            int _type = T__80;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:78:7: ( 'min' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:78:9: 'min'
             {
             match("min"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T80
+    // $ANTLR end "T__80"
 
-    // $ANTLR start T81
-    public final void mT81() throws RecognitionException {
+    // $ANTLR start "T__81"
+    public final void mT__81() throws RecognitionException {
         try {
-            int _type = T81;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:78:5: ( 'max' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:78:7: 'max'
+            int _type = T__81;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:79:7: ( 'max' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:79:9: 'max'
             {
             match("max"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T81
+    // $ANTLR end "T__81"
 
-    // $ANTLR start T82
-    public final void mT82() throws RecognitionException {
+    // $ANTLR start "T__82"
+    public final void mT__82() throws RecognitionException {
         try {
-            int _type = T82;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:79:5: ( 'log' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:79:7: 'log'
+            int _type = T__82;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:80:7: ( 'log' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:80:9: 'log'
             {
             match("log"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T82
+    // $ANTLR end "T__82"
 
-    // $ANTLR start T83
-    public final void mT83() throws RecognitionException {
+    // $ANTLR start "T__83"
+    public final void mT__83() throws RecognitionException {
         try {
-            int _type = T83;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:80:5: ( 'log2' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:80:7: 'log2'
+            int _type = T__83;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:81:7: ( 'log2' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:81:9: 'log2'
             {
             match("log2"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T83
+    // $ANTLR end "T__83"
 
-    // $ANTLR start T84
-    public final void mT84() throws RecognitionException {
+    // $ANTLR start "T__84"
+    public final void mT__84() throws RecognitionException {
         try {
-            int _type = T84;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:81:5: ( 'log10' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:81:7: 'log10'
+            int _type = T__84;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:82:7: ( 'log10' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:82:9: 'log10'
             {
             match("log10"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T84
+    // $ANTLR end "T__84"
 
-    // $ANTLR start T85
-    public final void mT85() throws RecognitionException {
+    // $ANTLR start "T__85"
+    public final void mT__85() throws RecognitionException {
         try {
-            int _type = T85;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:82:5: ( 'exp' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:82:7: 'exp'
+            int _type = T__85;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:83:7: ( 'exp' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:83:9: 'exp'
             {
             match("exp"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T85
+    // $ANTLR end "T__85"
 
-    // $ANTLR start T86
-    public final void mT86() throws RecognitionException {
+    // $ANTLR start "T__86"
+    public final void mT__86() throws RecognitionException {
         try {
-            int _type = T86;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:83:5: ( 'sin' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:83:7: 'sin'
+            int _type = T__86;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:84:7: ( 'sin' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:84:9: 'sin'
             {
             match("sin"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T86
+    // $ANTLR end "T__86"
 
-    // $ANTLR start T87
-    public final void mT87() throws RecognitionException {
+    // $ANTLR start "T__87"
+    public final void mT__87() throws RecognitionException {
         try {
-            int _type = T87;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:84:5: ( 'cos' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:84:7: 'cos'
+            int _type = T__87;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:85:7: ( 'cos' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:85:9: 'cos'
             {
             match("cos"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T87
+    // $ANTLR end "T__87"
 
-    // $ANTLR start T88
-    public final void mT88() throws RecognitionException {
+    // $ANTLR start "T__88"
+    public final void mT__88() throws RecognitionException {
         try {
-            int _type = T88;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:85:5: ( 'tan' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:85:7: 'tan'
+            int _type = T__88;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:86:7: ( 'tan' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:86:9: 'tan'
             {
             match("tan"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T88
+    // $ANTLR end "T__88"
 
-    // $ANTLR start T89
-    public final void mT89() throws RecognitionException {
+    // $ANTLR start "T__89"
+    public final void mT__89() throws RecognitionException {
         try {
-            int _type = T89;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:86:5: ( 'sinh' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:86:7: 'sinh'
+            int _type = T__89;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:87:7: ( 'sinh' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:87:9: 'sinh'
             {
             match("sinh"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T89
+    // $ANTLR end "T__89"
 
-    // $ANTLR start T90
-    public final void mT90() throws RecognitionException {
+    // $ANTLR start "T__90"
+    public final void mT__90() throws RecognitionException {
         try {
-            int _type = T90;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:87:5: ( 'cosh' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:87:7: 'cosh'
+            int _type = T__90;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:88:7: ( 'cosh' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:88:9: 'cosh'
             {
             match("cosh"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T90
+    // $ANTLR end "T__90"
 
-    // $ANTLR start T91
-    public final void mT91() throws RecognitionException {
+    // $ANTLR start "T__91"
+    public final void mT__91() throws RecognitionException {
         try {
-            int _type = T91;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:88:5: ( 'tanh' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:88:7: 'tanh'
+            int _type = T__91;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:89:7: ( 'tanh' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:89:9: 'tanh'
             {
             match("tanh"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T91
+    // $ANTLR end "T__91"
 
-    // $ANTLR start T92
-    public final void mT92() throws RecognitionException {
+    // $ANTLR start "T__92"
+    public final void mT__92() throws RecognitionException {
         try {
-            int _type = T92;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:89:5: ( 'sqrt' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:89:7: 'sqrt'
+            int _type = T__92;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:90:7: ( 'sqrt' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:90:9: 'sqrt'
             {
             match("sqrt"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T92
+    // $ANTLR end "T__92"
 
-    // $ANTLR start T93
-    public final void mT93() throws RecognitionException {
+    // $ANTLR start "T__93"
+    public final void mT__93() throws RecognitionException {
         try {
-            int _type = T93;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:90:5: ( 'abs' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:90:7: 'abs'
+            int _type = T__93;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:91:7: ( 'abs' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:91:9: 'abs'
             {
             match("abs"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T93
+    // $ANTLR end "T__93"
 
-    // $ANTLR start T94
-    public final void mT94() throws RecognitionException {
+    // $ANTLR start "T__94"
+    public final void mT__94() throws RecognitionException {
         try {
-            int _type = T94;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:91:5: ( 'floor' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:91:7: 'floor'
+            int _type = T__94;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:92:7: ( 'floor' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:92:9: 'floor'
             {
             match("floor"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T94
+    // $ANTLR end "T__94"
 
-    // $ANTLR start T95
-    public final void mT95() throws RecognitionException {
+    // $ANTLR start "T__95"
+    public final void mT__95() throws RecognitionException {
         try {
-            int _type = T95;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:92:5: ( 'ceil' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:92:7: 'ceil'
+            int _type = T__95;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:93:7: ( 'ceil' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:93:9: 'ceil'
             {
             match("ceil"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T95
+    // $ANTLR end "T__95"
 
-    // $ANTLR start T96
-    public final void mT96() throws RecognitionException {
+    // $ANTLR start "T__96"
+    public final void mT__96() throws RecognitionException {
         try {
-            int _type = T96;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:93:5: ( 'mod' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:93:7: 'mod'
+            int _type = T__96;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:94:7: ( 'mod' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:94:9: 'mod'
             {
             match("mod"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T96
+    // $ANTLR end "T__96"
 
-    // $ANTLR start T97
-    public final void mT97() throws RecognitionException {
+    // $ANTLR start "T__97"
+    public final void mT__97() throws RecognitionException {
         try {
-            int _type = T97;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:94:5: ( 'if' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:94:7: 'if'
+            int _type = T__97;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:95:7: ( 'if' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:95:9: 'if'
             {
             match("if"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T97
+    // $ANTLR end "T__97"
 
-    // $ANTLR start T98
-    public final void mT98() throws RecognitionException {
+    // $ANTLR start "T__98"
+    public final void mT__98() throws RecognitionException {
         try {
-            int _type = T98;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:95:5: ( 'and' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:95:7: 'and'
+            int _type = T__98;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:96:7: ( 'and' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:96:9: 'and'
             {
             match("and"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T98
+    // $ANTLR end "T__98"
 
-    // $ANTLR start T99
-    public final void mT99() throws RecognitionException {
+    // $ANTLR start "T__99"
+    public final void mT__99() throws RecognitionException {
         try {
-            int _type = T99;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:96:5: ( 'or' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:96:7: 'or'
+            int _type = T__99;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:97:7: ( 'or' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:97:9: 'or'
             {
             match("or"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T99
+    // $ANTLR end "T__99"
 
-    // $ANTLR start T100
-    public final void mT100() throws RecognitionException {
+    // $ANTLR start "T__100"
+    public final void mT__100() throws RecognitionException {
         try {
-            int _type = T100;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:97:6: ( 'not' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:97:8: 'not'
+            int _type = T__100;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:98:8: ( 'not' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:98:10: 'not'
             {
             match("not"); 
 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end T100
+    // $ANTLR end "T__100"
 
-    // $ANTLR start RULE_BOOLEAN
+    // $ANTLR start "RULE_BOOLEAN"
     public final void mRULE_BOOLEAN() throws RecognitionException {
         try {
             int _type = RULE_BOOLEAN;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4971:14: ( ( 'true' | 'false' ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4971:16: ( 'true' | 'false' )
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4159:14: ( ( 'true' | 'false' ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4159:16: ( 'true' | 'false' )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4971:16: ( 'true' | 'false' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4159:16: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1792,13 +1976,13 @@ public class InternalNetDSLLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("4971:16: ( 'true' | 'false' )", 1, 0, input);
+                    new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
             switch (alt1) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4971:17: 'true'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4159:17: 'true'
                     {
                     match("true"); 
 
@@ -1806,7 +1990,7 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4971:24: 'false'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4159:24: 'false'
                     {
                     match("false"); 
 
@@ -1819,21 +2003,23 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_BOOLEAN
+    // $ANTLR end "RULE_BOOLEAN"
 
-    // $ANTLR start RULE_ID
+    // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4973:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4973:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4161:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4161:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4973:11: ( '^' )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4161:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1842,7 +2028,7 @@ public class InternalNetDSLLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4973:11: '^'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4161:11: '^'
                     {
                     match('^'); 
 
@@ -1856,12 +2042,11 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
             else {
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4973:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4161:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1881,10 +2066,9 @@ public class InternalNetDSLLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -1898,21 +2082,23 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ID
+    // $ANTLR end "RULE_ID"
 
-    // $ANTLR start RULE_INT
+    // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
             int _type = RULE_INT;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4975:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4975:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4163:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4163:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4975:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4163:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1924,23 +2110,23 @@ public class InternalNetDSLLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("4975:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )", 5, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
             switch (alt5) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4975:13: '0'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4163:13: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4975:17: '1' .. '9' ( '0' .. '9' )*
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4163:17: '1' .. '9' ( '0' .. '9' )*
                     {
                     matchRange('1','9'); 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4975:26: ( '0' .. '9' )*
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4163:26: ( '0' .. '9' )*
                     loop4:
                     do {
                         int alt4=2;
@@ -1953,7 +2139,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4975:27: '0' .. '9'
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4163:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -1974,21 +2160,23 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_INT
+    // $ANTLR end "RULE_INT"
 
-    // $ANTLR start RULE_DOUBLE
+    // $ANTLR start "RULE_DOUBLE"
     public final void mRULE_DOUBLE() throws RecognitionException {
         try {
             int _type = RULE_DOUBLE;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:13: ( ( '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:15: ( '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:13: ( ( '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? ) )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:15: ( '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:15: ( '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:15: ( '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2000,16 +2188,16 @@ public class InternalNetDSLLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("4977:15: ( '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? | '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )? )", 17, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
             switch (alt17) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:16: '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:16: '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     {
                     matchRange('1','9'); 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:25: ( '0' .. '9' )*
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:25: ( '0' .. '9' )*
                     loop6:
                     do {
                         int alt6=2;
@@ -2022,7 +2210,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:26: '0' .. '9'
+                    	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:26: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -2034,7 +2222,7 @@ public class InternalNetDSLLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:37: ( '.' ( '0' .. '9' )+ )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:37: ( '.' ( '0' .. '9' )+ )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -2043,10 +2231,10 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:38: '.' ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:38: '.' ( '0' .. '9' )+
                             {
                             match('.'); 
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:42: ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:42: ( '0' .. '9' )+
                             int cnt7=0;
                             loop7:
                             do {
@@ -2060,7 +2248,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                                 switch (alt7) {
                             	case 1 :
-                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:43: '0' .. '9'
+                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:43: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -2082,7 +2270,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                     }
 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:56: ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:56: ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2091,19 +2279,18 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:57: ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:57: ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
 
                             }
                             else {
-                                MismatchedSetException mse =
-                                    new MismatchedSetException(null,input);
-                                recover(mse);    throw mse;
-                            }
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;}
 
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:67: ( '+' | '-' )?
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:67: ( '+' | '-' )?
                             int alt9=2;
                             int LA9_0 = input.LA(1);
 
@@ -2119,10 +2306,9 @@ public class InternalNetDSLLexer extends Lexer {
 
                                     }
                                     else {
-                                        MismatchedSetException mse =
-                                            new MismatchedSetException(null,input);
-                                        recover(mse);    throw mse;
-                                    }
+                                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                                        recover(mse);
+                                        throw mse;}
 
 
                                     }
@@ -2130,7 +2316,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                             }
 
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:78: ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:78: ( '0' .. '9' )+
                             int cnt10=0;
                             loop10:
                             do {
@@ -2144,7 +2330,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                                 switch (alt10) {
                             	case 1 :
-                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:79: '0' .. '9'
+                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:79: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -2170,10 +2356,10 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:92: '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:92: '0' ( '.' ( '0' .. '9' )+ )? ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     {
                     match('0'); 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:96: ( '.' ( '0' .. '9' )+ )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:96: ( '.' ( '0' .. '9' )+ )?
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
@@ -2182,10 +2368,10 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     switch (alt13) {
                         case 1 :
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:97: '.' ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:97: '.' ( '0' .. '9' )+
                             {
                             match('.'); 
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:101: ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:101: ( '0' .. '9' )+
                             int cnt12=0;
                             loop12:
                             do {
@@ -2199,7 +2385,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                                 switch (alt12) {
                             	case 1 :
-                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:102: '0' .. '9'
+                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:102: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -2221,7 +2407,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                     }
 
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:115: ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:115: ( ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+ )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2230,19 +2416,18 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:116: ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:116: ( 'E' | 'e' ) ( '+' | '-' )? ( '0' .. '9' )+
                             {
                             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                                 input.consume();
 
                             }
                             else {
-                                MismatchedSetException mse =
-                                    new MismatchedSetException(null,input);
-                                recover(mse);    throw mse;
-                            }
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                recover(mse);
+                                throw mse;}
 
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:126: ( '+' | '-' )?
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:126: ( '+' | '-' )?
                             int alt14=2;
                             int LA14_0 = input.LA(1);
 
@@ -2258,10 +2443,9 @@ public class InternalNetDSLLexer extends Lexer {
 
                                     }
                                     else {
-                                        MismatchedSetException mse =
-                                            new MismatchedSetException(null,input);
-                                        recover(mse);    throw mse;
-                                    }
+                                        MismatchedSetException mse = new MismatchedSetException(null,input);
+                                        recover(mse);
+                                        throw mse;}
 
 
                                     }
@@ -2269,7 +2453,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                             }
 
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:137: ( '0' .. '9' )+
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:137: ( '0' .. '9' )+
                             int cnt15=0;
                             loop15:
                             do {
@@ -2283,7 +2467,7 @@ public class InternalNetDSLLexer extends Lexer {
 
                                 switch (alt15) {
                             	case 1 :
-                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4977:138: '0' .. '9'
+                            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4165:138: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -2314,22 +2498,24 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_DOUBLE
+    // $ANTLR end "RULE_DOUBLE"
 
-    // $ANTLR start RULE_STRING
+    // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4979:13: ( '\"' ( options {greedy=false; } : . )* '\"' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4979:15: '\"' ( options {greedy=false; } : . )* '\"'
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4167:13: ( '\"' ( options {greedy=false; } : . )* '\"' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4167:15: '\"' ( options {greedy=false; } : . )* '\"'
             {
             match('\"'); 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4979:19: ( options {greedy=false; } : . )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4167:19: ( options {greedy=false; } : . )*
             loop18:
             do {
                 int alt18=2;
@@ -2338,14 +2524,14 @@ public class InternalNetDSLLexer extends Lexer {
                 if ( (LA18_0=='\"') ) {
                     alt18=2;
                 }
-                else if ( ((LA18_0>='\u0000' && LA18_0<='!')||(LA18_0>='#' && LA18_0<='\uFFFE')) ) {
+                else if ( ((LA18_0>='\u0000' && LA18_0<='!')||(LA18_0>='#' && LA18_0<='\uFFFF')) ) {
                     alt18=1;
                 }
 
 
                 switch (alt18) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4979:47: .
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4167:47: .
             	    {
             	    matchAny(); 
 
@@ -2361,23 +2547,25 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_STRING
+    // $ANTLR end "RULE_STRING"
 
-    // $ANTLR start RULE_ML_COMMENT
+    // $ANTLR start "RULE_ML_COMMENT"
     public final void mRULE_ML_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_ML_COMMENT;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4981:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4981:19: '/*' ( options {greedy=false; } : . )* '*/'
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4169:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4169:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4981:24: ( options {greedy=false; } : . )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4169:24: ( options {greedy=false; } : . )*
             loop19:
             do {
                 int alt19=2;
@@ -2389,20 +2577,20 @@ public class InternalNetDSLLexer extends Lexer {
                     if ( (LA19_1=='/') ) {
                         alt19=2;
                     }
-                    else if ( ((LA19_1>='\u0000' && LA19_1<='.')||(LA19_1>='0' && LA19_1<='\uFFFE')) ) {
+                    else if ( ((LA19_1>='\u0000' && LA19_1<='.')||(LA19_1>='0' && LA19_1<='\uFFFF')) ) {
                         alt19=1;
                     }
 
 
                 }
-                else if ( ((LA19_0>='\u0000' && LA19_0<=')')||(LA19_0>='+' && LA19_0<='\uFFFE')) ) {
+                else if ( ((LA19_0>='\u0000' && LA19_0<=')')||(LA19_0>='+' && LA19_0<='\uFFFF')) ) {
                     alt19=1;
                 }
 
 
                 switch (alt19) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4981:52: .
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4169:52: .
             	    {
             	    matchAny(); 
 
@@ -2419,45 +2607,46 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ML_COMMENT
+    // $ANTLR end "RULE_ML_COMMENT"
 
-    // $ANTLR start RULE_SL_COMMENT
+    // $ANTLR start "RULE_SL_COMMENT"
     public final void mRULE_SL_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SL_COMMENT;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:17: ( '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:19: '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:17: ( '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:19: '%' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('%'); 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop20:
             do {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( ((LA20_0>='\u0000' && LA20_0<='\t')||(LA20_0>='\u000B' && LA20_0<='\f')||(LA20_0>='\u000E' && LA20_0<='\uFFFE')) ) {
+                if ( ((LA20_0>='\u0000' && LA20_0<='\t')||(LA20_0>='\u000B' && LA20_0<='\f')||(LA20_0>='\u000E' && LA20_0<='\uFFFF')) ) {
                     alt20=1;
                 }
 
 
                 switch (alt20) {
             	case 1 :
-            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:23: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:23: ~ ( ( '\\n' | '\\r' ) )
             	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
+            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -2468,7 +2657,7 @@ public class InternalNetDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:39: ( ( '\\r' )? '\\n' )?
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:39: ( ( '\\r' )? '\\n' )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -2477,9 +2666,9 @@ public class InternalNetDSLLexer extends Lexer {
             }
             switch (alt22) {
                 case 1 :
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:40: ( '\\r' )? '\\n'
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:40: ( '\\r' )? '\\n'
                     {
-                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:40: ( '\\r' )?
+                    // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:40: ( '\\r' )?
                     int alt21=2;
                     int LA21_0 = input.LA(1);
 
@@ -2488,7 +2677,7 @@ public class InternalNetDSLLexer extends Lexer {
                     }
                     switch (alt21) {
                         case 1 :
-                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4983:40: '\\r'
+                            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4171:40: '\\r'
                             {
                             match('\r'); 
 
@@ -2507,21 +2696,23 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_SL_COMMENT
+    // $ANTLR end "RULE_SL_COMMENT"
 
-    // $ANTLR start RULE_WS
+    // $ANTLR start "RULE_WS"
     public final void mRULE_WS() throws RecognitionException {
         try {
             int _type = RULE_WS;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4985:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4985:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4173:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4173:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4985:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4173:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt23=0;
             loop23:
             do {
@@ -2542,10 +2733,9 @@ public class InternalNetDSLLexer extends Lexer {
 
             	    }
             	    else {
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
 
 
             	    }
@@ -2563,710 +2753,713 @@ public class InternalNetDSLLexer extends Lexer {
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_WS
+    // $ANTLR end "RULE_WS"
 
-    // $ANTLR start RULE_ANY_OTHER
+    // $ANTLR start "RULE_ANY_OTHER"
     public final void mRULE_ANY_OTHER() throws RecognitionException {
         try {
             int _type = RULE_ANY_OTHER;
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4987:16: ( . )
-            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4987:18: .
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4175:16: ( . )
+            // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:4175:18: .
             {
             matchAny(); 
 
             }
 
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally {
         }
     }
-    // $ANTLR end RULE_ANY_OTHER
+    // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:8: ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | T52 | T53 | T54 | T55 | T56 | T57 | T58 | T59 | T60 | T61 | T62 | T63 | T64 | T65 | T66 | T67 | T68 | T69 | T70 | T71 | T72 | T73 | T74 | T75 | T76 | T77 | T78 | T79 | T80 | T81 | T82 | T83 | T84 | T85 | T86 | T87 | T88 | T89 | T90 | T91 | T92 | T93 | T94 | T95 | T96 | T97 | T98 | T99 | T100 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_DOUBLE | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_DOUBLE | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt24=97;
         alt24 = dfa24.predict(input);
         switch (alt24) {
             case 1 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:10: T13
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:10: T__13
                 {
-                mT13(); 
+                mT__13(); 
 
                 }
                 break;
             case 2 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:14: T14
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:16: T__14
                 {
-                mT14(); 
+                mT__14(); 
 
                 }
                 break;
             case 3 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:18: T15
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:22: T__15
                 {
-                mT15(); 
+                mT__15(); 
 
                 }
                 break;
             case 4 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:22: T16
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:28: T__16
                 {
-                mT16(); 
+                mT__16(); 
 
                 }
                 break;
             case 5 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:26: T17
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:34: T__17
                 {
-                mT17(); 
+                mT__17(); 
 
                 }
                 break;
             case 6 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:30: T18
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:40: T__18
                 {
-                mT18(); 
+                mT__18(); 
 
                 }
                 break;
             case 7 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:34: T19
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:46: T__19
                 {
-                mT19(); 
+                mT__19(); 
 
                 }
                 break;
             case 8 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:38: T20
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:52: T__20
                 {
-                mT20(); 
+                mT__20(); 
 
                 }
                 break;
             case 9 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:42: T21
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:58: T__21
                 {
-                mT21(); 
+                mT__21(); 
 
                 }
                 break;
             case 10 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:46: T22
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:64: T__22
                 {
-                mT22(); 
+                mT__22(); 
 
                 }
                 break;
             case 11 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:50: T23
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:70: T__23
                 {
-                mT23(); 
+                mT__23(); 
 
                 }
                 break;
             case 12 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:54: T24
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:76: T__24
                 {
-                mT24(); 
+                mT__24(); 
 
                 }
                 break;
             case 13 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:58: T25
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:82: T__25
                 {
-                mT25(); 
+                mT__25(); 
 
                 }
                 break;
             case 14 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:62: T26
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:88: T__26
                 {
-                mT26(); 
+                mT__26(); 
 
                 }
                 break;
             case 15 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:66: T27
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:94: T__27
                 {
-                mT27(); 
+                mT__27(); 
 
                 }
                 break;
             case 16 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:70: T28
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:100: T__28
                 {
-                mT28(); 
+                mT__28(); 
 
                 }
                 break;
             case 17 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:74: T29
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:106: T__29
                 {
-                mT29(); 
+                mT__29(); 
 
                 }
                 break;
             case 18 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:78: T30
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:112: T__30
                 {
-                mT30(); 
+                mT__30(); 
 
                 }
                 break;
             case 19 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:82: T31
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:118: T__31
                 {
-                mT31(); 
+                mT__31(); 
 
                 }
                 break;
             case 20 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:86: T32
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:124: T__32
                 {
-                mT32(); 
+                mT__32(); 
 
                 }
                 break;
             case 21 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:90: T33
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:130: T__33
                 {
-                mT33(); 
+                mT__33(); 
 
                 }
                 break;
             case 22 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:94: T34
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:136: T__34
                 {
-                mT34(); 
+                mT__34(); 
 
                 }
                 break;
             case 23 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:98: T35
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:142: T__35
                 {
-                mT35(); 
+                mT__35(); 
 
                 }
                 break;
             case 24 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:102: T36
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:148: T__36
                 {
-                mT36(); 
+                mT__36(); 
 
                 }
                 break;
             case 25 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:106: T37
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:154: T__37
                 {
-                mT37(); 
+                mT__37(); 
 
                 }
                 break;
             case 26 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:110: T38
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:160: T__38
                 {
-                mT38(); 
+                mT__38(); 
 
                 }
                 break;
             case 27 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:114: T39
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:166: T__39
                 {
-                mT39(); 
+                mT__39(); 
 
                 }
                 break;
             case 28 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:118: T40
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:172: T__40
                 {
-                mT40(); 
+                mT__40(); 
 
                 }
                 break;
             case 29 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:122: T41
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:178: T__41
                 {
-                mT41(); 
+                mT__41(); 
 
                 }
                 break;
             case 30 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:126: T42
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:184: T__42
                 {
-                mT42(); 
+                mT__42(); 
 
                 }
                 break;
             case 31 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:130: T43
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:190: T__43
                 {
-                mT43(); 
+                mT__43(); 
 
                 }
                 break;
             case 32 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:134: T44
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:196: T__44
                 {
-                mT44(); 
+                mT__44(); 
 
                 }
                 break;
             case 33 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:138: T45
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:202: T__45
                 {
-                mT45(); 
+                mT__45(); 
 
                 }
                 break;
             case 34 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:142: T46
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:208: T__46
                 {
-                mT46(); 
+                mT__46(); 
 
                 }
                 break;
             case 35 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:146: T47
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:214: T__47
                 {
-                mT47(); 
+                mT__47(); 
 
                 }
                 break;
             case 36 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:150: T48
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:220: T__48
                 {
-                mT48(); 
+                mT__48(); 
 
                 }
                 break;
             case 37 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:154: T49
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:226: T__49
                 {
-                mT49(); 
+                mT__49(); 
 
                 }
                 break;
             case 38 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:158: T50
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:232: T__50
                 {
-                mT50(); 
+                mT__50(); 
 
                 }
                 break;
             case 39 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:162: T51
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:238: T__51
                 {
-                mT51(); 
+                mT__51(); 
 
                 }
                 break;
             case 40 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:166: T52
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:244: T__52
                 {
-                mT52(); 
+                mT__52(); 
 
                 }
                 break;
             case 41 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:170: T53
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:250: T__53
                 {
-                mT53(); 
+                mT__53(); 
 
                 }
                 break;
             case 42 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:174: T54
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:256: T__54
                 {
-                mT54(); 
+                mT__54(); 
 
                 }
                 break;
             case 43 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:178: T55
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:262: T__55
                 {
-                mT55(); 
+                mT__55(); 
 
                 }
                 break;
             case 44 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:182: T56
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:268: T__56
                 {
-                mT56(); 
+                mT__56(); 
 
                 }
                 break;
             case 45 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:186: T57
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:274: T__57
                 {
-                mT57(); 
+                mT__57(); 
 
                 }
                 break;
             case 46 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:190: T58
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:280: T__58
                 {
-                mT58(); 
+                mT__58(); 
 
                 }
                 break;
             case 47 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:194: T59
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:286: T__59
                 {
-                mT59(); 
+                mT__59(); 
 
                 }
                 break;
             case 48 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:198: T60
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:292: T__60
                 {
-                mT60(); 
+                mT__60(); 
 
                 }
                 break;
             case 49 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:202: T61
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:298: T__61
                 {
-                mT61(); 
+                mT__61(); 
 
                 }
                 break;
             case 50 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:206: T62
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:304: T__62
                 {
-                mT62(); 
+                mT__62(); 
 
                 }
                 break;
             case 51 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:210: T63
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:310: T__63
                 {
-                mT63(); 
+                mT__63(); 
 
                 }
                 break;
             case 52 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:214: T64
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:316: T__64
                 {
-                mT64(); 
+                mT__64(); 
 
                 }
                 break;
             case 53 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:218: T65
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:322: T__65
                 {
-                mT65(); 
+                mT__65(); 
 
                 }
                 break;
             case 54 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:222: T66
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:328: T__66
                 {
-                mT66(); 
+                mT__66(); 
 
                 }
                 break;
             case 55 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:226: T67
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:334: T__67
                 {
-                mT67(); 
+                mT__67(); 
 
                 }
                 break;
             case 56 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:230: T68
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:340: T__68
                 {
-                mT68(); 
+                mT__68(); 
 
                 }
                 break;
             case 57 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:234: T69
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:346: T__69
                 {
-                mT69(); 
+                mT__69(); 
 
                 }
                 break;
             case 58 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:238: T70
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:352: T__70
                 {
-                mT70(); 
+                mT__70(); 
 
                 }
                 break;
             case 59 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:242: T71
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:358: T__71
                 {
-                mT71(); 
+                mT__71(); 
 
                 }
                 break;
             case 60 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:246: T72
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:364: T__72
                 {
-                mT72(); 
+                mT__72(); 
 
                 }
                 break;
             case 61 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:250: T73
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:370: T__73
                 {
-                mT73(); 
+                mT__73(); 
 
                 }
                 break;
             case 62 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:254: T74
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:376: T__74
                 {
-                mT74(); 
+                mT__74(); 
 
                 }
                 break;
             case 63 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:258: T75
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:382: T__75
                 {
-                mT75(); 
+                mT__75(); 
 
                 }
                 break;
             case 64 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:262: T76
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:388: T__76
                 {
-                mT76(); 
+                mT__76(); 
 
                 }
                 break;
             case 65 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:266: T77
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:394: T__77
                 {
-                mT77(); 
+                mT__77(); 
 
                 }
                 break;
             case 66 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:270: T78
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:400: T__78
                 {
-                mT78(); 
+                mT__78(); 
 
                 }
                 break;
             case 67 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:274: T79
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:406: T__79
                 {
-                mT79(); 
+                mT__79(); 
 
                 }
                 break;
             case 68 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:278: T80
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:412: T__80
                 {
-                mT80(); 
+                mT__80(); 
 
                 }
                 break;
             case 69 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:282: T81
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:418: T__81
                 {
-                mT81(); 
+                mT__81(); 
 
                 }
                 break;
             case 70 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:286: T82
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:424: T__82
                 {
-                mT82(); 
+                mT__82(); 
 
                 }
                 break;
             case 71 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:290: T83
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:430: T__83
                 {
-                mT83(); 
+                mT__83(); 
 
                 }
                 break;
             case 72 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:294: T84
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:436: T__84
                 {
-                mT84(); 
+                mT__84(); 
 
                 }
                 break;
             case 73 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:298: T85
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:442: T__85
                 {
-                mT85(); 
+                mT__85(); 
 
                 }
                 break;
             case 74 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:302: T86
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:448: T__86
                 {
-                mT86(); 
+                mT__86(); 
 
                 }
                 break;
             case 75 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:306: T87
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:454: T__87
                 {
-                mT87(); 
+                mT__87(); 
 
                 }
                 break;
             case 76 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:310: T88
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:460: T__88
                 {
-                mT88(); 
+                mT__88(); 
 
                 }
                 break;
             case 77 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:314: T89
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:466: T__89
                 {
-                mT89(); 
+                mT__89(); 
 
                 }
                 break;
             case 78 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:318: T90
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:472: T__90
                 {
-                mT90(); 
+                mT__90(); 
 
                 }
                 break;
             case 79 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:322: T91
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:478: T__91
                 {
-                mT91(); 
+                mT__91(); 
 
                 }
                 break;
             case 80 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:326: T92
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:484: T__92
                 {
-                mT92(); 
+                mT__92(); 
 
                 }
                 break;
             case 81 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:330: T93
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:490: T__93
                 {
-                mT93(); 
+                mT__93(); 
 
                 }
                 break;
             case 82 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:334: T94
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:496: T__94
                 {
-                mT94(); 
+                mT__94(); 
 
                 }
                 break;
             case 83 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:338: T95
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:502: T__95
                 {
-                mT95(); 
+                mT__95(); 
 
                 }
                 break;
             case 84 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:342: T96
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:508: T__96
                 {
-                mT96(); 
+                mT__96(); 
 
                 }
                 break;
             case 85 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:346: T97
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:514: T__97
                 {
-                mT97(); 
+                mT__97(); 
 
                 }
                 break;
             case 86 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:350: T98
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:520: T__98
                 {
-                mT98(); 
+                mT__98(); 
 
                 }
                 break;
             case 87 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:354: T99
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:526: T__99
                 {
-                mT99(); 
+                mT__99(); 
 
                 }
                 break;
             case 88 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:358: T100
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:532: T__100
                 {
-                mT100(); 
+                mT__100(); 
 
                 }
                 break;
             case 89 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:363: RULE_BOOLEAN
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:539: RULE_BOOLEAN
                 {
                 mRULE_BOOLEAN(); 
 
                 }
                 break;
             case 90 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:376: RULE_ID
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:552: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 91 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:384: RULE_INT
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:560: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 92 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:393: RULE_DOUBLE
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:569: RULE_DOUBLE
                 {
                 mRULE_DOUBLE(); 
 
                 }
                 break;
             case 93 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:405: RULE_STRING
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:581: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 94 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:417: RULE_ML_COMMENT
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:593: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 95 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:433: RULE_SL_COMMENT
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:609: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 96 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:449: RULE_WS
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:625: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 97 :
-                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:457: RULE_ANY_OTHER
+                // ../net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/parser/antlr/internal/InternalNetDSL.g:1:633: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3288,20 +3481,20 @@ public class InternalNetDSLLexer extends Lexer {
         "\2\66\1\u00d4\5\66\1\uffff\1\u00db\1\u00dc\1\u00dd\1\uffff\1\66"+
         "\1\u00e1\17\66\1\u00f1\1\u00f2\1\u00f3\2\uffff\1\u00f5\1\uffff\3"+
         "\66\1\u00f9\1\66\1\u00fb\1\uffff\1\66\1\u00fd\7\66\1\u0105\1\uffff"+
-        "\1\u0106\1\66\1\u0108\1\66\1\uffff\6\66\3\uffff\1\u0110\1\66\1\u0112"+
-        "\1\uffff\5\66\1\u0118\7\66\1\u0120\1\66\3\uffff\1\66\1\uffff\3\66"+
-        "\1\uffff\1\66\1\uffff\1\u0127\1\uffff\2\66\1\u0110\1\u012a\3\66"+
-        "\2\uffff\1\u012f\1\uffff\1\u0130\6\66\1\uffff\1\66\1\uffff\5\66"+
-        "\1\uffff\1\u013d\6\66\1\uffff\2\66\1\u0146\3\66\1\uffff\2\66\1\uffff"+
-        "\1\u014c\3\66\2\uffff\10\66\1\u0159\3\66\1\uffff\10\66\1\uffff\3"+
-        "\66\1\u0168\1\66\1\uffff\1\66\1\u016b\3\66\1\u016f\5\66\1\u0175"+
-        "\1\uffff\5\66\1\u017b\1\u017c\1\66\1\u017e\2\66\1\u0181\1\u0182"+
-        "\1\66\1\uffff\1\u0184\1\66\1\uffff\1\66\1\u0187\1\66\1\uffff\1\u0189"+
-        "\1\u018a\2\66\1\u018d\1\uffff\2\66\1\u0190\2\66\2\uffff\1\66\1\uffff"+
-        "\1\66\1\u0195\2\uffff\1\66\1\uffff\2\66\1\uffff\1\u0199\2\uffff"+
-        "\2\66\1\uffff\1\66\1\u019d\1\uffff\1\u019e\3\66\1\uffff\1\u01a2"+
-        "\2\66\1\uffff\1\66\1\u01a6\1\66\2\uffff\1\66\1\u01a9\1\66\1\uffff"+
-        "\2\66\1\u01ad\1\uffff\1\66\1\u01af\1\uffff\1\66\1\u01b1\1\66\1\uffff"+
+        "\1\u0106\1\66\1\u0108\1\66\1\uffff\6\66\3\uffff\1\66\1\u0111\1\u0112"+
+        "\1\uffff\4\66\1\u0117\7\66\1\u011f\2\66\3\uffff\1\66\1\uffff\3\66"+
+        "\1\uffff\1\66\1\uffff\1\u0127\1\uffff\2\66\1\u012a\1\u0111\3\66"+
+        "\2\uffff\1\u012f\1\uffff\1\u0130\7\66\2\uffff\4\66\1\uffff\1\66"+
+        "\1\u013d\5\66\1\uffff\3\66\1\u0146\3\66\1\uffff\2\66\1\uffff\1\u014c"+
+        "\3\66\2\uffff\7\66\1\u0158\4\66\1\uffff\10\66\1\uffff\3\66\1\u0168"+
+        "\1\66\1\uffff\1\66\1\u016b\3\66\1\u016f\5\66\1\uffff\1\u0175\5\66"+
+        "\1\u017b\1\u017c\1\66\1\u017e\2\66\1\u0181\1\u0182\1\66\1\uffff"+
+        "\1\u0184\1\66\1\uffff\1\66\1\u0187\1\66\1\uffff\1\u0189\1\u018a"+
+        "\2\66\1\u018d\1\uffff\2\66\1\u0190\2\66\2\uffff\1\66\1\uffff\1\66"+
+        "\1\u0195\2\uffff\1\66\1\uffff\2\66\1\uffff\1\u0199\2\uffff\2\66"+
+        "\1\uffff\1\66\1\u019d\1\uffff\1\u019e\3\66\1\uffff\1\u01a2\2\66"+
+        "\1\uffff\1\66\1\u01a6\1\66\2\uffff\1\66\1\u01a9\1\66\1\uffff\2\66"+
+        "\1\u01ad\1\uffff\1\66\1\u01af\1\uffff\1\66\1\u01b1\1\66\1\uffff"+
         "\1\66\1\uffff\1\u01b4\1\uffff\2\66\1\uffff\5\66\1\u01bc\1\66\1\uffff"+
         "\2\66\1\u01c0\1\uffff";
     static final String DFA24_eofS =
@@ -3311,98 +3504,97 @@ public class InternalNetDSLLexer extends Lexer {
         "\157\1\146\1\174\1\75\1\141\2\uffff\2\75\1\52\1\75\1\46\3\75\1\141"+
         "\1\145\1\157\1\145\1\141\1\170\1\145\1\156\1\162\1\105\1\151\1\170"+
         "\1\142\1\162\1\101\1\uffff\2\56\1\0\2\uffff\1\164\1\144\1\155\3"+
-        "\uffff\1\163\1\143\1\164\1\156\1\141\2\151\1\156\1\154\1\157\1\141"+
+        "\uffff\1\163\1\143\1\164\1\156\1\141\2\151\1\156\1\157\1\154\1\141"+
         "\1\142\1\155\1\156\1\162\5\uffff\1\142\1\147\1\163\1\157\1\163\1"+
-        "\60\4\uffff\1\144\1\170\1\156\11\uffff\1\0\11\uffff\1\165\1\156"+
-        "\1\151\2\147\1\156\1\164\1\155\1\157\1\160\4\151\1\122\1\163\1\160"+
-        "\1\144\1\163\1\60\2\uffff\1\56\2\uffff\1\60\1\145\1\60\1\142\1\143"+
-        "\1\151\1\141\1\164\1\60\1\163\2\154\1\143\1\163\1\157\2\164\1\160"+
-        "\1\60\1\164\1\145\1\60\1\151\1\145\1\154\1\164\1\145\1\uffff\3\60"+
-        "\1\uffff\1\145\1\60\1\163\1\155\1\141\1\116\1\157\1\141\2\155\1"+
-        "\157\1\142\1\146\1\141\1\163\1\124\1\164\3\60\2\uffff\1\60\1\uffff"+
+        "\60\4\uffff\1\144\1\156\1\170\11\uffff\1\0\11\uffff\1\165\1\156"+
+        "\1\151\2\147\1\164\1\156\1\155\1\157\1\160\3\151\1\122\1\151\1\163"+
+        "\1\160\1\163\1\144\1\60\2\uffff\1\56\2\uffff\1\60\1\145\1\60\1\142"+
+        "\1\143\1\151\1\141\1\164\1\60\1\163\2\154\1\143\1\157\1\163\2\164"+
+        "\1\160\1\60\1\164\1\145\1\60\1\151\1\145\1\154\1\145\1\164\1\uffff"+
+        "\3\60\1\uffff\1\145\1\60\1\155\1\163\1\141\1\116\1\141\1\157\2\155"+
+        "\1\157\1\142\1\146\1\141\1\124\1\163\1\164\3\60\2\uffff\1\60\1\uffff"+
         "\1\145\1\162\1\163\1\60\1\151\1\60\1\uffff\1\163\1\60\1\151\1\164"+
-        "\1\145\1\162\1\145\1\171\1\154\1\60\1\uffff\1\60\1\154\2\60\1\uffff"+
-        "\1\164\1\156\1\145\1\141\1\162\1\154\3\uffff\1\60\1\143\1\60\1\uffff"+
-        "\1\171\1\141\1\164\1\157\1\155\1\60\1\141\1\145\1\156\1\165\1\157"+
-        "\1\156\1\163\1\60\1\162\3\uffff\1\163\1\uffff\1\162\1\145\1\151"+
+        "\1\162\2\145\1\171\1\154\1\60\1\uffff\1\60\1\154\2\60\1\uffff\1"+
+        "\164\1\156\1\145\1\162\1\141\1\154\3\uffff\1\143\2\60\1\uffff\1"+
+        "\141\1\171\1\164\1\157\1\60\1\155\1\141\1\145\1\156\1\165\1\157"+
+        "\1\156\1\60\1\163\1\162\3\uffff\1\163\1\uffff\1\162\1\145\1\151"+
         "\1\uffff\1\156\1\uffff\1\60\1\uffff\1\164\1\151\2\60\1\137\1\160"+
-        "\1\145\2\uffff\1\60\1\uffff\1\60\1\151\1\164\1\141\1\156\1\166\1"+
-        "\137\1\uffff\1\141\1\uffff\1\117\1\154\1\151\1\162\1\151\1\uffff"+
-        "\1\60\1\164\1\145\1\154\1\162\1\147\1\157\1\uffff\2\151\1\60\1\164"+
-        "\1\157\1\165\1\uffff\1\171\1\157\1\uffff\1\60\1\166\1\145\1\163"+
-        "\2\uffff\1\157\1\151\1\156\1\143\1\141\1\144\1\164\1\122\1\60\1"+
-        "\166\1\155\1\141\1\uffff\1\162\1\156\1\154\1\155\1\165\1\156\1\142"+
-        "\1\172\1\uffff\1\145\1\156\1\157\1\60\1\156\1\uffff\1\141\1\60\1"+
-        "\137\1\156\1\141\1\60\1\145\1\154\1\157\1\141\1\145\1\60\1\uffff"+
-        "\1\145\1\141\1\154\1\151\1\164\2\60\1\154\1\60\1\165\1\145\2\60"+
-        "\1\165\1\uffff\1\60\1\154\1\uffff\1\160\1\60\1\154\1\uffff\2\60"+
-        "\1\144\1\164\1\60\1\uffff\1\102\1\154\1\60\1\143\1\151\2\uffff\1"+
-        "\141\1\uffff\1\164\1\60\2\uffff\1\163\1\uffff\1\165\1\145\1\uffff"+
-        "\1\60\2\uffff\1\145\1\141\1\uffff\1\151\1\60\1\uffff\1\60\1\141"+
-        "\1\162\1\151\1\uffff\1\60\1\145\1\162\1\uffff\1\163\1\60\1\156\2"+
-        "\uffff\1\154\1\60\1\157\1\uffff\1\163\1\137\1\60\1\uffff\1\157\1"+
-        "\60\1\uffff\1\156\1\60\1\151\1\uffff\1\155\1\uffff\1\60\1\uffff"+
-        "\1\156\1\151\1\uffff\1\164\1\141\1\145\1\154\1\162\1\60\1\166\1"+
-        "\uffff\1\141\1\154\1\60\1\uffff";
+        "\1\145\2\uffff\1\60\1\uffff\1\60\1\151\1\164\1\141\1\166\1\156\1"+
+        "\137\1\141\2\uffff\1\154\1\117\1\151\1\162\1\uffff\1\151\1\60\1"+
+        "\164\1\145\1\154\1\162\1\147\1\uffff\1\157\2\151\1\60\1\164\1\157"+
+        "\1\165\1\uffff\1\171\1\157\1\uffff\1\60\1\166\1\145\1\163\2\uffff"+
+        "\1\157\1\151\1\156\1\141\1\143\1\144\1\164\1\60\1\122\1\166\1\155"+
+        "\1\141\1\uffff\1\162\1\156\1\154\1\155\1\165\1\156\1\142\1\172\1"+
+        "\uffff\1\145\1\156\1\157\1\60\1\156\1\uffff\1\141\1\60\1\137\1\156"+
+        "\1\141\1\60\1\154\1\145\1\157\1\141\1\145\1\uffff\1\60\1\145\1\141"+
+        "\1\154\1\151\1\164\2\60\1\154\1\60\1\165\1\145\2\60\1\165\1\uffff"+
+        "\1\60\1\154\1\uffff\1\160\1\60\1\154\1\uffff\2\60\1\144\1\164\1"+
+        "\60\1\uffff\1\102\1\154\1\60\1\143\1\151\2\uffff\1\141\1\uffff\1"+
+        "\164\1\60\2\uffff\1\163\1\uffff\1\165\1\145\1\uffff\1\60\2\uffff"+
+        "\1\145\1\141\1\uffff\1\151\1\60\1\uffff\1\60\1\141\1\162\1\151\1"+
+        "\uffff\1\60\1\145\1\162\1\uffff\1\163\1\60\1\156\2\uffff\1\154\1"+
+        "\60\1\157\1\uffff\1\163\1\137\1\60\1\uffff\1\157\1\60\1\uffff\1"+
+        "\156\1\60\1\151\1\uffff\1\155\1\uffff\1\60\1\uffff\1\156\1\151\1"+
+        "\uffff\1\164\1\141\1\145\1\154\1\162\1\60\1\166\1\uffff\1\141\1"+
+        "\154\1\60\1\uffff";
     static final String DFA24_maxS =
-        "\1\ufffe\1\165\2\uffff\1\151\1\157\1\164\2\165\1\75\3\uffff\3\157"+
+        "\1\uffff\1\165\2\uffff\1\151\1\157\1\164\2\165\1\75\3\uffff\3\157"+
         "\1\156\1\174\1\75\1\157\2\uffff\4\75\1\46\1\75\1\76\1\75\1\162\2"+
         "\157\1\151\1\145\1\170\1\145\1\156\1\162\1\157\1\151\1\170\1\156"+
-        "\1\162\1\172\1\uffff\2\145\1\ufffe\2\uffff\2\164\1\155\3\uffff\1"+
-        "\163\1\143\1\164\1\163\1\141\2\151\1\156\1\154\1\157\1\141\1\142"+
+        "\1\162\1\172\1\uffff\2\145\1\uffff\2\uffff\2\164\1\155\3\uffff\1"+
+        "\163\1\143\1\164\1\163\1\141\2\151\1\156\1\157\1\154\1\141\1\142"+
         "\1\155\1\156\1\162\5\uffff\1\142\1\147\1\164\1\157\1\164\1\172\4"+
-        "\uffff\1\144\1\170\1\156\11\uffff\1\ufffe\11\uffff\1\165\1\156\1"+
-        "\162\2\147\1\156\1\164\1\155\1\157\1\160\4\151\1\122\1\163\1\160"+
-        "\1\144\1\163\1\172\2\uffff\1\145\2\uffff\1\172\1\145\1\172\1\142"+
-        "\1\143\1\151\1\141\1\164\1\172\1\163\2\154\1\143\1\163\1\157\2\164"+
-        "\1\160\1\172\1\164\1\145\1\172\1\151\1\145\1\154\1\164\1\145\1\uffff"+
-        "\3\172\1\uffff\1\156\1\172\1\163\1\155\1\141\1\116\1\157\1\141\2"+
-        "\155\1\157\1\142\1\146\1\141\1\163\1\124\1\164\3\172\2\uffff\1\172"+
-        "\1\uffff\1\145\1\162\1\163\1\172\1\151\1\172\1\uffff\1\163\1\172"+
-        "\1\151\1\164\1\145\1\162\1\145\1\171\1\154\1\172\1\uffff\1\172\1"+
-        "\154\1\172\1\60\1\uffff\1\164\1\156\1\145\1\141\1\162\1\154\3\uffff"+
-        "\1\172\1\143\1\172\1\uffff\1\171\1\141\1\164\1\157\1\155\1\172\1"+
-        "\141\1\145\1\156\1\165\1\157\1\156\1\163\1\172\1\162\3\uffff\1\163"+
-        "\1\uffff\1\162\1\145\1\151\1\uffff\1\156\1\uffff\1\172\1\uffff\1"+
-        "\164\1\151\2\172\1\163\1\160\1\145\2\uffff\1\172\1\uffff\1\172\1"+
-        "\151\1\164\1\141\1\156\1\166\1\137\1\uffff\1\141\1\uffff\1\117\1"+
-        "\154\1\151\1\162\1\151\1\uffff\1\172\1\164\1\145\1\154\1\162\1\147"+
-        "\1\157\1\uffff\2\151\1\172\1\164\1\157\1\165\1\uffff\1\171\1\157"+
-        "\1\uffff\1\172\1\166\1\145\1\163\2\uffff\1\157\1\151\1\156\1\143"+
-        "\1\141\1\156\1\164\1\122\1\172\1\166\1\155\1\141\1\uffff\1\162\1"+
-        "\156\1\154\1\155\1\165\1\156\1\142\1\172\1\uffff\1\145\1\156\1\157"+
-        "\1\172\1\156\1\uffff\1\141\1\172\1\137\1\156\1\141\1\172\1\145\1"+
-        "\154\1\157\1\141\1\145\1\172\1\uffff\1\145\1\141\1\154\1\151\1\164"+
-        "\2\172\1\154\1\172\1\165\1\145\2\172\1\165\1\uffff\1\172\1\154\1"+
-        "\uffff\1\160\1\172\1\154\1\uffff\2\172\1\144\1\164\1\172\1\uffff"+
-        "\1\102\1\154\1\172\1\143\1\151\2\uffff\1\141\1\uffff\1\164\1\172"+
-        "\2\uffff\1\163\1\uffff\1\165\1\145\1\uffff\1\172\2\uffff\1\145\1"+
-        "\141\1\uffff\1\151\1\172\1\uffff\1\172\1\141\1\162\1\151\1\uffff"+
-        "\1\172\1\145\1\162\1\uffff\1\163\1\172\1\156\2\uffff\1\154\1\172"+
-        "\1\157\1\uffff\1\163\1\137\1\172\1\uffff\1\157\1\172\1\uffff\1\156"+
-        "\1\172\1\151\1\uffff\1\155\1\uffff\1\172\1\uffff\1\156\1\151\1\uffff"+
-        "\1\164\1\141\1\145\1\154\1\162\1\172\1\166\1\uffff\1\141\1\154\1"+
-        "\172\1\uffff";
+        "\uffff\1\144\1\156\1\170\11\uffff\1\uffff\11\uffff\1\165\1\156\1"+
+        "\162\2\147\1\164\1\156\1\155\1\157\1\160\3\151\1\122\1\151\1\163"+
+        "\1\160\1\163\1\144\1\172\2\uffff\1\145\2\uffff\1\172\1\145\1\172"+
+        "\1\142\1\143\1\151\1\141\1\164\1\172\1\163\2\154\1\143\1\157\1\163"+
+        "\2\164\1\160\1\172\1\164\1\145\1\172\1\151\1\145\1\154\1\145\1\164"+
+        "\1\uffff\3\172\1\uffff\1\156\1\172\1\155\1\163\1\141\1\116\1\141"+
+        "\1\157\2\155\1\157\1\142\1\146\1\141\1\124\1\163\1\164\3\172\2\uffff"+
+        "\1\172\1\uffff\1\145\1\162\1\163\1\172\1\151\1\172\1\uffff\1\163"+
+        "\1\172\1\151\1\164\1\162\2\145\1\171\1\154\1\172\1\uffff\1\172\1"+
+        "\154\1\172\1\60\1\uffff\1\164\1\156\1\145\1\162\1\141\1\154\3\uffff"+
+        "\1\143\2\172\1\uffff\1\141\1\171\1\164\1\157\1\172\1\155\1\141\1"+
+        "\145\1\156\1\165\1\157\1\156\1\172\1\163\1\162\3\uffff\1\163\1\uffff"+
+        "\1\162\1\145\1\151\1\uffff\1\156\1\uffff\1\172\1\uffff\1\164\1\151"+
+        "\2\172\1\163\1\160\1\145\2\uffff\1\172\1\uffff\1\172\1\151\1\164"+
+        "\1\141\1\166\1\156\1\137\1\141\2\uffff\1\154\1\117\1\151\1\162\1"+
+        "\uffff\1\151\1\172\1\164\1\145\1\154\1\162\1\147\1\uffff\1\157\2"+
+        "\151\1\172\1\164\1\157\1\165\1\uffff\1\171\1\157\1\uffff\1\172\1"+
+        "\166\1\145\1\163\2\uffff\1\157\1\151\1\156\1\141\1\143\1\156\1\164"+
+        "\1\172\1\122\1\166\1\155\1\141\1\uffff\1\162\1\156\1\154\1\155\1"+
+        "\165\1\156\1\142\1\172\1\uffff\1\145\1\156\1\157\1\172\1\156\1\uffff"+
+        "\1\141\1\172\1\137\1\156\1\141\1\172\1\154\1\145\1\157\1\141\1\145"+
+        "\1\uffff\1\172\1\145\1\141\1\154\1\151\1\164\2\172\1\154\1\172\1"+
+        "\165\1\145\2\172\1\165\1\uffff\1\172\1\154\1\uffff\1\160\1\172\1"+
+        "\154\1\uffff\2\172\1\144\1\164\1\172\1\uffff\1\102\1\154\1\172\1"+
+        "\143\1\151\2\uffff\1\141\1\uffff\1\164\1\172\2\uffff\1\163\1\uffff"+
+        "\1\165\1\145\1\uffff\1\172\2\uffff\1\145\1\141\1\uffff\1\151\1\172"+
+        "\1\uffff\1\172\1\141\1\162\1\151\1\uffff\1\172\1\145\1\162\1\uffff"+
+        "\1\163\1\172\1\156\2\uffff\1\154\1\172\1\157\1\uffff\1\163\1\137"+
+        "\1\172\1\uffff\1\157\1\172\1\uffff\1\156\1\172\1\151\1\uffff\1\155"+
+        "\1\uffff\1\172\1\uffff\1\156\1\151\1\uffff\1\164\1\141\1\145\1\154"+
+        "\1\162\1\172\1\166\1\uffff\1\141\1\154\1\172\1\uffff";
     static final String DFA24_acceptS =
         "\2\uffff\1\2\1\3\6\uffff\1\14\1\15\1\16\7\uffff\1\40\1\41\27\uffff"+
         "\1\132\3\uffff\1\140\1\141\3\uffff\1\132\1\2\1\3\17\uffff\1\52\1"+
         "\13\1\14\1\15\1\16\6\uffff\1\47\1\30\1\44\1\32\3\uffff\1\40\1\41"+
-        "\1\42\1\60\1\43\1\61\1\136\1\45\1\62\1\uffff\1\137\1\50\1\51\1\63"+
+        "\1\42\1\60\1\43\1\61\1\45\1\136\1\62\1\uffff\1\137\1\50\1\51\1\63"+
         "\1\53\1\54\1\56\1\55\1\57\24\uffff\1\133\1\134\1\uffff\1\135\1\140"+
         "\33\uffff\1\125\3\uffff\1\46\24\uffff\1\127\1\1\1\uffff\1\130\6"+
-        "\uffff\1\113\12\uffff\1\112\4\uffff\1\106\6\uffff\1\124\1\105\1"+
-        "\104\3\uffff\1\114\17\uffff\1\111\1\126\1\121\1\uffff\1\6\3\uffff"+
+        "\uffff\1\113\12\uffff\1\112\4\uffff\1\106\6\uffff\1\124\1\104\1"+
+        "\105\3\uffff\1\114\17\uffff\1\111\1\121\1\126\1\uffff\1\6\3\uffff"+
         "\1\31\1\uffff\1\116\1\uffff\1\123\7\uffff\1\115\1\120\1\uffff\1"+
-        "\107\7\uffff\1\131\1\uffff\1\117\5\uffff\1\67\7\uffff\1\75\6\uffff"+
-        "\1\36\2\uffff\1\122\4\uffff\1\17\1\110\14\uffff\1\70\10\uffff\1"+
-        "\23\5\uffff\1\12\14\uffff\1\65\16\uffff\1\10\2\uffff\1\21\3\uffff"+
-        "\1\22\5\uffff\1\103\5\uffff\1\72\1\73\1\uffff\1\77\2\uffff\1\4\1"+
-        "\7\1\uffff\1\11\2\uffff\1\20\1\uffff\1\37\1\24\2\uffff\1\64\2\uffff"+
+        "\107\10\uffff\1\131\1\117\4\uffff\1\67\7\uffff\1\75\7\uffff\1\36"+
+        "\2\uffff\1\122\4\uffff\1\17\1\110\14\uffff\1\70\10\uffff\1\23\5"+
+        "\uffff\1\12\13\uffff\1\65\17\uffff\1\10\2\uffff\1\21\3\uffff\1\22"+
+        "\5\uffff\1\103\5\uffff\1\72\1\73\1\uffff\1\77\2\uffff\1\4\1\7\1"+
+        "\uffff\1\11\2\uffff\1\20\1\uffff\1\24\1\37\2\uffff\1\64\2\uffff"+
         "\1\76\4\uffff\1\26\3\uffff\1\27\3\uffff\1\66\1\101\3\uffff\1\5\3"+
         "\uffff\1\35\2\uffff\1\74\3\uffff\1\33\1\uffff\1\71\1\uffff\1\25"+
         "\2\uffff\1\102\7\uffff\1\100\3\uffff\1\34";
     static final String DFA24_specialS =
-        "\u01c1\uffff}>";
+        "\1\2\57\uffff\1\1\62\uffff\1\0\u015d\uffff}>";
     static final String[] DFA24_transitionS = {
             "\11\62\2\61\2\62\1\61\22\62\1\61\1\33\1\60\2\62\1\31\1\32\1"+
             "\62\1\12\1\13\1\22\1\26\1\25\1\27\1\62\1\30\1\56\11\57\1\24"+
@@ -3410,14 +3602,14 @@ public class InternalNetDSLLexer extends Lexer {
             "\4\55\1\40\1\55\1\37\1\55\1\47\3\55\1\46\1\45\1\55\1\44\3\55"+
             "\3\62\1\54\1\55\1\62\1\52\1\17\1\5\1\4\1\51\1\7\2\55\1\20\2"+
             "\55\1\15\1\23\1\1\1\53\1\16\2\55\1\10\1\36\1\6\5\55\1\2\1\21"+
-            "\1\3\uff81\62",
+            "\1\3\uff82\62",
             "\1\63\11\uffff\1\64\5\uffff\1\65",
             "",
             "",
             "\1\73\3\uffff\1\72\3\uffff\1\71",
             "\1\76\6\uffff\1\75\2\uffff\1\74",
             "\1\77",
-            "\1\101\12\uffff\1\102\10\uffff\1\100",
+            "\1\102\12\uffff\1\101\10\uffff\1\100",
             "\1\105\7\uffff\1\106\7\uffff\1\107\2\uffff\1\103\1\104",
             "\1\110",
             "",
@@ -3429,12 +3621,12 @@ public class InternalNetDSLLexer extends Lexer {
             "\1\122\7\uffff\1\121",
             "\1\123",
             "\1\125",
-            "\1\130\7\uffff\1\131\5\uffff\1\127",
+            "\1\131\7\uffff\1\130\5\uffff\1\127",
             "",
             "",
             "\1\134",
             "\1\136",
-            "\1\140\22\uffff\1\141",
+            "\1\141\22\uffff\1\140",
             "\1\143",
             "\1\145",
             "\1\146",
@@ -3443,22 +3635,22 @@ public class InternalNetDSLLexer extends Lexer {
             "\1\156\20\uffff\1\155",
             "\1\160\11\uffff\1\157",
             "\1\161",
-            "\1\163\3\uffff\1\162",
+            "\1\162\3\uffff\1\163",
             "\1\164\3\uffff\1\165",
             "\1\166",
             "\1\167",
             "\1\170",
             "\1\171",
-            "\1\173\51\uffff\1\172",
+            "\1\172\51\uffff\1\173",
             "\1\174",
             "\1\175",
-            "\1\177\13\uffff\1\176",
+            "\1\176\13\uffff\1\177",
             "\1\u0080",
             "\32\66\4\uffff\1\66\1\uffff\32\66",
             "",
             "\1\u0082\26\uffff\1\u0082\37\uffff\1\u0082",
             "\1\u0082\1\uffff\12\u0083\13\uffff\1\u0082\37\uffff\1\u0082",
-            "\uffff\u0084",
+            "\0\u0084",
             "",
             "",
             "\1\u0086",
@@ -3491,7 +3683,7 @@ public class InternalNetDSLLexer extends Lexer {
             "\1\u009b",
             "\1\u009c\1\u009d",
             "\1\u009e",
-            "\1\u009f\1\u00a0",
+            "\1\u00a0\1\u009f",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
             "",
             "",
@@ -3509,7 +3701,7 @@ public class InternalNetDSLLexer extends Lexer {
             "",
             "",
             "",
-            "\uffff\144",
+            "\0\144",
             "",
             "",
             "",
@@ -3521,7 +3713,7 @@ public class InternalNetDSLLexer extends Lexer {
             "",
             "\1\u00a6",
             "\1\u00a7",
-            "\1\u00a8\10\uffff\1\u00a9",
+            "\1\u00a9\10\uffff\1\u00a8",
             "\1\u00aa",
             "\1\u00ab",
             "\1\u00ac",
@@ -3577,7 +3769,7 @@ public class InternalNetDSLLexer extends Lexer {
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
             "",
-            "\1\u00de\10\uffff\1\u00df",
+            "\1\u00df\10\uffff\1\u00de",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\7\66\1\u00e0\22\66",
             "\1\u00e2",
             "\1\u00e3",
@@ -3633,24 +3825,24 @@ public class InternalNetDSLLexer extends Lexer {
             "",
             "",
             "",
+            "\1\u0110",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
-            "\1\u0111",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
             "",
             "\1\u0113",
             "\1\u0114",
             "\1\u0115",
             "\1\u0116",
-            "\1\u0117",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
+            "\1\u0118",
             "\1\u0119",
             "\1\u011a",
             "\1\u011b",
             "\1\u011c",
             "\1\u011d",
             "\1\u011e",
-            "\1\u011f",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
+            "\1\u0120",
             "\1\u0121",
             "",
             "",
@@ -3683,23 +3875,23 @@ public class InternalNetDSLLexer extends Lexer {
             "\1\u0134",
             "\1\u0135",
             "\1\u0136",
-            "",
             "\1\u0137",
+            "",
             "",
             "\1\u0138",
             "\1\u0139",
             "\1\u013a",
             "\1\u013b",
-            "\1\u013c",
             "",
+            "\1\u013c",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
             "\1\u013e",
             "\1\u013f",
             "\1\u0140",
             "\1\u0141",
             "\1\u0142",
-            "\1\u0143",
             "",
+            "\1\u0143",
             "\1\u0144",
             "\1\u0145",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
@@ -3723,8 +3915,8 @@ public class InternalNetDSLLexer extends Lexer {
             "\1\u0154",
             "\1\u0156\11\uffff\1\u0155",
             "\1\u0157",
-            "\1\u0158",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
+            "\1\u0159",
             "\1\u015a",
             "\1\u015b",
             "\1\u015c",
@@ -3755,8 +3947,8 @@ public class InternalNetDSLLexer extends Lexer {
             "\1\u0172",
             "\1\u0173",
             "\1\u0174",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
             "",
+            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
             "\1\u0176",
             "\1\u0177",
             "\1\u0178",
@@ -3892,7 +4084,143 @@ public class InternalNetDSLLexer extends Lexer {
             this.transition = DFA24_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T13 | T14 | T15 | T16 | T17 | T18 | T19 | T20 | T21 | T22 | T23 | T24 | T25 | T26 | T27 | T28 | T29 | T30 | T31 | T32 | T33 | T34 | T35 | T36 | T37 | T38 | T39 | T40 | T41 | T42 | T43 | T44 | T45 | T46 | T47 | T48 | T49 | T50 | T51 | T52 | T53 | T54 | T55 | T56 | T57 | T58 | T59 | T60 | T61 | T62 | T63 | T64 | T65 | T66 | T67 | T68 | T69 | T70 | T71 | T72 | T73 | T74 | T75 | T76 | T77 | T78 | T79 | T80 | T81 | T82 | T83 | T84 | T85 | T86 | T87 | T88 | T89 | T90 | T91 | T92 | T93 | T94 | T95 | T96 | T97 | T98 | T99 | T100 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_DOUBLE | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_DOUBLE | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+        }
+        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
+            IntStream input = _input;
+        	int _s = s;
+            switch ( s ) {
+                    case 0 : 
+                        int LA24_99 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA24_99>='\u0000' && LA24_99<='\uFFFF')) ) {s = 100;}
+
+                        else s = 165;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA24_48 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA24_48>='\u0000' && LA24_48<='\uFFFF')) ) {s = 132;}
+
+                        else s = 50;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA24_0 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA24_0=='n') ) {s = 1;}
+
+                        else if ( (LA24_0=='{') ) {s = 2;}
+
+                        else if ( (LA24_0=='}') ) {s = 3;}
+
+                        else if ( (LA24_0=='d') ) {s = 4;}
+
+                        else if ( (LA24_0=='c') ) {s = 5;}
+
+                        else if ( (LA24_0=='u') ) {s = 6;}
+
+                        else if ( (LA24_0=='f') ) {s = 7;}
+
+                        else if ( (LA24_0=='s') ) {s = 8;}
+
+                        else if ( (LA24_0=='=') ) {s = 9;}
+
+                        else if ( (LA24_0=='(') ) {s = 10;}
+
+                        else if ( (LA24_0==')') ) {s = 11;}
+
+                        else if ( (LA24_0==';') ) {s = 12;}
+
+                        else if ( (LA24_0=='l') ) {s = 13;}
+
+                        else if ( (LA24_0=='p') ) {s = 14;}
+
+                        else if ( (LA24_0=='b') ) {s = 15;}
+
+                        else if ( (LA24_0=='i') ) {s = 16;}
+
+                        else if ( (LA24_0=='|') ) {s = 17;}
+
+                        else if ( (LA24_0=='*') ) {s = 18;}
+
+                        else if ( (LA24_0=='m') ) {s = 19;}
+
+                        else if ( (LA24_0==':') ) {s = 20;}
+
+                        else if ( (LA24_0==',') ) {s = 21;}
+
+                        else if ( (LA24_0=='+') ) {s = 22;}
+
+                        else if ( (LA24_0=='-') ) {s = 23;}
+
+                        else if ( (LA24_0=='/') ) {s = 24;}
+
+                        else if ( (LA24_0=='%') ) {s = 25;}
+
+                        else if ( (LA24_0=='&') ) {s = 26;}
+
+                        else if ( (LA24_0=='!') ) {s = 27;}
+
+                        else if ( (LA24_0=='<') ) {s = 28;}
+
+                        else if ( (LA24_0=='>') ) {s = 29;}
+
+                        else if ( (LA24_0=='t') ) {s = 30;}
+
+                        else if ( (LA24_0=='N') ) {s = 31;}
+
+                        else if ( (LA24_0=='L') ) {s = 32;}
+
+                        else if ( (LA24_0=='B') ) {s = 33;}
+
+                        else if ( (LA24_0=='G') ) {s = 34;}
+
+                        else if ( (LA24_0=='E') ) {s = 35;}
+
+                        else if ( (LA24_0=='W') ) {s = 36;}
+
+                        else if ( (LA24_0=='U') ) {s = 37;}
+
+                        else if ( (LA24_0=='T') ) {s = 38;}
+
+                        else if ( (LA24_0=='P') ) {s = 39;}
+
+                        else if ( (LA24_0=='D') ) {s = 40;}
+
+                        else if ( (LA24_0=='e') ) {s = 41;}
+
+                        else if ( (LA24_0=='a') ) {s = 42;}
+
+                        else if ( (LA24_0=='o') ) {s = 43;}
+
+                        else if ( (LA24_0=='^') ) {s = 44;}
+
+                        else if ( (LA24_0=='A'||LA24_0=='C'||LA24_0=='F'||(LA24_0>='H' && LA24_0<='K')||LA24_0=='M'||LA24_0=='O'||(LA24_0>='Q' && LA24_0<='S')||LA24_0=='V'||(LA24_0>='X' && LA24_0<='Z')||LA24_0=='_'||(LA24_0>='g' && LA24_0<='h')||(LA24_0>='j' && LA24_0<='k')||(LA24_0>='q' && LA24_0<='r')||(LA24_0>='v' && LA24_0<='z')) ) {s = 45;}
+
+                        else if ( (LA24_0=='0') ) {s = 46;}
+
+                        else if ( ((LA24_0>='1' && LA24_0<='9')) ) {s = 47;}
+
+                        else if ( (LA24_0=='\"') ) {s = 48;}
+
+                        else if ( ((LA24_0>='\t' && LA24_0<='\n')||LA24_0=='\r'||LA24_0==' ') ) {s = 49;}
+
+                        else if ( ((LA24_0>='\u0000' && LA24_0<='\b')||(LA24_0>='\u000B' && LA24_0<='\f')||(LA24_0>='\u000E' && LA24_0<='\u001F')||(LA24_0>='#' && LA24_0<='$')||LA24_0=='\''||LA24_0=='.'||(LA24_0>='?' && LA24_0<='@')||(LA24_0>='[' && LA24_0<=']')||LA24_0=='`'||(LA24_0>='~' && LA24_0<='\uFFFF')) ) {s = 50;}
+
+                        if ( s>=0 ) return s;
+                        break;
+            }
+            NoViableAltException nvae =
+                new NoViableAltException(getDescription(), 24, _s, input);
+            error(nvae);
+            throw nvae;
         }
     }
  

@@ -13,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.swt.SWT;
@@ -33,7 +37,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ArtifactIdentifierPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ArtifactIdentifierPropertiesEditionPart {
@@ -79,17 +83,39 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence artifactIdentifierStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = artifactIdentifierStep.addStep(ScoViewsRepository.ArtifactIdentifier.Properties.class);
+		propertiesStep.addStep(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName);
+		propertiesStep.addStep(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount);
+		propertiesStep.addStep(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount);
 		
-		// End of user code
+		
+		composer = new PartComposer(artifactIdentifierStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == ScoViewsRepository.ArtifactIdentifier.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == ScoViewsRepository.ArtifactIdentifier.Properties.resourceName) {
+					return 		createResourceNameText(widgetFactory, parent);
+				}
+				if (key == ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount) {
+					return 		createBaselinedLineCountText(widgetFactory, parent);
+				}
+				if (key == ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount) {
+					return 		createCurrentLineCountText(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(ScoMessages.ArtifactIdentifierPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -98,15 +124,13 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createResourceNameText(widgetFactory, propertiesGroup);
-		createBaselinedLineCountText(widgetFactory, propertiesGroup);
-		createCurrentLineCountText(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createResourceNameText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_ResourceNameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.resourceName, ScoViewsRepository.FORM_KIND));
+	protected Composite createResourceNameText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_ResourceNameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName, ScoViewsRepository.FORM_KIND));
 		resourceName = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		resourceName.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -121,7 +145,7 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.resourceName, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, resourceName.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.Properties.resourceName, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, resourceName.getText()));
 			}
 		});
 		resourceName.addKeyListener(new KeyAdapter() {
@@ -134,18 +158,19 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.resourceName, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, resourceName.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.Properties.resourceName, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, resourceName.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(resourceName, ScoViewsRepository.ArtifactIdentifier.resourceName);
+		EditingUtils.setID(resourceName, ScoViewsRepository.ArtifactIdentifier.Properties.resourceName);
 		EditingUtils.setEEFtype(resourceName, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.resourceName, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createBaselinedLineCountText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_BaselinedLineCountLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.baselinedLineCount, ScoViewsRepository.FORM_KIND));
+	protected Composite createBaselinedLineCountText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_BaselinedLineCountLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount, ScoViewsRepository.FORM_KIND));
 		baselinedLineCount = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		baselinedLineCount.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -160,7 +185,7 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.baselinedLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, baselinedLineCount.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, baselinedLineCount.getText()));
 			}
 		});
 		baselinedLineCount.addKeyListener(new KeyAdapter() {
@@ -173,18 +198,19 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.baselinedLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, baselinedLineCount.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, baselinedLineCount.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(baselinedLineCount, ScoViewsRepository.ArtifactIdentifier.baselinedLineCount);
+		EditingUtils.setID(baselinedLineCount, ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount);
 		EditingUtils.setEEFtype(baselinedLineCount, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.baselinedLineCount, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createCurrentLineCountText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_CurrentLineCountLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.currentLineCount, ScoViewsRepository.FORM_KIND));
+	protected Composite createCurrentLineCountText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_CurrentLineCountLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount, ScoViewsRepository.FORM_KIND));
 		currentLineCount = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		currentLineCount.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -199,7 +225,7 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.currentLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, currentLineCount.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, currentLineCount.getText()));
 			}
 		});
 		currentLineCount.addKeyListener(new KeyAdapter() {
@@ -212,13 +238,14 @@ public class ArtifactIdentifierPropertiesEditionPartForm extends CompositeProper
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.currentLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, currentLineCount.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactIdentifierPropertiesEditionPartForm.this, ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, currentLineCount.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(currentLineCount, ScoViewsRepository.ArtifactIdentifier.currentLineCount);
+		EditingUtils.setID(currentLineCount, ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount);
 		EditingUtils.setEEFtype(currentLineCount, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.currentLineCount, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

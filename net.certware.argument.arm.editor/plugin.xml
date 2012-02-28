@@ -41,7 +41,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
       <PropertiesEditionPolicyProvider
-            providerClass="net.certware.argument.arm.providers.ArmPackagePropertiesEditionPolicyProvider">
+            providerClass="net.certware.argument.arm.providers.ArmPackagePropertiesEditionProvider">
       </PropertiesEditionPolicyProvider>
    </extension>
    <extension

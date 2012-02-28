@@ -4,11 +4,8 @@
 package net.certware.verification.checklist.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -35,35 +32,7 @@ public interface CategoryPropertiesEditionPart {
 	public void setName(String newValue);
 
 
-	/**
-	 * @return the items to add
-	 * 
-	 */
-	public List getItemsToAdd();
 
-	/**
-	 * @return the items to remove
-	 * 
-	 */
-	public List getItemsToRemove();
-
-	/**
-	 * @return the items to move
-	 * 
-	 */
-	public List getItemsToMove();
-
-	/**
-	 * @return the items to edit
-	 * 
-	 */
-	public Map getItemsToEdit();
-
-	/**
-	 * @return the current items table
-	 * 
-	 */
-	public List getItemsTable();
 
 	/**
 	 * Init the items
@@ -71,14 +40,14 @@ public interface CategoryPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initItems(EObject current, EReference containingFeature, EReference feature);
+	public void initItems(ReferencesTableSettings settings);
 
 	/**
 	 * Update the items
 	 * @param newValue the items to update
 	 * 
 	 */
-	public void updateItems(EObject newValue);
+	public void updateItems();
 
 	/**
 	 * Adds the given filter to the items edition editor.

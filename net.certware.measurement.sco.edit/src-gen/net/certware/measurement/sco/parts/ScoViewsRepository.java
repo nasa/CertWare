@@ -4,7 +4,7 @@
 package net.certware.measurement.sco.parts;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ScoViewsRepository {
@@ -19,24 +19,28 @@ public class ScoViewsRepository {
 	 * 
 	 */
 	public static class TotalChangeOrders {
-		
-		public static String name = "sco::TotalChangeOrders::name";
-		
-		
-		public static String value = "sco::TotalChangeOrders::value";
-		
-		
-		public static String type = "sco::TotalChangeOrders::type";
-		
-		
-		public static String brokenLines = "sco::TotalChangeOrders::brokenLines";
-		
-		
-		public static String fixedLines = "sco::TotalChangeOrders::fixedLines";
-		
-		
-		public static String repairEffort = "sco::TotalChangeOrders::repairEffort";
-		
+		public static class Properties {
+	
+			
+			public static String name = "sco::TotalChangeOrders::properties::name";
+			
+			
+			public static String value = "sco::TotalChangeOrders::properties::value";
+			
+			
+			public static String type = "sco::TotalChangeOrders::properties::type";
+			
+			
+			public static String brokenLines = "sco::TotalChangeOrders::properties::brokenLines";
+			
+			
+			public static String fixedLines = "sco::TotalChangeOrders::properties::fixedLines";
+			
+			
+			public static String repairEffort = "sco::TotalChangeOrders::properties::repairEffort";
+			
+	
+		}
 	
 	}
 
@@ -45,24 +49,28 @@ public class ScoViewsRepository {
 	 * 
 	 */
 	public static class CriticalDefectChangeOrders {
-		
-		public static String name = "sco::CriticalDefectChangeOrders::name";
-		
-		
-		public static String value = "sco::CriticalDefectChangeOrders::value";
-		
-		
-		public static String type = "sco::CriticalDefectChangeOrders::type";
-		
-		
-		public static String brokenLines = "sco::CriticalDefectChangeOrders::brokenLines";
-		
-		
-		public static String fixedLines = "sco::CriticalDefectChangeOrders::fixedLines";
-		
-		
-		public static String repairEffort = "sco::CriticalDefectChangeOrders::repairEffort";
-		
+		public static class Properties {
+	
+			
+			public static String name = "sco::CriticalDefectChangeOrders::properties::name";
+			
+			
+			public static String value = "sco::CriticalDefectChangeOrders::properties::value";
+			
+			
+			public static String type = "sco::CriticalDefectChangeOrders::properties::type";
+			
+			
+			public static String brokenLines = "sco::CriticalDefectChangeOrders::properties::brokenLines";
+			
+			
+			public static String fixedLines = "sco::CriticalDefectChangeOrders::properties::fixedLines";
+			
+			
+			public static String repairEffort = "sco::CriticalDefectChangeOrders::properties::repairEffort";
+			
+	
+		}
 	
 	}
 
@@ -71,24 +79,28 @@ public class ScoViewsRepository {
 	 * 
 	 */
 	public static class NormalDefectChangeOrders {
-		
-		public static String name = "sco::NormalDefectChangeOrders::name";
-		
-		
-		public static String value = "sco::NormalDefectChangeOrders::value";
-		
-		
-		public static String type = "sco::NormalDefectChangeOrders::type";
-		
-		
-		public static String brokenLines = "sco::NormalDefectChangeOrders::brokenLines";
-		
-		
-		public static String fixedLines = "sco::NormalDefectChangeOrders::fixedLines";
-		
-		
-		public static String repairEffort = "sco::NormalDefectChangeOrders::repairEffort";
-		
+		public static class Properties {
+	
+			
+			public static String name = "sco::NormalDefectChangeOrders::properties::name";
+			
+			
+			public static String value = "sco::NormalDefectChangeOrders::properties::value";
+			
+			
+			public static String type = "sco::NormalDefectChangeOrders::properties::type";
+			
+			
+			public static String brokenLines = "sco::NormalDefectChangeOrders::properties::brokenLines";
+			
+			
+			public static String fixedLines = "sco::NormalDefectChangeOrders::properties::fixedLines";
+			
+			
+			public static String repairEffort = "sco::NormalDefectChangeOrders::properties::repairEffort";
+			
+	
+		}
 	
 	}
 
@@ -97,24 +109,28 @@ public class ScoViewsRepository {
 	 * 
 	 */
 	public static class ImprovementChangeOrders {
-		
-		public static String name = "sco::ImprovementChangeOrders::name";
-		
-		
-		public static String value = "sco::ImprovementChangeOrders::value";
-		
-		
-		public static String type = "sco::ImprovementChangeOrders::type";
-		
-		
-		public static String brokenLines = "sco::ImprovementChangeOrders::brokenLines";
-		
-		
-		public static String fixedLines = "sco::ImprovementChangeOrders::fixedLines";
-		
-		
-		public static String repairEffort = "sco::ImprovementChangeOrders::repairEffort";
-		
+		public static class Properties {
+	
+			
+			public static String name = "sco::ImprovementChangeOrders::properties::name";
+			
+			
+			public static String value = "sco::ImprovementChangeOrders::properties::value";
+			
+			
+			public static String type = "sco::ImprovementChangeOrders::properties::type";
+			
+			
+			public static String brokenLines = "sco::ImprovementChangeOrders::properties::brokenLines";
+			
+			
+			public static String fixedLines = "sco::ImprovementChangeOrders::properties::fixedLines";
+			
+			
+			public static String repairEffort = "sco::ImprovementChangeOrders::properties::repairEffort";
+			
+	
+		}
 	
 	}
 
@@ -123,24 +139,28 @@ public class ScoViewsRepository {
 	 * 
 	 */
 	public static class NewFeatureChangeOrders {
-		
-		public static String name = "sco::NewFeatureChangeOrders::name";
-		
-		
-		public static String value = "sco::NewFeatureChangeOrders::value";
-		
-		
-		public static String type = "sco::NewFeatureChangeOrders::type";
-		
-		
-		public static String brokenLines = "sco::NewFeatureChangeOrders::brokenLines";
-		
-		
-		public static String fixedLines = "sco::NewFeatureChangeOrders::fixedLines";
-		
-		
-		public static String repairEffort = "sco::NewFeatureChangeOrders::repairEffort";
-		
+		public static class Properties {
+	
+			
+			public static String name = "sco::NewFeatureChangeOrders::properties::name";
+			
+			
+			public static String value = "sco::NewFeatureChangeOrders::properties::value";
+			
+			
+			public static String type = "sco::NewFeatureChangeOrders::properties::type";
+			
+			
+			public static String brokenLines = "sco::NewFeatureChangeOrders::properties::brokenLines";
+			
+			
+			public static String fixedLines = "sco::NewFeatureChangeOrders::properties::fixedLines";
+			
+			
+			public static String repairEffort = "sco::NewFeatureChangeOrders::properties::repairEffort";
+			
+	
+		}
 	
 	}
 
@@ -149,25 +169,56 @@ public class ScoViewsRepository {
 	 * 
 	 */
 	public static class ArtifactIdentifier {
-		
-		public static String resourceName = "sco::ArtifactIdentifier::resourceName";
-		
-		
-		public static String baselinedLineCount = "sco::ArtifactIdentifier::baselinedLineCount";
-		
-		
-		public static String currentLineCount = "sco::ArtifactIdentifier::currentLineCount";
-		
+		public static class Properties {
+	
+			
+			public static String resourceName = "sco::ArtifactIdentifier::properties::resourceName";
+			
+			
+			public static String baselinedLineCount = "sco::ArtifactIdentifier::properties::baselinedLineCount";
+			
+			
+			public static String currentLineCount = "sco::ArtifactIdentifier::properties::currentLineCount";
+			
+	
+		}
 	
 	}
 
 	/**
-	 *  view descriptor
+	 * ArtifactCommit view descriptor
 	 * 
 	 */
-	/*
-	public static class Org.eclipse.emf.ecore.impl.DynamicEObjectImpl@74abacf7(eClass:Org.eclipse.emf.ecore.impl.EClassImpl@32e8c7f8(name:OclInvalid_Class)(instanceClassName:Null)(abstract:False,Interface:False)) {
+	public static class ArtifactCommit {
+		public static class Properties {
+	
+			
+			public static String artifactIdentifiers = "sco::ArtifactCommit::properties::artifactIdentifiers";
+			
+			
+			public static String commitIdentifier = "sco::ArtifactCommit::properties::commitIdentifier";
+			
+			
+			public static String usageTime = "sco::ArtifactCommit::properties::usageTime";
+			
+	
+		}
+	
 	}
-	*/
+
+	/**
+	 * CommitHistory view descriptor
+	 * 
+	 */
+	public static class CommitHistory {
+		public static class Properties {
+	
+			
+			public static String commitRecord = "sco::CommitHistory::properties::commitRecord";
+			
+	
+		}
+	
+	}
 
 }

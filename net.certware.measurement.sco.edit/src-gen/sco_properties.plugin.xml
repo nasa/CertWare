@@ -4,17 +4,11 @@
  <plugin>
 
   <!-- EEF extensions -->
-  <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
-      <PropertiesEditionComponentProvider
-            providerClass="net.certware.measurement.sco.providers.ScoPackagePropertiesEditionProvider">
-      </PropertiesEditionComponentProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
-      <PropertiesEditionPolicyProvider
-            providerClass="net.certware.measurement.sco.providers.ScoPackagePropertiesEditionPolicyProvider">
-      </PropertiesEditionPolicyProvider>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.certware.net/sco"
+            class="net.certware.measurement.sco.providers.ScoEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
@@ -104,10 +98,18 @@
          </propertySection>
          <propertySection
                class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id=".section."
+               id="net.certware.measurement.sco.section.ArtifactCommit"
                tab="Base">
              <input
-                    type=".">
+                    type="net.certware.measurement.sco.ArtifactCommit">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.measurement.sco.section.CommitHistory"
+               tab="Base">
+             <input
+                    type="net.certware.measurement.sco.CommitHistory">
              </input>
          </propertySection>
       </propertySections>

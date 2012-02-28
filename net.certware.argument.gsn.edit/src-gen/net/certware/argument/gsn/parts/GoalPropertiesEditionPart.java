@@ -4,11 +4,8 @@
 package net.certware.argument.gsn.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -63,35 +60,7 @@ public interface GoalPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -99,14 +68,14 @@ public interface GoalPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -163,35 +132,7 @@ public interface GoalPropertiesEditionPart {
 	public void setToBeSupported(Boolean newValue);
 
 
-	/**
-	 * @return the subGoals to add
-	 * 
-	 */
-	public List getSubGoalsToAdd();
 
-	/**
-	 * @return the subGoals to remove
-	 * 
-	 */
-	public List getSubGoalsToRemove();
-
-	/**
-	 * @return the subGoals to move
-	 * 
-	 */
-	public List getSubGoalsToMove();
-
-	/**
-	 * @return the subGoals to edit
-	 * 
-	 */
-	public Map getSubGoalsToEdit();
-
-	/**
-	 * @return the current subGoals table
-	 * 
-	 */
-	public List getSubGoalsTable();
 
 	/**
 	 * Init the subGoals
@@ -199,14 +140,14 @@ public interface GoalPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initSubGoals(EObject current, EReference containingFeature, EReference feature);
+	public void initSubGoals(ReferencesTableSettings settings);
 
 	/**
 	 * Update the subGoals
 	 * @param newValue the subGoals to update
 	 * 
 	 */
-	public void updateSubGoals(EObject newValue);
+	public void updateSubGoals();
 
 	/**
 	 * Adds the given filter to the subGoals edition editor.
@@ -235,35 +176,7 @@ public interface GoalPropertiesEditionPart {
 	public boolean isContainedInSubGoalsTable(EObject element);
 
 
-	/**
-	 * @return the strategies to add
-	 * 
-	 */
-	public List getStrategiesToAdd();
 
-	/**
-	 * @return the strategies to remove
-	 * 
-	 */
-	public List getStrategiesToRemove();
-
-	/**
-	 * @return the strategies to move
-	 * 
-	 */
-	public List getStrategiesToMove();
-
-	/**
-	 * @return the strategies to edit
-	 * 
-	 */
-	public Map getStrategiesToEdit();
-
-	/**
-	 * @return the current strategies table
-	 * 
-	 */
-	public List getStrategiesTable();
 
 	/**
 	 * Init the strategies
@@ -271,14 +184,14 @@ public interface GoalPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initStrategies(EObject current, EReference containingFeature, EReference feature);
+	public void initStrategies(ReferencesTableSettings settings);
 
 	/**
 	 * Update the strategies
 	 * @param newValue the strategies to update
 	 * 
 	 */
-	public void updateStrategies(EObject newValue);
+	public void updateStrategies();
 
 	/**
 	 * Adds the given filter to the strategies edition editor.
@@ -307,35 +220,7 @@ public interface GoalPropertiesEditionPart {
 	public boolean isContainedInStrategiesTable(EObject element);
 
 
-	/**
-	 * @return the goalContexts to add
-	 * 
-	 */
-	public List getGoalContextsToAdd();
 
-	/**
-	 * @return the goalContexts to remove
-	 * 
-	 */
-	public List getGoalContextsToRemove();
-
-	/**
-	 * @return the goalContexts to move
-	 * 
-	 */
-	public List getGoalContextsToMove();
-
-	/**
-	 * @return the goalContexts to edit
-	 * 
-	 */
-	public Map getGoalContextsToEdit();
-
-	/**
-	 * @return the current goalContexts table
-	 * 
-	 */
-	public List getGoalContextsTable();
 
 	/**
 	 * Init the goalContexts
@@ -343,14 +228,14 @@ public interface GoalPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initGoalContexts(EObject current, EReference containingFeature, EReference feature);
+	public void initGoalContexts(ReferencesTableSettings settings);
 
 	/**
 	 * Update the goalContexts
 	 * @param newValue the goalContexts to update
 	 * 
 	 */
-	public void updateGoalContexts(EObject newValue);
+	public void updateGoalContexts();
 
 	/**
 	 * Adds the given filter to the goalContexts edition editor.
@@ -379,35 +264,7 @@ public interface GoalPropertiesEditionPart {
 	public boolean isContainedInGoalContextsTable(EObject element);
 
 
-	/**
-	 * @return the assumptions to add
-	 * 
-	 */
-	public List getAssumptionsToAdd();
 
-	/**
-	 * @return the assumptions to remove
-	 * 
-	 */
-	public List getAssumptionsToRemove();
-
-	/**
-	 * @return the assumptions to move
-	 * 
-	 */
-	public List getAssumptionsToMove();
-
-	/**
-	 * @return the assumptions to edit
-	 * 
-	 */
-	public Map getAssumptionsToEdit();
-
-	/**
-	 * @return the current assumptions table
-	 * 
-	 */
-	public List getAssumptionsTable();
 
 	/**
 	 * Init the assumptions
@@ -415,14 +272,14 @@ public interface GoalPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initAssumptions(EObject current, EReference containingFeature, EReference feature);
+	public void initAssumptions(ReferencesTableSettings settings);
 
 	/**
 	 * Update the assumptions
 	 * @param newValue the assumptions to update
 	 * 
 	 */
-	public void updateAssumptions(EObject newValue);
+	public void updateAssumptions();
 
 	/**
 	 * Adds the given filter to the assumptions edition editor.
@@ -451,35 +308,7 @@ public interface GoalPropertiesEditionPart {
 	public boolean isContainedInAssumptionsTable(EObject element);
 
 
-	/**
-	 * @return the goalSolutions to add
-	 * 
-	 */
-	public List getGoalSolutionsToAdd();
 
-	/**
-	 * @return the goalSolutions to remove
-	 * 
-	 */
-	public List getGoalSolutionsToRemove();
-
-	/**
-	 * @return the goalSolutions to move
-	 * 
-	 */
-	public List getGoalSolutionsToMove();
-
-	/**
-	 * @return the goalSolutions to edit
-	 * 
-	 */
-	public Map getGoalSolutionsToEdit();
-
-	/**
-	 * @return the current goalSolutions table
-	 * 
-	 */
-	public List getGoalSolutionsTable();
 
 	/**
 	 * Init the goalSolutions
@@ -487,14 +316,14 @@ public interface GoalPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initGoalSolutions(EObject current, EReference containingFeature, EReference feature);
+	public void initGoalSolutions(ReferencesTableSettings settings);
 
 	/**
 	 * Update the goalSolutions
 	 * @param newValue the goalSolutions to update
 	 * 
 	 */
-	public void updateGoalSolutions(EObject newValue);
+	public void updateGoalSolutions();
 
 	/**
 	 * Adds the given filter to the goalSolutions edition editor.

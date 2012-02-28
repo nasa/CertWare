@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
@@ -9,16 +11,18 @@ import net.certware.argument.aml.providers.AmlMessages;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesContextService;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.EEFFeatureEditorDialog;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
@@ -32,7 +36,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -43,7 +46,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ValuePropertiesEditionPart {
@@ -91,17 +94,39 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence valueStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = valueStep.addStep(AmlViewsRepository.Value.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Value.Properties.mixed);
+		propertiesStep.addStep(AmlViewsRepository.Value.Properties.type);
+		propertiesStep.addStep(AmlViewsRepository.Value.Properties.unit);
 		
-		// End of user code
+		
+		composer = new PartComposer(valueStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Value.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Value.Properties.mixed) {
+					return createMixedMultiValuedEditor(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Value.Properties.type) {
+					return 		createTypeText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Value.Properties.unit) {
+					return 		createUnitText(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.ValuePropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -110,21 +135,19 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createMixedMultiValuedEditor(widgetFactory, propertiesGroup);
-		createTypeText(widgetFactory, propertiesGroup);
-		createUnitText(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	/**
 	 * 
 	 */
-	protected void createMixedMultiValuedEditor(FormToolkit widgetFactory, Composite parent) {
+	protected Composite createMixedMultiValuedEditor(FormToolkit widgetFactory, Composite parent) {
 		mixed = widgetFactory.createText(parent, "", SWT.READ_ONLY); //$NON-NLS-1$
 		GridData mixedData = new GridData(GridData.FILL_HORIZONTAL);
 		mixedData.horizontalSpan = 2;
 		mixed.setLayoutData(mixedData);
-		EditingUtils.setID(mixed, AmlViewsRepository.Value.mixed);
+		EditingUtils.setID(mixed, AmlViewsRepository.Value.Properties.mixed);
 		EditingUtils.setEEFtype(mixed, "eef::MultiValuedEditor::field"); //$NON-NLS-1$
 		editMixed = widgetFactory.createButton(parent, AmlMessages.ValuePropertiesEditionPart_MixedLabel, SWT.NONE);
 		GridData editMixedData = new GridData();
@@ -138,27 +161,30 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 			 * 
 			 */
 			public void widgetSelected(SelectionEvent e) {
-				EObject value = PropertiesContextService.getInstance().lastElement();
-				FeatureEditorDialog dialog = new FeatureEditorDialog(Display.getDefault().getActiveShell(), new AdapterFactoryLabelProvider(adapterFactory), value, AmlPackage.eINSTANCE.getValue_Mixed().getEType(), 
-						mixedList, "Value", null, false, false); //$NON-NLS-1$
+				EEFFeatureEditorDialog dialog = new EEFFeatureEditorDialog(
+						mixed.getShell(), "Value", new AdapterFactoryLabelProvider(adapterFactory), //$NON-NLS-1$
+						mixedList, AmlPackage.eINSTANCE.getValue_Mixed().getEType(), null,
+						false, true, 
+						null, null);
 				if (dialog.open() == Window.OK) {
 					mixedList = dialog.getResult();
 					if (mixedList == null) {
 						mixedList = new BasicEList();
 					}
 					mixed.setText(mixedList.toString());
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.mixed, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, mixedList));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.Properties.mixed, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new BasicEList(mixedList)));
 					setHasChanged(true);
 				}
 			}
 		});
-		EditingUtils.setID(editMixed, AmlViewsRepository.Value.mixed);
+		EditingUtils.setID(editMixed, AmlViewsRepository.Value.Properties.mixed);
 		EditingUtils.setEEFtype(editMixed, "eef::MultiValuedEditor::browsebutton"); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createTypeText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.ValuePropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Value.type, AmlViewsRepository.FORM_KIND));
+	protected Composite createTypeText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.ValuePropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Value.Properties.type, AmlViewsRepository.FORM_KIND));
 		type = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		type.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -173,7 +199,7 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, type.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.Properties.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, type.getText()));
 			}
 		});
 		type.addKeyListener(new KeyAdapter() {
@@ -186,18 +212,19 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, type.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.Properties.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, type.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(type, AmlViewsRepository.Value.type);
+		EditingUtils.setID(type, AmlViewsRepository.Value.Properties.type);
 		EditingUtils.setEEFtype(type, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Value.type, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Value.Properties.type, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createUnitText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.ValuePropertiesEditionPart_UnitLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Value.unit, AmlViewsRepository.FORM_KIND));
+	protected Composite createUnitText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.ValuePropertiesEditionPart_UnitLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Value.Properties.unit, AmlViewsRepository.FORM_KIND));
 		unit = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		unit.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -212,7 +239,7 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.unit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, unit.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.Properties.unit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, unit.getText()));
 			}
 		});
 		unit.addKeyListener(new KeyAdapter() {
@@ -225,13 +252,14 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.unit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, unit.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ValuePropertiesEditionPartForm.this, AmlViewsRepository.Value.Properties.unit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, unit.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(unit, AmlViewsRepository.Value.unit);
+		EditingUtils.setID(unit, AmlViewsRepository.Value.Properties.unit);
 		EditingUtils.setEEFtype(unit, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Value.unit, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Value.Properties.unit, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -272,18 +300,18 @@ public class ValuePropertiesEditionPartForm extends CompositePropertiesEditionPa
 			mixed.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void addToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		mixedList.add(newValue);		
+
+	public void addToMixed(Object newValue) {
+		mixedList.add(newValue);
 		if (newValue != null) {
 			mixed.setText(mixedList.toString());
 		} else {
 			mixed.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void removeToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		mixedList.remove(newValue);		
+
+	public void removeToMixed(Object newValue) {
+		mixedList.remove(newValue);
 		if (newValue != null) {
 			mixed.setText(mixedList.toString());
 		} else {

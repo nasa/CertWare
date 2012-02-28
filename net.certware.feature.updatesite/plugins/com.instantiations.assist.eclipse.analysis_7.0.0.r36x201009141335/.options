@@ -1,8 +1,0 @@
-com.instantiations.assist.eclipse.analysis/debug = true
-com.instantiations.assist.eclipse.analysis/debug/analysisCreation = true
-com.instantiations.assist.eclipse.analysis/debug/analysisEngine = true
-com.instantiations.assist.eclipse.analysis/debug/auditApplication = true
-com.instantiations.assist.eclipse.analysis/debug/extensionLoading = true
-com.instantiations.assist.eclipse.analysis/debug/memory/usage = true
-com.instantiations.assist.eclipse.analysis/debug/missingBindings = true
-com.instantiations.assist.eclipse.analysis/debug/taintedSource = true

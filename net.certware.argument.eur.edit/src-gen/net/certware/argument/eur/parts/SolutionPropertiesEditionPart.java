@@ -1,17 +1,13 @@
 /**
- * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
- * All rights reserved.
+ * Generated with Acceleo
  */
 package net.certware.argument.eur.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
+import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -19,7 +15,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface SolutionPropertiesEditionPart {
@@ -66,35 +62,7 @@ public interface SolutionPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -102,14 +70,14 @@ public interface SolutionPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -138,38 +106,20 @@ public interface SolutionPropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the target to add
-	 * 
-	 */
-	public List getTargetToAdd();
 
-	/**
-	 * @return the target to remove
-	 * 
-	 */
-	public List getTargetToRemove();
-
-	/**
-	 * @return the current target table
-	 * 
-	 */
-	public List getTargetTable();
 
 	/**
 	 * Init the target
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the target ReferencesTable 
 	 */
-	public void initTarget(EObject current, EReference containingFeature, EReference feature);
+	public void initTarget(ReferencesTableSettings settings);
 
 	/**
 	 * Update the target
 	 * @param newValue the target to update
 	 * 
 	 */
-	public void updateTarget(EObject newValue);
+	public void updateTarget();
 
 	/**
 	 * Adds the given filter to the target edition editor.
@@ -198,38 +148,20 @@ public interface SolutionPropertiesEditionPart {
 	public boolean isContainedInTargetTable(EObject element);
 
 
-	/**
-	 * @return the source to add
-	 * 
-	 */
-	public List getSourceToAdd();
 
-	/**
-	 * @return the source to remove
-	 * 
-	 */
-	public List getSourceToRemove();
-
-	/**
-	 * @return the current source table
-	 * 
-	 */
-	public List getSourceTable();
 
 	/**
 	 * Init the source
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the source ReferencesTable 
 	 */
-	public void initSource(EObject current, EReference containingFeature, EReference feature);
+	public void initSource(ReferencesTableSettings settings);
 
 	/**
 	 * Update the source
 	 * @param newValue the source to update
 	 * 
 	 */
-	public void updateSource(EObject newValue);
+	public void updateSource();
 
 	/**
 	 * Adds the given filter to the source edition editor.
@@ -258,38 +190,20 @@ public interface SolutionPropertiesEditionPart {
 	public boolean isContainedInSourceTable(EObject element);
 
 
-	/**
-	 * @return the context to add
-	 * 
-	 */
-	public List getContextToAdd();
 
-	/**
-	 * @return the context to remove
-	 * 
-	 */
-	public List getContextToRemove();
-
-	/**
-	 * @return the current context table
-	 * 
-	 */
-	public List getContextTable();
 
 	/**
 	 * Init the context
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the context ReferencesTable 
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature);
+	public void initContext(ReferencesTableSettings settings);
 
 	/**
 	 * Update the context
 	 * @param newValue the context to update
 	 * 
 	 */
-	public void updateContext(EObject newValue);
+	public void updateContext();
 
 	/**
 	 * Adds the given filter to the context edition editor.
@@ -326,10 +240,9 @@ public interface SolutionPropertiesEditionPart {
 
 	/**
 	 * Init the evidence
-	 * @param allResources the ResourceSet where the widget have to process
-	 * @param current the current value
+	 * @param settings the combo setting
 	 */
-	public void initEvidence(ResourceSet allResources, EObject current);
+	public void initEvidence(EObjectFlatComboSettings settings);
 
 	/**
 	 * Defines a new evidence
@@ -366,38 +279,20 @@ public interface SolutionPropertiesEditionPart {
 	public void addBusinessFilterToEvidence(ViewerFilter filter);
 
 
-	/**
-	 * @return the criteria to add
-	 * 
-	 */
-	public List getCriteriaToAdd();
 
-	/**
-	 * @return the criteria to remove
-	 * 
-	 */
-	public List getCriteriaToRemove();
-
-	/**
-	 * @return the current criteria table
-	 * 
-	 */
-	public List getCriteriaTable();
 
 	/**
 	 * Init the criteria
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the criteria ReferencesTable 
 	 */
-	public void initCriteria(EObject current, EReference containingFeature, EReference feature);
+	public void initCriteria(ReferencesTableSettings settings);
 
 	/**
 	 * Update the criteria
 	 * @param newValue the criteria to update
 	 * 
 	 */
-	public void updateCriteria(EObject newValue);
+	public void updateCriteria();
 
 	/**
 	 * Adds the given filter to the criteria edition editor.

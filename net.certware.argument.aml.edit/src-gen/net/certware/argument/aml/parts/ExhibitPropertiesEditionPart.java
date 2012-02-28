@@ -1,12 +1,11 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -14,40 +13,12 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface ExhibitPropertiesEditionPart {
 
-	/**
-	 * @return the annotation to add
-	 * 
-	 */
-	public List getAnnotationToAdd();
 
-	/**
-	 * @return the annotation to remove
-	 * 
-	 */
-	public List getAnnotationToRemove();
-
-	/**
-	 * @return the annotation to move
-	 * 
-	 */
-	public List getAnnotationToMove();
-
-	/**
-	 * @return the annotation to edit
-	 * 
-	 */
-	public Map getAnnotationToEdit();
-
-	/**
-	 * @return the current annotation table
-	 * 
-	 */
-	public List getAnnotationTable();
 
 	/**
 	 * Init the annotation
@@ -55,14 +26,14 @@ public interface ExhibitPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initAnnotation(EObject current, EReference containingFeature, EReference feature);
+	public void initAnnotation(ReferencesTableSettings settings);
 
 	/**
 	 * Update the annotation
 	 * @param newValue the annotation to update
 	 * 
 	 */
-	public void updateAnnotation(EObject newValue);
+	public void updateAnnotation();
 
 	/**
 	 * Adds the given filter to the annotation edition editor.

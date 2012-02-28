@@ -202,3 +202,225 @@ Start of user code addToStrategy() method body
 		
 		
 		// End of user code
+
+Mon Feb 13 13:34:40 CST 2012
+================================================================================
+Start of user code addToStrategies() method body
+				Strategy eObject = GsnFactory.eINSTANCE.createStrategy();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						strategiesEditUtil.addElement(propertiesEditionObject);
+						strategies.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.strategies, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		
+		// End of user code
+Start of user code editSubGoals() method body		
+				EObject editedElement = subGoalsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						subGoalsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						subGoals.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.subGoals, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code editGoalSolutions() method body		
+				EObject editedElement = goalSolutionsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						goalSolutionsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						goalSolutions.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.goalSolutions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code for the removeFromGoalContexts() method body
+				EObject editedElement = goalContextsEditUtil.foundCorrespondingEObject(element);
+				goalContextsEditUtil.removeElement(element);
+				goalContexts.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.goalContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+		
+		// End of user code
+Start of user code addToGoalContexts() method body
+				Context eObject = GsnFactory.eINSTANCE.createContext();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						goalContextsEditUtil.addElement(propertiesEditionObject);
+						goalContexts.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.goalContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		
+		// End of user code
+Start of user code addToAssumptions() method body
+				Assumption eObject = GsnFactory.eINSTANCE.createAssumption();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						assumptionsEditUtil.addElement(propertiesEditionObject);
+						assumptions.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.assumptions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		
+		// End of user code
+Start of user code addToGoalSolutions() method body
+				Solution eObject = GsnFactory.eINSTANCE.createSolution();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						goalSolutionsEditUtil.addElement(propertiesEditionObject);
+						goalSolutions.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.goalSolutions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		
+		// End of user code
+Start of user code editGoalContexts() method body		
+				EObject editedElement = goalContextsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						goalContextsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						goalContexts.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.goalContexts, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code for the removeFromAssumptions() method body
+				EObject editedElement = assumptionsEditUtil.foundCorrespondingEObject(element);
+				assumptionsEditUtil.removeElement(element);
+				assumptions.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.assumptions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+		
+		// End of user code
+Start of user code for the removeFromSubGoals() method body
+				EObject editedElement = subGoalsEditUtil.foundCorrespondingEObject(element);
+				subGoalsEditUtil.removeElement(element);
+				subGoals.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.subGoals, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+		
+		// End of user code
+Start of user code editIsTagged() method body
+				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						isTaggedEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						isTagged.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code addToIsTagged() method body
+				TaggedValue eObject = ArmFactory.eINSTANCE.createTaggedValue();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						isTaggedEditUtil.addElement(propertiesEditionObject);
+						isTagged.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		
+		// End of user code
+Start of user code for additional ui definition
+		
+		// End of user code
+Start of user code for the removeFromGoalSolutions() method body
+				EObject editedElement = goalSolutionsEditUtil.foundCorrespondingEObject(element);
+				goalSolutionsEditUtil.removeElement(element);
+				goalSolutions.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.goalSolutions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+		
+		// End of user code
+Start of user code editStrategies() method body		
+				EObject editedElement = strategiesEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						strategiesEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						strategies.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.strategies, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code addToSubGoals() method body
+				Goal eObject = GsnFactory.eINSTANCE.createGoal();
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
+				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
+					if (propertiesEditionObject != null) {
+						subGoalsEditUtil.addElement(propertiesEditionObject);
+						subGoals.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.subGoals, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
+					}
+				}
+		
+		
+		// End of user code
+Start of user code for the removeFromIsTagged() method body
+				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
+				isTaggedEditUtil.removeElement(element);
+				isTagged.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+		
+		// End of user code
+Start of user code editAssumptions() method body		
+				EObject editedElement = assumptionsEditUtil.foundCorrespondingEObject(element);
+				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
+				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
+				if (editionPolicy != null) {
+					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
+					if (propertiesEditionObject != null) {
+						assumptionsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
+						assumptions.refresh();
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.assumptions, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
+					}
+				}
+		
+		// End of user code
+Start of user code for the removeFromStrategies() method body
+				EObject editedElement = strategiesEditUtil.foundCorrespondingEObject(element);
+				strategiesEditUtil.removeElement(element);
+				strategies.refresh();
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GoalPropertiesEditionPartForm.this, GsnViewsRepository.Goal.strategies, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
+		
+		// End of user code

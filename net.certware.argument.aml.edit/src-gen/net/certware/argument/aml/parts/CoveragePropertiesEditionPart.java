@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
@@ -9,7 +11,7 @@ import org.eclipse.emf.common.util.EList;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface CoveragePropertiesEditionPart {
@@ -31,13 +33,13 @@ public interface CoveragePropertiesEditionPart {
 	 * Add a value to the mixed multivalued attribute.
 	 * @param newValue the value to add
 	 */
-	public void addToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue);
+	public void addToMixed(Object newValue);
 
 	/**
 	 * Remove a value to the mixed multivalued attribute.
 	 * @param newValue the value to remove
 	 */
-	public void removeToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue);
+	public void removeToMixed(Object newValue);
 
 
 

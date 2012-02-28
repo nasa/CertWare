@@ -6,7 +6,7 @@ package net.certware.measurement.sco.providers;
 import org.eclipse.osgi.util.NLS;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ScoMessages extends NLS {
@@ -30,6 +30,12 @@ public class ScoMessages extends NLS {
 
 	
 	public static String ArtifactIdentifierPropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String ArtifactCommitPropertiesEditionPart_PropertiesGroupLabel;
+
+	
+	public static String CommitHistoryPropertiesEditionPart_PropertiesGroupLabel;
 
 	
 	public static String TotalChangeOrders_ReadOnly;
@@ -67,12 +73,17 @@ public class ScoMessages extends NLS {
 	
 	public static String ArtifactIdentifier_Part_Title;
 
-	/*
-	public static String Org.eclipse.emf.ecore.impl.DynamicEObjectImpl@74abacf7(eClass:Org.eclipse.emf.ecore.impl.EClassImpl@32e8c7f8(name:OclInvalid_Class)(instanceClassName:Null)(abstract:False,Interface:False))_ReadOnly;
+	
+	public static String ArtifactCommit_ReadOnly;
 
 	
-	public static String Org.eclipse.emf.ecore.impl.DynamicEObjectImpl@74abacf7(eClass:Org.eclipse.emf.ecore.impl.EClassImpl@32e8c7f8(name:OclInvalid_Class)(instanceClassName:Null)(abstract:False,Interface:False))_Part_Title;
-	*/
+	public static String ArtifactCommit_Part_Title;
+
+	
+	public static String CommitHistory_ReadOnly;
+
+	
+	public static String CommitHistory_Part_Title;
 
 	
 	public static String TotalChangeOrdersPropertiesEditionPart_NameLabel;
@@ -174,6 +185,18 @@ public class ScoMessages extends NLS {
 	public static String ArtifactIdentifierPropertiesEditionPart_CurrentLineCountLabel;
 
 	
+	public static String ArtifactCommitPropertiesEditionPart_ArtifactIdentifiersLabel;
+
+	
+	public static String ArtifactCommitPropertiesEditionPart_CommitIdentifierLabel;
+
+	
+	public static String ArtifactCommitPropertiesEditionPart_UsageTimeLabel;
+
+	
+	public static String CommitHistoryPropertiesEditionPart_CommitRecordLabel;
+
+	
 	public static String PropertiesEditionPart_DocumentationLabel;
 
 	
@@ -220,7 +243,7 @@ public class ScoMessages extends NLS {
 
 	
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
-	
+
 	// Start of user code for additionnal NLS Constants
 	
 	// End of user code

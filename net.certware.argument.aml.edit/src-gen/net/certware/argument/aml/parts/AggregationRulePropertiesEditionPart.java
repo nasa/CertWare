@@ -1,12 +1,11 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -14,40 +13,12 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface AggregationRulePropertiesEditionPart {
 
-	/**
-	 * @return the parameter to add
-	 * 
-	 */
-	public List getParameterToAdd();
 
-	/**
-	 * @return the parameter to remove
-	 * 
-	 */
-	public List getParameterToRemove();
-
-	/**
-	 * @return the parameter to move
-	 * 
-	 */
-	public List getParameterToMove();
-
-	/**
-	 * @return the parameter to edit
-	 * 
-	 */
-	public Map getParameterToEdit();
-
-	/**
-	 * @return the current parameter table
-	 * 
-	 */
-	public List getParameterTable();
 
 	/**
 	 * Init the parameter
@@ -55,14 +26,14 @@ public interface AggregationRulePropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initParameter(EObject current, EReference containingFeature, EReference feature);
+	public void initParameter(ReferencesTableSettings settings);
 
 	/**
 	 * Update the parameter
 	 * @param newValue the parameter to update
 	 * 
 	 */
-	public void updateParameter(EObject newValue);
+	public void updateParameter();
 
 	/**
 	 * Adds the given filter to the parameter edition editor.

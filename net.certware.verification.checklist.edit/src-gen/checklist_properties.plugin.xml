@@ -4,17 +4,11 @@
  <plugin>
 
   <!-- EEF extensions -->
-  <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
-      <PropertiesEditionComponentProvider
-            providerClass="net.certware.verification.checklist.providers.ChecklistPackagePropertiesEditionProvider">
-      </PropertiesEditionComponentProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
-      <PropertiesEditionPolicyProvider
-            providerClass="net.certware.verification.checklist.providers.ChecklistPackagePropertiesEditionPolicyProvider">
-      </PropertiesEditionPolicyProvider>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="checklist"
+            class="net.certware.verification.checklist.providers.ChecklistEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">

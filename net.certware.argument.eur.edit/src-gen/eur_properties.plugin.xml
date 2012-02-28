@@ -4,17 +4,11 @@
  <plugin>
 
   <!-- EEF extensions -->
-  <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
-      <PropertiesEditionComponentProvider
-            providerClass="net.certware.argument.eur.providers.EurPackagePropertiesEditionProvider">
-      </PropertiesEditionComponentProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
-      <PropertiesEditionPolicyProvider
-            providerClass="net.certware.argument.eur.providers.EurPackagePropertiesEditionPolicyProvider">
-      </PropertiesEditionPolicyProvider>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.certware.net/eur"
+            class="net.certware.argument.eur.providers.EurEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">

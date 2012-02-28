@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
@@ -11,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.swt.SWT;
@@ -22,15 +28,14 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ReaderPropertiesEditionPart {
@@ -74,18 +79,39 @@ public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionP
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence readerStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = readerStep.addStep(AmlViewsRepository.Reader.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Reader.Properties.description);
+		propertiesStep.addStep(AmlViewsRepository.Reader.Properties.idRef);
+		propertiesStep.addStep(AmlViewsRepository.Reader.Properties.objectType);
 		
-		// End of user code
+		
+		composer = new PartComposer(readerStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Reader.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Reader.Properties.description) {
+					return createDescriptionText(parent);
+				}
+				if (key == AmlViewsRepository.Reader.Properties.idRef) {
+					return createIdRefText(parent);
+				}
+				if (key == AmlViewsRepository.Reader.Properties.objectType) {
+					return createObjectTypeText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.ReaderPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -94,31 +120,58 @@ public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionP
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createDescriptionTextarea(propertiesGroup);
-		createIdRefText(propertiesGroup);
-		createObjectTypeText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createDescriptionTextarea(Composite parent) {
-		Label descriptionLabel = SWTUtils.createPartLabel(parent, AmlMessages.ReaderPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Reader.description, AmlViewsRepository.SWT_KIND));
-		GridData descriptionLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionLabelData.horizontalSpan = 3;
-		descriptionLabel.setLayoutData(descriptionLabelData);
-		description = new Text(parent, SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL);
+	protected Composite createDescriptionText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.ReaderPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Reader.Properties.description, AmlViewsRepository.SWT_KIND));
+		description = new Text(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionData.horizontalSpan = 2;
-		descriptionData.heightHint = 80;
-		descriptionData.widthHint = 200;
 		description.setLayoutData(descriptionData);
-		EditingUtils.setID(description, AmlViewsRepository.Reader.description);
-		EditingUtils.setEEFtype(description, "eef::Textarea"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Reader.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		description.addFocusListener(new FocusAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+			}
+
+		});
+		description.addKeyListener(new KeyAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				}
+			}
+
+		});
+		EditingUtils.setID(description, AmlViewsRepository.Reader.Properties.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Reader.Properties.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createIdRefText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.ReaderPropertiesEditionPart_IdRefLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Reader.idRef, AmlViewsRepository.SWT_KIND));
+	protected Composite createIdRefText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.ReaderPropertiesEditionPart_IdRefLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Reader.Properties.idRef, AmlViewsRepository.SWT_KIND));
 		idRef = new Text(parent, SWT.BORDER);
 		GridData idRefData = new GridData(GridData.FILL_HORIZONTAL);
 		idRef.setLayoutData(idRefData);
@@ -134,7 +187,7 @@ public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.Properties.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
 			}
 
 		});
@@ -151,19 +204,20 @@ public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.Properties.idRef, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, idRef.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(idRef, AmlViewsRepository.Reader.idRef);
+		EditingUtils.setID(idRef, AmlViewsRepository.Reader.Properties.idRef);
 		EditingUtils.setEEFtype(idRef, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Reader.idRef, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Reader.Properties.idRef, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createObjectTypeText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.ReaderPropertiesEditionPart_ObjectTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Reader.objectType, AmlViewsRepository.SWT_KIND));
+	protected Composite createObjectTypeText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.ReaderPropertiesEditionPart_ObjectTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Reader.Properties.objectType, AmlViewsRepository.SWT_KIND));
 		objectType = new Text(parent, SWT.BORDER);
 		GridData objectTypeData = new GridData(GridData.FILL_HORIZONTAL);
 		objectType.setLayoutData(objectTypeData);
@@ -179,7 +233,7 @@ public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.objectType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, objectType.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.Properties.objectType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, objectType.getText()));
 			}
 
 		});
@@ -196,14 +250,15 @@ public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.objectType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, objectType.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ReaderPropertiesEditionPartImpl.this, AmlViewsRepository.Reader.Properties.objectType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, objectType.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(objectType, AmlViewsRepository.Reader.objectType);
+		EditingUtils.setID(objectType, AmlViewsRepository.Reader.Properties.objectType);
 		EditingUtils.setEEFtype(objectType, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Reader.objectType, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Reader.Properties.objectType, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -240,7 +295,7 @@ public class ReaderPropertiesEditionPartImpl extends CompositePropertiesEditionP
 		if (newValue != null) {
 			description.setText(newValue);
 		} else {
-			description.setText("");  //$NON-NLS-1$
+			description.setText(""); //$NON-NLS-1$
 		}
 	}
 

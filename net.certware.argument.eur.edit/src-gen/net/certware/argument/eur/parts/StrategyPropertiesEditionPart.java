@@ -1,15 +1,11 @@
 /**
- * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
- * All rights reserved.
+ * Generated with Acceleo
  */
 package net.certware.argument.eur.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -17,7 +13,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface StrategyPropertiesEditionPart {
@@ -64,35 +60,7 @@ public interface StrategyPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -100,14 +68,14 @@ public interface StrategyPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -136,35 +104,7 @@ public interface StrategyPropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the argument to add
-	 * 
-	 */
-	public List getArgumentToAdd();
 
-	/**
-	 * @return the argument to remove
-	 * 
-	 */
-	public List getArgumentToRemove();
-
-	/**
-	 * @return the argument to move
-	 * 
-	 */
-	public List getArgumentToMove();
-
-	/**
-	 * @return the argument to edit
-	 * 
-	 */
-	public Map getArgumentToEdit();
-
-	/**
-	 * @return the current argument table
-	 * 
-	 */
-	public List getArgumentTable();
 
 	/**
 	 * Init the argument
@@ -172,14 +112,14 @@ public interface StrategyPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initArgument(EObject current, EReference containingFeature, EReference feature);
+	public void initArgument(ReferencesTableSettings settings);
 
 	/**
 	 * Update the argument
 	 * @param newValue the argument to update
 	 * 
 	 */
-	public void updateArgument(EObject newValue);
+	public void updateArgument();
 
 	/**
 	 * Adds the given filter to the argument edition editor.
@@ -208,35 +148,7 @@ public interface StrategyPropertiesEditionPart {
 	public boolean isContainedInArgumentTable(EObject element);
 
 
-	/**
-	 * @return the justification to add
-	 * 
-	 */
-	public List getJustificationToAdd();
 
-	/**
-	 * @return the justification to remove
-	 * 
-	 */
-	public List getJustificationToRemove();
-
-	/**
-	 * @return the justification to move
-	 * 
-	 */
-	public List getJustificationToMove();
-
-	/**
-	 * @return the justification to edit
-	 * 
-	 */
-	public Map getJustificationToEdit();
-
-	/**
-	 * @return the current justification table
-	 * 
-	 */
-	public List getJustificationTable();
 
 	/**
 	 * Init the justification
@@ -244,14 +156,14 @@ public interface StrategyPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initJustification(EObject current, EReference containingFeature, EReference feature);
+	public void initJustification(ReferencesTableSettings settings);
 
 	/**
 	 * Update the justification
 	 * @param newValue the justification to update
 	 * 
 	 */
-	public void updateJustification(EObject newValue);
+	public void updateJustification();
 
 	/**
 	 * Adds the given filter to the justification edition editor.
@@ -280,38 +192,20 @@ public interface StrategyPropertiesEditionPart {
 	public boolean isContainedInJustificationTable(EObject element);
 
 
-	/**
-	 * @return the solution to add
-	 * 
-	 */
-	public List getSolutionToAdd();
 
-	/**
-	 * @return the solution to remove
-	 * 
-	 */
-	public List getSolutionToRemove();
-
-	/**
-	 * @return the current solution table
-	 * 
-	 */
-	public List getSolutionTable();
 
 	/**
 	 * Init the solution
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the solution ReferencesTable 
 	 */
-	public void initSolution(EObject current, EReference containingFeature, EReference feature);
+	public void initSolution(ReferencesTableSettings settings);
 
 	/**
 	 * Update the solution
 	 * @param newValue the solution to update
 	 * 
 	 */
-	public void updateSolution(EObject newValue);
+	public void updateSolution();
 
 	/**
 	 * Adds the given filter to the solution edition editor.
@@ -340,38 +234,20 @@ public interface StrategyPropertiesEditionPart {
 	public boolean isContainedInSolutionTable(EObject element);
 
 
-	/**
-	 * @return the criteria to add
-	 * 
-	 */
-	public List getCriteriaToAdd();
 
-	/**
-	 * @return the criteria to remove
-	 * 
-	 */
-	public List getCriteriaToRemove();
-
-	/**
-	 * @return the current criteria table
-	 * 
-	 */
-	public List getCriteriaTable();
 
 	/**
 	 * Init the criteria
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the criteria ReferencesTable 
 	 */
-	public void initCriteria(EObject current, EReference containingFeature, EReference feature);
+	public void initCriteria(ReferencesTableSettings settings);
 
 	/**
 	 * Update the criteria
 	 * @param newValue the criteria to update
 	 * 
 	 */
-	public void updateCriteria(EObject newValue);
+	public void updateCriteria();
 
 	/**
 	 * Adds the given filter to the criteria edition editor.
@@ -400,23 +276,7 @@ public interface StrategyPropertiesEditionPart {
 	public boolean isContainedInCriteriaTable(EObject element);
 
 
-	/**
-	 * @return the assumption to add
-	 * 
-	 */
-	public List getAssumptionToAdd();
 
-	/**
-	 * @return the assumption to remove
-	 * 
-	 */
-	public List getAssumptionToRemove();
-
-	/**
-	 * @return the current assumption table
-	 * 
-	 */
-	public List getAssumptionTable();
 
 	/**
 	 * Init the assumption
@@ -424,14 +284,14 @@ public interface StrategyPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initAssumption(EObject current, EReference containingFeature, EReference feature);
+	public void initAssumption(ReferencesTableSettings settings);
 
 	/**
 	 * Update the assumption
 	 * @param newValue the assumption to update
 	 * 
 	 */
-	public void updateAssumption(EObject newValue);
+	public void updateAssumption();
 
 	/**
 	 * Adds the given filter to the assumption edition editor.
@@ -458,6 +318,94 @@ public interface StrategyPropertiesEditionPart {
 	 * 
 	 */
 	public boolean isContainedInAssumptionTable(EObject element);
+
+
+
+
+	/**
+	 * Init the contexts
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initContexts(ReferencesTableSettings settings);
+
+	/**
+	 * Update the contexts
+	 * @param newValue the contexts to update
+	 * 
+	 */
+	public void updateContexts();
+
+	/**
+	 * Adds the given filter to the contexts edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToContexts(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the contexts edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToContexts(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the contexts table
+	 * 
+	 */
+	public boolean isContainedInContextsTable(EObject element);
+
+
+
+
+	/**
+	 * Init the strategies
+	 * @param current the current value
+	 * @param containgFeature the feature where to navigate if necessary
+	 * @param feature the feature to manage
+	 */
+	public void initStrategies(ReferencesTableSettings settings);
+
+	/**
+	 * Update the strategies
+	 * @param newValue the strategies to update
+	 * 
+	 */
+	public void updateStrategies();
+
+	/**
+	 * Adds the given filter to the strategies edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addFilterToStrategies(ViewerFilter filter);
+
+	/**
+	 * Adds the given filter to the strategies edition editor.
+	 * 
+	 * @param filter
+	 *            a viewer filter
+	 * @see org.eclipse.jface.viewers.StructuredViewer#addFilter(ViewerFilter)
+	 * 
+	 */
+	public void addBusinessFilterToStrategies(ViewerFilter filter);
+
+	/**
+	 * @return true if the given element is contained inside the strategies table
+	 * 
+	 */
+	public boolean isContainedInStrategiesTable(EObject element);
 
 
 

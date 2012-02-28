@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
@@ -11,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.swt.SWT;
@@ -21,7 +27,6 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -32,7 +37,7 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, BeliefPropertiesEditionPart {
@@ -79,17 +84,43 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence beliefStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = beliefStep.addStep(AmlViewsRepository.Belief.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.description);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.label);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.ordinal);
+		propertiesStep.addStep(AmlViewsRepository.Belief.Properties.symbol);
 		
-		// End of user code
+		
+		composer = new PartComposer(beliefStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Belief.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.description) {
+					return 		createDescriptionText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.label) {
+					return 		createLabelText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.ordinal) {
+					return 		createOrdinalText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.Belief.Properties.symbol) {
+					return 		createSymbolText(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.BeliefPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -98,47 +129,53 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createDescriptionTextarea(widgetFactory, propertiesGroup);
-		createLabelText(widgetFactory, propertiesGroup);
-		createOrdinalText(widgetFactory, propertiesGroup);
-		createSymbolText(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createDescriptionTextarea(FormToolkit widgetFactory, Composite parent) {
-		Label descriptionLabel = FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.description, AmlViewsRepository.FORM_KIND));
-		GridData descriptionLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionLabelData.horizontalSpan = 3;
-		descriptionLabel.setLayoutData(descriptionLabelData);
-		description = widgetFactory.createText(parent, "", SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL); //$NON-NLS-1$
+	protected Composite createDescriptionText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.description, AmlViewsRepository.FORM_KIND));
+		description = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		description.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionData.horizontalSpan = 2;
-		descriptionData.heightHint = 80;
-		descriptionData.widthHint = 200;
 		description.setLayoutData(descriptionData);
 		description.addFocusListener(new FocusAdapter() {
-
 			/**
-			 * {@inheritDoc}
-			 * 
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 * 
 			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 			}
-
 		});
-		EditingUtils.setID(description, AmlViewsRepository.Belief.description);
-		EditingUtils.setEEFtype(description, "eef::Textarea"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.description, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		description.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(description, AmlViewsRepository.Belief.Properties.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.description, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createLabelText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.label, AmlViewsRepository.FORM_KIND));
+	protected Composite createLabelText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.label, AmlViewsRepository.FORM_KIND));
 		label = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		label.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -153,7 +190,7 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 			}
 		});
 		label.addKeyListener(new KeyAdapter() {
@@ -166,18 +203,19 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(label, AmlViewsRepository.Belief.label);
+		EditingUtils.setID(label, AmlViewsRepository.Belief.Properties.label);
 		EditingUtils.setEEFtype(label, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.label, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.label, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createOrdinalText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_OrdinalLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.ordinal, AmlViewsRepository.FORM_KIND));
+	protected Composite createOrdinalText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_OrdinalLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.ordinal, AmlViewsRepository.FORM_KIND));
 		ordinal = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		ordinal.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -192,7 +230,7 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
 			}
 		});
 		ordinal.addKeyListener(new KeyAdapter() {
@@ -205,18 +243,19 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.ordinal, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, ordinal.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(ordinal, AmlViewsRepository.Belief.ordinal);
+		EditingUtils.setID(ordinal, AmlViewsRepository.Belief.Properties.ordinal);
 		EditingUtils.setEEFtype(ordinal, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.ordinal, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.ordinal, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createSymbolText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_SymbolLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.symbol, AmlViewsRepository.FORM_KIND));
+	protected Composite createSymbolText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.BeliefPropertiesEditionPart_SymbolLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Belief.Properties.symbol, AmlViewsRepository.FORM_KIND));
 		symbol = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		symbol.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -231,7 +270,7 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
 			}
 		});
 		symbol.addKeyListener(new KeyAdapter() {
@@ -244,13 +283,14 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(BeliefPropertiesEditionPartForm.this, AmlViewsRepository.Belief.Properties.symbol, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, symbol.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(symbol, AmlViewsRepository.Belief.symbol);
+		EditingUtils.setID(symbol, AmlViewsRepository.Belief.Properties.symbol);
 		EditingUtils.setEEFtype(symbol, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.symbol, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Belief.Properties.symbol, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -287,7 +327,7 @@ public class BeliefPropertiesEditionPartForm extends CompositePropertiesEditionP
 		if (newValue != null) {
 			description.setText(newValue);
 		} else {
-			description.setText("");  //$NON-NLS-1$
+			description.setText(""); //$NON-NLS-1$
 		}
 	}
 

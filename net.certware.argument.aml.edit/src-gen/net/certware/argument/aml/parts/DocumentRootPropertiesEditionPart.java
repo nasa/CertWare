@@ -1,13 +1,12 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -15,7 +14,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface DocumentRootPropertiesEditionPart {
@@ -37,44 +36,16 @@ public interface DocumentRootPropertiesEditionPart {
 	 * Add a value to the mixed multivalued attribute.
 	 * @param newValue the value to add
 	 */
-	public void addToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue);
+	public void addToMixed(Object newValue);
 
 	/**
 	 * Remove a value to the mixed multivalued attribute.
 	 * @param newValue the value to remove
 	 */
-	public void removeToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue);
+	public void removeToMixed(Object newValue);
 
 
-	/**
-	 * @return the xMLNSPrefixMap to add
-	 * 
-	 */
-	public List getXMLNSPrefixMapToAdd();
 
-	/**
-	 * @return the xMLNSPrefixMap to remove
-	 * 
-	 */
-	public List getXMLNSPrefixMapToRemove();
-
-	/**
-	 * @return the xMLNSPrefixMap to move
-	 * 
-	 */
-	public List getXMLNSPrefixMapToMove();
-
-	/**
-	 * @return the xMLNSPrefixMap to edit
-	 * 
-	 */
-	public Map getXMLNSPrefixMapToEdit();
-
-	/**
-	 * @return the current xMLNSPrefixMap table
-	 * 
-	 */
-	public List getXMLNSPrefixMapTable();
 
 	/**
 	 * Init the xMLNSPrefixMap
@@ -82,14 +53,14 @@ public interface DocumentRootPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initXMLNSPrefixMap(EObject current, EReference containingFeature, EReference feature);
+	public void initXMLNSPrefixMap(ReferencesTableSettings settings);
 
 	/**
 	 * Update the xMLNSPrefixMap
 	 * @param newValue the xMLNSPrefixMap to update
 	 * 
 	 */
-	public void updateXMLNSPrefixMap(EObject newValue);
+	public void updateXMLNSPrefixMap();
 
 	/**
 	 * Adds the given filter to the xMLNSPrefixMap edition editor.
@@ -118,35 +89,7 @@ public interface DocumentRootPropertiesEditionPart {
 	public boolean isContainedInXMLNSPrefixMapTable(EObject element);
 
 
-	/**
-	 * @return the xSISchemaLocation to add
-	 * 
-	 */
-	public List getXSISchemaLocationToAdd();
 
-	/**
-	 * @return the xSISchemaLocation to remove
-	 * 
-	 */
-	public List getXSISchemaLocationToRemove();
-
-	/**
-	 * @return the xSISchemaLocation to move
-	 * 
-	 */
-	public List getXSISchemaLocationToMove();
-
-	/**
-	 * @return the xSISchemaLocation to edit
-	 * 
-	 */
-	public Map getXSISchemaLocationToEdit();
-
-	/**
-	 * @return the current xSISchemaLocation table
-	 * 
-	 */
-	public List getXSISchemaLocationTable();
 
 	/**
 	 * Init the xSISchemaLocation
@@ -154,14 +97,14 @@ public interface DocumentRootPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initXSISchemaLocation(EObject current, EReference containingFeature, EReference feature);
+	public void initXSISchemaLocation(ReferencesTableSettings settings);
 
 	/**
 	 * Update the xSISchemaLocation
 	 * @param newValue the xSISchemaLocation to update
 	 * 
 	 */
-	public void updateXSISchemaLocation(EObject newValue);
+	public void updateXSISchemaLocation();
 
 	/**
 	 * Adds the given filter to the xSISchemaLocation edition editor.

@@ -38,7 +38,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
       <PropertiesEditionPolicyProvider
-            providerClass="net.certware.argument.gsn.providers.GsnPackagePropertiesEditionPolicyProvider">
+            providerClass="net.certware.argument.gsn.providers.GsnPackagePropertiesEditionProvider">
       </PropertiesEditionPolicyProvider>
    </extension>
    <extension

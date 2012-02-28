@@ -15,6 +15,9 @@ import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
+
+
+
 /**
  * 
  * 
@@ -23,20 +26,19 @@ public class ChecklistPropertiesEditionPartProvider implements IPropertiesEditio
 
 	/** 
 	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPartProvider#provides(java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPartProvider#provides(java.lang.Object)
 	 * 
 	 */
-	public boolean provides(java.lang.Class key) {
+	public boolean provides(Object key) {
 		return key == ChecklistViewsRepository.class;
 	}
 
-	
 	/** 
 	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPartProvider#getPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent)
+	 * @see org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPartProvider#getPropertiesEditionPart(java.lang.Object, int, org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent)
 	 * 
 	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionComponent component) {
+	public IPropertiesEditionPart getPropertiesEditionPart(Object key, int kind, IPropertiesEditionComponent component) {
 		if (key == ChecklistViewsRepository.Category.class) {
 			if (kind == ChecklistViewsRepository.SWT_KIND)
 				return new CategoryPropertiesEditionPartImpl(component);
@@ -49,7 +51,7 @@ public class ChecklistPropertiesEditionPartProvider implements IPropertiesEditio
 			if (kind == ChecklistViewsRepository.FORM_KIND)
 				return new ItemPropertiesEditionPartForm(component);
 		}
-		if (key == ChecklistViewsRepository.Checklist.class) {
+		if (key == ChecklistViewsRepository.Checklist_.class) {
 			if (kind == ChecklistViewsRepository.SWT_KIND)
 				return new ChecklistPropertiesEditionPartImpl(component);
 			if (kind == ChecklistViewsRepository.FORM_KIND)

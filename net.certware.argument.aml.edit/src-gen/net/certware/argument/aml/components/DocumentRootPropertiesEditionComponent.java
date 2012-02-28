@@ -1,270 +1,118 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.components;
 
 // Start of user code for imports
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import net.certware.argument.aml.AmlPackage;
 import net.certware.argument.aml.DocumentRoot;
 import net.certware.argument.aml.parts.AmlViewsRepository;
 import net.certware.argument.aml.parts.DocumentRootPropertiesEditionPart;
 
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-import org.eclipse.emf.edit.command.AddCommand;
-import org.eclipse.emf.edit.command.DeleteCommand;
-import org.eclipse.emf.edit.command.MoveCommand;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
 	
 
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class DocumentRootPropertiesEditionComponent extends StandardPropertiesEditionComponent {
+public class DocumentRootPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	private String[] parts = {BASE_PART};
-
 	/**
-	 * The EObject to edit
-	 * 
+	 * Settings for xMLNSPrefixMap ReferencesTable
 	 */
-	private DocumentRoot documentRoot;
-
+	protected ReferencesTableSettings xMLNSPrefixMapSettings;
+	
 	/**
-	 * The Base part
-	 * 
+	 * Settings for xSISchemaLocation ReferencesTable
 	 */
-	protected DocumentRootPropertiesEditionPart basePart;
-
+	protected ReferencesTableSettings xSISchemaLocationSettings;
+	
+	
 	/**
 	 * Default constructor
 	 * 
 	 */
-	public DocumentRootPropertiesEditionComponent(EObject documentRoot, String editing_mode) {
-		if (documentRoot instanceof DocumentRoot) {
-			this.documentRoot = (DocumentRoot)documentRoot;
-			if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode)) {
-				semanticAdapter = initializeSemanticAdapter();
-				this.documentRoot.eAdapters().add(semanticAdapter);
-			}
-		}
-		this.editing_mode = editing_mode;
-	}
-
-	/**
-	 * Initialize the semantic model listener for live editing mode
-	 * 
-	 * @return the semantic model listener
-	 * 
-	 */
-	private AdapterImpl initializeSemanticAdapter() {
-		return new EContentAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
-			 */
-			public void notifyChanged(final Notification msg) {
-				if (basePart == null)
-					DocumentRootPropertiesEditionComponent.this.dispose();
-				else {
-					Runnable updateRunnable = new Runnable() {
-						public void run() {
-							runUpdateRunnable(msg);
-						}
-					};
-					if (null == Display.getCurrent()) {
-						PlatformUI.getWorkbench().getDisplay().syncExec(updateRunnable);
-					} else {
-						updateRunnable.run();
-					}
-				}
-			}
-
-		};
-	}
-
-	/**
-	 * Used to update the views
-	 * 
-	 */
-	protected void runUpdateRunnable(final Notification msg) {
-		if (AmlPackage.eINSTANCE.getDocumentRoot_Mixed().equals(msg.getFeature()) && basePart != null) {
-			if (msg.getEventType() == Notification.ADD) 
-				basePart.addToMixed((org.eclipse.emf.ecore.util.FeatureMap.Entry) msg.getNewValue());
-			else if (msg.getEventType() == Notification.REMOVE) 
-				basePart.removeToMixed((org.eclipse.emf.ecore.util.FeatureMap.Entry) msg.getNewValue());
-		}
-
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == AmlPackage.eINSTANCE.getDocumentRoot_XMLNSPrefixMap())) {
-			basePart.updateXMLNSPrefixMap(documentRoot);
-		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == AmlPackage.eINSTANCE.getDocumentRoot_XSISchemaLocation())) {
-			basePart.updateXSISchemaLocation(documentRoot);
-		}
-		if (AmlPackage.eINSTANCE.getDocumentRoot_Description1().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setDescription1(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setDescription1("");
-			}
-		}
-		if (AmlPackage.eINSTANCE.getDocumentRoot_Id().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setId(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setId("");
-			}
-		}
-		if (AmlPackage.eINSTANCE.getDocumentRoot_IdRef().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setIdRef(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setIdRef("");
-			}
-		}
-		if (AmlPackage.eINSTANCE.getDocumentRoot_Label1().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setLabel1(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setLabel1("");
-			}
-		}
-
+	public DocumentRootPropertiesEditionComponent(PropertiesEditingContext editingContext, EObject documentRoot, String editing_mode) {
+		super(editingContext, documentRoot, editing_mode);
+		parts = new String[] { BASE_PART };
+		repositoryKey = AmlViewsRepository.class;
+		partKey = AmlViewsRepository.DocumentRoot.class;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#translatePart(java.lang.String)
-	 * 
-	 */
-	public java.lang.Class translatePart(String key) {
-		if (BASE_PART.equals(key))
-			return AmlViewsRepository.DocumentRoot.class;
-		return super.translatePart(key);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#partsList()
-	 * 
-	 */
-	public String[] partsList() {
-		return parts;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionPart
-	 *  (java.lang.String, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
-		if (documentRoot != null && BASE_PART.equals(key)) {
-			if (basePart == null) {
-				IPropertiesEditionPartProvider provider = PropertiesEditionPartProviderService.getInstance().getProvider(AmlViewsRepository.class);
-				if (provider != null) {
-					basePart = (DocumentRootPropertiesEditionPart)provider.getPropertiesEditionPart(AmlViewsRepository.DocumentRoot.class, kind, this);
-					addListener((IPropertiesEditionListener)basePart);
-				}
-			}
-			return (IPropertiesEditionPart)basePart;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#
-	 *      setPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
-	 * 
-	 */
-	public void setPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionPart propertiesEditionPart) {
-		if (key == AmlViewsRepository.DocumentRoot.class)
-			this.basePart = (DocumentRootPropertiesEditionPart) propertiesEditionPart;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Class, int, org.eclipse.emf.ecore.EObject, 
+	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	public void initPart(java.lang.Class key, int kind, EObject elt, ResourceSet allResource) {
+	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
-		if (basePart != null && key == AmlViewsRepository.DocumentRoot.class) {
-			((IPropertiesEditionPart)basePart).setContext(elt, allResource);
+		if (editingPart != null && key == partKey) {
+			editingPart.setContext(elt, allResource);
 			final DocumentRoot documentRoot = (DocumentRoot)elt;
+			final DocumentRootPropertiesEditionPart basePart = (DocumentRootPropertiesEditionPart)editingPart;
 			// init values
-			if (documentRoot.getMixed() != null)
-				basePart.setMixed(new BasicEList(documentRoot.getMixed()));
-
-			basePart.initXMLNSPrefixMap(documentRoot, null, AmlPackage.eINSTANCE.getDocumentRoot_XMLNSPrefixMap());
-			basePart.initXSISchemaLocation(documentRoot, null, AmlPackage.eINSTANCE.getDocumentRoot_XSISchemaLocation());
-			if (documentRoot.getDescription1() != null)
+			if (documentRoot.getMixed() != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.mixed))
+				basePart.setMixed(documentRoot.getMixed());
+			
+			if (isAccessible(AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap)) {
+				xMLNSPrefixMapSettings = new ReferencesTableSettings(documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_XMLNSPrefixMap());
+				basePart.initXMLNSPrefixMap(xMLNSPrefixMapSettings);
+			}
+			if (isAccessible(AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation)) {
+				xSISchemaLocationSettings = new ReferencesTableSettings(documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_XSISchemaLocation());
+				basePart.initXSISchemaLocation(xSISchemaLocationSettings);
+			}
+			if (documentRoot.getDescription1() != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.description1))
 				basePart.setDescription1(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), documentRoot.getDescription1()));
-
-			if (documentRoot.getId() != null)
+			
+			if (documentRoot.getId() != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.id))
 				basePart.setId(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), documentRoot.getId()));
-
-			if (documentRoot.getIdRef() != null)
+			
+			if (documentRoot.getIdRef() != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.idRef))
 				basePart.setIdRef(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), documentRoot.getIdRef()));
-
-			if (documentRoot.getLabel1() != null)
+			
+			if (documentRoot.getLabel1() != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.label1))
 				basePart.setLabel1(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), documentRoot.getLabel1()));
-
+			
 			// init filters
-
+			
 			basePart.addFilterToXMLNSPrefixMap(new ViewerFilter() {
-
+			
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -272,15 +120,15 @@ public class DocumentRootPropertiesEditionComponent extends StandardPropertiesEd
 					 */
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
 						return (element instanceof String && element.equals("")) || (element instanceof EStringToStringMapEntryImpl); //$NON-NLS-1$ 
-				}
-
+					}
+			
 			});
 			// Start of user code for additional businessfilters for xMLNSPrefixMap
 			
 			// End of user code
-
+			
 			basePart.addFilterToXSISchemaLocation(new ViewerFilter() {
-
+			
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -288,22 +136,22 @@ public class DocumentRootPropertiesEditionComponent extends StandardPropertiesEd
 					 */
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
 						return (element instanceof String && element.equals("")) || (element instanceof EStringToStringMapEntryImpl); //$NON-NLS-1$ 
-				}
-
+					}
+			
 			});
 			// Start of user code for additional businessfilters for xSISchemaLocation
 			
 			// End of user code
-
-
-
-
-
+			
+			
+			
+			
+			
+			// init values for referenced views
+			
+			// init filters for referenced views
+			
 		}
-		// init values for referenced views
-
-		// init filters for referenced views
-
 		setInitializing(false);
 	}
 
@@ -318,175 +166,157 @@ public class DocumentRootPropertiesEditionComponent extends StandardPropertiesEd
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionCommand
-	 *     (org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	public CompoundCommand getPropertiesEditionCommand(EditingDomain editingDomain) {
-		CompoundCommand cc = new CompoundCommand();
-		if ((documentRoot != null) && (basePart != null)) { 
-//FIXME invalid case in commandUpdater(), Case : model = Attribute(*) : mixed - view = MultiValuedEditor
-
-			List xMLNSPrefixMapToAddFromXMLNSPrefixMap = basePart.getXMLNSPrefixMapToAdd();
-			for (Iterator iter = xMLNSPrefixMapToAddFromXMLNSPrefixMap.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_XMLNSPrefixMap(), iter.next()));
-			Map xMLNSPrefixMapToRefreshFromXMLNSPrefixMap = basePart.getXMLNSPrefixMapToEdit();
-			for (Iterator iter = xMLNSPrefixMapToRefreshFromXMLNSPrefixMap.keySet().iterator(); iter.hasNext();) {
-				EStringToStringMapEntryImpl nextElement = (EStringToStringMapEntryImpl) iter.next();
-				EStringToStringMapEntryImpl xMLNSPrefixMap = (EStringToStringMapEntryImpl) xMLNSPrefixMapToRefreshFromXMLNSPrefixMap.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, xMLNSPrefixMap.eGet(feature)));
-					}
-				}
-			}
-			List xMLNSPrefixMapToRemoveFromXMLNSPrefixMap = basePart.getXMLNSPrefixMapToRemove();
-			for (Iterator iter = xMLNSPrefixMapToRemoveFromXMLNSPrefixMap.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List xMLNSPrefixMapToMoveFromXMLNSPrefixMap = basePart.getXMLNSPrefixMapToMove();
-			for (Iterator iter = xMLNSPrefixMapToMoveFromXMLNSPrefixMap.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, documentRoot, EcorePackage.eINSTANCE.getEStringToStringMapEntry(), moveElement.getElement(), moveElement.getIndex()));
-			}
-			List xSISchemaLocationToAddFromXSISchemaLocation = basePart.getXSISchemaLocationToAdd();
-			for (Iterator iter = xSISchemaLocationToAddFromXSISchemaLocation.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_XSISchemaLocation(), iter.next()));
-			Map xSISchemaLocationToRefreshFromXSISchemaLocation = basePart.getXSISchemaLocationToEdit();
-			for (Iterator iter = xSISchemaLocationToRefreshFromXSISchemaLocation.keySet().iterator(); iter.hasNext();) {
-				EStringToStringMapEntryImpl nextElement = (EStringToStringMapEntryImpl) iter.next();
-				EStringToStringMapEntryImpl xSISchemaLocation = (EStringToStringMapEntryImpl) xSISchemaLocationToRefreshFromXSISchemaLocation.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, xSISchemaLocation.eGet(feature)));
-					}
-				}
-			}
-			List xSISchemaLocationToRemoveFromXSISchemaLocation = basePart.getXSISchemaLocationToRemove();
-			for (Iterator iter = xSISchemaLocationToRemoveFromXSISchemaLocation.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List xSISchemaLocationToMoveFromXSISchemaLocation = basePart.getXSISchemaLocationToMove();
-			for (Iterator iter = xSISchemaLocationToMoveFromXSISchemaLocation.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, documentRoot, EcorePackage.eINSTANCE.getEStringToStringMapEntry(), moveElement.getElement(), moveElement.getIndex()));
-			}
-			cc.append(SetCommand.create(editingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_Description1(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getDescription1())));
-			cc.append(SetCommand.create(editingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_Id(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getId())));
-			cc.append(SetCommand.create(editingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_IdRef(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getIdRef())));
-			cc.append(SetCommand.create(editingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_Label1(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getLabel1())));
-
+	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == AmlViewsRepository.DocumentRoot.Properties.mixed) {
+			return AmlPackage.eINSTANCE.getDocumentRoot_Mixed();
 		}
-		if (!cc.isEmpty())
-			return cc;
-		cc.append(IdentityCommand.INSTANCE);
-		return cc;
+		if (editorKey == AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap) {
+			return AmlPackage.eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
+		}
+		if (editorKey == AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation) {
+			return AmlPackage.eINSTANCE.getDocumentRoot_XSISchemaLocation();
+		}
+		if (editorKey == AmlViewsRepository.DocumentRoot.Properties.description1) {
+			return AmlPackage.eINSTANCE.getDocumentRoot_Description1();
+		}
+		if (editorKey == AmlViewsRepository.DocumentRoot.Properties.id) {
+			return AmlPackage.eINSTANCE.getDocumentRoot_Id();
+		}
+		if (editorKey == AmlViewsRepository.DocumentRoot.Properties.idRef) {
+			return AmlPackage.eINSTANCE.getDocumentRoot_IdRef();
+		}
+		if (editorKey == AmlViewsRepository.DocumentRoot.Properties.label1) {
+			return AmlPackage.eINSTANCE.getDocumentRoot_Label1();
+		}
+		return super.associatedFeature(editorKey);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionObject()
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	public EObject getPropertiesEditionObject(EObject source) {
-		if (source instanceof DocumentRoot) {
-			DocumentRoot documentRootToUpdate = (DocumentRoot)source;
-//FIXME invalid case in partUpdater(), Case : model = Attribute(*) : mixed - view = MultiValuedEditor
-
-			documentRootToUpdate.getXMLNSPrefixMap().addAll(basePart.getXMLNSPrefixMapToAdd());
-			documentRootToUpdate.getXSISchemaLocation().addAll(basePart.getXSISchemaLocationToAdd());
-			documentRootToUpdate.setDescription1((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getDescription1()));
-
-			documentRootToUpdate.setId((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getId()));
-
-			documentRootToUpdate.setIdRef((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getIdRef()));
-
-			documentRootToUpdate.setLabel1((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getLabel1()));
-
-
-			return documentRootToUpdate;
+	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		DocumentRoot documentRoot = (DocumentRoot)semanticObject;
+		if (AmlViewsRepository.DocumentRoot.Properties.mixed == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.SET) {
+				documentRoot.getMixed().clear();
+				documentRoot.getMixed().addAll(((List) event.getNewValue()));
+			}
 		}
-		else
-			return null;
+		if (AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, xMLNSPrefixMapSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				xMLNSPrefixMapSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				xMLNSPrefixMapSettings.move(event.getNewIndex(), (EStringToStringMapEntryImpl) event.getNewValue());
+			}
+		}
+		if (AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, xSISchemaLocationSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				xSISchemaLocationSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				xSISchemaLocationSettings.move(event.getNewIndex(), (EStringToStringMapEntryImpl) event.getNewValue());
+			}
+		}
+		if (AmlViewsRepository.DocumentRoot.Properties.description1 == event.getAffectedEditor()) {
+			documentRoot.setDescription1((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (AmlViewsRepository.DocumentRoot.Properties.id == event.getAffectedEditor()) {
+			documentRoot.setId((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (AmlViewsRepository.DocumentRoot.Properties.idRef == event.getAffectedEditor()) {
+			documentRoot.setIdRef((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (AmlViewsRepository.DocumentRoot.Properties.label1 == event.getAffectedEditor()) {
+			documentRoot.setLabel1((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	public void firePropertiesChanged(IPropertiesEditionEvent event) {
-		if (!isInitializing()) {
-			Diagnostic valueDiagnostic = validateValue(event);
-			if (PropertiesEditionEvent.COMMIT == event.getState() && IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode) && valueDiagnostic.getSeverity() == Diagnostic.OK) {
-				CompoundCommand command = new CompoundCommand();
-//FIXME invalid case in liveCommandUpdater(), Case : model = Attribute(*) : mixed - view = MultiValuedEditor
-
-			if (AmlViewsRepository.DocumentRoot.xMLNSPrefixMap == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					EStringToStringMapEntryImpl oldValue = (EStringToStringMapEntryImpl)event.getOldValue();
-					EStringToStringMapEntryImpl newValue = (EStringToStringMapEntryImpl)event.getNewValue();
-					// TODO: Complete the documentRoot update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_XMLNSPrefixMap(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, documentRoot, EcorePackage.eINSTANCE.getEStringToStringMapEntry(), event.getNewValue(), event.getNewIndex()));
+	public void updatePart(Notification msg) {
+		if (editingPart.isVisible()) {	
+			DocumentRootPropertiesEditionPart basePart = (DocumentRootPropertiesEditionPart)editingPart;
+			if (AmlPackage.eINSTANCE.getDocumentRoot_Mixed().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.mixed)) {
+				basePart.setMixed(((DocumentRoot)semanticObject).getMixed());
 			}
-			if (AmlViewsRepository.DocumentRoot.xSISchemaLocation == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					EStringToStringMapEntryImpl oldValue = (EStringToStringMapEntryImpl)event.getOldValue();
-					EStringToStringMapEntryImpl newValue = (EStringToStringMapEntryImpl)event.getNewValue();
-					// TODO: Complete the documentRoot update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_XSISchemaLocation(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, documentRoot, EcorePackage.eINSTANCE.getEStringToStringMapEntry(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (AmlViewsRepository.DocumentRoot.description1 == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_Description1(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (AmlViewsRepository.DocumentRoot.id == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_Id(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (AmlViewsRepository.DocumentRoot.idRef == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_IdRef(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (AmlViewsRepository.DocumentRoot.label1 == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, documentRoot, AmlPackage.eINSTANCE.getDocumentRoot_Label1(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-
-				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+			
+			if (AmlPackage.eINSTANCE.getDocumentRoot_XMLNSPrefixMap().equals(msg.getFeature()) && isAccessible(AmlViewsRepository.DocumentRoot.Properties.xMLNSPrefixMap))
+				basePart.updateXMLNSPrefixMap();
+			if (AmlPackage.eINSTANCE.getDocumentRoot_XSISchemaLocation().equals(msg.getFeature()) && isAccessible(AmlViewsRepository.DocumentRoot.Properties.xSISchemaLocation))
+				basePart.updateXSISchemaLocation();
+			if (AmlPackage.eINSTANCE.getDocumentRoot_Description1().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.description1)) {
+				if (msg.getNewValue() != null) {
+					basePart.setDescription1(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
 				} else {
-					liveEditingDomain.getCommandStack().execute(command);
+					basePart.setDescription1("");
 				}
 			}
-			if (valueDiagnostic.getSeverity() != Diagnostic.OK && valueDiagnostic instanceof BasicDiagnostic)
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, valueDiagnostic));
-			else {
-				Diagnostic validate = validate();
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, validate));
+			if (AmlPackage.eINSTANCE.getDocumentRoot_Id().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.id)) {
+				if (msg.getNewValue() != null) {
+					basePart.setId(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setId("");
+				}
 			}
-			super.firePropertiesChanged(event);
+			if (AmlPackage.eINSTANCE.getDocumentRoot_IdRef().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.idRef)) {
+				if (msg.getNewValue() != null) {
+					basePart.setIdRef(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setIdRef("");
+				}
+			}
+			if (AmlPackage.eINSTANCE.getDocumentRoot_Label1().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.DocumentRoot.Properties.label1)) {
+				if (msg.getNewValue() != null) {
+					basePart.setLabel1(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setLabel1("");
+				}
+			}
+			
 		}
 	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -497,26 +327,40 @@ public class DocumentRootPropertiesEditionComponent extends StandardPropertiesEd
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
-			String newStringValue = event.getNewValue().toString();
 			try {
-				if (AmlViewsRepository.DocumentRoot.mixed == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_Mixed().getEAttributeType(), newStringValue);
-					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getDocumentRoot_Mixed().getEAttributeType(), newValue);
+				if (AmlViewsRepository.DocumentRoot.Properties.mixed == event.getAffectedEditor()) {
+					BasicDiagnostic chain = new BasicDiagnostic();
+					for (Iterator iterator = ((List)event.getNewValue()).iterator(); iterator.hasNext();) {
+						chain.add(Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getDocumentRoot_Mixed().getEAttributeType(), iterator.next()));
+					}
+					ret = chain;
 				}
-				if (AmlViewsRepository.DocumentRoot.description1 == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_Description1().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.DocumentRoot.Properties.description1 == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_Description1().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getDocumentRoot_Description1().getEAttributeType(), newValue);
 				}
-				if (AmlViewsRepository.DocumentRoot.id == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_Id().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.DocumentRoot.Properties.id == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_Id().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getDocumentRoot_Id().getEAttributeType(), newValue);
 				}
-				if (AmlViewsRepository.DocumentRoot.idRef == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_IdRef().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.DocumentRoot.Properties.idRef == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_IdRef().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getDocumentRoot_IdRef().getEAttributeType(), newValue);
 				}
-				if (AmlViewsRepository.DocumentRoot.label1 == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_Label1().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.DocumentRoot.Properties.label1 == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getDocumentRoot_Label1().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getDocumentRoot_Label1().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
@@ -528,45 +372,4 @@ public class DocumentRootPropertiesEditionComponent extends StandardPropertiesEd
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validate()
-	 * 
-	 */
-	public Diagnostic validate() {
-		Diagnostic validate = Diagnostic.OK_INSTANCE;
-		if (IPropertiesEditionComponent.BATCH_MODE.equals(editing_mode)) {
-			EObject copy = EcoreUtil.copy(documentRoot);
-			copy = getPropertiesEditionObject(copy);
-			validate =  EEFRuntimePlugin.getEEFValidator().validate(copy);
-		}
-		else if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode))
-			validate = EEFRuntimePlugin.getEEFValidator().validate(documentRoot);
-		// Start of user code for custom validation check
-		
-		// End of user code
-		return validate;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#dispose()
-	 * 
-	 */
-	public void dispose() {
-		if (semanticAdapter != null)
-			documentRoot.eAdapters().remove(semanticAdapter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getTabText(java.lang.String)
-	 * 
-	 */
-	public String getTabText(String p_key) {
-		return basePart.getTitle();
-	}
 }

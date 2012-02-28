@@ -1,14 +1,11 @@
-/*
- * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.cae.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -63,35 +60,7 @@ public interface ArgumentPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -99,14 +68,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -135,35 +104,7 @@ public interface ArgumentPropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the justification to add
-	 * 
-	 */
-	public List getJustificationToAdd();
 
-	/**
-	 * @return the justification to remove
-	 * 
-	 */
-	public List getJustificationToRemove();
-
-	/**
-	 * @return the justification to move
-	 * 
-	 */
-	public List getJustificationToMove();
-
-	/**
-	 * @return the justification to edit
-	 * 
-	 */
-	public Map getJustificationToEdit();
-
-	/**
-	 * @return the current justification table
-	 * 
-	 */
-	public List getJustificationTable();
 
 	/**
 	 * Init the justification
@@ -171,14 +112,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initJustification(EObject current, EReference containingFeature, EReference feature);
+	public void initJustification(ReferencesTableSettings settings);
 
 	/**
 	 * Update the justification
 	 * @param newValue the justification to update
 	 * 
 	 */
-	public void updateJustification(EObject newValue);
+	public void updateJustification();
 
 	/**
 	 * Adds the given filter to the justification edition editor.
@@ -207,35 +148,7 @@ public interface ArgumentPropertiesEditionPart {
 	public boolean isContainedInJustificationTable(EObject element);
 
 
-	/**
-	 * @return the evidence to add
-	 * 
-	 */
-	public List getEvidenceToAdd();
 
-	/**
-	 * @return the evidence to remove
-	 * 
-	 */
-	public List getEvidenceToRemove();
-
-	/**
-	 * @return the evidence to move
-	 * 
-	 */
-	public List getEvidenceToMove();
-
-	/**
-	 * @return the evidence to edit
-	 * 
-	 */
-	public Map getEvidenceToEdit();
-
-	/**
-	 * @return the current evidence table
-	 * 
-	 */
-	public List getEvidenceTable();
 
 	/**
 	 * Init the evidence
@@ -243,14 +156,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initEvidence(EObject current, EReference containingFeature, EReference feature);
+	public void initEvidence(ReferencesTableSettings settings);
 
 	/**
 	 * Update the evidence
 	 * @param newValue the evidence to update
 	 * 
 	 */
-	public void updateEvidence(EObject newValue);
+	public void updateEvidence();
 
 	/**
 	 * Adds the given filter to the evidence edition editor.
@@ -279,35 +192,7 @@ public interface ArgumentPropertiesEditionPart {
 	public boolean isContainedInEvidenceTable(EObject element);
 
 
-	/**
-	 * @return the claims to add
-	 * 
-	 */
-	public List getClaimsToAdd();
 
-	/**
-	 * @return the claims to remove
-	 * 
-	 */
-	public List getClaimsToRemove();
-
-	/**
-	 * @return the claims to move
-	 * 
-	 */
-	public List getClaimsToMove();
-
-	/**
-	 * @return the claims to edit
-	 * 
-	 */
-	public Map getClaimsToEdit();
-
-	/**
-	 * @return the current claims table
-	 * 
-	 */
-	public List getClaimsTable();
 
 	/**
 	 * Init the claims
@@ -315,14 +200,14 @@ public interface ArgumentPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initClaims(EObject current, EReference containingFeature, EReference feature);
+	public void initClaims(ReferencesTableSettings settings);
 
 	/**
 	 * Update the claims
 	 * @param newValue the claims to update
 	 * 
 	 */
-	public void updateClaims(EObject newValue);
+	public void updateClaims();
 
 	/**
 	 * Adds the given filter to the claims edition editor.

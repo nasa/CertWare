@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
@@ -11,6 +13,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
 import org.eclipse.swt.SWT;
@@ -22,15 +28,14 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, FlagPropertiesEditionPart {
@@ -74,18 +79,39 @@ public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence flagStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = flagStep.addStep(AmlViewsRepository.Flag.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.Flag.Properties.description);
+		propertiesStep.addStep(AmlViewsRepository.Flag.Properties.flagType);
+		propertiesStep.addStep(AmlViewsRepository.Flag.Properties.label);
 		
-		// End of user code
+		
+		composer = new PartComposer(flagStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Flag.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Flag.Properties.description) {
+					return createDescriptionText(parent);
+				}
+				if (key == AmlViewsRepository.Flag.Properties.flagType) {
+					return createFlagTypeText(parent);
+				}
+				if (key == AmlViewsRepository.Flag.Properties.label) {
+					return createLabelText(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.FlagPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -94,31 +120,58 @@ public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createDescriptionTextarea(propertiesGroup);
-		createFlagTypeText(propertiesGroup);
-		createLabelText(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createDescriptionTextarea(Composite parent) {
-		Label descriptionLabel = SWTUtils.createPartLabel(parent, AmlMessages.FlagPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Flag.description, AmlViewsRepository.SWT_KIND));
-		GridData descriptionLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionLabelData.horizontalSpan = 3;
-		descriptionLabel.setLayoutData(descriptionLabelData);
-		description = new Text(parent, SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL);
+	protected Composite createDescriptionText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.FlagPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Flag.Properties.description, AmlViewsRepository.SWT_KIND));
+		description = new Text(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionData.horizontalSpan = 2;
-		descriptionData.heightHint = 80;
-		descriptionData.widthHint = 200;
 		description.setLayoutData(descriptionData);
-		EditingUtils.setID(description, AmlViewsRepository.Flag.description);
-		EditingUtils.setEEFtype(description, "eef::Textarea"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Flag.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		description.addFocusListener(new FocusAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+			}
+
+		});
+		description.addKeyListener(new KeyAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				}
+			}
+
+		});
+		EditingUtils.setID(description, AmlViewsRepository.Flag.Properties.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Flag.Properties.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createFlagTypeText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.FlagPropertiesEditionPart_FlagTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Flag.flagType, AmlViewsRepository.SWT_KIND));
+	protected Composite createFlagTypeText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.FlagPropertiesEditionPart_FlagTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Flag.Properties.flagType, AmlViewsRepository.SWT_KIND));
 		flagType = new Text(parent, SWT.BORDER);
 		GridData flagTypeData = new GridData(GridData.FILL_HORIZONTAL);
 		flagType.setLayoutData(flagTypeData);
@@ -134,7 +187,7 @@ public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.flagType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, flagType.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.Properties.flagType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, flagType.getText()));
 			}
 
 		});
@@ -151,19 +204,20 @@ public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.flagType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, flagType.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.Properties.flagType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, flagType.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(flagType, AmlViewsRepository.Flag.flagType);
+		EditingUtils.setID(flagType, AmlViewsRepository.Flag.Properties.flagType);
 		EditingUtils.setEEFtype(flagType, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Flag.flagType, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Flag.Properties.flagType, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createLabelText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.FlagPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Flag.label, AmlViewsRepository.SWT_KIND));
+	protected Composite createLabelText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.FlagPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.Flag.Properties.label, AmlViewsRepository.SWT_KIND));
 		label = new Text(parent, SWT.BORDER);
 		GridData labelData = new GridData(GridData.FILL_HORIZONTAL);
 		label.setLayoutData(labelData);
@@ -179,7 +233,7 @@ public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 			}
 
 		});
@@ -196,14 +250,15 @@ public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(FlagPropertiesEditionPartImpl.this, AmlViewsRepository.Flag.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(label, AmlViewsRepository.Flag.label);
+		EditingUtils.setID(label, AmlViewsRepository.Flag.Properties.label);
 		EditingUtils.setEEFtype(label, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Flag.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.Flag.Properties.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -240,7 +295,7 @@ public class FlagPropertiesEditionPartImpl extends CompositePropertiesEditionPar
 		if (newValue != null) {
 			description.setText(newValue);
 		} else {
-			description.setText("");  //$NON-NLS-1$
+			description.setText(""); //$NON-NLS-1$
 		}
 	}
 

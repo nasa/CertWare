@@ -1,13 +1,10 @@
 package net.certware.evidence.hugin.view.handlers;
 
 import net.certware.evidence.hugin.view.ViewTree;
-import net.certware.evidence.hugin.view.jobs.ExportNetworkJob;
-import net.certware.export.excel.WriteExcel;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 
@@ -32,7 +29,8 @@ public class ExportNetworkHandler extends AbstractHandler
    * @throws ExecutionException if export job fails  
    * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
    */
-  public Object execute(ExecutionEvent event) throws ExecutionException
+  @SuppressWarnings("unused")
+public Object execute(ExecutionEvent event) throws ExecutionException
   {
     // get context information
     Shell shell = HandlerUtil.getActiveShellChecked(event);
@@ -41,7 +39,10 @@ public class ExportNetworkHandler extends AbstractHandler
     if ( network == null ) 
       return null;
 
-    final WriteExcel excel = new WriteExcel();
+    /*
+     * // recover this when POI-based export added to base; POI disallowed by NASA for redistribution
+    final WriteExcel excel = new WriteExcel(); 
+    
 
     // prompt for destination file
     excel.fetchDestinationFile(shell);
@@ -55,6 +56,9 @@ public class ExportNetworkHandler extends AbstractHandler
     job.schedule();
     
     return null;
+    */
+    
+    throw new ExecutionException("Excel export not installed");
   }  
 }
 

@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
@@ -9,7 +11,7 @@ package net.certware.argument.aml.parts;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface IntervalPropertiesEditionPart {

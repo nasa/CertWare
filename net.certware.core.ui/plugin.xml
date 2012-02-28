@@ -87,7 +87,7 @@
       <image
             icon="icons/ovr7/certware-ovr.gif"
             id="net.certware.core.ui.nature.id"
-            natureId="net.certware.resource.nature.id">
+            natureId="">
       </image>
    </extension>
       <extension

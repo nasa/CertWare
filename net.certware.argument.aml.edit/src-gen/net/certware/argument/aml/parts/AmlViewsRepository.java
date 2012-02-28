@@ -1,8 +1,10 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class AmlViewsRepository {
@@ -17,9 +19,13 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class AggregationRule {
-		
-		public static String parameter = "aml::AggregationRule::parameter";
-		
+		public static class Properties {
+	
+			
+			public static String parameter = "aml::AggregationRule::properties::parameter";
+			
+	
+		}
 	
 	}
 
@@ -28,12 +34,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class AmlDocument {
-		
-		public static String group = "aml::AmlDocument::group";
-		
-		
-		public static String version = "aml::AmlDocument::version";
-		
+		public static class Properties {
+	
+			
+			public static String group = "aml::AmlDocument::properties::group";
+			
+			
+			public static String version = "aml::AmlDocument::properties::version";
+			
+	
+		}
 	
 	}
 
@@ -42,12 +52,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Annotation {
-		
-		public static String mixed = "aml::Annotation::mixed";
-		
-		
-		public static String id = "aml::Annotation::id";
-		
+		public static class Properties {
+	
+			
+			public static String mixed = "aml::Annotation::properties::mixed";
+			
+			
+			public static String id = "aml::Annotation::properties::id";
+			
+	
+		}
 	
 	}
 
@@ -56,12 +70,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Answer {
-		
-		public static String group = "aml::Answer::group";
-		
-		
-		public static String questionId = "aml::Answer::questionId";
-		
+		public static class Properties {
+	
+			
+			public static String group = "aml::Answer::properties::group";
+			
+			
+			public static String questionId = "aml::Answer::properties::questionId";
+			
+	
+		}
 	
 	}
 
@@ -70,12 +88,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class ArgumentTemplate {
-		
-		public static String value = "aml::ArgumentTemplate::value";
-		
-		
-		public static String idRef = "aml::ArgumentTemplate::idRef";
-		
+		public static class Properties {
+	
+			
+			public static String value = "aml::ArgumentTemplate::properties::value";
+			
+			
+			public static String idRef = "aml::ArgumentTemplate::properties::idRef";
+			
+	
+		}
 	
 	}
 
@@ -84,15 +106,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Argument {
-		
-		public static String annotation = "aml::Argument::annotation";
-		
-		
-		public static String answer = "aml::Argument::answer";
-		
-		
-		public static String id = "aml::Argument::id";
-		
+		public static class Properties {
+	
+			
+			public static String annotation = "aml::Argument::properties::annotation";
+			
+			
+			public static String answer = "aml::Argument::properties::answer";
+			
+			
+			public static String id = "aml::Argument::properties::id";
+			
+	
+		}
 	
 	}
 
@@ -101,18 +127,22 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Belief {
-		
-		public static String description = "aml::Belief::description";
-		
-		
-		public static String label = "aml::Belief::label";
-		
-		
-		public static String ordinal = "aml::Belief::ordinal";
-		
-		
-		public static String symbol = "aml::Belief::symbol";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Belief::properties::description";
+			
+			
+			public static String label = "aml::Belief::properties::label";
+			
+			
+			public static String ordinal = "aml::Belief::properties::ordinal";
+			
+			
+			public static String symbol = "aml::Belief::properties::symbol";
+			
+	
+		}
 	
 	}
 
@@ -121,18 +151,22 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Choice {
-		
-		public static String description = "aml::Choice::description";
-		
-		
-		public static String label = "aml::Choice::label";
-		
-		
-		public static String ordinal = "aml::Choice::ordinal";
-		
-		
-		public static String symbol = "aml::Choice::symbol";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Choice::properties::description";
+			
+			
+			public static String label = "aml::Choice::properties::label";
+			
+			
+			public static String ordinal = "aml::Choice::properties::ordinal";
+			
+			
+			public static String symbol = "aml::Choice::properties::symbol";
+			
+	
+		}
 	
 	}
 
@@ -141,15 +175,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class CollectionItem {
-		
-		public static String idRef = "aml::CollectionItem::idRef";
-		
-		
-		public static String objectType = "aml::CollectionItem::objectType";
-		
-		
-		public static String ordinal = "aml::CollectionItem::ordinal";
-		
+		public static class Properties {
+	
+			
+			public static String idRef = "aml::CollectionItem::properties::idRef";
+			
+			
+			public static String objectType = "aml::CollectionItem::properties::objectType";
+			
+			
+			public static String ordinal = "aml::CollectionItem::properties::ordinal";
+			
+	
+		}
 	
 	}
 
@@ -158,21 +196,25 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Collection {
-		
-		public static String annotation = "aml::Collection::annotation";
-		
-		
-		public static String group = "aml::Collection::group";
-		
-		
-		public static String id = "aml::Collection::id";
-		
-		
-		public static String label1 = "aml::Collection::label1";
-		
-		
-		public static String objectType = "aml::Collection::objectType";
-		
+		public static class Properties {
+	
+			
+			public static String annotation = "aml::Collection::properties::annotation";
+			
+			
+			public static String group = "aml::Collection::properties::group";
+			
+			
+			public static String id = "aml::Collection::properties::id";
+			
+			
+			public static String label1 = "aml::Collection::properties::label1";
+			
+			
+			public static String objectType = "aml::Collection::properties::objectType";
+			
+	
+		}
 	
 	}
 
@@ -181,9 +223,13 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Coverage {
-		
-		public static String mixed = "aml::Coverage::mixed";
-		
+		public static class Properties {
+	
+			
+			public static String mixed = "aml::Coverage::properties::mixed";
+			
+	
+		}
 	
 	}
 
@@ -192,15 +238,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class CreatingTool {
-		
-		public static String label = "aml::CreatingTool::label";
-		
-		
-		public static String toolType = "aml::CreatingTool::toolType";
-		
-		
-		public static String version = "aml::CreatingTool::version";
-		
+		public static class Properties {
+	
+			
+			public static String label = "aml::CreatingTool::properties::label";
+			
+			
+			public static String toolType = "aml::CreatingTool::properties::toolType";
+			
+			
+			public static String version = "aml::CreatingTool::properties::version";
+			
+	
+		}
 	
 	}
 
@@ -209,15 +259,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Creator {
-		
-		public static String description = "aml::Creator::description";
-		
-		
-		public static String idRef = "aml::Creator::idRef";
-		
-		
-		public static String objectType = "aml::Creator::objectType";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Creator::properties::description";
+			
+			
+			public static String idRef = "aml::Creator::properties::idRef";
+			
+			
+			public static String objectType = "aml::Creator::properties::objectType";
+			
+	
+		}
 	
 	}
 
@@ -226,12 +280,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Dependent {
-		
-		public static String idRef = "aml::Dependent::idRef";
-		
-		
-		public static String ordinal = "aml::Dependent::ordinal";
-		
+		public static class Properties {
+	
+			
+			public static String idRef = "aml::Dependent::properties::idRef";
+			
+			
+			public static String ordinal = "aml::Dependent::properties::ordinal";
+			
+	
+		}
 	
 	}
 
@@ -240,30 +298,34 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class DiscoveryMethod {
-		
-		public static String url = "aml::DiscoveryMethod::url";
-		
-		
-		public static String annotation = "aml::DiscoveryMethod::annotation";
-		
-		
-		public static String autoTrigger = "aml::DiscoveryMethod::autoTrigger";
-		
-		
-		public static String description = "aml::DiscoveryMethod::description";
-		
-		
-		public static String id = "aml::DiscoveryMethod::id";
-		
-		
-		public static String importType = "aml::DiscoveryMethod::importType";
-		
-		
-		public static String label = "aml::DiscoveryMethod::label";
-		
-		
-		public static String type = "aml::DiscoveryMethod::type";
-		
+		public static class Properties {
+	
+			
+			public static String url = "aml::DiscoveryMethod::properties::url";
+			
+			
+			public static String annotation = "aml::DiscoveryMethod::properties::annotation";
+			
+			
+			public static String autoTrigger = "aml::DiscoveryMethod::properties::autoTrigger";
+			
+			
+			public static String description = "aml::DiscoveryMethod::properties::description";
+			
+			
+			public static String id = "aml::DiscoveryMethod::properties::id";
+			
+			
+			public static String importType = "aml::DiscoveryMethod::properties::importType";
+			
+			
+			public static String label = "aml::DiscoveryMethod::properties::label";
+			
+			
+			public static String type = "aml::DiscoveryMethod::properties::type";
+			
+	
+		}
 	
 	}
 
@@ -272,27 +334,31 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class DocumentRoot {
-		
-		public static String mixed = "aml::DocumentRoot::mixed";
-		
-		
-		public static String xMLNSPrefixMap = "aml::DocumentRoot::xMLNSPrefixMap";
-		
-		
-		public static String xSISchemaLocation = "aml::DocumentRoot::xSISchemaLocation";
-		
-		
-		public static String description1 = "aml::DocumentRoot::description1";
-		
-		
-		public static String id = "aml::DocumentRoot::id";
-		
-		
-		public static String idRef = "aml::DocumentRoot::idRef";
-		
-		
-		public static String label1 = "aml::DocumentRoot::label1";
-		
+		public static class Properties {
+	
+			
+			public static String mixed = "aml::DocumentRoot::properties::mixed";
+			
+			
+			public static String xMLNSPrefixMap = "aml::DocumentRoot::properties::xMLNSPrefixMap";
+			
+			
+			public static String xSISchemaLocation = "aml::DocumentRoot::properties::xSISchemaLocation";
+			
+			
+			public static String description1 = "aml::DocumentRoot::properties::description1";
+			
+			
+			public static String id = "aml::DocumentRoot::properties::id";
+			
+			
+			public static String idRef = "aml::DocumentRoot::properties::idRef";
+			
+			
+			public static String label1 = "aml::DocumentRoot::properties::label1";
+			
+	
+		}
 	
 	}
 
@@ -301,12 +367,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class End {
-		
-		public static String value = "aml::End::value";
-		
-		
-		public static String scheme = "aml::End::scheme";
-		
+		public static class Properties {
+	
+			
+			public static String value = "aml::End::properties::value";
+			
+			
+			public static String scheme = "aml::End::properties::scheme";
+			
+	
+		}
 	
 	}
 
@@ -315,15 +385,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class EvidenceExhibit {
-		
-		public static String value = "aml::EvidenceExhibit::value";
-		
-		
-		public static String idRef = "aml::EvidenceExhibit::idRef";
-		
-		
-		public static String questionId = "aml::EvidenceExhibit::questionId";
-		
+		public static class Properties {
+	
+			
+			public static String value = "aml::EvidenceExhibit::properties::value";
+			
+			
+			public static String idRef = "aml::EvidenceExhibit::properties::idRef";
+			
+			
+			public static String questionId = "aml::EvidenceExhibit::properties::questionId";
+			
+	
+		}
 	
 	}
 
@@ -332,18 +406,22 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Evidence {
-		
-		public static String annotation = "aml::Evidence::annotation";
-		
-		
-		public static String id = "aml::Evidence::id";
-		
-		
-		public static String label = "aml::Evidence::label";
-		
-		
-		public static String ordinal = "aml::Evidence::ordinal";
-		
+		public static class Properties {
+	
+			
+			public static String annotation = "aml::Evidence::properties::annotation";
+			
+			
+			public static String id = "aml::Evidence::properties::id";
+			
+			
+			public static String label = "aml::Evidence::properties::label";
+			
+			
+			public static String ordinal = "aml::Evidence::properties::ordinal";
+			
+	
+		}
 	
 	}
 
@@ -352,12 +430,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Exhibit {
-		
-		public static String annotation = "aml::Exhibit::annotation";
-		
-		
-		public static String id = "aml::Exhibit::id";
-		
+		public static class Properties {
+	
+			
+			public static String annotation = "aml::Exhibit::properties::annotation";
+			
+			
+			public static String id = "aml::Exhibit::properties::id";
+			
+	
+		}
 	
 	}
 
@@ -366,15 +448,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Flag {
-		
-		public static String description = "aml::Flag::description";
-		
-		
-		public static String flagType = "aml::Flag::flagType";
-		
-		
-		public static String label = "aml::Flag::label";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Flag::properties::description";
+			
+			
+			public static String flagType = "aml::Flag::properties::flagType";
+			
+			
+			public static String label = "aml::Flag::properties::label";
+			
+	
+		}
 	
 	}
 
@@ -383,12 +469,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Interval {
-		
-		public static String max = "aml::Interval::max";
-		
-		
-		public static String min = "aml::Interval::min";
-		
+		public static class Properties {
+	
+			
+			public static String max = "aml::Interval::properties::max";
+			
+			
+			public static String min = "aml::Interval::properties::min";
+			
+	
+		}
 	
 	}
 
@@ -397,9 +487,13 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class List {
-		
-		public static String group = "aml::List::group";
-		
+		public static class Properties {
+	
+			
+			public static String group = "aml::List::properties::group";
+			
+	
+		}
 	
 	}
 
@@ -408,24 +502,28 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Memo {
-		
-		public static String creator = "aml::Memo::creator";
-		
-		
-		public static String reader = "aml::Memo::reader";
-		
-		
-		public static String subject = "aml::Memo::subject";
-		
-		
-		public static String body = "aml::Memo::body";
-		
-		
-		public static String id = "aml::Memo::id";
-		
-		
-		public static String type = "aml::Memo::type";
-		
+		public static class Properties {
+	
+			
+			public static String creator = "aml::Memo::properties::creator";
+			
+			
+			public static String reader = "aml::Memo::properties::reader";
+			
+			
+			public static String subject = "aml::Memo::properties::subject";
+			
+			
+			public static String body = "aml::Memo::properties::body";
+			
+			
+			public static String id = "aml::Memo::properties::id";
+			
+			
+			public static String type = "aml::Memo::properties::type";
+			
+	
+		}
 	
 	}
 
@@ -434,9 +532,13 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class MetaData {
-		
-		public static String group = "aml::MetaData::group";
-		
+		public static class Properties {
+	
+			
+			public static String group = "aml::MetaData::properties::group";
+			
+	
+		}
 	
 	}
 
@@ -445,9 +547,13 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class NationState {
-		
-		public static String group = "aml::NationState::group";
-		
+		public static class Properties {
+	
+			
+			public static String group = "aml::NationState::properties::group";
+			
+	
+		}
 	
 	}
 
@@ -456,9 +562,13 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Parameter {
-		
-		public static String symbol = "aml::Parameter::symbol";
-		
+		public static class Properties {
+	
+			
+			public static String symbol = "aml::Parameter::properties::symbol";
+			
+	
+		}
 	
 	}
 
@@ -467,12 +577,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Period {
-		
-		public static String group = "aml::Period::group";
-		
-		
-		public static String label = "aml::Period::label";
-		
+		public static class Properties {
+	
+			
+			public static String group = "aml::Period::properties::group";
+			
+			
+			public static String label = "aml::Period::properties::label";
+			
+	
+		}
 	
 	}
 
@@ -481,33 +595,37 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Person {
-		
-		public static String firstName = "aml::Person::firstName";
-		
-		
-		public static String middleName = "aml::Person::middleName";
-		
-		
-		public static String lastName = "aml::Person::lastName";
-		
-		
-		public static String nickName = "aml::Person::nickName";
-		
-		
-		public static String organization = "aml::Person::organization";
-		
-		
-		public static String department = "aml::Person::department";
-		
-		
-		public static String email = "aml::Person::email";
-		
-		
-		public static String description = "aml::Person::description";
-		
-		
-		public static String id = "aml::Person::id";
-		
+		public static class Properties {
+	
+			
+			public static String firstName = "aml::Person::properties::firstName";
+			
+			
+			public static String middleName = "aml::Person::properties::middleName";
+			
+			
+			public static String lastName = "aml::Person::properties::lastName";
+			
+			
+			public static String nickName = "aml::Person::properties::nickName";
+			
+			
+			public static String organization = "aml::Person::properties::organization";
+			
+			
+			public static String department = "aml::Person::properties::department";
+			
+			
+			public static String email = "aml::Person::properties::email";
+			
+			
+			public static String description = "aml::Person::properties::description";
+			
+			
+			public static String id = "aml::Person::properties::id";
+			
+	
+		}
 	
 	}
 
@@ -516,15 +634,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Publisher {
-		
-		public static String description = "aml::Publisher::description";
-		
-		
-		public static String idRef = "aml::Publisher::idRef";
-		
-		
-		public static String objectType = "aml::Publisher::objectType";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Publisher::properties::description";
+			
+			
+			public static String idRef = "aml::Publisher::properties::idRef";
+			
+			
+			public static String objectType = "aml::Publisher::properties::objectType";
+			
+	
+		}
 	
 	}
 
@@ -533,9 +655,13 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class QuestionRelationships {
-		
-		public static String dependent = "aml::QuestionRelationships::dependent";
-		
+		public static class Properties {
+	
+			
+			public static String dependent = "aml::QuestionRelationships::properties::dependent";
+			
+	
+		}
 	
 	}
 
@@ -544,21 +670,25 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Question {
-		
-		public static String group = "aml::Question::group";
-		
-		
-		public static String amplification = "aml::Question::amplification";
-		
-		
-		public static String description = "aml::Question::description";
-		
-		
-		public static String id = "aml::Question::id";
-		
-		
-		public static String label = "aml::Question::label";
-		
+		public static class Properties {
+	
+			
+			public static String group = "aml::Question::properties::group";
+			
+			
+			public static String amplification = "aml::Question::properties::amplification";
+			
+			
+			public static String description = "aml::Question::properties::description";
+			
+			
+			public static String id = "aml::Question::properties::id";
+			
+			
+			public static String label = "aml::Question::properties::label";
+			
+	
+		}
 	
 	}
 
@@ -567,15 +697,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Reader {
-		
-		public static String description = "aml::Reader::description";
-		
-		
-		public static String idRef = "aml::Reader::idRef";
-		
-		
-		public static String objectType = "aml::Reader::objectType";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Reader::properties::description";
+			
+			
+			public static String idRef = "aml::Reader::properties::idRef";
+			
+			
+			public static String objectType = "aml::Reader::properties::objectType";
+			
+	
+		}
 	
 	}
 
@@ -584,18 +718,22 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Relevance {
-		
-		public static String description = "aml::Relevance::description";
-		
-		
-		public static String label = "aml::Relevance::label";
-		
-		
-		public static String ordinal = "aml::Relevance::ordinal";
-		
-		
-		public static String symbol = "aml::Relevance::symbol";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Relevance::properties::description";
+			
+			
+			public static String label = "aml::Relevance::properties::label";
+			
+			
+			public static String ordinal = "aml::Relevance::properties::ordinal";
+			
+			
+			public static String symbol = "aml::Relevance::properties::symbol";
+			
+	
+		}
 	
 	}
 
@@ -604,18 +742,22 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Reliability {
-		
-		public static String description = "aml::Reliability::description";
-		
-		
-		public static String label = "aml::Reliability::label";
-		
-		
-		public static String ordinal = "aml::Reliability::ordinal";
-		
-		
-		public static String symbol = "aml::Reliability::symbol";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Reliability::properties::description";
+			
+			
+			public static String label = "aml::Reliability::properties::label";
+			
+			
+			public static String ordinal = "aml::Reliability::properties::ordinal";
+			
+			
+			public static String symbol = "aml::Reliability::properties::symbol";
+			
+	
+		}
 	
 	}
 
@@ -624,12 +766,16 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Start {
-		
-		public static String value = "aml::Start::value";
-		
-		
-		public static String scheme = "aml::Start::scheme";
-		
+		public static class Properties {
+	
+			
+			public static String value = "aml::Start::properties::value";
+			
+			
+			public static String scheme = "aml::Start::properties::scheme";
+			
+	
+		}
 	
 	}
 
@@ -638,15 +784,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Template {
-		
-		public static String annotation = "aml::Template::annotation";
-		
-		
-		public static String question = "aml::Template::question";
-		
-		
-		public static String id = "aml::Template::id";
-		
+		public static class Properties {
+	
+			
+			public static String annotation = "aml::Template::properties::annotation";
+			
+			
+			public static String question = "aml::Template::properties::question";
+			
+			
+			public static String id = "aml::Template::properties::id";
+			
+	
+		}
 	
 	}
 
@@ -655,15 +805,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Value {
-		
-		public static String mixed = "aml::Value::mixed";
-		
-		
-		public static String type = "aml::Value::type";
-		
-		
-		public static String unit = "aml::Value::unit";
-		
+		public static class Properties {
+	
+			
+			public static String mixed = "aml::Value::properties::mixed";
+			
+			
+			public static String type = "aml::Value::properties::type";
+			
+			
+			public static String unit = "aml::Value::properties::unit";
+			
+	
+		}
 	
 	}
 
@@ -672,15 +826,19 @@ public class AmlViewsRepository {
 	 * 
 	 */
 	public static class Witness {
-		
-		public static String description = "aml::Witness::description";
-		
-		
-		public static String idRef = "aml::Witness::idRef";
-		
-		
-		public static String timestamp = "aml::Witness::timestamp";
-		
+		public static class Properties {
+	
+			
+			public static String description = "aml::Witness::properties::description";
+			
+			
+			public static String idRef = "aml::Witness::properties::idRef";
+			
+			
+			public static String timestamp = "aml::Witness::properties::timestamp";
+			
+	
+		}
 	
 	}
 

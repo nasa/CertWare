@@ -1,103 +1,116 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.providers;
+
+import java.util.List;
 
 import net.certware.argument.aml.AmlPackage;
 import net.certware.argument.aml.Flag;
 import net.certware.argument.aml.components.FlagPropertiesEditionComponent;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class FlagPropertiesEditionProvider implements IPropertiesEditionProvider {
+public class FlagPropertiesEditionProvider extends PropertiesEditingProviderImpl {
 
 	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject)
-	 * 
+	 * Constructor without provider for super types.
 	 */
-	public boolean provides(EObject eObject) {
-		return (eObject instanceof Flag) && (AmlPackage.eINSTANCE.getFlag() == eObject.eClass());
+	public FlagPropertiesEditionProvider() {
+		super();
+	}
+
+	/**
+	 * Constructor with providers for super types.
+	 * @param superProviders providers to use for super types.
+	 */
+	public FlagPropertiesEditionProvider(List<PropertiesEditingProvider> superProviders) {
+		super(superProviders);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part) {
-		return (eObject instanceof Flag) && (FlagPropertiesEditionComponent.BASE_PART.equals(part));
+	public boolean provides(PropertiesEditingContext editingContext) {
+		return (editingContext.getEObject() instanceof Flag) 
+					&& (AmlPackage.eINSTANCE.getFlag() == editingContext.getEObject().eClass());
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
 	 * 
 	 */
-	public boolean provides(EObject eObject, java.lang.Class refinement) {
-		return (eObject instanceof Flag) && (refinement == FlagPropertiesEditionComponent.class);
+	public boolean provides(PropertiesEditingContext editingContext, String part) {
+		return (editingContext.getEObject() instanceof Flag) && (FlagPropertiesEditionComponent.BASE_PART.equals(part));
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#provides(org.eclipse.emf.ecore.EObject, java.lang.String, java.lang.Class)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.Class)
 	 * 
 	 */
-	public boolean provides(EObject eObject, String part, java.lang.Class refinement) {
-		return (eObject instanceof Flag) && ((FlagPropertiesEditionComponent.BASE_PART.equals(part) && refinement == FlagPropertiesEditionComponent.class));
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof Flag) && (refinement == FlagPropertiesEditionComponent.class);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#provides(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.Class)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode) {
-		if (eObject instanceof Flag) {
-			return new FlagPropertiesEditionComponent(eObject, editing_mode);
+	@SuppressWarnings("rawtypes")
+	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
+		return (editingContext.getEObject() instanceof Flag) && ((FlagPropertiesEditionComponent.BASE_PART.equals(part) && refinement == FlagPropertiesEditionComponent.class));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
+	 * 
+	 */
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
+		if (editingContext.getEObject() instanceof Flag) {
+			return new FlagPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String)
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String)
 	 * 
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part) {
-		if (eObject instanceof Flag) {
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
+		if (editingContext.getEObject() instanceof Flag) {
 			if (FlagPropertiesEditionComponent.BASE_PART.equals(part))
-				return new FlagPropertiesEditionComponent(eObject, editing_mode);
+				return new FlagPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionProvider#getPropertiesEditionComponent(org.eclipse.emf.ecore.EObject,
-	 *  java.lang.String, java.lang.String, java.lang.Class)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String, java.lang.String, java.lang.Class)
 	 */
-	public IPropertiesEditionComponent getPropertiesEditionComponent(EObject eObject, String editing_mode, String part, java.lang.Class refinement) {
-		if (eObject instanceof Flag) {
+	@SuppressWarnings("rawtypes")
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
+		if (editingContext.getEObject() instanceof Flag) {
 			if (FlagPropertiesEditionComponent.BASE_PART.equals(part)
 				&& refinement == FlagPropertiesEditionComponent.class)
-				return new FlagPropertiesEditionComponent(eObject, editing_mode);
+				return new FlagPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
-		return null;
+		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}
 
 }

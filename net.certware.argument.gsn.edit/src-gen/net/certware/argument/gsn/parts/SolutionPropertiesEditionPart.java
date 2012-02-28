@@ -4,11 +4,8 @@
 package net.certware.argument.gsn.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -63,35 +60,7 @@ public interface SolutionPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -99,14 +68,14 @@ public interface SolutionPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -135,38 +104,20 @@ public interface SolutionPropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the target to add
-	 * 
-	 */
-	public List getTargetToAdd();
 
-	/**
-	 * @return the target to remove
-	 * 
-	 */
-	public List getTargetToRemove();
-
-	/**
-	 * @return the current target table
-	 * 
-	 */
-	public List getTargetTable();
 
 	/**
 	 * Init the target
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the target ReferencesTable 
 	 */
-	public void initTarget(EObject current, EReference containingFeature, EReference feature);
+	public void initTarget(ReferencesTableSettings settings);
 
 	/**
 	 * Update the target
 	 * @param newValue the target to update
 	 * 
 	 */
-	public void updateTarget(EObject newValue);
+	public void updateTarget();
 
 	/**
 	 * Adds the given filter to the target edition editor.
@@ -195,38 +146,20 @@ public interface SolutionPropertiesEditionPart {
 	public boolean isContainedInTargetTable(EObject element);
 
 
-	/**
-	 * @return the source to add
-	 * 
-	 */
-	public List getSourceToAdd();
 
-	/**
-	 * @return the source to remove
-	 * 
-	 */
-	public List getSourceToRemove();
-
-	/**
-	 * @return the current source table
-	 * 
-	 */
-	public List getSourceTable();
 
 	/**
 	 * Init the source
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the source ReferencesTable 
 	 */
-	public void initSource(EObject current, EReference containingFeature, EReference feature);
+	public void initSource(ReferencesTableSettings settings);
 
 	/**
 	 * Update the source
 	 * @param newValue the source to update
 	 * 
 	 */
-	public void updateSource(EObject newValue);
+	public void updateSource();
 
 	/**
 	 * Adds the given filter to the source edition editor.
@@ -255,35 +188,7 @@ public interface SolutionPropertiesEditionPart {
 	public boolean isContainedInSourceTable(EObject element);
 
 
-	/**
-	 * @return the solutionEvidence to add
-	 * 
-	 */
-	public List getSolutionEvidenceToAdd();
 
-	/**
-	 * @return the solutionEvidence to remove
-	 * 
-	 */
-	public List getSolutionEvidenceToRemove();
-
-	/**
-	 * @return the solutionEvidence to move
-	 * 
-	 */
-	public List getSolutionEvidenceToMove();
-
-	/**
-	 * @return the solutionEvidence to edit
-	 * 
-	 */
-	public Map getSolutionEvidenceToEdit();
-
-	/**
-	 * @return the current solutionEvidence table
-	 * 
-	 */
-	public List getSolutionEvidenceTable();
 
 	/**
 	 * Init the solutionEvidence
@@ -291,14 +196,14 @@ public interface SolutionPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initSolutionEvidence(EObject current, EReference containingFeature, EReference feature);
+	public void initSolutionEvidence(ReferencesTableSettings settings);
 
 	/**
 	 * Update the solutionEvidence
 	 * @param newValue the solutionEvidence to update
 	 * 
 	 */
-	public void updateSolutionEvidence(EObject newValue);
+	public void updateSolutionEvidence();
 
 	/**
 	 * Adds the given filter to the solutionEvidence edition editor.
@@ -327,35 +232,7 @@ public interface SolutionPropertiesEditionPart {
 	public boolean isContainedInSolutionEvidenceTable(EObject element);
 
 
-	/**
-	 * @return the solutionContexts to add
-	 * 
-	 */
-	public List getSolutionContextsToAdd();
 
-	/**
-	 * @return the solutionContexts to remove
-	 * 
-	 */
-	public List getSolutionContextsToRemove();
-
-	/**
-	 * @return the solutionContexts to move
-	 * 
-	 */
-	public List getSolutionContextsToMove();
-
-	/**
-	 * @return the solutionContexts to edit
-	 * 
-	 */
-	public Map getSolutionContextsToEdit();
-
-	/**
-	 * @return the current solutionContexts table
-	 * 
-	 */
-	public List getSolutionContextsTable();
 
 	/**
 	 * Init the solutionContexts
@@ -363,14 +240,14 @@ public interface SolutionPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initSolutionContexts(EObject current, EReference containingFeature, EReference feature);
+	public void initSolutionContexts(ReferencesTableSettings settings);
 
 	/**
 	 * Update the solutionContexts
 	 * @param newValue the solutionContexts to update
 	 * 
 	 */
-	public void updateSolutionContexts(EObject newValue);
+	public void updateSolutionContexts();
 
 	/**
 	 * Adds the given filter to the solutionContexts edition editor.

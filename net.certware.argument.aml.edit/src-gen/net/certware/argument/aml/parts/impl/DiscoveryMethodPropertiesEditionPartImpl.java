@@ -1,13 +1,12 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import net.certware.argument.aml.AmlFactory;
-import net.certware.argument.aml.Annotation;
 import net.certware.argument.aml.parts.AmlViewsRepository;
 import net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart;
 import net.certware.argument.aml.providers.AmlMessages;
@@ -22,19 +21,22 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
@@ -42,28 +44,28 @@ import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, DiscoveryMethodPropertiesEditionPart {
 
 	protected Text url;
-	protected EMFListEditUtil annotationEditUtil;
-	protected ReferencesTable<? extends EObject> annotation;
-	protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
+protected ReferencesTable annotation;
+protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
+protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
 	protected Text autoTrigger;
 	protected Text description;
 	protected Text id;
@@ -106,18 +108,59 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence discoveryMethodStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = discoveryMethodStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.url);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.annotation);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.description);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.id);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.importType);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.label);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.type);
 		
-		// End of user code
+		
+		composer = new PartComposer(discoveryMethodStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.url) {
+					return createUrlText(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.annotation) {
+					return createAnnotationAdvancedTableComposition(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger) {
+					return createAutoTriggerText(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.description) {
+					return createDescriptionText(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.id) {
+					return createIdText(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.importType) {
+					return createImportTypeText(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.label) {
+					return createLabelText(parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.type) {
+					return createTypeEMFComboViewer(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.DiscoveryMethodPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -126,19 +169,12 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createUrlText(propertiesGroup);
-		createAnnotationAdvancedTableComposition(propertiesGroup);
-		createAutoTriggerText(propertiesGroup);
-		createDescriptionTextarea(propertiesGroup);
-		createIdText(propertiesGroup);
-		createImportTypeText(propertiesGroup);
-		createLabelText(propertiesGroup);
-		createTypeEMFComboViewer(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createUrlText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_UrlLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.url, AmlViewsRepository.SWT_KIND));
+	protected Composite createUrlText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_UrlLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.url, AmlViewsRepository.SWT_KIND));
 		url = new Text(parent, SWT.BORDER);
 		GridData urlData = new GridData(GridData.FILL_HORIZONTAL);
 		url.setLayoutData(urlData);
@@ -154,7 +190,7 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
 			}
 
 		});
@@ -171,103 +207,68 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(url, AmlViewsRepository.DiscoveryMethod.url);
+		EditingUtils.setID(url, AmlViewsRepository.DiscoveryMethod.Properties.url);
 		EditingUtils.setEEFtype(url, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.url, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.url, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createAnnotationAdvancedTableComposition(Composite parent) {
-		this.annotation = new ReferencesTable<Annotation>(AmlMessages.DiscoveryMethodPropertiesEditionPart_AnnotationLabel, new ReferencesTableListener<Annotation>() {			
-			public void handleAdd() { addToAnnotation();}
-			public void handleEdit(Annotation element) { editAnnotation(element); }
-			public void handleMove(Annotation element, int oldIndex, int newIndex) { moveAnnotation(element, oldIndex, newIndex); }
-			public void handleRemove(Annotation element) { removeFromAnnotation(element); }
-			public void navigateTo(Annotation element) { }
+	protected Composite createAnnotationAdvancedTableComposition(Composite parent) {
+		this.annotation = new ReferencesTable(AmlMessages.DiscoveryMethodPropertiesEditionPart_AnnotationLabel, new ReferencesTableListener() {
+			public void handleAdd() { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				annotation.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				annotation.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				annotation.refresh();
+			}
+			public void handleRemove(EObject element) { 
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				annotation.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.annotation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.annotation, AmlViewsRepository.SWT_KIND));
+		for (ViewerFilter filter : this.annotationFilters) {
+			this.annotation.addFilter(filter);
+		}
+		this.annotation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.annotation, AmlViewsRepository.SWT_KIND));
 		this.annotation.createControls(parent);
+		this.annotation.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
 		this.annotation.setLowerBound(0);
 		this.annotation.setUpperBound(-1);
-		annotation.setID(AmlViewsRepository.DiscoveryMethod.annotation);
+		annotation.setID(AmlViewsRepository.DiscoveryMethod.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 *  
-	 */
-	protected void moveAnnotation(Annotation element, int oldIndex, int newIndex) {
-		EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-		annotationEditUtil.moveElement(element, oldIndex, newIndex);
-		annotation.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 *  
-	 */
-	protected void addToAnnotation() {
-		// Start of user code addToAnnotation() method body
-				Annotation eObject = AmlFactory.eINSTANCE.createAnnotation();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						annotationEditUtil.addElement(propertiesEditionObject);
-						annotation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void removeFromAnnotation(Annotation element) {
-		// Start of user code removeFromAnnotation() method body
-				EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-				annotationEditUtil.removeElement(element);
-				annotation.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.REMOVE, null, editedElement));
-		// End of user code
-	}
-
-	/**
-	 *  
-	 */
-	protected void editAnnotation(Annotation element) {
-		// Start of user code editAnnotation() method body
-				EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						annotationEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						annotation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		// End of user code
+		return parent;
 	}
 
 	
-	protected void createAutoTriggerText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_AutoTriggerLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.autoTrigger, AmlViewsRepository.SWT_KIND));
+	protected Composite createAutoTriggerText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_AutoTriggerLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, AmlViewsRepository.SWT_KIND));
 		autoTrigger = new Text(parent, SWT.BORDER);
 		GridData autoTriggerData = new GridData(GridData.FILL_HORIZONTAL);
 		autoTrigger.setLayoutData(autoTriggerData);
@@ -283,7 +284,7 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
 			}
 
 		});
@@ -300,36 +301,66 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(autoTrigger, AmlViewsRepository.DiscoveryMethod.autoTrigger);
+		EditingUtils.setID(autoTrigger, AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger);
 		EditingUtils.setEEFtype(autoTrigger, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.autoTrigger, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createDescriptionTextarea(Composite parent) {
-		Label descriptionLabel = SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.description, AmlViewsRepository.SWT_KIND));
-		GridData descriptionLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionLabelData.horizontalSpan = 3;
-		descriptionLabel.setLayoutData(descriptionLabelData);
-		description = new Text(parent, SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL);
+	protected Composite createDescriptionText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.description, AmlViewsRepository.SWT_KIND));
+		description = new Text(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionData.horizontalSpan = 2;
-		descriptionData.heightHint = 80;
-		descriptionData.widthHint = 200;
 		description.setLayoutData(descriptionData);
-		EditingUtils.setID(description, AmlViewsRepository.DiscoveryMethod.description);
-		EditingUtils.setEEFtype(description, "eef::Textarea"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		description.addFocusListener(new FocusAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+			}
+
+		});
+		description.addKeyListener(new KeyAdapter() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				}
+			}
+
+		});
+		EditingUtils.setID(description, AmlViewsRepository.DiscoveryMethod.Properties.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.description, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createIdText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.id, AmlViewsRepository.SWT_KIND));
+	protected Composite createIdText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.id, AmlViewsRepository.SWT_KIND));
 		id = new Text(parent, SWT.BORDER);
 		GridData idData = new GridData(GridData.FILL_HORIZONTAL);
 		id.setLayoutData(idData);
@@ -345,7 +376,7 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 			}
 
 		});
@@ -362,19 +393,20 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(id, AmlViewsRepository.DiscoveryMethod.id);
+		EditingUtils.setID(id, AmlViewsRepository.DiscoveryMethod.Properties.id);
 		EditingUtils.setEEFtype(id, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.id, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.id, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createImportTypeText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_ImportTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.importType, AmlViewsRepository.SWT_KIND));
+	protected Composite createImportTypeText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_ImportTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.importType, AmlViewsRepository.SWT_KIND));
 		importType = new Text(parent, SWT.BORDER);
 		GridData importTypeData = new GridData(GridData.FILL_HORIZONTAL);
 		importType.setLayoutData(importTypeData);
@@ -390,7 +422,7 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
 			}
 
 		});
@@ -407,19 +439,20 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(importType, AmlViewsRepository.DiscoveryMethod.importType);
+		EditingUtils.setID(importType, AmlViewsRepository.DiscoveryMethod.Properties.importType);
 		EditingUtils.setEEFtype(importType, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.importType, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.importType, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createLabelText(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.label, AmlViewsRepository.SWT_KIND));
+	protected Composite createLabelText(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.label, AmlViewsRepository.SWT_KIND));
 		label = new Text(parent, SWT.BORDER);
 		GridData labelData = new GridData(GridData.FILL_HORIZONTAL);
 		label.setLayoutData(labelData);
@@ -435,7 +468,7 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 			}
 
 		});
@@ -452,26 +485,42 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 				}
 			}
 
 		});
-		EditingUtils.setID(label, AmlViewsRepository.DiscoveryMethod.label);
+		EditingUtils.setID(label, AmlViewsRepository.DiscoveryMethod.Properties.label);
 		EditingUtils.setEEFtype(label, "eef::Text"); //$NON-NLS-1$
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.label, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createTypeEMFComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.type, AmlViewsRepository.SWT_KIND));
+	protected Composite createTypeEMFComboViewer(Composite parent) {
+		SWTUtils.createPartLabel(parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.type, AmlViewsRepository.SWT_KIND));
 		type = new EMFComboViewer(parent);
 		type.setContentProvider(new ArrayContentProvider());
 		type.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
 		GridData typeData = new GridData(GridData.FILL_HORIZONTAL);
 		type.getCombo().setLayoutData(typeData);
-		type.setID(AmlViewsRepository.DiscoveryMethod.type);
-		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.type, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		type.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartImpl.this, AmlViewsRepository.DiscoveryMethod.Properties.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getType()));
+			}
+
+		});
+		type.setID(AmlViewsRepository.DiscoveryMethod.Properties.type);
+		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.type, AmlViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -513,83 +562,30 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToAdd()
-	 * 
-	 */
-	public List getAnnotationToAdd() {
-		return annotationEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToRemove()
-	 * 
-	 */
-	public List getAnnotationToRemove() {
-		return annotationEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToEdit()
-	 * 
-	 */
-	public Map getAnnotationToEdit() {
-		return annotationEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToMove()
-	 * 
-	 */
-	public List getAnnotationToMove() {
-		return annotationEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationTable()
-	 * 
-	 */
-	public List getAnnotationTable() {
-		return annotationEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#initAnnotation(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initAnnotation(EObject current, EReference containingFeature, EReference feature) {
+	public void initAnnotation(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			annotationEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			annotationEditUtil = new EMFListEditUtil(current, feature);
-		this.annotation.setInput(annotationEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		annotation.setContentProvider(contentProvider);
+		annotation.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#updateAnnotation(EObject newValue)
+	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#updateAnnotation()
 	 * 
 	 */
-	public void updateAnnotation(EObject newValue) {
-		if(annotationEditUtil != null){
-			annotationEditUtil.reinit(newValue);
-			annotation.refresh();
-		}
-	}
+	public void updateAnnotation() {
+	annotation.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -599,6 +595,9 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 	 */
 	public void addFilterToAnnotation(ViewerFilter filter) {
 		annotationFilters.add(filter);
+		if (this.annotation != null) {
+			this.annotation.addFilter(filter);
+		}
 	}
 
 	/**
@@ -618,7 +617,7 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 	 * 
 	 */
 	public boolean isContainedInAnnotationTable(EObject element) {
-		return annotationEditUtil.contains(element);
+		return ((ReferencesTableSettings)annotation.getInput()).contains(element);
 	}
 
 
@@ -667,7 +666,7 @@ public class DiscoveryMethodPropertiesEditionPartImpl extends CompositePropertie
 		if (newValue != null) {
 			description.setText(newValue);
 		} else {
-			description.setText("");  //$NON-NLS-1$
+			description.setText(""); //$NON-NLS-1$
 		}
 	}
 

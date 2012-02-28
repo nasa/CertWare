@@ -1,19 +1,12 @@
-/*
- * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.cae.parts.forms;
 
 // Start of user code for imports
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import net.certware.argument.arm.ArmFactory;
-import net.certware.argument.arm.TaggedValue;
-import net.certware.argument.cae.CaeFactory;
-import net.certware.argument.cae.Claim;
-import net.certware.argument.cae.Evidence;
-import net.certware.argument.cae.Justification;
 import net.certware.argument.cae.parts.ArgumentPropertiesEditionPart;
 import net.certware.argument.cae.parts.CaeViewsRepository;
 import net.certware.argument.cae.providers.CaeMessages;
@@ -23,27 +16,29 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -62,22 +57,18 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	protected Text identifier;
 	protected Text description;
 	protected Text content;
-	protected EMFListEditUtil isTaggedEditUtil;
-		protected ReferencesTable<? extends EObject> isTagged;
-		protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil justificationEditUtil;
-		protected ReferencesTable<? extends EObject> justification;
-		protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil evidenceEditUtil;
-		protected ReferencesTable<? extends EObject> evidence;
-		protected List<ViewerFilter> evidenceBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> evidenceFilters = new ArrayList<ViewerFilter>();
-	protected EMFListEditUtil claimsEditUtil;
-		protected ReferencesTable<? extends EObject> claims;
-		protected List<ViewerFilter> claimsBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable isTagged;
+	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable justification;
+	protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable evidence;
+	protected List<ViewerFilter> evidenceBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> evidenceFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable claims;
+	protected List<ViewerFilter> claimsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -116,17 +107,55 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence argumentStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = argumentStep.addStep(CaeViewsRepository.Argument.Properties.class);
+		propertiesStep.addStep(CaeViewsRepository.Argument.Properties.identifier);
+		propertiesStep.addStep(CaeViewsRepository.Argument.Properties.description);
+		propertiesStep.addStep(CaeViewsRepository.Argument.Properties.content);
+		propertiesStep.addStep(CaeViewsRepository.Argument.Properties.isTagged);
+		propertiesStep.addStep(CaeViewsRepository.Argument.Properties.justification);
+		propertiesStep.addStep(CaeViewsRepository.Argument.Properties.evidence);
+		propertiesStep.addStep(CaeViewsRepository.Argument.Properties.claims);
 		
-		// End of user code
+		
+		composer = new PartComposer(argumentStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == CaeViewsRepository.Argument.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == CaeViewsRepository.Argument.Properties.identifier) {
+					return 		createIdentifierText(widgetFactory, parent);
+				}
+				if (key == CaeViewsRepository.Argument.Properties.description) {
+					return 		createDescriptionText(widgetFactory, parent);
+				}
+				if (key == CaeViewsRepository.Argument.Properties.content) {
+					return 		createContentText(widgetFactory, parent);
+				}
+				if (key == CaeViewsRepository.Argument.Properties.isTagged) {
+					return createIsTaggedTableComposition(widgetFactory, parent);
+				}
+				if (key == CaeViewsRepository.Argument.Properties.justification) {
+					return createJustificationTableComposition(widgetFactory, parent);
+				}
+				if (key == CaeViewsRepository.Argument.Properties.evidence) {
+					return createEvidenceTableComposition(widgetFactory, parent);
+				}
+				if (key == CaeViewsRepository.Argument.Properties.claims) {
+					return createClaimsTableComposition(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(CaeMessages.ArgumentPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -135,19 +164,13 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createIdentifierText(widgetFactory, propertiesGroup);
-		createDescriptionText(widgetFactory, propertiesGroup);
-		createContentTextarea(widgetFactory, propertiesGroup);
-		createIsTaggedTableComposition(widgetFactory, propertiesGroup);
-		createJustificationTableComposition(widgetFactory, propertiesGroup);
-		createEvidenceTableComposition(widgetFactory, propertiesGroup);
-		createClaimsTableComposition(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createIdentifierText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ArgumentPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.identifier, CaeViewsRepository.FORM_KIND));
+	protected Composite createIdentifierText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ArgumentPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.Properties.identifier, CaeViewsRepository.FORM_KIND));
 		identifier = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		identifier.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -162,7 +185,7 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 			}
 		});
 		identifier.addKeyListener(new KeyAdapter() {
@@ -175,18 +198,19 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(identifier, CaeViewsRepository.Argument.identifier);
+		EditingUtils.setID(identifier, CaeViewsRepository.Argument.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.identifier, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.Properties.identifier, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createDescriptionText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ArgumentPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.description, CaeViewsRepository.FORM_KIND));
+	protected Composite createDescriptionText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ArgumentPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.Properties.description, CaeViewsRepository.FORM_KIND));
 		description = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		description.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -201,7 +225,7 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 			}
 		});
 		description.addKeyListener(new KeyAdapter() {
@@ -214,396 +238,246 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(description, CaeViewsRepository.Argument.description);
+		EditingUtils.setID(description, CaeViewsRepository.Argument.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.description, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.Properties.description, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createContentTextarea(FormToolkit widgetFactory, Composite parent) {
-		Label contentLabel = FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ArgumentPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.content, CaeViewsRepository.FORM_KIND));
-		GridData contentLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		contentLabelData.horizontalSpan = 3;
-		contentLabel.setLayoutData(contentLabelData);
-		content = widgetFactory.createText(parent, "", SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL); //$NON-NLS-1$
+	protected Composite createContentText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ArgumentPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.Properties.content, CaeViewsRepository.FORM_KIND));
+		content = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		content.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
-		contentData.horizontalSpan = 2;
-		contentData.heightHint = 80;
-		contentData.widthHint = 200;
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
-
 			/**
-			 * {@inheritDoc}
-			 * 
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 * 
 			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
 			}
-
 		});
-		EditingUtils.setID(content, CaeViewsRepository.Argument.content);
-		EditingUtils.setEEFtype(content, "eef::Textarea"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.content, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		content.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(content, CaeViewsRepository.Argument.Properties.content);
+		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.Properties.content, CaeViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createIsTaggedTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.isTagged = new ReferencesTable<TaggedValue>(CaeMessages.ArgumentPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener<TaggedValue>() {			
-			public void handleAdd() { addToIsTagged();}
-			public void handleEdit(TaggedValue element) { editIsTagged(element); }
-			public void handleMove(TaggedValue element, int oldIndex, int newIndex) { moveIsTagged(element, oldIndex, newIndex); }
-			public void handleRemove(TaggedValue element) { removeFromIsTagged(element); }
-			public void navigateTo(TaggedValue element) { }
+	protected Composite createIsTaggedTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.isTagged = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				isTagged.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				isTagged.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				isTagged.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				isTagged.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.isTagged.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.isTagged, CaeViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.isTaggedFilters) {
+			this.isTagged.addFilter(filter);
+		}
+		this.isTagged.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.Properties.isTagged, CaeViewsRepository.FORM_KIND));
 		this.isTagged.createControls(parent, widgetFactory);
+		this.isTagged.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData isTaggedData = new GridData(GridData.FILL_HORIZONTAL);
 		isTaggedData.horizontalSpan = 3;
 		this.isTagged.setLayoutData(isTaggedData);
 		this.isTagged.setLowerBound(0);
 		this.isTagged.setUpperBound(-1);
-		isTagged.setID(CaeViewsRepository.Argument.isTagged);
+		isTagged.setID(CaeViewsRepository.Argument.Properties.isTagged);
 		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveIsTagged(TaggedValue element, int oldIndex, int newIndex) {
-		EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-		isTaggedEditUtil.moveElement(element, oldIndex, newIndex);
-		isTagged.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToIsTagged() {
-		// Start of user code addToIsTagged() method body
-				TaggedValue eObject = ArmFactory.eINSTANCE.createTaggedValue();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						isTaggedEditUtil.addElement(propertiesEditionObject);
-						isTagged.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromIsTagged(TaggedValue element) {
-		// Start of user code for the removeFromIsTagged() method body
-				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-				isTaggedEditUtil.removeElement(element);
-				isTagged.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editIsTagged(TaggedValue element) {
-		// Start of user code editIsTagged() method body
-				EObject editedElement = isTaggedEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						isTaggedEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						isTagged.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createJustificationTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.justification = new ReferencesTable<Justification>(CaeMessages.ArgumentPropertiesEditionPart_JustificationLabel, new ReferencesTableListener<Justification>() {			
-			public void handleAdd() { addToJustification();}
-			public void handleEdit(Justification element) { editJustification(element); }
-			public void handleMove(Justification element, int oldIndex, int newIndex) { moveJustification(element, oldIndex, newIndex); }
-			public void handleRemove(Justification element) { removeFromJustification(element); }
-			public void navigateTo(Justification element) { }
+	protected Composite createJustificationTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.justification = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_JustificationLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				justification.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				justification.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				justification.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				justification.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.justification.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.justification, CaeViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.justificationFilters) {
+			this.justification.addFilter(filter);
+		}
+		this.justification.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.Properties.justification, CaeViewsRepository.FORM_KIND));
 		this.justification.createControls(parent, widgetFactory);
+		this.justification.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.justification, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData justificationData = new GridData(GridData.FILL_HORIZONTAL);
 		justificationData.horizontalSpan = 3;
 		this.justification.setLayoutData(justificationData);
 		this.justification.setLowerBound(0);
 		this.justification.setUpperBound(-1);
-		justification.setID(CaeViewsRepository.Argument.justification);
+		justification.setID(CaeViewsRepository.Argument.Properties.justification);
 		justification.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveJustification(Justification element, int oldIndex, int newIndex) {
-		EObject editedElement = justificationEditUtil.foundCorrespondingEObject(element);
-		justificationEditUtil.moveElement(element, oldIndex, newIndex);
-		justification.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToJustification() {
-		// Start of user code addToJustification() method body
-				Justification eObject = CaeFactory.eINSTANCE.createJustification();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						justificationEditUtil.addElement(propertiesEditionObject);
-						justification.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromJustification(Justification element) {
-		// Start of user code for the removeFromJustification() method body
-				EObject editedElement = justificationEditUtil.foundCorrespondingEObject(element);
-				justificationEditUtil.removeElement(element);
-				justification.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editJustification(Justification element) {
-		// Start of user code editJustification() method body
-				EObject editedElement = justificationEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						justificationEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						justification.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createEvidenceTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.evidence = new ReferencesTable<Evidence>(CaeMessages.ArgumentPropertiesEditionPart_EvidenceLabel, new ReferencesTableListener<Evidence>() {			
-			public void handleAdd() { addToEvidence();}
-			public void handleEdit(Evidence element) { editEvidence(element); }
-			public void handleMove(Evidence element, int oldIndex, int newIndex) { moveEvidence(element, oldIndex, newIndex); }
-			public void handleRemove(Evidence element) { removeFromEvidence(element); }
-			public void navigateTo(Evidence element) { }
+	protected Composite createEvidenceTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.evidence = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_EvidenceLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				evidence.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				evidence.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				evidence.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				evidence.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.evidence.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.evidence, CaeViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.evidenceFilters) {
+			this.evidence.addFilter(filter);
+		}
+		this.evidence.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.Properties.evidence, CaeViewsRepository.FORM_KIND));
 		this.evidence.createControls(parent, widgetFactory);
+		this.evidence.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.evidence, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData evidenceData = new GridData(GridData.FILL_HORIZONTAL);
 		evidenceData.horizontalSpan = 3;
 		this.evidence.setLayoutData(evidenceData);
 		this.evidence.setLowerBound(0);
 		this.evidence.setUpperBound(-1);
-		evidence.setID(CaeViewsRepository.Argument.evidence);
+		evidence.setID(CaeViewsRepository.Argument.Properties.evidence);
 		evidence.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveEvidence(Evidence element, int oldIndex, int newIndex) {
-		EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
-		evidenceEditUtil.moveElement(element, oldIndex, newIndex);
-		evidence.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToEvidence() {
-		// Start of user code addToEvidence() method body
-				Evidence eObject = CaeFactory.eINSTANCE.createEvidence();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						evidenceEditUtil.addElement(propertiesEditionObject);
-						evidence.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromEvidence(Evidence element) {
-		// Start of user code for the removeFromEvidence() method body
-				EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
-				evidenceEditUtil.removeElement(element);
-				evidence.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editEvidence(Evidence element) {
-		// Start of user code editEvidence() method body
-				EObject editedElement = evidenceEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						evidenceEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						evidence.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createClaimsTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.claims = new ReferencesTable<Claim>(CaeMessages.ArgumentPropertiesEditionPart_ClaimsLabel, new ReferencesTableListener<Claim>() {			
-			public void handleAdd() { addToClaims();}
-			public void handleEdit(Claim element) { editClaims(element); }
-			public void handleMove(Claim element, int oldIndex, int newIndex) { moveClaims(element, oldIndex, newIndex); }
-			public void handleRemove(Claim element) { removeFromClaims(element); }
-			public void navigateTo(Claim element) { }
+	protected Composite createClaimsTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.claims = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_ClaimsLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				claims.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				claims.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				claims.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				claims.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.claims.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.claims, CaeViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.claimsFilters) {
+			this.claims.addFilter(filter);
+		}
+		this.claims.setHelpText(propertiesEditionComponent.getHelpContent(CaeViewsRepository.Argument.Properties.claims, CaeViewsRepository.FORM_KIND));
 		this.claims.createControls(parent, widgetFactory);
+		this.claims.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.Properties.claims, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData claimsData = new GridData(GridData.FILL_HORIZONTAL);
 		claimsData.horizontalSpan = 3;
 		this.claims.setLayoutData(claimsData);
 		this.claims.setLowerBound(0);
 		this.claims.setUpperBound(-1);
-		claims.setID(CaeViewsRepository.Argument.claims);
+		claims.setID(CaeViewsRepository.Argument.Properties.claims);
 		claims.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveClaims(Claim element, int oldIndex, int newIndex) {
-		EObject editedElement = claimsEditUtil.foundCorrespondingEObject(element);
-		claimsEditUtil.moveElement(element, oldIndex, newIndex);
-		claims.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToClaims() {
-		// Start of user code addToClaims() method body
-				Claim eObject = CaeFactory.eINSTANCE.createClaim();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						claimsEditUtil.addElement(propertiesEditionObject);
-						claims.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromClaims(Claim element) {
-		// Start of user code for the removeFromClaims() method body
-				EObject editedElement = claimsEditUtil.foundCorrespondingEObject(element);
-				claimsEditUtil.removeElement(element);
-				claims.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editClaims(Claim element) {
-		// Start of user code editClaims() method body
-				EObject editedElement = claimsEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						claimsEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						claims.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartForm.this, CaeViewsRepository.Argument.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 
@@ -690,88 +564,35 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 		if (newValue != null) {
 			content.setText(newValue);
 		} else {
-			content.setText("");  //$NON-NLS-1$
+			content.setText(""); //$NON-NLS-1$
 		}
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getIsTaggedToAdd()
-	 * 
-	 */
-	public List getIsTaggedToAdd() {
-		return isTaggedEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getIsTaggedToRemove()
-	 * 
-	 */
-	public List getIsTaggedToRemove() {
-		return isTaggedEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getIsTaggedToEdit()
-	 * 
-	 */
-	public Map getIsTaggedToEdit() {
-		return isTaggedEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getIsTaggedToMove()
-	 * 
-	 */
-	public List getIsTaggedToMove() {
-		return isTaggedEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getIsTaggedTable()
-	 * 
-	 */
-	public List getIsTaggedTable() {
-		return isTaggedEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#initIsTagged(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature) {
+	public void initIsTagged(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			isTaggedEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			isTaggedEditUtil = new EMFListEditUtil(current, feature);
-		this.isTagged.setInput(isTaggedEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		isTagged.setContentProvider(contentProvider);
+		isTagged.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateIsTagged(EObject newValue)
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateIsTagged()
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue) {
-		if(isTaggedEditUtil != null){
-			isTaggedEditUtil.reinit(newValue);
-			isTagged.refresh();
-		}
-	}
+	public void updateIsTagged() {
+	isTagged.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -781,6 +602,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToIsTagged(ViewerFilter filter) {
 		isTaggedFilters.add(filter);
+		if (this.isTagged != null) {
+			this.isTagged.addFilter(filter);
+		}
 	}
 
 	/**
@@ -800,87 +624,34 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInIsTaggedTable(EObject element) {
-		return isTaggedEditUtil.contains(element);
+		return ((ReferencesTableSettings)isTagged.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getJustificationToAdd()
-	 * 
-	 */
-	public List getJustificationToAdd() {
-		return justificationEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getJustificationToRemove()
-	 * 
-	 */
-	public List getJustificationToRemove() {
-		return justificationEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getJustificationToEdit()
-	 * 
-	 */
-	public Map getJustificationToEdit() {
-		return justificationEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getJustificationToMove()
-	 * 
-	 */
-	public List getJustificationToMove() {
-		return justificationEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getJustificationTable()
-	 * 
-	 */
-	public List getJustificationTable() {
-		return justificationEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#initJustification(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initJustification(EObject current, EReference containingFeature, EReference feature) {
+	public void initJustification(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			justificationEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			justificationEditUtil = new EMFListEditUtil(current, feature);
-		this.justification.setInput(justificationEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		justification.setContentProvider(contentProvider);
+		justification.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateJustification(EObject newValue)
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateJustification()
 	 * 
 	 */
-	public void updateJustification(EObject newValue) {
-		if(justificationEditUtil != null){
-			justificationEditUtil.reinit(newValue);
-			justification.refresh();
-		}
-	}
+	public void updateJustification() {
+	justification.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -890,6 +661,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToJustification(ViewerFilter filter) {
 		justificationFilters.add(filter);
+		if (this.justification != null) {
+			this.justification.addFilter(filter);
+		}
 	}
 
 	/**
@@ -909,87 +683,34 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInJustificationTable(EObject element) {
-		return justificationEditUtil.contains(element);
+		return ((ReferencesTableSettings)justification.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getEvidenceToAdd()
-	 * 
-	 */
-	public List getEvidenceToAdd() {
-		return evidenceEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getEvidenceToRemove()
-	 * 
-	 */
-	public List getEvidenceToRemove() {
-		return evidenceEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getEvidenceToEdit()
-	 * 
-	 */
-	public Map getEvidenceToEdit() {
-		return evidenceEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getEvidenceToMove()
-	 * 
-	 */
-	public List getEvidenceToMove() {
-		return evidenceEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getEvidenceTable()
-	 * 
-	 */
-	public List getEvidenceTable() {
-		return evidenceEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#initEvidence(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initEvidence(EObject current, EReference containingFeature, EReference feature) {
+	public void initEvidence(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			evidenceEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			evidenceEditUtil = new EMFListEditUtil(current, feature);
-		this.evidence.setInput(evidenceEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		evidence.setContentProvider(contentProvider);
+		evidence.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateEvidence(EObject newValue)
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateEvidence()
 	 * 
 	 */
-	public void updateEvidence(EObject newValue) {
-		if(evidenceEditUtil != null){
-			evidenceEditUtil.reinit(newValue);
-			evidence.refresh();
-		}
-	}
+	public void updateEvidence() {
+	evidence.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -999,6 +720,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToEvidence(ViewerFilter filter) {
 		evidenceFilters.add(filter);
+		if (this.evidence != null) {
+			this.evidence.addFilter(filter);
+		}
 	}
 
 	/**
@@ -1018,87 +742,34 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInEvidenceTable(EObject element) {
-		return evidenceEditUtil.contains(element);
+		return ((ReferencesTableSettings)evidence.getInput()).contains(element);
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToAdd()
-	 * 
-	 */
-	public List getClaimsToAdd() {
-		return claimsEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToRemove()
-	 * 
-	 */
-	public List getClaimsToRemove() {
-		return claimsEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToEdit()
-	 * 
-	 */
-	public Map getClaimsToEdit() {
-		return claimsEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsToMove()
-	 * 
-	 */
-	public List getClaimsToMove() {
-		return claimsEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#getClaimsTable()
-	 * 
-	 */
-	public List getClaimsTable() {
-		return claimsEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#initClaims(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initClaims(EObject current, EReference containingFeature, EReference feature) {
+	public void initClaims(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			claimsEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			claimsEditUtil = new EMFListEditUtil(current, feature);
-		this.claims.setInput(claimsEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		claims.setContentProvider(contentProvider);
+		claims.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateClaims(EObject newValue)
+	 * @see net.certware.argument.cae.parts.ArgumentPropertiesEditionPart#updateClaims()
 	 * 
 	 */
-	public void updateClaims(EObject newValue) {
-		if(claimsEditUtil != null){
-			claimsEditUtil.reinit(newValue);
-			claims.refresh();
-		}
-	}
+	public void updateClaims() {
+	claims.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -1108,6 +779,9 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 */
 	public void addFilterToClaims(ViewerFilter filter) {
 		claimsFilters.add(filter);
+		if (this.claims != null) {
+			this.claims.addFilter(filter);
+		}
 	}
 
 	/**
@@ -1127,7 +801,7 @@ public class ArgumentPropertiesEditionPartForm extends CompositePropertiesEditio
 	 * 
 	 */
 	public boolean isContainedInClaimsTable(EObject element) {
-		return claimsEditUtil.contains(element);
+		return ((ReferencesTableSettings)claims.getInput()).contains(element);
 	}
 
 

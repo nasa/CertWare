@@ -1,14 +1,11 @@
-/*
- * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.cae.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -63,35 +60,7 @@ public interface ClaimPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -99,14 +68,14 @@ public interface ClaimPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -163,35 +132,7 @@ public interface ClaimPropertiesEditionPart {
 	public void setToBeSupported(Boolean newValue);
 
 
-	/**
-	 * @return the strategy to add
-	 * 
-	 */
-	public List getStrategyToAdd();
 
-	/**
-	 * @return the strategy to remove
-	 * 
-	 */
-	public List getStrategyToRemove();
-
-	/**
-	 * @return the strategy to move
-	 * 
-	 */
-	public List getStrategyToMove();
-
-	/**
-	 * @return the strategy to edit
-	 * 
-	 */
-	public Map getStrategyToEdit();
-
-	/**
-	 * @return the current strategy table
-	 * 
-	 */
-	public List getStrategyTable();
 
 	/**
 	 * Init the strategy
@@ -199,14 +140,14 @@ public interface ClaimPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initStrategy(EObject current, EReference containingFeature, EReference feature);
+	public void initStrategy(ReferencesTableSettings settings);
 
 	/**
 	 * Update the strategy
 	 * @param newValue the strategy to update
 	 * 
 	 */
-	public void updateStrategy(EObject newValue);
+	public void updateStrategy();
 
 	/**
 	 * Adds the given filter to the strategy edition editor.
@@ -235,35 +176,7 @@ public interface ClaimPropertiesEditionPart {
 	public boolean isContainedInStrategyTable(EObject element);
 
 
-	/**
-	 * @return the assumption to add
-	 * 
-	 */
-	public List getAssumptionToAdd();
 
-	/**
-	 * @return the assumption to remove
-	 * 
-	 */
-	public List getAssumptionToRemove();
-
-	/**
-	 * @return the assumption to move
-	 * 
-	 */
-	public List getAssumptionToMove();
-
-	/**
-	 * @return the assumption to edit
-	 * 
-	 */
-	public Map getAssumptionToEdit();
-
-	/**
-	 * @return the current assumption table
-	 * 
-	 */
-	public List getAssumptionTable();
 
 	/**
 	 * Init the assumption
@@ -271,14 +184,14 @@ public interface ClaimPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initAssumption(EObject current, EReference containingFeature, EReference feature);
+	public void initAssumption(ReferencesTableSettings settings);
 
 	/**
 	 * Update the assumption
 	 * @param newValue the assumption to update
 	 * 
 	 */
-	public void updateAssumption(EObject newValue);
+	public void updateAssumption();
 
 	/**
 	 * Adds the given filter to the assumption edition editor.
@@ -307,35 +220,7 @@ public interface ClaimPropertiesEditionPart {
 	public boolean isContainedInAssumptionTable(EObject element);
 
 
-	/**
-	 * @return the context to add
-	 * 
-	 */
-	public List getContextToAdd();
 
-	/**
-	 * @return the context to remove
-	 * 
-	 */
-	public List getContextToRemove();
-
-	/**
-	 * @return the context to move
-	 * 
-	 */
-	public List getContextToMove();
-
-	/**
-	 * @return the context to edit
-	 * 
-	 */
-	public Map getContextToEdit();
-
-	/**
-	 * @return the current context table
-	 * 
-	 */
-	public List getContextTable();
 
 	/**
 	 * Init the context
@@ -343,14 +228,14 @@ public interface ClaimPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initContext(EObject current, EReference containingFeature, EReference feature);
+	public void initContext(ReferencesTableSettings settings);
 
 	/**
 	 * Update the context
 	 * @param newValue the context to update
 	 * 
 	 */
-	public void updateContext(EObject newValue);
+	public void updateContext();
 
 	/**
 	 * Adds the given filter to the context edition editor.
@@ -379,35 +264,7 @@ public interface ClaimPropertiesEditionPart {
 	public boolean isContainedInContextTable(EObject element);
 
 
-	/**
-	 * @return the solution to add
-	 * 
-	 */
-	public List getSolutionToAdd();
 
-	/**
-	 * @return the solution to remove
-	 * 
-	 */
-	public List getSolutionToRemove();
-
-	/**
-	 * @return the solution to move
-	 * 
-	 */
-	public List getSolutionToMove();
-
-	/**
-	 * @return the solution to edit
-	 * 
-	 */
-	public Map getSolutionToEdit();
-
-	/**
-	 * @return the current solution table
-	 * 
-	 */
-	public List getSolutionTable();
 
 	/**
 	 * Init the solution
@@ -415,14 +272,14 @@ public interface ClaimPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initSolution(EObject current, EReference containingFeature, EReference feature);
+	public void initSolution(ReferencesTableSettings settings);
 
 	/**
 	 * Update the solution
 	 * @param newValue the solution to update
 	 * 
 	 */
-	public void updateSolution(EObject newValue);
+	public void updateSolution();
 
 	/**
 	 * Adds the given filter to the solution edition editor.

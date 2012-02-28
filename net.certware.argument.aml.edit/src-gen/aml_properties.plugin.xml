@@ -4,17 +4,11 @@
  <plugin>
 
   <!-- EEF extensions -->
-  <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
-      <PropertiesEditionComponentProvider
-            providerClass="net.certware.argument.aml.providers.AmlPackagePropertiesEditionProvider">
-      </PropertiesEditionComponentProvider>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
-      <PropertiesEditionPolicyProvider
-            providerClass="net.certware.argument.aml.providers.AmlPackagePropertiesEditionPolicyProvider">
-      </PropertiesEditionPolicyProvider>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.ai.sri.com/AML"
+            class="net.certware.argument.aml.providers.AmlEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
    </extension>
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">

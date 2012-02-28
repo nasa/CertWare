@@ -18,6 +18,10 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
@@ -91,17 +95,47 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence itemStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = itemStep.addStep(ChecklistViewsRepository.Item.Properties.class);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.identifier);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.description);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.reference);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.result);
+		propertiesStep.addStep(ChecklistViewsRepository.Item.Properties.comment);
 		
-		// End of user code
+		
+		composer = new PartComposer(itemStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == ChecklistViewsRepository.Item.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.identifier) {
+					return 		createIdentifierText(widgetFactory, parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.description) {
+					return 		createDescriptionText(widgetFactory, parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.reference) {
+					return 		createReferenceText(widgetFactory, parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.result) {
+					return createResultEMFComboViewer(widgetFactory, parent);
+				}
+				if (key == ChecklistViewsRepository.Item.Properties.comment) {
+					return 		createCommentText(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(ChecklistMessages.ItemPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -110,17 +144,13 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createIdentifierText(widgetFactory, propertiesGroup);
-		createDescriptionText(widgetFactory, propertiesGroup);
-		createReferenceText(widgetFactory, propertiesGroup);
-		createResultEMFComboViewer(widgetFactory, propertiesGroup);
-		createCommentText(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createIdentifierText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.identifier, ChecklistViewsRepository.FORM_KIND));
+	protected Composite createIdentifierText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.identifier, ChecklistViewsRepository.FORM_KIND));
 		identifier = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		identifier.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -135,7 +165,7 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 			}
 		});
 		identifier.addKeyListener(new KeyAdapter() {
@@ -148,18 +178,19 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(identifier, ChecklistViewsRepository.Item.identifier);
+		EditingUtils.setID(identifier, ChecklistViewsRepository.Item.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.identifier, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.identifier, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createDescriptionText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.description, ChecklistViewsRepository.FORM_KIND));
+	protected Composite createDescriptionText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.description, ChecklistViewsRepository.FORM_KIND));
 		description = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		description.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -174,7 +205,7 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 			}
 		});
 		description.addKeyListener(new KeyAdapter() {
@@ -187,18 +218,19 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(description, ChecklistViewsRepository.Item.description);
+		EditingUtils.setID(description, ChecklistViewsRepository.Item.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.description, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.description, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createReferenceText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_ReferenceLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.reference, ChecklistViewsRepository.FORM_KIND));
+	protected Composite createReferenceText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_ReferenceLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.reference, ChecklistViewsRepository.FORM_KIND));
 		reference = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		reference.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -213,7 +245,7 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
 			}
 		});
 		reference.addKeyListener(new KeyAdapter() {
@@ -226,18 +258,19 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.reference, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, reference.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(reference, ChecklistViewsRepository.Item.reference);
+		EditingUtils.setID(reference, ChecklistViewsRepository.Item.Properties.reference);
 		EditingUtils.setEEFtype(reference, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.reference, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.reference, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createResultEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_ResultLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.result, ChecklistViewsRepository.FORM_KIND));
+	protected Composite createResultEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_ResultLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.result, ChecklistViewsRepository.FORM_KIND));
 		result = new EMFComboViewer(parent);
 		result.setContentProvider(new ArrayContentProvider());
 		result.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
@@ -253,17 +286,18 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.result, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getResult()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.result, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getResult()));
 			}
 
 		});
-		result.setID(ChecklistViewsRepository.Item.result);
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.result, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		result.setID(ChecklistViewsRepository.Item.Properties.result);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.result, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createCommentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.comment, ChecklistViewsRepository.FORM_KIND));
+	protected Composite createCommentText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ItemPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Item.Properties.comment, ChecklistViewsRepository.FORM_KIND));
 		comment = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		comment.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -278,7 +312,7 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
 			}
 		});
 		comment.addKeyListener(new KeyAdapter() {
@@ -291,13 +325,14 @@ public class ItemPropertiesEditionPartForm extends CompositePropertiesEditionPar
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ItemPropertiesEditionPartForm.this, ChecklistViewsRepository.Item.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(comment, ChecklistViewsRepository.Item.comment);
+		EditingUtils.setID(comment, ChecklistViewsRepository.Item.Properties.comment);
 		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.comment, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Item.Properties.comment, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 

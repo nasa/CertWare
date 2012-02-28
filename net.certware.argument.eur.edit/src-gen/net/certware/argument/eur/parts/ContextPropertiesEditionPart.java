@@ -1,15 +1,11 @@
 /**
- * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
- * All rights reserved.
+ * Generated with Acceleo
  */
 package net.certware.argument.eur.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -17,7 +13,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface ContextPropertiesEditionPart {
@@ -64,35 +60,7 @@ public interface ContextPropertiesEditionPart {
 	public void setContent(String newValue);
 
 
-	/**
-	 * @return the isTagged to add
-	 * 
-	 */
-	public List getIsTaggedToAdd();
 
-	/**
-	 * @return the isTagged to remove
-	 * 
-	 */
-	public List getIsTaggedToRemove();
-
-	/**
-	 * @return the isTagged to move
-	 * 
-	 */
-	public List getIsTaggedToMove();
-
-	/**
-	 * @return the isTagged to edit
-	 * 
-	 */
-	public Map getIsTaggedToEdit();
-
-	/**
-	 * @return the current isTagged table
-	 * 
-	 */
-	public List getIsTaggedTable();
 
 	/**
 	 * Init the isTagged
@@ -100,14 +68,14 @@ public interface ContextPropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initIsTagged(EObject current, EReference containingFeature, EReference feature);
+	public void initIsTagged(ReferencesTableSettings settings);
 
 	/**
 	 * Update the isTagged
 	 * @param newValue the isTagged to update
 	 * 
 	 */
-	public void updateIsTagged(EObject newValue);
+	public void updateIsTagged();
 
 	/**
 	 * Adds the given filter to the isTagged edition editor.
@@ -136,38 +104,20 @@ public interface ContextPropertiesEditionPart {
 	public boolean isContainedInIsTaggedTable(EObject element);
 
 
-	/**
-	 * @return the assumption to add
-	 * 
-	 */
-	public List getAssumptionToAdd();
 
-	/**
-	 * @return the assumption to remove
-	 * 
-	 */
-	public List getAssumptionToRemove();
-
-	/**
-	 * @return the current assumption table
-	 * 
-	 */
-	public List getAssumptionTable();
 
 	/**
 	 * Init the assumption
-	 * @param current the current value
-	 * @param containgFeature the feature where to navigate if necessary
-	 * @param feature the feature to manage
+	 * @param settings settings for the assumption ReferencesTable 
 	 */
-	public void initAssumption(EObject current, EReference containingFeature, EReference feature);
+	public void initAssumption(ReferencesTableSettings settings);
 
 	/**
 	 * Update the assumption
 	 * @param newValue the assumption to update
 	 * 
 	 */
-	public void updateAssumption(EObject newValue);
+	public void updateAssumption();
 
 	/**
 	 * Adds the given filter to the assumption edition editor.

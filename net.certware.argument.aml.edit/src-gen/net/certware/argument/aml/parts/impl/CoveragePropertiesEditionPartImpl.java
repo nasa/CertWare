@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.impl;
 
 // Start of user code for imports
@@ -9,16 +11,17 @@ import net.certware.argument.aml.providers.AmlMessages;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesContextService;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
+import org.eclipse.emf.eef.runtime.ui.widgets.EEFFeatureEditorDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -27,16 +30,15 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
 
 
 
-// End of user code	
+// End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class CoveragePropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, CoveragePropertiesEditionPart {
@@ -80,18 +82,32 @@ public class CoveragePropertiesEditionPartImpl extends CompositePropertiesEditio
 	 * 
 	 */
 	public void createControls(Composite view) { 
-		createPropertiesGroup(view);
-
-
-		// Start of user code for additional ui definition
+		CompositionSequence coverageStep = new BindingCompositionSequence(propertiesEditionComponent);
+		coverageStep
+			.addStep(AmlViewsRepository.Coverage.Properties.class)
+			.addStep(AmlViewsRepository.Coverage.Properties.mixed);
 		
-		// End of user code
+		
+		composer = new PartComposer(coverageStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.Coverage.Properties.class) {
+					return createPropertiesGroup(parent);
+				}
+				if (key == AmlViewsRepository.Coverage.Properties.mixed) {
+					return createMixedMultiValuedEditor(parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(Composite parent) {
+	protected Composite createPropertiesGroup(Composite parent) {
 		Group propertiesGroup = new Group(parent, SWT.NONE);
 		propertiesGroup.setText(AmlMessages.CoveragePropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesGroupData = new GridData(GridData.FILL_HORIZONTAL);
@@ -100,15 +116,15 @@ public class CoveragePropertiesEditionPartImpl extends CompositePropertiesEditio
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createMixedMultiValuedEditor(propertiesGroup);
+		return propertiesGroup;
 	}
 
-	protected void createMixedMultiValuedEditor(Composite parent) {
+	protected Composite createMixedMultiValuedEditor(Composite parent) {
 		mixed = new Text(parent, SWT.BORDER | SWT.READ_ONLY);
 		GridData mixedData = new GridData(GridData.FILL_HORIZONTAL);
 		mixedData.horizontalSpan = 2;
 		mixed.setLayoutData(mixedData);
-		EditingUtils.setID(mixed, AmlViewsRepository.Coverage.mixed);
+		EditingUtils.setID(mixed, AmlViewsRepository.Coverage.Properties.mixed);
 		EditingUtils.setEEFtype(mixed, "eef::MultiValuedEditor::field"); //$NON-NLS-1$
 		editMixed = new Button(parent, SWT.NONE);
 		editMixed.setText(AmlMessages.CoveragePropertiesEditionPart_MixedLabel);
@@ -122,23 +138,25 @@ public class CoveragePropertiesEditionPartImpl extends CompositePropertiesEditio
 			 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
 			 */
 			public void widgetSelected(SelectionEvent e) {
-				EObject coverage = PropertiesContextService.getInstance().lastElement();
-				FeatureEditorDialog dialog = new FeatureEditorDialog(Display.getDefault().getActiveShell(), new AdapterFactoryLabelProvider(adapterFactory), coverage, AmlPackage.eINSTANCE.getCoverage_Mixed().getEType(), 
-						mixedList, "Coverage", null, false, false); //$NON-NLS-1$
-						
+				EEFFeatureEditorDialog dialog = new EEFFeatureEditorDialog(
+						mixed.getShell(), "Coverage", new AdapterFactoryLabelProvider(adapterFactory), //$NON-NLS-1$
+						mixedList, AmlPackage.eINSTANCE.getCoverage_Mixed().getEType(), null,
+						false, true, 
+						null, null);
 				if (dialog.open() == Window.OK) {
 					mixedList = dialog.getResult();
 					if (mixedList == null) {
 						mixedList = new BasicEList();
 					}
 					mixed.setText(mixedList.toString());
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CoveragePropertiesEditionPartImpl.this, AmlViewsRepository.Coverage.mixed, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, mixedList));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CoveragePropertiesEditionPartImpl.this, AmlViewsRepository.Coverage.Properties.mixed, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, new BasicEList(mixedList)));
 					setHasChanged(true);
 				}
 			}
 		});
-		EditingUtils.setID(editMixed, AmlViewsRepository.Coverage.mixed);
+		EditingUtils.setID(editMixed, AmlViewsRepository.Coverage.Properties.mixed);
 		EditingUtils.setEEFtype(editMixed, "eef::MultiValuedEditor::browsebutton"); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -179,18 +197,18 @@ public class CoveragePropertiesEditionPartImpl extends CompositePropertiesEditio
 			mixed.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void addToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		mixedList.add(newValue);		
+
+	public void addToMixed(Object newValue) {
+		mixedList.add(newValue);
 		if (newValue != null) {
 			mixed.setText(mixedList.toString());
 		} else {
 			mixed.setText(""); //$NON-NLS-1$
 		}
 	}
-	
-	public void removeToMixed(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue) {
-		mixedList.remove(newValue);		
+
+	public void removeToMixed(Object newValue) {
+		mixedList.remove(newValue);
 		if (newValue != null) {
 			mixed.setText(mixedList.toString());
 		} else {

@@ -10,252 +10,96 @@ import net.certware.measurement.sco.ScoPackage;
 import net.certware.measurement.sco.parts.CriticalDefectChangeOrdersPropertiesEditionPart;
 import net.certware.measurement.sco.parts.ScoViewsRepository;
 
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
 	
 
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class CriticalDefectChangeOrdersPropertiesEditionComponent extends StandardPropertiesEditionComponent {
+public class CriticalDefectChangeOrdersPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	private String[] parts = {BASE_PART};
-
-	/**
-	 * The EObject to edit
-	 * 
-	 */
-	private CriticalDefectChangeOrders criticalDefectChangeOrders;
-
-	/**
-	 * The Base part
-	 * 
-	 */
-	protected CriticalDefectChangeOrdersPropertiesEditionPart basePart;
-
+	
 	/**
 	 * Default constructor
 	 * 
 	 */
-	public CriticalDefectChangeOrdersPropertiesEditionComponent(EObject criticalDefectChangeOrders, String editing_mode) {
-		if (criticalDefectChangeOrders instanceof CriticalDefectChangeOrders) {
-			this.criticalDefectChangeOrders = (CriticalDefectChangeOrders)criticalDefectChangeOrders;
-			if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode)) {
-				semanticAdapter = initializeSemanticAdapter();
-				this.criticalDefectChangeOrders.eAdapters().add(semanticAdapter);
-			}
-		}
-		this.editing_mode = editing_mode;
-	}
-
-	/**
-	 * Initialize the semantic model listener for live editing mode
-	 * 
-	 * @return the semantic model listener
-	 * 
-	 */
-	private AdapterImpl initializeSemanticAdapter() {
-		return new EContentAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
-			 */
-			public void notifyChanged(final Notification msg) {
-				if (basePart == null)
-					CriticalDefectChangeOrdersPropertiesEditionComponent.this.dispose();
-				else {
-					Runnable updateRunnable = new Runnable() {
-						public void run() {
-							runUpdateRunnable(msg);
-						}
-					};
-					if (null == Display.getCurrent()) {
-						PlatformUI.getWorkbench().getDisplay().syncExec(updateRunnable);
-					} else {
-						updateRunnable.run();
-					}
-				}
-			}
-
-		};
-	}
-
-	/**
-	 * Used to update the views
-	 * 
-	 */
-	protected void runUpdateRunnable(final Notification msg) {
-		if (ScoPackage.eINSTANCE.getChangeOrderCount_Name().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
-			} else {
-				basePart.setName("");
-			}
-		}
-		if (ScoPackage.eINSTANCE.getChangeOrderCount_Value().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setValue(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
-			} else {
-				basePart.setValue("");
-			}
-		}
-		if (ScoPackage.eINSTANCE.getChangeOrderCount_Type().equals(msg.getFeature()) && basePart != null)
-			basePart.setType((Enumerator)msg.getNewValue());
-
-		if (ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setBrokenLines(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
-			} else {
-				basePart.setBrokenLines("");
-			}
-		}
-		if (ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setFixedLines(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
-			} else {
-				basePart.setFixedLines("");
-			}
-		}
-		if (ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setRepairEffort(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), msg.getNewValue()));
-			} else {
-				basePart.setRepairEffort("");
-			}
-		}
-
+	public CriticalDefectChangeOrdersPropertiesEditionComponent(PropertiesEditingContext editingContext, EObject criticalDefectChangeOrders, String editing_mode) {
+		super(editingContext, criticalDefectChangeOrders, editing_mode);
+		parts = new String[] { BASE_PART };
+		repositoryKey = ScoViewsRepository.class;
+		partKey = ScoViewsRepository.CriticalDefectChangeOrders.class;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#translatePart(java.lang.String)
-	 * 
-	 */
-	public java.lang.Class translatePart(String key) {
-		if (BASE_PART.equals(key))
-			return ScoViewsRepository.CriticalDefectChangeOrders.class;
-		return super.translatePart(key);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#partsList()
-	 * 
-	 */
-	public String[] partsList() {
-		return parts;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionPart
-	 *  (java.lang.String, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
-		if (criticalDefectChangeOrders != null && BASE_PART.equals(key)) {
-			if (basePart == null) {
-				IPropertiesEditionPartProvider provider = PropertiesEditionPartProviderService.getInstance().getProvider(ScoViewsRepository.class);
-				if (provider != null) {
-					basePart = (CriticalDefectChangeOrdersPropertiesEditionPart)provider.getPropertiesEditionPart(ScoViewsRepository.CriticalDefectChangeOrders.class, kind, this);
-					addListener((IPropertiesEditionListener)basePart);
-				}
-			}
-			return (IPropertiesEditionPart)basePart;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#
-	 *      setPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
-	 * 
-	 */
-	public void setPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionPart propertiesEditionPart) {
-		if (key == ScoViewsRepository.CriticalDefectChangeOrders.class)
-			this.basePart = (CriticalDefectChangeOrdersPropertiesEditionPart) propertiesEditionPart;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Class, int, org.eclipse.emf.ecore.EObject, 
+	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	public void initPart(java.lang.Class key, int kind, EObject elt, ResourceSet allResource) {
+	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
-		if (basePart != null && key == ScoViewsRepository.CriticalDefectChangeOrders.class) {
-			((IPropertiesEditionPart)basePart).setContext(elt, allResource);
+		if (editingPart != null && key == partKey) {
+			editingPart.setContext(elt, allResource);
 			final CriticalDefectChangeOrders criticalDefectChangeOrders = (CriticalDefectChangeOrders)elt;
+			final CriticalDefectChangeOrdersPropertiesEditionPart basePart = (CriticalDefectChangeOrdersPropertiesEditionPart)editingPart;
 			// init values
-			if (criticalDefectChangeOrders.getName() != null)
+			if (criticalDefectChangeOrders.getName() != null && isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.name))
 				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), criticalDefectChangeOrders.getName()));
-
-			basePart.setValue(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), criticalDefectChangeOrders.getValue()));
-
-			basePart.initType((EEnum) ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEType(), criticalDefectChangeOrders.getType());
-			basePart.setBrokenLines(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), criticalDefectChangeOrders.getBrokenLines()));
-
-			basePart.setFixedLines(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), criticalDefectChangeOrders.getFixedLines()));
-
-			basePart.setRepairEffort(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), criticalDefectChangeOrders.getRepairEffort()));
-
+			
+			if (isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.value)) {
+				basePart.setValue(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), criticalDefectChangeOrders.getValue()));
+			}
+			
+			if (isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.type)) {
+				basePart.initType((EEnum) ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEType(), criticalDefectChangeOrders.getType());
+			}
+			if (isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines)) {
+				basePart.setBrokenLines(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), criticalDefectChangeOrders.getBrokenLines()));
+			}
+			
+			if (isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines)) {
+				basePart.setFixedLines(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), criticalDefectChangeOrders.getFixedLines()));
+			}
+			
+			if (isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort)) {
+				basePart.setRepairEffort(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), criticalDefectChangeOrders.getRepairEffort()));
+			}
+			
 			// init filters
-
-
-
-
-
-
+			
+			
+			
+			
+			
+			
+			// init values for referenced views
+			
+			// init filters for referenced views
+			
 		}
-		// init values for referenced views
-
-		// init filters for referenced views
-
 		setInitializing(false);
 	}
 
@@ -269,131 +113,135 @@ public class CriticalDefectChangeOrdersPropertiesEditionComponent extends Standa
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionCommand
-	 *     (org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	public CompoundCommand getPropertiesEditionCommand(EditingDomain editingDomain) {
-		CompoundCommand cc = new CompoundCommand();
-		if ((criticalDefectChangeOrders != null) && (basePart != null)) { 
-			cc.append(SetCommand.create(editingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_Name(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), basePart.getName())));
-			cc.append(SetCommand.create(editingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_Value(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEInt(), basePart.getValue())));
-			cc.append(SetCommand.create(editingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_Type(), basePart.getType()));
-
-			cc.append(SetCommand.create(editingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEInt(), basePart.getBrokenLines())));
-			cc.append(SetCommand.create(editingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEInt(), basePart.getFixedLines())));
-			cc.append(SetCommand.create(editingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEDouble(), basePart.getRepairEffort())));
-
+	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == ScoViewsRepository.CriticalDefectChangeOrders.Properties.name) {
+			return ScoPackage.eINSTANCE.getChangeOrderCount_Name();
 		}
-		if (!cc.isEmpty())
-			return cc;
-		cc.append(IdentityCommand.INSTANCE);
-		return cc;
+		if (editorKey == ScoViewsRepository.CriticalDefectChangeOrders.Properties.value) {
+			return ScoPackage.eINSTANCE.getChangeOrderCount_Value();
+		}
+		if (editorKey == ScoViewsRepository.CriticalDefectChangeOrders.Properties.type) {
+			return ScoPackage.eINSTANCE.getChangeOrderCount_Type();
+		}
+		if (editorKey == ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines) {
+			return ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines();
+		}
+		if (editorKey == ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines) {
+			return ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines();
+		}
+		if (editorKey == ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort) {
+			return ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort();
+		}
+		return super.associatedFeature(editorKey);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionObject()
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	public EObject getPropertiesEditionObject(EObject source) {
-		if (source instanceof CriticalDefectChangeOrders) {
-			CriticalDefectChangeOrders criticalDefectChangeOrdersToUpdate = (CriticalDefectChangeOrders)source;
-			criticalDefectChangeOrdersToUpdate.setName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), basePart.getName()));
-
-			criticalDefectChangeOrdersToUpdate.setValue(EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), basePart.getValue()));
-
-			criticalDefectChangeOrdersToUpdate.setType((ChangeOrderType)basePart.getType());
-
-			criticalDefectChangeOrdersToUpdate.setBrokenLines(EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), basePart.getBrokenLines()));
-
-			criticalDefectChangeOrdersToUpdate.setFixedLines(EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), basePart.getFixedLines()));
-
-			criticalDefectChangeOrdersToUpdate.setRepairEffort(EEFConverterUtil.createDoubleFromString(EcorePackage.eINSTANCE.getEDouble(), basePart.getRepairEffort()));
-
-
-			return criticalDefectChangeOrdersToUpdate;
+	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		CriticalDefectChangeOrders criticalDefectChangeOrders = (CriticalDefectChangeOrders)semanticObject;
+		if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.name == event.getAffectedEditor()) {
+			criticalDefectChangeOrders.setName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
 		}
-		else
-			return null;
+		if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.value == event.getAffectedEditor()) {
+			criticalDefectChangeOrders.setValue((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+		}
+		if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.type == event.getAffectedEditor()) {
+			criticalDefectChangeOrders.setType((ChangeOrderType)event.getNewValue());
+		}
+		if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines == event.getAffectedEditor()) {
+			criticalDefectChangeOrders.setBrokenLines((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+		}
+		if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines == event.getAffectedEditor()) {
+			criticalDefectChangeOrders.setFixedLines((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+		}
+		if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort == event.getAffectedEditor()) {
+			criticalDefectChangeOrders.setRepairEffort((EEFConverterUtil.createDoubleFromString(EcorePackage.eINSTANCE.getEDouble(), (String)event.getNewValue())));
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	public void firePropertiesChanged(IPropertiesEditionEvent event) {
-		if (!isInitializing()) {
-			Diagnostic valueDiagnostic = validateValue(event);
-			if (PropertiesEditionEvent.COMMIT == event.getState() && IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode) && valueDiagnostic.getSeverity() == Diagnostic.OK) {
-				CompoundCommand command = new CompoundCommand();
-			if (ScoViewsRepository.CriticalDefectChangeOrders.name == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_Name(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue())));
-			}
-			if (ScoViewsRepository.CriticalDefectChangeOrders.value == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_Value(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
-			}
-			if (ScoViewsRepository.CriticalDefectChangeOrders.type == event.getAffectedEditor())
-				command.append(SetCommand.create(liveEditingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_Type(), event.getNewValue()));
-
-			if (ScoViewsRepository.CriticalDefectChangeOrders.brokenLines == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
-			}
-			if (ScoViewsRepository.CriticalDefectChangeOrders.fixedLines == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
-			}
-			if (ScoViewsRepository.CriticalDefectChangeOrders.repairEffort == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, criticalDefectChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort(), EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEDouble(), (String)event.getNewValue())));
-			}
-
-				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+	public void updatePart(Notification msg) {
+		if (editingPart.isVisible()) {	
+			CriticalDefectChangeOrdersPropertiesEditionPart basePart = (CriticalDefectChangeOrdersPropertiesEditionPart)editingPart;
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.name)) {
+				if (msg.getNewValue() != null) {
+					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
 				} else {
-					liveEditingDomain.getCommandStack().execute(command);
+					basePart.setName("");
 				}
 			}
-			if (valueDiagnostic.getSeverity() != Diagnostic.OK && valueDiagnostic instanceof BasicDiagnostic)
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, valueDiagnostic));
-			else {
-				Diagnostic validate = validate();
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, validate));
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_Value().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.value)) {
+				if (msg.getNewValue() != null) {
+					basePart.setValue(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+				} else {
+					basePart.setValue("");
+				}
 			}
-			super.firePropertiesChanged(event);
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_Type().equals(msg.getFeature()) && isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.type))
+				basePart.setType((Enumerator)msg.getNewValue());
+			
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines)) {
+				if (msg.getNewValue() != null) {
+					basePart.setBrokenLines(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+				} else {
+					basePart.setBrokenLines("");
+				}
+			}
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines)) {
+				if (msg.getNewValue() != null) {
+					basePart.setFixedLines(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+				} else {
+					basePart.setFixedLines("");
+				}
+			}
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort)) {
+				if (msg.getNewValue() != null) {
+					basePart.setRepairEffort(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), msg.getNewValue()));
+				} else {
+					basePart.setRepairEffort("");
+				}
+			}
+			
 		}
 	}
 
+
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.String, int)
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
-	public boolean isRequired(String key, int kind) {
-		return key == ScoViewsRepository.CriticalDefectChangeOrders.name || key == ScoViewsRepository.CriticalDefectChangeOrders.value || key == ScoViewsRepository.CriticalDefectChangeOrders.type || key == ScoViewsRepository.CriticalDefectChangeOrders.brokenLines || key == ScoViewsRepository.CriticalDefectChangeOrders.fixedLines || key == ScoViewsRepository.CriticalDefectChangeOrders.repairEffort;
+	public boolean isRequired(Object key, int kind) {
+		return key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.name || key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.value || key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.type || key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines || key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines || key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getHelpContent(java.lang.String, int)
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getHelpContent(java.lang.Object, int)
 	 * 
 	 */
-	public String getHelpContent(String key, int kind) {
-		if (key == ScoViewsRepository.CriticalDefectChangeOrders.name)
+	public String getHelpContent(Object key, int kind) {
+		if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.name)
 			return "The name of the change order type"; //$NON-NLS-1$
-		if (key == ScoViewsRepository.CriticalDefectChangeOrders.value)
+		if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.value)
 			return "The number of change orders for this type"; //$NON-NLS-1$
-		if (key == ScoViewsRepository.CriticalDefectChangeOrders.type)
+		if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.type)
 			return "The change order type identifier"; //$NON-NLS-1$
-		if (key == ScoViewsRepository.CriticalDefectChangeOrders.brokenLines)
+		if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines)
 			return "The estimated number of broken lines in the current artifact"; //$NON-NLS-1$
-		if (key == ScoViewsRepository.CriticalDefectChangeOrders.fixedLines)
+		if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines)
 			return "The number of lines fixed in the current artifact and represented by the repair effort"; //$NON-NLS-1$
-		if (key == ScoViewsRepository.CriticalDefectChangeOrders.repairEffort)
+		if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort)
 			return "The hours of repair effort corresponding to the fixed lines in the current artifact"; //$NON-NLS-1$
 		return super.getHelpContent(key, kind);
 	}
@@ -407,30 +255,47 @@ public class CriticalDefectChangeOrdersPropertiesEditionComponent extends Standa
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
-			String newStringValue = event.getNewValue().toString();
 			try {
-				if (ScoViewsRepository.CriticalDefectChangeOrders.name == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Name().getEAttributeType(), newStringValue);
+				if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.name == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Name().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_Name().getEAttributeType(), newValue);
 				}
-				if (ScoViewsRepository.CriticalDefectChangeOrders.value == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Value().getEAttributeType(), newStringValue);
+				if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.value == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Value().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_Value().getEAttributeType(), newValue);
 				}
-				if (ScoViewsRepository.CriticalDefectChangeOrders.type == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEAttributeType(), newStringValue);
+				if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.type == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEAttributeType(), newValue);
 				}
-				if (ScoViewsRepository.CriticalDefectChangeOrders.brokenLines == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().getEAttributeType(), newStringValue);
+				if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().getEAttributeType(), newValue);
 				}
-				if (ScoViewsRepository.CriticalDefectChangeOrders.fixedLines == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().getEAttributeType(), newStringValue);
+				if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().getEAttributeType(), newValue);
 				}
-				if (ScoViewsRepository.CriticalDefectChangeOrders.repairEffort == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().getEAttributeType(), newStringValue);
+				if (ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
@@ -442,45 +307,4 @@ public class CriticalDefectChangeOrdersPropertiesEditionComponent extends Standa
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validate()
-	 * 
-	 */
-	public Diagnostic validate() {
-		Diagnostic validate = Diagnostic.OK_INSTANCE;
-		if (IPropertiesEditionComponent.BATCH_MODE.equals(editing_mode)) {
-			EObject copy = EcoreUtil.copy(criticalDefectChangeOrders);
-			copy = getPropertiesEditionObject(copy);
-			validate =  EEFRuntimePlugin.getEEFValidator().validate(copy);
-		}
-		else if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode))
-			validate = EEFRuntimePlugin.getEEFValidator().validate(criticalDefectChangeOrders);
-		// Start of user code for custom validation check
-		
-		// End of user code
-		return validate;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#dispose()
-	 * 
-	 */
-	public void dispose() {
-		if (semanticAdapter != null)
-			criticalDefectChangeOrders.eAdapters().remove(semanticAdapter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getTabText(java.lang.String)
-	 * 
-	 */
-	public String getTabText(String p_key) {
-		return basePart.getTitle();
-	}
 }

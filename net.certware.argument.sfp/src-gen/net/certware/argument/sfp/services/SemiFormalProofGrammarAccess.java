@@ -73,7 +73,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Text");
 		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Text returns ecore::EString:
+		//Text:
 		//	STRING;
 		public ParserRule getRule() { return rule; }
 
@@ -299,7 +299,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Numeral");
 		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Numeral returns ecore::EString:
+		//Numeral:
 		//	INT;
 		public ParserRule getRule() { return rule; }
 
@@ -549,7 +549,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		return getProofAccess().getRule();
 	}
 
-	//Text returns ecore::EString:
+	//Text:
 	//	STRING;
 	public TextElements getTextAccess() {
 		return (pText != null) ? pText : (pText = new TextElements());
@@ -610,7 +610,7 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 		return getConjunctionAccess().getRule();
 	}
 
-	//Numeral returns ecore::EString:
+	//Numeral:
 	//	INT;
 	public NumeralElements getNumeralAccess() {
 		return (pNumeral != null) ? pNumeral : (pNumeral = new NumeralElements());
@@ -674,8 +674,8 @@ public class SemiFormalProofGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" | "n" |
-	//	"f" | "r" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
+	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
+	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 

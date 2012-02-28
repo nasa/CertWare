@@ -1,14 +1,11 @@
 package net.certware.verification.checklist.view.handlers;
 
-import net.certware.export.excel.WriteExcel;
 import net.certware.verification.checklist.Checklist;
 import net.certware.verification.checklist.view.ViewList;
-import net.certware.verification.checklist.view.jobs.ExportChecklistJob;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 
@@ -31,7 +28,8 @@ public class ExportChecklistHandler extends AbstractHandler
    * @throws ExecutionException if export job fails  
    * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
    */
-  public Object execute(ExecutionEvent event) throws ExecutionException
+  @SuppressWarnings("unused")
+public Object execute(ExecutionEvent event) throws ExecutionException
   {
     // get context information
     Shell shell = HandlerUtil.getActiveShellChecked(event);
@@ -40,6 +38,7 @@ public class ExportChecklistHandler extends AbstractHandler
     if ( checklist == null ) 
       return null;
 
+    /*
     final WriteExcel excel = new WriteExcel();
 
     // prompt for destination file
@@ -54,6 +53,9 @@ public class ExportChecklistHandler extends AbstractHandler
     job.schedule();
     
     return null;
+    */
+    
+    throw new ExecutionException("Excel export not installed");
   }  
 }
 

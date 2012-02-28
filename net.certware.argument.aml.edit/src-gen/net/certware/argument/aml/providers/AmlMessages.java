@@ -1,10 +1,12 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.providers;
 
 import org.eclipse.osgi.util.NLS;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class AmlMessages extends NLS {
@@ -769,7 +771,7 @@ public class AmlMessages extends NLS {
 
 	
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
-	
+
 	// Start of user code for additionnal NLS Constants
 	
 	// End of user code

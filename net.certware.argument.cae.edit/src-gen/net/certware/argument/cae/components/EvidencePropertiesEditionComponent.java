@@ -1,14 +1,12 @@
-/*
- * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+/**
+ * Generated with Acceleo
  */
 package net.certware.argument.cae.components;
 
 // Start of user code for imports
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.arm.InformationElement;
+import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.TaggedValue;
 import net.certware.argument.cae.CaePackage;
 import net.certware.argument.cae.Context;
@@ -16,43 +14,30 @@ import net.certware.argument.cae.Evidence;
 import net.certware.argument.cae.parts.CaeViewsRepository;
 import net.certware.argument.cae.parts.EvidencePropertiesEditionPart;
 
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.command.AddCommand;
-import org.eclipse.emf.edit.command.DeleteCommand;
-import org.eclipse.emf.edit.command.MoveCommand;
-import org.eclipse.emf.edit.command.RemoveCommand;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
 	
 
 // End of user code
@@ -61,204 +46,98 @@ import org.eclipse.ui.PlatformUI;
  * 
  * 
  */
-public class EvidencePropertiesEditionComponent extends StandardPropertiesEditionComponent {
+public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	private String[] parts = {BASE_PART};
-
 	/**
-	 * The EObject to edit
-	 * 
+	 * Settings for isTagged ReferencesTable
 	 */
-	private Evidence evidence;
-
+	protected ReferencesTableSettings isTaggedSettings;
+	
 	/**
-	 * The Base part
-	 * 
+	 * Settings for target ReferencesTable
 	 */
-	protected EvidencePropertiesEditionPart basePart;
-
+	private	ReferencesTableSettings targetSettings;
+	
+	/**
+	 * Settings for source ReferencesTable
+	 */
+	private	ReferencesTableSettings sourceSettings;
+	
+	/**
+	 * Settings for context ReferencesTable
+	 */
+	protected ReferencesTableSettings contextSettings;
+	
+	/**
+	 * Settings for evidence ReferencesTable
+	 */
+	private	ReferencesTableSettings evidenceSettings;
+	
+	
 	/**
 	 * Default constructor
 	 * 
 	 */
-	public EvidencePropertiesEditionComponent(EObject evidence, String editing_mode) {
-		if (evidence instanceof Evidence) {
-			this.evidence = (Evidence)evidence;
-			if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode)) {
-				semanticAdapter = initializeSemanticAdapter();
-				this.evidence.eAdapters().add(semanticAdapter);
-			}
-		}
-		this.editing_mode = editing_mode;
-	}
-
-	/**
-	 * Initialize the semantic model listener for live editing mode
-	 * 
-	 * @return the semantic model listener
-	 * 
-	 */
-	private AdapterImpl initializeSemanticAdapter() {
-		return new EContentAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
-			 */
-			public void notifyChanged(final Notification msg) {
-				if (basePart == null)
-					EvidencePropertiesEditionComponent.this.dispose();
-				else {
-					Runnable updateRunnable = new Runnable() {
-						public void run() {
-							runUpdateRunnable(msg);
-						}
-					};
-					if (null == Display.getCurrent()) {
-						PlatformUI.getWorkbench().getDisplay().syncExec(updateRunnable);
-					} else {
-						updateRunnable.run();
-					}
-				}
-			}
-
-		};
-	}
-
-	/**
-	 * Used to update the views
-	 * 
-	 */
-	protected void runUpdateRunnable(final Notification msg) {
-		if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setIdentifier("");
-			}
-		}
-		if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setDescription("");
-			}
-		}
-		if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setContent("");
-			}
-		}
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == ArmPackage.eINSTANCE.getModelElement_IsTagged())) {
-			basePart.updateIsTagged(evidence);
-		}
-		if (ArmPackage.eINSTANCE.getArgumentLink_Target().equals(msg.getFeature()))
-			basePart.updateTarget(evidence);
-		if (ArmPackage.eINSTANCE.getArgumentLink_Source().equals(msg.getFeature()))
-			basePart.updateSource(evidence);
-		if (msg.getFeature() != null && ((EStructuralFeature)msg.getFeature() == CaePackage.eINSTANCE.getEvidence_Context())) {
-			basePart.updateContext(evidence);
-		}
-		if (CaePackage.eINSTANCE.getEvidence_Evidence().equals(msg.getFeature()))
-			basePart.updateEvidence(evidence);
-
+	public EvidencePropertiesEditionComponent(PropertiesEditingContext editingContext, EObject evidence, String editing_mode) {
+		super(editingContext, evidence, editing_mode);
+		parts = new String[] { BASE_PART };
+		repositoryKey = CaeViewsRepository.class;
+		partKey = CaeViewsRepository.Evidence.class;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#translatePart(java.lang.String)
-	 * 
-	 */
-	public java.lang.Class translatePart(String key) {
-		if (BASE_PART.equals(key))
-			return CaeViewsRepository.Evidence.class;
-		return super.translatePart(key);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#partsList()
-	 * 
-	 */
-	public String[] partsList() {
-		return parts;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionPart
-	 *  (java.lang.String, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
-		if (evidence != null && BASE_PART.equals(key)) {
-			if (basePart == null) {
-				IPropertiesEditionPartProvider provider = PropertiesEditionPartProviderService.getInstance().getProvider(CaeViewsRepository.class);
-				if (provider != null) {
-					basePart = (EvidencePropertiesEditionPart)provider.getPropertiesEditionPart(CaeViewsRepository.Evidence.class, kind, this);
-					addListener((IPropertiesEditionListener)basePart);
-				}
-			}
-			return (IPropertiesEditionPart)basePart;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#
-	 *      setPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
-	 * 
-	 */
-	public void setPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionPart propertiesEditionPart) {
-		if (key == CaeViewsRepository.Evidence.class)
-			this.basePart = (EvidencePropertiesEditionPart) propertiesEditionPart;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Class, int, org.eclipse.emf.ecore.EObject, 
+	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	public void initPart(java.lang.Class key, int kind, EObject elt, ResourceSet allResource) {
+	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
-		if (basePart != null && key == CaeViewsRepository.Evidence.class) {
-			((IPropertiesEditionPart)basePart).setContext(elt, allResource);
+		if (editingPart != null && key == partKey) {
+			editingPart.setContext(elt, allResource);
 			final Evidence evidence = (Evidence)elt;
+			final EvidencePropertiesEditionPart basePart = (EvidencePropertiesEditionPart)editingPart;
 			// init values
-			if (evidence.getIdentifier() != null)
+			if (evidence.getIdentifier() != null && isAccessible(CaeViewsRepository.Evidence.Properties.identifier))
 				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getIdentifier()));
-
-			if (evidence.getDescription() != null)
+			
+			if (evidence.getDescription() != null && isAccessible(CaeViewsRepository.Evidence.Properties.description))
 				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getDescription()));
-
-			if (evidence.getContent() != null)
-				basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getContent()));
-			basePart.initIsTagged(evidence, null, ArmPackage.eINSTANCE.getModelElement_IsTagged());
-			basePart.initTarget(evidence, null, ArmPackage.eINSTANCE.getArgumentLink_Target());
-			basePart.initSource(evidence, null, ArmPackage.eINSTANCE.getArgumentLink_Source());
-			basePart.initContext(evidence, null, CaePackage.eINSTANCE.getEvidence_Context());
-			basePart.initEvidence(evidence, null, CaePackage.eINSTANCE.getEvidence_Evidence());
+			
+			if (evidence.getContent() != null && isAccessible(CaeViewsRepository.Evidence.Properties.content))
+				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getContent()));
+			
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.isTagged)) {
+				isTaggedSettings = new ReferencesTableSettings(evidence, ArmPackage.eINSTANCE.getModelElement_IsTagged());
+				basePart.initIsTagged(isTaggedSettings);
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.target)) {
+				targetSettings = new ReferencesTableSettings(evidence, ArmPackage.eINSTANCE.getArgumentLink_Target());
+				basePart.initTarget(targetSettings);
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.source)) {
+				sourceSettings = new ReferencesTableSettings(evidence, ArmPackage.eINSTANCE.getArgumentLink_Source());
+				basePart.initSource(sourceSettings);
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.context)) {
+				contextSettings = new ReferencesTableSettings(evidence, CaePackage.eINSTANCE.getEvidence_Context());
+				basePart.initContext(contextSettings);
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.evidence_)) {
+				evidenceSettings = new ReferencesTableSettings(evidence, CaePackage.eINSTANCE.getEvidence_Evidence());
+				basePart.initEvidence(evidenceSettings);
+			}
 			// init filters
-
-
-
+			
+			
+			
 			basePart.addFilterToIsTagged(new ViewerFilter() {
-
+			
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -266,15 +145,15 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 					 */
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
 						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
-				}
-
+					}
+			
 			});
 			// Start of user code for additional businessfilters for isTagged
 			
 			// End of user code
-
+			
 			basePart.addFilterToTarget(new ViewerFilter() {
-
+			
 				/**
 				 * {@inheritDoc}
 				 * 
@@ -285,15 +164,15 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 						return (!basePart.isContainedInTargetTable((EObject)element));
 					return element instanceof Resource;
 				}
-
+			
 			});
 			basePart.addFilterToTarget(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
 			// Start of user code for additional businessfilters for target
 			
 			// End of user code
-
+			
 			basePart.addFilterToSource(new ViewerFilter() {
-
+			
 				/**
 				 * {@inheritDoc}
 				 * 
@@ -304,15 +183,15 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 						return (!basePart.isContainedInSourceTable((EObject)element));
 					return element instanceof Resource;
 				}
-
+			
 			});
 			basePart.addFilterToSource(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
 			// Start of user code for additional businessfilters for source
 			
 			// End of user code
-
+			
 			basePart.addFilterToContext(new ViewerFilter() {
-
+			
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -320,15 +199,15 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 					 */
 					public boolean select(Viewer viewer, Object parentElement, Object element) {
 						return (element instanceof String && element.equals("")) || (element instanceof Context); //$NON-NLS-1$ 
-				}
-
+					}
+			
 			});
 			// Start of user code for additional businessfilters for context
 			
 			// End of user code
-
+			
 			basePart.addFilterToEvidence(new ViewerFilter() {
-
+			
 				/**
 				 * {@inheritDoc}
 				 * 
@@ -339,18 +218,18 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 						return (!basePart.isContainedInEvidenceTable((EObject)element));
 					return element instanceof Resource;
 				}
-
+			
 			});
 			basePart.addFilterToEvidence(new EObjectFilter(ArmPackage.eINSTANCE.getInformationElement()));
 			// Start of user code for additional businessfilters for evidence
 			
 			// End of user code
-
+			
+			// init values for referenced views
+			
+			// init filters for referenced views
+			
 		}
-		// init values for referenced views
-
-		// init filters for referenced views
-
 		setInitializing(false);
 	}
 
@@ -366,231 +245,188 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionCommand
-	 *     (org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	public CompoundCommand getPropertiesEditionCommand(EditingDomain editingDomain) {
-		CompoundCommand cc = new CompoundCommand();
-		if ((evidence != null) && (basePart != null)) { 
-			cc.append(SetCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier())));
-			cc.append(SetCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription())));
-			cc.append(SetCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent())));
-			List isTaggedToAddFromIsTagged = basePart.getIsTaggedToAdd();
-			for (Iterator iter = isTaggedToAddFromIsTagged.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_IsTagged(), iter.next()));
-			Map isTaggedToRefreshFromIsTagged = basePart.getIsTaggedToEdit();
-			for (Iterator iter = isTaggedToRefreshFromIsTagged.keySet().iterator(); iter.hasNext();) {
-				TaggedValue nextElement = (TaggedValue) iter.next();
-				TaggedValue isTagged = (TaggedValue) isTaggedToRefreshFromIsTagged.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, isTagged.eGet(feature)));
-					}
-				}
-			}
-			List isTaggedToRemoveFromIsTagged = basePart.getIsTaggedToRemove();
-			for (Iterator iter = isTaggedToRemoveFromIsTagged.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List isTaggedToMoveFromIsTagged = basePart.getIsTaggedToMove();
-			for (Iterator iter = isTaggedToMoveFromIsTagged.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getTaggedValue(), moveElement.getElement(), moveElement.getIndex()));
-			}
-			List targetToAddFromTarget = basePart.getTargetToAdd();
-			for (Iterator iter = targetToAddFromTarget.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Target(), iter.next()));
-			List targetToRemoveFromTarget = basePart.getTargetToRemove();
-			for (Iterator iter = targetToRemoveFromTarget.iterator(); iter.hasNext();)
-				cc.append(RemoveCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Target(), iter.next()));
-			//List targetToMoveFromTarget = basePart.getTargetToMove();
-			//for (Iterator iter = targetToMoveFromTarget.iterator(); iter.hasNext();){
-			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-			//	cc.append(MoveCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement(), moveElement.getElement(), moveElement.getIndex()));
-			//}
-			List sourceToAddFromSource = basePart.getSourceToAdd();
-			for (Iterator iter = sourceToAddFromSource.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Source(), iter.next()));
-			List sourceToRemoveFromSource = basePart.getSourceToRemove();
-			for (Iterator iter = sourceToRemoveFromSource.iterator(); iter.hasNext();)
-				cc.append(RemoveCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Source(), iter.next()));
-			//List sourceToMoveFromSource = basePart.getSourceToMove();
-			//for (Iterator iter = sourceToMoveFromSource.iterator(); iter.hasNext();){
-			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-			//	cc.append(MoveCommand.create(editingDomain, evidence, ArmPackage.eINSTANCE.getModelElement(), moveElement.getElement(), moveElement.getIndex()));
-			//}
-			List contextToAddFromContext = basePart.getContextToAdd();
-			for (Iterator iter = contextToAddFromContext.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, evidence, CaePackage.eINSTANCE.getEvidence_Context(), iter.next()));
-			Map contextToRefreshFromContext = basePart.getContextToEdit();
-			for (Iterator iter = contextToRefreshFromContext.keySet().iterator(); iter.hasNext();) {
-				Context nextElement = (Context) iter.next();
-				Context context = (Context) contextToRefreshFromContext.get(nextElement);
-				for (EStructuralFeature feature : nextElement.eClass().getEAllStructuralFeatures()) {
-					if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-						cc.append(SetCommand.create(editingDomain, nextElement, feature, context.eGet(feature)));
-					}
-				}
-			}
-			List contextToRemoveFromContext = basePart.getContextToRemove();
-			for (Iterator iter = contextToRemoveFromContext.iterator(); iter.hasNext();)
-				cc.append(DeleteCommand.create(editingDomain, iter.next()));
-			List contextToMoveFromContext = basePart.getContextToMove();
-			for (Iterator iter = contextToMoveFromContext.iterator(); iter.hasNext();){
-				org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-				cc.append(MoveCommand.create(editingDomain, evidence, CaePackage.eINSTANCE.getContext(), moveElement.getElement(), moveElement.getIndex()));
-			}
-			List evidenceToAddFromEvidence = basePart.getEvidenceToAdd();
-			for (Iterator iter = evidenceToAddFromEvidence.iterator(); iter.hasNext();)
-				cc.append(AddCommand.create(editingDomain, evidence, CaePackage.eINSTANCE.getEvidence_Evidence(), iter.next()));
-			List evidenceToRemoveFromEvidence = basePart.getEvidenceToRemove();
-			for (Iterator iter = evidenceToRemoveFromEvidence.iterator(); iter.hasNext();)
-				cc.append(RemoveCommand.create(editingDomain, evidence, CaePackage.eINSTANCE.getEvidence_Evidence(), iter.next()));
-			//List evidenceToMoveFromEvidence = basePart.getEvidenceToMove();
-			//for (Iterator iter = evidenceToMoveFromEvidence.iterator(); iter.hasNext();){
-			//	org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement moveElement = (org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil.MoveElement)iter.next();
-			//	cc.append(MoveCommand.create(editingDomain, evidence, CaePackage.eINSTANCE.getInformationElement(), moveElement.getElement(), moveElement.getIndex()));
-			//}
-
+	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == CaeViewsRepository.Evidence.Properties.identifier) {
+			return ArmPackage.eINSTANCE.getModelElement_Identifier();
 		}
-		if (!cc.isEmpty())
-			return cc;
-		cc.append(IdentityCommand.INSTANCE);
-		return cc;
+		if (editorKey == CaeViewsRepository.Evidence.Properties.description) {
+			return ArmPackage.eINSTANCE.getModelElement_Description();
+		}
+		if (editorKey == CaeViewsRepository.Evidence.Properties.content) {
+			return ArmPackage.eINSTANCE.getModelElement_Content();
+		}
+		if (editorKey == CaeViewsRepository.Evidence.Properties.isTagged) {
+			return ArmPackage.eINSTANCE.getModelElement_IsTagged();
+		}
+		if (editorKey == CaeViewsRepository.Evidence.Properties.target) {
+			return ArmPackage.eINSTANCE.getArgumentLink_Target();
+		}
+		if (editorKey == CaeViewsRepository.Evidence.Properties.source) {
+			return ArmPackage.eINSTANCE.getArgumentLink_Source();
+		}
+		if (editorKey == CaeViewsRepository.Evidence.Properties.context) {
+			return CaePackage.eINSTANCE.getEvidence_Context();
+		}
+		if (editorKey == CaeViewsRepository.Evidence.Properties.evidence_) {
+			return CaePackage.eINSTANCE.getEvidence_Evidence();
+		}
+		return super.associatedFeature(editorKey);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionObject()
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	public EObject getPropertiesEditionObject(EObject source) {
-		if (source instanceof Evidence) {
-			Evidence evidenceToUpdate = (Evidence)source;
-			evidenceToUpdate.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getIdentifier()));
-
-			evidenceToUpdate.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getDescription()));
-
-			evidenceToUpdate.setContent((java.lang.String)EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), basePart.getContent()));
-			evidenceToUpdate.getIsTagged().addAll(basePart.getIsTaggedToAdd());
-			evidenceToUpdate.getTarget().addAll(basePart.getTargetToAdd());
-			evidenceToUpdate.getSource().addAll(basePart.getSourceToAdd());
-			evidenceToUpdate.getContext().addAll(basePart.getContextToAdd());
-			evidenceToUpdate.getEvidence().addAll(basePart.getEvidenceToAdd());
-
-			return evidenceToUpdate;
+	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		Evidence evidence = (Evidence)semanticObject;
+		if (CaeViewsRepository.Evidence.Properties.identifier == event.getAffectedEditor()) {
+			evidence.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
 		}
-		else
-			return null;
+		if (CaeViewsRepository.Evidence.Properties.description == event.getAffectedEditor()) {
+			evidence.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (CaeViewsRepository.Evidence.Properties.content == event.getAffectedEditor()) {
+			evidence.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (CaeViewsRepository.Evidence.Properties.isTagged == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, isTaggedSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				isTaggedSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				isTaggedSettings.move(event.getNewIndex(), (TaggedValue) event.getNewValue());
+			}
+		}
+		if (CaeViewsRepository.Evidence.Properties.target == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				if (event.getNewValue() instanceof ModelElement) {
+					targetSettings.addToReference((EObject) event.getNewValue());
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				targetSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				targetSettings.move(event.getNewIndex(), (ModelElement) event.getNewValue());
+			}
+		}
+		if (CaeViewsRepository.Evidence.Properties.source == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				if (event.getNewValue() instanceof ModelElement) {
+					sourceSettings.addToReference((EObject) event.getNewValue());
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				sourceSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				sourceSettings.move(event.getNewIndex(), (ModelElement) event.getNewValue());
+			}
+		}
+		if (CaeViewsRepository.Evidence.Properties.context == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, contextSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				contextSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				contextSettings.move(event.getNewIndex(), (Context) event.getNewValue());
+			}
+		}
+		if (CaeViewsRepository.Evidence.Properties.evidence_ == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				if (event.getNewValue() instanceof InformationElement) {
+					evidenceSettings.addToReference((EObject) event.getNewValue());
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				evidenceSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				evidenceSettings.move(event.getNewIndex(), (InformationElement) event.getNewValue());
+			}
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	public void firePropertiesChanged(IPropertiesEditionEvent event) {
-		if (!isInitializing()) {
-			Diagnostic valueDiagnostic = validateValue(event);
-			if (PropertiesEditionEvent.COMMIT == event.getState() && IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode) && valueDiagnostic.getSeverity() == Diagnostic.OK) {
-				CompoundCommand command = new CompoundCommand();
-			if (CaeViewsRepository.Evidence.identifier == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Identifier(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (CaeViewsRepository.Evidence.description == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Description(), EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (CaeViewsRepository.Evidence.content == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_Content(), EcoreUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (CaeViewsRepository.Evidence.isTagged == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					TaggedValue oldValue = (TaggedValue)event.getOldValue();
-					TaggedValue newValue = (TaggedValue)event.getNewValue();
-					// TODO: Complete the evidence update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getModelElement_IsTagged(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getTaggedValue(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (CaeViewsRepository.Evidence.target == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Target(), event.getNewValue()));
-				if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(RemoveCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Target(), event.getNewValue()));
-				if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Target(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (CaeViewsRepository.Evidence.source == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Source(), event.getNewValue()));
-				if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(RemoveCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Source(), event.getNewValue()));
-				if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, evidence, ArmPackage.eINSTANCE.getArgumentLink_Source(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (CaeViewsRepository.Evidence.context == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.SET == event.getKind()) {
-					Context oldValue = (Context)event.getOldValue();
-					Context newValue = (Context)event.getNewValue();
-					// TODO: Complete the evidence update command
-					for (EStructuralFeature feature : newValue.eClass().getEAllStructuralFeatures()) {
-						if (feature.isChangeable() && !(feature instanceof EReference && ((EReference) feature).isContainer())) {
-							command.append(SetCommand.create(liveEditingDomain, oldValue, feature, newValue.eGet(feature)));
-						}
-					}
-				}
-				else if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, evidence, CaePackage.eINSTANCE.getEvidence_Context(), event.getNewValue()));
-				else if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(DeleteCommand.create(liveEditingDomain, event.getNewValue()));
-				else if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, evidence, CaePackage.eINSTANCE.getContext(), event.getNewValue(), event.getNewIndex()));
-			}
-			if (CaeViewsRepository.Evidence.evidence == event.getAffectedEditor()) {
-				if (PropertiesEditionEvent.ADD == event.getKind())
-					command.append(AddCommand.create(liveEditingDomain, evidence, CaePackage.eINSTANCE.getEvidence_Evidence(), event.getNewValue()));
-				if (PropertiesEditionEvent.REMOVE == event.getKind())
-					command.append(RemoveCommand.create(liveEditingDomain, evidence, CaePackage.eINSTANCE.getEvidence_Evidence(), event.getNewValue()));
-				if (PropertiesEditionEvent.MOVE == event.getKind())
-					command.append(MoveCommand.create(liveEditingDomain, evidence, CaePackage.eINSTANCE.getEvidence_Evidence(), event.getNewValue(), event.getNewIndex()));
-			}
-
-				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+	public void updatePart(Notification msg) {
+		if (editingPart.isVisible()) {	
+			EvidencePropertiesEditionPart basePart = (EvidencePropertiesEditionPart)editingPart;
+			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Evidence.Properties.identifier)) {
+				if (msg.getNewValue() != null) {
+					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
 				} else {
-					liveEditingDomain.getCommandStack().execute(command);
+					basePart.setIdentifier("");
 				}
 			}
-			if (valueDiagnostic.getSeverity() != Diagnostic.OK && valueDiagnostic instanceof BasicDiagnostic)
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, valueDiagnostic));
-			else {
-				Diagnostic validate = validate();
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, validate));
+			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Evidence.Properties.description)) {
+				if (msg.getNewValue() != null) {
+					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setDescription("");
+				}
 			}
-			super.firePropertiesChanged(event);
+			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Evidence.Properties.content)) {
+				if (msg.getNewValue() != null) {
+					basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setContent("");
+				}
+			}
+			if (ArmPackage.eINSTANCE.getModelElement_IsTagged().equals(msg.getFeature()) && isAccessible(CaeViewsRepository.Evidence.Properties.isTagged))
+				basePart.updateIsTagged();
+			if (ArmPackage.eINSTANCE.getArgumentLink_Target().equals(msg.getFeature())  && isAccessible(CaeViewsRepository.Evidence.Properties.target))
+				basePart.updateTarget();
+			if (ArmPackage.eINSTANCE.getArgumentLink_Source().equals(msg.getFeature())  && isAccessible(CaeViewsRepository.Evidence.Properties.source))
+				basePart.updateSource();
+			if (CaePackage.eINSTANCE.getEvidence_Context().equals(msg.getFeature()) && isAccessible(CaeViewsRepository.Evidence.Properties.context))
+				basePart.updateContext();
+			if (CaePackage.eINSTANCE.getEvidence_Evidence().equals(msg.getFeature())  && isAccessible(CaeViewsRepository.Evidence.Properties.evidence_))
+				basePart.updateEvidence();
+			
 		}
 	}
+
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.String, int)
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
 	 * 
 	 */
-	public boolean isRequired(String key, int kind) {
-		return key == CaeViewsRepository.Evidence.evidence;
+	public boolean isRequired(Object key, int kind) {
+		return key == CaeViewsRepository.Evidence.Properties.evidence_;
 	}
 
 	/**
@@ -602,18 +438,26 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
-			String newStringValue = event.getNewValue().toString();
 			try {
-				if (CaeViewsRepository.Evidence.identifier == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newStringValue);
+				if (CaeViewsRepository.Evidence.Properties.identifier == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newValue);
 				}
-				if (CaeViewsRepository.Evidence.description == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newStringValue);
+				if (CaeViewsRepository.Evidence.Properties.description == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newValue);
 				}
-				if (CaeViewsRepository.Evidence.content == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newStringValue);
+				if (CaeViewsRepository.Evidence.Properties.content == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
@@ -625,45 +469,4 @@ public class EvidencePropertiesEditionComponent extends StandardPropertiesEditio
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validate()
-	 * 
-	 */
-	public Diagnostic validate() {
-		Diagnostic validate = Diagnostic.OK_INSTANCE;
-		if (IPropertiesEditionComponent.BATCH_MODE.equals(editing_mode)) {
-			EObject copy = EcoreUtil.copy(evidence);
-			copy = getPropertiesEditionObject(copy);
-			validate =  EEFRuntimePlugin.getEEFValidator().validate(copy);
-		}
-		else if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode))
-			validate = EEFRuntimePlugin.getEEFValidator().validate(evidence);
-		// Start of user code for custom validation check
-		
-		// End of user code
-		return validate;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#dispose()
-	 * 
-	 */
-	public void dispose() {
-		if (semanticAdapter != null)
-			evidence.eAdapters().remove(semanticAdapter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getTabText(java.lang.String)
-	 * 
-	 */
-	public String getTabText(String p_key) {
-		return basePart.getTitle();
-	}
 }

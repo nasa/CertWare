@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
@@ -9,7 +11,7 @@ import org.eclipse.emf.common.util.EList;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface QuestionPropertiesEditionPart {
@@ -31,13 +33,13 @@ public interface QuestionPropertiesEditionPart {
 	 * Add a value to the group multivalued attribute.
 	 * @param newValue the value to add
 	 */
-	public void addToGroup(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue);
+	public void addToGroup(Object newValue);
 
 	/**
 	 * Remove a value to the group multivalued attribute.
 	 * @param newValue the value to remove
 	 */
-	public void removeToGroup(org.eclipse.emf.ecore.util.FeatureMap.Entry newValue);
+	public void removeToGroup(Object newValue);
 
 
 	/**

@@ -1,13 +1,12 @@
 /**
- * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
- * All rights reserved.
+ * Generated with Acceleo
  */
 package net.certware.argument.eur.providers;
 
 import org.eclipse.osgi.util.NLS;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class EurMessages extends NLS {
@@ -144,6 +143,12 @@ public class EurMessages extends NLS {
 	public static String StrategyPropertiesEditionPart_AssumptionLabel;
 
 	
+	public static String StrategyPropertiesEditionPart_ContextsLabel;
+
+	
+	public static String StrategyPropertiesEditionPart_StrategiesLabel;
+
+	
 	public static String SolutionPropertiesEditionPart_IdentifierLabel;
 
 	
@@ -274,7 +279,7 @@ public class EurMessages extends NLS {
 
 	
 	public static String PropertiesEditionPart_RemoveListViewerLabel;
-	
+
 	// Start of user code for additionnal NLS Constants
 	
 	// End of user code

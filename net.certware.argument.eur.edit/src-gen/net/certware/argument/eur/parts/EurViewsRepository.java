@@ -1,11 +1,10 @@
 /**
- * Copyright (c) United States Government as represented by the National Aeronautics and Space Administration.
- * All rights reserved.
+ * Generated with Acceleo
  */
 package net.certware.argument.eur.parts;
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class EurViewsRepository {
@@ -20,45 +19,49 @@ public class EurViewsRepository {
 	 * 
 	 */
 	public static class Argument {
-		
-		public static String identifier = "eur::Argument::identifier";
-		
-		
-		public static String description = "eur::Argument::description";
-		
-		
-		public static String content = "eur::Argument::content";
-		
-		
-		public static String isTagged = "eur::Argument::isTagged";
-		
-		
-		public static String assumed = "eur::Argument::assumed";
-		
-		
-		public static String toBeSupported = "eur::Argument::toBeSupported";
-		
-		
-		public static String strategy = "eur::Argument::strategy";
-		
-		
-		public static String assumption = "eur::Argument::assumption";
-		
-		
-		public static String context = "eur::Argument::context";
-		
-		
-		public static String solution = "eur::Argument::solution";
-		
-		
-		public static String argument = "eur::Argument::argument";
-		
-		
-		public static String criteria = "eur::Argument::criteria";
-		
-		
-		public static String justification = "eur::Argument::justification";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "eur::Argument::properties::identifier";
+			
+			
+			public static String description = "eur::Argument::properties::description";
+			
+			
+			public static String content = "eur::Argument::properties::content";
+			
+			
+			public static String isTagged = "eur::Argument::properties::isTagged";
+			
+			
+			public static String assumed = "eur::Argument::properties::assumed";
+			
+			
+			public static String toBeSupported = "eur::Argument::properties::toBeSupported";
+			
+			
+			public static String strategy = "eur::Argument::properties::strategy";
+			
+			
+			public static String assumption = "eur::Argument::properties::assumption";
+			
+			
+			public static String context = "eur::Argument::properties::context";
+			
+			
+			public static String solution = "eur::Argument::properties::solution";
+			
+			
+			public static String argument_ = "eur::Argument::properties::argument_";
+			
+			
+			public static String criteria = "eur::Argument::properties::criteria";
+			
+			
+			public static String justification = "eur::Argument::properties::justification";
+			
+	
+		}
 	
 	}
 
@@ -67,33 +70,43 @@ public class EurViewsRepository {
 	 * 
 	 */
 	public static class Strategy {
-		
-		public static String identifier = "eur::Strategy::identifier";
-		
-		
-		public static String description = "eur::Strategy::description";
-		
-		
-		public static String content = "eur::Strategy::content";
-		
-		
-		public static String isTagged = "eur::Strategy::isTagged";
-		
-		
-		public static String argument = "eur::Strategy::argument";
-		
-		
-		public static String justification = "eur::Strategy::justification";
-		
-		
-		public static String solution = "eur::Strategy::solution";
-		
-		
-		public static String criteria = "eur::Strategy::criteria";
-		
-		
-		public static String assumption = "eur::Strategy::assumption";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "eur::Strategy::properties::identifier";
+			
+			
+			public static String description = "eur::Strategy::properties::description";
+			
+			
+			public static String content = "eur::Strategy::properties::content";
+			
+			
+			public static String isTagged = "eur::Strategy::properties::isTagged";
+			
+			
+			public static String argument = "eur::Strategy::properties::argument";
+			
+			
+			public static String justification = "eur::Strategy::properties::justification";
+			
+			
+			public static String solution = "eur::Strategy::properties::solution";
+			
+			
+			public static String criteria = "eur::Strategy::properties::criteria";
+			
+			
+			public static String assumption = "eur::Strategy::properties::assumption";
+			
+			
+			public static String contexts = "eur::Strategy::properties::contexts";
+			
+			
+			public static String strategies = "eur::Strategy::properties::strategies";
+			
+	
+		}
 	
 	}
 
@@ -102,33 +115,37 @@ public class EurViewsRepository {
 	 * 
 	 */
 	public static class Solution {
-		
-		public static String identifier = "eur::Solution::identifier";
-		
-		
-		public static String description = "eur::Solution::description";
-		
-		
-		public static String content = "eur::Solution::content";
-		
-		
-		public static String isTagged = "eur::Solution::isTagged";
-		
-		
-		public static String target = "eur::Solution::target";
-		
-		
-		public static String source = "eur::Solution::source";
-		
-		
-		public static String context = "eur::Solution::context";
-		
-		
-		public static String evidence = "eur::Solution::evidence";
-		
-		
-		public static String criteria = "eur::Solution::criteria";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "eur::Solution::properties::identifier";
+			
+			
+			public static String description = "eur::Solution::properties::description";
+			
+			
+			public static String content = "eur::Solution::properties::content";
+			
+			
+			public static String isTagged = "eur::Solution::properties::isTagged";
+			
+			
+			public static String target = "eur::Solution::properties::target";
+			
+			
+			public static String source = "eur::Solution::properties::source";
+			
+			
+			public static String context = "eur::Solution::properties::context";
+			
+			
+			public static String evidence = "eur::Solution::properties::evidence";
+			
+			
+			public static String criteria = "eur::Solution::properties::criteria";
+			
+	
+		}
 	
 	}
 
@@ -137,18 +154,22 @@ public class EurViewsRepository {
 	 * 
 	 */
 	public static class Assumption {
-		
-		public static String identifier = "eur::Assumption::identifier";
-		
-		
-		public static String description = "eur::Assumption::description";
-		
-		
-		public static String content = "eur::Assumption::content";
-		
-		
-		public static String isTagged = "eur::Assumption::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "eur::Assumption::properties::identifier";
+			
+			
+			public static String description = "eur::Assumption::properties::description";
+			
+			
+			public static String content = "eur::Assumption::properties::content";
+			
+			
+			public static String isTagged = "eur::Assumption::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -157,21 +178,25 @@ public class EurViewsRepository {
 	 * 
 	 */
 	public static class Context {
-		
-		public static String identifier = "eur::Context::identifier";
-		
-		
-		public static String description = "eur::Context::description";
-		
-		
-		public static String content = "eur::Context::content";
-		
-		
-		public static String isTagged = "eur::Context::isTagged";
-		
-		
-		public static String assumption = "eur::Context::assumption";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "eur::Context::properties::identifier";
+			
+			
+			public static String description = "eur::Context::properties::description";
+			
+			
+			public static String content = "eur::Context::properties::content";
+			
+			
+			public static String isTagged = "eur::Context::properties::isTagged";
+			
+			
+			public static String assumption = "eur::Context::properties::assumption";
+			
+	
+		}
 	
 	}
 
@@ -180,18 +205,22 @@ public class EurViewsRepository {
 	 * 
 	 */
 	public static class Justification {
-		
-		public static String identifier = "eur::Justification::identifier";
-		
-		
-		public static String description = "eur::Justification::description";
-		
-		
-		public static String content = "eur::Justification::content";
-		
-		
-		public static String isTagged = "eur::Justification::isTagged";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "eur::Justification::properties::identifier";
+			
+			
+			public static String description = "eur::Justification::properties::description";
+			
+			
+			public static String content = "eur::Justification::properties::content";
+			
+			
+			public static String isTagged = "eur::Justification::properties::isTagged";
+			
+	
+		}
 	
 	}
 
@@ -200,24 +229,28 @@ public class EurViewsRepository {
 	 * 
 	 */
 	public static class Criteria {
-		
-		public static String identifier = "eur::Criteria::identifier";
-		
-		
-		public static String description = "eur::Criteria::description";
-		
-		
-		public static String content = "eur::Criteria::content";
-		
-		
-		public static String isTagged = "eur::Criteria::isTagged";
-		
-		
-		public static String context = "eur::Criteria::context";
-		
-		
-		public static String assumption = "eur::Criteria::assumption";
-		
+		public static class Properties {
+	
+			
+			public static String identifier = "eur::Criteria::properties::identifier";
+			
+			
+			public static String description = "eur::Criteria::properties::description";
+			
+			
+			public static String content = "eur::Criteria::properties::content";
+			
+			
+			public static String isTagged = "eur::Criteria::properties::isTagged";
+			
+			
+			public static String context = "eur::Criteria::properties::context";
+			
+			
+			public static String assumption = "eur::Criteria::properties::assumption";
+			
+	
+		}
 	
 	}
 

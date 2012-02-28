@@ -1,13 +1,12 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import net.certware.argument.aml.AmlFactory;
-import net.certware.argument.aml.Annotation;
 import net.certware.argument.aml.parts.AmlViewsRepository;
 import net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart;
 import net.certware.argument.aml.providers.AmlMessages;
@@ -22,18 +21,19 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -44,10 +44,11 @@ import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -58,16 +59,15 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, DiscoveryMethodPropertiesEditionPart {
 
 	protected Text url;
-	protected EMFListEditUtil annotationEditUtil;
-		protected ReferencesTable<? extends EObject> annotation;
-		protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable annotation;
+	protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
 	protected Text autoTrigger;
 	protected Text description;
 	protected Text id;
@@ -112,17 +112,59 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence discoveryMethodStep = new BindingCompositionSequence(propertiesEditionComponent);
+		CompositionStep propertiesStep = discoveryMethodStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.class);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.url);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.annotation);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.description);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.id);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.importType);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.label);
+		propertiesStep.addStep(AmlViewsRepository.DiscoveryMethod.Properties.type);
 		
-		// End of user code
+		
+		composer = new PartComposer(discoveryMethodStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.url) {
+					return 		createUrlText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.annotation) {
+					return createAnnotationTableComposition(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger) {
+					return 		createAutoTriggerText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.description) {
+					return 		createDescriptionText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.id) {
+					return 		createIdText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.importType) {
+					return 		createImportTypeText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.label) {
+					return 		createLabelText(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.DiscoveryMethod.Properties.type) {
+					return createTypeEMFComboViewer(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.DiscoveryMethodPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -131,20 +173,13 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createUrlText(widgetFactory, propertiesGroup);
-		createAnnotationTableComposition(widgetFactory, propertiesGroup);
-		createAutoTriggerText(widgetFactory, propertiesGroup);
-		createDescriptionTextarea(widgetFactory, propertiesGroup);
-		createIdText(widgetFactory, propertiesGroup);
-		createImportTypeText(widgetFactory, propertiesGroup);
-		createLabelText(widgetFactory, propertiesGroup);
-		createTypeEMFComboViewer(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	
-	protected void createUrlText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_UrlLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.url, AmlViewsRepository.FORM_KIND));
+	protected Composite createUrlText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_UrlLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.url, AmlViewsRepository.FORM_KIND));
 		url = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		url.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -159,7 +194,7 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
 			}
 		});
 		url.addKeyListener(new KeyAdapter() {
@@ -172,106 +207,67 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.url, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, url.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(url, AmlViewsRepository.DiscoveryMethod.url);
+		EditingUtils.setID(url, AmlViewsRepository.DiscoveryMethod.Properties.url);
 		EditingUtils.setEEFtype(url, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.url, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.url, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createAnnotationTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.annotation = new ReferencesTable<Annotation>(AmlMessages.DiscoveryMethodPropertiesEditionPart_AnnotationLabel, new ReferencesTableListener<Annotation>() {			
-			public void handleAdd() { addToAnnotation();}
-			public void handleEdit(Annotation element) { editAnnotation(element); }
-			public void handleMove(Annotation element, int oldIndex, int newIndex) { moveAnnotation(element, oldIndex, newIndex); }
-			public void handleRemove(Annotation element) { removeFromAnnotation(element); }
-			public void navigateTo(Annotation element) { }
+	protected Composite createAnnotationTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.annotation = new ReferencesTable(AmlMessages.DiscoveryMethodPropertiesEditionPart_AnnotationLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				annotation.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				annotation.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				annotation.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				annotation.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.annotation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.annotation, AmlViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.annotationFilters) {
+			this.annotation.addFilter(filter);
+		}
+		this.annotation.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.annotation, AmlViewsRepository.FORM_KIND));
 		this.annotation.createControls(parent, widgetFactory);
+		this.annotation.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
 		this.annotation.setLowerBound(0);
 		this.annotation.setUpperBound(-1);
-		annotation.setID(AmlViewsRepository.DiscoveryMethod.annotation);
+		annotation.setID(AmlViewsRepository.DiscoveryMethod.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveAnnotation(Annotation element, int oldIndex, int newIndex) {
-		EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-		annotationEditUtil.moveElement(element, oldIndex, newIndex);
-		annotation.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToAnnotation() {
-		// Start of user code addToAnnotation() method body
-				Annotation eObject = AmlFactory.eINSTANCE.createAnnotation();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						annotationEditUtil.addElement(propertiesEditionObject);
-						annotation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromAnnotation(Annotation element) {
-		// Start of user code for the removeFromAnnotation() method body
-				EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-				annotationEditUtil.removeElement(element);
-				annotation.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editAnnotation(Annotation element) {
-		// Start of user code editAnnotation() method body
-				EObject editedElement = annotationEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						annotationEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						annotation.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 	
-	protected void createAutoTriggerText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_AutoTriggerLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.autoTrigger, AmlViewsRepository.FORM_KIND));
+	protected Composite createAutoTriggerText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_AutoTriggerLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, AmlViewsRepository.FORM_KIND));
 		autoTrigger = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		autoTrigger.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -286,7 +282,7 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
 			}
 		});
 		autoTrigger.addKeyListener(new KeyAdapter() {
@@ -299,49 +295,59 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, autoTrigger.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(autoTrigger, AmlViewsRepository.DiscoveryMethod.autoTrigger);
+		EditingUtils.setID(autoTrigger, AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger);
 		EditingUtils.setEEFtype(autoTrigger, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.autoTrigger, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.autoTrigger, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createDescriptionTextarea(FormToolkit widgetFactory, Composite parent) {
-		Label descriptionLabel = FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.description, AmlViewsRepository.FORM_KIND));
-		GridData descriptionLabelData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionLabelData.horizontalSpan = 3;
-		descriptionLabel.setLayoutData(descriptionLabelData);
-		description = widgetFactory.createText(parent, "", SWT.BORDER | SWT.WRAP | SWT.MULTI | SWT.V_SCROLL); //$NON-NLS-1$
+	protected Composite createDescriptionText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.description, AmlViewsRepository.FORM_KIND));
+		description = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		description.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
-		descriptionData.horizontalSpan = 2;
-		descriptionData.heightHint = 80;
-		descriptionData.widthHint = 200;
 		description.setLayoutData(descriptionData);
 		description.addFocusListener(new FocusAdapter() {
-
 			/**
-			 * {@inheritDoc}
-			 * 
 			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 			 * 
 			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
 			}
-
 		});
-		EditingUtils.setID(description, AmlViewsRepository.DiscoveryMethod.description);
-		EditingUtils.setEEFtype(description, "eef::Textarea"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.description, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		description.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(description, AmlViewsRepository.DiscoveryMethod.Properties.description);
+		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.description, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createIdText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.id, AmlViewsRepository.FORM_KIND));
+	protected Composite createIdText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_IdLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.id, AmlViewsRepository.FORM_KIND));
 		id = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		id.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -356,7 +362,7 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 			}
 		});
 		id.addKeyListener(new KeyAdapter() {
@@ -369,18 +375,19 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.id, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, id.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(id, AmlViewsRepository.DiscoveryMethod.id);
+		EditingUtils.setID(id, AmlViewsRepository.DiscoveryMethod.Properties.id);
 		EditingUtils.setEEFtype(id, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.id, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.id, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createImportTypeText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_ImportTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.importType, AmlViewsRepository.FORM_KIND));
+	protected Composite createImportTypeText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_ImportTypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.importType, AmlViewsRepository.FORM_KIND));
 		importType = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		importType.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -395,7 +402,7 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
 			}
 		});
 		importType.addKeyListener(new KeyAdapter() {
@@ -408,18 +415,19 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.importType, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, importType.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(importType, AmlViewsRepository.DiscoveryMethod.importType);
+		EditingUtils.setID(importType, AmlViewsRepository.DiscoveryMethod.Properties.importType);
 		EditingUtils.setEEFtype(importType, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.importType, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.importType, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createLabelText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.label, AmlViewsRepository.FORM_KIND));
+	protected Composite createLabelText(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_LabelLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.label, AmlViewsRepository.FORM_KIND));
 		label = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		label.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -434,7 +442,7 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 			}
 		});
 		label.addKeyListener(new KeyAdapter() {
@@ -447,18 +455,19 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			public void keyPressed(KeyEvent e) {
 				if (e.character == SWT.CR) {
 					if (propertiesEditionComponent != null)
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.label, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, label.getText()));
 				}
 			}
 		});
-		EditingUtils.setID(label, AmlViewsRepository.DiscoveryMethod.label);
+		EditingUtils.setID(label, AmlViewsRepository.DiscoveryMethod.Properties.label);
 		EditingUtils.setEEFtype(label, "eef::Text"); //$NON-NLS-1$
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.label, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.label, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 	
-	protected void createTypeEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.type, AmlViewsRepository.FORM_KIND));
+	protected Composite createTypeEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		FormUtils.createPartLabel(widgetFactory, parent, AmlMessages.DiscoveryMethodPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(AmlViewsRepository.DiscoveryMethod.Properties.type, AmlViewsRepository.FORM_KIND));
 		type = new EMFComboViewer(parent);
 		type.setContentProvider(new ArrayContentProvider());
 		type.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
@@ -474,12 +483,13 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getType()));
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(DiscoveryMethodPropertiesEditionPartForm.this, AmlViewsRepository.DiscoveryMethod.Properties.type, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getType()));
 			}
 
 		});
-		type.setID(AmlViewsRepository.DiscoveryMethod.type);
-		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.type, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		type.setID(AmlViewsRepository.DiscoveryMethod.Properties.type);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(AmlViewsRepository.DiscoveryMethod.Properties.type, AmlViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
 	}
 
 
@@ -521,83 +531,30 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 	}
 
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToAdd()
-	 * 
-	 */
-	public List getAnnotationToAdd() {
-		return annotationEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToRemove()
-	 * 
-	 */
-	public List getAnnotationToRemove() {
-		return annotationEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToEdit()
-	 * 
-	 */
-	public Map getAnnotationToEdit() {
-		return annotationEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationToMove()
-	 * 
-	 */
-	public List getAnnotationToMove() {
-		return annotationEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#getAnnotationTable()
-	 * 
-	 */
-	public List getAnnotationTable() {
-		return annotationEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#initAnnotation(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initAnnotation(EObject current, EReference containingFeature, EReference feature) {
+	public void initAnnotation(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			annotationEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			annotationEditUtil = new EMFListEditUtil(current, feature);
-		this.annotation.setInput(annotationEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		annotation.setContentProvider(contentProvider);
+		annotation.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#updateAnnotation(EObject newValue)
+	 * @see net.certware.argument.aml.parts.DiscoveryMethodPropertiesEditionPart#updateAnnotation()
 	 * 
 	 */
-	public void updateAnnotation(EObject newValue) {
-		if(annotationEditUtil != null){
-			annotationEditUtil.reinit(newValue);
-			annotation.refresh();
-		}
-	}
+	public void updateAnnotation() {
+	annotation.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -607,6 +564,9 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 	 */
 	public void addFilterToAnnotation(ViewerFilter filter) {
 		annotationFilters.add(filter);
+		if (this.annotation != null) {
+			this.annotation.addFilter(filter);
+		}
 	}
 
 	/**
@@ -626,7 +586,7 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 	 * 
 	 */
 	public boolean isContainedInAnnotationTable(EObject element) {
-		return annotationEditUtil.contains(element);
+		return ((ReferencesTableSettings)annotation.getInput()).contains(element);
 	}
 
 
@@ -675,7 +635,7 @@ public class DiscoveryMethodPropertiesEditionPartForm extends CompositePropertie
 		if (newValue != null) {
 			description.setText(newValue);
 		} else {
-			description.setText("");  //$NON-NLS-1$
+			description.setText(""); //$NON-NLS-1$
 		}
 	}
 

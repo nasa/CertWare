@@ -6,8 +6,8 @@ Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.argument.caz.validator.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.osgi.framework
+Import-Package: org.eclipse.epsilon.evl.emf.validation,
+ org.osgi.framework
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.ui.ide,
- org.eclipse.epsilon.evl.emf.validation
+Require-Bundle: org.eclipse.ui.ide
 Export-Package: net.certware.argument.caz.validator

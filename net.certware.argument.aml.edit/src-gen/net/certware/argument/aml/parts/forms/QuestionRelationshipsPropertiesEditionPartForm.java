@@ -1,13 +1,12 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts.forms;
 
 // Start of user code for imports
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-import net.certware.argument.aml.AmlFactory;
-import net.certware.argument.aml.Dependent;
 import net.certware.argument.aml.parts.AmlViewsRepository;
 import net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart;
 import net.certware.argument.aml.providers.AmlMessages;
@@ -17,16 +16,18 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.policies.IPropertiesEditionPolicy;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPolicyProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.impl.policies.EObjectPropertiesEditionContext;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPolicyProviderService;
-import org.eclipse.emf.eef.runtime.impl.utils.EMFListEditUtil;
+import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
+import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -39,15 +40,14 @@ import org.eclipse.ui.forms.widgets.Section;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public class QuestionRelationshipsPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, QuestionRelationshipsPropertiesEditionPart {
 
-	protected EMFListEditUtil dependentEditUtil;
-		protected ReferencesTable<? extends EObject> dependent;
-		protected List<ViewerFilter> dependentBusinessFilters = new ArrayList<ViewerFilter>();
-		protected List<ViewerFilter> dependentFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable dependent;
+	protected List<ViewerFilter> dependentBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> dependentFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -86,17 +86,32 @@ public class QuestionRelationshipsPropertiesEditionPartForm extends CompositePro
 	 * 
 	 */
 	public void createControls(final FormToolkit widgetFactory, Composite view) {
-		createPropertiesGroup(widgetFactory, view);
-
-		// Start of user code for additional ui definition
+		CompositionSequence questionRelationshipsStep = new BindingCompositionSequence(propertiesEditionComponent);
+		questionRelationshipsStep
+			.addStep(AmlViewsRepository.QuestionRelationships.Properties.class)
+			.addStep(AmlViewsRepository.QuestionRelationships.Properties.dependent);
 		
-		// End of user code
+		
+		composer = new PartComposer(questionRelationshipsStep) {
+
+			@Override
+			public Composite addToPart(Composite parent, Object key) {
+				if (key == AmlViewsRepository.QuestionRelationships.Properties.class) {
+					return createPropertiesGroup(widgetFactory, parent);
+				}
+				if (key == AmlViewsRepository.QuestionRelationships.Properties.dependent) {
+					return createDependentTableComposition(widgetFactory, parent);
+				}
+				return parent;
+			}
+		};
+		composer.compose(view);
 	}
 	/**
 	 * 
 	 */
-	protected void createPropertiesGroup(FormToolkit widgetFactory, final Composite view) {
-		Section propertiesSection = widgetFactory.createSection(view, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+	protected Composite createPropertiesGroup(FormToolkit widgetFactory, final Composite parent) {
+		Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		propertiesSection.setText(AmlMessages.QuestionRelationshipsPropertiesEditionPart_PropertiesGroupLabel);
 		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
 		propertiesSectionData.horizontalSpan = 3;
@@ -105,96 +120,56 @@ public class QuestionRelationshipsPropertiesEditionPartForm extends CompositePro
 		GridLayout propertiesGroupLayout = new GridLayout();
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
-		createDependentTableComposition(widgetFactory, propertiesGroup);
 		propertiesSection.setClient(propertiesGroup);
+		return propertiesGroup;
 	}
 
 	/**
 	 * @param container
 	 * 
 	 */
-	protected void createDependentTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.dependent = new ReferencesTable<Dependent>(AmlMessages.QuestionRelationshipsPropertiesEditionPart_DependentLabel, new ReferencesTableListener<Dependent>() {			
-			public void handleAdd() { addToDependent();}
-			public void handleEdit(Dependent element) { editDependent(element); }
-			public void handleMove(Dependent element, int oldIndex, int newIndex) { moveDependent(element, oldIndex, newIndex); }
-			public void handleRemove(Dependent element) { removeFromDependent(element); }
-			public void navigateTo(Dependent element) { }
+	protected Composite createDependentTableComposition(FormToolkit widgetFactory, Composite parent) {
+		this.dependent = new ReferencesTable(AmlMessages.QuestionRelationshipsPropertiesEditionPart_DependentLabel, new ReferencesTableListener() {
+			public void handleAdd() {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.Properties.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
+				dependent.refresh();
+			}
+			public void handleEdit(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.Properties.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
+				dependent.refresh();
+			}
+			public void handleMove(EObject element, int oldIndex, int newIndex) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.Properties.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
+				dependent.refresh();
+			}
+			public void handleRemove(EObject element) {
+				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.Properties.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
+				dependent.refresh();
+			}
+			public void navigateTo(EObject element) { }
 		});
-		this.dependent.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.QuestionRelationships.dependent, AmlViewsRepository.FORM_KIND));
+		for (ViewerFilter filter : this.dependentFilters) {
+			this.dependent.addFilter(filter);
+		}
+		this.dependent.setHelpText(propertiesEditionComponent.getHelpContent(AmlViewsRepository.QuestionRelationships.Properties.dependent, AmlViewsRepository.FORM_KIND));
 		this.dependent.createControls(parent, widgetFactory);
+		this.dependent.addSelectionListener(new SelectionAdapter() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				if (e.item != null && e.item.getData() instanceof EObject) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.Properties.dependent, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
+				}
+			}
+			
+		});
 		GridData dependentData = new GridData(GridData.FILL_HORIZONTAL);
 		dependentData.horizontalSpan = 3;
 		this.dependent.setLayoutData(dependentData);
 		this.dependent.setLowerBound(0);
 		this.dependent.setUpperBound(-1);
-		dependent.setID(AmlViewsRepository.QuestionRelationships.dependent);
+		dependent.setID(AmlViewsRepository.QuestionRelationships.Properties.dependent);
 		dependent.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-	}
-
-	/**
-	 * 
-	 */
-	protected void moveDependent(Dependent element, int oldIndex, int newIndex) {
-		EObject editedElement = dependentEditUtil.foundCorrespondingEObject(element);
-		dependentEditUtil.moveElement(element, oldIndex, newIndex);
-		dependent.refresh();
-		propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, editedElement, newIndex));	
-	}
-
-	/**
-	 * 
-	 */
-	protected void addToDependent() {
-		// Start of user code addToDependent() method body
-				Dependent eObject = AmlFactory.eINSTANCE.createDependent();
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(eObject);
-				IPropertiesEditionPolicy editionPolicy = policyProvider.getEditionPolicy(eObject);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(propertiesEditionComponent, eObject,resourceSet));
-					if (propertiesEditionObject != null) {
-						dependentEditUtil.addElement(propertiesEditionObject);
-						dependent.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, propertiesEditionObject));
-					}
-				}
-		
-		
-		// End of user code
-
-	}
-
-	/**
-	 * 
-	 */
-	protected void removeFromDependent(Dependent element) {
-		// Start of user code for the removeFromDependent() method body
-				EObject editedElement = dependentEditUtil.foundCorrespondingEObject(element);
-				dependentEditUtil.removeElement(element);
-				dependent.refresh();
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, editedElement));
-		
-		// End of user code
-	}
-
-	/**
-	 * 
-	 */
-	protected void editDependent(Dependent element) {
-		// Start of user code editDependent() method body
-				EObject editedElement = dependentEditUtil.foundCorrespondingEObject(element);
-				IPropertiesEditionPolicyProvider policyProvider = PropertiesEditionPolicyProviderService.getInstance().getProvider(element);
-				IPropertiesEditionPolicy editionPolicy = policyProvider	.getEditionPolicy(editedElement);
-				if (editionPolicy != null) {
-					EObject propertiesEditionObject = editionPolicy.getPropertiesEditionObject(new EObjectPropertiesEditionContext(null, element,resourceSet));
-					if (propertiesEditionObject != null) {
-						dependentEditUtil.putElementToRefresh(editedElement, propertiesEditionObject);
-						dependent.refresh();
-						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(QuestionRelationshipsPropertiesEditionPartForm.this, AmlViewsRepository.QuestionRelationships.dependent, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, editedElement, propertiesEditionObject));
-					}
-				}
-		
-		// End of user code
+		return parent;
 	}
 
 
@@ -211,83 +186,30 @@ public class QuestionRelationshipsPropertiesEditionPartForm extends CompositePro
 		// End of user code
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#getDependentToAdd()
-	 * 
-	 */
-	public List getDependentToAdd() {
-		return dependentEditUtil.getElementsToAdd();
-	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#getDependentToRemove()
-	 * 
-	 */
-	public List getDependentToRemove() {
-		return dependentEditUtil.getElementsToRemove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#getDependentToEdit()
-	 * 
-	 */
-	public Map getDependentToEdit() {
-		return dependentEditUtil.getElementsToRefresh();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#getDependentToMove()
-	 * 
-	 */
-	public List getDependentToMove() {
-		return dependentEditUtil.getElementsToMove();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#getDependentTable()
-	 * 
-	 */
-	public List getDependentTable() {
-		return dependentEditUtil.getVirtualList();
-	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#initDependent(EObject current, EReference containingFeature, EReference feature)
 	 */
-	public void initDependent(EObject current, EReference containingFeature, EReference feature) {
+	public void initDependent(ReferencesTableSettings settings) {
 		if (current.eResource() != null && current.eResource().getResourceSet() != null)
 			this.resourceSet = current.eResource().getResourceSet();
-		if (containingFeature != null)
-			dependentEditUtil = new EMFListEditUtil(current, containingFeature, feature);
-		else
-			dependentEditUtil = new EMFListEditUtil(current, feature);
-		this.dependent.setInput(dependentEditUtil.getVirtualList());
+		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
+		dependent.setContentProvider(contentProvider);
+		dependent.setInput(settings);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#updateDependent(EObject newValue)
+	 * @see net.certware.argument.aml.parts.QuestionRelationshipsPropertiesEditionPart#updateDependent()
 	 * 
 	 */
-	public void updateDependent(EObject newValue) {
-		if(dependentEditUtil != null){
-			dependentEditUtil.reinit(newValue);
-			dependent.refresh();
-		}
-	}
+	public void updateDependent() {
+	dependent.refresh();
+}
 
 	/**
 	 * {@inheritDoc}
@@ -297,6 +219,9 @@ public class QuestionRelationshipsPropertiesEditionPartForm extends CompositePro
 	 */
 	public void addFilterToDependent(ViewerFilter filter) {
 		dependentFilters.add(filter);
+		if (this.dependent != null) {
+			this.dependent.addFilter(filter);
+		}
 	}
 
 	/**
@@ -316,7 +241,7 @@ public class QuestionRelationshipsPropertiesEditionPartForm extends CompositePro
 	 * 
 	 */
 	public boolean isContainedInDependentTable(EObject element) {
-		return dependentEditUtil.contains(element);
+		return ((ReferencesTableSettings)dependent.getInput()).contains(element);
 	}
 
 

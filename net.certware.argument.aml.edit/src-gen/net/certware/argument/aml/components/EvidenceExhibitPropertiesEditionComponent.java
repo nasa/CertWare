@@ -1,4 +1,6 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.components;
 
 // Start of user code for imports
@@ -7,227 +9,78 @@ import net.certware.argument.aml.EvidenceExhibit;
 import net.certware.argument.aml.parts.AmlViewsRepository;
 import net.certware.argument.aml.parts.EvidenceExhibitPropertiesEditionPart;
 
-import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-import org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.notify.PropertiesValidationEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.PlatformUI;
 	
 
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
-public class EvidenceExhibitPropertiesEditionComponent extends StandardPropertiesEditionComponent {
+public class EvidenceExhibitPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
 	public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
-	private String[] parts = {BASE_PART};
-
-	/**
-	 * The EObject to edit
-	 * 
-	 */
-	private EvidenceExhibit evidenceExhibit;
-
-	/**
-	 * The Base part
-	 * 
-	 */
-	protected EvidenceExhibitPropertiesEditionPart basePart;
-
+	
 	/**
 	 * Default constructor
 	 * 
 	 */
-	public EvidenceExhibitPropertiesEditionComponent(EObject evidenceExhibit, String editing_mode) {
-		if (evidenceExhibit instanceof EvidenceExhibit) {
-			this.evidenceExhibit = (EvidenceExhibit)evidenceExhibit;
-			if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode)) {
-				semanticAdapter = initializeSemanticAdapter();
-				this.evidenceExhibit.eAdapters().add(semanticAdapter);
-			}
-		}
-		this.editing_mode = editing_mode;
-	}
-
-	/**
-	 * Initialize the semantic model listener for live editing mode
-	 * 
-	 * @return the semantic model listener
-	 * 
-	 */
-	private AdapterImpl initializeSemanticAdapter() {
-		return new EContentAdapter() {
-
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
-			 */
-			public void notifyChanged(final Notification msg) {
-				if (basePart == null)
-					EvidenceExhibitPropertiesEditionComponent.this.dispose();
-				else {
-					Runnable updateRunnable = new Runnable() {
-						public void run() {
-							runUpdateRunnable(msg);
-						}
-					};
-					if (null == Display.getCurrent()) {
-						PlatformUI.getWorkbench().getDisplay().syncExec(updateRunnable);
-					} else {
-						updateRunnable.run();
-					}
-				}
-			}
-
-		};
-	}
-
-	/**
-	 * Used to update the views
-	 * 
-	 */
-	protected void runUpdateRunnable(final Notification msg) {
-		if (AmlPackage.eINSTANCE.getEvidenceExhibit_Value().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setValue(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setValue("");
-			}
-		}
-		if (AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setIdRef(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setIdRef("");
-			}
-		}
-		if (AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId().equals(msg.getFeature()) && basePart != null){
-			if (msg.getNewValue() != null) {
-				basePart.setQuestionId(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
-			} else {
-				basePart.setQuestionId("");
-			}
-		}
-
+	public EvidenceExhibitPropertiesEditionComponent(PropertiesEditingContext editingContext, EObject evidenceExhibit, String editing_mode) {
+		super(editingContext, evidenceExhibit, editing_mode);
+		parts = new String[] { BASE_PART };
+		repositoryKey = AmlViewsRepository.class;
+		partKey = AmlViewsRepository.EvidenceExhibit.class;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#translatePart(java.lang.String)
-	 * 
-	 */
-	public java.lang.Class translatePart(String key) {
-		if (BASE_PART.equals(key))
-			return AmlViewsRepository.EvidenceExhibit.class;
-		return super.translatePart(key);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#partsList()
-	 * 
-	 */
-	public String[] partsList() {
-		return parts;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionPart
-	 *  (java.lang.String, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
-		if (evidenceExhibit != null && BASE_PART.equals(key)) {
-			if (basePart == null) {
-				IPropertiesEditionPartProvider provider = PropertiesEditionPartProviderService.getInstance().getProvider(AmlViewsRepository.class);
-				if (provider != null) {
-					basePart = (EvidenceExhibitPropertiesEditionPart)provider.getPropertiesEditionPart(AmlViewsRepository.EvidenceExhibit.class, kind, this);
-					addListener((IPropertiesEditionListener)basePart);
-				}
-			}
-			return (IPropertiesEditionPart)basePart;
-		}
-		return null;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#
-	 *      setPropertiesEditionPart(java.lang.Class, int, org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
-	 * 
-	 */
-	public void setPropertiesEditionPart(java.lang.Class key, int kind, IPropertiesEditionPart propertiesEditionPart) {
-		if (key == AmlViewsRepository.EvidenceExhibit.class)
-			this.basePart = (EvidenceExhibitPropertiesEditionPart) propertiesEditionPart;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Class, int, org.eclipse.emf.ecore.EObject, 
+	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
 	 * 
 	 */
-	public void initPart(java.lang.Class key, int kind, EObject elt, ResourceSet allResource) {
+	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
-		if (basePart != null && key == AmlViewsRepository.EvidenceExhibit.class) {
-			((IPropertiesEditionPart)basePart).setContext(elt, allResource);
+		if (editingPart != null && key == partKey) {
+			editingPart.setContext(elt, allResource);
 			final EvidenceExhibit evidenceExhibit = (EvidenceExhibit)elt;
+			final EvidenceExhibitPropertiesEditionPart basePart = (EvidenceExhibitPropertiesEditionPart)editingPart;
 			// init values
-			if (evidenceExhibit.getValue() != null)
+			if (evidenceExhibit.getValue() != null && isAccessible(AmlViewsRepository.EvidenceExhibit.Properties.value))
 				basePart.setValue(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), evidenceExhibit.getValue()));
-
-			if (evidenceExhibit.getIdRef() != null)
+			
+			if (evidenceExhibit.getIdRef() != null && isAccessible(AmlViewsRepository.EvidenceExhibit.Properties.idRef))
 				basePart.setIdRef(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), evidenceExhibit.getIdRef()));
-
-			if (evidenceExhibit.getQuestionId() != null)
+			
+			if (evidenceExhibit.getQuestionId() != null && isAccessible(AmlViewsRepository.EvidenceExhibit.Properties.questionId))
 				basePart.setQuestionId(EEFConverterUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), evidenceExhibit.getQuestionId()));
-
+			
 			// init filters
-
-
-
+			
+			
+			
+			// init values for referenced views
+			
+			// init filters for referenced views
+			
 		}
-		// init values for referenced views
-
-		// init filters for referenced views
-
 		setInitializing(false);
 	}
 
@@ -238,83 +91,71 @@ public class EvidenceExhibitPropertiesEditionComponent extends StandardPropertie
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionCommand
-	 *     (org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
-	public CompoundCommand getPropertiesEditionCommand(EditingDomain editingDomain) {
-		CompoundCommand cc = new CompoundCommand();
-		if ((evidenceExhibit != null) && (basePart != null)) { 
-			cc.append(SetCommand.create(editingDomain, evidenceExhibit, AmlPackage.eINSTANCE.getEvidenceExhibit_Value(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getValue())));
-			cc.append(SetCommand.create(editingDomain, evidenceExhibit, AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getIdRef())));
-			cc.append(SetCommand.create(editingDomain, evidenceExhibit, AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getQuestionId())));
-
+	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == AmlViewsRepository.EvidenceExhibit.Properties.value) {
+			return AmlPackage.eINSTANCE.getEvidenceExhibit_Value();
 		}
-		if (!cc.isEmpty())
-			return cc;
-		cc.append(IdentityCommand.INSTANCE);
-		return cc;
+		if (editorKey == AmlViewsRepository.EvidenceExhibit.Properties.idRef) {
+			return AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef();
+		}
+		if (editorKey == AmlViewsRepository.EvidenceExhibit.Properties.questionId) {
+			return AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId();
+		}
+		return super.associatedFeature(editorKey);
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getPropertiesEditionObject()
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
-	public EObject getPropertiesEditionObject(EObject source) {
-		if (source instanceof EvidenceExhibit) {
-			EvidenceExhibit evidenceExhibitToUpdate = (EvidenceExhibit)source;
-			evidenceExhibitToUpdate.setValue((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getValue()));
-
-			evidenceExhibitToUpdate.setIdRef((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getIdRef()));
-
-			evidenceExhibitToUpdate.setQuestionId((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), basePart.getQuestionId()));
-
-
-			return evidenceExhibitToUpdate;
+	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		EvidenceExhibit evidenceExhibit = (EvidenceExhibit)semanticObject;
+		if (AmlViewsRepository.EvidenceExhibit.Properties.value == event.getAffectedEditor()) {
+			evidenceExhibit.setValue((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
 		}
-		else
-			return null;
+		if (AmlViewsRepository.EvidenceExhibit.Properties.idRef == event.getAffectedEditor()) {
+			evidenceExhibit.setIdRef((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
+		if (AmlViewsRepository.EvidenceExhibit.Properties.questionId == event.getAffectedEditor()) {
+			evidenceExhibit.setQuestionId((java.lang.String)EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue()));
+		}
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
-	public void firePropertiesChanged(IPropertiesEditionEvent event) {
-		if (!isInitializing()) {
-			Diagnostic valueDiagnostic = validateValue(event);
-			if (PropertiesEditionEvent.COMMIT == event.getState() && IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode) && valueDiagnostic.getSeverity() == Diagnostic.OK) {
-				CompoundCommand command = new CompoundCommand();
-			if (AmlViewsRepository.EvidenceExhibit.value == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, evidenceExhibit, AmlPackage.eINSTANCE.getEvidenceExhibit_Value(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (AmlViewsRepository.EvidenceExhibit.idRef == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, evidenceExhibit, AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-			if (AmlViewsRepository.EvidenceExhibit.questionId == event.getAffectedEditor()) {
-				command.append(SetCommand.create(liveEditingDomain, evidenceExhibit, AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId(), EEFConverterUtil.createFromString(XMLTypePackage.eINSTANCE.getString(), (String)event.getNewValue())));
-			}
-
-				if (!command.isEmpty() && !command.canExecute()) {
-					EEFRuntimePlugin.getDefault().logError("Cannot perform model change command.", null);
+	public void updatePart(Notification msg) {
+		if (editingPart.isVisible()) {	
+			EvidenceExhibitPropertiesEditionPart basePart = (EvidenceExhibitPropertiesEditionPart)editingPart;
+			if (AmlPackage.eINSTANCE.getEvidenceExhibit_Value().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.EvidenceExhibit.Properties.value)) {
+				if (msg.getNewValue() != null) {
+					basePart.setValue(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
 				} else {
-					liveEditingDomain.getCommandStack().execute(command);
+					basePart.setValue("");
 				}
 			}
-			if (valueDiagnostic.getSeverity() != Diagnostic.OK && valueDiagnostic instanceof BasicDiagnostic)
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, valueDiagnostic));
-			else {
-				Diagnostic validate = validate();
-				super.firePropertiesChanged(new PropertiesValidationEditionEvent(event, validate));
+			if (AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.EvidenceExhibit.Properties.idRef)) {
+				if (msg.getNewValue() != null) {
+					basePart.setIdRef(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setIdRef("");
+				}
 			}
-			super.firePropertiesChanged(event);
+			if (AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId().equals(msg.getFeature()) && basePart != null && isAccessible(AmlViewsRepository.EvidenceExhibit.Properties.questionId)) {
+				if (msg.getNewValue() != null) {
+					basePart.setQuestionId(EcoreUtil.convertToString(XMLTypePackage.eINSTANCE.getString(), msg.getNewValue()));
+				} else {
+					basePart.setQuestionId("");
+				}
+			}
+			
 		}
 	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -325,18 +166,26 @@ public class EvidenceExhibitPropertiesEditionComponent extends StandardPropertie
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
 		Diagnostic ret = Diagnostic.OK_INSTANCE;
 		if (event.getNewValue() != null) {
-			String newStringValue = event.getNewValue().toString();
 			try {
-				if (AmlViewsRepository.EvidenceExhibit.value == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getEvidenceExhibit_Value().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.EvidenceExhibit.Properties.value == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getEvidenceExhibit_Value().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getEvidenceExhibit_Value().getEAttributeType(), newValue);
 				}
-				if (AmlViewsRepository.EvidenceExhibit.idRef == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.EvidenceExhibit.Properties.idRef == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getEvidenceExhibit_IdRef().getEAttributeType(), newValue);
 				}
-				if (AmlViewsRepository.EvidenceExhibit.questionId == event.getAffectedEditor()) {
-					Object newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId().getEAttributeType(), newStringValue);
+				if (AmlViewsRepository.EvidenceExhibit.Properties.questionId == event.getAffectedEditor()) {
+					Object newValue = event.getNewValue();
+					if (newValue instanceof String) {
+						newValue = EcoreUtil.createFromString(AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId().getEAttributeType(), (String)newValue);
+					}
 					ret = Diagnostician.INSTANCE.validate(AmlPackage.eINSTANCE.getEvidenceExhibit_QuestionId().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
@@ -348,45 +197,4 @@ public class EvidenceExhibitPropertiesEditionComponent extends StandardPropertie
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#validate()
-	 * 
-	 */
-	public Diagnostic validate() {
-		Diagnostic validate = Diagnostic.OK_INSTANCE;
-		if (IPropertiesEditionComponent.BATCH_MODE.equals(editing_mode)) {
-			EObject copy = EcoreUtil.copy(evidenceExhibit);
-			copy = getPropertiesEditionObject(copy);
-			validate =  EEFRuntimePlugin.getEEFValidator().validate(copy);
-		}
-		else if (IPropertiesEditionComponent.LIVE_MODE.equals(editing_mode))
-			validate = EEFRuntimePlugin.getEEFValidator().validate(evidenceExhibit);
-		// Start of user code for custom validation check
-		
-		// End of user code
-		return validate;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#dispose()
-	 * 
-	 */
-	public void dispose() {
-		if (semanticAdapter != null)
-			evidenceExhibit.eAdapters().remove(semanticAdapter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#getTabText(java.lang.String)
-	 * 
-	 */
-	public String getTabText(String p_key) {
-		return basePart.getTitle();
-	}
 }

@@ -48,7 +48,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
       <PropertiesEditionPolicyProvider
-            providerClass="net.certware.measurement.sco.providers.ScoPackagePropertiesEditionPolicyProvider">
+            providerClass="net.certware.measurement.sco.providers.ScoPackagePropertiesEditionProvider">
       </PropertiesEditionPolicyProvider>
    </extension>
    <extension

@@ -29,7 +29,7 @@
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
       <PropertiesEditionPolicyProvider
-            providerClass="net.certware.argument.cae.providers.CaePackagePropertiesEditionPolicyProvider">
+            providerClass="net.certware.argument.cae.providers.CaePackagePropertiesEditionProvider">
       </PropertiesEditionPolicyProvider>
    </extension>
    <extension

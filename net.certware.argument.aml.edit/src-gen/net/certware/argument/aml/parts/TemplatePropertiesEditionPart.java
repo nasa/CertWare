@@ -1,12 +1,11 @@
-
+/**
+ * Generated with Acceleo
+ */
 package net.certware.argument.aml.parts;
 
 // Start of user code for imports
-import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.ViewerFilter;
 
 
@@ -14,40 +13,12 @@ import org.eclipse.jface.viewers.ViewerFilter;
 // End of user code
 
 /**
- * @author mrb
+ * 
  * 
  */
 public interface TemplatePropertiesEditionPart {
 
-	/**
-	 * @return the annotation to add
-	 * 
-	 */
-	public List getAnnotationToAdd();
 
-	/**
-	 * @return the annotation to remove
-	 * 
-	 */
-	public List getAnnotationToRemove();
-
-	/**
-	 * @return the annotation to move
-	 * 
-	 */
-	public List getAnnotationToMove();
-
-	/**
-	 * @return the annotation to edit
-	 * 
-	 */
-	public Map getAnnotationToEdit();
-
-	/**
-	 * @return the current annotation table
-	 * 
-	 */
-	public List getAnnotationTable();
 
 	/**
 	 * Init the annotation
@@ -55,14 +26,14 @@ public interface TemplatePropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initAnnotation(EObject current, EReference containingFeature, EReference feature);
+	public void initAnnotation(ReferencesTableSettings settings);
 
 	/**
 	 * Update the annotation
 	 * @param newValue the annotation to update
 	 * 
 	 */
-	public void updateAnnotation(EObject newValue);
+	public void updateAnnotation();
 
 	/**
 	 * Adds the given filter to the annotation edition editor.
@@ -91,35 +62,7 @@ public interface TemplatePropertiesEditionPart {
 	public boolean isContainedInAnnotationTable(EObject element);
 
 
-	/**
-	 * @return the question to add
-	 * 
-	 */
-	public List getQuestionToAdd();
 
-	/**
-	 * @return the question to remove
-	 * 
-	 */
-	public List getQuestionToRemove();
-
-	/**
-	 * @return the question to move
-	 * 
-	 */
-	public List getQuestionToMove();
-
-	/**
-	 * @return the question to edit
-	 * 
-	 */
-	public Map getQuestionToEdit();
-
-	/**
-	 * @return the current question table
-	 * 
-	 */
-	public List getQuestionTable();
 
 	/**
 	 * Init the question
@@ -127,14 +70,14 @@ public interface TemplatePropertiesEditionPart {
 	 * @param containgFeature the feature where to navigate if necessary
 	 * @param feature the feature to manage
 	 */
-	public void initQuestion(EObject current, EReference containingFeature, EReference feature);
+	public void initQuestion(ReferencesTableSettings settings);
 
 	/**
 	 * Update the question
 	 * @param newValue the question to update
 	 * 
 	 */
-	public void updateQuestion(EObject newValue);
+	public void updateQuestion();
 
 	/**
 	 * Adds the given filter to the question edition editor.
