@@ -1,0 +1,183 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF url(images/img1.gif) repeat-x;
+	text-align: justify;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #8F8F8F;
+}
+
+ol { 
+   list-style-type: decimal;
+}
+ol ol {
+   list-style-type: upper-roman;
+}
+
+
+h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+h2 {
+	text-transform: lowercase;
+	letter-spacing: -1px;
+	font-size: 26px;
+	font-weight: normal;
+	color: #31576F;
+}
+
+h2 em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+h3 {
+	height: 25px;
+	background: #0077A7 url(images/img3.gif) repeat-x left bottom;
+	padding: 13px 0 0 20px;
+	text-transform: lowercase;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+
+p, ol, ul {
+	line-height: 180%;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 0;
+	list-style-position: inside;
+}
+
+a {
+	color: #6B6B6B;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.image {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.bg1 {
+	padding: 0 20px 20px 20px;
+	text-align: left;
+	border-top: 1px solid #FFFFFF;
+	background: #FFFFFF url(images/img4.gif) repeat-x;
+}
+
+.bg2 {
+	padding: 20px;
+	border-top: 1px solid #CBE1EF;
+	background: #FFFFFF url(images/img4.gif) repeat-x;
+}
+
+/* Header */
+
+#header {
+	width: 892px;
+	height: 160px;
+	margin: 0 auto;
+}
+
+#header * {
+	margin: 0;
+	padding: 0;
+	text-transform: lowercase;
+	color: #FFFFFF;
+}
+
+#header h1 {
+	float: left;
+	padding: 70px 0 0 10px;
+	font-size: 33px;
+}
+
+#header h2 {
+	float: left;
+	padding: 91px 0 0 10px;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#header ul {
+	float: right;
+	margin: 0;
+	padding: 82px 0 0 0;
+	list-style: none;
+}
+
+#header li {
+	display: inline;
+}
+
+#header a {
+	display: block;
+	float: left;
+	height: 25px;
+	margin: 0 0 0 8px;
+	padding: 12px 20px 0 20px;
+	background: #ABBA47 url(images/img2.gif) repeat-x;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Content */
+
+#content {
+	width: 892px;
+	margin: 0 auto;
+}
+
+#colOne {
+	float: left;
+	width: 186px;
+}
+
+#colOne ul {
+	padding-left: 0;
+	list-style: none none outside;
+}
+
+#colOne li {
+	padding: 5px 0;
+	background: url(images/img6.gif) repeat-x;
+}
+
+#colOne li.first {
+	background: none;
+}
+
+#colTwo {
+	float: right;
+	width: 686px;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	width: 892px;
+	margin: 0 auto;
+	padding: 30px 0;
+	background: url(images/img7.gif) repeat-x
+}
+
+#footer p {
+	margin: 0;
+	text-align: center;
+	/* text-transform: lowercase; */
+}

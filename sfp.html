@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CertWare</title>
+	<meta name="generator" content="Studio 3 http://aptana.com/">
+	<meta name="author" content="Matthew Barry">
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+<div id="header">
+	<h1>CertWare</h1>
+	<h2>Eclipse-based, open source tools for safety, assurance, or dependability cases.</h2>
+	<ul>
+		<li><a href="index.html" accesskey="1" title="">Home</a></li>
+		<li><a href="#introduction" accesskey="2" title="">Introduction</a></li>
+		<li><a href="#examples" accesskey="3" title="">Examples</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="colOne">
+		<h3>References</h3>
+		<div class="bg1">
+			<ul>
+				<li class="first"><b>Documents</b></li>
+				<li>Nachiappan, "Tools for Semi-Formal Proofs", Master's Thesis, Texas Tech University, Lubbock, TX, 2008.</li>
+				<li>Nachiappan, Blount, and Rushton, "A System for Checking Semi-Formal Proofs", in the Proceedings of FECS'08: The 2008 International Conference on Frontiers in Education: Computer Science and Computer Engineering, Las Vegas, NV, 2008.</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 
+		introduction
+	-->
+	<div id="colTwo">
+		<div class="bg2">
+			<h2><a name="introduction"/><em>Semi-Formal Proof</em> Arguments</h2>
+			<!-- <p><img src="images/cwlogo.png" alt="" width="180" height="165" class="image" /></p> -->
+				<p>A <em>semi-formal proof</em> is a proof structure in which the overall arrangement of a proof 
+					is a formal data structure, while individual propositions within the structure are 
+					expressed either formally or informally. The motivation is to make the proof easier 
+					to review by human readers, while preserving some automated verification capabilities.
+					The language is designed in such a way that the human review is as simple as possible, 
+				showing only the related premises and inferences necessary to support a deduction statement
+				requiring validation.  This approach minimizes the clutter and confusion of validating the
+				proof.
+
+				<p>Although SFP models have not traditionally been employed in safety case applications, we
+					feel this novel approach offers some compelling benefits.  We will be developing some templates
+					for using SFP models in a way that would be familiar to a safety case author or reviewer, 
+					and will offer these through the CertWare workbench.
+					  
+			<p>The CertWare implementation of SFP is through a domain-specific language (DSL).  The SFP DSL
+				provides an editor with syntax checking and built-in validation rules.  Just create a file
+				with the extension <b>*.sfp</b> or use the New File wizard to create an SFP file.  To enter
+				a proof (a form of safety case), start by entering a theorm statement which is the top-level
+				claim of the case.  Then, on each subsequent line, enter a line number for idenfication 
+				followed by an hypothesis, entailment, or simple statement.  A statement must provide
+				a justification using a parenthetical list of statement numbers following the statement; these
+				are then the justifications upon which the statement depends.  After entering the proof, run
+				the <b>Review Wizard</b> to launch a wizard that walks the analyst through the proof
+				step-by-step, prompting him to validate the inference made in each step.  The analyst can
+				mark the statement as valid, invalid, or unknown, and these states will propagate through
+				the rest of the proof.  When all of the statements are valid according to the analyst, 
+				we can say the proof is valid.
+				   
+				<p>The following automated verification rules are built-into the SFP DSL editor.  When found to be invalid,
+					the rules generate markers on the proof file resource and in the editor. 
+					<ul>
+						<li>Each justification must be non-empty.</li>
+						<li>A proof must have at least one proof step.</li>
+						<li>A proof cannot contain cycles.</li>
+						<li>A statement justification cannot refer to itself.</li>
+						<li>A justification identifier must exist.</li>
+						<li>An entailment tail identifier must exist.</li>
+						<li>Each entailment head identifier must exist.</li>
+						<li>An entailment statement cannot include itself in the head or tail.</li>
+					</ul>
+			<p>The text-based editor is shown in the first figure.<br>
+				<img src="images/sfp/sfp-edit.png" alt="SFP DSL" width="100%">  
+			<p>The review wizard is shown in the next figure.<br>
+				<img src="images/sfp/sfp-review.png" alt="SFP Wizard" width="100%">  
+		</div>
+	</div>
+	<!--
+		examples
+	-->
+	<div id="colTwo">
+		<div class="bg2">
+			<h2><a name="examples"/>Examples</h2>
+			<p>The following example models can be downloaded then imported into the workbench.
+				<ul>
+					<li><a href="collateral/examples/example.sfp">Logical proof model</a></li>
+				</ul>
+			<p>See the <a href="license.html">evaluation license</a> for legal terms regarding this software.
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>Copyright (c) 2011 United States Government as represented by the National Aeronautics and Space Administration.  All rights reserved.
+	<p>Point of contact: <a href="mailto:mrb@certware.net">Matt Barry</a>, Kestrel Technology LLC.
+</div>
+</body>
+</html>

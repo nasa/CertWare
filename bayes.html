@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CertWare</title>
+	<meta name="generator" content="Studio 3 http://aptana.com/">
+	<meta name="author" content="Matthew Barry">
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+<div id="header">
+	<h1>CertWare</h1>
+	<h2>Eclipse-based, open source tools for safety, assurance, or dependability cases.</h2>
+	<ul>
+		<li><a href="index.html" accesskey="1" title="">Home</a></li>
+		<li><a href="#introduction" accesskey="2" title="">Introduction</a></li>
+		<li><a href="#examples" accesskey="3" title="">Examples</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="colOne">
+		<h3>References</h3>
+		<div class="bg1">
+			<ul>
+				<li class="first"><b>Documents</b></li>
+				<li><a href="http://www.hugin.com/developer/documentation">Hugin API Reference Manual</a>, Version 7.4, Hugin Expert A/S, 2010</li>
+				<li><a href="http://reasoning.cs.ucla.edu/samiam/">Sensitivity Analysis, Modeling, Inference and More</a>, (SamIam), Automated Reasoning Group, Computer Science Department, UCLA. 
+			</ul>
+		</div>
+	</div>
+	<!-- 
+		introduction
+	-->
+	<div id="colTwo">
+		<div class="bg2">
+			<h2><a name="introduction"/><em>Bayesian Reasoning</em></h2>
+			<!-- <p><img src="images/cwlogo.png" alt="" width="180" height="165" class="image" /></p> -->
+			<p>After the analyst creates a <a href="net.html">Hugin Network</a> describing the 
+				problem domain he will want 
+				to perform some queries on his network model.  We use the SamIam inference
+				engine to support the query calculations.  CertWare provides a Network Analysis view which
+				shows the selected network resource file as a structured tree, where the network variables
+				are the branch nodes and the variable states are leaves on each node.  Each variable or
+				state is selectable with its checkbox.  To assert evidence, click on the corresponding state
+				(these are mutually exclusive in the editor).  To select variables for queries, click on
+				their checkboxes.  The following figure shows this Network Analysis view with a model selected.  
+				The view is also included in the CertWare perspective.
+				<center><img src="images/net/net-view.png" alt="NET View" width="60%" border="1"></center>
+			<p>To save evidence selections for future application, CertWare provides an evidence metamodel
+				and editor.  The view can create an instance of this model with the current evidence selections,
+				prompting the user where to save the file in the workspace.  To recover and apply evidence saved
+				earlier, simply restore the evidence in the selected model.  If the model has changed structure,
+				or evidence is applied to a different model, only variable and state matches that succeed will
+				be applied.  While it is not necessary to use the evidence model editor, one is available in the
+				workspace (perhaps for generating permutations for testing), and is shown in the following figure.
+				<center><img src="images/net/ev-editor.png" alt="EV Editor" width="60%" border="1"></center>
+			<p>To perform queries in this Network Analysis view, assert the evidence selections, if any, and 
+				select the variables of interest for the query results.  The toolbar buttons will respond
+				to selections, as will the corresponding items in the view's menu.  The queries available
+				at this writing are the <i>maximum a posteriori probability</i> (MAP) and 
+				<i>most probable explanation</i> (MPE) calculations.  To set up the inference engine
+				preferences see the Network Analysis view's preference page. 
+				<center><img src="images/net/net-preferences.png" alt="Net Pref" width="60%" border="1"></center>  
+			<p>The MAP calculations determine the most likely state of world for each selected MAP variable 
+				given the evidence.  It computes both p(MAP,e) and p(MAP|e), and can use either approximate 
+				or exact values; the approximate methods are most appropriate for large models as the exact 
+				algorithm complexity is exponential. The MPE calculation is a special case wherein all of the 
+				nodes with unobserved values are selected as MAP variables.  In this case only p(MPE,e) is relevant. 
+				The following figure shows a sample MAP calculation result as shown in the Network
+				Analysis view.  Use the section header buttons to expand or collapse sections of interest.
+				Note there is currently a bug in the display of the search time units of measure.  
+				<center><img src="images/net/map-results.png" alt="EV Editor" width="60%" border="1"></center>
+			<p>Finally, the following figure shows a sample MPE calculation result on the same model.
+				<center><img src="images/net/mpe-results.png" alt="EV Editor" width="60%" border="1"></center>
+				  
+				
+		</div>
+	</div>
+	<!--
+		examples
+	-->
+	<div id="colTwo">
+		<div class="bg2">
+			<h2><a name="examples"/>Examples</h2>
+			<p>When creating a new NET file in the workbench, CertWare populates the file with a template
+				that shows most of the correct structure for a typical model.  Use this template to
+				edit the problem to be computed in the workbench.  
+			<p>See the <a href="license.html">evaluation license</a> for legal terms regarding this software.
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>Copyright (c) 2011 United States Government as represented by the National Aeronautics and Space Administration.  All rights reserved.
+	<p>Point of contact: <a href="mailto:mrb@certware.net">Matt Barry</a>, Kestrel Technology LLC.
+</div>
+</body>
+</html>

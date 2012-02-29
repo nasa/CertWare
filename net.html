@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CertWare</title>
+	<meta name="generator" content="Studio 3 http://aptana.com/">
+	<meta name="author" content="Matthew Barry">
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+<div id="header">
+	<h1>CertWare</h1>
+	<h2>Eclipse-based, open source tools for safety, assurance, or dependability cases.</h2>
+	<ul>
+		<li><a href="index.html" accesskey="1" title="">Home</a></li>
+		<li><a href="#introduction" accesskey="2" title="">Introduction</a></li>
+		<li><a href="#examples" accesskey="3" title="">Examples</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="colOne">
+		<h3>References</h3>
+		<div class="bg1">
+			<ul>
+				<li class="first"><b>Documents</b></li>
+				<li><a href="http://www.hugin.com/developer/documentation">Hugin API Reference Manual</a>, Version 7.4, Hugin Expert A/S, 2010</li>
+				<li><a href="http://reasoning.cs.ucla.edu/samiam/">Sensitivity Analysis, Modeling, Inference and More</a>, (SamIam), Automated Reasoning Group, Computer Science Department, UCLA. 
+			</ul>
+		</div>
+	</div>
+	<!-- 
+		introduction
+	-->
+	<div id="colTwo">
+		<div class="bg2">
+			<h2><a name="introduction"/><em>Hugin Networks</em></h2>
+			<!-- <p><img src="images/cwlogo.png" alt="" width="180" height="165" class="image" /></p> -->
+			<p>A <em>Hugin Network</em> here is a network file describing a problem to be solved with
+				Bayesian reasoning. Hugin is a popular Bayesian modeling and inference engine from Hugin Expert.
+				From the Hugin API manual:
+				<blockquote>
+					The HUGIN API contains a high performance inference engine that can be used as the 
+					core of knowledge based systems built using Bayesian belief networks or “limited memory” 
+					influence diagrams (LIMIDs). A knowledge engineer can build knowledge bases that model 
+					the application domain, using probabilistic descriptions of causal relationships in 
+					the domain. Given this description, the HUGIN inference engine can perform fast and 
+					accurate reasoning.
+				</blockquote>
+				</br>
+			<p>In CertWare we do not use the commercial Hugin inference engine, but rather we use a
+				publicly-available sensitivity analysis and inference engine called <em>SamIam</em> from the UCLA
+				Computer Science department (see the reference at the left).  
+				While SamIam can perform the Bayesian network computations using 
+				Hugin NET files as input, it is not intended as a complete replacement for Hugin.  However, 
+				SamIam does support the probabilistic analyses that are most useful for safety cases, and can 
+				perform other tasks such as sensitivity	analysis and value-of-information calculations.  
+				CertWare will add these tasks in the future. 
+			<p>CertWare represents the Hugin Network (NET) metamodel in a domain-specific language (DSL).  The
+				CertWare NET DSL implements nearly all of the NET grammar described in the Hugin API manual (see
+				the references at left).  The DSL implements syntax checking and some validation of content.  More
+				validation rules will be added in the future.  To create a NET file, simply create a file
+				with the extension <b>.net</b> or use the New File wizard and choose NET file.
+			<p>The NET DSL editor is shown in the figure.</p>
+				<img src="images/net/net-edit.png" alt="NET DSL" width="100%">
+			<p>After the network model is complete, one can perform some <a href="bayes.html">Bayesian
+				Reasoning</a> queries on the network in the Network Analysis view. 
+				
+		</div>
+	</div>
+	<!--
+		examples
+	-->
+	<div id="colTwo">
+		<div class="bg2">
+			<h2><a name="examples"/>Examples</h2>
+			<p>When creating a new NET file in the workbench, CertWare populates the file with a template
+				that shows most of the correct structure for a typical model.  Use this template to
+				edit the problem to be computed in the workbench.  
+			<p>See the <a href="license.html">evaluation license</a> for legal terms regarding this software.
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>Copyright (c) 2011 United States Government as represented by the National Aeronautics and Space Administration.  All rights reserved.
+	<p>Point of contact: <a href="mailto:mrb@certware.net">Matt Barry</a>, Kestrel Technology LLC.
+</div>
+</body>
+</html>
