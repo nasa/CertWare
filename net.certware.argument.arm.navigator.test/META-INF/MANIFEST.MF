@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare ARM Navigator Test
+Bundle-SymbolicName: net.certware.argument.arm.navigator.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.argument.arm.navigator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.core.internal.events,
+ org.eclipse.core.internal.resources.mapping,
+ org.eclipse.swt,
+ org.eclipse.swt.widgets
+Require-Bundle: org.easymock

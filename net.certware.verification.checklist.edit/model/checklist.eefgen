@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.verification.checklist.edit/src-gen">
+  <editionContexts basePackage="net.certware.verification" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="checklist.components#_9uJ9MFZ7EeGY7JfWCGhS-w"/>
+  </editionContexts>
+  <viewsRepositories basePackage="net.certware.verification.checklist" swtViews="true" formViews="true">
+    <viewsRepository href="checklist.components#_9uKkSVZ7EeGY7JfWCGhS-w"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

@@ -1,0 +1,51 @@
+h1. EXAMPLE GUIDE
+
+From SSEI SoBP SSEI-BP-000001 section 4.3.1.
+
+h2. CONSEQUENCES
+
+Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. Firstly ‘Goal: sw contribution’ must be supported. The Software contribution safety argument pattern presented in this catalogue can be used to support this goal. In addition, an argument to support ‘Goal: contIdent’ must also be developed in module contIdent. This argument will be based on analysis performed at the system level, so in some cases a sufficient argument may exist at the system level which can be used to support this claim.
+
+h2. IMPLEMENTATION
+
+There are a number of different possible top goals for this pattern, as indicated by the public goals. The appropriate top level goal for the argument must be determined through consideration of the structure of any system safety argument which the software safety argument supports. If the pattern is being used to support a system level safety argument, the top goal from this pattern may not actually appear at the top of the overall argument structure. Instead it will appear as a child-goal within the system safety argument. It is important that a stand alone soft- ware safety argument begins with the top goal ‘Goal: swSystem Safe’ to capture the overall objective of the argument and all the required contextual information.
+
+h2. PARTICIPANTS
+
+Note that there are a number of different possible top goals for this pattern, as indicated by the public goals in the argument structure below.
+
+h3. Goal: SwSystem Safe 
+
+If a stand alone software safety argument is being produced  then this goal should be used as the top goal in the argument since it clearly sets 
+out the overall objective of the software safety argument. It is necessary to provide the three items of context to make the scope of the software safety argument clear to the reader. This goal has been designated as a public goal to indicate that it may be used as the top goal in the argument.
+
+h3. Goal: swContributionAcc 
+
+This goal makes it clear that a hazard directed approach is adopted, by considering the contributions made by the software to the system’s hazards. If the pattern is being used as part of a system safety argument, then this goal may provide the link in to that argument (hence a public goal). This would be the case if the system safety argument considers the contribution of the software all in one place. It is not necessary to include the context to provide descriptions of the system and the software if this is already clear from the system safety argument.
+
+h3. Ass: hazards 
+
+The system hazards can only be identified at the system level. Identification of system hazards is therefore outside of the scope of the software safety 
+argument. It is acceptable therefore to make this assumption as long as the assumption is demonstrated elsewhere at the system level. If an argument to support this assumption exists with a system safety argument then it would be appropriate to link to that argument at this point instead of making an assumption.
+
+h3. Strat: swContributionAcc 
+
+To ensure traceability from the software to system hazards, the strategy adopted is to argue explicitly over each of the hazards identified at the system level.
+
+h3. Goal: Hazard 
+
+For each hazard there may be one or more potential contributions from the software identified at the system level. An instance of this goal is created for each of the system hazards to which the software may contribute. At the system level the software will only be considered from a ‘black-box’ point of view, so the contribution may be identified in the form of high-level functionality, or safety requirements. These contributions would be considered base events at the system level, and would not generally be developed further in a system level argument.
+
+h3. Goal: contIdent 
+
+It is necessary to ensure that all the software contributions are correctly identified at the system level. This is crucial to the assurance of the argument as it provides the warrant for the adopted strategy of arguing over the software contributions. This goal provides context to the strategy contMit and must be supported by an argument contained in a separate module (contIdent). Software contributions are often identified as base events in a fault tree analysis performed at the system level. The argument in module contIdent would, in such a case, reason about the rigor and suitability of that analysis.
+
+h3. Goal: sw contribution 3
+
+An instance of this goal is created for each of the identified software contributions to each of the system hazards. The Software contribution safety argument pattern may be used to generate an argument to support this goal.
+
+h2. POSSIBLE PITFALLS
+
+The software contributions may not have been adequately identified at the system level. This may then necessitate further analysis at the system level. It is therefore clearly advantageous to ensure software is considered as part of the system level safety activities.
+
+

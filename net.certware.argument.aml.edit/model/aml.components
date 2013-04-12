@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_riR3YUFBEeCHqY1i-BlMyQ" documentation="Edition Context for aml GenPackage">
+    <categories xmi:id="_riSecEFBEeCHqY1i-BlMyQ" name="aml">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSecUFBEeCHqY1i-BlMyQ" name="AggregationRule" views="_riUToEFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSeckFBEeCHqY1i-BlMyQ" name="parameter" views="_riUTokFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//AggregationRule/parameter"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//AggregationRule"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSec0FBEeCHqY1i-BlMyQ" name="AmlDocument" views="_riUTo0FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSedEFBEeCHqY1i-BlMyQ" name="group" views="_riUTpUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//AmlDocument/group"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSedUFBEeCHqY1i-BlMyQ" name="version" views="_riUTpkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//AmlDocument/version"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//AmlDocument"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSedkFBEeCHqY1i-BlMyQ" name="Annotation" views="_riUTp0FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSed0FBEeCHqY1i-BlMyQ" name="mixed" views="_riUTqUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Annotation/mixed"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSeeEFBEeCHqY1i-BlMyQ" name="id" views="_riUTqkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Annotation/id"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Annotation"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSeeUFBEeCHqY1i-BlMyQ" name="Answer" views="_riUTq0FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSeekFBEeCHqY1i-BlMyQ" name="group" views="_riUTrUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Answer/group"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSee0FBEeCHqY1i-BlMyQ" name="questionId" views="_riUTrkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Answer/questionId"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Answer"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSefEFBEeCHqY1i-BlMyQ" name="ArgumentTemplate" views="_riUTr0FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSefUFBEeCHqY1i-BlMyQ" name="value" views="_riUTsUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//ArgumentTemplate/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSefkFBEeCHqY1i-BlMyQ" name="idRef" views="_riUTskFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//ArgumentTemplate/idRef"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//ArgumentTemplate"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSef0FBEeCHqY1i-BlMyQ" name="Argument" views="_riUTs0FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSegEFBEeCHqY1i-BlMyQ" name="annotation" views="_riUTtUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Argument/annotation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSegUFBEeCHqY1i-BlMyQ" name="answer" views="_riUTtkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Argument/answer"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSegkFBEeCHqY1i-BlMyQ" name="id" views="_riUTt0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Argument/id"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Argument"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSeg0FBEeCHqY1i-BlMyQ" name="Belief" views="_riUTuEFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSehEFBEeCHqY1i-BlMyQ" name="description" views="_riUTukFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Belief/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSehUFBEeCHqY1i-BlMyQ" name="label" views="_riUTu0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Belief/label"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSehkFBEeCHqY1i-BlMyQ" name="ordinal" views="_riUTvEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Belief/ordinal"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSeh0FBEeCHqY1i-BlMyQ" name="symbol" views="_riUTvUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Belief/symbol"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Belief"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riSeiEFBEeCHqY1i-BlMyQ" name="Choice" views="_riUTvkFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSeiUFBEeCHqY1i-BlMyQ" name="description" views="_riUTwEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Choice/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSeikFBEeCHqY1i-BlMyQ" name="label" views="_riUTwUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Choice/label"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSei0FBEeCHqY1i-BlMyQ" name="ordinal" views="_riUTwkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Choice/ordinal"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riSejEFBEeCHqY1i-BlMyQ" name="symbol" views="_riUTw0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Choice/symbol"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Choice"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFgEFBEeCHqY1i-BlMyQ" name="CollectionItem" views="_riUTxEFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFgUFBEeCHqY1i-BlMyQ" name="idRef" views="_riUTxkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CollectionItem/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFgkFBEeCHqY1i-BlMyQ" name="objectType" views="_riUTx0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CollectionItem/objectType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFg0FBEeCHqY1i-BlMyQ" name="ordinal" views="_riUTyEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CollectionItem/ordinal"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CollectionItem"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFhEFBEeCHqY1i-BlMyQ" name="Collection" views="_riUTyUFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFhUFBEeCHqY1i-BlMyQ" name="annotation" views="_riUTy0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Collection/annotation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFhkFBEeCHqY1i-BlMyQ" name="group" views="_riUTzEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Collection/group"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFh0FBEeCHqY1i-BlMyQ" name="id" views="_riUTzUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Collection/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFiEFBEeCHqY1i-BlMyQ" name="label1" views="_riUTzkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Collection/label1"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFiUFBEeCHqY1i-BlMyQ" name="objectType" views="_riUTz0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Collection/objectType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Collection"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFikFBEeCHqY1i-BlMyQ" name="Coverage" views="_riUT0EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFi0FBEeCHqY1i-BlMyQ" name="mixed" views="_riUT0kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Coverage/mixed"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Coverage"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFjEFBEeCHqY1i-BlMyQ" name="CreatingTool" views="_riUT00FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFjUFBEeCHqY1i-BlMyQ" name="label" views="_riUT1UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CreatingTool/label"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFjkFBEeCHqY1i-BlMyQ" name="toolType" views="_riUT1kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CreatingTool/toolType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFj0FBEeCHqY1i-BlMyQ" name="version" views="_riUT10FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CreatingTool/version"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//CreatingTool"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFkEFBEeCHqY1i-BlMyQ" name="Creator" views="_riUT2EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFkUFBEeCHqY1i-BlMyQ" name="description" views="_riUT2kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Creator/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFkkFBEeCHqY1i-BlMyQ" name="idRef" views="_riUT20FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Creator/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFk0FBEeCHqY1i-BlMyQ" name="objectType" views="_riUT3EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Creator/objectType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Creator"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFlEFBEeCHqY1i-BlMyQ" name="Dependent" views="_riUT3UFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFlUFBEeCHqY1i-BlMyQ" name="idRef" views="_riUT30FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Dependent/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFlkFBEeCHqY1i-BlMyQ" name="ordinal" views="_riUT4EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Dependent/ordinal"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Dependent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFl0FBEeCHqY1i-BlMyQ" name="DiscoveryMethod" views="_riUT4UFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFmEFBEeCHqY1i-BlMyQ" name="url" views="_riUT40FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/url"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFmUFBEeCHqY1i-BlMyQ" name="annotation" views="_riUT5EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/annotation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFmkFBEeCHqY1i-BlMyQ" name="autoTrigger" views="_riUT5UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/autoTrigger"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFm0FBEeCHqY1i-BlMyQ" name="description" views="_riUT5kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFnEFBEeCHqY1i-BlMyQ" name="id" views="_riUT50FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFnUFBEeCHqY1i-BlMyQ" name="importType" views="_riUT6EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/importType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFnkFBEeCHqY1i-BlMyQ" name="label" views="_riUT6UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/label"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFn0FBEeCHqY1i-BlMyQ" name="type" views="_riUT6kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod/type"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DiscoveryMethod"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFoEFBEeCHqY1i-BlMyQ" name="DocumentRoot" views="_riUT60FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFoUFBEeCHqY1i-BlMyQ" name="mixed" views="_riUT7UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot/mixed"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFokFBEeCHqY1i-BlMyQ" name="xMLNSPrefixMap" views="_riUT7kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFo0FBEeCHqY1i-BlMyQ" name="xSISchemaLocation" views="_riUT70FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot/xSISchemaLocation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFpEFBEeCHqY1i-BlMyQ" name="description1" views="_riUT8EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot/description1"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFpUFBEeCHqY1i-BlMyQ" name="id" views="_riUT8UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFpkFBEeCHqY1i-BlMyQ" name="idRef" views="_riUT8kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFp0FBEeCHqY1i-BlMyQ" name="label1" views="_riUT80FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot/label1"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//DocumentRoot"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFqEFBEeCHqY1i-BlMyQ" name="End" views="_riUT9EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFqUFBEeCHqY1i-BlMyQ" name="value" views="_riUT9kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//End/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFqkFBEeCHqY1i-BlMyQ" name="scheme" views="_riUT90FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//End/scheme"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//End"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFq0FBEeCHqY1i-BlMyQ" name="EvidenceExhibit" views="_riUT-EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFrEFBEeCHqY1i-BlMyQ" name="value" views="_riUT-kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//EvidenceExhibit/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFrUFBEeCHqY1i-BlMyQ" name="idRef" views="_riUT-0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//EvidenceExhibit/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFrkFBEeCHqY1i-BlMyQ" name="questionId" views="_riUT_EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//EvidenceExhibit/questionId"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//EvidenceExhibit"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFr0FBEeCHqY1i-BlMyQ" name="Evidence" views="_riUT_UFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFsEFBEeCHqY1i-BlMyQ" name="annotation" views="_riUT_0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Evidence/annotation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFsUFBEeCHqY1i-BlMyQ" name="id" views="_riUUAEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Evidence/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFskFBEeCHqY1i-BlMyQ" name="label" views="_riUUAUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Evidence/label"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFs0FBEeCHqY1i-BlMyQ" name="ordinal" views="_riUUAkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Evidence/ordinal"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Evidence"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFtEFBEeCHqY1i-BlMyQ" name="Exhibit" views="_riUUA0FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFtUFBEeCHqY1i-BlMyQ" name="annotation" views="_riUUBUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Exhibit/annotation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFtkFBEeCHqY1i-BlMyQ" name="id" views="_riUUBkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Exhibit/id"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Exhibit"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFt0FBEeCHqY1i-BlMyQ" name="Flag" views="_riU6sEFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFuEFBEeCHqY1i-BlMyQ" name="description" views="_riU6skFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Flag/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFuUFBEeCHqY1i-BlMyQ" name="flagType" views="_riU6s0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Flag/flagType"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFukFBEeCHqY1i-BlMyQ" name="label" views="_riU6tEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Flag/label"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Flag"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFu0FBEeCHqY1i-BlMyQ" name="Interval" views="_riU6tUFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFvEFBEeCHqY1i-BlMyQ" name="max" views="_riU6t0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Interval/max"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFvUFBEeCHqY1i-BlMyQ" name="min" views="_riU6uEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Interval/min"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Interval"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFvkFBEeCHqY1i-BlMyQ" name="List" views="_riU6uUFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFv0FBEeCHqY1i-BlMyQ" name="group" views="_riU6u0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//List/group"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//List"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFwEFBEeCHqY1i-BlMyQ" name="Memo" views="_riU6vEFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFwUFBEeCHqY1i-BlMyQ" name="creator" views="_riU6vkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Memo/creator"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFwkFBEeCHqY1i-BlMyQ" name="reader" views="_riU6v0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Memo/reader"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFw0FBEeCHqY1i-BlMyQ" name="subject" views="_riU6wEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Memo/subject"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFxEFBEeCHqY1i-BlMyQ" name="body" views="_riU6wUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Memo/body"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFxUFBEeCHqY1i-BlMyQ" name="id" views="_riU6wkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Memo/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFxkFBEeCHqY1i-BlMyQ" name="type" views="_riU6w0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Memo/type"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Memo"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFx0FBEeCHqY1i-BlMyQ" name="MetaData" views="_riU6xEFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFyEFBEeCHqY1i-BlMyQ" name="group" views="_riU6xkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//MetaData/group"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//MetaData"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFyUFBEeCHqY1i-BlMyQ" name="NationState" views="_riU6x0FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFykFBEeCHqY1i-BlMyQ" name="group" views="_riU6yUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//NationState/group"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//NationState"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFy0FBEeCHqY1i-BlMyQ" name="Parameter" views="_riU6ykFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFzEFBEeCHqY1i-BlMyQ" name="symbol" views="_riU6zEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Parameter/symbol"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Parameter"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTFzUFBEeCHqY1i-BlMyQ" name="Period" views="_riU6zUFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFzkFBEeCHqY1i-BlMyQ" name="group" views="_riU6z0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Period/group"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTFz0FBEeCHqY1i-BlMyQ" name="label" views="_riU60EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Period/label"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Period"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTF0EFBEeCHqY1i-BlMyQ" name="Person" views="_riU60UFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF0UFBEeCHqY1i-BlMyQ" name="firstName" views="_riU600FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/firstName"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF0kFBEeCHqY1i-BlMyQ" name="middleName" views="_riU61EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/middleName"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF00FBEeCHqY1i-BlMyQ" name="lastName" views="_riU61UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/lastName"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF1EFBEeCHqY1i-BlMyQ" name="nickName" views="_riU61kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/nickName"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF1UFBEeCHqY1i-BlMyQ" name="organization" views="_riU610FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/organization"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF1kFBEeCHqY1i-BlMyQ" name="department" views="_riU62EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/department"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF10FBEeCHqY1i-BlMyQ" name="email" views="_riU62UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/email"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF2EFBEeCHqY1i-BlMyQ" name="description" views="_riU62kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTF2UFBEeCHqY1i-BlMyQ" name="id" views="_riU620FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person/id"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Person"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTF2kFBEeCHqY1i-BlMyQ" name="Publisher" views="_riU63EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTskEFBEeCHqY1i-BlMyQ" name="description" views="_riU63kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Publisher/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTskUFBEeCHqY1i-BlMyQ" name="idRef" views="_riU630FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Publisher/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTskkFBEeCHqY1i-BlMyQ" name="objectType" views="_riU64EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Publisher/objectType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Publisher"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTsk0FBEeCHqY1i-BlMyQ" name="QuestionRelationships" views="_riU64UFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTslEFBEeCHqY1i-BlMyQ" name="dependent" views="_riU640FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//QuestionRelationships/dependent"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//QuestionRelationships"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTslUFBEeCHqY1i-BlMyQ" name="Question" views="_riU65EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTslkFBEeCHqY1i-BlMyQ" name="group" views="_riU65kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Question/group"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsl0FBEeCHqY1i-BlMyQ" name="amplification" views="_riU650FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Question/amplification"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsmEFBEeCHqY1i-BlMyQ" name="description" views="_riU66EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Question/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsmUFBEeCHqY1i-BlMyQ" name="id" views="_riU66UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Question/id"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsmkFBEeCHqY1i-BlMyQ" name="label" views="_riU66kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Question/label"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Question"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTsm0FBEeCHqY1i-BlMyQ" name="Reader" views="_riU660FBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsnEFBEeCHqY1i-BlMyQ" name="description" views="_riU67UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reader/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsnUFBEeCHqY1i-BlMyQ" name="idRef" views="_riU67kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reader/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsnkFBEeCHqY1i-BlMyQ" name="objectType" views="_riU670FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reader/objectType"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reader"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTsn0FBEeCHqY1i-BlMyQ" name="Relevance" views="_riU68EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsoEFBEeCHqY1i-BlMyQ" name="description" views="_riU68kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Relevance/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsoUFBEeCHqY1i-BlMyQ" name="label" views="_riU680FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Relevance/label"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsokFBEeCHqY1i-BlMyQ" name="ordinal" views="_riU69EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Relevance/ordinal"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTso0FBEeCHqY1i-BlMyQ" name="symbol" views="_riU69UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Relevance/symbol"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Relevance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTspEFBEeCHqY1i-BlMyQ" name="Reliability" views="_riU69kFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTspUFBEeCHqY1i-BlMyQ" name="description" views="_riU6-EFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reliability/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTspkFBEeCHqY1i-BlMyQ" name="label" views="_riU6-UFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reliability/label"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsp0FBEeCHqY1i-BlMyQ" name="ordinal" views="_riU6-kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reliability/ordinal"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsqEFBEeCHqY1i-BlMyQ" name="symbol" views="_riU6-0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reliability/symbol"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Reliability"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTsqUFBEeCHqY1i-BlMyQ" name="Start" views="_riU6_EFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsqkFBEeCHqY1i-BlMyQ" name="value" views="_riU6_kFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Start/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsq0FBEeCHqY1i-BlMyQ" name="scheme" views="_riU6_0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Start/scheme"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Start"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTsrEFBEeCHqY1i-BlMyQ" name="Template" views="_riU7AEFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsrUFBEeCHqY1i-BlMyQ" name="annotation" views="_riU7AkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Template/annotation"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsrkFBEeCHqY1i-BlMyQ" name="question" views="_riU7A0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EReference" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Template/question"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsr0FBEeCHqY1i-BlMyQ" name="id" views="_riU7BEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Template/id"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Template"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTssEFBEeCHqY1i-BlMyQ" name="Value" views="_riU7BUFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTssUFBEeCHqY1i-BlMyQ" name="mixed" views="_riU7B0FBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Value/mixed"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTsskFBEeCHqY1i-BlMyQ" name="type" views="_riU7CEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Value/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTss0FBEeCHqY1i-BlMyQ" name="unit" views="_riU7CUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Value/unit"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Value"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_riTstEFBEeCHqY1i-BlMyQ" name="Witness" views="_riU7CkFBEeCHqY1i-BlMyQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTstUFBEeCHqY1i-BlMyQ" name="description" views="_riU7DEFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Witness/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTstkFBEeCHqY1i-BlMyQ" name="idRef" views="_riU7DUFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Witness/idRef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_riTst0FBEeCHqY1i-BlMyQ" name="timestamp" views="_riU7DkFBEeCHqY1i-BlMyQ">
+          <model xsi:type="ecore:EAttribute" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Witness/timestamp"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.ecore#//Witness"/>
+      </bindings>
+    </categories>
+    <model href="file:/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.aml/model/aml.genmodel#//aml"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_riTsuEFBEeCHqY1i-BlMyQ" documentation="Views repository for aml GenPackage" name="aml">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_riTsuUFBEeCHqY1i-BlMyQ" name="aml">
+      <views xmi:id="_riUToEFBEeCHqY1i-BlMyQ" name="AggregationRule">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUToUFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTokFBEeCHqY1i-BlMyQ" name="parameter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTo0FBEeCHqY1i-BlMyQ" name="AmlDocument">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTpEFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTpUFBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTpkFBEeCHqY1i-BlMyQ" name="version">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTp0FBEeCHqY1i-BlMyQ" name="Annotation">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTqEFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTqUFBEeCHqY1i-BlMyQ" name="mixed">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTqkFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTq0FBEeCHqY1i-BlMyQ" name="Answer">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTrEFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTrUFBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTrkFBEeCHqY1i-BlMyQ" name="questionId">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTr0FBEeCHqY1i-BlMyQ" name="ArgumentTemplate">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTsEFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTsUFBEeCHqY1i-BlMyQ" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTskFBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTs0FBEeCHqY1i-BlMyQ" name="Argument">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTtEFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTtUFBEeCHqY1i-BlMyQ" name="annotation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTtkFBEeCHqY1i-BlMyQ" name="answer">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTt0FBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTuEFBEeCHqY1i-BlMyQ" name="Belief">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTuUFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTukFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTu0FBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTvEFBEeCHqY1i-BlMyQ" name="ordinal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTvUFBEeCHqY1i-BlMyQ" name="symbol">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTvkFBEeCHqY1i-BlMyQ" name="Choice">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTv0FBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTwEFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTwUFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTwkFBEeCHqY1i-BlMyQ" name="ordinal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTw0FBEeCHqY1i-BlMyQ" name="symbol">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTxEFBEeCHqY1i-BlMyQ" name="CollectionItem">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTxUFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTxkFBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTx0FBEeCHqY1i-BlMyQ" name="objectType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTyEFBEeCHqY1i-BlMyQ" name="ordinal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUTyUFBEeCHqY1i-BlMyQ" name="Collection">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUTykFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTy0FBEeCHqY1i-BlMyQ" name="annotation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTzEFBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTzUFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTzkFBEeCHqY1i-BlMyQ" name="label1">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUTz0FBEeCHqY1i-BlMyQ" name="objectType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT0EFBEeCHqY1i-BlMyQ" name="Coverage">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT0UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT0kFBEeCHqY1i-BlMyQ" name="mixed">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT00FBEeCHqY1i-BlMyQ" name="CreatingTool">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT1EFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT1UFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT1kFBEeCHqY1i-BlMyQ" name="toolType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT10FBEeCHqY1i-BlMyQ" name="version">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT2EFBEeCHqY1i-BlMyQ" name="Creator">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT2UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT2kFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT20FBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT3EFBEeCHqY1i-BlMyQ" name="objectType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT3UFBEeCHqY1i-BlMyQ" name="Dependent">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT3kFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT30FBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT4EFBEeCHqY1i-BlMyQ" name="ordinal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT4UFBEeCHqY1i-BlMyQ" name="DiscoveryMethod">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT4kFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT40FBEeCHqY1i-BlMyQ" name="url">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT5EFBEeCHqY1i-BlMyQ" name="annotation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT5UFBEeCHqY1i-BlMyQ" name="autoTrigger">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT5kFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT50FBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT6EFBEeCHqY1i-BlMyQ" name="importType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT6UFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT6kFBEeCHqY1i-BlMyQ" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT60FBEeCHqY1i-BlMyQ" name="DocumentRoot">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT7EFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT7UFBEeCHqY1i-BlMyQ" name="mixed">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT7kFBEeCHqY1i-BlMyQ" name="xMLNSPrefixMap">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT70FBEeCHqY1i-BlMyQ" name="xSISchemaLocation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT8EFBEeCHqY1i-BlMyQ" name="description1">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT8UFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT8kFBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT80FBEeCHqY1i-BlMyQ" name="label1">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT9EFBEeCHqY1i-BlMyQ" name="End">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT9UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT9kFBEeCHqY1i-BlMyQ" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT90FBEeCHqY1i-BlMyQ" name="scheme">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT-EFBEeCHqY1i-BlMyQ" name="EvidenceExhibit">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT-UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT-kFBEeCHqY1i-BlMyQ" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT-0FBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT_EFBEeCHqY1i-BlMyQ" name="questionId">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUT_UFBEeCHqY1i-BlMyQ" name="Evidence">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUT_kFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUT_0FBEeCHqY1i-BlMyQ" name="annotation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUUAEFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUUAUFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUUAkFBEeCHqY1i-BlMyQ" name="ordinal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riUUA0FBEeCHqY1i-BlMyQ" name="Exhibit">
+        <elements xsi:type="eef-views:Container" xmi:id="_riUUBEFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUUBUFBEeCHqY1i-BlMyQ" name="annotation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riUUBkFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6sEFBEeCHqY1i-BlMyQ" name="Flag">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6sUFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6skFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6s0FBEeCHqY1i-BlMyQ" name="flagType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6tEFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6tUFBEeCHqY1i-BlMyQ" name="Interval">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6tkFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6t0FBEeCHqY1i-BlMyQ" name="max">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6uEFBEeCHqY1i-BlMyQ" name="min">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6uUFBEeCHqY1i-BlMyQ" name="List">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6ukFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6u0FBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6vEFBEeCHqY1i-BlMyQ" name="Memo">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6vUFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6vkFBEeCHqY1i-BlMyQ" name="creator">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6v0FBEeCHqY1i-BlMyQ" name="reader">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6wEFBEeCHqY1i-BlMyQ" documentation="" name="subject">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6wUFBEeCHqY1i-BlMyQ" documentation="" name="body">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6wkFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6w0FBEeCHqY1i-BlMyQ" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6xEFBEeCHqY1i-BlMyQ" name="MetaData">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6xUFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6xkFBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6x0FBEeCHqY1i-BlMyQ" name="NationState">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6yEFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6yUFBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6ykFBEeCHqY1i-BlMyQ" name="Parameter">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6y0FBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6zEFBEeCHqY1i-BlMyQ" name="symbol">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6zUFBEeCHqY1i-BlMyQ" name="Period">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6zkFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6z0FBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU60EFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU60UFBEeCHqY1i-BlMyQ" name="Person">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU60kFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU600FBEeCHqY1i-BlMyQ" name="firstName">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU61EFBEeCHqY1i-BlMyQ" name="middleName">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU61UFBEeCHqY1i-BlMyQ" name="lastName">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU61kFBEeCHqY1i-BlMyQ" name="nickName">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU610FBEeCHqY1i-BlMyQ" name="organization">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU62EFBEeCHqY1i-BlMyQ" name="department">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU62UFBEeCHqY1i-BlMyQ" name="email">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU62kFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU620FBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU63EFBEeCHqY1i-BlMyQ" name="Publisher">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU63UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU63kFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU630FBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU64EFBEeCHqY1i-BlMyQ" name="objectType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU64UFBEeCHqY1i-BlMyQ" name="QuestionRelationships">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU64kFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU640FBEeCHqY1i-BlMyQ" name="dependent">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU65EFBEeCHqY1i-BlMyQ" name="Question">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU65UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU65kFBEeCHqY1i-BlMyQ" name="group">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU650FBEeCHqY1i-BlMyQ" name="amplification">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU66EFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU66UFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU66kFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU660FBEeCHqY1i-BlMyQ" name="Reader">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU67EFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU67UFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU67kFBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU670FBEeCHqY1i-BlMyQ" name="objectType">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU68EFBEeCHqY1i-BlMyQ" name="Relevance">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU68UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU68kFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU680FBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU69EFBEeCHqY1i-BlMyQ" name="ordinal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU69UFBEeCHqY1i-BlMyQ" name="symbol">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU69kFBEeCHqY1i-BlMyQ" name="Reliability">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU690FBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6-EFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6-UFBEeCHqY1i-BlMyQ" name="label">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6-kFBEeCHqY1i-BlMyQ" name="ordinal">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6-0FBEeCHqY1i-BlMyQ" name="symbol">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU6_EFBEeCHqY1i-BlMyQ" name="Start">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU6_UFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6_kFBEeCHqY1i-BlMyQ" documentation="" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU6_0FBEeCHqY1i-BlMyQ" documentation="" name="scheme">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU7AEFBEeCHqY1i-BlMyQ" name="Template">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU7AUFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7AkFBEeCHqY1i-BlMyQ" name="annotation">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7A0FBEeCHqY1i-BlMyQ" name="question">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7BEFBEeCHqY1i-BlMyQ" name="id">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU7BUFBEeCHqY1i-BlMyQ" name="Value">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU7BkFBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7B0FBEeCHqY1i-BlMyQ" name="mixed">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7CEFBEeCHqY1i-BlMyQ" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7CUFBEeCHqY1i-BlMyQ" name="unit">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_riU7CkFBEeCHqY1i-BlMyQ" name="Witness">
+        <elements xsi:type="eef-views:Container" xmi:id="_riU7C0FBEeCHqY1i-BlMyQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7DEFBEeCHqY1i-BlMyQ" documentation="" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7DUFBEeCHqY1i-BlMyQ" name="idRef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_riU7DkFBEeCHqY1i-BlMyQ" name="timestamp">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

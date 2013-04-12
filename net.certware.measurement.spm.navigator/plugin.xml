@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+         <commonFilter
+               activeByDefault="false"
+               class="net.certware.measurement.spm.navigator.filters.NavigatorFilter"
+               description="Filters the SPM model files"
+               id="net.certware.measurement.spm.navigator.filters.filefilter"
+               name="CertWare SPM Models"
+               visibleInUI="true">
+      </commonFilter>
+            <navigatorContent
+            activeByDefault="true"
+            contentProvider="net.certware.measurement.spm.navigator.ContentProvider"
+            icon="icons/obj16/spider.png"
+            id="net.certware.measurement.spm.navigator.navigatorContent"
+            labelProvider="net.certware.measurement.spm.navigator.LabelProvider"
+            name="SPM Model Conditions"
+            priority="high"
+            providesSaveables="false">
+         <triggerPoints>
+            <or>
+               <and>
+                  <instanceof
+                        value="org.eclipse.core.resources.IResource">
+                  </instanceof>
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.core.resources.extension"
+                        value="spm">
+                  </test>
+               </and>
+               <instanceof
+                     value="net.certware.measurement.spm.navigator.TreeData">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="net.certware.measurement.spm.navigator.TreeData">
+               </instanceof>
+            </or>
+         </possibleChildren>
+      </navigatorContent>
+   </extension>
+      <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding
+            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.measurement.spm.navigator.filters.*">
+            </contentExtension>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.measurement.spm.navigator.navigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+
+</plugin>

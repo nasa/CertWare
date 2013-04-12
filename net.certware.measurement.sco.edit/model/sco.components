@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_goCioFZ7EeGY7JfWCGhS-w" documentation="Edition Context for sco GenPackage">
+    <categories xmi:id="_goCioVZ7EeGY7JfWCGhS-w" name="sco">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goCiolZ7EeGY7JfWCGhS-w" name="TotalChangeOrders" views="_goDJ2lZ7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goCio1Z7EeGY7JfWCGhS-w" name="name" views="_goDJ3FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goCipFZ7EeGY7JfWCGhS-w" name="value" views="_goDJ3VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goCipVZ7EeGY7JfWCGhS-w" name="type" views="_goDJ3lZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goCiplZ7EeGY7JfWCGhS-w" name="brokenLines" views="_goDJ31Z7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/brokenLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJsFZ7EeGY7JfWCGhS-w" name="fixedLines" views="_goDJ4FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/fixedLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJsVZ7EeGY7JfWCGhS-w" name="repairEffort" views="_goDJ4VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/repairEffort"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//TotalChangeOrders"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goDJslZ7EeGY7JfWCGhS-w" name="CriticalDefectChangeOrders" views="_goDJ4lZ7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJs1Z7EeGY7JfWCGhS-w" name="name" views="_goDJ5FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJtFZ7EeGY7JfWCGhS-w" name="value" views="_goDJ5VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJtVZ7EeGY7JfWCGhS-w" name="type" views="_goDJ5lZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJtlZ7EeGY7JfWCGhS-w" name="brokenLines" views="_goDJ51Z7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/brokenLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJt1Z7EeGY7JfWCGhS-w" name="fixedLines" views="_goDJ6FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/fixedLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJuFZ7EeGY7JfWCGhS-w" name="repairEffort" views="_goDJ6VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/repairEffort"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//CriticalDefectChangeOrders"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goDJuVZ7EeGY7JfWCGhS-w" name="NormalDefectChangeOrders" views="_goDJ6lZ7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJulZ7EeGY7JfWCGhS-w" name="name" views="_goDJ7FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJu1Z7EeGY7JfWCGhS-w" name="value" views="_goDJ7VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJvFZ7EeGY7JfWCGhS-w" name="type" views="_goDJ7lZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJvVZ7EeGY7JfWCGhS-w" name="brokenLines" views="_goDJ71Z7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/brokenLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJvlZ7EeGY7JfWCGhS-w" name="fixedLines" views="_goDJ8FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/fixedLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJv1Z7EeGY7JfWCGhS-w" name="repairEffort" views="_goDJ8VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/repairEffort"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//NormalDefectChangeOrders"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goDJwFZ7EeGY7JfWCGhS-w" name="ImprovementChangeOrders" views="_goDJ8lZ7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJwVZ7EeGY7JfWCGhS-w" name="name" views="_goDJ9FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJwlZ7EeGY7JfWCGhS-w" name="value" views="_goDJ9VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJw1Z7EeGY7JfWCGhS-w" name="type" views="_goDJ9lZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJxFZ7EeGY7JfWCGhS-w" name="brokenLines" views="_goDJ91Z7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/brokenLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJxVZ7EeGY7JfWCGhS-w" name="fixedLines" views="_goDJ-FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/fixedLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJxlZ7EeGY7JfWCGhS-w" name="repairEffort" views="_goDJ-VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/repairEffort"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ImprovementChangeOrders"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goDJx1Z7EeGY7JfWCGhS-w" name="NewFeatureChangeOrders" views="_goDJ-lZ7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJyFZ7EeGY7JfWCGhS-w" name="name" views="_goDJ_FZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJyVZ7EeGY7JfWCGhS-w" name="value" views="_goDJ_VZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJylZ7EeGY7JfWCGhS-w" name="type" views="_goDJ_lZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJy1Z7EeGY7JfWCGhS-w" name="brokenLines" views="_goDJ_1Z7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/brokenLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJzFZ7EeGY7JfWCGhS-w" name="fixedLines" views="_goDKAFZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/fixedLines"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJzVZ7EeGY7JfWCGhS-w" name="repairEffort" views="_goDKAVZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ChangeOrderCount/repairEffort"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//NewFeatureChangeOrders"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goDJzlZ7EeGY7JfWCGhS-w" name="ArtifactIdentifier" views="_goDKAlZ7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJz1Z7EeGY7JfWCGhS-w" name="resourceName" views="_goDKBFZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactIdentifier/resourceName"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJ0FZ7EeGY7JfWCGhS-w" name="baselinedLineCount" views="_goDKBVZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactIdentifier/baselinedLineCount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJ0VZ7EeGY7JfWCGhS-w" name="currentLineCount" views="_goDKBlZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactIdentifier/currentLineCount"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactIdentifier"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goDJ0lZ7EeGY7JfWCGhS-w" name="ArtifactCommit" views="_goDKB1Z7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJ01Z7EeGY7JfWCGhS-w" name="artifactIdentifiers" views="_goDwwVZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactCommit/artifactIdentifiers"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJ1FZ7EeGY7JfWCGhS-w" name="commitIdentifier" views="_goDwwlZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactCommit/commitIdentifier"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJ1VZ7EeGY7JfWCGhS-w" name="usageTime" views="_goDww1Z7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactCommit/usageTime"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//ArtifactCommit"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_goDJ1lZ7EeGY7JfWCGhS-w" name="CommitHistory" views="_goDwxFZ7EeGY7JfWCGhS-w">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_goDJ11Z7EeGY7JfWCGhS-w" name="commitRecord" views="_goDwxlZ7EeGY7JfWCGhS-w">
+          <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//CommitHistory/commitRecord"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.measurement.sco/model/sco.ecore#//CommitHistory"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/net.certware.measurement.sco/model/sco.genmodel#//sco"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_goDJ2FZ7EeGY7JfWCGhS-w" documentation="Views repository for sco GenPackage" name="sco">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_goDJ2VZ7EeGY7JfWCGhS-w" name="sco">
+      <views xmi:id="_goDJ2lZ7EeGY7JfWCGhS-w" name="TotalChangeOrders">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDJ21Z7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ3FZ7EeGY7JfWCGhS-w" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ3VZ7EeGY7JfWCGhS-w" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ3lZ7EeGY7JfWCGhS-w" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ31Z7EeGY7JfWCGhS-w" name="brokenLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ4FZ7EeGY7JfWCGhS-w" name="fixedLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ4VZ7EeGY7JfWCGhS-w" name="repairEffort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_goDJ4lZ7EeGY7JfWCGhS-w" name="CriticalDefectChangeOrders">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDJ41Z7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ5FZ7EeGY7JfWCGhS-w" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ5VZ7EeGY7JfWCGhS-w" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ5lZ7EeGY7JfWCGhS-w" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ51Z7EeGY7JfWCGhS-w" name="brokenLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ6FZ7EeGY7JfWCGhS-w" name="fixedLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ6VZ7EeGY7JfWCGhS-w" name="repairEffort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_goDJ6lZ7EeGY7JfWCGhS-w" name="NormalDefectChangeOrders">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDJ61Z7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ7FZ7EeGY7JfWCGhS-w" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ7VZ7EeGY7JfWCGhS-w" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ7lZ7EeGY7JfWCGhS-w" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ71Z7EeGY7JfWCGhS-w" name="brokenLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ8FZ7EeGY7JfWCGhS-w" name="fixedLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ8VZ7EeGY7JfWCGhS-w" name="repairEffort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_goDJ8lZ7EeGY7JfWCGhS-w" name="ImprovementChangeOrders">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDJ81Z7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ9FZ7EeGY7JfWCGhS-w" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ9VZ7EeGY7JfWCGhS-w" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ9lZ7EeGY7JfWCGhS-w" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ91Z7EeGY7JfWCGhS-w" name="brokenLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ-FZ7EeGY7JfWCGhS-w" name="fixedLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ-VZ7EeGY7JfWCGhS-w" name="repairEffort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_goDJ-lZ7EeGY7JfWCGhS-w" name="NewFeatureChangeOrders">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDJ-1Z7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ_FZ7EeGY7JfWCGhS-w" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ_VZ7EeGY7JfWCGhS-w" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ_lZ7EeGY7JfWCGhS-w" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDJ_1Z7EeGY7JfWCGhS-w" name="brokenLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDKAFZ7EeGY7JfWCGhS-w" name="fixedLines">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDKAVZ7EeGY7JfWCGhS-w" name="repairEffort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_goDKAlZ7EeGY7JfWCGhS-w" name="ArtifactIdentifier">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDKA1Z7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDKBFZ7EeGY7JfWCGhS-w" name="resourceName">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDKBVZ7EeGY7JfWCGhS-w" name="baselinedLineCount">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDKBlZ7EeGY7JfWCGhS-w" name="currentLineCount">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_goDKB1Z7EeGY7JfWCGhS-w" name="ArtifactCommit">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDwwFZ7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDwwVZ7EeGY7JfWCGhS-w" name="artifactIdentifiers">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDwwlZ7EeGY7JfWCGhS-w" name="commitIdentifier">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDww1Z7EeGY7JfWCGhS-w" name="usageTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_goDwxFZ7EeGY7JfWCGhS-w" name="CommitHistory">
+        <elements xsi:type="eef-views:Container" xmi:id="_goDwxVZ7EeGY7JfWCGhS-w" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_goDwxlZ7EeGY7JfWCGhS-w" name="commitRecord">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

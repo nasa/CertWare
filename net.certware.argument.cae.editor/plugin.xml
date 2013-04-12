@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 National Aeronautics and Space Administration
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.argument.cae.presentation.CaeModelWizardID"
+            name="CAE Model"
+            class="net.certware.argument.cae.presentation.CaeModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/CaeModelFile.gif">
+         <description>Creates a new CAE argument model.</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.cae.presentation.CaeEditorID"
+            name="CAE Model Editor"
+            icon="icons/full/obj16/CaeModelFile.gif"
+            extensions="cae"
+            class="net.certware.argument.cae.presentation.CaeEditor"
+            contributorClass="net.certware.argument.cae.presentation.CaeActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.cae.presentation.CaeModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

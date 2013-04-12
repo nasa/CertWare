@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="semiFormalProof"
+    nsURI="http://www.certware.net/argument/sfp/SemiFormalProof" nsPrefix="semiFormalProof">
+  <eClassifiers xsi:type="ecore:EClass" name="Proof">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="justifications" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Justifications"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="proofSteps" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//ProofSteps"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Justifications">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="justifications" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Justification"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Justification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hypothesis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numeral" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertion" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//QuotedAssertion"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entailment" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Entailment"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QuotedAssertion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entailment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Conjunction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Conjunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lhs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Conjunction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProofSteps">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="justification" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Justifications"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validation" eType="ecore:EClass platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//Validation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Validation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EEnum platform:/resource/net.certware.argument.sfp/src-gen/net/certware/argument/sfp/SemiFormalProof.ecore#//ValidationKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValidationKind">
+    <eLiterals name="UNKNOWN" literal="unknown"/>
+    <eLiterals name="VALID" value="1" literal="valid"/>
+    <eLiterals name="INVALID" value="2" literal="invalid"/>
+  </eClassifiers>
+</ecore:EPackage>

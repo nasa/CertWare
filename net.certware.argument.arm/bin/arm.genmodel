@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010 Object Management Group (ARM metamodel)&#xA;Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) "
+    modelDirectory="/net.certware.argument.arm/src" editDirectory="/net.certware.argument.arm.edit/src"
+    editorDirectory="/net.certware.argument.arm.editor/src" modelPluginID="net.certware.argument.arm"
+    templateDirectory="" redirection="" modelName="arm" modelPluginClass="" editPluginClass="net.certware.argument.arm.provider.ArmEditPlugin"
+    editorPluginClass="net.certware.argument.arm.presentation.ArmEditorPlugin" nonNLSMarkers="true"
+    rootImplementsInterface="" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" editPluginID="net.certware.argument.arm.edit" editorPluginID="net.certware.argument.arm.editor"
+    colorProviders="true" fontProviders="true" language="" classNamePattern="">
+  <foreignModel>arm.ecore</foreignModel>
+  <genPackages prefix="Arm" basePackage="net.certware.argument" resource="XMI" disposableProviderFactory="true"
+      multipleEditorPages="false" ecorePackage="arm.ecore#/">
+    <genDataTypes ecoreDataType="arm.ecore#//String"/>
+    <genDataTypes ecoreDataType="arm.ecore#//Integer"/>
+    <genDataTypes ecoreDataType="arm.ecore#//Boolean"/>
+    <genClasses image="false" ecoreClass="arm.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/description"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute arm.ecore#//ModelElement/content"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference arm.ecore#//ModelElement/isTagged"/>
+    </genClasses>
+    <genClasses ecoreClass="arm.ecore#//TaggedValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//TaggedValue/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//TaggedValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="arm.ecore#//Argument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arm.ecore#//Argument/containsArgumentElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arm.ecore#//Argument/containsArgumentLink"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arm.ecore#//Argument/containsArgument"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="arm.ecore#//ArgumentElement"/>
+    <genClasses image="false" ecoreClass="arm.ecore#//ArgumentLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arm.ecore#//ArgumentLink/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arm.ecore#//ArgumentLink/source"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="arm.ecore#//AssertedRelationship"/>
+    <genClasses ecoreClass="arm.ecore#//Annotation"/>
+    <genClasses ecoreClass="arm.ecore#//AssertedInference"/>
+    <genClasses ecoreClass="arm.ecore#//AssertedEvidence"/>
+    <genClasses ecoreClass="arm.ecore#//AssertedContext"/>
+    <genClasses ecoreClass="arm.ecore#//AssertedCounterEvidence"/>
+    <genClasses ecoreClass="arm.ecore#//AssertedChallenge"/>
+    <genClasses image="false" ecoreClass="arm.ecore#//ReasoningElement"/>
+    <genClasses ecoreClass="arm.ecore#//Claim">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//Claim/assumed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arm.ecore#//Claim/toBeSupported"/>
+    </genClasses>
+    <genClasses ecoreClass="arm.ecore#//EvidenceAssertion"/>
+    <genClasses ecoreClass="arm.ecore#//InformationElement"/>
+    <genClasses ecoreClass="arm.ecore#//ArgumentReasoning">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arm.ecore#//ArgumentReasoning/describes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arm.ecore#//ArgumentReasoning/hasStructure"/>
+    </genClasses>
+    <genClasses ecoreClass="arm.ecore#//CitationElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arm.ecore#//CitationElement/refersToArgumentElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arm.ecore#//CitationElement/refersToArgument"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

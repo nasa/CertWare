@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="net.certware.core.status">
+  <implementation class="net.certware.internal.core.StatusIdFinder"/>
+  <reference
+    name="packageAdmin"
+    interface="org.osgi.service.packageadmin.PackageAdmin"
+    cardinality="0..1"
+    policy="dynamic"
+    bind="bind"
+    unbind="unbind"/>
+</scr:component>

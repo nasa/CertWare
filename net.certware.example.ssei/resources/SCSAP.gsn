@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="Goal: sw contribution" description="" content="{software contribution} to {Hazard} is acceptably managed at {tier n}">
+  <strategies identifier="Strat: sw contribution" description="" content="Argument over SSRs identified for {tier n}">
+    <goals identifier="Goal: hazCont_hazCont" description="" content="SSRs at {tier n} address the potential additional hazardous contribution identified at {tier n}">
+      <isTagged key="module" value="hazCont"/>
+      <isTagged key="optional" value="true"/>
+    </goals>
+    <goals identifier="Goal: SSRidentify_SSRidentify" description="" content="SSRs from {tier n-1} have been adequately allocated, decomposed, apportioned and interpreted at {tier n}">
+      <isTagged key="optional" value="true"/>
+      <isTagged key="module" value="SSRidentify"/>
+    </goals>
+    <goals identifier="Goal: SSRnAddn" description="" content="{SSRn} addressed through design at {tier n}">
+      <isTagged key="multiplicity" value="zero or more on SSRs at {tier n}"/>
+      <subGoals identifier="Goal: SSRnSat" description="" content="{SSRn} demonstrably satisfied through evidence provided at {tier n}">
+        <isTagged key="undeveloped" value="true"/>
+      </subGoals>
+      <subGoals identifier="Goal: SSRnAddn+1" description="" content="{SSRn} addressed through design at {tier n+1}">
+        <isTagged key="recurse" value="Strat: sw contribution"/>
+      </subGoals>
+    </goals>
+    <strategyContexts identifier="Con: tierNdesign" description="" content="{{tier n} design}">
+      <isTagged key="unsubstantiated" value="true"/>
+    </strategyContexts>
+    <strategyContexts identifier="Con: SSRsN" description="" content="{SSRs identified for {tier n}}">
+      <isTagged key="unsubstantiated" value="true"/>
+    </strategyContexts>
+  </strategies>
+  <goalContexts identifier="Con: tierNdesign" description="" content="{{tier n} design}">
+    <isTagged key="unsubstantiated" value="true"/>
+  </goalContexts>
+</gsn:Goal>

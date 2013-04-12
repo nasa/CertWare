@@ -1,0 +1,63 @@
+h1. SSR IDENTIFICATION SOFTWARE SAFETY ARGUMENT PATTERN EXAMPLE GUIDE
+
+From SSEI SoBP SSEI-BP-000001 section 4.3.3.
+
+h2. INTENT
+
+This pattern provides the structure for arguments that software safety requirements (SSRs) from a previous tier of development have been adequately captured at the next tier of development through the allocation, decomposition, apportionment or interpretation of the SSRs from the previous tier. This is achieved either through making design decisions which mitigate the SSR, or through the definition of additional SSRs.
+
+h2. MOTIVATION
+
+(Not provided.)
+
+h2. CONSEQUENCES
+
+Once this pattern has been instantiated, a number of elements will remain undeveloped and requiring support. An instance of ‘Goal: SSRn’ must be supported for each SSR from {tier n-1}. An argument should be provided which demonstrates that one or more SSRs specified at {tier n} adequately capture the {tier n-1} SSR for the design at {tier n}. An instance of ‘Goal: designDecision’ must be supported for each design decision which was made to facilitate the satisfaction of SSRs at {tier n}. ‘Goal: HSFMdetect’ and ‘Goal: SSRprevent’, if created, must also be supported.
+
+h2. IMPLEMENTATION
+
+{tier n}, and {tier n-1} must be instantiated with the names of the relevant tier. This could for example be class design and high-level software design respectively.
+
+
+h2. PARTICIPANTS
+
+h3. Goal: SSRidentify 
+
+This is a public goal in a separate argument module which can be referenced from other software safety argument modules using an away goal reference. This claim is applicable wherever an argument is being presented over the tiers of the software development life cycle. {tier n} refers to the current tier being considered in the argument. {tier n-1} refers to the previous tier of development. At each tier it is necessary to demonstrate that the SSRs from {tier n-1} are adequately captured in the design of {tier n}.
+
+h3. Strat: SSRidentify 
+
+This is achieved either through making design decisions at {tier n} which facilitate the satisfaction of the {tier n-1} SSR, or through the definition of SSRs for {tier n} which consider the {tier n} design. In some cases a mixture of appropriate design decision and SSR definition might be required to capture all of the {tier n} SSRs. In other cases just one approach may be sufficient, this will depend on a number of factors including the nature of the SSRs, which tier is being considered and the nature of the design of {tier n}. The Argument justification software safety argument pattern may be used to justify the adopted strategy.
+
+h3. Goal: SSRcapture 
+
+This goal claims that the design of {tier n} has been considered in order to define SSRs for {tier n} which adequately capture the SSRs from {tier n-1}.
+
+h3. Goal: designDecisions 
+
+It may be possible to facilitate the satisfaction of some of the {tier n-1} SSRs through decisions taken in the design of {tier n}. For example, a decision to have redundant components may be taken in order to help satisfy a SSR relating to the availability of an item of data. This goal allows claims to be made that such decisions reflect the SSRs from {tier n-1}.
+
+h3. Con: tierNdesign 
+
+The design of {tier n} will be determined by the design decisions made, some of which may have been influenced by {tier n-1} SSRs. The {tier n} design will also determine the nature of the SSRs defined at {tier n}. This context is therefore common to both ‘Goal: SSRcapture’ and ‘Goal: designDecisions’.
+
+h3. Goal: SSRn 
+
+An instance of this goal is created for each SSR from {tier n-1}. To adequately reflect each {tier n-1} SSR, one or more SSRs may be required at {tier n}.
+
+h3. Goal: HSFMdetect 
+
+One of the key ways in which the design at {tier n} may facilitate satisfaction of the {tier n-1} SSRs is through the detection and handling of failures which may lead to a breach of a SSR. This optional goal makes a claim that such detection and handling mechanisms at {tier n} are sufficient to address SSR breaches. Clearly this goal will not be relevant at all tiers.
+
+h3. Goal: SSRprevent 
+
+Another key way in which the design at {tier n} may facilitate satisfaction of the {tier n-1} SSRs is through design features which prevent interference between components at {tier n} (for example through physical or logical partitioning). Interference between components has the potential to prevent SSRs from being satisfied. This optional goal makes a claim that interference at {tier n} will not prevent SSRs from being fulfilled.
+
+h3. Goal: designDecision 
+
+An instance of this goal is created for each design decision taken which is relevant to the satisfaction of a SSR from {tier n-1}. Each instance of this goal requires a supporting argument which demonstrates how the design feature supports the SSR satisfaction.
+
+h2. POSSIBLE PITFALLS
+
+The SSRs defined at {tier n} must adequately reflect the {tier n} design. If that design changes, it is necessary to check that the SSRs defined at {tier n} are still valid, and if necessary update the SSRs to reflect the design changes. For this reason it would be advantageous to have a reasonably stable design for {tier n} before defining SSRs for that tier. Since the SSRs from {tier n-1} may influence the design, it is important that this is considered early in the design of {tier n}, such that any resulting design changes are not required late in the development.
+

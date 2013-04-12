@@ -1,0 +1,125 @@
+action processing history P/net.certware.verify
+mapping: RepositoryMapping[ -> ../.git]
+
+Refs:
+key HEAD value SymbolicRef[HEAD -> refs/heads/master=ef44081aaf2123b152bdfe0f4636be153cfcf284]
+key refs/heads/master value Ref[refs/heads/master=ef44081aaf2123b152bdfe0f4636be153cfcf284]
+branch: master
+head: SymbolicRef[HEAD -> refs/heads/master=ef44081aaf2123b152bdfe0f4636be153cfcf284]
+walk: org.eclipse.jgit.revwalk.RevWalk@775a9fdf
+head obj: AnyObjectId[ef44081aaf2123b152bdfe0f4636be153cfcf284]
+ 
+commit: commit ef44081aaf2123b152bdfe0f4636be153cfcf284 1297295834 ----sp
+name ef44081aaf2123b152bdfe0f4636be153cfcf284 type 1 author PersonIdent[Matt Barry, mrb@certware.net, Wed Feb 9 17:57:14 2011 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Wed Feb 9 17:57:14 2011 -0600] time 1297295834 when Wed Feb 09 17:57:14 CST 2011
+parents 1 full Added multi-commit SPM model to test containment in new model. short Added multi-commit SPM model to test containment in new model.
+commit rev tree: first byte 62 id 3e3b1ded39404552973e71644cebc500ea828cf9 rev tree name 3e3b1ded39404552973e71644cebc500ea828cf9
+rev type tree
+ 
+commit: commit 29e61126f7b3831fad65693499db96bc0473a0c6 1297204521 ----sp
+name 29e61126f7b3831fad65693499db96bc0473a0c6 type 1 author PersonIdent[Matt Barry, mrb@certware.net, Tue Feb 8 16:35:21 2011 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Tue Feb 8 16:35:21 2011 -0600] time 1297204521 when Tue Feb 08 16:35:21 CST 2011
+parents 1 full Updated statistics. short Updated statistics.
+commit rev tree: first byte 205 id cdc59dbf75c86d279705fe59d4a824a632b7cb27 rev tree name cdc59dbf75c86d279705fe59d4a824a632b7cb27
+rev type tree
+ 
+commit: commit bd620240048bed15d1a0dfea2cbffaeeeccc1ba1 1296777238 ----sp
+name bd620240048bed15d1a0dfea2cbffaeeeccc1ba1 type 1 author PersonIdent[Matt Barry, mrb@certware.net, Thu Feb 3 17:53:58 2011 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Thu Feb 3 17:53:58 2011 -0600] time 1296777238 when Thu Feb 03 17:53:58 CST 2011
+parents 1 full Updating examples. short Updating examples.
+commit rev tree: first byte 46 id 2e467d28f082282e616cc89d7f9e1faca9e5efc8 rev tree name 2e467d28f082282e616cc89d7f9e1faca9e5efc8
+rev type tree
+ 
+commit: commit 972f852d5df9511202d1ec686eb2fef3e03c5857 1296163284 ----sp
+name 972f852d5df9511202d1ec686eb2fef3e03c5857 type 1 author PersonIdent[Matt Barry, mrb@certware.net, Thu Jan 27 15:21:24 2011 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Thu Jan 27 15:21:24 2011 -0600] time 1296163284 when Thu Jan 27 15:21:24 CST 2011
+parents 1 full New metrics and change orders. short New metrics and change orders.
+commit rev tree: first byte 98 id 62514ab438f9a3acd3fdaed8c8f570539fb89d57 rev tree name 62514ab438f9a3acd3fdaed8c8f570539fb89d57
+rev type tree
+ 
+commit: commit 02e1d994b71fc1e689d99f1de07a52da50255aca 1293130589 ----sp
+name 02e1d994b71fc1e689d99f1de07a52da50255aca type 1 author PersonIdent[Matt Barry, mrb@certware.net, Thu Dec 23 12:56:29 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Thu Dec 23 12:56:29 2010 -0600] time 1293130589 when Thu Dec 23 12:56:29 CST 2010
+parents 1 full Working validation review. short Working validation review.
+commit rev tree: first byte 131 id 8357dc3809e347a0755d0a6ff84d832a71097b3c rev tree name 8357dc3809e347a0755d0a6ff84d832a71097b3c
+rev type tree
+ 
+commit: commit 8fcd929621ce5e6c9a91ce6ae37ad9f80fe67d6e 1293052594 ----sp
+name 8fcd929621ce5e6c9a91ce6ae37ad9f80fe67d6e type 1 author PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 15:16:34 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 15:16:34 2010 -0600] time 1293052594 when Wed Dec 22 15:16:34 CST 2010
+parents 1 full Recovering project. short Recovering project.
+commit rev tree: first byte 205 id cdf4b4dbe1289a7f28ba50cba8f8c56aa84efd2c rev tree name cdf4b4dbe1289a7f28ba50cba8f8c56aa84efd2c
+rev type tree
+ 
+commit: commit 534bf782ca5a2d8357c3ee6f0aa993edb82b7a09 1293050378 ----sp
+name 534bf782ca5a2d8357c3ee6f0aa993edb82b7a09 type 1 author PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 14:39:38 2010 -0600] committer PersonIdent[Matt Barry, mrb@certware.net, Wed Dec 22 14:39:38 2010 -0600] time 1293050378 when Wed Dec 22 14:39:38 CST 2010
+parents 0 full Committing more test files. short Committing more test files.
+commit rev tree: first byte 244 id f425fd88900b10f88519b09b301bef78dc3bd63b rev tree name f425fd88900b10f88519b09b301bef78dc3bd63b
+rev type tree
+
+
+file history for resource L/net.certware.verify/.project
+file revision: Matt Barry;New metrics and change orders.;972f852d5df9511202d1ec686eb2fef3e03c5857;.project;1296163284000;1/27/11 3:21 PM
+line count 17 byte count 394
+file revision: Matt Barry;New metrics and change orders.;972f852d5df9511202d1ec686eb2fef3e03c5857;.project;1296163284000;1/27/11 3:21 PM
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;.project;1293050378000;12/22/10 2:39 PM
+line count 11 byte count 212
+
+file history for resource L/net.certware.verify/AJSSAP.gsn
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;AJSSAP.gsn;1293050378000;12/22/10 2:39 PM
+line count 66 byte count 5211
+
+file history for resource L/net.certware.verify/AJSSAP.textile
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;AJSSAP.textile;1293050378000;12/22/10 2:39 PM
+line count 72 byte count 5939
+
+file history for resource L/net.certware.verify/Bluetooth.arm
+file revision: Matt Barry;New metrics and change orders.;972f852d5df9511202d1ec686eb2fef3e03c5857;Bluetooth.arm;1296163284000;1/27/11 3:21 PM
+line count 19 byte count 3484
+
+file history for resource L/net.certware.verify/Eurocontrol SCDM AppC.vcl
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;Eurocontrol SCDM AppC.vcl;1293050378000;12/22/10 2:39 PM
+line count 55 byte count 7385
+
+file history for resource L/net.certware.verify/Eurocontrol.vcl
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;Eurocontrol.vcl;1293050378000;12/22/10 2:39 PM
+line count 55 byte count 7385
+file history for resource L/net.certware.verify/Industrial Press.arm
+file revision: Matt Barry;New metrics and change orders.;972f852d5df9511202d1ec686eb2fef3e03c5857;Industrial Press.arm;1296163284000;1/27/11 3:21 PM
+line count 31 byte count 4982
+file history for resource L/net.certware.verify/My.mspdi
+file revision: Matt Barry;New metrics and change orders.;972f852d5df9511202d1ec686eb2fef3e03c5857;My.mspdi;1296163284000;1/27/11 3:21 PM
+line count 30 byte count 793
+file history for resource L/net.certware.verify/My.smm
+file revision: Matt Barry;New metrics and change orders.;972f852d5df9511202d1ec686eb2fef3e03c5857;My.smm;1296163284000;1/27/11 3:21 PM
+line count 2 byte count 155
+file history for resource L/net.certware.verify/PSC ADS-B-NRA.eur
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;PSC ADS-B-NRA.eur;1293050378000;12/22/10 2:39 PM
+line count 102 byte count 9659
+file history for resource L/net.certware.verify/SCSAP 22.png
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;SCSAP 22.png;1293050378000;12/22/10 2:39 PM
+line count 1074 byte count 147070
+file history for resource L/net.certware.verify/SCSAP 23.png
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;SCSAP 23.png;1293050378000;12/22/10 2:39 PM
+line count 1015 byte count 154226
+file history for resource L/net.certware.verify/SCSAP.gsn
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;SCSAP.gsn;1293050378000;12/22/10 2:39 PM
+line count 31 byte count 2108
+file history for resource L/net.certware.verify/SCSAP.textile
+file revision: Matt Barry;Committing more test files.;534bf782ca5a2d8357c3ee6f0aa993edb82b7a09;SCSAP.textile;1293050378000;12/22/10 2:39 PM
+line count 59 byte count 8517
+file history for resource L/net.certware.verify/Verify Compute.spm
+file revision: Matt Barry;Added multi-commit SPM model to test containment in new model.;ef44081aaf2123b152bdfe0f4636be153cfcf284;Verify Compute.spm;1297295834000;2/9/11 5:57 PM
+line count 465 byte count 34044
+file history for resource L/net.certware.verify/Verify.cpn
+file revision: Matt Barry;Added multi-commit SPM model to test containment in new model.;ef44081aaf2123b152bdfe0f4636be153cfcf284;Verify.cpn;1297295834000;2/9/11 5:57 PM
+line count 14 byte count 346
+file history for resource L/net.certware.verify/Verify.sco
+file revision: Matt Barry;Updating examples.;bd620240048bed15d1a0dfea2cbffaeeeccc1ba1;Verify.sco;1296777238000;2/3/11 5:53 PM
+line count 15 byte count 1286
+file revision: Matt Barry;Updating examples.;bd620240048bed15d1a0dfea2cbffaeeeccc1ba1;Verify.sco;1296777238000;2/3/11 5:53 PM
+file revision: Matt Barry;New metrics and change orders.;972f852d5df9511202d1ec686eb2fef3e03c5857;Verify.sco;1296163284000;1/27/11 3:21 PM
+line count 8 byte count 645
+file history for resource L/net.certware.verify/Verify.spm
+file revision: Matt Barry;Added multi-commit SPM model to test containment in new model.;ef44081aaf2123b152bdfe0f4636be153cfcf284;Verify.spm;1297295834000;2/9/11 5:57 PM
+line count 128 byte count 9730
+file revision: Matt Barry;Added multi-commit SPM model to test containment in new model.;ef44081aaf2123b152bdfe0f4636be153cfcf284;Verify.spm;1297295834000;2/9/11 5:57 PM
+file revision: Matt Barry;Updated statistics.;29e61126f7b3831fad65693499db96bc0473a0c6;Verify.spm;1297204521000;2/8/11 4:35 PM
+line count 128 byte count 11606
+file revision: Matt Barry;Updated statistics.;29e61126f7b3831fad65693499db96bc0473a0c6;Verify.spm;1297204521000;2/8/11 4:35 PM
+file revision: Matt Barry;Updating examples.;bd620240048bed15d1a0dfea2cbffaeeeccc1ba1;Verify.spm;1296777238000;2/3/11 5:53 PM
+line count 86 byte count 9267

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CertWare Exports</title>
+<style type="text/css">@import url("file:/Users/mrbarryold/Applications/Eclipse-3.7-Model-64/configuration/org.eclipse.osgi/bundles/980/1/.cp/book.css");</style>
+<style type="text/css">@import url("file:/Users/mrbarryold/Applications/Eclipse-3.7-Model-64/configuration/org.eclipse.osgi/bundles/983/1/.cp/schema.css");</style>
+</HEAD>
+<BODY>
+<H1 style="text-align:center">CertWare Exports</H1>
+<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Identifier: </h6>net.certware.export.net.certware.export<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Since: </h6>1.1.0
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Description: </h6>Provides export capabilities to the run-time platform.  Installs the exports for selection through standard workbench operations.<p></p>
+<h6 class="CaptionFigColumn SchemaHeader">Configuration Markup:</h6>
+<p></p>
+<p class="code SchemaDtd">&lt;!ELEMENT <a name="e.extension">extension</a> (<a href="#e.styleIdMapping">styleIdMapping</a> | <a href="#e.styleResource">styleResource</a> | <a href="#e.styleContribution">styleContribution</a> | <a href="#e.exportOperation">exportOperation</a>)+&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST extension</p>
+<p class="code SchemaDtdAttlist">point&nbsp;CDATA #REQUIRED</p><p class="code SchemaDtdAttlist">id&nbsp;&nbsp;&nbsp;&nbsp;CDATA #IMPLIED</p><p class="code SchemaDtdAttlist">name&nbsp;&nbsp;CDATA #IMPLIED</p>&gt;</p>
+<p></p>
+<ul class="ConfigMarkupAttlistDesc">
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.styleResource">styleResource</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST styleResource</p>
+<p class="code SchemaDtdAttlist">styleTheme&nbsp;CDATA #IMPLIED</p><p class="code SchemaDtdAttlist">styleFile&nbsp;&nbsp;CDATA #REQUIRED</p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+An XML resource file associated with the example to be copied into the workspace.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>styleTheme</b> - Description of the nature style file.</li>
+<li><b>styleFile</b> - An XML style file to be loaded prior to export operations.</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.styleIdMapping">styleIdMapping</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST styleIdMapping</p>
+<p class="code SchemaDtdAttlist">modelElementID&nbsp;&nbsp;&nbsp;CDATA #REQUIRED</p><p class="code SchemaDtdAttlist">styleString&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA #REQUIRED</p><p class="code SchemaDtdAttlist">isParagraphStyle&nbsp;(true | false) </p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Maps one of the built-in style IDs to a model element or attribute.  Use the model's package identifier for the identifier value.  Use the style IDs from the built-in document styles (see docx4j styles.xml), e.g. "Heading1" for a paragraph style or "Heading1Char" for a run style.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>modelElementID</b> - Model element number from the model package file.</li>
+<li><b>styleString</b> - Paragraph or run style ID from built-in or supplemental styles.</li>
+<li><b>isParagraphStyle</b> - True if the style is for paragraphs, false if style is for runs.</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.styleContribution">styleContribution</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST styleContribution</p>
+<p class="code SchemaDtdAttlist">styleString&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA #REQUIRED</p><p class="code SchemaDtdAttlist">isParagraphStyle&nbsp;(true | false) </p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Provides an XML-syntax string to define a new style.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>styleString</b> - XML string describing the style including the namespace.  The style name should be included in the string as it will be retrieved for application during the export process.  The usual namespace for word processing documents in this framework is
+xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main".</li>
+<li><b>isParagraphStyle</b> - True if the style is for paragraphs, false otherwise (for runs).</li>
+</ul>
+<br><p class="code SchemaDtd">&lt;!ELEMENT <a name="e.exportOperation">exportOperation</a> EMPTY&gt;</p>
+<p class="code SchemaDtd">&lt;!ATTLIST exportOperation</p>
+<p class="code SchemaDtdAttlist">fileExtension&nbsp;CDATA #REQUIRED</p><p class="code SchemaDtdAttlist">class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDATA #REQUIRED</p>&gt;</p>
+<p></p>
+<p class="ConfigMarkupElementDesc">
+Class for exporting the argument as a formatted document from the export wizard.</p>
+<br>
+<ul class="ConfigMarkupAttlistDesc">
+<li><b>fileExtension</b> - The model file extension to match when running the export wizard.</li>
+<li><b>class</b> - The export operation class will be called from the workbench export wizard when a file of this type is selected for export.</li>
+</ul>
+<br><h6 class="CaptionFigColumn SchemaHeader">Examples: </h6>[Enter extension point usage example here.]
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">API Information: </h6>[Enter API information here.]
+<p></p>
+
+<h6 class="CaptionFigColumn SchemaHeader">Supplied Implementation: </h6>[Enter information about supplied implementation of this extension point.]
+<p></p>
+
+<br>
+<p class="note SchemaCopyright">
+Copyright (c) 2011 Kestrel Technology LLC.
+
+</p>
+</BODY>
+</HTML>

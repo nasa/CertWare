@@ -1,0 +1,37 @@
+/**
+ * CertWare Project
+ * CertWare Planning Notation (CPN) overlay for ARM standard notation.
+ * @since 1.0.3
+ * @author mrb
+ */
+grammar net.certware.planning.cpn.CpnDsl with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "platform:/resource/net.certware.argument.arm/model/arm.ecore" as arm
+
+generate cpnDsl "http://www.certware.net/planning/cpn/CpnDsl"
+
+
+Plans :
+ 	(argumentmodels+=ArgumentModels)*
+ 	(plans+=Plan)*
+	;
+
+// any of our CertWare argument models derived from ARM should work here 
+ArgumentModels :
+ 'argumentmodel' importURI=STRING;
+
+Allocation : {Allocation}
+	('cost' cost=INT)? 
+	('duration' duration=INT)?
+	('team' team=STRING)?
+	('facility' facility=STRING)?
+	;
+
+Plan: 'plan' id=STRING 
+	'element' element=[arm::ModelElement]
+	('estimated' '(' estimated=Allocation')')?
+	('actual' '(' actual=Allocation')')? 
+	;
+
+	

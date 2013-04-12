@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="evidence"
+    nsURI="http:///evidence.ecore" nsPrefix="evidence">
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceAttribute" abstract="true" eSuperTypes="#//EvaluationAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Consistency" eSuperTypes="#//DocumentAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//ConsistencyLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Completeness" eSuperTypes="#//DocumentAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//CompletenessLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConsistencyLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="informal" value="1"/>
+    <eLiterals name="semiformal" value="2"/>
+    <eLiterals name="formal" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//Exhibit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" upperBound="-1"
+        eType="#//DocumentProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//DocumentAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Confidence" eSuperTypes="#//EvidenceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//ConfidenceLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApprovedBy" eSuperTypes="#//Provenance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supervisor" lowerBound="1"
+        eType="#//Originator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Description" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreatedBy" eSuperTypes="#//Provenance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Originator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tool" eSuperTypes="#//CollectionMethod">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="#//CollectionMethod">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tool" upperBound="-1" eType="#//RequiresTool"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiresTool" eSuperTypes="#//EvidenceProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tool" lowerBound="1" eType="#//Tool"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceItem" abstract="true" eSuperTypes="#//EvidenceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" upperBound="-1"
+        eType="#//EvidenceEvent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsBasedOn" eSuperTypes="#//DocumentProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//EvidenceItem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainAssertion" abstract="true" eSuperTypes="#//Meaning #//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stmt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsA" eSuperTypes="#//EvidenceInterpretation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
+        eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsCharacterizedBy" eSuperTypes="#//EvidenceInterpretation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="#//DomainAssertion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//Originator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affiliation" upperBound="-1"
+        eType="#//HasRoleIn" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//Originator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affiliation" upperBound="-1"
+        eType="#//HasRoleIn" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//AdministrativeElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="consistency" eType="#//ConsistencyLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="criteria" eType="#//StandardOfProof"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="completeness" eType="#//CompletenessLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" upperBound="-1"
+        eType="#//CollectionMethod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="originator" upperBound="-1"
+        eType="#//Originator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" upperBound="-1"
+        eType="#//EvidenceRequest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objective" upperBound="-1"
+        eType="#//ProjectObjective" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" upperBound="-1"
+        eType="#//Activity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" upperBound="-1" eType="#//EvidenceItem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RequiresPackage" upperBound="-1"
+        eType="#//RequiresPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation" upperBound="-1"
+        eType="#//EvidenceEvaluation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndTime" eSuperTypes="#//EffectiveTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datetime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assertion" eSuperTypes="#//DomainAssertion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="facttype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" upperBound="-1" eType="#//RoleBinding"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormalObject" abstract="true" eSuperTypes="#//DomainObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="concept" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//FormalObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeSubject" eSuperTypes="#//DomainObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="#//DomainObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleBinding" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subject" eType="#//DomainObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartTime" eSuperTypes="#//EffectiveTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datetime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relevance" eSuperTypes="#//EvidenceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//Level"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Level">
+    <eLiterals name="unknown"/>
+    <eLiterals name="low" value="1"/>
+    <eLiterals name="mediumLow" value="2"/>
+    <eLiterals name="medium" value="3"/>
+    <eLiterals name="mediumHigh" value="4"/>
+    <eLiterals name="high" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Significance" eSuperTypes="#//EvidenceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="#//Level"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Accuracy" eSuperTypes="#//EvidenceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//AccuracyLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasRoleIn" eSuperTypes="#//EvidenceProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="organization" lowerBound="1"
+        eType="#//Organization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsScopedBy" eSuperTypes="#//EvidenceInterpretation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scope" lowerBound="1" eType="#//Object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EffectiveTime" abstract="true" eSuperTypes="#//TimingProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AtTime" eSuperTypes="#//TimingProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateTtime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Originality" eSuperTypes="#//DocumentAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//OriginalityLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reporting" eSuperTypes="#//EvidenceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//ReportingLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OriginalityLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="derivative" value="1"/>
+    <eLiterals name="original" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reliability" eSuperTypes="#//DocumentAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//ReliabilityLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReportingLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="secondary" value="1"/>
+    <eLiterals name="primary" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Supports" eSuperTypes="#//EvidenceRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IsGeneratedAt" eSuperTypes="#//EvidenceEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionMethod" abstract="true" eSuperTypes="#//Object"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceRelation" abstract="true" eSuperTypes="#//EvidenceEvaluation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1" eType="#//EvidenceItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertion" lowerBound="1"
+        eType="#//DomainAssertion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Support" eSuperTypes="#//EvidenceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//SupportLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Conflicts" eSuperTypes="#//EvidenceObservation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertion1" lowerBound="1"
+        eType="#//DomainAssertion"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertion2" lowerBound="1"
+        eType="#//DomainAssertion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rationale" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Refutes" eSuperTypes="#//EvidenceResolution">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//DomainAssertion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Negates" eSuperTypes="#//EvidenceResolution">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//EvidenceRelation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnknownSubject" eSuperTypes="#//FormalObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceEvaluation" abstract="true"
+      eSuperTypes="#//EvidenceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//EvidenceAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resolves" eSuperTypes="#//EvidenceResolution">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//EvidenceObservation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Originator" abstract="true" eSuperTypes="#//Object"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceRequest" eSuperTypes="#//AdministrativeElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" upperBound="-1" eType="#//EvidenceItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provenance" upperBound="-1"
+        eType="#//Provenance" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectObjective" eSuperTypes="#//AdministrativeElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//AdministrativeElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" upperBound="-1"
+        eType="#//ActivityProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" upperBound="-1"
+        eType="#//TimingProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provenance" upperBound="-1"
+        eType="#//Provenance" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependsOn" eSuperTypes="#//ActivityProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsAssociatedWith" eSuperTypes="#//ActivityProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="request" lowerBound="1"
+        eType="#//EvidenceRequest"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiresMethod" eSuperTypes="#//ActivityProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" lowerBound="1"
+        eType="#//CollectionMethod"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Satisfies" eSuperTypes="#//ActivityProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objective" lowerBound="1"
+        eType="#//ProjectObjective"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdministrativeElement" abstract="true"
+      eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StandardOfProof">
+    <eLiterals name="unknown"/>
+    <eLiterals name="other" value="1"/>
+    <eLiterals name="POE" value="2"/>
+    <eLiterals name="CCE" value="3"/>
+    <eLiterals name="BRD" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainClaim" eSuperTypes="#//DomainAssertion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceObservation" abstract="true"
+      eSuperTypes="#//EvidenceEvaluation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceResolution" abstract="true"
+      eSuperTypes="#//EvidenceEvaluation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rationale" lowerBound="1"
+        eType="#//Rationale" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+        eType="#//EvidenceGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Weakens" eSuperTypes="#//Contributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Amplifies" eSuperTypes="#//Contributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Contributes" abstract="true" eSuperTypes="#//EvidenceObservation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation1" lowerBound="1"
+        eType="#//EvidenceRelation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation2" lowerBound="1"
+        eType="#//EvidenceRelation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Challenges" eSuperTypes="#//EvidenceRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Strength" eSuperTypes="#//EvidenceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsAcquiredAt" eSuperTypes="#//EvidenceEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IsTransferredTo" eSuperTypes="#//EvidenceEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentAttribute" abstract="true" eSuperTypes="#//EvaluationAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceEvent" abstract="true" eSuperTypes="#//EvidenceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="custody" upperBound="-1"
+        eType="#//CustodyProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OwnedBy" eSuperTypes="#//Provenance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//Originator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Provenance" abstract="true" eSuperTypes="#//EvidenceProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimingProperty" abstract="true" eSuperTypes="#//EvidenceProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IsPartOf" eSuperTypes="#//ExhibitProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whole" lowerBound="1" eType="#//Exhibit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SupportLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="indirect" value="1"/>
+    <eLiterals name="direct" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsRevokedAt" eSuperTypes="#//EvidenceEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProvidesContext" eSuperTypes="#//EvidenceEvaluation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//EvidenceElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
+        eType="#//EvidenceGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainObject" abstract="true" eSuperTypes="#//Meaning">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeansThat" eSuperTypes="#//EvidenceInterpretation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="meaning" lowerBound="1"
+        eType="#//DomainAssertion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceElement" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
+        eType="#//Description" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provenance" upperBound="-1"
+        eType="#//Provenance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" upperBound="-1"
+        eType="#//TimingProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompletenessLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="incomplete" value="1"/>
+    <eLiterals name="draft" value="2"/>
+    <eLiterals name="final" value="3"/>
+    <eLiterals name="obsolete" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CareOf" eSuperTypes="#//CustodyProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="curator" lowerBound="1"
+        eType="#//Person"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustodyProperty" abstract="true" eSuperTypes="#//EvidenceProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AtLocation" eSuperTypes="#//CustodyProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" lowerBound="1"
+        eType="#//Organization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsCreatedAt" eSuperTypes="#//EvidenceEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiresPackage" eSuperTypes="#//AdministrativeProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
+        eType="#//Package"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityProperty" abstract="true" eSuperTypes="#//AdministrativeProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceProperty" abstract="true" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdministrativeProperty" abstract="true"
+      eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//CollectionMethod">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tool" upperBound="-1" eType="#//RequiresTool"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentProperty" abstract="true" eSuperTypes="#//EvidenceProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HasElectronicSource" eSuperTypes="#//ExhibitProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsExpressedInLanguage" eSuperTypes="#//DocumentProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsPrimary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsingProcess" eSuperTypes="#//CustodyProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" lowerBound="1"
+        eType="#//CollectionMethod"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasSecurityClassification" eSuperTypes="#//DocumentProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityClassification"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsReleaseableTo" eSuperTypes="#//DocumentProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="releasability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceGroup" eSuperTypes="#//EvidenceItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="#//EvidenceElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasVersion" eSuperTypes="#//DocumentProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvaluationAttribute" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provenance" upperBound="-1"
+        eType="#//Provenance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timing" upperBound="-1"
+        eType="#//TimingProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Supercedes" eSuperTypes="#//EvidenceEvaluation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newAttribute" lowerBound="1"
+        eType="#//EvaluationAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldAttribute" lowerBound="1"
+        eType="#//EvaluationAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasMedia" eSuperTypes="#//ExhibitProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="media" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Exhibit" eSuperTypes="#//EvidenceItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exhibitProperty" upperBound="-1"
+        eType="#//ExhibitProperty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Meaning" abstract="true" eSuperTypes="#//EvidenceItem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExhibitProperty" abstract="true" eSuperTypes="#//EvidenceProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceInterpretation" abstract="true"
+      eSuperTypes="#//EvidenceEvaluation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//EvidenceElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReliabilityLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="unReliable" value="1"/>
+    <eLiterals name="notUsuallyReliable" value="2"/>
+    <eLiterals name="usuallyReliable" value="3"/>
+    <eLiterals name="fairlyReliable" value="4"/>
+    <eLiterals name="completelyReliable" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccuracyLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="improbable" value="1"/>
+    <eLiterals name="doubtful" value="2"/>
+    <eLiterals name="possible" value="3"/>
+    <eLiterals name="probable" value="4"/>
+    <eLiterals name="confirmed" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConfidenceLevel">
+    <eLiterals name="unknown"/>
+    <eLiterals name="reportedAsUncertain" value="1"/>
+    <eLiterals name="reportedAsPlausible" value="2"/>
+    <eLiterals name="reportedAsFact" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

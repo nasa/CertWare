@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <pattern
+            applicability="CertWare SPM"
+            author="Matt Barry"
+            consequences="Populated model with place-holder data, ready for reapplication and computation"
+            idp="net.certware.example.metrics.spm"
+            implementation="Edit file to populate with change repository, time-keeping, and change order data."
+            intent="Initialize a typical structure of the SPM metrics"
+            motivation="Capturing product quality and in-progress indicators for safey case projects"
+            name="CertWare Software Project Management Metrics"
+            version="CW SPM 2.3.2011">
+         <resource
+               description="Metrics model file"
+               structure="resources/Metrics.spm">
+         </resource>
+      </pattern>
+   </extension>
+
+</fragment>

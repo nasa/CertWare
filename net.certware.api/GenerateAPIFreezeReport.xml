@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+  <property name="xml" value="/reports/freeze/xml"/>
+  <property name="html" value="/reports/freeze/html"/>
+  <property name="profile" value="/eclipse/eclipse/plugins"/>
+  <property name="baseline" value="/eclipse/eclipse_3.6.2/plugins"/>
+  <target name="default">
+    <apifreeze
+        baseline="${baseline}"
+        profile="${profile}"
+        report="${xml}"
+        debug="true"
+    />
+    <apifreeze_reportconversion
+    	xmlfiles="${xml}"
+    	htmlfiles="${html}"
+    	debug="true"
+    />
+  </target>
+</project>

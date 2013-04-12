@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="sfp"
+            id="net.certware.argument.sfp.SemiFormalProof"
+            name="%editor.name">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="net.certware.argument.sfp.SemiFormalProof.validate">
+         <activeWhen>
+            <reference
+                    definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="net.certware.argument.sfp.SemiFormalProof" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+              category="certware"
+              class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="net.certware.argument.sfp.SemiFormalProof"
+              name="%page.name">
+            <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
+        </page>
+        <page
+            category="net.certware.argument.sfp.SemiFormalProof"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="net.certware.argument.sfp.SemiFormalProof.coloring"
+            name="%page.name.0">
+            <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
+        </page>
+        <page
+            category="net.certware.argument.sfp.SemiFormalProof"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="net.certware.argument.sfp.SemiFormalProof.templates"
+            name="%page.name.1">
+            <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"
+            label="%keyword.label"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="%command.description"
+            id="net.certware.argument.sfp.SemiFormalProof.validate"
+            name="%command.name">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="net.certware.argument.sfp.SemiFormalProof.validate"
+                 style="push"
+                 tooltip="%command.tooltip">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="sfp">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="sfp">
+        </resourceServiceProvider>
+    </extension>
+
+
+
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+        categoryId="net.certware.core.ui.command.category"
+        description="%command.description.0"
+        id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+        name="%command.name.0">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="%command.tooltip.0">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+   <!-- quickfix marker resolution generator -->
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+      </markerResolutionGenerator>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.argument.sfp.ui.wizard.NewProofFileWizard"
+            hasPages="true"
+            icon="icons/obj16/proof.gif"
+            id="net.certware.argument.sfp.ui.newwizard"
+            name="Semi-Formal Proof"
+            project="false">
+         <description>
+            Creates a new semi-formal proof file in the selected container.  Initializes file with representative content.
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.sfp.ui.newwizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

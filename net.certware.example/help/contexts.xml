@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts>
+   <context id="example_wizard_page_context" title="CertWare Examples">
+      <description>CertWare examples wizard</description>
+      <topic href="html/concepts/example_patterns.html" label="Example Patterns"/>
+      <topic href="html/concepts/example_documents.html" label="Example Documents"/>
+      <topic href="html/concepts/example_checklists.html" label="Example Checklists"/>
+   </context>
+   <context id="example_wizard_document_context" title="CertWare Document Example">
+      <description>CertWare document example</description>
+      <topic href="html/concepts/example_documents.html" label="Example Document"/>
+   </context>
+   <context id="example_wizard_pattern_context" title="CertWare Pattern Example">
+      <description>CertWare pattern example</description>
+      <topic href="html/concepts/example_patterns.html" label="Example Pattern"/>
+   </context>
+   <context id="example_wizard_checklist_context" title="CertWare Checklist Example">
+      <description>CertWare checklist example</description>
+      <topic href="html/concepts/example_checklists.html" label="Example Checklist"/>
+   </context>
+</contexts>

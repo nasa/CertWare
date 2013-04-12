@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Measurement SCO Model View
+Bundle-SymbolicName: net.certware.measurement.sco.view;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-Activator: net.certware.measurement.sco.view.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.certware.core.ui,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms,
+ org.eclipse.core.resources,
+ net.certware.core,
+ org.eclipse.emf,
+ org.eclipse.emf.ecore,
+ net.certware.measurement.sco,
+ net.certware.measurement.sco.editor,
+ org.eclipse.emf.ecore.edit

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Help
+Bundle-SymbolicName: net.certware.help;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-ClassPath: net.certware.help
+Bundle-Vendor: Kestrel Technology LLC

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright © 2000-2005 SRI International.
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.ai.sri.com/AML"
+            class="net.certware.argument.aml.AmlPackage"
+            genModel="model/aml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="aml"
+            class="net.certware.argument.aml.util.AmlResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

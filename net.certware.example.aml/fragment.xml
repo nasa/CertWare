@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <pattern
+            applicability="AML structured argument model element example"
+            author="AI Center, SRI International"
+            consequences="Rework of argument structure"
+            idp="net.certware.example.patterns.aml.iraq"
+            implementation="Re-populate for model elements and attributes of interest"
+            intent="Demonstrate a SEAS analysis argument"
+            motivation="Realistic representation of AML argument.  "
+            name="Iraq Analysis"
+            version="Iraq-99">
+         <resource
+               description="Pattern model file"
+               structure="resources/Iraq FSHA.aml">
+         </resource>
+      </pattern>
+   </extension>
+
+</fragment>

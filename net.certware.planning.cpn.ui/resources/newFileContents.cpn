@@ -1,0 +1,22 @@
+// the following content is representative of CPN content and structure
+
+// import an existing ARM model
+// refer to the argument elements in the plan lines below
+argumentmodel "Industrial Press.arm"
+argumentmodel "Bluetooth.arm"
+
+
+// roll-up place-holder
+plan "line1" element C1 estimated () actual ()
+
+// adding a facility resource to a node
+plan "line2" element C1 
+estimated (cost 20000 duration 23 team "testing" facility "wind tunnel" ) 
+actual (cost 22000 duration 24 team "testing" facility "wind tunnel")
+
+// adding confidentiality node
+plan "line3" element Confidentiality 
+estimated (cost 1000 duration 20) 
+actual (cost 1000 duration 20 facility "penetration lab")
+
+plan "task 4" element Integrity actual (facility "cert lab")

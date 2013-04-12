@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#/"
+    outputs="aml.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://1299.fwk841752171/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//actor;XSDElementDeclaration=32"
+      outputs="aml.ecore#//DocumentRoot/actor"/>
+  <nested inputs="bundleentry://1299.fwk841752171/cache/www.w3.org/2001/XMLSchema.xsd#//anyType;XSDComplexTypeDefinition=28"
+      outputs="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//interval;XSDElementDeclaration=9/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//IntervalType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//interval;XSDElementDeclaration=9/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//IntervalType/max"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//interval;XSDElementDeclaration=9/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//IntervalType/min"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//list;XSDElementDeclaration=68/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ListType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//list;XSDElementDeclaration=68/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//ListType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//list;XSDElementDeclaration=68/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//ListType/li"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//value;XSDElementDeclaration=10/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ValueType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//value;XSDElementDeclaration=10/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//ValueType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//value;XSDElementDeclaration=10/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//ValueType/interval"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//value;XSDElementDeclaration=10/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//ValueType/list"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//value;XSDElementDeclaration=10/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//ValueType/type"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//value;XSDElementDeclaration=10/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//ValueType/unit"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//parameter;XSDElementDeclaration=12/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ParameterType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//parameter;XSDElementDeclaration=12/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//ParameterType/symbol"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//parameter;XSDElementDeclaration=12/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//ParameterType/value"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//aggregationRule;XSDElementDeclaration=13/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//AggregationRuleType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//aggregationRule;XSDElementDeclaration=13/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//AggregationRuleType/method"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//aggregationRule;XSDElementDeclaration=13/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//AggregationRuleType/parameter"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//aggregationRule;XSDElementDeclaration=13"
+      outputs="aml.ecore#//DocumentRoot/aggregationRule"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="aml.ecore#//ObjectTypeType3">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="aml.ecore#//ObjectTypeType3/template"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="aml.ecore#//ObjectTypeType3/argument"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="aml.ecore#//ObjectTypeType3/collection"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="aml.ecore#//ObjectTypeType3/person"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="aml.ecore#//ObjectTypeType3/exhibit"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=5"
+        outputs="aml.ecore#//ObjectTypeType3/memo"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=6"
+        outputs="aml.ecore#//ObjectTypeType3/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=7"
+        outputs="aml.ecore#//ObjectTypeType3/discoveryMethod"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//CreatorType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//CreatorType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//CreatorType/idRef"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//CreatorType/objectType"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reader;XSDElementDeclaration=58/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ReaderType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reader;XSDElementDeclaration=58/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//ReaderType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reader;XSDElementDeclaration=58/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//ReaderType/idRef"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reader;XSDElementDeclaration=58/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//ReaderType/objectType"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="aml.ecore#//ObjectTypeType1">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="aml.ecore#//ObjectTypeType1/template"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="aml.ecore#//ObjectTypeType1/argument"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="aml.ecore#//ObjectTypeType1/collection"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="aml.ecore#//ObjectTypeType1/person"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="aml.ecore#//ObjectTypeType1/exhibit"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=5"
+        outputs="aml.ecore#//ObjectTypeType1/memo"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=6"
+        outputs="aml.ecore#//ObjectTypeType1/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=7"
+        outputs="aml.ecore#//ObjectTypeType1/discoveryMethod"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//PublisherType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//PublisherType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//PublisherType/idRef"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//PublisherType/objectType"/>
+  </nested>
+  <nested inputs="bundleentry://1299.fwk841752171/cache/www.w3.org/2001/XMLSchema.xsd#//date;XSDSimpleTypeDefinition=17"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//start;XSDElementDeclaration=28/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//StartType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//start;XSDElementDeclaration=28/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//StartType/scheme"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//end;XSDElementDeclaration=29/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//EndType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//end;XSDElementDeclaration=29/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//EndType/scheme"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//period;XSDElementDeclaration=30/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//PeriodType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//period;XSDElementDeclaration=30/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//PeriodType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//period;XSDElementDeclaration=30/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//PeriodType/start"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//period;XSDElementDeclaration=30/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//PeriodType/end"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//period;XSDElementDeclaration=30/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//PeriodType/label"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//NationStateType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//NationStateType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//NationStateType/perspective"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//NationStateType/period"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//NationStateType/actor"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//NationStateType/region"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//NationStateType/event"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//coverage;XSDElementDeclaration=49/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//CoverageType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//coverage;XSDElementDeclaration=49/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//CoverageType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//coverage;XSDElementDeclaration=49/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//CoverageType/nationState"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//MetaDataType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//MetaDataType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//MetaDataType/title"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//MetaDataType/securityMarking"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//MetaDataType/creator"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//MetaDataType/reader"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//MetaDataType/subject"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="aml.ecore#//MetaDataType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="aml.ecore#//MetaDataType/publisher"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="aml.ecore#//MetaDataType/contributor"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="aml.ecore#//MetaDataType/date"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="aml.ecore#//MetaDataType/type"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10"
+        outputs="aml.ecore#//MetaDataType/format"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=11"
+        outputs="aml.ecore#//MetaDataType/identifier"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=12"
+        outputs="aml.ecore#//MetaDataType/source"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=13"
+        outputs="aml.ecore#//MetaDataType/language"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=14"
+        outputs="aml.ecore#//MetaDataType/relation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=15"
+        outputs="aml.ecore#//MetaDataType/coverage"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=16"
+        outputs="aml.ecore#//MetaDataType/rights"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=17"
+        outputs="aml.ecore#//MetaDataType/image"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creatingTool;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//CreatingToolType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creatingTool;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//CreatingToolType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creatingTool;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//CreatingToolType/toolType"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creatingTool;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//CreatingToolType/version"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//MemoType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//MemoType/creator"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//MemoType/reader"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//MemoType/subject"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//MemoType/body"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//MemoType/id"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//MemoType/type"/>
+  </nested>
+  <nested inputs="bundleentry://1299.fwk841752171/cache/www.w3.org/2001/XMLSchema.xsd#//dateTime;XSDSimpleTypeDefinition=15"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//DateTime"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//witness;XSDElementDeclaration=20/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//WitnessType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//witness;XSDElementDeclaration=20/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//WitnessType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//witness;XSDElementDeclaration=20/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//WitnessType/idRef"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//witness;XSDElementDeclaration=20/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//WitnessType/timestamp"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//flag;XSDElementDeclaration=66/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//FlagType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//flag;XSDElementDeclaration=66/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//FlagType/witness"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//flag;XSDElementDeclaration=66/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//FlagType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//flag;XSDElementDeclaration=66/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//FlagType/flagType"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//flag;XSDElementDeclaration=66/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//FlagType/label"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//annotation;XSDElementDeclaration=5/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//AnnotationType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//annotation;XSDElementDeclaration=5/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//AnnotationType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//annotation;XSDElementDeclaration=5/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//AnnotationType/memo"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//annotation;XSDElementDeclaration=5/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//AnnotationType/flag"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//annotation;XSDElementDeclaration=5/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//AnnotationType/id"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//choice;XSDElementDeclaration=1/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ChoiceType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//choice;XSDElementDeclaration=1/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//ChoiceType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//choice;XSDElementDeclaration=1/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//ChoiceType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//choice;XSDElementDeclaration=1/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="aml.ecore#//ChoiceType/ordinal"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//choice;XSDElementDeclaration=1/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//ChoiceType/symbol"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//dependent;XSDElementDeclaration=6/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//DependentType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//dependent;XSDElementDeclaration=6/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//DependentType/idRef"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//dependent;XSDElementDeclaration=6/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//DependentType/ordinal"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//questionRelationships;XSDElementDeclaration=7/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//QuestionRelationshipsType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//questionRelationships;XSDElementDeclaration=7/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//QuestionRelationshipsType/dependent"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argumentTemplate;XSDElementDeclaration=15/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ArgumentTemplateType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argumentTemplate;XSDElementDeclaration=15/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//ArgumentTemplateType/idRef"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=3/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="aml.ecore#//TypeType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=3/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="aml.ecore#//TypeType/Url"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=3/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="aml.ecore#//TypeType/Template"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=3/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="aml.ecore#//TypeType/Urldir"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//DiscoveryMethodType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//DiscoveryMethodType/argumentTemplate"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//DiscoveryMethodType/url"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//DiscoveryMethodType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=5"
+        outputs="aml.ecore#//DiscoveryMethodType/autoTrigger"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//DiscoveryMethodType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//DiscoveryMethodType/id"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=4"
+        outputs="aml.ecore#//DiscoveryMethodType/importType"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//DiscoveryMethodType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="aml.ecore#//DiscoveryMethodType/type"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//QuestionType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//QuestionType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//QuestionType/type"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//QuestionType/choice"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//QuestionType/questionRelationships"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//QuestionType/aggregationRule"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="aml.ecore#//QuestionType/discoveryMethod"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="aml.ecore#//QuestionType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//QuestionType/amplification"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//QuestionType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="aml.ecore#//QuestionType/id"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//QuestionType/label"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//template;XSDElementDeclaration=18/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//TemplateType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//template;XSDElementDeclaration=18/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//TemplateType/metaData"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//template;XSDElementDeclaration=18/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//TemplateType/creatingTool"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//template;XSDElementDeclaration=18/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//TemplateType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//template;XSDElementDeclaration=18/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//TemplateType/question"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//template;XSDElementDeclaration=18/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//TemplateType/id"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//belief;XSDElementDeclaration=19/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//BeliefType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//belief;XSDElementDeclaration=19/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//BeliefType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//belief;XSDElementDeclaration=19/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//BeliefType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//belief;XSDElementDeclaration=19/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="aml.ecore#//BeliefType/ordinal"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//belief;XSDElementDeclaration=19/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//BeliefType/symbol"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidenceExhibit;XSDElementDeclaration=25/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//EvidenceExhibitType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidenceExhibit;XSDElementDeclaration=25/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//EvidenceExhibitType/idRef"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidenceExhibit;XSDElementDeclaration=25/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//EvidenceExhibitType/questionId"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//relevance;XSDElementDeclaration=22/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//RelevanceType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//relevance;XSDElementDeclaration=22/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//RelevanceType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//relevance;XSDElementDeclaration=22/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//RelevanceType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//relevance;XSDElementDeclaration=22/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="aml.ecore#//RelevanceType/ordinal"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//relevance;XSDElementDeclaration=22/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//RelevanceType/symbol"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reliability;XSDElementDeclaration=23/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ReliabilityType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reliability;XSDElementDeclaration=23/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//ReliabilityType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reliability;XSDElementDeclaration=23/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//ReliabilityType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reliability;XSDElementDeclaration=23/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="aml.ecore#//ReliabilityType/ordinal"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reliability;XSDElementDeclaration=23/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//ReliabilityType/symbol"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//EvidenceType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//EvidenceType/evidenceExhibit"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//EvidenceType/relevance"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//EvidenceType/reliability"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//EvidenceType/witness"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//EvidenceType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//EvidenceType/id"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//EvidenceType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//EvidenceType/ordinal"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//AnswerType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//AnswerType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//AnswerType/belief"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//AnswerType/witness"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//AnswerType/rationale"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//AnswerType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//AnswerType/aggregationRule"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="aml.ecore#//AnswerType/evidence"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="aml.ecore#//AnswerType/discoveryMethod"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//AnswerType/questionId"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ArgumentType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//ArgumentType/metaData"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//ArgumentType/creatingTool"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//ArgumentType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//ArgumentType/argumentTemplate"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//ArgumentType/answer"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//ArgumentType/id"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//exhibit;XSDElementDeclaration=24/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//ExhibitType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//exhibit;XSDElementDeclaration=24/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//ExhibitType/archive"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//exhibit;XSDElementDeclaration=24/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//ExhibitType/metaData"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//exhibit;XSDElementDeclaration=24/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//ExhibitType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//exhibit;XSDElementDeclaration=24/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//ExhibitType/id"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="aml.ecore#//ObjectTypeType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="aml.ecore#//ObjectTypeType/template"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="aml.ecore#//ObjectTypeType/argument"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="aml.ecore#//ObjectTypeType/collection"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="aml.ecore#//ObjectTypeType/person"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="aml.ecore#//ObjectTypeType/exhibit"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=5"
+        outputs="aml.ecore#//ObjectTypeType/memo"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=6"
+        outputs="aml.ecore#//ObjectTypeType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=7"
+        outputs="aml.ecore#//ObjectTypeType/discoveryMethod"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//CollectionItemType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//CollectionItemType/idRef"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//CollectionItemType/objectType"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//CollectionItemType/ordinal"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="aml.ecore#//ObjectTypeType2">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="aml.ecore#//ObjectTypeType2/MISC"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="aml.ecore#//ObjectTypeType2/SEQUENTIAL"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="aml.ecore#//ObjectTypeType2/VERSIONING"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="aml.ecore#//ObjectTypeType2/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="aml.ecore#//ObjectTypeType2/argument"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1/object-type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=5"
+        outputs="aml.ecore#//ObjectTypeType2/template"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//CollectionType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//CollectionType/metaData"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//CollectionType/creatingTool"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//CollectionType/annotation"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//CollectionType/question"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//CollectionType/argumentTemplate"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="aml.ecore#//CollectionType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//CollectionType/label"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//CollectionType/collectionItem"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//CollectionType/id"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="aml.ecore#//CollectionType/label1"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//CollectionType/objectType"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//PersonType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//PersonType/firstName"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//PersonType/middleName"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//PersonType/lastName"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//PersonType/nickName"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//PersonType/organization"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="aml.ecore#//PersonType/department"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="aml.ecore#//PersonType/email"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="aml.ecore#//PersonType/description"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//PersonType/id"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition"
+      outputs="aml.ecore#//AmlDocumentType">
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle"
+        outputs="aml.ecore#//AmlDocumentType/group"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="aml.ecore#//AmlDocumentType/template"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="aml.ecore#//AmlDocumentType/argument"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="aml.ecore#//AmlDocumentType/exhibit"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="aml.ecore#//AmlDocumentType/collection"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="aml.ecore#//AmlDocumentType/person"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="aml.ecore#//AmlDocumentType/memo"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="aml.ecore#//AmlDocumentType/discoveryMethod"/>
+    <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="aml.ecore#//AmlDocumentType/version"/>
+  </nested>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//amlDocument;XSDElementDeclaration=53"
+      outputs="aml.ecore#//DocumentRoot/amlDocument"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//annotation;XSDElementDeclaration=5"
+      outputs="aml.ecore#//DocumentRoot/annotation"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//answer;XSDElementDeclaration=27"
+      outputs="aml.ecore#//DocumentRoot/answer"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//archive;XSDElementDeclaration=67"
+      outputs="aml.ecore#//DocumentRoot/archive"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argument;XSDElementDeclaration=52"
+      outputs="aml.ecore#//DocumentRoot/argument"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//argumentTemplate;XSDElementDeclaration=15"
+      outputs="aml.ecore#//DocumentRoot/argumentTemplate"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//belief;XSDElementDeclaration=19"
+      outputs="aml.ecore#//DocumentRoot/belief"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//body;XSDElementDeclaration=3"
+      outputs="aml.ecore#//DocumentRoot/body"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//choice;XSDElementDeclaration=1"
+      outputs="aml.ecore#//DocumentRoot/choice"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collection;XSDElementDeclaration=54"
+      outputs="aml.ecore#//DocumentRoot/collection"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//collectionItem;XSDElementDeclaration=57"
+      outputs="aml.ecore#//DocumentRoot/collectionItem"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//contributor;XSDElementDeclaration=41"
+      outputs="aml.ecore#//DocumentRoot/contributor"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//coverage;XSDElementDeclaration=49"
+      outputs="aml.ecore#//DocumentRoot/coverage"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creatingTool;XSDElementDeclaration"
+      outputs="aml.ecore#//DocumentRoot/creatingTool"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//creator;XSDElementDeclaration=38"
+      outputs="aml.ecore#//DocumentRoot/creator"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//date;XSDElementDeclaration=42"
+      outputs="aml.ecore#//DocumentRoot/date"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//department;XSDElementDeclaration=64"
+      outputs="aml.ecore#//DocumentRoot/department"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//dependent;XSDElementDeclaration=6"
+      outputs="aml.ecore#//DocumentRoot/dependent"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//description;XSDElementDeclaration=39"
+      outputs="aml.ecore#//DocumentRoot/description"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//discoveryMethod;XSDElementDeclaration=16"
+      outputs="aml.ecore#//DocumentRoot/discoveryMethod"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//email;XSDElementDeclaration=65"
+      outputs="aml.ecore#//DocumentRoot/email"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//end;XSDElementDeclaration=29"
+      outputs="aml.ecore#//DocumentRoot/end"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//event;XSDElementDeclaration=34"
+      outputs="aml.ecore#//DocumentRoot/event"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidence;XSDElementDeclaration=26"
+      outputs="aml.ecore#//DocumentRoot/evidence"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//evidenceExhibit;XSDElementDeclaration=25"
+      outputs="aml.ecore#//DocumentRoot/evidenceExhibit"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//exhibit;XSDElementDeclaration=24"
+      outputs="aml.ecore#//DocumentRoot/exhibit"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//firstName;XSDElementDeclaration=59"
+      outputs="aml.ecore#//DocumentRoot/firstName"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//flag;XSDElementDeclaration=66"
+      outputs="aml.ecore#//DocumentRoot/flag"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//format;XSDElementDeclaration=44"
+      outputs="aml.ecore#//DocumentRoot/format"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//identifier;XSDElementDeclaration=45"
+      outputs="aml.ecore#//DocumentRoot/identifier"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//image;XSDElementDeclaration=69"
+      outputs="aml.ecore#//DocumentRoot/image"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//interval;XSDElementDeclaration=9"
+      outputs="aml.ecore#//DocumentRoot/interval"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//label;XSDElementDeclaration=56"
+      outputs="aml.ecore#//DocumentRoot/label"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//language;XSDElementDeclaration=47"
+      outputs="aml.ecore#//DocumentRoot/language"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//lastName;XSDElementDeclaration=61"
+      outputs="aml.ecore#//DocumentRoot/lastName"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//list;XSDElementDeclaration=68"
+      outputs="aml.ecore#//DocumentRoot/list"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//memo;XSDElementDeclaration=4"
+      outputs="aml.ecore#//DocumentRoot/memo"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//metaData;XSDElementDeclaration=51"
+      outputs="aml.ecore#//DocumentRoot/metaData"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//method;XSDElementDeclaration=8"
+      outputs="aml.ecore#//DocumentRoot/method"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//middleName;XSDElementDeclaration=60"
+      outputs="aml.ecore#//DocumentRoot/middleName"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nationState;XSDElementDeclaration=35"
+      outputs="aml.ecore#//DocumentRoot/nationState"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//nickName;XSDElementDeclaration=62"
+      outputs="aml.ecore#//DocumentRoot/nickName"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//organization;XSDElementDeclaration=63"
+      outputs="aml.ecore#//DocumentRoot/organization"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//parameter;XSDElementDeclaration=12"
+      outputs="aml.ecore#//DocumentRoot/parameter"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//period;XSDElementDeclaration=30"
+      outputs="aml.ecore#//DocumentRoot/period"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//person;XSDElementDeclaration=55"
+      outputs="aml.ecore#//DocumentRoot/person"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//perspective;XSDElementDeclaration=31"
+      outputs="aml.ecore#//DocumentRoot/perspective"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//publisher;XSDElementDeclaration=40"
+      outputs="aml.ecore#//DocumentRoot/publisher"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//question;XSDElementDeclaration=17"
+      outputs="aml.ecore#//DocumentRoot/question"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//questionRelationships;XSDElementDeclaration=7"
+      outputs="aml.ecore#//DocumentRoot/questionRelationships"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//rationale;XSDElementDeclaration=21"
+      outputs="aml.ecore#//DocumentRoot/rationale"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reader;XSDElementDeclaration=58"
+      outputs="aml.ecore#//DocumentRoot/reader"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//region;XSDElementDeclaration=33"
+      outputs="aml.ecore#//DocumentRoot/region"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//relation;XSDElementDeclaration=48"
+      outputs="aml.ecore#//DocumentRoot/relation"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//relevance;XSDElementDeclaration=22"
+      outputs="aml.ecore#//DocumentRoot/relevance"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//reliability;XSDElementDeclaration=23"
+      outputs="aml.ecore#//DocumentRoot/reliability"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//rights;XSDElementDeclaration=50"
+      outputs="aml.ecore#//DocumentRoot/rights"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//securityMarking;XSDElementDeclaration=37"
+      outputs="aml.ecore#//DocumentRoot/securityMarking"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//source;XSDElementDeclaration=46"
+      outputs="aml.ecore#//DocumentRoot/source"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//start;XSDElementDeclaration=28"
+      outputs="aml.ecore#//DocumentRoot/start"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//subject;XSDElementDeclaration=2"
+      outputs="aml.ecore#//DocumentRoot/subject"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//symbol;XSDElementDeclaration=11"
+      outputs="aml.ecore#//DocumentRoot/symbol"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//template;XSDElementDeclaration=18"
+      outputs="aml.ecore#//DocumentRoot/template"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//title;XSDElementDeclaration=36"
+      outputs="aml.ecore#//DocumentRoot/title"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//type;XSDElementDeclaration=43"
+      outputs="aml.ecore#//DocumentRoot/type"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//url;XSDElementDeclaration=14"
+      outputs="aml.ecore#//DocumentRoot/url"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//value;XSDElementDeclaration=10"
+      outputs="aml.ecore#//DocumentRoot/value"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//witness;XSDElementDeclaration=20"
+      outputs="aml.ecore#//DocumentRoot/witness"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//description;XSDAttributeDeclaration=2"
+      outputs="aml.ecore#//DocumentRoot/description1"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//id;XSDAttributeDeclaration"
+      outputs="aml.ecore#//DocumentRoot/id"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//idRef;XSDAttributeDeclaration=1"
+      outputs="aml.ecore#//DocumentRoot/idRef"/>
+  <nested inputs="file:/Users/mrbarryold/Downloads/amlSchema-4.0.xsd#//label;XSDAttributeDeclaration=3"
+      outputs="aml.ecore#//DocumentRoot/label1"/>
+</xsd2ecore:XSD2EcoreMappingRoot>

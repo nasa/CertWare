@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Measurement SPM Details View
+Bundle-SymbolicName: net.certware.measurement.spm.view;singleton:=true
+Bundle-Version: 1.2.2.qualifier
+Bundle-Activator: net.certware.measurement.spm.view.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.emf.edit.ui.provider,
+ org.eclipse.ui.dialogs,
+ org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.certware.core.ui,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms,
+ org.eclipse.core.resources,
+ net.certware.core,
+ org.eclipse.emf,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.edit,
+ net.certware.measurement.spm,
+ net.certware.measurement.spm.edit,
+ org.eclipse.core.expressions,
+ net.certware.measurement.sco

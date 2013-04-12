@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 National Aeronautics and Space Administration
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.argument.gsn.presentation.GsnModelWizardID"
+            name="GSN Model"
+            class="net.certware.argument.gsn.presentation.GsnModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/GsnModelFile.gif">
+         <description>Creates a new GSN argument model.</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.gsn.presentation.GsnEditorID"
+            name="GSN Model Editor"
+            icon="icons/full/obj16/GsnModelFile.gif"
+            extensions="gsn"
+            class="net.certware.argument.gsn.presentation.GsnEditor"
+            contributorClass="net.certware.argument.gsn.presentation.GsnActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="net.certware.argument.gsn.providers.GsnPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
+      <PropertiesEditionPolicyProvider
+            providerClass="net.certware.argument.gsn.providers.GsnPackagePropertiesEditionProvider">
+      </PropertiesEditionPolicyProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
+      <PropertiesEditionComponentProvider
+            providerClass="net.certware.argument.gsn.providers.GsnPackagePropertiesEditionProvider">
+      </PropertiesEditionComponentProvider>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="net.certware.argument.gsn.properties">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="net.certware.argument.gsn.properties">
+         <propertyTab
+               label="Base"
+               category="default"
+               id="Base">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="net.certware.argument.gsn.properties">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Goal"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Goal">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Strategy"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Strategy">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Solution"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Solution">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Assumption"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Assumption">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Context"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Context">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.gsn.section.Justification"
+               tab="Base">
+             <input
+                    type="net.certware.argument.gsn.Justification">
+             </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.gsn.presentation.GsnModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+</plugin>

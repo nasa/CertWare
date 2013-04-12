@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.certware.feature.planning"
+      label="CertWare Project Planning Support"
+      version="1.2.3.qualifier"
+      provider-name="Kestrel Technology LLC"
+      license-feature="net.certware.feature"
+      license-feature-version="1.2.3.qualifier">
+
+   <description url="http://nasa.github.com/CertWare">
+      CertWare support for project planning using a DSL for planning notation.  Requires the ARM feature.
+   </description>
+
+   <copyright>
+      Copyright (c) 2011 United States Government as represented by
+the National Aeronautics and Space Administration.  All rights
+reserved.
+   </copyright>
+
+   <license url="http://nasa.github.com/CertWare/license.html">
+      Copyright (c) 2011 United States Government as represented by
+the National Aeronautics and Space Administration.  All rights
+reserved.
+This use of this software is governed by the CertWare Safety
+Case Workbench BETA-TEST AGREEMENT OF EXPERIMENTAL COMPUTER CODE.
+Use of this software is limited to beta-testing only.  No modifications
+to the software or further development of the software are permitted.
+This software incorporates open source software.  Such open source
+software is identified via notices within the source code.  Such
+notices identify the governing open source license and use of
+such open source software is governed by the terms and conditions
+of the governing open source license.  NASA disclaims all warranties
+and liabilities regarding open source software and distributes
+it &quot;as is&quot; under this Agreement.
+This software shall not be exported outside the United Kingdom,
+except to the United States, without the express permission of
+NASA. Access to the SOFTWARE within the United Kingdom to TESTER’s
+organization is permitted for United Kingdom, Canadian, Greek
+and U.S. persons only.  Furthermore, the software shall not be
+provided to any person or entity listed on any U.S. &quot;denied parties/persons&quot;
+list (including the U.S. Department of the Treasury, Office of
+Foreign Assets Control, Specially Designated Nationals and Blocked
+Persons; U.S. Department of the Treasury, Office of Foreign Assets
+Control, Changes to List of Specially Designated Nationals and
+Blocked Persons; U.S. Department of State, Directorate of Defense
+Trade Controls, List of Statutorily Debarred Parties; U.S. Department
+of Commerce, Bureau of Industry and Security, Denied Persons
+List; U.S. Department of Commerce, Bureau of Industry and Security,
+Entity List).  Violations may result in criminal liability under
+U.S. laws.
+THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; WITHOUT ANY WARRANTY OF ANY
+KIND, EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT
+NOT LIMITED TO, ANY WARRANTY THAT THE SOFTWARE WILL CONFORM TO
+SPECIFICATIONS, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND FREEDOM FROM INFRINGEMENT, AND
+ANY WARRANTY THAT THE DOCUMENTATION WILL CONFORM TO THE SOFTWARE,
+OR ANY WARRANTY THAT THE SOFTWARE WILL BE ERROR FREE, WHETHER
+OR NOT THE ERROR IS DISCOVERABLE.  IN NO EVENT SHALL THE UNITED
+STATES GOVERNMENT, OR ITS CONTRACTORS OR SUBCONTRACTORS, BE LIABLE
+FOR ANY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DIRECT, INDIRECT,
+SPECIAL OR CONSEQUENTIAL DAMAGES, ARISING OUT OF, RESULTING FROM,
+OR IN ANY WAY CONNECTED WITH THIS SOFTWARE, WHETHER OR NOT BASED
+UPON WARRANTY, CONTRACT, TORT , OR OTHERWISE, WHETHER OR NOT
+INJURY WAS SUSTAINED BY PERSONS OR PROPERTY OR OTHERWISE, WHETHER
+OR NOT DAMAGES ARE BASED ON A THIRD PARTY CLAIM, WHETHER OR NOT
+LOSS WAS SUSTAINED FROM, OR AROSE OUT OF THE RESULTS OF, OR USE
+OF, THE SOFTWARE OR SERVICES PROVIDED HEREUNDER, AND REGARDLESS
+OF WHETHER THE UNITED STATES GOVERNMENT SHALL BE ADVISED, SHALL
+HAVE OTHER REASON TO KNOW, OR IN FACT SHALL KNOW OF THE POSSIBILITY
+OF THE FOREGOING.  THE UNITED STATES GOVERNMENT DISCLAIMS ALL
+WARRANTIES AND LIABILITIES REGARDING THIRD PARTY SOFTWARE, IF
+PRESENT IN THE NASA GENERATED SOFTWARE, AND DISTRIBUTES IT ‘AS
+IS.
+USE OF THIS SOFTWARE IS AN AGREEMENT TO WAIVE ANY AND ALL CLAIMS
+AGAINST THE UNITED STATES GOVERNMENT, AND ITS CONTRACTORS AND
+SUBCONTRACTORS, AND TO  INDEMNIFY AND HOLD HARMLESS THE UNITED
+STATES GOVERNMENT AND ITS CONTRACTORS AND SUBCONTRACTORS FOR
+ANY LIABILITIES, DEMANDS, DAMAGES, EXPENSES OR LOSSES THAT MAY
+BE INCURRED FROM USE OF THIS SOFTWARE.
+   </license>
+
+   <url>
+      <update label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
+      <discovery label="CertWare" url="http://github.com/nasa/CertWare/update"/>
+   </url>
+
+   <includes
+         id="net.certware.feature"
+         version="0.0.0"
+         search-location="both"/>
+
+   <requires>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.xpand"/>
+      <import plugin="org.eclipse.xtend"/>
+      <import plugin="org.eclipse.emf.mwe.utils"/>
+      <import plugin="org.eclipse.xtend.typesystem.emf"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.jobs"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.emf.codegen.ecore.ui"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+   </requires>
+
+   <plugin
+         id="net.certware.planning"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.cpn"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.cpn.generator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.cpn.navigator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.cpn.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.cpn.view"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.mspdi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.mspdi.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.planning.mspdi.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

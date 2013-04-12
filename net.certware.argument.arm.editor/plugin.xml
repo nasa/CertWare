@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 Object Management Group (ARM metamodel)
+ Copyright (c) 2010 National Aeronautics and Space Administration (generated models) 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.argument.arm.presentation.ArmModelWizardID"
+            name="ARM Model"
+            class="net.certware.argument.arm.presentation.ArmModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/ArmModelFile.gif">
+         <description>Creates a new ARM argument model.</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.arm.presentation.ArmEditorID"
+            name="ARM Model Editor"
+            icon="icons/full/obj16/ArmModelFile.gif"
+            extensions="arm"
+            class="net.certware.argument.arm.presentation.ArmEditor"
+            contributorClass="net.certware.argument.arm.presentation.ArmActionBarContributor">
+      </editor>
+   </extension>
+   
+     <!-- EEF extensions -->
+  <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
+      <PropertiesEditionComponentProvider
+            providerClass="net.certware.argument.arm.providers.ArmPackagePropertiesEditionProvider">
+      </PropertiesEditionComponentProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPolicyProvider">
+      <PropertiesEditionPolicyProvider
+            providerClass="net.certware.argument.arm.providers.ArmPackagePropertiesEditionProvider">
+      </PropertiesEditionPolicyProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="net.certware.argument.arm.providers.ArmPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+   <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="net.certware.argument.arm.properties">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="net.certware.argument.arm.properties">
+         <propertyTab
+               label="Base"
+               category="default"
+               id="Base">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="net.certware.argument.arm.properties">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.TaggedValue"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.TaggedValue">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.Argument"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.Argument">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.Annotation"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.Annotation">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.AssertedInference"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.AssertedInference">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.AssertedEvidence"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.AssertedEvidence">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.AssertedContext"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.AssertedContext">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.AssertedCounterEvidence"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.AssertedCounterEvidence">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.AssertedChallenge"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.AssertedChallenge">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.Claim"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.Claim">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.EvidenceAssertion"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.EvidenceAssertion">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.InformationElement"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.InformationElement">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.ArgumentReasoning"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.ArgumentReasoning">
+             </input>
+         </propertySection>
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="net.certware.argument.arm.section.CitationElement"
+               tab="Base">
+             <input
+                    type="net.certware.argument.arm.CitationElement">
+             </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.arm.presentation.ArmModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:sco="http://www.certware.net/sco" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.certware.net/sco">
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:simpleType name="ChangeOrderType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="Critical"/>
+      <xsd:enumeration value="Normal"/>
+      <xsd:enumeration value="Improvements"/>
+      <xsd:enumeration value="NewFeatures"/>
+      <xsd:enumeration value="Total"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType abstract="true" name="ChangeOrderCount">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+    <xsd:attribute name="value" type="xsd:int" use="required"/>
+    <xsd:attribute name="type" type="sco:ChangeOrderType" use="required"/>
+    <xsd:attribute name="brokenLines" type="xsd:int" use="required"/>
+    <xsd:attribute name="fixedLines" type="xsd:int" use="required"/>
+    <xsd:attribute name="repairEffort" type="xsd:double" use="required"/>
+  </xsd:complexType>
+  <xsd:element name="ChangeOrderCount" type="sco:ChangeOrderCount"/>
+  <xsd:complexType name="TotalChangeOrders">
+    <xsd:complexContent>
+      <xsd:extension base="sco:ChangeOrderCount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TotalChangeOrders" type="sco:TotalChangeOrders"/>
+  <xsd:complexType name="CriticalDefectChangeOrders">
+    <xsd:complexContent>
+      <xsd:extension base="sco:ChangeOrderCount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="CriticalDefectChangeOrders" type="sco:CriticalDefectChangeOrders"/>
+  <xsd:complexType name="NormalDefectChangeOrders">
+    <xsd:complexContent>
+      <xsd:extension base="sco:ChangeOrderCount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NormalDefectChangeOrders" type="sco:NormalDefectChangeOrders"/>
+  <xsd:complexType name="ImprovementChangeOrders">
+    <xsd:complexContent>
+      <xsd:extension base="sco:ChangeOrderCount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ImprovementChangeOrders" type="sco:ImprovementChangeOrders"/>
+  <xsd:complexType name="NewFeatureChangeOrders">
+    <xsd:complexContent>
+      <xsd:extension base="sco:ChangeOrderCount"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="NewFeatureChangeOrders" type="sco:NewFeatureChangeOrders"/>
+  <xsd:complexType name="ArtifactIdentifier">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="criticalDefectChangeOrders" type="sco:CriticalDefectChangeOrders"/>
+      <xsd:element name="normalDefectChangeOrders" type="sco:NormalDefectChangeOrders"/>
+      <xsd:element name="improvementChangeOrders" type="sco:ImprovementChangeOrders"/>
+      <xsd:element name="newFeatureChangeOrders" type="sco:NewFeatureChangeOrders"/>
+      <xsd:element name="totalChangeOrders" type="sco:TotalChangeOrders"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="resourceName" type="xsd:string" use="required"/>
+    <xsd:attribute name="baselinedLineCount" type="xsd:int" use="required"/>
+    <xsd:attribute name="currentLineCount" type="xsd:int" use="required"/>
+  </xsd:complexType>
+  <xsd:element name="ArtifactIdentifier" type="sco:ArtifactIdentifier"/>
+  <xsd:complexType name="ArtifactCommit">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="artifactIdentifiers" type="sco:ArtifactIdentifier"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="commitIdentifier" type="xsd:string"/>
+    <xsd:attribute name="usageTime" type="xsd:double"/>
+  </xsd:complexType>
+  <xsd:element name="ArtifactCommit" type="sco:ArtifactCommit"/>
+  <xsd:complexType name="CommitHistory">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="commitRecord" type="sco:ArtifactCommit"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+  </xsd:complexType>
+  <xsd:element name="CommitHistory" type="sco:CommitHistory"/>
+</xsd:schema>

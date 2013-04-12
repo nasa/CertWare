@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cae:Claim xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cae="http://www.certware.net/cae" identifier="C1" description="" content="A bluetooth enabled network provides adequate security">
+  <strategy identifier="A1" description="" content="Argue for each security requirement identified in the security white paper">
+    <claims identifier="Available" description="" content="A Bluetooth enabled network is adequately available" toBeSupported="true">
+      <context identifier="Definition" description="" content="Availability - The system is capable of providing requested services to authorized users in an acceptable/defined time"/>
+    </claims>
+    <claims identifier="Access" description="" content="A Bluetooth enabled network provides adequate control for access to services and data" toBeSupported="true">
+      <context identifier="Definition" description="" content="Access - only users permitted by the defined security policy have access to services and data"/>
+    </claims>
+    <claims identifier="Integrity" description="" content="A Bluetooth enabled network provides adequate levels of integrity" toBeSupported="true">
+      <context identifier="Definition" description="" content="Integrity - services and data are provided to authorized users as intended and without corruption"/>
+    </claims>
+    <claims identifier="Confidentiality" description="" content="A Bluetooth enabled network provides adequate levels of confidentiality" toBeSupported="true">
+      <context identifier="Definition" description="" content="Confidentiality - Unauthorized persons cannot intercept and understand information to which they are not entitled"/>
+    </claims>
+  </strategy>
+  <context identifier="Context: security policy and scenario for use" description="" content="Definitions are required of the intended security policy and the scenario of use for the system, including what is regarded as 'adequate'"/>
+  <context identifier="References" description="" content="[1] Bluetooth Security White Paper"/>
+</cae:Claim>

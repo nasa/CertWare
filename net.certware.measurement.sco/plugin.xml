@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2011 National Aeronautics and Space Administration
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.certware.net/sco"
+            class="net.certware.measurement.sco.ScoPackage"
+            genModel="model/sco.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="sco"
+            class="net.certware.measurement.sco.util.ScoResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

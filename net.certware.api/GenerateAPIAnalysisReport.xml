@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="certware" default="Analysis">
+	<property name="eclipse" value="/Users/mrbarryold/Applications/Eclipse-3.6-Model-64"/>
+	<property name="xml" value="/reports/analysis/xml"/>
+	<property name="html" value="/reports/analysis/html"/>
+	<property name="profile" value="/Users/mrbarryold/Documents/Projects/CertWare/Workspace"/>
+	<property name="baseline" value="${eclipse}/plugins"/>
+	<property name="prefs" value="/settings/analysis/prefs.properties"/>
+	<property name="filters" value="/settings/analysis/api_filters"/>
+	<property name="exclude" value="/settings/analysis/exclude_list"/>
+	<target name="Analysis">
+		<apitooling.analysis
+       		baseline="${baseline}"
+       		profile="${profile}"
+       		report="${xml}"
+       		preferences="${prefs}"
+			excludelist="${exclude}"
+       		filters="${filters}"
+       		debug="true"
+    		/>
+		<analysis_reportconversion
+    		xmlfiles="${xml}"
+    		htmlfiles="${html}"
+    		debug="true"
+    	/>
+	</target>
+</project>
+
+<!--
+This task runs a complete API analysis of an API profile 
+relative to a baseline - including API use, binary compatibility, 
+and bundle version number validation. 
+
+The profile is the current state of a product under development. 
+
+The profile is compared to an API baseline for binary compatibility 
+(usually the previous release of a product).
+
+The analysis does not include @since tag validation as all 
+verification is performed on binary class files 
+(source is not analyzed).
+-->

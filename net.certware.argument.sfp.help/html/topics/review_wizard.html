@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link rel="stylesheet" type="text/css" href="../../css/certware.css" />
+	<title>Semi-Formal Proof Notation</title>
+</head>
+
+<body>
+<h1>Semi-Formal Proof Review Wizard</h1>
+
+<h2>Background</h2>
+<div class="background">
+The motivation behind the semi-formal proof (SFP) argument notation is to make arguments easier to read and validate. While some of the validation is done automatically behind the scene in the argument editor, the remainder is left to the argument author or verifier.  The CertWare workbench provides a "review wizard" to assist with this remaining review task.  
+</div>
+
+<h2>Application</h2>
+<div class="application">
+Invoke the wizard by raising the context menu (usually right-click) on any SFP file and choosing the "Review Wizard" menu item. The wizard launches in the manner of many Eclipse wizards.  
+<p>
+The first page of the wizard prompts for validation record fields.  Enter the author and time stamp values that the wizard should apply to the subsequent validation actions.  The wizard loads the current time by default.  For convenience the wizard also provides two buttons to clear existing validation fields if desired; simply select the button and the wizard with prompt with a confirmation before continuing to apply the change to the selected file. 
+<p>
+The second page of the wizard presents a master-details block arrangement for navigating the argument.  Line by line, select each statement in the master panel to raise its associated details in the details panel.  After reviewing the statement use the validation buttons to complete the review before continuing with the next statement.  
+<p>
+Use the <b>Cancel</b> button to terminate the review without saving any validation record changes.  Use the <b>Finish</b> button to terminate the review and save any changes to the argument file.  
+</div>
+<h2>See Also</h2>
+<div class="reference">
+<ul>
+<li><a href="review_proof.html">Proof Page</a>
+<li><a href="review_statement.html">Statement Page</a>
+</ul>
+</div>
+</body>
+</html>

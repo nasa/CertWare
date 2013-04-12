@@ -1,0 +1,3168 @@
+<?xml version="1.0" standalone="no"?>
+
+<?xml-stylesheet type="text/xsl" href="http://www.ai.sri.com/~genoa/aml/argtem2_xsl.xml"?>
+<amlDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ai.sri.com/~genoa/aml/amlSchema-4.0.xsd" version="4.0">
+<collection id="IRAQ-99" object-type="argument">
+<metaData>
+<title>IRAQ-99</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<creator idRef="SFISHER" object-type="person" description="Fisher, Scott, Hick &amp; Associates"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<period>
+<start>1999-01-01</start>
+<end>1999-01-31</end>
+</period>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<annotation>
+<memo id="MSS-IRAQ-99.HARRISON.1" type="critique">
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<subject>Weak leadership dimension</subject>
+<body>Overall a good anlaysis, but not enough attention was paid to the leadership dimension.</body>
+</memo>
+</annotation>
+<argumentTemplate idRef="CSA-IRAQ"></argumentTemplate>
+<collectionItem idRef="LEADERSHIP.IRAQ-99" object-type="argument"></collectionItem>
+<collectionItem idRef="SOCIAL.IRAQ-99" object-type="argument"></collectionItem>
+<collectionItem idRef="POLITICAL.IRAQ-99" object-type="argument"></collectionItem>
+<collectionItem idRef="MILITARY.IRAQ-99" object-type="argument"></collectionItem>
+<collectionItem idRef="EXTERNAL.IRAQ-99" object-type="argument"></collectionItem>
+<collectionItem idRef="ECONOMIC.IRAQ-99" object-type="argument"></collectionItem>
+</collection>
+<person id="LOWRANCE" description="Lowrance, John D., SRI International">
+<firstName>John</firstName>
+<middleName>D.</middleName>
+<lastName>Lowrance</lastName>
+<nickName></nickName>
+<organization>SRI International</organization>
+<department>Artificial Intelligence Center</department>
+<email>Lowrance@ai.sri.com</email>
+</person>
+<person id="HARRISON" description="Harrison, Ian W., SRI International">
+<firstName>Ian</firstName>
+<middleName>W.</middleName>
+<lastName>Harrison</lastName>
+<nickName></nickName>
+<organization>SRI International</organization>
+<department>Artificial Intelligence Center</department>
+<email>harrison@ai.sri.com</email>
+</person>
+<person id="RODRIGUEZ" description="Rodriguez, Andres, SRI International">
+<firstName>Andres</firstName>
+<middleName></middleName>
+<lastName>Rodriguez</lastName>
+<nickName></nickName>
+<organization>SRI International</organization>
+<department>Artificial Intelligence Center</department>
+<email>rodriguez@ai.sri.com</email>
+</person>
+<person id="SFISHER" description="Fisher, Scott, Hick &amp; Associates">
+<firstName>Scott</firstName>
+<middleName></middleName>
+<lastName>Fisher</lastName>
+<nickName></nickName>
+<organization>Hick &amp; Associates</organization>
+<department>AS&amp;CO</department>
+<email>scott.m.fisher@saic.com</email>
+</person>
+<collection id="CSA-IRAQ" object-type="template">
+<metaData>
+<title>CSA-IRAQ</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question label="NATION-STATE" description="Is this country headed for a crisis?"></question>
+<label>Leadership</label>
+<collectionItem idRef="LEADERSHIP.CSA-IRAQ" object-type="template" ordinal="1"></collectionItem>
+<label>Social</label>
+<collectionItem idRef="SOCIAL.CSA-IRAQ" object-type="template" ordinal="2"></collectionItem>
+<label>Political</label>
+<collectionItem idRef="POLITICAL.CSA-IRAQ" object-type="template" ordinal="3"></collectionItem>
+<label>Military</label>
+<collectionItem idRef="MILITARY.CSA-IRAQ" object-type="template" ordinal="4"></collectionItem>
+<label>External</label>
+<collectionItem idRef="EXTERNAL.CSA-IRAQ" object-type="template" ordinal="5"></collectionItem>
+<label>Economic</label>
+<collectionItem idRef="ECONOMIC.CSA-IRAQ" object-type="template" ordinal="6"></collectionItem>
+</collection>
+<template id="LEADERSHIP.CSA-IRAQ">
+<metaData>
+<title>LEADERSHIP.CSA-IRAQ</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-10-04</date>
+<coverage>
+<nationState>
+<perspective>LEADERSHIP-AND-INTENT</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question id="SSQ.1X4X3-1" label="LEADERSHIP AND INTENT" description="Are changes or developments involving this country's leadership or the leadership's intentions cause for concern?" amplification="">
+<choice label="Choice 1" description="" symbol="OK" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="CAUTION" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="WARNING" ordinal="3"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3" ordinal="3"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4" ordinal="4"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>OK</symbol>
+<value unit="percentage">
+<interval min="0" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>CAUTION</symbol>
+<value unit="percentage">
+<interval min="40" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>WARNING</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1" label="LEADERSHIP STRENGTH" description="Is the strength of the leadership declining in a way that is cause for concern?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1.1" label="INFLUENCE/POWER BASE" description="Is the leadership's influence or power base eroding?" amplification="Declining popular or elite support~%Electoral loss/defeat of leader's political party~%Decreasing ability to rally support for policies/goals~%Decreasing ability to make deals with other political actors">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="About even, as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.2" label="LEGITIMACY/CREDIBILITY" description="Is the leader's legitimacy or credibility deteriorating?" amplification="Declining popular or elite support~%Increasing criticism of the leader's policies/actions/character~%Subordinates or other officials challenge or defy leader's orders or policies~%Legislative actions to reduce the leader's powers or to remove the leader from office">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.3" label="DUTIES AND FUNCTIONS" description="Is the leader's ability to carry out his/her duties and functions declining?" amplification="Persistant/serious health problems~%Psychological problems~%Frequent/unexplained absences from public view~%Frequent failure to keep engagements~%Failure to carry out policies">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2" label="INTENTIONS" description="FOREIGN POLICY: Are the leader's intentions with respect to foreign policy goals a cause for concern?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.2.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.2.1" label="INTER-STATE RELATIONS" description="Are the leader's intentions regarding relations with other states a  cause for concern?" amplification="Issues hostile or threatening public statements, warnings, or policy decisions~%Engages in diplomatic, economic, or military coercion~%Intervenes in the sovereign affairs of another state~%Abrogates or terminates agreements~%Recalls diplomatic personnel~%Seeks support from or forms alliances with external powers~%Engages in signalling">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.2" label="FOREIGN ECONOMIC POLICY" description="Are the leader's intentions with respect to foreign economic policy a  cause for concern?" amplification="Issues hostile or threatening public statements, warnings, or policy decisions~%Engages in economic coercion or economic warfare~%Imposes protectionist measures~%Abrogates or terminates agreements~%Engages in signalling">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.3" label="MULTILATERAL COOPERATION" description="Are the leader's intentions with respect to multilateral cooperation a cause for concern?" amplification="Issues hostile or threatening public statements, warnings, or policy decisions~%Engages in belligerent or uncooperative behavior in multilateral fora~%Openly flaunts agreed rules, procedures, or norms~%Fails to ensure national compliance with agreements~%Exploits multilateral fora or processes for nefarious ends">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3" label="NATIONAL SECURITY GOALS" description="Are the leader's intentions with respect to national security goals a cause for concern?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.3.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.3.1" label="MILITARY ACTION" description="Will the leader use military means to achieve objectives?" amplification="Leader is issuing hostile or threatening public statements, warnings, or policy decisions~%Leader is exaggerating a foreign threat to divert attention from internal problems~%Leader has ordered a mobilization or exercise~%Leader has Recalled diplomatic personnel">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.2" label="MILITARY TIES" description="Does the leader intend to forge or enhance military ties with another state that poses a threat to regional security or US interests?" amplification="Leader has acquired WMD, advanced conventional weapons, or associated technical assistance~%Leader has obtained military assistance or military intelligence~%Leader has signed defense cooperation agreement~%Leader has formed an alliance">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.3" label="MILITARY CAPABILITIES" description="Does the leader intend to enhance national military capabilities in a way that could be regionally destabilizing?" amplification="Leader has acquired or deployed WMD~%Leader has acquired or deployed ballisic or cruise missiles~%Leader has acquired or deployed advanced conventional weapons~%Leader has acquired or deployed power projection capabilities">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4" label="DOMESTIC POLICY" description="Are the leader's intentions with respect to domestic policy goals and issues a cause for concern?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.4.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.4.1" label="SOCIAL PROBLEMS/CONFLICTS" description="Are the leader's intentions with respect to social problems or conflicts a cause for concern?" amplification="Privileges one set of interests over another~%Advances personal interests or goals over public ones~%Engages in corruption~%Fails to make needed policy changes or respond to public demands">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.2" label="ECONOMIC ISSUES" description="Are the leader's intentions with respect to economic issues a cause for concern?" amplification="Engages in uncontrolled public spending~%Increases public spending prior to an election~%Makes liberal use of patronage~%Distributes rents to supporters and cronies~%Fails to undertake necessary reforms or to avert avoidable problems">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.3" label="POLITICAL GOALS" description="Are the leader's political goals a cause for concern?" amplification="Undermines constitutional order~%Abuses power to achieve objectives~%Maintains power at any cost~%Destroys political rivals~%Achieves personal gain">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+</template>
+<template id="SOCIAL.CSA-IRAQ">
+<metaData>
+<title>SOCIAL.CSA-IRAQ</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>SOCIAL</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question id="SSQ.1X4X3-1" label="SOCIAL" description="Is this country headed for a social crisis?" amplification="">
+<choice label="Choice 1" description="" symbol="OK" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="CAUTION" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="WARNING" ordinal="3"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3" ordinal="3"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4" ordinal="4"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>OK</symbol>
+<value unit="percentage">
+<interval min="0" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>CAUTION</symbol>
+<value unit="percentage">
+<interval min="40" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>WARNING</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1" label="SOCIAL INSTABILITY/CONFLICT" description="Is there emerging or growing social instability/conflict?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1.1" label="SOCIO-POLITICAL UNREST" description="Is there emerging or growing social unrest linked to political factors?" amplification="Protests/demonstrations against incumbent leaders~%Protests/demonstrations against government policies~%Public demands/petitions for specific measures/changes~%Nationalist/populist uprisings">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.2" label="ETHNIC/RACIAL TENSIONS/CONFLICTS" description="Are ethnic/racial tensions/conflicts increasing or becoming (more) violent?" amplification="Persecution of/discrimination against specific groups~%Acts of violence directed at specific groups~%Open warfare between rival groups">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.3" label="RELIGIOUS TENSIONS/CONFLICT" description="Are religious tensions/conflict increasing or becoming (more) violent?" amplification="Growth of or increased activism by religious or radical fundamentalist groups,~%Persecution or discrimination against specific religious groups~%Acts of violence directed at specific religious groups~%Open warfare between rival religious groups">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2" label="SOCIO-ECONOMIC INSTABILITY" description="Are economic problems contributing to, promoting, or exacerbating social instability?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.2.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.2.1" label="SOCIO-ECONOMIC UNREST" description="Is emerging or growing social unrest linked to economic problems?" amplification="Strikes/labor activism~%Agrarian or peasant movements~%Popular resistance or protest against modernization/development program/policies~%Increased electoral support for opposition parties~%Increased criminal or black market activity">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.2" label="SOCIO-ECONOMIC TENSION/CONFLICT" description="Is economic inequality promoting or exacerbating tension/conflict between social groups?" amplification="Strikes/labor activism~%Agrarian or peasant movements~%Acts of violence against property owners/industrial interests~%Social tensions/conflict related to growing income disparity/limited redistribution of wealth~%Increased criminal or black market activity">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.3" label="SOCIO-ECONOMIC IMPACT OF ENVIRONMENTAL PROBLEMS" description="Are environmental problems having an adverse socio-economic impact?" amplification="Declining productivity~%Increased incidence of public health problems~%Agricultural damage~%Infrastructure damage">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3" label="DEMOGRAHPIC DEVELOPMENTS" description="Are demographic developments cause for concern?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.3.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.3.1" label="POVERTY" description="Is poverty increasing in general or affecting more socioeconomic groups?" amplification="Increasing incidence of families/women/children falling below the poverty line~%Significant decline in the middle classes~%Increasing incidence of homelessness~%Significant urban decay">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.2" label="POPULATION PRESSURES" description="Are significant population pressures developing or increasing?" amplification="Large-scale refugee influx~%Large-scale immigration~%Large-scale population migration/displacement~%Rapid urbanization">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.3" label="PUBLIC HEALTH PROBLEMS" description="Are significant public health problems emerging or increasing?" amplification="High/increasing infant mortality rate~%High/increasing incidence of malnourishment/starvation~%High/increasing incidence of disease resulting from public sanitation problems or inadequate public health services~%High/increasing incidence of AIDS or other epidemics~%High/increasing rate of alcohol/drug use">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4" label="CRIMINAL ACTIVITY" description="Is criminal activity substantially increasing?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.4.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.4.1" label="RISING CRIME STATISTICS" description="Are crime statistics rising?" amplification="Increasing incidence of petty crime~%Increasing incidence of arsen~%Increasing incidence of robbery~%Increasing incidence of prostitution~%Increasing incidence of white collar crime">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.2" label="RISING CRIMINAL VIOLENCE" description="Are rates of criminal violence rising?" amplification="Increasing incidence of violent crimes~%Increasing incidence of gang warfare~%Increasing incidence of drug-related violence~%Increasing incidence of violent crimes committed against or by specific groups/communities">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.3" label="ORGANIZED CRIME" description="Is organized crime activity increasing?" amplification="Increasing incidence of money laundering, smuggling, protection rackets, fraud, murder-for-hire, extortion, prostitution, ...~%Growth in the drug trade~%Growth in the arms trade~%Increasing incidence of conflict or warfare among rival criminal groups">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+</template>
+<template id="POLITICAL.CSA-IRAQ">
+<metaData>
+<title>POLITICAL.CSA-IRAQ</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>POLITICAL</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1" label="POLITICAL" description="Is this country headed for a political crisis?" amplification="">
+<choice label="Choice 1" description="" symbol="OK" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="CAUTION" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="WARNING" ordinal="3"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3" ordinal="3"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4" ordinal="4"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>OK</symbol>
+<value unit="percentage">
+<interval min="0" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>CAUTION</symbol>
+<value unit="percentage">
+<interval min="40" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>WARNING</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1" label="POLITICAL INSTABILITY" description="Is political instability increasing?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1" label="INCREASINGLY UNSTABLE/WEAK GOVERNMENT" description="Is the government becoming increasingly unstable or weak? stuff" amplification="">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2" label="INCREASING CONFLICT OVER POLICY/ISSUE AREA" description="Is increasing conflict over policy/issue areas having a destabilizing effect? other" amplification="">
+<choice label="Choice 1" description="Yes" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3" label="DECREASING PUBLIC CONFIDENCE" description="Is decreasing public confidence in the leadership or government policies having a destabilizing effect?" amplification="Is there decreasing confidence in the leadership's performance/capabilities?~%Is there decreasing confidence in leadership's credibility/integrity?~%Is there decreasing confidence in leadership's fitness to remain in office?~%Is there decreasing confidence in policies/reform process?">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2" label="POWER STRUGGLE" description="Is there a government power struggle with potentially destabilizing consequences?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1" label="FACTIONALISM" description="Is there evidence of growing factionalism within the government, bureaucracy, or legislature that is leading to or exacerbating a power struggle?" amplification="Factionalism based on political rivalry~%Factionalism based on ideological conflict~%Factionalism based on religious rivalry/fundamentalist-secularist conflict~%Factionalism based on ethnic/tribal/racial conflict~%Factionalism based on class conflict">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2" label="OPPOSITION CHALLENGE" description="Is there a significant political opposition challenge to the government that is leading to or exacerbating a power struggle?" amplification="Challenges by legal political opposition~%Challenges by rising political movements~%Challenges by dissident groups~%Challenges by opposition groups sponsored/backed by foreign governments/actors">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3" label="SUBNATIONAL GROUP INFLUENCE" description="Are powerful subnational groups contributing to a government power struggle by influencing or backing specific government officials/factions?" amplification="Business/industrial interests~%Labor interests, Traditional political elite~%Religious leaders/organizations/movements~%Guerrilla movements/paramilitary groups,~%Minority community~%Ethnic/other insurgency/secessionist/separatist movements~%Terrorist groups~%Criminal organizations">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3" label="GOVERNMENT RESPONSE TO SOCIO-POLITICAL DISCORD" description="Is the government resorting to increasingly stringent measures in response to socio-political discord with potentially destabilizing consequences?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1" label="REPRESSION OF POLITICAL OPPOSITION" description="Is government repression of the political opposition or dissident groups occurring/increasing?" amplification="Crackdown on political opposition/dissidents~%Ban on political parties/movements~%Arrests or executions of political opposition/dissident leaders~%Shutting down of or imposed restrictions on media~%Arrests or executions of members of the media">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2" label="REPRESSION OF SOCIAL/RELIGIOUS GROUPS" description="Is government repression of social/religious groups occurring/increasing?" amplification="Crackdown on demonstrators or acts of public assembly~%Shut downs or imposed restrictions on media~%Ban on social movements or religious groups~%Arrests or executions of religious/other societal leaders or members of the media~%Suspension of civil liberties~%Government acts of violence/genocide against specific individuals/groups">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3" label="INTERNAL SECURITY MEASURES" description="Is the government instituting or strengthening internal security measures in response to armed (guerrilla/insurgency/separatist) movements or terrorist/criminal activity?" amplification="Increased police/troop presence in specific areas~%Establishment of special police/military units~%Imposition of stricter laws or increased penalties~%Arrests or executions of leaders~%Imposition of a state of emergency or martial law,~%Persecution or harrassment of sympathizers/supporters/associated communities">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4" label="STRUCTURAL/INSTITUTIONAL PROBLEMS" description="Are there serious or worsening structural or institutional problems that could have destabilizing consequences?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1" label="CONSTITUTIONAL CONFLICT/CRISIS" description="Is there a constitutional conflict/crisis?" amplification="Conflict over separation of powers,~%Conflict over the rule of law, Conflict over the constitutional role of the military,~%Conflict over civil liberties, Conflict over regional/subnational/minority rights/autonomy">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2" label="ERODING LEGAL AUTHORITY/ADMINISTRATIVE FUNCTIONS" description="Are legal authoritites or administrative functions eroding?" amplification="Decreasing ability to uphold law and order,~%Decreasing ability to protect minority interests/civil liberties,~%Decreasing ability to implement and enforce policy,~%Decreasing ability to provide basic social services">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3" label="DECREASING PUBLIC CONFIDENCE" description="Is  public confidence in public institutions decreasing?" amplification="Bureaucratic incompetence/negligence~%Government corruption~%Extra-judicial practices~%Abuses/violations of human/civil rights">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+</template>
+<template id="MILITARY.CSA-IRAQ">
+<metaData>
+<title>MILITARY.CSA-IRAQ</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>MILITARY</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question id="SSQ.1X4X3-1" label="MILITARY" description="Is this country experiencing a crisis involving the military or preparing for military action?" amplification="">
+<choice label="Choice 1" description="" symbol="OK" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="CAUTION" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="WARNING" ordinal="3"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3" ordinal="3"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4" ordinal="4"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>OK</symbol>
+<value unit="percentage">
+<interval min="0" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>CAUTION</symbol>
+<value unit="percentage">
+<interval min="40" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>WARNING</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1" label="INTERNAL CONFLICT" description="Is there internal conflict in the military that could destabilize this country?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1.1" label="RIVALRY/FACTIONALISM" description="Are there emerging or increasing rivalries or factionalism in the military?" amplification="Leadership rivalry/factionalism~%Intra-service rivalry/factionalism~%Ethnic-/racial-/religious-based rivalry/factionalism~%Inter-service rivalry">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.2" label="POWER STRUGGLE" description="Are there emerging or increasing power struggles in the military?" amplification="Leadership power struggles~%Power struggles between field officers and staff officers~%Inter-service power struggles~%Purge of the officer corps or ranks">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.3" label="DETERIORATING MORALE/INCREASING DISSENTION" description="Is there deteriorating morale or increasing dissention in the ranks or in the officer corps?" amplification="Growing incidence of desertions/mutinies~%Increasing incidence of violations of orders~%Breakdown of chain-of-command~%Rising incidence of violent or criminal acts by servicemen or officers">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2" label="CIVIL-MILITARY RELATIONS" description="Are there changes or developments in civil-military relations that could destabilize the country?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.2.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.2.1" label="MILITARY COUP" description="Might a military coup occur?" amplification="Military is backing a particular political leader/faction~%Military has issued warnings/threats to the political leadership~%Military has openly criticized the government's position on an issue/dispute~%Military is actively working to undermine the government or its policies~%Military officers have disobeyed orders from civilian leader">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.2" label="CIVIL-MILITARY CONFLICT" description="Is there increasing conflict between the civilian and military leaders?" amplification="Military openly criticizes government policy~%Civilian leadership institutes policy that undermines/threatens military interests~%Military and civilian leaders are unable to agree on national defense strategy,~%Military and civilian leaders are unable to agree on a course of action~%Military leaders are ignoring/defying government policy/orders from political leadership">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.3" label="CONSTITUTIONAL/LEGAL CONFLICT" description="Is there increasing civil-military conflict over constitutional/legal matters?" amplification="Military and political leaders disagree about constitutional roles and responsibilities,~%Military and political leaders disagree about how to interpret the constitution,~%Civilian political leaders challenge the military's involvement in politics,~%Civilian political leaders openly oppose the military's control of the government,~%Civilian leaders accuse the military of involvment in criminal activities/extra-judicial practices,~%Military accuses government/political leaders of corruption">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3" label="SOCIO-MILITARY CONFLICT" description="Are there growing tensions/conflicts in socio-military relations that could destabilize the country?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.3.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.3.1" label="INTERNAL SECURITY ROLE" description="Is the military assuming a new internal security role or increasing its involvement in internal security affairs?" amplification="Involvement in anti-terrorist/-guerrilla/-insurgency activities~%Containment/crushing of anti-government protests, demonstrations, acts of civil disobedience, religious expression, ...~%Engagement in public deterrent activities~%Involvement in acts of repression/violence against civilians~%Involvement in extra-judicial activities~%Establishment of martial law/military courts">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.2" label="MILITARY ACTIVITIES" description="Are military operations/activities having an increasingly adverse impact on society?" amplification="Property/land damage/destruction~%Environmental/agricultural damage~%Harm/injury to citizens~%Public health problems">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.3" label="CRIMINAL ACTIVITIES" description="Is the military involved in criminal activity that are contributing to increased tensions/conflict between the military and the public?" amplification="Military association with criminal organizations~%Military involvement in terrorist activities~%Military involvement in black market/other illegal economic activities/petty crime~%Military involvement in the weapons trade">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4" label="OPERATIONAL STATUS/CAPABILITY" description="Are there changes or developments in the military's operational status or capabilities that suggest pending military action?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.4.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.4.1" label="ACTIVITY LEVELS/PATTERNS" description="Is there unusual change or a sudden increase in activity levels/patterns?" amplification="Mobilization~%Sudden increases in communications activity~%Increased volume of communications between headquarters and subordinate units~%Activation of wartime command posts~%Unusual activity around ammunition storage sites, military depots, or air defense sites~%CC&amp;D activity~%Army units leaving garrisons~%Units moving to border areas~%Air force suddenly standing down or flying fewer sorties~%More naval units than usual deploying to sea">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.2" label="PERSONNEL STATUS" description="Are there changes or developments in personnel status?" amplification="Reserve call-up~%Cancellation of leave~%Unusual training or exercise activities~%Mobilization~%Military commanders suddenly returning to capital/headquarters from travel or canceling travel">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.3" label="FORCE CAPABILITIES" description="Are there significant changes or developments in force capabilities?" amplification="Procurement or enhancement of power projection capabilities~%Procurement or enhancement of advanced conventional weapon systems~%Acquisition or deployment of WMD or associated delivery systems~%Enhancement of logistic capabilities">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+</template>
+<template id="EXTERNAL.CSA-IRAQ">
+<metaData>
+<title>EXTERNAL.CSA-IRAQ</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>EXTERNAL</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1" label="EXTERNAL" description="Is this country headed for a crisis arising from external factors?" amplification="">
+<choice label="Choice 1" description="" symbol="OK" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="CAUTION" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="WARNING" ordinal="3"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3" ordinal="3"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4" ordinal="4"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>OK</symbol>
+<value unit="percentage">
+<interval min="0" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>CAUTION</symbol>
+<value unit="percentage">
+<interval min="40" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>WARNING</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1" label="EXTERNAL MILITARY THREAT" description="Is an external military threat emerging or increasing?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1" label="LIMITED/COVERT MILITARY ACTION" description="Is an adversary engaging in or increasing limited/covert military action?" amplification="Cross-border skirmishes~%Sporadic shelling~%Naval or air skirmishes~%Violation of territorial waters or airspace~%Acts of sabotage~%Infiltration by elite units~%Military espionage">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2" label="CONVENTIONAL MILITARY ACTION" description="Is an adversary preparing to engage in conventional military action against this country?" amplification="Adversary makes threatening statements or warnings~%Mobilization activity~%Sudden increase in communications activity~%Increased volume of communications between headquarters and subordinate units~%Activation of wartime command posts~%Unusual activity around ammunition storage sites, military depots, or air defense sites~%Mining operations~%Air force suddenly stands down or flies fewer sorties~%More naval units than usual deploy to sea~%Recall or evacuation of diplomatic personnel~%Political or military leaders cancel travel plans or suddenly return to capital or headquarters">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3" label="WMD/ADVANCED WEAPONS" description="Is an adversary trying to acquire or is in the process of deploying WMD or advanced weapons?" amplification="WMD proliferation activities or WMD program developments~%Nuclear tests or test preparations~%Ballistic missile tests or test preparations~%Acquisition of other WMD delivery vehicles~%WMD weaponization~%WMD deployment~%Advanced conventional weapon acquisition activities or weapon program developments~%Acquisition or enhancement of force projection capabilities~%Deployment of advanced conventional weapons">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2" label="POLIITCAL-MILITARY INFLUENCE" description="Is another state(s) exerting political-military influence in an effort to destabilize this country or undermine its leadership?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1" label="DIPLOMATIC PRESSURE/COERCION" description="Is another state(s) applying diplomatic pressure or coercion to force this country to cede to some demand?" amplification="Withholding or threatening to withhold economic aid~%Imposing or threatening to impose economic sanctions~%Withholding or threatening to withhold military aid~%Threatening military action~%Abrogating, terminating, or threatening to abrogate or terminate an agreement~%Withholding or threatening to take punitive action against this country in international fora~%Blackmailing the political leadership">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2" label="DESTABILIZATION/EXPLOITATION" description="Is another state(s) actively trying to destabilize or exploit this country or its leadership?" amplification="Providing support, training, or safe haven to an opposition, insurgency, guerrilla organization, or local terrorist movement~%Engaging in economic warfare or imposing punitive economic sanctions~%Sponsoring terrorist acts in this country~%Inciting public uprisings or rebellions~%Backing or supporting factions or cliques in the government or military~%Assassinating political leaders">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3" label="INTERVENTION" description="Is another state(s) intervening in the sovereign affairs of this country in an effort to destabilize it or undermine its leadership?" amplification="Providing support, training, or safe haven to an opposition, insurgency, guerrilla organization, or local terrorist movement,~%Providing support to an irredentist region~%Influencing factions or cliques in the government or military~%Threatening specific actions in an effort to influence policy~%Openly criticizing national policies or government actions~%Taking punitive action against this country in international fora">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3" label="EXTERNAL ECONOMIC FACTORS" description="Are external economic factors having a negative or destabilizing impact on this country's economy?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1" label="COERCIVE ECONOMIC MEASURES" description="Are coercive economic measures imposed by another state(s) having a negative or destabilizing impact?" amplification="Economic warfare~%Sanctions~%Embargo, boycott, or blockade~%Disruption or diversion of resources~%Suspension or termination of foreign aid~%Negative trade actions or trade wars~%Divestiture">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2" label="FOREIGN ECONOMIC INSTABILITY" description="Is economic instability in a neighboring state(s) or region  having a negative or destabilizing impact?" amplification="Currency crisis~%Financial crisis~%Economic downturn, recession, or depression~%Market instability~%Nationalization of private assets">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3" label="GLOBAL ECONOMIC DEVELOPMENTS" description="Are global economic developments having a negative or destabilizing impact?" amplification="Major regional/global economic downturn, recession, or depression~%Market instability~%Increasing competition~%Increasing protectionism~%Increasing technology gap">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4" label="TRANSBORDER/TRANSNATIONAL FACTORS" description="Are transnational factors having a negative or destabilizing impact on this country?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1" label="BORDER/NATIONAL SECURITY" description="Are serious threats to border security or national security emanating from instability or conflicts in neighboring states?" amplification="Large-scale illegal immigration~%Refugee movements~%Spillover of ethnic or religious conflicts or guerrilla or insurgent activities~%Transborder narcotics or arms trade~%Adversary making threatening statements or engaging in aggressive or provocative actions to divert attention from domestic problems">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2" label="TRANSNATIONAL TERRORISM/CRIMINAL ACTIVITY" description="Are transnational terrorism or criminal activities having a destabilizing impact?" amplification="Establishment of terrorist or criminal operating bases~%Increased scope of terrorist or criminal activities~%Increased incidence of violence related to terrorist or criminal activities~%Conflict or warfare among rival terrorist or criminal organizations">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3" label="TRANSBORDER ENVIRONMENTAL PROBLEMS" description="Are transborder environmental problems having a negative or destabilizing effect?" amplification="Disputes or conflicts related to shortage of water resources~%Spillover effects from a natural disaster~%Spillover effects from air, water, or ground pollution~%Spillover effects from industrial or transportation accidents">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+</template>
+<template id="ECONOMIC.CSA-IRAQ">
+<metaData>
+<title>ECONOMIC.CSA-IRAQ</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>ECONOMIC</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1" label="ECONOMIC" description="Is this country headed for an economic crisis?" amplification="">
+<choice label="Choice 1" description="" symbol="OK" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="CAUTION" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="WARNING" ordinal="3"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3" ordinal="3"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4" ordinal="4"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>OK</symbol>
+<value unit="percentage">
+<interval min="0" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>CAUTION</symbol>
+<value unit="percentage">
+<interval min="40" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>WARNING</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1" label="MACROECONOMIC STABILITY" description="Is there a significant decline in this country's macroeconomic stability?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1" label="BUDGET CRISIS" description="Is a budget crisis developing or worsening?" amplification="Rising budget deficit~%Increased external/internal borrowing~%Fiscal spending is exceeding revenue collection">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+<discoveryMethod id="DT-URL.ECONOMIC.CSA-IRAQ_1_2_1" label="Google search for Iraq debt" type="Url">
+<url>http://www.google.com/search?q=iraq+debt&amp;sa=Google+Search</url>
+</discoveryMethod>
+<discoveryMethod id="DT-URL.ECONOMIC.CSA-IRAQ_1_2_2" label="Excite search for Iraq debt" type="Url">
+<url>http://search.excite.com/search.gw?search=%2Biraq%2Bdebt&amp;c=hourtime</url>
+</discoveryMethod>
+<discoveryMethod id="DT-URL.ECONOMIC.CSA-IRAQ_1_2_3" label="ABC Country Book - Economy" type="Url">
+<url>http://www.theodora.com/wfb/iraq_economy.html</url>
+</discoveryMethod>
+<annotation>
+<memo id="MSS-QA.ECONOMIC.CSA-IRAQ.LOWRANCE" type="critique">
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="SRI" object-type="group" description="SRI International"></reader>
+<subject>Need better discovery tools</subject>
+<body>We need to work at developing discovery tools that better target the appropriate type of information to support answering this question.</body>
+</memo>
+</annotation>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2" label="INFLATION" description="Is inflation increasing or becoming worse?" amplification="Increase in consumer/producer prices~%Excessive wage rate awards~%Increase in key commodity prices~%Expansion is exceeding real economic growth rates">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+<discoveryMethod id="DT-URL.ECONOMIC.CSA-IRAQ_1_2_4" label="Google Search for Iraq Inflation" type="Url">
+<url>http://www.google.com/search?q=iraq+inflation&amp;btnG=Google+Search</url>
+</discoveryMethod>
+<discoveryMethod id="DT-URL.ECONOMIC.CSA-IRAQ_1_2_5" label="Excite search for Iraq inflation" type="Url">
+<url>http://search.excite.com/search.gw?search=%2Biraq%2Binflation&amp;c=hourtime</url>
+</discoveryMethod>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3" label="BALANCE OF PAYMENTS" description="Are there problematic developments in the country's balance of payments?" amplification="Declining months of foreign exchange coverage~%Falling terms of trade~%Capital flight/outflows of net investment~%Increasing import levels">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2" label="FINANCIAL STABILITY" description="Is there a significant decline in this country's financial stability?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1" label="BANKING SECTOR" description="Are there problems or developments in the banking sector?" amplification="Rise in bank failures~%Fall in bank liquidity~%Unsustainable credit growth~%Increasing loan default rates~%Loan terms becoming tighter">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2" label="CURRENCY" description="Are there currency-related problems or developments?" amplification="Unusual currency appreciation~%Unusual currency depreciation,~%Exchange expenditures on currency support~%Problems obtaining foreign exchange">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3" label="STOCK MARKET/INVESTMENTS" description="Are there problems or developments in the stock market or other investment areas?" amplification="Declining stock market prices~%High level of corporate bankruptcies~%Heavily discounted financial instruments~%High price evaluations for equities relative to historical trends">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3" label="ECONOMIC HEALTH" description="Is there deterioration in the country's overall economic health?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1" label="OUTPUT" description="Are there problems with this country's economic output?" amplification="Declining or negative GDP growth rates~%Declining GDP per capita level/rates~%Unusually low rates of investment~%Collapse of key commodity price/demand">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+<discoveryMethod id="DT-URL.ECONOMIC.CSA-IRAQ_1_2_6" label="Excite search for Iraq GDP" type="Url">
+<url>http://search.excite.com/search.gw?search=%2Biraq%2Bgdp&amp;c=hourtime</url>
+</discoveryMethod>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2" label="KEY SECTOR" description="Is there a significant decline in any of the country's key sectors?" amplification="Declining growth in the industrial sector~%Declining growth in the agricultural sector~%Declining growth in the domestic services sector~%Declining growth in the export sector">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3" label="UNEMPLOYMENT" description="Are there problematic developments in the country's unemployment figures?" amplification="Rising unemployment rates/levels~%False unemployment estimates~%Decline in the labor force~%Widespread layoffs~%Unemployed workers not seeking employment">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+<discoveryMethod id="DT-URL.ECONOMIC.CSA-IRAQ_1_2_7" label="Excite search for Iraq unemployment" type="Url">
+<url>http://search.excite.com/search.gw?search=%2Biraq%2Bunemployment&amp;c=hourtime</url>
+</discoveryMethod>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4" label="INFRASTRUCTURE/ENVIRONMENTAL PROBLEMS" description="Are there infrastructure problems or environmental problems developing or worsening?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>MAXIMUM</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1" label="INFRASTRUCTURE" description="Are there significant problems with this country's infrastructure?" amplification="Problems/breakdowns in the power system (especially during winter months)~%Problems/breakdowns in the water system~%Problems/breakdowns in the transportation system~%Problems/breakdowns in the telecommunications system">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2" label="NATURAL ENVIRONMENTAL CATASTROPHE" description="Is a natural environmental catastrophe creating significant economic or other problems for the country?" amplification="Major drought/successive droughts~%Major flooding~%Major damage/destruction resulting from a natural disaster~%Public health problems">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3" label="MAN-MADE ENVIRONMENTAL CRISIS" description="Is a man-made environmental crisis creating significant economic or other problems for this country?" amplification="Local/regional water/air/ground pollution~%Crisis with regional/global reach (e.g., deterioration of the ozone, deforestation)~%Transboundary environmental conflict with neighboring states (e.g., over fishing, acid rain)~%Chemical/biological contamination">
+<choice label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+</template>
+<argument id="LEADERSHIP.IRAQ-99">
+<metaData>
+<title>LEADERSHIP.IRAQ-99</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<creator idRef="SFISHER" object-type="person" description="Fisher, Scott, Hick &amp; Associates"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-10-04</date>
+<coverage>
+<nationState>
+<perspective>LEADERSHIP-AND-INTENT</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<argumentTemplate idRef="LEADERSHIP.CSA-IRAQ"></argumentTemplate>
+<answer questionId="SSQ.1X4X3-1">
+<belief symbol="WARNING"></belief>
+<annotation>
+<memo id="MEMO-EV.LEADERSHIP.IRAQ-99.LOWRANCE" type="comment">
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<subject>test</subject>
+<body>test it</body>
+</memo>
+</annotation>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:11:58"></witness>
+<evidence id="DOC.LEADERSHIP.IRAQ-99-EX-CIT-459543" label="I believe the leadership in IRAQ is hot going well." ordinal="1">
+<evidenceExhibit idRef="EX-CIT-459543"></evidenceExhibit>
+<relevance description="It's very relevant." symbol="THREE"></relevance>
+<witness idRef="RODRIGUEZ" description="Rodriguez, Andres, SRI International" timestamp="2003-06-10T14:32:48"></witness>
+</evidence>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:12:11"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:12:25"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2">
+<belief symbol="THREE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="HARRISON" description="Harrison, Ian W., SRI International" timestamp="2001-03-21T17:24:09"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:13:09"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.3">
+<belief label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:13:36"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3">
+<belief symbol="FIVE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.1">
+<belief label="Choice 5" description="No, almost certainly not" symbol="FIVE" ordinal="5"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2001-10-17T15:50:56"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.2">
+<belief label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></belief>
+<belief label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:14:10"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.3">
+<belief label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2002-01-09T08:57:22"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4">
+<belief symbol="FOUR"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:14:42"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T16:14:55"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.3">
+<belief label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2003-03-05T09:06:57"></witness>
+</answer>
+</argument>
+<exhibit id="EX-CIT-459543">
+<archive></archive>
+<metaData>
+<title>I believe the leadership in IRAQ is hot going well.</title>
+<date>2003-06-10</date>
+</metaData>
+</exhibit>
+<argument id="SOCIAL.IRAQ-99">
+<metaData>
+<title>SOCIAL.IRAQ-99</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<creator idRef="SFISHER" object-type="person" description="Fisher, Scott, Hick &amp; Associates"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>SOCIAL</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<argumentTemplate idRef="SOCIAL.CSA-IRAQ"></argumentTemplate>
+<answer questionId="SSQ.1X4X3-1">
+<belief symbol="OK"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.1">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:31:20"></witness>
+<evidence id="DOC.SOCIAL.IRAQ-99-EX-CIT.19921" label="New Evidence to be considered" ordinal="1">
+<evidenceExhibit idRef="EX-CIT.19921"></evidenceExhibit>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2001-06-12T10:29:17"></witness>
+<annotation>
+<flag flag-type="red" label="Attention" description="User attention needed"></flag>
+</annotation>
+</evidence>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2000-12-06T16:01:43"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.3">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:31:54"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.1">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:32:10"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:32:26"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:32:41"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:32:58"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:35:26"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2000-12-06T16:01:33"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:36:59"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:37:15"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:37:27"></witness>
+</answer>
+</argument>
+<exhibit id="EX-CIT.19921">
+<archive></archive>
+<metaData>
+<title>New Evidence to be considered</title>
+<date>2001-06-12</date>
+</metaData>
+</exhibit>
+<argument id="POLITICAL.IRAQ-99">
+<metaData>
+<title>POLITICAL.IRAQ-99</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<creator idRef="SFISHER" object-type="person" description="Fisher, Scott, Hick &amp; Associates"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>POLITICAL</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<argumentTemplate idRef="POLITICAL.CSA-IRAQ"></argumentTemplate>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1">
+<belief symbol="CAUTION"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:38:04"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2">
+<belief label="Choice 1" description="Yes" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:38:23"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:38:37"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:38:53"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:39:09"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:39:42"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3">
+<belief symbol="FOUR"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1">
+<belief label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:40:04"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2">
+<belief label="Choice 4" description="Unlikely" symbol="FOUR" ordinal="4"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:40:18"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:40:38"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:40:51"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:41:05"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:41:20"></witness>
+</answer>
+</argument>
+<argument id="MILITARY.IRAQ-99">
+<metaData>
+<title>MILITARY.IRAQ-99</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<creator idRef="SFISHER" object-type="person" description="Fisher, Scott, Hick &amp; Associates"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>MILITARY</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<argumentTemplate idRef="MILITARY.CSA-IRAQ"></argumentTemplate>
+<answer questionId="SSQ.1X4X3-1">
+<belief symbol="OK"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:42:29"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:42:42"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:42:55"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:43:13"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:43:26"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:43:42"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:43:59"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2000-12-05T15:47:22"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:44:31"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:44:49"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:45:03"></witness>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:45:18"></witness>
+</answer>
+</argument>
+<argument id="EXTERNAL.IRAQ-99">
+<metaData>
+<title>EXTERNAL.IRAQ-99</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<creator idRef="SFISHER" object-type="person" description="Fisher, Scott, Hick &amp; Associates"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>EXTERNAL</perspective>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<argumentTemplate idRef="EXTERNAL.CSA-IRAQ"></argumentTemplate>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1">
+<belief symbol="OK"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-18T12:08:03"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:46:54"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:47:11"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:47:30"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2000-12-05T15:47:46"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:48:14"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:48:27"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:48:42"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:48:59"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:49:17"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:49:32"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T13:49:47"></witness>
+</answer>
+</argument>
+<argument id="ECONOMIC.IRAQ-99">
+<metaData>
+<title>ECONOMIC.IRAQ-99</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<creator idRef="SFISHER" object-type="person" description="Fisher, Scott, Hick &amp; Associates"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>ECONOMIC</perspective>
+<period>
+<start>1999-03-13</start>
+<end>1999-03-13</end>
+</period>
+<region>IRAQ</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<argumentTemplate idRef="ECONOMIC.CSA-IRAQ"></argumentTemplate>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1">
+<belief symbol="CAUTION"></belief>
+<annotation>
+<memo id="MSS-ECONOMIC.IRAQ-99.LOWRANCE" type="comment">
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<subject>Why I think this is important</subject>
+<body>There is a clear trend of worsening economic conditions that needs immediate attention.</body>
+</memo>
+</annotation>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1">
+<belief symbol="THREE"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.1">
+<belief label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2003-12-12T13:53:57"></witness>
+<rationale>Based upon historical data, there is reason to expect a budget crisis, despite the possibility of hidden bank accounts and stolen goods.</rationale>
+<annotation>
+<memo id="MSS-ECONOMIC.IRAQ-99.LOWRANCE.1" type="critique">
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<subject>Over stating the evidence</subject>
+<body>Given the evidence, this conclusion seems far to strong.</body>
+</memo>
+</annotation>
+<evidence id="DOC.ECONOMIC.IRAQ-99-EX-URL.845389" label="Christian Aid in Iraq" ordinal="1">
+<evidenceExhibit idRef="EX-URL.845389"></evidenceExhibit>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2003-11-13T09:55:29"></witness>
+<annotation>
+<flag flag-type="red" label="Attention" description="User attention needed"></flag>
+</annotation>
+</evidence>
+<evidence id="DOC.ECONOMIC.IRAQ-99-ECONOMIC.CSA-NS.2" label="Iranian economic argument" ordinal="2">
+<evidenceExhibit idRef="ECONOMIC.CSA-NS.2"></evidenceExhibit>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2004-01-07T16:48:01"></witness>
+<annotation>
+<flag flag-type="red" label="Attention" description="User attention needed"></flag>
+</annotation>
+</evidence>
+<evidence id="DOC.ECONOMIC.IRAQ-99-EX-URL.10806" label="Iraq Sanctions Case" ordinal="3">
+<evidenceExhibit idRef="EX-URL.10806"></evidenceExhibit>
+<relevance description="In addition to Iraq's ability to finance itself through stolen gold and durable goods, there are rumors abound about large, undeclared Iraqi bank accounts abroad." symbol="FOUR"></relevance>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2003-06-17T15:05:50"></witness>
+</evidence>
+<evidence id="DOC.ECONOMIC.IRAQ-99-GENOA-KB" label="Iraq Economy 1995 Summary" ordinal="4">
+<evidenceExhibit idRef="EX-URL.http//www/theodora.com/wfb/iraq_economy.html"></evidenceExhibit>
+<relevance description="Historically, Iraq has had a very volatile economy." symbol="THREE"></relevance>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2003-06-17T15:05:27"></witness>
+</evidence>
+<discoveryMethod id="DT-URLDIR.ECONOMIC.IRAQ-99" label="Yahoo World News" type="Urldir">
+<url>http://rss.news.yahoo.com/rss/world</url>
+</discoveryMethod>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.2">
+<belief label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2003-07-17T10:12:11"></witness>
+<rationale>Recent economic reports indicates that inflation is on the rise. DNA is not reliable.</rationale>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.1.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2001-06-12T10:25:31"></witness>
+<rationale>Trade terms are in decline.</rationale>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2002-12-13T10:28:15"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T15:34:57"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.2.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2002-05-20T14:05:47"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3">
+<belief symbol="THREE"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.1">
+<belief label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2002-02-08T06:08:05"></witness>
+<rationale>The price for oil exports are being held down.</rationale>
+<annotation>
+<memo id="MEMO-EV.ECONOMIC.IRAQ-99.MURDOCK" type="for-review">
+<creator idRef="MURDOCK" object-type="person" description="Murdock, Janet, SRI International"></creator>
+<reader idRef="Inherited-Audience"></reader>
+<reader idRef="Inherited-Authors"></reader>
+<subject>third memo</subject>
+<body>Testing to see what buttons appear at left.
+Mod 1
+</body>
+</memo>
+</annotation>
+<annotation>
+<memo id="MEMO-EV.ECONOMIC.IRAQ-99.LOWRANCE_3" type="for-review">
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="Inherited-Audience"></reader>
+<reader idRef="Inherited-Authors"></reader>
+<subject>Please have a look at this</subject>
+<body>;oishgdpoihsafdopigh</body>
+</memo>
+</annotation>
+<annotation>
+<memo id="MSS-EV.ECONOMIC.IRAQ-99.LOWRANCE.1" type="critique">
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<subject>Something Wrong</subject>
+<body>what is wrong</body>
+</memo>
+</annotation>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="lowrance" description="Lowrance" timestamp="1999-10-04T15:35:46"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.3.3">
+<belief label="Choice 3" description="Even, about as likely as not" symbol="THREE" ordinal="3"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2002-02-01T09:23:09"></witness>
+<annotation>
+<memo id="MEMO-EV.ECONOMIC.IRAQ-99.LOWRANCE" type="to-do">
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="Inherited-Audience"></reader>
+<reader idRef="Inherited-Authors"></reader>
+<subject>oioiha</subject>
+<body>asvo;ihsqfo'ihsoaih</body>
+</memo>
+</annotation>
+<evidence id="DOC.ECONOMIC.IRAQ-99-EX-URL-296268" label="Iraq: Unemployment hits hard in Basra, UN OCHA Integrated Regional Information Network, April 25, 2003" ordinal="1">
+<evidenceExhibit idRef="EX-URL-296268"></evidenceExhibit>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2003-05-29T11:51:55"></witness>
+</evidence>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4">
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.1">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2002-04-29T13:31:38"></witness>
+<rationale>Sanctions are contributing to a geneal decline in the infrastructure.</rationale>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.2">
+<belief label="Choice 2" description="Likely" symbol="TWO" ordinal="2"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2002-05-20T14:06:01"></witness>
+</answer>
+<answer questionId="SSQ.B3B5555DB5555DB5555DB5555DD-1.4.3">
+<belief label="Choice 1" description="Yes, almost certainly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2004-01-22T17:20:57"></witness>
+</answer>
+</argument>
+<exhibit id="EX-URL.http//www/theodora.com/wfb/iraq_economy.html">
+<archive></archive>
+<metaData>
+<title>Iraq Economy 1995 Summary</title>
+<date>2003-06-17</date>
+<identifier>http://www.theodora.com/wfb/iraq_economy.html</identifier>
+</metaData>
+</exhibit>
+<exhibit id="EX-URL.10806">
+<archive></archive>
+<metaData>
+<title>Iraq Sanctions Case</title>
+<date>2003-06-17</date>
+<identifier>http://www.american.edu/projects/mandala/TED/iraqsanc.htm</identifier>
+</metaData>
+</exhibit>
+<exhibit id="EX-URL.845389">
+<archive></archive>
+<metaData>
+<title>Christian Aid in Iraq</title>
+<date>2003-11-13</date>
+<identifier>http://www.christian-aid.org.uk/world/where/meeca/iraqp.htm</identifier>
+</metaData>
+</exhibit>
+<argument id="ECONOMIC.CSA-NS.2">
+<metaData>
+<title>ECONOMIC.CSA-NS.2</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<creator idRef="HARRISON" object-type="person" description="Harrison, Ian W., SRI International"></creator>
+<creator idRef="RODRIGUEZ" object-type="person" description="Rodriguez, Andres, SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<date>1999-01-01</date>
+<coverage>
+<nationState>
+<perspective>ECONOMIC</perspective>
+<region>IRAN</region>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<argumentTemplate idRef="ECONOMIC.CSA-NS"></argumentTemplate>
+<answer questionId="SSQ.1X4X3-1">
+<belief symbol="CAUTION"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1">
+<belief symbol="ONE"></belief>
+<belief symbol="TWO"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.1">
+<belief label="Choice 1" description="The government faces an imminent fiscal crisis." symbol="ONE" ordinal="1"></belief>
+<witness idRef="S. Holmes" description="S. Holmes" timestamp="1998-05-27T11:56:08"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.2">
+<belief label="Choice 2" description="It is likely that excessive inflation will occur." symbol="TWO" ordinal="2"></belief>
+<belief label="Choice 3" description="The country faces considerable inflation rate rises." symbol="THREE" ordinal="3"></belief>
+<witness idRef="Lowrance" description="Lowrance" timestamp="1998-09-10T10:53:33"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.1.3">
+<belief label="Choice 1" description="It is highly likely that major foreign exchange losses/shortages will occur." symbol="ONE" ordinal="1"></belief>
+<belief label="Choice 2" description="It is likely that major foreign exchange losses/shortages will occur." symbol="TWO" ordinal="2"></belief>
+<witness idRef="S. Holmes" description="S. Holmes" timestamp="1998-05-27T11:56:08"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.1">
+<belief label="Choice 1" description="It is highly likely that the banking/financial system will encounter serious strains" symbol="ONE" ordinal="1"></belief>
+<belief label="Choice 2" description="It is likely that the banking/financial system will encounter serious strains." symbol="TWO" ordinal="2"></belief>
+<witness idRef="Lowrance" description="Lowrance" timestamp="1998-09-10T10:53:13"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.2">
+<belief label="Choice 1" description="It is highly likely that the currency value will face major downward pressures." symbol="ONE" ordinal="1"></belief>
+<witness idRef="Lowrance" description="Lowrance" timestamp="1998-09-10T10:53:05"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.2.3">
+<belief label="Choice 2" description="It is likely that the stock market will experience major downward pressures." symbol="TWO" ordinal="2"></belief>
+<witness idRef="Lowrance" description="Lowrance" timestamp="1998-09-10T10:44:03"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3">
+<belief symbol="FOUR"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.1">
+<belief label="Choice 1" description="It is highly likely that the output growth rate will fall rapidly" symbol="ONE" ordinal="1"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2001-03-01T15:18:00"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.2">
+<belief label="Choice 5" description="All key economic sectors are experiencing normal growth/activity." symbol="FIVE" ordinal="5"></belief>
+<witness idRef="LOWRANCE" description="Lowrance, John D., SRI International" timestamp="2001-03-01T14:23:57"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.3.3">
+<belief label="Choice 1" description="It is highly likely that major levels of unemployment will occur." symbol="ONE" ordinal="1"></belief>
+<witness idRef="S. Holmes" description="S. Holmes" timestamp="1998-05-27T11:56:08"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4">
+<belief symbol="ONE"></belief>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.1">
+<belief label="Choice 1" description="It is highly likely that a transportation system crisis will occur." symbol="ONE" ordinal="1"></belief>
+<witness idRef="S. Holmes" description="S. Holmes" timestamp="1998-05-27T11:56:08"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.2">
+<belief label="Choice 1" description="It is highly likely that a power system crisis will occur." symbol="ONE" ordinal="1"></belief>
+<witness idRef="S. Holmes" description="S. Holmes" timestamp="1998-05-27T11:56:08"></witness>
+<rationale>?</rationale>
+</answer>
+<answer questionId="SSQ.1X4X3-1.4.3">
+<belief label="Choice 1" description="It is highly likely that a power system crisis will occur." symbol="ONE" ordinal="1"></belief>
+<witness idRef="S. Holmes" description="S. Holmes" timestamp="1998-05-27T11:56:08"></witness>
+<rationale>?</rationale>
+</answer>
+</argument>
+<template id="ECONOMIC.CSA-NS">
+<metaData>
+<title>ECONOMIC.CSA-NS</title>
+<securityMarking></securityMarking>
+<creator idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></creator>
+<reader idRef="WORLD" object-type="group" description="World"></reader>
+<publisher idRef="LOWRANCE" object-type="person" description="Lowrance, John D., SRI International"></publisher>
+<date>1999-06-21</date>
+<coverage>
+<nationState>
+<perspective>ECONOMIC</perspective>
+</nationState>
+</coverage>
+</metaData>
+<creatingTool label="SEAS" version="6.3" tool-type="Structured Argumentation"></creatingTool>
+<question id="SSQ.1X4X3-1" label="" description="Is the country about to enter a serious economic crisis?" amplification="">
+<choice label="Choice 1" description="" symbol="OK" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="CAUTION" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="WARNING" ordinal="3"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3" ordinal="3"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4" ordinal="4"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>CONSENSUS</method>
+<parameter>
+<symbol>OK</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>CAUTION</symbol>
+<value unit="percentage">
+<interval min="20" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>WARNING</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1" label="" description="Does the nation face acute instability in the real economy?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.1.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.1.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>CONSENSUS</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.1.1" label="" description="Is the government facing a grave budget crisis?" amplification="The budget deficit (absolute size, % of GDP) is rising precipitously.~%The government is increasing its internal/external borrowing.~%Domestic debt load (% of GDP) is increasing.~%International debt load (% of foreign exchange earnings) is rising.~%Fiscal spending versus revenue collection is accelerating">
+<choice label="Choice 1" description="The government faces an imminent fiscal crisis." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that the government will experience a fiscal crisis." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that the government will experience a fiscal crisis." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="The government fiscal situation is experiencing some difficulties." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="The government fiscal situation is sound and/or normal." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.2" label="" description="Is the economy experiencing excessive price inflation/hyper-inflation?" amplification="Consumer prices are rising at rates materially above historical averages.~%Wage rate demands and awards are out pacing consumer price increases.~%Producer prices are rising at rates materially above historical averages.~%Currency depreciation is introducing import price inflation.~%Monetary policies are ineffective in stemming demand and price rises.">
+<choice label="Choice 1" description="Excessive inflation or hyper-inflation is high likely." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that excessive inflation will occur." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="The country faces considerable inflation rate rises." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="A moderate rise in the inflation rate is being experienced." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="There is no evidence suggesting inflationary pressure." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.1.3" label="" description="Does the balance of payments indicate major losses/shortages of foreign exchange?" amplification="Months of foreign exchange coverage for imports are declining.~%Terms of trade are falling for major commodity exports.~%Import levels have grown excessive.~%There are clear signs of capital flight.~%Net investment outflows, especially &quot;hot&quot; money (short-term capital), are accelerating.">
+<choice label="Choice 1" description="It is highly likely that major foreign exchange losses/shortages will occur." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that major foreign exchange losses/shortages will occur." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that major foreign exchange losses/shortages will occur." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely that major foreign exchange losses/shortages will occur." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="It is highly unlikely that major foreign exchange losses/shortages will occur." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2" label="" description="Does the nation face acute financial instability?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.2.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.2.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>CONSENSUS</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.2.1" label="" description="Is the domestic banking/financial system experiencing serious strain?" amplification="There is an unusual rise in bank failures (numbers and/or size of banks).~%Banks are calling in loans at term and not extending fresh credit to borrowers.~%Loan default rates are growing and/or at higher than historical rates.~%Financial data indicate a fall in bank liquidity.~%Loan terms (rates, maturity, collateral) are tightening.">
+<choice label="Choice 1" description="It is highly likely that the banking/financial system will encounter serious strains" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that the banking/financial system will encounter serious strains." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="The banking/financial system may encounter serious strains." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="The banking/financial system is experiencing some new problems." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="There is no evidence suggesting banking/financial system strain." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.2" label="" description="Is the currency exchange rate under major pressure and/or collapsing?" amplification="Current exchange rates are declining are falling at unusually high levels/pace.~%Considerable exchange is being expended in currency support activities.~%Forward exchange spreads are rising.~%Black market rate discounts and/or levels of activity are increasing.~%Companies/individuals are having problems obtaining foreign exchange.">
+<choice label="Choice 1" description="It is highly likely that the currency value will face major downward pressures." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that the currency value will face major downward pressures." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="The currency value may experience major downward pressures." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely that the currency value will face major downward pressures." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="The currency value is stable and faces no major downward pressures." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.2.3" label="" description="Is the stock exchange and/or its equivalent under major pressure and/or collapsing?" amplification="Stock market (equity) values are declining precipitously.~%Corporate bankruptcies are at unusually high levels.~%Financial instruments are being heavily discounted.~%Bond markets are unstable.">
+<choice label="Choice 1" description="It is highly likely that stock market will experience major downward pressures." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that the stock market will experience major downward pressures." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="The stock market may experience major downward pressures." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely that the stock market will experience major downward pressures." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="The stock market is stable and not subject to major downward pressures." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3" label="" description="Is the nation experiencing a severe decline in economic output/income?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.3.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.3.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>CONSENSUS</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.3.1" label="" description="Is national output growth declining rapidly and/or negative?" amplification="GDP growth rates (quarterly/annually) indicate substantially declining output growth.~%GDP per capita growth rates indicate declines.~%Rates of investment are unusually low and/or negative.">
+<choice label="Choice 1" description="It is highly likely that the output growth rate will fall rapidly" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that the output growth rate will fall rapidly." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that the output growth rate will fall rapidly." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely that the output growth rate will fall rapidly." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="National output is growing at a good or normal pace." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.2" label="" description="Are key economic sectors undergoing serious recession and/or collapse?" amplification="The industrial sector is witnessing abnormally declining growth.~%The agricultural sector is witnessing abnormally declining growth.~%The domestic services sector is witnessing abnormally declining growth.~%The export sector is witnessing abnormally declining growth.">
+<choice label="Choice 1" description="It is highly likely that one or more key economic sectors will face serious recession." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that one or more key economic sectors will face serious recession" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that one or more key economic sectors will face serious recession." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely than any key economic sector will face serious recession." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="All key economic sectors are experiencing normal growth/activity." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.3.3" label="" description="Is unemployment becoming sufficiency serious to become a destabilizing factor?" amplification="Published rates of unemployment are rising.~%The government does not publish unemployment rates and/or publishes underestimates.~%Labor force indicators show declines.~%Widespread layoffs are taking place.~%Unemployed workers decline from seeking employment.">
+<choice label="Choice 1" description="It is highly likely that major levels of unemployment will occur." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that major levels of unemployment will occur." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that major levels of unemployment will occur." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="Rates of unemployment are rising." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="Rates of unemployment are normal." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4" label="" description="Is there a critical breakdown in economic infrastructure?" amplification="">
+<choice label="Choice 1" description="" symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="" symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="" symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="" symbol="FIVE" ordinal="5"></choice>
+<questionRelationships>
+<dependent idRef="SSQ.1X4X3-1.4.1" ordinal="1"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.2" ordinal="2"></dependent>
+<dependent idRef="SSQ.1X4X3-1.4.3" ordinal="3"></dependent>
+</questionRelationships>
+<aggregationRule>
+<method>CONSENSUS</method>
+<parameter>
+<symbol>ONE</symbol>
+<value unit="percentage">
+<interval min="0" max="20"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>TWO</symbol>
+<value unit="percentage">
+<interval min="20" max="40"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>THREE</symbol>
+<value unit="percentage">
+<interval min="40" max="60"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FOUR</symbol>
+<value unit="percentage">
+<interval min="60" max="80"></interval>
+</value>
+</parameter>
+<parameter>
+<symbol>FIVE</symbol>
+<value unit="percentage">
+<interval min="80" max="100"></interval>
+</value>
+</parameter>
+</aggregationRule>
+</question>
+<question id="SSQ.1X4X3-1.4.1" label="" description="Does the nation face a critical domestic/international transportation crisis?" amplification="The road system is encountering problems (weather, lack of security, deterioration, etc.).~%The rail system is encountering problems (lack of maintenance, attacks, poor management, etc.)~%The air transport system is encountering problems (lack of security, poor finance, etc.).~%The shipping transport system is encountering problems.">
+<choice label="Choice 1" description="It is highly likely that a transportation system crisis will occur." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that a transportation system crisis will occur." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that a transportation system crisis will occur" symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely that a transportation system crisis will occur." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="The transportation system/network is normal." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.2" label="" description="Does the nation face a critical electrical power crisis?" amplification="Demand for electrical power is outstripping supply and capacity building efforts.~%The system is experiencing a growing number/duration of blackouts/brownouts.~%Electricity rationing (by time, sector, etc.) is rising.~%Power companies are experiencing substantial financial problems (poor collections, etc.)~%Major power generation facilities are experiencing significant production problems.">
+<choice label="Choice 1" description="It is highly likely that a power system crisis will occur." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that a power system crisis will occur." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that a power system crisis will occur." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely that a power system crisis will occur." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="The electrical power system/network is normal." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+<question id="SSQ.1X4X3-1.4.3" label="" description="Does the nation face a critical communications crisis?" amplification="The national telephone system is subject to unusual disruptions.~%The telephone system is vulnerable to possible sabotage/attacks.~%The radio/television systems are subject to unusual disruptions/attacks~%International communications facilities are vulnerable to possible sabotage/attacks.~% Other communications systems (telex, mail, fax, internet, etc.) are vulnerable.">
+<choice label="Choice 1" description="It is highly likely that a power system crisis will occur." symbol="ONE" ordinal="1"></choice>
+<choice label="Choice 2" description="It is likely that a communications system crisis will occur." symbol="TWO" ordinal="2"></choice>
+<choice label="Choice 3" description="It is possible that a communications system crisis will occur." symbol="THREE" ordinal="3"></choice>
+<choice label="Choice 4" description="It is unlikely that a communications system crisis will occur." symbol="FOUR" ordinal="4"></choice>
+<choice label="Choice 5" description="The communications system/networks are normal." symbol="FIVE" ordinal="5"></choice>
+<questionRelationships></questionRelationships>
+</question>
+</template>
+<exhibit id="EX-URL-296268">
+<archive></archive>
+<metaData>
+<title>Iraq: Unemployment hits hard in Basra, UN OCHA Integrated Regional Information Network, April 25, 2003</title>
+<date>2003-05-29</date>
+<identifier>http://www.reliefweb.int/w/rwb.nsf/0/380a133fcd488f5549256d13002bf381?OpenDocument</identifier>
+</metaData>
+</exhibit>
+</amlDocument>

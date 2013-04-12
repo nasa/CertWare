@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare History for EGit
+Bundle-SymbolicName: net.certware.history.egit;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-Activator: net.certware.history.egit.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.team.core,
+ org.eclipse.team.core.history,
+ org.eclipse.ui.actions,
+ org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.certware.history,
+ org.eclipse.ui,
+ org.eclipse.jgit,
+ org.eclipse.egit,
+ org.eclipse.egit.core,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.team.core,
+ org.eclipse.core.filesystem,
+ net.certware.core.ui,
+ net.certware.measurement.sco,
+ net.certware.core

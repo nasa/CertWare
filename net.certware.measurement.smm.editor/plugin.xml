@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 Object Management Group (SMM metamodel)
+ Copyright (c) 2010 Castor Technology (ecore from schema, Eclipse GMT MODISCO)
+ Kestrel Technology LLC (modified generated models) 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.measurement.smm.presentation.SmmModelWizardID"
+            name="%_UI_SmmModelWizard_label"
+            class="net.certware.measurement.smm.presentation.SmmModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/measure.gif">
+         <description>%_UI_SmmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.measurement.smm.presentation.SmmEditorID"
+            name="%_UI_SmmEditor_label"
+            icon="icons/full/obj16/measure.gif"
+            extensions="smm"
+            class="net.certware.measurement.smm.presentation.SmmEditor"
+            contributorClass="net.certware.measurement.smm.presentation.SmmActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.measurement.smm.presentation.SmmModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

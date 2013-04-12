@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <pattern
+            applicability="OMG ARM Industrial Press Example"
+            author="OMG SysA"
+            consequences="Safety template needing solution evidence"
+            idp="net.certware.example.patterns.arm.indpress"
+            implementation="Re-populate for attributes of interest"
+            intent="Demonstrate the ARM notation"
+            motivation="Mapping example for safety concern"
+            name="Industrial Press"
+            version="p.1">
+         <related_pattern
+               pattern_id="net.certware.example.patterns.arm.bluetooth">
+         </related_pattern>
+         <resource
+               description="Pattern model file"
+               structure="resources/Industrial Press.arm">
+         </resource>
+      </pattern>
+      <pattern
+            applicability="OMG ARM Bluetooth Example"
+            author="OMG SysA"
+            consequences="Safety template needing solution evidence"
+            idp="net.certware.example.patterns.arm.bluetooth"
+            implementation="Re-populate for attributes of interest"
+            intent="Demonstrate the ARM notation usage"
+            motivation="Mapping example for security concern"
+            name="Bluetooth"
+            version="p.1">
+         <related_pattern
+               pattern_id="net.certware.example.patterns.arm.indpress">
+         </related_pattern>
+         <resource
+               description="Pattern model file"
+               structure="resources/Bluetooth.arm">
+         </resource>
+      </pattern>
+   </extension>
+
+</fragment>

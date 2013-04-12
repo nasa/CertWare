@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="CertWare Help" topic="html/toc.html">
+   <topic href="html/gettingstarted/maintopic.html" label="Getting Started">
+      <anchor id="gettingstarted"/>
+   </topic>
+   <topic href="html/concepts/maintopic.html" label="Concepts">
+      <anchor id="concepts"/>
+   </topic>
+   <topic href="html/tasks/maintopic.html" label="Tasks">
+      <anchor id="tasks"/>
+   </topic>
+   <topic href="html/reference/maintopic.html" label="Reference">
+      <anchor id="reference"/>
+   </topic>
+   <topic href="html/samples/maintopic.html" label="Samples">
+      <anchor id="samples"/>
+   </topic>
+   <anchor id="models"/>
+</toc>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Example Metrics for SPM
+Bundle-SymbolicName: net.certware.example.spm;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-ClassPath: net.certware.example.spm
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.example
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

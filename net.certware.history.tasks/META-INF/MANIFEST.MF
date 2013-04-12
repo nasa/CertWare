@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare History for Task List
+Bundle-SymbolicName: net.certware.history.tasks;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-Activator: net.certware.history.tasks.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ net.certware.core.ui,
+ org.eclipse.mylyn.tasks.ui,
+ org.eclipse.mylyn.tasks.core

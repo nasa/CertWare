@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: net.certware.planning.cpn.generator
+Bundle-Vendor: My Company
+Bundle-Version: 1.1.0.qualifier
+Bundle-SymbolicName: net.certware.planning.cpn.generator; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.certware.planning.cpn;visibility:=reexport,
+ org.eclipse.xpand;visibility:=reexport,
+ org.eclipse.xtend;visibility:=reexport,
+ org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.emf.mwe.utils;visibility:=reexport,
+ org.eclipse.xtend.typesystem.emf;visibility:=reexport
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

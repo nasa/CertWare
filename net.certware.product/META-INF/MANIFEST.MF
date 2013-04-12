@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Product
+Bundle-SymbolicName: net.certware.product;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-ClassPath: net.certware.product
+Bundle-Vendor: Kestrel Technology LLC
+Require-Bundle: org.eclipse.ui.ide.application

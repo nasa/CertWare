@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="net.certware.export" name="CertWare Exports" schema="schema/net.certware.export.exsd"/>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="CertWare case argument export commands"
+            id="net.certware.export.category"
+            name="CertWare Exports">
+      </category>
+   </extension>
+
+</plugin>

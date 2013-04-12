@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsn:Goal xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gsn="http://www.certware.net/gsn" identifier="G1" description="" content="A bluetooth enabled network provides adequate security">
+  <strategies identifier="S1">
+    <goals identifier="Available" description="" content="A Bluetooth enabled network is adequately available">
+      <subGoals identifier="X1"/>
+      <goalContexts identifier="Definition"/>
+    </goals>
+    <goals identifier="Access" description="" content="A Bluetooth enabled network provides adequate control for access to services and data">
+      <goalContexts identifier="Definition" description="" content="Access - only users permitted by the defined security policy have access to services and data"/>
+    </goals>
+    <goals identifier="Integrity" description="" content="A Bluetooth enabled network provides adequate levels of integrity">
+      <goalContexts identifier="Definition" description="" content="Integrity - services and data are provided to authorized users as intended and without corruption"/>
+    </goals>
+    <goals identifier="Confidentiality" description="" content="A Bluetooth enabled network provides adequate levels of confidentiality">
+      <goalContexts identifier="Definition" description="" content="Confidentiality - Unauthorized persons cannot intercept and understand information to which they are not entitled"/>
+    </goals>
+  </strategies>
+  <strategies identifier="T2"/>
+  <goalContexts identifier="Context: security policy and scenario for use"/>
+  <goalContexts identifier="Reference"/>
+</gsn:Goal>

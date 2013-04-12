@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: net.certware.planning.mspdi.edit;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: net.certware.planning.mspdi.provider.MspdiEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.planning.mspdi.provider
+Require-Bundle: org.eclipse.core.runtime,
+ net.certware.planning.mspdi;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

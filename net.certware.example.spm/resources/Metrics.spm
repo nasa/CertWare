@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spm:ProjectModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smm="http://www.eclipse.org/MoDisco/smm" xmlns:spm="http://www.certware.net/spm">
+  <modelElement xsi:type="spm:CaseScope" name="CertWare SPM"/>
+  <modelElement xsi:type="spm:ProjectScope" name="CertWare SPM"/>
+  <modelElement xsi:type="spm:ChangeScope" name="CertWare SPM"/>
+  <modelElement xsi:type="spm:ProjectSize" name="Project Size SLOC"/>
+  <modelElement xsi:type="smm:Attribute" tag="version" value="1.0"/>
+  <modelElement xsi:type="smm:Annotation" text="Project model containing commit records"/>
+  <commits>
+    <annotation text="Commit ID"/>
+    <modelElement xsi:type="spm:TotalCaseSizeMeasure" library="CertWare" name="Total Case Size SLOC" unit="SLOC">
+      <measurement xsi:type="smm:Count" value="12000.0"/>
+    </modelElement>
+    <modelElement xsi:type="spm:BaselineCaseSizeMeasure" library="CertWare" name="Baseline SLOC" unit="SLOC">
+      <measurement xsi:type="smm:Count" value="500.0">
+        <observation observer="Product Baseline Manager" tool="CM" whenObserved="2011-01-01T00:00:00.000-0600"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:CriticalDefectChangeOrderCount" library="CertWare" unit="orders">
+      <measurement xsi:type="smm:Count" error="Verified" value="12.0">
+        <observation observer="Product Baseline Manager" tool="CM" whenObserved="2011-01-01T00:00:00.000-0600"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:NormalDefectChangeOrderCount" library="CertWare" unit="orders">
+      <measurement xsi:type="smm:Count" error="Verified" value="33.0">
+        <observation observer="Product Baseline Manager" tool="CM" whenObserved="2011-01-01T00:00:00.000-0600"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:ImprovementChangeOrderCount" library="CertWare" unit="orders">
+      <measurement xsi:type="smm:Count" error="None" value="44.0"/>
+    </modelElement>
+    <modelElement xsi:type="spm:NewFeatureChangeOrderCount" library="CertWare" unit="orders">
+      <measurement xsi:type="smm:Count" value="2.0"/>
+    </modelElement>
+    <modelElement xsi:type="spm:TotalChangeOrderCount" library="CertWare" name="" unit="orders">
+      <measurement xsi:type="smm:CollectiveMeasurement" error="None" value="91.0" baseMeasurement="//@commits.0/@modelElement.2/@measurement.0 //@commits.0/@modelElement.5/@measurement.0 //@commits.0/@modelElement.3/@measurement.0 //@commits.0/@modelElement.4/@measurement.0">
+        <observation observer="Computed" tool="CertWare" whenObserved="2011-01-01T12:00:00.000-0600"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:BrokenCaseSizeMeasure" library="CertWare" name="Broken SLOC" unit="SLOC">
+      <measurement xsi:type="smm:Count" value="1300.0">
+        <observation observer="EGit Repository Count" tool="CertWare" whenObserved="2011-01-02T12:00:00.000-0600"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:FixedCaseSizeMeasure" library="CertWare" name="Fixed SLOC" unit="SLOC">
+      <measurement xsi:type="smm:Count" error="Assumptions" value="200.0">
+        <observation observer="EGit Repository Count" tool="CertWare" whenObserved="2011-01-02T12:00:00.000-0600"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:RepairEffortMeasure" library="CertWare" name="Repair Hours" unit="hrs">
+      <measurement xsi:type="smm:Count" error="Entry accuracy" value="20.0">
+        <observation observer="Baseline Manager" tool="Timecards"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:UsageTimeMeasure" library="CertWare" name="Usage Time Representative" unit="hrs">
+      <measurement xsi:type="smm:Count" error="Assumptions on representative environment" value="40.0">
+        <observation observer="Baseline Manager" tool="Test Reports"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:DevelopmentEffortMeasure" library="CertWare" name="Total Development Effort" unit="hrs">
+      <measurement xsi:type="smm:Count" error="Entry accuracy" value="350.0">
+        <observation observer="Baseline Manager" tool="Timecards"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:CriticalAndNormalChangeOrderCount" library="CertWare" name="Total Count" unit="orders" functor="sum" baseMeasure1="//@commits.0/@modelElement.2" baseMeasure2="//@commits.0/@modelElement.3">
+      <measurement xsi:type="smm:Count" value="45.0">
+        <observation observer="Computed" tool="CertWare" whenObserved="2011-02-03T10:00:00.000-0600"/>
+      </measurement>
+    </modelElement>
+    <modelElement xsi:type="spm:EndProductQuality" name="End Product Quality">
+      <characteristics xsi:type="spm:AdaptabilityRatioMeasure" library="CertWare" name="Adaptability Ratio" unit="hr/SLOC" functor="divide" baseMeasure1="//@commits.0/@modelElement.9" baseMeasure2="//@commits.0/@modelElement.6">
+        <measurement xsi:type="smm:AggregatedMeasurement" error="Computed" value="0.45" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:ReworkRatioMeasure" library="CertWare" name="Rework Ratio" functor="divide" baseMeasure1="//@commits.0/@modelElement.9" baseMeasure2="//@commits.0/@modelElement.11">
+        <measurement xsi:type="smm:AggregatedMeasurement" error="Computed" value="0.0571428" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:ScrapRatioMeasure" library="CertWare" name="Scrap Ratio" unit="" functor="divide" baseMeasure1="//@commits.0/@modelElement.7" baseMeasure2="//@commits.0/@modelElement.0">
+        <measurement xsi:type="smm:AggregatedMeasurement" error="Computed" value="0.108333" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:ModularityMeasure" library="CertWare" name="Modularity Ratio" unit="" functor="divide" baseMeasure1="//@commits.0/@modelElement.7" baseMeasure2="//@commits.0/@modelElement.6">
+        <measurement xsi:type="smm:AggregatedMeasurement" value="14.2857" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:MaturityRatioMeasure" library="CertWare" name="Maturity Ratio" unit="hr/order" functor="divide" baseMeasure1="//@commits.0/@modelElement.10" baseMeasure2="//@commits.0/@modelElement.12">
+        <measurement xsi:type="smm:AggregatedMeasurement" error="Computed" value="0.8888" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:MaintainabilityMeasure" library="CertWare" name="Maintainability Ratio" unit="" functor="divide" baseMeasure1="//@commits.0/@modelElement.13/@characteristics.2" baseMeasure2="//@commits.0/@modelElement.13/@characteristics.1">
+        <measurement xsi:type="smm:AggregatedMeasurement" error="Computed" value="1890.002" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+    </modelElement>
+    <modelElement xsi:type="spm:InProgressIndicator" name="In-Progress Indicator">
+      <characteristics xsi:type="spm:ReworkStabilityMeasure" library="CertWare" name="Rework Stability" unit="SLOC" functor="subtract" baseMeasure1="//@commits.0/@modelElement.7" baseMeasure2="//@commits.0/@modelElement.8">
+        <measurement xsi:type="smm:AggregatedMeasurement" error="Computed" value="1100.0" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:ReworkBacklogMeasure" library="CertWare" name="Rework Backlog" functor="divide" baseMeasure1="//@commits.0/@modelElement.14/@characteristics.0" baseMeasure2="//@commits.0/@modelElement.1">
+        <measurement xsi:type="smm:AggregatedMeasurement" error="Computed" value="2.2" isBaseSuppled="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:ModularityTrend" library="CertWare" name="Modularity Trend" unit="SLOC/order-hr" baseMeasure="//@commits.0/@modelElement.13/@characteristics.3" accumulator="average">
+        <measurement xsi:type="smm:CollectiveMeasurement" value="14.287" accumulator="average" isBaseSupplied="true"/>
+      </characteristics>
+      <characteristics xsi:type="spm:AdaptabilityTrend" library="CertWare" name="Adaptability Trend" unit="hr/SLOC-hr" baseMeasure="//@commits.0/@modelElement.13/@characteristics.0" accumulator="average">
+        <measurement xsi:type="smm:CollectiveMeasurement" value="0.45" accumulator="average" isBaseSupplied="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+      <characteristics xsi:type="spm:MaturityTrend" library="CertWare" name="Maturity Trend" unit="hr/SLOC-hr" baseMeasure="//@commits.0/@modelElement.13/@characteristics.4" accumulator="average">
+        <measurement xsi:type="smm:CollectiveMeasurement" value="14.29" accumulator="average" isBaseSupplied="true">
+          <observation observer="Computed" tool="CertWare"/>
+        </measurement>
+      </characteristics>
+    </modelElement>
+  </commits>
+</spm:ProjectModel>

@@ -1,0 +1,98 @@
+net
+{
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@535bab52";
+	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@274cbf3f";
+	node_size = (100.0 40.0);
+}
+
+node E
+{
+	states = ("Representative Load" "Limited Load" );
+	position = (404 -151);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	ID = "E";
+	label = "Timing Testing";
+	diagnosistype = "AUXILIARY";
+}
+node D
+{
+	states = ("Exhaustive" "Limited" );
+	position = (218 -174);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	ID = "D";
+	label = "Memory Testing";
+	diagnosistype = "AUXILIARY";
+}
+node B
+{
+	states = ("Dynamic and Static" "Static Only" );
+	position = (36 -112);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	ID = "B";
+	label = "ARINC 653 Testing";
+	diagnosistype = "AUXILIARY";
+}
+node C
+{
+	states = ("Exhaustive" "Limited" );
+	position = (300 0);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	ID = "C";
+	label = "Queue Testing";
+	diagnosistype = "AUXILIARY";
+}
+node A
+{
+	states = ("Safe" "Unsafe" );
+	position = (102 -2);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "true";
+	ID = "A";
+	label = "Certifiable RTOS";
+	diagnosistype = "AUXILIARY";
+}
+node F
+{
+	states = ("Representative Load" "Limited Load" );
+	position = (30 -224);
+	excludepolicy = "include whole CPT";
+	ismapvariable = "false";
+	ID = "F";
+	label = "Partition Testing";
+	diagnosistype = "AUXILIARY";
+}
+potential ( E | C )
+{
+	data = ((	0.8	0.2	)
+		(	0.3	0.7	));
+}
+potential ( D | C B )
+{
+	data = (((	0.5	0.5	)
+		(	0.5	0.5	))
+		((	0.5	0.5	)
+		(	0.5	0.5	)));
+}
+potential ( B | A )
+{
+	data = ((	0.7	0.3	)
+		(	0.2	0.8	));
+}
+potential ( C | A )
+{
+	data = ((	0.6	0.4	)
+		(	0.3	0.7	));
+}
+potential ( A | )
+{
+	data = (	0.1	0.9	);
+}
+potential ( F | B )
+{
+	data = ((	0.8	0.2	)
+		(	0.2	0.8	));
+}

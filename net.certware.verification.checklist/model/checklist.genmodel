@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010 National Aeronautics and Space Administration"
+    modelDirectory="/net.certware.verification.checklist/src" modelPluginID="net.certware.verification.checklist"
+    modelName="checklist" editPluginClass="net.certware.verification.checklist.edit.provider.ChecklistEditPlugin"
+    editorPluginClass="net.certware.verification.checklist.presentation.ChecklistEditorPlugin"
+    nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" providerRootExtendsClass="" tableProviders="true" colorProviders="true">
+  <foreignModel>checklist.ecore</foreignModel>
+  <genPackages prefix="Checklist" basePackage="net.certware.verification" resource="XMI"
+      disposableProviderFactory="true" multipleEditorPages="false" fileExtensions="vcl"
+      ecorePackage="checklist.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="checklist.ecore#//Choices">
+      <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/no"/>
+      <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/yes"/>
+      <genEnumLiterals ecoreEnumLiteral="checklist.ecore#//Choices/not_applicable"/>
+    </genEnums>
+    <genClasses ecoreClass="checklist.ecore#//Category">
+      <genFeatures createChild="false" propertyCategory="Base" propertyDescription="The category name for this collection of items"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Category/name"/>
+      <genFeatures children="true" createChild="true" propertyCategory="Base" propertyDescription="Verification items in this category"
+          ecoreFeature="ecore:EReference checklist.ecore#//Category/items"/>
+      <genFeatures createChild="false" propertyCategory="Support" propertyDescription="Verification comments for this category"
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute checklist.ecore#//Category/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="checklist.ecore#//Item" labelFeature="#//checklist/Item/description">
+      <genFeatures createChild="false" propertyCategory="Fixed" propertyDescription="Item unique identifier for traceability"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Item/identifier"/>
+      <genFeatures createChild="false" propertyCategory="Fixed" propertyDescription="Item description for verification task"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Item/description"/>
+      <genFeatures createChild="false" propertyCategory="Fixed" propertyDescription="Case location reference for verification"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Item/reference"/>
+      <genFeatures createChild="false" propertyCategory="Base" propertyDescription="Whether the case fulfills with the verification item"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Item/result"/>
+      <genFeatures createChild="false" propertyCategory="Support" propertyDescription="Comments regarding the verification result"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Item/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="checklist.ecore#//Checklist">
+      <genFeatures createChild="false" propertyCategory="Base" propertyDescription="The checklist name."
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Checklist/name"/>
+      <genFeatures createChild="false" propertyCategory="Base" propertyDescription="The checklist version identifier"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Checklist/version"/>
+      <genFeatures children="true" createChild="true" propertyCategory="Base" propertyDescription="Verification categories"
+          ecoreFeature="ecore:EReference checklist.ecore#//Checklist/categories"/>
+      <genFeatures createChild="false" propertyCategory="Support" propertyDescription="Comments regarding this checklist"
+          ecoreFeature="ecore:EAttribute checklist.ecore#//Checklist/comment"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

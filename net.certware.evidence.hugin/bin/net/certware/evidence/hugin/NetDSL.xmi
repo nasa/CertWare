@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xtext:Grammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext" name="net.certware.evidence.hugin.NetDSL" definesHiddenTokens="true" hiddenTokens="//@rules.8 //@rules.6 //@rules.7">
+  <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="netDSL">
+    <ePackage href="http://www.certware.net/evidence/hugin/NetDSL#/"/>
+  </metamodelDeclarations>
+  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </metamodelDeclarations>
+  <rules xsi:type="xtext:ParserRule" name="Model">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//Model"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" cardinality="?" feature="domain" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="BOOLEAN">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="true"/>
+      <elements xsi:type="xtext:Keyword" value="false"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ID">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" cardinality="?" value="^"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="INT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="0"/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="1"/>
+          <right value="9"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange" cardinality="*">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="DOUBLE">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="1"/>
+          <right value="9"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange" cardinality="*">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="."/>
+          <elements xsi:type="xtext:CharacterRange" cardinality="+">
+            <left value="0"/>
+            <right value="9"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="E"/>
+            <elements xsi:type="xtext:Keyword" value="e"/>
+          </elements>
+          <elements xsi:type="xtext:Alternatives" cardinality="?">
+            <elements xsi:type="xtext:Keyword" value="+"/>
+            <elements xsi:type="xtext:Keyword" value="-"/>
+          </elements>
+          <elements xsi:type="xtext:CharacterRange" cardinality="+">
+            <left value="0"/>
+            <right value="9"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="0"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="."/>
+          <elements xsi:type="xtext:CharacterRange" cardinality="+">
+            <left value="0"/>
+            <right value="9"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="E"/>
+            <elements xsi:type="xtext:Keyword" value="e"/>
+          </elements>
+          <elements xsi:type="xtext:Alternatives" cardinality="?">
+            <elements xsi:type="xtext:Keyword" value="+"/>
+            <elements xsi:type="xtext:Keyword" value="-"/>
+          </elements>
+          <elements xsi:type="xtext:CharacterRange" cardinality="+">
+            <left value="0"/>
+            <right value="9"/>
+          </elements>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="STRING">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="&quot;"/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value="&quot;"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="/*"/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value="*/"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="SL_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="%"/>
+      <elements xsi:type="xtext:NegatedToken" cardinality="*">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="WS">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+      <elements xsi:type="xtext:Keyword" value=" "/>
+      <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ANY_OTHER">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Wildcard"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Integer">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//Integer"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="i" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DomainDefinition">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//DomainDefinition"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="header" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="elements" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DomainHeader">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//DomainHeader"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//DomainHeader"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="net"/>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="attributes" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="DomainElement">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//DomainElement"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.41"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Attribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//Attribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="BasicNode">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//BasicNode"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="keyword" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="id" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="attributes" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="BasicNodeKeyword">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Alternatives" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="discrete"/>
+          <elements xsi:type="xtext:Keyword" value="continuous"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="node"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="decision"/>
+      <elements xsi:type="xtext:Keyword" value="utility"/>
+      <elements xsi:type="xtext:Keyword" value="function"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="StatesAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//StatesAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//StatesAttribute"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="states"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="states" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="LabelAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//LabelAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="label"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PositionAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PositionAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="position"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//IntegerLiteral"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="x" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="y" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SubtypeAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//SubtypeAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="subtype"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="subtype" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="label"/>
+          <elements xsi:type="xtext:Keyword" value="boolean"/>
+          <elements xsi:type="xtext:Keyword" value="number"/>
+          <elements xsi:type="xtext:Keyword" value="interval"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="StateValuesAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//StateValuesAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="state_values"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="numbers" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ApplicationAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ApplicationAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="key" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NodeSizeAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//NodeSizeAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="node_size"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" feature="width" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="height" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Potential">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//Potential"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="potential"/>
+      <elements xsi:type="xtext:Assignment" feature="graph" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="model" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PotentialGraph">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialGraph"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialGraph"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="children" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="|"/>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="parents" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PotentialModel">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialModel"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialModel"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="attributes" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PotentialAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.37"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PotentialDataAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialDataAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialDataAttribute"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="data"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="data" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MatrixRow">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="r5" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="r4" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="r3" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.32"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="r2" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="r1" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="List5">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//List5"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="list" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="List4">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//List4"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="list" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.32"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="List3">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//List3"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="list" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="List2">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//List2"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="list" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="List1">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MatrixRow"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//List1"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="items" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MeanExpression">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value="+"/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="MeanTerm">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+        <elements xsi:type="xtext:Keyword" value="*"/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PotentialTableAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//PotentialTableAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="nodes" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.38"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="samples" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.39"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="data" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.40"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ModelNodesAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ModelNodesAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ModelNodesAttribute"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="model_nodes"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="configurations" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SamplesAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//SamplesAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="samples_per_interval"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ModelDataAttribute">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ModelDataAttribute"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ModelDataAttribute"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="model_data"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" feature="sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.49"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ClassDefinition">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ClassDefinition"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="class"/>
+      <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="elements" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.42"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ClassElement">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ClassElement"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.43"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ClassInstance">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ClassInstance"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="instance"/>
+      <elements xsi:type="xtext:Assignment" feature="instanceName" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" feature="className" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="input" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.44"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value=";"/>
+        <elements xsi:type="xtext:Assignment" feature="output" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Assignment" feature="attributes" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.48"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="InputBindings">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//InputBindings"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="lhs" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.45"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=","/>
+      <elements xsi:type="xtext:Assignment" feature="rhs" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.44"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="InputBinding">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//InputBinding"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="formal" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="actual" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="OutputBindings">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//OutputBindings"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="lhs" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.47"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=","/>
+      <elements xsi:type="xtext:Assignment" feature="rhs" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="OutputBinding">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//OutputBinding"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="actual" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="formal" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="NodeAttributes">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//NodeAttributes"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ExpressionSequence">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ExpressionSequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//ExpressionSequence"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="expressions" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="expressions" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.50"/>
+          </elements>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Expression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//Expression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.51"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//Assignment"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="="/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="assignmentOpExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//assignmentOpExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//AssignmentOp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.52"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="assignOp">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="+="/>
+      <elements xsi:type="xtext:Keyword" value="-="/>
+      <elements xsi:type="xtext:Keyword" value="*="/>
+      <elements xsi:type="xtext:Keyword" value="/="/>
+      <elements xsi:type="xtext:Keyword" value="%="/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="orExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//orExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//OrExp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="||"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="andExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//andExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.55"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//AndExp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="&amp;&amp;"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="relationalExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//relationalExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.57"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//RelationalExp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.55"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="relOps">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="!="/>
+      <elements xsi:type="xtext:Keyword" value="=="/>
+      <elements xsi:type="xtext:Keyword" value="&lt;="/>
+      <elements xsi:type="xtext:Keyword" value="&lt;>"/>
+      <elements xsi:type="xtext:Keyword" value=">="/>
+      <elements xsi:type="xtext:Keyword" value="&lt;"/>
+      <elements xsi:type="xtext:Keyword" value=">"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="additiveExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//additiveExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.59"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//AdditiveExp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.57"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="arithOps">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="+"/>
+      <elements xsi:type="xtext:Keyword" value="-"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="multiplicativeExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//multiplicativeExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.61"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Action" feature="left" operator="=">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//MultiplicativeExp"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.60"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.59"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="multOps">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="*"/>
+      <elements xsi:type="xtext:Keyword" value="/"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="unaryExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//unaryExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.64"/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.62"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.64"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="unaryOps">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="-"/>
+      <elements xsi:type="xtext:Keyword" value="!"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Operator">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//Operator"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="op" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.66"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" feature="sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.49"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TermExpression">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//TermExpression"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.65"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.63"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TermLiteral">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//TermLiteral"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//VarRef"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//IntegerLiteral"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//BooleanLiteral"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//StringLiteral"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.certware.net/evidence/hugin/NetDSL#//DoubleLiteral"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="OperatorName">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="truncate"/>
+      <elements xsi:type="xtext:Keyword" value="Normal"/>
+      <elements xsi:type="xtext:Keyword" value="LogNormal"/>
+      <elements xsi:type="xtext:Keyword" value="Beta"/>
+      <elements xsi:type="xtext:Keyword" value="Gamma"/>
+      <elements xsi:type="xtext:Keyword" value="Exponential"/>
+      <elements xsi:type="xtext:Keyword" value="Weibull"/>
+      <elements xsi:type="xtext:Keyword" value="Uniform"/>
+      <elements xsi:type="xtext:Keyword" value="Triangular"/>
+      <elements xsi:type="xtext:Keyword" value="PERT"/>
+      <elements xsi:type="xtext:Keyword" value="Binomial"/>
+      <elements xsi:type="xtext:Keyword" value="Poisson"/>
+      <elements xsi:type="xtext:Keyword" value="NegativeBinomial"/>
+      <elements xsi:type="xtext:Keyword" value="Geometric"/>
+      <elements xsi:type="xtext:Keyword" value="Distribution"/>
+      <elements xsi:type="xtext:Keyword" value="NoisyOR"/>
+      <elements xsi:type="xtext:Keyword" value="min"/>
+      <elements xsi:type="xtext:Keyword" value="max"/>
+      <elements xsi:type="xtext:Keyword" value="log"/>
+      <elements xsi:type="xtext:Keyword" value="log2"/>
+      <elements xsi:type="xtext:Keyword" value="log10"/>
+      <elements xsi:type="xtext:Keyword" value="exp"/>
+      <elements xsi:type="xtext:Keyword" value="sin"/>
+      <elements xsi:type="xtext:Keyword" value="cos"/>
+      <elements xsi:type="xtext:Keyword" value="tan"/>
+      <elements xsi:type="xtext:Keyword" value="sinh"/>
+      <elements xsi:type="xtext:Keyword" value="cosh"/>
+      <elements xsi:type="xtext:Keyword" value="tanh"/>
+      <elements xsi:type="xtext:Keyword" value="sqrt"/>
+      <elements xsi:type="xtext:Keyword" value="abs"/>
+      <elements xsi:type="xtext:Keyword" value="floor"/>
+      <elements xsi:type="xtext:Keyword" value="ceil"/>
+      <elements xsi:type="xtext:Keyword" value="mod"/>
+      <elements xsi:type="xtext:Keyword" value="if"/>
+      <elements xsi:type="xtext:Keyword" value="and"/>
+      <elements xsi:type="xtext:Keyword" value="or"/>
+      <elements xsi:type="xtext:Keyword" value="not"/>
+    </alternatives>
+  </rules>
+</xtext:Grammar>

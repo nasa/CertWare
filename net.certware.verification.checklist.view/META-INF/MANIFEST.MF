@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Verification Checklist View
+Bundle-SymbolicName: net.certware.verification.checklist.view;singleton:=true
+Bundle-Version: 1.2.2.qualifier
+Bundle-Activator: net.certware.verification.checklist.view.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.core.expressions,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.core.runtime.jobs,
+ org.eclipse.core.runtime.preferences,
+ org.eclipse.help,
+ org.eclipse.ui.actions,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.certware.core;bundle-version="1.2.0",
+ net.certware.core.ui;bundle-version="1.2.1",
+ net.certware.verification.checklist.edit;bundle-version="1.2.0"

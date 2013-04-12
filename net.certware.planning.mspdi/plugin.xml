@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ MSPDI is copyright Microsoft, Inc.
+ Implementation wrapper in ecore done by Kestrel Technology LLC
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schemas.microsoft.com/project"
+            class="net.certware.planning.mspdi.MspdiPackage"
+            genModel="model/mspdi.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="mspdi"
+            class="net.certware.planning.mspdi.util.MspdiResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

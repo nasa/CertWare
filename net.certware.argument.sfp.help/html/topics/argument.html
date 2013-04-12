@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link rel="stylesheet" type="text/css" href="../../css/certware.css" />
+	<title>Semi-Formal Proof Notation</title>
+</head>
+
+<body>
+<h1>Semi-Formal Arguments</h1>
+
+<h2>Background</h2>
+<div class="background">
+
+One can present a safety case arguments using the style of <em>semi-formal proofs</em>.  The individual claims and evidence in the case argument become the theorems, premises, inferences, and deductions in the semi-formal proof language.  
+
+</div>
+
+<h2>Application</h2>
+<div class="application">
+
+CertWare provides an editor for the semi-formal proof (SFP) language and an accompanying review wizard that guides the case author or verifier through the argument for validation.  Create a new argument file using the Eclipse new file wizard and giving the file the extension <b>.sfp</b>, as in <b>myargument.sfp</b>.  Then open the file to invoke the SFP editor.  The editor provides syntax validation and assistance, so use the assistance feature (usually the keys ALT-/) to find the appropriate terms to use as you go along.   
+<p>
+Start a new argument in the editor using the keyword <b>Theorem:</b> followed by a quoted text string describing the theorem, followed by a parenthetical of justification statement numbers or entailments.  For example, 
+<blockquote>
+Theorem: "The computing system meets its availability requirements" (1->7)<br/>
+</blockquote>
+<p>
+This will be the only un-numbered statement in the argument file.  Thereafter, enter a collection of numbered lines as statements providing hypotheses, facts, inferences, entailments, or deductions.   Hypotheses use the keyword <b>hypothesis</b>, facts or non-justified statements use the keyword <b>epsilon</b>, deductions use the entailment justification syntax <b>A->B</b> where A and B are line numbers (statement numbers in the proof, not line numbers of the file contents), and inferences use the justification syntax <b>A</b> or <b>A,B,C,D</b> and so on for any set of line numbers.  Combinations of the above justifications are permitted as well. For instance, 
+
+<blockquote>
+1. The computing system boundary is defined in document 1154. (epsilon)<br/>
+2. The computing system requirements are defined in document 1155. (epsilon)<br/>
+3. The input/output module test suite is defined in document 1156. (epsilon)<br/>
+4. I/O traffic test A is complete. (3)<br/>
+5. I/O security test B is complete. (3)<br/>
+6. The I/O module tests are complete (3,4,5)<br/>
+</blockquote>
+<p>
+The editor also applies real-time validation to the argument structure.  The real-time validation will generate warning or error messages and markers on the file according to the validation rules.  Some of these have quick fixes, so use these convenient tools to repair the argument.  Validation rules include missing line numbers, unused line numbers, logical ordering, entailment context, syntax, and related rules.    
+<p>
+The SFP file includes a verification record for each statement, including the verification result, verification author, and a time stamp. The analyst entering the argument need not enter these fields as they are meant to be completed during a semi-formal proof review using the <a href="review_wizard.html">review wizard</a>. Invoke the review wizard by raising the context menu (right-click) on the SFP file and choose the <b>Review Proof</b> menu option.   The wizard presents the proof step-by-step, showing only the relevant parts of the argument for verification.  
+
+</div>
+
+
+</body>
+</html>

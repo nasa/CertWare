@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cpnDsl"
+    nsURI="http://www.certware.net/planning/cpn/CpnDsl" nsPrefix="cpnDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="Plans">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentmodels" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.planning.cpn/src-gen/net/certware/planning/cpn/CpnDsl.ecore#//ArgumentModels"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plans" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.planning.cpn/src-gen/net/certware/planning/cpn/CpnDsl.ecore#//Plan"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentModels">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Allocation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="team" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="facility" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/net.certware.argument.arm/model/arm.ecore#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="estimated" eType="ecore:EClass platform:/resource/net.certware.planning.cpn/src-gen/net/certware/planning/cpn/CpnDsl.ecore#//Allocation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actual" eType="ecore:EClass platform:/resource/net.certware.planning.cpn/src-gen/net/certware/planning/cpn/CpnDsl.ecore#//Allocation"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

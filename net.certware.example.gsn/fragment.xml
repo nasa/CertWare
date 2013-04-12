@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <pattern
+            applicability="OMG GSN Industrial Press Example"
+            author="OMG SysA"
+            consequences="Safety template needing solution evidence"
+            idp="net.certware.example.patterns.gsn.indpress"
+            implementation="Re-populate for attributes of interest"
+            intent="Demonstrate the ARM mapping for GSN"
+            motivation="Mapping example for safety concern"
+            name="Industrial Press"
+            version="p.1">
+         <related_pattern
+               pattern_id="net.certware.example.patterns.gsn.bluetooth">
+         </related_pattern>
+         <resource
+               description="Pattern model file"
+               structure="resources/Industrial Press.gsn">
+         </resource>
+      </pattern>
+      <pattern
+            applicability="OMG GSN Bluetooth Example"
+            author="OMG SysA"
+            consequences="Safety template needing solution evidence"
+            idp="net.certware.example.patterns.gsn.bluetooth"
+            implementation="Re-populate for attributes of interest"
+            intent="Demonstrate the ARM mapping for GSN"
+            motivation="Mapping example for security concern"
+            name="Bluetooth"
+            version="p.1">
+         <related_pattern
+               pattern_id="net.certware.example.patterns.gsn.indpress">
+         </related_pattern>
+         <resource
+               description="Pattern model file"
+               structure="resources/Bluetooth.gsn">
+         </resource>
+      </pattern>
+   </extension>
+
+</fragment>

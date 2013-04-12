@@ -1,0 +1,55 @@
+/*
+ * CertWare semi-formal proof domain specific language grammar definition.
+ * Based on work by Rushton et al., see {A System for Checking Semi-formal Proofs, FECS'08}
+ * @author mrb 
+ * @since 1.0.2
+ */
+grammar net.certware.argument.sfp.SemiFormalProof with org.eclipse.xtext.common.Terminals
+
+generate semiFormalProof "http://www.certware.net/argument/sfp/SemiFormalProof"
+
+
+Proof: 
+	'Theorem' ':'  
+	title=Text 
+	'(' justifications=Justifications ')' 
+	proofSteps=ProofSteps 
+	;
+	
+Text : STRING;
+
+Justifications : {Justifications} 
+	(justifications+=Justification (',' justifications+=Justification)*)? ; 
+
+Justification : {Justification}
+	hypothesis?='hypothesis' | epsilon?='epsilon' | numeral=Numeral | assertion=QuotedAssertion | entailment=Entailment ;
+	
+QuotedAssertion : {QuotedAssertion}
+	text=Text;
+	
+Entailment : {Entailment}
+	head=Conjunction '->' tail=Numeral;
+	 
+Conjunction : {Conjunction}
+	lhs=Numeral '^' rhs=Conjunction | lhs=Numeral;
+	
+Numeral : INT;
+
+ProofSteps : {ProofSteps} 
+	(statements+=Statement (statements+=Statement)*)? | epsilon?='epsilon'
+	;
+	
+Statement : {Statement}
+	id=Numeral '.' statement=Text '(' justification=Justifications ')' ( '{' validation=Validation '}')? ;
+
+Validation : {Validation}
+	author=Text (timeStamp=Text)? state=ValidationKind ; 
+	
+// enumeration ordered so that value 0 is unknown
+enum ValidationKind :
+	UNKNOWN='unknown' |
+	VALID='valid' |
+	INVALID='invalid'
+	;  
+	
+// end

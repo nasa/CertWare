@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Argument Semi-Formal Proof Help
+Bundle-SymbolicName: net.certware.argument.sfp.help;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-ClassPath: net.certware.argument.sfp.help
+Bundle-Vendor: Kestrel Technology LLC
+Require-Bundle: org.eclipse.help

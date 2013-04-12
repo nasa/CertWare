@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2011 National Aeronautics and Space Administration.  All rights reserved.
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.evidence.hugin.instance.presentation.InstanceEditorID"
+            name="%_UI_InstanceEditor_label"
+            icon="icons/full/obj16/InstanceModelFile.gif"
+            extensions="hev"
+            class="net.certware.evidence.hugin.instance.presentation.InstanceEditor"
+            contributorClass="net.certware.evidence.hugin.instance.presentation.InstanceActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

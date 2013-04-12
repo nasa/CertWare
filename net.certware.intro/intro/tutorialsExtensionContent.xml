@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	Copyright (c) 2011 U.S. Government.  All rights reserved.
+    Contributors:
+    	MRB <mrb@certware.net> - initial implementation
+ -->
+
+<introContent>
+	<extensionContent id="net.certware" name="CertWare"
+		style="css/tutorials.css" alt-style="css/tutorials.properties" path="tutorials/@">
+		<group label="CertWare" id="certware" style-id="content-group">
+			<link
+				url="http://nasa.github.com/CertWare/"
+				label="Watch the CertWare Tutorials" id="certware-guide" style-id="content-link">
+				<text>Watch the narrated tutorials at the CertWare web site.</text>
+			</link>
+		</group>
+	</extensionContent>
+</introContent>

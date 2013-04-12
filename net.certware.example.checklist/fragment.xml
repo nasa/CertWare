@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <checklist
+            applicability="EUROCONTROL SCDM Verification Checklist App C"
+            author="EUROCONTROL"
+            consequences="Populated checklist with empty verification check boxes"
+            idc="net.certware.example.patterns.checklist.eurocontrol"
+            implementation="Put in version control and edit instance to update check boxes and text fields."
+            intent="Represents the EUROCONTROL SCDM example verification checklist"
+            motivation="Verification of safety case artifacts"
+            name="EUROCONTROL SCDM Checklist"
+            version="SCDM 2.1 2006">
+         <resource
+               description="Checklist model file"
+               structure="resources/Eurocontrol.vcl">
+         </resource>
+      </checklist>
+   </extension>
+
+</fragment>

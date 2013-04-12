@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.epsilon.evl.emf.validation">
+      <constraintsBinding
+            constraints="validation/gsn.evl"
+            namespaceURI="http://www.certware.net/gsn">
+      </constraintsBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+         <markerResolutionGenerator
+         	class = "org.eclipse.epsilon.evl.emf.validation.EvlMarkerResolutionGenerator"
+         	markerType = "net.certware.argument.gsn.validator.diagnostic">
+         </markerResolutionGenerator>
+         <markerResolutionGenerator
+         	class = "org.eclipse.epsilon.evl.emf.validation.EvlMarkerResolutionGenerator"
+         	markerType = "org.eclipse.emf.ecore.diagnostic">
+         </markerResolutionGenerator>
+   </extension>
+   <extension
+         id="diagnostic"
+         name="GSN problems"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
+</plugin>

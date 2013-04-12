@@ -1,0 +1,13 @@
+h1. CertWare Inference Library Plug-in
+
+This plugin is meant to contain Java libraries from external sources to support evidence inference. The JAR file list should include
+
+bc. 
+/net.certware.libs.inference/inflib.jar
+
+For more information on the @inflib.jar@ library see the "SamIam":http://reasoning.cs.ucla.edu/samiam/ guide from the Automated Reasoning UCLA.
+
+March 1, 2011
+
+
+

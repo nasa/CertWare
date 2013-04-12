@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="net.certware.argument.sfp.review.proof">
+         <iterate
+               ifEmpty="false">
+            <adapt
+                  type="org.eclipse.core.resources.IFile">
+               <test
+                     property="org.eclipse.core.resources.name"
+                     value="*.sfp">
+               </test>
+            </adapt>
+         </iterate>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <command
+               commandId="net.certware.argument.sfp.review.launchWizard"
+               label="Review Wizard"
+               style="push"
+               tooltip="Load and review the semi-formal proof">
+            <visibleWhen
+                  checkEnabled="false">
+               <or>
+                  <with
+                        variable="activeMenuSelection">
+                     <reference
+                           definitionId="net.certware.argument.sfp.review.proof">
+                     </reference>
+                  </with>
+                  <with
+                        variable="activeMenuEditorInput">
+                     <reference
+                           definitionId="net.certware.argument.sfp.review.proof">
+                     </reference>
+                  </with>
+               </or>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Launches the proof review wizard"
+            helpContextId="net.certware.core.ui.review_wizard_page_context"
+            id="net.certware.argument.sfp.review.launchWizard"
+            name="Proof Review Wizard">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="net.certware.argument.sfp.review.wizard.ReviewWizardHandler"
+            commandId="net.certware.argument.sfp.review.launchWizard">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="net.certware.argument.sfp.review.launchWizard"
+            disabledIcon="icons/dtool16/certware-run-d16.gif"
+            icon="icons/obj16/certware-run.gif">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.certware.argument.sfp.review.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="certware"
+            class="net.certware.argument.sfp.review.preferences.SfpReviewPreferencePage"
+            id="net.certware.argument.sfp.review.page"
+            name="Semi-Formal Proof Review">
+      </page>
+   </extension>
+
+</plugin>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	
+<!-- To see log output when running samples from within Eclipse, 
+	 in the Eclipse run dialog, arguments tab, enter the following
+	 as a program argument:
+	
+	     -Dlog4j.configuration=src/main/resources/log4j.xml
+	
+	--> 	
+
+    <!-- ====================================================================== -->
+    <!-- A P P E N D E R S                                                      -->
+    <!-- ====================================================================== -->
+
+    <!-- console -->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss} *%-5p* %c{1}: %m (%F, line %L)%n"/>
+        </layout>
+    </appender>
+
+    <!-- error.log -->
+    <appender name="error" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/docx4j.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss} *%-5p* %c{1}: %m (%F, line %L)%n"/>
+        </layout>
+    </appender>
+
+    <!-- ====================================================================== -->
+    <!-- L O G G E R S                                                          -->
+    <!-- ====================================================================== -->
+
+
+    <logger name="org.apache.commons">
+  		<level value="info"/> 
+	</logger>
+
+    <logger name="org.docx4j">
+  		<level value="info"/> 
+	</logger>	
+	
+	<logger name="org.docx4j.jaxb">
+		  		<level value="error"/> 
+	</logger>	
+
+	    
+    <logger name="org.docx4j.document.wordprocessingml">
+  		<level value="info"/> 
+	</logger>
+	
+    <logger name="org.docx4j.openpackaging">
+  		<level value="info"/> 
+	</logger>
+
+    <logger name="org.docx4j.openpackaging.io">
+  		<level value="debug"/> 
+	</logger>
+
+    <logger name="org.docx4j.openpackaging.packages">
+  		<level value="info"/> 
+	</logger>
+
+    <logger name="org.docx4j.openpackaging.parts">
+  		<level value="debug"/> 
+	</logger>
+
+    <logger name="org.docx4j.fonts">
+  		<level value="debug"/> 
+	</logger>
+	
+	<logger name="org.docx4j.convert.out.pdf.viaXSLFO">
+		<level value="info"/>
+	</logger>
+  
+
+    <root>
+        <level value="info" />
+        <appender-ref ref="console"/>
+        <!-- <appender-ref ref="error"/> -->
+    </root>
+
+</log4j:configuration>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ CertWare Project
+ Copyright (c) 2010 National Aeronautics and Space Administration
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="checklist"
+            class="net.certware.verification.checklist.ChecklistPackage"
+            genModel="model/checklist.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="checklist"
+            class="net.certware.verification.checklist.util.ChecklistResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

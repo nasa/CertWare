@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.measurement.sco.edit/src-gen">
+  <editionContexts basePackage="net.certware.measurement" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="sco.components#_goCioFZ7EeGY7JfWCGhS-w"/>
+  </editionContexts>
+  <viewsRepositories basePackage="net.certware.measurement.sco" swtViews="true" formViews="true">
+    <viewsRepository href="sco.components#_goDJ2FZ7EeGY7JfWCGhS-w"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

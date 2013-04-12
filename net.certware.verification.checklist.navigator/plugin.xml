@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+         <commonFilter
+               activeByDefault="false"
+               class="net.certware.verification.checklist.navigator.filters.NavigatorFilter"
+               description="Filters the verification checklist model files"
+               id="net.certware.verification.checklist.navigator.filters.filefilter"
+               name="CertWare VCL Models"
+               visibleInUI="true">
+      </commonFilter>
+            <navigatorContent
+            activeByDefault="true"
+            contentProvider="net.certware.verification.checklist.navigator.ContentProvider"
+            icon="icons/obj16/checklist.gif"
+            id="net.certware.verification.checklist.navigator.navigatorContent"
+            labelProvider="net.certware.verification.checklist.navigator.LabelProvider"
+            name="VCL Model Conditions"
+            priority="high"
+            providesSaveables="false">
+         <triggerPoints>
+            <or>
+               <and>
+                  <instanceof
+                        value="org.eclipse.core.resources.IResource">
+                  </instanceof>
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.core.resources.extension"
+                        value="vcl">
+                  </test>
+               </and>
+               <instanceof
+                     value="net.certware.verification.checklist.navigator.TreeData">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="net.certware.verification.checklist.navigator.TreeData">
+               </instanceof>
+            </or>
+         </possibleChildren>
+      </navigatorContent>
+   </extension>
+      <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding
+            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.verification.checklist.navigator.filters.*">
+            </contentExtension>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.verification.checklist.navigator.navigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+
+</plugin>

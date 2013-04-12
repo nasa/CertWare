@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
+  <nodeTraces visualID="2001" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Claim') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'ArgumentDiagram') and _containmentMF_.name = 'claims')">
+    <nodeLabelTraces visualID="5001" queryText="true"/>
+    <nodeLabelTraces visualID="5002" queryText="true"/>
+  </nodeTraces>
+  <nodeTraces visualID="2002" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Evidence') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'ArgumentDiagram') and _containmentMF_.name = 'evidence')">
+    <nodeLabelTraces visualID="5003" queryText="true"/>
+    <nodeLabelTraces visualID="5004" queryText="true"/>
+  </nodeTraces>
+  <nodeTraces visualID="2003" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Argument') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'ArgumentDiagram') and _containmentMF_.name = 'arguments')">
+    <nodeLabelTraces visualID="5005" queryText="true"/>
+    <nodeLabelTraces visualID="5006" queryText="true"/>
+  </nodeTraces>
+  <nodeTraces visualID="2004" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Assumption') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'ArgumentDiagram') and _containmentMF_.name = 'assumptions')">
+    <nodeLabelTraces visualID="5007" queryText="true"/>
+    <nodeLabelTraces visualID="5008" queryText="true"/>
+  </nodeTraces>
+  <nodeTraces visualID="2005" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Justification') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'ArgumentDiagram') and _containmentMF_.name = 'justifications')">
+    <nodeLabelTraces visualID="5009" queryText="true"/>
+    <nodeLabelTraces visualID="5010" queryText="true"/>
+  </nodeTraces>
+  <nodeTraces visualID="2006" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Context') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'ArgumentDiagram') and _containmentMF_.name = 'contexts')">
+    <nodeLabelTraces visualID="5011" queryText="true"/>
+    <nodeLabelTraces visualID="5012" queryText="true"/>
+  </nodeTraces>
+  <linkTraces visualID="4001" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Claim') and _feature_.name = 'claimStrategies')">
+    <linkLabelTraces visualID="6001" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4002" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Claim') and _feature_.name = 'claimAssumptions')">
+    <linkLabelTraces visualID="6002" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4003" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Claim') and _feature_.name = 'claimContexts')">
+    <linkLabelTraces visualID="6003" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4004" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Claim') and _feature_.name = 'claimSolutions')">
+    <linkLabelTraces visualID="6004" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4005" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Claim') and _feature_.name = 'subClaims')">
+    <linkLabelTraces visualID="6005" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4006" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Argument') and _feature_.name = 'argumentJustification')">
+    <linkLabelTraces visualID="6006" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4007" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Argument') and _feature_.name = 'argumentEvidence')">
+    <linkLabelTraces visualID="6007" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4008" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Argument') and _feature_.name = 'argumentClaims')">
+    <linkLabelTraces visualID="6008" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4009" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Evidence') and _feature_.name = 'evidenceContexts')">
+    <linkLabelTraces visualID="6009" queryText="true"/>
+  </linkTraces>
+  <linkTraces visualID="4010" queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/caz' and _eClass_.name = 'Evidence') and _feature_.name = 'evidence')">
+    <linkLabelTraces visualID="6010" queryText="true"/>
+  </linkTraces>
+</trace:TraceModel>

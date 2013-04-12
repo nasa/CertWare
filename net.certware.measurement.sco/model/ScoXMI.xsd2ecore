@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="sco.ecore#/"
+    outputs="ScoXMI.xsd#/">
+  <nested inputs="sco.ecore#/" outputs="ScoXMI.xsd#/">
+    <nested inputs="sco.ecore#//ChangeOrderType" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition">
+      <nested inputs="sco.ecore#//ChangeOrderType/Critical" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition/XSDEnumerationFacet"/>
+      <nested inputs="sco.ecore#//ChangeOrderType/Normal" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition/XSDEnumerationFacet=1"/>
+      <nested inputs="sco.ecore#//ChangeOrderType/Improvements" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition/XSDEnumerationFacet=2"/>
+      <nested inputs="sco.ecore#//ChangeOrderType/NewFeatures" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition/XSDEnumerationFacet=3"/>
+      <nested inputs="sco.ecore#//ChangeOrderType/Total" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition/XSDEnumerationFacet=4"/>
+    </nested>
+    <nested inputs="sco.ecore#//ChangeOrderCount" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDComplexTypeDefinition">
+      <nested inputs="sco.ecore#//ChangeOrderCount/name" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDComplexTypeDefinition/XSDAttributeUse=1"/>
+      <nested inputs="sco.ecore#//ChangeOrderCount/value" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDComplexTypeDefinition/XSDAttributeUse=2"/>
+      <nested inputs="sco.ecore#//ChangeOrderCount/type" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDComplexTypeDefinition/XSDAttributeUse=3"/>
+      <nested inputs="sco.ecore#//ChangeOrderCount/brokenLines" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDComplexTypeDefinition/XSDAttributeUse=4"/>
+      <nested inputs="sco.ecore#//ChangeOrderCount/fixedLines" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDComplexTypeDefinition/XSDAttributeUse=5"/>
+      <nested inputs="sco.ecore#//ChangeOrderCount/repairEffort" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDComplexTypeDefinition/XSDAttributeUse=6"/>
+    </nested>
+    <nested inputs="sco.ecore#//ChangeOrderCount" outputs="ScoXMI.xsd#//ChangeOrderCount;XSDElementDeclaration"/>
+    <nested inputs="sco.ecore#//TotalChangeOrders" outputs="ScoXMI.xsd#//TotalChangeOrders;XSDComplexTypeDefinition=1"/>
+    <nested inputs="sco.ecore#//TotalChangeOrders" outputs="ScoXMI.xsd#//TotalChangeOrders;XSDElementDeclaration=1"/>
+    <nested inputs="sco.ecore#//CriticalDefectChangeOrders" outputs="ScoXMI.xsd#//CriticalDefectChangeOrders;XSDComplexTypeDefinition=2"/>
+    <nested inputs="sco.ecore#//CriticalDefectChangeOrders" outputs="ScoXMI.xsd#//CriticalDefectChangeOrders;XSDElementDeclaration=2"/>
+    <nested inputs="sco.ecore#//NormalDefectChangeOrders" outputs="ScoXMI.xsd#//NormalDefectChangeOrders;XSDComplexTypeDefinition=3"/>
+    <nested inputs="sco.ecore#//NormalDefectChangeOrders" outputs="ScoXMI.xsd#//NormalDefectChangeOrders;XSDElementDeclaration=3"/>
+    <nested inputs="sco.ecore#//ImprovementChangeOrders" outputs="ScoXMI.xsd#//ImprovementChangeOrders;XSDComplexTypeDefinition=4"/>
+    <nested inputs="sco.ecore#//ImprovementChangeOrders" outputs="ScoXMI.xsd#//ImprovementChangeOrders;XSDElementDeclaration=4"/>
+    <nested inputs="sco.ecore#//NewFeatureChangeOrders" outputs="ScoXMI.xsd#//NewFeatureChangeOrders;XSDComplexTypeDefinition=5"/>
+    <nested inputs="sco.ecore#//NewFeatureChangeOrders" outputs="ScoXMI.xsd#//NewFeatureChangeOrders;XSDElementDeclaration=5"/>
+    <nested inputs="sco.ecore#//ArtifactIdentifier" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6">
+      <nested inputs="sco.ecore#//ArtifactIdentifier/resourceName" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDAttributeUse=1"/>
+      <nested inputs="sco.ecore#//ArtifactIdentifier/baselinedLineCount" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDAttributeUse=2"/>
+      <nested inputs="sco.ecore#//ArtifactIdentifier/currentLineCount" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDAttributeUse=3"/>
+      <nested inputs="sco.ecore#//ArtifactIdentifier/criticalDefectChangeOrders" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="sco.ecore#//ArtifactIdentifier/normalDefectChangeOrders" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="sco.ecore#//ArtifactIdentifier/improvementChangeOrders" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+      <nested inputs="sco.ecore#//ArtifactIdentifier/newFeatureChangeOrders" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=3"/>
+      <nested inputs="sco.ecore#//ArtifactIdentifier/totalChangeOrders" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=4"/>
+    </nested>
+    <nested inputs="sco.ecore#//ArtifactIdentifier" outputs="ScoXMI.xsd#//ArtifactIdentifier;XSDElementDeclaration=6"/>
+    <nested inputs="sco.ecore#//ArtifactCommit" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7">
+      <nested inputs="sco.ecore#//ArtifactCommit/commitIdentifier" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7/XSDAttributeUse=1"/>
+      <nested inputs="sco.ecore#//ArtifactCommit/usageTime" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7/XSDAttributeUse=2"/>
+      <nested inputs="sco.ecore#//ArtifactCommit/artifactIdentifiers" outputs="ScoXMI.xsd#//ArtifactCommit;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="sco.ecore#//ArtifactCommit" outputs="ScoXMI.xsd#//ArtifactCommit;XSDElementDeclaration=7"/>
+    <nested inputs="sco.ecore#//CommitHistory" outputs="ScoXMI.xsd#//CommitHistory;XSDComplexTypeDefinition=8">
+      <nested inputs="sco.ecore#//CommitHistory/commitRecord" outputs="ScoXMI.xsd#//CommitHistory;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="sco.ecore#//CommitHistory" outputs="ScoXMI.xsd#//CommitHistory;XSDElementDeclaration=8"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

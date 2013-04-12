@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="net.certware.example" name="CertWare Examples" schema="schema/net.certware.example.exsd"/>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="net.certware.examples"
+            name="CertWare Examples"
+            parentCategory="org.eclipse.ui.Examples">
+      </category>
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.ui.Examples/net.certware.examples"
+            class="net.certware.example.wizards.ExampleWizard"
+            hasPages="true"
+            icon="icons/obj16/example.gif"
+            id="net.certware.example.wizards.ExampleWizard"
+            name="Safety Case Example"
+            project="false">
+         <description>
+            Provides a list of safety case elements for installation in the workspace.
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contextProvider
+            class="net.certware.example.wizards.ExampleContextProvider">
+      </contextProvider>
+      <contexts
+            file="help/contexts.xml"
+            plugin="net.certware.core.ui">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.example.wizards.ExampleWizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

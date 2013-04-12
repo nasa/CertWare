@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <commonFilter
+            class="net.certware.argument.aml.navigator.filters.NavigatorFilter"
+            description="Filters the AML model files"
+            id="net.certware.argument.aml.navigator.filters.filefilter"
+            name="CertWare AML Models">
+      </commonFilter>
+   </extension>
+
+</plugin>

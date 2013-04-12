@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright © 2000-2005 SRI International.
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.argument.aml.presentation.AmlModelWizardID"
+            name="%_UI_AmlModelWizard_label"
+            class="net.certware.argument.aml.presentation.AmlModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/AmlModelFile.gif">
+         <description>%_UI_AmlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.aml.presentation.AmlEditorID"
+            name="%_UI_AmlEditor_label"
+            icon="icons/full/obj16/AmlModelFile.gif"
+            extensions="aml"
+            class="net.certware.argument.aml.presentation.AmlEditor"
+            contributorClass="net.certware.argument.aml.presentation.AmlActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.argument.aml.presentation.AmlModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

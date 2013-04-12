@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="net.certware.example" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="net.certware.example" id="net.certware.example" name="CertWare Examples"/>
+      </appinfo>
+      <documentation>
+         Provides case document or argument fragment examples to the run-time platform.  Installs the examples as a new wizard for selection through standard workbench operations.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="pattern"/>
+            <element ref="document"/>
+            <element ref="checklist"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="pattern">
+      <complexType>
+         <choice minOccurs="0" maxOccurs="1">
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="related_pattern" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="resource" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="related_document" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+         </choice>
+         <attribute name="idp" type="string" use="required">
+            <annotation>
+               <documentation>
+                  An identifier for the pattern contribution.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The name of the pattern for identification in the selection wizard.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="author" type="string">
+            <annotation>
+               <documentation>
+                  The author of the pattern.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="version" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A version tag for the pattern definition.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="intent" type="string">
+            <annotation>
+               <documentation>
+                  States what the pattern is trying to achieve.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="motivation" type="string">
+            <annotation>
+               <documentation>
+                  Communicates why the pattern was constructed.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="applicability" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Records under what circumstances the pattern can and should be applied.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="consequences" type="string">
+            <annotation>
+               <documentation>
+                  What remains to be done after applying the pattern.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="implementation" type="string">
+            <annotation>
+               <documentation>
+                  Provides hints and techniques for successful application of the pattern.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="related_pattern">
+      <annotation>
+         <documentation>
+            Related pattern for reference.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="pattern_id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="net.certware.example/pattern/@idp"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="resource">
+      <annotation>
+         <documentation>
+            A file associated with the example to be copied into the workspace.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="description" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Description of the nature of the source, such as argument model or help document.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="structure" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The resource file contributed by this example for installation in the user&apos;s workspace.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="resource"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="document">
+      <annotation>
+         <documentation>
+            A document example for templates, mock-ups, or user guides.
+         </documentation>
+      </annotation>
+      <complexType>
+         <choice minOccurs="0" maxOccurs="1">
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="related_document" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="resource" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="related_pattern" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+         </choice>
+         <attribute name="idd" type="string" use="required">
+            <annotation>
+               <documentation>
+                  An identifier for the document contribution.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The name of the document for identification in the selection wizard.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="author" type="string">
+            <annotation>
+               <documentation>
+                  The author of the document.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="version" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A version tag for the document definition.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="intent" type="string">
+            <annotation>
+               <documentation>
+                  States what the document is trying to achieve.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="motivation" type="string">
+            <annotation>
+               <documentation>
+                  Communicates why the document was constructed.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="applicability" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Records under what circumstances the document can and should be applied.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="consequences" type="string">
+            <annotation>
+               <documentation>
+                  What remains to be done with the document.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="implementation" type="string">
+            <annotation>
+               <documentation>
+                  Provides hints and techniques for successful application of the document.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="checklist">
+      <annotation>
+         <documentation>
+            A checklist example for verification checklists.
+         </documentation>
+      </annotation>
+      <complexType>
+         <choice minOccurs="0" maxOccurs="1">
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="related_document" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="resource" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+            <sequence minOccurs="0" maxOccurs="1">
+               <element ref="related_pattern" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+         </choice>
+         <attribute name="idc" type="string" use="required">
+            <annotation>
+               <documentation>
+                  An identifier for the document contribution.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The name of the document for identification in the selection wizard.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="author" type="string">
+            <annotation>
+               <documentation>
+                  The author of the document.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="version" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A version tag for the document definition.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="intent" type="string">
+            <annotation>
+               <documentation>
+                  States what the document is trying to achieve.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="motivation" type="string">
+            <annotation>
+               <documentation>
+                  Communicates why the document was constructed.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="applicability" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Records under what circumstances the document can and should be applied.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="consequences" type="string">
+            <annotation>
+               <documentation>
+                  What remains to be done with the document.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="implementation" type="string">
+            <annotation>
+               <documentation>
+                  Provides hints and techniques for successful application of the document.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="related_document">
+      <annotation>
+         <documentation>
+            A related document example
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="document_id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="net.certware.example/document/@idd"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         1.0.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2010 Kestrel Technology LLC.
+      </documentation>
+   </annotation>
+
+</schema>

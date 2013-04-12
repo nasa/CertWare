@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="smm"
+    nsURI="http://www.eclipse.org/MoDisco/smm" nsPrefix="smm">
+  <eClassifiers xsi:type="ecore:EClass" name="SmmElement" abstract="true">
+    <eOperations name="getInbound" upperBound="-1" eType="#//SmmRelationship"/>
+    <eOperations name="getOutbound" upperBound="-1" eType="#//SmmRelationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//SmmModel"
+        eOpposite="#//SmmModel/modelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Attribute" containment="true" eOpposite="#//Attribute/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotation" upperBound="-1"
+        eType="#//Annotation" containment="true" eOpposite="#//Annotation/owner"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SmmModel" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelElement" upperBound="-1"
+        eType="#//SmmElement" containment="true" eOpposite="#//SmmElement/model"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SmmRelationship" abstract="true" interface="true"
+      eSuperTypes="#//SmmElement">
+    <eOperations name="getTo" lowerBound="1" eType="#//SmmElement"/>
+    <eOperations name="getFrom" lowerBound="1" eType="#//SmmElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CategoryRelationship" eSuperTypes="#//SmmRelationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//Category"
+        eOpposite="#//Category/outCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//Category"
+        eOpposite="#//Category/inCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Category" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" upperBound="-1"
+        eType="#//Category" eOpposite="#//Category/categoryElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categoryElement" upperBound="-1"
+        eType="#//Category" eOpposite="#//Category/category"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outCategory" upperBound="-1"
+        eType="#//CategoryRelationship" eOpposite="#//CategoryRelationship/from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inCategory" upperBound="-1"
+        eType="#//CategoryRelationship" eOpposite="#//CategoryRelationship/to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categoryMeasure" upperBound="-1"
+        eType="#//Measure" eOpposite="#//Measure/category"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Measure" abstract="true" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" upperBound="-1"
+        eType="#//Category" eOpposite="#//Category/categoryMeasure"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="library" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentFrom" upperBound="-1"
+        eType="#//Measure" eOpposite="#//Measure/equivalentTo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentTo" upperBound="-1"
+        eType="#//Measure" eOpposite="#//Measure/equivalentFrom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinement" upperBound="-1"
+        eType="#//Measure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" upperBound="-1"
+        eType="#//Measurement" containment="true" eOpposite="#//Measurement/measure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outMeasure" upperBound="-1"
+        eType="#//MeasureRelationship" eOpposite="#//MeasureRelationship/from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inMeasure" upperBound="-1"
+        eType="#//MeasureRelationship" containment="true" eOpposite="#//MeasureRelationship/to"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trait" lowerBound="1" eType="#//Characteristic"
+        eOpposite="#//Characteristic/characteristics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scope" lowerBound="1" eType="#//Scope"
+        eOpposite="#//Scope/measures"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Measurement" abstract="true" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measure" lowerBound="1"
+        eType="#//Measure" eOpposite="#//Measure/measurement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="observation" lowerBound="1"
+        eType="#//Observation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="error" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outMeasurement" upperBound="-1"
+        eType="#//MeasurementRelationship" eOpposite="#//MeasurementRelationship/from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inMeasurement" upperBound="-1"
+        eType="#//MeasurementRelationship" eOpposite="#//MeasurementRelationship/to"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Observation" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="observer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tool" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="whenObserved" eType="#//Date"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Date" instanceClassName="java.util.Date"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Timestamp" instanceClassName="java.sql.Timestamp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MeasureRelationship" eSuperTypes="#//SmmRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//Measure"
+        eOpposite="#//Measure/outMeasure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//Measure"
+        eOpposite="#//Measure/inMeasure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DimensionalMeasure" eSuperTypes="#//Measure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ranking" eSuperTypes="#//Measure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interval" lowerBound="1"
+        upperBound="-1" eType="#//RankingInterval" containment="true" eOpposite="#//RankingInterval/rank"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RankingInterval" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rank" eType="#//Ranking"
+        eOpposite="#//Ranking/interval"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumEndpoint" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumOpen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumEndpoint" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumOpen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Characteristic" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Characteristic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="characteristics" upperBound="-1"
+        eType="#//Measure" containment="true" eOpposite="#//Measure/trait"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scope" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumerated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1"
+        eType="#//Measure" eOpposite="#//Measure/scope"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recognizer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryMeasure" eSuperTypes="#//DimensionalMeasure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functor" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseMeasure1" lowerBound="1"
+        eType="#//DimensionalMeasure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseMeasure2" lowerBound="1"
+        eType="#//DimensionalMeasure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectMeasure" eSuperTypes="#//DimensionalMeasure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectiveMeasure" eSuperTypes="#//DimensionalMeasure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseMeasure" lowerBound="1"
+        eType="#//DimensionalMeasure"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accumulator" lowerBound="1"
+        eType="#//Accumulator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedMeasure" eSuperTypes="#//DimensionalMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RescaledMeasure" eSuperTypes="#//DimensionalMeasure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formula" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RatioMeasure" eSuperTypes="#//BinaryMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Counting" eSuperTypes="#//DirectMeasure"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Accumulator">
+    <eLiterals name="sum"/>
+    <eLiterals name="maximum" value="1"/>
+    <eLiterals name="minimum" value="2"/>
+    <eLiterals name="average" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DimensionalMeasurement" abstract="true"
+      eSuperTypes="#//Measurement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Grade" eSuperTypes="#//Measurement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseMeasurement" eType="#//DimensionalMeasurement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBaseSupplied" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeasurementRelationship" abstract="true"
+      eSuperTypes="#//SmmRelationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//Measurement"
+        eOpposite="#//Measurement/outMeasurement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//Measurement"
+        eOpposite="#//Measurement/inMeasurement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectMeasurement" eSuperTypes="#//DimensionalMeasurement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Count" eSuperTypes="#//DirectMeasurement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectiveMeasurement" eSuperTypes="#//DimensionalMeasurement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accumulator" lowerBound="1"
+        eType="#//Accumulator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBaseSupplied" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseMeasurement" upperBound="-1"
+        eType="#//DimensionalMeasurement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AggregatedMeasurement" eSuperTypes="#//DimensionalMeasurement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBaseSuppled" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseMeasurement" upperBound="-1"
+        eType="#//DimensionalMeasurement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedMeasurement" eSuperTypes="#//DimensionalMeasurement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReScaledMeasurement" eSuperTypes="#//DimensionalMeasurement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBaseSupplied" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//SmmElement"
+        eOpposite="#//SmmElement/attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation" eSuperTypes="#//SmmElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//SmmElement"
+        eOpposite="#//SmmElement/annotation"/>
+  </eClassifiers>
+</ecore:EPackage>

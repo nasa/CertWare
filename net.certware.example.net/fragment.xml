@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <pattern
+            applicability="Hugin NET Bayesian network model example"
+            author="Matt Barry"
+            consequences="Rework of argument structure and probability tables"
+            idp="net.certware.example.patterns.net.rtos"
+            implementation="Use Hugin DSL editor for structure, Network Analysis View for analysis"
+            intent="Demonstrate basic structure of BN for evidence inference"
+            motivation="Initialize the NET DSL editor with working content, editable to suit safety case evidence structure."
+            name="RTOS Software Analysis"
+            version="RTOS 1">
+         <resource
+               description="Model file for DSL editor"
+               structure="resources/software_test.net">
+         </resource>
+      </pattern>
+   </extension>
+
+</fragment>

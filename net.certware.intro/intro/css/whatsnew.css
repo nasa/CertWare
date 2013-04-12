@@ -1,0 +1,7 @@
+a#certware-noteworthy img {
+	background-image: url(../../icons/obj48/certware-48.gif);
+}
+
+a#certware-noteworthy:hover img {
+	background-image: url(../../icons/obj48/certware-48.gif);
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ MSPDI is copyright Microsoft, Inc.
+ Implementation wrapper in ecore done by Kestrel Technology LLC
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.planning.mspdi.presentation.mspdiEditorID"
+            name="%_UI_mspdiEditor_label"
+            icon="icons/full/obj16/ms_office.gif"
+            extensions="mspdi,mpx"
+            class="net.certware.planning.mspdi.presentation.MspdiEditor"
+            contributorClass="net.certware.planning.mspdi.presentation.MspdiActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.planning.mspdi.presentation.MspdiModelWizard"
+            icon="icons/full/obj16/ms_office.gif"
+            id="net.certware.planning.mspdi.editor.wizard"
+            name="%_UI_mspdiModelWizard_label">
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+         <description>
+            %_UI_mspdiModelWizard_description</description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.planning.mspdi.editor.wizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

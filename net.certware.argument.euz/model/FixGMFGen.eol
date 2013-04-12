@@ -1,0 +1,3 @@
+var genPlugin = GmfGen!GenPlugin.all.first();
+
+genPlugin.requiredPlugins.add('net.certware.argument.diagram.figures');

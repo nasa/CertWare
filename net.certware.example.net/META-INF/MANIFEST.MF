@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Example Patterns for NET
+Bundle-SymbolicName: net.certware.example.net;singleton:=true
+Bundle-Version: 1.2.1.qualifier
+Bundle-ClassPath: net.certware.example.net
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.example
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

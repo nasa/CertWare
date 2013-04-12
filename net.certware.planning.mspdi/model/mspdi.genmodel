@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="MSPDI is copyright Microsoft, Inc.&#xA;Implementation wrapper in ecore done by Kestrel Technology LLC"
+    modelDirectory="/net.certware.planning.mspdi/src" creationSubmenus="true" modelPluginID="net.certware.planning.mspdi"
+    modelName="Mspdi" testsDirectory="" testSuiteClass="" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="6.0" copyrightFields="false" testsPluginID="net.certware.planning.mspdi.tests">
+  <foreignModel>file:/Users/mrbarryold/Downloads/mspdi_pj12.xsd</foreignModel>
+  <genPackages prefix="Mspdi" basePackage="net.certware.planning" resource="XML" disposableProviderFactory="true"
+      loadInitialization="true" generateExampleClass="false" multipleEditorPages="false"
+      fileExtensions="mspdi,mpx" ecorePackage="mspdi.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//AccrueAtType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//AccrueAtType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//AccrueAtType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//AccrueAtType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//AccrueAtType/_4"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//BaselineForEarnedValueType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BaselineForEarnedValueType/_10"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//BookingTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BookingTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BookingTypeType/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//BookingTypeType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BookingTypeType1/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//BookingTypeType1/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//CalculationTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CalculationTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CalculationTypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CalculationTypeType/_2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//CFTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CFTypeType/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//CommitmentTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CommitmentTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CommitmentTypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CommitmentTypeType/_2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//ConstraintTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ConstraintTypeType/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//CostRateTableType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CostRateTableType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CostRateTableType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CostRateTableType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CostRateTableType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CostRateTableType/_4"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//CurrencySymbolPositionType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CurrencySymbolPositionType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CurrencySymbolPositionType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CurrencySymbolPositionType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//CurrencySymbolPositionType/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DayTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DayTypeType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DayTypeType1/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DefaultFixedCostAccrualType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultFixedCostAccrualType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultFixedCostAccrualType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultFixedCostAccrualType/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DefaultTaskEVMethodType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultTaskEVMethodType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultTaskEVMethodType/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DefaultTaskTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultTaskTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultTaskTypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DefaultTaskTypeType/_2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DurationFormatType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DurationFormatType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType1/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DurationFormatType2">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType2/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DurationFormatType3">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType3/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DurationFormatType4">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType4/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//DurationFormatType5">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//DurationFormatType5/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//EarnedValueMethodType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//EarnedValueMethodType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//EarnedValueMethodType/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//EarnedValueMethodType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//EarnedValueMethodType1/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//EarnedValueMethodType1/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//ElemTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ElemTypeType/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ElemTypeType/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ElemTypeType/_22"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ElemTypeType/_23"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//FixedCostAccrualType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FixedCostAccrualType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FixedCostAccrualType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FixedCostAccrualType/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//FYStartDateType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//FYStartDateType/_12"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//LagFormatType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LagFormatType/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//LevelingDelayFormatType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//LevelingDelayFormatType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_12"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//LevelingDelayFormatType1/_53"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//MonthItemType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthItemType/_9"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//MonthPositionType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthPositionType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthPositionType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthPositionType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthPositionType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthPositionType/_4"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//MonthType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//MonthType/_11"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//NewTaskStartDateType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//NewTaskStartDateType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//NewTaskStartDateType/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//OvertimeRateFormatType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//OvertimeRateFormatType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType1/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType1/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType1/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType1/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType1/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//OvertimeRateFormatType1/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//RateTableType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RateTableType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RateTableType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RateTableType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RateTableType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RateTableType/_4"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//RollupTypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//RollupTypeType/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//StandardRateFormatType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType/_7"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//StandardRateFormatType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType1/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType1/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType1/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType1/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType1/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType1/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//StandardRateFormatType1/_8"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType/_9"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType1">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_8"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_10"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_11"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_16"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_17"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_18"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_19"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_20"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_22"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_23"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_24"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_25"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_26"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_27"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_28"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_29"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_30"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_31"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_32"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_33"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_34"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_35"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_36"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_37"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_38"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_39"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_40"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_41"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_42"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_43"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_44"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_45"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_46"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_47"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_48"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_49"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_50"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_51"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_52"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_53"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_54"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_55"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_56"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_57"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_58"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_59"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_60"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_61"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_62"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_63"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_64"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_65"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_66"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_67"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_68"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_69"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_70"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_71"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_72"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_73"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_74"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_75"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType1/_76"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType2">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType2/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType2/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType3">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType3/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType3/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType3/_2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType4">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType4/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType4/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType4/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType4/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType5">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType5/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType5/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType5/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType5/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType6">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType6/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType6/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType6/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType6/_3"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//TypeType7">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType7/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType7/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType7/_9"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType7/_15"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType7/_17"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType7/_21"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//TypeType7/_27"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//UnitType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//UnitType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//UnitType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//UnitType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//UnitType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//UnitType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//UnitType/_8"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//ValuelistSortOrderType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ValuelistSortOrderType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//ValuelistSortOrderType/_1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//WeekStartDayType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WeekStartDayType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WeekStartDayType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WeekStartDayType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WeekStartDayType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WeekStartDayType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WeekStartDayType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WeekStartDayType/_6"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//WorkContourType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_5"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_6"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_7"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkContourType/_8"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//WorkFormatType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkFormatType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkFormatType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkFormatType/_3"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkFormatType/_4"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkFormatType/_5"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mspdi.ecore#//WorkGroupType">
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkGroupType/_0"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkGroupType/_1"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkGroupType/_2"/>
+      <genEnumLiterals ecoreEnumLiteral="mspdi.ecore#//WorkGroupType/_3"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="mspdi.ecore#//AccrueAtTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//ActiveDirectoryGUIDType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//AliasType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//AuthorType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//BaselineForEarnedValueTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//BookingTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//BookingTypeTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CalculationTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CategoryType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CFTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CodeType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CommitmentTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CompanyType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//ConstraintTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//ContactType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CostRateTableTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CurrencyCodeType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CurrencySymbolPositionTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//CurrencySymbolType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DayTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DayTypeTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DefaultFixedCostAccrualTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DefaultTaskEVMethodTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DefaultTaskTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DurationFormatTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DurationFormatTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DurationFormatTypeObject2"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DurationFormatTypeObject3"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DurationFormatTypeObject4"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//DurationFormatTypeObject5"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//EarnedValueMethodTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//EarnedValueMethodTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//ElemTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//EmailAddressType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//ExternalTaskProjectType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//FixedCostAccrualTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//FYStartDateTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//GroupType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkAddressType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkAddressType1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkAddressType2"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkSubAddressType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkSubAddressType1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkSubAddressType2"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkType1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//HyperlinkType2"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//InitialsType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//LagFormatTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//LevelingDelayFormatTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//LevelingDelayFormatTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//ManagerType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//MaterialLabelType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//MonthItemTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//MonthPositionTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//MonthTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NameType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NameType1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NameType2"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NameType3"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NameType4"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NameType5"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NewTaskStartDateTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//NTAccountType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//OutlineNumberType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//OvertimeRateFormatTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//OvertimeRateFormatTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//PhoneticAliasType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//PhoneticsType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//PrefixType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//RateTableTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//RollupTypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//StandardRateFormatTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//StandardRateFormatTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//SubjectType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//SubprojectNameType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TitleType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject1"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject2"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject3"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject4"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject5"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject6"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//TypeTypeObject7"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//UIDType"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//UnitTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//ValuelistSortOrderTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//WeekStartDayTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//WorkContourTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//WorkFormatTypeObject"/>
+    <genDataTypes ecoreDataType="mspdi.ecore#//WorkGroupTypeObject"/>
+    <genClasses ecoreClass="mspdi.ecore#//AssignmentsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentsType/assignment"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//AssignmentType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/uID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/taskUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/resourceUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/percentWorkComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualFinish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualOvertimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualOvertimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/aCWP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/confirmed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/cost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/costRateTable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/costVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/cV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/delay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/finish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/finishVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/hyperlink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/hyperlinkAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/hyperlinkSubAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/workVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/hasFixedRateUnits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/fixedMaterial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/levelingDelay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/levelingDelayFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/linkedFields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/milestone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/notes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/overallocated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/overtimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/overtimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/peakUnits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/regularWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/remainingCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/remainingOvertimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/remainingOvertimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/remainingWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/responsePending"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/stop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/resume"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/startVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/summary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/sV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/units"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/updateNeeded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/vAC"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/work"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/workContour"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/bCWS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/bCWP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/bookingType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualWorkProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/actualOvertimeWorkProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/creationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/assnOwner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/assnOwnerGuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/budgetCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AssignmentType/budgetWork"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/extendedAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/baseline"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404000"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404001"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404002"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404003"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404004"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404005"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404006"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404007"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404008"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404009"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40400a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40400b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40400c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40400d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40400e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40400f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404010"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404011"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404012"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404013"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404014"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404015"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404016"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404017"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404018"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404019"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40401a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40401b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40401c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40401d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40401e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40401f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404020"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404021"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404022"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404023"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404024"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404025"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404026"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404027"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404028"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404029"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40402a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40402b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40402c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40402d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40402e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40402f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404030"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404031"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404032"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404033"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404034"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404035"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404036"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404037"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404038"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404039"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40403a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40403b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40403c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40403d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40403e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40403f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404040"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404041"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404042"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404043"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404044"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404045"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404046"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404047"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404048"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404049"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40404a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40404b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40404c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40404d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40404e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40404f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404050"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404051"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404052"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404053"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404054"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404055"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404056"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404057"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404058"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404059"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40405a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40405b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40405c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40405d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40405e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40405f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404060"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404061"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404062"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404063"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404064"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404065"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404066"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404067"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404068"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404069"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40406a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40406b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40406c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40406d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40406e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40406f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404070"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404071"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404072"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404073"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404074"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404075"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404076"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404077"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404078"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404079"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40407a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40407b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40407c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40407d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40407e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40407f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404080"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404081"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404082"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404083"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404084"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404085"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404086"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404087"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404088"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404089"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40408a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40408b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40408c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40408d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40408e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40408f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404090"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404091"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404092"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404093"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404094"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404095"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404096"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404097"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404098"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f404099"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40409a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40409b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40409c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40409d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40409e"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f40409f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a7"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a8"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040a9"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040aa"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040ab"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040ac"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040ad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040ae"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040af"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b7"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b8"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040b9"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040ba"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040bb"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040bc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040bd"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040be"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040bf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c7"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/f4040c8"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AssignmentType/timephasedData"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//AvailabilityPeriodsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//AvailabilityPeriodsType/availabilityPeriod"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//AvailabilityPeriodType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AvailabilityPeriodType/availableFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AvailabilityPeriodType/availableTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//AvailabilityPeriodType/availableUnits"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//BaselineType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//BaselineType/timephasedData"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType/finish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType/work"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType/cost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType/bCWS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType/bCWP"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//BaselineType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType1/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType1/work"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType1/cost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType1/bCWS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType1/bCWP"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//BaselineType2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//BaselineType2/timephasedData"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/interim"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/finish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/durationFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/estimatedDuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/work"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/cost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/bCWS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/bCWP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//BaselineType2/fixedCost"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//CalendarsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//CalendarsType/calendar"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//CalendarType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//CalendarType/uID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//CalendarType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//CalendarType/isBaseCalendar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//CalendarType/baseCalendarUID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//CalendarType/weekDays"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//CalendarType/exceptions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//CalendarType/workWeeks"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mspdi.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mspdi.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//DocumentRoot/project"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ExceptionsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ExceptionsType/exception"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ExceptionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/enteredByOccurrences"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ExceptionType/timePeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/occurrences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/daysOfWeek"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/monthItem"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/monthPosition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/monthDay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExceptionType/dayWorking"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ExceptionType/workingTimes"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ExtendedAttributesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ExtendedAttributesType/extendedAttribute"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ExtendedAttributeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType/fieldID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType/valueGUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType/durationFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ExtendedAttributeType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType1/fieldID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType1/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType1/valueGUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType1/durationFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ExtendedAttributeType2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType2/fieldID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType2/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType2/valueGUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType2/durationFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ExtendedAttributeType3">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/fieldID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/fieldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/cFType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/elemType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/maxMultiValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/userDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/secondaryPID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/autoRollDown"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/defaultGuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/ltuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/phoneticAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/rollupType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/calculationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/formula"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/restrictValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/valuelistSortOrder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/appendNewValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ExtendedAttributeType3/default"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ExtendedAttributeType3/valueList"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//MasksType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//MasksType/mask"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//MaskType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//MaskType/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//MaskType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//MaskType/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//MaskType/separator"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//OutlineCodesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//OutlineCodesType/outlineCode"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//OutlineCodeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType/fieldID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType/valueID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType/valueGUID"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//OutlineCodeType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType1/fieldID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType1/valueID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType1/valueGUID"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//OutlineCodeType2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/guid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/fieldID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/fieldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/phoneticAlias"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//OutlineCodeType2/values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/enterprise"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/enterpriseOutlineCodeAlias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/resourceSubstitutionEnabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/leafOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/allLevelsRequired"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//OutlineCodeType2/onlyTableValuesAllowed"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//OutlineCodeType2/masks"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//PredecessorLinkType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//PredecessorLinkType/predecessorUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//PredecessorLinkType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//PredecessorLinkType/crossProject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//PredecessorLinkType/crossProjectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//PredecessorLinkType/linkLag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//PredecessorLinkType/lagFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ProjectType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/saveVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/uID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/subject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/company"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/manager"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/creationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/revision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/lastSaved"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/scheduleFromStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/finishDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/fYStartDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/criticalSlackLimit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/currencyDigits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/currencySymbol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/currencyCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/currencySymbolPosition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/calendarUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/defaultStartTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/defaultFinishTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/minutesPerDay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/minutesPerWeek"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/daysPerMonth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/defaultTaskType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/defaultFixedCostAccrual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/defaultStandardRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/defaultOvertimeRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/durationFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/workFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/editableActualCosts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/honorConstraints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/earnedValueMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/insertedProjectsLikeSummary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/multipleCriticalPaths"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/newTasksEffortDriven"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/newTasksEstimated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/splitsInProgressTasks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/spreadActualCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/spreadPercentComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/taskUpdatesResource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/fiscalYearStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/weekStartDay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/moveCompletedEndsBack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/moveRemainingStartsBack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/moveRemainingStartsForward"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/moveCompletedEndsForward"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/baselineForEarnedValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/autoAddNewResourcesAndTasks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/statusDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/currentDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/microsoftProjectServerURL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/autolink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/newTaskStartDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/defaultTaskEVMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/projectExternallyEdited"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/extendedCreationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/actualsInSync"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/removeFileProperties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ProjectType/adminProject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ProjectType/outlineCodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ProjectType/wBSMasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ProjectType/extendedAttributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ProjectType/calendars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ProjectType/tasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ProjectType/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ProjectType/assignments"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//RatesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//RatesType/rate"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//RateType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/ratesFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/ratesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/rateTable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/standardRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/standardRateFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/overtimeRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/overtimeRateFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//RateType/costPerUse"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ResourcesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ResourcesType/resource"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ResourceType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/uID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/iD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/isNull"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/initials"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/phonetics"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/nTAccount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/materialLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/workGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/emailAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/hyperlink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/hyperlinkAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/hyperlinkSubAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/maxUnits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/peakUnits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/overAllocated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/availableFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/availableTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/finish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/canLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/accrueAt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/work"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/regularWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/overtimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/actualWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/remainingWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/actualOvertimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/remainingOvertimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/percentWorkComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/standardRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/standardRateFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/cost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/overtimeRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/overtimeRateFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/overtimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/costPerUse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/actualCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/actualOvertimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/remainingCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/remainingOvertimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/workVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/costVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/sV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/cV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/aCWP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/calendarUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/notes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/bCWS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/bCWP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/isGeneric"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/isInactive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/isEnterprise"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/bookingType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/actualWorkProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/actualOvertimeWorkProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/activeDirectoryGUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/creationDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ResourceType/extendedAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ResourceType/baseline"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ResourceType/outlineCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/isCostResource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/assnOwner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/assnOwnerGuid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ResourceType/isBudget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ResourceType/availabilityPeriods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ResourceType/rates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ResourceType/timephasedData"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//TasksType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//TasksType/task"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//TaskType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/uID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/iD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/isNull"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/createDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/contact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/wBS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/wBSLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/outlineNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/outlineLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/finish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/durationFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/work"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/stop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/resume"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/resumeValid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/effortDriven"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/recurring"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/overAllocated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/estimated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/milestone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/summary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/critical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/isSubproject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/isSubprojectReadOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/subprojectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/externalTask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/externalTaskProject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/earlyStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/earlyFinish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/lateStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/lateFinish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/startVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/finishVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/workVariance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/freeSlack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/totalSlack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/fixedCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/fixedCostAccrual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/percentComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/percentWorkComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/cost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/overtimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/overtimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualFinish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualDuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualOvertimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualOvertimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/regularWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/remainingDuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/remainingCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/remainingWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/remainingOvertimeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/remainingOvertimeWork"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/aCWP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/cV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/constraintType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/calendarUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/constraintDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/deadline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/levelAssignments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/levelingCanSplit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/levelingDelay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/levelingDelayFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/preLeveledStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/preLeveledFinish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/hyperlink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/hyperlinkAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/hyperlinkSubAddress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/ignoreResourceCalendar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/notes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/hideBar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/rollup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/bCWS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/bCWP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/physicalPercentComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/earnedValueMethod"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//TaskType/predecessorLink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualWorkProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/actualOvertimeWorkProtected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//TaskType/extendedAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//TaskType/baseline"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//TaskType/outlineCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/isPublished"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/statusManager"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/commitmentStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/commitmentFinish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TaskType/commitmentType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//TaskType/timephasedData"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//TimePeriodType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimePeriodType/fromDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimePeriodType/toDate"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//TimePeriodType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimePeriodType1/fromDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimePeriodType1/toDate"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//TimePeriodType2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimePeriodType2/fromDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimePeriodType2/toDate"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//TimephasedDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimephasedDataType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimephasedDataType/uID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimephasedDataType/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimephasedDataType/finish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimephasedDataType/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//TimephasedDataType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ValueListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//ValueListType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ValuesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValuesType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mspdi.ecore#//ValuesType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType/iD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType/phonetic"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//ValueType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType1/valueID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType1/fieldGUID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType1/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType1/parentValueID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType1/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//ValueType1/description"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WBSMasksType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WBSMasksType/verifyUniqueCodes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WBSMasksType/generateCodes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WBSMasksType/prefix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WBSMasksType/wBSMask"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WBSMaskType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WBSMaskType/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WBSMaskType/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WBSMaskType/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WBSMaskType/separator"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WeekDaysType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WeekDaysType/weekDay"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WeekDayType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WeekDayType/dayType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WeekDayType/dayWorking"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WeekDayType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WeekDayType1/dayType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WeekDayType1/dayWorking"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WeekDayType1/timePeriod"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WeekDayType1/workingTimes"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WorkingTimesType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WorkingTimesType/workingTime"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WorkingTimesType1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WorkingTimesType1/workingTime"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WorkingTimeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WorkingTimeType/fromTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WorkingTimeType/toTime"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WorkingTimeType1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WorkingTimeType1/fromTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WorkingTimeType1/toTime"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WorkWeeksType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WorkWeeksType/workWeek"/>
+    </genClasses>
+    <genClasses ecoreClass="mspdi.ecore#//WorkWeekType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WorkWeekType/timePeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mspdi.ecore#//WorkWeekType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mspdi.ecore#//WorkWeekType/weekDay"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

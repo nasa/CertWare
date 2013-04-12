@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+  <property name="project.name" value="api.tools.generation"/>
+  <property name="bin" value="/eclipse/org.eclipse.pde.api.tools/bin:/eclipse/org.eclipse.pde.api.tools/antbin"/>
+  <property name="src" value="/eclipse/org.eclipse.pde.api.tools/src"/>
+  <property name="target" value="/eclipse/plugins/org.eclipse.pde.api.tools"/>
+  <property name="manifests" value="/eclipse/my.bundle/MANIFEST.MF:/eclipse/my.bundle.2/MANIFEST.MF"/>
+  <target name="default">
+    <apigeneration
+       	projectname="${project.name}"
+       	project="${src}"
+       	binary="${bin}"
+       	target="${target}"
+       	extramanifests="${manifests}"
+       	debug="true"
+    />
+  </target>
+</project>
