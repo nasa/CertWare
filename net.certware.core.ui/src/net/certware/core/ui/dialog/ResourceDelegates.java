@@ -446,6 +446,13 @@ public class ResourceDelegates {
 				throws CoreException {
 			fFile.setDerived(isDerived, monitor);
 		}
+
+		@Override
+		public void accept(IResourceProxyVisitor visitor, int depth,
+				int memberFlags) throws CoreException {
+			// TODO Auto-generated method stub
+			
+		}
 	}
 	
 	static class FolderDelegate implements IFolder {
@@ -870,6 +877,13 @@ public class ResourceDelegates {
 		public void setDerived(boolean isDerived, IProgressMonitor monitor)
 				throws CoreException {
 			fFolder.setDerived(isDerived, monitor);
+		}
+
+		@Override
+		public void accept(IResourceProxyVisitor visitor, int depth,
+				int memberFlags) throws CoreException {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 	
@@ -1409,6 +1423,13 @@ public class ResourceDelegates {
 		public boolean hasBuildConfig(String configName) throws CoreException {
 			// TODO Auto-generated method stub
 			return false;
+		}
+
+		@Override
+		public void accept(IResourceProxyVisitor visitor, int depth,
+				int memberFlags) throws CoreException {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 	
