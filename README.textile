@@ -157,6 +157,8 @@ The CertWare plug-ins and fragments can be delivered in a variety of ways, inclu
 
 h3. Delivery as a Feature
 
+_Note: the update site currently is down for migration to a separate repository.  12 April 2013_
+
 The several @net.certware.*@ plug-ins and fragments (not including the testing fragments) are combined into several features and a single category definition.  Use the automated dependency calculation of the feature editors to identify the installation dependencies, then ensure there are no spurious plug-ins identified; if so, identify the source and repair the issue.  For complete feature deliveries, use the version tool in the feature editor to push the feature version identifier into the plugins and fragments.  Export to either a folder or archive file.  There are no platform-dependent requirements.  There are several features available, each bundling distinct functionality and identifying dependencies if necessary.  All features use the @core@ feature for shared functionality.  
 
 * @net.certware.feature@ Core feature used by all other features, providing logging, extensions, and other basic functionality.

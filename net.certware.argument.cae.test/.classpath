@@ -5,6 +5,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/Users/mrbarryold/Documents/Projects/CertWare/Workspace/net.certware.argument.cae.test/lib/easymockclassextension-2.4.jar"/>
+	<classpathentry kind="lib" path="/net.certware.target/testing/easymock-3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
