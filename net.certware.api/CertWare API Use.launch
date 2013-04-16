@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.pde.api.tools.usescan">
-<stringAttribute key="org.eclipse.pde.api.tools.ui.BASELINE_NAME" value="Eclipse 3.6"/>
+<stringAttribute key="org.eclipse.pde.api.tools.ui.BASELINE_NAME" value=""/>
 <stringAttribute key="org.eclipse.pde.api.tools.ui.DESCRIPTION" value="CertWare API Usage Report"/>
 <stringAttribute key="org.eclipse.pde.api.tools.ui.INSTALL_PATH" value=""/>
+<intAttribute key="org.eclipse.pde.api.tools.ui.REPORT_TYPE" value="1"/>
 <intAttribute key="org.eclipse.pde.api.tools.ui.SEARCH_MODIFIERS" value="125"/>
 <stringAttribute key="org.eclipse.pde.api.tools.ui.SEARCH_SCOPE" value=""/>
 <stringAttribute key="org.eclipse.pde.api.tools.ui.TARGET_HANDLE" value="resource:/net.certware.target/certware.target"/>

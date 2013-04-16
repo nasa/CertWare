@@ -154,20 +154,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
          unpack="false"/>
 
    <plugin
-         id="net.certware.argument.gsn.dsl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.gsn.dsl.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="net.certware.argument.gsn.edit"
          download-size="0"
          install-size="0"
@@ -263,5 +249,19 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
          install-size="0"
          version="0.0.0"
          fragment="true"/>
+
+   <plugin
+         id="net.certware.argument.gsn.xdsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.gsn.xdsl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
