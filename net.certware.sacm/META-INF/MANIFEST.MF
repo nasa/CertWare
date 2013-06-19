@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare SACM Model
+Bundle-SymbolicName: net.certware.sacm; singleton:=true
+Bundle-Version: 0.1.0
+Require-Bundle: org.eclipse.emf.ecore
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
