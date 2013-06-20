@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2013 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/SACM/1.0"
+            class="net.certware.sacm.SACM.SACMPackage"
+            genModel="model/SACM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="sacm"
+            class="net.certware.sacm.SACM.util.SACMResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/SACM/1.0/Argumentation"
+            class="net.certware.sacm.SACM.Argumentation.ArgumentationPackage"
+            genModel="model/SACM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://schema.omg.org/SACM/1.0/Evidence"
+            class="net.certware.sacm.SACM.Evidence.EvidencePackage"
+            genModel="model/SACM.genmodel"/>
+   </extension>
+
+</plugin>

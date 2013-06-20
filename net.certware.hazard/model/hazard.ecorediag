@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_g3z9wNkaEeKf_d6LT7kQFQ" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_g4IG0NkaEeKf_d6LT7kQFQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_g4JU8NkaEeKf_d6LT7kQFQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_g4LKINkaEeKf_d6LT7kQFQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_g4LxMNkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_FAA/NO_SAFETY_EFFECT"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4LxMdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4LxMtkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_FAA/MINOR"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4LxM9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4LxNNkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_FAA/MAJOR"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4LxNdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4LxNtkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_FAA/HAZARDOUS"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4LxN9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4MYQNkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_FAA/CATASTROPHIC"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4MYQdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4LKIdkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4LKItkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4LKI9kaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4IG0dkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="hazard.ecore#//Severity_FAA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4IG0tkaEeKf_d6LT7kQFQ"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4MYQtkaEeKf_d6LT7kQFQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_g4MYRdkaEeKf_d6LT7kQFQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_g4MYRtkaEeKf_d6LT7kQFQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_g4M_UNkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_FAA/EXTREMELY_IMPROBABLE_D"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4M_UdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4M_UtkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_FAA/EXTREMELY_REMOTE_C"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4M_U9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4M_VNkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_FAA/REMOTE_B"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4M_VdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4M_VtkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_FAA/PROBABLE_A"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4M_V9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4MYR9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4MYSNkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4MYSdkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4MYQ9kaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="hazard.ecore#//Likelihood_FAA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4MYRNkaEeKf_d6LT7kQFQ" x="187"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4NmYNkaEeKf_d6LT7kQFQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_g4NmY9kaEeKf_d6LT7kQFQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_g4ONcNkaEeKf_d6LT7kQFQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_g4ONdNkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_MIL_STD_882D/NEGLIGIBLE_IV"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ONddkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4ONdtkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_MIL_STD_882D/MARGINAL_III"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ONd9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4ONeNkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_MIL_STD_882D/CRITICAL_II"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ONedkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4ONetkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Severity_MIL_STD_882D/CATASTROPHIC_I"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ONe9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4ONcdkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4ONctkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4ONc9kaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4NmYdkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="hazard.ecore#//Severity_MIL_STD_882D"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4NmYtkaEeKf_d6LT7kQFQ" x="412"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4R30NkaEeKf_d6LT7kQFQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_g4R309kaEeKf_d6LT7kQFQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_g4Se4NkaEeKf_d6LT7kQFQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_g4Se5NkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_MIL_STD_882D/IMPROBABLE_E"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4Se5dkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4Se5tkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_MIL_STD_882D/REMOTE_D"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4Se59kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4TF8NkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_MIL_STD_882D/OCCASIONAL_C"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4TF8dkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4TF8tkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_MIL_STD_882D/PROBABLE_B"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4TF89kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4TF9NkaEeKf_d6LT7kQFQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="hazard.ecore#//Likelihood_MIL_STD_882D/FREQUENT_A"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4TF9dkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4Se4dkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4Se4tkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4Se49kaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4R30dkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="hazard.ecore#//Likelihood_MIL_STD_882D"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4R30tkaEeKf_d6LT7kQFQ" x="609"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4TF9tkaEeKf_d6LT7kQFQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g4TtANkaEeKf_d6LT7kQFQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g4TtAdkaEeKf_d6LT7kQFQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_g4TtCdkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/secTrackingNumber"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4TtCtkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4UUENkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/craTitle"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4UUEdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4UUEtkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/system"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4UUE9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4UUFNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/summary"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4UUFdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4UUFtkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/baseline"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4UUF9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4UUGNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/proposedChange"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4UUGdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4U7INkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/description"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4U7IdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4U7ItkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//ComparativeRiskAssessmentForm/assessmentSummary"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4U7I9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4TtAtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4TtA9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4TtBNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4TtBdkaEeKf_d6LT7kQFQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4TtBtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4TtB9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4TtCNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4TF99kaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="hazard.ecore#//ComparativeRiskAssessmentForm"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4TF-NkaEeKf_d6LT7kQFQ" x="685" y="580"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4U7JNkaEeKf_d6LT7kQFQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g4U7J9kaEeKf_d6LT7kQFQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g4ViMNkaEeKf_d6LT7kQFQ" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4ViMdkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4ViMtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4ViM9kaEeKf_d6LT7kQFQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4ViNNkaEeKf_d6LT7kQFQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4ViNdkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4ViNtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4ViN9kaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4U7JdkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="hazard.ecore#//HazardList"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4U7JtkaEeKf_d6LT7kQFQ" x="520" y="471"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4ViONkaEeKf_d6LT7kQFQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g4ViO9kaEeKf_d6LT7kQFQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g4ViPNkaEeKf_d6LT7kQFQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_g4WJRNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//Hazard/number"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4WJRdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4WJRtkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//Hazard/hazardCondition"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4WJR9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4ViPdkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4ViPtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4ViP9kaEeKf_d6LT7kQFQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4WJQNkaEeKf_d6LT7kQFQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4WJQdkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4WJQtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4WJQ9kaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4ViOdkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="hazard.ecore#//Hazard"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4ViOtkaEeKf_d6LT7kQFQ" x="493" y="346"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4WJSNkaEeKf_d6LT7kQFQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g4WwUNkaEeKf_d6LT7kQFQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g4WwUdkaEeKf_d6LT7kQFQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_g4WwWdkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//Reference/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4WwWtkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4WwUtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4WwU9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4WwVNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4WwVdkaEeKf_d6LT7kQFQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4WwVtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4WwV9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4WwWNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4WJSdkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="hazard.ecore#//Reference"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4WJStkaEeKf_d6LT7kQFQ" x="682" y="471"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4WwW9kaEeKf_d6LT7kQFQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g4XXYNkaEeKf_d6LT7kQFQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g4XXYdkaEeKf_d6LT7kQFQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_g4XXadkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessment/severity"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4XXatkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4XXa9kaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessment/probability"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4XXbNkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4X-cNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessment/assessment"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4X-cdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4X-ctkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessment/severityRationale"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4X-c9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4X-dNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessment/probabilityRationale"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4X-ddkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4XXYtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4XXY9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4XXZNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4XXZdkaEeKf_d6LT7kQFQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4XXZtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4XXZ9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4XXaNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4WwXNkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="hazard.ecore#//RiskAssessment"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4WwXdkaEeKf_d6LT7kQFQ" x="818"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4X-dtkaEeKf_d6LT7kQFQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g4YlgNkaEeKf_d6LT7kQFQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g4YlgdkaEeKf_d6LT7kQFQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_g4YlidkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessmentCode/baseline"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4YlitkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4ZMkNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessmentCode/optionB"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ZMkdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4ZMktkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessmentCode/optionC"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ZMk9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4ZMlNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessmentCode/optionD"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ZMldkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4ZMltkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//RiskAssessmentCode/optionE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ZMl9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4YlgtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4Ylg9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4YlhNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4YlhdkaEeKf_d6LT7kQFQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4YlhtkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4Ylh9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4YliNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4X-d9kaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="hazard.ecore#//RiskAssessmentCode"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4X-eNkaEeKf_d6LT7kQFQ" x="435" y="173"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_g4ZMmNkaEeKf_d6LT7kQFQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_g4ZzoNkaEeKf_d6LT7kQFQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_g4ZzodkaEeKf_d6LT7kQFQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_g4ZzqdkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//HazardClassificationRationale/hazardId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4ZzqtkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4aasNkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//HazardClassificationRationale/summary"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4aasdkaEeKf_d6LT7kQFQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_g4aastkaEeKf_d6LT7kQFQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="hazard.ecore#//HazardClassificationRationale/option"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_g4aas9kaEeKf_d6LT7kQFQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4ZzotkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4Zzo9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4ZzpNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4ZzpdkaEeKf_d6LT7kQFQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_g4ZzptkaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_g4Zzp9kaEeKf_d6LT7kQFQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_g4ZzqNkaEeKf_d6LT7kQFQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_g4ZMmdkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="hazard.ecore#//HazardClassificationRationale"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g4ZMmtkaEeKf_d6LT7kQFQ" x="619" y="173"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_g3z9wdkaEeKf_d6LT7kQFQ"/>
+  <element xmi:type="ecore:EPackage" href="hazard.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_g4aatNkaEeKf_d6LT7kQFQ" type="3002" source="_g4TF9tkaEeKf_d6LT7kQFQ" target="_g4WJSNkaEeKf_d6LT7kQFQ">
+    <children xmi:type="notation:Node" xmi:id="_g4aauNkaEeKf_d6LT7kQFQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4aaudkaEeKf_d6LT7kQFQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4aautkaEeKf_d6LT7kQFQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4aau9kaEeKf_d6LT7kQFQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_g4aatdkaEeKf_d6LT7kQFQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g4aattkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="hazard.ecore#//ComparativeRiskAssessmentForm/references"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g4aat9kaEeKf_d6LT7kQFQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6L8UNkaEeKf_d6LT7kQFQ" id="(0.25806451612903225,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6L8UdkaEeKf_d6LT7kQFQ" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_g4bBwNkaEeKf_d6LT7kQFQ" type="3002" source="_g4TF9tkaEeKf_d6LT7kQFQ" target="_g4WwW9kaEeKf_d6LT7kQFQ">
+    <children xmi:type="notation:Node" xmi:id="_g4bBxNkaEeKf_d6LT7kQFQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bBxdkaEeKf_d6LT7kQFQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4bBxtkaEeKf_d6LT7kQFQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bBx9kaEeKf_d6LT7kQFQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_g4bBwdkaEeKf_d6LT7kQFQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g4bBwtkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="hazard.ecore#//ComparativeRiskAssessmentForm/riskAssessment"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g4bBw9kaEeKf_d6LT7kQFQ" points="[0, 0, -101, 467]$[101, -61, 0, 406]$[101, -467, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6NxgdkaEeKf_d6LT7kQFQ" id="(0.6290322580645161,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6NxgtkaEeKf_d6LT7kQFQ" id="(0.4941860465116279,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_g4bByNkaEeKf_d6LT7kQFQ" type="3002" source="_g4TF9tkaEeKf_d6LT7kQFQ" target="_g4U7JNkaEeKf_d6LT7kQFQ">
+    <children xmi:type="notation:Node" xmi:id="_g4bBzNkaEeKf_d6LT7kQFQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bBzdkaEeKf_d6LT7kQFQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4bBztkaEeKf_d6LT7kQFQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bBz9kaEeKf_d6LT7kQFQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_g4bBydkaEeKf_d6LT7kQFQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g4bBytkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="hazard.ecore#//ComparativeRiskAssessmentForm/hazardList"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g4bBy9kaEeKf_d6LT7kQFQ" points="[0, 0, 138, 67]$[-138, -67, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6LVQNkaEeKf_d6LT7kQFQ" id="(0.12903225806451613,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6LVQdkaEeKf_d6LT7kQFQ" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_g4bo0NkaEeKf_d6LT7kQFQ" type="3002" source="_g4U7JNkaEeKf_d6LT7kQFQ" target="_g4ViONkaEeKf_d6LT7kQFQ">
+    <children xmi:type="notation:Node" xmi:id="_g4bo1NkaEeKf_d6LT7kQFQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bo1dkaEeKf_d6LT7kQFQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4bo1tkaEeKf_d6LT7kQFQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bo19kaEeKf_d6LT7kQFQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_g4bo0dkaEeKf_d6LT7kQFQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g4bo0tkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="hazard.ecore#//HazardList/hazards"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g4bo09kaEeKf_d6LT7kQFQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6L8UtkaEeKf_d6LT7kQFQ" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6MjYNkaEeKf_d6LT7kQFQ" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_g4bo2NkaEeKf_d6LT7kQFQ" type="3002" source="_g4ViONkaEeKf_d6LT7kQFQ" target="_g4X-dtkaEeKf_d6LT7kQFQ">
+    <children xmi:type="notation:Node" xmi:id="_g4bo3NkaEeKf_d6LT7kQFQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bo3dkaEeKf_d6LT7kQFQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4bo3tkaEeKf_d6LT7kQFQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4bo39kaEeKf_d6LT7kQFQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_g4bo2dkaEeKf_d6LT7kQFQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g4bo2tkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="hazard.ecore#//Hazard/riskAssessmentCode"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g4bo29kaEeKf_d6LT7kQFQ" points="[0, 0, 48, 60]$[-48, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6MjYdkaEeKf_d6LT7kQFQ" id="(0.3333333333333333,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6MjYtkaEeKf_d6LT7kQFQ" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_g4cP4NkaEeKf_d6LT7kQFQ" type="3002" source="_g4ViONkaEeKf_d6LT7kQFQ" target="_g4ZMmNkaEeKf_d6LT7kQFQ">
+    <children xmi:type="notation:Node" xmi:id="_g4cP5NkaEeKf_d6LT7kQFQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4cP5dkaEeKf_d6LT7kQFQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4cP5tkaEeKf_d6LT7kQFQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4cP59kaEeKf_d6LT7kQFQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_g4cP4dkaEeKf_d6LT7kQFQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g4cP4tkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="hazard.ecore#//Hazard/hazardClassificationRationale"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g4cP49kaEeKf_d6LT7kQFQ" points="[0, 0, -104, 92]$[104, -92, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6NKcNkaEeKf_d6LT7kQFQ" id="(0.6666666666666666,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6NKcdkaEeKf_d6LT7kQFQ" id="(0.49696969696969695,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_g4cP6NkaEeKf_d6LT7kQFQ" type="3002" source="_g4ZMmNkaEeKf_d6LT7kQFQ" target="_g4WwW9kaEeKf_d6LT7kQFQ">
+    <children xmi:type="notation:Node" xmi:id="_g4cP7NkaEeKf_d6LT7kQFQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4cP7dkaEeKf_d6LT7kQFQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_g4cP7tkaEeKf_d6LT7kQFQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_g4cP79kaEeKf_d6LT7kQFQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_g4cP6dkaEeKf_d6LT7kQFQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_g4cP6tkaEeKf_d6LT7kQFQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="hazard.ecore#//HazardClassificationRationale/riskAssessment"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g4cP69kaEeKf_d6LT7kQFQ" points="[0, 0, -159, 60]$[159, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6NKctkaEeKf_d6LT7kQFQ" id="(0.49696969696969695,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g6NxgNkaEeKf_d6LT7kQFQ" id="(0.2441860465116279,1.0)"/>
+  </edges>
+</notation:Diagram>
