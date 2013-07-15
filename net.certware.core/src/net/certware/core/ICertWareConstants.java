@@ -38,6 +38,8 @@ public interface ICertWareConstants {
 	public static final String EUZ_DIAGRAM_EXTENSION = "euz_diagram"; //$NON-NLS-1$
 	/** file extension for the verification checklist model */
 	public static final String VCL_EXTENSION = "vcl"; //$NON-NLS-1$
+	/** file extension for the SACM models */
+	public static final String SACM_EXTENSION = "sacm"; //$NON-NLS-1$
 	/** file extension for the semi-formal proof model */
 	public static final String SFP_EXTENSION = "sfp"; //$NON-NLS-1$
 	/** file extension for the software metrics metamodel */

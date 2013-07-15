@@ -9,14 +9,11 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="net.certware.sacm.SACM.presentation.SACMModelWizardID"
             name="%_UI_SACMModelWizard_label"
             class="net.certware.sacm.SACM.presentation.SACMModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/SACMModelFile.gif">
          <description>%_UI_SACMModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -35,14 +32,11 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationModelWizardID"
             name="%_UI_ArgumentationModelWizard_label"
             class="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/ArgumentationModelFile.gif">
          <description>%_UI_ArgumentationModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -61,14 +55,11 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="net.certware.sacm.SACM.Evidence.presentation.EvidenceModelWizardID"
             name="%_UI_EvidenceModelWizard_label"
             class="net.certware.sacm.SACM.Evidence.presentation.EvidenceModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/EvidenceModelFile.gif">
          <description>%_UI_EvidenceModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -84,6 +75,15 @@
             class="net.certware.sacm.SACM.Evidence.presentation.EvidenceEditor"
             contributorClass="net.certware.sacm.SACM.Evidence.presentation.EvidenceActionBarContributor">
       </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.sacm.SACM.presentation.SACMModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
    </extension>
 
 </plugin>

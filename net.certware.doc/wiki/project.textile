@@ -19,15 +19,16 @@ The typical output goes to the local disk in a Javadoc directory.  The @overview
 h3. Meta-Models
 
 * @AML@ SRI structured argument markup language and its Ecore implementation
-* @ARM@ OMG argument metamodel and its Ecore implementation
-* @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
-* @CAZ@ A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
-* @EUR@ A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
-* @EUZ@ A diagram for EUROCONTROL notation derived from EUR and ARM metamodels. 
-* @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
-* @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
+* @ARM@ (deprecated) OMG argument metamodel and its Ecore implementation
+* @CAE@ (deprecated) A claim-argument-evidence metamodel derived from the ARM metamodel.
+* @CAZ@ (deprecated) A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
+* @EUR@ (deprecated) A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
+* @EUZ@ (deprecated) A diagram for EUROCONTROL notation derived from EUR and ARM metamodels. 
+* @GSN@ (deprecated) A goal structuring notation metamodel derived from the ARM metamodel.
+* @GSZ@ (deprecated) A diagram for goal structuring notation derived from GSN and ARM metamodels.
 * @HEV@ Evidence settings for Hugin Bayesian networks.
 * @NET@ Hugin Network models.
+* @SACM@ OMG Structured Assurance Case Metamodel (SACM) and its Ecore implementation. 
 * @SFP@ A semi-formal proof metamodel derived from an Xtext grammar for these proofs.
 * @SMM@ OMG software measurement metamodel and its Ecore implementation.
 * @VCL@ A verification checklist generic metamodel.
