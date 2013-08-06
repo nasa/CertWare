@@ -234,9 +234,9 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	 * @param modelFile input file
 	 * @return project data from the document
      */
-	private synchronized Argument updateModel(IFile modelFile) { // $codepro.audit.disable synchronizedMethod
+	private synchronized Resource updateModel(IFile modelFile) { // $codepro.audit.disable synchronizedMethod
 		if ( ICertWareConstants.ARM_EXTENSION.equals(modelFile.getFileExtension())) {
-			Argument model = ArmFactory.eINSTANCE.createArgument();
+			// Argument model = ArmFactory.eINSTANCE.createArgument();  // TODO needed?  check return value below
 			if (modelFile.exists()) {
 				//@SuppressWarnings("unused") // uses side effect
 				//ArmPackage armPackage = ArmPackage.eINSTANCE; 
@@ -273,7 +273,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 					
 					final TreeData[] treeDataArray = treeNodes.toArray(new TreeData[treeNodes.size()]);
 		            cachedModelMap.put(modelFile, treeDataArray);
-		            return model;
+		            // return model;
+		            return resource;
 				} // model not null
 			} // model file exists
 		} // file extension matches
