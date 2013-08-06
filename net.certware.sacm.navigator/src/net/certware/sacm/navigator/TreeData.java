@@ -11,22 +11,20 @@ import org.eclipse.core.resources.IFile;
  */
 public class TreeData
 {
-	/** artifact count */
-	public static final int ARTIFACT_COUNT = 0;
-	/** baselined lines count */
-	public static final int BASELINED_COUNT = 1;
-	/** current lines count */
-	public static final int CURRENT_COUNT = 2;
-	/** critical change count */
-	public static final int CRITICAL_COUNT = 3;
-	/** normal change count */
-	public static final int NORMAL_COUNT = 4;
-	/** improvement change count */
-	public static final int IMPROVEMENT_COUNT = 5;
-	/** new feature change count */
-	public static final int NEW_FEATURE_COUNT = 6;
-	/** total change count */
-	public static final int TOTAL_COUNT = 7;
+	/** annotation count type */
+	public static final int COUNT_TYPE_ANNOTATIONS = 0;
+	/** assurance case count type */
+	public static final int COUNT_TYPE_ASSURANCE_CASES = 1;
+	/** date time count type */
+	public static final int COUNT_TYPE_DATE_TIMES = 2;
+	/** model elements count type */
+	public static final int COUNT_TYPE_MODEL_ELEMENTS = 3;
+	/** SACM elements count type */
+	public static final int COUNT_TYPE_SACM_ELEMENTS = 4;
+	/** tagged values count type */
+	public static final int COUNT_TYPE_TAGGED_VALUES = 5;
+	/** utility elements count type */
+	public static final int COUNT_TYPE_UTILITY_ELEMENTS = 6;
 	/** file reference */
 	IFile ifile = null;
 	/** node description */

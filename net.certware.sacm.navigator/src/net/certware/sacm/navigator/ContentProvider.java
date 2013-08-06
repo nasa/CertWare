@@ -12,6 +12,14 @@ import java.util.Map;
 
 import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.log.CertWareLog;
+import net.certware.sacm.SACM.Annotation;
+import net.certware.sacm.SACM.AssuranceCase;
+import net.certware.sacm.SACM.Datetime;
+import net.certware.sacm.SACM.ModelElement;
+import net.certware.sacm.SACM.SACMElement;
+import net.certware.sacm.SACM.TaggedValue;
+import net.certware.sacm.SACM.UtilityElement;
+import net.certware.sacm.SACM.util.SACMSwitch;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -36,9 +44,9 @@ import org.eclipse.ui.progress.UIJob;
 
 
 /**
- * Provides model elements as navigator content.
+ * Provides model elements as navigator content.  
+ * Uses a visitor to read the model and accumulate counter values.
  * @author mrb
- * @since 1.0
  */
 public class ContentProvider 
 implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor, ICertWareConstants {
@@ -52,6 +60,20 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	private final Map<IFile, TreeData[]> cachedModelMap = new HashMap<IFile, TreeData[]>(INITIAL_CAPACITY,LOAD_FACTOR);
 	/** tree viewer to update */
 	private StructuredViewer viewer;
+	/** model utility elements */
+	private int utilityElementCount;
+	/** model annotations */
+	private int annotationCount;
+	/** model assurance cases */
+	private int assuranceCaseCount;
+	/** model date time elements */
+	private int dateTimeCount;
+	/** model elements */
+	private int modelElementCount;
+	/** model SACM elements */
+	private int sacmElementCount;
+	/** model tagged values */
+	private int taggedValueCount;
 
 	/**
 	 * Constructor adds resource change listener for post change events.
@@ -171,7 +193,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	/**
 	 * Gets the parent TreeData object if element is TreeData, otherwise null.
 	 * @param element TreeData element to find IFile
-	 * @return TreeData object IFile, otherwise null
+	 * @return TreeData object IFile, otherwise TRUE if element is not a tree data object
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(Object)
 	 */
 	@Override
@@ -180,7 +202,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 			final TreeData td = (TreeData)element;
 			return td.getIfile();
 		}
-		return null;
+		return Boolean.TRUE;
 	}
 
 	/**
@@ -217,49 +239,229 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 
 				if ( null != resource ) {
 
+					setAnnotationCount(0);
+					setAssuranceCaseCount(0);
+					setDateTimeCount(0);
+					setModelElementCount(0);
+					setSacmElementCount(0);
+					setTaggedValueCount(0);
+					setUtilityElementCount(0);
+
 					// visit the model, collect statistics
 					for ( Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) {
 						EObject eo = i.next();
-						/* TODO 
-						if ( eo instanceof CommitHistory) {
-							CommitHistory ch = (CommitHistory)eo;
-							if ( ch.getCommitRecord() != null && ch.getCommitRecord().isEmpty() == false ) {
-								// get the last commit in the list
+						visitor.doSwitch(eo);
+					}
 
-								ArtifactCommit ac = 
-									ch.getCommitRecord().get( ch.getCommitRecord().size() - 1);
+					final List<TreeData> treeNodes = new ArrayList<TreeData>();
 
-								int artifactCount = ac.getArtifactIdentifiers().size();
-								int baselinedLineCount = ac.getAllBaselinedLineCount();
-								int currentLineCount = ac.getAllCurrentLineCount();
-								int criticalDefectCount = ac.getAllCriticalDefectChangeOrders().getValue();
-								int normalDefectCount = ac.getAllNormalDefectChangeOrders().getValue();
-								int improvementCount = ac.getAllImprovementChangeOrders().getValue();
-								int newFeatureCount = ac.getAllNewFeatureChangeOrders().getValue();
-								int totalChangeCount = ac.getAllTotalChangeOrders().getValue();
+					treeNodes.add(new TreeData(modelFile,Messages.ContentProvider_0,getAnnotationCount(),TreeData.COUNT_TYPE_ANNOTATIONS));
+					treeNodes.add(new TreeData(modelFile,Messages.ContentProvider_1,getAssuranceCaseCount(),TreeData.COUNT_TYPE_ASSURANCE_CASES));
+					treeNodes.add(new TreeData(modelFile,Messages.ContentProvider_2,getDateTimeCount(),TreeData.COUNT_TYPE_DATE_TIMES));
+					treeNodes.add(new TreeData(modelFile,Messages.ContentProvider_3,getModelElementCount(),TreeData.COUNT_TYPE_MODEL_ELEMENTS));
+					treeNodes.add(new TreeData(modelFile,Messages.ContentProvider_4,getSacmElementCount(),TreeData.COUNT_TYPE_SACM_ELEMENTS));
+					treeNodes.add(new TreeData(modelFile,Messages.ContentProvider_5,getTaggedValueCount(),TreeData.COUNT_TYPE_TAGGED_VALUES));
+					treeNodes.add(new TreeData(modelFile,Messages.ContentProvider_6,getTaggedValueCount(),TreeData.COUNT_TYPE_UTILITY_ELEMENTS));
 
-
-								final List<TreeData> treeNodes = new ArrayList<TreeData>(); // $codepro.audit.disable localDeclaration
-
-								// TODO treeNodes.add(new TreeData(modelFile,Messages.Node_Artifact,artifactCount,TreeData.ARTIFACT_COUNT));
-								// TODO treeNodes.add(new TreeData(modelFile,Messages.Node_Baselined,baselinedLineCount,TreeData.BASELINED_COUNT));
-
-								// populate array and model map
-								final TreeData[] treeDataArray = treeNodes.toArray(new TreeData[treeNodes.size()]); // $codepro.audit.disable localDeclaration
-								cachedModelMap.put(modelFile, treeDataArray);
-								break;
-							} // record
-						 */
-						} // for 
+					// populate array and model map
+					final TreeData[] treeDataArray = treeNodes.toArray(new TreeData[treeNodes.size()]);
+					cachedModelMap.put(modelFile, treeDataArray);
 					return resource;
 				} // model not null
 			} // model file exists
 		} // file extension matches
-	
+
 		cachedModelMap.remove(modelFile);
-	
 		return null; 
 	} // method
 
 
+	public void setUtilityElementCount(int elementCount) {
+		this.utilityElementCount = elementCount;
+	}
+
+	public int getUtilityElementCount() {
+		return utilityElementCount;
+	}
+	
+	public void incrementUtilityElement() {
+		utilityElementCount += 1;
+	}
+
+	public void incrementAnnotationCount() {
+		annotationCount += 1;
+	}
+	
+	public void setAnnotationCount(int count) {
+		annotationCount = count;
+	}
+	
+	public int getAnnotationCount() {
+		return annotationCount;
+	}
+	
+	public void incrementAssuranceCaseCount() {
+		assuranceCaseCount += 1;
+	}
+	
+	public void setAssuranceCaseCount(int count) {
+		assuranceCaseCount = count;
+	}
+	
+	public int getAssuranceCaseCount() {
+		return assuranceCaseCount;
+	}
+	
+	public void incrementDateTimeCount() {
+		dateTimeCount += 1;
+	}
+	
+	public void setDateTimeCount(int count) {
+		dateTimeCount = count;
+	}
+	
+	public int getDateTimeCount() {
+		return dateTimeCount;
+	}
+	
+	public void incrementModelElementCount() {
+		modelElementCount += 1;
+	}
+	
+	public void setModelElementCount(int count) {
+		modelElementCount = count;
+	}
+	
+	public int getModelElementCount() {
+		return modelElementCount;
+	}
+	
+	public void incrementSacmElementCount() {
+		sacmElementCount += 1;
+	}
+	
+	public void setSacmElementCount(int count) {
+		sacmElementCount = count;
+	}
+	
+	public int getSacmElementCount() {
+		return sacmElementCount;
+	}
+	
+	public void incrementTaggedValueCount() {
+		taggedValueCount += 1;
+	}
+	
+	public void setTaggedValueCount(int count) {
+		taggedValueCount = count;
+	}
+	
+	public int getTaggedValueCount() {
+		return taggedValueCount;
+	}
+	
+	public void incrementUtilityElementCount() {
+		utilityElementCount += 1;
+	}
+	
+
+	
+	/**
+	 * Visitor to pass over model elements and links.
+	 */
+	public SACMSwitch<Boolean> visitor = new SACMSwitch<Boolean>() {
+		
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Annotation</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAnnotation(Annotation object) {
+			incrementAnnotationCount();
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Assurance Case</em>'.
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Assurance Case</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssuranceCase(AssuranceCase object) {
+			incrementAssuranceCaseCount();
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Datetime</em>'.
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Datetime</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseDatetime(Datetime object) {
+			incrementDateTimeCount();
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseModelElement(ModelElement object) {
+			incrementModelElementCount();
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseSACMElement(SACMElement object) {
+			incrementSacmElementCount();
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Tagged Value</em>'.
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Tagged Value</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseTaggedValue(TaggedValue object) {
+			incrementTaggedValueCount();
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Utility Element</em>'.
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>Utility Element</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseUtilityElement(UtilityElement object) {
+			incrementUtilityElement();
+			return Boolean.TRUE;
+		}
+
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+		 * <!-- begin-user-doc -->
+		 * This implementation returns null;
+		 * returning a non-null result will terminate the switch, but this is the last case anyway.
+		 * <!-- end-user-doc -->
+		 * @param object the target of the switch.
+		 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+		 */
+		@Override
+		public Boolean defaultCase(EObject object) {
+			return Boolean.TRUE;
+		}
+	};
 }

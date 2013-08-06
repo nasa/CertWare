@@ -52,24 +52,20 @@ public class LabelProvider implements ILabelProvider, IDescriptionProvider {
 		if ( element instanceof TreeData ) {
 
 			TreeData td = (TreeData)element;
-			if ( td.getType() == TreeData.ARTIFACT_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_ARTIFACTS);
-			/*
-			if ( td.getType() == TreeData.BASELINED_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_BASELINE);
-			if ( td.getType() == TreeData.CRITICAL_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_CRITICAL);
-			if ( td.getType() == TreeData.NORMAL_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_NORMAL);
-			if ( td.getType() == TreeData.IMPROVEMENT_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_IMPROVEMENT);
-			if ( td.getType() == TreeData.NEW_FEATURE_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_NEW_FEATURE);
-			if ( td.getType() == TreeData.CURRENT_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_CURRENT);
-			if ( td.getType() == TreeData.TOTAL_COUNT )
-				return Activator.getDefault().getImageRegistry().get(Activator.NODE_TOTAL);
-			 */
+			if ( td.getType() == TreeData.COUNT_TYPE_ANNOTATIONS )
+				return Activator.getDefault().getImageRegistry().get(Activator.NODE_ANNOTATIONS);
+			if ( td.getType() == TreeData.COUNT_TYPE_ASSURANCE_CASES )
+				return Activator.getDefault().getImageRegistry().get(Activator.NODE_ASSURANCE_CASES);
+			if ( td.getType() == TreeData.COUNT_TYPE_DATE_TIMES )
+				return Activator.getDefault().getImageRegistry().get(Activator.NODE_DATE_TIMES);
+			if ( td.getType() == TreeData.COUNT_TYPE_MODEL_ELEMENTS )
+				return Activator.getDefault().getImageRegistry().get(Activator.NODE_MODEL_ELEMENTS);
+			if ( td.getType() == TreeData.COUNT_TYPE_SACM_ELEMENTS )
+				return Activator.getDefault().getImageRegistry().get(Activator.NODE_SACM_ELEMENTS);
+			if ( td.getType() == TreeData.COUNT_TYPE_TAGGED_VALUES )
+				return Activator.getDefault().getImageRegistry().get(Activator.NODE_TAGGED_VALUES);
+			if ( td.getType() == TreeData.COUNT_TYPE_UTILITY_ELEMENTS )
+				return Activator.getDefault().getImageRegistry().get(Activator.NODE_UTILITY_ELEMENTS);
 		}
 		return null;
 	}

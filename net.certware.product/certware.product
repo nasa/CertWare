@@ -106,7 +106,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
    </license>
 
    <plugins>
-      <plugin id="com.google.collect"/>
       <plugin id="com.google.guava"/>
       <plugin id="com.google.inject"/>
       <plugin id="com.ibm.icu"/>
@@ -117,8 +116,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="javax.inject"/>
       <plugin id="javax.servlet"/>
       <plugin id="javax.servlet.jsp"/>
-      <plugin id="javax.servlet.jsp.jstl"/>
-      <plugin id="javax.transaction" fragment="true"/>
       <plugin id="javax.xml"/>
       <plugin id="lpg.runtime.java"/>
       <plugin id="net.certware.argument.aml"/>

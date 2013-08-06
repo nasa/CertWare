@@ -9,16 +9,6 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "net.certware.sacm.navigator.messages"; //$NON-NLS-1$
 	
-	static public String Node_Artifact = null;
-	/*
-	static public String Node_Baselined = null;
-	static public String Node_Current = null;
-	static public String Node_Critical = null;
-	static public String Node_Normal = null;
-	static public String Node_Improvement = null;
-	static public String Node_NewFeature = null;
-	static public String Node_Total = null;
-	*/
 	static public String Job = null;
 	static public String ResourceChanged = null;
 	
@@ -30,4 +20,32 @@ public class Messages extends NLS {
 
 	private Messages() {
 	}
+
+	public static String ContentProvider_0;
+
+	public static String ContentProvider_1;
+
+	public static String ContentProvider_2;
+
+	public static String ContentProvider_3;
+
+	public static String ContentProvider_4;
+
+	public static String ContentProvider_5;
+
+	public static String ContentProvider_6;
+
+	public static String ImageKey0;
+
+	public static String ImageKey1;
+
+	public static String ImageKey2;
+
+	public static String ImageKey3;
+
+	public static String ImageKey4;
+
+	public static String ImageKey5;
+
+	public static String ImageKey6;
 }
