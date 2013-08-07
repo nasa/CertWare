@@ -30,6 +30,7 @@ The following tags are associated with the many meta-models used in the workbenc
 * @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
 * @HEV@ Evidence settings for Hugin Bayesian networks.
 * @NET@ Hugin Network models.
+* @SACM@ OMG's structured assurance case metamodel.
 * @SFP@ A semi-formal proof metamodel derived from an Xtext grammar for these proofs.
 * @SMM@ OMG software measurement metamodel and its Ecore implementation.
 * @VCL@ A verification checklist generic metamodel.
@@ -66,6 +67,7 @@ h3. File Names and Extensions
 * @*.hev@ Hugin evidence setting model files
 * @*.mspdi@ and @*.mpx@ are Microsoft Project (MSPDI) model files
 * @*.net@ and @*.hugin@ Hugin NET files
+* @*.sacm@ SACM model files
 * @*.saem@ SAEM model files
 * @*.sco@ SCO change order model files
 * @*.smm@ OMG Software Measurement Metamodel files
@@ -91,6 +93,7 @@ h3. Navigator Contributions
 * @net.certware.argument.gsn.navigator@ Contributes content on GSN model resource files and navigator filter.
 * @net.certware.argument.eur.navigator@ Contributes content on EUR model resource files and navigator filter.
 * @net.certware.argument.sfp.navigator@ Contributes content on SFP model resource files and navigator filter.
+* @net.certware.sacm.navigator@ Contributes content on SACM model resource files and navigator filter.
 * @net.certware.measurement.sco.navigator@ Contributes content on SCO model resource files and navigator filter. 
 * @net.certware.measurement.spm.navigator@ Contributes content on SPM model resource files and navigator filter. 
 * @net.certware.planning.cpn.navigator@ Contributes content on CPN model resource files and navigator filter.
@@ -135,6 +138,7 @@ h3. Plugins Summary
 * @net.certware.planning.cpn.*@ A planning content DSL serving as a project management data overlay on argument models.
 * @net.certware.planning.mspdi.*@ Planning content model using Microsoft project data schema. The Microsoft MSPDI schema was coerced into an Ecore model, then the EMF plugins generated from this model.    
 * @net.certware.product@ Product definition for stand-alone application. 
+* @net.certware.sacm.*@ Object model and editor support for OMG's SACM.  
 * @net.certware.target@ CertWare project target definition.
 * @net.certware.update@ Update site definition project (currently unused).
 * @net.certware.verification.checklist.*@ Verification model and editor support for generic check lists. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
@@ -143,12 +147,12 @@ h3. Plugins Summary
 
 h3. Target Platform
 
-* Eclipse Indigo baseline
-* Eclipse EGit, requiring JGit as dependency
-* Eclipse Epsilon features, pre-1.0 bundles
+* Eclipse Juno SR2 or later
+* Eclipse EGit
+* Eclipse Epsilon features
 * Eclipse Extended Editing Framework
 * Eclipse RCP delta pack for multi-platform exports
-* JUnit 4.8.1 for testing
+
 
 
 h2. Packaging
@@ -156,8 +160,6 @@ h2. Packaging
 The CertWare plug-ins and fragments can be delivered in a variety of ways, including simply exporting projects to the file system.
 
 h3. Delivery as a Feature
-
-_Note: the update site currently is down for migration to a separate repository.  12 April 2013_
 
 The several @net.certware.*@ plug-ins and fragments (not including the testing fragments) are combined into several features and a single category definition.  Use the automated dependency calculation of the feature editors to identify the installation dependencies, then ensure there are no spurious plug-ins identified; if so, identify the source and repair the issue.  For complete feature deliveries, use the version tool in the feature editor to push the feature version identifier into the plugins and fragments.  Export to either a folder or archive file.  There are no platform-dependent requirements.  There are several features available, each bundling distinct functionality and identifying dependencies if necessary.  All features use the @core@ feature for shared functionality.  
 
@@ -171,6 +173,7 @@ The several @net.certware.*@ plug-ins and fragments (not including the testing f
 * @net.certware.feature.gsn@ Support for GSN arguments.
 * @net.certware.feature.measure@ Support for measurement collection and metrics.
 * @net.certware.feature.planning@ Support for time and resource planning notation.
+* @net.certware.feature.sacm@ Support for SACM arguments and evidence.
 * @net.certware.feature.saem@ Support for SAEM evidence.
 * @net.certware.feature.sfp@ Support for semi-formal proof arguments.
 
@@ -183,7 +186,7 @@ The project @net.certware.product@ provides a product definition and p2 configur
 
 h2. Publishing
 
-To prepare an update site for publishing, first regenerate the latest features as described above from the @net.certware.feature@ project.  Then go to the update site project at @net.certware.feature.updatesite@ and open the @site.xml@ definition file.  Use the site definition editor to add the new features with their updated version identifier.  Click build all to build the update site.  The result is usable in the remote and local repositories, and we occasionally copy the update site to an Amazon S3 location for other users.
+To prepare an update site for publishing, first regenerate the latest features as described above from the @net.certware.feature@ project.  Then go to the update site project at @net.certware.feature.updatesite@ and open the @site.xml@ definition file.  Use the site definition editor to add the new features with their updated version identifier.  Click build all to build the update site.  The resulting update site is usable in the remote and local repositories, when pushed back to GitHub, or when copied say to an Amazon S3 location for other users.
 
 At this writing there are three ways to use the update site:
 * Install from the local copy of the repository. In this case add a software installation site using the Eclipse software install dialog to point to the local repository and the @net.certware.feature.updatesite@ folder.  
@@ -200,6 +203,6 @@ h2. License
 
 See the license files for the original and updated contributions.  The initial release of CertWare to open source is given by the NASA Open Source Agreement and third-party licenses including Apache 2.0.  
 
-Copyright (c) 2011-2012 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+Copyright (c) 2011-2013 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
 
 
