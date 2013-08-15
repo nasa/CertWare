@@ -6,37 +6,54 @@ package net.certware.argument.cae.components;
 // Start of user code for imports
 import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.TaggedValue;
+
 import net.certware.argument.cae.Argument;
 import net.certware.argument.cae.CaePackage;
 import net.certware.argument.cae.Claim;
 import net.certware.argument.cae.Evidence;
 import net.certware.argument.cae.Justification;
+
 import net.certware.argument.cae.parts.ArgumentPropertiesEditionPart;
 import net.certware.argument.cae.parts.CaeViewsRepository;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.ecore.resource.ResourceSet;
+
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
+
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
+
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
+
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+
 import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
+
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
+
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-	
+
 
 // End of user code
 
@@ -97,13 +114,13 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 			final ArgumentPropertiesEditionPart basePart = (ArgumentPropertiesEditionPart)editingPart;
 			// init values
 			if (argument.getIdentifier() != null && isAccessible(CaeViewsRepository.Argument.Properties.identifier))
-				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), argument.getIdentifier()));
+				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, argument.getIdentifier()));
 			
 			if (argument.getDescription() != null && isAccessible(CaeViewsRepository.Argument.Properties.description))
-				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), argument.getDescription()));
+				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, argument.getDescription()));
 			
 			if (argument.getContent() != null && isAccessible(CaeViewsRepository.Argument.Properties.content))
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), argument.getContent()));
+				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, argument.getContent()));
 			
 			if (isAccessible(CaeViewsRepository.Argument.Properties.isTagged)) {
 				isTaggedSettings = new ReferencesTableSettings(argument, ArmPackage.eINSTANCE.getModelElement_IsTagged());
@@ -125,8 +142,8 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 			
 			
 			
-			basePart.addFilterToIsTagged(new ViewerFilter() {
-			
+			if (isAccessible(CaeViewsRepository.Argument.Properties.isTagged)) {
+				basePart.addFilterToIsTagged(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -136,13 +153,12 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for isTagged
-			
-			// End of user code
-			
-			basePart.addFilterToJustification(new ViewerFilter() {
-			
+				});
+				// Start of user code for additional businessfilters for isTagged
+				// End of user code
+			}
+			if (isAccessible(CaeViewsRepository.Argument.Properties.justification)) {
+				basePart.addFilterToJustification(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -152,13 +168,12 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Justification); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for justification
-			
-			// End of user code
-			
-			basePart.addFilterToEvidence(new ViewerFilter() {
-			
+				});
+				// Start of user code for additional businessfilters for justification
+				// End of user code
+			}
+			if (isAccessible(CaeViewsRepository.Argument.Properties.evidence)) {
+				basePart.addFilterToEvidence(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -168,13 +183,12 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Evidence); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for evidence
-			
-			// End of user code
-			
-			basePart.addFilterToClaims(new ViewerFilter() {
-			
+				});
+				// Start of user code for additional businessfilters for evidence
+				// End of user code
+			}
+			if (isAccessible(CaeViewsRepository.Argument.Properties.claims)) {
+				basePart.addFilterToClaims(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -184,11 +198,10 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Claim); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for claims
-			
-			// End of user code
-			
+				});
+				// Start of user code for additional businessfilters for claims
+				// End of user code
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -243,13 +256,13 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Argument argument = (Argument)semanticObject;
 		if (CaeViewsRepository.Argument.Properties.identifier == event.getAffectedEditor()) {
-			argument.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			argument.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (CaeViewsRepository.Argument.Properties.description == event.getAffectedEditor()) {
-			argument.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			argument.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (CaeViewsRepository.Argument.Properties.content == event.getAffectedEditor()) {
-			argument.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			argument.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (CaeViewsRepository.Argument.Properties.isTagged == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.ADD) {
@@ -358,25 +371,25 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			ArgumentPropertiesEditionPart basePart = (ArgumentPropertiesEditionPart)editingPart;
 			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Argument.Properties.identifier)) {
 				if (msg.getNewValue() != null) {
-					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setIdentifier("");
 				}
 			}
 			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Argument.Properties.description)) {
 				if (msg.getNewValue() != null) {
-					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setDescription("");
 				}
 			}
 			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Argument.Properties.content)) {
 				if (msg.getNewValue() != null) {
-					basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setContent(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setContent("");
 				}
@@ -407,21 +420,21 @@ public class ArgumentPropertiesEditionComponent extends SinglePartPropertiesEdit
 				if (CaeViewsRepository.Argument.Properties.identifier == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newValue);
 				}
 				if (CaeViewsRepository.Argument.Properties.description == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newValue);
 				}
 				if (CaeViewsRepository.Argument.Properties.content == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newValue);
 				}

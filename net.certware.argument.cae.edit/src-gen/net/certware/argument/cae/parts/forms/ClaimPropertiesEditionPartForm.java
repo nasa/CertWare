@@ -9,43 +9,59 @@ import java.util.List;
 
 import net.certware.argument.cae.parts.CaeViewsRepository;
 import net.certware.argument.cae.parts.ClaimPropertiesEditionPart;
+
 import net.certware.argument.cae.providers.CaeMessages;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
+
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+
+import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
+
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
+
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
+
 import org.eclipse.jface.viewers.ViewerFilter;
+
 import org.eclipse.swt.SWT;
+
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
+
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
-
 
 // End of user code
 
@@ -53,7 +69,7 @@ import org.eclipse.ui.forms.widgets.Section;
  * 
  * 
  */
-public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ClaimPropertiesEditionPart {
+public class ClaimPropertiesEditionPartForm extends SectionPropertiesEditingPart implements IFormPropertiesEditionPart, ClaimPropertiesEditionPart {
 
 	protected Text identifier;
 	protected Text description;
@@ -77,6 +93,11 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	protected List<ViewerFilter> solutionFilters = new ArrayList<ViewerFilter>();
 
 
+
+	/**
+	 * For {@link ISection} use only.
+	 */
+	public ClaimPropertiesEditionPartForm() { super(); }
 
 	/**
 	 * Default constructor
@@ -135,13 +156,13 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 					return createPropertiesGroup(widgetFactory, parent);
 				}
 				if (key == CaeViewsRepository.Claim.Properties.identifier) {
-					return 		createIdentifierText(widgetFactory, parent);
+					return createIdentifierText(widgetFactory, parent);
 				}
 				if (key == CaeViewsRepository.Claim.Properties.description) {
-					return 		createDescriptionText(widgetFactory, parent);
+					return createDescriptionText(widgetFactory, parent);
 				}
 				if (key == CaeViewsRepository.Claim.Properties.content) {
-					return 		createContentText(widgetFactory, parent);
+					return createContentText(widgetFactory, parent);
 				}
 				if (key == CaeViewsRepository.Claim.Properties.isTagged) {
 					return createIsTaggedTableComposition(widgetFactory, parent);
@@ -188,7 +209,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 
 	
 	protected Composite createIdentifierText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ClaimPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Claim.Properties.identifier, CaeViewsRepository.FORM_KIND));
+		createDescription(parent, CaeViewsRepository.Claim.Properties.identifier, CaeMessages.ClaimPropertiesEditionPart_IdentifierLabel);
 		identifier = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		identifier.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -202,8 +223,33 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							ClaimPropertiesEditionPartForm.this,
+							CaeViewsRepository.Claim.Properties.identifier,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ClaimPropertiesEditionPartForm.this,
+									CaeViewsRepository.Claim.Properties.identifier,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, identifier.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ClaimPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		identifier.addKeyListener(new KeyAdapter() {
@@ -228,7 +274,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 
 	
 	protected Composite createDescriptionText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ClaimPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Claim.Properties.description, CaeViewsRepository.FORM_KIND));
+		createDescription(parent, CaeViewsRepository.Claim.Properties.description, CaeMessages.ClaimPropertiesEditionPart_DescriptionLabel);
 		description = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		description.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -242,8 +288,33 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							ClaimPropertiesEditionPartForm.this,
+							CaeViewsRepository.Claim.Properties.description,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ClaimPropertiesEditionPartForm.this,
+									CaeViewsRepository.Claim.Properties.description,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, description.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ClaimPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		description.addKeyListener(new KeyAdapter() {
@@ -268,7 +339,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 
 	
 	protected Composite createContentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, CaeMessages.ClaimPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Claim.Properties.content, CaeViewsRepository.FORM_KIND));
+		createDescription(parent, CaeViewsRepository.Claim.Properties.content, CaeMessages.ClaimPropertiesEditionPart_ContentLabel);
 		content = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		content.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -282,8 +353,33 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							ClaimPropertiesEditionPartForm.this,
+							CaeViewsRepository.Claim.Properties.content,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ClaimPropertiesEditionPartForm.this,
+									CaeViewsRepository.Claim.Properties.content,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, content.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ClaimPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		content.addKeyListener(new KeyAdapter() {
@@ -311,7 +407,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	 * 
 	 */
 	protected Composite createIsTaggedTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.isTagged = new ReferencesTable(CaeMessages.ClaimPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+		this.isTagged = new ReferencesTable(getDescription(CaeViewsRepository.Claim.Properties.isTagged, CaeMessages.ClaimPropertiesEditionPart_IsTaggedLabel), new ReferencesTableListener() {
 			public void handleAdd() {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				isTagged.refresh();
@@ -356,7 +452,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 
 	
 	protected Composite createAssumedCheckbox(FormToolkit widgetFactory, Composite parent) {
-		assumed = widgetFactory.createButton(parent, CaeMessages.ClaimPropertiesEditionPart_AssumedLabel, SWT.CHECK);
+		assumed = widgetFactory.createButton(parent, getDescription(CaeViewsRepository.Claim.Properties.assumed, CaeMessages.ClaimPropertiesEditionPart_AssumedLabel), SWT.CHECK);
 		assumed.addSelectionListener(new SelectionAdapter() {
 
 			/**
@@ -382,7 +478,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 
 	
 	protected Composite createToBeSupportedCheckbox(FormToolkit widgetFactory, Composite parent) {
-		toBeSupported = widgetFactory.createButton(parent, CaeMessages.ClaimPropertiesEditionPart_ToBeSupportedLabel, SWT.CHECK);
+		toBeSupported = widgetFactory.createButton(parent, getDescription(CaeViewsRepository.Claim.Properties.toBeSupported, CaeMessages.ClaimPropertiesEditionPart_ToBeSupportedLabel), SWT.CHECK);
 		toBeSupported.addSelectionListener(new SelectionAdapter() {
 
 			/**
@@ -411,7 +507,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	 * 
 	 */
 	protected Composite createStrategyTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.strategy = new ReferencesTable(CaeMessages.ClaimPropertiesEditionPart_StrategyLabel, new ReferencesTableListener() {
+		this.strategy = new ReferencesTable(getDescription(CaeViewsRepository.Claim.Properties.strategy, CaeMessages.ClaimPropertiesEditionPart_StrategyLabel), new ReferencesTableListener() {
 			public void handleAdd() {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.strategy, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				strategy.refresh();
@@ -459,7 +555,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	 * 
 	 */
 	protected Composite createAssumptionTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.assumption = new ReferencesTable(CaeMessages.ClaimPropertiesEditionPart_AssumptionLabel, new ReferencesTableListener() {
+		this.assumption = new ReferencesTable(getDescription(CaeViewsRepository.Claim.Properties.assumption, CaeMessages.ClaimPropertiesEditionPart_AssumptionLabel), new ReferencesTableListener() {
 			public void handleAdd() {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.assumption, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				assumption.refresh();
@@ -507,7 +603,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	 * 
 	 */
 	protected Composite createContextTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.context = new ReferencesTable(CaeMessages.ClaimPropertiesEditionPart_ContextLabel, new ReferencesTableListener() {
+		this.context = new ReferencesTable(getDescription(CaeViewsRepository.Claim.Properties.context, CaeMessages.ClaimPropertiesEditionPart_ContextLabel), new ReferencesTableListener() {
 			public void handleAdd() {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.context, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				context.refresh();
@@ -555,7 +651,7 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	 * 
 	 */
 	protected Composite createSolutionTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.solution = new ReferencesTable(CaeMessages.ClaimPropertiesEditionPart_SolutionLabel, new ReferencesTableListener() {
+		this.solution = new ReferencesTable(getDescription(CaeViewsRepository.Claim.Properties.solution, CaeMessages.ClaimPropertiesEditionPart_SolutionLabel), new ReferencesTableListener() {
 			public void handleAdd() {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ClaimPropertiesEditionPartForm.this, CaeViewsRepository.Claim.Properties.solution, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				solution.refresh();
@@ -599,7 +695,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	}
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -636,7 +731,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 		}
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -661,7 +755,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 		}
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -685,7 +778,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 			content.setText(""); //$NON-NLS-1$
 		}
 	}
-
 
 
 
@@ -745,7 +837,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 		return ((ReferencesTableSettings)isTagged.getInput()).contains(element);
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -770,7 +861,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 		}
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -794,7 +884,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 			toBeSupported.setSelection(false);
 		}
 	}
-
 
 
 
@@ -856,7 +945,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -912,7 +1000,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	public boolean isContainedInAssumptionTable(EObject element) {
 		return ((ReferencesTableSettings)assumption.getInput()).contains(element);
 	}
-
 
 
 
@@ -974,7 +1061,6 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1030,6 +1116,8 @@ public class ClaimPropertiesEditionPartForm extends CompositePropertiesEditionPa
 	public boolean isContainedInSolutionTable(EObject element) {
 		return ((ReferencesTableSettings)solution.getInput()).contains(element);
 	}
+
+
 
 
 

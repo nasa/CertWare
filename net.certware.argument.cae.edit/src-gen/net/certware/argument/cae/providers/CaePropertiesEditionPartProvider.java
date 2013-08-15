@@ -4,12 +4,14 @@
 package net.certware.argument.cae.providers;
 
 import net.certware.argument.cae.parts.CaeViewsRepository;
+
 import net.certware.argument.cae.parts.forms.ArgumentPropertiesEditionPartForm;
 import net.certware.argument.cae.parts.forms.AssumptionPropertiesEditionPartForm;
 import net.certware.argument.cae.parts.forms.ClaimPropertiesEditionPartForm;
 import net.certware.argument.cae.parts.forms.ContextPropertiesEditionPartForm;
 import net.certware.argument.cae.parts.forms.EvidencePropertiesEditionPartForm;
 import net.certware.argument.cae.parts.forms.JustificationPropertiesEditionPartForm;
+
 import net.certware.argument.cae.parts.impl.ArgumentPropertiesEditionPartImpl;
 import net.certware.argument.cae.parts.impl.AssumptionPropertiesEditionPartImpl;
 import net.certware.argument.cae.parts.impl.ClaimPropertiesEditionPartImpl;
@@ -18,11 +20,10 @@ import net.certware.argument.cae.parts.impl.EvidencePropertiesEditionPartImpl;
 import net.certware.argument.cae.parts.impl.JustificationPropertiesEditionPartImpl;
 
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
+
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
-
-
 
 /**
  * 

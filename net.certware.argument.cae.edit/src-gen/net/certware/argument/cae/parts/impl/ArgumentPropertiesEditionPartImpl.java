@@ -9,40 +9,55 @@ import java.util.List;
 
 import net.certware.argument.cae.parts.ArgumentPropertiesEditionPart;
 import net.certware.argument.cae.parts.CaeViewsRepository;
+
 import net.certware.argument.cae.providers.CaeMessages;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
+
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
+
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
+
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
+
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.SWTUtils;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
+
 import org.eclipse.jface.viewers.ViewerFilter;
+
 import org.eclipse.swt.SWT;
+
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
-
-
 
 // End of user code
 
@@ -55,18 +70,18 @@ public class ArgumentPropertiesEditionPartImpl extends CompositePropertiesEditio
 	protected Text identifier;
 	protected Text description;
 	protected Text content;
-protected ReferencesTable isTagged;
-protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
-protected ReferencesTable justification;
-protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
-protected ReferencesTable evidence;
-protected List<ViewerFilter> evidenceBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> evidenceFilters = new ArrayList<ViewerFilter>();
-protected ReferencesTable claims;
-protected List<ViewerFilter> claimsBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable isTagged;
+	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable justification;
+	protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable evidence;
+	protected List<ViewerFilter> evidenceBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> evidenceFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable claims;
+	protected List<ViewerFilter> claimsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -165,8 +180,8 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 	
 	protected Composite createIdentifierText(Composite parent) {
-		SWTUtils.createPartLabel(parent, CaeMessages.ArgumentPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.Properties.identifier, CaeViewsRepository.SWT_KIND));
-		identifier = new Text(parent, SWT.BORDER);
+		createDescription(parent, CaeViewsRepository.Argument.Properties.identifier, CaeMessages.ArgumentPropertiesEditionPart_IdentifierLabel);
+		identifier = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData identifierData = new GridData(GridData.FILL_HORIZONTAL);
 		identifier.setLayoutData(identifierData);
 		identifier.addFocusListener(new FocusAdapter() {
@@ -211,8 +226,8 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 	
 	protected Composite createDescriptionText(Composite parent) {
-		SWTUtils.createPartLabel(parent, CaeMessages.ArgumentPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.Properties.description, CaeViewsRepository.SWT_KIND));
-		description = new Text(parent, SWT.BORDER);
+		createDescription(parent, CaeViewsRepository.Argument.Properties.description, CaeMessages.ArgumentPropertiesEditionPart_DescriptionLabel);
+		description = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
 		description.setLayoutData(descriptionData);
 		description.addFocusListener(new FocusAdapter() {
@@ -257,8 +272,8 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 	
 	protected Composite createContentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, CaeMessages.ArgumentPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(CaeViewsRepository.Argument.Properties.content, CaeViewsRepository.SWT_KIND));
-		content = new Text(parent, SWT.BORDER);
+		createDescription(parent, CaeViewsRepository.Argument.Properties.content, CaeMessages.ArgumentPropertiesEditionPart_ContentLabel);
+		content = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
@@ -306,7 +321,7 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createIsTaggedAdvancedTableComposition(Composite parent) {
-		this.isTagged = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+		this.isTagged = new ReferencesTable(getDescription(CaeViewsRepository.Argument.Properties.isTagged, CaeMessages.ArgumentPropertiesEditionPart_IsTaggedLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				isTagged.refresh();
@@ -354,7 +369,7 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createJustificationAdvancedTableComposition(Composite parent) {
-		this.justification = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_JustificationLabel, new ReferencesTableListener() {
+		this.justification = new ReferencesTable(getDescription(CaeViewsRepository.Argument.Properties.justification, CaeMessages.ArgumentPropertiesEditionPart_JustificationLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.Properties.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				justification.refresh();
@@ -402,7 +417,7 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createEvidenceAdvancedTableComposition(Composite parent) {
-		this.evidence = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_EvidenceLabel, new ReferencesTableListener() {
+		this.evidence = new ReferencesTable(getDescription(CaeViewsRepository.Argument.Properties.evidence, CaeMessages.ArgumentPropertiesEditionPart_EvidenceLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.Properties.evidence, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				evidence.refresh();
@@ -450,7 +465,7 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createClaimsAdvancedTableComposition(Composite parent) {
-		this.claims = new ReferencesTable(CaeMessages.ArgumentPropertiesEditionPart_ClaimsLabel, new ReferencesTableListener() {
+		this.claims = new ReferencesTable(getDescription(CaeViewsRepository.Argument.Properties.claims, CaeMessages.ArgumentPropertiesEditionPart_ClaimsLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, CaeViewsRepository.Argument.Properties.claims, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				claims.refresh();
@@ -494,7 +509,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 	}
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -531,7 +545,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 		}
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -556,7 +569,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 		}
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -580,7 +592,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 			content.setText(""); //$NON-NLS-1$
 		}
 	}
-
 
 
 
@@ -642,7 +653,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -698,7 +708,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 	public boolean isContainedInJustificationTable(EObject element) {
 		return ((ReferencesTableSettings)justification.getInput()).contains(element);
 	}
-
 
 
 
@@ -760,7 +769,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -816,7 +824,6 @@ protected List<ViewerFilter> claimsFilters = new ArrayList<ViewerFilter>();
 	public boolean isContainedInClaimsTable(EObject element) {
 		return ((ReferencesTableSettings)claims.getInput()).contains(element);
 	}
-
 
 
 

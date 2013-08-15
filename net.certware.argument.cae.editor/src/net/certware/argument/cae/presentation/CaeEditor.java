@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ * Copyright (c) 2010-2013 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
  * 
  */
 package net.certware.argument.cae.presentation;
@@ -15,7 +15,6 @@ import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
@@ -89,7 +88,8 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
-import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
@@ -143,7 +143,7 @@ import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
-import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
+import org.eclipse.emf.eef.runtime.ui.notify.OpenWizardOnDoubleClick;
 
 import net.certware.argument.cae.provider.CaeItemProviderAdapterFactory;
 
@@ -155,12 +155,13 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 /**
  * This is an example of a Cae model editor.
  * <!-- begin-user-doc -->
+ * @implements ITabbedPropertySheetPageContributor
  * <!-- end-user-doc -->
  * @generated
  */
 public class CaeEditor
 	extends MultiPageEditorPart
-	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
+	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,9 +213,10 @@ public class CaeEditor
 	 * This is the property sheet page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected PropertySheetPage propertySheetPage;
+	// protected PropertySheetPage propertySheetPage;
+	protected TabbedPropertySheetPage propertySheetPage;
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline.
@@ -640,10 +642,16 @@ public class CaeEditor
 		//
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
+		System.err.println("initializing adapter factories");
+		
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CaeItemProviderAdapterFactory());
+		System.err.println("created ripaf");
 		adapterFactory.addAdapterFactory(new ArmItemProviderAdapterFactory());
+		System.err.println("created aipaf");
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
+		System.err.println("created ripaf");
+		adapterFactory.addAdapterFactory(new CaeItemProviderAdapterFactory());
+		System.err.println("created cipaf");
 
 		// Create the command stack that will notify this editor as commands are executed.
 		//
@@ -926,7 +934,7 @@ public class CaeEditor
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void createPages() {
@@ -947,7 +955,7 @@ public class CaeEditor
 			selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(adapterFactory, selectionViewer));
 			selectionViewer.setInput(editingDomain.getResourceSet());
 			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
-
+			selectionViewer.addDoubleClickListener(new OpenWizardOnDoubleClick(editingDomain,adapterFactory));
 			new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
 			createContextMenuFor(selectionViewer);
@@ -1128,9 +1136,10 @@ public class CaeEditor
 	 * This accesses a cached version of the property sheet.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
+		/*
 		if (propertySheetPage == null) {
 			propertySheetPage =
 				new ExtendedPropertySheetPage(editingDomain) {
@@ -1148,6 +1157,10 @@ public class CaeEditor
 				};
 			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
 		}
+		*/
+	     if (propertySheetPage == null || propertySheetPage.getControl().isDisposed()) {
+	         propertySheetPage = new TabbedPropertySheetPage(CaeEditor.this);
+	      }
 
 		return propertySheetPage;
 	}
@@ -1544,5 +1557,15 @@ public class CaeEditor
 	 */
 	protected boolean showOutlineView() {
 		return false;
+	}
+
+	public static final String PROPERTIES_CONTRIBUTOR = "net.certware.argument.cae.properties";
+			
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	public String getContributorId() {
+		return PROPERTIES_CONTRIBUTOR;
 	}
 }

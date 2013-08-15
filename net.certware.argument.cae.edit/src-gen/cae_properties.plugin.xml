@@ -17,11 +17,12 @@
       </PropertiesEditionPartProvider>
    </extension>
 
-   <!-- Tabbed properties views extension -->
+  <!-- Tabbed properties views extension -->
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="net.certware.argument.cae.properties">
+            contributorId="net.certware.argument.cae.properties"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -38,10 +39,11 @@
       <propertyTabs
             contributorId="net.certware.argument.cae.properties">
          <propertyTab
+               id="Base"
                label="Base"
-               category="default"
-               id="Base">
+               category="default">
          </propertyTab>
+
       </propertyTabs>
    </extension>
    <extension
@@ -49,52 +51,40 @@
       <propertySections
             contributorId="net.certware.argument.cae.properties">
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.argument.cae.parts.forms.ClaimPropertiesEditionPartForm"
+               filter="net.certware.argument.cae.providers.ClaimPropertiesEditionProvider$EditionFilter"
                id="net.certware.argument.cae.section.Claim"
                tab="Base">
-             <input
-                    type="net.certware.argument.cae.Claim">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.argument.cae.parts.forms.ArgumentPropertiesEditionPartForm"
+               filter="net.certware.argument.cae.providers.ArgumentPropertiesEditionProvider$EditionFilter"
                id="net.certware.argument.cae.section.Argument"
                tab="Base">
-             <input
-                    type="net.certware.argument.cae.Argument">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.argument.cae.parts.forms.EvidencePropertiesEditionPartForm"
+               filter="net.certware.argument.cae.providers.EvidencePropertiesEditionProvider$EditionFilter"
                id="net.certware.argument.cae.section.Evidence"
                tab="Base">
-             <input
-                    type="net.certware.argument.cae.Evidence">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.argument.cae.parts.forms.AssumptionPropertiesEditionPartForm"
+               filter="net.certware.argument.cae.providers.AssumptionPropertiesEditionProvider$EditionFilter"
                id="net.certware.argument.cae.section.Assumption"
                tab="Base">
-             <input
-                    type="net.certware.argument.cae.Assumption">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.argument.cae.parts.forms.ContextPropertiesEditionPartForm"
+               filter="net.certware.argument.cae.providers.ContextPropertiesEditionProvider$EditionFilter"
                id="net.certware.argument.cae.section.Context"
                tab="Base">
-             <input
-                    type="net.certware.argument.cae.Context">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.argument.cae.parts.forms.JustificationPropertiesEditionPartForm"
+               filter="net.certware.argument.cae.providers.JustificationPropertiesEditionProvider$EditionFilter"
                id="net.certware.argument.cae.section.Justification"
                tab="Base">
-             <input
-                    type="net.certware.argument.cae.Justification">
-             </input>
          </propertySection>
       </propertySections>
    </extension>

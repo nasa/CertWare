@@ -31,6 +31,7 @@ public class CaeMessages extends NLS {
 	
 	public static String JustificationPropertiesEditionPart_PropertiesGroupLabel;
 
+
 	
 	public static String Claim_ReadOnly;
 
@@ -66,6 +67,7 @@ public class CaeMessages extends NLS {
 
 	
 	public static String Justification_Part_Title;
+
 
 	
 	public static String ClaimPropertiesEditionPart_IdentifierLabel;
@@ -177,6 +179,7 @@ public class CaeMessages extends NLS {
 
 	
 	public static String JustificationPropertiesEditionPart_IsTaggedLabel;
+
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

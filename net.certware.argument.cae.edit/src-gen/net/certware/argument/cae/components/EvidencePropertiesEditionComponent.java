@@ -8,37 +8,55 @@ import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.TaggedValue;
+
 import net.certware.argument.cae.CaePackage;
 import net.certware.argument.cae.Context;
 import net.certware.argument.cae.Evidence;
+
 import net.certware.argument.cae.parts.CaeViewsRepository;
 import net.certware.argument.cae.parts.EvidencePropertiesEditionPart;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
+
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
+
 import org.eclipse.emf.eef.runtime.impl.filters.EObjectFilter;
+
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
+
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+
 import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
+
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
+
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-	
+
 
 // End of user code
 
@@ -60,12 +78,12 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 	/**
 	 * Settings for target ReferencesTable
 	 */
-	private	ReferencesTableSettings targetSettings;
+	private ReferencesTableSettings targetSettings;
 	
 	/**
 	 * Settings for source ReferencesTable
 	 */
-	private	ReferencesTableSettings sourceSettings;
+	private ReferencesTableSettings sourceSettings;
 	
 	/**
 	 * Settings for context ReferencesTable
@@ -75,7 +93,7 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 	/**
 	 * Settings for evidence ReferencesTable
 	 */
-	private	ReferencesTableSettings evidenceSettings;
+	private ReferencesTableSettings evidenceSettings;
 	
 	
 	/**
@@ -104,13 +122,13 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 			final EvidencePropertiesEditionPart basePart = (EvidencePropertiesEditionPart)editingPart;
 			// init values
 			if (evidence.getIdentifier() != null && isAccessible(CaeViewsRepository.Evidence.Properties.identifier))
-				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getIdentifier()));
+				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, evidence.getIdentifier()));
 			
 			if (evidence.getDescription() != null && isAccessible(CaeViewsRepository.Evidence.Properties.description))
-				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getDescription()));
+				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, evidence.getDescription()));
 			
 			if (evidence.getContent() != null && isAccessible(CaeViewsRepository.Evidence.Properties.content))
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), evidence.getContent()));
+				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, evidence.getContent()));
 			
 			if (isAccessible(CaeViewsRepository.Evidence.Properties.isTagged)) {
 				isTaggedSettings = new ReferencesTableSettings(evidence, ArmPackage.eINSTANCE.getModelElement_IsTagged());
@@ -136,8 +154,8 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 			
 			
 			
-			basePart.addFilterToIsTagged(new ViewerFilter() {
-			
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.isTagged)) {
+				basePart.addFilterToIsTagged(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -147,51 +165,50 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for isTagged
-			
-			// End of user code
-			
-			basePart.addFilterToTarget(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInTargetTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToTarget(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
-			// Start of user code for additional businessfilters for target
-			
-			// End of user code
-			
-			basePart.addFilterToSource(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInSourceTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToSource(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
-			// Start of user code for additional businessfilters for source
-			
-			// End of user code
-			
-			basePart.addFilterToContext(new ViewerFilter() {
-			
+				});
+				// Start of user code for additional businessfilters for isTagged
+				// End of user code
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.target)) {
+				basePart.addFilterToTarget(new ViewerFilter() {
+				
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						if (element instanceof EObject)
+							return (!basePart.isContainedInTargetTable((EObject)element));
+						return element instanceof Resource;
+					}
+				
+				});
+				basePart.addFilterToTarget(new EObjectFilter(ArmPackage.Literals.MODEL_ELEMENT));
+				// Start of user code for additional businessfilters for target
+				// End of user code
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.source)) {
+				basePart.addFilterToSource(new ViewerFilter() {
+				
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						if (element instanceof EObject)
+							return (!basePart.isContainedInSourceTable((EObject)element));
+						return element instanceof Resource;
+					}
+				
+				});
+				basePart.addFilterToSource(new EObjectFilter(ArmPackage.Literals.MODEL_ELEMENT));
+				// Start of user code for additional businessfilters for source
+				// End of user code
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.context)) {
+				basePart.addFilterToContext(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -201,30 +218,29 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Context); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for context
-			
-			// End of user code
-			
-			basePart.addFilterToEvidence(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInEvidenceTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToEvidence(new EObjectFilter(ArmPackage.eINSTANCE.getInformationElement()));
-			// Start of user code for additional businessfilters for evidence
-			
-			// End of user code
-			
+				});
+				// Start of user code for additional businessfilters for context
+				// End of user code
+			}
+			if (isAccessible(CaeViewsRepository.Evidence.Properties.evidence_)) {
+				basePart.addFilterToEvidence(new ViewerFilter() {
+				
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						if (element instanceof EObject)
+							return (!basePart.isContainedInEvidenceTable((EObject)element));
+						return element instanceof Resource;
+					}
+				
+				});
+				basePart.addFilterToEvidence(new EObjectFilter(ArmPackage.Literals.INFORMATION_ELEMENT));
+				// Start of user code for additional businessfilters for evidence
+				// End of user code
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -283,13 +299,13 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Evidence evidence = (Evidence)semanticObject;
 		if (CaeViewsRepository.Evidence.Properties.identifier == event.getAffectedEditor()) {
-			evidence.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			evidence.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (CaeViewsRepository.Evidence.Properties.description == event.getAffectedEditor()) {
-			evidence.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			evidence.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (CaeViewsRepository.Evidence.Properties.content == event.getAffectedEditor()) {
-			evidence.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			evidence.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (CaeViewsRepository.Evidence.Properties.isTagged == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.ADD) {
@@ -381,25 +397,25 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		if (editingPart.isVisible()) {
 			EvidencePropertiesEditionPart basePart = (EvidencePropertiesEditionPart)editingPart;
 			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Evidence.Properties.identifier)) {
 				if (msg.getNewValue() != null) {
-					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setIdentifier("");
 				}
 			}
 			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Evidence.Properties.description)) {
 				if (msg.getNewValue() != null) {
-					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setDescription("");
 				}
 			}
 			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null && isAccessible(CaeViewsRepository.Evidence.Properties.content)) {
 				if (msg.getNewValue() != null) {
-					basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setContent(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setContent("");
 				}
@@ -442,21 +458,21 @@ public class EvidencePropertiesEditionComponent extends SinglePartPropertiesEdit
 				if (CaeViewsRepository.Evidence.Properties.identifier == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newValue);
 				}
 				if (CaeViewsRepository.Evidence.Properties.description == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newValue);
 				}
 				if (CaeViewsRepository.Evidence.Properties.content == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newValue);
 				}
