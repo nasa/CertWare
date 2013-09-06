@@ -179,6 +179,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.sacm"/>
       <plugin id="net.certware.sacm.edit"/>
       <plugin id="net.certware.sacm.editor"/>
+      <plugin id="net.certware.sacm.help"/>
       <plugin id="net.certware.sacm.navigator"/>
       <plugin id="net.certware.verification.checklist"/>
       <plugin id="net.certware.verification.checklist.edit"/>
