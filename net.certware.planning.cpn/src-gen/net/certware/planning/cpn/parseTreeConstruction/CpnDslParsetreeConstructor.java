@@ -6,14 +6,13 @@ package net.certware.planning.cpn.parseTreeConstruction;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
-import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
 
 import net.certware.planning.cpn.services.CpnDslGrammarAccess;
 
 import com.google.inject.Inject;
 
 @SuppressWarnings("all")
-public class CpnDslParsetreeConstructor extends AbstractParseTreeConstructor {
+public class CpnDslParsetreeConstructor extends org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor {
 		
 	@Inject
 	private CpnDslGrammarAccess grammarAccess;
@@ -666,12 +665,12 @@ protected class Allocation_FacilityAssignment_4_1 extends AssignmentToken  {
 /************ begin Rule Plan ****************
  *
  * Plan:
- * 	"plan" id=STRING "element" element=[arm::ModelElement] ("estimated" "(" estimated=Allocation ")")? ("actual" "("
+ * 	"plan" id=STRING "element" element=[sacm::ModelElement] ("estimated" "(" estimated=Allocation ")")? ("actual" "("
  * 	actual=Allocation ")")?;
  *
  **/
 
-// "plan" id=STRING "element" element=[arm::ModelElement] ("estimated" "(" estimated=Allocation ")")? ("actual" "("
+// "plan" id=STRING "element" element=[sacm::ModelElement] ("estimated" "(" estimated=Allocation ")")? ("actual" "("
 // actual=Allocation ")")?
 protected class Plan_Group extends GroupToken {
 	
@@ -780,7 +779,7 @@ protected class Plan_ElementKeyword_2 extends KeywordToken  {
 
 }
 
-// element=[arm::ModelElement]
+// element=[sacm::ModelElement]
 protected class Plan_ElementAssignment_3 extends AssignmentToken  {
 	
 	public Plan_ElementAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

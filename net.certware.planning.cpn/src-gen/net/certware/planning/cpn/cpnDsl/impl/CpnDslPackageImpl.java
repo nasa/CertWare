@@ -1,11 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package net.certware.planning.cpn.cpnDsl.impl;
-
-import net.certware.argument.arm.ArmPackage;
 
 import net.certware.planning.cpn.cpnDsl.Allocation;
 import net.certware.planning.cpn.cpnDsl.ArgumentModels;
@@ -13,6 +8,8 @@ import net.certware.planning.cpn.cpnDsl.CpnDslFactory;
 import net.certware.planning.cpn.cpnDsl.CpnDslPackage;
 import net.certware.planning.cpn.cpnDsl.Plan;
 import net.certware.planning.cpn.cpnDsl.Plans;
+
+import net.certware.sacm.SACM.SACMPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -106,7 +103,7 @@ public class CpnDslPackageImpl extends EPackageImpl implements CpnDslPackage
     isInited = true;
 
     // Initialize simple dependencies
-    ArmPackage.eINSTANCE.eClass();
+    SACMPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theCpnDslPackage.createPackageContents();
@@ -348,7 +345,7 @@ public class CpnDslPackageImpl extends EPackageImpl implements CpnDslPackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    ArmPackage theArmPackage = (ArmPackage)EPackage.Registry.INSTANCE.getEPackage(ArmPackage.eNS_URI);
+    SACMPackage theSACMPackage = (SACMPackage)EPackage.Registry.INSTANCE.getEPackage(SACMPackage.eNS_URI);
 
     // Create type parameters
 
@@ -372,7 +369,7 @@ public class CpnDslPackageImpl extends EPackageImpl implements CpnDslPackage
 
     initEClass(planEClass, Plan.class, "Plan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPlan_Id(), ecorePackage.getEString(), "id", null, 0, 1, Plan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlan_Element(), theArmPackage.getModelElement(), null, "element", null, 0, 1, Plan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPlan_Element(), theSACMPackage.getModelElement(), null, "element", null, 0, 1, Plan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPlan_Estimated(), this.getAllocation(), null, "estimated", null, 0, 1, Plan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPlan_Actual(), this.getAllocation(), null, "actual", null, 0, 1, Plan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

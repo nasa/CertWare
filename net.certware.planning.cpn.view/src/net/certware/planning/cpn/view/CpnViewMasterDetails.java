@@ -6,7 +6,6 @@ package net.certware.planning.cpn.view;
 
 import java.util.ArrayList;
 
-import net.certware.argument.arm.ModelElement;
 import net.certware.core.ICertWareConstants;
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.core.ui.resources.FileFinder;
@@ -18,6 +17,7 @@ import net.certware.planning.cpn.cpnDsl.Plans;
 import net.certware.planning.cpn.cpnDsl.impl.AllocationImpl;
 import net.certware.planning.cpn.cpnDsl.impl.ArgumentModelsImpl;
 import net.certware.planning.cpn.cpnDsl.impl.PlanImpl;
+import net.certware.sacm.SACM.ModelElement;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -598,16 +598,16 @@ public class CpnViewMasterDetails extends ViewPart implements ISelectionListener
 			planId.setToolTipText(pid);
 
 			ModelElement me = plan.getElement();
-			String mid = me.getIdentifier() == null ? "" : me.getIdentifier();
-			String mec = me.getContent() == null ? "" : me.getContent();
-			String med = me.getDescription() == null ? "" : me.getDescription();
+			String mid = me.getId() == null ? "" : me.getId();
+			//String mec = me.getContent() == null ? "" : me.getContent();
+			//String med = me.getDescription() == null ? "" : me.getDescription();
 
 			modelElementId.setText(mid);
 			modelElementId.setToolTipText(mid);
-			modelElementContent.setText(mec);
-			modelElementContent.setToolTipText(mec);
-			modelElementDescription.setText(med);
-			modelElementDescription.setToolTipText(med);
+			//modelElementContent.setText(mec);
+			//modelElementContent.setToolTipText(mec);
+			//modelElementDescription.setText(med);
+			//modelElementDescription.setToolTipText(med);
 
 			stale = false;
 			client.getParent().layout(true);

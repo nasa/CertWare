@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2013 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.
+ 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.sacm.SACM.presentation.SACMModelWizardID"
+            name="%_UI_SACMModelWizard_label"
+            class="net.certware.sacm.SACM.presentation.SACMModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/SACMModelFile.gif">
+         <description>%_UI_SACMModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.sacm.SACM.presentation.SACMEditorID"
+            name="%_UI_SACMEditor_label"
+            icon="icons/full/obj16/SACMModelFile.gif"
+            extensions="sacm"
+            class="net.certware.sacm.SACM.presentation.SACMEditor"
+            contributorClass="net.certware.sacm.SACM.presentation.SACMActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationModelWizardID"
+            name="%_UI_ArgumentationModelWizard_label"
+            class="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/ArgumentationModelFile.gif">
+         <description>%_UI_ArgumentationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationEditorID"
+            name="%_UI_ArgumentationEditor_label"
+            icon="icons/full/obj16/ArgumentationModelFile.gif"
+            extensions="argumentation"
+            class="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationEditor"
+            contributorClass="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.sacm.SACM.Evidence.presentation.EvidenceModelWizardID"
+            name="%_UI_EvidenceModelWizard_label"
+            class="net.certware.sacm.SACM.Evidence.presentation.EvidenceModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/EvidenceModelFile.gif">
+         <description>%_UI_EvidenceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.sacm.SACM.Evidence.presentation.EvidenceEditorID"
+            name="%_UI_EvidenceEditor_label"
+            icon="icons/full/obj16/EvidenceModelFile.gif"
+            extensions="evidence"
+            class="net.certware.sacm.SACM.Evidence.presentation.EvidenceEditor"
+            contributorClass="net.certware.sacm.SACM.Evidence.presentation.EvidenceActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.sacm.SACM.presentation.SACMModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

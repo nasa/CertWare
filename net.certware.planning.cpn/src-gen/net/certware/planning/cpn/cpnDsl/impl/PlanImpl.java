@@ -1,15 +1,12 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package net.certware.planning.cpn.cpnDsl.impl;
-
-import net.certware.argument.arm.ModelElement;
 
 import net.certware.planning.cpn.cpnDsl.Allocation;
 import net.certware.planning.cpn.cpnDsl.CpnDslPackage;
 import net.certware.planning.cpn.cpnDsl.Plan;
+
+import net.certware.sacm.SACM.ModelElement;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;

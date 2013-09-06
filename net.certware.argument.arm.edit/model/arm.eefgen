@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.argument.arm.edit/src-gen" author="" license="/*&#xA; * Copyright &#xa9; 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  &#xA; */" testsGenDirectory="">
-  <editionContexts basePackage="net.certware.argument" descriptorsGenericPropertiesViews="true">
-    <PropertiesEditionContext href="arm.components#_FxxO4QhyEeCzO8JExYDW8g"/>
-  </editionContexts>
-  <viewsRepositories basePackage="net.certware.argument.arm" swtViews="true" formViews="true">
-    <viewsRepository href="arm.components#_FxzEJQhyEeCzO8JExYDW8g"/>
-  </viewsRepositories>
-</eef-gen:EEFGenModel>

@@ -4,8 +4,8 @@
 package net.certware.planning.cpn;
 
 
-import net.certware.argument.arm.ArmPackage;
-import net.certware.argument.arm.ModelElement;
+import net.certware.sacm.SACM.ModelElement;
+import net.certware.sacm.SACM.SACMPackage;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
@@ -18,34 +18,33 @@ import org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider;
  */
 public class CpnDslRuntimeModule extends net.certware.planning.cpn.AbstractCpnDslRuntimeModule {
 
-	// added to support ARM access
+	// added to support SACM access
 	public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
-		return ArmResourceServiceProvider.class;
+		return SacmResourceServiceProvider.class;
 	}
 	
-	// added to support ARM access
+	// added to support SACM access
 	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
-		return ArmQualifiedNameProvider.class;
+		return SacmQualifiedNameProvider.class;
 	}
 	
 	//public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
-	//return ArmGlobalScopeProvider.class;
+	//return SacmGlobalScopeProvider.class;
 	//}
 	
-	static class ArmResourceServiceProvider extends DefaultResourceServiceProvider {
+	static class SacmResourceServiceProvider extends DefaultResourceServiceProvider {
 		@Override
 		public boolean canHandle(URI uri) {
-			if (uri.toPlatformString(true).endsWith(ArmPackage.eNAME)) {
+			if (uri.toPlatformString(true).endsWith(SACMPackage.eNAME)) {
 				return true;
 			}
 			return super.canHandle(uri);
 		}
 	}
 	
-	static class ArmQualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider {
+	static class SacmQualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider {
 		public String qualifiedName(ModelElement me) {
-			// System.err.println("getting qualified name for " + me + " returning " + me.getIdentifier());
-			return me.getIdentifier();
+			return me.getId();
 		}
 	}
 	

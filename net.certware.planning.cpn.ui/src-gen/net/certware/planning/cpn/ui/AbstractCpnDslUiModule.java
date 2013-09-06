@@ -79,7 +79,6 @@ public abstract class AbstractCpnDslUiModule extends DefaultUiModule {
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.outline.OutlineTreeProviderFragment
-	/*
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.IOutlineTreeProvider> bindIOutlineTreeProvider() {
 		return net.certware.planning.cpn.ui.outline.CpnDslOutlineTreeProvider.class;
 	}
@@ -88,7 +87,6 @@ public abstract class AbstractCpnDslUiModule extends DefaultUiModule {
 	public Class<? extends org.eclipse.xtext.ui.editor.outline.impl.IOutlineTreeStructureProvider> bindIOutlineTreeStructureProvider() {
 		return net.certware.planning.cpn.ui.outline.CpnDslOutlineTreeProvider.class;
 	}
-	*/
 
 	// contributed by org.eclipse.xtext.ui.generator.quickfix.QuickfixProviderFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.quickfix.IssueResolutionProvider> bindIssueResolutionProvider() {

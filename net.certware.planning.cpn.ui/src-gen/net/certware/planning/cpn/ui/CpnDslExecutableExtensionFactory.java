@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import net.certware.planning.cpn.ui.internal.CpnDslActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class CpnDslExecutableExtensionFactory extends AbstractGuiceAwareExecutab
 
 	@Override
 	protected Bundle getBundle() {
-		return net.certware.planning.cpn.ui.internal.CpnDslActivator.getInstance().getBundle();
+		return CpnDslActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return net.certware.planning.cpn.ui.internal.CpnDslActivator.getInstance().getInjector("net.certware.planning.cpn.CpnDsl");
+		return CpnDslActivator.getInstance().getInjector(CpnDslActivator.NET_CERTWARE_PLANNING_CPN_CPNDSL);
 	}
 	
 }

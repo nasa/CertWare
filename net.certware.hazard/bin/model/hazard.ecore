@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hazard" nsURI="http://www.certware.net/hazard" nsPrefix="hazard">
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity_FAA">
+    <eLiterals name="NO_SAFETY_EFFECT" value="5">
+      <eAnnotations references="#//Severity_FAA/NO_SAFETY_EFFECT">
+        <details key="definition" value="Has no effect on safety."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MINOR" value="4">
+      <eAnnotations references="#//Severity_FAA/MINOR">
+        <details key="definition" value="Does not significantly reduce system safety. Actions required by operators are well within their capabilities. Include:&#xA;- Slight reduction in safety margin or functional capabilities&#xA;- Slight increase in workload such as routine flight plan changes&#xA;- Some physical discomfort to occupants or aircraft (except operators)&#xA;- Minor occupational illness and/or minor environmental damage, and/or minor property damage"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAJOR" value="3">
+      <eAnnotations references="#//Severity_FAA/MAJOR">
+        <details key="definition" value="Reduces the capability of the system or the operators to cope with adverse operating conditions to the extent that there would be:&#xA;- Significant reduction in safety margin or functional capability&#xA;- Significant increase in operator workload&#xA;- Conditions impairing operator efficiency or creating significant discomfort&#xA;- Physical distress to occupants of aircraft (except operator) including injuries&#xA;- Major occupational illness and/or major environmental damage, and/or major property damage"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="HAZARDOUS" value="2">
+      <eAnnotations references="#//Severity_FAA/HAZARDOUS">
+        <details key="definition" value="Reduces the capability of the system or the operator ability to cope with adverse conditions to the extent that there would be:&#xA;- Large reduction in safety margin or functional capability&#xA;- Crew physical distress/excessive workload such that operators cannot be relied upon to perform required tasks accurately or completely&#xA;- Serious or fatal injury to small number of occupants of aircraft (except operators)&#xA;- Fatal injury to ground personnel and/or general public"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CATASTROPHIC" value="1">
+      <eAnnotations references="#//Severity_FAA/CATASTROPHIC">
+        <details key="definition" value="Results in multiple fatalities and/or loss of the system"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Likelihood_FAA">
+    <eLiterals name="EXTREMELY_IMPROBABLE_D">
+      <eAnnotations references="#//Likelihood_FAA/EXTREMELY_IMPROBABLE_D">
+        <details key="definition" value="Probability of occurrence per operational hour less than 1E10-9"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="EXTREMELY_REMOTE_C" value="1">
+      <eAnnotations references="#//Likelihood_FAA/EXTREMELY_REMOTE_C">
+        <details key="definition" value="Probability of occurrence per operational hour less than 1E10-7 but greater than 1E10-9"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="REMOTE_B" value="2">
+      <eAnnotations references="#//Likelihood_FAA/REMOTE_B">
+        <details key="definition" value="Probability of occurrence per operational hour less than 1E10-5 but greater than 1E10-7"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PROBABLE_A" value="3">
+      <eAnnotations references="#//Likelihood_FAA/PROBABLE_A">
+        <details key="definition" value="Probability of occurrence per operational hour greater than 1E10-5"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity_MIL_STD_882D">
+    <eLiterals name="NEGLIGIBLE_IV" value="4">
+      <eAnnotations references="#//Severity_MIL_STD_882D/NEGLIGIBLE_IV">
+        <details key="definition" value="Could result in injury or illness not resulting in a lost work day, loss exceeding $2K but less than $10K, or minimal environmental damage not violating law or regulation."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MARGINAL_III" value="3">
+      <eAnnotations references="#//Severity_MIL_STD_882D/MARGINAL_III">
+        <details key="definition" value="Could result in injury or occupational illness resulting in one or more lost work days(s), loss exceeding $10K but less than $200K, or mitigatible environmental damage without violation of law or regulation where restoration activities can be accomplished."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CRITICAL_II" value="2">
+      <eAnnotations references="#//Severity_MIL_STD_882D/CRITICAL_II">
+        <details key="definition" value="Could result in permanent partial disability, injuries or occupational illness that may result in hospitalization of at least three personnel, loss exceeding $200K but less than $1M, or reversible environmental damage causing a violation of law or regulation."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CATASTROPHIC_I" value="1">
+      <eAnnotations references="#//Severity_MIL_STD_882D/CATASTROPHIC_I">
+        <details key="definition" value="Could result in death, permanent total disability, loss exceeding $1M, or irreversible severe environmental damage that violates law or regulation."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Likelihood_MIL_STD_882D">
+    <eLiterals name="IMPROBABLE_E">
+      <eAnnotations source="MIL_STD_882D" references="#//Likelihood_MIL_STD_882D/IMPROBABLE_E">
+        <details key="individual" value="So unlikely, it can be assumed occurrence may not be experienced, with a probability of occurrence less than 10E-6 in that life."/>
+        <details key="inventory" value="Unlikely to occur, but possible"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="REMOTE_D" value="1">
+      <eAnnotations source="MIL_STD_882D" references="#//Likelihood_MIL_STD_882D/REMOTE_D">
+        <details key="individual" value="Unlikely but possible to occur in the life of an item, with a probability of occurrence less&#xD;10E-3 but greater than 10E-6 in that life."/>
+        <details key="inventory" value="Unlikely, but can reasonably be expected to occur."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="OCCASIONAL_C" value="2">
+      <eAnnotations source="MIL_STD_882D" references="#//Likelihood_MIL_STD_882D/OCCASIONAL_C">
+        <details key="individual" value="Likely to occur some time in the life of an item, with a probability of occurrence less&#xD;than 10E-2 but greater than 10E-3 in that life."/>
+        <details key="inventory" value="Will occur several times."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PROBABLE_B">
+      <eAnnotations source="MIL_STD_882D" references="#//Likelihood_MIL_STD_882D/PROBABLE_B">
+        <details key="individual" value="Will occur several times in the life of an item, with a probability of occurrence less than 10E-1 but greater than 10E-2 in that life."/>
+        <details key="inventory" value="Will occur frequently."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="FREQUENT_A">
+      <eAnnotations source="MIL_STD_882D" references="#//Likelihood_MIL_STD_882D/FREQUENT_A">
+        <details key="individual" value="Likely to occur often in the life of an item, with a probability of occurrence greater than 10E-1 in that life."/>
+        <details key="inventory" value="Continuously experienced."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComparativeRiskAssessmentForm">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="secTrackingNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="craTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="system" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" ordered="false"
+        upperBound="-1" eType="#//Reference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proposedChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="riskAssessment" eType="#//RiskAssessment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazardList" eType="#//HazardList"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessmentSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazards" ordered="false"
+        upperBound="-1" eType="#//Hazard" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hazard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hazardCondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="riskAssessmentCode" eType="#//RiskAssessmentCode"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hazardClassificationRationale"
+        eType="#//HazardClassificationRationale"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RiskAssessment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity_FAA"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="#//Likelihood_FAA"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severityRationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probabilityRationale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RiskAssessmentCode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionB" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionC" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HazardClassificationRationale">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hazardId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="riskAssessment" eType="#//RiskAssessment"/>
+  </eClassifiers>
+</ecore:EPackage>

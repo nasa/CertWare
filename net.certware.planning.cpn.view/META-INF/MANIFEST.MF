@@ -33,6 +33,6 @@ Require-Bundle: org.eclipse.swt,
  org.eclipse.core.runtime,
  org.eclipse.emf.edit,
  org.eclipse.emf.edit.ui,
- net.certware.argument.arm,
  org.eclipse.emf.codegen.ecore.ui,
- net.certware.core.ui
+ net.certware.core.ui,
+ net.certware.sacm

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare SACM Navigator Contribution
+Bundle-SymbolicName: net.certware.sacm.navigator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: net.certware.sacm.navigator.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.navigator,
+ org.eclipse.emf.ecore,
+ net.certware.sacm
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: net.certware.core,
+ net.certware.core.ui.log,
+ net.certware.sacm.SACM.util,
+ org.eclipse.core.resources,
+ org.eclipse.emf.common.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.resource,
+ org.eclipse.emf.ecore.resource.impl

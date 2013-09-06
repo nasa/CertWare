@@ -1,11 +1,8 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package net.certware.planning.cpn.cpnDsl;
 
-import net.certware.argument.arm.ModelElement;
+import net.certware.sacm.SACM.ModelElement;
 
 import org.eclipse.emf.ecore.EObject;
 

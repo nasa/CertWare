@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="CertWare" uid="net.certware.product" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="1.1.0.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="CertWare" uid="net.certware.product" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="2.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/net.certware.product/icons/obj256/certware-250.png"/>
@@ -122,60 +122,11 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.argument.aml.edit"/>
       <plugin id="net.certware.argument.aml.editor"/>
       <plugin id="net.certware.argument.aml.navigator"/>
-      <plugin id="net.certware.argument.arm"/>
-      <plugin id="net.certware.argument.arm.edit"/>
-      <plugin id="net.certware.argument.arm.editor"/>
-      <plugin id="net.certware.argument.arm.help"/>
-      <plugin id="net.certware.argument.arm.navigator"/>
-      <plugin id="net.certware.argument.arm.navigator.test" fragment="true"/>
-      <plugin id="net.certware.argument.arm.test" fragment="true"/>
-      <plugin id="net.certware.argument.cae"/>
-      <plugin id="net.certware.argument.cae.edit"/>
-      <plugin id="net.certware.argument.cae.editor"/>
-      <plugin id="net.certware.argument.cae.help"/>
-      <plugin id="net.certware.argument.cae.navigator"/>
-      <plugin id="net.certware.argument.cae.navigator.test" fragment="true"/>
-      <plugin id="net.certware.argument.cae.test.example" fragment="true"/>
-      <plugin id="net.certware.argument.caz"/>
-      <plugin id="net.certware.argument.caz.diagram"/>
-      <plugin id="net.certware.argument.caz.edit"/>
-      <plugin id="net.certware.argument.caz.editor"/>
-      <plugin id="net.certware.argument.caz.validator"/>
-      <plugin id="net.certware.argument.diagram.figures"/>
-      <plugin id="net.certware.argument.eur"/>
-      <plugin id="net.certware.argument.eur.edit"/>
-      <plugin id="net.certware.argument.eur.editor"/>
-      <plugin id="net.certware.argument.eur.help"/>
-      <plugin id="net.certware.argument.eur.navigator"/>
-      <plugin id="net.certware.argument.eur.navigator.test" fragment="true"/>
-      <plugin id="net.certware.argument.eur.test" fragment="true"/>
-      <plugin id="net.certware.argument.euz"/>
-      <plugin id="net.certware.argument.euz.diagram"/>
-      <plugin id="net.certware.argument.euz.edit"/>
-      <plugin id="net.certware.argument.euz.editor"/>
-      <plugin id="net.certware.argument.euz.validator"/>
-      <plugin id="net.certware.argument.gsn"/>
-      <plugin id="net.certware.argument.gsn.edit"/>
-      <plugin id="net.certware.argument.gsn.editor"/>
-      <plugin id="net.certware.argument.gsn.help"/>
-      <plugin id="net.certware.argument.gsn.navigator"/>
-      <plugin id="net.certware.argument.gsn.navigator.test" fragment="true"/>
-      <plugin id="net.certware.argument.gsn.test" fragment="true"/>
-      <plugin id="net.certware.argument.gsn.validator"/>
-      <plugin id="net.certware.argument.gsn.xdsl"/>
-      <plugin id="net.certware.argument.gsn.xdsl.ui"/>
-      <plugin id="net.certware.argument.gsz"/>
-      <plugin id="net.certware.argument.gsz.diagram"/>
-      <plugin id="net.certware.argument.gsz.edit"/>
-      <plugin id="net.certware.argument.gsz.editor"/>
-      <plugin id="net.certware.argument.gsz.validator"/>
       <plugin id="net.certware.argument.sfp"/>
       <plugin id="net.certware.argument.sfp.help"/>
       <plugin id="net.certware.argument.sfp.navigator"/>
       <plugin id="net.certware.argument.sfp.review"/>
       <plugin id="net.certware.argument.sfp.ui"/>
-      <plugin id="net.certware.argument.transform.gsn2arm"/>
-      <plugin id="net.certware.argument.transform.gsn2arm.test" fragment="true"/>
       <plugin id="net.certware.branding"/>
       <plugin id="net.certware.core"/>
       <plugin id="net.certware.core.ui"/>
@@ -185,22 +136,15 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.evidence.hugin.instance.editor"/>
       <plugin id="net.certware.evidence.hugin.ui"/>
       <plugin id="net.certware.evidence.hugin.view"/>
-      <plugin id="net.certware.evidence.saem"/>
-      <plugin id="net.certware.evidence.saem.edit"/>
-      <plugin id="net.certware.evidence.saem.editor"/>
       <plugin id="net.certware.example"/>
       <plugin id="net.certware.example.aml" fragment="true"/>
-      <plugin id="net.certware.example.arm" fragment="true"/>
-      <plugin id="net.certware.example.cae" fragment="true"/>
       <plugin id="net.certware.example.checklist" fragment="true"/>
-      <plugin id="net.certware.example.eur" fragment="true"/>
-      <plugin id="net.certware.example.gsn" fragment="true"/>
       <plugin id="net.certware.example.net" fragment="true"/>
+      <plugin id="net.certware.example.sacm" fragment="true"/>
       <plugin id="net.certware.example.spm" fragment="true"/>
       <plugin id="net.certware.example.ssei" fragment="true"/>
       <plugin id="net.certware.export"/>
-      <plugin id="net.certware.export.arm"/>
-      <plugin id="net.certware.export.gsn"/>
+      <plugin id="net.certware.export.sacm"/>
       <plugin id="net.certware.help"/>
       <plugin id="net.certware.history"/>
       <plugin id="net.certware.history.egit"/>

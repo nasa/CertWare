@@ -7,9 +7,9 @@ import org.eclipse.xtext.ui.generator.*
 var grammarURI = "classpath:/net/certware/planning/cpn/CpnDsl.xtext"
 var file.extensions = "cpn"
 var projectName = "net.certware.planning.cpn"
-var armName = "net.certware.argument.arm"
+var sacmName = "net.certware.sacm"
 var runtimeProject = "../${projectName}"
-var armGenmodelURI = "platform:/resource/${armName}/model/arm.genmodel"
+var sacmGenmodelURI = "platform:/resource/${sacmName}/model/sacm.genmodel"
 
 Workflow {
     bean = StandaloneSetup {
@@ -38,7 +38,7 @@ Workflow {
 
 			// generates Java API for the generated EPackages 
 			fragment = ecore.EcoreGeneratorFragment {
-				referencedGenModels = armGenmodelURI
+				referencedGenModels = sacmGenmodelURI
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
 			}
 

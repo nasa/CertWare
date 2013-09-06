@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding
+            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.sacm.navigator.filters.*">
+            </contentExtension>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.sacm.navigator.navigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <commonFilter
+            activeByDefault="false"
+            description="Filters the SACM model files"
+            id="net.certware.sacm.navigator.filters.filefilter"
+            name="CertWare SACM Models">
+      </commonFilter>
+      <navigatorContent
+            contentProvider="net.certware.sacm.navigator.ContentProvider"
+            icon="icons/obj16/sacm.gif"
+            id="net.certware.sacm.navigator.navigatorContent"
+            labelProvider="net.certware.sacm.navigator.LabelProvider"
+            name="SACM Model Content"
+            priority="high">
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="net.certware.sacm.navigator.TreeData">
+               </instanceof>
+            </or></possibleChildren>
+         <triggerPoints>
+            <or>
+               <and>
+                  <instanceof
+                        value="org.eclipse.core.resources.IResource">
+                  </instanceof>
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.core.resources.extension"
+                        value="sacm">
+                  </test>
+               </and>
+               <instanceof
+                     value="net.certware.sacm.navigator.TreeData">
+               </instanceof>
+            </or>
+         </triggerPoints>
+      </navigatorContent>
+   </extension>
+
+</plugin>

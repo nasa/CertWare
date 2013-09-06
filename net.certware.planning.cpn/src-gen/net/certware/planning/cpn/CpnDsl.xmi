@@ -4,8 +4,8 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
       <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
     </metamodelDeclarations>
-    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="arm">
-      <ePackage href="http://www.omg.org/ARM#/"/>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="sacm">
+      <ePackage href="http://schema.omg.org/SACM/1.0#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="cpnDsl">
       <ePackage href="http://www.certware.net/planning/cpn/CpnDsl#/"/>
@@ -83,7 +83,7 @@
         <elements xsi:type="xtext:Assignment" feature="element" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.omg.org/ARM#//ModelElement"/>
+              <classifier xsi:type="ecore:EClass" href="http://schema.omg.org/SACM/1.0#//ModelElement"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
