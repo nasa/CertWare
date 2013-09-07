@@ -19,6 +19,7 @@ import org.osgi.service.packageadmin.PackageAdmin;
  * @author Eclipse Toast
  * @since 1.0
  */
+@SuppressWarnings("deprecation")
 public class StatusIdFinder implements IStatusIdFinder {
 	/** package administration */
 	private PackageAdmin packageAdmin;

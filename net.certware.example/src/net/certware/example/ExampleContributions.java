@@ -15,7 +15,7 @@ import org.eclipse.core.runtime.Platform;
 public class ExampleContributions implements IExampleContribution {
 
 	/** all of the categories of examples, defined by the extension schema */
-	List<ExampleCategory> categories = new ArrayList();
+	List<ExampleCategory> categories = new ArrayList<ExampleCategory>();
 
 	/**
 	 * Initialize the categories and list given the extension point contributions.

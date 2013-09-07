@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare SACM Help
+Bundle-SymbolicName: net.certware.sacm.help;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: net.certware.sacm.help
+Bundle-Vendor: Kestrel Technology LLC
+Require-Bundle: org.eclipse.help

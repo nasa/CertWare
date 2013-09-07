@@ -276,7 +276,7 @@ public class GatherOrders implements IObjectActionDelegate
 		boolean clearMeasurements = store.getBoolean(PreferenceConstants.P_CLEAR_MEASUREMENTS);
 		
 		// gather individual statistics by iterating over all commit elements
-		TreeIterator ti = pc.eAllContents();
+		TreeIterator<?> ti = pc.eAllContents();
 		while( ti.hasNext() ) {
 			EObject eo = (EObject)ti.next();
 
@@ -562,7 +562,7 @@ public class GatherOrders implements IObjectActionDelegate
 	 */
 	private ProjectScope findProjectScopeFromCommit(ProjectCommit pc) {
 		ProjectModel pm = (ProjectModel)pc.eContainer();
-		TreeIterator ti = pm.eAllContents();
+		TreeIterator<?> ti = pm.eAllContents();
 		while( ti.hasNext() ) {
 			EObject eo = (EObject)ti.next();
 			if ( eo instanceof ProjectScope ) {

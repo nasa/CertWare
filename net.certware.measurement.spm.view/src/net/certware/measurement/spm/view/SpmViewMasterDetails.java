@@ -565,7 +565,7 @@ public class SpmViewMasterDetails extends ViewPart implements ISelectionListener
 			// visit the model, collect statistics
 			// these are all direct measurement measures, so the tree data content expects only these types
 			// we are only using the first measurement (index 0) in every case 
-			TreeIterator ti = projectCommit.eAllContents();
+			TreeIterator<EObject> ti = projectCommit.eAllContents();
 			while( ti.hasNext() ) {
 				EObject eo = (EObject)ti.next();
 				

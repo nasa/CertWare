@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright © 2013 National Aeronautics and Space Administration."
+    modelDirectory="/net.certware.hazard/src" modelPluginID="net.certware.hazard"
+    modelName="Hazard" editPluginClass="net.certware.hazard.provider.HazardEditPlugin"
+    editorPluginClass="net.certware.hazard.presentation.HazardEditorPlugin" generateSchema="true"
+    nonNLSMarkers="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" publicConstructors="true" providerRootExtendsClass=""
+    tableProviders="true" colorProviders="true" language="" interfaceNamePattern="">
+  <foreignModel>hazard.ecore</foreignModel>
+  <genPackages prefix="Hazard" basePackage="net.certware.hazard" resource="XMI" disposableProviderFactory="true"
+      dataTypeConverters="true" multipleEditorPages="false" contentTypeIdentifier=""
+      fileExtensions="haz" ecorePackage="hazard.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hazard.ecore#//Severity_FAA">
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_FAA/NO_SAFETY_EFFECT"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_FAA/MINOR"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_FAA/MAJOR"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_FAA/HAZARDOUS"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_FAA/CATASTROPHIC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hazard.ecore#//Likelihood_FAA">
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_FAA/EXTREMELY_IMPROBABLE_D"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_FAA/EXTREMELY_REMOTE_C"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_FAA/REMOTE_B"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_FAA/PROBABLE_A"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hazard.ecore#//Severity_MIL_STD_882D">
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_MIL_STD_882D/NEGLIGIBLE_IV"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_MIL_STD_882D/MARGINAL_III"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_MIL_STD_882D/CRITICAL_II"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Severity_MIL_STD_882D/CATASTROPHIC_I"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hazard.ecore#//Likelihood_MIL_STD_882D">
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_MIL_STD_882D/IMPROBABLE_E"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_MIL_STD_882D/REMOTE_D"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_MIL_STD_882D/OCCASIONAL_C"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_MIL_STD_882D/PROBABLE_B"/>
+      <genEnumLiterals ecoreEnumLiteral="hazard.ecore#//Likelihood_MIL_STD_882D/FREQUENT_A"/>
+    </genEnums>
+    <genClasses ecoreClass="hazard.ecore#//ComparativeRiskAssessmentForm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/secTrackingNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/craTitle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/system"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//ComparativeRiskAssessmentForm/references"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/summary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/baseline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/proposedChange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//ComparativeRiskAssessmentForm/riskAssessment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//ComparativeRiskAssessmentForm/hazardList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//ComparativeRiskAssessmentForm/assessmentSummary"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//HazardList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardList/hazards"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//Hazard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//Hazard/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//Hazard/hazardCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hazard.ecore#//Hazard/riskAssessmentCode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//Hazard/hazardClassificationRationale"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//Reference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//Reference/name"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//RiskAssessment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessment/severity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessment/probability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessment/assessment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessment/severityRationale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessment/probabilityRationale"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//RiskAssessmentCode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessmentCode/baseline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessmentCode/optionB"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessmentCode/optionC"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessmentCode/optionD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//RiskAssessmentCode/optionE"/>
+    </genClasses>
+    <genClasses ecoreClass="hazard.ecore#//HazardClassificationRationale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardClassificationRationale/hazardId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardClassificationRationale/summary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hazard.ecore#//HazardClassificationRationale/option"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hazard.ecore#//HazardClassificationRationale/riskAssessment"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

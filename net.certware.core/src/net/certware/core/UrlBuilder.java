@@ -20,7 +20,7 @@ import java.util.List;
  * @since 1.0
  */
 public class UrlBuilder {
-	private static class UrlParameter extends Object {
+	public static class UrlParameter extends Object {
 		private String name;
 		private String value;
 
@@ -49,7 +49,7 @@ public class UrlBuilder {
 	}
 
 	private String spec;
-	private List parameters;
+	private List<UrlParameter> parameters;
 
 	/**
 	 * Creates the initial URL string by specification.
@@ -61,7 +61,7 @@ public class UrlBuilder {
 		if (spec == null)
 			throw new IllegalArgumentException("URL spec must not be null");
 		this.spec = spec;
-		parameters = new ArrayList(5);
+		parameters = new ArrayList<UrlParameter>(5);
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class UrlBuilder {
 			if (empty == true)
 				return;
 			buffer.append('?');
-			Iterator iterator = parameters.iterator();
+			Iterator<UrlParameter> iterator = parameters.iterator();
 			while (iterator.hasNext() == true) {
 				UrlParameter parameter = (UrlParameter) iterator.next();
 				parameter.printOn(buffer);

@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: net.certware.hazard
-Bundle-SymbolicName: net.certware.hazard; singleton:=true
-Bundle-Version: 0.1.0
-Require-Bundle: org.eclipse.emf.ecore

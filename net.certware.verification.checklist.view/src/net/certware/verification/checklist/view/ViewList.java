@@ -995,6 +995,7 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 		 * Constructor sets the editor content, input, and label providers.
 		 * @param viewer column viewer for the column requiring this editor
 		 */
+		@SuppressWarnings("deprecation")
 		public ResultEditingSupport(ColumnViewer viewer) {
 			super(viewer);
 			columnViewer = viewer;

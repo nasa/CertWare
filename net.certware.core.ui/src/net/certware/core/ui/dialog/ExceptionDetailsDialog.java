@@ -228,7 +228,6 @@ public class ExceptionDetailsDialog extends AbstractDetailsDialog {
 	 * @param parent details panel
 	 * @return the new composite
 	 */
-	@SuppressWarnings("unchecked")
 	protected Composite createProductInfoArea(Composite parent) {
 		// if no plugins specified, nothing to display 
 		if ( plugin == null )

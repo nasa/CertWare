@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:hazard="http://www.certware.net/hazard" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.certware.net/hazard">
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:simpleType name="Severity_FAA">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="NO_SAFETY_EFFECT"/>
+      <xsd:enumeration value="MINOR"/>
+      <xsd:enumeration value="MAJOR"/>
+      <xsd:enumeration value="HAZARDOUS"/>
+      <xsd:enumeration value="CATASTROPHIC"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Likelihood_FAA">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="EXTREMELY_IMPROBABLE_D"/>
+      <xsd:enumeration value="EXTREMELY_REMOTE_C"/>
+      <xsd:enumeration value="REMOTE_B"/>
+      <xsd:enumeration value="PROBABLE_A"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Severity_MIL_STD_882D">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="NEGLIGIBLE_IV"/>
+      <xsd:enumeration value="MARGINAL_III"/>
+      <xsd:enumeration value="CRITICAL_II"/>
+      <xsd:enumeration value="CATASTROPHIC_I"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="Likelihood_MIL_STD_882D">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="IMPROBABLE_E"/>
+      <xsd:enumeration value="REMOTE_D"/>
+      <xsd:enumeration value="OCCASIONAL_C"/>
+      <xsd:enumeration value="PROBABLE_B"/>
+      <xsd:enumeration value="FREQUENT_A"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ComparativeRiskAssessmentForm">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="references" type="hazard:Reference"/>
+      <xsd:element name="riskAssessment" type="hazard:RiskAssessment"/>
+      <xsd:element name="hazardList" type="hazard:HazardList"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="secTrackingNumber" type="xsd:string"/>
+    <xsd:attribute name="craTitle" type="xsd:string"/>
+    <xsd:attribute name="system" type="xsd:string"/>
+    <xsd:attribute name="summary" type="xsd:string"/>
+    <xsd:attribute name="baseline" type="xsd:string"/>
+    <xsd:attribute name="proposedChange" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+    <xsd:attribute name="assessmentSummary" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ComparativeRiskAssessmentForm" type="hazard:ComparativeRiskAssessmentForm"/>
+  <xsd:complexType name="HazardList">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="hazards" type="hazard:Hazard"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+  </xsd:complexType>
+  <xsd:element name="HazardList" type="hazard:HazardList"/>
+  <xsd:complexType name="Hazard">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="riskAssessmentCode" type="hazard:RiskAssessmentCode"/>
+      <xsd:element name="hazardClassificationRationale" type="hazard:HazardClassificationRationale"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="number" type="xsd:int"/>
+    <xsd:attribute name="hazardCondition" type="xsd:string"/>
+    <xsd:attribute name="hazardClassificationRationale" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Hazard" type="hazard:Hazard"/>
+  <xsd:complexType name="Reference">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Reference" type="hazard:Reference"/>
+  <xsd:complexType name="RiskAssessment">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="severity" type="hazard:Severity_FAA"/>
+    <xsd:attribute name="probability" type="hazard:Likelihood_FAA"/>
+    <xsd:attribute name="assessment" type="xsd:string"/>
+    <xsd:attribute name="severityRationale" type="xsd:string"/>
+    <xsd:attribute name="probabilityRationale" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="RiskAssessment" type="hazard:RiskAssessment"/>
+  <xsd:complexType name="RiskAssessmentCode">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="baseline" type="xsd:string"/>
+    <xsd:attribute name="optionB" type="xsd:string"/>
+    <xsd:attribute name="optionC" type="xsd:string"/>
+    <xsd:attribute name="optionD" type="xsd:string"/>
+    <xsd:attribute name="optionE" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="RiskAssessmentCode" type="hazard:RiskAssessmentCode"/>
+  <xsd:complexType name="HazardClassificationRationale">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="riskAssessment" type="hazard:RiskAssessment"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="hazardId" type="xsd:string"/>
+    <xsd:attribute name="summary" type="xsd:string"/>
+    <xsd:attribute name="option" type="xsd:string"/>
+    <xsd:attribute name="riskAssessment" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="HazardClassificationRationale" type="hazard:HazardClassificationRationale"/>
+</xsd:schema>

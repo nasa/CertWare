@@ -66,20 +66,20 @@ public class CancerMAPTest {
 	@Test
 	public void testComputeA() {
 
-	    Map evidence = Collections.EMPTY_MAP;
+	    Map<?, ?> evidence = Collections.EMPTY_MAP;
 
-	    Set setMAPVariables = new HashSet();
+	    Set<FiniteVariable> setMAPVariables = new HashSet<FiniteVariable>();
 	    setMAPVariables.add(varA);
 
 	    /* prune first */
 	    BeliefNetwork networkUnpruned = beliefNetwork;
-	    Set varsUnpruned = setMAPVariables;
-	    Map evidenceUnpruned = evidence;
+	    Set<FiniteVariable> varsUnpruned = setMAPVariables;
+	    Map<?, ?> evidenceUnpruned = evidence;
 
-	    Map oldToNew = new HashMap( networkUnpruned.size() );
-	    Map newToOld = new HashMap( networkUnpruned.size() );
-	    Set queryVarsPruned = new HashSet( varsUnpruned.size() );
-	    Map evidencePruned = new HashMap( evidenceUnpruned.size() );
+	    Map<?, ?> oldToNew = new HashMap<Object, Object>( networkUnpruned.size() );
+	    Map<?, ?> newToOld = new HashMap<Object, Object>( networkUnpruned.size() );
+	    Set<FiniteVariable> queryVarsPruned = new HashSet<FiniteVariable>( varsUnpruned.size() );
+	    Map<?, ?> evidencePruned = new HashMap<Object, Object>( evidenceUnpruned.size() );
 	    BeliefNetwork networkPruned = Prune.prune( networkUnpruned, varsUnpruned, evidenceUnpruned, oldToNew, newToOld, queryVarsPruned, evidencePruned );
 
 	    beliefNetwork = networkPruned;
@@ -114,7 +114,7 @@ public class CancerMAPTest {
 	    /* Construct a MapRunner and run the query. */
 	    MapRunner maprunner = new MapRunner();
 	    MapRunner.MapResult mapresult = maprunner.approximateMap( beliefNetwork, engine, setMAPVariables, evidence, searchmethod, initializationmethod, steps );
-	    Map instantiation = mapresult.instantiation;
+	    Map<?, ?> instantiation = mapresult.instantiation;
 	    double score = mapresult.score;
 
 	    
@@ -130,20 +130,20 @@ public class CancerMAPTest {
 	@Test
 	public void testComputeB() {
 
-	    Map evidence = Collections.EMPTY_MAP;
+	    Map<?, ?> evidence = Collections.EMPTY_MAP;
 
-	    Set setMAPVariables = new HashSet();
+	    Set<FiniteVariable> setMAPVariables = new HashSet<FiniteVariable>();
 	    setMAPVariables.add(varB);
 
 	    /* prune first */
 	    BeliefNetwork networkUnpruned = beliefNetwork;
-	    Set varsUnpruned = setMAPVariables;
-	    Map evidenceUnpruned = evidence;
+	    Set<FiniteVariable> varsUnpruned = setMAPVariables;
+	    Map<?, ?> evidenceUnpruned = evidence;
 
-	    Map oldToNew = new HashMap( networkUnpruned.size() );
-	    Map newToOld = new HashMap( networkUnpruned.size() );
-	    Set queryVarsPruned = new HashSet( varsUnpruned.size() );
-	    Map evidencePruned = new HashMap( evidenceUnpruned.size() );
+	    Map<?, ?> oldToNew = new HashMap<Object, Object>( networkUnpruned.size() );
+	    Map<?, ?> newToOld = new HashMap<Object, Object>( networkUnpruned.size() );
+	    Set<FiniteVariable> queryVarsPruned = new HashSet<FiniteVariable>( varsUnpruned.size() );
+	    Map<?, ?> evidencePruned = new HashMap<Object, Object>( evidenceUnpruned.size() );
 	    BeliefNetwork networkPruned = Prune.prune( networkUnpruned, varsUnpruned, evidenceUnpruned, oldToNew, newToOld, queryVarsPruned, evidencePruned );
 
 	    beliefNetwork = networkPruned;
@@ -178,7 +178,7 @@ public class CancerMAPTest {
 	    /* Construct a MapRunner and run the query. */
 	    MapRunner maprunner = new MapRunner();
 	    MapRunner.MapResult mapresult = maprunner.approximateMap( beliefNetwork, engine, setMAPVariables, evidence, searchmethod, initializationmethod, steps );
-	    Map instantiation = mapresult.instantiation;
+	    Map<?, ?> instantiation = mapresult.instantiation;
 	    double score = mapresult.score;
 
 	    

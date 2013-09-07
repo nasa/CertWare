@@ -118,10 +118,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="javax.servlet.jsp"/>
       <plugin id="javax.xml"/>
       <plugin id="lpg.runtime.java"/>
-      <plugin id="net.certware.argument.aml"/>
-      <plugin id="net.certware.argument.aml.edit"/>
-      <plugin id="net.certware.argument.aml.editor"/>
-      <plugin id="net.certware.argument.aml.navigator"/>
+      <plugin id="net.certware.argument.diagram.figures"/>
       <plugin id="net.certware.argument.sfp"/>
       <plugin id="net.certware.argument.sfp.help"/>
       <plugin id="net.certware.argument.sfp.navigator"/>
@@ -145,6 +142,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.example.ssei" fragment="true"/>
       <plugin id="net.certware.export"/>
       <plugin id="net.certware.export.sacm"/>
+      <plugin id="net.certware.hazard"/>
       <plugin id="net.certware.help"/>
       <plugin id="net.certware.history"/>
       <plugin id="net.certware.history.egit"/>
@@ -181,6 +179,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.sacm.editor"/>
       <plugin id="net.certware.sacm.help"/>
       <plugin id="net.certware.sacm.navigator"/>
+      <plugin id="net.certware.sacm.validator"/>
       <plugin id="net.certware.verification.checklist"/>
       <plugin id="net.certware.verification.checklist.edit"/>
       <plugin id="net.certware.verification.checklist.editor"/>

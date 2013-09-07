@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="hazard.ecore#/" outputs="HazardXMI.xsd#/">
+  <nested inputs="hazard.ecore#/" outputs="HazardXMI.xsd#/">
+    <nested inputs="hazard.ecore#//Severity_FAA" outputs="HazardXMI.xsd#//Severity_FAA;XSDSimpleTypeDefinition">
+      <nested inputs="hazard.ecore#//Severity_FAA/NO_SAFETY_EFFECT" outputs="HazardXMI.xsd#//Severity_FAA;XSDSimpleTypeDefinition/XSDEnumerationFacet"/>
+      <nested inputs="hazard.ecore#//Severity_FAA/MINOR" outputs="HazardXMI.xsd#//Severity_FAA;XSDSimpleTypeDefinition/XSDEnumerationFacet=1"/>
+      <nested inputs="hazard.ecore#//Severity_FAA/MAJOR" outputs="HazardXMI.xsd#//Severity_FAA;XSDSimpleTypeDefinition/XSDEnumerationFacet=2"/>
+      <nested inputs="hazard.ecore#//Severity_FAA/HAZARDOUS" outputs="HazardXMI.xsd#//Severity_FAA;XSDSimpleTypeDefinition/XSDEnumerationFacet=3"/>
+      <nested inputs="hazard.ecore#//Severity_FAA/CATASTROPHIC" outputs="HazardXMI.xsd#//Severity_FAA;XSDSimpleTypeDefinition/XSDEnumerationFacet=4"/>
+    </nested>
+    <nested inputs="hazard.ecore#//Likelihood_FAA" outputs="HazardXMI.xsd#//Likelihood_FAA;XSDSimpleTypeDefinition=1">
+      <nested inputs="hazard.ecore#//Likelihood_FAA/EXTREMELY_IMPROBABLE_D" outputs="HazardXMI.xsd#//Likelihood_FAA;XSDSimpleTypeDefinition=1/XSDEnumerationFacet"/>
+      <nested inputs="hazard.ecore#//Likelihood_FAA/EXTREMELY_REMOTE_C" outputs="HazardXMI.xsd#//Likelihood_FAA;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=1"/>
+      <nested inputs="hazard.ecore#//Likelihood_FAA/REMOTE_B" outputs="HazardXMI.xsd#//Likelihood_FAA;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=2"/>
+      <nested inputs="hazard.ecore#//Likelihood_FAA/PROBABLE_A" outputs="HazardXMI.xsd#//Likelihood_FAA;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=3"/>
+    </nested>
+    <nested inputs="hazard.ecore#//Severity_MIL_STD_882D" outputs="HazardXMI.xsd#//Severity_MIL_STD_882D;XSDSimpleTypeDefinition=2">
+      <nested inputs="hazard.ecore#//Severity_MIL_STD_882D/NEGLIGIBLE_IV" outputs="HazardXMI.xsd#//Severity_MIL_STD_882D;XSDSimpleTypeDefinition=2/XSDEnumerationFacet"/>
+      <nested inputs="hazard.ecore#//Severity_MIL_STD_882D/MARGINAL_III" outputs="HazardXMI.xsd#//Severity_MIL_STD_882D;XSDSimpleTypeDefinition=2/XSDEnumerationFacet=1"/>
+      <nested inputs="hazard.ecore#//Severity_MIL_STD_882D/CRITICAL_II" outputs="HazardXMI.xsd#//Severity_MIL_STD_882D;XSDSimpleTypeDefinition=2/XSDEnumerationFacet=2"/>
+      <nested inputs="hazard.ecore#//Severity_MIL_STD_882D/CATASTROPHIC_I" outputs="HazardXMI.xsd#//Severity_MIL_STD_882D;XSDSimpleTypeDefinition=2/XSDEnumerationFacet=3"/>
+    </nested>
+    <nested inputs="hazard.ecore#//Likelihood_MIL_STD_882D" outputs="HazardXMI.xsd#//Likelihood_MIL_STD_882D;XSDSimpleTypeDefinition=3">
+      <nested inputs="hazard.ecore#//Likelihood_MIL_STD_882D/IMPROBABLE_E" outputs="HazardXMI.xsd#//Likelihood_MIL_STD_882D;XSDSimpleTypeDefinition=3/XSDEnumerationFacet"/>
+      <nested inputs="hazard.ecore#//Likelihood_MIL_STD_882D/REMOTE_D" outputs="HazardXMI.xsd#//Likelihood_MIL_STD_882D;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=1"/>
+      <nested inputs="hazard.ecore#//Likelihood_MIL_STD_882D/OCCASIONAL_C" outputs="HazardXMI.xsd#//Likelihood_MIL_STD_882D;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=2"/>
+      <nested inputs="hazard.ecore#//Likelihood_MIL_STD_882D/PROBABLE_B" outputs="HazardXMI.xsd#//Likelihood_MIL_STD_882D;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=3"/>
+      <nested inputs="hazard.ecore#//Likelihood_MIL_STD_882D/FREQUENT_A" outputs="HazardXMI.xsd#//Likelihood_MIL_STD_882D;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=4"/>
+    </nested>
+    <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition">
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/secTrackingNumber"
+          outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=1"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/craTitle" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=2"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/system" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=3"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/summary" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=4"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/baseline" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=5"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/proposedChange"
+          outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=6"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/description" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=7"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/assessmentSummary"
+          outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDAttributeUse=8"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/references" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/riskAssessment"
+          outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm/hazardList" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+    </nested>
+    <nested inputs="hazard.ecore#//ComparativeRiskAssessmentForm" outputs="HazardXMI.xsd#//ComparativeRiskAssessmentForm;XSDElementDeclaration"/>
+    <nested inputs="hazard.ecore#//HazardList" outputs="HazardXMI.xsd#//HazardList;XSDComplexTypeDefinition=1">
+      <nested inputs="hazard.ecore#//HazardList/hazards" outputs="HazardXMI.xsd#//HazardList;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="hazard.ecore#//HazardList" outputs="HazardXMI.xsd#//HazardList;XSDElementDeclaration=1"/>
+    <nested inputs="hazard.ecore#//Hazard" outputs="HazardXMI.xsd#//Hazard;XSDComplexTypeDefinition=2">
+      <nested inputs="hazard.ecore#//Hazard/number" outputs="HazardXMI.xsd#//Hazard;XSDComplexTypeDefinition=2/XSDAttributeUse=1"/>
+      <nested inputs="hazard.ecore#//Hazard/hazardCondition" outputs="HazardXMI.xsd#//Hazard;XSDComplexTypeDefinition=2/XSDAttributeUse=2"/>
+      <nested inputs="hazard.ecore#//Hazard/riskAssessmentCode" outputs="HazardXMI.xsd#//Hazard;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="hazard.ecore#//Hazard/hazardClassificationRationale" outputs="HazardXMI.xsd#//Hazard;XSDComplexTypeDefinition=2/XSDAttributeUse=3"/>
+      <nested inputs="hazard.ecore#//Hazard/hazardClassificationRationale" outputs="HazardXMI.xsd#//Hazard;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="hazard.ecore#//Hazard" outputs="HazardXMI.xsd#//Hazard;XSDElementDeclaration=2"/>
+    <nested inputs="hazard.ecore#//Reference" outputs="HazardXMI.xsd#//Reference;XSDComplexTypeDefinition=3">
+      <nested inputs="hazard.ecore#//Reference/name" outputs="HazardXMI.xsd#//Reference;XSDComplexTypeDefinition=3/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="hazard.ecore#//Reference" outputs="HazardXMI.xsd#//Reference;XSDElementDeclaration=3"/>
+    <nested inputs="hazard.ecore#//RiskAssessment" outputs="HazardXMI.xsd#//RiskAssessment;XSDComplexTypeDefinition=4">
+      <nested inputs="hazard.ecore#//RiskAssessment/severity" outputs="HazardXMI.xsd#//RiskAssessment;XSDComplexTypeDefinition=4/XSDAttributeUse=1"/>
+      <nested inputs="hazard.ecore#//RiskAssessment/probability" outputs="HazardXMI.xsd#//RiskAssessment;XSDComplexTypeDefinition=4/XSDAttributeUse=2"/>
+      <nested inputs="hazard.ecore#//RiskAssessment/assessment" outputs="HazardXMI.xsd#//RiskAssessment;XSDComplexTypeDefinition=4/XSDAttributeUse=3"/>
+      <nested inputs="hazard.ecore#//RiskAssessment/severityRationale" outputs="HazardXMI.xsd#//RiskAssessment;XSDComplexTypeDefinition=4/XSDAttributeUse=4"/>
+      <nested inputs="hazard.ecore#//RiskAssessment/probabilityRationale" outputs="HazardXMI.xsd#//RiskAssessment;XSDComplexTypeDefinition=4/XSDAttributeUse=5"/>
+    </nested>
+    <nested inputs="hazard.ecore#//RiskAssessment" outputs="HazardXMI.xsd#//RiskAssessment;XSDElementDeclaration=4"/>
+    <nested inputs="hazard.ecore#//RiskAssessmentCode" outputs="HazardXMI.xsd#//RiskAssessmentCode;XSDComplexTypeDefinition=5">
+      <nested inputs="hazard.ecore#//RiskAssessmentCode/baseline" outputs="HazardXMI.xsd#//RiskAssessmentCode;XSDComplexTypeDefinition=5/XSDAttributeUse=1"/>
+      <nested inputs="hazard.ecore#//RiskAssessmentCode/optionB" outputs="HazardXMI.xsd#//RiskAssessmentCode;XSDComplexTypeDefinition=5/XSDAttributeUse=2"/>
+      <nested inputs="hazard.ecore#//RiskAssessmentCode/optionC" outputs="HazardXMI.xsd#//RiskAssessmentCode;XSDComplexTypeDefinition=5/XSDAttributeUse=3"/>
+      <nested inputs="hazard.ecore#//RiskAssessmentCode/optionD" outputs="HazardXMI.xsd#//RiskAssessmentCode;XSDComplexTypeDefinition=5/XSDAttributeUse=4"/>
+      <nested inputs="hazard.ecore#//RiskAssessmentCode/optionE" outputs="HazardXMI.xsd#//RiskAssessmentCode;XSDComplexTypeDefinition=5/XSDAttributeUse=5"/>
+    </nested>
+    <nested inputs="hazard.ecore#//RiskAssessmentCode" outputs="HazardXMI.xsd#//RiskAssessmentCode;XSDElementDeclaration=5"/>
+    <nested inputs="hazard.ecore#//HazardClassificationRationale" outputs="HazardXMI.xsd#//HazardClassificationRationale;XSDComplexTypeDefinition=6">
+      <nested inputs="hazard.ecore#//HazardClassificationRationale/hazardId" outputs="HazardXMI.xsd#//HazardClassificationRationale;XSDComplexTypeDefinition=6/XSDAttributeUse=1"/>
+      <nested inputs="hazard.ecore#//HazardClassificationRationale/summary" outputs="HazardXMI.xsd#//HazardClassificationRationale;XSDComplexTypeDefinition=6/XSDAttributeUse=2"/>
+      <nested inputs="hazard.ecore#//HazardClassificationRationale/option" outputs="HazardXMI.xsd#//HazardClassificationRationale;XSDComplexTypeDefinition=6/XSDAttributeUse=3"/>
+      <nested inputs="hazard.ecore#//HazardClassificationRationale/riskAssessment"
+          outputs="HazardXMI.xsd#//HazardClassificationRationale;XSDComplexTypeDefinition=6/XSDAttributeUse=4"/>
+      <nested inputs="hazard.ecore#//HazardClassificationRationale/riskAssessment"
+          outputs="HazardXMI.xsd#//HazardClassificationRationale;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="hazard.ecore#//HazardClassificationRationale" outputs="HazardXMI.xsd#//HazardClassificationRationale;XSDElementDeclaration=6"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

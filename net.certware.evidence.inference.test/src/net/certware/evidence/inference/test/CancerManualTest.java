@@ -96,7 +96,7 @@ public class CancerManualTest {
 
 	@Test
 	public void testEvidence() {
-		Map evidence = new HashMap(2);
+		Map<FiniteVariable, Object> evidence = new HashMap<FiniteVariable, Object>(2);
 		FiniteVariable var = null;
 		var = (FiniteVariable) beliefNetwork.forID( "C" );
 		evidence.put( var, var.instance( "Present" ) );
@@ -187,7 +187,7 @@ public class CancerManualTest {
 
 			@Override
 			public void evidenceChanged(EvidenceChangeEvent ece) {
-				Collection changed = ece.recentEvidenceChangeVariables;
+				Collection<?> changed = ece.recentEvidenceChangeVariables;
 				assertEquals(2,changed.size());
 				Object[] nodes = changed.toArray();
 				FiniteVariable f1 = (FiniteVariable) nodes[0];
@@ -200,7 +200,7 @@ public class CancerManualTest {
 
 			@Override
 			public void warning(EvidenceChangeEvent ece) {
-				Collection changed = ece.recentEvidenceChangeVariables;
+				Collection<?> changed = ece.recentEvidenceChangeVariables;
 				assertEquals(2,changed.size());
 				Object[] nodes = changed.toArray();
 				FiniteVariable f1 = (FiniteVariable) nodes[0];
@@ -211,13 +211,13 @@ public class CancerManualTest {
 					fail("testing variable");
 			}});
 
-		Set evidenceVariables = ec.evidenceVariables();
+		Set<?> evidenceVariables = ec.evidenceVariables();
 		assertTrue(evidenceVariables.isEmpty());
 		
-		Map evidenceMap = ec.evidence();
+		Map<?, ?> evidenceMap = ec.evidence();
 		assertTrue(evidenceMap.isEmpty());
 
-		Map evidence = new HashMap(2);
+		Map<FiniteVariable, Object> evidence = new HashMap<FiniteVariable, Object>(2);
 		FiniteVariable var = null;
 		var = (FiniteVariable) beliefNetwork.forID( "C" );
 		evidence.put( var, var.instance( "Present" ) );

@@ -122,6 +122,7 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 	 * 
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
+		@SuppressWarnings("unused")
 		CommitHistory commitHistory = (CommitHistory)semanticObject;
 		if (ScoViewsRepository.CommitHistory.Properties.commitRecord == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.ADD) {

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Project Exports for SACM
+Bundle-SymbolicName: net.certware.export.sacm;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: net.certware.export.sacm.Activator
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: net.certware.core.ui.log,
+ org.eclipse.core.commands,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.core.runtime.jobs,
+ org.eclipse.emf.common.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.resource,
+ org.eclipse.jface.viewers,
+ org.eclipse.ui.handlers,
+ org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.certware.export,
+ net.certware.libs.doc,
+ org.eclipse.ui,
+ net.certware.core.ui,
+ net.certware.core,
+ net.certware.sacm

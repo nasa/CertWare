@@ -56,7 +56,7 @@ public class CancerJoinTest {
 
 	@Test
 	public void testEvidence() {
-		Map evidence = new HashMap(2);
+		Map<FiniteVariable, Object> evidence = new HashMap<FiniteVariable, Object>(2);
 		FiniteVariable var = null;
 		var = (FiniteVariable) beliefNetwork.forID( "C" );
 		evidence.put( var, var.instance( "Present" ) );

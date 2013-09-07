@@ -18,6 +18,7 @@ import edu.ucla.belief.FiniteVariable;
 import edu.ucla.belief.InferenceEngine;
 import edu.ucla.belief.StateNotFoundException;
 import edu.ucla.belief.Table;
+import edu.ucla.belief.Variable;
 import edu.ucla.belief.inference.RCEngineGenerator;
 import edu.ucla.belief.inference.RCInfo;
 import edu.ucla.belief.io.NetworkIO;
@@ -49,7 +50,7 @@ public class CancerProbabilityQuery {
 	@Test
 	public void testComputeA() {
 
-	    Map evidence = new HashMap(2);
+	    Map<FiniteVariable, Object> evidence = new HashMap<FiniteVariable, Object>(2);
 	    FiniteVariable var = null;
 	    var = (FiniteVariable) beliefNetwork.forID( "C" );
 	    evidence.put( var, var.instance( "Present" ) );
@@ -100,7 +101,7 @@ public class CancerProbabilityQuery {
 	    
 	    assertEquals(0.25,pE,epsilon);
 	    
-	    Set setMarginalVariables = new HashSet();
+	    Set<Variable> setMarginalVariables = new HashSet<Variable>();
 	    String[] arrayMarginalVariableIDs = new String[] { "A", "C", "B", "E", "D" };
 	    for( int i=0; i<arrayMarginalVariableIDs.length; i++ ){
 	      setMarginalVariables.add( beliefNetwork.forID( arrayMarginalVariableIDs[i] ) );

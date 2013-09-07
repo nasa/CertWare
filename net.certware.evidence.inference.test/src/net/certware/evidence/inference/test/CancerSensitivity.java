@@ -58,7 +58,7 @@ public class CancerSensitivity {
 	@Test
 	public void testSensitivity() {
 		/* Define evidence, by id. */
-		Map evidence = Collections.EMPTY_MAP;
+		Map<?, ?> evidence = Collections.EMPTY_MAP;
 
 		/* Define the constraint, by variable id. */
 
@@ -141,8 +141,8 @@ public class CancerSensitivity {
 			fail("network already satisfies constraint");
 		}
 
-		List singleParameterSuggestions = report.generateSingleParamSuggestions();
-		Map mapFiniteVariablesToSingleCPTSuggestions = report.getSingleCPTMap();
+		List<?> singleParameterSuggestions = report.generateSingleParamSuggestions();
+		Map<?, ?> mapFiniteVariablesToSingleCPTSuggestions = report.getSingleCPTMap();
 
 		if( singleParameterSuggestions.isEmpty() && mapFiniteVariablesToSingleCPTSuggestions.isEmpty() ) {
 			fail("constraint is unsatisfiable");
@@ -169,7 +169,7 @@ public class CancerSensitivity {
 		FiniteVariable target = null;
 		SingleCPTSuggestion suggestion = null;
 		//ProbabilityInterval[] intervals = null;
-		for( Iterator iterator = mapFiniteVariablesToSingleCPTSuggestions.keySet().iterator(); iterator.hasNext(); ){
+		for( Iterator<?> iterator = mapFiniteVariablesToSingleCPTSuggestions.keySet().iterator(); iterator.hasNext(); ){
 			target = (FiniteVariable)iterator.next();
 			suggestion = (SingleCPTSuggestion) mapFiniteVariablesToSingleCPTSuggestions.get( target );
 			//intervals = suggestion.probabilityIntervals();
@@ -209,7 +209,7 @@ public class CancerSensitivity {
 		// full table assertions
 		CPTShell shell = c2.getCPTShell();
 		TableIndex index = shell.index();
-		List variables = index.variables();
+		List<?> variables = index.variables();
 		assertEquals("HuginNode A",variables.get(0).toString());
 		assertEquals("HuginNode B",variables.get(1).toString());
 		TableIndex.Iterator iter = shell.index().iterator();

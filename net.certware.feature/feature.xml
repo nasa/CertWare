@@ -17,7 +17,7 @@ reserved.
    </copyright>
 
    <license url="http://nasa.github.com/CertWare/license.html">
-NASA OPEN SOURCE AGREEMENT VERSION 1.3
+      NASA OPEN SOURCE AGREEMENT VERSION 1.3
    
 This software (excluding the libraries identified below under &quot;Third Party Open Source Software&quot;) is released under the terms and conditions of the NASA Open Source Agreement (NOSA).   Libraries identified under &quot;Third Party Open Source Software&quot; are released (1) under Apache License, Version 2.0 or (2) for educational and research non-commercial use only. 
 
@@ -197,25 +197,6 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
          id="org.eclipse.epsilon.evl.emf.validation.feature"
          version="0.0.0"
          name="Eclipse Epsilon EVL Validation"
-         search-location="both"/>
-
-   <includes
-         id="org.eclipse.epsilon.feature"
-         version="0.0.0"
-         name="Eclipse Epsilon"
-         search-location="both"/>
-
-   <includes
-         id="org.eclipse.epsilon.gmf.feature"
-         version="0.0.0"
-         name="Eclipse Epsilon GMF"
-         search-location="both"/>
-
-   <includes
-         id="org.eclipse.epsilon.hutn.feature"
-         version="0.0.0"
-         name="Eclipse Epsilon HUTN"
-         optional="true"
          search-location="both"/>
 
    <requires>

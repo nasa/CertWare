@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright © 2013 National Aeronautics and Space Administration.
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.certware.hazard.hazard.presentation.HazardModelWizardID"
+            name="%_UI_HazardModelWizard_label"
+            class="net.certware.hazard.hazard.presentation.HazardModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/HazardModelFile.gif">
+         <description>%_UI_HazardModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.hazard.hazard.presentation.HazardEditorID"
+            name="%_UI_HazardEditor_label"
+            icon="icons/full/obj16/HazardModelFile.gif"
+            extensions="haz"
+            class="net.certware.hazard.hazard.presentation.HazardEditor"
+            contributorClass="net.certware.hazard.hazard.presentation.HazardActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

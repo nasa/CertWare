@@ -226,6 +226,7 @@ public class SpmFactoryImpl extends EFactoryImpl implements SpmFactory {
 	 * @param eclass class to find by instance match
 	 * @return first element found by match, or null
 	 */
+	@SuppressWarnings("rawtypes")
 	public SmmElement getModelElement(SmmModel model, Class eclass) {
 		SmmElement rv = null;
 		for ( SmmElement e : model.getModelElement() ) {

@@ -47,9 +47,9 @@ public class CancerExactMAPTest {
 	@Test
 	public void testComputeA() {
 
-	    Map evidence = Collections.EMPTY_MAP;
+	    Map<?, ?> evidence = Collections.EMPTY_MAP;
 
-	    Set setMAPVariables = new HashSet();
+	    Set<FiniteVariable> setMAPVariables = new HashSet<FiniteVariable>();
 	    setMAPVariables.add(varA);
 
 	    BeliefNetwork bn = beliefNetwork;
@@ -64,7 +64,7 @@ public class CancerExactMAPTest {
 	    /* Call static ExactMap method (unsloppy version). */
 	    MapSearch.MapInfo mapinfo = ExactMap.computeMap( bn, setMAPVariables, evidence, timeoutsecs, widthbarrier );
 	    MapSearch.MapResult exactmapresult = (MapSearch.MapResult) mapinfo.results.iterator().next();
-	    Map instantiation = exactmapresult.getConvertedInstatiation();
+	    Map<?, ?> instantiation = exactmapresult.getConvertedInstatiation();
 	    double score = exactmapresult.score;
 	    boolean flagExact = mapinfo.finished;
 

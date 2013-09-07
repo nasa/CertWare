@@ -20,7 +20,7 @@ public class Graph {
 	/** whether the graph is directed */
 	private boolean digraph;
 	/** adjacency vector */
-	Vector adjacency;
+	Vector<Vector<?>> adjacency;
 
 	// TODO is there a reason statement identifiers have to be integers?
 
@@ -38,17 +38,18 @@ public class Graph {
 	}
 
 	private void allocateElements(int n) {
-		adjacency = new Vector();
+		adjacency = new Vector<Vector<?>>();
 		for (int i = 0; i < n; i++)
-			adjacency.addElement(new Vector());
+			adjacency.addElement(new Vector<Object>());
 	}
 
+	@SuppressWarnings("unchecked")
 	public void addArc(int i, int j) {
-		((Vector) adjacency.elementAt(i)).addElement(new Integer(j));
+		((Vector<Integer>) adjacency.elementAt(i)).addElement(new Integer(j));
 	}
 
-	public Vector neighbors(int i) {
-		return (Vector) ((Vector) adjacency.elementAt(i)).clone();
+	public Vector<?> neighbors(int i) {
+		return (Vector<?>) ((Vector<?>) adjacency.elementAt(i)).clone();
 	}
 
 	int getVertexCount() {
@@ -169,7 +170,7 @@ public class Graph {
 	private void doDFS(int v, int[] preOrder, int[] postOrder, CountPair countPair) {
 		preOrder[v] = countPair.inc1();
 
-		Vector neighbors = neighbors(v);
+		Vector<?> neighbors = neighbors(v);
 
 		for (int i = 0; i < neighbors.size(); i++) {
 			int u = ((Integer) neighbors.elementAt(i)).intValue();
@@ -241,7 +242,7 @@ public class Graph {
 					continue;
 				}
 
-				Vector neighbors = neighbors(j);
+				Vector<?> neighbors = neighbors(j);
 
 				for (int k = 0; k < neighbors.size(); k++) {
 					int u = ((Integer) neighbors.elementAt(k)).intValue();

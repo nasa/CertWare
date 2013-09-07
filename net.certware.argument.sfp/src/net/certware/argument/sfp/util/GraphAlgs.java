@@ -146,7 +146,7 @@ public class GraphAlgs {
 				
 				// entailment justification
 			} else if ( j.getEntailment() != null && j.getEntailment().getHead() != null ) {
-				Set nestedDisjunct = new HashSet();
+				Set<String> nestedDisjunct = new HashSet<String>();
 				checkEntailments(proof,s,nestedDisjunct);
 				
 				if ( nestedDisjunct.isEmpty() == false ) {

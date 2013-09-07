@@ -241,7 +241,7 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 
 			// acyclic, so now check the entailment structure by statement
 			for ( Statement s : statements ) {
-				Set context = new HashSet();
+				Set<String> context = new HashSet<String>();
 				GraphAlgs.checkEntailments(proof, s, context);
 				if ( context.isEmpty() == false ) {
 					warning(String.format("Entailment invalid at statement %s context %s",

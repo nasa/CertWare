@@ -19,10 +19,10 @@ import org.eclipse.core.runtime.Platform;
  */
 public class ExportContributions implements IExportContribution {
 
-	List<ExportStyleIdMapping> styleIdMappings = new ArrayList();
-	List<ExportStyleResource> styleResources = new ArrayList();
-	List<ExportStyleString> styleStrings = new ArrayList();
-	List<ExportOperation> fileExporters = new ArrayList();
+	List<ExportStyleIdMapping> styleIdMappings = new ArrayList<ExportStyleIdMapping>();
+	List<ExportStyleResource> styleResources = new ArrayList<ExportStyleResource>();
+	List<ExportStyleString> styleStrings = new ArrayList<ExportStyleString>();
+	List<ExportOperation> fileExporters = new ArrayList<ExportOperation>();
 	
 	/**
 	 * Initialize the categories and list given the extension point contributions.

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contexts>
+	<context id="sacm_editor_argument_context" title="SACM Argument">
+		<description>
+		This element represents an argument node in a claim-argument-evidence notation argument.
+		A parent claim captures the intention of what the argument is meant to accomplish.
+		</description>
+		<topic href="html/concepts/sacm.html" label="SACM Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="sacm_editor_claim_context" title="SACM Claim">
+		<description>
+		This element represents a claim in a claim-argument-evidence argument.
+Use these nodes to identify a starting point for what the argument is intending to show.
+		</description>
+		<topic href="html/topics/strategy_node.html" label="Strategy Nodes" />
+		<topic href="html/concepts/sacm.html" label="SACM Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="sacm_editor_evidence_context" title="SACM Solution">
+		<description>
+		This element represents an evidence node in a claim-argument-evidence argument.  Evidence is meant to fulfill its parent claim.  
+		</description>
+		<topic href="html/topics/solution_node.html" label="Solution Nodes" />
+		<topic href="html/concepts/sacm.html" label="SACM Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="sacm_editor_assumption_context" title="SACM Assumption">
+		<description>
+		This element represents an assumption in a claim-argument-evidence argument.
+		Assumption nodes capture information necessary to support the argument, but which may be challenged.
+		</description>
+		<topic href="html/topics/assumption_node.html" label="Assumption Nodes" />
+		<topic href="html/concepts/sacm.html" label="SACM Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="sacm_editor_justification_context" title="SACM Justification">
+		<description>
+		This element represents a justification in a claim-argument-evidence argument.
+		A justification explains why a particular strategy has been adopted.
+		</description>
+		<topic href="html/topics/justification_node.html" label="Justification Nodes" />
+		<topic href="html/concepts/sacm.html" label=" Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="sacm_editor_context_context" title="SACM Context">
+		<description>
+		This element represents a context in a claim-argument-evidence argument.
+		A context node attaches contextual information to another node to explain its relevance.
+		</description>
+		<topic href="html/topics/context_node.html" label="Justification Nodes" />
+		<topic href="html/concepts/sacm.html" label="SACM Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+</contexts>
