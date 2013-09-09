@@ -224,29 +224,6 @@
     </extension>
 
 
-    <!-- marker definitions for net.certware.planning.cpn.CpnDsl -->
-    <extension
-            id="cpndsl.check.fast"
-            name="CpnDsl Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.fast"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="cpndsl.check.normal"
-            name="CpnDsl Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.normal"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="cpndsl.check.expensive"
-            name="CpnDsl Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.expensive"/>
-        <persistent value="true"/>
-    </extension>
-
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">

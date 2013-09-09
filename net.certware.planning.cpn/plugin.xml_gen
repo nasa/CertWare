@@ -7,10 +7,9 @@
     <package 
        uri = "http://www.certware.net/planning/cpn/CpnDsl" 
        class = "net.certware.planning.cpn.cpnDsl.CpnDslPackage"
-       genModel = "net/certware/planning/cpn/CpnDsl.genmodel" /> 
+       genModel = "model/generated/CpnDsl.genmodel" /> 
 	
   </extension>
-
 
 
 

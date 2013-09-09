@@ -3,49 +3,9 @@
  */
 package net.certware.planning.cpn;
 
-
-import net.certware.sacm.SACM.ModelElement;
-import net.certware.sacm.SACM.SACMPackage;
-
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
-import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.eclipse.xtext.resource.IResourceServiceProvider;
-import org.eclipse.xtext.resource.impl.DefaultResourceServiceProvider;
-
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class CpnDslRuntimeModule extends net.certware.planning.cpn.AbstractCpnDslRuntimeModule {
 
-	// added to support SACM access
-	public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
-		return SacmResourceServiceProvider.class;
-	}
-	
-	// added to support SACM access
-	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
-		return SacmQualifiedNameProvider.class;
-	}
-	
-	//public Class<? extends IGlobalScopeProvider> bindIGlobalScopeProvider() {
-	//return SacmGlobalScopeProvider.class;
-	//}
-	
-	static class SacmResourceServiceProvider extends DefaultResourceServiceProvider {
-		@Override
-		public boolean canHandle(URI uri) {
-			if (uri.toPlatformString(true).endsWith(SACMPackage.eNAME)) {
-				return true;
-			}
-			return super.canHandle(uri);
-		}
-	}
-	
-	static class SacmQualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider {
-		public String qualifiedName(ModelElement me) {
-			return me.getId();
-		}
-	}
-	
 }

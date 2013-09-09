@@ -14,6 +14,8 @@ var sacmGenmodelURI = "platform:/resource/${sacmName}/model/sacm.genmodel"
 Workflow {
     bean = StandaloneSetup {
 		platformUri = "${runtimeProject}/.."
+		registerGeneratedEPackage = "net.certware.sacm.SACM.SACMPackage"
+		registerGenModelFile = sacmGenmodelURI
 	}
 
 	component = DirectoryCleaner {
@@ -37,9 +39,12 @@ Workflow {
 			fragment = grammarAccess.GrammarAccessFragment {}
 
 			// generates Java API for the generated EPackages 
-			fragment = ecore.EcoreGeneratorFragment {
-				referencedGenModels = sacmGenmodelURI
+			//fragment = ecore.EcoreGeneratorFragment {
+			//		referencedGenModels = sacmGenmodelURI
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
+			//}
+			fragment = ecore.EMFGeneratorFragment {
+				
 			}
 
 			// the serialization component
@@ -58,11 +63,11 @@ Workflow {
 			}
 
 			// java-based API for validation 
-			fragment = validation.JavaValidatorFragment {
-				composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-				// registerForImportedPackages = true
-			}
+			//fragment = validation.JavaValidatorFragment {
+			//	composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+			//	composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			//	// registerForImportedPackages = true
+			//}
 
 			// scoping and exporting API
 			fragment = scoping.ImportURIScopingFragment {} // was commented MRB

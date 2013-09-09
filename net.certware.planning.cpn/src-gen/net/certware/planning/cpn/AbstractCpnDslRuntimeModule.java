@@ -84,11 +84,6 @@ public abstract class AbstractCpnDslRuntimeModule extends DefaultRuntimeModule {
 		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.validation.JavaValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends net.certware.planning.cpn.validation.CpnDslJavaValidator> bindCpnDslJavaValidator() {
-		return net.certware.planning.cpn.validation.CpnDslJavaValidator.class;
-	}
-
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
 		return net.certware.planning.cpn.scoping.CpnDslScopeProvider.class;

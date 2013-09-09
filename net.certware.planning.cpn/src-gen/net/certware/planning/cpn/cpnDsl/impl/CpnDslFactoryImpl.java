@@ -30,7 +30,7 @@ public class CpnDslFactoryImpl extends EFactoryImpl implements CpnDslFactory
   {
     try
     {
-      CpnDslFactory theCpnDslFactory = (CpnDslFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.certware.net/planning/cpn/CpnDsl"); 
+      CpnDslFactory theCpnDslFactory = (CpnDslFactory)EPackage.Registry.INSTANCE.getEFactory(CpnDslPackage.eNS_URI);
       if (theCpnDslFactory != null)
       {
         return theCpnDslFactory;

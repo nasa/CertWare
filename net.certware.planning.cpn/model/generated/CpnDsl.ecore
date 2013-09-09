@@ -19,7 +19,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Plan">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass ../../../../../../net.certware.sacm/model/SACM.ecore#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass ../../../net.certware.sacm/model/SACM.ecore#//ModelElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="estimated" eType="#//Allocation"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actual" eType="#//Allocation"

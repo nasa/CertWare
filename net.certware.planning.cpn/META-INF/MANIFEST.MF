@@ -5,28 +5,25 @@ Bundle-Vendor: Kestrel Technology LLC
 Bundle-Version: 2.0.0.qualifier
 Bundle-SymbolicName: net.certware.planning.cpn; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.xtext,
- org.eclipse.xtext.generator;resolution:=optional,
- org.apache.commons.logging;resolution:=optional,
+Require-Bundle: org.apache.commons.logging;resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
- org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional,
  com.ibm.icu;resolution:=optional,
- org.eclipse.xtext.util,
  org.eclipse.emf.ecore,
- org.eclipse.emf.common,
  org.antlr.runtime,
- net.certware.sacm
+ net.certware.sacm;visibility:=reexport,
+ org.eclipse.xtext.common.types;bundle-version="2.4.3",
+ org.eclipse.xtext;bundle-version="2.4.3",
+ org.eclipse.xtext.generator;bundle-version="2.4.3"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.planning.cpn,
+ net.certware.planning.cpn.scoping,
+ net.certware.planning.cpn.formatting,
  net.certware.planning.cpn.services,
  net.certware.planning.cpn.cpnDsl,
  net.certware.planning.cpn.cpnDsl.impl,
  net.certware.planning.cpn.cpnDsl.util,
  net.certware.planning.cpn.parseTreeConstruction,
  net.certware.planning.cpn.parser.antlr,
- net.certware.planning.cpn.parser.antlr.internal,
- net.certware.planning.cpn.validation,
- net.certware.planning.cpn.scoping,
- net.certware.planning.cpn.formatting
+ net.certware.planning.cpn.parser.antlr.internal
+Bundle-ClassPath: .

@@ -4,7 +4,7 @@
     editorDirectory="/net.certware.planning.cpn.editor/src" modelPluginID="net.certware.planning.cpn"
     forceOverwrite="true" modelName="CpnDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.planning.cpn.edit"
-    editorPluginID="net.certware.planning.cpn.editor" runtimeVersion="2.8" usedGenPackages="../../../../../../net.certware.sacm/model/sacm.genmodel#//SACM">
+    editorPluginID="net.certware.planning.cpn.editor" runtimeVersion="2.9" usedGenPackages="../../../net.certware.sacm/model/sacm.genmodel#//SACM">
   <genPackages prefix="CpnDsl" basePackage="net.certware.planning.cpn" disposableProviderFactory="true"
       ecorePackage="CpnDsl.ecore#/">
     <genClasses ecoreClass="CpnDsl.ecore#//Plans">
