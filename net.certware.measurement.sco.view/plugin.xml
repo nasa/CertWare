@@ -32,34 +32,58 @@
       </perspectiveExtension>
    </extension>
 <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="net.certware.measurement.sco.view.open"
-            nameFilter="*.sco"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.measurement.sco.view.actions.OpenView"
-               enablesFor="1"
-               icon="icons/obj16/sco.gif"
-               id="net.certware.measurement.sco.view.action.openview"
-               label="Open in SCO View"
-               menubarPath="certware/additions"
-               tooltip="Open the SCO content in its view">
-         </action>
-      </objectContribution>
-   </extension>
+      point="org.eclipse.ui.commands">
+   <command
+         categoryId="net.certware.core.ui.command.category"
+         defaultHandler="net.certware.measurement.sco.view.handlers.OpenViewHandler"
+         description="Opens master-detais measurement view"
+         helpContextId="sco_instance_context"
+         id="net.certware.measurement.sco.view.open"
+         name="Open measurement view">
+   </command>
+</extension>
+<extension
+      point="org.eclipse.ui.commandImages">
+   <image
+         commandId="net.certware.measurement.sco.view.open"
+         icon="icons/obj16/sco.gif">
+   </image>
+</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <menu
+            icon="icons/obj16/certware.gif"
+            id="net.certware.popup"
+            label="CertWare"
+            tooltip="CertWare associated UI commands">
+         <separator
+               name="cps">
+         </separator>
+         <command
+               commandId="net.certware.measurement.sco.view.open"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.sco">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menu>
+   </menuContribution>
+</extension>
 
 </plugin>

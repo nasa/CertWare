@@ -109,7 +109,7 @@ public class ResourceSelectionDialog2 implements ISelectionProvider {
 		fDialog.setHelpAvailable(helpAvailable);
 	}
 
-	public void setInitialElementSelections(List selectedElements) {
+	public void setInitialElementSelections(List<?> selectedElements) {
 		fDialog.setInitialElementSelections(selectedElements);
 	}
 

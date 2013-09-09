@@ -248,7 +248,8 @@ public class LogProxy extends Object implements LogService {
 	 * @see org.osgi.service.log.LogService#log(org.osgi.framework.ServiceReference,
 	 *      int, java.lang.String)
 	 */
-	public void log(ServiceReference reference, int level, String message) {
+	@SuppressWarnings("rawtypes")
+	public void log(org.osgi.framework.ServiceReference reference, int level, String message) {
 		log(reference, level, message, null);
 	}
 
@@ -256,6 +257,7 @@ public class LogProxy extends Object implements LogService {
 	 * @see org.osgi.service.log.LogService#log(org.osgi.framework.ServiceReference,
 	 *      int, java.lang.String, java.lang.Throwable)
 	 */
+	@SuppressWarnings("rawtypes")
 	public void log(ServiceReference reference, int level, String message,
 			Throwable throwable) {
 		boolean logging = isLogging(level);
