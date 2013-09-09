@@ -1,4 +1,4 @@
-package net.certware.planning.cpn.view.actions;
+package net.certware.planning.cpn.handlers;
 
 import java.io.IOException;
 import java.math.BigDecimal;

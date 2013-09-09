@@ -32,63 +32,6 @@
       </perspectiveExtension>
    </extension>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="net.certware.planning.cpn.view.open"
-            nameFilter="*.cpn"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.planning.cpn.view.actions.OpenView"
-               enablesFor="1"
-               icon="icons/obj16/cpn.gif"
-               id="net.certware.planning.cpn.view.action.openview"
-               label="Open in CPN View"
-               menubarPath="certware/additions"
-               tooltip="Open the CPN content in its view">
-         </action>
-      </objectContribution>
-      <objectContribution
-            adaptable="true"
-            id="net.certware.planning.cpn.write.mspdi"
-            nameFilter="*.cpn"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.planning.cpn.view.actions.CreateProjectAction"
-               enablesFor="1"
-               icon="icons/obj16/ms_office.gif"
-               id="net.certware.planning.cpn.view.action.write.mspdi"
-               label="Create Microsoft Project File"
-               menubarPath="certware/additions"
-               tooltip="Translate CPN tasks and resources to MSPDI tasks and resources">
-         </action>
-      </objectContribution>
-   </extension>
-   <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
             class="net.certware.planning.cpn.view.preferences.PreferenceInitializer">
@@ -102,6 +45,91 @@
             id="net.certware.planning.cpn.view.preferences.page"
             name="CPN View and Actions">
       </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            defaultHandler="net.certware.planning.cpn.handlers.OpenViewHandler"
+            description="Opens planning model in master-detail view"
+            helpContextId="cpn_instance_context"
+            id="net.certware.planning.cpn.view.open"
+            name="Open CPN view">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            defaultHandler="net.certware.planning.cpn.handlers.WriteProjectHandler"
+            description="Writes CPN planning model to MSPDI format"
+            id="net.certware.planning.cpn.write.project"
+            name="Write to Microsoft Project">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="net.certware.planning.cpn.view.open"
+            icon="icons/obj16/cpn.gif">
+      </image>
+      <image
+            commandId="net.certware.planning.cpn.write.project"
+            icon="icons/obj16/ms_office.gif">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="net.certware.popup"
+               label="CertWare"
+               tooltip="CertWare associated UI commands">
+            <separator
+                  name="cps">
+            </separator>
+            <command
+                  commandId="net.certware.planning.cpn.view.open"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.cpn">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="net.certware.planning.cpn.write.project"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.cpn">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
 
 </plugin>
