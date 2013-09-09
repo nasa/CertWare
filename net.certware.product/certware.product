@@ -134,7 +134,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.evidence.hugin.ui"/>
       <plugin id="net.certware.evidence.hugin.view"/>
       <plugin id="net.certware.example"/>
-      <plugin id="net.certware.example.aml" fragment="true"/>
       <plugin id="net.certware.example.checklist" fragment="true"/>
       <plugin id="net.certware.example.net" fragment="true"/>
       <plugin id="net.certware.example.sacm" fragment="true"/>
