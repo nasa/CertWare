@@ -49,36 +49,6 @@
       </propertyTester>
    </extension>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="net.certware.verification.checklist.view.objectContribution"
-            nameFilter="*.vcl"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.verification.checklist.view.actions.OpenView"
-               enablesFor="1"
-               icon="icons/view16/checklist.png"
-               id="net.certware.verification.checklist.view.open"
-               label="Open in Checklist View"
-               menubarPath="certware/additions"
-               tooltip="Open the verification checklist content in its view">
-         </action>
-      </objectContribution>
-   </extension>
-   <extension
          point="org.eclipse.ui.preferencePages">
       <page
             category="certware"
@@ -107,6 +77,12 @@
             id="net.certware.verification.checklist.view.export"
             name="Export to Excel">
       </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            description="Opens the verification checklist view for the object"
+            id="net.certware.verification.checklist.view.open"
+            name="Open the checklist view">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.commandImages">
@@ -119,6 +95,10 @@
             commandId="net.certware.verification.checklist.view.export"
             disabledIcon="icons/dtool16/export_wiz.gif"
             icon="icons/etool16/export_wiz.gif">
+      </image>
+      <image
+            commandId="net.certware.verification.checklist.view.open"
+            icon="icons/view16/checklist.png">
       </image>
    </extension>
    <extension
@@ -234,6 +214,39 @@
                name="help"
                visible="false">
          </separator>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="net.certware.popup"
+               label="CertWare"
+               tooltip="CertWare associated UI commands">
+            <separator
+                  name="cps">
+            </separator>
+            <command
+                  commandId="net.certware.verification.checklist.view.open"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.vcl">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
       </menuContribution>
    </extension>
 
