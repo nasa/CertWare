@@ -56,36 +56,6 @@
       </propertyTester>
    </extension>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="net.certware.evidence.hugin.view.objectContribution"
-            nameFilter="*.net"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.evidence.hugin.view.actions.OpenView"
-               enablesFor="1"
-               icon="icons/view16/samiam-icon.png"
-               id="net.certware.evidence.hugin.view.open"
-               label="Open in Samiam View"
-               menubarPath="certware/additions"
-               tooltip="Open the Hugin network structure in the SamIam analysis view">
-         </action>
-      </objectContribution>
-   </extension>
-   <extension
          point="org.eclipse.ui.preferencePages">
       <page
             category="certware"
@@ -172,6 +142,14 @@
             id="net.certware.evidence.hugin.view.evidence.restore"
             name="Restore evidence">
       </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            defaultHandler="net.certware.evidence.hugin.view.handlers.OpenViewHandler"
+            description="Opens network in SamIam view"
+            helpContextId="hugin_instance_context"
+            id="net.certware.evidence.hugin.view.network.open"
+            name="Open network view">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.commandImages">
@@ -222,6 +200,10 @@
             commandId="net.certware.evidence.hugin.view.sensitivity"
             disabledIcon="icons/dtool16/certware-run-d16.gif"
             icon="icons/obj16/certware-run.png">
+      </image>
+      <image
+            commandId="net.certware.evidence.hugin.view.network.open"
+            icon="icons/view16/samiam-icon.png">
       </image>
    </extension>
    <extension
@@ -634,6 +616,39 @@
                name="help"
                visible="false">
          </separator>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               icon="icons/obj16/certware.gif"
+               id="net.certware.popup"
+               label="CertWare"
+               tooltip="CertWare associated UI commands">
+            <separator
+                  name="cps">
+            </separator>
+            <command
+                  commandId="net.certware.evidence.hugin.view.network.open"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.net">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
       </menuContribution>
    </extension>
 
