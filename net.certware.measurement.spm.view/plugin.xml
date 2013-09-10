@@ -48,101 +48,6 @@
       </perspectiveExtension>
    </extension>
 <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="false"
-            id="net.certware.measurement.spm.view.projectModelMenu"
-            objectClass="net.certware.measurement.spm.ProjectModel">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.measurement.spm.view.actions.ComputeMetrics"
-               enablesFor="1"
-               helpContextId="net.certware.core.ui.compute_metrics"
-               icon="icons/obj16/ratio.gif"
-               id="net.certware.measurement.spm.view.action.projectmetrics"
-               label="Compute Metrics"
-               menubarPath="certware/additions"
-               tooltip="Compute the metrics from the raw statistics">
-         </action>
-      </objectContribution>
-      <objectContribution
-            adaptable="false"
-            id="net.certware.measurement.spm.view.projectCommitMenu"
-            objectClass="net.certware.measurement.spm.ProjectCommit">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.measurement.spm.view.actions.GatherOrders"
-               enablesFor="1"
-               helpContextId="net.certware.core.ui.gather_orders"
-               icon="icons/obj16/sco.gif"
-               id="net.certware.measurement.spm.view.action.gatherorders"
-               label="Gather Change Order Counts..."
-               menubarPath="certware/additions"
-               tooltip="Gather change order counts from an SCO file">
-         </action>
-         <action
-               class="net.certware.measurement.spm.view.actions.ComputeMetrics"
-               enablesFor="1"
-               helpContextId="net.certware.core.ui.compute_metrics"
-               icon="icons/obj16/ratio.gif"
-               id="net.certware.measurement.spm.view.action.commitmetrics"
-               label="Compute Metrics"
-               menubarPath="certware/additions"
-               tooltip="Compute the metrics from the raw statistics">
-         </action>
-      </objectContribution>
-      <objectContribution
-            adaptable="true"
-            id="net.certware.measurement.spm.view.open"
-            nameFilter="*.spm"
-            objectClass="org.eclipse.core.resources.IFile">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.measurement.spm.view.actions.OpenView"
-               enablesFor="1"
-               helpContextId="net.certware.core.ui.open_spm_view"
-               icon="icons/obj16/spider.png"
-               id="net.certware.measurement.spm.view.action.openview"
-               label="Open in SPM View"
-               menubarPath="certware/additions"
-               tooltip="Open the SPM content in its view">
-         </action>
-      </objectContribution>
-   </extension>
-<extension
       point="org.eclipse.core.runtime.preferences">
    <initializer
          class="net.certware.measurement.spm.view.preferences.PreferenceInitializer">
@@ -156,6 +61,136 @@
          id="net.certware.measurement.spm.view.page"
          name="SPM View and Command Preferences">
    </page>
+</extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <command
+         categoryId="net.certware.core.ui.command.category"
+         defaultHandler="net.certware.measurement.spm.view.handlers.OpenViewHandler"
+         description="Opens SPM master-details view on resource"
+         id="net.certware.measurement.spm.view.open"
+         name="Open SPM view">
+   </command>
+   <command
+         categoryId="net.certware.core.ui.command.category"
+         defaultHandler="net.certware.measurement.spm.view.handlers.GatherOrdersHandler"
+         description="Gather change order counts from an SCO file"
+         helpContextId="net.certware.core.ui.gather_orders"
+         id="net.certware.measurement.spm.view.gather"
+         name="Gather change orders">
+   </command>
+   <command
+         categoryId="net.certware.core.ui.command.category"
+         defaultHandler="net.certware.measurement.spm.view.handlers.ComputeMetricsHandler"
+         id="net.certware.measurement.spm.view.compute"
+         name="Compute metrics">
+   </command>
+</extension>
+<extension
+      point="org.eclipse.ui.commandImages">
+   <image
+         commandId="net.certware.measurement.spm.view.open"
+         icon="icons/obj16/spider.png">
+   </image>
+   <image
+         commandId="net.certware.measurement.spm.view.gather"
+         icon="icons/obj16/sco.gif">
+   </image>
+   <image
+         commandId="net.certware.measurement.spm.view.compute"
+         icon="icons/obj16/ratio.gif">
+   </image>
+</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <menu
+            icon="icons/obj16/certware.gif"
+            id="net.certware.popup"
+            label="CertWare"
+            tooltip="CertWare associated UI commands">
+         <separator
+               name="cps">
+         </separator>
+         <command
+               commandId="net.certware.measurement.spm.view.open"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.spm">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.measurement.spm.view.gather"
+               label="Gather change orders counts..."
+               style="push"
+               tooltip="Raises the SCO file selection dialog">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="net.certware.measurement.spm.ProjectCommit">
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.measurement.spm.view.compute"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="net.certware.measurement.spm.ProjectCommit">
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="net.certware.measurement.spm.view.compute"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false">
+                     <or>
+                        <adapt
+                              type="net.certware.measurement.spm.ProjectCommit">
+                        </adapt>
+                        <adapt
+                              type="net.certware.measurement.spm.ProjectModel">
+                        </adapt>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menu>
+   </menuContribution>
 </extension>
 
 </plugin>

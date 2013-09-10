@@ -1,5 +1,4 @@
-
-package net.certware.measurement.spm.view.actions;
+package net.certware.measurement.spm.view.handlers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +34,9 @@ import net.certware.measurement.spm.UsageTimeMeasure;
 import net.certware.measurement.spm.view.Activator;
 import net.certware.measurement.spm.view.preferences.PreferenceConstants;
 
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -47,184 +49,124 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * Gathers change order counts from an SCO file.
+ * Gathers change orders.
  * @author mrb
- * @since 1.1.0
+ * @since 2.0.0
  */
-public class GatherOrders implements IObjectActionDelegate
-{
-	/** latest selection, assigned from object contribution extension */
-	private IStructuredSelection latestSelection = null;
-	/** part selection from action */
-	IWorkbenchPart latestPart = null;
-	/** whether to clear the measurement list for computed statistics */
-	boolean clearStatistics = false;
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.action.IAction, org.eclipse.ui.IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart)
-	{
-		latestPart = targetPart;
-	}
+public class GatherOrdersHandler extends AbstractHandler {
+
 
 	/**
-	 * Open a selected SCO file.
-	 * @param ifile file selection from resources
-	 * @return artifact list or null
+	 * Handles the gather orders command request.  
+	 * @param event used to provide context
+	 * @return always returns null  
+	 * @throws ExecutionException if context fails  
+	 * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
 	 */
-	private CommitHistory loadOrdersFromFile(IFile ifile) {
-		
+	@Override
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+
 		try {
-	        // load the SCO file through the EMF resource set implementation
-	        ResourceSet resourceSet = new ResourceSetImpl();
-	        Resource resource = resourceSet.getResource( 
-	        		URI.createPlatformResourceURI(ifile.getFullPath().toString(), true), true);
-	        
-	        CommitHistory documentRoot = (CommitHistory)resource.getContents().get(0);
-	        if ( documentRoot != null ) {
-	          return documentRoot;
-	        }
-	      } catch( Exception exception ) {
-	        CertWareLog.logError(String.format("%s %s", 
-	        		"Document root null loading" + ifile.getName()), exception);
-	      }
-	      
-	      return null;
-	}
+			// fetch workbench context
+			IWorkbenchPart latestPart = HandlerUtil.getActivePartChecked(event);
+			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+			ISelectionService service = window.getSelectionService();
+			IStructuredSelection iss = (IStructuredSelection)service.getSelection();
 
-	/**
-	 * Computes the metrics from the statistics.
-	 * Expects the latest selection object is a ProjectModel or a ProjectCommit.
-	 * If a ProjectModel, runs the ProjectCommit for each model element of type ProjectCommit.
-	 * @param action object action contribution
-	 */
-	public void run(IAction action)
-	{
-		// the selection is an SPM project model or project commit
-		if ( latestSelection == null ) {
-			return;
-		}
-
-		Object first = latestSelection.getFirstElement();
-
-		// get the SCO resource by prompting the user
-		// presumes the action is run in the UI thread
-		// using the CertWare version of the JFace dialog so we can apply a validator filter
-		ResourceSelectionDialog2 dialog = 
-			new ResourceSelectionDialog2(latestPart.getSite().getShell(),
-				ResourcesPlugin.getWorkspace().getRoot(), 
-				"Select SCO file:");
-		dialog.setTitle("Change Order File Selection");
-		dialog.setBlockOnOpen(true);
-		dialog.setHelpAvailable(true);
-		dialog.setValidator(new ISelectionValidator() {
-			@Override
-			public boolean isValid(IResource resource) {
-				if ( resource instanceof IProject ) {
-					return true;
-				}
-				if ( resource instanceof IFolder ) {
-					return true;
-				}
-				if ( resource instanceof IFile ) {
-					IFile ifile = (IFile)resource;
-					if ( ifile.getFileExtension().equals( ICertWareConstants.SCO_EXTENSION) ) {
-						return true;
-					}
-				}
-				return false;
-			}});
-		if ( dialog.open() == Dialog.CANCEL ) {
-			return;
-		}
-		
-		Object results[] = dialog.getResult();
-
-		List<CommitHistory> listOfHistories = new ArrayList<CommitHistory>();
-
-		// collect change order artifact lists from the selected files
-		for ( Object o : results ) {
-			if ( o instanceof IFile ) {
-				IFile f = (IFile)o;
-				if ( f.getFileExtension().equals( ICertWareConstants.SCO_EXTENSION ) == false ) {
-					CertWareLog.logWarning(String.format("%s %s","Skipped processing change orders from invalid file",f.getName()));
-					continue;
-				}
-				CommitHistory commitHistory = loadOrdersFromFile(f);
-				if ( commitHistory != null ) {
-					listOfHistories.add(commitHistory);
-					CertWareLog.logInfo(String.format("%s %s","Processing change orders from file",f.getName()));
-				}
+			// the selection is an SPM project model or project commit
+			if ( iss == null ) {
+				return null;
 			}
-		}
 
-		/*
-		ResourceListSelectionDialog dialog;
-		Object results[] = null;
-		try {
-			dialog = new ResourceListSelectionDialog(latestPart.getSite().getShell(),
-					ResourcesPlugin.getWorkspace().getRoot().members(false));
-			dialog.setAllowUserToToggleDerived(true);
+			Object first = iss.getFirstElement();
+
+			// get the SCO resource by prompting the user
+			// presumes the action is run in the UI thread
+			// using the CertWare version of the JFace dialog so we can apply a validator filter
+			ResourceSelectionDialog2 dialog = 
+				new ResourceSelectionDialog2(latestPart.getSite().getShell(),
+					ResourcesPlugin.getWorkspace().getRoot(), 
+					"Select SCO file:");
+			dialog.setTitle("Change Order File Selection");
 			dialog.setBlockOnOpen(true);
 			dialog.setHelpAvailable(true);
-			dialog.setMessage("Select change order file (*.sco)");
-			dialog.setTitle("Change Order File Selection");
+			dialog.setValidator(new ISelectionValidator() {
+				@Override
+				public boolean isValid(IResource resource) {
+					if ( resource instanceof IProject ) {
+						return true;
+					}
+					if ( resource instanceof IFolder ) {
+						return true;
+					}
+					if ( resource instanceof IFile ) {
+						IFile ifile = (IFile)resource;
+						if ( ifile.getFileExtension().equals( ICertWareConstants.SCO_EXTENSION) ) {
+							return true;
+						}
+					}
+					return false;
+				}});
 			if ( dialog.open() == Dialog.CANCEL ) {
-				return;
+				return null;
 			}
 			
-			results = dialog.getResult();
-		} catch (CoreException e) {
-			CertWareLog.logError("Gathering change order workspace", e);
-			return;
-		}
-		
-		List<ArtifactList> listOfLists = new ArrayList<ArtifactList>();
+			Object results[] = dialog.getResult();
 
-		// collect change order artifact lists from the selected files
-		for ( Object o : results ) {
-			if ( o instanceof IFile ) {
-				IFile f = (IFile)o;
-				System.err.println("dialog selected file " + f);
-				ArtifactList artifactList = loadOrdersFromFile(f);
-				if ( artifactList != null ) {
-					listOfLists.add(artifactList);
+			List<CommitHistory> listOfHistories = new ArrayList<CommitHistory>();
+
+			// collect change order artifact lists from the selected files
+			for ( Object o : results ) {
+				if ( o instanceof IFile ) {
+					IFile f = (IFile)o;
+					if ( f.getFileExtension().equals( ICertWareConstants.SCO_EXTENSION ) == false ) {
+						CertWareLog.logWarning(String.format("%s %s","Skipped processing change orders from invalid file",f.getName()));
+						continue;
+					}
+					CommitHistory commitHistory = loadOrdersFromFile(f);
+					if ( commitHistory != null ) {
+						listOfHistories.add(commitHistory);
+						CertWareLog.logInfo(String.format("%s %s","Processing change orders from file",f.getName()));
+					}
 				}
 			}
-		}
-		*/
 
-		// find preference to determine whether to match commit IDs in the files
+			// find preference to determine whether to match commit IDs in the files
 
-		// project commit
-		if ( first instanceof ProjectCommit ) {
-			ProjectCommit pc = (ProjectCommit)first;
-			if ( computeOrders(pc,listOfHistories) == true ) {
-				return;
+			// project commit
+			if ( first instanceof ProjectCommit ) {
+				ProjectCommit pc = (ProjectCommit)first;
+				if ( computeOrders(pc,listOfHistories) == true ) {
+					return null;
+				}
 			}
-		}
-		
-		// project model selection, do for each commit
-		if ( first instanceof ProjectModel ) {
-			// check raw statistics and compute metrics
-			ProjectModel pm = (ProjectModel)first;
-			for ( ProjectCommit pc : pm.getCommits() ) {
-					if ( computeOrders(pc,listOfHistories) == true ) {
-						// nothing logged per commit
-					}
+			
+			// project model selection, do for each commit
+			if ( first instanceof ProjectModel ) {
+				// check raw statistics and compute metrics
+				ProjectModel pm = (ProjectModel)first;
+				for ( ProjectCommit pc : pm.getCommits() ) {
+						if ( computeOrders(pc,listOfHistories) == true ) {
+							// nothing logged per commit
+						}
+				}
+				return null;
 			}
-			return;
+
+		} catch (ExecutionException e) {
+			CertWareLog.logError("Gathering orders", e);
 		}
+
+		return null;
 	}
 
 	/**
@@ -246,7 +188,7 @@ public class GatherOrders implements IObjectActionDelegate
 		}
 		return sb.toString();
 	}
-
+	
 	/**
 	 * Compute the metrics given a project commit.
 	 * Check whether the raw statistics are present.
@@ -366,7 +308,7 @@ public class GatherOrders implements IObjectActionDelegate
 		if ( cdcoc == null ) {
 			cdcoc = SpmFactory.eINSTANCE.createCriticalDefectChangeOrderCount();
 			cdcoc.setAccumulator(Accumulator.SUM);
-			cdcoc.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			cdcoc.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			cdcoc.setName("Critical Defect Change Order Count)");
 			cdcoc.setScope(projectScope);
 			cdcoc.setTrait(endProductQuality);
@@ -377,7 +319,7 @@ public class GatherOrders implements IObjectActionDelegate
 		if ( ndcoc == null ) {
 			ndcoc = SpmFactory.eINSTANCE.createNormalDefectChangeOrderCount();
 			ndcoc.setAccumulator(Accumulator.SUM);
-			ndcoc.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			ndcoc.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			ndcoc.setName("Normal Defect Change Order Count)");
 			ndcoc.setScope(projectScope);
 			ndcoc.setTrait(endProductQuality);
@@ -388,7 +330,7 @@ public class GatherOrders implements IObjectActionDelegate
 		if ( icoc == null ) {
 			icoc = SpmFactory.eINSTANCE.createImprovementChangeOrderCount();
 			icoc.setAccumulator(Accumulator.SUM);
-			icoc.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			icoc.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			icoc.setName("Improvement Change Order Count)");
 			icoc.setScope(projectScope);
 			icoc.setTrait(endProductQuality);
@@ -399,7 +341,7 @@ public class GatherOrders implements IObjectActionDelegate
 		if ( nfcoc == null ) {
 			nfcoc = SpmFactory.eINSTANCE.createNewFeatureChangeOrderCount();
 			nfcoc.setAccumulator(Accumulator.SUM);
-			nfcoc.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			nfcoc.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			nfcoc.setName("New Feature Change Order Count)");
 			nfcoc.setScope(projectScope);
 			nfcoc.setTrait(endProductQuality);
@@ -410,7 +352,7 @@ public class GatherOrders implements IObjectActionDelegate
 		if ( tcoc == null ) {
 			tcoc = SpmFactory.eINSTANCE.createTotalChangeOrderCount();
 			tcoc.setAccumulator(Accumulator.SUM);
-			tcoc.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			tcoc.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			tcoc.setName("Total Change Order Count)");
 			tcoc.setScope(projectScope);
 			tcoc.setTrait(endProductQuality);
@@ -420,20 +362,20 @@ public class GatherOrders implements IObjectActionDelegate
 		}
 		if ( cncoc == null ) {
 			cncoc = SpmFactory.eINSTANCE.createCriticalAndNormalChangeOrderCount();
-			cncoc.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			cncoc.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			cncoc.setName("Critical and Normal Change Order Count)");
 			cncoc.setScope(projectScope);
 			cncoc.setTrait(endProductQuality);
 			cncoc.setUnit("orders");
 			cncoc.setBaseMeasure1(cdcoc);
 			cncoc.setBaseMeasure2(ndcoc);
-			cncoc.setFunctor(ComputeMetrics.FUNCTOR_ADD);
+			cncoc.setFunctor(ComputeMetricsHandler.FUNCTOR_ADD);
 			pc.getModelElement().add(cncoc);
 			CertWareLog.logInfo("Added total change order statistic to project commit");
 		}
 		if ( bcs == null ) {
 			bcs = SpmFactory.eINSTANCE.createBaselineCaseSizeMeasure();
-			bcs.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			bcs.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			bcs.setName("Baseline Case Size");
 			bcs.setScope(projectScope);
 			bcs.setTrait(endProductQuality);
@@ -443,7 +385,7 @@ public class GatherOrders implements IObjectActionDelegate
 		}
 		if ( tcs == null ) {
 			tcs = SpmFactory.eINSTANCE.createTotalCaseSizeMeasure();
-			tcs.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			tcs.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			tcs.setName("Total Case Size");
 			tcs.setScope(projectScope);
 			tcs.setTrait(endProductQuality);
@@ -453,7 +395,7 @@ public class GatherOrders implements IObjectActionDelegate
 		}
 		if ( ut == null ) {
 			ut = SpmFactory.eINSTANCE.createUsageTimeMeasure();
-			ut.setLibrary(ComputeMetrics.LIBRARY_TAG);
+			ut.setLibrary(ComputeMetricsHandler.LIBRARY_TAG);
 			ut.setName("Usage Time");
 			ut.setScope(projectScope);
 			ut.setTrait(endProductQuality);
@@ -531,7 +473,7 @@ public class GatherOrders implements IObjectActionDelegate
 		} // commit histories
 		
 		// compute the combined metric
-		ComputeMetrics computeMetrics = new ComputeMetrics();
+		ComputeMetricsHandler computeMetrics = new ComputeMetricsHandler();
 		
 		// insert into statistics as measurements
 		// one of them is a combined metric
@@ -572,15 +514,29 @@ public class GatherOrders implements IObjectActionDelegate
 		return null;
 	}
 
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
+	/**
+	 * Open a selected SCO file.
+	 * @param ifile file selection from resources
+	 * @return artifact list or null
 	 */
-	public void selectionChanged(IAction action, ISelection selection)
-	{
-		latestSelection = null;
-		if ( selection instanceof IStructuredSelection)
-			latestSelection = (IStructuredSelection)selection;
+	private CommitHistory loadOrdersFromFile(IFile ifile) {
+		
+		try {
+	        // load the SCO file through the EMF resource set implementation
+	        ResourceSet resourceSet = new ResourceSetImpl();
+	        Resource resource = resourceSet.getResource( 
+	        		URI.createPlatformResourceURI(ifile.getFullPath().toString(), true), true);
+	        
+	        CommitHistory documentRoot = (CommitHistory)resource.getContents().get(0);
+	        if ( documentRoot != null ) {
+	          return documentRoot;
+	        }
+	      } catch( Exception exception ) {
+	        CertWareLog.logError(String.format("%s %s", 
+	        		"Document root null loading" + ifile.getName()), exception);
+	      }
+	      
+	      return null;
 	}
 
 }

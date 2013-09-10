@@ -1,5 +1,4 @@
-
-package net.certware.measurement.spm.view.actions;
+package net.certware.measurement.spm.view.handlers;
 
 import java.util.Date;
 
@@ -50,28 +49,28 @@ import net.certware.measurement.spm.UsageTimeMeasure;
 import net.certware.measurement.spm.view.Activator;
 import net.certware.measurement.spm.view.preferences.PreferenceConstants;
 
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * Computes the project model metrics.
- * Presumes the statistics are already available in the model.
+ * Computes change order metrics.
  * @author mrb
- * @since 1.1.0
+ * @since 2.0.0
  */
-public class ComputeMetrics implements IObjectActionDelegate
-{
-	/** latest selection, assigned from object contribution extension */
-	private IStructuredSelection latestSelection = null;
-	/** part selection from action */
+public class ComputeMetricsHandler extends AbstractHandler {
+
+	/** part selected in command context */
 	IWorkbenchPart latestPart = null;
 	/** measure library tag */
 	public static final String LIBRARY_TAG = "CertWare";
@@ -90,68 +89,51 @@ public class ComputeMetrics implements IObjectActionDelegate
 	/** measurement error value */
 	public static final String MEASUREMENT_ERROR = "Computed";
 	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.IObjectActionDelegate#setActivePart(org.eclipse.jface.action.IAction, org.eclipse.ui.IWorkbenchPart)
-	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart)
-	{
-		latestPart = targetPart;
-	}
-
 	/**
-	 * Computes the metrics from the statistics.
-	 * Expects the latest selection object is a ProjectModel or a ProjectCommit.
-	 * If a ProjectModel, runs the ProjectCommit for each model element of type ProjectCommit.
-	 * @param action object action contribution
+	 * Handles the compute metrics command request.  
+	 * Presumes the command came from a popup menu selection of model or commit.
+	 * @param event used to find context
+	 * @return always returns null  
+	 * @throws ExecutionException if open fails  
+	 * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
 	 */
-	public void run(IAction action)
-	{
-		if ( latestSelection == null ) {
-			return;
+	@Override
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+
+		try {
+			// fetch workbench context
+			latestPart = HandlerUtil.getActivePartChecked(event);
+			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+			ISelectionService service = window.getSelectionService();
+			IStructuredSelection iss = (IStructuredSelection)service.getSelection();
+
+			Object first = iss.getFirstElement();
+			
+			// project commit
+			if ( first instanceof ProjectCommit ) {
+				ProjectCommit pc = (ProjectCommit)first;
+				if ( computeMetrics(pc) == true ) {
+					return null;
+				}
+			}
+			
+			// project model selection, do for each commit
+			if ( first instanceof ProjectModel ) {
+				// check raw statistics and compute metrics
+				ProjectModel pm = (ProjectModel)first;
+				for ( ProjectCommit pc : pm.getCommits() ) {
+						if ( computeMetrics(pc) == true ) {
+							// nothing logged per commit
+						}
+				}
+				return null;
+			}
+			
+		} catch (ExecutionException e) {
+			CertWareLog.logError("Opening SCO view", e);
 		}
 
-		Object first = latestSelection.getFirstElement();
-		
-		
-		// project commit
-		if ( first instanceof ProjectCommit ) {
-			ProjectCommit pc = (ProjectCommit)first;
-			if ( computeMetrics(pc) == true ) {
-				return;
-			}
-		}
-		
-		// project model selection, do for each commit
-		if ( first instanceof ProjectModel ) {
-			// check raw statistics and compute metrics
-			ProjectModel pm = (ProjectModel)first;
-			for ( ProjectCommit pc : pm.getCommits() ) {
-					if ( computeMetrics(pc) == true ) {
-						// nothing logged per commit
-					}
-			}
-			return;
-		}
-	}
-
-	/**
-	 * Gets a list of the annotations attached to a project commit element.
-	 * Builds the list with each annotation separated by a comma character.
-	 * @param pc project commit
-	 * @return string delimited by commas
-	 */
-	private String getName(ProjectCommit pc) {
-		EList<Annotation> annotations = pc.getAnnotation();
-		StringBuffer sb = new StringBuffer();
-		boolean subsequentPass = false;
-		for ( Annotation a : annotations ) { 
-			if ( subsequentPass ) {
-				sb.append( ',' );
-			}
-			sb.append( a.getText() );
-			subsequentPass = true;
-		}
-		return sb.toString();
+		return null;
 	}
 
 	/**
@@ -563,6 +545,25 @@ public class ComputeMetrics implements IObjectActionDelegate
 	}
 
 	/**
+	 * Gets a list of the annotations attached to a project commit element.
+	 * Builds the list with each annotation separated by a comma character.
+	 * @param pc project commit
+	 * @return string delimited by commas
+	 */
+	private String getName(ProjectCommit pc) {
+		EList<Annotation> annotations = pc.getAnnotation();
+		StringBuffer sb = new StringBuffer();
+		boolean subsequentPass = false;
+		for ( Annotation a : annotations ) { 
+			if ( subsequentPass ) {
+				sb.append( ',' );
+			}
+			sb.append( a.getText() );
+			subsequentPass = true;
+		}
+		return sb.toString();
+	}
+	/**
 	 * Computes the averages of the items in the measurement list.
 	 * @param items list of measurement items, assumed to be {@code DimensionalMeasurement} types.
 	 * @return average, or {@code POSITIVE_INFINITY} if count of dimensional measurement is zero.
@@ -694,7 +695,6 @@ public class ComputeMetrics implements IObjectActionDelegate
 		
 		return true;
 	}
-	
 	/**
 	 * Computes a binary measure's results given its base measurements and values.
 	 * Assumes both base measures are dimensional measures with measurements available.
@@ -828,16 +828,4 @@ public class ComputeMetrics implements IObjectActionDelegate
 			MessageDialog.openWarning(latestPart.getSite().getShell(), "Statistics Incomplete", message);
 		}
 	}
-	
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
-	 */
-	public void selectionChanged(IAction action, ISelection selection)
-	{
-		latestSelection = null;
-		if ( selection instanceof IStructuredSelection)
-			latestSelection = (IStructuredSelection)selection;
-	}
-
 }
