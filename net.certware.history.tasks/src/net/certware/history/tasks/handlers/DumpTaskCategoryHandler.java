@@ -1,48 +1,59 @@
-package net.certware.history.tasks.actions;
+package net.certware.history.tasks.handlers;
 
 import java.util.Collection;
 import java.util.Iterator;
 
 import net.certware.core.ui.log.CertWareLog;
 
-import org.eclipse.jface.action.IAction;
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.mylyn.tasks.core.ITask;
 import org.eclipse.mylyn.tasks.core.ITaskContainer;
-import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * An action to dump the task category of the selected projects to the console.
- * TESTING
+ * Dump task command handler.
  * @author mrb
- * @since 1.1.0
+ * @since 2.0.0
  */
-public class DumpTaskCategory implements IObjectActionDelegate {
+public class DumpTaskCategoryHandler extends AbstractHandler {
 
 	/** dialog title */
 	private static final String TITLE = "Task Category Computation"; 
-	/** current selection */
-	private ISelection currentSelection;
-	/** active part for shell reference */
-	private IWorkbenchPart activePart;
-
+	IWorkbenchPart activePart = null;
+	
 	/**
-	 * Constructor simply calls super.
+	 * Handles the dump task category command request.  
+	 * Presumes the command came from a popup menu selection of model object.
+	 * @param event used to find file
+	 * @return always returns null  
+	 * @throws ExecutionException if open fails  
+	 * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
 	 */
-	public DumpTaskCategory() {
-		super();
-	}
-
 	@Override
-	public void run(IAction action) {
-		// process the selection; call for each task container in the selection 
-		IStructuredSelection iss = (IStructuredSelection)currentSelection;
-		for (Iterator<?> iterator = iss.iterator(); iterator.hasNext();) {
-			process((ITaskContainer)iterator.next());
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+
+		try {
+			// fetch workbench context
+			activePart = HandlerUtil.getActivePartChecked(event);
+			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+			ISelectionService service = window.getSelectionService();
+			IStructuredSelection iss = (IStructuredSelection)service.getSelection();
+
+			for (Iterator<?> iterator = iss.iterator(); iterator.hasNext();) {
+				process((ITaskContainer)iterator.next());
+			}
+		} catch (ExecutionException e) {
+			CertWareLog.logError("Dump task category", e);
 		}
+
+		return null;
 	}
 
 	/**
@@ -51,9 +62,9 @@ public class DumpTaskCategory implements IObjectActionDelegate {
 	 * @param selectedCategory
 	 */
 	protected void process(ITaskContainer selectedContainer) {
-		
+
 		System.out.println("processing task container " + selectedContainer);
-		
+
 		// use the children in the selected container
 		int uncompletedHours = 0;
 		int completedHours = 0;
@@ -64,7 +75,7 @@ public class DumpTaskCategory implements IObjectActionDelegate {
 			MessageDialog.openWarning(activePart.getSite().getShell(), TITLE, "No tasks found in task list.");
 			return;
 		}
-		
+
 		// process the task collection
 		// these items have no children or sub-tasks
 		for (ITask it : tasks ) {
@@ -77,7 +88,7 @@ public class DumpTaskCategory implements IObjectActionDelegate {
 			// System.err.println("estimated time hours " + at.getEstimatedTimeHours());
 			System.out.println("completed? " + it.isCompleted());
 			int estimatedHours = 0;
-			
+
 			if ( it.getCompletionDate() != null && it.getCreationDate() != null ) { 
 				long duration = it.getCompletionDate().getTime() - it.getCreationDate().getTime();
 				estimatedHours = (int) (duration / 3); // integer division good enough here
@@ -91,10 +102,10 @@ public class DumpTaskCategory implements IObjectActionDelegate {
 			}
 
 		}
-		
+
 		// report to log
 		CertWareLog.logInfo(String.format("%s %s","Processed task category",selectedContainer.toString()));
-		
+
 		// report to dialog
 		StringBuffer sb = new StringBuffer();
 		sb.append(String.format("%s %d","Task count:",tasks.size())).append('\n');
@@ -102,15 +113,4 @@ public class DumpTaskCategory implements IObjectActionDelegate {
 		sb.append(String.format("%s %d hrs", "Total uncompleted hours:", uncompletedHours )).append('\n');
 		MessageDialog.openInformation(activePart.getSite().getShell(),TITLE,sb.toString());
 	}
-	
-	@Override
-	public void selectionChanged(IAction action, ISelection selection) {
-		this.currentSelection = selection;
-	}
-
-	@Override
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		activePart = targetPart;
-	}
-
 }

@@ -1,52 +1,64 @@
-package net.certware.history.tasks.actions;
+package net.certware.history.tasks.handlers;
 
 import java.util.Collection;
 import java.util.Iterator;
 
 import net.certware.core.ui.log.CertWareLog;
 
+import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.mylyn.internal.tasks.core.AbstractTask;
 import org.eclipse.mylyn.internal.tasks.core.TaskList;
 import org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin;
 import org.eclipse.mylyn.tasks.core.ITask;
-import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * An action to dump the task list of the selected projects to the console.
- * TESTING
+ * Dump task command handler.
  * @author mrb
- * @since 1.1.0
+ * @since 2.0.0
  */
 @SuppressWarnings("restriction")
-public class DumpTaskList implements IObjectActionDelegate {
+public class DumpTaskListHandler extends AbstractHandler {
 
 	/** dialog title */
 	private static final String TITLE = "Task List Computation"; 
-	/** current selection */
-	private ISelection currentSelection;
-	/** active part for shell reference */
-	private IWorkbenchPart activePart;
-
+	protected IWorkbenchPart activePart = null;
+	
 	/**
-	 * Constructor simply calls super.
+	 * Handles the dump task category command request.  
+	 * Presumes the command came from a popup menu selection of model object.
+	 * @param event used to find file
+	 * @return always returns null  
+	 * @throws ExecutionException if open fails  
+	 * @see org.eclipse.core.commands.IHandler#execute(ExecutionEvent)
 	 */
-	public DumpTaskList() {
-		super();
-	}
-
 	@Override
-	public void run(IAction action) {
-		// process the selection; call for each project in the selection 
-		IStructuredSelection iss = (IStructuredSelection)currentSelection;
-		for (Iterator<?> iterator = iss.iterator(); iterator.hasNext();) {
-			process((IProject)iterator.next());
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+
+		try {
+			// fetch workbench context
+			activePart = HandlerUtil.getActivePartChecked(event);
+			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+			ISelectionService service = window.getSelectionService();
+			IStructuredSelection iss = (IStructuredSelection)service.getSelection();
+			
+			for (Iterator<?> iterator = iss.iterator(); iterator.hasNext();) {
+				process((IProject)iterator.next());
+			}
+
+		} catch (ExecutionException e) {
+			CertWareLog.logError("Dump task category", e);
 		}
+
+		return null;
 	}
 
 	/**
@@ -119,15 +131,4 @@ public class DumpTaskList implements IObjectActionDelegate {
 		sb.append(String.format("%s %d hrs", "Total uncompleted hours:", uncompletedHours )).append('\n');
 		MessageDialog.openInformation(activePart.getSite().getShell(),TITLE,sb.toString());
 	}
-	
-	@Override
-	public void selectionChanged(IAction action, ISelection selection) {
-		this.currentSelection = selection;
-	}
-
-	@Override
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		activePart = targetPart;
-	}
-
 }

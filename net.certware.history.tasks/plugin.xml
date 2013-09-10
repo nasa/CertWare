@@ -2,59 +2,80 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="false"
-            id="net.certware.history.tasks.dump.project"
-            nameFilter="*"
-            objectClass="org.eclipse.core.resources.IProject">
-         <menu
-               icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare"
-               path="group.build">
-            <separator
-                  name="markers">
-            </separator>
-            <separator
-                  name="additions">
-            </separator>
-         </menu>
-         <action
-               class="net.certware.history.tasks.actions.DumpTaskList"
-               enablesFor="+"
-               helpContextId="taskDumpProject"
-               icon="icons/obj16/history_list.png"
-               id="net.certware.history.tasks.action.console.project"
-               label="Dump task list to console"
-               menubarPath="certware/additions"
-               tooltip="Dump the task list metrics to the console">
-         </action>
-      </objectContribution>
-      <objectContribution
-            adaptable="false"
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            defaultHandler="net.certware.history.tasks.handlers.DumpTaskCategoryHandler"
+            description="Dumps task category to console"
             id="net.certware.history.tasks.dump.category"
-            nameFilter="*"
-            objectClass="org.eclipse.mylyn.tasks.core.ITaskContainer">
+            name="Dump task category">
+      </command>
+      <command
+            categoryId="net.certware.core.ui.command.category"
+            defaultHandler="net.certware.history.tasks.handlers.DumpTaskListHandler"
+            description="Dumps task list to console"
+            id="net.certware.history.tasks.dump.list"
+            name="Dump task list">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commandImages">
+      <image
+            commandId="net.certware.history.tasks.dump.category"
+            icon="icons/obj16/history_list.png">
+      </image>
+      <image
+            commandId="net.certware.history.tasks.dump.list"
+            icon="icons/obj16/history_list.png">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <menu
                icon="icons/obj16/certware.gif"
-               id="certware"
-               label="CertWare">
+               id="net.certware.popup"
+               label="CertWare"
+               tooltip="CertWare associated UI commands">
             <separator
-                  name="additions">
+                  name="cps">
             </separator>
+            <command
+                  commandId="net.certware.history.tasks.dump.category"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.mylyn.tasks.core.ITaskContainer">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="net.certware.history.tasks.dump.list"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IProject">
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
          </menu>
-         <action
-               class="net.certware.history.tasks.actions.DumpTaskCategory"
-               enablesFor="+"
-               helpContextId="taskDumpCategory"
-               icon="icons/obj16/history_list.png"
-               id="net.certware.history.tasks.action.console.category"
-               label="Dump task category to console"
-               menubarPath="certware/additions"
-               tooltip="Dump the task category metrics to the console">
-         </action>
-      </objectContribution>
+      </menuContribution>
    </extension>
 
 </plugin>
