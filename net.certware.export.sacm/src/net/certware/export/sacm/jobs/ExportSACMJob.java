@@ -5,28 +5,20 @@
 package net.certware.export.sacm.jobs;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 import javax.xml.bind.JAXBException;
 
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.export.jobs.AbstractExportJob;
 import net.certware.sacm.SACM.Annotation;
+import net.certware.sacm.SACM.AssuranceCase;
+import net.certware.sacm.SACM.Datetime;
 import net.certware.sacm.SACM.ModelElement;
+import net.certware.sacm.SACM.SACMElement;
 import net.certware.sacm.SACM.SACMPackage;
 import net.certware.sacm.SACM.TaggedValue;
-import net.certware.sacm.SACM.Argumentation.ArgumentElement;
-import net.certware.sacm.SACM.Argumentation.ArgumentReasoning;
-import net.certware.sacm.SACM.Argumentation.AssertedChallenge;
-import net.certware.sacm.SACM.Argumentation.AssertedContext;
-import net.certware.sacm.SACM.Argumentation.AssertedCounterEvidence;
-import net.certware.sacm.SACM.Argumentation.AssertedEvidence;
-import net.certware.sacm.SACM.Argumentation.AssertedInference;
-import net.certware.sacm.SACM.Argumentation.AssertedRelationship;
-import net.certware.sacm.SACM.Argumentation.CitationElement;
-import net.certware.sacm.SACM.Argumentation.Claim;
-import net.certware.sacm.SACM.Argumentation.InformationElement;
-import net.certware.sacm.SACM.Argumentation.ReasoningElement;
-import net.certware.sacm.SACM.Evidence.EvidenceAssertion;
+import net.certware.sacm.SACM.UtilityElement;
 import net.certware.sacm.SACM.util.SACMSwitch;
 
 import org.docx4j.openpackaging.exceptions.Docx4JException;
@@ -38,10 +30,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
 /**
- * Exports ARM model elements to a document file.
- * Designed as well to be super class of exporting jobs for models extending ARM notation.
+ * Exports SACM model elements to a document file.
+ * Designed as well to be super class of exporting jobs for models extending SACM notation.
  * @author mrb
- * @since 1.0
+ * @since 2.0
  */
 public class ExportSACMJob extends AbstractExportJob {
 
@@ -93,33 +85,23 @@ public class ExportSACMJob extends AbstractExportJob {
 		visitor.doSwitch(eObject);
 	}
 	
-	/**
-	 * Visitor to pass to the model's tree iterator.
-	 * Overrides the case methods of the generated switch class.
-	 */
+	// TODO in work
 	public SACMSwitch<Boolean> visitor = new SACMSwitch<Boolean>() {
-		private boolean writeTagsHeader;
-		private boolean writeArgumentElementHeader;
-		private boolean writeArgumentLinkHeader;
-		private boolean writeAssertedRelationshipHeader;
-		@SuppressWarnings("unused")
-		private boolean writeSourceHeader;
-		@SuppressWarnings("unused")
-		private boolean writeTargetHeader;
-		private boolean writeAssertedInferenceHeader;
-		private boolean writeAssertedEvidenceHeader;
-		private boolean writeAssertedContextHeader;
-		private boolean writeAssertedCounterEvidenceHeader;
-		private boolean writeAssertedChallengeHeader;
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
-		 * @param me the target of the switch.
-		 * @param prefix model element type prefix
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseModelElement(String prefix, ModelElement me) {
+		private boolean writeTagsHeader = false;
+		
+		public Boolean caseAnnotation(Annotation a) {
+			return null;
+		}
+		
+		public Boolean caseAssuranceCase(AssuranceCase ac) {
+			return null;
+		}
+		
+		public Boolean caseDatetime(Datetime d) {
+			return null;
+		}
+		
+		public Boolean 	caseModelElement(ModelElement me) {
 			// prefix, identifier, description, and content
 			// tagged values visited in a different case
 
@@ -128,36 +110,47 @@ public class ExportSACMJob extends AbstractExportJob {
 			//Br b = factory.createBr();
 			//b.setType(STBrType.TEXT_WRAPPING);
 			P modelElementParagraph = factory.createP();
-			String id = me.getIdentifier();
-			String heading = prefix + ' ' + me.getIdentifier();
-			if ( id.startsWith(prefix) )
-				heading = me.getIdentifier();
+			String id = me.getId();
+			String heading = id;
+			// String heading = prefix + ' ' + id;
+			//if ( id.startsWith(prefix) )
 			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT),heading));
 			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
 			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
 			//modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT__IDENTIFIER),me.getIdentifier()));
 			// modelElementParagraph.getParagraphContent().add( factory.createRCr());
 			modelElementParagraph.getParagraphContent().add( factory.createBr());
-			modelElementParagraph.getParagraphContent().add( addRunOfText("Description: "));
-			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT__DESCRIPTION),me.getDescription()));
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Annotations: "));
+			Iterator<Annotation> i = me.getAnnotation().iterator();
+			while( i.hasNext() ) {
+				Annotation a = i.next();
+				modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT__ANNOTATION),a.getContent()));
+			}
 			modelElementParagraph.getParagraphContent().add( factory.createBr());
-			modelElementParagraph.getParagraphContent().add( addRunOfText("Content: "));
-			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT__CONTENT),me.getContent()));
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Tags: "));
+			Iterator<TaggedValue> t = me.getTaggedValue().iterator();
+			while( t.hasNext() ) {
+				TaggedValue v = t.next();
+				caseTaggedValue(v);
+			}
+
 			mainDocumentPart.addObject(modelElementParagraph);
 
-			// tags header, if any
-			writeTagsHeader = me.getIsTagged().isEmpty() == false;
-
 			return Boolean.TRUE;
+		}
+
+		public Boolean 	caseSACMElement(SACMElement se) {
+			// TODO
+			return null;
 		}
 
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>Tagged Value</em>'.
 		 * @param taggedValue the target of the switch.
-		 * @return always returns null
+		 * @return always returns TRUE
 		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 		 */
-		public Boolean caseTaggedValue(TaggedValue taggedValue) {
+		public Boolean 	caseTaggedValue(TaggedValue tv) {
 			if ( writeTagsHeader ) {
 				addStyledText(styleMap.get(SACMPackage.TAGGED_VALUE),"Tags");
 				writeTagsHeader = false;
@@ -166,202 +159,19 @@ public class ExportSACMJob extends AbstractExportJob {
 			P tagLine = factory.createP();
 			tagLine.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.TAGGED_VALUE),"Key:"));
 			tagLine.getParagraphContent().add( addRunOfText(" "));
-			tagLine.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.TAGGED_VALUE__KEY),taggedValue.getKey()));
+			tagLine.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.TAGGED_VALUE__KEY),tv.getKey()));
 			tagLine.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.TAGGED_VALUE),"Value:"));
 			tagLine.getParagraphContent().add( addRunOfText(" "));
-			tagLine.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.TAGGED_VALUE__VALUE),taggedValue.getValue()));
+			tagLine.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.TAGGED_VALUE__VALUE),tv.getValue()));
 			mainDocumentPart.addObject(tagLine);
-
+			
 			return Boolean.TRUE;
 		}
 
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Argument</em>'.
-		 * @param argument the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseArgument(Argument argument) {
-			// identifier, description, and content
-			caseModelElement("Argument",argument);
-
-			// headers, if any
-			writeArgumentElementHeader = argument.getContainsArgumentElement().isEmpty() == false;
-			writeArgumentLinkHeader = argument.getContainsArgumentLink().isEmpty() == false;
-
-			return Boolean.TRUE;
+		public Boolean 	caseUtilityElement(UtilityElement ue) {
+			return null;
 		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Argument Element</em>'.
-		 * @param argumentElement the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseArgumentElement(ArgumentElement argumentElement) {
-			if ( writeArgumentElementHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ARGUMENT_ELEMENT),"Argument Elements");
-				writeArgumentElementHeader = false;
-			}
-
-			caseModelElement("Argument Element",argumentElement);
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Argument Link</em>'.
-		 * @param argumentLink the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseArgumentLink(ArgumentLink argumentLink) {
-			if ( writeArgumentLinkHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ARGUMENT_ELEMENT), "Argument Links");
-				writeArgumentLinkHeader = false;
-			}
-
-			caseModelElement("Argument Link", argumentLink);
-
-			if ( argumentLink.getSource().isEmpty() == false ) {
-				writeSourceHeader = true;
-			}
-			if ( argumentLink.getTarget().isEmpty() == false ) {
-				writeTargetHeader = true;
-			}
-
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
-		 * @param assertedRelationship the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseAssertedRelationship(AssertedRelationship assertedRelationship) {
-			if ( writeAssertedRelationshipHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ASSERTED_RELATIONSHIP), "Asserted Relationship");
-				writeAssertedRelationshipHeader = false;
-			}
-
-			caseModelElement("Asserted Relationship", assertedRelationship);
-
-			if ( assertedRelationship.getSource().isEmpty() == false ) {
-				writeSourceHeader = true;
-			}
-			if ( assertedRelationship.getTarget().isEmpty() == false ) {
-				writeTargetHeader = true;
-			}
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Annotation</em>'.
-		 * @param annotation the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseAnnotation(Annotation annotation) {
-			caseArgumentLink(annotation);
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Asserted Inference</em>'.
-		 * @param assertedInference the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseAssertedInference(AssertedInference assertedInference) {
-			if ( writeAssertedInferenceHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ASSERTED_INFERENCE), "Asserted Inference");
-				writeAssertedInferenceHeader = false;
-			}
-
-			caseAssertedRelationship(assertedInference);
-
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
-		 * @param assertedEvidence the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseAssertedEvidence(AssertedEvidence assertedEvidence) {
-			if ( writeAssertedEvidenceHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ASSERTED_EVIDENCE), "Asserted Evidence");
-				writeAssertedEvidenceHeader = false;
-			}
-
-			caseAssertedRelationship(assertedEvidence);
-
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Asserted Context</em>'.
-		 * @param assertedContext the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseAssertedContext(AssertedContext assertedContext) {
-			if ( writeAssertedContextHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ASSERTED_CONTEXT), "Asserted Context");
-				writeAssertedContextHeader = false;
-			}
-
-			caseAssertedRelationship(assertedContext);
-
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Asserted Counter Evidence</em>'.
-		 * @param assertedCounterEvidence the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseAssertedCounterEvidence(AssertedCounterEvidence assertedCounterEvidence) {
-			if ( writeAssertedCounterEvidenceHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ASSERTED_COUNTER_EVIDENCE), "Asserted Counter-Evidence");
-				writeAssertedCounterEvidenceHeader = false;
-			}
-			caseAssertedRelationship(assertedCounterEvidence);
-
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Asserted Challenge</em>'.
-		 * @param assertedChallenge the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseAssertedChallenge(AssertedChallenge assertedChallenge) {
-			if ( writeAssertedChallengeHeader ) {
-				addStyledText(styleMap.get(SACMPackage.ASSERTED_CHALLENGE), "Asserted Challenge");
-				writeAssertedChallengeHeader = false;
-			}
-
-			caseAssertedRelationship(assertedChallenge);
-
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Reasoning Element</em>'.
-		 * @param reasoningElement the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		@SuppressWarnings("unused")
-		public Boolean caseReasoningElement(ReasoningElement reasoningElement) {
-			caseModelElement("Reasoning Element", reasoningElement);
-			return Boolean.TRUE;
-		}
-
+		
 		/**
 		 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 		 * @param object the target of the switch.
@@ -372,10 +182,13 @@ public class ExportSACMJob extends AbstractExportJob {
 			return Boolean.TRUE;
 		}
 	};
+	
+	
+
 
 	/**
-	 * Returns the visitor for the ARM model traversal.
-	 * @return visitor suitable for ARM switch 
+	 * Returns the visitor for the SACM model traversal.
+	 * @return visitor suitable for SACM switch 
 	 */
 	public SACMSwitch<Boolean> getVisitor() {
 		return visitor;
@@ -390,43 +203,39 @@ public class ExportSACMJob extends AbstractExportJob {
 		// each model element can have its own style
 		// for convenience we use the model element literals as keys 
 		styleMap.put(SACMPackage.ANNOTATION, new StyleEntry(false, "Annotation"));
-		styleMap.put(SACMPackage.ARGUMENT, new StyleEntry(true,"Argument"));
-		styleMap.put(SACMPackage.ARGUMENT_ELEMENT,new StyleEntry(false,"ArgumentElement"));
-		styleMap.put(SACMPackage.ARGUMENT_LINK, new StyleEntry(false,"ArgumentLink"));
-		styleMap.put(SACMPackage.ARGUMENT_LINK__SOURCE, new StyleEntry(false,"ArgumentLinkSource"));
-		styleMap.put(SACMPackage.ARGUMENT_LINK__TARGET, new StyleEntry(false,"ArgumentLinkTarget"));
-		styleMap.put(SACMPackage.ARGUMENT_REASONING__DESCRIBES, new StyleEntry(false,"ArgumentReasoningDescribes"));
-		styleMap.put(SACMPackage.ARGUMENT_REASONING__HAS_STRUCTURE, new StyleEntry(false,"ArgumentReasoningHasStructure"));
-		styleMap.put(SACMPackage.ARGUMENT__CONTAINS_ARGUMENT,new StyleEntry(false,"ArgumentContainsArgument"));
-		styleMap.put(SACMPackage.ARGUMENT__CONTAINS_ARGUMENT_ELEMENT, new StyleEntry(false,"ArgumentContainsArgumentElement"));
-		styleMap.put(SACMPackage.ARGUMENT__CONTAINS_ARGUMENT_LINK,new StyleEntry(false,"ArgumentContainsArgumentLink"));
-		styleMap.put(SACMPackage.ARGUMENT_REASONING, new StyleEntry(false,"ArgumentReasoning"));
-		styleMap.put(SACMPackage.ASSERTED_CHALLENGE, new StyleEntry(false,"AssertedChallenge"));
-		styleMap.put(SACMPackage.ASSERTED_CONTEXT, new StyleEntry(false,"AssertedContext"));
-		styleMap.put(SACMPackage.ASSERTED_COUNTER_EVIDENCE, new StyleEntry(false,"AssertedCounterEvidence"));
-		styleMap.put(SACMPackage.ASSERTED_EVIDENCE, new StyleEntry(false,"AssertedEvidence"));
-		styleMap.put(SACMPackage.ASSERTED_INFERENCE, new StyleEntry(false,"AssertedInference"));
-		styleMap.put(SACMPackage.ASSERTED_RELATIONSHIP, new StyleEntry(false,"AssertedRelationship"));
-		styleMap.put(SACMPackage.CITATION_ELEMENT, new StyleEntry(false,"CitationElement"));
-		styleMap.put(SACMPackage.CITATION_ELEMENT__REFERS_TO_ARGUMENT, new StyleEntry(false,"CitationElementRefersToArgument"));
-		styleMap.put(SACMPackage.CITATION_ELEMENT__REFERS_TO_ARGUMENT_ELEMENT, new StyleEntry(false,"CitationElementRefersToArgumentElement"));
-		styleMap.put(SACMPackage.CLAIM, new StyleEntry(false,"Claim"));
-		styleMap.put(SACMPackage.CLAIM__ASSUMED, new StyleEntry(false,"ClaimAssumed"));
-		styleMap.put(SACMPackage.CLAIM__TO_BE_SUPPORTED, new StyleEntry(false,"ClaimToBeSupported"));
-		styleMap.put(SACMPackage.EVIDENCE_ASSERTION, new StyleEntry(false,"EvidenceAssertion"));
-		styleMap.put(SACMPackage.INFORMATION_ELEMENT, new StyleEntry(false,"InformationElement"));
-		styleMap.put(SACMPackage.MODEL_ELEMENT, new StyleEntry(false,"ModelElement")); 
-		styleMap.put(SACMPackage.MODEL_ELEMENT__CONTENT, new StyleEntry(false,"ModelElementContent"));
-		styleMap.put(SACMPackage.MODEL_ELEMENT__DESCRIPTION, new StyleEntry(false,"ModelElementDescription"));
-		styleMap.put(SACMPackage.MODEL_ELEMENT__IDENTIFIER, new StyleEntry(false,"ModelElementIdentifier"));
-		styleMap.put(SACMPackage.MODEL_ELEMENT__IS_TAGGED, new StyleEntry(false,"ModelElementIsTagged"));
-		styleMap.put(SACMPackage.REASONING_ELEMENT, new StyleEntry(false,"ReasoningElement"));
+		styleMap.put(SACMPackage.ANNOTATION__CONTENT, new StyleEntry(false,"AnnotationContent"));
+		styleMap.put(SACMPackage.ANNOTATION_FEATURE_COUNT, new StyleEntry(false,"AnnotationFeatureCount"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE, new StyleEntry(true,"AssuranceCase"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE__ANNOTATION, new StyleEntry(false,"AssuranceCaseAnnotation"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE__ARGUMENT, new StyleEntry(true,"AssuranceCaseArgument"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE__EVIDENCE, new StyleEntry(true,"AssuranceCaseEvidence"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE__GID, new StyleEntry(false,"AssuranceCaseGid"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE__ID, new StyleEntry(false,"AssuranceCaseId"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE__NAME, new StyleEntry(false,"AssuranceCaseName"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE__TAGGED_VALUE, new StyleEntry(false,"AssuranceCaseTaggedValue"));
+		styleMap.put(SACMPackage.ASSURANCE_CASE_FEATURE_COUNT, new StyleEntry(false,"AssuranceCaseFeatureCount"));
+		styleMap.put(SACMPackage.BOOLEAN, new StyleEntry(false,"Boolean"));
+		styleMap.put(SACMPackage.DATETIME, new StyleEntry(false,"DateTime"));
+		styleMap.put(SACMPackage.DATETIME__DATETIME, new StyleEntry(false,"DateTimeDateTime"));
+		styleMap.put(SACMPackage.DATETIME_FEATURE_COUNT, new StyleEntry(false,"DateTimeFeatureCount"));
+		styleMap.put(SACMPackage.INTEGER, new StyleEntry(false,"Integer"));
+		styleMap.put(SACMPackage.MODEL_ELEMENT, new StyleEntry(false,"ModelElement"));
+		styleMap.put(SACMPackage.MODEL_ELEMENT__ANNOTATION, new StyleEntry(false,"ModelElementAnnotation"));
+		styleMap.put(SACMPackage.MODEL_ELEMENT__ID, new StyleEntry(false,"ModelElementId"));
+		styleMap.put(SACMPackage.MODEL_ELEMENT__TAGGED_VALUE, new StyleEntry(false,"ModelElementTaggedValue"));
+		styleMap.put(SACMPackage.MODEL_ELEMENT_FEATURE_COUNT, new StyleEntry(false,"ModelElementFeatureCount"));
+		styleMap.put(SACMPackage.SACM_ELEMENT, new StyleEntry(false,"SacmElement"));
+		styleMap.put(SACMPackage.SACM_ELEMENT_FEATURE_COUNT, new StyleEntry(false,"SacmElementFeatureCount"));
+		styleMap.put(SACMPackage.STRING, new StyleEntry(false,"String"));
 		styleMap.put(SACMPackage.TAGGED_VALUE,new StyleEntry(false, "TaggedValue"));
 		styleMap.put(SACMPackage.TAGGED_VALUE__KEY, new StyleEntry(false,"TaggedValueKey"));
 		styleMap.put(SACMPackage.TAGGED_VALUE__VALUE, new StyleEntry(false,"TaggedValueValue"));
+		styleMap.put(SACMPackage.TAGGED_VALUE_FEATURE_COUNT, new StyleEntry(false,"TaggedValueFeatureCount"));
+		styleMap.put(SACMPackage.UTILITY_ELEMENT, new StyleEntry(false,"UtilityElement"));
+		styleMap.put(SACMPackage.UTILITY_ELEMENT_FEATURE_COUNT, new StyleEntry(false,"UtilityElementFeatureCount"));
 
-		assignStyleId(SACMPackage.MODEL_ELEMENT__CONTENT,true,"Heading2Char"); // TODO testing
-		assignStyleId(SACMPackage.ARGUMENT_ELEMENT__CONTENT,false,"Heading3Char"); // TODO testing
+		// assignStyleId(SACMPackage.MODEL_ELEMENT__CONTENT,true,"Heading2Char"); // TODO testing
+		// assignStyleId(SACMPackage.ARGUMENT_ELEMENT__CONTENT,false,"Heading3Char"); // TODO testing
 
 		// override with plugin contributions
 		loadContributedStyles();

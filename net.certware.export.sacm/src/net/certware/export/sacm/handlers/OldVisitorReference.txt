@@ -1,0 +1,226 @@
+// old visitor for reference
+	/**
+	 * Visitor to pass to the model's tree iterator.
+	 * Overrides the case methods of the generated switch class.
+	 */
+	public SACMSwitch<Boolean> visitor = new SACMSwitch<Boolean>() {
+		private boolean writeTagsHeader;
+		private boolean writeArgumentElementHeader;
+		private boolean writeArgumentLinkHeader;
+		private boolean writeAssertedRelationshipHeader;
+		@SuppressWarnings("unused")
+		private boolean writeSourceHeader;
+		@SuppressWarnings("unused")
+		private boolean writeTargetHeader;
+		private boolean writeAssertedInferenceHeader;
+		private boolean writeAssertedEvidenceHeader;
+		private boolean writeAssertedContextHeader;
+		private boolean writeAssertedCounterEvidenceHeader;
+		private boolean writeAssertedChallengeHeader;
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+		 * @param me the target of the switch.
+		 * @param prefix model element type prefix
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseModelElement(String prefix, ModelElement me) {
+			// prefix, identifier, description, and content
+			// tagged values visited in a different case
+
+			// prefix, identifier, description, and content
+			// tagged values visited in a different case
+			//Br b = factory.createBr();
+			//b.setType(STBrType.TEXT_WRAPPING);
+			P modelElementParagraph = factory.createP();
+			String id = me.getIdentifier();
+			String heading = prefix + ' ' + me.getIdentifier();
+			if ( id.startsWith(prefix) )
+				heading = me.getIdentifier();
+			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT),heading));
+			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
+			//modelElementParagraph.getParagraphContent().add( factory.createRTab() );
+			//modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT__IDENTIFIER),me.getIdentifier()));
+			// modelElementParagraph.getParagraphContent().add( factory.createRCr());
+			modelElementParagraph.getParagraphContent().add( factory.createBr());
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Description: "));
+			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT__DESCRIPTION),me.getDescription()));
+			modelElementParagraph.getParagraphContent().add( factory.createBr());
+			modelElementParagraph.getParagraphContent().add( addRunOfText("Content: "));
+			modelElementParagraph.getParagraphContent().add( addStyledRunOfText(styleMap.get(SACMPackage.MODEL_ELEMENT__CONTENT),me.getContent()));
+			mainDocumentPart.addObject(modelElementParagraph);
+
+			// tags header, if any
+			writeTagsHeader = me.getIsTagged().isEmpty() == false;
+
+			return Boolean.TRUE;
+		}
+
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Argument</em>'.
+		 * @param argument the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseArgument(Argument argument) {
+			// identifier, description, and content
+			caseModelElement("Argument",argument);
+
+			// headers, if any
+			writeArgumentElementHeader = argument.getContainsArgumentElement().isEmpty() == false;
+			writeArgumentLinkHeader = argument.getContainsArgumentLink().isEmpty() == false;
+
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Argument Element</em>'.
+		 * @param argumentElement the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseArgumentElement(ArgumentElement argumentElement) {
+			if ( writeArgumentElementHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ARGUMENT_ELEMENT),"Argument Elements");
+				writeArgumentElementHeader = false;
+			}
+
+			caseModelElement("Argument Element",argumentElement);
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Argument Link</em>'.
+		 * @param argumentLink the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseArgumentLink(ArgumentLink argumentLink) {
+			if ( writeArgumentLinkHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ARGUMENT_ELEMENT), "Argument Links");
+				writeArgumentLinkHeader = false;
+			}
+
+			caseModelElement("Argument Link", argumentLink);
+
+			if ( argumentLink.getSource().isEmpty() == false ) {
+				writeSourceHeader = true;
+			}
+			if ( argumentLink.getTarget().isEmpty() == false ) {
+				writeTargetHeader = true;
+			}
+
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Relationship</em>'.
+		 * @param assertedRelationship the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedRelationship(AssertedRelationship assertedRelationship) {
+			if ( writeAssertedRelationshipHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ASSERTED_RELATIONSHIP), "Asserted Relationship");
+				writeAssertedRelationshipHeader = false;
+			}
+
+			caseModelElement("Asserted Relationship", assertedRelationship);
+
+			if ( assertedRelationship.getSource().isEmpty() == false ) {
+				writeSourceHeader = true;
+			}
+			if ( assertedRelationship.getTarget().isEmpty() == false ) {
+				writeTargetHeader = true;
+			}
+			return Boolean.TRUE;
+		}
+
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Inference</em>'.
+		 * @param assertedInference the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedInference(AssertedInference assertedInference) {
+			if ( writeAssertedInferenceHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ASSERTED_INFERENCE), "Asserted Inference");
+				writeAssertedInferenceHeader = false;
+			}
+
+			caseAssertedRelationship(assertedInference);
+
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Evidence</em>'.
+		 * @param assertedEvidence the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedEvidence(AssertedEvidence assertedEvidence) {
+			if ( writeAssertedEvidenceHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ASSERTED_EVIDENCE), "Asserted Evidence");
+				writeAssertedEvidenceHeader = false;
+			}
+
+			caseAssertedRelationship(assertedEvidence);
+
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Context</em>'.
+		 * @param assertedContext the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedContext(AssertedContext assertedContext) {
+			if ( writeAssertedContextHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ASSERTED_CONTEXT), "Asserted Context");
+				writeAssertedContextHeader = false;
+			}
+
+			caseAssertedRelationship(assertedContext);
+
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Counter Evidence</em>'.
+		 * @param assertedCounterEvidence the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedCounterEvidence(AssertedCounterEvidence assertedCounterEvidence) {
+			if ( writeAssertedCounterEvidenceHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ASSERTED_COUNTER_EVIDENCE), "Asserted Counter-Evidence");
+				writeAssertedCounterEvidenceHeader = false;
+			}
+			caseAssertedRelationship(assertedCounterEvidence);
+
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Asserted Challenge</em>'.
+		 * @param assertedChallenge the target of the switch.
+		 * @return always returns true
+		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+		 */
+		public Boolean caseAssertedChallenge(AssertedChallenge assertedChallenge) {
+			if ( writeAssertedChallengeHeader ) {
+				addStyledText(styleMap.get(SACMPackage.ASSERTED_CHALLENGE), "Asserted Challenge");
+				writeAssertedChallengeHeader = false;
+			}
+
+			caseAssertedRelationship(assertedChallenge);
+
+			return Boolean.TRUE;
+		}
+
+	};

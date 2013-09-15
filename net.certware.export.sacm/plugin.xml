@@ -48,58 +48,22 @@
                      operator="or">
                   <or>
                      <instanceof
-                           value="net.certware.sacm.Argument">
+                           value="net.certware.sacm.SACM.Annotation">
                      </instanceof>
                      <instanceof
-                           value="net.certware.sacm.Annotation">
+                           value="net.certware.sacm.SACM.AssuranceCase">
                      </instanceof>
                      <instanceof
-                           value="net.certware.sacm.ArgumentReasoning">
+                           value="net.certware.sacm.SACM.Datetime">
                      </instanceof>
                      <instanceof
-                           value="net.certware.sacm.ArgumentElement">
+                           value="net.certware.sacm.SACM.ModelElement">
                      </instanceof>
                      <instanceof
-                           value="net.certware.sacm.ArgumentLink">
+                           value="net.certware.sacm.SACM.TaggedValue">
                      </instanceof>
                      <instanceof
-                           value="net.certware.sacm.AssertedChallenge">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.AssertedContext">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.AssertedCounterEvidence">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.AssertedEvidence">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.AssertedInference">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.AssertedRelationship">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.CitationElement">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.Claim">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.EvidenceAssertion">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.InformationElement">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.ModelElement">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.ReasoningElement">
-                     </instanceof>
-                     <instanceof
-                           value="net.certware.sacm.TaggedValue">
+                           value="net.certware.sacm.SACM.UtilityElement">
                      </instanceof>
                   </or>
                </iterate>

@@ -24,11 +24,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
- * Handles the command to export a ARM model node (and its subordinates).
+ * Handles the command to export a SACM model node (and its subordinates).
  * @author mrb
  * @since 1.0
  */
-public class ExportARMHandler extends AbstractHandler {
+public class ExportSACMHandler extends AbstractHandler {
 	/**
 	 * Method execute.
 	 * @param event execution event associated with job
@@ -50,7 +50,7 @@ public class ExportARMHandler extends AbstractHandler {
 				// use various job constructors according to selection
 				Collection collection = null;
 				AbstractExportJob job = null;
-				final String jobTitle = "Export ARM model elements";
+				final String jobTitle = "Export SACM model elements";
 
 				if ( iss.size() > 1 ) {
 					collection = iss.toList();
@@ -63,7 +63,7 @@ public class ExportARMHandler extends AbstractHandler {
 						job = new ExportSACMJob(jobTitle, (EObject)iss.getFirstElement());
 					}
 					else {
-						CertWareLog.logWarning("Unknown selection for ARM export");
+						CertWareLog.logWarning("Unknown selection for SACM export");
 						return null;
 					}
 				}
