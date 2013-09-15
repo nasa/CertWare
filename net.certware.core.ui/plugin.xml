@@ -170,4 +170,14 @@
           splashId="net.certware.core.ui.splash.overlay">
     </splashHandlerProductBinding>
  </extension>
+ <extension
+       id="net.certware.resource.nature.id"
+       name="CertWare Nature"
+       point="org.eclipse.core.resources.natures">
+    <runtime>
+       <run
+             class="net.certware.core.ui.natures.ProjectNature">
+       </run>
+    </runtime>
+ </extension>
 </plugin>

@@ -18,7 +18,7 @@
          </related_pattern>
          <resource
                description="Pattern model file"
-               structure="resources/Industrial Press.sacm">
+               structure="resources/IndustrialPress.argumentation">
          </resource>
       </pattern>
       <pattern

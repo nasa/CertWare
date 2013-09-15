@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARM:Argumentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation">
+  <argumentElement xsi:type="ARM:Claim" id="C1" description="" content="&quot;C/S logic is fault free&quot;"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="RC1.1" content="Argument by satisfaction of all C/S safety requirements" structure="/"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="IRC1.1" description="Identified software hazards"/>
+  <argumentElement xsi:type="ARM:Claim" id="C1.1" description="" content="Unintended opening of press (after PoNR) can only occur as a result of component failure"/>
+  <argumentElement xsi:type="ARM:Claim" id="C1.2" description="" content="Unintended closing of press can only occur as a result of component failure"/>
+  <argumentElement xsi:type="ARM:Claim" id="C2.1" description="" content="Press controls being 'jammed on' will cause press to halt&quot;"/>
+  <argumentElement xsi:type="ARM:Claim" id="C2.2" description="" content="Release of controls prior to press passing physical PoNR will cause press operation to abort"/>
+  <argumentElement xsi:type="ARM:Claim" id="C2.3" description="" content="C/S fails safe (halts on) and annunciates (by sounding Klaxon) all component failures" toBeSupported="true"/>
+  <argumentElement xsi:type="ARM:Claim" id="C2.1.1" description="" content="Failure 1 of PLC state machine includes BUTTON_IN remaining true"/>
+  <argumentElement xsi:type="ARM:Claim" id="C2.2.1" description="" content="Abort transition of PLC state machine includes BUTTON_IN going false"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="S1.1" description="" content="Fault tree analysis cutsets for event 'Hand trapped in press due to command error"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="S1.2" description="" content="Hazard directed test results"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="S2.1" description="black box testing" content=""/>
+  <argumentElement xsi:type="ARM:InformationElement" id="S2.2.1" description="" content="C/S state machine"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="C1.1.1" source="//@argumentElement.3" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="C1.1.2" source="//@argumentElement.4" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="C1.2.1" description="" source="//@argumentElement.5" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="C1.2.2" source="//@argumentElement.6" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="C1.2.3" description="" source="//@argumentElement.7" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="CIRC1.1" source="//@argumentElement.2" target="//@argumentElement.1"/>
+  <argumentElement xsi:type="ARM:AssertedEvidence" id="S1.1" source="//@argumentElement.10" target="//@argumentElement.3 //@argumentElement.4"/>
+  <argumentElement xsi:type="ARM:AssertedEvidence" id="S1.1" source="//@argumentElement.10" target="//@argumentElement.3 //@argumentElement.4"/>
+  <argumentElement xsi:type="ARM:AssertedEvidence" id="S1.2" source="//@argumentElement.11" target="//@argumentElement.3 //@argumentElement.4"/>
+  <argumentElement xsi:type="ARM:AssertedEvidence" id="SC2.1" source="//@argumentElement.12" target="//@argumentElement.5"/>
+  <argumentElement xsi:type="ARM:AssertedEvidence" id="SC2.1.1" source="//@argumentElement.13" target="//@argumentElement.8"/>
+  <argumentElement xsi:type="ARM:AssertedEvidence" id="SC2.2.1" source="//@argumentElement.13" target="//@argumentElement.9"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="DI C2.1" source="//@argumentElement.8" target="//@argumentElement.5"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="DI C2.2" source="//@argumentElement.9" target="//@argumentElement.6"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AR29" source="//@argumentElement.1" target="//@argumentElement.14 //@argumentElement.15"/>
+</ARM:Argumentation>
