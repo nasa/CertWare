@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARM:Argumentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation">
+  <argumentElement xsi:type="ARM:Claim" id="Bluetooth secure" content="A bluetooth enabled network provides adequate security"/>
+  <argumentElement xsi:type="ARM:Claim" id="Availability" content="A bluetooth enabled network is adequately available [1] Section 1 para 3"/>
+  <argumentElement xsi:type="ARM:Claim" id="Access" content="A bluetooth enabled network provides adequate control for access to services and data [1] Section 1 para 3"/>
+  <argumentElement xsi:type="ARM:Claim" id="Confidentiality" content="A bluetooth enabled network provides adequate levels of confidentiality [1] Section 1 para 3"/>
+  <argumentElement xsi:type="ARM:Claim" id="Integrity" content="A bluetooth enabled network provides adequate levels of integrity [1] Section 1 para 3"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Context: security policy and scenario for use" content="Definitions are required of the intended security policy and the scenario of use for the system, including what is regarded as 'adequate'"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="References" content="[1] Bluetooth security white paper 19/4/02"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Definition: Availability" content="The system is capable of providing requested services to authorised users, in an acceptable/defined time"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Definition: Access" content="Only users permitted by the defined security policy have access to services and data"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Define: Confidentiality" content="Unauthorised persons cannot intercept and understand information to which they are not entitled"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Define: Integrity" content="Services and data are provided to authorised users as intended and without corruption"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC1" source="//@argumentElement.6" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC2" source="//@argumentElement.5" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC3" source="//@argumentElement.7" target="//@argumentElement.1"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC4" source="//@argumentElement.8" target="//@argumentElement.2"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC5" content="" source="//@argumentElement.9" target="//@argumentElement.3"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC6" source="//@argumentElement.10" target="//@argumentElement.4"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="AI1" description="" source="//@argumentElement.2 //@argumentElement.1 //@argumentElement.3 //@argumentElement.4" target="//@argumentElement.0"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Argue over vulnerabilities" content="Argue for each security requirement identified in the security white paper" describedInference="//@argumentElement.17"/>
+</ARM:Argumentation>
