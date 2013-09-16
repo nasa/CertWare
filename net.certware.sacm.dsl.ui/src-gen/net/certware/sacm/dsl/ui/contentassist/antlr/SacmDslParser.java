@@ -57,6 +57,7 @@ public class SacmDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFormalElementAccess().getAlternatives(), "rule__FormalElement__Alternatives");
 					put(grammarAccess.getEvidenceRelationAccess().getAlternatives(), "rule__EvidenceRelation__Alternatives");
 					put(grammarAccess.getEvidenceObservationAccess().getAlternatives(), "rule__EvidenceObservation__Alternatives");
+					put(grammarAccess.getBooleanAccess().getAlternatives(), "rule__Boolean__Alternatives");
 					put(grammarAccess.getAssuranceCaseAccess().getGroup(), "rule__AssuranceCase__Group__0");
 					put(grammarAccess.getAssuranceCaseAccess().getGroup_8(), "rule__AssuranceCase__Group_8__0");
 					put(grammarAccess.getAssuranceCaseAccess().getGroup_8_3(), "rule__AssuranceCase__Group_8_3__0");

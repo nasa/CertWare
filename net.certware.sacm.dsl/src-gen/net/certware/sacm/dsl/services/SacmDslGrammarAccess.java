@@ -244,19 +244,6 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
-	public class EStringElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
-		private final RuleCall cString0ParserRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//// note this bit was added because without this rule many errors below turn up
-		//EString returns ecore::EString:
-		//	String0;
-		public ParserRule getRule() { return rule; }
-
-		//String0
-		public RuleCall getString0ParserRuleCall() { return cString0ParserRuleCall; }
-	}
-
 	public class ArgumentElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArgumentElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -270,6 +257,7 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAssertedChallengeParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cAssertedCounterEvidenceParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
+		//// note this bit was added because without this rule many errors below turn up
 		//ArgumentElement returns Argumentation::ArgumentElement:
 		//	CitationElement | InformationElement | ArgumentReasoning | Claim | AssertedInference | AssertedEvidence |
 		//	AssertedContext | AssertedChallenge | AssertedCounterEvidence;
@@ -1350,16 +1338,30 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
-	public class String0Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "String0");
-		private final Keyword cStringKeyword = (Keyword)rule.eContents().get(1);
+	public class EStringElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
+		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		/// * TODO: implement this rule and an appropriate IValueConverter * / String0 returns SACM::String:
-		//	"String";
+		//// Added because generator did not
+		//EString returns ecore::EString:
+		//	STRING;
 		public ParserRule getRule() { return rule; }
 
-		//"String"
-		public Keyword getStringKeyword() { return cStringKeyword; }
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+	}
+
+	public class String0Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "String0");
+		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//// Added because value converter requested below is just string
+		//String0:
+		//	STRING;
+		public ParserRule getRule() { return rule; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
 	}
 
 	public class Argumentation0Elements extends AbstractParserRuleElementFinder {
@@ -1418,6 +1420,11 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_11_4 = (Keyword)cGroup_11.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
+		////String0 returns SACM::String:
+		////	'String' / * TODO: implement this rule and an appropriate IValueConverter * /
+		////	;
+		////String0 returns EString:
+		////;
 		//Argumentation0 returns Argumentation::Argumentation:
 		//	"Argumentation" "{" "id" id=String0 "description" description=String0 "content" content=String0 ("taggedValue" "{"
 		//	taggedValue+=TaggedValue ("," taggedValue+=TaggedValue)* "}")? ("annotation" "{" annotation+=Annotation (","
@@ -21339,26 +21346,40 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class IntegerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Integer");
-		private final Keyword cIntegerKeyword = (Keyword)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		/// * TODO: implement this rule and an appropriate IValueConverter * / Integer returns SACM::Integer:
-		//	"Integer";
+		//// Integer : INT;
+		//Integer returns ecore::EInt:
+		//	INT;
 		public ParserRule getRule() { return rule; }
 
-		//"Integer"
-		public Keyword getIntegerKeyword() { return cIntegerKeyword; }
+		//INT
+		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
 	}
 
 	public class BooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Boolean");
-		private final Keyword cBooleanKeyword = (Keyword)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		/// * TODO: implement this rule and an appropriate IValueConverter * / Boolean returns SACM::Boolean:
-		//	"Boolean";
+		////Integer returns SACM::Integer:
+		////	'Integer' / * TODO: implement this rule and an appropriate IValueConverter * /;
+		//// Boolean : (true|FALSE);
+		////Boolean returns SACM::Boolean:
+		////	'Boolean' / * TODO: implement this rule and an appropriate IValueConverter * /;
+		//Boolean returns ecore::EBoolean:
+		//	"true" | "false";
 		public ParserRule getRule() { return rule; }
 
-		//"Boolean"
-		public Keyword getBooleanKeyword() { return cBooleanKeyword; }
+		//"true" | "false"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"true"
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+
+		//"false"
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
 	}
 
 	public class RoleBindingElements extends AbstractParserRuleElementFinder {
@@ -21423,6 +21444,10 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cEObjectAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEObjectKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
+		////EString returns ecore::EString:
+		////	{ecore::EString}
+		////	'EString'	
+		////	;
 		//EObject returns ecore::EObject:
 		//	{ecore::EObject} "EObject";
 		public ParserRule getRule() { return rule; }
@@ -28517,7 +28542,6 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private AssuranceCaseElements pAssuranceCase;
-	private EStringElements pEString;
 	private ArgumentElementElements pArgumentElement;
 	private EvidenceEvaluationElements pEvidenceEvaluation;
 	private EvidenceItemElements pEvidenceItem;
@@ -28540,6 +28564,7 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 	private EvidenceObservationElements pEvidenceObservation;
 	private TaggedValueElements pTaggedValue;
 	private AnnotationElements pAnnotation;
+	private EStringElements pEString;
 	private String0Elements pString0;
 	private Argumentation0Elements pArgumentation0;
 	private EvidenceContainerElements pEvidenceContainer;
@@ -28696,16 +28721,6 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// note this bit was added because without this rule many errors below turn up
-	//EString returns ecore::EString:
-	//	String0;
-	public EStringElements getEStringAccess() {
-		return (pEString != null) ? pEString : (pEString = new EStringElements());
-	}
-	
-	public ParserRule getEStringRule() {
-		return getEStringAccess().getRule();
-	}
-
 	//ArgumentElement returns Argumentation::ArgumentElement:
 	//	CitationElement | InformationElement | ArgumentReasoning | Claim | AssertedInference | AssertedEvidence |
 	//	AssertedContext | AssertedChallenge | AssertedCounterEvidence;
@@ -28941,8 +28956,20 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getAnnotationAccess().getRule();
 	}
 
-	/// * TODO: implement this rule and an appropriate IValueConverter * / String0 returns SACM::String:
-	//	"String";
+	//// Added because generator did not
+	//EString returns ecore::EString:
+	//	STRING;
+	public EStringElements getEStringAccess() {
+		return (pEString != null) ? pEString : (pEString = new EStringElements());
+	}
+	
+	public ParserRule getEStringRule() {
+		return getEStringAccess().getRule();
+	}
+
+	//// Added because value converter requested below is just string
+	//String0:
+	//	STRING;
 	public String0Elements getString0Access() {
 		return (pString0 != null) ? pString0 : (pString0 = new String0Elements());
 	}
@@ -28951,6 +28978,11 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getString0Access().getRule();
 	}
 
+	////String0 returns SACM::String:
+	////	'String' / * TODO: implement this rule and an appropriate IValueConverter * /
+	////	;
+	////String0 returns EString:
+	////;
 	//Argumentation0 returns Argumentation::Argumentation:
 	//	"Argumentation" "{" "id" id=String0 "description" description=String0 "content" content=String0 ("taggedValue" "{"
 	//	taggedValue+=TaggedValue ("," taggedValue+=TaggedValue)* "}")? ("annotation" "{" annotation+=Annotation (","
@@ -29954,8 +29986,9 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getReliabilityLevelAccess().getRule();
 	}
 
-	/// * TODO: implement this rule and an appropriate IValueConverter * / Integer returns SACM::Integer:
-	//	"Integer";
+	//// Integer : INT;
+	//Integer returns ecore::EInt:
+	//	INT;
 	public IntegerElements getIntegerAccess() {
 		return (pInteger != null) ? pInteger : (pInteger = new IntegerElements());
 	}
@@ -29964,8 +29997,13 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getIntegerAccess().getRule();
 	}
 
-	/// * TODO: implement this rule and an appropriate IValueConverter * / Boolean returns SACM::Boolean:
-	//	"Boolean";
+	////Integer returns SACM::Integer:
+	////	'Integer' / * TODO: implement this rule and an appropriate IValueConverter * /;
+	//// Boolean : (true|FALSE);
+	////Boolean returns SACM::Boolean:
+	////	'Boolean' / * TODO: implement this rule and an appropriate IValueConverter * /;
+	//Boolean returns ecore::EBoolean:
+	//	"true" | "false";
 	public BooleanElements getBooleanAccess() {
 		return (pBoolean != null) ? pBoolean : (pBoolean = new BooleanElements());
 	}
@@ -29984,6 +30022,10 @@ public class SacmDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getRoleBindingAccess().getRule();
 	}
 
+	////EString returns ecore::EString:
+	////	{ecore::EString}
+	////	'EString'	
+	////	;
 	//EObject returns ecore::EObject:
 	//	{ecore::EObject} "EObject";
 	public EObjectElements getEObjectAccess() {

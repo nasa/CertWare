@@ -102,14 +102,15 @@ Annotation returns SACM::Annotation:
 		'content' content=String0
 	'}';
 
-/* TODO bogus rule */
-EString :
-	String0
-;
+// Added because generator did not
+EString : STRING;
 
-String0 returns SACM::String:
-	'String' /* TODO: implement this rule and an appropriate IValueConverter */
-	;
+// Added because value converter requested below is just string
+String0 : STRING;
+
+//String0 returns SACM::String:
+//	'String' /* TODO: implement this rule and an appropriate IValueConverter */
+//	;
 //String0 returns EString:
 //;
 
@@ -1018,11 +1019,21 @@ OriginalityLevel returns OriginalityLevel:
 ReliabilityLevel returns ReliabilityLevel:
 	'ReliabilityLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-Integer returns SACM::Integer:
-	'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
+// Integer : INT;
+Integer returns ecore::EInt:
+	INT
+;
 
-Boolean returns SACM::Boolean:
-	'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+//Integer returns SACM::Integer:
+//	'Integer' /* TODO: implement this rule and an appropriate IValueConverter */;
+
+// Boolean : (true|FALSE);
+
+//Boolean returns SACM::Boolean:
+//	'Boolean' /* TODO: implement this rule and an appropriate IValueConverter */;
+Boolean returns ecore::EBoolean:
+	('true'|'false')
+;
 
 RoleBinding returns RoleBinding:
 	'RoleBinding'
