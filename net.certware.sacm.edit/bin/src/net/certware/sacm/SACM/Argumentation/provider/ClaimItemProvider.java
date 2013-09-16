@@ -135,14 +135,15 @@ public class ClaimItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Claim)object).getId();
+		String content = ((Claim)object).getContent();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Claim_type") : //$NON-NLS-1$
-			getString("_UI_Claim_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+			getString("_UI_Claim_type") + " " + label + ": " + content; //$NON-NLS-1$ //$NON-NLS-2$ // NLS 3 okay
 	}
 
 	/**

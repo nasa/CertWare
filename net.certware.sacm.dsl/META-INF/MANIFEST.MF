@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare SACM DSL
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: net.certware.sacm.dsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ net.certware.sacm;bundle-version="1.0.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.sacm.dsl,
+ net.certware.sacm.dsl.services,
+ net.certware.sacm.dsl.serializer,
+ net.certware.sacm.dsl.parser.antlr,
+ net.certware.sacm.dsl.parser.antlr.internal,
+ net.certware.sacm.dsl.validation,
+ net.certware.sacm.dsl.scoping,
+ net.certware.sacm.dsl.generator,
+ net.certware.sacm.dsl.formatting

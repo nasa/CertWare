@@ -122,8 +122,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		case IResource.FOLDER:
 			return true;
 		case IResource.FILE:
-			final IFile file = (IFile) source; 
-			if ( ICertWareConstants.SACM_EXTENSION.equals(file.getFileExtension())) {
+			final IFile file = (IFile) source;
+			if ( isSacm(file) ) {
 				updateModel(file);
 				new UIJob(Messages.Job) {
 					public IStatus runInUIThread(IProgressMonitor monitor) {
@@ -180,7 +180,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 			children = NO_CHILDREN;
 		} else if (parentElement instanceof IFile) {
 			final IFile modelFile = (IFile)parentElement;
-			if ( ICertWareConstants.SACM_EXTENSION.equals( modelFile.getFileExtension() ) ) {
+			if ( isSacm(modelFile) ) {
 				children = cachedModelMap.get(modelFile);
 				if ( null == children && null != updateModel(modelFile) ) {
 					children = cachedModelMap.get(modelFile);
@@ -206,6 +206,18 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	}
 
 	/**
+	 * Whether a given file has an extension matching the SACM models.
+	 * @param f file to text extension
+	 * @return true if extension matches one of several SACM extensions
+	 */
+	private boolean isSacm(IFile f) {
+		String ext = f.getFileExtension();
+		return ICertWareConstants.SACM_EXTENSION.equals(ext) ||
+				ICertWareConstants.SACM_ARG_EXTENSION.equals(ext) ||
+				ICertWareConstants.SACM_EVIDENCE_EXTENSION.equals(ext);
+	}
+	
+	/**
 	 * Method hasChildren.
 	 * @param element Object
 	 * @return boolean
@@ -216,10 +228,11 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		if ( element instanceof TreeData ) {
 			return false;
 		}
-		else if ( element instanceof IFile ) {
-			return ICertWareConstants.SACM_EXTENSION.equals(((IFile)element).getFileExtension());
+		else 
+			if ( element instanceof IFile ) {
+				return isSacm((IFile)element);
 		}
-
+		
 		return false;
 	}
 
@@ -229,7 +242,7 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	 * @return model resource processed from file 
 	 */
 	private synchronized Resource updateModel(IFile modelFile) { 
-		if ( ICertWareConstants.SACM_EXTENSION.equals(modelFile.getFileExtension())) {
+		if ( isSacm(modelFile) ) {
 
 			if (modelFile.exists()) {
 				final ResourceSet resourceSet = new ResourceSetImpl();

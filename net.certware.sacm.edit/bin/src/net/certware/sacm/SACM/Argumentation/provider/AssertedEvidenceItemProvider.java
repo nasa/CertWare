@@ -6,12 +6,15 @@ package net.certware.sacm.SACM.Argumentation.provider;
 
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
+import net.certware.sacm.SACM.Argumentation.ArgumentElement;
 import net.certware.sacm.SACM.Argumentation.AssertedEvidence;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -56,6 +59,25 @@ public class AssertedEvidenceItemProvider
 	}
 
 	/**
+	 * Returns a parenthesized and comma-delimited string for an argument element list.
+	 * @param e argument element list
+	 * @return parenthesized and comma-delimited string or empty string
+	 */
+	private String listToString(EList<ArgumentElement> e) {
+		StringBuffer sb = new StringBuffer();
+		Iterator<ArgumentElement> i = e.iterator();
+		sb.append('(');
+		while( i.hasNext() ) {
+			ArgumentElement ae = (ArgumentElement)i.next();
+			sb.append(ae.getId());
+			if ( i.hasNext() )
+				sb.append(',');
+		}
+		sb.append(')');
+		return sb.toString();
+	}
+	
+	/**
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,14 +107,18 @@ public class AssertedEvidenceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((AssertedEvidence)object).getId();
+		EList<ArgumentElement> sources = ((AssertedEvidence)object).getSource();
+		EList<ArgumentElement> targets = ((AssertedEvidence)object).getTarget();
+
 		return label == null || label.length() == 0 ?
 			getString("_UI_AssertedEvidence_type") : //$NON-NLS-1$
-			getString("_UI_AssertedEvidence_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_AssertedEvidence_type") + " " + label + ": " + 
+				listToString(sources) + "->" + listToString(targets); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

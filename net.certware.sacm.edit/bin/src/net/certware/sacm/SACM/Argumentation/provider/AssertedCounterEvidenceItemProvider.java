@@ -6,13 +6,15 @@ package net.certware.sacm.SACM.Argumentation.provider;
 
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
+import net.certware.sacm.SACM.Argumentation.ArgumentElement;
 import net.certware.sacm.SACM.Argumentation.AssertedCounterEvidence;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -82,17 +84,39 @@ public class AssertedCounterEvidenceItemProvider
 	}
 
 	/**
+	 * Returns a parenthesized and comma-delimited string for an argument element list.
+	 * @param e argument element list
+	 * @return parenthesized and comma-delimited string or empty string
+	 */
+	private String listToString(EList<ArgumentElement> e) {
+		StringBuffer sb = new StringBuffer();
+		Iterator<ArgumentElement> i = e.iterator();
+		sb.append('(');
+		while( i.hasNext() ) {
+			ArgumentElement ae = (ArgumentElement)i.next();
+			sb.append(ae.getId());
+			if ( i.hasNext() )
+				sb.append(',');
+		}
+		sb.append(')');
+		return sb.toString();
+	}
+	
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((AssertedCounterEvidence)object).getId();
+		EList<ArgumentElement> sources = ((AssertedCounterEvidence)object).getSource();
+		EList<ArgumentElement> targets = ((AssertedCounterEvidence)object).getTarget();
 		return label == null || label.length() == 0 ?
 			getString("_UI_AssertedCounterEvidence_type") : //$NON-NLS-1$
-			getString("_UI_AssertedCounterEvidence_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_AssertedCounterEvidence_type") + " " + label + ": " + 
+				listToString(sources) + "->" + listToString(targets); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

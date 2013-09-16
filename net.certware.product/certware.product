@@ -142,6 +142,8 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.export"/>
       <plugin id="net.certware.export.sacm"/>
       <plugin id="net.certware.hazard"/>
+      <plugin id="net.certware.hazard.edit"/>
+      <plugin id="net.certware.hazard.editor"/>
       <plugin id="net.certware.help"/>
       <plugin id="net.certware.history"/>
       <plugin id="net.certware.history.egit"/>
@@ -174,6 +176,8 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.planning.mspdi.editor"/>
       <plugin id="net.certware.product"/>
       <plugin id="net.certware.sacm"/>
+      <plugin id="net.certware.sacm.dsl"/>
+      <plugin id="net.certware.sacm.dsl.ui"/>
       <plugin id="net.certware.sacm.edit"/>
       <plugin id="net.certware.sacm.editor"/>
       <plugin id="net.certware.sacm.help"/>
@@ -494,11 +498,18 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.update.ui"/>
       <plugin id="org.eclipse.xpand"/>
       <plugin id="org.eclipse.xtend"/>
+      <plugin id="org.eclipse.xtend.lib"/>
       <plugin id="org.eclipse.xtend.typesystem.emf"/>
       <plugin id="org.eclipse.xtext"/>
       <plugin id="org.eclipse.xtext.builder"/>
+      <plugin id="org.eclipse.xtext.common.types"/>
+      <plugin id="org.eclipse.xtext.common.types.ui"/>
+      <plugin id="org.eclipse.xtext.ecore"/>
+      <plugin id="org.eclipse.xtext.generator"/>
       <plugin id="org.eclipse.xtext.logging" fragment="true"/>
       <plugin id="org.eclipse.xtext.ui"/>
+      <plugin id="org.eclipse.xtext.ui.codetemplates"/>
+      <plugin id="org.eclipse.xtext.ui.codetemplates.ui"/>
       <plugin id="org.eclipse.xtext.ui.shared"/>
       <plugin id="org.eclipse.xtext.util"/>
       <plugin id="org.eclipse.xtext.xbase.lib"/>

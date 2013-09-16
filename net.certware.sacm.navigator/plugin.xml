@@ -44,11 +44,23 @@
                   <instanceof
                         value="org.eclipse.core.resources.IResource">
                   </instanceof>
-                  <test
-                        forcePluginActivation="true"
-                        property="org.eclipse.core.resources.extension"
-                        value="sacm">
-                  </test>
+                  <or>
+                     <test
+                           forcePluginActivation="true"
+                           property="org.eclipse.core.resources.extension"
+                           value="sacm">
+                     </test>
+                     <test
+                           forcePluginActivation="true"
+                           property="org.eclipse.core.resources.extension"
+                           value="argumentation">
+                     </test>
+                     <test
+                           forcePluginActivation="true"
+                           property="org.eclipse.core.resources.extension"
+                           value="evidence">
+                     </test>
+                  </or>
                </and>
                <instanceof
                      value="net.certware.sacm.navigator.TreeData">
