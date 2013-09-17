@@ -43,9 +43,9 @@ import org.eclipse.swt.widgets.Group;
  */
 public class CommitHistoryPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, CommitHistoryPropertiesEditionPart {
 
-protected ReferencesTable commitRecord;
-protected List<ViewerFilter> commitRecordBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> commitRecordFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable commitRecord;
+	protected List<ViewerFilter> commitRecordBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> commitRecordFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -124,7 +124,7 @@ protected List<ViewerFilter> commitRecordFilters = new ArrayList<ViewerFilter>()
 	 * 
 	 */
 	protected Composite createCommitRecordAdvancedTableComposition(Composite parent) {
-		this.commitRecord = new ReferencesTable(ScoMessages.CommitHistoryPropertiesEditionPart_CommitRecordLabel, new ReferencesTableListener() {
+		this.commitRecord = new ReferencesTable(getDescription(ScoViewsRepository.CommitHistory.Properties.commitRecord, ScoMessages.CommitHistoryPropertiesEditionPart_CommitRecordLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CommitHistoryPropertiesEditionPartImpl.this, ScoViewsRepository.CommitHistory.Properties.commitRecord, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				commitRecord.refresh();
@@ -164,9 +164,11 @@ protected List<ViewerFilter> commitRecordFilters = new ArrayList<ViewerFilter>()
 		this.commitRecord.setUpperBound(-1);
 		commitRecord.setID(ScoViewsRepository.CommitHistory.Properties.commitRecord);
 		commitRecord.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createCommitRecordAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -194,6 +196,14 @@ protected List<ViewerFilter> commitRecordFilters = new ArrayList<ViewerFilter>()
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		commitRecord.setContentProvider(contentProvider);
 		commitRecord.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CommitHistory.Properties.commitRecord);
+		if (eefElementEditorReadOnlyState && commitRecord.isEnabled()) {
+			commitRecord.setEnabled(false);
+			commitRecord.setToolTipText(ScoMessages.CommitHistory_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !commitRecord.isEnabled()) {
+			commitRecord.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -238,7 +248,6 @@ protected List<ViewerFilter> commitRecordFilters = new ArrayList<ViewerFilter>()
 	public boolean isContainedInCommitRecordTable(EObject element) {
 		return ((ReferencesTableSettings)commitRecord.getInput()).contains(element);
 	}
-
 
 
 

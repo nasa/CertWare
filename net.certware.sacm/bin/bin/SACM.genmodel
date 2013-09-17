@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2013 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.&#xA;"
+    modelDirectory="/net.certware.sacm/src" modelPluginID="net.certware.sacm" modelName="SACM"
+    editPluginClass="net.certware.sacm.provider.SACMEditPlugin" editorPluginClass="net.certware.sacm.presentation.SACMEditorPlugin"
+    nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
+    minimalReflectiveMethods="false" complianceLevel="6.0" colorProviders="true" fontProviders="true">
+  <foreignModel>SACM.ecore</foreignModel>
+  <genPackages prefix="SACM" basePackage="net.certware.sacm" resource="XMI" disposableProviderFactory="true"
+      generateExampleClass="false" multipleEditorPages="false" ecorePackage="SACM.ecore#/">
+    <genDataTypes ecoreDataType="SACM.ecore#//Boolean"/>
+    <genDataTypes ecoreDataType="SACM.ecore#//Integer"/>
+    <genDataTypes ecoreDataType="SACM.ecore#//String"/>
+    <genClasses ecoreClass="SACM.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Annotation/content"/>
+    </genClasses>
+    <genClasses ecoreClass="SACM.ecore#//AssuranceCase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//AssuranceCase/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//AssuranceCase/gid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//AssuranceCase/argument"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//AssuranceCase/evidence"/>
+    </genClasses>
+    <genClasses ecoreClass="SACM.ecore#//Datetime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Datetime/datetime"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SACM.ecore#//ModelElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//ModelElement/taggedValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//ModelElement/annotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//ModelElement/id"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SACM.ecore#//SACMElement"/>
+    <genClasses ecoreClass="SACM.ecore#//TaggedValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//TaggedValue/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//TaggedValue/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SACM.ecore#//UtilityElement"/>
+    <nestedGenPackages prefix="Argumentation" disposableProviderFactory="true" ecorePackage="SACM.ecore#//Argumentation">
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/Argumentation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/Argumentation/argumentation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/Argumentation/argumentElement"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Argumentation/ArgumentElement"/>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/CitationElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/CitationElement/argumentElementReference"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/CitationElement/argumentationReference"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/InformationElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/InformationElement/evidence"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Argumentation/InformationElement/url"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Argumentation/ReasoningElement"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Argumentation/Assertion"/>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/ArgumentReasoning">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/ArgumentReasoning/structure"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/ArgumentReasoning/describedInference"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/ArgumentReasoning/describedChallenge"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Argumentation/AssertedRelationship">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/AssertedRelationship/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/AssertedRelationship/target"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/Claim">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Argumentation/Claim/assumed"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Argumentation/Claim/toBeSupported"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/AssertedInference"/>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/AssertedEvidence"/>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/AssertedContext"/>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/AssertedChallenge"/>
+      <genClasses ecoreClass="SACM.ecore#//Argumentation/AssertedCounterEvidence"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Argumentation/ArgumentationElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Argumentation/ArgumentationElement/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Argumentation/ArgumentationElement/content"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Evidence" disposableProviderFactory="true" ecorePackage="SACM.ecore#//Evidence">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/ReliabilityLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/unReliable"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/notUsuallyReliable"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/usuallyReliable"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/fairlyReliable"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/completelyReliable"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/CompletenessLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/CompletenessLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/CompletenessLevel/incomplete"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/CompletenessLevel/draft"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/CompletenessLevel/final"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/CompletenessLevel/obsolete"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/OriginalityLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/OriginalityLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/OriginalityLevel/derivative"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/OriginalityLevel/original"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/ConsistencyLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConsistencyLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConsistencyLevel/informal"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConsistencyLevel/semiformal"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConsistencyLevel/formal"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/Level">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/Level/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/Level/low"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/Level/mediumLow"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/Level/medium"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/Level/mediumHigh"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/Level/high"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/SupportLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/SupportLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/SupportLevel/indirect"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/SupportLevel/direct"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/ReportingLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReportingLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReportingLevel/secondary"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReportingLevel/primary"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/ConfidenceLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConfidenceLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConfidenceLevel/reportedAsUncertain"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConfidenceLevel/reportedAsPlausible"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ConfidenceLevel/reportedAsFact"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/AccuracyLevel">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/AccuracyLevel/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/AccuracyLevel/improbable"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/AccuracyLevel/doubtful"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/AccuracyLevel/possible"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/AccuracyLevel/probable"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/AccuracyLevel/confirmed"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/StandardOfProof">
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/StandardOfProof/unknown"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/StandardOfProof/other"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/StandardOfProof/POE"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/StandardOfProof/RCE"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/StandardOfProof/CCE"/>
+        <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/StandardOfProof/BRD"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceAttribute"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Consistency">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Consistency/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Completeness">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Completeness/status"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Document">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Document/title"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Document/citation"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Confidence">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Confidence/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ApprovedBy">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/ApprovedBy/supervisor"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/CreatedBy">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/CreatedBy/source"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Tool">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Tool/version"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Method"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceItem"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsBasedOn">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/IsBasedOn/source"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/FormalAssertion">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/FormalAssertion/content"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsA">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/IsA/definition"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsCharacterizedBy">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/IsCharacterizedBy/assertion"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Person"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Organization">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Organization/address"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/EvidenceContainer">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/EvidenceContainer/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceContainer/evaluation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceContainer/item"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/EvidenceContainer/gid"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceContainer/property"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/EvidenceContainer/version"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceContainer/element"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/EndTime">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EndTime/datetime"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Assertion">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Assertion/facttype"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Assertion/role"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Assertion/definition"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Object">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Object/concept"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Object/definition"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/CompositeObject">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/CompositeObject/element"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/RoleBinding">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/RoleBinding/role"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/RoleBinding/subject"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/StartTime">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/StartTime/datetime"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Relevance">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Relevance/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Significance">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Significance/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Accuracy">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Accuracy/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/HasRoleIn">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/HasRoleIn/role"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/HasRoleIn/organization"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsScopedBy">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/IsScopedBy/scope"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EffectiveTime"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/AtTime">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/AtTime/dateTtime"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Originality">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Originality/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Reporting">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Reporting/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Reliability">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Reliability/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Supports"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsGeneratedAt"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/CollectionMethod"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceRelation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceRelation/assertion"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceRelation/subject"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Support">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Support/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Conflicts">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Conflicts/assertion"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Conflicts/subject"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Refutes">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Refutes/element"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Negates">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Negates/element"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/UnknownObject"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceEvaluation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceEvaluation/attribute"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Resolves">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Resolves/element"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/Stakeholder"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/EvidenceRequest">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceRequest/item"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ProjectObjective"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Activity"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/DependsOn">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/DependsOn/element"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Satisfies">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Satisfies/element"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/ProjectElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/ProjectElement/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/ProjectElement/content"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/ProjectElement/property"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ReferencedClaim">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/ReferencedClaim/claim"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceObservation"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceResolution">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceResolution/subject"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Weakens"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Amplifies"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/Contributes">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Contributes/subject"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Contributes/relation"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Challenges"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Strength">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Strength/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsAcquiredAt"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsTransferredTo"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/DocumentProperty"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceEvent"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/OwnedBy">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/OwnedBy/owner"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/Provenance"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/TimingProperty"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsPartOf">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/IsPartOf/whole"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsRevokedAt"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ProvidesContext">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/ProvidesContext/context"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/FormalObject">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/FormalObject/name"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/MeansThat">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/MeansThat/meaning"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceElement/timing"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceElement/custody"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceElement/provenance"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceElement/event"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/CareOf">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/CareOf/custodian"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/CustodyProperty"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/AtLocation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/AtLocation/location"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsCreatedAt"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/RequiresContainer">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/RequiresContainer/container"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/ProjectProperty"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Service"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/HasElectronicSource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/HasElectronicSource/source"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/HasElectronicSource/format"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/HasElectronicSource/fileSize"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsExpressedInLanguage">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/IsExpressedInLanguage/language"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/IsExpressedInLanguage/IsPrimary"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/UsingProcess">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/UsingProcess/method"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/HasSecurityClassification">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/HasSecurityClassification/securityClassification"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsReleaseableTo">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/IsReleaseableTo/releasability"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/EvidenceGroup">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/EvidenceGroup/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceGroup/element"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/HasVersion">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/HasVersion/version"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/HasMedia">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/HasMedia/media"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Exhibit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Exhibit/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Exhibit/url"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Evidence/Exhibit/property"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/FormalElement"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/ExhibitProperty"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceInterpretation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/EvidenceInterpretation/subject"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceAssertion"/>
+      <genClasses image="false" ecoreClass="SACM.ecore#//Evidence/EvidenceProperty"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ExtendedEvidenceAttribute"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ExtendedDocumentProperty"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/Record">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Record/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/Record/content"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ObjectifiedAssertion">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/ObjectifiedAssertion/assertion"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/IsModifiedBy"/>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/PerformedBy">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SACM.ecore#//Evidence/PerformedBy/executor"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ContainerConsistency">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/ContainerConsistency/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ContainerCompleteness">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/ContainerCompleteness/value"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/CompliesTo">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Evidence/CompliesTo/criteria"/>
+      </genClasses>
+      <genClasses ecoreClass="SACM.ecore#//Evidence/ExtendedProjectProperty"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

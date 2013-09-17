@@ -22,6 +22,7 @@ public class ChecklistMessages extends NLS {
 	
 	public static String ChecklistPropertiesEditionPart_PropertiesGroupLabel;
 
+
 	
 	public static String Category_ReadOnly;
 
@@ -39,6 +40,7 @@ public class ChecklistMessages extends NLS {
 
 	
 	public static String Checklist_Part_Title;
+
 
 	
 	public static String CategoryPropertiesEditionPart_NameLabel;
@@ -75,6 +77,7 @@ public class ChecklistMessages extends NLS {
 
 	
 	public static String ChecklistPropertiesEditionPart_CommentLabel;
+
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

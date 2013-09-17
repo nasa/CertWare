@@ -5,7 +5,6 @@ package net.certware.verification.checklist.parts;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
 
 
 
@@ -67,10 +66,10 @@ public interface ItemPropertiesEditionPart {
 
 	/**
 	 * Init the result
-	 * @param eenum the enum to manage
+	 * @param input the viewer input
 	 * @param current the current value
 	 */
-	public void initResult(EEnum eenum, Enumerator current);
+	public void initResult(Object input, Enumerator current);
 
 	/**
 	 * Defines a new result

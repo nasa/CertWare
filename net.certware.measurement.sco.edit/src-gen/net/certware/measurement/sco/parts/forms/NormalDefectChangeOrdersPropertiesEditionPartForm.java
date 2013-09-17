@@ -9,15 +9,13 @@ import net.certware.measurement.sco.parts.ScoViewsRepository;
 import net.certware.measurement.sco.providers.ScoMessages;
 
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
@@ -42,6 +40,7 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.views.properties.tabbed.ISection;
 
 
 // End of user code
@@ -50,7 +49,7 @@ import org.eclipse.ui.forms.widgets.Section;
  * 
  * 
  */
-public class NormalDefectChangeOrdersPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, NormalDefectChangeOrdersPropertiesEditionPart {
+public class NormalDefectChangeOrdersPropertiesEditionPartForm extends SectionPropertiesEditingPart implements IFormPropertiesEditionPart, NormalDefectChangeOrdersPropertiesEditionPart {
 
 	protected Text name;
 	protected Text value;
@@ -60,6 +59,11 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 	protected Text repairEffort;
 
 
+
+	/**
+	 * For {@link ISection} use only.
+	 */
+	public NormalDefectChangeOrdersPropertiesEditionPartForm() { super(); }
 
 	/**
 	 * Default constructor
@@ -114,22 +118,22 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 					return createPropertiesGroup(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.NormalDefectChangeOrders.Properties.name) {
-					return 		createNameText(widgetFactory, parent);
+					return createNameText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.NormalDefectChangeOrders.Properties.value) {
-					return 		createValueText(widgetFactory, parent);
+					return createValueText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.NormalDefectChangeOrders.Properties.type) {
 					return createTypeEMFComboViewer(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines) {
-					return 		createBrokenLinesText(widgetFactory, parent);
+					return createBrokenLinesText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines) {
-					return 		createFixedLinesText(widgetFactory, parent);
+					return createFixedLinesText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort) {
-					return 		createRepairEffortText(widgetFactory, parent);
+					return createRepairEffortText(widgetFactory, parent);
 				}
 				return parent;
 			}
@@ -155,7 +159,7 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 
 	
 	protected Composite createNameText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NormalDefectChangeOrders.Properties.name, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.NormalDefectChangeOrders.Properties.name, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_NameLabel);
 		name = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		name.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -169,8 +173,33 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(NormalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.NormalDefectChangeOrders.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.NormalDefectChangeOrders.Properties.name,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.NormalDefectChangeOrders.Properties.name,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, name.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		name.addKeyListener(new KeyAdapter() {
@@ -190,12 +219,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		EditingUtils.setID(name, ScoViewsRepository.NormalDefectChangeOrders.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NormalDefectChangeOrders.Properties.name, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createNameText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createValueText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_ValueLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NormalDefectChangeOrders.Properties.value, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.NormalDefectChangeOrders.Properties.value, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_ValueLabel);
 		value = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		value.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -209,8 +241,33 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(NormalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.NormalDefectChangeOrders.Properties.value, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.NormalDefectChangeOrders.Properties.value,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.NormalDefectChangeOrders.Properties.value,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, value.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		value.addKeyListener(new KeyAdapter() {
@@ -230,15 +287,18 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		EditingUtils.setID(value, ScoViewsRepository.NormalDefectChangeOrders.Properties.value);
 		EditingUtils.setEEFtype(value, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NormalDefectChangeOrders.Properties.value, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createValueText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createTypeEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NormalDefectChangeOrders.Properties.type, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.NormalDefectChangeOrders.Properties.type, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_TypeLabel);
 		type = new EMFComboViewer(parent);
 		type.setContentProvider(new ArrayContentProvider());
-		type.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		type.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData typeData = new GridData(GridData.FILL_HORIZONTAL);
 		type.getCombo().setLayoutData(typeData);
 		type.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -257,12 +317,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		});
 		type.setID(ScoViewsRepository.NormalDefectChangeOrders.Properties.type);
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NormalDefectChangeOrders.Properties.type, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createTypeEMFComboViewer
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createBrokenLinesText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_BrokenLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_BrokenLinesLabel);
 		brokenLines = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		brokenLines.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -276,8 +339,33 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(NormalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, brokenLines.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		brokenLines.addKeyListener(new KeyAdapter() {
@@ -297,12 +385,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		EditingUtils.setID(brokenLines, ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines);
 		EditingUtils.setEEFtype(brokenLines, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createBrokenLinesText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createFixedLinesText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_FixedLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_FixedLinesLabel);
 		fixedLines = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		fixedLines.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -316,8 +407,33 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(NormalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, fixedLines.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		fixedLines.addKeyListener(new KeyAdapter() {
@@ -337,12 +453,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		EditingUtils.setID(fixedLines, ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines);
 		EditingUtils.setEEFtype(fixedLines, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createFixedLinesText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createRepairEffortText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_RepairEffortLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort, ScoMessages.NormalDefectChangeOrdersPropertiesEditionPart_RepairEffortLabel);
 		repairEffort = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		repairEffort.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -356,8 +475,33 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(NormalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, repairEffort.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									NormalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		repairEffort.addKeyListener(new KeyAdapter() {
@@ -377,9 +521,11 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		EditingUtils.setID(repairEffort, ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort);
 		EditingUtils.setEEFtype(repairEffort, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createRepairEffortText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -416,8 +562,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		} else {
 			name.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NormalDefectChangeOrders.Properties.name);
+		if (eefElementEditorReadOnlyState && name.isEnabled()) {
+			name.setEnabled(false);
+			name.setToolTipText(ScoMessages.NormalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !name.isEnabled()) {
+			name.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -441,8 +594,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		} else {
 			value.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NormalDefectChangeOrders.Properties.value);
+		if (eefElementEditorReadOnlyState && value.isEnabled()) {
+			value.setEnabled(false);
+			value.setToolTipText(ScoMessages.NormalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !value.isEnabled()) {
+			value.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -451,18 +611,26 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 	 * 
 	 */
 	public Enumerator getType() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) type.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) type.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.measurement.sco.parts.NormalDefectChangeOrdersPropertiesEditionPart#initType(EEnum eenum, Enumerator current)
+	 * @see net.certware.measurement.sco.parts.NormalDefectChangeOrdersPropertiesEditionPart#initType(Object input, Enumerator current)
 	 */
-	public void initType(EEnum eenum, Enumerator current) {
-		type.setInput(eenum.getELiterals());
+	public void initType(Object input, Enumerator current) {
+		type.setInput(input);
 		type.modelUpdating(new StructuredSelection(current));
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NormalDefectChangeOrders.Properties.type);
+		if (eefElementEditorReadOnlyState && type.isEnabled()) {
+			type.setEnabled(false);
+			type.setToolTipText(ScoMessages.NormalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !type.isEnabled()) {
+			type.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -473,8 +641,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 	 */
 	public void setType(Enumerator newValue) {
 		type.modelUpdating(new StructuredSelection(newValue));
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NormalDefectChangeOrders.Properties.type);
+		if (eefElementEditorReadOnlyState && type.isEnabled()) {
+			type.setEnabled(false);
+			type.setToolTipText(ScoMessages.NormalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !type.isEnabled()) {
+			type.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -498,8 +673,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		} else {
 			brokenLines.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NormalDefectChangeOrders.Properties.brokenLines);
+		if (eefElementEditorReadOnlyState && brokenLines.isEnabled()) {
+			brokenLines.setEnabled(false);
+			brokenLines.setToolTipText(ScoMessages.NormalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !brokenLines.isEnabled()) {
+			brokenLines.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -523,8 +705,15 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		} else {
 			fixedLines.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NormalDefectChangeOrders.Properties.fixedLines);
+		if (eefElementEditorReadOnlyState && fixedLines.isEnabled()) {
+			fixedLines.setEnabled(false);
+			fixedLines.setToolTipText(ScoMessages.NormalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !fixedLines.isEnabled()) {
+			fixedLines.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -548,7 +737,17 @@ public class NormalDefectChangeOrdersPropertiesEditionPartForm extends Composite
 		} else {
 			repairEffort.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NormalDefectChangeOrders.Properties.repairEffort);
+		if (eefElementEditorReadOnlyState && repairEffort.isEnabled()) {
+			repairEffort.setEnabled(false);
+			repairEffort.setToolTipText(ScoMessages.NormalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !repairEffort.isEnabled()) {
+			repairEffort.setEnabled(true);
+		}	
+		
 	}
+
+
 
 
 

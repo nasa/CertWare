@@ -54,9 +54,9 @@ public class ChecklistPropertiesEditionPartImpl extends CompositePropertiesEditi
 
 	protected Text name;
 	protected Text version;
-protected ReferencesTable categories;
-protected List<ViewerFilter> categoriesBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable categories;
+	protected List<ViewerFilter> categoriesBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 	protected Text comment;
 
 
@@ -144,8 +144,8 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 
 	
 	protected Composite createNameText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ChecklistPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Checklist_.Properties.name, ChecklistViewsRepository.SWT_KIND));
-		name = new Text(parent, SWT.BORDER);
+		createDescription(parent, ChecklistViewsRepository.Checklist_.Properties.name, ChecklistMessages.ChecklistPropertiesEditionPart_NameLabel);
+		name = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
 		name.setLayoutData(nameData);
 		name.addFocusListener(new FocusAdapter() {
@@ -185,13 +185,16 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(name, ChecklistViewsRepository.Checklist_.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist_.Properties.name, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createNameText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createVersionText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ChecklistPropertiesEditionPart_VersionLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Checklist_.Properties.version, ChecklistViewsRepository.SWT_KIND));
-		version = new Text(parent, SWT.BORDER);
+		createDescription(parent, ChecklistViewsRepository.Checklist_.Properties.version, ChecklistMessages.ChecklistPropertiesEditionPart_VersionLabel);
+		version = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData versionData = new GridData(GridData.FILL_HORIZONTAL);
 		version.setLayoutData(versionData);
 		version.addFocusListener(new FocusAdapter() {
@@ -231,6 +234,9 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(version, ChecklistViewsRepository.Checklist_.Properties.version);
 		EditingUtils.setEEFtype(version, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist_.Properties.version, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createVersionText
+
+		// End of user code
 		return parent;
 	}
 
@@ -239,7 +245,7 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createCategoriesAdvancedTableComposition(Composite parent) {
-		this.categories = new ReferencesTable(ChecklistMessages.ChecklistPropertiesEditionPart_CategoriesLabel, new ReferencesTableListener() {
+		this.categories = new ReferencesTable(getDescription(ChecklistViewsRepository.Checklist_.Properties.categories, ChecklistMessages.ChecklistPropertiesEditionPart_CategoriesLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ChecklistPropertiesEditionPartImpl.this, ChecklistViewsRepository.Checklist_.Properties.categories, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				categories.refresh();
@@ -279,13 +285,16 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		this.categories.setUpperBound(-1);
 		categories.setID(ChecklistViewsRepository.Checklist_.Properties.categories);
 		categories.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createCategoriesAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createCommentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.ChecklistPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Checklist_.Properties.comment, ChecklistViewsRepository.SWT_KIND));
-		comment = new Text(parent, SWT.BORDER);
+		createDescription(parent, ChecklistViewsRepository.Checklist_.Properties.comment, ChecklistMessages.ChecklistPropertiesEditionPart_CommentLabel);
+		comment = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
 		comment.setLayoutData(commentData);
 		comment.addFocusListener(new FocusAdapter() {
@@ -325,9 +334,11 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(comment, ChecklistViewsRepository.Checklist_.Properties.comment);
 		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist_.Properties.comment, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createCommentText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -364,8 +375,15 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		} else {
 			name.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.name);
+		if (eefElementEditorReadOnlyState && name.isEnabled()) {
+			name.setEnabled(false);
+			name.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !name.isEnabled()) {
+			name.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -389,8 +407,15 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		} else {
 			version.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.version);
+		if (eefElementEditorReadOnlyState && version.isEnabled()) {
+			version.setEnabled(false);
+			version.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !version.isEnabled()) {
+			version.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -405,6 +430,14 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		categories.setContentProvider(contentProvider);
 		categories.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.categories);
+		if (eefElementEditorReadOnlyState && categories.isEnabled()) {
+			categories.setEnabled(false);
+			categories.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !categories.isEnabled()) {
+			categories.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -450,7 +483,6 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		return ((ReferencesTableSettings)categories.getInput()).contains(element);
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -473,8 +505,15 @@ protected List<ViewerFilter> categoriesFilters = new ArrayList<ViewerFilter>();
 		} else {
 			comment.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.comment);
+		if (eefElementEditorReadOnlyState && comment.isEnabled()) {
+			comment.setEnabled(false);
+			comment.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !comment.isEnabled()) {
+			comment.setEnabled(true);
+		}	
+		
 	}
-
 
 
 

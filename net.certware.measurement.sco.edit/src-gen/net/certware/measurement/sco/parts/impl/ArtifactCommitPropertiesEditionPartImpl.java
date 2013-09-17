@@ -51,9 +51,9 @@ import org.eclipse.swt.widgets.Text;
  */
 public class ArtifactCommitPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ArtifactCommitPropertiesEditionPart {
 
-protected ReferencesTable artifactIdentifiers;
-protected List<ViewerFilter> artifactIdentifiersBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable artifactIdentifiers;
+	protected List<ViewerFilter> artifactIdentifiersBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFilter>();
 	protected Text commitIdentifier;
 	protected Text usageTime;
 
@@ -141,7 +141,7 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 	 * 
 	 */
 	protected Composite createArtifactIdentifiersAdvancedTableComposition(Composite parent) {
-		this.artifactIdentifiers = new ReferencesTable(ScoMessages.ArtifactCommitPropertiesEditionPart_ArtifactIdentifiersLabel, new ReferencesTableListener() {
+		this.artifactIdentifiers = new ReferencesTable(getDescription(ScoViewsRepository.ArtifactCommit.Properties.artifactIdentifiers, ScoMessages.ArtifactCommitPropertiesEditionPart_ArtifactIdentifiersLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArtifactCommitPropertiesEditionPartImpl.this, ScoViewsRepository.ArtifactCommit.Properties.artifactIdentifiers, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				artifactIdentifiers.refresh();
@@ -181,13 +181,16 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 		this.artifactIdentifiers.setUpperBound(-1);
 		artifactIdentifiers.setID(ScoViewsRepository.ArtifactCommit.Properties.artifactIdentifiers);
 		artifactIdentifiers.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createArtifactIdentifiersAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createCommitIdentifierText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.ArtifactCommitPropertiesEditionPart_CommitIdentifierLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactCommit.Properties.commitIdentifier, ScoViewsRepository.SWT_KIND));
-		commitIdentifier = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.ArtifactCommit.Properties.commitIdentifier, ScoMessages.ArtifactCommitPropertiesEditionPart_CommitIdentifierLabel);
+		commitIdentifier = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData commitIdentifierData = new GridData(GridData.FILL_HORIZONTAL);
 		commitIdentifier.setLayoutData(commitIdentifierData);
 		commitIdentifier.addFocusListener(new FocusAdapter() {
@@ -227,13 +230,16 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 		EditingUtils.setID(commitIdentifier, ScoViewsRepository.ArtifactCommit.Properties.commitIdentifier);
 		EditingUtils.setEEFtype(commitIdentifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactCommit.Properties.commitIdentifier, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createCommitIdentifierText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createUsageTimeText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.ArtifactCommitPropertiesEditionPart_UsageTimeLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactCommit.Properties.usageTime, ScoViewsRepository.SWT_KIND));
-		usageTime = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.ArtifactCommit.Properties.usageTime, ScoMessages.ArtifactCommitPropertiesEditionPart_UsageTimeLabel);
+		usageTime = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData usageTimeData = new GridData(GridData.FILL_HORIZONTAL);
 		usageTime.setLayoutData(usageTimeData);
 		usageTime.addFocusListener(new FocusAdapter() {
@@ -273,9 +279,11 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 		EditingUtils.setID(usageTime, ScoViewsRepository.ArtifactCommit.Properties.usageTime);
 		EditingUtils.setEEFtype(usageTime, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactCommit.Properties.usageTime, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createUsageTimeText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -303,6 +311,14 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		artifactIdentifiers.setContentProvider(contentProvider);
 		artifactIdentifiers.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.ArtifactCommit.Properties.artifactIdentifiers);
+		if (eefElementEditorReadOnlyState && artifactIdentifiers.isEnabled()) {
+			artifactIdentifiers.setEnabled(false);
+			artifactIdentifiers.setToolTipText(ScoMessages.ArtifactCommit_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !artifactIdentifiers.isEnabled()) {
+			artifactIdentifiers.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -348,7 +364,6 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 		return ((ReferencesTableSettings)artifactIdentifiers.getInput()).contains(element);
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -371,8 +386,15 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 		} else {
 			commitIdentifier.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.ArtifactCommit.Properties.commitIdentifier);
+		if (eefElementEditorReadOnlyState && commitIdentifier.isEnabled()) {
+			commitIdentifier.setEnabled(false);
+			commitIdentifier.setToolTipText(ScoMessages.ArtifactCommit_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !commitIdentifier.isEnabled()) {
+			commitIdentifier.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -396,8 +418,15 @@ protected List<ViewerFilter> artifactIdentifiersFilters = new ArrayList<ViewerFi
 		} else {
 			usageTime.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.ArtifactCommit.Properties.usageTime);
+		if (eefElementEditorReadOnlyState && usageTime.isEnabled()) {
+			usageTime.setEnabled(false);
+			usageTime.setToolTipText(ScoMessages.ArtifactCommit_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !usageTime.isEnabled()) {
+			usageTime.setEnabled(true);
+		}	
+		
 	}
-
 
 
 

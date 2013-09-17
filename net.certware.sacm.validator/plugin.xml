@@ -5,7 +5,18 @@
          point="org.eclipse.epsilon.evl.emf.validation">
       <constraintsBinding
             constraints="validation/sacm.evl"
-            namespaceURI="http://www.certware.net/sacm">
+            modelName="SACM"
+            namespaceURI="http://schema.omg.org/SACM/1.0">
+      </constraintsBinding>
+      <constraintsBinding
+            compose="true"
+            constraints="validation/argumentation.evl"
+            namespaceURI="http://schema.omg.org/SACM/1.0/Argumentation">
+      </constraintsBinding>
+      <constraintsBinding
+            compose="true"
+            constraints="validation/evidence.evl"
+            namespaceURI="http://schema.omg.org/SACM/1.0/Evidence">
       </constraintsBinding>
    </extension>
    <extension

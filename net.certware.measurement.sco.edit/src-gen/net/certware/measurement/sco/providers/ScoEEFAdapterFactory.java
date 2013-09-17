@@ -7,7 +7,6 @@ import net.certware.measurement.sco.util.ScoAdapterFactory;
 
 import org.eclipse.emf.common.notify.Adapter;
 
-
 /**
  * 
  * 

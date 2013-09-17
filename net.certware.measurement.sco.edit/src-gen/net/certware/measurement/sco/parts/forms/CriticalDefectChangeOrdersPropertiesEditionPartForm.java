@@ -9,15 +9,13 @@ import net.certware.measurement.sco.parts.ScoViewsRepository;
 import net.certware.measurement.sco.providers.ScoMessages;
 
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
@@ -42,6 +40,7 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.views.properties.tabbed.ISection;
 
 
 // End of user code
@@ -50,7 +49,7 @@ import org.eclipse.ui.forms.widgets.Section;
  * 
  * 
  */
-public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, CriticalDefectChangeOrdersPropertiesEditionPart {
+public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends SectionPropertiesEditingPart implements IFormPropertiesEditionPart, CriticalDefectChangeOrdersPropertiesEditionPart {
 
 	protected Text name;
 	protected Text value;
@@ -60,6 +59,11 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 	protected Text repairEffort;
 
 
+
+	/**
+	 * For {@link ISection} use only.
+	 */
+	public CriticalDefectChangeOrdersPropertiesEditionPartForm() { super(); }
 
 	/**
 	 * Default constructor
@@ -114,22 +118,22 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 					return createPropertiesGroup(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.name) {
-					return 		createNameText(widgetFactory, parent);
+					return createNameText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.value) {
-					return 		createValueText(widgetFactory, parent);
+					return createValueText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.type) {
 					return createTypeEMFComboViewer(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines) {
-					return 		createBrokenLinesText(widgetFactory, parent);
+					return createBrokenLinesText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines) {
-					return 		createFixedLinesText(widgetFactory, parent);
+					return createFixedLinesText(widgetFactory, parent);
 				}
 				if (key == ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort) {
-					return 		createRepairEffortText(widgetFactory, parent);
+					return createRepairEffortText(widgetFactory, parent);
 				}
 				return parent;
 			}
@@ -155,7 +159,7 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 
 	
 	protected Composite createNameText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.CriticalDefectChangeOrders.Properties.name, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.CriticalDefectChangeOrders.Properties.name, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_NameLabel);
 		name = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		name.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -169,8 +173,33 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CriticalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.CriticalDefectChangeOrders.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.CriticalDefectChangeOrders.Properties.name,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.CriticalDefectChangeOrders.Properties.name,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, name.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		name.addKeyListener(new KeyAdapter() {
@@ -190,12 +219,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		EditingUtils.setID(name, ScoViewsRepository.CriticalDefectChangeOrders.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.CriticalDefectChangeOrders.Properties.name, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createNameText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createValueText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_ValueLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.CriticalDefectChangeOrders.Properties.value, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.CriticalDefectChangeOrders.Properties.value, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_ValueLabel);
 		value = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		value.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -209,8 +241,33 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CriticalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.CriticalDefectChangeOrders.Properties.value, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.CriticalDefectChangeOrders.Properties.value,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, value.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.CriticalDefectChangeOrders.Properties.value,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, value.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		value.addKeyListener(new KeyAdapter() {
@@ -230,15 +287,18 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		EditingUtils.setID(value, ScoViewsRepository.CriticalDefectChangeOrders.Properties.value);
 		EditingUtils.setEEFtype(value, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.CriticalDefectChangeOrders.Properties.value, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createValueText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createTypeEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.CriticalDefectChangeOrders.Properties.type, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.CriticalDefectChangeOrders.Properties.type, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_TypeLabel);
 		type = new EMFComboViewer(parent);
 		type.setContentProvider(new ArrayContentProvider());
-		type.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		type.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData typeData = new GridData(GridData.FILL_HORIZONTAL);
 		type.getCombo().setLayoutData(typeData);
 		type.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -257,12 +317,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		});
 		type.setID(ScoViewsRepository.CriticalDefectChangeOrders.Properties.type);
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.CriticalDefectChangeOrders.Properties.type, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createTypeEMFComboViewer
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createBrokenLinesText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_BrokenLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_BrokenLinesLabel);
 		brokenLines = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		brokenLines.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -276,8 +339,33 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CriticalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, brokenLines.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, brokenLines.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		brokenLines.addKeyListener(new KeyAdapter() {
@@ -297,12 +385,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		EditingUtils.setID(brokenLines, ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines);
 		EditingUtils.setEEFtype(brokenLines, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createBrokenLinesText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createFixedLinesText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_FixedLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_FixedLinesLabel);
 		fixedLines = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		fixedLines.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -316,8 +407,33 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CriticalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, fixedLines.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, fixedLines.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		fixedLines.addKeyListener(new KeyAdapter() {
@@ -337,12 +453,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		EditingUtils.setID(fixedLines, ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines);
 		EditingUtils.setEEFtype(fixedLines, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createFixedLinesText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createRepairEffortText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_RepairEffortLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort, ScoViewsRepository.FORM_KIND));
+		createDescription(parent, ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort, ScoMessages.CriticalDefectChangeOrdersPropertiesEditionPart_RepairEffortLabel);
 		repairEffort = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		repairEffort.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -356,8 +475,33 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CriticalDefectChangeOrdersPropertiesEditionPartForm.this, ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+							ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, repairEffort.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, repairEffort.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									CriticalDefectChangeOrdersPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		repairEffort.addKeyListener(new KeyAdapter() {
@@ -377,9 +521,11 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		EditingUtils.setID(repairEffort, ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort);
 		EditingUtils.setEEFtype(repairEffort, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort, ScoViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createRepairEffortText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -416,8 +562,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		} else {
 			name.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CriticalDefectChangeOrders.Properties.name);
+		if (eefElementEditorReadOnlyState && name.isEnabled()) {
+			name.setEnabled(false);
+			name.setToolTipText(ScoMessages.CriticalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !name.isEnabled()) {
+			name.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -441,8 +594,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		} else {
 			value.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CriticalDefectChangeOrders.Properties.value);
+		if (eefElementEditorReadOnlyState && value.isEnabled()) {
+			value.setEnabled(false);
+			value.setToolTipText(ScoMessages.CriticalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !value.isEnabled()) {
+			value.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -451,18 +611,26 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 	 * 
 	 */
 	public Enumerator getType() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) type.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) type.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.measurement.sco.parts.CriticalDefectChangeOrdersPropertiesEditionPart#initType(EEnum eenum, Enumerator current)
+	 * @see net.certware.measurement.sco.parts.CriticalDefectChangeOrdersPropertiesEditionPart#initType(Object input, Enumerator current)
 	 */
-	public void initType(EEnum eenum, Enumerator current) {
-		type.setInput(eenum.getELiterals());
+	public void initType(Object input, Enumerator current) {
+		type.setInput(input);
 		type.modelUpdating(new StructuredSelection(current));
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CriticalDefectChangeOrders.Properties.type);
+		if (eefElementEditorReadOnlyState && type.isEnabled()) {
+			type.setEnabled(false);
+			type.setToolTipText(ScoMessages.CriticalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !type.isEnabled()) {
+			type.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -473,8 +641,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 	 */
 	public void setType(Enumerator newValue) {
 		type.modelUpdating(new StructuredSelection(newValue));
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CriticalDefectChangeOrders.Properties.type);
+		if (eefElementEditorReadOnlyState && type.isEnabled()) {
+			type.setEnabled(false);
+			type.setToolTipText(ScoMessages.CriticalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !type.isEnabled()) {
+			type.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -498,8 +673,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		} else {
 			brokenLines.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CriticalDefectChangeOrders.Properties.brokenLines);
+		if (eefElementEditorReadOnlyState && brokenLines.isEnabled()) {
+			brokenLines.setEnabled(false);
+			brokenLines.setToolTipText(ScoMessages.CriticalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !brokenLines.isEnabled()) {
+			brokenLines.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -523,8 +705,15 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		} else {
 			fixedLines.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CriticalDefectChangeOrders.Properties.fixedLines);
+		if (eefElementEditorReadOnlyState && fixedLines.isEnabled()) {
+			fixedLines.setEnabled(false);
+			fixedLines.setToolTipText(ScoMessages.CriticalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !fixedLines.isEnabled()) {
+			fixedLines.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -548,7 +737,17 @@ public class CriticalDefectChangeOrdersPropertiesEditionPartForm extends Composi
 		} else {
 			repairEffort.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.CriticalDefectChangeOrders.Properties.repairEffort);
+		if (eefElementEditorReadOnlyState && repairEffort.isEnabled()) {
+			repairEffort.setEnabled(false);
+			repairEffort.setToolTipText(ScoMessages.CriticalDefectChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !repairEffort.isEnabled()) {
+			repairEffort.setEnabled(true);
+		}	
+		
 	}
+
+
 
 
 

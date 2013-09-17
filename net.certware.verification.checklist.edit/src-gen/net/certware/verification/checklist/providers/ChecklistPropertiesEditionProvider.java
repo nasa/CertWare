@@ -9,10 +9,13 @@ import net.certware.verification.checklist.Checklist;
 import net.certware.verification.checklist.ChecklistPackage;
 import net.certware.verification.checklist.components.ChecklistPropertiesEditionComponent;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
+import org.eclipse.jface.viewers.IFilter;
 
 /**
  * 
@@ -42,7 +45,7 @@ public class ChecklistPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	public boolean provides(PropertiesEditingContext editingContext) {
 		return (editingContext.getEObject() instanceof Checklist) 
-					&& (ChecklistPackage.eINSTANCE.getChecklist() == editingContext.getEObject().eClass());
+					&& (ChecklistPackage.Literals.CHECKLIST == editingContext.getEObject().eClass());
 	}
 
 	/**
@@ -111,6 +114,23 @@ public class ChecklistPropertiesEditionProvider extends PropertiesEditingProvide
 				return new ChecklistPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
+	}
+
+	/**
+	 * Provides the filter used by the plugin.xml to assign part forms.
+	 */
+	public static class EditionFilter implements IFilter {
+		
+		/**
+		 * {@inheritDoc}
+		 * 
+		 * @see org.eclipse.jface.viewers.IFilter#select(java.lang.Object)
+		 */
+		public boolean select(Object toTest) {
+			EObject eObj = EEFUtils.resolveSemanticObject(toTest);
+			return eObj != null && ChecklistPackage.Literals.CHECKLIST == eObj.eClass();
+		}
+		
 	}
 
 }

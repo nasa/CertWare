@@ -125,8 +125,8 @@ public class ArtifactIdentifierPropertiesEditionPartImpl extends CompositeProper
 
 	
 	protected Composite createResourceNameText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_ResourceNameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName, ScoViewsRepository.SWT_KIND));
-		resourceName = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.ArtifactIdentifier.Properties.resourceName, ScoMessages.ArtifactIdentifierPropertiesEditionPart_ResourceNameLabel);
+		resourceName = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData resourceNameData = new GridData(GridData.FILL_HORIZONTAL);
 		resourceName.setLayoutData(resourceNameData);
 		resourceName.addFocusListener(new FocusAdapter() {
@@ -166,13 +166,16 @@ public class ArtifactIdentifierPropertiesEditionPartImpl extends CompositeProper
 		EditingUtils.setID(resourceName, ScoViewsRepository.ArtifactIdentifier.Properties.resourceName);
 		EditingUtils.setEEFtype(resourceName, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createResourceNameText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createBaselinedLineCountText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_BaselinedLineCountLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount, ScoViewsRepository.SWT_KIND));
-		baselinedLineCount = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount, ScoMessages.ArtifactIdentifierPropertiesEditionPart_BaselinedLineCountLabel);
+		baselinedLineCount = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData baselinedLineCountData = new GridData(GridData.FILL_HORIZONTAL);
 		baselinedLineCount.setLayoutData(baselinedLineCountData);
 		baselinedLineCount.addFocusListener(new FocusAdapter() {
@@ -212,13 +215,16 @@ public class ArtifactIdentifierPropertiesEditionPartImpl extends CompositeProper
 		EditingUtils.setID(baselinedLineCount, ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount);
 		EditingUtils.setEEFtype(baselinedLineCount, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createBaselinedLineCountText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createCurrentLineCountText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.ArtifactIdentifierPropertiesEditionPart_CurrentLineCountLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount, ScoViewsRepository.SWT_KIND));
-		currentLineCount = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount, ScoMessages.ArtifactIdentifierPropertiesEditionPart_CurrentLineCountLabel);
+		currentLineCount = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData currentLineCountData = new GridData(GridData.FILL_HORIZONTAL);
 		currentLineCount.setLayoutData(currentLineCountData);
 		currentLineCount.addFocusListener(new FocusAdapter() {
@@ -258,9 +264,11 @@ public class ArtifactIdentifierPropertiesEditionPartImpl extends CompositeProper
 		EditingUtils.setID(currentLineCount, ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount);
 		EditingUtils.setEEFtype(currentLineCount, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createCurrentLineCountText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -297,8 +305,15 @@ public class ArtifactIdentifierPropertiesEditionPartImpl extends CompositeProper
 		} else {
 			resourceName.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName);
+		if (eefElementEditorReadOnlyState && resourceName.isEnabled()) {
+			resourceName.setEnabled(false);
+			resourceName.setToolTipText(ScoMessages.ArtifactIdentifier_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !resourceName.isEnabled()) {
+			resourceName.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -322,8 +337,15 @@ public class ArtifactIdentifierPropertiesEditionPartImpl extends CompositeProper
 		} else {
 			baselinedLineCount.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount);
+		if (eefElementEditorReadOnlyState && baselinedLineCount.isEnabled()) {
+			baselinedLineCount.setEnabled(false);
+			baselinedLineCount.setToolTipText(ScoMessages.ArtifactIdentifier_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !baselinedLineCount.isEnabled()) {
+			baselinedLineCount.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -347,8 +369,15 @@ public class ArtifactIdentifierPropertiesEditionPartImpl extends CompositeProper
 		} else {
 			currentLineCount.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount);
+		if (eefElementEditorReadOnlyState && currentLineCount.isEnabled()) {
+			currentLineCount.setEnabled(false);
+			currentLineCount.setToolTipText(ScoMessages.ArtifactIdentifier_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !currentLineCount.isEnabled()) {
+			currentLineCount.setEnabled(true);
+		}	
+		
 	}
-
 
 
 

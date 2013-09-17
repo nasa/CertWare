@@ -13,19 +13,20 @@ import net.certware.measurement.sco.parts.TotalChangeOrdersPropertiesEditionPart
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 	
 
 // End of user code
@@ -63,29 +64,30 @@ public class TotalChangeOrdersPropertiesEditionComponent extends SinglePartPrope
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
 			editingPart.setContext(elt, allResource);
+			
 			final TotalChangeOrders totalChangeOrders = (TotalChangeOrders)elt;
 			final TotalChangeOrdersPropertiesEditionPart basePart = (TotalChangeOrdersPropertiesEditionPart)editingPart;
 			// init values
-			if (totalChangeOrders.getName() != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.name))
-				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), totalChangeOrders.getName()));
+			if (isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.name))
+				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, totalChangeOrders.getName()));
 			
 			if (isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.value)) {
-				basePart.setValue(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), totalChangeOrders.getValue()));
+				basePart.setValue(EEFConverterUtil.convertToString(EcorePackage.Literals.EINT, totalChangeOrders.getValue()));
 			}
 			
 			if (isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.type)) {
-				basePart.initType((EEnum) ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEType(), totalChangeOrders.getType());
+				basePart.initType(EEFUtils.choiceOfValues(totalChangeOrders, ScoPackage.eINSTANCE.getChangeOrderCount_Type()), totalChangeOrders.getType());
 			}
 			if (isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.brokenLines)) {
-				basePart.setBrokenLines(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), totalChangeOrders.getBrokenLines()));
+				basePart.setBrokenLines(EEFConverterUtil.convertToString(EcorePackage.Literals.EINT, totalChangeOrders.getBrokenLines()));
 			}
 			
 			if (isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.fixedLines)) {
-				basePart.setFixedLines(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), totalChangeOrders.getFixedLines()));
+				basePart.setFixedLines(EEFConverterUtil.convertToString(EcorePackage.Literals.EINT, totalChangeOrders.getFixedLines()));
 			}
 			
 			if (isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.repairEffort)) {
-				basePart.setRepairEffort(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), totalChangeOrders.getRepairEffort()));
+				basePart.setRepairEffort(EEFConverterUtil.convertToString(EcorePackage.Literals.EDOUBLE, totalChangeOrders.getRepairEffort()));
 			}
 			
 			// init filters
@@ -145,22 +147,22 @@ public class TotalChangeOrdersPropertiesEditionComponent extends SinglePartPrope
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		TotalChangeOrders totalChangeOrders = (TotalChangeOrders)semanticObject;
 		if (ScoViewsRepository.TotalChangeOrders.Properties.name == event.getAffectedEditor()) {
-			totalChangeOrders.setName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
+			totalChangeOrders.setName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 		if (ScoViewsRepository.TotalChangeOrders.Properties.value == event.getAffectedEditor()) {
-			totalChangeOrders.setValue((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+			totalChangeOrders.setValue((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
 		}
 		if (ScoViewsRepository.TotalChangeOrders.Properties.type == event.getAffectedEditor()) {
 			totalChangeOrders.setType((ChangeOrderType)event.getNewValue());
 		}
 		if (ScoViewsRepository.TotalChangeOrders.Properties.brokenLines == event.getAffectedEditor()) {
-			totalChangeOrders.setBrokenLines((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+			totalChangeOrders.setBrokenLines((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
 		}
 		if (ScoViewsRepository.TotalChangeOrders.Properties.fixedLines == event.getAffectedEditor()) {
-			totalChangeOrders.setFixedLines((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+			totalChangeOrders.setFixedLines((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
 		}
 		if (ScoViewsRepository.TotalChangeOrders.Properties.repairEffort == event.getAffectedEditor()) {
-			totalChangeOrders.setRepairEffort((EEFConverterUtil.createDoubleFromString(EcorePackage.eINSTANCE.getEDouble(), (String)event.getNewValue())));
+			totalChangeOrders.setRepairEffort((EEFConverterUtil.createDoubleFromString(EcorePackage.Literals.EDOUBLE, (String)event.getNewValue())));
 		}
 	}
 
@@ -169,48 +171,66 @@ public class TotalChangeOrdersPropertiesEditionComponent extends SinglePartPrope
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		super.updatePart(msg);
+		if (editingPart.isVisible()) {
 			TotalChangeOrdersPropertiesEditionPart basePart = (TotalChangeOrdersPropertiesEditionPart)editingPart;
-			if (ScoPackage.eINSTANCE.getChangeOrderCount_Name().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.name)) {
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.name)) {
 				if (msg.getNewValue() != null) {
-					basePart.setName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
+					basePart.setName(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					basePart.setName("");
 				}
 			}
-			if (ScoPackage.eINSTANCE.getChangeOrderCount_Value().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.value)) {
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_Value().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.value)) {
 				if (msg.getNewValue() != null) {
-					basePart.setValue(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+					basePart.setValue(EcoreUtil.convertToString(EcorePackage.Literals.EINT, msg.getNewValue()));
 				} else {
 					basePart.setValue("");
 				}
 			}
-			if (ScoPackage.eINSTANCE.getChangeOrderCount_Type().equals(msg.getFeature()) && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.type))
-				basePart.setType((Enumerator)msg.getNewValue());
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_Type().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.type))
+				basePart.setType((ChangeOrderType)msg.getNewValue());
 			
-			if (ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.brokenLines)) {
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.brokenLines)) {
 				if (msg.getNewValue() != null) {
-					basePart.setBrokenLines(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+					basePart.setBrokenLines(EcoreUtil.convertToString(EcorePackage.Literals.EINT, msg.getNewValue()));
 				} else {
 					basePart.setBrokenLines("");
 				}
 			}
-			if (ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.fixedLines)) {
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.fixedLines)) {
 				if (msg.getNewValue() != null) {
-					basePart.setFixedLines(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+					basePart.setFixedLines(EcoreUtil.convertToString(EcorePackage.Literals.EINT, msg.getNewValue()));
 				} else {
 					basePart.setFixedLines("");
 				}
 			}
-			if (ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.repairEffort)) {
+			if (ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.TotalChangeOrders.Properties.repairEffort)) {
 				if (msg.getNewValue() != null) {
-					basePart.setRepairEffort(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEDouble(), msg.getNewValue()));
+					basePart.setRepairEffort(EcoreUtil.convertToString(EcorePackage.Literals.EDOUBLE, msg.getNewValue()));
 				} else {
 					basePart.setRepairEffort("");
 				}
 			}
 			
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getNotificationFilters()
+	 */
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
+			ScoPackage.eINSTANCE.getChangeOrderCount_Name(),
+			ScoPackage.eINSTANCE.getChangeOrderCount_Value(),
+			ScoPackage.eINSTANCE.getChangeOrderCount_Type(),
+			ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines(),
+			ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines(),
+			ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort()		);
+		return new NotificationFilter[] {filter,};
 	}
 
 
@@ -259,42 +279,42 @@ public class TotalChangeOrdersPropertiesEditionComponent extends SinglePartPrope
 				if (ScoViewsRepository.TotalChangeOrders.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Name().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_Name().getEAttributeType(), newValue);
 				}
 				if (ScoViewsRepository.TotalChangeOrders.Properties.value == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Value().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Value().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_Value().getEAttributeType(), newValue);
 				}
 				if (ScoViewsRepository.TotalChangeOrders.Properties.type == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_Type().getEAttributeType(), newValue);
 				}
 				if (ScoViewsRepository.TotalChangeOrders.Properties.brokenLines == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_BrokenLines().getEAttributeType(), newValue);
 				}
 				if (ScoViewsRepository.TotalChangeOrders.Properties.fixedLines == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_FixedLines().getEAttributeType(), newValue);
 				}
 				if (ScoViewsRepository.TotalChangeOrders.Properties.repairEffort == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getChangeOrderCount_RepairEffort().getEAttributeType(), newValue);
 				}
@@ -306,5 +326,8 @@ public class TotalChangeOrdersPropertiesEditionComponent extends SinglePartPrope
 		}
 		return ret;
 	}
+
+
+	
 
 }

@@ -13,19 +13,20 @@ import net.certware.verification.checklist.parts.ItemPropertiesEditionPart;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.WrappedException;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 	
 
 // End of user code
@@ -63,23 +64,24 @@ public class ItemPropertiesEditionComponent extends SinglePartPropertiesEditingC
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
 			editingPart.setContext(elt, allResource);
+			
 			final Item item = (Item)elt;
 			final ItemPropertiesEditionPart basePart = (ItemPropertiesEditionPart)editingPart;
 			// init values
-			if (item.getIdentifier() != null && isAccessible(ChecklistViewsRepository.Item.Properties.identifier))
-				basePart.setIdentifier(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), item.getIdentifier()));
+			if (isAccessible(ChecklistViewsRepository.Item.Properties.identifier))
+				basePart.setIdentifier(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, item.getIdentifier()));
 			
-			if (item.getDescription() != null && isAccessible(ChecklistViewsRepository.Item.Properties.description))
-				basePart.setDescription(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), item.getDescription()));
+			if (isAccessible(ChecklistViewsRepository.Item.Properties.description))
+				basePart.setDescription(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, item.getDescription()));
 			
-			if (item.getReference() != null && isAccessible(ChecklistViewsRepository.Item.Properties.reference))
-				basePart.setReference(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), item.getReference()));
+			if (isAccessible(ChecklistViewsRepository.Item.Properties.reference))
+				basePart.setReference(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, item.getReference()));
 			
 			if (isAccessible(ChecklistViewsRepository.Item.Properties.result)) {
-				basePart.initResult((EEnum) ChecklistPackage.eINSTANCE.getItem_Result().getEType(), item.getResult());
+				basePart.initResult(EEFUtils.choiceOfValues(item, ChecklistPackage.eINSTANCE.getItem_Result()), item.getResult());
 			}
-			if (item.getComment() != null && isAccessible(ChecklistViewsRepository.Item.Properties.comment))
-				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), item.getComment()));
+			if (isAccessible(ChecklistViewsRepository.Item.Properties.comment))
+				basePart.setComment(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, item.getComment()));
 			
 			// init filters
 			
@@ -133,19 +135,19 @@ public class ItemPropertiesEditionComponent extends SinglePartPropertiesEditingC
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Item item = (Item)semanticObject;
 		if (ChecklistViewsRepository.Item.Properties.identifier == event.getAffectedEditor()) {
-			item.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
+			item.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 		if (ChecklistViewsRepository.Item.Properties.description == event.getAffectedEditor()) {
-			item.setDescription((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
+			item.setDescription((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 		if (ChecklistViewsRepository.Item.Properties.reference == event.getAffectedEditor()) {
-			item.setReference((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
+			item.setReference((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 		if (ChecklistViewsRepository.Item.Properties.result == event.getAffectedEditor()) {
 			item.setResult((Choices)event.getNewValue());
 		}
 		if (ChecklistViewsRepository.Item.Properties.comment == event.getAffectedEditor()) {
-			item.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
+			item.setComment((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 	}
 
@@ -154,41 +156,58 @@ public class ItemPropertiesEditionComponent extends SinglePartPropertiesEditingC
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		super.updatePart(msg);
+		if (editingPart.isVisible()) {
 			ItemPropertiesEditionPart basePart = (ItemPropertiesEditionPart)editingPart;
-			if (ChecklistPackage.eINSTANCE.getItem_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.identifier)) {
+			if (ChecklistPackage.eINSTANCE.getItem_Identifier().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.identifier)) {
 				if (msg.getNewValue() != null) {
-					basePart.setIdentifier(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
+					basePart.setIdentifier(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					basePart.setIdentifier("");
 				}
 			}
-			if (ChecklistPackage.eINSTANCE.getItem_Description().equals(msg.getFeature()) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.description)) {
+			if (ChecklistPackage.eINSTANCE.getItem_Description().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.description)) {
 				if (msg.getNewValue() != null) {
-					basePart.setDescription(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
+					basePart.setDescription(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					basePart.setDescription("");
 				}
 			}
-			if (ChecklistPackage.eINSTANCE.getItem_Reference().equals(msg.getFeature()) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.reference)) {
+			if (ChecklistPackage.eINSTANCE.getItem_Reference().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.reference)) {
 				if (msg.getNewValue() != null) {
-					basePart.setReference(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
+					basePart.setReference(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					basePart.setReference("");
 				}
 			}
-			if (ChecklistPackage.eINSTANCE.getItem_Result().equals(msg.getFeature()) && isAccessible(ChecklistViewsRepository.Item.Properties.result))
-				basePart.setResult((Enumerator)msg.getNewValue());
+			if (ChecklistPackage.eINSTANCE.getItem_Result().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && isAccessible(ChecklistViewsRepository.Item.Properties.result))
+				basePart.setResult((Choices)msg.getNewValue());
 			
-			if (ChecklistPackage.eINSTANCE.getItem_Comment().equals(msg.getFeature()) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.comment)) {
+			if (ChecklistPackage.eINSTANCE.getItem_Comment().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ChecklistViewsRepository.Item.Properties.comment)) {
 				if (msg.getNewValue() != null) {
-					basePart.setComment(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
+					basePart.setComment(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					basePart.setComment("");
 				}
 			}
 			
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getNotificationFilters()
+	 */
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
+			ChecklistPackage.eINSTANCE.getItem_Identifier(),
+			ChecklistPackage.eINSTANCE.getItem_Description(),
+			ChecklistPackage.eINSTANCE.getItem_Reference(),
+			ChecklistPackage.eINSTANCE.getItem_Result(),
+			ChecklistPackage.eINSTANCE.getItem_Comment()		);
+		return new NotificationFilter[] {filter,};
 	}
 
 
@@ -235,35 +254,35 @@ public class ItemPropertiesEditionComponent extends SinglePartPropertiesEditingC
 				if (ChecklistViewsRepository.Item.Properties.identifier == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Identifier().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Identifier().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ChecklistPackage.eINSTANCE.getItem_Identifier().getEAttributeType(), newValue);
 				}
 				if (ChecklistViewsRepository.Item.Properties.description == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Description().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Description().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ChecklistPackage.eINSTANCE.getItem_Description().getEAttributeType(), newValue);
 				}
 				if (ChecklistViewsRepository.Item.Properties.reference == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Reference().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Reference().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ChecklistPackage.eINSTANCE.getItem_Reference().getEAttributeType(), newValue);
 				}
 				if (ChecklistViewsRepository.Item.Properties.result == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Result().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Result().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ChecklistPackage.eINSTANCE.getItem_Result().getEAttributeType(), newValue);
 				}
 				if (ChecklistViewsRepository.Item.Properties.comment == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Comment().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ChecklistPackage.eINSTANCE.getItem_Comment().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ChecklistPackage.eINSTANCE.getItem_Comment().getEAttributeType(), newValue);
 				}
@@ -275,5 +294,8 @@ public class ItemPropertiesEditionComponent extends SinglePartPropertiesEditingC
 		}
 		return ret;
 	}
+
+
+	
 
 }

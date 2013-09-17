@@ -21,4 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui;bundle-version="3.6.1",
  org.eclipse.emf.eef.runtime;bundle-version="0.8.2";visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: net.certware.measurement.sco.parts.forms
+Import-Package: net.certware.measurement.sco.parts.forms,
+ org.eclipse.emf.eef.runtime.ui,
+ org.eclipse.emf.eef.runtime.ui.editor

@@ -1,0 +1,104 @@
+/**
+ * Validation rules and fixes for SACM models.
+ * Epsilon Validation Language
+ * @author mrb
+ */
+
+// claim nodes
+context Claim {
+
+
+	constraint HasIdentifier {
+		check : self.id.isDefined()
+		message : 'Model element ' + self.eClass().name + ' requires identifier'
+	}	
+	
+/*
+	// must have content 
+	// fix sets content to TBS and sets the associated flag
+	constraint HasContent {
+		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Argument ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Argument ' + self.identifier
+			do {
+				self.content := 'TBS';
+				self.toBeSupported := true;
+			}
+		}
+	}
+	
+	// the argument should have at least one solution, strategy, or sub-argument
+	critique HasEvidence {
+		guard : self.satisfies('HasIdentifier')
+		check : (not self.subClaims.isEmpty()) or (not self.claimSolutions.isEmpty()) or (not self.claimStrategies.isEmpty())
+		message : 'Claim ' + self.identifier + ' has no evidence, strategies, or sub-claims'
+		fix {
+			title : 'Set the to-be-supported flag as a reminder'
+			do {
+				self.toBeSupported := true;
+			}
+		}
+	}
+
+	// the claim node cannot contain itself as a sub-claim
+	constraint NoContainsSelf {
+		guard : self.satisfies('HasIdentifier')
+		check : not self.subClaims.includes(self)
+		message: 'Claim ' + self.identifier + ' cannot include itself as a sub-claim' 
+		fix {
+			title : 'Remove ' + self.identifier + ' from sub-claims list'
+			do {
+				self.subClaims.remove(self);
+			}
+		}
+	}
+*/
+
+} // claim context
+
+
+
+// argumentation nodes
+context Argumentation {
+
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.id.isDefined()
+		message : 'Argumentation ' + self.content + ' requires identifier'
+	}
+
+/*	
+	// must have content 
+	// fix sets content to TBS and sets the associated flag
+	constraint HasContent {
+	//		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Argument ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Argument ' + self.identifier
+			do {
+				self.content := 'TBS';
+				self.toBeSupported := true;
+			}
+		}
+	}
+	
+	// the argument should have at least one solution, strategy, or sub-argument
+	critique HasSolutions {
+	//		guard : self.satisfies('HasIdentifier')
+		check : (not self.argumentEvidence.isEmpty()) or (not self.argumentClaims.isEmpty()) 
+		message : 'Argument ' + self.identifier + ' has no evidence or claims'
+		fix {
+			title : 'Set the to-be-supported flag as a reminder'
+			do {
+				self.toBeSupported := true;
+			}
+		}
+	}
+*/
+
+} // argument context
+
+

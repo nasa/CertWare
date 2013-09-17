@@ -37,6 +37,7 @@ public class ScoMessages extends NLS {
 	
 	public static String CommitHistoryPropertiesEditionPart_PropertiesGroupLabel;
 
+
 	
 	public static String TotalChangeOrders_ReadOnly;
 
@@ -84,6 +85,7 @@ public class ScoMessages extends NLS {
 
 	
 	public static String CommitHistory_Part_Title;
+
 
 	
 	public static String TotalChangeOrdersPropertiesEditionPart_NameLabel;
@@ -195,6 +197,7 @@ public class ScoMessages extends NLS {
 
 	
 	public static String CommitHistoryPropertiesEditionPart_CommitRecordLabel;
+
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

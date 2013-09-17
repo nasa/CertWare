@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
@@ -60,18 +62,19 @@ public class ArtifactIdentifierPropertiesEditionComponent extends SinglePartProp
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
 			editingPart.setContext(elt, allResource);
+			
 			final ArtifactIdentifier artifactIdentifier = (ArtifactIdentifier)elt;
 			final ArtifactIdentifierPropertiesEditionPart basePart = (ArtifactIdentifierPropertiesEditionPart)editingPart;
 			// init values
-			if (artifactIdentifier.getResourceName() != null && isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName))
-				basePart.setResourceName(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEString(), artifactIdentifier.getResourceName()));
+			if (isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName))
+				basePart.setResourceName(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, artifactIdentifier.getResourceName()));
 			
 			if (isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount)) {
-				basePart.setBaselinedLineCount(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), artifactIdentifier.getBaselinedLineCount()));
+				basePart.setBaselinedLineCount(EEFConverterUtil.convertToString(EcorePackage.Literals.EINT, artifactIdentifier.getBaselinedLineCount()));
 			}
 			
 			if (isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount)) {
-				basePart.setCurrentLineCount(EEFConverterUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), artifactIdentifier.getCurrentLineCount()));
+				basePart.setCurrentLineCount(EEFConverterUtil.convertToString(EcorePackage.Literals.EINT, artifactIdentifier.getCurrentLineCount()));
 			}
 			
 			// init filters
@@ -116,13 +119,13 @@ public class ArtifactIdentifierPropertiesEditionComponent extends SinglePartProp
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		ArtifactIdentifier artifactIdentifier = (ArtifactIdentifier)semanticObject;
 		if (ScoViewsRepository.ArtifactIdentifier.Properties.resourceName == event.getAffectedEditor()) {
-			artifactIdentifier.setResourceName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getEString(), (String)event.getNewValue()));
+			artifactIdentifier.setResourceName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
 		}
 		if (ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount == event.getAffectedEditor()) {
-			artifactIdentifier.setBaselinedLineCount((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+			artifactIdentifier.setBaselinedLineCount((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
 		}
 		if (ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount == event.getAffectedEditor()) {
-			artifactIdentifier.setCurrentLineCount((EEFConverterUtil.createIntFromString(EcorePackage.eINSTANCE.getEInt(), (String)event.getNewValue())));
+			artifactIdentifier.setCurrentLineCount((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
 		}
 	}
 
@@ -131,31 +134,46 @@ public class ArtifactIdentifierPropertiesEditionComponent extends SinglePartProp
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		super.updatePart(msg);
+		if (editingPart.isVisible()) {
 			ArtifactIdentifierPropertiesEditionPart basePart = (ArtifactIdentifierPropertiesEditionPart)editingPart;
-			if (ScoPackage.eINSTANCE.getArtifactIdentifier_ResourceName().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName)) {
+			if (ScoPackage.eINSTANCE.getArtifactIdentifier_ResourceName().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.resourceName)) {
 				if (msg.getNewValue() != null) {
-					basePart.setResourceName(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEString(), msg.getNewValue()));
+					basePart.setResourceName(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					basePart.setResourceName("");
 				}
 			}
-			if (ScoPackage.eINSTANCE.getArtifactIdentifier_BaselinedLineCount().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount)) {
+			if (ScoPackage.eINSTANCE.getArtifactIdentifier_BaselinedLineCount().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount)) {
 				if (msg.getNewValue() != null) {
-					basePart.setBaselinedLineCount(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+					basePart.setBaselinedLineCount(EcoreUtil.convertToString(EcorePackage.Literals.EINT, msg.getNewValue()));
 				} else {
 					basePart.setBaselinedLineCount("");
 				}
 			}
-			if (ScoPackage.eINSTANCE.getArtifactIdentifier_CurrentLineCount().equals(msg.getFeature()) && basePart != null && isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount)) {
+			if (ScoPackage.eINSTANCE.getArtifactIdentifier_CurrentLineCount().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount)) {
 				if (msg.getNewValue() != null) {
-					basePart.setCurrentLineCount(EcoreUtil.convertToString(EcorePackage.eINSTANCE.getEInt(), msg.getNewValue()));
+					basePart.setCurrentLineCount(EcoreUtil.convertToString(EcorePackage.Literals.EINT, msg.getNewValue()));
 				} else {
 					basePart.setCurrentLineCount("");
 				}
 			}
 			
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getNotificationFilters()
+	 */
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
+			ScoPackage.eINSTANCE.getArtifactIdentifier_ResourceName(),
+			ScoPackage.eINSTANCE.getArtifactIdentifier_BaselinedLineCount(),
+			ScoPackage.eINSTANCE.getArtifactIdentifier_CurrentLineCount()		);
+		return new NotificationFilter[] {filter,};
 	}
 
 
@@ -198,21 +216,21 @@ public class ArtifactIdentifierPropertiesEditionComponent extends SinglePartProp
 				if (ScoViewsRepository.ArtifactIdentifier.Properties.resourceName == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getArtifactIdentifier_ResourceName().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getArtifactIdentifier_ResourceName().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getArtifactIdentifier_ResourceName().getEAttributeType(), newValue);
 				}
 				if (ScoViewsRepository.ArtifactIdentifier.Properties.baselinedLineCount == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getArtifactIdentifier_BaselinedLineCount().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getArtifactIdentifier_BaselinedLineCount().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getArtifactIdentifier_BaselinedLineCount().getEAttributeType(), newValue);
 				}
 				if (ScoViewsRepository.ArtifactIdentifier.Properties.currentLineCount == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ScoPackage.eINSTANCE.getArtifactIdentifier_CurrentLineCount().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ScoPackage.eINSTANCE.getArtifactIdentifier_CurrentLineCount().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ScoPackage.eINSTANCE.getArtifactIdentifier_CurrentLineCount().getEAttributeType(), newValue);
 				}
@@ -224,5 +242,8 @@ public class ArtifactIdentifierPropertiesEditionComponent extends SinglePartProp
 		}
 		return ret;
 	}
+
+
+	
 
 }

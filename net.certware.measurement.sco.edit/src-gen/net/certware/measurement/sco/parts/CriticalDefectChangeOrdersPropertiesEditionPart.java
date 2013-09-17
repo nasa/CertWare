@@ -5,7 +5,6 @@ package net.certware.measurement.sco.parts;
 
 // Start of user code for imports
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
 
 
 
@@ -53,10 +52,10 @@ public interface CriticalDefectChangeOrdersPropertiesEditionPart {
 
 	/**
 	 * Init the type
-	 * @param eenum the enum to manage
+	 * @param input the viewer input
 	 * @param current the current value
 	 */
-	public void initType(EEnum eenum, Enumerator current);
+	public void initType(Object input, Enumerator current);
 
 	/**
 	 * Defines a new type

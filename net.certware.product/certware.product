@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="CertWare" uid="net.certware.product" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="2.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="CertWare" uid="net.certware.product.id" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="2.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/net.certware.product/icons/obj256/certware-250.png"/>
@@ -39,7 +39,7 @@
    <license>
         <url>http://certware-update.s3-website-us-east-1.amazonaws.com/license.html</url>
         <text>
-   Copyright (c) 2011 United States Government as represented by
+   Copyright (c) 2011-2013 United States Government as represented by
 the National Aeronautics and Space Administration.  All rights
 reserved.
 

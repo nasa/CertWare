@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package net.certware.argument.sfp.semiFormalProof.impl;
 
@@ -34,7 +31,7 @@ public class SemiFormalProofFactoryImpl extends EFactoryImpl implements SemiForm
   {
     try
     {
-      SemiFormalProofFactory theSemiFormalProofFactory = (SemiFormalProofFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.certware.net/argument/sfp/SemiFormalProof"); 
+      SemiFormalProofFactory theSemiFormalProofFactory = (SemiFormalProofFactory)EPackage.Registry.INSTANCE.getEFactory(SemiFormalProofPackage.eNS_URI);
       if (theSemiFormalProofFactory != null)
       {
         return theSemiFormalProofFactory;

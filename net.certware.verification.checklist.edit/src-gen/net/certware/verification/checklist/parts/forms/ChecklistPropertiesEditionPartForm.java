@@ -17,7 +17,7 @@ import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
@@ -44,6 +44,7 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.views.properties.tabbed.ISection;
 
 
 // End of user code
@@ -52,7 +53,7 @@ import org.eclipse.ui.forms.widgets.Section;
  * 
  * 
  */
-public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ChecklistPropertiesEditionPart {
+public class ChecklistPropertiesEditionPartForm extends SectionPropertiesEditingPart implements IFormPropertiesEditionPart, ChecklistPropertiesEditionPart {
 
 	protected Text name;
 	protected Text version;
@@ -62,6 +63,11 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 	protected Text comment;
 
 
+
+	/**
+	 * For {@link ISection} use only.
+	 */
+	public ChecklistPropertiesEditionPartForm() { super(); }
 
 	/**
 	 * Default constructor
@@ -114,16 +120,16 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 					return createPropertiesGroup(widgetFactory, parent);
 				}
 				if (key == ChecklistViewsRepository.Checklist_.Properties.name) {
-					return 		createNameText(widgetFactory, parent);
+					return createNameText(widgetFactory, parent);
 				}
 				if (key == ChecklistViewsRepository.Checklist_.Properties.version) {
-					return 		createVersionText(widgetFactory, parent);
+					return createVersionText(widgetFactory, parent);
 				}
 				if (key == ChecklistViewsRepository.Checklist_.Properties.categories) {
 					return createCategoriesTableComposition(widgetFactory, parent);
 				}
 				if (key == ChecklistViewsRepository.Checklist_.Properties.comment) {
-					return 		createCommentText(widgetFactory, parent);
+					return createCommentText(widgetFactory, parent);
 				}
 				return parent;
 			}
@@ -149,7 +155,7 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 
 	
 	protected Composite createNameText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ChecklistPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Checklist_.Properties.name, ChecklistViewsRepository.FORM_KIND));
+		createDescription(parent, ChecklistViewsRepository.Checklist_.Properties.name, ChecklistMessages.ChecklistPropertiesEditionPart_NameLabel);
 		name = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		name.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -163,8 +169,33 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ChecklistPropertiesEditionPartForm.this, ChecklistViewsRepository.Checklist_.Properties.name, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							ChecklistPropertiesEditionPartForm.this,
+							ChecklistViewsRepository.Checklist_.Properties.name,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, name.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ChecklistPropertiesEditionPartForm.this,
+									ChecklistViewsRepository.Checklist_.Properties.name,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, name.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ChecklistPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		name.addKeyListener(new KeyAdapter() {
@@ -184,12 +215,15 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		EditingUtils.setID(name, ChecklistViewsRepository.Checklist_.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist_.Properties.name, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createNameText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createVersionText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ChecklistPropertiesEditionPart_VersionLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Checklist_.Properties.version, ChecklistViewsRepository.FORM_KIND));
+		createDescription(parent, ChecklistViewsRepository.Checklist_.Properties.version, ChecklistMessages.ChecklistPropertiesEditionPart_VersionLabel);
 		version = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		version.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -203,8 +237,33 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ChecklistPropertiesEditionPartForm.this, ChecklistViewsRepository.Checklist_.Properties.version, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, version.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							ChecklistPropertiesEditionPartForm.this,
+							ChecklistViewsRepository.Checklist_.Properties.version,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, version.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ChecklistPropertiesEditionPartForm.this,
+									ChecklistViewsRepository.Checklist_.Properties.version,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, version.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ChecklistPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		version.addKeyListener(new KeyAdapter() {
@@ -224,6 +283,9 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		EditingUtils.setID(version, ChecklistViewsRepository.Checklist_.Properties.version);
 		EditingUtils.setEEFtype(version, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist_.Properties.version, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createVersionText
+
+		// End of user code
 		return parent;
 	}
 
@@ -232,7 +294,7 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 	 * 
 	 */
 	protected Composite createCategoriesTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.categories = new ReferencesTable(ChecklistMessages.ChecklistPropertiesEditionPart_CategoriesLabel, new ReferencesTableListener() {
+		this.categories = new ReferencesTable(getDescription(ChecklistViewsRepository.Checklist_.Properties.categories, ChecklistMessages.ChecklistPropertiesEditionPart_CategoriesLabel), new ReferencesTableListener() {
 			public void handleAdd() {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ChecklistPropertiesEditionPartForm.this, ChecklistViewsRepository.Checklist_.Properties.categories, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				categories.refresh();
@@ -272,12 +334,15 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		this.categories.setUpperBound(-1);
 		categories.setID(ChecklistViewsRepository.Checklist_.Properties.categories);
 		categories.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createCategoriesTableComposition
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createCommentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, ChecklistMessages.ChecklistPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Checklist_.Properties.comment, ChecklistViewsRepository.FORM_KIND));
+		createDescription(parent, ChecklistViewsRepository.Checklist_.Properties.comment, ChecklistMessages.ChecklistPropertiesEditionPart_CommentLabel);
 		comment = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		comment.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -291,8 +356,33 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ChecklistPropertiesEditionPartForm.this, ChecklistViewsRepository.Checklist_.Properties.comment, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							ChecklistPropertiesEditionPartForm.this,
+							ChecklistViewsRepository.Checklist_.Properties.comment,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, comment.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ChecklistPropertiesEditionPartForm.this,
+									ChecklistViewsRepository.Checklist_.Properties.comment,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, comment.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									ChecklistPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		comment.addKeyListener(new KeyAdapter() {
@@ -312,9 +402,11 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		EditingUtils.setID(comment, ChecklistViewsRepository.Checklist_.Properties.comment);
 		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Checklist_.Properties.comment, ChecklistViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createCommentText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -351,8 +443,15 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		} else {
 			name.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.name);
+		if (eefElementEditorReadOnlyState && name.isEnabled()) {
+			name.setEnabled(false);
+			name.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !name.isEnabled()) {
+			name.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -376,8 +475,15 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		} else {
 			version.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.version);
+		if (eefElementEditorReadOnlyState && version.isEnabled()) {
+			version.setEnabled(false);
+			version.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !version.isEnabled()) {
+			version.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -392,6 +498,14 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		categories.setContentProvider(contentProvider);
 		categories.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.categories);
+		if (eefElementEditorReadOnlyState && categories.isEnabled()) {
+			categories.setEnabled(false);
+			categories.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !categories.isEnabled()) {
+			categories.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -437,7 +551,6 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		return ((ReferencesTableSettings)categories.getInput()).contains(element);
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -460,7 +573,17 @@ public class ChecklistPropertiesEditionPartForm extends CompositePropertiesEditi
 		} else {
 			comment.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Checklist_.Properties.comment);
+		if (eefElementEditorReadOnlyState && comment.isEnabled()) {
+			comment.setEnabled(false);
+			comment.setToolTipText(ChecklistMessages.Checklist_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !comment.isEnabled()) {
+			comment.setEnabled(true);
+		}	
+		
 	}
+
+
 
 
 

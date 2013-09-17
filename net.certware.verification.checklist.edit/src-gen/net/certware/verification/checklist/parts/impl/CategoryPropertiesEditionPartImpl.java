@@ -53,9 +53,9 @@ import org.eclipse.swt.widgets.Text;
 public class CategoryPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, CategoryPropertiesEditionPart {
 
 	protected Text name;
-protected ReferencesTable items;
-protected List<ViewerFilter> itemsBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable items;
+	protected List<ViewerFilter> itemsBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 	protected Text comment;
 
 
@@ -139,8 +139,8 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 
 	
 	protected Composite createNameText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.CategoryPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Category.Properties.name, ChecklistViewsRepository.SWT_KIND));
-		name = new Text(parent, SWT.BORDER);
+		createDescription(parent, ChecklistViewsRepository.Category.Properties.name, ChecklistMessages.CategoryPropertiesEditionPart_NameLabel);
+		name = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
 		name.setLayoutData(nameData);
 		name.addFocusListener(new FocusAdapter() {
@@ -180,6 +180,9 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(name, ChecklistViewsRepository.Category.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Category.Properties.name, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createNameText
+
+		// End of user code
 		return parent;
 	}
 
@@ -188,7 +191,7 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createItemsAdvancedTableComposition(Composite parent) {
-		this.items = new ReferencesTable(ChecklistMessages.CategoryPropertiesEditionPart_ItemsLabel, new ReferencesTableListener() {
+		this.items = new ReferencesTable(getDescription(ChecklistViewsRepository.Category.Properties.items, ChecklistMessages.CategoryPropertiesEditionPart_ItemsLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CategoryPropertiesEditionPartImpl.this, ChecklistViewsRepository.Category.Properties.items, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				items.refresh();
@@ -228,13 +231,16 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 		this.items.setUpperBound(-1);
 		items.setID(ChecklistViewsRepository.Category.Properties.items);
 		items.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createItemsAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createCommentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ChecklistMessages.CategoryPropertiesEditionPart_CommentLabel, propertiesEditionComponent.isRequired(ChecklistViewsRepository.Category.Properties.comment, ChecklistViewsRepository.SWT_KIND));
-		comment = new Text(parent, SWT.BORDER);
+		createDescription(parent, ChecklistViewsRepository.Category.Properties.comment, ChecklistMessages.CategoryPropertiesEditionPart_CommentLabel);
+		comment = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData commentData = new GridData(GridData.FILL_HORIZONTAL);
 		comment.setLayoutData(commentData);
 		comment.addFocusListener(new FocusAdapter() {
@@ -274,9 +280,11 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(comment, ChecklistViewsRepository.Category.Properties.comment);
 		EditingUtils.setEEFtype(comment, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ChecklistViewsRepository.Category.Properties.comment, ChecklistViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createCommentText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -313,8 +321,15 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 		} else {
 			name.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Category.Properties.name);
+		if (eefElementEditorReadOnlyState && name.isEnabled()) {
+			name.setEnabled(false);
+			name.setToolTipText(ChecklistMessages.Category_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !name.isEnabled()) {
+			name.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -329,6 +344,14 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		items.setContentProvider(contentProvider);
 		items.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Category.Properties.items);
+		if (eefElementEditorReadOnlyState && items.isEnabled()) {
+			items.setEnabled(false);
+			items.setToolTipText(ChecklistMessages.Category_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !items.isEnabled()) {
+			items.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -374,7 +397,6 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 		return ((ReferencesTableSettings)items.getInput()).contains(element);
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -397,8 +419,15 @@ protected List<ViewerFilter> itemsFilters = new ArrayList<ViewerFilter>();
 		} else {
 			comment.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ChecklistViewsRepository.Category.Properties.comment);
+		if (eefElementEditorReadOnlyState && comment.isEnabled()) {
+			comment.setEnabled(false);
+			comment.setToolTipText(ChecklistMessages.Category_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !comment.isEnabled()) {
+			comment.setEnabled(true);
+		}	
+		
 	}
-
 
 
 

@@ -17,11 +17,12 @@
       </PropertiesEditionPartProvider>
    </extension>
 
-   <!-- Tabbed properties views extension -->
+  <!-- Tabbed properties views extension -->
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="net.certware.measurement.sco.properties">
+            contributorId="net.certware.measurement.sco.properties"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
          <propertyCategory
                category="default">
          </propertyCategory>
@@ -38,10 +39,11 @@
       <propertyTabs
             contributorId="net.certware.measurement.sco.properties">
          <propertyTab
+               id="Base"
                label="Base"
-               category="default"
-               id="Base">
+               category="default">
          </propertyTab>
+
       </propertyTabs>
    </extension>
    <extension
@@ -49,68 +51,52 @@
       <propertySections
             contributorId="net.certware.measurement.sco.properties">
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.TotalChangeOrdersPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.TotalChangeOrdersPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.TotalChangeOrders"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.TotalChangeOrders">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.CriticalDefectChangeOrdersPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.CriticalDefectChangeOrdersPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.CriticalDefectChangeOrders"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.CriticalDefectChangeOrders">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.NormalDefectChangeOrdersPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.NormalDefectChangeOrdersPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.NormalDefectChangeOrders"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.NormalDefectChangeOrders">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.ImprovementChangeOrdersPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.ImprovementChangeOrdersPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.ImprovementChangeOrders"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.ImprovementChangeOrders">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.NewFeatureChangeOrdersPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.NewFeatureChangeOrdersPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.NewFeatureChangeOrders"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.NewFeatureChangeOrders">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.ArtifactIdentifierPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.ArtifactIdentifierPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.ArtifactIdentifier"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.ArtifactIdentifier">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.ArtifactCommitPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.ArtifactCommitPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.ArtifactCommit"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.ArtifactCommit">
-             </input>
          </propertySection>
          <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               class="net.certware.measurement.sco.parts.forms.CommitHistoryPropertiesEditionPartForm"
+               filter="net.certware.measurement.sco.providers.CommitHistoryPropertiesEditionProvider$EditionFilter"
                id="net.certware.measurement.sco.section.CommitHistory"
                tab="Base">
-             <input
-                    type="net.certware.measurement.sco.CommitHistory">
-             </input>
          </propertySection>
       </propertySections>
    </extension>

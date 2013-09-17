@@ -17,7 +17,9 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
@@ -71,6 +73,7 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
 			editingPart.setContext(elt, allResource);
+			
 			final CommitHistory commitHistory = (CommitHistory)elt;
 			final CommitHistoryPropertiesEditionPart basePart = (CommitHistoryPropertiesEditionPart)editingPart;
 			// init values
@@ -79,8 +82,8 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 				basePart.initCommitRecord(commitRecordSettings);
 			}
 			// init filters
-			basePart.addFilterToCommitRecord(new ViewerFilter() {
-			
+			if (isAccessible(ScoViewsRepository.CommitHistory.Properties.commitRecord)) {
+				basePart.addFilterToCommitRecord(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -90,10 +93,10 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 						return (element instanceof String && element.equals("")) || (element instanceof ArtifactCommit); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for commitRecord
+				});
+				// Start of user code for additional businessfilters for commitRecord
 			// End of user code
-			
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -156,12 +159,25 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		super.updatePart(msg);
+		if (editingPart.isVisible()) {
 			CommitHistoryPropertiesEditionPart basePart = (CommitHistoryPropertiesEditionPart)editingPart;
 			if (ScoPackage.eINSTANCE.getCommitHistory_CommitRecord().equals(msg.getFeature()) && isAccessible(ScoViewsRepository.CommitHistory.Properties.commitRecord))
 				basePart.updateCommitRecord();
 			
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getNotificationFilters()
+	 */
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
+			ScoPackage.eINSTANCE.getCommitHistory_CommitRecord()		);
+		return new NotificationFilter[] {filter,};
 	}
 
 
@@ -183,5 +199,8 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 		}
 		return ret;
 	}
+
+
+	
 
 }

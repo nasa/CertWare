@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package net.certware.argument.sfp.semiFormalProof.util;
 

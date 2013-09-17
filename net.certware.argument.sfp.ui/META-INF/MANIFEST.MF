@@ -22,6 +22,8 @@ Import-Package: net.certware.core.ui,
  org.eclipse.ui.forms,
  org.eclipse.ui.forms.events
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: net.certware.argument.sfp.ui.contentassist.antlr
+Export-Package: net.certware.argument.sfp.ui.contentassist.antlr,
+ net.certware.argument.sfp.ui.quickfix,
+ net.certware.argument.sfp.ui.contentassist
 Bundle-Activator: net.certware.argument.sfp.ui.internal.SemiFormalProofActivator
 Eclipse-RegisterBuddy: org.apache.log4j

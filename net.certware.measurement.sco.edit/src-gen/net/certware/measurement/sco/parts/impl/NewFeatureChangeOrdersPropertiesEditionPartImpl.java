@@ -9,10 +9,8 @@ import net.certware.measurement.sco.parts.ScoViewsRepository;
 import net.certware.measurement.sco.providers.ScoMessages;
 
 import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EEnumLiteral;
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.ISWTPropertiesEditionPart;
@@ -150,8 +148,8 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 
 	
 	protected Composite createNameText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_NameLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NewFeatureChangeOrders.Properties.name, ScoViewsRepository.SWT_KIND));
-		name = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.NewFeatureChangeOrders.Properties.name, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_NameLabel);
+		name = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
 		name.setLayoutData(nameData);
 		name.addFocusListener(new FocusAdapter() {
@@ -191,13 +189,16 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		EditingUtils.setID(name, ScoViewsRepository.NewFeatureChangeOrders.Properties.name);
 		EditingUtils.setEEFtype(name, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NewFeatureChangeOrders.Properties.name, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createNameText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createValueText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_ValueLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NewFeatureChangeOrders.Properties.value, ScoViewsRepository.SWT_KIND));
-		value = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.NewFeatureChangeOrders.Properties.value, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_ValueLabel);
+		value = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData valueData = new GridData(GridData.FILL_HORIZONTAL);
 		value.setLayoutData(valueData);
 		value.addFocusListener(new FocusAdapter() {
@@ -237,15 +238,18 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		EditingUtils.setID(value, ScoViewsRepository.NewFeatureChangeOrders.Properties.value);
 		EditingUtils.setEEFtype(value, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NewFeatureChangeOrders.Properties.value, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createValueText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createTypeEMFComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_TypeLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NewFeatureChangeOrders.Properties.type, ScoViewsRepository.SWT_KIND));
+		createDescription(parent, ScoViewsRepository.NewFeatureChangeOrders.Properties.type, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_TypeLabel);
 		type = new EMFComboViewer(parent);
 		type.setContentProvider(new ArrayContentProvider());
-		type.setLabelProvider(new AdapterFactoryLabelProvider(new EcoreAdapterFactory()));
+		type.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
 		GridData typeData = new GridData(GridData.FILL_HORIZONTAL);
 		type.getCombo().setLayoutData(typeData);
 		type.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -264,13 +268,16 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		});
 		type.setID(ScoViewsRepository.NewFeatureChangeOrders.Properties.type);
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NewFeatureChangeOrders.Properties.type, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createTypeEMFComboViewer
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createBrokenLinesText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_BrokenLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NewFeatureChangeOrders.Properties.brokenLines, ScoViewsRepository.SWT_KIND));
-		brokenLines = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.NewFeatureChangeOrders.Properties.brokenLines, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_BrokenLinesLabel);
+		brokenLines = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData brokenLinesData = new GridData(GridData.FILL_HORIZONTAL);
 		brokenLines.setLayoutData(brokenLinesData);
 		brokenLines.addFocusListener(new FocusAdapter() {
@@ -310,13 +317,16 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		EditingUtils.setID(brokenLines, ScoViewsRepository.NewFeatureChangeOrders.Properties.brokenLines);
 		EditingUtils.setEEFtype(brokenLines, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NewFeatureChangeOrders.Properties.brokenLines, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createBrokenLinesText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createFixedLinesText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_FixedLinesLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NewFeatureChangeOrders.Properties.fixedLines, ScoViewsRepository.SWT_KIND));
-		fixedLines = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.NewFeatureChangeOrders.Properties.fixedLines, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_FixedLinesLabel);
+		fixedLines = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData fixedLinesData = new GridData(GridData.FILL_HORIZONTAL);
 		fixedLines.setLayoutData(fixedLinesData);
 		fixedLines.addFocusListener(new FocusAdapter() {
@@ -356,13 +366,16 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		EditingUtils.setID(fixedLines, ScoViewsRepository.NewFeatureChangeOrders.Properties.fixedLines);
 		EditingUtils.setEEFtype(fixedLines, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NewFeatureChangeOrders.Properties.fixedLines, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createFixedLinesText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createRepairEffortText(Composite parent) {
-		SWTUtils.createPartLabel(parent, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_RepairEffortLabel, propertiesEditionComponent.isRequired(ScoViewsRepository.NewFeatureChangeOrders.Properties.repairEffort, ScoViewsRepository.SWT_KIND));
-		repairEffort = new Text(parent, SWT.BORDER);
+		createDescription(parent, ScoViewsRepository.NewFeatureChangeOrders.Properties.repairEffort, ScoMessages.NewFeatureChangeOrdersPropertiesEditionPart_RepairEffortLabel);
+		repairEffort = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData repairEffortData = new GridData(GridData.FILL_HORIZONTAL);
 		repairEffort.setLayoutData(repairEffortData);
 		repairEffort.addFocusListener(new FocusAdapter() {
@@ -402,9 +415,11 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		EditingUtils.setID(repairEffort, ScoViewsRepository.NewFeatureChangeOrders.Properties.repairEffort);
 		EditingUtils.setEEFtype(repairEffort, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(ScoViewsRepository.NewFeatureChangeOrders.Properties.repairEffort, ScoViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createRepairEffortText
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -441,8 +456,15 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		} else {
 			name.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NewFeatureChangeOrders.Properties.name);
+		if (eefElementEditorReadOnlyState && name.isEnabled()) {
+			name.setEnabled(false);
+			name.setToolTipText(ScoMessages.NewFeatureChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !name.isEnabled()) {
+			name.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -466,8 +488,15 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		} else {
 			value.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NewFeatureChangeOrders.Properties.value);
+		if (eefElementEditorReadOnlyState && value.isEnabled()) {
+			value.setEnabled(false);
+			value.setToolTipText(ScoMessages.NewFeatureChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !value.isEnabled()) {
+			value.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -476,18 +505,26 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 	 * 
 	 */
 	public Enumerator getType() {
-		EEnumLiteral selection = (EEnumLiteral) ((StructuredSelection) type.getSelection()).getFirstElement();
-		return selection.getInstance();
+		Enumerator selection = (Enumerator) ((StructuredSelection) type.getSelection()).getFirstElement();
+		return selection;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.certware.measurement.sco.parts.NewFeatureChangeOrdersPropertiesEditionPart#initType(EEnum eenum, Enumerator current)
+	 * @see net.certware.measurement.sco.parts.NewFeatureChangeOrdersPropertiesEditionPart#initType(Object input, Enumerator current)
 	 */
-	public void initType(EEnum eenum, Enumerator current) {
-		type.setInput(eenum.getELiterals());
+	public void initType(Object input, Enumerator current) {
+		type.setInput(input);
 		type.modelUpdating(new StructuredSelection(current));
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NewFeatureChangeOrders.Properties.type);
+		if (eefElementEditorReadOnlyState && type.isEnabled()) {
+			type.setEnabled(false);
+			type.setToolTipText(ScoMessages.NewFeatureChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !type.isEnabled()) {
+			type.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -498,8 +535,15 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 	 */
 	public void setType(Enumerator newValue) {
 		type.modelUpdating(new StructuredSelection(newValue));
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NewFeatureChangeOrders.Properties.type);
+		if (eefElementEditorReadOnlyState && type.isEnabled()) {
+			type.setEnabled(false);
+			type.setToolTipText(ScoMessages.NewFeatureChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !type.isEnabled()) {
+			type.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -523,8 +567,15 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		} else {
 			brokenLines.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NewFeatureChangeOrders.Properties.brokenLines);
+		if (eefElementEditorReadOnlyState && brokenLines.isEnabled()) {
+			brokenLines.setEnabled(false);
+			brokenLines.setToolTipText(ScoMessages.NewFeatureChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !brokenLines.isEnabled()) {
+			brokenLines.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -548,8 +599,15 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		} else {
 			fixedLines.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NewFeatureChangeOrders.Properties.fixedLines);
+		if (eefElementEditorReadOnlyState && fixedLines.isEnabled()) {
+			fixedLines.setEnabled(false);
+			fixedLines.setToolTipText(ScoMessages.NewFeatureChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !fixedLines.isEnabled()) {
+			fixedLines.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -573,8 +631,15 @@ public class NewFeatureChangeOrdersPropertiesEditionPartImpl extends CompositePr
 		} else {
 			repairEffort.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(ScoViewsRepository.NewFeatureChangeOrders.Properties.repairEffort);
+		if (eefElementEditorReadOnlyState && repairEffort.isEnabled()) {
+			repairEffort.setEnabled(false);
+			repairEffort.setToolTipText(ScoMessages.NewFeatureChangeOrders_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !repairEffort.isEnabled()) {
+			repairEffort.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
