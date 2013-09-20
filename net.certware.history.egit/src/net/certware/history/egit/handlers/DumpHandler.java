@@ -29,7 +29,6 @@ import org.eclipse.jgit.revwalk.FooterLine;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevTree;
 import org.eclipse.jgit.revwalk.RevWalk;
-import org.eclipse.jgit.storage.file.FileRepository;
 import org.eclipse.jgit.treewalk.TreeWalk;
 import org.eclipse.jgit.treewalk.filter.TreeFilter;
 import org.eclipse.team.core.RepositoryProvider;
@@ -371,8 +370,8 @@ public class DumpHandler extends AbstractHandler {
 	}
 
 
-	protected static FileRepository lookupRepository(File directory) throws Exception {
-		return (FileRepository) org.eclipse.egit.core.Activator.getDefault()
+	protected static org.eclipse.jgit.storage.file.FileRepository lookupRepository(File directory) throws Exception {
+		return (org.eclipse.jgit.storage.file.FileRepository) org.eclipse.egit.core.Activator.getDefault()
 		.getRepositoryCache().lookupRepository(directory);
 	}
 

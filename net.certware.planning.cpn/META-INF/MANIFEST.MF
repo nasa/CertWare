@@ -11,9 +11,9 @@ Require-Bundle: org.apache.commons.logging;resolution:=optional,
  org.eclipse.emf.ecore,
  org.antlr.runtime,
  net.certware.sacm;visibility:=reexport,
- org.eclipse.xtext.common.types;bundle-version="2.4.3",
- org.eclipse.xtext;bundle-version="2.4.3",
- org.eclipse.xtext.generator;bundle-version="2.4.3"
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext,
+ org.eclipse.xtext.generator
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.planning.cpn,

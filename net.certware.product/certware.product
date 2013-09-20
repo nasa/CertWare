@@ -112,10 +112,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="com.jcraft.jsch"/>
       <plugin id="com.sun.syndication"/>
       <plugin id="javax.annotation"/>
-      <plugin id="javax.el"/>
       <plugin id="javax.inject"/>
-      <plugin id="javax.servlet"/>
-      <plugin id="javax.servlet.jsp"/>
       <plugin id="javax.xml"/>
       <plugin id="lpg.runtime.java"/>
       <plugin id="net.certware.argument.diagram.figures"/>
@@ -131,8 +128,10 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.evidence.hugin.instance"/>
       <plugin id="net.certware.evidence.hugin.instance.edit"/>
       <plugin id="net.certware.evidence.hugin.instance.editor"/>
+      <plugin id="net.certware.evidence.hugin.test"/>
       <plugin id="net.certware.evidence.hugin.ui"/>
       <plugin id="net.certware.evidence.hugin.view"/>
+      <plugin id="net.certware.evidence.inference.test"/>
       <plugin id="net.certware.example"/>
       <plugin id="net.certware.example.checklist" fragment="true"/>
       <plugin id="net.certware.example.net" fragment="true"/>
@@ -164,6 +163,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.measurement.spm.edit"/>
       <plugin id="net.certware.measurement.spm.editor"/>
       <plugin id="net.certware.measurement.spm.navigator"/>
+      <plugin id="net.certware.measurement.spm.tests"/>
       <plugin id="net.certware.measurement.spm.view"/>
       <plugin id="net.certware.planning"/>
       <plugin id="net.certware.planning.cpn"/>
@@ -177,6 +177,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.product"/>
       <plugin id="net.certware.sacm"/>
       <plugin id="net.certware.sacm.dsl"/>
+      <plugin id="net.certware.sacm.dsl.tests"/>
       <plugin id="net.certware.sacm.dsl.ui"/>
       <plugin id="net.certware.sacm.edit"/>
       <plugin id="net.certware.sacm.editor"/>
@@ -191,27 +192,16 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.antlr.runtime"/>
       <plugin id="org.antlr.runtime_3.1.b1"/>
       <plugin id="org.apache.ant"/>
-      <plugin id="org.apache.batik.bridge"/>
       <plugin id="org.apache.batik.css"/>
-      <plugin id="org.apache.batik.dom"/>
-      <plugin id="org.apache.batik.dom.svg"/>
-      <plugin id="org.apache.batik.ext.awt"/>
-      <plugin id="org.apache.batik.parser"/>
-      <plugin id="org.apache.batik.pdf"/>
-      <plugin id="org.apache.batik.svggen"/>
-      <plugin id="org.apache.batik.transcoder"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
-      <plugin id="org.apache.batik.xml"/>
       <plugin id="org.apache.commons.cli"/>
       <plugin id="org.apache.commons.codec"/>
       <plugin id="org.apache.commons.httpclient"/>
+      <plugin id="org.apache.commons.io"/>
       <plugin id="org.apache.commons.lang"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.log4j"/>
-      <plugin id="org.apache.lucene"/>
-      <plugin id="org.apache.lucene.analysis"/>
-      <plugin id="org.apache.lucene.core"/>
       <plugin id="org.eclipse.ant.core"/>
       <plugin id="org.eclipse.ant.launching"/>
       <plugin id="org.eclipse.ant.ui"/>
@@ -227,25 +217,11 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.core.externaltools"/>
       <plugin id="org.eclipse.core.filebuffers"/>
       <plugin id="org.eclipse.core.filesystem"/>
-      <plugin id="org.eclipse.core.filesystem.aix.ppc" fragment="true"/>
-      <plugin id="org.eclipse.core.filesystem.hpux.ia64_32" fragment="true"/>
-      <plugin id="org.eclipse.core.filesystem.linux.ppc" fragment="true"/>
-      <plugin id="org.eclipse.core.filesystem.linux.x86" fragment="true"/>
-      <plugin id="org.eclipse.core.filesystem.linux.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.filesystem.macosx" fragment="true"/>
-      <plugin id="org.eclipse.core.filesystem.solaris.sparc" fragment="true"/>
-      <plugin id="org.eclipse.core.filesystem.win32.x86" fragment="true"/>
-      <plugin id="org.eclipse.core.filesystem.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.jobs"/>
       <plugin id="org.eclipse.core.net"/>
-      <plugin id="org.eclipse.core.net.linux.x86" fragment="true"/>
-      <plugin id="org.eclipse.core.net.linux.x86_64" fragment="true"/>
-      <plugin id="org.eclipse.core.net.win32.x86" fragment="true"/>
-      <plugin id="org.eclipse.core.net.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.resources"/>
-      <plugin id="org.eclipse.core.resources.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.core.runtime"/>
-      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
       <plugin id="org.eclipse.core.variables"/>
       <plugin id="org.eclipse.debug.core"/>
@@ -270,24 +246,14 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt.cocoa" fragment="true"/>
       <plugin id="org.eclipse.e4.ui.workbench.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench3"/>
-      <plugin id="org.eclipse.ecf"/>
-      <plugin id="org.eclipse.ecf.filetransfer"/>
-      <plugin id="org.eclipse.ecf.identity"/>
-      <plugin id="org.eclipse.ecf.provider.filetransfer"/>
-      <plugin id="org.eclipse.ecf.provider.filetransfer.ssl" fragment="true"/>
-      <plugin id="org.eclipse.ecf.ssl" fragment="true"/>
       <plugin id="org.eclipse.egf.common"/>
       <plugin id="org.eclipse.egf.common.ui"/>
       <plugin id="org.eclipse.egf.core"/>
       <plugin id="org.eclipse.egf.core.pde"/>
       <plugin id="org.eclipse.egf.core.platform"/>
       <plugin id="org.eclipse.egf.core.ui"/>
-      <plugin id="org.eclipse.egf.emf.codegen.ecore.ui" fragment="true"/>
-      <plugin id="org.eclipse.egf.emf.ecore.editor" fragment="true"/>
       <plugin id="org.eclipse.egit"/>
       <plugin id="org.eclipse.egit.core"/>
-      <plugin id="org.eclipse.egit.doc"/>
-      <plugin id="org.eclipse.egit.ui"/>
       <plugin id="org.eclipse.emf"/>
       <plugin id="org.eclipse.emf.codegen"/>
       <plugin id="org.eclipse.emf.codegen.ecore"/>
@@ -297,19 +263,16 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.emf.ecore"/>
       <plugin id="org.eclipse.emf.ecore.change"/>
       <plugin id="org.eclipse.emf.ecore.edit"/>
-      <plugin id="org.eclipse.emf.ecore.editor"/>
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.emf.edit"/>
       <plugin id="org.eclipse.emf.edit.ui"/>
       <plugin id="org.eclipse.emf.eef.runtime"/>
+      <plugin id="org.eclipse.emf.eef.runtime.extended"/>
       <plugin id="org.eclipse.emf.mwe.core"/>
       <plugin id="org.eclipse.emf.mwe.utils"/>
       <plugin id="org.eclipse.emf.mwe2.runtime"/>
       <plugin id="org.eclipse.emf.transaction"/>
       <plugin id="org.eclipse.emf.validation"/>
-      <plugin id="org.eclipse.emf.validation.ocl"/>
-      <plugin id="org.eclipse.emf.validation.ui"/>
-      <plugin id="org.eclipse.emf.validation.ui.ide"/>
       <plugin id="org.eclipse.emf.workspace"/>
       <plugin id="org.eclipse.epsilon.common"/>
       <plugin id="org.eclipse.epsilon.common.dt"/>
@@ -321,13 +284,12 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.epsilon.evl.emf.validation"/>
       <plugin id="org.eclipse.epsilon.evl.engine"/>
       <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.bidi"/>
       <plugin id="org.eclipse.equinox.common"/>
       <plugin id="org.eclipse.equinox.ds"/>
       <plugin id="org.eclipse.equinox.event"/>
       <plugin id="org.eclipse.equinox.frameworkadmin"/>
       <plugin id="org.eclipse.equinox.frameworkadmin.equinox"/>
-      <plugin id="org.eclipse.equinox.http.jetty"/>
-      <plugin id="org.eclipse.equinox.http.servlet"/>
       <plugin id="org.eclipse.equinox.p2.artifact.repository"/>
       <plugin id="org.eclipse.equinox.p2.core"/>
       <plugin id="org.eclipse.equinox.p2.director"/>
@@ -349,48 +311,13 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.equinox.security"/>
       <plugin id="org.eclipse.equinox.security.macosx" fragment="true"/>
       <plugin id="org.eclipse.equinox.security.ui"/>
-      <plugin id="org.eclipse.equinox.security.win32.x86" fragment="true"/>
-      <plugin id="org.eclipse.equinox.servletbridge.extensionbundle" fragment="true"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
-      <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
       <plugin id="org.eclipse.equinox.util"/>
-      <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
-      <plugin id="org.eclipse.gef"/>
       <plugin id="org.eclipse.gmf.runtime.common.core"/>
       <plugin id="org.eclipse.gmf.runtime.common.ui"/>
-      <plugin id="org.eclipse.gmf.runtime.common.ui.action"/>
-      <plugin id="org.eclipse.gmf.runtime.common.ui.action.ide"/>
-      <plugin id="org.eclipse.gmf.runtime.common.ui.printing"/>
-      <plugin id="org.eclipse.gmf.runtime.common.ui.printing.win32" fragment="true"/>
-      <plugin id="org.eclipse.gmf.runtime.common.ui.services"/>
-      <plugin id="org.eclipse.gmf.runtime.common.ui.services.action"/>
-      <plugin id="org.eclipse.gmf.runtime.common.ui.services.properties"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.core"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.actions"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.properties"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.providers"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.render"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
-      <plugin id="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
       <plugin id="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render"/>
-      <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render.awt"/>
-      <plugin id="org.eclipse.gmf.runtime.emf.clipboard.core"/>
-      <plugin id="org.eclipse.gmf.runtime.emf.commands.core"/>
-      <plugin id="org.eclipse.gmf.runtime.emf.core"/>
-      <plugin id="org.eclipse.gmf.runtime.emf.type.core"/>
-      <plugin id="org.eclipse.gmf.runtime.emf.ui"/>
-      <plugin id="org.eclipse.gmf.runtime.emf.ui.properties"/>
-      <plugin id="org.eclipse.gmf.runtime.gef.ui"/>
-      <plugin id="org.eclipse.gmf.runtime.notation"/>
       <plugin id="org.eclipse.help"/>
-      <plugin id="org.eclipse.help.base"/>
-      <plugin id="org.eclipse.help.ui"/>
       <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
       <plugin id="org.eclipse.jdt.compiler.tool" fragment="true"/>
       <plugin id="org.eclipse.jdt.core"/>
@@ -402,25 +329,12 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.jdt.junit.runtime"/>
       <plugin id="org.eclipse.jdt.launching"/>
       <plugin id="org.eclipse.jdt.ui"/>
-      <plugin id="org.eclipse.jetty.continuation"/>
-      <plugin id="org.eclipse.jetty.http"/>
-      <plugin id="org.eclipse.jetty.io"/>
-      <plugin id="org.eclipse.jetty.security"/>
-      <plugin id="org.eclipse.jetty.server"/>
-      <plugin id="org.eclipse.jetty.servlet"/>
-      <plugin id="org.eclipse.jetty.util"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
       <plugin id="org.eclipse.jface.text"/>
       <plugin id="org.eclipse.jgit"/>
-      <plugin id="org.eclipse.jsch.core"/>
-      <plugin id="org.eclipse.jsch.ui"/>
       <plugin id="org.eclipse.ltk.core.refactoring"/>
       <plugin id="org.eclipse.ltk.ui.refactoring"/>
-      <plugin id="org.eclipse.m2m.atl.common"/>
-      <plugin id="org.eclipse.m2m.atl.core"/>
-      <plugin id="org.eclipse.m2m.atl.core.emf"/>
-      <plugin id="org.eclipse.m2m.atl.engine.emfvm"/>
       <plugin id="org.eclipse.mylyn.commons.core"/>
       <plugin id="org.eclipse.mylyn.commons.identity.core"/>
       <plugin id="org.eclipse.mylyn.commons.net"/>
@@ -446,35 +360,15 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.pde.core"/>
       <plugin id="org.eclipse.pde.launching"/>
       <plugin id="org.eclipse.pde.ui"/>
-      <plugin id="org.eclipse.sdk"/>
       <plugin id="org.eclipse.search"/>
       <plugin id="org.eclipse.swt"/>
-      <plugin id="org.eclipse.swt.carbon.macosx" fragment="true"/>
-      <plugin id="org.eclipse.swt.cocoa.macosx" fragment="true"/>
       <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.linux.ppc" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.linux.ppc64" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.linux.s390" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.linux.s390x" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.linux.x86" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.solaris.sparc" fragment="true"/>
-      <plugin id="org.eclipse.swt.gtk.solaris.x86" fragment="true"/>
-      <plugin id="org.eclipse.swt.motif.aix.ppc" fragment="true"/>
-      <plugin id="org.eclipse.swt.motif.hpux.ia64_32" fragment="true"/>
-      <plugin id="org.eclipse.swt.motif.linux.x86" fragment="true"/>
-      <plugin id="org.eclipse.swt.motif.solaris.sparc" fragment="true"/>
-      <plugin id="org.eclipse.swt.photon.qnx.x86" fragment="true"/>
-      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
-      <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.team.core"/>
       <plugin id="org.eclipse.team.ui"/>
       <plugin id="org.eclipse.text"/>
       <plugin id="org.eclipse.ui"/>
       <plugin id="org.eclipse.ui.browser"/>
-      <plugin id="org.eclipse.ui.carbon" fragment="true"/>
       <plugin id="org.eclipse.ui.cheatsheets"/>
-      <plugin id="org.eclipse.ui.cocoa" fragment="true"/>
       <plugin id="org.eclipse.ui.console"/>
       <plugin id="org.eclipse.ui.editors"/>
       <plugin id="org.eclipse.ui.externaltools"/>
@@ -488,14 +382,9 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.ui.views"/>
       <plugin id="org.eclipse.ui.views.log"/>
       <plugin id="org.eclipse.ui.views.properties.tabbed"/>
-      <plugin id="org.eclipse.ui.win32" fragment="true"/>
       <plugin id="org.eclipse.ui.workbench"/>
       <plugin id="org.eclipse.ui.workbench.texteditor"/>
       <plugin id="org.eclipse.update.configurator"/>
-      <plugin id="org.eclipse.update.core"/>
-      <plugin id="org.eclipse.update.core.linux" fragment="true"/>
-      <plugin id="org.eclipse.update.core.win32" fragment="true"/>
-      <plugin id="org.eclipse.update.ui"/>
       <plugin id="org.eclipse.xpand"/>
       <plugin id="org.eclipse.xtend"/>
       <plugin id="org.eclipse.xtend.lib"/>
@@ -506,6 +395,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.xtext.common.types.ui"/>
       <plugin id="org.eclipse.xtext.ecore"/>
       <plugin id="org.eclipse.xtext.generator"/>
+      <plugin id="org.eclipse.xtext.junit4"/>
       <plugin id="org.eclipse.xtext.logging" fragment="true"/>
       <plugin id="org.eclipse.xtext.ui"/>
       <plugin id="org.eclipse.xtext.ui.codetemplates"/>
@@ -524,11 +414,5 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.w3c.dom.svg"/>
    </plugins>
 
-   <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
-      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="3" />
-   </configurations>
 
 </product>
