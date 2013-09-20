@@ -6,14 +6,13 @@ package net.certware.argument.sfp.parseTreeConstruction;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
-import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
 
 import net.certware.argument.sfp.services.SemiFormalProofGrammarAccess;
 
 import com.google.inject.Inject;
 
 @SuppressWarnings("all")
-public class SemiFormalProofParsetreeConstructor extends AbstractParseTreeConstructor {
+public class SemiFormalProofParsetreeConstructor extends org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor {
 		
 	@Inject
 	private SemiFormalProofGrammarAccess grammarAccess;

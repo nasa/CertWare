@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
@@ -274,6 +275,12 @@ public class ItemPropertiesEditionComponent extends SinglePartPropertiesEditingC
 			}
 		}
 		return ret;
+	}
+
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

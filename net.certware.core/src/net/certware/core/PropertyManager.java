@@ -65,7 +65,7 @@ public class PropertyManager {
 	}
 
 	/** property cache */
-	private Map cache;
+	private Map<String, String> cache;
 
 	/**
 	 * Property manager private constructor.
@@ -73,7 +73,7 @@ public class PropertyManager {
 	 */
 	private PropertyManager() {
 		super();
-		cache = new HashMap(11);
+		cache = new HashMap<String, String>(11);
 	}
 
 	private boolean instanceGetBooleanProperty(String property) {

@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.certware.net/argument/sfp/SemiFormalProof" 
        class = "net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage"
-       genModel = "net/certware/argument/sfp/SemiFormalProof.genmodel" /> 
+       genModel = "model/generated/SemiFormalProof.genmodel" /> 
 	
   </extension>
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.argument.sfp/src-gen" editDirectory="/net.certware.argument.sfp.edit/src"
+    editorDirectory="/net.certware.argument.sfp.editor/src" modelPluginID="net.certware.argument.sfp"
+    forceOverwrite="true" modelName="SemiFormalProof" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.argument.sfp.edit"
+    editorPluginID="net.certware.argument.sfp.editor" runtimeVersion="2.9">
+  <genPackages prefix="SemiFormalProof" basePackage="net.certware.argument.sfp" disposableProviderFactory="true"
+      ecorePackage="SemiFormalProof.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SemiFormalProof.ecore#//ValidationKind">
+      <genEnumLiterals ecoreEnumLiteral="SemiFormalProof.ecore#//ValidationKind/UNKNOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="SemiFormalProof.ecore#//ValidationKind/VALID"/>
+      <genEnumLiterals ecoreEnumLiteral="SemiFormalProof.ecore#//ValidationKind/INVALID"/>
+    </genEnums>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//Proof">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Proof/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Proof/justifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Proof/proofSteps"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//Justifications">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Justifications/justifications"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//Justification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Justification/hypothesis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Justification/epsilon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Justification/numeral"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Justification/assertion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Justification/entailment"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//QuotedAssertion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//QuotedAssertion/text"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//Entailment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Entailment/head"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Entailment/tail"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//Conjunction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Conjunction/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Conjunction/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//ProofSteps">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//ProofSteps/statements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//ProofSteps/epsilon"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Statement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Statement/statement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Statement/justification"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SemiFormalProof.ecore#//Statement/validation"/>
+    </genClasses>
+    <genClasses ecoreClass="SemiFormalProof.ecore#//Validation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Validation/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Validation/timeStamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SemiFormalProof.ecore#//Validation/state"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

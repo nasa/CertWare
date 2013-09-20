@@ -6,8 +6,7 @@ Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.argument.sfp.navigator.Activator
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: net.certware.argument.arm,
- net.certware.argument.sfp,
+Import-Package: net.certware.argument.sfp,
  net.certware.argument.sfp.semiFormalProof.util,
  net.certware.core,
  net.certware.core.ui.log,

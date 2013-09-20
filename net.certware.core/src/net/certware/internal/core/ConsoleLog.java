@@ -47,7 +47,7 @@ class ConsoleLog extends Object implements LogService {
 		setBuffer(new StringBuffer(ConsoleLog.DEFAULT_BUFFER_SIZE));
 	}
 
-	private String formatLogMessage(ServiceReference reference, int level,
+	private String formatLogMessage(ServiceReference<String[]> reference, int level,
 			String message) {
 		StringBuffer buffer = getBuffer();
 		int count = buffer.length();
@@ -146,6 +146,7 @@ class ConsoleLog extends Object implements LogService {
 	 * @see org.osgi.service.log.LogService#log(org.osgi.framework.ServiceReference,
 	 *      int, java.lang.String)
 	 */
+	@SuppressWarnings({ "rawtypes" })
 	public void log(ServiceReference reference, int level, String message) {
 		log(reference, level, message, null);
 	}
@@ -154,6 +155,7 @@ class ConsoleLog extends Object implements LogService {
 	 * @see org.osgi.service.log.LogService#log(org.osgi.framework.ServiceReference,
 	 *      int, java.lang.String, java.lang.Throwable)
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void log(ServiceReference reference, int level, String message,
 			Throwable throwable) {
 		OutputStream stream = getOutputStream(level);
@@ -178,7 +180,7 @@ class ConsoleLog extends Object implements LogService {
 	}
 
 	private void printServiceReferenceOn(StringBuffer buffer,
-			ServiceReference reference) {
+			ServiceReference<String[]> reference) {
 		if (reference == null)
 			return; // Early return.
 		Bundle bundle = reference.getBundle();
@@ -201,8 +203,8 @@ class ConsoleLog extends Object implements LogService {
 		buffer.append('=');
 		buffer.append('[');
 
-		List names = getServiceNames(reference);
-		Iterator iterator = names.iterator();
+		List<?> names = getServiceNames(reference);
+		Iterator<?> iterator = names.iterator();
 
 		while (iterator.hasNext() == true) {
 			Object name = iterator.next();

@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import net.certware.argument.sfp.ui.internal.SemiFormalProofActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class SemiFormalProofExecutableExtensionFactory extends AbstractGuiceAwar
 
 	@Override
 	protected Bundle getBundle() {
-		return net.certware.argument.sfp.ui.internal.SemiFormalProofActivator.getInstance().getBundle();
+		return SemiFormalProofActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return net.certware.argument.sfp.ui.internal.SemiFormalProofActivator.getInstance().getInjector("net.certware.argument.sfp.SemiFormalProof");
+		return SemiFormalProofActivator.getInstance().getInjector(SemiFormalProofActivator.NET_CERTWARE_ARGUMENT_SFP_SEMIFORMALPROOF);
 	}
 	
 }

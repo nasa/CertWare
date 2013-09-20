@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
@@ -121,6 +122,7 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@SuppressWarnings("unused")
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		CommitHistory commitHistory = (CommitHistory)semanticObject;
 		if (ScoViewsRepository.CommitHistory.Properties.commitRecord == event.getAffectedEditor()) {
@@ -181,6 +183,12 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 			}
 		}
 		return ret;
+	}
+
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
