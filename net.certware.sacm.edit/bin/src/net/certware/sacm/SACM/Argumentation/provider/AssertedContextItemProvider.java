@@ -112,13 +112,9 @@ public class AssertedContextItemProvider
 	@Override
 	public String getText(Object object) {
 		String label = ((AssertedContext)object).getId();
-		EList<ArgumentElement> sources = ((AssertedContext)object).getSource();
-		EList<ArgumentElement> targets = ((AssertedContext)object).getTarget();
-
 		return label == null || label.length() == 0 ?
 			getString("_UI_AssertedContext_type") : //$NON-NLS-1$
-			getString("_UI_AssertedContext_type") + " " + label + ": " + 
-			listToString(sources) + "->" + listToString(targets); //$NON-NLS-1$ //$NON-NLS-2$
+			getString("_UI_AssertedContext_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

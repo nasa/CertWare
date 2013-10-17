@@ -1,0 +1,106 @@
+<!-- see http://5ise.quanxinquanyi.de/2013/01/11/avoiding-manual-merge-when-generating-plugin-xml-with-xtextxtend/ -->
+<project default="updateAll">
+	
+	<target name="findFile">
+		<fileset id="matches" dir="${basedir}">
+		    <filename name="plugin.xml"/>
+		</fileset>
+		<condition property="foundFile">
+			<resourcecount when="greater" count="0" refid="matches" />
+		</condition>
+	</target>	
+
+	<target name="ensureFileExists" depends="findFile" unless="foundFile">
+		<copy file="src-gen/plugin.xml" todir="${basedir}" />
+		<antcall target="findFile" />
+	</target>	
+
+	<target name="updateAll" depends="ensureFileExists" if="foundFile">
+
+		<antcall target="update">
+			<param name="segmentFileName" value="plugin_diagramtype.xml" />
+			<param name="commentSegment" value="DIAGRAM TYPE" />
+			<param name="commentMatchString" value="&lt;!-- DIAGRAM TYPE AUTOGEN START --&gt;(.+?)\&lt;!-- DIAGRAM TYPE AUTOGEN END --&gt;" />
+		</antcall>
+
+		<antcall target="update">
+			<param name="segmentFileName" value="plugin_diagramtypeprovider.xml" />
+			<param name="commentSegment" value="DIAGRAM TYPE PROVIDER" />
+			<param name="commentMatchString" value="&lt;!-- DIAGRAM TYPE PROVIDER AUTOGEN START --&gt;(.+?)\&lt;!-- DIAGRAM TYPE PROVIDER AUTOGEN END --&gt;" />
+		</antcall>
+
+		<antcall target="update">
+			<param name="segmentFileName" value="plugin_graphitieditor.xml" />
+			<param name="commentSegment" value="GRAPHITI EDITOR EXTENSION" />
+			<param name="commentMatchString" value="&lt;!-- GRAPHITI EDITOR EXTENSION AUTOGEN START --&gt;(.+?)\&lt;!-- GRAPHITI EDITOR EXTENSION AUTOGEN END --&gt;" />
+		</antcall>
+
+		<antcall target="update">
+			<param name="segmentFileName" value="plugin_imageprovider.xml" />
+			<param name="commentSegment" value="IMAGE PROVIDER" />
+			<param name="commentMatchString" value="&lt;!-- IMAGE PROVIDER AUTOGEN START --&gt;(.+?)\&lt;!-- IMAGE PROVIDER AUTOGEN END --&gt;" />
+		</antcall>
+
+		<antcall target="update">
+			<param name="segmentFileName" value="plugin_newdiagramwizard.xml" />
+			<param name="commentSegment" value="NEW DIAGRAM WIZARD" />
+			<param name="commentMatchString" value="&lt;!-- NEW DIAGRAM WIZARD AUTOGEN START --&gt;(.+?)\&lt;!-- NEW DIAGRAM WIZARD AUTOGEN END --&gt;" />
+		</antcall>
+
+		<antcall target="update">
+			<param name="segmentFileName" value="plugin_propertysections.xml" />
+			<param name="commentSegment" value="PROPERTY SECTIONS" />
+			<param name="commentMatchString" value="&lt;!-- PROPERTY SECTIONS AUTOGEN START --&gt;(.+?)\&lt;!-- PROPERTY SECTIONS AUTOGEN END --&gt;" />
+		</antcall>
+
+		<antcall target="update">
+			<param name="segmentFileName" value="plugin_propertytabs.xml" />
+			<param name="commentSegment" value="PROPERTY TAB" />
+			<param name="commentMatchString" value="&lt;!-- PROPERTY TAB AUTOGEN START --&gt;(.+?)\&lt;!-- PROPERTY TAB AUTOGEN END --&gt;" />
+		</antcall>
+		
+	</target>
+
+	<target name="findInFile">
+		<fileset id="matches" dir="${basedir}">
+		    <filename name="plugin.xml"/>
+			<containsregexp 
+				expression="${commentSegment}"/>
+		</fileset>
+		<condition property="foundInFile">
+			<resourcecount when="greater" count="0" refid="matches" />
+		</condition>
+	</target>
+	
+	<target name="readSegmentFileContent" depends="findInFile" if="foundInFile">
+		<loadfile property="segmentFileContent" srcfile="${basedir}/src-gen/${segmentFileName}" />
+	</target>	
+
+	<target name="updateWithContent" depends="readSegmentFileContent" if="segmentFileContent">
+
+		<replaceregexp 
+			file="plugin.xml" 
+			match="${commentMatchString}" 
+			replace="&lt;!-- ${commentSegment} AUTOGEN START -->${line.separator}
+				${segmentFileContent}
+				&lt;!-- ${commentSegment} AUTOGEN END -->" 
+			flags="gis" 
+			byline="false" 
+		/>
+		<echo message="Regenerating content of ${commentMatchString} in plugin.xml with content from ${segmentFileName}" />
+	</target>
+
+	<target name="updateWithEmptyContent" depends="readSegmentFileContent" unless="segmentFileContent">
+		<replaceregexp 
+			file="plugin.xml" 
+			match="${commentMatchString}" 
+			replace="&lt;!-- ${commentSegment} AUTOGEN START -->${line.separator}
+			&lt;!-- ${commentSegment} AUTOGEN END -->" 
+			flags="gis" 
+			byline="false" 
+		/>
+	</target>
+
+	<target name="update" depends="updateWithEmptyContent, updateWithContent" />
+
+</project>

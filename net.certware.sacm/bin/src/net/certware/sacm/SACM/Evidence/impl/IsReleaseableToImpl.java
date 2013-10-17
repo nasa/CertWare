@@ -69,7 +69,7 @@ public class IsReleaseableToImpl extends DocumentPropertyImpl implements IsRelea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsReleaseableToImpl() {
+	public IsReleaseableToImpl() {
 		super();
 	}
 

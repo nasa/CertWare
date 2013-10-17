@@ -90,7 +90,7 @@ public class IsExpressedInLanguageImpl extends DocumentPropertyImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsExpressedInLanguageImpl() {
+	public IsExpressedInLanguageImpl() {
 		super();
 	}
 

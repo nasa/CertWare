@@ -70,7 +70,7 @@ public class SignificanceImpl extends EvidenceAttributeImpl implements Significa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SignificanceImpl() {
+	public SignificanceImpl() {
 		super();
 	}
 

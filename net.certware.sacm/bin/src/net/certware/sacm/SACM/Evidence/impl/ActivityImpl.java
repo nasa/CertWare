@@ -31,7 +31,7 @@ public class ActivityImpl extends ProjectElementImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityImpl() {
+	public ActivityImpl() {
 		super();
 	}
 

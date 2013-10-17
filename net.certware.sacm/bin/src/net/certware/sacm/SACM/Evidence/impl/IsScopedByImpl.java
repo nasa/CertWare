@@ -63,7 +63,7 @@ public class IsScopedByImpl extends EvidenceInterpretationImpl implements IsScop
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsScopedByImpl() {
+	public IsScopedByImpl() {
 		super();
 	}
 

@@ -69,7 +69,7 @@ public class HasSecurityClassificationImpl extends DocumentPropertyImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HasSecurityClassificationImpl() {
+	public HasSecurityClassificationImpl() {
 		super();
 	}
 

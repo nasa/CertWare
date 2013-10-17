@@ -31,7 +31,7 @@ public abstract class EvidenceAttributeImpl extends EvidenceAssertionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceAttributeImpl() {
+	public EvidenceAttributeImpl() {
 		super();
 	}
 

@@ -31,7 +31,7 @@ public class MethodImpl extends CollectionMethodImpl implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MethodImpl() {
+	public MethodImpl() {
 		super();
 	}
 

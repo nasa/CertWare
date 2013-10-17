@@ -17,6 +17,7 @@ import net.certware.sacm.SACM.TaggedValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -82,7 +83,7 @@ public class InformationElementImpl extends ArgumentElementImpl implements Infor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InformationElementImpl() {
+	public InformationElementImpl() {
 		super();
 	}
 

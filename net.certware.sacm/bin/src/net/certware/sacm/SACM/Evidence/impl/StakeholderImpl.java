@@ -31,7 +31,7 @@ public abstract class StakeholderImpl extends ProjectElementImpl implements Stak
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StakeholderImpl() {
+	public StakeholderImpl() {
 		super();
 	}
 

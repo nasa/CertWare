@@ -31,7 +31,7 @@ public class IsAcquiredAtImpl extends EvidenceEventImpl implements IsAcquiredAt 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsAcquiredAtImpl() {
+	public IsAcquiredAtImpl() {
 		super();
 	}
 

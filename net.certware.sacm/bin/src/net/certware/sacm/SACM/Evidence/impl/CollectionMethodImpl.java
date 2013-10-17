@@ -31,7 +31,7 @@ public abstract class CollectionMethodImpl extends ProjectElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CollectionMethodImpl() {
+	public CollectionMethodImpl() {
 		super();
 	}
 

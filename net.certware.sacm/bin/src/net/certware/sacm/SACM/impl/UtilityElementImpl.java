@@ -31,7 +31,7 @@ public abstract class UtilityElementImpl extends SACMElementImpl implements Util
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UtilityElementImpl() {
+	public UtilityElementImpl() {
 		super();
 	}
 

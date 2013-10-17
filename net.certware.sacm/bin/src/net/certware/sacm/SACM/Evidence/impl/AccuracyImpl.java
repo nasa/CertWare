@@ -70,7 +70,7 @@ public class AccuracyImpl extends EvidenceAttributeImpl implements Accuracy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AccuracyImpl() {
+	public AccuracyImpl() {
 		super();
 	}
 

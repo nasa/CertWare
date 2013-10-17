@@ -61,7 +61,7 @@ public class AtLocationImpl extends CustodyPropertyImpl implements AtLocation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AtLocationImpl() {
+	public AtLocationImpl() {
 		super();
 	}
 

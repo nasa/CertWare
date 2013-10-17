@@ -15,6 +15,7 @@ import net.certware.sacm.SACM.Argumentation.CitationElement;
 
 import net.certware.sacm.SACM.TaggedValue;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -68,7 +69,7 @@ public class CitationElementImpl extends ArgumentElementImpl implements Citation
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CitationElementImpl() {
+	public CitationElementImpl() {
 		super();
 	}
 

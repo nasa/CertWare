@@ -90,7 +90,7 @@ public class RecordImpl extends EvidenceItemImpl implements Record {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RecordImpl() {
+	public RecordImpl() {
 		super();
 	}
 

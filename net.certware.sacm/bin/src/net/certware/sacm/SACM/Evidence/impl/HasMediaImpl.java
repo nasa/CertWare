@@ -69,7 +69,7 @@ public class HasMediaImpl extends ExhibitPropertyImpl implements HasMedia {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HasMediaImpl() {
+	public HasMediaImpl() {
 		super();
 	}
 

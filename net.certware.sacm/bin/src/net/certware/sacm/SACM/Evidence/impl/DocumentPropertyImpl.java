@@ -31,7 +31,7 @@ public abstract class DocumentPropertyImpl extends ExhibitPropertyImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DocumentPropertyImpl() {
+	public DocumentPropertyImpl() {
 		super();
 	}
 

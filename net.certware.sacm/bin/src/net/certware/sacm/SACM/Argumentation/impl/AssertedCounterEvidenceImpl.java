@@ -31,7 +31,7 @@ public class AssertedCounterEvidenceImpl extends AssertedRelationshipImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssertedCounterEvidenceImpl() {
+	public AssertedCounterEvidenceImpl() {
 		super();
 	}
 

@@ -61,7 +61,7 @@ public class IsBasedOnImpl extends ExhibitPropertyImpl implements IsBasedOn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsBasedOnImpl() {
+	public IsBasedOnImpl() {
 		super();
 	}
 

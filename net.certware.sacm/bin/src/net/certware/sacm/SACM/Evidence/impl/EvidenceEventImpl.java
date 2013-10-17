@@ -31,7 +31,7 @@ public abstract class EvidenceEventImpl extends EvidencePropertyImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceEventImpl() {
+	public EvidenceEventImpl() {
 		super();
 	}
 

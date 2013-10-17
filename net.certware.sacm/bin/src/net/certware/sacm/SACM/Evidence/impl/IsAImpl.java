@@ -63,7 +63,7 @@ public class IsAImpl extends EvidenceInterpretationImpl implements IsA {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsAImpl() {
+	public IsAImpl() {
 		super();
 	}
 

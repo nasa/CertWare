@@ -61,7 +61,7 @@ public class AtTimeImpl extends TimingPropertyImpl implements AtTime {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AtTimeImpl() {
+	public AtTimeImpl() {
 		super();
 	}
 

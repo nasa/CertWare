@@ -70,7 +70,7 @@ public class ConfidenceImpl extends EvidenceAttributeImpl implements Confidence 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConfidenceImpl() {
+	public ConfidenceImpl() {
 		super();
 	}
 

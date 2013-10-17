@@ -61,7 +61,7 @@ public class StartTimeImpl extends EffectiveTimeImpl implements StartTime {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StartTimeImpl() {
+	public StartTimeImpl() {
 		super();
 	}
 

@@ -70,7 +70,7 @@ public class CompliesToImpl extends ProjectPropertyImpl implements CompliesTo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CompliesToImpl() {
+	public CompliesToImpl() {
 		super();
 	}
 

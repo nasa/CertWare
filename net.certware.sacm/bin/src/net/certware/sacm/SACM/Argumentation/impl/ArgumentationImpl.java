@@ -16,6 +16,7 @@ import net.certware.sacm.SACM.TaggedValue;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -71,7 +72,7 @@ public class ArgumentationImpl extends ArgumentationElementImpl implements Argum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArgumentationImpl() {
+	public ArgumentationImpl() {
 		super();
 	}
 

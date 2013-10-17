@@ -31,7 +31,7 @@ public abstract class EvidenceItemImpl extends EvidenceElementImpl implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceItemImpl() {
+	public EvidenceItemImpl() {
 		super();
 	}
 

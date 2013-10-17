@@ -31,7 +31,7 @@ public abstract class AssertionImpl extends ReasoningElementImpl implements Asse
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssertionImpl() {
+	public AssertionImpl() {
 		super();
 	}
 

@@ -61,7 +61,7 @@ public class PerformedByImpl extends ProvenanceImpl implements PerformedBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PerformedByImpl() {
+	public PerformedByImpl() {
 		super();
 	}
 

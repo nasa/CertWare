@@ -63,7 +63,7 @@ public class MeansThatImpl extends EvidenceInterpretationImpl implements MeansTh
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MeansThatImpl() {
+	public MeansThatImpl() {
 		super();
 	}
 

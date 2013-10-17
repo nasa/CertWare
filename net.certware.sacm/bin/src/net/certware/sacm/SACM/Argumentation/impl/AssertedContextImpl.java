@@ -31,7 +31,7 @@ public class AssertedContextImpl extends AssertedRelationshipImpl implements Ass
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssertedContextImpl() {
+	public AssertedContextImpl() {
 		super();
 	}
 

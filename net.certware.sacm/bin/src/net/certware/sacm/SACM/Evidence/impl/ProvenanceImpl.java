@@ -31,7 +31,7 @@ public abstract class ProvenanceImpl extends EvidencePropertyImpl implements Pro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProvenanceImpl() {
+	public ProvenanceImpl() {
 		super();
 	}
 

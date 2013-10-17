@@ -69,7 +69,7 @@ public class StrengthImpl extends EvidenceAttributeImpl implements Strength {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StrengthImpl() {
+	public StrengthImpl() {
 		super();
 	}
 

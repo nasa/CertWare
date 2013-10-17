@@ -31,7 +31,7 @@ public class ExtendedProjectPropertyImpl extends ProjectPropertyImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExtendedProjectPropertyImpl() {
+	public ExtendedProjectPropertyImpl() {
 		super();
 	}
 

@@ -88,7 +88,7 @@ public abstract class ArgumentationElementImpl extends ModelElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArgumentationElementImpl() {
+	public ArgumentationElementImpl() {
 		super();
 	}
 

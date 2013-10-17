@@ -74,7 +74,7 @@ public class RoleBindingImpl extends UtilityElementImpl implements RoleBinding {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RoleBindingImpl() {
+	public RoleBindingImpl() {
 		super();
 	}
 

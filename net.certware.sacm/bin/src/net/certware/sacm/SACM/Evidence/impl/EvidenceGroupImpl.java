@@ -20,6 +20,7 @@ import net.certware.sacm.SACM.TaggedValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -85,7 +86,7 @@ public class EvidenceGroupImpl extends EvidenceItemImpl implements EvidenceGroup
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceGroupImpl() {
+	public EvidenceGroupImpl() {
 		super();
 	}
 

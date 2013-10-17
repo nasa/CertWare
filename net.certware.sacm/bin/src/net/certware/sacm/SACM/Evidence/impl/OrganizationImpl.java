@@ -70,7 +70,7 @@ public class OrganizationImpl extends StakeholderImpl implements Organization {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OrganizationImpl() {
+	public OrganizationImpl() {
 		super();
 	}
 

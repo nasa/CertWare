@@ -61,7 +61,7 @@ public class UsingProcessImpl extends CustodyPropertyImpl implements UsingProces
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UsingProcessImpl() {
+	public UsingProcessImpl() {
 		super();
 	}
 

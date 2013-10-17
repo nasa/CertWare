@@ -37,7 +37,7 @@ public class SACMFactoryImpl extends EFactoryImpl implements SACMFactory {
 	 */
 	public static SACMFactory init() {
 		try {
-			SACMFactory theSACMFactory = (SACMFactory)EPackage.Registry.INSTANCE.getEFactory("http://schema.omg.org/SACM/1.0"); //$NON-NLS-1$ 
+			SACMFactory theSACMFactory = (SACMFactory)EPackage.Registry.INSTANCE.getEFactory(SACMPackage.eNS_URI);
 			if (theSACMFactory != null) {
 				return theSACMFactory;
 			}

@@ -63,7 +63,7 @@ public class NegatesImpl extends EvidenceResolutionImpl implements Negates {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NegatesImpl() {
+	public NegatesImpl() {
 		super();
 	}
 

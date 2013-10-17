@@ -74,7 +74,7 @@ public abstract class EvidenceRelationImpl extends EvidenceEvaluationImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceRelationImpl() {
+	public EvidenceRelationImpl() {
 		super();
 	}
 

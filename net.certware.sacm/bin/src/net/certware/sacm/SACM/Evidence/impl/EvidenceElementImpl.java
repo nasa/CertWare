@@ -21,6 +21,7 @@ import net.certware.sacm.SACM.impl.ModelElementImpl;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -98,7 +99,7 @@ public abstract class EvidenceElementImpl extends ModelElementImpl implements Ev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceElementImpl() {
+	public EvidenceElementImpl() {
 		super();
 	}
 

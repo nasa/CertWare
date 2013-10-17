@@ -70,7 +70,7 @@ public class SupportImpl extends EvidenceAttributeImpl implements Support {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SupportImpl() {
+	public SupportImpl() {
 		super();
 	}
 

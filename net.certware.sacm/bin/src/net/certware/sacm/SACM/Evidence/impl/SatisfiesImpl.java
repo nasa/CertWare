@@ -61,7 +61,7 @@ public class SatisfiesImpl extends ProjectPropertyImpl implements Satisfies {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SatisfiesImpl() {
+	public SatisfiesImpl() {
 		super();
 	}
 

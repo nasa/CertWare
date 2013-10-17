@@ -82,7 +82,7 @@ public class HasRoleInImpl extends ProjectPropertyImpl implements HasRoleIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HasRoleInImpl() {
+	public HasRoleInImpl() {
 		super();
 	}
 

@@ -59,7 +59,7 @@ public class AnnotationImpl extends UtilityElementImpl implements Annotation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AnnotationImpl() {
+	public AnnotationImpl() {
 		super();
 	}
 

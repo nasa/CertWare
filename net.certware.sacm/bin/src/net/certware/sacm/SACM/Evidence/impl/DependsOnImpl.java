@@ -61,7 +61,7 @@ public class DependsOnImpl extends ProjectPropertyImpl implements DependsOn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DependsOnImpl() {
+	public DependsOnImpl() {
 		super();
 	}
 

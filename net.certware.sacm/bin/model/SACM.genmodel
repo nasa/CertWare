@@ -4,10 +4,13 @@
     modelDirectory="/net.certware.sacm/src" modelPluginID="net.certware.sacm" modelName="SACM"
     editPluginClass="net.certware.sacm.provider.SACMEditPlugin" editorPluginClass="net.certware.sacm.presentation.SACMEditorPlugin"
     nonNLSMarkers="true" testsDirectory="" testSuiteClass="" importerID="org.eclipse.emf.importer.ecore"
-    minimalReflectiveMethods="false" complianceLevel="6.0" colorProviders="true" fontProviders="true">
+    minimalReflectiveMethods="false" complianceLevel="6.0" publicConstructors="true"
+    providerRootExtendsClass="" colorProviders="true" fontProviders="true" interfaceNamePattern=""
+    classNamePattern="">
   <foreignModel>SACM.ecore</foreignModel>
   <genPackages prefix="SACM" basePackage="net.certware.sacm" resource="XMI" disposableProviderFactory="true"
-      generateExampleClass="false" multipleEditorPages="false" ecorePackage="SACM.ecore#/">
+      generateExampleClass="false" multipleEditorPages="false" contentTypeIdentifier=""
+      ecorePackage="SACM.ecore#/">
     <genDataTypes ecoreDataType="SACM.ecore#//Boolean"/>
     <genDataTypes ecoreDataType="SACM.ecore#//Integer"/>
     <genDataTypes ecoreDataType="SACM.ecore#//String"/>
@@ -34,7 +37,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//TaggedValue/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SACM.ecore#//UtilityElement"/>
-    <nestedGenPackages prefix="Argumentation" disposableProviderFactory="true" ecorePackage="SACM.ecore#//Argumentation">
+    <nestedGenPackages prefix="Argumentation" resource="XMI" disposableProviderFactory="true"
+        contentTypeIdentifier="" ecorePackage="SACM.ecore#//Argumentation">
       <genClasses ecoreClass="SACM.ecore#//Argumentation/Argumentation">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/Argumentation/argumentation"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/Argumentation/argumentElement"/>

@@ -62,7 +62,7 @@ public abstract class EvidenceInterpretationImpl extends EvidenceEvaluationImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceInterpretationImpl() {
+	public EvidenceInterpretationImpl() {
 		super();
 	}
 

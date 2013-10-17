@@ -61,7 +61,7 @@ public class OwnedByImpl extends ProvenanceImpl implements OwnedBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OwnedByImpl() {
+	public OwnedByImpl() {
 		super();
 	}
 

@@ -61,7 +61,7 @@ public class CreatedByImpl extends ProvenanceImpl implements CreatedBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CreatedByImpl() {
+	public CreatedByImpl() {
 		super();
 	}
 

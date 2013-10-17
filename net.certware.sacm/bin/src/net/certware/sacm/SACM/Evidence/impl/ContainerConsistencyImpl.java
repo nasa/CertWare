@@ -70,7 +70,7 @@ public class ContainerConsistencyImpl extends ProjectPropertyImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContainerConsistencyImpl() {
+	public ContainerConsistencyImpl() {
 		super();
 	}
 

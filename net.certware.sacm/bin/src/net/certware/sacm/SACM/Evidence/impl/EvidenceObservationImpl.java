@@ -31,7 +31,7 @@ public abstract class EvidenceObservationImpl extends EvidenceEvaluationImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceObservationImpl() {
+	public EvidenceObservationImpl() {
 		super();
 	}
 

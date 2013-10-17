@@ -63,7 +63,7 @@ public class RefutesImpl extends EvidenceResolutionImpl implements Refutes {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RefutesImpl() {
+	public RefutesImpl() {
 		super();
 	}
 

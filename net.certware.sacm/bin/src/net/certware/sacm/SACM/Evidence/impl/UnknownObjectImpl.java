@@ -31,7 +31,7 @@ public class UnknownObjectImpl extends FormalObjectImpl implements UnknownObject
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UnknownObjectImpl() {
+	public UnknownObjectImpl() {
 		super();
 	}
 

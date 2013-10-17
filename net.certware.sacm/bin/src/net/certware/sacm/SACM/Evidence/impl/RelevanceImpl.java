@@ -70,7 +70,7 @@ public class RelevanceImpl extends EvidenceAttributeImpl implements Relevance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RelevanceImpl() {
+	public RelevanceImpl() {
 		super();
 	}
 

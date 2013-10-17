@@ -69,7 +69,7 @@ public class HasVersionImpl extends DocumentPropertyImpl implements HasVersion {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HasVersionImpl() {
+	public HasVersionImpl() {
 		super();
 	}
 

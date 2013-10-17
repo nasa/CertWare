@@ -1,0 +1,64 @@
+/*************************************************************************************
+ *
+ * Spray shapes definition
+ * 
+ * This file contains the definition of graphical figures using the Shapes Language.
+ * Refer to http://code.google.com/a/eclipselabs.org/p/spray/ for documentation.
+ *************************************************************************************/
+
+shape AnnotationShape {
+	rectangle {
+		position(x=0,y=0)
+		size(width=100,height=80)
+		style(background-color=light-gray)
+		wrapped-text {
+			position(x=5,y=5)
+			size(width=90,height=70)
+			id = annotationText
+		}
+	}	
+	anchor corners
+}
+
+shape ClaimShape {
+	ellipse {
+		position(x=0,y=0)
+		size(width=100,height=85)
+		style(background-color=cyan)
+		wrapped-text {
+			position(x=5,y=5)
+			size(width=90,height=50)
+			id = claimClassText
+		}
+		text {
+			position(x=5,y=55)
+			size(width=90,height=15)
+			id = assumedText
+		}
+		text {
+			position(x=5,y=70)
+			size(width=90,height=15)
+			id = toBeSupportedText
+		}
+	}	
+	anchor corners
+}
+// Add definition of shapes here.
+// shape RectangleShape {
+//     rectangle {
+//         position(x=0,y=0)
+//         size(width=100,height=100)
+//     }
+// }
+
+// connection ArrowConnection {
+//     placing {
+//         position (offset=1.0)
+//         polygon {
+//             point (x=-10, y=-5)
+//             point (x=0, y=0)
+//             point (x=-10, y=5)
+//             style (background-color=black)
+//         }
+//     }
+// }

@@ -14,6 +14,7 @@ import net.certware.sacm.SACM.Argumentation.AssertedRelationship;
 
 import net.certware.sacm.SACM.TaggedValue;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -67,7 +68,7 @@ public abstract class AssertedRelationshipImpl extends AssertionImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssertedRelationshipImpl() {
+	public AssertedRelationshipImpl() {
 		super();
 	}
 

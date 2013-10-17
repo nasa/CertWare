@@ -70,7 +70,7 @@ public class ToolImpl extends CollectionMethodImpl implements Tool {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ToolImpl() {
+	public ToolImpl() {
 		super();
 	}
 

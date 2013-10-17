@@ -62,7 +62,7 @@ public class ReferencedClaimImpl extends FormalAssertionImpl implements Referenc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReferencedClaimImpl() {
+	public ReferencedClaimImpl() {
 		super();
 	}
 

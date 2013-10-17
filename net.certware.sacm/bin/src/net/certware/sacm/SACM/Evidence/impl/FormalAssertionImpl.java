@@ -69,7 +69,7 @@ public abstract class FormalAssertionImpl extends FormalElementImpl implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FormalAssertionImpl() {
+	public FormalAssertionImpl() {
 		super();
 	}
 

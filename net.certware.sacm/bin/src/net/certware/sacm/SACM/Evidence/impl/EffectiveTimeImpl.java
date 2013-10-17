@@ -31,7 +31,7 @@ public abstract class EffectiveTimeImpl extends TimingPropertyImpl implements Ef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EffectiveTimeImpl() {
+	public EffectiveTimeImpl() {
 		super();
 	}
 

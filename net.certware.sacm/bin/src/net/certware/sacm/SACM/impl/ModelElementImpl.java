@@ -14,6 +14,7 @@ import net.certware.sacm.SACM.TaggedValue;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -92,7 +93,7 @@ public abstract class ModelElementImpl extends SACMElementImpl implements ModelE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelElementImpl() {
+	public ModelElementImpl() {
 		super();
 	}
 

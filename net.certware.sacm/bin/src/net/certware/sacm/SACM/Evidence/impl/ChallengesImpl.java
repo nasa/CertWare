@@ -31,7 +31,7 @@ public class ChallengesImpl extends EvidenceRelationImpl implements Challenges {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChallengesImpl() {
+	public ChallengesImpl() {
 		super();
 	}
 

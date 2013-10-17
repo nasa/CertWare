@@ -70,7 +70,7 @@ public class OriginalityImpl extends DocumentPropertyImpl implements Originality
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OriginalityImpl() {
+	public OriginalityImpl() {
 		super();
 	}
 

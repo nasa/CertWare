@@ -31,7 +31,7 @@ public abstract class ReasoningElementImpl extends ArgumentElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReasoningElementImpl() {
+	public ReasoningElementImpl() {
 		super();
 	}
 

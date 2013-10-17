@@ -61,7 +61,7 @@ public class ObjectifiedAssertionImpl extends FormalObjectImpl implements Object
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObjectifiedAssertionImpl() {
+	public ObjectifiedAssertionImpl() {
 		super();
 	}
 

@@ -60,7 +60,7 @@ public class DatetimeImpl extends EObjectImpl implements Datetime {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DatetimeImpl() {
+	public DatetimeImpl() {
 		super();
 	}
 

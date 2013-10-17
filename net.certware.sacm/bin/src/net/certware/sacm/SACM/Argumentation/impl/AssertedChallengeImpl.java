@@ -31,7 +31,7 @@ public class AssertedChallengeImpl extends AssertedRelationshipImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssertedChallengeImpl() {
+	public AssertedChallengeImpl() {
 		super();
 	}
 

@@ -20,6 +20,7 @@ import net.certware.sacm.SACM.TaggedValue;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -64,7 +65,7 @@ public abstract class EvidenceEvaluationImpl extends EvidenceAssertionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceEvaluationImpl() {
+	public EvidenceEvaluationImpl() {
 		super();
 	}
 

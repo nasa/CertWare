@@ -28,6 +28,13 @@
             genModel="model/SACM.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated SACM -->
+      <parser
+            type="argumentation"
+            class="net.certware.sacm.SACM.Argumentation.util.ArgumentationResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://schema.omg.org/SACM/1.0/Evidence"

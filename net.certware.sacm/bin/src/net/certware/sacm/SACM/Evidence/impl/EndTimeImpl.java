@@ -61,7 +61,7 @@ public class EndTimeImpl extends EffectiveTimeImpl implements EndTime {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EndTimeImpl() {
+	public EndTimeImpl() {
 		super();
 	}
 

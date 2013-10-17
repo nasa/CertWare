@@ -63,7 +63,7 @@ public class ResolvesImpl extends EvidenceResolutionImpl implements Resolves {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResolvesImpl() {
+	public ResolvesImpl() {
 		super();
 	}
 

@@ -19,12 +19,11 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.egit.core.GitProvider;
-import org.eclipse.egit.core.project.RepositoryMapping;
 import org.eclipse.jgit.lib.ObjectId;
 import org.eclipse.jgit.lib.PersonIdent;
 import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.lib.RepositoryBuilder;
 import org.eclipse.jgit.revwalk.FooterLine;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevTree;
@@ -55,17 +54,18 @@ public class DumpHandler extends AbstractHandler {
 		try {
 			//GitProvider provider = new GitProvider();
 			//provider.configureProject();
+			// TODO derive from selection
 			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject("net.certware.test");
 			
 			System.out.println("programmatic access to project " + project);
 			
-			RepositoryMapping repositoryMapping = RepositoryMapping.getMapping((IResource) project);
-			System.out.println("mapping: " + repositoryMapping);
-			if (repositoryMapping != null) {
-				Repository repo = repositoryMapping.getRepository();
+			RepositoryBuilder builder = new RepositoryBuilder();
+			Repository repository = builder.setGitDir(((IResource)project).getFullPath().toFile()).readEnvironment().findGitDir().build();
+			
+			if (repository != null) {
 				
 				// tags
-				Map<String, Ref> repoTags = repo.getTags();
+				Map<String, Ref> repoTags = repository.getTags();
 				System.out.println("tags: ");
 				{
 				Set<String> keyset = repoTags.keySet();
@@ -79,7 +79,7 @@ public class DumpHandler extends AbstractHandler {
 				}
 				
 				//refs
-				Map<String, Ref> refs = repo.getAllRefs();
+				Map<String, Ref> refs = repository.getAllRefs();
 				System.out.println("refs: ");
 				{
 				Set<String> keyset = repoTags.keySet();
@@ -93,16 +93,16 @@ public class DumpHandler extends AbstractHandler {
 				}
 				
 				
-				String branch = repo.getBranch();
+				String branch = repository.getBranch();
 				System.out.println("branch: " + branch);
 				
-				Ref head = repo.getRef("HEAD");
+				Ref head = repository.getRef("HEAD");
 				System.out.println("head: " + head);
 				
-				RevWalk walk = new RevWalk(repo);
+				RevWalk walk = new RevWalk(repository);
 				System.out.println("walk: " + walk);
 
-				ObjectId headObject = repo.resolve("HEAD");
+				ObjectId headObject = repository.resolve("HEAD");
 				System.out.println("head obj: " + headObject);
 				
 				walk.markStart(walk.parseCommit(headObject));
@@ -161,7 +161,7 @@ public class DumpHandler extends AbstractHandler {
 				/**
 				 * tree walk version
 				 */
-				TreeWalk treeWalk = new TreeWalk(repo);
+				TreeWalk treeWalk = new TreeWalk(repository);
 				System.out.println(' ');
 				System.err.println("tree walk: " + treeWalk);
 				
@@ -169,10 +169,12 @@ public class DumpHandler extends AbstractHandler {
 				 * from test case
 				 */
 				System.err.println("file provider test");
-				File workDir = repositoryMapping.getWorkTree();
+				File workDir = repository.getWorkTree();
 				System.out.println("work dir " + workDir);
 				
-				GitProvider provider = (GitProvider)RepositoryProvider.getProvider(project);
+
+				// GitProvider provider = (GitProvider)RepositoryProvider.getProvider(project);
+				RepositoryProvider provider = RepositoryProvider.getProvider(project);
 				String id = provider.getID();
 				Subscriber subscriber = provider.getSubscriber();
 				IFileHistoryProvider fileHistoryProvider = provider.getFileHistoryProvider();
@@ -309,10 +311,9 @@ public class DumpHandler extends AbstractHandler {
 				authorEmails.add(commit.getAuthorIdent().getEmailAddress());
 
 				// commit.dispose();
-				// commit.reset(); // TODO check this
+				// commit.reset(); 
 			}
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		*/
@@ -350,7 +351,7 @@ public class DumpHandler extends AbstractHandler {
 				authorEmails.add(commit.getAuthorIdent().getEmailAddress());
 
 				// commit.dispose();
-				commit.reset(); // TODO check this
+				commit.reset(); 
 			}
 
 
@@ -361,7 +362,6 @@ public class DumpHandler extends AbstractHandler {
 
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		*/
@@ -370,9 +370,9 @@ public class DumpHandler extends AbstractHandler {
 	}
 
 
-	protected static org.eclipse.jgit.storage.file.FileRepository lookupRepository(File directory) throws Exception {
-		return (org.eclipse.jgit.storage.file.FileRepository) org.eclipse.egit.core.Activator.getDefault()
-		.getRepositoryCache().lookupRepository(directory);
-	}
+//	protected static org.eclipse.jgit.storage.file.FileRepository lookupRepository(File directory) throws Exception {
+		//return (org.eclipse.jgit.storage.file.FileRepository) org.eclipse.egit.core.Activator.getDefault()
+		//.getRepositoryCache().lookupRepository(directory);
+	//}
 
 }

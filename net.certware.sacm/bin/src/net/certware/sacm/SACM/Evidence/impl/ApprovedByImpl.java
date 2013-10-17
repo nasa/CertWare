@@ -61,7 +61,7 @@ public class ApprovedByImpl extends ProvenanceImpl implements ApprovedBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ApprovedByImpl() {
+	public ApprovedByImpl() {
 		super();
 	}
 

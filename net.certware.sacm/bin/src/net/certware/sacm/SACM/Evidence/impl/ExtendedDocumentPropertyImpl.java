@@ -31,7 +31,7 @@ public class ExtendedDocumentPropertyImpl extends DocumentPropertyImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExtendedDocumentPropertyImpl() {
+	public ExtendedDocumentPropertyImpl() {
 		super();
 	}
 

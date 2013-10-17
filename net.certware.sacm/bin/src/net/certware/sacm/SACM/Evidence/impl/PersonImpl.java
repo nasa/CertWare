@@ -31,7 +31,7 @@ public class PersonImpl extends StakeholderImpl implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PersonImpl() {
+	public PersonImpl() {
 		super();
 	}
 

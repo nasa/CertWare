@@ -65,7 +65,7 @@ public abstract class EvidenceResolutionImpl extends EvidenceEvaluationImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceResolutionImpl() {
+	public EvidenceResolutionImpl() {
 		super();
 	}
 

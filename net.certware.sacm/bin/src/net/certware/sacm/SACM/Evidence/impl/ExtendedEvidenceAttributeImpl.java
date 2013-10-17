@@ -31,7 +31,7 @@ public class ExtendedEvidenceAttributeImpl extends EvidenceAttributeImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExtendedEvidenceAttributeImpl() {
+	public ExtendedEvidenceAttributeImpl() {
 		super();
 	}
 

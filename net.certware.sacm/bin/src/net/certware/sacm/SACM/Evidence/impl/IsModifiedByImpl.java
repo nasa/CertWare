@@ -31,7 +31,7 @@ public class IsModifiedByImpl extends EvidenceEventImpl implements IsModifiedBy 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsModifiedByImpl() {
+	public IsModifiedByImpl() {
 		super();
 	}
 

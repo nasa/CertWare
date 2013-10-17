@@ -61,7 +61,7 @@ public class RequiresContainerImpl extends ProjectPropertyImpl implements Requir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RequiresContainerImpl() {
+	public RequiresContainerImpl() {
 		super();
 	}
 

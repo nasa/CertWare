@@ -70,7 +70,7 @@ public class ReliabilityImpl extends DocumentPropertyImpl implements Reliability
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReliabilityImpl() {
+	public ReliabilityImpl() {
 		super();
 	}
 

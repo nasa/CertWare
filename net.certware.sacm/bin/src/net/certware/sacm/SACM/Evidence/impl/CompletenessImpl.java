@@ -70,7 +70,7 @@ public class CompletenessImpl extends DocumentPropertyImpl implements Completene
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CompletenessImpl() {
+	public CompletenessImpl() {
 		super();
 	}
 

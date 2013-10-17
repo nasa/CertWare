@@ -70,7 +70,7 @@ public class ContainerCompletenessImpl extends ProjectPropertyImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContainerCompletenessImpl() {
+	public ContainerCompletenessImpl() {
 		super();
 	}
 

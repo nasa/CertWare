@@ -31,7 +31,7 @@ public abstract class ArgumentElementImpl extends ArgumentationElementImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArgumentElementImpl() {
+	public ArgumentElementImpl() {
 		super();
 	}
 

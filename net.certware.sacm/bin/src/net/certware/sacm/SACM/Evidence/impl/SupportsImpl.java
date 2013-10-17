@@ -31,7 +31,7 @@ public class SupportsImpl extends EvidenceRelationImpl implements Supports {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SupportsImpl() {
+	public SupportsImpl() {
 		super();
 	}
 

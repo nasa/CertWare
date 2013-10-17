@@ -31,7 +31,7 @@ public class IsTransferredToImpl extends EvidenceEventImpl implements IsTransfer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsTransferredToImpl() {
+	public IsTransferredToImpl() {
 		super();
 	}
 

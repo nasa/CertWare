@@ -91,7 +91,7 @@ public class DocumentImpl extends ExhibitImpl implements Document {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DocumentImpl() {
+	public DocumentImpl() {
 		super();
 	}
 

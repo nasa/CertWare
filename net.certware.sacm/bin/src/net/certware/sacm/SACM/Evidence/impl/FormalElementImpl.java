@@ -31,7 +31,7 @@ public abstract class FormalElementImpl extends EvidenceItemImpl implements Form
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FormalElementImpl() {
+	public FormalElementImpl() {
 		super();
 	}
 

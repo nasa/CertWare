@@ -61,7 +61,7 @@ public class CareOfImpl extends CustodyPropertyImpl implements CareOf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CareOfImpl() {
+	public CareOfImpl() {
 		super();
 	}
 

@@ -111,7 +111,7 @@ public class HasElectronicSourceImpl extends ExhibitPropertyImpl implements HasE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HasElectronicSourceImpl() {
+	public HasElectronicSourceImpl() {
 		super();
 	}
 

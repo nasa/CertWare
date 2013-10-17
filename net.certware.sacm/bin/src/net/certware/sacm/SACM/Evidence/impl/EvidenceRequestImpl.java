@@ -19,6 +19,7 @@ import net.certware.sacm.SACM.Evidence.TimingProperty;
 
 import net.certware.sacm.SACM.TaggedValue;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -61,7 +62,7 @@ public class EvidenceRequestImpl extends ProjectElementImpl implements EvidenceR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EvidenceRequestImpl() {
+	public EvidenceRequestImpl() {
 		super();
 	}
 

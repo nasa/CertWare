@@ -31,7 +31,7 @@ public class IsGeneratedAtImpl extends EvidenceEventImpl implements IsGeneratedA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsGeneratedAtImpl() {
+	public IsGeneratedAtImpl() {
 		super();
 	}
 

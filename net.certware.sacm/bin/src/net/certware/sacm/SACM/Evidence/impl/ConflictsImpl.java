@@ -73,7 +73,7 @@ public class ConflictsImpl extends EvidenceObservationImpl implements Conflicts 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConflictsImpl() {
+	public ConflictsImpl() {
 		super();
 	}
 

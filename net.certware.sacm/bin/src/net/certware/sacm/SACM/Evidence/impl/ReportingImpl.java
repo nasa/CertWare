@@ -70,7 +70,7 @@ public class ReportingImpl extends EvidenceAttributeImpl implements Reporting {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReportingImpl() {
+	public ReportingImpl() {
 		super();
 	}
 

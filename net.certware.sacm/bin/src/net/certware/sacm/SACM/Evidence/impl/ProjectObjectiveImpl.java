@@ -31,7 +31,7 @@ public class ProjectObjectiveImpl extends ProjectElementImpl implements ProjectO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProjectObjectiveImpl() {
+	public ProjectObjectiveImpl() {
 		super();
 	}
 

@@ -73,7 +73,7 @@ public abstract class ContributesImpl extends EvidenceObservationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContributesImpl() {
+	public ContributesImpl() {
 		super();
 	}
 

@@ -31,7 +31,7 @@ public class AssertedEvidenceImpl extends AssertedRelationshipImpl implements As
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssertedEvidenceImpl() {
+	public AssertedEvidenceImpl() {
 		super();
 	}
 

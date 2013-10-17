@@ -61,7 +61,7 @@ public class IsPartOfImpl extends ExhibitPropertyImpl implements IsPartOf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsPartOfImpl() {
+	public IsPartOfImpl() {
 		super();
 	}
 

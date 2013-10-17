@@ -31,7 +31,7 @@ public class AmplifiesImpl extends ContributesImpl implements Amplifies {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AmplifiesImpl() {
+	public AmplifiesImpl() {
 		super();
 	}
 

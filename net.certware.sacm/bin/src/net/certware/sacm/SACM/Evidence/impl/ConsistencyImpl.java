@@ -70,7 +70,7 @@ public class ConsistencyImpl extends DocumentPropertyImpl implements Consistency
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConsistencyImpl() {
+	public ConsistencyImpl() {
 		super();
 	}
 

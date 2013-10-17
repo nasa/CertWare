@@ -62,7 +62,7 @@ public class ProvidesContextImpl extends EvidenceInterpretationImpl implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProvidesContextImpl() {
+	public ProvidesContextImpl() {
 		super();
 	}
 

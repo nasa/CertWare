@@ -31,7 +31,7 @@ public class WeakensImpl extends ContributesImpl implements Weakens {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WeakensImpl() {
+	public WeakensImpl() {
 		super();
 	}
 

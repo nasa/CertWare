@@ -31,7 +31,7 @@ public class IsCreatedAtImpl extends EvidenceEventImpl implements IsCreatedAt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsCreatedAtImpl() {
+	public IsCreatedAtImpl() {
 		super();
 	}
 

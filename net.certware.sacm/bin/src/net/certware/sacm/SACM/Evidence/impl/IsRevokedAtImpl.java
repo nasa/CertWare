@@ -31,7 +31,7 @@ public class IsRevokedAtImpl extends EvidenceEventImpl implements IsRevokedAt {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsRevokedAtImpl() {
+	public IsRevokedAtImpl() {
 		super();
 	}
 

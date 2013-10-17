@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="155" height="175" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape: ClaimShape</title>
+    <metadata>
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+            <rdf:Description rdf:about="http://code.google.com/a/eclipselabs.org/p/spray/">
+                <dc:creator>org.eclipselabs.spray.shapes.generator.GeneratorSVGDefinition</dc:creator>
+                <dc:subject>Spray SVG Shape</dc:subject>
+                <dc:source>http://code.google.com/a/eclipselabs.org/p/spray/</dc:source>
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type>Image</dc:type>
+            </rdf:Description>
+        </rdf:RDF>
+    </metadata>
+<defs>
+    <style type="text/css"> <![CDATA[
+    rect {fill: none; stroke:black; stroke-width:1px}
+    line {fill: none; stroke:black; stroke-width:1px}
+    polyline {fill: none; stroke:black; stroke-width:1px}
+    polygon {fill: none; stroke:black; stroke-width:1px}
+    circle {fill: none; stroke:black; stroke-width:1px}
+    ellipse {fill: none; stroke:black; stroke-width:1px}
+    text {fill: black; font-family: verdana,sans-serif; font-size:12px;}
+    .default {fill: none; stroke:black; stroke-width:1px}
+    ]]>
+    </style>
+    <rect id="anchor" style="fill:#a0c0e8" width="5" height="5"/>
+</defs>
+<ellipse cx="50" cy="42" rx="50" ry="42" style="fill:CYAN;"/>
+<text x="5" y="55">#claimClassText</text>
+<text x="5" y="70">#assumedText</text>
+<text x="5" y="85">#toBeSupportedText</text>
+</svg>

@@ -63,7 +63,7 @@ public class IsCharacterizedByImpl extends EvidenceInterpretationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IsCharacterizedByImpl() {
+	public IsCharacterizedByImpl() {
 		super();
 	}
 

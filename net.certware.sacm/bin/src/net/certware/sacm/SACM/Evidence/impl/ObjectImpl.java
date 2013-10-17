@@ -81,7 +81,7 @@ public class ObjectImpl extends FormalObjectImpl implements net.certware.sacm.SA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ObjectImpl() {
+	public ObjectImpl() {
 		super();
 	}
 

@@ -31,7 +31,7 @@ public abstract class ProjectPropertyImpl extends EvidencePropertyImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProjectPropertyImpl() {
+	public ProjectPropertyImpl() {
 		super();
 	}
 

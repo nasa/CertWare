@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+ Generated on Wed Oct 16 06:23:13 PDT 2013 by Spray Plugin.xtend
+ This file will be generated only once if it need to be regenerated, remove this file.
+ 
+-->
+<plugin>
+  
+  <!-- GRAPHITI EDITOR EXTENSION AUTOGEN START -->
+     <!-- Potentially redefine the EDITOR EXTENSION TO ALLOW FOR OUR OWN EDITOR SUBCLASS TO BE USED. 
+<extension
+      point="org.eclipse.ui.editors">
+   <editor
+       class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.diagram.MydiagramDiagramEditor"
+       contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+       default="true"
+       extensions="diagram"
+       icon="icons/diagram.gif"
+       id="net.certware.sacm.diagram.diagram.MydiagramDiagramEditor"
+       matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorFactory$DiagramEditorMatchingStrategy"
+       name="%_diagram_editor_name">
+    <contentTypeBinding
+          contentTypeId="org.eclipse.graphiti.content.diagram">
+    </contentTypeBinding>
+   </editor>
+</extension>
+-->
+     <!-- GRAPHITI EDITOR EXTENSION AUTOGEN END -->
+  
+  <extension
+       point="org.eclipse.graphiti.ui.diagramTypes">
+    <!-- DIAGRAM TYPE AUTOGEN START -->
+     <diagramType
+  description="This is the diagram type for the Mydiagram diagram type"
+  id="net.certware.sacm.diagram.diagram.MydiagramDiagramType"
+  name="Mydiagram Graphiti Diagram Type"
+  type="Mydiagram">
+</diagramType>
+     <!-- DIAGRAM TYPE AUTOGEN END -->
+  </extension>
+  
+  <extension
+       point="org.eclipse.graphiti.ui.diagramTypeProviders">
+    <!-- DIAGRAM TYPE PROVIDER AUTOGEN START -->
+     <diagramTypeProvider
+  class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.diagram.MydiagramDiagramTypeProvider"
+  description="This is my editor for the Mydiagram diagram type"
+  id="net.certware.sacm.diagram.diagram.MydiagramDiagramTypeProvider"
+  name="Mydiagram editor">
+  <diagramType
+        id="net.certware.sacm.diagram.diagram.MydiagramDiagramType">
+  </diagramType>
+    <imageProvider
+           id="net.certware.sacm.diagram.diagram.MydiagramImageProvider">
+     </imageProvider>
+</diagramTypeProvider>
+     <!-- DIAGRAM TYPE PROVIDER AUTOGEN END -->
+  </extension>
+  
+  <extension
+       point="org.eclipse.graphiti.ui.imageProviders">
+    <!-- IMAGE PROVIDER AUTOGEN START -->
+     <imageProvider
+      class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.diagram.MydiagramImageProvider"
+         id="net.certware.sacm.diagram.diagram.MydiagramImageProvider">
+</imageProvider>
+     <!-- IMAGE PROVIDER AUTOGEN END -->
+  </extension>
+  
+  <extension
+       point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor contributorId="Mydiagram.PropertyContributor">
+       <propertyCategory category="MydiagramCategory">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+  
+  <extension
+       point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+    <propertyTabs contributorId="Mydiagram.PropertyContributor">
+      <!-- PROPERTY TAB AUTOGEN START -->
+     <propertyTab label="Main" category="MydiagramCategory"
+    id="Mydiagram.main.tab">
+</propertyTab>
+     <!-- PROPERTY TAB AUTOGEN END -->
+    </propertyTabs>
+  </extension>
+  
+  <!-- PROPERTY SECTIONS AUTOGEN START -->
+     <extension
+    point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="Mydiagram.PropertyContributor">
+  <propertySection tab="Mydiagram.main.tab"
+   class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.property.ClaimIdSection"
+   filter="net.certware.sacm.diagram.property.ClaimFilter"
+   id="Mydiagram.main.tab.Claim.id">
+  </propertySection>
+  <propertySection tab="Mydiagram.main.tab"
+   class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.property.ClaimDescriptionSection"
+   filter="net.certware.sacm.diagram.property.ClaimFilter"
+   afterSection="Mydiagram.main.tab.Claim.id"
+   id="Mydiagram.main.tab.Claim.description">
+  </propertySection>
+  <propertySection tab="Mydiagram.main.tab"
+   class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.property.ClaimContentSection"
+   filter="net.certware.sacm.diagram.property.ClaimFilter"
+   afterSection="Mydiagram.main.tab.Claim.description"
+   id="Mydiagram.main.tab.Claim.content">
+  </propertySection>
+  <propertySection tab="Mydiagram.main.tab"
+   class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.property.ClaimAssumedSection"
+   filter="net.certware.sacm.diagram.property.ClaimFilter"
+   afterSection="Mydiagram.main.tab.Claim.content"
+   id="Mydiagram.main.tab.Claim.assumed">
+  </propertySection>
+  <propertySection tab="Mydiagram.main.tab"
+   class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.property.ClaimToBeSupportedSection"
+   filter="net.certware.sacm.diagram.property.ClaimFilter"
+   afterSection="Mydiagram.main.tab.Claim.assumed"
+   id="Mydiagram.main.tab.Claim.toBeSupported">
+  </propertySection>
+    </propertySections>
+</extension>
+
+<extension
+    point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="Mydiagram.PropertyContributor">
+  <propertySection tab="Mydiagram.main.tab"
+   class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:net.certware.sacm.diagram.property.AnnotationContentSection"
+   filter="net.certware.sacm.diagram.property.AnnotationFilter"
+   id="Mydiagram.main.tab.Annotation.content">
+  </propertySection>
+    </propertySections>
+</extension>
+
+     <!-- PROPERTY SECTIONS AUTOGEN END -->
+  
+  <!-- NEW DIAGRAM WIZARD AUTOGEN START -->
+     <extension
+      point="org.eclipse.ui.newWizards">
+      <category
+         name="Mydiagram"
+         id="org.eclipselabs.spray.Mydiagram">
+         </category>
+   <wizard
+         category="org.eclipselabs.spray.Mydiagram"
+         class="net.certware.sacm.diagram.internal.ExecutableExtensionFactory:org.eclipselabs.spray.runtime.graphiti.wizard.NewDiagramWizard"
+         descriptionImage="icons/Mydiagram-32.png"
+         icon="icons/Mydiagram-16.png"
+         id="org.eclipselabs.spray.Mydiagram.NewDiagramWizard"
+         name="New Mydiagram Diagram"
+         preferredPerspectives="org.eclipse.graphiti.examples.common.perspective.GFPerspective"
+         project="false">
+   </wizard>
+</extension>
+     <!-- NEW DIAGRAM WIZARD AUTOGEN END -->
+  
+</plugin>

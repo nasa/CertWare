@@ -33,7 +33,7 @@ public abstract class SACMElementImpl extends EObjectImpl implements SACMElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SACMElementImpl() {
+	public SACMElementImpl() {
 		super();
 	}
 

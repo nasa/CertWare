@@ -31,7 +31,7 @@ public class ServiceImpl extends CollectionMethodImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceImpl() {
+	public ServiceImpl() {
 		super();
 	}
 

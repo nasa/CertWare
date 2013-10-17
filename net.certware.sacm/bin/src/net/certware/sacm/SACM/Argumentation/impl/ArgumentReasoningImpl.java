@@ -16,6 +16,7 @@ import net.certware.sacm.SACM.Argumentation.AssertedInference;
 
 import net.certware.sacm.SACM.TaggedValue;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -80,7 +81,7 @@ public class ArgumentReasoningImpl extends ReasoningElementImpl implements Argum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArgumentReasoningImpl() {
+	public ArgumentReasoningImpl() {
 		super();
 	}
 

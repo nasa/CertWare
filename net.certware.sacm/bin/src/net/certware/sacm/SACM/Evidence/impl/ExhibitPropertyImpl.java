@@ -31,7 +31,7 @@ public abstract class ExhibitPropertyImpl extends EvidencePropertyImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExhibitPropertyImpl() {
+	public ExhibitPropertyImpl() {
 		super();
 	}
 

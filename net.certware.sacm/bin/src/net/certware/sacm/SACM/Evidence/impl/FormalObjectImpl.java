@@ -69,7 +69,7 @@ public abstract class FormalObjectImpl extends FormalElementImpl implements Form
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FormalObjectImpl() {
+	public FormalObjectImpl() {
 		super();
 	}
 

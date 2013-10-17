@@ -31,7 +31,7 @@ public abstract class TimingPropertyImpl extends EvidencePropertyImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TimingPropertyImpl() {
+	public TimingPropertyImpl() {
 		super();
 	}
 

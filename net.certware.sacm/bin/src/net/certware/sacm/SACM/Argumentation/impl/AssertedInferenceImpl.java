@@ -31,7 +31,7 @@ public class AssertedInferenceImpl extends AssertedRelationshipImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssertedInferenceImpl() {
+	public AssertedInferenceImpl() {
 		super();
 	}
 

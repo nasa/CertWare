@@ -31,7 +31,7 @@ public abstract class CustodyPropertyImpl extends EvidencePropertyImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CustodyPropertyImpl() {
+	public CustodyPropertyImpl() {
 		super();
 	}
 

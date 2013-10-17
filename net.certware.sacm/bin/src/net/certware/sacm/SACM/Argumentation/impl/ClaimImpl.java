@@ -86,7 +86,7 @@ public class ClaimImpl extends AssertionImpl implements Claim {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClaimImpl() {
+	public ClaimImpl() {
 		super();
 	}
 

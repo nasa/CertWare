@@ -80,7 +80,7 @@ public class TaggedValueImpl extends UtilityElementImpl implements TaggedValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TaggedValueImpl() {
+	public TaggedValueImpl() {
 		super();
 	}
 
