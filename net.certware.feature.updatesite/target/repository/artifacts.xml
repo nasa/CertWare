@@ -1,0 +1,596 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='CertWare ABSA Update Site' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1382477398620'/>
+    <property name='publishPackFilesAsSiblings' value='true'/>
+  </properties>
+  <mappings size='5'>
+    <rule filter='(&amp; (classifier=osgi.bundle) (format=packed))' output='${repoUrl}/plugins/${id}_${version}.jar.pack.gz'/>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature) (format=packed))' output='${repoUrl}/features/${id}_${version}.jar.pack.gz'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='64'>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.cpn.view' version='1.2.2.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='49919'/>
+        <property name='download.size' value='49919'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.cpn.view'/>
+        <property name='maven-version' value='1.2.2-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.intro' version='1.2.3.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='9823'/>
+        <property name='download.size' value='9823'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.intro'/>
+        <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.example.net' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='3229'/>
+        <property name='download.size' value='3229'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.example.net'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.libs.doc' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='10183197'/>
+        <property name='download.size' value='10183197'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.libs.doc'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.help' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='38671'/>
+        <property name='download.size' value='38671'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.help'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.smm.editor' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='58760'/>
+        <property name='download.size' value='58760'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.smm.editor'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.check' version='1.2.3.v20131017-1358'>
+      <properties size='6'>
+        <property name='artifact.size' value='4539'/>
+        <property name='download.size' value='4539'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.feature.check'/>
+        <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.cpn.navigator' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='18445'/>
+        <property name='download.size' value='18445'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.cpn.navigator'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.libs.inference' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='1445449'/>
+        <property name='download.size' value='1445449'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.libs.inference'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.evidence.hugin' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='2226784'/>
+        <property name='download.size' value='2226784'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.evidence.hugin'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.verification.checklist' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='31020'/>
+        <property name='download.size' value='31020'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.verification.checklist'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.sco.edit' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='456306'/>
+        <property name='download.size' value='456306'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.sco.edit'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.example.checklist' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='4586'/>
+        <property name='download.size' value='4586'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.example.checklist'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.argument.sfp.ui' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='97249'/>
+        <property name='download.size' value='97249'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.argument.sfp.ui'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.spm.editor' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='60281'/>
+        <property name='download.size' value='60281'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.spm.editor'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.example' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='52430'/>
+        <property name='download.size' value='52430'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.example'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='net.certware.feature' version='1.2.3.v20131017-1358'>
+      <properties size='6'>
+        <property name='artifact.size' value='11215'/>
+        <property name='download.size' value='11215'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.feature'/>
+        <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.spm.navigator' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='34568'/>
+        <property name='download.size' value='34568'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.spm.navigator'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.smm' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='128321'/>
+        <property name='download.size' value='128321'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.smm'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.sco.editor' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='29031'/>
+        <property name='download.size' value='29031'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.sco.editor'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.evidence.hugin.instance.edit' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='21579'/>
+        <property name='download.size' value='21579'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.evidence.hugin.instance.edit'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.cpn.generator' version='1.1.0.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='5921'/>
+        <property name='download.size' value='5921'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.cpn.generator'/>
+        <property name='maven-version' value='1.1.0-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.history' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='8518'/>
+        <property name='download.size' value='8518'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.history'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.sco.navigator' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='22270'/>
+        <property name='download.size' value='22270'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.sco.navigator'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.verification.checklist.view' version='1.2.2.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='57951'/>
+        <property name='download.size' value='57951'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.verification.checklist.view'/>
+        <property name='maven-version' value='1.2.2-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.sacm' version='1.0.0.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='438549'/>
+        <property name='download.size' value='438549'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.sacm'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.argument.sfp' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='1693331'/>
+        <property name='download.size' value='1693331'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.argument.sfp'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.evidence.hugin.instance.editor' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='45427'/>
+        <property name='download.size' value='45427'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.evidence.hugin.instance.editor'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.sfp' version='1.2.3.v20131017-1358'>
+      <properties size='6'>
+        <property name='artifact.size' value='4556'/>
+        <property name='download.size' value='4556'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.feature.sfp'/>
+        <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.spm.view' version='1.2.2.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='69415'/>
+        <property name='download.size' value='69415'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.spm.view'/>
+        <property name='maven-version' value='1.2.2-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.sco' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='48311'/>
+        <property name='download.size' value='48311'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.sco'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.cpn.ui' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='76607'/>
+        <property name='download.size' value='76607'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.cpn.ui'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.core' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='23660'/>
+        <property name='download.size' value='23660'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.core'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.verification.checklist.navigator' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='20109'/>
+        <property name='download.size' value='20109'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.verification.checklist.navigator'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.sacm' version='1.0.0.v20131017-1358'>
+      <properties size='6'>
+        <property name='artifact.size' value='2911'/>
+        <property name='download.size' value='2911'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.feature.sacm'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.evidence.hugin.view' version='1.2.4.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='133032'/>
+        <property name='download.size' value='133032'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.evidence.hugin.view'/>
+        <property name='maven-version' value='1.2.4-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.cpn' version='2.0.0.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='116977'/>
+        <property name='download.size' value='116977'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.cpn'/>
+        <property name='maven-version' value='2.0.0-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.mspdi.editor' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='62235'/>
+        <property name='download.size' value='62235'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.mspdi.editor'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.branding' version='1.2.2.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='231628'/>
+        <property name='download.size' value='231628'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.branding'/>
+        <property name='maven-version' value='1.2.2-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.spm.edit' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='186733'/>
+        <property name='download.size' value='186733'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.spm.edit'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.mspdi' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='595817'/>
+        <property name='download.size' value='595817'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.mspdi'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.argument.sfp.help' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='37513'/>
+        <property name='download.size' value='37513'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.argument.sfp.help'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.history.egit' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='33946'/>
+        <property name='download.size' value='33946'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.history.egit'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.evidence.hugin.instance' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='28999'/>
+        <property name='download.size' value='28999'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.evidence.hugin.instance'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.smm.edit' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='157721'/>
+        <property name='download.size' value='157721'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.smm.edit'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning.mspdi.edit' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='390134'/>
+        <property name='download.size' value='390134'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning.mspdi.edit'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.measure' version='1.2.3.v20131017-1358'>
+      <properties size='6'>
+        <property name='artifact.size' value='4723'/>
+        <property name='download.size' value='4723'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.feature.measure'/>
+        <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.sacm.edit' version='1.0.0.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='376377'/>
+        <property name='download.size' value='376377'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.sacm.edit'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.argument.sfp.navigator' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='21704'/>
+        <property name='download.size' value='21704'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.argument.sfp.navigator'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.core.ui' version='1.2.2.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='163407'/>
+        <property name='download.size' value='163407'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.core.ui'/>
+        <property name='maven-version' value='1.2.2-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.sco.view' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='37771'/>
+        <property name='download.size' value='37771'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.sco.view'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.sacm.editor' version='1.0.0.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='180826'/>
+        <property name='download.size' value='180826'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.sacm.editor'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.antlr.runtime' version='3.2.0.v201101311130'>
+      <properties size='1'>
+        <property name='download.size' value='214584'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.export' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='54113'/>
+        <property name='download.size' value='54113'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.export'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.measurement.spm' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='93462'/>
+        <property name='download.size' value='93462'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.measurement.spm'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.argument.sfp.review' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='68439'/>
+        <property name='download.size' value='68439'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.argument.sfp.review'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.planning' version='1.2.3.v20131017-1358'>
+      <properties size='6'>
+        <property name='artifact.size' value='4687'/>
+        <property name='download.size' value='4687'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.feature.planning'/>
+        <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.verification.checklist.editor' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='31236'/>
+        <property name='download.size' value='31236'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.verification.checklist.editor'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.bayes' version='1.2.4.v20131017-1358'>
+      <properties size='6'>
+        <property name='artifact.size' value='2795'/>
+        <property name='download.size' value='2795'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.feature.bayes'/>
+        <property name='maven-version' value='1.2.4-SNAPSHOT'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.example.spm' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='5614'/>
+        <property name='download.size' value='5614'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.example.spm'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.verification.checklist.edit' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='181183'/>
+        <property name='download.size' value='181183'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.verification.checklist.edit'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.planning' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='4988'/>
+        <property name='download.size' value='4988'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.planning'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.evidence.hugin.ui' version='1.2.1.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='274169'/>
+        <property name='download.size' value='274169'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.evidence.hugin.ui'/>
+        <property name='maven-version' value='1.2.1-SNAPSHOT'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='net.certware.sacm.navigator' version='1.0.0.v20131017-1358'>
+      <properties size='5'>
+        <property name='artifact.size' value='18272'/>
+        <property name='download.size' value='18272'/>
+        <property name='maven-groupId' value='net.certware.tycho.build'/>
+        <property name='maven-artifactId' value='net.certware.sacm.navigator'/>
+        <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      </properties>
+    </artifact>
+  </artifacts>
+</repository>

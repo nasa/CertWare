@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-ClassPath: net.certware.evidence.hugin.test
+Bundle-Version: 1.2.1.v20131017-1358
+Bundle-Name: CertWare Evidence Hugin Test
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: net.certware.evidence.hugin.test;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

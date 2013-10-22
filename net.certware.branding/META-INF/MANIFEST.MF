@@ -5,3 +5,4 @@ Bundle-SymbolicName: net.certware.branding;singleton:=true
 Bundle-Version: 1.2.2.qualifier
 Bundle-ClassPath: net.certware.branding
 Bundle-Vendor: %Bundle-Vendor
+Eclipse-BundleShape: dir

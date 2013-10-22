@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Export-Package: edu.ucla.belief,edu.ucla.belief.approx,edu.ucla.belief
+ .decision,edu.ucla.belief.dtree,edu.ucla.belief.inference,edu.ucla.be
+ lief.inference.map,edu.ucla.belief.io,edu.ucla.belief.io.dsl,edu.ucla
+ .belief.io.geneticlinkage,edu.ucla.belief.io.hugin,edu.ucla.belief.io
+ .netica,edu.ucla.belief.io.xmlbif,edu.ucla.belief.learn,edu.ucla.beli
+ ef.rc2.caching,edu.ucla.belief.rc2.creation,edu.ucla.belief.rc2.io,ed
+ u.ucla.belief.rc2.kb,edu.ucla.belief.rc2.kb.sat,edu.ucla.belief.rc2.s
+ tructure,edu.ucla.belief.rc2.tools,edu.ucla.belief.recursivecondition
+ ing,edu.ucla.belief.sensitivity,edu.ucla.belief.tree,edu.ucla.belief.
+ uai2006,edu.ucla.structure,edu.ucla.util,edu.ucla.util.code,il2.bridg
+ e,il2.inf,il2.inf.bp,il2.inf.bp.schedules,il2.inf.edgedeletion,il2.in
+ f.experimental,il2.inf.jointree,il2.inf.map,il2.inf.mini,il2.inf.rc,i
+ l2.inf.structure,il2.inf.structure.minfill2,il2.model,il2.util
+Bundle-Vendor: Kestrel Technology LLC / UCLA ARL
+Bundle-ClassPath: inflib.jar
+Bundle-Version: 1.2.1.v20131017-1358
+Bundle-Name: CertWare Bayesian Inference Library
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: net.certware.libs.inference
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

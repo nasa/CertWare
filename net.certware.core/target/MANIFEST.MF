@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Service-Component: OSGI-INF/status.xml,OSGI-INF/log.xml
+Export-Package: net.certware.core,net.certware.core.spi,net.certware.i
+ nternal.core;x-internal:=true
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.2.1.v20131017-1358
+Bundle-Name: CertWare Core
+Bundle-Activator: net.certware.internal.core.bundle.Activator
+Bundle-ManifestVersion: 2
+Import-Package: org.osgi.framework,org.osgi.service.log,org.osgi.servi
+ ce.packageadmin
+Bundle-SymbolicName: net.certware.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

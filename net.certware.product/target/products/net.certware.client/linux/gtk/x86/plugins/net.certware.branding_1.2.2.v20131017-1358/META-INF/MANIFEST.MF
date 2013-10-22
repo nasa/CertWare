@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %Bundle-Vendor
+Bundle-ClassPath: net.certware.branding
+Eclipse-BundleShape: dir
+Bundle-Version: 1.2.2.v20131017-1358
+Built-By: mrb
+Build-Jdk: 1.6.0_29
+Bundle-Name: %Bundle-Name
+Bundle-ManifestVersion: 2
+Created-By: Apache Maven
+Bundle-SymbolicName: net.certware.branding;singleton:=true
+Archiver-Version: Plexus Archiver
+

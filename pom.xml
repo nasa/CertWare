@@ -5,10 +5,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.certware.tycho.build</groupId>
 	<artifactId>certware</artifactId>
-	<version>2.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>net.certware.argument.diagram.figures</module>
 		<module>net.certware.argument.sfp</module>
 		<module>net.certware.argument.sfp.help</module>
 		<module>net.certware.argument.sfp.navigator</module>
@@ -55,7 +54,6 @@
 		<module>net.certware.measurement.sco.edit</module>
 		<module>net.certware.measurement.sco.editor</module>
 		<module>net.certware.measurement.sco.navigator</module>
-		<module>net.certware.measurement.sco.tests</module>
 		<module>net.certware.measurement.sco.view</module>
 		<module>net.certware.measurement.smm</module>
 		<module>net.certware.measurement.smm.edit</module>
@@ -64,7 +62,6 @@
 		<module>net.certware.measurement.spm.edit</module>
 		<module>net.certware.measurement.spm.editor</module>
 		<module>net.certware.measurement.spm.navigator</module>
-		<module>net.certware.measurement.spm.tests</module>
 		<module>net.certware.measurement.spm.view</module>
 		<module>net.certware.planning</module>
 		<module>net.certware.planning.cpn</module>
@@ -77,7 +74,7 @@
 		<module>net.certware.planning.mspdi.editor</module>
 		<module>net.certware.product</module>
 		<module>net.certware.sacm</module>
-		<module>net.certware.sacm.diagram</module>
+		<!--  <module>net.certware.sacm.diagram</module> -->
 		<module>net.certware.sacm.dsl</module>
 		<module>net.certware.sacm.dsl.tests</module>
 		<module>net.certware.sacm.dsl.ui</module>
@@ -97,12 +94,19 @@
 		<tycho.version>0.18.1</tycho.version>
 		<tycho-extras.version>0.18.1</tycho-extras.version>
 		<kepler-repo.url>http://download.eclipse.org/releases/kepler</kepler-repo.url>
+		<epsilon-repo.url>http://download.eclipse.org/epsilon/updates</epsilon-repo.url>
 		<tycho-repo.url>https://oss.sonatype.org/content/groups/public/</tycho-repo.url>
+		<project.name>certware</project.name>
 	</properties>
 	<repositories>
 		<repository>
 			<id>kepler</id>
 			<url>${kepler-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>epsilon</id>
+			<url>${epsilon-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 	</repositories>
@@ -123,8 +127,13 @@
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
-				<version>0.18.1</version>
+				<version>${tycho.version}</version>
 				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>

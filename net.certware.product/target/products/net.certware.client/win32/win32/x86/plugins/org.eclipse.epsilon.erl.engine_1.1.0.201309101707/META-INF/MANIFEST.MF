@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: org.eclipse.epsilon.erl,org.eclipse.epsilon.erl.except
+ ions,org.eclipse.epsilon.erl.rules,org.eclipse.epsilon.erl.strategy
+Require-Bundle: org.eclipse.epsilon.eol.engine
+Bundle-Vendor: Eclipse.org
+Bundle-Version: 1.1.0.201309101707
+Bundle-Localization: plugin
+Bundle-Name: Epsilon Rule Language Engine
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.epsilon.erl.engine;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

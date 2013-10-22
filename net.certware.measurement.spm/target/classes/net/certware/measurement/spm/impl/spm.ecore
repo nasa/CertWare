@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spm"
+    nsURI="http://www.certware.net/spm" nsPrefix="spm">
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectModel" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//SmmModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commits" upperBound="-1"
+        eType="#//ProjectCommit" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectCommit" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//SmmModel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommitRelationship" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//SmmRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProductQualityCategory" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Category"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InProgressQualityCategory" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Category"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndProductQuality" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Characteristic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Maintainability" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Characteristic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InProgressIndicator" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Characteristic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectSize" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Characteristic"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseDimensionalMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//DimensionalMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeOrderDimensionalMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//DimensionalMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeDimensionalMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//DimensionalMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdditiveMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//CollectiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseScope" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Scope"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectScope" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Scope"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeScope" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//Scope"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CriticalDefectChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDefectChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImprovementChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewFeatureChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TrendMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//CollectiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScrapRatioMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModularityMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReworkRatioMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdaptabilityRatioMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MaturityRatioMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MaintainabilityMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BrokenCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FixedCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TotalCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BaselineCaseSizeMeasure" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageTimeMeasure" eSuperTypes="#//TimeDimensionalMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RepairEffortMeasure" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DevelopmentEffortMeasure" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TotalChangeOrderCount" eSuperTypes="#//AdditiveMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CriticalAndNormalChangeOrderCount" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//BinaryMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReworkStabilityMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//BinaryMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReworkBacklogMeasure" eSuperTypes="http://www.eclipse.org/MoDisco/smm#//RatioMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModularityTrend" eSuperTypes="#//TrendMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdaptabilityTrend" eSuperTypes="#//TrendMeasure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MaturityTrend" eSuperTypes="#//TrendMeasure"/>
+</ecore:EPackage>

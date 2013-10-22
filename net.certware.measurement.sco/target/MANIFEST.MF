@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore;visibil
+ ity:=reexport,org.eclipse.emf.ecore.xmi;visibility:=reexport
+Export-Package: net.certware.measurement.sco,net.certware.measurement.
+ sco.impl,net.certware.measurement.sco.util
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.2.1.v20131017-1358
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: net.certware.measurement.sco;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

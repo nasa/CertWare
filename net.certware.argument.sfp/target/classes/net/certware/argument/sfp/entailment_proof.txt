@@ -1,0 +1,69 @@
+Entailment Algorithm
+
+The important property of the algorithm is to check the validity of entailments in a proof. For example, if the justification of an assertion includes an entailment A1, A2…An → B, then the context of B may not include any hypothesis asides from A1,A2…An.
+
+Pseudo Code
+
+Check_Entailment (ProofStep P, Set S )
+
+    {
+
+          if P has an entailment
+
+           {
+
+               Set C
+
+               Context (P.Conclusion, S)
+
+                for all Justifications j in P
+
+                 {
+
+                     add j to set C
+
+                 }
+
+                S.removeAll(C)
+
+            }
+    }
+
+Context (ProofStep P, Set S)
+
+    {
+
+        for all ReferenceToLabels k in P
+
+        {
+
+            Context (k, S)
+
+        }
+
+        if P is a supposition
+
+        {
+
+            add P to set S
+        }
+
+        if P has an entailment
+
+        {
+
+            Set nestedSet
+
+            Check_Entailment (P, nestedSet)
+
+            if(!nestedSet.isEmpty())
+
+            {
+
+                    S.addAll(nestedSet)
+
+            }
+
+        }
+
+}

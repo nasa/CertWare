@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Export-Package: net.certware.planning.cpn.ui.contentassist.antlr,net.c
+ ertware.planning.cpn.ui.quickfix,net.certware.planning.cpn.ui.content
+ assist
+Require-Bundle: net.certware.planning.cpn;visibility:=reexport,org.ecl
+ ipse.xtext.ui,org.eclipse.ui.editors,org.eclipse.ui.ide,org.eclipse.x
+ text.ui.shared,org.eclipse.ui,org.eclipse.xtext.builder,org.antlr.run
+ time,org.eclipse.core.runtime,org.eclipse.core.resources,org.eclipse.
+ xtend,org.eclipse.xpand
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.2.1.v20131017-1358
+Bundle-Name: Certware Planning CPN UI
+Bundle-Activator: net.certware.planning.cpn.ui.internal.CpnDslActivato
+ r
+Bundle-ManifestVersion: 2
+Import-Package: net.certware.core.ui,org.apache.log4j
+Bundle-SymbolicName: net.certware.planning.cpn.ui; singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

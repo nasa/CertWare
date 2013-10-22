@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Export-Package: net.certware.measurement.sco.components,net.certware.m
+ easurement.sco.parts,net.certware.measurement.sco.parts.forms,net.cer
+ tware.measurement.sco.parts.impl,net.certware.measurement.sco.provide
+ r,net.certware.measurement.sco.providers
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,net.certware.measurement.sco;
+ visibility:=reexport,org.eclipse.emf.edit;visibility:=reexport,org.ec
+ lipse.jface;bundle-version="3.6.1",org.eclipse.ui;bundle-version="3.6
+ .1",org.eclipse.emf.eef.runtime;bundle-version="0.8.2";visibility:=re
+ export
+Bundle-Vendor: %providerName
+Bundle-Version: 1.2.1.v20131017-1358
+Bundle-ManifestVersion: 2
+Bundle-Activator: net.certware.measurement.sco.provider.ScoEditPlugin$
+ Implementation
+Import-Package: net.certware.measurement.sco.parts.forms,org.eclipse.e
+ mf.eef.runtime.ui,org.eclipse.emf.eef.runtime.ui.editor
+Bundle-SymbolicName: net.certware.measurement.sco.edit;singleton:=true
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+ <plugin>
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="checklist"
+            class="net.certware.verification.checklist.providers.ChecklistEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="net.certware.verification.checklist.providers.ChecklistPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="net.certware.verification.checklist.properties"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="net.certware.verification.checklist.properties">
+         <propertyTab
+               id="Base"
+               label="Base"
+               category="default">
+         </propertyTab>
+
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="net.certware.verification.checklist.properties">
+         <propertySection
+               class="net.certware.verification.checklist.parts.forms.CategoryPropertiesEditionPartForm"
+               filter="net.certware.verification.checklist.providers.CategoryPropertiesEditionProvider$EditionFilter"
+               id="net.certware.verification.checklist.section.Category"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.verification.checklist.parts.forms.ItemPropertiesEditionPartForm"
+               filter="net.certware.verification.checklist.providers.ItemPropertiesEditionProvider$EditionFilter"
+               id="net.certware.verification.checklist.section.Item"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.verification.checklist.parts.forms.ChecklistPropertiesEditionPartForm"
+               filter="net.certware.verification.checklist.providers.ChecklistPropertiesEditionProvider$EditionFilter"
+               id="net.certware.verification.checklist.section.Checklist"
+               tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension>
+ </plugin>

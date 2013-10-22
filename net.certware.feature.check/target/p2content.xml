@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='2'>
+  <unit id='net.certware.feature.check.feature.group' version='1.2.3.v20131017-1358' singleton='false'>
+    <update id='net.certware.feature.check.feature.group' range='[0.0.0,1.2.3.v20131017-1358)' severity='0'/>
+    <properties size='8'>
+      <property name='org.eclipse.equinox.p2.name' value='CertWare Verification Checklist Support'/>
+      <property name='org.eclipse.equinox.p2.description' value='CertWare support for verification checklist models and views.'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://nasa.github.com/CertWare'/>
+      <property name='org.eclipse.equinox.p2.provider' value='Kestrel Technology LLC'/>
+      <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+      <property name='maven-groupId' value='net.certware.tycho.build'/>
+      <property name='maven-artifactId' value='net.certware.feature.check'/>
+      <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+    </properties>
+    <provides size='1'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.check.feature.group' version='1.2.3.v20131017-1358'/>
+    </provides>
+    <requires size='27'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.feature.group' range='[1.2.3.v20131017-1358,1.2.3.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.runtime' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.ecore' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.ecore.xmi' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.edit' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.eef.runtime' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.resources' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.edit.ui' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.ide' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.navigator' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.jobs' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.common' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.jface' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.osgi' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.swt' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.workbench' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.expressions' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.contenttype' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.equinox.preferences' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.help' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.verification.checklist' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.verification.checklist.edit' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.verification.checklist.editor' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.verification.checklist.navigator' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.verification.checklist.view' range='[1.2.2.v20131017-1358,1.2.2.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.example.checklist' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.check.feature.jar' range='[1.2.3.v20131017-1358,1.2.3.v20131017-1358]'>
+        <filter>
+          (org.eclipse.update.install.features=true)
+        </filter>
+      </required>
+    </requires>
+    <touchpoint id='null' version='0.0.0'/>
+    <licenses size='1'>
+      <license uri='http://nasa.github.com/CertWare/license.html' url='http://nasa.github.com/CertWare/license.html'>
+        Copyright (c) 2011 United States Government as represented by&#xA;the National Aeronautics and Space Administration.  All rights&#xA;reserved.&#xA;This use of this software is governed by the CertWare Safety&#xA;Case Workbench BETA-TEST AGREEMENT OF EXPERIMENTAL COMPUTER CODE.&#xA;Use of this software is limited to beta-testing only.  No modifications&#xA;to the software or further development of the software are permitted.&#xA;This software incorporates open source software.  Such open source&#xA;software is identified via notices within the source code.  Such&#xA;notices identify the governing open source license and use of&#xA;such open source software is governed by the terms and conditions&#xA;of the governing open source license.  NASA disclaims all warranties&#xA;and liabilities regarding open source software and distributes&#xA;it &quot;as is&quot; under this Agreement.&#xA;This software shall not be exported outside the United Kingdom,&#xA;except to the United States, without the express permission of&#xA;NASA. Access to the SOFTWARE within the United Kingdom to TESTER’s&#xA;organization is permitted for United Kingdom, Canadian, Greek&#xA;and U.S. persons only.  Furthermore, the software shall not be&#xA;provided to any person or entity listed on any U.S. &quot;denied parties/persons&quot;&#xA;list (including the U.S. Department of the Treasury, Office of&#xA;Foreign Assets Control, Specially Designated Nationals and Blocked&#xA;Persons; U.S. Department of the Treasury, Office of Foreign Assets&#xA;Control, Changes to List of Specially Designated Nationals and&#xA;Blocked Persons; U.S. Department of State, Directorate of Defense&#xA;Trade Controls, List of Statutorily Debarred Parties; U.S. Department&#xA;of Commerce, Bureau of Industry and Security, Denied Persons&#xA;List; U.S. Department of Commerce, Bureau of Industry and Security,&#xA;Entity List).  Violations may result in criminal liability under&#xA;U.S. laws.&#xA;THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; WITHOUT ANY WARRANTY OF ANY&#xA;KIND, EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT&#xA;NOT LIMITED TO, ANY WARRANTY THAT THE SOFTWARE WILL CONFORM TO&#xA;SPECIFICATIONS, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS&#xA;FOR A PARTICULAR PURPOSE, AND FREEDOM FROM INFRINGEMENT, AND&#xA;ANY WARRANTY THAT THE DOCUMENTATION WILL CONFORM TO THE SOFTWARE,&#xA;OR ANY WARRANTY THAT THE SOFTWARE WILL BE ERROR FREE, WHETHER&#xA;OR NOT THE ERROR IS DISCOVERABLE.  IN NO EVENT SHALL THE UNITED&#xA;STATES GOVERNMENT, OR ITS CONTRACTORS OR SUBCONTRACTORS, BE LIABLE&#xA;FOR ANY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DIRECT, INDIRECT,&#xA;SPECIAL OR CONSEQUENTIAL DAMAGES, ARISING OUT OF, RESULTING FROM,&#xA;OR IN ANY WAY CONNECTED WITH THIS SOFTWARE, WHETHER OR NOT BASED&#xA;UPON WARRANTY, CONTRACT, TORT , OR OTHERWISE, WHETHER OR NOT&#xA;INJURY WAS SUSTAINED BY PERSONS OR PROPERTY OR OTHERWISE, WHETHER&#xA;OR NOT DAMAGES ARE BASED ON A THIRD PARTY CLAIM, WHETHER OR NOT&#xA;LOSS WAS SUSTAINED FROM, OR AROSE OUT OF THE RESULTS OF, OR USE&#xA;OF, THE SOFTWARE OR SERVICES PROVIDED HEREUNDER, AND REGARDLESS&#xA;OF WHETHER THE UNITED STATES GOVERNMENT SHALL BE ADVISED, SHALL&#xA;HAVE OTHER REASON TO KNOW, OR IN FACT SHALL KNOW OF THE POSSIBILITY&#xA;OF THE FOREGOING.  THE UNITED STATES GOVERNMENT DISCLAIMS ALL&#xA;WARRANTIES AND LIABILITIES REGARDING THIRD PARTY SOFTWARE, IF&#xA;PRESENT IN THE NASA GENERATED SOFTWARE, AND DISTRIBUTES IT ‘AS&#xA;IS.&#xA;USE OF THIS SOFTWARE IS AN AGREEMENT TO WAIVE ANY AND ALL CLAIMS&#xA;AGAINST THE UNITED STATES GOVERNMENT, AND ITS CONTRACTORS AND&#xA;SUBCONTRACTORS, AND TO  INDEMNIFY AND HOLD HARMLESS THE UNITED&#xA;STATES GOVERNMENT AND ITS CONTRACTORS AND SUBCONTRACTORS FOR&#xA;ANY LIABILITIES, DEMANDS, DAMAGES, EXPENSES OR LOSSES THAT MAY&#xA;BE INCURRED FROM USE OF THIS SOFTWARE.
+      </license>
+    </licenses>
+    <copyright>
+      Copyright (c) 2011 United States Government as represented by&#xA;the National Aeronautics and Space Administration.  All rights&#xA;reserved.
+    </copyright>
+  </unit>
+  <unit id='net.certware.feature.check.feature.jar' version='1.2.3.v20131017-1358'>
+    <properties size='7'>
+      <property name='org.eclipse.equinox.p2.name' value='CertWare Verification Checklist Support'/>
+      <property name='org.eclipse.equinox.p2.description' value='CertWare support for verification checklist models and views.'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://nasa.github.com/CertWare'/>
+      <property name='org.eclipse.equinox.p2.provider' value='Kestrel Technology LLC'/>
+      <property name='maven-groupId' value='net.certware.tycho.build'/>
+      <property name='maven-artifactId' value='net.certware.feature.check'/>
+      <property name='maven-version' value='1.2.3-SNAPSHOT'/>
+    </properties>
+    <provides size='3'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.check.feature.jar' version='1.2.3.v20131017-1358'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+      <provided namespace='org.eclipse.update.feature' name='net.certware.feature.check' version='1.2.3.v20131017-1358'/>
+    </provides>
+    <filter>
+      (org.eclipse.update.install.features=true)
+    </filter>
+    <artifacts size='1'>
+      <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.check' version='1.2.3.v20131017-1358'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='zipped'>
+          true
+        </instruction>
+      </instructions>
+    </touchpointData>
+    <licenses size='1'>
+      <license uri='http://nasa.github.com/CertWare/license.html' url='http://nasa.github.com/CertWare/license.html'>
+        Copyright (c) 2011 United States Government as represented by&#xA;the National Aeronautics and Space Administration.  All rights&#xA;reserved.&#xA;This use of this software is governed by the CertWare Safety&#xA;Case Workbench BETA-TEST AGREEMENT OF EXPERIMENTAL COMPUTER CODE.&#xA;Use of this software is limited to beta-testing only.  No modifications&#xA;to the software or further development of the software are permitted.&#xA;This software incorporates open source software.  Such open source&#xA;software is identified via notices within the source code.  Such&#xA;notices identify the governing open source license and use of&#xA;such open source software is governed by the terms and conditions&#xA;of the governing open source license.  NASA disclaims all warranties&#xA;and liabilities regarding open source software and distributes&#xA;it &quot;as is&quot; under this Agreement.&#xA;This software shall not be exported outside the United Kingdom,&#xA;except to the United States, without the express permission of&#xA;NASA. Access to the SOFTWARE within the United Kingdom to TESTER’s&#xA;organization is permitted for United Kingdom, Canadian, Greek&#xA;and U.S. persons only.  Furthermore, the software shall not be&#xA;provided to any person or entity listed on any U.S. &quot;denied parties/persons&quot;&#xA;list (including the U.S. Department of the Treasury, Office of&#xA;Foreign Assets Control, Specially Designated Nationals and Blocked&#xA;Persons; U.S. Department of the Treasury, Office of Foreign Assets&#xA;Control, Changes to List of Specially Designated Nationals and&#xA;Blocked Persons; U.S. Department of State, Directorate of Defense&#xA;Trade Controls, List of Statutorily Debarred Parties; U.S. Department&#xA;of Commerce, Bureau of Industry and Security, Denied Persons&#xA;List; U.S. Department of Commerce, Bureau of Industry and Security,&#xA;Entity List).  Violations may result in criminal liability under&#xA;U.S. laws.&#xA;THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; WITHOUT ANY WARRANTY OF ANY&#xA;KIND, EITHER EXPRESSED, IMPLIED, OR STATUTORY, INCLUDING, BUT&#xA;NOT LIMITED TO, ANY WARRANTY THAT THE SOFTWARE WILL CONFORM TO&#xA;SPECIFICATIONS, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS&#xA;FOR A PARTICULAR PURPOSE, AND FREEDOM FROM INFRINGEMENT, AND&#xA;ANY WARRANTY THAT THE DOCUMENTATION WILL CONFORM TO THE SOFTWARE,&#xA;OR ANY WARRANTY THAT THE SOFTWARE WILL BE ERROR FREE, WHETHER&#xA;OR NOT THE ERROR IS DISCOVERABLE.  IN NO EVENT SHALL THE UNITED&#xA;STATES GOVERNMENT, OR ITS CONTRACTORS OR SUBCONTRACTORS, BE LIABLE&#xA;FOR ANY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DIRECT, INDIRECT,&#xA;SPECIAL OR CONSEQUENTIAL DAMAGES, ARISING OUT OF, RESULTING FROM,&#xA;OR IN ANY WAY CONNECTED WITH THIS SOFTWARE, WHETHER OR NOT BASED&#xA;UPON WARRANTY, CONTRACT, TORT , OR OTHERWISE, WHETHER OR NOT&#xA;INJURY WAS SUSTAINED BY PERSONS OR PROPERTY OR OTHERWISE, WHETHER&#xA;OR NOT DAMAGES ARE BASED ON A THIRD PARTY CLAIM, WHETHER OR NOT&#xA;LOSS WAS SUSTAINED FROM, OR AROSE OUT OF THE RESULTS OF, OR USE&#xA;OF, THE SOFTWARE OR SERVICES PROVIDED HEREUNDER, AND REGARDLESS&#xA;OF WHETHER THE UNITED STATES GOVERNMENT SHALL BE ADVISED, SHALL&#xA;HAVE OTHER REASON TO KNOW, OR IN FACT SHALL KNOW OF THE POSSIBILITY&#xA;OF THE FOREGOING.  THE UNITED STATES GOVERNMENT DISCLAIMS ALL&#xA;WARRANTIES AND LIABILITIES REGARDING THIRD PARTY SOFTWARE, IF&#xA;PRESENT IN THE NASA GENERATED SOFTWARE, AND DISTRIBUTES IT ‘AS&#xA;IS.&#xA;USE OF THIS SOFTWARE IS AN AGREEMENT TO WAIVE ANY AND ALL CLAIMS&#xA;AGAINST THE UNITED STATES GOVERNMENT, AND ITS CONTRACTORS AND&#xA;SUBCONTRACTORS, AND TO  INDEMNIFY AND HOLD HARMLESS THE UNITED&#xA;STATES GOVERNMENT AND ITS CONTRACTORS AND SUBCONTRACTORS FOR&#xA;ANY LIABILITIES, DEMANDS, DAMAGES, EXPENSES OR LOSSES THAT MAY&#xA;BE INCURRED FROM USE OF THIS SOFTWARE.
+      </license>
+    </licenses>
+    <copyright>
+      Copyright (c) 2011 United States Government as represented by&#xA;the National Aeronautics and Space Administration.  All rights&#xA;reserved.
+    </copyright>
+  </unit>
+</units>

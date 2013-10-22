@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="netDSL"
+    nsURI="http://www.certware.net/evidence/hugin/NetDSL" nsPrefix="netDSL">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//DomainDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Integer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="i" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//DomainHeader"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//DomainElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainHeader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainElement" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ClassElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ClassElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicNode" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//DomainElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatesAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="states" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//NodeAttributes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//NodeAttributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubtypeAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subtype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateValuesAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numbers" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//NodeAttributes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeSizeAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Potential" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//DomainElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//PotentialGraph"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//PotentialModel"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PotentialGraph">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="children" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PotentialModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//PotentialAttribute"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PotentialAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PotentialDataAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//PotentialAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r5" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r4" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r3" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r2" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="r1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PotentialTableAttribute" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//PotentialAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ModelNodesAttribute"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="samples" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//SamplesAttribute"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ModelDataAttribute"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelNodesAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configurations" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SamplesAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelDataAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequence" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ExpressionSequence"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassDefinition" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//DomainElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ClassElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassInstance" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ClassElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//InputBindings"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//OutputBindings"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//NodeAttributes"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputBindings">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//InputBinding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//InputBindings"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputBinding">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputBindings">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//OutputBinding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//OutputBindings"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputBinding">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeAttributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionSequence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="assignmentOpExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="orExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//assignmentOpExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="andExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//orExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="relationalExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//andExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="additiveExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//relationalExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="multiplicativeExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//additiveExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="unaryExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//multiplicativeExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operator" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequence" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//ExpressionSequence"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TermExpression" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//unaryExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TermLiteral" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerLiteral" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//PositionAttribute platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermLiteral">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="x" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Integer"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="y" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Integer"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List5" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List4" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List3" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List2" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" upperBound="-1" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List1" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//MatrixRow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//unaryExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//assignmentOpExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//orExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssignmentOp" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//assignmentOpExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//orExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//orExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrExp" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//orExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//andExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//orExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExp" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//andExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//relationalExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//andExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationalExp" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//relationalExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//additiveExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//relationalExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdditiveExp" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//additiveExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//multiplicativeExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//additiveExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicativeExp" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//multiplicativeExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//unaryExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//multiplicativeExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VarRef" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DoubleLiteral" eSuperTypes="platform:/resource/net.certware.evidence.hugin/src-gen/net/certware/evidence/hugin/NetDSL.ecore#//TermLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+</ecore:EPackage>

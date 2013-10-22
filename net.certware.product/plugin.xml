@@ -3,7 +3,7 @@
 <plugin>
 
    <extension
-         id="CertWare"
+         id="certware"
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.ui.ide.workbench"

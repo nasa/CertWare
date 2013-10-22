@@ -193,12 +193,6 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
       <discovery label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
    </url>
 
-   <includes
-         id="org.eclipse.epsilon.evl.emf.validation.feature"
-         version="0.0.0"
-         name="Eclipse Epsilon EVL Validation"
-         search-location="both"/>
-
    <requires>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
       <import plugin="org.eclipse.ui" version="3.6.1" match="greaterOrEqual"/>
@@ -224,13 +218,6 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
       <import plugin="org.junit"/>
       <import feature="org.eclipse.emf" version="2.9.0.v20130610-0406"/>
    </requires>
-
-   <plugin
-         id="net.certware.argument.diagram.figures"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="net.certware.branding"

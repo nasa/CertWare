@@ -1,0 +1,108 @@
+module net.certware.planning.cpn.CpnDsl
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.xtext.generator.*
+import org.eclipse.xtext.ui.generator.*
+
+var grammarURI = "classpath:/net/certware/planning/cpn/CpnDsl.xtext"
+var file.extensions = "cpn"
+var projectName = "net.certware.planning.cpn"
+var sacmName = "net.certware.sacm"
+var runtimeProject = "../${projectName}"
+var sacmGenmodelURI = "platform:/resource/${sacmName}/model/sacm.genmodel"
+
+Workflow {
+    bean = StandaloneSetup {
+		platformUri = "${runtimeProject}/.."
+		registerGeneratedEPackage = "net.certware.sacm.SACM.SACMPackage"
+		registerGenModelFile = sacmGenmodelURI
+	}
+
+	component = DirectoryCleaner {
+		directory = "${runtimeProject}/src-gen"
+	}
+
+	component = DirectoryCleaner {
+		directory = "${runtimeProject}.ui/src-gen"
+	}
+
+	component = Generator {
+		pathRtProject = runtimeProject
+		pathUiProject = "${runtimeProject}.ui"
+		projectNameRt = projectName
+		projectNameUi = "${projectName}.ui"
+		language = {
+			uri = grammarURI
+			fileExtensions = file.extensions
+
+			// Java API to access grammar elements (required by several other fragments)
+			fragment = grammarAccess.GrammarAccessFragment {}
+
+			// generates Java API for the generated EPackages 
+			//fragment = ecore.EcoreGeneratorFragment {
+			//		referencedGenModels = sacmGenmodelURI
+			// referencedGenModels = "uri to genmodel, uri to next genmodel"
+			//}
+			//fragment = ecore.EMFGeneratorFragment {
+				
+			//}
+
+			// the serialization component
+			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+
+			// a custom ResourceFactory for use with EMF 
+			fragment = resourceFactory.ResourceFactoryFragment {
+				fileExtensions = file.extensions
+			}
+
+			// The antlr parser generator fragment.
+			fragment = parser.antlr.XtextAntlrGeneratorFragment {
+			//  options = {
+			//		backtrack = true
+			//	}
+			}
+
+			// java-based API for validation 
+			//fragment = validation.JavaValidatorFragment {
+			//	composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+			//	composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			//	// registerForImportedPackages = true
+			//}
+
+			// scoping and exporting API
+			fragment = scoping.ImportURIScopingFragment {} // was commented MRB
+			// fragment = exporting.SimpleNamesFragment {} 
+
+			// scoping and exporting API 
+			// fragment = scoping.ImportNamespacesScopingFragment {} // was not commented MRB
+			fragment = exporting.QualifiedNamesFragment {} 
+			fragment = builder.BuilderIntegrationFragment {}
+
+			// formatter API 
+			fragment = formatting.FormatterFragment {}
+
+			// labeling API 
+			fragment = labeling.LabelProviderFragment {}
+
+			// outline API 
+			fragment = outline.OutlineTreeProviderFragment {}
+			fragment = outline.QuickOutlineFragment {}
+			
+
+			// quickfix API 
+			fragment = quickfix.QuickfixProviderFragment {}
+
+			// content assist API  
+			fragment = contentAssist.JavaBasedContentAssistFragment {}
+
+			// generates a more lightweight Antlr parser and lexer tailored for content assist  
+			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
+
+			// project wizard (optional) 
+			//fragment = projectWizard.SimpleProjectWizardFragment {
+			// 		generatorProjectName = "${projectName}.generator" 
+			//		modelFileExtension = file.extensions
+			// }
+		}
+	}
+}

@@ -29,7 +29,7 @@ Import-Package: org.eclipse.core.expressions,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.core;bundle-version="1.2.0",
  net.certware.core.ui;bundle-version="1.2.1",
- net.certware.libs.inference;bundle-version="1.0.0",
+ net.certware.libs.inference,
  org.eclipse.core.resources,
  net.certware.evidence.hugin.instance;bundle-version="1.0.0",
  org.eclipse.emf.common.ui

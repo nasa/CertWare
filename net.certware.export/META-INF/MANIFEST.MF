@@ -27,7 +27,7 @@ Import-Package: net.certware.core,
  org.eclipse.ui.plugin,
  org.osgi.framework
 Bundle-ActivationPolicy: lazy
-Require-Bundle: net.certware.libs.doc,
+Require-Bundle: net.certware.libs.doc;visibility:=reexport,
  org.eclipse.jface,
  org.eclipse.ui
 Export-Package: net.certware.export,

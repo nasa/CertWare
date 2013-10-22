@@ -1,0 +1,384 @@
+// Developed from information in the Hugin API Manual
+// @author mrb
+// @date 2/28/11
+// @since 1.1.3
+
+// grammar net.certware.evidence.hugin.NetDSL with org.eclipse.xtext.common.Terminals
+grammar net.certware.evidence.hugin.NetDSL
+	hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate netDSL "http://www.certware.net/evidence/hugin/NetDSL"
+
+import "http://www.eclipse.org/emf/2002/Ecore"as ecore
+
+Model:
+	domain=DomainDefinition?;
+	
+terminal BOOLEAN returns ecore::EBoolean : 'true' | 'false';
+terminal ID returns ecore::EString : '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ;
+//terminal DOUBLE returns ecore::EDouble
+//	: '-'? ('0'..'9')+ ('.' ('0'..'9')+ (('e'|'E') ('-')? ('0'..'9')+)?)?;
+// terminal INT returns ecore::EInt: ('0'..'9')+ ;
+terminal INT returns ecore::EInt: '0' | ('1'..'9' ('0'..'9')*); 
+terminal DOUBLE returns ecore::EDouble :  
+	'1'..'9' ('0'..'9')* ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)?
+	| '0' ('.' '0'..'9'+)? (('E' | 'e') ('+' | '-')? '0'..'9'+)? 
+	;
+//terminal STRING :
+//'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+//"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'"'|"'"|'\\') | !('\\'|"'") )* "'"; 
+terminal STRING returns ecore::EString : '"' -> '"' ;
+terminal ML_COMMENT : '/*' -> '*/' ; 
+terminal SL_COMMENT : '%' !('\n'|'\r')* ('\r'? '\n')? ;
+// terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')? ; 
+terminal WS : (' '|'\t'|'\r'|'\n')+ ;
+//DOUBLE: INT '.' (EXT_INT | INT);
+//terminal EXT_INT: INT ('e'|'E')('-'|'+') INT;
+terminal ANY_OTHER: . ;
+
+	
+Integer :
+	i=INT
+	;
+	
+DomainDefinition :
+	header=DomainHeader elements+=DomainElement*
+	;
+	
+DomainHeader : {DomainHeader}
+	'net' '{' attributes+=Attribute* '}'
+	;
+	
+DomainElement :
+	BasicNode | Potential | ClassDefinition
+	;
+	
+Attribute :
+	StatesAttribute |
+	LabelAttribute |
+	PositionAttribute |
+	SubtypeAttribute |
+	StateValuesAttribute | 
+	ApplicationAttribute |
+	NodeSizeAttribute
+	;
+
+BasicNode :
+	keyword=BasicNodeKeyword (id=ID)? '{' attributes+=Attribute* '}' ;
+	
+BasicNodeKeyword :
+	(('discrete' | 'continuous')? 'node') | 'decision' | 'utility' | 'function'
+	;
+
+StatesAttribute : {StatesAttribute}
+	'states' '=' '(' states+=STRING* ')' ';'
+	;
+	
+LabelAttribute :
+	'label' '=' value=STRING ';'
+	;
+	
+PositionAttribute :
+	'position' '=' '(' {IntegerLiteral} x=Integer y=Integer ')' ';'
+	;
+	
+SubtypeAttribute :
+	'subtype' '=' subtype=('label' | 'boolean' | 'number' | 'interval') ';'
+	;
+		
+StateValuesAttribute :
+	'state_values' '=' '(' numbers+=INT+ ')' ';'
+	;
+	
+ApplicationAttribute :
+	key=ID '=' value=STRING ';' 
+	;
+	
+NodeSizeAttribute : // global magic for HUGIN GUI
+	'node_size' '=' '(' width=INT height=INT ')' ';'
+	;
+	
+Potential :
+	'potential' graph=PotentialGraph model=PotentialModel
+	;
+	
+PotentialGraph : {PotentialGraph}
+	'(' children+=ID* ('|' parents+=ID* )? ')'
+	;
+	
+PotentialModel : {PotentialModel}
+	'{' attributes+=PotentialAttribute* '}'
+	;
+	
+PotentialAttribute 
+	: PotentialDataAttribute 
+	| PotentialTableAttribute // TODO fragile
+	;
+	
+PotentialDataAttribute : {PotentialDataAttribute}
+	'data' '=' data=MatrixRow ';'
+	;
+	
+// tough to do arbitrary nesting in xtext, so do reasonably deep rules
+// validation rules should check content patterns
+MatrixRow
+	: {MatrixRow} r5+=List5+ // trying for big enough to handle barley
+	| {MatrixRow} r4+=List4+ // '(' '(' '(' r31+=List1+ ')' '(' r32+=List1+ ')' '(' r33+=List1+ ')' ')' ')'
+	| {MatrixRow} r3+=List3+ //'(' '(' r21+=List+ ')' '(' r22+=List+ ')' ')'
+	| {MatrixRow} r2+=List2+ // '(' r11+=List+ ')'
+	| {MatrixRow} r1=List1
+	;
+
+List5 returns MatrixRow
+	: {List5} '(' list+=List4+ ')'
+	;
+	
+List4 returns MatrixRow
+	: {List4} '(' list+=List3+ ')'
+	;
+	
+List3 returns MatrixRow
+	: {List3} '(' list+=List2+ ')'
+	;
+	
+List2 returns MatrixRow
+	: {List2} '(' list+=List1+ ')' 
+	;
+	
+List1 returns MatrixRow
+	: {List1} '(' items+=unaryExpression* ')' 
+	// TODO add normal distribution as an expression operation
+	;
+	
+// TODO redefine as an operator so it matches unary expressions
+//NormalDistribution 
+//	: 'normal' '(' mean=MeanExpression ',' variance=DOUBLE ')'
+//	;
+	
+MeanExpression 
+	: MeanTerm ('+' MeanTerm)*
+	;
+	
+MeanTerm 
+	: DOUBLE 
+	| (DOUBLE '*' ID) 
+	| ID
+	; 
+
+PotentialTableAttribute :
+	nodes=ModelNodesAttribute 
+	(samples=SamplesAttribute)? 
+	data=ModelDataAttribute
+	;
+	
+ModelNodesAttribute : {ModelNodesAttribute}
+	'model_nodes' '=' '(' configurations+=ID* ')' ';'
+	;
+	
+SamplesAttribute :
+	'samples_per_interval' '=' value=INT ';'
+	;
+	
+ModelDataAttribute : {ModelDataAttribute}
+	'model_data' '=' '(' sequence=ExpressionSequence ')' ';' 
+	;
+	
+
+///////////////////////////////////////////////////
+// classes
+///////////////////////////////////////////////////
+
+ClassDefinition :
+	'class' name=ID '{' elements+=ClassElement* '}'
+	;
+	
+ClassElement :
+	DomainElement | Attribute | ClassInstance;
+
+ClassInstance :
+	'instance' instanceName=ID ':' className=ID 
+	'(' (input=InputBindings)? (';' output=OutputBindings)? ')'
+	'{' attributes=NodeAttributes '}'
+	;
+	
+InputBindings :
+	lhs=InputBinding ',' rhs=InputBindings
+	;
+	
+InputBinding :
+	formal=ID '=' actual=ID
+	;
+
+OutputBindings :
+	lhs=OutputBinding ',' rhs=OutputBindings
+	;
+	
+OutputBinding :
+	actual=ID '=' formal=ID
+	;
+	
+NodeAttributes :
+	LabelAttribute | PositionAttribute | ApplicationAttribute
+	;	
+
+
+///////////////////////////////////////////////////
+// expressions
+///////////////////////////////////////////////////
+
+ExpressionSequence : {ExpressionSequence}
+	(expressions+=Expression (',' expressions+=Expression)*)?
+	;
+
+Expression
+	: assignmentOpExpression
+	( {Assignment.left=current} op='=' right=orExpression
+	)?;
+	
+assignmentOpExpression
+	: orExpression
+	({AssignmentOp.left=current} op=assignOp right=orExpression
+	)?;
+		
+assignOp
+	: '+='
+	| '-='
+	| '*='
+	| '/='
+	| '%='
+	;
+
+orExpression
+	: andExpression
+	({OrExp.left=current}
+		op='||' right=orExpression
+		)?;
+		
+andExpression
+	: relationalExpression
+	({AndExp.left=current}
+		op='&&' right=andExpression
+		)?;
+		
+relationalExpression
+	: additiveExpression
+	({RelationalExp.left=current}
+		op=relOps right=relationalExpression
+		)?;
+	
+relOps
+	: '!='
+	| '=='
+	| '<='
+	| '<>'
+	| '>='
+	| '<'
+	| '>'
+	;
+
+additiveExpression
+	: multiplicativeExpression
+	({AdditiveExp.left=current}
+		op=arithOps right=additiveExpression
+		)?;
+		
+arithOps
+	: '+'
+	| '-'
+	;
+	
+multiplicativeExpression
+	: unaryExpression
+	({MultiplicativeExp.left=current}
+		op=multOps right=multiplicativeExpression
+		)?;
+
+multOps
+	: '*'
+	| '/'
+	;
+	
+unaryExpression 
+	: TermExpression
+	| op=unaryOps expr=TermExpression
+	;
+
+unaryOps
+	: '-'
+	| '!'
+	;			
+
+Operator 
+	: op=OperatorName '(' sequence=ExpressionSequence ')'
+	;
+
+TermExpression
+	: TermLiteral
+	| Operator
+	;
+
+TermLiteral
+	: {VarRef} value=ID
+	| {IntegerLiteral} value=INT
+	| {BooleanLiteral} value=BOOLEAN
+	| {StringLiteral}  value=STRING
+	| {DoubleLiteral}  value=DOUBLE
+	;
+	
+OperatorName 
+	: 'truncate' 
+	| 'Normal' 
+	| 'LogNormal' 
+	| 'Beta' 
+	| 'Gamma' 
+	| 'Exponential' 
+	| 'Weibull' 
+	| 'Uniform' 
+	| 'Triangular' 
+	| 'PERT' 
+	| 'Binomial' 
+	| 'Poisson' 
+	| 'NegativeBinomial' 
+	| 'Geometric' 
+	| 'Distribution'
+	| 'NoisyOR' 
+	| 'min' 
+	| 'max' 
+	| 'log' 
+	| 'log2' 
+	| 'log10' 
+	| 'exp' 
+	| 'sin' 
+	| 'cos' 
+	| 'tan' 
+	| 'sinh' 
+	| 'cosh' 
+	| 'tanh' 
+	| 'sqrt' 
+	| 'abs' 
+	| 'floor' 
+	| 'ceil' 
+	| 'mod' 
+	| 'if' 
+	| 'and' 
+	| 'or' 
+	| 'not'
+	;
+	
+///////////////////////////////////////////////////	
+// pending validations, for Java editor callbacks	
+///////////////////////////////////////////////////
+
+// TODO create a validation rule that states attribute is only allowed for discrete nodes
+// TODO subtype attribute only for discrete (chance or decision) node
+// TODO state_values attribute only for nodes of type number or interval
+// TODO state_values attribute must appear after subtype and states attributes
+// TODO state_values if subtype number list length same as states list
+// TODO state_values if subtype interval list length one greater than states list
+// TODO potential graph children must be >0 if parents used
+// TODO chance, decision, and utility nodes can only have chance and decision nodes as parents
+// TODO discrete nodes can only have discrete nodes as parents
+// TODO a node must not be referenced in a potential specification before it has been defined by a node, decision, utility, or function specification
+// TODO mean value of normal distribution must be linear function of continuous graph parents, each term must be numeric constant, name of continuous parent, or constant followed by '*' followed by name of continuous parent
+// TODO formal input name must refer to a node listed in the inputs attribute of the class with name
+// TODO the node referred to by the actual input name must be defined somewhere in the class containing the class instance

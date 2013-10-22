@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sco"
+    nsURI="http://www.certware.net/sco" nsPrefix="sco">
+  <eClassifiers xsi:type="ecore:EEnum" name="ChangeOrderType">
+    <eLiterals name="Critical" literal="Critical"/>
+    <eLiterals name="Normal" value="1" literal="Normal"/>
+    <eLiterals name="Improvements" value="2" literal="Improvements"/>
+    <eLiterals name="NewFeatures" value="3" literal="NewFeatures"/>
+    <eLiterals name="Total" value="4" literal="Total"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeOrderCount" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ChangeOrderType"
+        defaultValueLiteral="Normal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brokenLines" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixedLines" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repairEffort" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TotalChangeOrders" eSuperTypes="#//ChangeOrderCount"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CriticalDefectChangeOrders" eSuperTypes="#//ChangeOrderCount"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDefectChangeOrders" eSuperTypes="#//ChangeOrderCount"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImprovementChangeOrders" eSuperTypes="#//ChangeOrderCount"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewFeatureChangeOrders" eSuperTypes="#//ChangeOrderCount"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArtifactIdentifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baselinedLineCount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentLineCount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="criticalDefectChangeOrders"
+        eType="#//CriticalDefectChangeOrders" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="normalDefectChangeOrders"
+        eType="#//NormalDefectChangeOrders" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="improvementChangeOrders"
+        eType="#//ImprovementChangeOrders" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newFeatureChangeOrders"
+        eType="#//NewFeatureChangeOrders" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="totalChangeOrders" lowerBound="1"
+        eType="#//TotalChangeOrders" volatile="true" derived="true" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArtifactCommit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifactIdentifiers" upperBound="-1"
+        eType="#//ArtifactIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commitIdentifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommitHistory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commitRecord" upperBound="-1"
+        eType="#//ArtifactCommit" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

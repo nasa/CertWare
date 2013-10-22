@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='2'>
+  <unit id='net.certware.feature.bayes.feature.group' version='1.2.4.v20131017-1358' singleton='false'>
+    <update id='net.certware.feature.bayes.feature.group' range='[0.0.0,1.2.4.v20131017-1358)' severity='0'/>
+    <properties size='8'>
+      <property name='org.eclipse.equinox.p2.name' value='CertWare Bayesian Reasoning Support'/>
+      <property name='org.eclipse.equinox.p2.description' value='CertWare evidence support for Bayesian reasoning using Hugin models and Samiam inference engine.'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://nasa.github.com/CertWare'/>
+      <property name='org.eclipse.equinox.p2.provider' value='Kestrel Technology LLC'/>
+      <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+      <property name='maven-groupId' value='net.certware.tycho.build'/>
+      <property name='maven-artifactId' value='net.certware.feature.bayes'/>
+      <property name='maven-version' value='1.2.4-SNAPSHOT'/>
+    </properties>
+    <provides size='1'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.bayes.feature.group' version='1.2.4.v20131017-1358'/>
+    </provides>
+    <requires size='38'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.feature.group' range='[1.2.3.v20131017-1358,1.2.3.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.xtext' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.xtext.util' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.ecore' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.common' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.antlr.runtime' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.apache.log4j' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.runtime' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.ecore.xmi' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.edit' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.resources' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.edit.ui' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.ide' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.xtext.ui' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.editors' range='3.5.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.xtext.ui.shared' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.xtext.builder' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.jface' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.workbench' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.common.ui' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.expressions' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.osgi' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.contenttype' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.jobs' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.equinox.preferences' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.help' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.swt' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.ui.forms' range='0.0.0'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.evidence.hugin' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.evidence.hugin.instance' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.evidence.hugin.instance.edit' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.evidence.hugin.instance.editor' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.evidence.hugin.ui' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.evidence.hugin.view' range='[1.2.4.v20131017-1358,1.2.4.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.example.net' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.libs.inference' range='[1.2.1.v20131017-1358,1.2.1.v20131017-1358]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.bayes.feature.jar' range='[1.2.4.v20131017-1358,1.2.4.v20131017-1358]'>
+        <filter>
+          (org.eclipse.update.install.features=true)
+        </filter>
+      </required>
+    </requires>
+    <touchpoint id='null' version='0.0.0'/>
+    <licenses size='1'>
+      <license uri='http://nasa.github.com/CertWare/license.html' url='http://nasa.github.com/CertWare/license.html'>
+        The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The inference engine is licensed for education and research non-commercial use only. See the accompanying NASA Open Source Agreement for details.
+      </license>
+    </licenses>
+    <copyright>
+      Copyright (c) 2011 United States Government as represented by&#xA;the National Aeronautics and Space Administration.  All rights&#xA;reserved.
+    </copyright>
+  </unit>
+  <unit id='net.certware.feature.bayes.feature.jar' version='1.2.4.v20131017-1358'>
+    <properties size='7'>
+      <property name='org.eclipse.equinox.p2.name' value='CertWare Bayesian Reasoning Support'/>
+      <property name='org.eclipse.equinox.p2.description' value='CertWare evidence support for Bayesian reasoning using Hugin models and Samiam inference engine.'/>
+      <property name='org.eclipse.equinox.p2.description.url' value='http://nasa.github.com/CertWare'/>
+      <property name='org.eclipse.equinox.p2.provider' value='Kestrel Technology LLC'/>
+      <property name='maven-groupId' value='net.certware.tycho.build'/>
+      <property name='maven-artifactId' value='net.certware.feature.bayes'/>
+      <property name='maven-version' value='1.2.4-SNAPSHOT'/>
+    </properties>
+    <provides size='3'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='net.certware.feature.bayes.feature.jar' version='1.2.4.v20131017-1358'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+      <provided namespace='org.eclipse.update.feature' name='net.certware.feature.bayes' version='1.2.4.v20131017-1358'/>
+    </provides>
+    <filter>
+      (org.eclipse.update.install.features=true)
+    </filter>
+    <artifacts size='1'>
+      <artifact classifier='org.eclipse.update.feature' id='net.certware.feature.bayes' version='1.2.4.v20131017-1358'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='zipped'>
+          true
+        </instruction>
+      </instructions>
+    </touchpointData>
+    <licenses size='1'>
+      <license uri='http://nasa.github.com/CertWare/license.html' url='http://nasa.github.com/CertWare/license.html'>
+        The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The inference engine is licensed for education and research non-commercial use only. See the accompanying NASA Open Source Agreement for details.
+      </license>
+    </licenses>
+    <copyright>
+      Copyright (c) 2011 United States Government as represented by&#xA;the National Aeronautics and Space Administration.  All rights&#xA;reserved.
+    </copyright>
+  </unit>
+</units>

@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Export-Package: net.certware.export,net.certware.export.jobs,net.certw
+ are.export.wizards
+Bundle-ActivationPolicy: lazy
+Bundle-Name: CertWare Product Exports
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: net.certware.libs.doc;visibility:=reexport,org.eclipse
+ .jface,org.eclipse.ui
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-Version: 1.2.1.v20131017-1358
+Bundle-ManifestVersion: 2
+Bundle-Activator: net.certware.export.Activator
+Bundle-SymbolicName: net.certware.export;singleton:=true
+Import-Package: net.certware.core,net.certware.core.ui.log,org.eclipse
+ .core.commands,org.eclipse.core.resources,org.eclipse.core.runtime,or
+ g.eclipse.core.runtime.jobs,org.eclipse.emf.common,org.eclipse.emf.co
+ mmon.notify,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.ecl
+ ipse.emf.ecore.resource,org.eclipse.emf.ecore.resource.impl,org.eclip
+ se.emf.ecore.util,org.eclipse.jface.viewers,org.eclipse.osgi.util,org
+ .eclipse.ui,org.eclipse.ui.dialogs,org.eclipse.ui.handlers,org.eclips
+ e.ui.plugin,org.osgi.framework
+Eclipse-RegisterBuddy: org.apache.log4j
+

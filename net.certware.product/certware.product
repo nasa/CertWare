@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="CertWare" uid="net.certware.product.id" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="2.0.0.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="CertWare" uid="net.certware.client" id="net.certware.product.CertWare" application="org.eclipse.ui.ide.workbench" version="2.0.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/net.certware.product/icons/obj256/certware-250.png"/>
@@ -115,7 +115,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>
       <plugin id="lpg.runtime.java"/>
-      <plugin id="net.certware.argument.diagram.figures"/>
       <plugin id="net.certware.argument.sfp"/>
       <plugin id="net.certware.argument.sfp.help"/>
       <plugin id="net.certware.argument.sfp.navigator"/>
@@ -154,7 +153,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.measurement.sco.edit"/>
       <plugin id="net.certware.measurement.sco.editor"/>
       <plugin id="net.certware.measurement.sco.navigator"/>
-      <plugin id="net.certware.measurement.sco.tests"/>
       <plugin id="net.certware.measurement.sco.view"/>
       <plugin id="net.certware.measurement.smm"/>
       <plugin id="net.certware.measurement.smm.edit"/>
@@ -163,7 +161,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.measurement.spm.edit"/>
       <plugin id="net.certware.measurement.spm.editor"/>
       <plugin id="net.certware.measurement.spm.navigator"/>
-      <plugin id="net.certware.measurement.spm.tests"/>
       <plugin id="net.certware.measurement.spm.view"/>
       <plugin id="net.certware.planning"/>
       <plugin id="net.certware.planning.cpn"/>
@@ -174,7 +171,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.planning.mspdi"/>
       <plugin id="net.certware.planning.mspdi.edit"/>
       <plugin id="net.certware.planning.mspdi.editor"/>
-      <plugin id="net.certware.product"/>
       <plugin id="net.certware.sacm"/>
       <plugin id="net.certware.sacm.dsl"/>
       <plugin id="net.certware.sacm.dsl.tests"/>
@@ -415,9 +411,12 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
    </plugins>
 
    <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="3" />
-      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="3" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
    </configurations>
 
 </product>

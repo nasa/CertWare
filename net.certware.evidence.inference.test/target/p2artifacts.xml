@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='2'>
+  <artifact classifier='osgi.bundle' id='net.certware.evidence.inference.test' version='1.2.0.v20131017-1358'>
+    <properties size='5'>
+      <property name='artifact.size' value='305633'/>
+      <property name='download.size' value='305633'/>
+      <property name='maven-groupId' value='net.certware.tycho.build'/>
+      <property name='maven-artifactId' value='net.certware.evidence.inference.test'/>
+      <property name='maven-version' value='1.2.0-SNAPSHOT'/>
+    </properties>
+  </artifact>
+  <artifact classifier='osgi.bundle' id='net.certware.evidence.inference.test.source' version='1.2.0.v20131017-1358'>
+    <properties size='6'>
+      <property name='artifact.size' value='19305'/>
+      <property name='download.size' value='19305'/>
+      <property name='maven-groupId' value='net.certware.tycho.build'/>
+      <property name='maven-artifactId' value='net.certware.evidence.inference.test'/>
+      <property name='maven-version' value='1.2.0-SNAPSHOT'/>
+      <property name='maven-classifier' value='sources'/>
+    </properties>
+  </artifact>
+</artifacts>
