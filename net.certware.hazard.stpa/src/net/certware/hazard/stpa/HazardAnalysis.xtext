@@ -1,0 +1,102 @@
+grammar net.certware.hazard.stpa.HazardAnalysis with org.eclipse.xtext.common.Terminals
+
+generate hazardAnalysis "http://www.certware.net/hazard/stpa/HazardAnalysis"
+
+Model:
+	accidents+=Accident*
+	indicents+=Incident*
+;
+	
+Accident:
+	'Accident' desc=STRING
+	'{'
+	ranking=Ranking
+	hazards+=Hazard+
+	notes+=Note*
+	'}'
+;
+
+Incident:
+	'Incident' desc=STRING
+	'{'
+	ranking=Ranking
+	hazards+=Hazard+
+	notes+=Note*
+	'}'
+;
+
+Ranking:
+	('Severity' ID) | ('Priority' ID)
+;	
+
+Hazard:
+	'Hazard' desc=STRING
+	'{'
+	level=HazardLevel
+	risk=RiskLevel 
+	constraints+=Constraint+
+	'}'
+;
+
+RiskLevel: 
+	'Risk' 
+	'{'
+	exposure=HazardExposure 
+	likelihood=HazardAccidentLikelihood
+	'}'
+;
+
+HazardLevel:
+	'Severity' severity=HazardSeverity
+	'Likelihood' likelihood=HazardLikelihood
+;
+
+HazardExposure:
+	'Exposure' exposure=STRING
+;
+
+HazardAccidentLikelihood:
+	'Likelihood' likelihood=STRING
+;
+
+HazardSeverity:
+	value=ID
+;
+
+HazardLikelihood:
+	value=ID
+;
+
+Constraint:
+	'Constraint' constraint=STRING '{'
+	requirements+=Requirement*
+	scenarios+=Scenario*
+	controls+=Control*
+	notes+=Note*
+	'}'
+;
+
+Requirement:
+	'Requirement' requirement=STRING '{'
+	designs+=Design*
+	notes+=Note*
+	'}'
+;
+
+Design:
+	'Allocation' allocation=STRING
+	('Analysis' analysis=STRING)?
+	('Rationale' rationale=STRING)?
+;
+
+Scenario:
+	'Scenario' scenario=STRING ';'
+;
+
+Control:
+	'Control' control=STRING ';'
+;
+
+Note:
+	'Note' note=STRING ';'
+;

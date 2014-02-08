@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: net.certware.hazard.stpa
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: net.certware.hazard.stpa; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.hazard.stpa,
+ net.certware.hazard.stpa.services,
+ net.certware.hazard.stpa.hazardAnalysis,
+ net.certware.hazard.stpa.hazardAnalysis.impl,
+ net.certware.hazard.stpa.hazardAnalysis.util,
+ net.certware.hazard.stpa.serializer,
+ net.certware.hazard.stpa.parser.antlr,
+ net.certware.hazard.stpa.parser.antlr.internal,
+ net.certware.hazard.stpa.validation,
+ net.certware.hazard.stpa.scoping,
+ net.certware.hazard.stpa.generator,
+ net.certware.hazard.stpa.formatting

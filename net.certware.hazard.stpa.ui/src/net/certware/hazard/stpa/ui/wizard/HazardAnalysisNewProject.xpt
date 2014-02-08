@@ -1,0 +1,28 @@
+«IMPORT net::certware::hazard::stpa::ui::wizard»
+
+«DEFINE main FOR HazardAnalysisProjectInfo»
+«EXPAND model FOR this»
+«EXPAND workflow FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR HazardAnalysisProjectInfo»
+«FILE "src/model/Model.hazardanalysis"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE workflow FOR HazardAnalysisProjectInfo»
+«FILE "src/Generator.mwe2"-»
+module Generator
+
+var targetDir = "src-gen"
+var modelPath = "src/model"
+
+Workflow {
+	component = @workflow.HazardAnalysisGenerator auto-inject {}
+}
+«ENDFILE»
+«ENDDEFINE»

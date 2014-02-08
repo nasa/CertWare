@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.hazard.stpa/src-gen" editDirectory="/net.certware.hazard.stpa.edit/src"
+    editorDirectory="/net.certware.hazard.stpa.editor/src" modelPluginID="net.certware.hazard.stpa"
+    forceOverwrite="true" modelName="HazardAnalysis" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.hazard.stpa.edit"
+    editorPluginID="net.certware.hazard.stpa.editor" runtimeVersion="2.9">
+  <genPackages prefix="HazardAnalysis" basePackage="net.certware.hazard.stpa" disposableProviderFactory="true"
+      fileExtensions="stpa" ecorePackage="HazardAnalysis.ecore#/">
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Model/accidents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Model/indicents"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Accident">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Accident/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Accident/ranking"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Accident/hazards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Accident/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Incident">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Incident/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Incident/ranking"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Incident/hazards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Incident/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Hazard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Hazard/desc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Hazard/level"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Hazard/risk"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Hazard/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//RiskLevel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//RiskLevel/exposure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//RiskLevel/likelihood"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//HazardLevel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//HazardLevel/severity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//HazardLevel/likelihood"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//HazardExposure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//HazardExposure/exposure"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//HazardAccidentLikelihood">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//HazardAccidentLikelihood/likelihood"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//HazardSeverity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//HazardSeverity/value"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//HazardLikelihood">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//HazardLikelihood/value"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Constraint/constraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Constraint/requirements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Constraint/scenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Constraint/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Constraint/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Requirement/requirement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Requirement/designs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference HazardAnalysis.ecore#//Requirement/notes"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Design">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Design/allocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Design/analysis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Design/rationale"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Scenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Scenario/scenario"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Control">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Control/control"/>
+    </genClasses>
+    <genClasses ecoreClass="HazardAnalysis.ecore#//Note">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute HazardAnalysis.ecore#//Note/note"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
