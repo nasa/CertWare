@@ -1,0 +1,154 @@
+/*
+ * Draft intent specification model.
+ * This grammar represents the structure and some semantics but not executable requirements.
+ * Based loosely on SpecTRM model from various publications.
+ */
+grammar net.certware.intent.IntentSpecification with org.eclipse.xtext.common.Terminals
+
+generate intentSpecification "http://www.certware.net/intent/IntentSpecification"
+
+/*
+ * An intent specification consists of one or more refinements.
+ */
+Specification:
+	'specification'
+	id=ID
+	refinements+=Refinement+
+;
+
+/*
+ * A refinement has no type and consists of one or more intents.
+ */
+Refinement:
+	'refinement'
+	id=ID
+	desc=STRING
+	intents+=Intent+	
+;	
+
+/*
+ * An intent has a type and consists of one or more decompositions. 
+ */
+Intent:
+	type=IntentType
+	id=ID
+	desc=STRING
+	decompositions+=Decomposition+	
+;
+
+/*
+ * Intent types refer to the different levels of the canonical model.
+ * The grammar does not enforce their universal containment in a specification.
+ * A proper intention specification should contain an intent of each type in each refinement.
+ */
+IntentType:
+	'basic' | 'purpose' | 'principles' | 'models' | 'design' | 'implementation' | 'operation'
+;
+
+/*
+ * A decomposition has a type and consists of one or more models, documents, or items.
+ */
+Decomposition:
+	type=DecompositionType
+	id=ID
+	desc=STRING
+	('{' documents+=Document* '}')?
+	('[' models+=ModelItem* ']')?
+	('(' items+=ListItem* ')')?
+;
+
+DecompositionType:
+	'environment' | 'operator' | 'system' | 'verification'
+;
+
+Document:
+	'{' entries += DocItem+ '}'
+;
+
+DocItemType:
+	'condition' | 'figure' | 'break' | 'model' | 'paragraph' | 'section' | 'table'
+;
+
+DocItem :
+	type=DocItemType
+	id=ID
+	ref=STRING
+	';'
+;
+
+ModelType:
+	'output' | 'mode' | 'state' | 'macro' | 'function' | 'input'	
+;
+
+ModelItem:
+	type=ModelType
+	id=ID
+	desc=STRING
+	';'
+;
+
+ListItemType:
+	'requirement' | 'goal' | 'hazard' | 'constraint'	
+;
+
+/*
+ * A list item has a type, description and lists of references.
+ */
+ListItem:
+	type=ListItemType
+	id=ID
+	desc=STRING
+	('{' docReferences+=[DocItem]+ '}' )?
+	('(' itemReferences+=[ListItem]+ ')' )?
+	('[' modelReferences+=[ModelItem]+ ']' )?
+	';'
+;
+
+
+
+/* 
+Level0:
+	{Level0}
+	'{'
+		('Program Plan' pmp=Document)?
+		('Safety Plan' safetyPlan=Document)?
+		('Accident Definition' accidentDefinition=Document)?
+		('Safety Policy' safetyPolicy=Document)?
+	'}'
+;
+
+Level1:
+	{Level1}
+	'{'
+		('Introduction' introduction=Document)?
+		('Historical' historical=Document)?
+		('Environment' environment=Document)?
+		('Goals' '(' goals+=GoalItem* ')' )?
+		('High-Level Requirements' '(' highLevelReqs+=RequirementItem* ')' )?
+		('System Limitations' limitations=Document)?
+		('Operator Requirements' '(' opReq+=RequirementItem* ')' )?
+		('Hazard Analysis' hazardAnalysis=Document)?
+		('Hazard List' '(' hazardList+=HazardItem* ')')?
+		('Design Constraints' '(' constraints+=ConstraintItem* ')' )?
+		('Verification and Validation' verification=Document)?
+	'}'
+;
+
+
+Level2:
+	desc=STRING
+	'{'
+	'}'	
+;
+
+Level3:
+	desc=STRING
+	'{'
+		('System Blackbox Behavior' '(' behaviors+=ModelItem* ')' )?
+		('User Model' '(' userModels+=ModelItem* ')' )?
+		('Verification and Validation' verification=Document )?
+	'}'
+;
+
+
+*/

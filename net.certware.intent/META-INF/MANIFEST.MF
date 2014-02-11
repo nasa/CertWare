@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Intent Specification Model
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: net.certware.intent; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.intent,
+ net.certware.intent.services,
+ net.certware.intent.intentSpecification,
+ net.certware.intent.intentSpecification.impl,
+ net.certware.intent.intentSpecification.util,
+ net.certware.intent.serializer,
+ net.certware.intent.parser.antlr,
+ net.certware.intent.parser.antlr.internal,
+ net.certware.intent.validation,
+ net.certware.intent.scoping,
+ net.certware.intent.generator,
+ net.certware.intent.formatting

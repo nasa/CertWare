@@ -1,0 +1,28 @@
+«IMPORT net::certware::intent::ui::wizard»
+
+«DEFINE main FOR IntentSpecificationProjectInfo»
+«EXPAND model FOR this»
+«EXPAND workflow FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR IntentSpecificationProjectInfo»
+«FILE "src/model/Model.intentspecification"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE workflow FOR IntentSpecificationProjectInfo»
+«FILE "src/Generator.mwe2"-»
+module Generator
+
+var targetDir = "src-gen"
+var modelPath = "src/model"
+
+Workflow {
+	component = @workflow.IntentSpecificationGenerator auto-inject {}
+}
+«ENDFILE»
+«ENDDEFINE»
