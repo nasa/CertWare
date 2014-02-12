@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Export-Package: net.certware.hazard.hazard.provider,net.certware.hazar
+ d.provider
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,net.certware.hazard;visibilit
+ y:=reexport,org.eclipse.emf.edit;visibility:=reexport
+Bundle-Vendor: %providerName
+Bundle-Version: 1.0.0.v20131017-1358
+Bundle-ManifestVersion: 2
+Bundle-Activator: net.certware.hazard.provider.HazardEditPlugin$Implem
+ entation
+Bundle-SymbolicName: net.certware.hazard.edit;singleton:=true
+

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore;visibil
+ ity:=reexport,org.eclipse.emf.ecore.xmi;visibility:=reexport
+Export-Package: net.certware.hazard.hazard,net.certware.hazard.hazard.
+ impl,net.certware.hazard.hazard.util
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.0.v20131017-1358
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: net.certware.hazard;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
