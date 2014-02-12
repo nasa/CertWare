@@ -22,28 +22,28 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Specification");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSpecificationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cRefinementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRefinementsRefinementParserRuleCall_2_0 = (RuleCall)cRefinementsAssignment_2.eContents().get(0);
 		
 		/// *
 		// * An intent specification consists of one or more refinements.
 		// * / Specification:
-		//	"specification" id=ID refinements+=Refinement+;
+		//	"specification" name=ID refinements+=Refinement+;
 		public ParserRule getRule() { return rule; }
 
-		//"specification" id=ID refinements+=Refinement+
+		//"specification" name=ID refinements+=Refinement+
 		public Group getGroup() { return cGroup; }
 
 		//"specification"
 		public Keyword getSpecificationKeyword_0() { return cSpecificationKeyword_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//refinements+=Refinement+
 		public Assignment getRefinementsAssignment_2() { return cRefinementsAssignment_2; }
@@ -56,8 +56,8 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Refinement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRefinementKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cDescAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescAssignment_2.eContents().get(0);
 		private final Assignment cIntentsAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -66,20 +66,20 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		/// *
 		// * A refinement has no type and consists of one or more intents.
 		// * / Refinement:
-		//	"refinement" id=ID desc=STRING intents+=Intent+;
+		//	"refinement" name=ID desc=STRING intents+=Intent+;
 		public ParserRule getRule() { return rule; }
 
-		//"refinement" id=ID desc=STRING intents+=Intent+
+		//"refinement" name=ID desc=STRING intents+=Intent+
 		public Group getGroup() { return cGroup; }
 
 		//"refinement"
 		public Keyword getRefinementKeyword_0() { return cRefinementKeyword_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//desc=STRING
 		public Assignment getDescAssignment_2() { return cDescAssignment_2; }
@@ -99,8 +99,8 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeIntentTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cDescAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescAssignment_2.eContents().get(0);
 		private final Assignment cDecompositionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -109,10 +109,10 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		/// *
 		// * An intent has a type and consists of one or more decompositions. 
 		// * / Intent:
-		//	type=IntentType id=ID desc=STRING decompositions+=Decomposition+;
+		//	type=IntentType name=ID desc=STRING decompositions+=Decomposition+;
 		public ParserRule getRule() { return rule; }
 
-		//type=IntentType id=ID desc=STRING decompositions+=Decomposition+
+		//type=IntentType name=ID desc=STRING decompositions+=Decomposition+
 		public Group getGroup() { return cGroup; }
 
 		//type=IntentType
@@ -121,11 +121,11 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//IntentType
 		public RuleCall getTypeIntentTypeParserRuleCall_0_0() { return cTypeIntentTypeParserRuleCall_0_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//desc=STRING
 		public Assignment getDescAssignment_2() { return cDescAssignment_2; }
@@ -142,46 +142,50 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 
 	public class IntentTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IntentType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cBasicKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cPurposeKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cPrinciplesKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cModelsKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cDesignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cImplementationKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cOperationKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Assignment cTypeNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypeNameAlternatives_0 = (Alternatives)cTypeNameAssignment.eContents().get(0);
+		private final Keyword cTypeNameBasicKeyword_0_0 = (Keyword)cTypeNameAlternatives_0.eContents().get(0);
+		private final Keyword cTypeNamePurposeKeyword_0_1 = (Keyword)cTypeNameAlternatives_0.eContents().get(1);
+		private final Keyword cTypeNamePrinciplesKeyword_0_2 = (Keyword)cTypeNameAlternatives_0.eContents().get(2);
+		private final Keyword cTypeNameModelsKeyword_0_3 = (Keyword)cTypeNameAlternatives_0.eContents().get(3);
+		private final Keyword cTypeNameDesignKeyword_0_4 = (Keyword)cTypeNameAlternatives_0.eContents().get(4);
+		private final Keyword cTypeNameImplementationKeyword_0_5 = (Keyword)cTypeNameAlternatives_0.eContents().get(5);
+		private final Keyword cTypeNameOperationKeyword_0_6 = (Keyword)cTypeNameAlternatives_0.eContents().get(6);
 		
 		/// *
 		// * Intent types refer to the different levels of the canonical model.
 		// * The grammar does not enforce their universal containment in a specification.
 		// * A proper intention specification should contain an intent of each type in each refinement.
 		// * / IntentType:
-		//	"basic" | "purpose" | "principles" | "models" | "design" | "implementation" | "operation";
+		//	typeName=("basic" | "purpose" | "principles" | "models" | "design" | "implementation" | "operation");
 		public ParserRule getRule() { return rule; }
 
+		//typeName=("basic" | "purpose" | "principles" | "models" | "design" | "implementation" | "operation")
+		public Assignment getTypeNameAssignment() { return cTypeNameAssignment; }
+
 		//"basic" | "purpose" | "principles" | "models" | "design" | "implementation" | "operation"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getTypeNameAlternatives_0() { return cTypeNameAlternatives_0; }
 
 		//"basic"
-		public Keyword getBasicKeyword_0() { return cBasicKeyword_0; }
+		public Keyword getTypeNameBasicKeyword_0_0() { return cTypeNameBasicKeyword_0_0; }
 
 		//"purpose"
-		public Keyword getPurposeKeyword_1() { return cPurposeKeyword_1; }
+		public Keyword getTypeNamePurposeKeyword_0_1() { return cTypeNamePurposeKeyword_0_1; }
 
 		//"principles"
-		public Keyword getPrinciplesKeyword_2() { return cPrinciplesKeyword_2; }
+		public Keyword getTypeNamePrinciplesKeyword_0_2() { return cTypeNamePrinciplesKeyword_0_2; }
 
 		//"models"
-		public Keyword getModelsKeyword_3() { return cModelsKeyword_3; }
+		public Keyword getTypeNameModelsKeyword_0_3() { return cTypeNameModelsKeyword_0_3; }
 
 		//"design"
-		public Keyword getDesignKeyword_4() { return cDesignKeyword_4; }
+		public Keyword getTypeNameDesignKeyword_0_4() { return cTypeNameDesignKeyword_0_4; }
 
 		//"implementation"
-		public Keyword getImplementationKeyword_5() { return cImplementationKeyword_5; }
+		public Keyword getTypeNameImplementationKeyword_0_5() { return cTypeNameImplementationKeyword_0_5; }
 
 		//"operation"
-		public Keyword getOperationKeyword_6() { return cOperationKeyword_6; }
+		public Keyword getTypeNameOperationKeyword_0_6() { return cTypeNameOperationKeyword_0_6; }
 	}
 
 	public class DecompositionElements extends AbstractParserRuleElementFinder {
@@ -189,8 +193,8 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeDecompositionTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cDescAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -212,11 +216,11 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		/// *
 		// * A decomposition has a type and consists of one or more models, documents, or items.
 		// * / Decomposition:
-		//	type=DecompositionType id=ID desc=STRING ("{" documents+=Document* "}")? ("[" models+=ModelItem* "]")? ("("
+		//	type=DecompositionType name=ID desc=STRING ("{" documents+=Document* "}")? ("[" models+=ModelItem* "]")? ("("
 		//	items+=ListItem* ")")?;
 		public ParserRule getRule() { return rule; }
 
-		//type=DecompositionType id=ID desc=STRING ("{" documents+=Document* "}")? ("[" models+=ModelItem* "]")? ("("
+		//type=DecompositionType name=ID desc=STRING ("{" documents+=Document* "}")? ("[" models+=ModelItem* "]")? ("("
 		//items+=ListItem* ")")?
 		public Group getGroup() { return cGroup; }
 
@@ -226,11 +230,11 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//DecompositionType
 		public RuleCall getTypeDecompositionTypeParserRuleCall_0_0() { return cTypeDecompositionTypeParserRuleCall_0_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//desc=STRING
 		public Assignment getDescAssignment_2() { return cDescAssignment_2; }
@@ -286,30 +290,34 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 
 	public class DecompositionTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DecompositionType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cEnvironmentKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cOperatorKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cSystemKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cVerificationKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Assignment cTypeNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypeNameAlternatives_0 = (Alternatives)cTypeNameAssignment.eContents().get(0);
+		private final Keyword cTypeNameEnvironmentKeyword_0_0 = (Keyword)cTypeNameAlternatives_0.eContents().get(0);
+		private final Keyword cTypeNameOperatorKeyword_0_1 = (Keyword)cTypeNameAlternatives_0.eContents().get(1);
+		private final Keyword cTypeNameSystemKeyword_0_2 = (Keyword)cTypeNameAlternatives_0.eContents().get(2);
+		private final Keyword cTypeNameVerificationKeyword_0_3 = (Keyword)cTypeNameAlternatives_0.eContents().get(3);
 		
 		//DecompositionType:
-		//	"environment" | "operator" | "system" | "verification";
+		//	typeName=("environment" | "operator" | "system" | "verification");
 		public ParserRule getRule() { return rule; }
 
+		//typeName=("environment" | "operator" | "system" | "verification")
+		public Assignment getTypeNameAssignment() { return cTypeNameAssignment; }
+
 		//"environment" | "operator" | "system" | "verification"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getTypeNameAlternatives_0() { return cTypeNameAlternatives_0; }
 
 		//"environment"
-		public Keyword getEnvironmentKeyword_0() { return cEnvironmentKeyword_0; }
+		public Keyword getTypeNameEnvironmentKeyword_0_0() { return cTypeNameEnvironmentKeyword_0_0; }
 
 		//"operator"
-		public Keyword getOperatorKeyword_1() { return cOperatorKeyword_1; }
+		public Keyword getTypeNameOperatorKeyword_0_1() { return cTypeNameOperatorKeyword_0_1; }
 
 		//"system"
-		public Keyword getSystemKeyword_2() { return cSystemKeyword_2; }
+		public Keyword getTypeNameSystemKeyword_0_2() { return cTypeNameSystemKeyword_0_2; }
 
 		//"verification"
-		public Keyword getVerificationKeyword_3() { return cVerificationKeyword_3; }
+		public Keyword getTypeNameVerificationKeyword_0_3() { return cTypeNameVerificationKeyword_0_3; }
 	}
 
 	public class DocumentElements extends AbstractParserRuleElementFinder {
@@ -342,42 +350,46 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 
 	public class DocItemTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DocItemType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cConditionKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFigureKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cBreakKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cModelKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cParagraphKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cSectionKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cTableKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Assignment cTypeNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypeNameAlternatives_0 = (Alternatives)cTypeNameAssignment.eContents().get(0);
+		private final Keyword cTypeNameConditionKeyword_0_0 = (Keyword)cTypeNameAlternatives_0.eContents().get(0);
+		private final Keyword cTypeNameFigureKeyword_0_1 = (Keyword)cTypeNameAlternatives_0.eContents().get(1);
+		private final Keyword cTypeNameBreakKeyword_0_2 = (Keyword)cTypeNameAlternatives_0.eContents().get(2);
+		private final Keyword cTypeNameModelKeyword_0_3 = (Keyword)cTypeNameAlternatives_0.eContents().get(3);
+		private final Keyword cTypeNameParagraphKeyword_0_4 = (Keyword)cTypeNameAlternatives_0.eContents().get(4);
+		private final Keyword cTypeNameSectionKeyword_0_5 = (Keyword)cTypeNameAlternatives_0.eContents().get(5);
+		private final Keyword cTypeNameTableKeyword_0_6 = (Keyword)cTypeNameAlternatives_0.eContents().get(6);
 		
 		//DocItemType:
-		//	"condition" | "figure" | "break" | "model" | "paragraph" | "section" | "table";
+		//	typeName=("condition" | "figure" | "break" | "model" | "paragraph" | "section" | "table");
 		public ParserRule getRule() { return rule; }
 
+		//typeName=("condition" | "figure" | "break" | "model" | "paragraph" | "section" | "table")
+		public Assignment getTypeNameAssignment() { return cTypeNameAssignment; }
+
 		//"condition" | "figure" | "break" | "model" | "paragraph" | "section" | "table"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getTypeNameAlternatives_0() { return cTypeNameAlternatives_0; }
 
 		//"condition"
-		public Keyword getConditionKeyword_0() { return cConditionKeyword_0; }
+		public Keyword getTypeNameConditionKeyword_0_0() { return cTypeNameConditionKeyword_0_0; }
 
 		//"figure"
-		public Keyword getFigureKeyword_1() { return cFigureKeyword_1; }
+		public Keyword getTypeNameFigureKeyword_0_1() { return cTypeNameFigureKeyword_0_1; }
 
 		//"break"
-		public Keyword getBreakKeyword_2() { return cBreakKeyword_2; }
+		public Keyword getTypeNameBreakKeyword_0_2() { return cTypeNameBreakKeyword_0_2; }
 
 		//"model"
-		public Keyword getModelKeyword_3() { return cModelKeyword_3; }
+		public Keyword getTypeNameModelKeyword_0_3() { return cTypeNameModelKeyword_0_3; }
 
 		//"paragraph"
-		public Keyword getParagraphKeyword_4() { return cParagraphKeyword_4; }
+		public Keyword getTypeNameParagraphKeyword_0_4() { return cTypeNameParagraphKeyword_0_4; }
 
 		//"section"
-		public Keyword getSectionKeyword_5() { return cSectionKeyword_5; }
+		public Keyword getTypeNameSectionKeyword_0_5() { return cTypeNameSectionKeyword_0_5; }
 
 		//"table"
-		public Keyword getTableKeyword_6() { return cTableKeyword_6; }
+		public Keyword getTypeNameTableKeyword_0_6() { return cTypeNameTableKeyword_0_6; }
 	}
 
 	public class DocItemElements extends AbstractParserRuleElementFinder {
@@ -385,17 +397,17 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeDocItemTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cRefAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRefSTRINGTerminalRuleCall_2_0 = (RuleCall)cRefAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//DocItem:
-		//	type=DocItemType id=ID ref=STRING ";";
+		//	type=DocItemType name=ID ref=STRING ";";
 		public ParserRule getRule() { return rule; }
 
-		//type=DocItemType id=ID ref=STRING ";"
+		//type=DocItemType name=ID ref=STRING ";"
 		public Group getGroup() { return cGroup; }
 
 		//type=DocItemType
@@ -404,11 +416,11 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//DocItemType
 		public RuleCall getTypeDocItemTypeParserRuleCall_0_0() { return cTypeDocItemTypeParserRuleCall_0_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//ref=STRING
 		public Assignment getRefAssignment_2() { return cRefAssignment_2; }
@@ -422,38 +434,42 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 
 	public class ModelTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModelType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cOutputKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cModeKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cStateKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cMacroKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cFunctionKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cInputKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Assignment cTypeNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypeNameAlternatives_0 = (Alternatives)cTypeNameAssignment.eContents().get(0);
+		private final Keyword cTypeNameOutputKeyword_0_0 = (Keyword)cTypeNameAlternatives_0.eContents().get(0);
+		private final Keyword cTypeNameModeKeyword_0_1 = (Keyword)cTypeNameAlternatives_0.eContents().get(1);
+		private final Keyword cTypeNameStateKeyword_0_2 = (Keyword)cTypeNameAlternatives_0.eContents().get(2);
+		private final Keyword cTypeNameMacroKeyword_0_3 = (Keyword)cTypeNameAlternatives_0.eContents().get(3);
+		private final Keyword cTypeNameFunctionKeyword_0_4 = (Keyword)cTypeNameAlternatives_0.eContents().get(4);
+		private final Keyword cTypeNameInputKeyword_0_5 = (Keyword)cTypeNameAlternatives_0.eContents().get(5);
 		
 		//ModelType:
-		//	"output" | "mode" | "state" | "macro" | "function" | "input";
+		//	typeName=("output" | "mode" | "state" | "macro" | "function" | "input");
 		public ParserRule getRule() { return rule; }
 
+		//typeName=("output" | "mode" | "state" | "macro" | "function" | "input")
+		public Assignment getTypeNameAssignment() { return cTypeNameAssignment; }
+
 		//"output" | "mode" | "state" | "macro" | "function" | "input"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getTypeNameAlternatives_0() { return cTypeNameAlternatives_0; }
 
 		//"output"
-		public Keyword getOutputKeyword_0() { return cOutputKeyword_0; }
+		public Keyword getTypeNameOutputKeyword_0_0() { return cTypeNameOutputKeyword_0_0; }
 
 		//"mode"
-		public Keyword getModeKeyword_1() { return cModeKeyword_1; }
+		public Keyword getTypeNameModeKeyword_0_1() { return cTypeNameModeKeyword_0_1; }
 
 		//"state"
-		public Keyword getStateKeyword_2() { return cStateKeyword_2; }
+		public Keyword getTypeNameStateKeyword_0_2() { return cTypeNameStateKeyword_0_2; }
 
 		//"macro"
-		public Keyword getMacroKeyword_3() { return cMacroKeyword_3; }
+		public Keyword getTypeNameMacroKeyword_0_3() { return cTypeNameMacroKeyword_0_3; }
 
 		//"function"
-		public Keyword getFunctionKeyword_4() { return cFunctionKeyword_4; }
+		public Keyword getTypeNameFunctionKeyword_0_4() { return cTypeNameFunctionKeyword_0_4; }
 
 		//"input"
-		public Keyword getInputKeyword_5() { return cInputKeyword_5; }
+		public Keyword getTypeNameInputKeyword_0_5() { return cTypeNameInputKeyword_0_5; }
 	}
 
 	public class ModelItemElements extends AbstractParserRuleElementFinder {
@@ -461,17 +477,17 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeModelTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cDescAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ModelItem:
-		//	type=ModelType id=ID desc=STRING ";";
+		//	type=ModelType name=ID desc=STRING ";";
 		public ParserRule getRule() { return rule; }
 
-		//type=ModelType id=ID desc=STRING ";"
+		//type=ModelType name=ID desc=STRING ";"
 		public Group getGroup() { return cGroup; }
 
 		//type=ModelType
@@ -480,11 +496,11 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//ModelType
 		public RuleCall getTypeModelTypeParserRuleCall_0_0() { return cTypeModelTypeParserRuleCall_0_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//desc=STRING
 		public Assignment getDescAssignment_2() { return cDescAssignment_2; }
@@ -498,30 +514,34 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 
 	public class ListItemTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ListItemType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cRequirementKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cGoalKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cHazardKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cConstraintKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Assignment cTypeNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cTypeNameAlternatives_0 = (Alternatives)cTypeNameAssignment.eContents().get(0);
+		private final Keyword cTypeNameRequirementKeyword_0_0 = (Keyword)cTypeNameAlternatives_0.eContents().get(0);
+		private final Keyword cTypeNameGoalKeyword_0_1 = (Keyword)cTypeNameAlternatives_0.eContents().get(1);
+		private final Keyword cTypeNameHazardKeyword_0_2 = (Keyword)cTypeNameAlternatives_0.eContents().get(2);
+		private final Keyword cTypeNameConstraintKeyword_0_3 = (Keyword)cTypeNameAlternatives_0.eContents().get(3);
 		
 		//ListItemType:
-		//	"requirement" | "goal" | "hazard" | "constraint";
+		//	typeName=("requirement" | "goal" | "hazard" | "constraint");
 		public ParserRule getRule() { return rule; }
 
+		//typeName=("requirement" | "goal" | "hazard" | "constraint")
+		public Assignment getTypeNameAssignment() { return cTypeNameAssignment; }
+
 		//"requirement" | "goal" | "hazard" | "constraint"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getTypeNameAlternatives_0() { return cTypeNameAlternatives_0; }
 
 		//"requirement"
-		public Keyword getRequirementKeyword_0() { return cRequirementKeyword_0; }
+		public Keyword getTypeNameRequirementKeyword_0_0() { return cTypeNameRequirementKeyword_0_0; }
 
 		//"goal"
-		public Keyword getGoalKeyword_1() { return cGoalKeyword_1; }
+		public Keyword getTypeNameGoalKeyword_0_1() { return cTypeNameGoalKeyword_0_1; }
 
 		//"hazard"
-		public Keyword getHazardKeyword_2() { return cHazardKeyword_2; }
+		public Keyword getTypeNameHazardKeyword_0_2() { return cTypeNameHazardKeyword_0_2; }
 
 		//"constraint"
-		public Keyword getConstraintKeyword_3() { return cConstraintKeyword_3; }
+		public Keyword getTypeNameConstraintKeyword_0_3() { return cTypeNameConstraintKeyword_0_3; }
 	}
 
 	public class ListItemElements extends AbstractParserRuleElementFinder {
@@ -529,8 +549,8 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeListItemTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cDescAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -555,58 +575,13 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		
 		/// *
 		// * A list item has a type, description and lists of references.
-		// * / / * 
-		//Level0:
-		//	{Level0}
-		//	'{'
-		//		('Program Plan' pmp=Document)?
-		//		('Safety Plan' safetyPlan=Document)?
-		//		('Accident Definition' accidentDefinition=Document)?
-		//		('Safety Policy' safetyPolicy=Document)?
-		//	'}'
-		//;
-		//
-		//Level1:
-		//	{Level1}
-		//	'{'
-		//		('Introduction' introduction=Document)?
-		//		('Historical' historical=Document)?
-		//		('Environment' environment=Document)?
-		//		('Goals' '(' goals+=GoalItem* ')' )?
-		//		('High-Level Requirements' '(' highLevelReqs+=RequirementItem* ')' )?
-		//		('System Limitations' limitations=Document)?
-		//		('Operator Requirements' '(' opReq+=RequirementItem* ')' )?
-		//		('Hazard Analysis' hazardAnalysis=Document)?
-		//		('Hazard List' '(' hazardList+=HazardItem* ')')?
-		//		('Design Constraints' '(' constraints+=ConstraintItem* ')' )?
-		//		('Verification and Validation' verification=Document)?
-		//	'}'
-		//;
-		//
-		//
-		//Level2:
-		//	desc=STRING
-		//	'{'
-		//	'}'	
-		//;
-		//
-		//Level3:
-		//	desc=STRING
-		//	'{'
-		//		('System Blackbox Behavior' '(' behaviors+=ModelItem* ')' )?
-		//		('User Model' '(' userModels+=ModelItem* ')' )?
-		//		('Verification and Validation' verification=Document )?
-		//	'}'
-		//;
-		//
-		//
 		// * / ListItem:
-		//	type=ListItemType id=ID desc=STRING ("{" docReferences+=[DocItem]* "}")? ("(" itemReferences+=[ListItem]* ")")? ("["
-		//	modelReferences+=[ModelItem]* "]")? ";";
+		//	type=ListItemType name=ID desc=STRING ("{" docReferences+=[DocItem]+ "}")? ("(" itemReferences+=[ListItem]+ ")")? ("["
+		//	modelReferences+=[ModelItem]+ "]")? ";";
 		public ParserRule getRule() { return rule; }
 
-		//type=ListItemType id=ID desc=STRING ("{" docReferences+=[DocItem]* "}")? ("(" itemReferences+=[ListItem]* ")")? ("["
-		//modelReferences+=[ModelItem]* "]")? ";"
+		//type=ListItemType name=ID desc=STRING ("{" docReferences+=[DocItem]+ "}")? ("(" itemReferences+=[ListItem]+ ")")? ("["
+		//modelReferences+=[ModelItem]+ "]")? ";"
 		public Group getGroup() { return cGroup; }
 
 		//type=ListItemType
@@ -615,11 +590,11 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//ListItemType
 		public RuleCall getTypeListItemTypeParserRuleCall_0_0() { return cTypeListItemTypeParserRuleCall_0_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//desc=STRING
 		public Assignment getDescAssignment_2() { return cDescAssignment_2; }
@@ -627,13 +602,13 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//STRING
 		public RuleCall getDescSTRINGTerminalRuleCall_2_0() { return cDescSTRINGTerminalRuleCall_2_0; }
 
-		//("{" docReferences+=[DocItem]* "}")?
+		//("{" docReferences+=[DocItem]+ "}")?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
 
-		//docReferences+=[DocItem]*
+		//docReferences+=[DocItem]+
 		public Assignment getDocReferencesAssignment_3_1() { return cDocReferencesAssignment_3_1; }
 
 		//[DocItem]
@@ -645,13 +620,13 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
 
-		//("(" itemReferences+=[ListItem]* ")")?
+		//("(" itemReferences+=[ListItem]+ ")")?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_4_0() { return cLeftParenthesisKeyword_4_0; }
 
-		//itemReferences+=[ListItem]*
+		//itemReferences+=[ListItem]+
 		public Assignment getItemReferencesAssignment_4_1() { return cItemReferencesAssignment_4_1; }
 
 		//[ListItem]
@@ -663,13 +638,13 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 		//")"
 		public Keyword getRightParenthesisKeyword_4_2() { return cRightParenthesisKeyword_4_2; }
 
-		//("[" modelReferences+=[ModelItem]* "]")?
+		//("[" modelReferences+=[ModelItem]+ "]")?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"["
 		public Keyword getLeftSquareBracketKeyword_5_0() { return cLeftSquareBracketKeyword_5_0; }
 
-		//modelReferences+=[ModelItem]*
+		//modelReferences+=[ModelItem]+
 		public Assignment getModelReferencesAssignment_5_1() { return cModelReferencesAssignment_5_1; }
 
 		//[ModelItem]
@@ -741,7 +716,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	/// *
 	// * An intent specification consists of one or more refinements.
 	// * / Specification:
-	//	"specification" id=ID refinements+=Refinement+;
+	//	"specification" name=ID refinements+=Refinement+;
 	public SpecificationElements getSpecificationAccess() {
 		return (pSpecification != null) ? pSpecification : (pSpecification = new SpecificationElements());
 	}
@@ -753,7 +728,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	/// *
 	// * A refinement has no type and consists of one or more intents.
 	// * / Refinement:
-	//	"refinement" id=ID desc=STRING intents+=Intent+;
+	//	"refinement" name=ID desc=STRING intents+=Intent+;
 	public RefinementElements getRefinementAccess() {
 		return (pRefinement != null) ? pRefinement : (pRefinement = new RefinementElements());
 	}
@@ -765,7 +740,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	/// *
 	// * An intent has a type and consists of one or more decompositions. 
 	// * / Intent:
-	//	type=IntentType id=ID desc=STRING decompositions+=Decomposition+;
+	//	type=IntentType name=ID desc=STRING decompositions+=Decomposition+;
 	public IntentElements getIntentAccess() {
 		return (pIntent != null) ? pIntent : (pIntent = new IntentElements());
 	}
@@ -779,7 +754,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	// * The grammar does not enforce their universal containment in a specification.
 	// * A proper intention specification should contain an intent of each type in each refinement.
 	// * / IntentType:
-	//	"basic" | "purpose" | "principles" | "models" | "design" | "implementation" | "operation";
+	//	typeName=("basic" | "purpose" | "principles" | "models" | "design" | "implementation" | "operation");
 	public IntentTypeElements getIntentTypeAccess() {
 		return (pIntentType != null) ? pIntentType : (pIntentType = new IntentTypeElements());
 	}
@@ -791,7 +766,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	/// *
 	// * A decomposition has a type and consists of one or more models, documents, or items.
 	// * / Decomposition:
-	//	type=DecompositionType id=ID desc=STRING ("{" documents+=Document* "}")? ("[" models+=ModelItem* "]")? ("("
+	//	type=DecompositionType name=ID desc=STRING ("{" documents+=Document* "}")? ("[" models+=ModelItem* "]")? ("("
 	//	items+=ListItem* ")")?;
 	public DecompositionElements getDecompositionAccess() {
 		return (pDecomposition != null) ? pDecomposition : (pDecomposition = new DecompositionElements());
@@ -802,7 +777,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//DecompositionType:
-	//	"environment" | "operator" | "system" | "verification";
+	//	typeName=("environment" | "operator" | "system" | "verification");
 	public DecompositionTypeElements getDecompositionTypeAccess() {
 		return (pDecompositionType != null) ? pDecompositionType : (pDecompositionType = new DecompositionTypeElements());
 	}
@@ -822,7 +797,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//DocItemType:
-	//	"condition" | "figure" | "break" | "model" | "paragraph" | "section" | "table";
+	//	typeName=("condition" | "figure" | "break" | "model" | "paragraph" | "section" | "table");
 	public DocItemTypeElements getDocItemTypeAccess() {
 		return (pDocItemType != null) ? pDocItemType : (pDocItemType = new DocItemTypeElements());
 	}
@@ -832,7 +807,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//DocItem:
-	//	type=DocItemType id=ID ref=STRING ";";
+	//	type=DocItemType name=ID ref=STRING ";";
 	public DocItemElements getDocItemAccess() {
 		return (pDocItem != null) ? pDocItem : (pDocItem = new DocItemElements());
 	}
@@ -842,7 +817,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//ModelType:
-	//	"output" | "mode" | "state" | "macro" | "function" | "input";
+	//	typeName=("output" | "mode" | "state" | "macro" | "function" | "input");
 	public ModelTypeElements getModelTypeAccess() {
 		return (pModelType != null) ? pModelType : (pModelType = new ModelTypeElements());
 	}
@@ -852,7 +827,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//ModelItem:
-	//	type=ModelType id=ID desc=STRING ";";
+	//	type=ModelType name=ID desc=STRING ";";
 	public ModelItemElements getModelItemAccess() {
 		return (pModelItem != null) ? pModelItem : (pModelItem = new ModelItemElements());
 	}
@@ -862,7 +837,7 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 	}
 
 	//ListItemType:
-	//	"requirement" | "goal" | "hazard" | "constraint";
+	//	typeName=("requirement" | "goal" | "hazard" | "constraint");
 	public ListItemTypeElements getListItemTypeAccess() {
 		return (pListItemType != null) ? pListItemType : (pListItemType = new ListItemTypeElements());
 	}
@@ -873,54 +848,9 @@ public class IntentSpecificationGrammarAccess extends AbstractGrammarElementFind
 
 	/// *
 	// * A list item has a type, description and lists of references.
-	// * / / * 
-	//Level0:
-	//	{Level0}
-	//	'{'
-	//		('Program Plan' pmp=Document)?
-	//		('Safety Plan' safetyPlan=Document)?
-	//		('Accident Definition' accidentDefinition=Document)?
-	//		('Safety Policy' safetyPolicy=Document)?
-	//	'}'
-	//;
-	//
-	//Level1:
-	//	{Level1}
-	//	'{'
-	//		('Introduction' introduction=Document)?
-	//		('Historical' historical=Document)?
-	//		('Environment' environment=Document)?
-	//		('Goals' '(' goals+=GoalItem* ')' )?
-	//		('High-Level Requirements' '(' highLevelReqs+=RequirementItem* ')' )?
-	//		('System Limitations' limitations=Document)?
-	//		('Operator Requirements' '(' opReq+=RequirementItem* ')' )?
-	//		('Hazard Analysis' hazardAnalysis=Document)?
-	//		('Hazard List' '(' hazardList+=HazardItem* ')')?
-	//		('Design Constraints' '(' constraints+=ConstraintItem* ')' )?
-	//		('Verification and Validation' verification=Document)?
-	//	'}'
-	//;
-	//
-	//
-	//Level2:
-	//	desc=STRING
-	//	'{'
-	//	'}'	
-	//;
-	//
-	//Level3:
-	//	desc=STRING
-	//	'{'
-	//		('System Blackbox Behavior' '(' behaviors+=ModelItem* ')' )?
-	//		('User Model' '(' userModels+=ModelItem* ')' )?
-	//		('Verification and Validation' verification=Document )?
-	//	'}'
-	//;
-	//
-	//
 	// * / ListItem:
-	//	type=ListItemType id=ID desc=STRING ("{" docReferences+=[DocItem]* "}")? ("(" itemReferences+=[ListItem]* ")")? ("["
-	//	modelReferences+=[ModelItem]* "]")? ";";
+	//	type=ListItemType name=ID desc=STRING ("{" docReferences+=[DocItem]+ "}")? ("(" itemReferences+=[ListItem]+ ")")? ("["
+	//	modelReferences+=[ModelItem]+ "]")? ";";
 	public ListItemElements getListItemAccess() {
 		return (pListItem != null) ? pListItem : (pListItem = new ListItemElements());
 	}

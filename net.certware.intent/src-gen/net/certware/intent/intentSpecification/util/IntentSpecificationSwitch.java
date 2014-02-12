@@ -93,10 +93,24 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case IntentSpecificationPackage.INTENT_TYPE:
+      {
+        IntentType intentType = (IntentType)theEObject;
+        T result = caseIntentType(intentType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case IntentSpecificationPackage.DECOMPOSITION:
       {
         Decomposition decomposition = (Decomposition)theEObject;
         T result = caseDecomposition(decomposition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IntentSpecificationPackage.DECOMPOSITION_TYPE:
+      {
+        DecompositionType decompositionType = (DecompositionType)theEObject;
+        T result = caseDecompositionType(decompositionType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -107,6 +121,13 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case IntentSpecificationPackage.DOC_ITEM_TYPE:
+      {
+        DocItemType docItemType = (DocItemType)theEObject;
+        T result = caseDocItemType(docItemType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case IntentSpecificationPackage.DOC_ITEM:
       {
         DocItem docItem = (DocItem)theEObject;
@@ -114,10 +135,24 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case IntentSpecificationPackage.MODEL_TYPE:
+      {
+        ModelType modelType = (ModelType)theEObject;
+        T result = caseModelType(modelType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case IntentSpecificationPackage.MODEL_ITEM:
       {
         ModelItem modelItem = (ModelItem)theEObject;
         T result = caseModelItem(modelItem);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IntentSpecificationPackage.LIST_ITEM_TYPE:
+      {
+        ListItemType listItemType = (ListItemType)theEObject;
+        T result = caseListItemType(listItemType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -181,6 +216,22 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Intent Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Intent Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntentType(IntentType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Decomposition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -192,6 +243,22 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDecomposition(Decomposition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Decomposition Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Decomposition Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDecompositionType(DecompositionType object)
   {
     return null;
   }
@@ -213,6 +280,22 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Doc Item Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Doc Item Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDocItemType(DocItemType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Doc Item</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -229,6 +312,22 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Model Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Model Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModelType(ModelType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Model Item</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -240,6 +339,22 @@ public class IntentSpecificationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModelItem(ModelItem object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Item Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Item Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListItemType(ListItemType object)
   {
     return null;
   }

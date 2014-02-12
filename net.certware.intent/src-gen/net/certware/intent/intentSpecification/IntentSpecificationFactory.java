@@ -50,6 +50,15 @@ public interface IntentSpecificationFactory extends EFactory
   Intent createIntent();
 
   /**
+   * Returns a new object of class '<em>Intent Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Intent Type</em>'.
+   * @generated
+   */
+  IntentType createIntentType();
+
+  /**
    * Returns a new object of class '<em>Decomposition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -57,6 +66,15 @@ public interface IntentSpecificationFactory extends EFactory
    * @generated
    */
   Decomposition createDecomposition();
+
+  /**
+   * Returns a new object of class '<em>Decomposition Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decomposition Type</em>'.
+   * @generated
+   */
+  DecompositionType createDecompositionType();
 
   /**
    * Returns a new object of class '<em>Document</em>'.
@@ -68,6 +86,15 @@ public interface IntentSpecificationFactory extends EFactory
   Document createDocument();
 
   /**
+   * Returns a new object of class '<em>Doc Item Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Doc Item Type</em>'.
+   * @generated
+   */
+  DocItemType createDocItemType();
+
+  /**
    * Returns a new object of class '<em>Doc Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -77,6 +104,15 @@ public interface IntentSpecificationFactory extends EFactory
   DocItem createDocItem();
 
   /**
+   * Returns a new object of class '<em>Model Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model Type</em>'.
+   * @generated
+   */
+  ModelType createModelType();
+
+  /**
    * Returns a new object of class '<em>Model Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -84,6 +120,15 @@ public interface IntentSpecificationFactory extends EFactory
    * @generated
    */
   ModelItem createModelItem();
+
+  /**
+   * Returns a new object of class '<em>List Item Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Item Type</em>'.
+   * @generated
+   */
+  ListItemType createListItemType();
 
   /**
    * Returns a new object of class '<em>List Item</em>'.

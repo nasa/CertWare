@@ -3,12 +3,17 @@ package net.certware.intent.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import net.certware.intent.intentSpecification.Decomposition;
+import net.certware.intent.intentSpecification.DecompositionType;
 import net.certware.intent.intentSpecification.DocItem;
+import net.certware.intent.intentSpecification.DocItemType;
 import net.certware.intent.intentSpecification.Document;
 import net.certware.intent.intentSpecification.Intent;
 import net.certware.intent.intentSpecification.IntentSpecificationPackage;
+import net.certware.intent.intentSpecification.IntentType;
 import net.certware.intent.intentSpecification.ListItem;
+import net.certware.intent.intentSpecification.ListItemType;
 import net.certware.intent.intentSpecification.ModelItem;
+import net.certware.intent.intentSpecification.ModelType;
 import net.certware.intent.intentSpecification.Refinement;
 import net.certware.intent.intentSpecification.Specification;
 import net.certware.intent.services.IntentSpecificationGrammarAccess;
@@ -38,9 +43,21 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 					return; 
 				}
 				else break;
+			case IntentSpecificationPackage.DECOMPOSITION_TYPE:
+				if(context == grammarAccess.getDecompositionTypeRule()) {
+					sequence_DecompositionType(context, (DecompositionType) semanticObject); 
+					return; 
+				}
+				else break;
 			case IntentSpecificationPackage.DOC_ITEM:
 				if(context == grammarAccess.getDocItemRule()) {
 					sequence_DocItem(context, (DocItem) semanticObject); 
+					return; 
+				}
+				else break;
+			case IntentSpecificationPackage.DOC_ITEM_TYPE:
+				if(context == grammarAccess.getDocItemTypeRule()) {
+					sequence_DocItemType(context, (DocItemType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -56,15 +73,33 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 					return; 
 				}
 				else break;
+			case IntentSpecificationPackage.INTENT_TYPE:
+				if(context == grammarAccess.getIntentTypeRule()) {
+					sequence_IntentType(context, (IntentType) semanticObject); 
+					return; 
+				}
+				else break;
 			case IntentSpecificationPackage.LIST_ITEM:
 				if(context == grammarAccess.getListItemRule()) {
 					sequence_ListItem(context, (ListItem) semanticObject); 
 					return; 
 				}
 				else break;
+			case IntentSpecificationPackage.LIST_ITEM_TYPE:
+				if(context == grammarAccess.getListItemTypeRule()) {
+					sequence_ListItemType(context, (ListItemType) semanticObject); 
+					return; 
+				}
+				else break;
 			case IntentSpecificationPackage.MODEL_ITEM:
 				if(context == grammarAccess.getModelItemRule()) {
 					sequence_ModelItem(context, (ModelItem) semanticObject); 
+					return; 
+				}
+				else break;
+			case IntentSpecificationPackage.MODEL_TYPE:
+				if(context == grammarAccess.getModelTypeRule()) {
+					sequence_ModelType(context, (ModelType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -86,9 +121,18 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
+	 *     (typeName='environment' | typeName='operator' | typeName='system' | typeName='verification')
+	 */
+	protected void sequence_DecompositionType(EObject context, DecompositionType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         type=DecompositionType 
-	 *         id=ID 
+	 *         name=ID 
 	 *         desc=STRING 
 	 *         documents+=Document* 
 	 *         models+=ModelItem* 
@@ -102,21 +146,38 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (type=DocItemType id=ID ref=STRING)
+	 *     (
+	 *         typeName='condition' | 
+	 *         typeName='figure' | 
+	 *         typeName='break' | 
+	 *         typeName='model' | 
+	 *         typeName='paragraph' | 
+	 *         typeName='section' | 
+	 *         typeName='table'
+	 *     )
+	 */
+	protected void sequence_DocItemType(EObject context, DocItemType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=DocItemType name=ID ref=STRING)
 	 */
 	protected void sequence_DocItem(EObject context, DocItem semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__TYPE));
-			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__ID));
+			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__REF) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.DOC_ITEM__REF));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDocItemAccess().getTypeDocItemTypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getDocItemAccess().getIdIDTerminalRuleCall_1_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getDocItemAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getDocItemAccess().getRefSTRINGTerminalRuleCall_2_0(), semanticObject.getRef());
 		feeder.finish();
 	}
@@ -133,7 +194,24 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (type=IntentType id=ID desc=STRING decompositions+=Decomposition+)
+	 *     (
+	 *         typeName='basic' | 
+	 *         typeName='purpose' | 
+	 *         typeName='principles' | 
+	 *         typeName='models' | 
+	 *         typeName='design' | 
+	 *         typeName='implementation' | 
+	 *         typeName='operation'
+	 *     )
+	 */
+	protected void sequence_IntentType(EObject context, IntentType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (type=IntentType name=ID desc=STRING decompositions+=Decomposition+)
 	 */
 	protected void sequence_Intent(EObject context, Intent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -142,9 +220,18 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
+	 *     (typeName='requirement' | typeName='goal' | typeName='hazard' | typeName='constraint')
+	 */
+	protected void sequence_ListItemType(EObject context, ListItemType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         type=ListItemType 
-	 *         id=ID 
+	 *         name=ID 
 	 *         desc=STRING 
 	 *         docReferences+=[DocItem|ID]* 
 	 *         itemReferences+=[ListItem|ID]* 
@@ -158,21 +245,21 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (type=ModelType id=ID desc=STRING)
+	 *     (type=ModelType name=ID desc=STRING)
 	 */
 	protected void sequence_ModelItem(EObject context, ModelItem semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__TYPE));
-			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__ID));
+			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__NAME));
 			if(transientValues.isValueTransient(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__DESC) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IntentSpecificationPackage.Literals.MODEL_ITEM__DESC));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getModelItemAccess().getTypeModelTypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getModelItemAccess().getIdIDTerminalRuleCall_1_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getModelItemAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getModelItemAccess().getDescSTRINGTerminalRuleCall_2_0(), semanticObject.getDesc());
 		feeder.finish();
 	}
@@ -180,7 +267,23 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (id=ID desc=STRING intents+=Intent+)
+	 *     (
+	 *         typeName='output' | 
+	 *         typeName='mode' | 
+	 *         typeName='state' | 
+	 *         typeName='macro' | 
+	 *         typeName='function' | 
+	 *         typeName='input'
+	 *     )
+	 */
+	protected void sequence_ModelType(EObject context, ModelType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID desc=STRING intents+=Intent+)
 	 */
 	protected void sequence_Refinement(EObject context, Refinement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -189,7 +292,7 @@ public class IntentSpecificationSemanticSequencer extends AbstractDelegatingSema
 	
 	/**
 	 * Constraint:
-	 *     (id=ID refinements+=Refinement+)
+	 *     (name=ID refinements+=Refinement+)
 	 */
 	protected void sequence_Specification(EObject context, Specification semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -9,44 +9,59 @@
   <genPackages prefix="IntentSpecification" basePackage="net.certware.intent" disposableProviderFactory="true"
       fileExtensions="intent" ecorePackage="IntentSpecification.ecore#/">
     <genClasses ecoreClass="IntentSpecification.ecore#//Specification">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Specification/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Specification/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Specification/refinements"/>
     </genClasses>
     <genClasses ecoreClass="IntentSpecification.ecore#//Refinement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Refinement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Refinement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Refinement/desc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Refinement/intents"/>
     </genClasses>
     <genClasses ecoreClass="IntentSpecification.ecore#//Intent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Intent/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Intent/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Intent/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Intent/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Intent/desc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Intent/decompositions"/>
     </genClasses>
+    <genClasses ecoreClass="IntentSpecification.ecore#//IntentType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//IntentType/typeName"/>
+    </genClasses>
     <genClasses ecoreClass="IntentSpecification.ecore#//Decomposition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Decomposition/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Decomposition/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Decomposition/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Decomposition/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//Decomposition/desc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Decomposition/documents"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Decomposition/models"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Decomposition/items"/>
     </genClasses>
+    <genClasses ecoreClass="IntentSpecification.ecore#//DecompositionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//DecompositionType/typeName"/>
+    </genClasses>
     <genClasses ecoreClass="IntentSpecification.ecore#//Document">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//Document/entries"/>
     </genClasses>
+    <genClasses ecoreClass="IntentSpecification.ecore#//DocItemType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//DocItemType/typeName"/>
+    </genClasses>
     <genClasses ecoreClass="IntentSpecification.ecore#//DocItem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//DocItem/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//DocItem/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//DocItem/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//DocItem/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//DocItem/ref"/>
     </genClasses>
+    <genClasses ecoreClass="IntentSpecification.ecore#//ModelType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ModelType/typeName"/>
+    </genClasses>
     <genClasses ecoreClass="IntentSpecification.ecore#//ModelItem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ModelItem/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ModelItem/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//ModelItem/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ModelItem/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ModelItem/desc"/>
     </genClasses>
+    <genClasses ecoreClass="IntentSpecification.ecore#//ListItemType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ListItemType/typeName"/>
+    </genClasses>
     <genClasses ecoreClass="IntentSpecification.ecore#//ListItem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ListItem/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ListItem/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//ListItem/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ListItem/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IntentSpecification.ecore#//ListItem/desc"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//ListItem/docReferences"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IntentSpecification.ecore#//ListItem/itemReferences"/>

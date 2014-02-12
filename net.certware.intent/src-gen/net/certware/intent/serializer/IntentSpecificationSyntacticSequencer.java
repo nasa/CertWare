@@ -21,9 +21,6 @@ public class IntentSpecificationSyntacticSequencer extends AbstractSyntacticSequ
 	protected AbstractElementAlias match_Decomposition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
 	protected AbstractElementAlias match_Decomposition___LeftParenthesisKeyword_5_0_RightParenthesisKeyword_5_2__q;
 	protected AbstractElementAlias match_Decomposition___LeftSquareBracketKeyword_4_0_RightSquareBracketKeyword_4_2__q;
-	protected AbstractElementAlias match_ListItem___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
-	protected AbstractElementAlias match_ListItem___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q;
-	protected AbstractElementAlias match_ListItem___LeftSquareBracketKeyword_5_0_RightSquareBracketKeyword_5_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -31,9 +28,6 @@ public class IntentSpecificationSyntacticSequencer extends AbstractSyntacticSequ
 		match_Decomposition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDecompositionAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDecompositionAccess().getRightCurlyBracketKeyword_3_2()));
 		match_Decomposition___LeftParenthesisKeyword_5_0_RightParenthesisKeyword_5_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDecompositionAccess().getLeftParenthesisKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getDecompositionAccess().getRightParenthesisKeyword_5_2()));
 		match_Decomposition___LeftSquareBracketKeyword_4_0_RightSquareBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDecompositionAccess().getLeftSquareBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDecompositionAccess().getRightSquareBracketKeyword_4_2()));
-		match_ListItem___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getListItemAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getListItemAccess().getRightCurlyBracketKeyword_3_2()));
-		match_ListItem___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getListItemAccess().getLeftParenthesisKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getListItemAccess().getRightParenthesisKeyword_4_2()));
-		match_ListItem___LeftSquareBracketKeyword_5_0_RightSquareBracketKeyword_5_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getListItemAccess().getLeftSquareBracketKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getListItemAccess().getRightSquareBracketKeyword_5_2()));
 	}
 	
 	@Override
@@ -54,12 +48,6 @@ public class IntentSpecificationSyntacticSequencer extends AbstractSyntacticSequ
 				emit_Decomposition___LeftParenthesisKeyword_5_0_RightParenthesisKeyword_5_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Decomposition___LeftSquareBracketKeyword_4_0_RightSquareBracketKeyword_4_2__q.equals(syntax))
 				emit_Decomposition___LeftSquareBracketKeyword_4_0_RightSquareBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ListItem___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
-				emit_ListItem___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ListItem___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q.equals(syntax))
-				emit_ListItem___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ListItem___LeftSquareBracketKeyword_5_0_RightSquareBracketKeyword_5_2__q.equals(syntax))
-				emit_ListItem___LeftSquareBracketKeyword_5_0_RightSquareBracketKeyword_5_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -85,30 +73,6 @@ public class IntentSpecificationSyntacticSequencer extends AbstractSyntacticSequ
 	 *     ('[' ']')?
 	 */
 	protected void emit_Decomposition___LeftSquareBracketKeyword_4_0_RightSquareBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('{' '}')?
-	 */
-	protected void emit_ListItem___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('(' ')')?
-	 */
-	protected void emit_ListItem___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('[' ']')?
-	 */
-	protected void emit_ListItem___LeftSquareBracketKeyword_5_0_RightSquareBracketKeyword_5_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

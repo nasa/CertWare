@@ -67,10 +67,15 @@ public class IntentSpecificationFactoryImpl extends EFactoryImpl implements Inte
       case IntentSpecificationPackage.SPECIFICATION: return createSpecification();
       case IntentSpecificationPackage.REFINEMENT: return createRefinement();
       case IntentSpecificationPackage.INTENT: return createIntent();
+      case IntentSpecificationPackage.INTENT_TYPE: return createIntentType();
       case IntentSpecificationPackage.DECOMPOSITION: return createDecomposition();
+      case IntentSpecificationPackage.DECOMPOSITION_TYPE: return createDecompositionType();
       case IntentSpecificationPackage.DOCUMENT: return createDocument();
+      case IntentSpecificationPackage.DOC_ITEM_TYPE: return createDocItemType();
       case IntentSpecificationPackage.DOC_ITEM: return createDocItem();
+      case IntentSpecificationPackage.MODEL_TYPE: return createModelType();
       case IntentSpecificationPackage.MODEL_ITEM: return createModelItem();
+      case IntentSpecificationPackage.LIST_ITEM_TYPE: return createListItemType();
       case IntentSpecificationPackage.LIST_ITEM: return createListItem();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -115,10 +120,32 @@ public class IntentSpecificationFactoryImpl extends EFactoryImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public IntentType createIntentType()
+  {
+    IntentTypeImpl intentType = new IntentTypeImpl();
+    return intentType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Decomposition createDecomposition()
   {
     DecompositionImpl decomposition = new DecompositionImpl();
     return decomposition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DecompositionType createDecompositionType()
+  {
+    DecompositionTypeImpl decompositionType = new DecompositionTypeImpl();
+    return decompositionType;
   }
 
   /**
@@ -137,6 +164,17 @@ public class IntentSpecificationFactoryImpl extends EFactoryImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public DocItemType createDocItemType()
+  {
+    DocItemTypeImpl docItemType = new DocItemTypeImpl();
+    return docItemType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DocItem createDocItem()
   {
     DocItemImpl docItem = new DocItemImpl();
@@ -148,10 +186,32 @@ public class IntentSpecificationFactoryImpl extends EFactoryImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public ModelType createModelType()
+  {
+    ModelTypeImpl modelType = new ModelTypeImpl();
+    return modelType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ModelItem createModelItem()
   {
     ModelItemImpl modelItem = new ModelItemImpl();
     return modelItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ListItemType createListItemType()
+  {
+    ListItemTypeImpl listItemType = new ListItemTypeImpl();
+    return listItemType;
   }
 
   /**

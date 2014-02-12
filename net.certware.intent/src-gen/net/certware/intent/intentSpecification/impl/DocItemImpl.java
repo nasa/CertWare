@@ -3,11 +3,14 @@
 package net.certware.intent.intentSpecification.impl;
 
 import net.certware.intent.intentSpecification.DocItem;
+import net.certware.intent.intentSpecification.DocItemType;
 import net.certware.intent.intentSpecification.IntentSpecificationPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -20,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DocItemImpl#getType <em>Type</em>}</li>
- *   <li>{@link net.certware.intent.intentSpecification.impl.DocItemImpl#getId <em>Id</em>}</li>
+ *   <li>{@link net.certware.intent.intentSpecification.impl.DocItemImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DocItemImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
@@ -30,44 +33,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
+  protected DocItemType type;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String type = TYPE_EDEFAULT;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected String id = ID_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getRef() <em>Ref</em>}' attribute.
@@ -115,7 +108,7 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public DocItemType getType()
   {
     return type;
   }
@@ -125,12 +118,16 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public NotificationChain basicSetType(DocItemType newType, NotificationChain msgs)
   {
-    String oldType = type;
+    DocItemType oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DOC_ITEM__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DOC_ITEM__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -138,9 +135,20 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId()
+  public void setType(DocItemType newType)
   {
-    return id;
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - IntentSpecificationPackage.DOC_ITEM__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - IntentSpecificationPackage.DOC_ITEM__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DOC_ITEM__TYPE, newType, newType));
   }
 
   /**
@@ -148,12 +156,22 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId)
+  public String getName()
   {
-    String oldId = id;
-    id = newId;
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DOC_ITEM__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DOC_ITEM__NAME, oldName, name));
   }
 
   /**
@@ -185,14 +203,30 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case IntentSpecificationPackage.DOC_ITEM__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case IntentSpecificationPackage.DOC_ITEM__TYPE:
         return getType();
-      case IntentSpecificationPackage.DOC_ITEM__ID:
-        return getId();
+      case IntentSpecificationPackage.DOC_ITEM__NAME:
+        return getName();
       case IntentSpecificationPackage.DOC_ITEM__REF:
         return getRef();
     }
@@ -210,10 +244,10 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
     switch (featureID)
     {
       case IntentSpecificationPackage.DOC_ITEM__TYPE:
-        setType((String)newValue);
+        setType((DocItemType)newValue);
         return;
-      case IntentSpecificationPackage.DOC_ITEM__ID:
-        setId((String)newValue);
+      case IntentSpecificationPackage.DOC_ITEM__NAME:
+        setName((String)newValue);
         return;
       case IntentSpecificationPackage.DOC_ITEM__REF:
         setRef((String)newValue);
@@ -233,10 +267,10 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
     switch (featureID)
     {
       case IntentSpecificationPackage.DOC_ITEM__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((DocItemType)null);
         return;
-      case IntentSpecificationPackage.DOC_ITEM__ID:
-        setId(ID_EDEFAULT);
+      case IntentSpecificationPackage.DOC_ITEM__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case IntentSpecificationPackage.DOC_ITEM__REF:
         setRef(REF_EDEFAULT);
@@ -256,9 +290,9 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
     switch (featureID)
     {
       case IntentSpecificationPackage.DOC_ITEM__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case IntentSpecificationPackage.DOC_ITEM__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+        return type != null;
+      case IntentSpecificationPackage.DOC_ITEM__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case IntentSpecificationPackage.DOC_ITEM__REF:
         return REF_EDEFAULT == null ? ref != null : !REF_EDEFAULT.equals(ref);
     }
@@ -276,10 +310,8 @@ public class DocItemImpl extends MinimalEObjectImpl.Container implements DocItem
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(", id: ");
-    result.append(id);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", ref: ");
     result.append(ref);
     result.append(')');

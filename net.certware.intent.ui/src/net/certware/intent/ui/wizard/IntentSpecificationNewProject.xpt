@@ -6,7 +6,7 @@
 «ENDDEFINE»
 
 «DEFINE model FOR IntentSpecificationProjectInfo»
-«FILE "src/model/Model.intentspecification"-»
+«FILE "src/model/Model.intent"-»
 /*
  * This is an example model
  */

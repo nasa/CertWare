@@ -12,7 +12,7 @@
               extensions="intent"
               icon="icons/obj16/intent.gif"
               id="net.certware.intent.IntentSpecification"
-              name="IntentSpecification Editor">
+              name="Intent Specification Editor">
         </editor>
     </extension>
     <extension
@@ -84,7 +84,7 @@
               category="certware"
               class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
               id="net.certware.intent.IntentSpecification"
-              name="IntentSpecification">
+              name="Intent Specification">
             <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
         </page>
         <page
@@ -108,7 +108,7 @@
               class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
               icon="icons/obj16/intent.gif"
               id="net.certware.intent.IntentSpecification"
-              name="IntentSpecification">
+              name="Intent Specification">
             <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -120,7 +120,7 @@
         point="org.eclipse.ui.keywords">
         <keyword
             id="net.certware.intent.ui.keyword_IntentSpecification"
-            label="IntentSpecification"/>
+            label="Intent Specification"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
@@ -235,21 +235,21 @@
 	<!-- marker definitions for net.certware.intent.IntentSpecification -->
 	<extension
 	        id="intentspecification.check.fast"
-	        name="IntentSpecification Problem"
+	        name="Intent Specification Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.fast"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
 	        id="intentspecification.check.normal"
-	        name="IntentSpecification Problem"
+	        name="Intent Specification Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.normal"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
 	        id="intentspecification.check.expensive"
-	        name="IntentSpecification Problem"
+	        name="Intent Specification Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.expensive"/>
 	    <persistent value="true"/>
@@ -406,7 +406,7 @@
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="net.certware.intent.IntentSpecification.compare.contentMergeViewers"
             class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="intent" label="IntentSpecification Compare">
+            extensions="intent" label="Intent Specification Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">

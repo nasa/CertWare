@@ -846,10 +846,10 @@ public class InternalIntentSpecificationLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2829:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2829:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2930:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2930:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2829:11: ( '^' )?
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2930:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -858,7 +858,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2829:11: '^'
+                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2930:11: '^'
                     {
                     match('^'); 
 
@@ -876,7 +876,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2829:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2930:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -925,10 +925,10 @@ public class InternalIntentSpecificationLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2831:10: ( ( '0' .. '9' )+ )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2831:12: ( '0' .. '9' )+
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2932:10: ( ( '0' .. '9' )+ )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2932:12: ( '0' .. '9' )+
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2831:12: ( '0' .. '9' )+
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2932:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -942,7 +942,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2831:13: '0' .. '9'
+            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2932:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -974,10 +974,10 @@ public class InternalIntentSpecificationLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -995,10 +995,10 @@ public class InternalIntentSpecificationLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1014,7 +1014,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1030,7 +1030,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1055,10 +1055,10 @@ public class InternalIntentSpecificationLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1074,7 +1074,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1090,7 +1090,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2934:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1133,12 +1133,12 @@ public class InternalIntentSpecificationLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2835:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2835:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2936:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2936:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2835:24: ( options {greedy=false; } : . )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2936:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1163,7 +1163,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2835:52: .
+            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2936:52: .
             	    {
             	    matchAny(); 
 
@@ -1193,12 +1193,12 @@ public class InternalIntentSpecificationLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1211,7 +1211,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1231,7 +1231,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
                 }
             } while (true);
 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:40: ( ( '\\r' )? '\\n' )?
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1240,9 +1240,9 @@ public class InternalIntentSpecificationLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:41: ( '\\r' )? '\\n'
+                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:41: ( '\\r' )? '\\n'
                     {
-                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:41: ( '\\r' )?
+                    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1251,7 +1251,7 @@ public class InternalIntentSpecificationLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2837:41: '\\r'
+                            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2938:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1283,10 +1283,10 @@ public class InternalIntentSpecificationLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2839:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2839:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2940:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2940:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2839:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2940:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1340,8 +1340,8 @@ public class InternalIntentSpecificationLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2841:16: ( . )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2841:18: .
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2942:16: ( . )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2942:18: .
             {
             matchAny(); 
 

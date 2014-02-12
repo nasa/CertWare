@@ -90,9 +90,19 @@ public class IntentSpecificationAdapterFactory extends AdapterFactoryImpl
         return createIntentAdapter();
       }
       @Override
+      public Adapter caseIntentType(IntentType object)
+      {
+        return createIntentTypeAdapter();
+      }
+      @Override
       public Adapter caseDecomposition(Decomposition object)
       {
         return createDecompositionAdapter();
+      }
+      @Override
+      public Adapter caseDecompositionType(DecompositionType object)
+      {
+        return createDecompositionTypeAdapter();
       }
       @Override
       public Adapter caseDocument(Document object)
@@ -100,14 +110,29 @@ public class IntentSpecificationAdapterFactory extends AdapterFactoryImpl
         return createDocumentAdapter();
       }
       @Override
+      public Adapter caseDocItemType(DocItemType object)
+      {
+        return createDocItemTypeAdapter();
+      }
+      @Override
       public Adapter caseDocItem(DocItem object)
       {
         return createDocItemAdapter();
       }
       @Override
+      public Adapter caseModelType(ModelType object)
+      {
+        return createModelTypeAdapter();
+      }
+      @Override
       public Adapter caseModelItem(ModelItem object)
       {
         return createModelItemAdapter();
+      }
+      @Override
+      public Adapter caseListItemType(ListItemType object)
+      {
+        return createListItemTypeAdapter();
       }
       @Override
       public Adapter caseListItem(ListItem object)
@@ -182,6 +207,21 @@ public class IntentSpecificationAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.IntentType <em>Intent Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.intent.intentSpecification.IntentType
+   * @generated
+   */
+  public Adapter createIntentTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.Decomposition <em>Decomposition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -192,6 +232,21 @@ public class IntentSpecificationAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDecompositionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.DecompositionType <em>Decomposition Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.intent.intentSpecification.DecompositionType
+   * @generated
+   */
+  public Adapter createDecompositionTypeAdapter()
   {
     return null;
   }
@@ -212,6 +267,21 @@ public class IntentSpecificationAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.DocItemType <em>Doc Item Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.intent.intentSpecification.DocItemType
+   * @generated
+   */
+  public Adapter createDocItemTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.DocItem <em>Doc Item</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -227,6 +297,21 @@ public class IntentSpecificationAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.ModelType <em>Model Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.intent.intentSpecification.ModelType
+   * @generated
+   */
+  public Adapter createModelTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.ModelItem <em>Model Item</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -237,6 +322,21 @@ public class IntentSpecificationAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelItemAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.intent.intentSpecification.ListItemType <em>List Item Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.intent.intentSpecification.ListItemType
+   * @generated
+   */
+  public Adapter createListItemTypeAdapter()
   {
     return null;
   }

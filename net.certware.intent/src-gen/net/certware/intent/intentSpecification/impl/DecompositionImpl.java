@@ -5,6 +5,7 @@ package net.certware.intent.intentSpecification.impl;
 import java.util.Collection;
 
 import net.certware.intent.intentSpecification.Decomposition;
+import net.certware.intent.intentSpecification.DecompositionType;
 import net.certware.intent.intentSpecification.Document;
 import net.certware.intent.intentSpecification.IntentSpecificationPackage;
 import net.certware.intent.intentSpecification.ListItem;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getType <em>Type</em>}</li>
- *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getId <em>Id</em>}</li>
+ *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getDocuments <em>Documents</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getModels <em>Models</em>}</li>
@@ -45,44 +46,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class DecompositionImpl extends MinimalEObjectImpl.Container implements Decomposition
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
+  protected DecompositionType type;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String type = TYPE_EDEFAULT;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected String id = ID_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
@@ -160,7 +151,7 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public DecompositionType getType()
   {
     return type;
   }
@@ -170,12 +161,16 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public NotificationChain basicSetType(DecompositionType newType, NotificationChain msgs)
   {
-    String oldType = type;
+    DecompositionType oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DECOMPOSITION__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DECOMPOSITION__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -183,9 +178,20 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId()
+  public void setType(DecompositionType newType)
   {
-    return id;
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - IntentSpecificationPackage.DECOMPOSITION__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - IntentSpecificationPackage.DECOMPOSITION__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DECOMPOSITION__TYPE, newType, newType));
   }
 
   /**
@@ -193,12 +199,22 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId)
+  public String getName()
   {
-    String oldId = id;
-    id = newId;
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DECOMPOSITION__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.DECOMPOSITION__NAME, oldName, name));
   }
 
   /**
@@ -276,6 +292,8 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
   {
     switch (featureID)
     {
+      case IntentSpecificationPackage.DECOMPOSITION__TYPE:
+        return basicSetType(null, msgs);
       case IntentSpecificationPackage.DECOMPOSITION__DOCUMENTS:
         return ((InternalEList<?>)getDocuments()).basicRemove(otherEnd, msgs);
       case IntentSpecificationPackage.DECOMPOSITION__MODELS:
@@ -298,8 +316,8 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
     {
       case IntentSpecificationPackage.DECOMPOSITION__TYPE:
         return getType();
-      case IntentSpecificationPackage.DECOMPOSITION__ID:
-        return getId();
+      case IntentSpecificationPackage.DECOMPOSITION__NAME:
+        return getName();
       case IntentSpecificationPackage.DECOMPOSITION__DESC:
         return getDesc();
       case IntentSpecificationPackage.DECOMPOSITION__DOCUMENTS:
@@ -324,10 +342,10 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
     switch (featureID)
     {
       case IntentSpecificationPackage.DECOMPOSITION__TYPE:
-        setType((String)newValue);
+        setType((DecompositionType)newValue);
         return;
-      case IntentSpecificationPackage.DECOMPOSITION__ID:
-        setId((String)newValue);
+      case IntentSpecificationPackage.DECOMPOSITION__NAME:
+        setName((String)newValue);
         return;
       case IntentSpecificationPackage.DECOMPOSITION__DESC:
         setDesc((String)newValue);
@@ -359,10 +377,10 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
     switch (featureID)
     {
       case IntentSpecificationPackage.DECOMPOSITION__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((DecompositionType)null);
         return;
-      case IntentSpecificationPackage.DECOMPOSITION__ID:
-        setId(ID_EDEFAULT);
+      case IntentSpecificationPackage.DECOMPOSITION__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case IntentSpecificationPackage.DECOMPOSITION__DESC:
         setDesc(DESC_EDEFAULT);
@@ -391,9 +409,9 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
     switch (featureID)
     {
       case IntentSpecificationPackage.DECOMPOSITION__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case IntentSpecificationPackage.DECOMPOSITION__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+        return type != null;
+      case IntentSpecificationPackage.DECOMPOSITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case IntentSpecificationPackage.DECOMPOSITION__DESC:
         return DESC_EDEFAULT == null ? desc != null : !DESC_EDEFAULT.equals(desc);
       case IntentSpecificationPackage.DECOMPOSITION__DOCUMENTS:
@@ -417,10 +435,8 @@ public class DecompositionImpl extends MinimalEObjectImpl.Container implements D
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
-    result.append(type);
-    result.append(", id: ");
-    result.append(id);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", desc: ");
     result.append(desc);
     result.append(')');

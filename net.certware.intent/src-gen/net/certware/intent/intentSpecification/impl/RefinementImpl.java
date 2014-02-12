@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.intent.intentSpecification.impl.RefinementImpl#getId <em>Id</em>}</li>
+ *   <li>{@link net.certware.intent.intentSpecification.impl.RefinementImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.RefinementImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.RefinementImpl#getIntents <em>Intents</em>}</li>
  * </ul>
@@ -40,24 +40,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RefinementImpl extends MinimalEObjectImpl.Container implements Refinement
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
@@ -115,9 +115,9 @@ public class RefinementImpl extends MinimalEObjectImpl.Container implements Refi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId()
+  public String getName()
   {
-    return id;
+    return name;
   }
 
   /**
@@ -125,12 +125,12 @@ public class RefinementImpl extends MinimalEObjectImpl.Container implements Refi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId)
+  public void setName(String newName)
   {
-    String oldId = id;
-    id = newId;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.REFINEMENT__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.REFINEMENT__NAME, oldName, name));
   }
 
   /**
@@ -196,8 +196,8 @@ public class RefinementImpl extends MinimalEObjectImpl.Container implements Refi
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.REFINEMENT__ID:
-        return getId();
+      case IntentSpecificationPackage.REFINEMENT__NAME:
+        return getName();
       case IntentSpecificationPackage.REFINEMENT__DESC:
         return getDesc();
       case IntentSpecificationPackage.REFINEMENT__INTENTS:
@@ -217,8 +217,8 @@ public class RefinementImpl extends MinimalEObjectImpl.Container implements Refi
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.REFINEMENT__ID:
-        setId((String)newValue);
+      case IntentSpecificationPackage.REFINEMENT__NAME:
+        setName((String)newValue);
         return;
       case IntentSpecificationPackage.REFINEMENT__DESC:
         setDesc((String)newValue);
@@ -241,8 +241,8 @@ public class RefinementImpl extends MinimalEObjectImpl.Container implements Refi
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.REFINEMENT__ID:
-        setId(ID_EDEFAULT);
+      case IntentSpecificationPackage.REFINEMENT__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case IntentSpecificationPackage.REFINEMENT__DESC:
         setDesc(DESC_EDEFAULT);
@@ -264,8 +264,8 @@ public class RefinementImpl extends MinimalEObjectImpl.Container implements Refi
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.REFINEMENT__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case IntentSpecificationPackage.REFINEMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case IntentSpecificationPackage.REFINEMENT__DESC:
         return DESC_EDEFAULT == null ? desc != null : !DESC_EDEFAULT.equals(desc);
       case IntentSpecificationPackage.REFINEMENT__INTENTS:
@@ -285,8 +285,8 @@ public class RefinementImpl extends MinimalEObjectImpl.Container implements Refi
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", desc: ");
     result.append(desc);
     result.append(')');

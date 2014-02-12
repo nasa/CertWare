@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.ListItem#getType <em>Type</em>}</li>
- *   <li>{@link net.certware.intent.intentSpecification.ListItem#getId <em>Id</em>}</li>
+ *   <li>{@link net.certware.intent.intentSpecification.ListItem#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.ListItem#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.ListItem#getDocReferences <em>Doc References</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.ListItem#getItemReferences <em>Item References</em>}</li>
@@ -30,56 +30,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface ListItem extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(String)
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(ListItemType)
    * @see net.certware.intent.intentSpecification.IntentSpecificationPackage#getListItem_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getType();
+  ListItemType getType();
 
   /**
-   * Sets the value of the '{@link net.certware.intent.intentSpecification.ListItem#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link net.certware.intent.intentSpecification.ListItem#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */
-  void setType(String value);
+  void setType(ListItemType value);
 
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see net.certware.intent.intentSpecification.IntentSpecificationPackage#getListItem_Id()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see net.certware.intent.intentSpecification.IntentSpecificationPackage#getListItem_Name()
    * @model
    * @generated
    */
-  String getId();
+  String getName();
 
   /**
-   * Sets the value of the '{@link net.certware.intent.intentSpecification.ListItem#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link net.certware.intent.intentSpecification.ListItem#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setId(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Desc</b></em>' attribute.

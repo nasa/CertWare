@@ -3,13 +3,18 @@
 package net.certware.intent.intentSpecification.impl;
 
 import net.certware.intent.intentSpecification.Decomposition;
+import net.certware.intent.intentSpecification.DecompositionType;
 import net.certware.intent.intentSpecification.DocItem;
+import net.certware.intent.intentSpecification.DocItemType;
 import net.certware.intent.intentSpecification.Document;
 import net.certware.intent.intentSpecification.Intent;
 import net.certware.intent.intentSpecification.IntentSpecificationFactory;
 import net.certware.intent.intentSpecification.IntentSpecificationPackage;
+import net.certware.intent.intentSpecification.IntentType;
 import net.certware.intent.intentSpecification.ListItem;
+import net.certware.intent.intentSpecification.ListItemType;
 import net.certware.intent.intentSpecification.ModelItem;
+import net.certware.intent.intentSpecification.ModelType;
 import net.certware.intent.intentSpecification.Refinement;
 import net.certware.intent.intentSpecification.Specification;
 
@@ -54,7 +59,21 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass intentTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass decompositionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass decompositionTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,6 +87,13 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass docItemTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass docItemEClass = null;
 
   /**
@@ -75,7 +101,21 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass modelTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass modelItemEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listItemTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -162,7 +202,7 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpecification_Id()
+  public EAttribute getSpecification_Name()
   {
     return (EAttribute)specificationEClass.getEStructuralFeatures().get(0);
   }
@@ -192,7 +232,7 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRefinement_Id()
+  public EAttribute getRefinement_Name()
   {
     return (EAttribute)refinementEClass.getEStructuralFeatures().get(0);
   }
@@ -232,9 +272,9 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIntent_Type()
+  public EReference getIntent_Type()
   {
-    return (EAttribute)intentEClass.getEStructuralFeatures().get(0);
+    return (EReference)intentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -242,7 +282,7 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIntent_Id()
+  public EAttribute getIntent_Name()
   {
     return (EAttribute)intentEClass.getEStructuralFeatures().get(1);
   }
@@ -272,6 +312,26 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getIntentType()
+  {
+    return intentTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIntentType_TypeName()
+  {
+    return (EAttribute)intentTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDecomposition()
   {
     return decompositionEClass;
@@ -282,9 +342,9 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDecomposition_Type()
+  public EReference getDecomposition_Type()
   {
-    return (EAttribute)decompositionEClass.getEStructuralFeatures().get(0);
+    return (EReference)decompositionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -292,7 +352,7 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDecomposition_Id()
+  public EAttribute getDecomposition_Name()
   {
     return (EAttribute)decompositionEClass.getEStructuralFeatures().get(1);
   }
@@ -342,6 +402,26 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDecompositionType()
+  {
+    return decompositionTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDecompositionType_TypeName()
+  {
+    return (EAttribute)decompositionTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDocument()
   {
     return documentEClass;
@@ -362,6 +442,26 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDocItemType()
+  {
+    return docItemTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDocItemType_TypeName()
+  {
+    return (EAttribute)docItemTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDocItem()
   {
     return docItemEClass;
@@ -372,9 +472,9 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocItem_Type()
+  public EReference getDocItem_Type()
   {
-    return (EAttribute)docItemEClass.getEStructuralFeatures().get(0);
+    return (EReference)docItemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -382,7 +482,7 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocItem_Id()
+  public EAttribute getDocItem_Name()
   {
     return (EAttribute)docItemEClass.getEStructuralFeatures().get(1);
   }
@@ -402,6 +502,26 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getModelType()
+  {
+    return modelTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getModelType_TypeName()
+  {
+    return (EAttribute)modelTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getModelItem()
   {
     return modelItemEClass;
@@ -412,9 +532,9 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModelItem_Type()
+  public EReference getModelItem_Type()
   {
-    return (EAttribute)modelItemEClass.getEStructuralFeatures().get(0);
+    return (EReference)modelItemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -422,7 +542,7 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getModelItem_Id()
+  public EAttribute getModelItem_Name()
   {
     return (EAttribute)modelItemEClass.getEStructuralFeatures().get(1);
   }
@@ -442,6 +562,26 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getListItemType()
+  {
+    return listItemTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getListItemType_TypeName()
+  {
+    return (EAttribute)listItemTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getListItem()
   {
     return listItemEClass;
@@ -452,9 +592,9 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getListItem_Type()
+  public EReference getListItem_Type()
   {
-    return (EAttribute)listItemEClass.getEStructuralFeatures().get(0);
+    return (EReference)listItemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -462,7 +602,7 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getListItem_Id()
+  public EAttribute getListItem_Name()
   {
     return (EAttribute)listItemEClass.getEStructuralFeatures().get(1);
   }
@@ -538,44 +678,59 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
 
     // Create classes and their features
     specificationEClass = createEClass(SPECIFICATION);
-    createEAttribute(specificationEClass, SPECIFICATION__ID);
+    createEAttribute(specificationEClass, SPECIFICATION__NAME);
     createEReference(specificationEClass, SPECIFICATION__REFINEMENTS);
 
     refinementEClass = createEClass(REFINEMENT);
-    createEAttribute(refinementEClass, REFINEMENT__ID);
+    createEAttribute(refinementEClass, REFINEMENT__NAME);
     createEAttribute(refinementEClass, REFINEMENT__DESC);
     createEReference(refinementEClass, REFINEMENT__INTENTS);
 
     intentEClass = createEClass(INTENT);
-    createEAttribute(intentEClass, INTENT__TYPE);
-    createEAttribute(intentEClass, INTENT__ID);
+    createEReference(intentEClass, INTENT__TYPE);
+    createEAttribute(intentEClass, INTENT__NAME);
     createEAttribute(intentEClass, INTENT__DESC);
     createEReference(intentEClass, INTENT__DECOMPOSITIONS);
 
+    intentTypeEClass = createEClass(INTENT_TYPE);
+    createEAttribute(intentTypeEClass, INTENT_TYPE__TYPE_NAME);
+
     decompositionEClass = createEClass(DECOMPOSITION);
-    createEAttribute(decompositionEClass, DECOMPOSITION__TYPE);
-    createEAttribute(decompositionEClass, DECOMPOSITION__ID);
+    createEReference(decompositionEClass, DECOMPOSITION__TYPE);
+    createEAttribute(decompositionEClass, DECOMPOSITION__NAME);
     createEAttribute(decompositionEClass, DECOMPOSITION__DESC);
     createEReference(decompositionEClass, DECOMPOSITION__DOCUMENTS);
     createEReference(decompositionEClass, DECOMPOSITION__MODELS);
     createEReference(decompositionEClass, DECOMPOSITION__ITEMS);
 
+    decompositionTypeEClass = createEClass(DECOMPOSITION_TYPE);
+    createEAttribute(decompositionTypeEClass, DECOMPOSITION_TYPE__TYPE_NAME);
+
     documentEClass = createEClass(DOCUMENT);
     createEReference(documentEClass, DOCUMENT__ENTRIES);
 
+    docItemTypeEClass = createEClass(DOC_ITEM_TYPE);
+    createEAttribute(docItemTypeEClass, DOC_ITEM_TYPE__TYPE_NAME);
+
     docItemEClass = createEClass(DOC_ITEM);
-    createEAttribute(docItemEClass, DOC_ITEM__TYPE);
-    createEAttribute(docItemEClass, DOC_ITEM__ID);
+    createEReference(docItemEClass, DOC_ITEM__TYPE);
+    createEAttribute(docItemEClass, DOC_ITEM__NAME);
     createEAttribute(docItemEClass, DOC_ITEM__REF);
 
+    modelTypeEClass = createEClass(MODEL_TYPE);
+    createEAttribute(modelTypeEClass, MODEL_TYPE__TYPE_NAME);
+
     modelItemEClass = createEClass(MODEL_ITEM);
-    createEAttribute(modelItemEClass, MODEL_ITEM__TYPE);
-    createEAttribute(modelItemEClass, MODEL_ITEM__ID);
+    createEReference(modelItemEClass, MODEL_ITEM__TYPE);
+    createEAttribute(modelItemEClass, MODEL_ITEM__NAME);
     createEAttribute(modelItemEClass, MODEL_ITEM__DESC);
 
+    listItemTypeEClass = createEClass(LIST_ITEM_TYPE);
+    createEAttribute(listItemTypeEClass, LIST_ITEM_TYPE__TYPE_NAME);
+
     listItemEClass = createEClass(LIST_ITEM);
-    createEAttribute(listItemEClass, LIST_ITEM__TYPE);
-    createEAttribute(listItemEClass, LIST_ITEM__ID);
+    createEReference(listItemEClass, LIST_ITEM__TYPE);
+    createEAttribute(listItemEClass, LIST_ITEM__NAME);
     createEAttribute(listItemEClass, LIST_ITEM__DESC);
     createEReference(listItemEClass, LIST_ITEM__DOC_REFERENCES);
     createEReference(listItemEClass, LIST_ITEM__ITEM_REFERENCES);
@@ -614,44 +769,59 @@ public class IntentSpecificationPackageImpl extends EPackageImpl implements Inte
 
     // Initialize classes and features; add operations and parameters
     initEClass(specificationEClass, Specification.class, "Specification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSpecification_Id(), ecorePackage.getEString(), "id", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpecification_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSpecification_Refinements(), this.getRefinement(), null, "refinements", null, 0, -1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(refinementEClass, Refinement.class, "Refinement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRefinement_Id(), ecorePackage.getEString(), "id", null, 0, 1, Refinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRefinement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Refinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRefinement_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Refinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRefinement_Intents(), this.getIntent(), null, "intents", null, 0, -1, Refinement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(intentEClass, Intent.class, "Intent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntent_Type(), ecorePackage.getEString(), "type", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIntent_Id(), ecorePackage.getEString(), "id", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIntent_Type(), this.getIntentType(), null, "type", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIntent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIntent_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIntent_Decompositions(), this.getDecomposition(), null, "decompositions", null, 0, -1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(intentTypeEClass, IntentType.class, "IntentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIntentType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, IntentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(decompositionEClass, Decomposition.class, "Decomposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDecomposition_Type(), ecorePackage.getEString(), "type", null, 0, 1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDecomposition_Id(), ecorePackage.getEString(), "id", null, 0, 1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDecomposition_Type(), this.getDecompositionType(), null, "type", null, 0, 1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDecomposition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDecomposition_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDecomposition_Documents(), this.getDocument(), null, "documents", null, 0, -1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDecomposition_Models(), this.getModelItem(), null, "models", null, 0, -1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDecomposition_Items(), this.getListItem(), null, "items", null, 0, -1, Decomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(decompositionTypeEClass, DecompositionType.class, "DecompositionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDecompositionType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, DecompositionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDocument_Entries(), this.getDocItem(), null, "entries", null, 0, -1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(docItemTypeEClass, DocItemType.class, "DocItemType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDocItemType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, DocItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(docItemEClass, DocItem.class, "DocItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDocItem_Type(), ecorePackage.getEString(), "type", null, 0, 1, DocItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDocItem_Id(), ecorePackage.getEString(), "id", null, 0, 1, DocItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocItem_Type(), this.getDocItemType(), null, "type", null, 0, 1, DocItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDocItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, DocItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDocItem_Ref(), ecorePackage.getEString(), "ref", null, 0, 1, DocItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(modelTypeEClass, ModelType.class, "ModelType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModelType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, ModelType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(modelItemEClass, ModelItem.class, "ModelItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getModelItem_Type(), ecorePackage.getEString(), "type", null, 0, 1, ModelItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModelItem_Id(), ecorePackage.getEString(), "id", null, 0, 1, ModelItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModelItem_Type(), this.getModelType(), null, "type", null, 0, 1, ModelItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModelItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModelItem_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, ModelItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(listItemTypeEClass, ListItemType.class, "ListItemType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getListItemType_TypeName(), ecorePackage.getEString(), "typeName", null, 0, 1, ListItemType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(listItemEClass, ListItem.class, "ListItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getListItem_Type(), ecorePackage.getEString(), "type", null, 0, 1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getListItem_Id(), ecorePackage.getEString(), "id", null, 0, 1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListItem_Type(), this.getListItemType(), null, "type", null, 0, 1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getListItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getListItem_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListItem_DocReferences(), this.getDocItem(), null, "docReferences", null, 0, -1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListItem_ItemReferences(), this.getListItem(), null, "itemReferences", null, 0, -1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

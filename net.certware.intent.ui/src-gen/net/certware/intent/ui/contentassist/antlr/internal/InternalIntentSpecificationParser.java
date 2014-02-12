@@ -369,31 +369,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "ruleIntentType"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:153:1: ruleIntentType : ( ( rule__IntentType__Alternatives ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:153:1: ruleIntentType : ( ( rule__IntentType__TypeNameAssignment ) ) ;
     public final void ruleIntentType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:157:2: ( ( ( rule__IntentType__Alternatives ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:158:1: ( ( rule__IntentType__Alternatives ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:157:2: ( ( ( rule__IntentType__TypeNameAssignment ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:158:1: ( ( rule__IntentType__TypeNameAssignment ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:158:1: ( ( rule__IntentType__Alternatives ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:159:1: ( rule__IntentType__Alternatives )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:158:1: ( ( rule__IntentType__TypeNameAssignment ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:159:1: ( rule__IntentType__TypeNameAssignment )
             {
-             before(grammarAccess.getIntentTypeAccess().getAlternatives()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:160:1: ( rule__IntentType__Alternatives )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:160:2: rule__IntentType__Alternatives
+             before(grammarAccess.getIntentTypeAccess().getTypeNameAssignment()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:160:1: ( rule__IntentType__TypeNameAssignment )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:160:2: rule__IntentType__TypeNameAssignment
             {
-            pushFollow(FOLLOW_rule__IntentType__Alternatives_in_ruleIntentType274);
-            rule__IntentType__Alternatives();
+            pushFollow(FOLLOW_rule__IntentType__TypeNameAssignment_in_ruleIntentType274);
+            rule__IntentType__TypeNameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIntentTypeAccess().getAlternatives()); 
+             after(grammarAccess.getIntentTypeAccess().getTypeNameAssignment()); 
 
             }
 
@@ -523,31 +523,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "ruleDecompositionType"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:209:1: ruleDecompositionType : ( ( rule__DecompositionType__Alternatives ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:209:1: ruleDecompositionType : ( ( rule__DecompositionType__TypeNameAssignment ) ) ;
     public final void ruleDecompositionType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:213:2: ( ( ( rule__DecompositionType__Alternatives ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:214:1: ( ( rule__DecompositionType__Alternatives ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:213:2: ( ( ( rule__DecompositionType__TypeNameAssignment ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:214:1: ( ( rule__DecompositionType__TypeNameAssignment ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:214:1: ( ( rule__DecompositionType__Alternatives ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:215:1: ( rule__DecompositionType__Alternatives )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:214:1: ( ( rule__DecompositionType__TypeNameAssignment ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:215:1: ( rule__DecompositionType__TypeNameAssignment )
             {
-             before(grammarAccess.getDecompositionTypeAccess().getAlternatives()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:216:1: ( rule__DecompositionType__Alternatives )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:216:2: rule__DecompositionType__Alternatives
+             before(grammarAccess.getDecompositionTypeAccess().getTypeNameAssignment()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:216:1: ( rule__DecompositionType__TypeNameAssignment )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:216:2: rule__DecompositionType__TypeNameAssignment
             {
-            pushFollow(FOLLOW_rule__DecompositionType__Alternatives_in_ruleDecompositionType394);
-            rule__DecompositionType__Alternatives();
+            pushFollow(FOLLOW_rule__DecompositionType__TypeNameAssignment_in_ruleDecompositionType394);
+            rule__DecompositionType__TypeNameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDecompositionTypeAccess().getAlternatives()); 
+             after(grammarAccess.getDecompositionTypeAccess().getTypeNameAssignment()); 
 
             }
 
@@ -677,31 +677,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "ruleDocItemType"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:265:1: ruleDocItemType : ( ( rule__DocItemType__Alternatives ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:265:1: ruleDocItemType : ( ( rule__DocItemType__TypeNameAssignment ) ) ;
     public final void ruleDocItemType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:269:2: ( ( ( rule__DocItemType__Alternatives ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:270:1: ( ( rule__DocItemType__Alternatives ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:269:2: ( ( ( rule__DocItemType__TypeNameAssignment ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:270:1: ( ( rule__DocItemType__TypeNameAssignment ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:270:1: ( ( rule__DocItemType__Alternatives ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:271:1: ( rule__DocItemType__Alternatives )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:270:1: ( ( rule__DocItemType__TypeNameAssignment ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:271:1: ( rule__DocItemType__TypeNameAssignment )
             {
-             before(grammarAccess.getDocItemTypeAccess().getAlternatives()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:272:1: ( rule__DocItemType__Alternatives )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:272:2: rule__DocItemType__Alternatives
+             before(grammarAccess.getDocItemTypeAccess().getTypeNameAssignment()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:272:1: ( rule__DocItemType__TypeNameAssignment )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:272:2: rule__DocItemType__TypeNameAssignment
             {
-            pushFollow(FOLLOW_rule__DocItemType__Alternatives_in_ruleDocItemType514);
-            rule__DocItemType__Alternatives();
+            pushFollow(FOLLOW_rule__DocItemType__TypeNameAssignment_in_ruleDocItemType514);
+            rule__DocItemType__TypeNameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDocItemTypeAccess().getAlternatives()); 
+             after(grammarAccess.getDocItemTypeAccess().getTypeNameAssignment()); 
 
             }
 
@@ -831,31 +831,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "ruleModelType"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:321:1: ruleModelType : ( ( rule__ModelType__Alternatives ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:321:1: ruleModelType : ( ( rule__ModelType__TypeNameAssignment ) ) ;
     public final void ruleModelType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:325:2: ( ( ( rule__ModelType__Alternatives ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:326:1: ( ( rule__ModelType__Alternatives ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:325:2: ( ( ( rule__ModelType__TypeNameAssignment ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:326:1: ( ( rule__ModelType__TypeNameAssignment ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:326:1: ( ( rule__ModelType__Alternatives ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:327:1: ( rule__ModelType__Alternatives )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:326:1: ( ( rule__ModelType__TypeNameAssignment ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:327:1: ( rule__ModelType__TypeNameAssignment )
             {
-             before(grammarAccess.getModelTypeAccess().getAlternatives()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:328:1: ( rule__ModelType__Alternatives )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:328:2: rule__ModelType__Alternatives
+             before(grammarAccess.getModelTypeAccess().getTypeNameAssignment()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:328:1: ( rule__ModelType__TypeNameAssignment )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:328:2: rule__ModelType__TypeNameAssignment
             {
-            pushFollow(FOLLOW_rule__ModelType__Alternatives_in_ruleModelType634);
-            rule__ModelType__Alternatives();
+            pushFollow(FOLLOW_rule__ModelType__TypeNameAssignment_in_ruleModelType634);
+            rule__ModelType__TypeNameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getModelTypeAccess().getAlternatives()); 
+             after(grammarAccess.getModelTypeAccess().getTypeNameAssignment()); 
 
             }
 
@@ -985,31 +985,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "ruleListItemType"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:377:1: ruleListItemType : ( ( rule__ListItemType__Alternatives ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:377:1: ruleListItemType : ( ( rule__ListItemType__TypeNameAssignment ) ) ;
     public final void ruleListItemType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:381:2: ( ( ( rule__ListItemType__Alternatives ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:382:1: ( ( rule__ListItemType__Alternatives ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:381:2: ( ( ( rule__ListItemType__TypeNameAssignment ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:382:1: ( ( rule__ListItemType__TypeNameAssignment ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:382:1: ( ( rule__ListItemType__Alternatives ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:383:1: ( rule__ListItemType__Alternatives )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:382:1: ( ( rule__ListItemType__TypeNameAssignment ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:383:1: ( rule__ListItemType__TypeNameAssignment )
             {
-             before(grammarAccess.getListItemTypeAccess().getAlternatives()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:384:1: ( rule__ListItemType__Alternatives )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:384:2: rule__ListItemType__Alternatives
+             before(grammarAccess.getListItemTypeAccess().getTypeNameAssignment()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:384:1: ( rule__ListItemType__TypeNameAssignment )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:384:2: rule__ListItemType__TypeNameAssignment
             {
-            pushFollow(FOLLOW_rule__ListItemType__Alternatives_in_ruleListItemType754);
-            rule__ListItemType__Alternatives();
+            pushFollow(FOLLOW_rule__ListItemType__TypeNameAssignment_in_ruleListItemType754);
+            rule__ListItemType__TypeNameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getListItemTypeAccess().getAlternatives()); 
+             after(grammarAccess.getListItemTypeAccess().getTypeNameAssignment()); 
 
             }
 
@@ -1108,9 +1108,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "ruleListItem"
 
 
-    // $ANTLR start "rule__IntentType__Alternatives"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:424:1: rule__IntentType__Alternatives : ( ( 'basic' ) | ( 'purpose' ) | ( 'principles' ) | ( 'models' ) | ( 'design' ) | ( 'implementation' ) | ( 'operation' ) );
-    public final void rule__IntentType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__IntentType__TypeNameAlternatives_0"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:424:1: rule__IntentType__TypeNameAlternatives_0 : ( ( 'basic' ) | ( 'purpose' ) | ( 'principles' ) | ( 'models' ) | ( 'design' ) | ( 'implementation' ) | ( 'operation' ) );
+    public final void rule__IntentType__TypeNameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -1167,9 +1167,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:429:1: ( 'basic' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:430:1: 'basic'
                     {
-                     before(grammarAccess.getIntentTypeAccess().getBasicKeyword_0()); 
-                    match(input,11,FOLLOW_11_in_rule__IntentType__Alternatives851); 
-                     after(grammarAccess.getIntentTypeAccess().getBasicKeyword_0()); 
+                     before(grammarAccess.getIntentTypeAccess().getTypeNameBasicKeyword_0_0()); 
+                    match(input,11,FOLLOW_11_in_rule__IntentType__TypeNameAlternatives_0851); 
+                     after(grammarAccess.getIntentTypeAccess().getTypeNameBasicKeyword_0_0()); 
 
                     }
 
@@ -1182,9 +1182,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:437:6: ( 'purpose' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:438:1: 'purpose'
                     {
-                     before(grammarAccess.getIntentTypeAccess().getPurposeKeyword_1()); 
-                    match(input,12,FOLLOW_12_in_rule__IntentType__Alternatives871); 
-                     after(grammarAccess.getIntentTypeAccess().getPurposeKeyword_1()); 
+                     before(grammarAccess.getIntentTypeAccess().getTypeNamePurposeKeyword_0_1()); 
+                    match(input,12,FOLLOW_12_in_rule__IntentType__TypeNameAlternatives_0871); 
+                     after(grammarAccess.getIntentTypeAccess().getTypeNamePurposeKeyword_0_1()); 
 
                     }
 
@@ -1197,9 +1197,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:445:6: ( 'principles' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:446:1: 'principles'
                     {
-                     before(grammarAccess.getIntentTypeAccess().getPrinciplesKeyword_2()); 
-                    match(input,13,FOLLOW_13_in_rule__IntentType__Alternatives891); 
-                     after(grammarAccess.getIntentTypeAccess().getPrinciplesKeyword_2()); 
+                     before(grammarAccess.getIntentTypeAccess().getTypeNamePrinciplesKeyword_0_2()); 
+                    match(input,13,FOLLOW_13_in_rule__IntentType__TypeNameAlternatives_0891); 
+                     after(grammarAccess.getIntentTypeAccess().getTypeNamePrinciplesKeyword_0_2()); 
 
                     }
 
@@ -1212,9 +1212,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:453:6: ( 'models' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:454:1: 'models'
                     {
-                     before(grammarAccess.getIntentTypeAccess().getModelsKeyword_3()); 
-                    match(input,14,FOLLOW_14_in_rule__IntentType__Alternatives911); 
-                     after(grammarAccess.getIntentTypeAccess().getModelsKeyword_3()); 
+                     before(grammarAccess.getIntentTypeAccess().getTypeNameModelsKeyword_0_3()); 
+                    match(input,14,FOLLOW_14_in_rule__IntentType__TypeNameAlternatives_0911); 
+                     after(grammarAccess.getIntentTypeAccess().getTypeNameModelsKeyword_0_3()); 
 
                     }
 
@@ -1227,9 +1227,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:461:6: ( 'design' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:462:1: 'design'
                     {
-                     before(grammarAccess.getIntentTypeAccess().getDesignKeyword_4()); 
-                    match(input,15,FOLLOW_15_in_rule__IntentType__Alternatives931); 
-                     after(grammarAccess.getIntentTypeAccess().getDesignKeyword_4()); 
+                     before(grammarAccess.getIntentTypeAccess().getTypeNameDesignKeyword_0_4()); 
+                    match(input,15,FOLLOW_15_in_rule__IntentType__TypeNameAlternatives_0931); 
+                     after(grammarAccess.getIntentTypeAccess().getTypeNameDesignKeyword_0_4()); 
 
                     }
 
@@ -1242,9 +1242,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:469:6: ( 'implementation' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:470:1: 'implementation'
                     {
-                     before(grammarAccess.getIntentTypeAccess().getImplementationKeyword_5()); 
-                    match(input,16,FOLLOW_16_in_rule__IntentType__Alternatives951); 
-                     after(grammarAccess.getIntentTypeAccess().getImplementationKeyword_5()); 
+                     before(grammarAccess.getIntentTypeAccess().getTypeNameImplementationKeyword_0_5()); 
+                    match(input,16,FOLLOW_16_in_rule__IntentType__TypeNameAlternatives_0951); 
+                     after(grammarAccess.getIntentTypeAccess().getTypeNameImplementationKeyword_0_5()); 
 
                     }
 
@@ -1257,9 +1257,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:477:6: ( 'operation' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:478:1: 'operation'
                     {
-                     before(grammarAccess.getIntentTypeAccess().getOperationKeyword_6()); 
-                    match(input,17,FOLLOW_17_in_rule__IntentType__Alternatives971); 
-                     after(grammarAccess.getIntentTypeAccess().getOperationKeyword_6()); 
+                     before(grammarAccess.getIntentTypeAccess().getTypeNameOperationKeyword_0_6()); 
+                    match(input,17,FOLLOW_17_in_rule__IntentType__TypeNameAlternatives_0971); 
+                     after(grammarAccess.getIntentTypeAccess().getTypeNameOperationKeyword_0_6()); 
 
                     }
 
@@ -1280,12 +1280,12 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__IntentType__Alternatives"
+    // $ANTLR end "rule__IntentType__TypeNameAlternatives_0"
 
 
-    // $ANTLR start "rule__DecompositionType__Alternatives"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:490:1: rule__DecompositionType__Alternatives : ( ( 'environment' ) | ( 'operator' ) | ( 'system' ) | ( 'verification' ) );
-    public final void rule__DecompositionType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__DecompositionType__TypeNameAlternatives_0"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:490:1: rule__DecompositionType__TypeNameAlternatives_0 : ( ( 'environment' ) | ( 'operator' ) | ( 'system' ) | ( 'verification' ) );
+    public final void rule__DecompositionType__TypeNameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -1327,9 +1327,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:495:1: ( 'environment' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:496:1: 'environment'
                     {
-                     before(grammarAccess.getDecompositionTypeAccess().getEnvironmentKeyword_0()); 
-                    match(input,18,FOLLOW_18_in_rule__DecompositionType__Alternatives1006); 
-                     after(grammarAccess.getDecompositionTypeAccess().getEnvironmentKeyword_0()); 
+                     before(grammarAccess.getDecompositionTypeAccess().getTypeNameEnvironmentKeyword_0_0()); 
+                    match(input,18,FOLLOW_18_in_rule__DecompositionType__TypeNameAlternatives_01006); 
+                     after(grammarAccess.getDecompositionTypeAccess().getTypeNameEnvironmentKeyword_0_0()); 
 
                     }
 
@@ -1342,9 +1342,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:503:6: ( 'operator' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:504:1: 'operator'
                     {
-                     before(grammarAccess.getDecompositionTypeAccess().getOperatorKeyword_1()); 
-                    match(input,19,FOLLOW_19_in_rule__DecompositionType__Alternatives1026); 
-                     after(grammarAccess.getDecompositionTypeAccess().getOperatorKeyword_1()); 
+                     before(grammarAccess.getDecompositionTypeAccess().getTypeNameOperatorKeyword_0_1()); 
+                    match(input,19,FOLLOW_19_in_rule__DecompositionType__TypeNameAlternatives_01026); 
+                     after(grammarAccess.getDecompositionTypeAccess().getTypeNameOperatorKeyword_0_1()); 
 
                     }
 
@@ -1357,9 +1357,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:511:6: ( 'system' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:512:1: 'system'
                     {
-                     before(grammarAccess.getDecompositionTypeAccess().getSystemKeyword_2()); 
-                    match(input,20,FOLLOW_20_in_rule__DecompositionType__Alternatives1046); 
-                     after(grammarAccess.getDecompositionTypeAccess().getSystemKeyword_2()); 
+                     before(grammarAccess.getDecompositionTypeAccess().getTypeNameSystemKeyword_0_2()); 
+                    match(input,20,FOLLOW_20_in_rule__DecompositionType__TypeNameAlternatives_01046); 
+                     after(grammarAccess.getDecompositionTypeAccess().getTypeNameSystemKeyword_0_2()); 
 
                     }
 
@@ -1372,9 +1372,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:519:6: ( 'verification' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:520:1: 'verification'
                     {
-                     before(grammarAccess.getDecompositionTypeAccess().getVerificationKeyword_3()); 
-                    match(input,21,FOLLOW_21_in_rule__DecompositionType__Alternatives1066); 
-                     after(grammarAccess.getDecompositionTypeAccess().getVerificationKeyword_3()); 
+                     before(grammarAccess.getDecompositionTypeAccess().getTypeNameVerificationKeyword_0_3()); 
+                    match(input,21,FOLLOW_21_in_rule__DecompositionType__TypeNameAlternatives_01066); 
+                     after(grammarAccess.getDecompositionTypeAccess().getTypeNameVerificationKeyword_0_3()); 
 
                     }
 
@@ -1395,12 +1395,12 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__DecompositionType__Alternatives"
+    // $ANTLR end "rule__DecompositionType__TypeNameAlternatives_0"
 
 
-    // $ANTLR start "rule__DocItemType__Alternatives"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:532:1: rule__DocItemType__Alternatives : ( ( 'condition' ) | ( 'figure' ) | ( 'break' ) | ( 'model' ) | ( 'paragraph' ) | ( 'section' ) | ( 'table' ) );
-    public final void rule__DocItemType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__DocItemType__TypeNameAlternatives_0"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:532:1: rule__DocItemType__TypeNameAlternatives_0 : ( ( 'condition' ) | ( 'figure' ) | ( 'break' ) | ( 'model' ) | ( 'paragraph' ) | ( 'section' ) | ( 'table' ) );
+    public final void rule__DocItemType__TypeNameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -1457,9 +1457,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:537:1: ( 'condition' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:538:1: 'condition'
                     {
-                     before(grammarAccess.getDocItemTypeAccess().getConditionKeyword_0()); 
-                    match(input,22,FOLLOW_22_in_rule__DocItemType__Alternatives1101); 
-                     after(grammarAccess.getDocItemTypeAccess().getConditionKeyword_0()); 
+                     before(grammarAccess.getDocItemTypeAccess().getTypeNameConditionKeyword_0_0()); 
+                    match(input,22,FOLLOW_22_in_rule__DocItemType__TypeNameAlternatives_01101); 
+                     after(grammarAccess.getDocItemTypeAccess().getTypeNameConditionKeyword_0_0()); 
 
                     }
 
@@ -1472,9 +1472,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:545:6: ( 'figure' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:546:1: 'figure'
                     {
-                     before(grammarAccess.getDocItemTypeAccess().getFigureKeyword_1()); 
-                    match(input,23,FOLLOW_23_in_rule__DocItemType__Alternatives1121); 
-                     after(grammarAccess.getDocItemTypeAccess().getFigureKeyword_1()); 
+                     before(grammarAccess.getDocItemTypeAccess().getTypeNameFigureKeyword_0_1()); 
+                    match(input,23,FOLLOW_23_in_rule__DocItemType__TypeNameAlternatives_01121); 
+                     after(grammarAccess.getDocItemTypeAccess().getTypeNameFigureKeyword_0_1()); 
 
                     }
 
@@ -1487,9 +1487,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:553:6: ( 'break' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:554:1: 'break'
                     {
-                     before(grammarAccess.getDocItemTypeAccess().getBreakKeyword_2()); 
-                    match(input,24,FOLLOW_24_in_rule__DocItemType__Alternatives1141); 
-                     after(grammarAccess.getDocItemTypeAccess().getBreakKeyword_2()); 
+                     before(grammarAccess.getDocItemTypeAccess().getTypeNameBreakKeyword_0_2()); 
+                    match(input,24,FOLLOW_24_in_rule__DocItemType__TypeNameAlternatives_01141); 
+                     after(grammarAccess.getDocItemTypeAccess().getTypeNameBreakKeyword_0_2()); 
 
                     }
 
@@ -1502,9 +1502,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:561:6: ( 'model' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:562:1: 'model'
                     {
-                     before(grammarAccess.getDocItemTypeAccess().getModelKeyword_3()); 
-                    match(input,25,FOLLOW_25_in_rule__DocItemType__Alternatives1161); 
-                     after(grammarAccess.getDocItemTypeAccess().getModelKeyword_3()); 
+                     before(grammarAccess.getDocItemTypeAccess().getTypeNameModelKeyword_0_3()); 
+                    match(input,25,FOLLOW_25_in_rule__DocItemType__TypeNameAlternatives_01161); 
+                     after(grammarAccess.getDocItemTypeAccess().getTypeNameModelKeyword_0_3()); 
 
                     }
 
@@ -1517,9 +1517,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:569:6: ( 'paragraph' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:570:1: 'paragraph'
                     {
-                     before(grammarAccess.getDocItemTypeAccess().getParagraphKeyword_4()); 
-                    match(input,26,FOLLOW_26_in_rule__DocItemType__Alternatives1181); 
-                     after(grammarAccess.getDocItemTypeAccess().getParagraphKeyword_4()); 
+                     before(grammarAccess.getDocItemTypeAccess().getTypeNameParagraphKeyword_0_4()); 
+                    match(input,26,FOLLOW_26_in_rule__DocItemType__TypeNameAlternatives_01181); 
+                     after(grammarAccess.getDocItemTypeAccess().getTypeNameParagraphKeyword_0_4()); 
 
                     }
 
@@ -1532,9 +1532,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:577:6: ( 'section' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:578:1: 'section'
                     {
-                     before(grammarAccess.getDocItemTypeAccess().getSectionKeyword_5()); 
-                    match(input,27,FOLLOW_27_in_rule__DocItemType__Alternatives1201); 
-                     after(grammarAccess.getDocItemTypeAccess().getSectionKeyword_5()); 
+                     before(grammarAccess.getDocItemTypeAccess().getTypeNameSectionKeyword_0_5()); 
+                    match(input,27,FOLLOW_27_in_rule__DocItemType__TypeNameAlternatives_01201); 
+                     after(grammarAccess.getDocItemTypeAccess().getTypeNameSectionKeyword_0_5()); 
 
                     }
 
@@ -1547,9 +1547,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:585:6: ( 'table' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:586:1: 'table'
                     {
-                     before(grammarAccess.getDocItemTypeAccess().getTableKeyword_6()); 
-                    match(input,28,FOLLOW_28_in_rule__DocItemType__Alternatives1221); 
-                     after(grammarAccess.getDocItemTypeAccess().getTableKeyword_6()); 
+                     before(grammarAccess.getDocItemTypeAccess().getTypeNameTableKeyword_0_6()); 
+                    match(input,28,FOLLOW_28_in_rule__DocItemType__TypeNameAlternatives_01221); 
+                     after(grammarAccess.getDocItemTypeAccess().getTypeNameTableKeyword_0_6()); 
 
                     }
 
@@ -1570,12 +1570,12 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__DocItemType__Alternatives"
+    // $ANTLR end "rule__DocItemType__TypeNameAlternatives_0"
 
 
-    // $ANTLR start "rule__ModelType__Alternatives"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:598:1: rule__ModelType__Alternatives : ( ( 'output' ) | ( 'mode' ) | ( 'state' ) | ( 'macro' ) | ( 'function' ) | ( 'input' ) );
-    public final void rule__ModelType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__ModelType__TypeNameAlternatives_0"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:598:1: rule__ModelType__TypeNameAlternatives_0 : ( ( 'output' ) | ( 'mode' ) | ( 'state' ) | ( 'macro' ) | ( 'function' ) | ( 'input' ) );
+    public final void rule__ModelType__TypeNameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -1627,9 +1627,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:603:1: ( 'output' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:604:1: 'output'
                     {
-                     before(grammarAccess.getModelTypeAccess().getOutputKeyword_0()); 
-                    match(input,29,FOLLOW_29_in_rule__ModelType__Alternatives1256); 
-                     after(grammarAccess.getModelTypeAccess().getOutputKeyword_0()); 
+                     before(grammarAccess.getModelTypeAccess().getTypeNameOutputKeyword_0_0()); 
+                    match(input,29,FOLLOW_29_in_rule__ModelType__TypeNameAlternatives_01256); 
+                     after(grammarAccess.getModelTypeAccess().getTypeNameOutputKeyword_0_0()); 
 
                     }
 
@@ -1642,9 +1642,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:611:6: ( 'mode' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:612:1: 'mode'
                     {
-                     before(grammarAccess.getModelTypeAccess().getModeKeyword_1()); 
-                    match(input,30,FOLLOW_30_in_rule__ModelType__Alternatives1276); 
-                     after(grammarAccess.getModelTypeAccess().getModeKeyword_1()); 
+                     before(grammarAccess.getModelTypeAccess().getTypeNameModeKeyword_0_1()); 
+                    match(input,30,FOLLOW_30_in_rule__ModelType__TypeNameAlternatives_01276); 
+                     after(grammarAccess.getModelTypeAccess().getTypeNameModeKeyword_0_1()); 
 
                     }
 
@@ -1657,9 +1657,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:619:6: ( 'state' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:620:1: 'state'
                     {
-                     before(grammarAccess.getModelTypeAccess().getStateKeyword_2()); 
-                    match(input,31,FOLLOW_31_in_rule__ModelType__Alternatives1296); 
-                     after(grammarAccess.getModelTypeAccess().getStateKeyword_2()); 
+                     before(grammarAccess.getModelTypeAccess().getTypeNameStateKeyword_0_2()); 
+                    match(input,31,FOLLOW_31_in_rule__ModelType__TypeNameAlternatives_01296); 
+                     after(grammarAccess.getModelTypeAccess().getTypeNameStateKeyword_0_2()); 
 
                     }
 
@@ -1672,9 +1672,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:627:6: ( 'macro' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:628:1: 'macro'
                     {
-                     before(grammarAccess.getModelTypeAccess().getMacroKeyword_3()); 
-                    match(input,32,FOLLOW_32_in_rule__ModelType__Alternatives1316); 
-                     after(grammarAccess.getModelTypeAccess().getMacroKeyword_3()); 
+                     before(grammarAccess.getModelTypeAccess().getTypeNameMacroKeyword_0_3()); 
+                    match(input,32,FOLLOW_32_in_rule__ModelType__TypeNameAlternatives_01316); 
+                     after(grammarAccess.getModelTypeAccess().getTypeNameMacroKeyword_0_3()); 
 
                     }
 
@@ -1687,9 +1687,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:635:6: ( 'function' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:636:1: 'function'
                     {
-                     before(grammarAccess.getModelTypeAccess().getFunctionKeyword_4()); 
-                    match(input,33,FOLLOW_33_in_rule__ModelType__Alternatives1336); 
-                     after(grammarAccess.getModelTypeAccess().getFunctionKeyword_4()); 
+                     before(grammarAccess.getModelTypeAccess().getTypeNameFunctionKeyword_0_4()); 
+                    match(input,33,FOLLOW_33_in_rule__ModelType__TypeNameAlternatives_01336); 
+                     after(grammarAccess.getModelTypeAccess().getTypeNameFunctionKeyword_0_4()); 
 
                     }
 
@@ -1702,9 +1702,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:643:6: ( 'input' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:644:1: 'input'
                     {
-                     before(grammarAccess.getModelTypeAccess().getInputKeyword_5()); 
-                    match(input,34,FOLLOW_34_in_rule__ModelType__Alternatives1356); 
-                     after(grammarAccess.getModelTypeAccess().getInputKeyword_5()); 
+                     before(grammarAccess.getModelTypeAccess().getTypeNameInputKeyword_0_5()); 
+                    match(input,34,FOLLOW_34_in_rule__ModelType__TypeNameAlternatives_01356); 
+                     after(grammarAccess.getModelTypeAccess().getTypeNameInputKeyword_0_5()); 
 
                     }
 
@@ -1725,12 +1725,12 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ModelType__Alternatives"
+    // $ANTLR end "rule__ModelType__TypeNameAlternatives_0"
 
 
-    // $ANTLR start "rule__ListItemType__Alternatives"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:656:1: rule__ListItemType__Alternatives : ( ( 'requirement' ) | ( 'goal' ) | ( 'hazard' ) | ( 'constraint' ) );
-    public final void rule__ListItemType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__ListItemType__TypeNameAlternatives_0"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:656:1: rule__ListItemType__TypeNameAlternatives_0 : ( ( 'requirement' ) | ( 'goal' ) | ( 'hazard' ) | ( 'constraint' ) );
+    public final void rule__ListItemType__TypeNameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -1772,9 +1772,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:661:1: ( 'requirement' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:662:1: 'requirement'
                     {
-                     before(grammarAccess.getListItemTypeAccess().getRequirementKeyword_0()); 
-                    match(input,35,FOLLOW_35_in_rule__ListItemType__Alternatives1391); 
-                     after(grammarAccess.getListItemTypeAccess().getRequirementKeyword_0()); 
+                     before(grammarAccess.getListItemTypeAccess().getTypeNameRequirementKeyword_0_0()); 
+                    match(input,35,FOLLOW_35_in_rule__ListItemType__TypeNameAlternatives_01391); 
+                     after(grammarAccess.getListItemTypeAccess().getTypeNameRequirementKeyword_0_0()); 
 
                     }
 
@@ -1787,9 +1787,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:669:6: ( 'goal' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:670:1: 'goal'
                     {
-                     before(grammarAccess.getListItemTypeAccess().getGoalKeyword_1()); 
-                    match(input,36,FOLLOW_36_in_rule__ListItemType__Alternatives1411); 
-                     after(grammarAccess.getListItemTypeAccess().getGoalKeyword_1()); 
+                     before(grammarAccess.getListItemTypeAccess().getTypeNameGoalKeyword_0_1()); 
+                    match(input,36,FOLLOW_36_in_rule__ListItemType__TypeNameAlternatives_01411); 
+                     after(grammarAccess.getListItemTypeAccess().getTypeNameGoalKeyword_0_1()); 
 
                     }
 
@@ -1802,9 +1802,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:677:6: ( 'hazard' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:678:1: 'hazard'
                     {
-                     before(grammarAccess.getListItemTypeAccess().getHazardKeyword_2()); 
-                    match(input,37,FOLLOW_37_in_rule__ListItemType__Alternatives1431); 
-                     after(grammarAccess.getListItemTypeAccess().getHazardKeyword_2()); 
+                     before(grammarAccess.getListItemTypeAccess().getTypeNameHazardKeyword_0_2()); 
+                    match(input,37,FOLLOW_37_in_rule__ListItemType__TypeNameAlternatives_01431); 
+                     after(grammarAccess.getListItemTypeAccess().getTypeNameHazardKeyword_0_2()); 
 
                     }
 
@@ -1817,9 +1817,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:685:6: ( 'constraint' )
                     // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:686:1: 'constraint'
                     {
-                     before(grammarAccess.getListItemTypeAccess().getConstraintKeyword_3()); 
-                    match(input,38,FOLLOW_38_in_rule__ListItemType__Alternatives1451); 
-                     after(grammarAccess.getListItemTypeAccess().getConstraintKeyword_3()); 
+                     before(grammarAccess.getListItemTypeAccess().getTypeNameConstraintKeyword_0_3()); 
+                    match(input,38,FOLLOW_38_in_rule__ListItemType__TypeNameAlternatives_01451); 
+                     after(grammarAccess.getListItemTypeAccess().getTypeNameConstraintKeyword_0_3()); 
 
                     }
 
@@ -1840,7 +1840,7 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ListItemType__Alternatives"
+    // $ANTLR end "rule__ListItemType__TypeNameAlternatives_0"
 
 
     // $ANTLR start "rule__Specification__Group__0"
@@ -1957,31 +1957,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Specification__Group__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:743:1: rule__Specification__Group__1__Impl : ( ( rule__Specification__IdAssignment_1 ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:743:1: rule__Specification__Group__1__Impl : ( ( rule__Specification__NameAssignment_1 ) ) ;
     public final void rule__Specification__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:747:1: ( ( ( rule__Specification__IdAssignment_1 ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:748:1: ( ( rule__Specification__IdAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:747:1: ( ( ( rule__Specification__NameAssignment_1 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:748:1: ( ( rule__Specification__NameAssignment_1 ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:748:1: ( ( rule__Specification__IdAssignment_1 ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:749:1: ( rule__Specification__IdAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:748:1: ( ( rule__Specification__NameAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:749:1: ( rule__Specification__NameAssignment_1 )
             {
-             before(grammarAccess.getSpecificationAccess().getIdAssignment_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:750:1: ( rule__Specification__IdAssignment_1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:750:2: rule__Specification__IdAssignment_1
+             before(grammarAccess.getSpecificationAccess().getNameAssignment_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:750:1: ( rule__Specification__NameAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:750:2: rule__Specification__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Specification__IdAssignment_1_in_rule__Specification__Group__1__Impl1575);
-            rule__Specification__IdAssignment_1();
+            pushFollow(FOLLOW_rule__Specification__NameAssignment_1_in_rule__Specification__Group__1__Impl1575);
+            rule__Specification__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSpecificationAccess().getIdAssignment_1()); 
+             after(grammarAccess.getSpecificationAccess().getNameAssignment_1()); 
 
             }
 
@@ -2240,31 +2240,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Refinement__Group__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:844:1: rule__Refinement__Group__1__Impl : ( ( rule__Refinement__IdAssignment_1 ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:844:1: rule__Refinement__Group__1__Impl : ( ( rule__Refinement__NameAssignment_1 ) ) ;
     public final void rule__Refinement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:848:1: ( ( ( rule__Refinement__IdAssignment_1 ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:849:1: ( ( rule__Refinement__IdAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:848:1: ( ( ( rule__Refinement__NameAssignment_1 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:849:1: ( ( rule__Refinement__NameAssignment_1 ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:849:1: ( ( rule__Refinement__IdAssignment_1 ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:850:1: ( rule__Refinement__IdAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:849:1: ( ( rule__Refinement__NameAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:850:1: ( rule__Refinement__NameAssignment_1 )
             {
-             before(grammarAccess.getRefinementAccess().getIdAssignment_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:851:1: ( rule__Refinement__IdAssignment_1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:851:2: rule__Refinement__IdAssignment_1
+             before(grammarAccess.getRefinementAccess().getNameAssignment_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:851:1: ( rule__Refinement__NameAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:851:2: rule__Refinement__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Refinement__IdAssignment_1_in_rule__Refinement__Group__1__Impl1777);
-            rule__Refinement__IdAssignment_1();
+            pushFollow(FOLLOW_rule__Refinement__NameAssignment_1_in_rule__Refinement__Group__1__Impl1777);
+            rule__Refinement__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRefinementAccess().getIdAssignment_1()); 
+             after(grammarAccess.getRefinementAccess().getNameAssignment_1()); 
 
             }
 
@@ -2618,31 +2618,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Intent__Group__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:974:1: rule__Intent__Group__1__Impl : ( ( rule__Intent__IdAssignment_1 ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:974:1: rule__Intent__Group__1__Impl : ( ( rule__Intent__NameAssignment_1 ) ) ;
     public final void rule__Intent__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:978:1: ( ( ( rule__Intent__IdAssignment_1 ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:979:1: ( ( rule__Intent__IdAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:978:1: ( ( ( rule__Intent__NameAssignment_1 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:979:1: ( ( rule__Intent__NameAssignment_1 ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:979:1: ( ( rule__Intent__IdAssignment_1 ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:980:1: ( rule__Intent__IdAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:979:1: ( ( rule__Intent__NameAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:980:1: ( rule__Intent__NameAssignment_1 )
             {
-             before(grammarAccess.getIntentAccess().getIdAssignment_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:981:1: ( rule__Intent__IdAssignment_1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:981:2: rule__Intent__IdAssignment_1
+             before(grammarAccess.getIntentAccess().getNameAssignment_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:981:1: ( rule__Intent__NameAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:981:2: rule__Intent__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Intent__IdAssignment_1_in_rule__Intent__Group__1__Impl2039);
-            rule__Intent__IdAssignment_1();
+            pushFollow(FOLLOW_rule__Intent__NameAssignment_1_in_rule__Intent__Group__1__Impl2039);
+            rule__Intent__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIntentAccess().getIdAssignment_1()); 
+             after(grammarAccess.getIntentAccess().getNameAssignment_1()); 
 
             }
 
@@ -2996,31 +2996,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Decomposition__Group__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1104:1: rule__Decomposition__Group__1__Impl : ( ( rule__Decomposition__IdAssignment_1 ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1104:1: rule__Decomposition__Group__1__Impl : ( ( rule__Decomposition__NameAssignment_1 ) ) ;
     public final void rule__Decomposition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1108:1: ( ( ( rule__Decomposition__IdAssignment_1 ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1109:1: ( ( rule__Decomposition__IdAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1108:1: ( ( ( rule__Decomposition__NameAssignment_1 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1109:1: ( ( rule__Decomposition__NameAssignment_1 ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1109:1: ( ( rule__Decomposition__IdAssignment_1 ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1110:1: ( rule__Decomposition__IdAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1109:1: ( ( rule__Decomposition__NameAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1110:1: ( rule__Decomposition__NameAssignment_1 )
             {
-             before(grammarAccess.getDecompositionAccess().getIdAssignment_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1111:1: ( rule__Decomposition__IdAssignment_1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1111:2: rule__Decomposition__IdAssignment_1
+             before(grammarAccess.getDecompositionAccess().getNameAssignment_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1111:1: ( rule__Decomposition__NameAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1111:2: rule__Decomposition__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Decomposition__IdAssignment_1_in_rule__Decomposition__Group__1__Impl2301);
-            rule__Decomposition__IdAssignment_1();
+            pushFollow(FOLLOW_rule__Decomposition__NameAssignment_1_in_rule__Decomposition__Group__1__Impl2301);
+            rule__Decomposition__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDecompositionAccess().getIdAssignment_1()); 
+             after(grammarAccess.getDecompositionAccess().getNameAssignment_1()); 
 
             }
 
@@ -4551,31 +4551,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__DocItem__Group__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1680:1: rule__DocItem__Group__1__Impl : ( ( rule__DocItem__IdAssignment_1 ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1680:1: rule__DocItem__Group__1__Impl : ( ( rule__DocItem__NameAssignment_1 ) ) ;
     public final void rule__DocItem__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1684:1: ( ( ( rule__DocItem__IdAssignment_1 ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1685:1: ( ( rule__DocItem__IdAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1684:1: ( ( ( rule__DocItem__NameAssignment_1 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1685:1: ( ( rule__DocItem__NameAssignment_1 ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1685:1: ( ( rule__DocItem__IdAssignment_1 ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1686:1: ( rule__DocItem__IdAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1685:1: ( ( rule__DocItem__NameAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1686:1: ( rule__DocItem__NameAssignment_1 )
             {
-             before(grammarAccess.getDocItemAccess().getIdAssignment_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1687:1: ( rule__DocItem__IdAssignment_1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1687:2: rule__DocItem__IdAssignment_1
+             before(grammarAccess.getDocItemAccess().getNameAssignment_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1687:1: ( rule__DocItem__NameAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1687:2: rule__DocItem__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__DocItem__IdAssignment_1_in_rule__DocItem__Group__1__Impl3441);
-            rule__DocItem__IdAssignment_1();
+            pushFollow(FOLLOW_rule__DocItem__NameAssignment_1_in_rule__DocItem__Group__1__Impl3441);
+            rule__DocItem__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDocItemAccess().getIdAssignment_1()); 
+             after(grammarAccess.getDocItemAccess().getNameAssignment_1()); 
 
             }
 
@@ -4876,31 +4876,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ModelItem__Group__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1805:1: rule__ModelItem__Group__1__Impl : ( ( rule__ModelItem__IdAssignment_1 ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1805:1: rule__ModelItem__Group__1__Impl : ( ( rule__ModelItem__NameAssignment_1 ) ) ;
     public final void rule__ModelItem__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1809:1: ( ( ( rule__ModelItem__IdAssignment_1 ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1810:1: ( ( rule__ModelItem__IdAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1809:1: ( ( ( rule__ModelItem__NameAssignment_1 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1810:1: ( ( rule__ModelItem__NameAssignment_1 ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1810:1: ( ( rule__ModelItem__IdAssignment_1 ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1811:1: ( rule__ModelItem__IdAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1810:1: ( ( rule__ModelItem__NameAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1811:1: ( rule__ModelItem__NameAssignment_1 )
             {
-             before(grammarAccess.getModelItemAccess().getIdAssignment_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1812:1: ( rule__ModelItem__IdAssignment_1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1812:2: rule__ModelItem__IdAssignment_1
+             before(grammarAccess.getModelItemAccess().getNameAssignment_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1812:1: ( rule__ModelItem__NameAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1812:2: rule__ModelItem__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__ModelItem__IdAssignment_1_in_rule__ModelItem__Group__1__Impl3688);
-            rule__ModelItem__IdAssignment_1();
+            pushFollow(FOLLOW_rule__ModelItem__NameAssignment_1_in_rule__ModelItem__Group__1__Impl3688);
+            rule__ModelItem__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getModelItemAccess().getIdAssignment_1()); 
+             after(grammarAccess.getModelItemAccess().getNameAssignment_1()); 
 
             }
 
@@ -5201,31 +5201,31 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1930:1: rule__ListItem__Group__1__Impl : ( ( rule__ListItem__IdAssignment_1 ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1930:1: rule__ListItem__Group__1__Impl : ( ( rule__ListItem__NameAssignment_1 ) ) ;
     public final void rule__ListItem__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1934:1: ( ( ( rule__ListItem__IdAssignment_1 ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1935:1: ( ( rule__ListItem__IdAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1934:1: ( ( ( rule__ListItem__NameAssignment_1 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1935:1: ( ( rule__ListItem__NameAssignment_1 ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1935:1: ( ( rule__ListItem__IdAssignment_1 ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1936:1: ( rule__ListItem__IdAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1935:1: ( ( rule__ListItem__NameAssignment_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1936:1: ( rule__ListItem__NameAssignment_1 )
             {
-             before(grammarAccess.getListItemAccess().getIdAssignment_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1937:1: ( rule__ListItem__IdAssignment_1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1937:2: rule__ListItem__IdAssignment_1
+             before(grammarAccess.getListItemAccess().getNameAssignment_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1937:1: ( rule__ListItem__NameAssignment_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:1937:2: rule__ListItem__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__ListItem__IdAssignment_1_in_rule__ListItem__Group__1__Impl3935);
-            rule__ListItem__IdAssignment_1();
+            pushFollow(FOLLOW_rule__ListItem__NameAssignment_1_in_rule__ListItem__Group__1__Impl3935);
+            rule__ListItem__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getListItemAccess().getIdAssignment_1()); 
+             after(grammarAccess.getListItemAccess().getNameAssignment_1()); 
 
             }
 
@@ -5804,20 +5804,42 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_3__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2150:1: rule__ListItem__Group_3__1__Impl : ( ( rule__ListItem__DocReferencesAssignment_3_1 )* ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2150:1: rule__ListItem__Group_3__1__Impl : ( ( ( rule__ListItem__DocReferencesAssignment_3_1 ) ) ( ( rule__ListItem__DocReferencesAssignment_3_1 )* ) ) ;
     public final void rule__ListItem__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2154:1: ( ( ( rule__ListItem__DocReferencesAssignment_3_1 )* ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2155:1: ( ( rule__ListItem__DocReferencesAssignment_3_1 )* )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2154:1: ( ( ( ( rule__ListItem__DocReferencesAssignment_3_1 ) ) ( ( rule__ListItem__DocReferencesAssignment_3_1 )* ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2155:1: ( ( ( rule__ListItem__DocReferencesAssignment_3_1 ) ) ( ( rule__ListItem__DocReferencesAssignment_3_1 )* ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2155:1: ( ( rule__ListItem__DocReferencesAssignment_3_1 )* )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2156:1: ( rule__ListItem__DocReferencesAssignment_3_1 )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2155:1: ( ( ( rule__ListItem__DocReferencesAssignment_3_1 ) ) ( ( rule__ListItem__DocReferencesAssignment_3_1 )* ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2156:1: ( ( rule__ListItem__DocReferencesAssignment_3_1 ) ) ( ( rule__ListItem__DocReferencesAssignment_3_1 )* )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2156:1: ( ( rule__ListItem__DocReferencesAssignment_3_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2157:1: ( rule__ListItem__DocReferencesAssignment_3_1 )
             {
              before(grammarAccess.getListItemAccess().getDocReferencesAssignment_3_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2157:1: ( rule__ListItem__DocReferencesAssignment_3_1 )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2158:1: ( rule__ListItem__DocReferencesAssignment_3_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2158:2: rule__ListItem__DocReferencesAssignment_3_1
+            {
+            pushFollow(FOLLOW_rule__ListItem__DocReferencesAssignment_3_1_in_rule__ListItem__Group_3__1__Impl4375);
+            rule__ListItem__DocReferencesAssignment_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListItemAccess().getDocReferencesAssignment_3_1()); 
+
+            }
+
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2161:1: ( ( rule__ListItem__DocReferencesAssignment_3_1 )* )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2162:1: ( rule__ListItem__DocReferencesAssignment_3_1 )*
+            {
+             before(grammarAccess.getListItemAccess().getDocReferencesAssignment_3_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2163:1: ( rule__ListItem__DocReferencesAssignment_3_1 )*
             loop19:
             do {
                 int alt19=2;
@@ -5830,9 +5852,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
                 switch (alt19) {
             	case 1 :
-            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2157:2: rule__ListItem__DocReferencesAssignment_3_1
+            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2163:2: rule__ListItem__DocReferencesAssignment_3_1
             	    {
-            	    pushFollow(FOLLOW_rule__ListItem__DocReferencesAssignment_3_1_in_rule__ListItem__Group_3__1__Impl4373);
+            	    pushFollow(FOLLOW_rule__ListItem__DocReferencesAssignment_3_1_in_rule__ListItem__Group_3__1__Impl4387);
             	    rule__ListItem__DocReferencesAssignment_3_1();
 
             	    state._fsp--;
@@ -5847,6 +5869,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
             } while (true);
 
              after(grammarAccess.getListItemAccess().getDocReferencesAssignment_3_1()); 
+
+            }
+
 
             }
 
@@ -5869,16 +5894,16 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_3__2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2167:1: rule__ListItem__Group_3__2 : rule__ListItem__Group_3__2__Impl ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2174:1: rule__ListItem__Group_3__2 : rule__ListItem__Group_3__2__Impl ;
     public final void rule__ListItem__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2171:1: ( rule__ListItem__Group_3__2__Impl )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2172:2: rule__ListItem__Group_3__2__Impl
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2178:1: ( rule__ListItem__Group_3__2__Impl )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2179:2: rule__ListItem__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__ListItem__Group_3__2__Impl_in_rule__ListItem__Group_3__24404);
+            pushFollow(FOLLOW_rule__ListItem__Group_3__2__Impl_in_rule__ListItem__Group_3__24420);
             rule__ListItem__Group_3__2__Impl();
 
             state._fsp--;
@@ -5902,20 +5927,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_3__2__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2178:1: rule__ListItem__Group_3__2__Impl : ( '}' ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2185:1: rule__ListItem__Group_3__2__Impl : ( '}' ) ;
     public final void rule__ListItem__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2182:1: ( ( '}' ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2183:1: ( '}' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2189:1: ( ( '}' ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2190:1: ( '}' )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2183:1: ( '}' )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2184:1: '}'
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2190:1: ( '}' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2191:1: '}'
             {
              before(grammarAccess.getListItemAccess().getRightCurlyBracketKeyword_3_2()); 
-            match(input,42,FOLLOW_42_in_rule__ListItem__Group_3__2__Impl4432); 
+            match(input,42,FOLLOW_42_in_rule__ListItem__Group_3__2__Impl4448); 
              after(grammarAccess.getListItemAccess().getRightCurlyBracketKeyword_3_2()); 
 
             }
@@ -5939,21 +5964,21 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_4__0"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2203:1: rule__ListItem__Group_4__0 : rule__ListItem__Group_4__0__Impl rule__ListItem__Group_4__1 ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2210:1: rule__ListItem__Group_4__0 : rule__ListItem__Group_4__0__Impl rule__ListItem__Group_4__1 ;
     public final void rule__ListItem__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2207:1: ( rule__ListItem__Group_4__0__Impl rule__ListItem__Group_4__1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2208:2: rule__ListItem__Group_4__0__Impl rule__ListItem__Group_4__1
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2214:1: ( rule__ListItem__Group_4__0__Impl rule__ListItem__Group_4__1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2215:2: rule__ListItem__Group_4__0__Impl rule__ListItem__Group_4__1
             {
-            pushFollow(FOLLOW_rule__ListItem__Group_4__0__Impl_in_rule__ListItem__Group_4__04469);
+            pushFollow(FOLLOW_rule__ListItem__Group_4__0__Impl_in_rule__ListItem__Group_4__04485);
             rule__ListItem__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ListItem__Group_4__1_in_rule__ListItem__Group_4__04472);
+            pushFollow(FOLLOW_rule__ListItem__Group_4__1_in_rule__ListItem__Group_4__04488);
             rule__ListItem__Group_4__1();
 
             state._fsp--;
@@ -5977,20 +6002,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_4__0__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2215:1: rule__ListItem__Group_4__0__Impl : ( '(' ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2222:1: rule__ListItem__Group_4__0__Impl : ( '(' ) ;
     public final void rule__ListItem__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2219:1: ( ( '(' ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2220:1: ( '(' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2226:1: ( ( '(' ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2227:1: ( '(' )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2220:1: ( '(' )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2221:1: '('
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2227:1: ( '(' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2228:1: '('
             {
              before(grammarAccess.getListItemAccess().getLeftParenthesisKeyword_4_0()); 
-            match(input,45,FOLLOW_45_in_rule__ListItem__Group_4__0__Impl4500); 
+            match(input,45,FOLLOW_45_in_rule__ListItem__Group_4__0__Impl4516); 
              after(grammarAccess.getListItemAccess().getLeftParenthesisKeyword_4_0()); 
 
             }
@@ -6014,21 +6039,21 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_4__1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2234:1: rule__ListItem__Group_4__1 : rule__ListItem__Group_4__1__Impl rule__ListItem__Group_4__2 ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2241:1: rule__ListItem__Group_4__1 : rule__ListItem__Group_4__1__Impl rule__ListItem__Group_4__2 ;
     public final void rule__ListItem__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2238:1: ( rule__ListItem__Group_4__1__Impl rule__ListItem__Group_4__2 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2239:2: rule__ListItem__Group_4__1__Impl rule__ListItem__Group_4__2
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2245:1: ( rule__ListItem__Group_4__1__Impl rule__ListItem__Group_4__2 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2246:2: rule__ListItem__Group_4__1__Impl rule__ListItem__Group_4__2
             {
-            pushFollow(FOLLOW_rule__ListItem__Group_4__1__Impl_in_rule__ListItem__Group_4__14531);
+            pushFollow(FOLLOW_rule__ListItem__Group_4__1__Impl_in_rule__ListItem__Group_4__14547);
             rule__ListItem__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ListItem__Group_4__2_in_rule__ListItem__Group_4__14534);
+            pushFollow(FOLLOW_rule__ListItem__Group_4__2_in_rule__ListItem__Group_4__14550);
             rule__ListItem__Group_4__2();
 
             state._fsp--;
@@ -6052,20 +6077,42 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_4__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2246:1: rule__ListItem__Group_4__1__Impl : ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2253:1: rule__ListItem__Group_4__1__Impl : ( ( ( rule__ListItem__ItemReferencesAssignment_4_1 ) ) ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* ) ) ;
     public final void rule__ListItem__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2250:1: ( ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2251:1: ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2257:1: ( ( ( ( rule__ListItem__ItemReferencesAssignment_4_1 ) ) ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2258:1: ( ( ( rule__ListItem__ItemReferencesAssignment_4_1 ) ) ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2251:1: ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2252:1: ( rule__ListItem__ItemReferencesAssignment_4_1 )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2258:1: ( ( ( rule__ListItem__ItemReferencesAssignment_4_1 ) ) ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2259:1: ( ( rule__ListItem__ItemReferencesAssignment_4_1 ) ) ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2259:1: ( ( rule__ListItem__ItemReferencesAssignment_4_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2260:1: ( rule__ListItem__ItemReferencesAssignment_4_1 )
             {
              before(grammarAccess.getListItemAccess().getItemReferencesAssignment_4_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2253:1: ( rule__ListItem__ItemReferencesAssignment_4_1 )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2261:1: ( rule__ListItem__ItemReferencesAssignment_4_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2261:2: rule__ListItem__ItemReferencesAssignment_4_1
+            {
+            pushFollow(FOLLOW_rule__ListItem__ItemReferencesAssignment_4_1_in_rule__ListItem__Group_4__1__Impl4579);
+            rule__ListItem__ItemReferencesAssignment_4_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListItemAccess().getItemReferencesAssignment_4_1()); 
+
+            }
+
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2264:1: ( ( rule__ListItem__ItemReferencesAssignment_4_1 )* )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2265:1: ( rule__ListItem__ItemReferencesAssignment_4_1 )*
+            {
+             before(grammarAccess.getListItemAccess().getItemReferencesAssignment_4_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2266:1: ( rule__ListItem__ItemReferencesAssignment_4_1 )*
             loop20:
             do {
                 int alt20=2;
@@ -6078,9 +6125,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
                 switch (alt20) {
             	case 1 :
-            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2253:2: rule__ListItem__ItemReferencesAssignment_4_1
+            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2266:2: rule__ListItem__ItemReferencesAssignment_4_1
             	    {
-            	    pushFollow(FOLLOW_rule__ListItem__ItemReferencesAssignment_4_1_in_rule__ListItem__Group_4__1__Impl4561);
+            	    pushFollow(FOLLOW_rule__ListItem__ItemReferencesAssignment_4_1_in_rule__ListItem__Group_4__1__Impl4591);
             	    rule__ListItem__ItemReferencesAssignment_4_1();
 
             	    state._fsp--;
@@ -6095,6 +6142,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
             } while (true);
 
              after(grammarAccess.getListItemAccess().getItemReferencesAssignment_4_1()); 
+
+            }
+
 
             }
 
@@ -6117,16 +6167,16 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_4__2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2263:1: rule__ListItem__Group_4__2 : rule__ListItem__Group_4__2__Impl ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2277:1: rule__ListItem__Group_4__2 : rule__ListItem__Group_4__2__Impl ;
     public final void rule__ListItem__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2267:1: ( rule__ListItem__Group_4__2__Impl )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2268:2: rule__ListItem__Group_4__2__Impl
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2281:1: ( rule__ListItem__Group_4__2__Impl )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2282:2: rule__ListItem__Group_4__2__Impl
             {
-            pushFollow(FOLLOW_rule__ListItem__Group_4__2__Impl_in_rule__ListItem__Group_4__24592);
+            pushFollow(FOLLOW_rule__ListItem__Group_4__2__Impl_in_rule__ListItem__Group_4__24624);
             rule__ListItem__Group_4__2__Impl();
 
             state._fsp--;
@@ -6150,20 +6200,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_4__2__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2274:1: rule__ListItem__Group_4__2__Impl : ( ')' ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2288:1: rule__ListItem__Group_4__2__Impl : ( ')' ) ;
     public final void rule__ListItem__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2278:1: ( ( ')' ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2279:1: ( ')' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2292:1: ( ( ')' ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2293:1: ( ')' )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2279:1: ( ')' )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2280:1: ')'
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2293:1: ( ')' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2294:1: ')'
             {
              before(grammarAccess.getListItemAccess().getRightParenthesisKeyword_4_2()); 
-            match(input,46,FOLLOW_46_in_rule__ListItem__Group_4__2__Impl4620); 
+            match(input,46,FOLLOW_46_in_rule__ListItem__Group_4__2__Impl4652); 
              after(grammarAccess.getListItemAccess().getRightParenthesisKeyword_4_2()); 
 
             }
@@ -6187,21 +6237,21 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_5__0"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2299:1: rule__ListItem__Group_5__0 : rule__ListItem__Group_5__0__Impl rule__ListItem__Group_5__1 ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2313:1: rule__ListItem__Group_5__0 : rule__ListItem__Group_5__0__Impl rule__ListItem__Group_5__1 ;
     public final void rule__ListItem__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2303:1: ( rule__ListItem__Group_5__0__Impl rule__ListItem__Group_5__1 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2304:2: rule__ListItem__Group_5__0__Impl rule__ListItem__Group_5__1
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2317:1: ( rule__ListItem__Group_5__0__Impl rule__ListItem__Group_5__1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2318:2: rule__ListItem__Group_5__0__Impl rule__ListItem__Group_5__1
             {
-            pushFollow(FOLLOW_rule__ListItem__Group_5__0__Impl_in_rule__ListItem__Group_5__04657);
+            pushFollow(FOLLOW_rule__ListItem__Group_5__0__Impl_in_rule__ListItem__Group_5__04689);
             rule__ListItem__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ListItem__Group_5__1_in_rule__ListItem__Group_5__04660);
+            pushFollow(FOLLOW_rule__ListItem__Group_5__1_in_rule__ListItem__Group_5__04692);
             rule__ListItem__Group_5__1();
 
             state._fsp--;
@@ -6225,20 +6275,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_5__0__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2311:1: rule__ListItem__Group_5__0__Impl : ( '[' ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2325:1: rule__ListItem__Group_5__0__Impl : ( '[' ) ;
     public final void rule__ListItem__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2315:1: ( ( '[' ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2316:1: ( '[' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2329:1: ( ( '[' ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2330:1: ( '[' )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2316:1: ( '[' )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2317:1: '['
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2330:1: ( '[' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2331:1: '['
             {
              before(grammarAccess.getListItemAccess().getLeftSquareBracketKeyword_5_0()); 
-            match(input,43,FOLLOW_43_in_rule__ListItem__Group_5__0__Impl4688); 
+            match(input,43,FOLLOW_43_in_rule__ListItem__Group_5__0__Impl4720); 
              after(grammarAccess.getListItemAccess().getLeftSquareBracketKeyword_5_0()); 
 
             }
@@ -6262,21 +6312,21 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_5__1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2330:1: rule__ListItem__Group_5__1 : rule__ListItem__Group_5__1__Impl rule__ListItem__Group_5__2 ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2344:1: rule__ListItem__Group_5__1 : rule__ListItem__Group_5__1__Impl rule__ListItem__Group_5__2 ;
     public final void rule__ListItem__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2334:1: ( rule__ListItem__Group_5__1__Impl rule__ListItem__Group_5__2 )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2335:2: rule__ListItem__Group_5__1__Impl rule__ListItem__Group_5__2
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2348:1: ( rule__ListItem__Group_5__1__Impl rule__ListItem__Group_5__2 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2349:2: rule__ListItem__Group_5__1__Impl rule__ListItem__Group_5__2
             {
-            pushFollow(FOLLOW_rule__ListItem__Group_5__1__Impl_in_rule__ListItem__Group_5__14719);
+            pushFollow(FOLLOW_rule__ListItem__Group_5__1__Impl_in_rule__ListItem__Group_5__14751);
             rule__ListItem__Group_5__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ListItem__Group_5__2_in_rule__ListItem__Group_5__14722);
+            pushFollow(FOLLOW_rule__ListItem__Group_5__2_in_rule__ListItem__Group_5__14754);
             rule__ListItem__Group_5__2();
 
             state._fsp--;
@@ -6300,20 +6350,42 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_5__1__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2342:1: rule__ListItem__Group_5__1__Impl : ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2356:1: rule__ListItem__Group_5__1__Impl : ( ( ( rule__ListItem__ModelReferencesAssignment_5_1 ) ) ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* ) ) ;
     public final void rule__ListItem__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2346:1: ( ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2347:1: ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2360:1: ( ( ( ( rule__ListItem__ModelReferencesAssignment_5_1 ) ) ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2361:1: ( ( ( rule__ListItem__ModelReferencesAssignment_5_1 ) ) ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2347:1: ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2348:1: ( rule__ListItem__ModelReferencesAssignment_5_1 )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2361:1: ( ( ( rule__ListItem__ModelReferencesAssignment_5_1 ) ) ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2362:1: ( ( rule__ListItem__ModelReferencesAssignment_5_1 ) ) ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2362:1: ( ( rule__ListItem__ModelReferencesAssignment_5_1 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2363:1: ( rule__ListItem__ModelReferencesAssignment_5_1 )
             {
              before(grammarAccess.getListItemAccess().getModelReferencesAssignment_5_1()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2349:1: ( rule__ListItem__ModelReferencesAssignment_5_1 )*
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2364:1: ( rule__ListItem__ModelReferencesAssignment_5_1 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2364:2: rule__ListItem__ModelReferencesAssignment_5_1
+            {
+            pushFollow(FOLLOW_rule__ListItem__ModelReferencesAssignment_5_1_in_rule__ListItem__Group_5__1__Impl4783);
+            rule__ListItem__ModelReferencesAssignment_5_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListItemAccess().getModelReferencesAssignment_5_1()); 
+
+            }
+
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2367:1: ( ( rule__ListItem__ModelReferencesAssignment_5_1 )* )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2368:1: ( rule__ListItem__ModelReferencesAssignment_5_1 )*
+            {
+             before(grammarAccess.getListItemAccess().getModelReferencesAssignment_5_1()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2369:1: ( rule__ListItem__ModelReferencesAssignment_5_1 )*
             loop21:
             do {
                 int alt21=2;
@@ -6326,9 +6398,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
                 switch (alt21) {
             	case 1 :
-            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2349:2: rule__ListItem__ModelReferencesAssignment_5_1
+            	    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2369:2: rule__ListItem__ModelReferencesAssignment_5_1
             	    {
-            	    pushFollow(FOLLOW_rule__ListItem__ModelReferencesAssignment_5_1_in_rule__ListItem__Group_5__1__Impl4749);
+            	    pushFollow(FOLLOW_rule__ListItem__ModelReferencesAssignment_5_1_in_rule__ListItem__Group_5__1__Impl4795);
             	    rule__ListItem__ModelReferencesAssignment_5_1();
 
             	    state._fsp--;
@@ -6343,6 +6415,9 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
             } while (true);
 
              after(grammarAccess.getListItemAccess().getModelReferencesAssignment_5_1()); 
+
+            }
+
 
             }
 
@@ -6365,16 +6440,16 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_5__2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2359:1: rule__ListItem__Group_5__2 : rule__ListItem__Group_5__2__Impl ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2380:1: rule__ListItem__Group_5__2 : rule__ListItem__Group_5__2__Impl ;
     public final void rule__ListItem__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2363:1: ( rule__ListItem__Group_5__2__Impl )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2364:2: rule__ListItem__Group_5__2__Impl
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2384:1: ( rule__ListItem__Group_5__2__Impl )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2385:2: rule__ListItem__Group_5__2__Impl
             {
-            pushFollow(FOLLOW_rule__ListItem__Group_5__2__Impl_in_rule__ListItem__Group_5__24780);
+            pushFollow(FOLLOW_rule__ListItem__Group_5__2__Impl_in_rule__ListItem__Group_5__24828);
             rule__ListItem__Group_5__2__Impl();
 
             state._fsp--;
@@ -6398,20 +6473,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__Group_5__2__Impl"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2370:1: rule__ListItem__Group_5__2__Impl : ( ']' ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2391:1: rule__ListItem__Group_5__2__Impl : ( ']' ) ;
     public final void rule__ListItem__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2374:1: ( ( ']' ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2375:1: ( ']' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2395:1: ( ( ']' ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2396:1: ( ']' )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2375:1: ( ']' )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2376:1: ']'
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2396:1: ( ']' )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2397:1: ']'
             {
              before(grammarAccess.getListItemAccess().getRightSquareBracketKeyword_5_2()); 
-            match(input,44,FOLLOW_44_in_rule__ListItem__Group_5__2__Impl4808); 
+            match(input,44,FOLLOW_44_in_rule__ListItem__Group_5__2__Impl4856); 
              after(grammarAccess.getListItemAccess().getRightSquareBracketKeyword_5_2()); 
 
             }
@@ -6434,22 +6509,22 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__ListItem__Group_5__2__Impl"
 
 
-    // $ANTLR start "rule__Specification__IdAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2396:1: rule__Specification__IdAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Specification__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Specification__NameAssignment_1"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2417:1: rule__Specification__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Specification__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2400:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2401:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2421:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2422:1: ( RULE_ID )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2401:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2402:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2422:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2423:1: RULE_ID
             {
-             before(grammarAccess.getSpecificationAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Specification__IdAssignment_14850); 
-             after(grammarAccess.getSpecificationAccess().getIdIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getSpecificationAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Specification__NameAssignment_14898); 
+             after(grammarAccess.getSpecificationAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -6468,24 +6543,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__Specification__IdAssignment_1"
+    // $ANTLR end "rule__Specification__NameAssignment_1"
 
 
     // $ANTLR start "rule__Specification__RefinementsAssignment_2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2411:1: rule__Specification__RefinementsAssignment_2 : ( ruleRefinement ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2432:1: rule__Specification__RefinementsAssignment_2 : ( ruleRefinement ) ;
     public final void rule__Specification__RefinementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2415:1: ( ( ruleRefinement ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2416:1: ( ruleRefinement )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2436:1: ( ( ruleRefinement ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2437:1: ( ruleRefinement )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2416:1: ( ruleRefinement )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2417:1: ruleRefinement
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2437:1: ( ruleRefinement )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2438:1: ruleRefinement
             {
              before(grammarAccess.getSpecificationAccess().getRefinementsRefinementParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleRefinement_in_rule__Specification__RefinementsAssignment_24881);
+            pushFollow(FOLLOW_ruleRefinement_in_rule__Specification__RefinementsAssignment_24929);
             ruleRefinement();
 
             state._fsp--;
@@ -6512,22 +6587,22 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__Specification__RefinementsAssignment_2"
 
 
-    // $ANTLR start "rule__Refinement__IdAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2426:1: rule__Refinement__IdAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Refinement__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Refinement__NameAssignment_1"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2447:1: rule__Refinement__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Refinement__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2430:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2431:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2451:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2452:1: ( RULE_ID )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2431:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2432:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2452:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2453:1: RULE_ID
             {
-             before(grammarAccess.getRefinementAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Refinement__IdAssignment_14912); 
-             after(grammarAccess.getRefinementAccess().getIdIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getRefinementAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Refinement__NameAssignment_14960); 
+             after(grammarAccess.getRefinementAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -6546,24 +6621,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__Refinement__IdAssignment_1"
+    // $ANTLR end "rule__Refinement__NameAssignment_1"
 
 
     // $ANTLR start "rule__Refinement__DescAssignment_2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2441:1: rule__Refinement__DescAssignment_2 : ( RULE_STRING ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2462:1: rule__Refinement__DescAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Refinement__DescAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2445:1: ( ( RULE_STRING ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2446:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2466:1: ( ( RULE_STRING ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2467:1: ( RULE_STRING )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2446:1: ( RULE_STRING )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2447:1: RULE_STRING
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2467:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2468:1: RULE_STRING
             {
              before(grammarAccess.getRefinementAccess().getDescSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Refinement__DescAssignment_24943); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Refinement__DescAssignment_24991); 
              after(grammarAccess.getRefinementAccess().getDescSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -6587,20 +6662,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Refinement__IntentsAssignment_3"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2456:1: rule__Refinement__IntentsAssignment_3 : ( ruleIntent ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2477:1: rule__Refinement__IntentsAssignment_3 : ( ruleIntent ) ;
     public final void rule__Refinement__IntentsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2460:1: ( ( ruleIntent ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2461:1: ( ruleIntent )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2481:1: ( ( ruleIntent ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2482:1: ( ruleIntent )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2461:1: ( ruleIntent )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2462:1: ruleIntent
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2482:1: ( ruleIntent )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2483:1: ruleIntent
             {
              before(grammarAccess.getRefinementAccess().getIntentsIntentParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleIntent_in_rule__Refinement__IntentsAssignment_34974);
+            pushFollow(FOLLOW_ruleIntent_in_rule__Refinement__IntentsAssignment_35022);
             ruleIntent();
 
             state._fsp--;
@@ -6628,20 +6703,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Intent__TypeAssignment_0"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2471:1: rule__Intent__TypeAssignment_0 : ( ruleIntentType ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2492:1: rule__Intent__TypeAssignment_0 : ( ruleIntentType ) ;
     public final void rule__Intent__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2475:1: ( ( ruleIntentType ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2476:1: ( ruleIntentType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2496:1: ( ( ruleIntentType ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2497:1: ( ruleIntentType )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2476:1: ( ruleIntentType )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2477:1: ruleIntentType
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2497:1: ( ruleIntentType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2498:1: ruleIntentType
             {
              before(grammarAccess.getIntentAccess().getTypeIntentTypeParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleIntentType_in_rule__Intent__TypeAssignment_05005);
+            pushFollow(FOLLOW_ruleIntentType_in_rule__Intent__TypeAssignment_05053);
             ruleIntentType();
 
             state._fsp--;
@@ -6668,22 +6743,22 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__Intent__TypeAssignment_0"
 
 
-    // $ANTLR start "rule__Intent__IdAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2486:1: rule__Intent__IdAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Intent__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Intent__NameAssignment_1"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2507:1: rule__Intent__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Intent__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2490:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2491:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2511:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2512:1: ( RULE_ID )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2491:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2492:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2512:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2513:1: RULE_ID
             {
-             before(grammarAccess.getIntentAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Intent__IdAssignment_15036); 
-             after(grammarAccess.getIntentAccess().getIdIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getIntentAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Intent__NameAssignment_15084); 
+             after(grammarAccess.getIntentAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -6702,24 +6777,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__Intent__IdAssignment_1"
+    // $ANTLR end "rule__Intent__NameAssignment_1"
 
 
     // $ANTLR start "rule__Intent__DescAssignment_2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2501:1: rule__Intent__DescAssignment_2 : ( RULE_STRING ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2522:1: rule__Intent__DescAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Intent__DescAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2505:1: ( ( RULE_STRING ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2506:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2526:1: ( ( RULE_STRING ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2527:1: ( RULE_STRING )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2506:1: ( RULE_STRING )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2507:1: RULE_STRING
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2527:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2528:1: RULE_STRING
             {
              before(grammarAccess.getIntentAccess().getDescSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Intent__DescAssignment_25067); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Intent__DescAssignment_25115); 
              after(grammarAccess.getIntentAccess().getDescSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -6743,20 +6818,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Intent__DecompositionsAssignment_3"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2516:1: rule__Intent__DecompositionsAssignment_3 : ( ruleDecomposition ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2537:1: rule__Intent__DecompositionsAssignment_3 : ( ruleDecomposition ) ;
     public final void rule__Intent__DecompositionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2520:1: ( ( ruleDecomposition ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2521:1: ( ruleDecomposition )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2541:1: ( ( ruleDecomposition ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2542:1: ( ruleDecomposition )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2521:1: ( ruleDecomposition )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2522:1: ruleDecomposition
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2542:1: ( ruleDecomposition )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2543:1: ruleDecomposition
             {
              before(grammarAccess.getIntentAccess().getDecompositionsDecompositionParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleDecomposition_in_rule__Intent__DecompositionsAssignment_35098);
+            pushFollow(FOLLOW_ruleDecomposition_in_rule__Intent__DecompositionsAssignment_35146);
             ruleDecomposition();
 
             state._fsp--;
@@ -6783,21 +6858,68 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__Intent__DecompositionsAssignment_3"
 
 
+    // $ANTLR start "rule__IntentType__TypeNameAssignment"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2552:1: rule__IntentType__TypeNameAssignment : ( ( rule__IntentType__TypeNameAlternatives_0 ) ) ;
+    public final void rule__IntentType__TypeNameAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2556:1: ( ( ( rule__IntentType__TypeNameAlternatives_0 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2557:1: ( ( rule__IntentType__TypeNameAlternatives_0 ) )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2557:1: ( ( rule__IntentType__TypeNameAlternatives_0 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2558:1: ( rule__IntentType__TypeNameAlternatives_0 )
+            {
+             before(grammarAccess.getIntentTypeAccess().getTypeNameAlternatives_0()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2559:1: ( rule__IntentType__TypeNameAlternatives_0 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2559:2: rule__IntentType__TypeNameAlternatives_0
+            {
+            pushFollow(FOLLOW_rule__IntentType__TypeNameAlternatives_0_in_rule__IntentType__TypeNameAssignment5177);
+            rule__IntentType__TypeNameAlternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIntentTypeAccess().getTypeNameAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IntentType__TypeNameAssignment"
+
+
     // $ANTLR start "rule__Decomposition__TypeAssignment_0"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2531:1: rule__Decomposition__TypeAssignment_0 : ( ruleDecompositionType ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2568:1: rule__Decomposition__TypeAssignment_0 : ( ruleDecompositionType ) ;
     public final void rule__Decomposition__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2535:1: ( ( ruleDecompositionType ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2536:1: ( ruleDecompositionType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2572:1: ( ( ruleDecompositionType ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2573:1: ( ruleDecompositionType )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2536:1: ( ruleDecompositionType )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2537:1: ruleDecompositionType
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2573:1: ( ruleDecompositionType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2574:1: ruleDecompositionType
             {
              before(grammarAccess.getDecompositionAccess().getTypeDecompositionTypeParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleDecompositionType_in_rule__Decomposition__TypeAssignment_05129);
+            pushFollow(FOLLOW_ruleDecompositionType_in_rule__Decomposition__TypeAssignment_05210);
             ruleDecompositionType();
 
             state._fsp--;
@@ -6824,22 +6946,22 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__Decomposition__TypeAssignment_0"
 
 
-    // $ANTLR start "rule__Decomposition__IdAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2546:1: rule__Decomposition__IdAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Decomposition__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Decomposition__NameAssignment_1"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2583:1: rule__Decomposition__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Decomposition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2550:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2551:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2587:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2588:1: ( RULE_ID )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2551:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2552:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2588:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2589:1: RULE_ID
             {
-             before(grammarAccess.getDecompositionAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Decomposition__IdAssignment_15160); 
-             after(grammarAccess.getDecompositionAccess().getIdIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getDecompositionAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Decomposition__NameAssignment_15241); 
+             after(grammarAccess.getDecompositionAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -6858,24 +6980,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__Decomposition__IdAssignment_1"
+    // $ANTLR end "rule__Decomposition__NameAssignment_1"
 
 
     // $ANTLR start "rule__Decomposition__DescAssignment_2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2561:1: rule__Decomposition__DescAssignment_2 : ( RULE_STRING ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2598:1: rule__Decomposition__DescAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Decomposition__DescAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2565:1: ( ( RULE_STRING ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2566:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2602:1: ( ( RULE_STRING ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2603:1: ( RULE_STRING )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2566:1: ( RULE_STRING )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2567:1: RULE_STRING
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2603:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2604:1: RULE_STRING
             {
              before(grammarAccess.getDecompositionAccess().getDescSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Decomposition__DescAssignment_25191); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Decomposition__DescAssignment_25272); 
              after(grammarAccess.getDecompositionAccess().getDescSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -6899,20 +7021,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Decomposition__DocumentsAssignment_3_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2576:1: rule__Decomposition__DocumentsAssignment_3_1 : ( ruleDocument ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2613:1: rule__Decomposition__DocumentsAssignment_3_1 : ( ruleDocument ) ;
     public final void rule__Decomposition__DocumentsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2580:1: ( ( ruleDocument ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2581:1: ( ruleDocument )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2617:1: ( ( ruleDocument ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2618:1: ( ruleDocument )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2581:1: ( ruleDocument )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2582:1: ruleDocument
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2618:1: ( ruleDocument )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2619:1: ruleDocument
             {
              before(grammarAccess.getDecompositionAccess().getDocumentsDocumentParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleDocument_in_rule__Decomposition__DocumentsAssignment_3_15222);
+            pushFollow(FOLLOW_ruleDocument_in_rule__Decomposition__DocumentsAssignment_3_15303);
             ruleDocument();
 
             state._fsp--;
@@ -6940,20 +7062,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Decomposition__ModelsAssignment_4_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2591:1: rule__Decomposition__ModelsAssignment_4_1 : ( ruleModelItem ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2628:1: rule__Decomposition__ModelsAssignment_4_1 : ( ruleModelItem ) ;
     public final void rule__Decomposition__ModelsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2595:1: ( ( ruleModelItem ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2596:1: ( ruleModelItem )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2632:1: ( ( ruleModelItem ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2633:1: ( ruleModelItem )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2596:1: ( ruleModelItem )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2597:1: ruleModelItem
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2633:1: ( ruleModelItem )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2634:1: ruleModelItem
             {
              before(grammarAccess.getDecompositionAccess().getModelsModelItemParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleModelItem_in_rule__Decomposition__ModelsAssignment_4_15253);
+            pushFollow(FOLLOW_ruleModelItem_in_rule__Decomposition__ModelsAssignment_4_15334);
             ruleModelItem();
 
             state._fsp--;
@@ -6981,20 +7103,20 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__Decomposition__ItemsAssignment_5_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2606:1: rule__Decomposition__ItemsAssignment_5_1 : ( ruleListItem ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2643:1: rule__Decomposition__ItemsAssignment_5_1 : ( ruleListItem ) ;
     public final void rule__Decomposition__ItemsAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2610:1: ( ( ruleListItem ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2611:1: ( ruleListItem )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2647:1: ( ( ruleListItem ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2648:1: ( ruleListItem )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2611:1: ( ruleListItem )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2612:1: ruleListItem
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2648:1: ( ruleListItem )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2649:1: ruleListItem
             {
              before(grammarAccess.getDecompositionAccess().getItemsListItemParserRuleCall_5_1_0()); 
-            pushFollow(FOLLOW_ruleListItem_in_rule__Decomposition__ItemsAssignment_5_15284);
+            pushFollow(FOLLOW_ruleListItem_in_rule__Decomposition__ItemsAssignment_5_15365);
             ruleListItem();
 
             state._fsp--;
@@ -7021,21 +7143,68 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__Decomposition__ItemsAssignment_5_1"
 
 
+    // $ANTLR start "rule__DecompositionType__TypeNameAssignment"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2658:1: rule__DecompositionType__TypeNameAssignment : ( ( rule__DecompositionType__TypeNameAlternatives_0 ) ) ;
+    public final void rule__DecompositionType__TypeNameAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2662:1: ( ( ( rule__DecompositionType__TypeNameAlternatives_0 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2663:1: ( ( rule__DecompositionType__TypeNameAlternatives_0 ) )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2663:1: ( ( rule__DecompositionType__TypeNameAlternatives_0 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2664:1: ( rule__DecompositionType__TypeNameAlternatives_0 )
+            {
+             before(grammarAccess.getDecompositionTypeAccess().getTypeNameAlternatives_0()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2665:1: ( rule__DecompositionType__TypeNameAlternatives_0 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2665:2: rule__DecompositionType__TypeNameAlternatives_0
+            {
+            pushFollow(FOLLOW_rule__DecompositionType__TypeNameAlternatives_0_in_rule__DecompositionType__TypeNameAssignment5396);
+            rule__DecompositionType__TypeNameAlternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDecompositionTypeAccess().getTypeNameAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DecompositionType__TypeNameAssignment"
+
+
     // $ANTLR start "rule__Document__EntriesAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2621:1: rule__Document__EntriesAssignment_1 : ( ruleDocItem ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2674:1: rule__Document__EntriesAssignment_1 : ( ruleDocItem ) ;
     public final void rule__Document__EntriesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2625:1: ( ( ruleDocItem ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2626:1: ( ruleDocItem )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2678:1: ( ( ruleDocItem ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2679:1: ( ruleDocItem )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2626:1: ( ruleDocItem )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2627:1: ruleDocItem
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2679:1: ( ruleDocItem )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2680:1: ruleDocItem
             {
              before(grammarAccess.getDocumentAccess().getEntriesDocItemParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleDocItem_in_rule__Document__EntriesAssignment_15315);
+            pushFollow(FOLLOW_ruleDocItem_in_rule__Document__EntriesAssignment_15429);
             ruleDocItem();
 
             state._fsp--;
@@ -7062,21 +7231,68 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__Document__EntriesAssignment_1"
 
 
+    // $ANTLR start "rule__DocItemType__TypeNameAssignment"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2689:1: rule__DocItemType__TypeNameAssignment : ( ( rule__DocItemType__TypeNameAlternatives_0 ) ) ;
+    public final void rule__DocItemType__TypeNameAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2693:1: ( ( ( rule__DocItemType__TypeNameAlternatives_0 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2694:1: ( ( rule__DocItemType__TypeNameAlternatives_0 ) )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2694:1: ( ( rule__DocItemType__TypeNameAlternatives_0 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2695:1: ( rule__DocItemType__TypeNameAlternatives_0 )
+            {
+             before(grammarAccess.getDocItemTypeAccess().getTypeNameAlternatives_0()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2696:1: ( rule__DocItemType__TypeNameAlternatives_0 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2696:2: rule__DocItemType__TypeNameAlternatives_0
+            {
+            pushFollow(FOLLOW_rule__DocItemType__TypeNameAlternatives_0_in_rule__DocItemType__TypeNameAssignment5460);
+            rule__DocItemType__TypeNameAlternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDocItemTypeAccess().getTypeNameAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DocItemType__TypeNameAssignment"
+
+
     // $ANTLR start "rule__DocItem__TypeAssignment_0"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2636:1: rule__DocItem__TypeAssignment_0 : ( ruleDocItemType ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2705:1: rule__DocItem__TypeAssignment_0 : ( ruleDocItemType ) ;
     public final void rule__DocItem__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2640:1: ( ( ruleDocItemType ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2641:1: ( ruleDocItemType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2709:1: ( ( ruleDocItemType ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2710:1: ( ruleDocItemType )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2641:1: ( ruleDocItemType )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2642:1: ruleDocItemType
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2710:1: ( ruleDocItemType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2711:1: ruleDocItemType
             {
              before(grammarAccess.getDocItemAccess().getTypeDocItemTypeParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleDocItemType_in_rule__DocItem__TypeAssignment_05346);
+            pushFollow(FOLLOW_ruleDocItemType_in_rule__DocItem__TypeAssignment_05493);
             ruleDocItemType();
 
             state._fsp--;
@@ -7103,22 +7319,22 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__DocItem__TypeAssignment_0"
 
 
-    // $ANTLR start "rule__DocItem__IdAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2651:1: rule__DocItem__IdAssignment_1 : ( RULE_ID ) ;
-    public final void rule__DocItem__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__DocItem__NameAssignment_1"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2720:1: rule__DocItem__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__DocItem__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2655:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2656:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2724:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2725:1: ( RULE_ID )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2656:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2657:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2725:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2726:1: RULE_ID
             {
-             before(grammarAccess.getDocItemAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DocItem__IdAssignment_15377); 
-             after(grammarAccess.getDocItemAccess().getIdIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getDocItemAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DocItem__NameAssignment_15524); 
+             after(grammarAccess.getDocItemAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -7137,24 +7353,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__DocItem__IdAssignment_1"
+    // $ANTLR end "rule__DocItem__NameAssignment_1"
 
 
     // $ANTLR start "rule__DocItem__RefAssignment_2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2666:1: rule__DocItem__RefAssignment_2 : ( RULE_STRING ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2735:1: rule__DocItem__RefAssignment_2 : ( RULE_STRING ) ;
     public final void rule__DocItem__RefAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2670:1: ( ( RULE_STRING ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2671:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2739:1: ( ( RULE_STRING ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2740:1: ( RULE_STRING )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2671:1: ( RULE_STRING )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2672:1: RULE_STRING
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2740:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2741:1: RULE_STRING
             {
              before(grammarAccess.getDocItemAccess().getRefSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__DocItem__RefAssignment_25408); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__DocItem__RefAssignment_25555); 
              after(grammarAccess.getDocItemAccess().getRefSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -7177,21 +7393,68 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__DocItem__RefAssignment_2"
 
 
+    // $ANTLR start "rule__ModelType__TypeNameAssignment"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2750:1: rule__ModelType__TypeNameAssignment : ( ( rule__ModelType__TypeNameAlternatives_0 ) ) ;
+    public final void rule__ModelType__TypeNameAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2754:1: ( ( ( rule__ModelType__TypeNameAlternatives_0 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2755:1: ( ( rule__ModelType__TypeNameAlternatives_0 ) )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2755:1: ( ( rule__ModelType__TypeNameAlternatives_0 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2756:1: ( rule__ModelType__TypeNameAlternatives_0 )
+            {
+             before(grammarAccess.getModelTypeAccess().getTypeNameAlternatives_0()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2757:1: ( rule__ModelType__TypeNameAlternatives_0 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2757:2: rule__ModelType__TypeNameAlternatives_0
+            {
+            pushFollow(FOLLOW_rule__ModelType__TypeNameAlternatives_0_in_rule__ModelType__TypeNameAssignment5586);
+            rule__ModelType__TypeNameAlternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getModelTypeAccess().getTypeNameAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ModelType__TypeNameAssignment"
+
+
     // $ANTLR start "rule__ModelItem__TypeAssignment_0"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2681:1: rule__ModelItem__TypeAssignment_0 : ( ruleModelType ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2766:1: rule__ModelItem__TypeAssignment_0 : ( ruleModelType ) ;
     public final void rule__ModelItem__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2685:1: ( ( ruleModelType ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2686:1: ( ruleModelType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2770:1: ( ( ruleModelType ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2771:1: ( ruleModelType )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2686:1: ( ruleModelType )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2687:1: ruleModelType
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2771:1: ( ruleModelType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2772:1: ruleModelType
             {
              before(grammarAccess.getModelItemAccess().getTypeModelTypeParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleModelType_in_rule__ModelItem__TypeAssignment_05439);
+            pushFollow(FOLLOW_ruleModelType_in_rule__ModelItem__TypeAssignment_05619);
             ruleModelType();
 
             state._fsp--;
@@ -7218,22 +7481,22 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__ModelItem__TypeAssignment_0"
 
 
-    // $ANTLR start "rule__ModelItem__IdAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2696:1: rule__ModelItem__IdAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ModelItem__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ModelItem__NameAssignment_1"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2781:1: rule__ModelItem__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ModelItem__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2700:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2701:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2785:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2786:1: ( RULE_ID )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2701:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2702:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2786:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2787:1: RULE_ID
             {
-             before(grammarAccess.getModelItemAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ModelItem__IdAssignment_15470); 
-             after(grammarAccess.getModelItemAccess().getIdIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getModelItemAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ModelItem__NameAssignment_15650); 
+             after(grammarAccess.getModelItemAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -7252,24 +7515,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ModelItem__IdAssignment_1"
+    // $ANTLR end "rule__ModelItem__NameAssignment_1"
 
 
     // $ANTLR start "rule__ModelItem__DescAssignment_2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2711:1: rule__ModelItem__DescAssignment_2 : ( RULE_STRING ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2796:1: rule__ModelItem__DescAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ModelItem__DescAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2715:1: ( ( RULE_STRING ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2716:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2800:1: ( ( RULE_STRING ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2801:1: ( RULE_STRING )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2716:1: ( RULE_STRING )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2717:1: RULE_STRING
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2801:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2802:1: RULE_STRING
             {
              before(grammarAccess.getModelItemAccess().getDescSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ModelItem__DescAssignment_25501); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ModelItem__DescAssignment_25681); 
              after(grammarAccess.getModelItemAccess().getDescSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -7292,21 +7555,68 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__ModelItem__DescAssignment_2"
 
 
+    // $ANTLR start "rule__ListItemType__TypeNameAssignment"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2811:1: rule__ListItemType__TypeNameAssignment : ( ( rule__ListItemType__TypeNameAlternatives_0 ) ) ;
+    public final void rule__ListItemType__TypeNameAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2815:1: ( ( ( rule__ListItemType__TypeNameAlternatives_0 ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2816:1: ( ( rule__ListItemType__TypeNameAlternatives_0 ) )
+            {
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2816:1: ( ( rule__ListItemType__TypeNameAlternatives_0 ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2817:1: ( rule__ListItemType__TypeNameAlternatives_0 )
+            {
+             before(grammarAccess.getListItemTypeAccess().getTypeNameAlternatives_0()); 
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2818:1: ( rule__ListItemType__TypeNameAlternatives_0 )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2818:2: rule__ListItemType__TypeNameAlternatives_0
+            {
+            pushFollow(FOLLOW_rule__ListItemType__TypeNameAlternatives_0_in_rule__ListItemType__TypeNameAssignment5712);
+            rule__ListItemType__TypeNameAlternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListItemTypeAccess().getTypeNameAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItemType__TypeNameAssignment"
+
+
     // $ANTLR start "rule__ListItem__TypeAssignment_0"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2726:1: rule__ListItem__TypeAssignment_0 : ( ruleListItemType ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2827:1: rule__ListItem__TypeAssignment_0 : ( ruleListItemType ) ;
     public final void rule__ListItem__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2730:1: ( ( ruleListItemType ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2731:1: ( ruleListItemType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2831:1: ( ( ruleListItemType ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2832:1: ( ruleListItemType )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2731:1: ( ruleListItemType )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2732:1: ruleListItemType
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2832:1: ( ruleListItemType )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2833:1: ruleListItemType
             {
              before(grammarAccess.getListItemAccess().getTypeListItemTypeParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleListItemType_in_rule__ListItem__TypeAssignment_05532);
+            pushFollow(FOLLOW_ruleListItemType_in_rule__ListItem__TypeAssignment_05745);
             ruleListItemType();
 
             state._fsp--;
@@ -7333,22 +7643,22 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     // $ANTLR end "rule__ListItem__TypeAssignment_0"
 
 
-    // $ANTLR start "rule__ListItem__IdAssignment_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2741:1: rule__ListItem__IdAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ListItem__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ListItem__NameAssignment_1"
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2842:1: rule__ListItem__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ListItem__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2745:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2746:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2846:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2847:1: ( RULE_ID )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2746:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2747:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2847:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2848:1: RULE_ID
             {
-             before(grammarAccess.getListItemAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__IdAssignment_15563); 
-             after(grammarAccess.getListItemAccess().getIdIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getListItemAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__NameAssignment_15776); 
+             after(grammarAccess.getListItemAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -7367,24 +7677,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
         }
         return ;
     }
-    // $ANTLR end "rule__ListItem__IdAssignment_1"
+    // $ANTLR end "rule__ListItem__NameAssignment_1"
 
 
     // $ANTLR start "rule__ListItem__DescAssignment_2"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2756:1: rule__ListItem__DescAssignment_2 : ( RULE_STRING ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2857:1: rule__ListItem__DescAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ListItem__DescAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2760:1: ( ( RULE_STRING ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2761:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2861:1: ( ( RULE_STRING ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2862:1: ( RULE_STRING )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2761:1: ( RULE_STRING )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2762:1: RULE_STRING
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2862:1: ( RULE_STRING )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2863:1: RULE_STRING
             {
              before(grammarAccess.getListItemAccess().getDescSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ListItem__DescAssignment_25594); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ListItem__DescAssignment_25807); 
              after(grammarAccess.getListItemAccess().getDescSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -7408,24 +7718,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__DocReferencesAssignment_3_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2771:1: rule__ListItem__DocReferencesAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2872:1: rule__ListItem__DocReferencesAssignment_3_1 : ( ( RULE_ID ) ) ;
     public final void rule__ListItem__DocReferencesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2775:1: ( ( ( RULE_ID ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2776:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2876:1: ( ( ( RULE_ID ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2877:1: ( ( RULE_ID ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2776:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2777:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2877:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2878:1: ( RULE_ID )
             {
              before(grammarAccess.getListItemAccess().getDocReferencesDocItemCrossReference_3_1_0()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2778:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2779:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2879:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2880:1: RULE_ID
             {
              before(grammarAccess.getListItemAccess().getDocReferencesDocItemIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__DocReferencesAssignment_3_15629); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__DocReferencesAssignment_3_15842); 
              after(grammarAccess.getListItemAccess().getDocReferencesDocItemIDTerminalRuleCall_3_1_0_1()); 
 
             }
@@ -7453,24 +7763,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__ItemReferencesAssignment_4_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2790:1: rule__ListItem__ItemReferencesAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2891:1: rule__ListItem__ItemReferencesAssignment_4_1 : ( ( RULE_ID ) ) ;
     public final void rule__ListItem__ItemReferencesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2794:1: ( ( ( RULE_ID ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2795:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2895:1: ( ( ( RULE_ID ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2896:1: ( ( RULE_ID ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2795:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2796:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2896:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2897:1: ( RULE_ID )
             {
              before(grammarAccess.getListItemAccess().getItemReferencesListItemCrossReference_4_1_0()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2797:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2798:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2898:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2899:1: RULE_ID
             {
              before(grammarAccess.getListItemAccess().getItemReferencesListItemIDTerminalRuleCall_4_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__ItemReferencesAssignment_4_15668); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__ItemReferencesAssignment_4_15881); 
              after(grammarAccess.getListItemAccess().getItemReferencesListItemIDTerminalRuleCall_4_1_0_1()); 
 
             }
@@ -7498,24 +7808,24 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
 
 
     // $ANTLR start "rule__ListItem__ModelReferencesAssignment_5_1"
-    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2809:1: rule__ListItem__ModelReferencesAssignment_5_1 : ( ( RULE_ID ) ) ;
+    // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2910:1: rule__ListItem__ModelReferencesAssignment_5_1 : ( ( RULE_ID ) ) ;
     public final void rule__ListItem__ModelReferencesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2813:1: ( ( ( RULE_ID ) ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2814:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2914:1: ( ( ( RULE_ID ) ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2915:1: ( ( RULE_ID ) )
             {
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2814:1: ( ( RULE_ID ) )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2815:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2915:1: ( ( RULE_ID ) )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2916:1: ( RULE_ID )
             {
              before(grammarAccess.getListItemAccess().getModelReferencesModelItemCrossReference_5_1_0()); 
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2816:1: ( RULE_ID )
-            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2817:1: RULE_ID
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2917:1: ( RULE_ID )
+            // ../net.certware.intent.ui/src-gen/net/certware/intent/ui/contentassist/antlr/internal/InternalIntentSpecification.g:2918:1: RULE_ID
             {
              before(grammarAccess.getListItemAccess().getModelReferencesModelItemIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__ModelReferencesAssignment_5_15707); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ListItem__ModelReferencesAssignment_5_15920); 
              after(grammarAccess.getListItemAccess().getModelReferencesModelItemIDTerminalRuleCall_5_1_0_1()); 
 
             }
@@ -7557,68 +7867,68 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__Intent__Group__0_in_ruleIntent214 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIntentType_in_entryRuleIntentType241 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIntentType248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__IntentType__Alternatives_in_ruleIntentType274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IntentType__TypeNameAssignment_in_ruleIntentType274 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDecomposition_in_entryRuleDecomposition301 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDecomposition308 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Decomposition__Group__0_in_ruleDecomposition334 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDecompositionType_in_entryRuleDecompositionType361 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDecompositionType368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DecompositionType__Alternatives_in_ruleDecompositionType394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DecompositionType__TypeNameAssignment_in_ruleDecompositionType394 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDocument_in_entryRuleDocument421 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDocument428 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Document__Group__0_in_ruleDocument454 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDocItemType_in_entryRuleDocItemType481 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDocItemType488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DocItemType__Alternatives_in_ruleDocItemType514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DocItemType__TypeNameAssignment_in_ruleDocItemType514 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDocItem_in_entryRuleDocItem541 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDocItem548 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DocItem__Group__0_in_ruleDocItem574 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleModelType_in_entryRuleModelType601 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModelType608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ModelType__Alternatives_in_ruleModelType634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ModelType__TypeNameAssignment_in_ruleModelType634 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleModelItem_in_entryRuleModelItem661 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModelItem668 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ModelItem__Group__0_in_ruleModelItem694 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleListItemType_in_entryRuleListItemType721 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleListItemType728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItemType__Alternatives_in_ruleListItemType754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItemType__TypeNameAssignment_in_ruleListItemType754 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleListItem_in_entryRuleListItem781 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleListItem788 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ListItem__Group__0_in_ruleListItem814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__IntentType__Alternatives851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__IntentType__Alternatives871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__IntentType__Alternatives891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__IntentType__Alternatives911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__IntentType__Alternatives931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__IntentType__Alternatives951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__IntentType__Alternatives971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__DecompositionType__Alternatives1006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__DecompositionType__Alternatives1026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__DecompositionType__Alternatives1046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__DecompositionType__Alternatives1066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__DocItemType__Alternatives1101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__DocItemType__Alternatives1121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__DocItemType__Alternatives1141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__DocItemType__Alternatives1161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__DocItemType__Alternatives1181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__DocItemType__Alternatives1201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__DocItemType__Alternatives1221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__ModelType__Alternatives1256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__ModelType__Alternatives1276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__ModelType__Alternatives1296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__ModelType__Alternatives1316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__ModelType__Alternatives1336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__ModelType__Alternatives1356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ListItemType__Alternatives1391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__ListItemType__Alternatives1411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ListItemType__Alternatives1431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__ListItemType__Alternatives1451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__IntentType__TypeNameAlternatives_0851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__IntentType__TypeNameAlternatives_0871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__IntentType__TypeNameAlternatives_0891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__IntentType__TypeNameAlternatives_0911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__IntentType__TypeNameAlternatives_0931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__IntentType__TypeNameAlternatives_0951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__IntentType__TypeNameAlternatives_0971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__DecompositionType__TypeNameAlternatives_01006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__DecompositionType__TypeNameAlternatives_01026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__DecompositionType__TypeNameAlternatives_01046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__DecompositionType__TypeNameAlternatives_01066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__DocItemType__TypeNameAlternatives_01101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__DocItemType__TypeNameAlternatives_01121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__DocItemType__TypeNameAlternatives_01141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__DocItemType__TypeNameAlternatives_01161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__DocItemType__TypeNameAlternatives_01181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__DocItemType__TypeNameAlternatives_01201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__DocItemType__TypeNameAlternatives_01221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__ModelType__TypeNameAlternatives_01256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__ModelType__TypeNameAlternatives_01276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__ModelType__TypeNameAlternatives_01296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__ModelType__TypeNameAlternatives_01316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__ModelType__TypeNameAlternatives_01336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__ModelType__TypeNameAlternatives_01356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__ListItemType__TypeNameAlternatives_01391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__ListItemType__TypeNameAlternatives_01411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__ListItemType__TypeNameAlternatives_01431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__ListItemType__TypeNameAlternatives_01451 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Specification__Group__0__Impl_in_rule__Specification__Group__01483 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Specification__Group__1_in_rule__Specification__Group__01486 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_39_in_rule__Specification__Group__0__Impl1514 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Specification__Group__1__Impl_in_rule__Specification__Group__11545 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_rule__Specification__Group__2_in_rule__Specification__Group__11548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Specification__IdAssignment_1_in_rule__Specification__Group__1__Impl1575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Specification__NameAssignment_1_in_rule__Specification__Group__1__Impl1575 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Specification__Group__2__Impl_in_rule__Specification__Group__21605 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Specification__RefinementsAssignment_2_in_rule__Specification__Group__2__Impl1634 = new BitSet(new long[]{0x0000010000000002L});
     public static final BitSet FOLLOW_rule__Specification__RefinementsAssignment_2_in_rule__Specification__Group__2__Impl1646 = new BitSet(new long[]{0x0000010000000002L});
@@ -7627,7 +7937,7 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_40_in_rule__Refinement__Group__0__Impl1716 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Refinement__Group__1__Impl_in_rule__Refinement__Group__11747 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__Refinement__Group__2_in_rule__Refinement__Group__11750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Refinement__IdAssignment_1_in_rule__Refinement__Group__1__Impl1777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Refinement__NameAssignment_1_in_rule__Refinement__Group__1__Impl1777 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Refinement__Group__2__Impl_in_rule__Refinement__Group__21807 = new BitSet(new long[]{0x000000000003F800L});
     public static final BitSet FOLLOW_rule__Refinement__Group__3_in_rule__Refinement__Group__21810 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Refinement__DescAssignment_2_in_rule__Refinement__Group__2__Impl1837 = new BitSet(new long[]{0x0000000000000002L});
@@ -7639,7 +7949,7 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__Intent__TypeAssignment_0_in_rule__Intent__Group__0__Impl1979 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Intent__Group__1__Impl_in_rule__Intent__Group__12009 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__Intent__Group__2_in_rule__Intent__Group__12012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Intent__IdAssignment_1_in_rule__Intent__Group__1__Impl2039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Intent__NameAssignment_1_in_rule__Intent__Group__1__Impl2039 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Intent__Group__2__Impl_in_rule__Intent__Group__22069 = new BitSet(new long[]{0x00000000003C0000L});
     public static final BitSet FOLLOW_rule__Intent__Group__3_in_rule__Intent__Group__22072 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Intent__DescAssignment_2_in_rule__Intent__Group__2__Impl2099 = new BitSet(new long[]{0x0000000000000002L});
@@ -7651,7 +7961,7 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__Decomposition__TypeAssignment_0_in_rule__Decomposition__Group__0__Impl2241 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Decomposition__Group__1__Impl_in_rule__Decomposition__Group__12271 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__Decomposition__Group__2_in_rule__Decomposition__Group__12274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Decomposition__IdAssignment_1_in_rule__Decomposition__Group__1__Impl2301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Decomposition__NameAssignment_1_in_rule__Decomposition__Group__1__Impl2301 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Decomposition__Group__2__Impl_in_rule__Decomposition__Group__22331 = new BitSet(new long[]{0x00002A0000000000L});
     public static final BitSet FOLLOW_rule__Decomposition__Group__3_in_rule__Decomposition__Group__22334 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Decomposition__DescAssignment_2_in_rule__Decomposition__Group__2__Impl2361 = new BitSet(new long[]{0x0000000000000002L});
@@ -7701,7 +8011,7 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__DocItem__TypeAssignment_0_in_rule__DocItem__Group__0__Impl3381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DocItem__Group__1__Impl_in_rule__DocItem__Group__13411 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__DocItem__Group__2_in_rule__DocItem__Group__13414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DocItem__IdAssignment_1_in_rule__DocItem__Group__1__Impl3441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DocItem__NameAssignment_1_in_rule__DocItem__Group__1__Impl3441 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DocItem__Group__2__Impl_in_rule__DocItem__Group__23471 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_rule__DocItem__Group__3_in_rule__DocItem__Group__23474 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__DocItem__RefAssignment_2_in_rule__DocItem__Group__2__Impl3501 = new BitSet(new long[]{0x0000000000000002L});
@@ -7712,7 +8022,7 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__ModelItem__TypeAssignment_0_in_rule__ModelItem__Group__0__Impl3628 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ModelItem__Group__1__Impl_in_rule__ModelItem__Group__13658 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__ModelItem__Group__2_in_rule__ModelItem__Group__13661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ModelItem__IdAssignment_1_in_rule__ModelItem__Group__1__Impl3688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ModelItem__NameAssignment_1_in_rule__ModelItem__Group__1__Impl3688 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ModelItem__Group__2__Impl_in_rule__ModelItem__Group__23718 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_rule__ModelItem__Group__3_in_rule__ModelItem__Group__23721 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ModelItem__DescAssignment_2_in_rule__ModelItem__Group__2__Impl3748 = new BitSet(new long[]{0x0000000000000002L});
@@ -7723,7 +8033,7 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__ListItem__TypeAssignment_0_in_rule__ListItem__Group__0__Impl3875 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ListItem__Group__1__Impl_in_rule__ListItem__Group__13905 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__ListItem__Group__2_in_rule__ListItem__Group__13908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__IdAssignment_1_in_rule__ListItem__Group__1__Impl3935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__NameAssignment_1_in_rule__ListItem__Group__1__Impl3935 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ListItem__Group__2__Impl_in_rule__ListItem__Group__23965 = new BitSet(new long[]{0x0000AA0000000000L});
     public static final BitSet FOLLOW_rule__ListItem__Group__3_in_rule__ListItem__Group__23968 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ListItem__DescAssignment_2_in_rule__ListItem__Group__2__Impl3995 = new BitSet(new long[]{0x0000000000000002L});
@@ -7738,57 +8048,65 @@ public class InternalIntentSpecificationParser extends AbstractInternalContentAs
     public static final BitSet FOLLOW_rule__ListItem__Group_5__0_in_rule__ListItem__Group__5__Impl4177 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ListItem__Group__6__Impl_in_rule__ListItem__Group__64208 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_47_in_rule__ListItem__Group__6__Impl4236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_3__0__Impl_in_rule__ListItem__Group_3__04281 = new BitSet(new long[]{0x0000040000000010L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_3__0__Impl_in_rule__ListItem__Group_3__04281 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__ListItem__Group_3__1_in_rule__ListItem__Group_3__04284 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_41_in_rule__ListItem__Group_3__0__Impl4312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_3__1__Impl_in_rule__ListItem__Group_3__14343 = new BitSet(new long[]{0x0000040000000010L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_3__1__Impl_in_rule__ListItem__Group_3__14343 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_rule__ListItem__Group_3__2_in_rule__ListItem__Group_3__14346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__DocReferencesAssignment_3_1_in_rule__ListItem__Group_3__1__Impl4373 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_3__2__Impl_in_rule__ListItem__Group_3__24404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__ListItem__Group_3__2__Impl4432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_4__0__Impl_in_rule__ListItem__Group_4__04469 = new BitSet(new long[]{0x0000400000000010L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_4__1_in_rule__ListItem__Group_4__04472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__ListItem__Group_4__0__Impl4500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_4__1__Impl_in_rule__ListItem__Group_4__14531 = new BitSet(new long[]{0x0000400000000010L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_4__2_in_rule__ListItem__Group_4__14534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__ItemReferencesAssignment_4_1_in_rule__ListItem__Group_4__1__Impl4561 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_4__2__Impl_in_rule__ListItem__Group_4__24592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__ListItem__Group_4__2__Impl4620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_5__0__Impl_in_rule__ListItem__Group_5__04657 = new BitSet(new long[]{0x0000100000000010L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_5__1_in_rule__ListItem__Group_5__04660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__ListItem__Group_5__0__Impl4688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_5__1__Impl_in_rule__ListItem__Group_5__14719 = new BitSet(new long[]{0x0000100000000010L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_5__2_in_rule__ListItem__Group_5__14722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ListItem__ModelReferencesAssignment_5_1_in_rule__ListItem__Group_5__1__Impl4749 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__ListItem__Group_5__2__Impl_in_rule__ListItem__Group_5__24780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__ListItem__Group_5__2__Impl4808 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Specification__IdAssignment_14850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRefinement_in_rule__Specification__RefinementsAssignment_24881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Refinement__IdAssignment_14912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Refinement__DescAssignment_24943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntent_in_rule__Refinement__IntentsAssignment_34974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntentType_in_rule__Intent__TypeAssignment_05005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Intent__IdAssignment_15036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Intent__DescAssignment_25067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecomposition_in_rule__Intent__DecompositionsAssignment_35098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDecompositionType_in_rule__Decomposition__TypeAssignment_05129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Decomposition__IdAssignment_15160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Decomposition__DescAssignment_25191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDocument_in_rule__Decomposition__DocumentsAssignment_3_15222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModelItem_in_rule__Decomposition__ModelsAssignment_4_15253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListItem_in_rule__Decomposition__ItemsAssignment_5_15284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDocItem_in_rule__Document__EntriesAssignment_15315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDocItemType_in_rule__DocItem__TypeAssignment_05346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__DocItem__IdAssignment_15377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__DocItem__RefAssignment_25408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModelType_in_rule__ModelItem__TypeAssignment_05439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ModelItem__IdAssignment_15470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__ModelItem__DescAssignment_25501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleListItemType_in_rule__ListItem__TypeAssignment_05532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__IdAssignment_15563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__ListItem__DescAssignment_25594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__DocReferencesAssignment_3_15629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__ItemReferencesAssignment_4_15668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__ModelReferencesAssignment_5_15707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__DocReferencesAssignment_3_1_in_rule__ListItem__Group_3__1__Impl4375 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ListItem__DocReferencesAssignment_3_1_in_rule__ListItem__Group_3__1__Impl4387 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_3__2__Impl_in_rule__ListItem__Group_3__24420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__ListItem__Group_3__2__Impl4448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_4__0__Impl_in_rule__ListItem__Group_4__04485 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_4__1_in_rule__ListItem__Group_4__04488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_rule__ListItem__Group_4__0__Impl4516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_4__1__Impl_in_rule__ListItem__Group_4__14547 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_4__2_in_rule__ListItem__Group_4__14550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__ItemReferencesAssignment_4_1_in_rule__ListItem__Group_4__1__Impl4579 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ListItem__ItemReferencesAssignment_4_1_in_rule__ListItem__Group_4__1__Impl4591 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_4__2__Impl_in_rule__ListItem__Group_4__24624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__ListItem__Group_4__2__Impl4652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_5__0__Impl_in_rule__ListItem__Group_5__04689 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_5__1_in_rule__ListItem__Group_5__04692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__ListItem__Group_5__0__Impl4720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_5__1__Impl_in_rule__ListItem__Group_5__14751 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_5__2_in_rule__ListItem__Group_5__14754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItem__ModelReferencesAssignment_5_1_in_rule__ListItem__Group_5__1__Impl4783 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ListItem__ModelReferencesAssignment_5_1_in_rule__ListItem__Group_5__1__Impl4795 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__ListItem__Group_5__2__Impl_in_rule__ListItem__Group_5__24828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rule__ListItem__Group_5__2__Impl4856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Specification__NameAssignment_14898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRefinement_in_rule__Specification__RefinementsAssignment_24929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Refinement__NameAssignment_14960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Refinement__DescAssignment_24991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntent_in_rule__Refinement__IntentsAssignment_35022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleIntentType_in_rule__Intent__TypeAssignment_05053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Intent__NameAssignment_15084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Intent__DescAssignment_25115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecomposition_in_rule__Intent__DecompositionsAssignment_35146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__IntentType__TypeNameAlternatives_0_in_rule__IntentType__TypeNameAssignment5177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDecompositionType_in_rule__Decomposition__TypeAssignment_05210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Decomposition__NameAssignment_15241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Decomposition__DescAssignment_25272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDocument_in_rule__Decomposition__DocumentsAssignment_3_15303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModelItem_in_rule__Decomposition__ModelsAssignment_4_15334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListItem_in_rule__Decomposition__ItemsAssignment_5_15365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DecompositionType__TypeNameAlternatives_0_in_rule__DecompositionType__TypeNameAssignment5396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDocItem_in_rule__Document__EntriesAssignment_15429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DocItemType__TypeNameAlternatives_0_in_rule__DocItemType__TypeNameAssignment5460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDocItemType_in_rule__DocItem__TypeAssignment_05493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__DocItem__NameAssignment_15524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__DocItem__RefAssignment_25555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ModelType__TypeNameAlternatives_0_in_rule__ModelType__TypeNameAssignment5586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModelType_in_rule__ModelItem__TypeAssignment_05619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ModelItem__NameAssignment_15650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__ModelItem__DescAssignment_25681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ListItemType__TypeNameAlternatives_0_in_rule__ListItemType__TypeNameAssignment5712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleListItemType_in_rule__ListItem__TypeAssignment_05745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__NameAssignment_15776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__ListItem__DescAssignment_25807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__DocReferencesAssignment_3_15842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__ItemReferencesAssignment_4_15881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ListItem__ModelReferencesAssignment_5_15920 = new BitSet(new long[]{0x0000000000000002L});
 
 }

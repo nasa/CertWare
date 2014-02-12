@@ -12,7 +12,7 @@ generate intentSpecification "http://www.certware.net/intent/IntentSpecification
  */
 Specification:
 	'specification'
-	id=ID
+	name=ID
 	refinements+=Refinement+
 ;
 
@@ -21,7 +21,7 @@ Specification:
  */
 Refinement:
 	'refinement'
-	id=ID
+	name=ID
 	desc=STRING
 	intents+=Intent+	
 ;	
@@ -31,7 +31,7 @@ Refinement:
  */
 Intent:
 	type=IntentType
-	id=ID
+	name=ID
 	desc=STRING
 	decompositions+=Decomposition+	
 ;
@@ -42,7 +42,7 @@ Intent:
  * A proper intention specification should contain an intent of each type in each refinement.
  */
 IntentType:
-	'basic' | 'purpose' | 'principles' | 'models' | 'design' | 'implementation' | 'operation'
+	typeName=('basic' | 'purpose' | 'principles' | 'models' | 'design' | 'implementation' | 'operation')
 ;
 
 /*
@@ -50,7 +50,7 @@ IntentType:
  */
 Decomposition:
 	type=DecompositionType
-	id=ID
+	name=ID
 	desc=STRING
 	('{' documents+=Document* '}')?
 	('[' models+=ModelItem* ']')?
@@ -58,7 +58,7 @@ Decomposition:
 ;
 
 DecompositionType:
-	'environment' | 'operator' | 'system' | 'verification'
+	typeName=('environment' | 'operator' | 'system' | 'verification')
 ;
 
 Document:
@@ -66,29 +66,29 @@ Document:
 ;
 
 DocItemType:
-	'condition' | 'figure' | 'break' | 'model' | 'paragraph' | 'section' | 'table'
+	typeName=('condition' | 'figure' | 'break' | 'model' | 'paragraph' | 'section' | 'table')
 ;
 
 DocItem :
 	type=DocItemType
-	id=ID
+	name=ID
 	ref=STRING
 	';'
 ;
 
 ModelType:
-	'output' | 'mode' | 'state' | 'macro' | 'function' | 'input'	
+	typeName=('output' | 'mode' | 'state' | 'macro' | 'function' | 'input')	
 ;
 
 ModelItem:
 	type=ModelType
-	id=ID
+	name=ID
 	desc=STRING
 	';'
 ;
 
 ListItemType:
-	'requirement' | 'goal' | 'hazard' | 'constraint'	
+	typeName=('requirement' | 'goal' | 'hazard' | 'constraint')	
 ;
 
 /*
@@ -96,7 +96,7 @@ ListItemType:
  */
 ListItem:
 	type=ListItemType
-	id=ID
+	name=ID
 	desc=STRING
 	('{' docReferences+=[DocItem]+ '}' )?
 	('(' itemReferences+=[ListItem]+ ')' )?
@@ -104,51 +104,3 @@ ListItem:
 	';'
 ;
 
-
-
-/* 
-Level0:
-	{Level0}
-	'{'
-		('Program Plan' pmp=Document)?
-		('Safety Plan' safetyPlan=Document)?
-		('Accident Definition' accidentDefinition=Document)?
-		('Safety Policy' safetyPolicy=Document)?
-	'}'
-;
-
-Level1:
-	{Level1}
-	'{'
-		('Introduction' introduction=Document)?
-		('Historical' historical=Document)?
-		('Environment' environment=Document)?
-		('Goals' '(' goals+=GoalItem* ')' )?
-		('High-Level Requirements' '(' highLevelReqs+=RequirementItem* ')' )?
-		('System Limitations' limitations=Document)?
-		('Operator Requirements' '(' opReq+=RequirementItem* ')' )?
-		('Hazard Analysis' hazardAnalysis=Document)?
-		('Hazard List' '(' hazardList+=HazardItem* ')')?
-		('Design Constraints' '(' constraints+=ConstraintItem* ')' )?
-		('Verification and Validation' verification=Document)?
-	'}'
-;
-
-
-Level2:
-	desc=STRING
-	'{'
-	'}'	
-;
-
-Level3:
-	desc=STRING
-	'{'
-		('System Blackbox Behavior' '(' behaviors+=ModelItem* ')' )?
-		('User Model' '(' userModels+=ModelItem* ')' )?
-		('Verification and Validation' verification=Document )?
-	'}'
-;
-
-
-*/

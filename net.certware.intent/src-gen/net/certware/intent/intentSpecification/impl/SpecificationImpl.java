@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.intent.intentSpecification.impl.SpecificationImpl#getId <em>Id</em>}</li>
+ *   <li>{@link net.certware.intent.intentSpecification.impl.SpecificationImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.SpecificationImpl#getRefinements <em>Refinements</em>}</li>
  * </ul>
  * </p>
@@ -39,24 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SpecificationImpl extends MinimalEObjectImpl.Container implements Specification
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRefinements() <em>Refinements</em>}' containment reference list.
@@ -94,9 +94,9 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId()
+  public String getName()
   {
-    return id;
+    return name;
   }
 
   /**
@@ -104,12 +104,12 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId)
+  public void setName(String newName)
   {
-    String oldId = id;
-    id = newId;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.SPECIFICATION__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, IntentSpecificationPackage.SPECIFICATION__NAME, oldName, name));
   }
 
   /**
@@ -152,8 +152,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.SPECIFICATION__ID:
-        return getId();
+      case IntentSpecificationPackage.SPECIFICATION__NAME:
+        return getName();
       case IntentSpecificationPackage.SPECIFICATION__REFINEMENTS:
         return getRefinements();
     }
@@ -171,8 +171,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.SPECIFICATION__ID:
-        setId((String)newValue);
+      case IntentSpecificationPackage.SPECIFICATION__NAME:
+        setName((String)newValue);
         return;
       case IntentSpecificationPackage.SPECIFICATION__REFINEMENTS:
         getRefinements().clear();
@@ -192,8 +192,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.SPECIFICATION__ID:
-        setId(ID_EDEFAULT);
+      case IntentSpecificationPackage.SPECIFICATION__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case IntentSpecificationPackage.SPECIFICATION__REFINEMENTS:
         getRefinements().clear();
@@ -212,8 +212,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case IntentSpecificationPackage.SPECIFICATION__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case IntentSpecificationPackage.SPECIFICATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case IntentSpecificationPackage.SPECIFICATION__REFINEMENTS:
         return refinements != null && !refinements.isEmpty();
     }
@@ -231,8 +231,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
