@@ -1,13 +1,13 @@
-module net.certware.intent.GenerateIntentSpecification
+module net.certware.intent.state.GenerateStateSpecification
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/net/certware/intent/IntentSpecification.xtext"
-var fileExtensions = "intent"
-var fileExtension = "intent"
-var projectName = "net.certware.intent"
+var grammarURI = "classpath:/net/certware/intent/state/StateSpecification.xtext"
+var fileExtensions = "state"
+var fileExtension = "state"
+var projectName = "net.certware.intent.state"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 
@@ -73,7 +73,7 @@ Workflow {
     		// Xtend-based API for validation
     		fragment = validation.ValidatorFragment auto-inject {
     		//    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
-				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+    		      composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
     		}
     
     		// old scoping and exporting API
@@ -112,7 +112,7 @@ Workflow {
     
     		// project wizard (optional)
     		fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
-    			generatorProjectName = "${projectName}"
+    		     generatorProjectName = "${projectName}"
     		}
     
     		// rename refactoring

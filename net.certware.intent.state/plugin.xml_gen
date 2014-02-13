@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.certware.net/intent/state/StateSpecification" 
+       class = "net.certware.intent.state.stateSpecification.StateSpecificationPackage"
+       genModel = "net/certware/intent/state/StateSpecification.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

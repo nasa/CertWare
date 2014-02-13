@@ -1,0 +1,164 @@
+grammar net.certware.intent.state.StateSpecification with org.eclipse.xtext.common.Terminals
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate stateSpecification "http://www.certware.net/intent/state/StateSpecification"
+
+/*
+ * A state specification consists of one or more components.
+ */
+Specification:
+	'specification'
+	name=ID
+	('[' 'devices' devices+=Device* ']')? 
+	components+=Component+
+;
+
+BigDecimalType returns ecore::EBigDecimal:
+'-'? INT ('.' INT)?
+;
+
+ModeElementType:
+	elementType=('supervisory' | 'operating' | 'other')
+;
+
+Component:
+	'component'
+	name=ID
+	('modes' modes+=ModeElement*)?
+	('states' states+=StateElement*)?
+	('inputs' inputs+=ComponentInput*)?
+	('outputs' outputs+=ComponentOutput*)?
+;
+
+ModeElement:
+	(inferred?='inferred')?
+	type=ModeElementType
+	modes+=ModeVariable+
+	';'
+;
+
+StateElement:
+	(inferred?='inferred')?
+	states+=StateVariable+
+	';'	
+;
+
+StateVariable:
+	'state'
+	desc=STRING
+	'{'
+	state+=State+	
+	'}'
+;
+
+State:
+	(initial?='initial')?
+	value=STRING
+;
+
+ModeVariable:
+	'mode'
+	desc=STRING
+	'{'
+	modes+=Mode+
+	'}'	
+;
+
+Mode:
+	(initial?='initial')?
+	value=STRING
+;
+
+Device:
+	'device'
+	name=ID
+	desc=STRING
+	('inputs' inputs+=DeviceInput*)?
+	('outputs' outputs+=DeviceOutput*)?
+;
+
+DeviceInput:
+	'input'
+	name=ID
+	('value' io=Input)?
+	'source' source=[Component]
+;
+
+DeviceOutput:
+	'output'
+	name=ID
+	('value' io=Output)?
+	'target' target=[Component]
+;
+
+ComponentInput:
+	'input'
+	name=ID
+	('value' io=Input)?
+	'source' source=[Device]
+;
+
+ComponentOutput:
+	'output'
+	name=ID
+	('value' io=Output)?
+	'target' target=[Device]	
+;
+
+BigUnitValue:
+	value=BigDecimalType
+	'units'
+	units=STRING	
+;
+
+StateValue:
+	value=('T' | 'F' | '.' | '?')
+;
+
+StateList:
+	'[' stateList+=StateValue+ ']'
+;
+
+Trigger:
+	('mode' mode=[Mode] list=StateList) |
+	('state' variable=[StateVariable] value=[State] list=StateList)
+;
+
+TriggerTable:
+	{TriggerTable}
+	'table'
+	rows+=Trigger*
+;
+
+Output:
+	{Output}
+	(
+		('range' '{' lower=BigDecimalType '...' upper=BigDecimalType '}' 'type' rangeType=STRING 'units' rangeUnits=STRING) | 
+		('values' '{' values+=STRING* '}')
+	)
+	('rate' rate=BigUnitValue)?
+	('initiation-delay' delay=BigUnitValue)?
+	('completion-deadline' deadline=BigUnitValue)?
+	('completion-exception' completionHandling=STRING)?
+	('variables' variables=STRING)?
+	('relationship' relationship=STRING)?
+	('min-response-time' minResponse=BigUnitValue)?
+	('max-response-time' maxResponse=BigUnitValue)?
+	('feedback-exception' feebackHandling=STRING)?
+	('reversed-by' reversed=STRING)?
+	('references' references=STRING)?
+	('comments' comments=STRING)?
+	('contents' contents=STRING)?
+	('triggering' table=TriggerTable)?
+;
+
+Input:
+	{Input}
+	(
+		('range' '{' lower=BigDecimalType '...' upper=BigDecimalType '}' 'type' rangeType=STRING 'units' rangeUnits=STRING) | 
+		('values' '{' values+=STRING* '}')
+	)
+	('rate' rate=BigUnitValue)?
+	('variables' variables=STRING)?
+	('references' references=STRING)?
+	('comments' comments=STRING)?
+;
