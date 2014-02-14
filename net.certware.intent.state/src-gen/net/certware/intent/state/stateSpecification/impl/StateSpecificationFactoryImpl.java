@@ -83,6 +83,8 @@ public class StateSpecificationFactoryImpl extends EFactoryImpl implements State
       case StateSpecificationPackage.STATE_LIST: return createStateList();
       case StateSpecificationPackage.TRIGGER: return createTrigger();
       case StateSpecificationPackage.TRIGGER_TABLE: return createTriggerTable();
+      case StateSpecificationPackage.VALUE_RANGE: return createValueRange();
+      case StateSpecificationPackage.VALUE_LIST: return createValueList();
       case StateSpecificationPackage.OUTPUT: return createOutput();
       case StateSpecificationPackage.INPUT: return createInput();
       default:
@@ -297,6 +299,28 @@ public class StateSpecificationFactoryImpl extends EFactoryImpl implements State
   {
     TriggerTableImpl triggerTable = new TriggerTableImpl();
     return triggerTable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValueRange createValueRange()
+  {
+    ValueRangeImpl valueRange = new ValueRangeImpl();
+    return valueRange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValueList createValueList()
+  {
+    ValueListImpl valueList = new ValueListImpl();
+    return valueList;
   }
 
   /**

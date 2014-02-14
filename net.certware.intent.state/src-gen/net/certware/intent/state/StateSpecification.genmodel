@@ -92,12 +92,18 @@
     <genClasses ecoreClass="StateSpecification.ecore#//TriggerTable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//TriggerTable/rows"/>
     </genClasses>
+    <genClasses ecoreClass="StateSpecification.ecore#//ValueRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//ValueRange/lower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//ValueRange/upper"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//ValueRange/rangeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//ValueRange/rangeUnits"/>
+    </genClasses>
+    <genClasses ecoreClass="StateSpecification.ecore#//ValueList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//ValueList/values"/>
+    </genClasses>
     <genClasses ecoreClass="StateSpecification.ecore#//Output">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Output/lower"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Output/upper"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Output/rangeType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Output/rangeUnits"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Output/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Output/range"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Output/valueList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Output/rate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Output/delay"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Output/deadline"/>
@@ -114,15 +120,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Output/table"/>
     </genClasses>
     <genClasses ecoreClass="StateSpecification.ecore#//Input">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/lower"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/upper"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/rangeType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/rangeUnits"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/values"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/rate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/range"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/valueList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/valueHandling"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/granularity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/arrivalRateAvg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/arrivalRateMinimum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/arrivalRateMaximum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/obsolescence"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/references"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/appearsIn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateSpecification.ecore#//Input/comments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateSpecification.ecore#//Input/structure"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

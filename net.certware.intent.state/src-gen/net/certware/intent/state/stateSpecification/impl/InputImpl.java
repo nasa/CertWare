@@ -2,26 +2,21 @@
  */
 package net.certware.intent.state.stateSpecification.impl;
 
-import java.math.BigDecimal;
-
-import java.util.Collection;
-
 import net.certware.intent.state.stateSpecification.BigUnitValue;
 import net.certware.intent.state.stateSpecification.Input;
 import net.certware.intent.state.stateSpecification.StateSpecificationPackage;
+import net.certware.intent.state.stateSpecification.TriggerTable;
+import net.certware.intent.state.stateSpecification.ValueList;
+import net.certware.intent.state.stateSpecification.ValueRange;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,15 +25,19 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getLower <em>Lower</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getUpper <em>Upper</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getRangeType <em>Range Type</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getRangeUnits <em>Range Units</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getValues <em>Values</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getRate <em>Rate</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getRange <em>Range</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getValueList <em>Value List</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getValueHandling <em>Value Handling</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getGranularity <em>Granularity</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getArrivalRateAvg <em>Arrival Rate Avg</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getArrivalRateMinimum <em>Arrival Rate Minimum</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getArrivalRateMaximum <em>Arrival Rate Maximum</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getObsolescence <em>Obsolescence</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getReferences <em>References</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getAppearsIn <em>Appears In</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getStructure <em>Structure</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,124 +46,94 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class InputImpl extends MinimalEObjectImpl.Container implements Input
 {
   /**
-   * The default value of the '{@link #getLower() <em>Lower</em>}' attribute.
+   * The cached value of the '{@link #getRange() <em>Range</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLower()
+   * @see #getRange()
    * @generated
    * @ordered
    */
-  protected static final BigDecimal LOWER_EDEFAULT = null;
+  protected ValueRange range;
 
   /**
-   * The cached value of the '{@link #getLower() <em>Lower</em>}' attribute.
+   * The cached value of the '{@link #getValueList() <em>Value List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLower()
+   * @see #getValueList()
    * @generated
    * @ordered
    */
-  protected BigDecimal lower = LOWER_EDEFAULT;
+  protected ValueList valueList;
 
   /**
-   * The default value of the '{@link #getUpper() <em>Upper</em>}' attribute.
+   * The default value of the '{@link #getValueHandling() <em>Value Handling</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUpper()
+   * @see #getValueHandling()
    * @generated
    * @ordered
    */
-  protected static final BigDecimal UPPER_EDEFAULT = null;
+  protected static final String VALUE_HANDLING_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getUpper() <em>Upper</em>}' attribute.
+   * The cached value of the '{@link #getValueHandling() <em>Value Handling</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUpper()
+   * @see #getValueHandling()
    * @generated
    * @ordered
    */
-  protected BigDecimal upper = UPPER_EDEFAULT;
+  protected String valueHandling = VALUE_HANDLING_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getRangeType() <em>Range Type</em>}' attribute.
+   * The cached value of the '{@link #getGranularity() <em>Granularity</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRangeType()
+   * @see #getGranularity()
    * @generated
    * @ordered
    */
-  protected static final String RANGE_TYPE_EDEFAULT = null;
+  protected BigUnitValue granularity;
 
   /**
-   * The cached value of the '{@link #getRangeType() <em>Range Type</em>}' attribute.
+   * The cached value of the '{@link #getArrivalRateAvg() <em>Arrival Rate Avg</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRangeType()
+   * @see #getArrivalRateAvg()
    * @generated
    * @ordered
    */
-  protected String rangeType = RANGE_TYPE_EDEFAULT;
+  protected BigUnitValue arrivalRateAvg;
 
   /**
-   * The default value of the '{@link #getRangeUnits() <em>Range Units</em>}' attribute.
+   * The cached value of the '{@link #getArrivalRateMinimum() <em>Arrival Rate Minimum</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRangeUnits()
+   * @see #getArrivalRateMinimum()
    * @generated
    * @ordered
    */
-  protected static final String RANGE_UNITS_EDEFAULT = null;
+  protected BigUnitValue arrivalRateMinimum;
 
   /**
-   * The cached value of the '{@link #getRangeUnits() <em>Range Units</em>}' attribute.
+   * The cached value of the '{@link #getArrivalRateMaximum() <em>Arrival Rate Maximum</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRangeUnits()
+   * @see #getArrivalRateMaximum()
    * @generated
    * @ordered
    */
-  protected String rangeUnits = RANGE_UNITS_EDEFAULT;
+  protected BigUnitValue arrivalRateMaximum;
 
   /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+   * The cached value of the '{@link #getObsolescence() <em>Obsolescence</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValues()
+   * @see #getObsolescence()
    * @generated
    * @ordered
    */
-  protected EList<String> values;
-
-  /**
-   * The cached value of the '{@link #getRate() <em>Rate</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRate()
-   * @generated
-   * @ordered
-   */
-  protected BigUnitValue rate;
-
-  /**
-   * The default value of the '{@link #getVariables() <em>Variables</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariables()
-   * @generated
-   * @ordered
-   */
-  protected static final String VARIABLES_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVariables()
-   * @generated
-   * @ordered
-   */
-  protected String variables = VARIABLES_EDEFAULT;
+  protected BigUnitValue obsolescence;
 
   /**
    * The default value of the '{@link #getReferences() <em>References</em>}' attribute.
@@ -187,6 +156,46 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
   protected String references = REFERENCES_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getAppearsIn() <em>Appears In</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAppearsIn()
+   * @generated
+   * @ordered
+   */
+  protected static final String APPEARS_IN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAppearsIn() <em>Appears In</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAppearsIn()
+   * @generated
+   * @ordered
+   */
+  protected String appearsIn = APPEARS_IN_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getComments() <em>Comments</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -205,6 +214,16 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * @ordered
    */
   protected String comments = COMMENTS_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getStructure() <em>Structure</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStructure()
+   * @generated
+   * @ordered
+   */
+  protected TriggerTable structure;
 
   /**
    * <!-- begin-user-doc -->
@@ -232,9 +251,9 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public BigDecimal getLower()
+  public ValueRange getRange()
   {
-    return lower;
+    return range;
   }
 
   /**
@@ -242,119 +261,13 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLower(BigDecimal newLower)
+  public NotificationChain basicSetRange(ValueRange newRange, NotificationChain msgs)
   {
-    BigDecimal oldLower = lower;
-    lower = newLower;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__LOWER, oldLower, lower));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BigDecimal getUpper()
-  {
-    return upper;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUpper(BigDecimal newUpper)
-  {
-    BigDecimal oldUpper = upper;
-    upper = newUpper;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__UPPER, oldUpper, upper));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getRangeType()
-  {
-    return rangeType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRangeType(String newRangeType)
-  {
-    String oldRangeType = rangeType;
-    rangeType = newRangeType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__RANGE_TYPE, oldRangeType, rangeType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getRangeUnits()
-  {
-    return rangeUnits;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRangeUnits(String newRangeUnits)
-  {
-    String oldRangeUnits = rangeUnits;
-    rangeUnits = newRangeUnits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__RANGE_UNITS, oldRangeUnits, rangeUnits));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getValues()
-  {
-    if (values == null)
-    {
-      values = new EDataTypeEList<String>(String.class, this, StateSpecificationPackage.INPUT__VALUES);
-    }
-    return values;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BigUnitValue getRate()
-  {
-    return rate;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRate(BigUnitValue newRate, NotificationChain msgs)
-  {
-    BigUnitValue oldRate = rate;
-    rate = newRate;
+    ValueRange oldRange = range;
+    range = newRange;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__RATE, oldRate, newRate);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__RANGE, oldRange, newRange);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -365,20 +278,20 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRate(BigUnitValue newRate)
+  public void setRange(ValueRange newRange)
   {
-    if (newRate != rate)
+    if (newRange != range)
     {
       NotificationChain msgs = null;
-      if (rate != null)
-        msgs = ((InternalEObject)rate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__RATE, null, msgs);
-      if (newRate != null)
-        msgs = ((InternalEObject)newRate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__RATE, null, msgs);
-      msgs = basicSetRate(newRate, msgs);
+      if (range != null)
+        msgs = ((InternalEObject)range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__RANGE, null, msgs);
+      if (newRange != null)
+        msgs = ((InternalEObject)newRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__RANGE, null, msgs);
+      msgs = basicSetRange(newRange, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__RATE, newRate, newRate));
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__RANGE, newRange, newRange));
   }
 
   /**
@@ -386,9 +299,9 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVariables()
+  public ValueList getValueList()
   {
-    return variables;
+    return valueList;
   }
 
   /**
@@ -396,12 +309,300 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariables(String newVariables)
+  public NotificationChain basicSetValueList(ValueList newValueList, NotificationChain msgs)
   {
-    String oldVariables = variables;
-    variables = newVariables;
+    ValueList oldValueList = valueList;
+    valueList = newValueList;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__VARIABLES, oldVariables, variables));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__VALUE_LIST, oldValueList, newValueList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValueList(ValueList newValueList)
+  {
+    if (newValueList != valueList)
+    {
+      NotificationChain msgs = null;
+      if (valueList != null)
+        msgs = ((InternalEObject)valueList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__VALUE_LIST, null, msgs);
+      if (newValueList != null)
+        msgs = ((InternalEObject)newValueList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__VALUE_LIST, null, msgs);
+      msgs = basicSetValueList(newValueList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__VALUE_LIST, newValueList, newValueList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getValueHandling()
+  {
+    return valueHandling;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValueHandling(String newValueHandling)
+  {
+    String oldValueHandling = valueHandling;
+    valueHandling = newValueHandling;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__VALUE_HANDLING, oldValueHandling, valueHandling));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BigUnitValue getGranularity()
+  {
+    return granularity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetGranularity(BigUnitValue newGranularity, NotificationChain msgs)
+  {
+    BigUnitValue oldGranularity = granularity;
+    granularity = newGranularity;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__GRANULARITY, oldGranularity, newGranularity);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setGranularity(BigUnitValue newGranularity)
+  {
+    if (newGranularity != granularity)
+    {
+      NotificationChain msgs = null;
+      if (granularity != null)
+        msgs = ((InternalEObject)granularity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__GRANULARITY, null, msgs);
+      if (newGranularity != null)
+        msgs = ((InternalEObject)newGranularity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__GRANULARITY, null, msgs);
+      msgs = basicSetGranularity(newGranularity, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__GRANULARITY, newGranularity, newGranularity));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BigUnitValue getArrivalRateAvg()
+  {
+    return arrivalRateAvg;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetArrivalRateAvg(BigUnitValue newArrivalRateAvg, NotificationChain msgs)
+  {
+    BigUnitValue oldArrivalRateAvg = arrivalRateAvg;
+    arrivalRateAvg = newArrivalRateAvg;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG, oldArrivalRateAvg, newArrivalRateAvg);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArrivalRateAvg(BigUnitValue newArrivalRateAvg)
+  {
+    if (newArrivalRateAvg != arrivalRateAvg)
+    {
+      NotificationChain msgs = null;
+      if (arrivalRateAvg != null)
+        msgs = ((InternalEObject)arrivalRateAvg).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG, null, msgs);
+      if (newArrivalRateAvg != null)
+        msgs = ((InternalEObject)newArrivalRateAvg).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG, null, msgs);
+      msgs = basicSetArrivalRateAvg(newArrivalRateAvg, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG, newArrivalRateAvg, newArrivalRateAvg));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BigUnitValue getArrivalRateMinimum()
+  {
+    return arrivalRateMinimum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetArrivalRateMinimum(BigUnitValue newArrivalRateMinimum, NotificationChain msgs)
+  {
+    BigUnitValue oldArrivalRateMinimum = arrivalRateMinimum;
+    arrivalRateMinimum = newArrivalRateMinimum;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM, oldArrivalRateMinimum, newArrivalRateMinimum);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArrivalRateMinimum(BigUnitValue newArrivalRateMinimum)
+  {
+    if (newArrivalRateMinimum != arrivalRateMinimum)
+    {
+      NotificationChain msgs = null;
+      if (arrivalRateMinimum != null)
+        msgs = ((InternalEObject)arrivalRateMinimum).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM, null, msgs);
+      if (newArrivalRateMinimum != null)
+        msgs = ((InternalEObject)newArrivalRateMinimum).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM, null, msgs);
+      msgs = basicSetArrivalRateMinimum(newArrivalRateMinimum, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM, newArrivalRateMinimum, newArrivalRateMinimum));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BigUnitValue getArrivalRateMaximum()
+  {
+    return arrivalRateMaximum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetArrivalRateMaximum(BigUnitValue newArrivalRateMaximum, NotificationChain msgs)
+  {
+    BigUnitValue oldArrivalRateMaximum = arrivalRateMaximum;
+    arrivalRateMaximum = newArrivalRateMaximum;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM, oldArrivalRateMaximum, newArrivalRateMaximum);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArrivalRateMaximum(BigUnitValue newArrivalRateMaximum)
+  {
+    if (newArrivalRateMaximum != arrivalRateMaximum)
+    {
+      NotificationChain msgs = null;
+      if (arrivalRateMaximum != null)
+        msgs = ((InternalEObject)arrivalRateMaximum).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM, null, msgs);
+      if (newArrivalRateMaximum != null)
+        msgs = ((InternalEObject)newArrivalRateMaximum).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM, null, msgs);
+      msgs = basicSetArrivalRateMaximum(newArrivalRateMaximum, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM, newArrivalRateMaximum, newArrivalRateMaximum));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BigUnitValue getObsolescence()
+  {
+    return obsolescence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetObsolescence(BigUnitValue newObsolescence, NotificationChain msgs)
+  {
+    BigUnitValue oldObsolescence = obsolescence;
+    obsolescence = newObsolescence;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__OBSOLESCENCE, oldObsolescence, newObsolescence);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setObsolescence(BigUnitValue newObsolescence)
+  {
+    if (newObsolescence != obsolescence)
+    {
+      NotificationChain msgs = null;
+      if (obsolescence != null)
+        msgs = ((InternalEObject)obsolescence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__OBSOLESCENCE, null, msgs);
+      if (newObsolescence != null)
+        msgs = ((InternalEObject)newObsolescence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__OBSOLESCENCE, null, msgs);
+      msgs = basicSetObsolescence(newObsolescence, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__OBSOLESCENCE, newObsolescence, newObsolescence));
   }
 
   /**
@@ -432,6 +633,52 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getAppearsIn()
+  {
+    return appearsIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAppearsIn(String newAppearsIn)
+  {
+    String oldAppearsIn = appearsIn;
+    appearsIn = newAppearsIn;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__APPEARS_IN, oldAppearsIn, appearsIn));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getComments()
   {
     return comments;
@@ -455,13 +702,75 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
+  public TriggerTable getStructure()
+  {
+    return structure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStructure(TriggerTable newStructure, NotificationChain msgs)
+  {
+    TriggerTable oldStructure = structure;
+    structure = newStructure;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__STRUCTURE, oldStructure, newStructure);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStructure(TriggerTable newStructure)
+  {
+    if (newStructure != structure)
+    {
+      NotificationChain msgs = null;
+      if (structure != null)
+        msgs = ((InternalEObject)structure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__STRUCTURE, null, msgs);
+      if (newStructure != null)
+        msgs = ((InternalEObject)newStructure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.INPUT__STRUCTURE, null, msgs);
+      msgs = basicSetStructure(newStructure, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.INPUT__STRUCTURE, newStructure, newStructure));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.INPUT__RATE:
-        return basicSetRate(null, msgs);
+      case StateSpecificationPackage.INPUT__RANGE:
+        return basicSetRange(null, msgs);
+      case StateSpecificationPackage.INPUT__VALUE_LIST:
+        return basicSetValueList(null, msgs);
+      case StateSpecificationPackage.INPUT__GRANULARITY:
+        return basicSetGranularity(null, msgs);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG:
+        return basicSetArrivalRateAvg(null, msgs);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM:
+        return basicSetArrivalRateMinimum(null, msgs);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM:
+        return basicSetArrivalRateMaximum(null, msgs);
+      case StateSpecificationPackage.INPUT__OBSOLESCENCE:
+        return basicSetObsolescence(null, msgs);
+      case StateSpecificationPackage.INPUT__STRUCTURE:
+        return basicSetStructure(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -476,24 +785,32 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.INPUT__LOWER:
-        return getLower();
-      case StateSpecificationPackage.INPUT__UPPER:
-        return getUpper();
-      case StateSpecificationPackage.INPUT__RANGE_TYPE:
-        return getRangeType();
-      case StateSpecificationPackage.INPUT__RANGE_UNITS:
-        return getRangeUnits();
-      case StateSpecificationPackage.INPUT__VALUES:
-        return getValues();
-      case StateSpecificationPackage.INPUT__RATE:
-        return getRate();
-      case StateSpecificationPackage.INPUT__VARIABLES:
-        return getVariables();
+      case StateSpecificationPackage.INPUT__RANGE:
+        return getRange();
+      case StateSpecificationPackage.INPUT__VALUE_LIST:
+        return getValueList();
+      case StateSpecificationPackage.INPUT__VALUE_HANDLING:
+        return getValueHandling();
+      case StateSpecificationPackage.INPUT__GRANULARITY:
+        return getGranularity();
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG:
+        return getArrivalRateAvg();
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM:
+        return getArrivalRateMinimum();
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM:
+        return getArrivalRateMaximum();
+      case StateSpecificationPackage.INPUT__OBSOLESCENCE:
+        return getObsolescence();
       case StateSpecificationPackage.INPUT__REFERENCES:
         return getReferences();
+      case StateSpecificationPackage.INPUT__APPEARS_IN:
+        return getAppearsIn();
+      case StateSpecificationPackage.INPUT__DESCRIPTION:
+        return getDescription();
       case StateSpecificationPackage.INPUT__COMMENTS:
         return getComments();
+      case StateSpecificationPackage.INPUT__STRUCTURE:
+        return getStructure();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -503,39 +820,49 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.INPUT__LOWER:
-        setLower((BigDecimal)newValue);
+      case StateSpecificationPackage.INPUT__RANGE:
+        setRange((ValueRange)newValue);
         return;
-      case StateSpecificationPackage.INPUT__UPPER:
-        setUpper((BigDecimal)newValue);
+      case StateSpecificationPackage.INPUT__VALUE_LIST:
+        setValueList((ValueList)newValue);
         return;
-      case StateSpecificationPackage.INPUT__RANGE_TYPE:
-        setRangeType((String)newValue);
+      case StateSpecificationPackage.INPUT__VALUE_HANDLING:
+        setValueHandling((String)newValue);
         return;
-      case StateSpecificationPackage.INPUT__RANGE_UNITS:
-        setRangeUnits((String)newValue);
+      case StateSpecificationPackage.INPUT__GRANULARITY:
+        setGranularity((BigUnitValue)newValue);
         return;
-      case StateSpecificationPackage.INPUT__VALUES:
-        getValues().clear();
-        getValues().addAll((Collection<? extends String>)newValue);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG:
+        setArrivalRateAvg((BigUnitValue)newValue);
         return;
-      case StateSpecificationPackage.INPUT__RATE:
-        setRate((BigUnitValue)newValue);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM:
+        setArrivalRateMinimum((BigUnitValue)newValue);
         return;
-      case StateSpecificationPackage.INPUT__VARIABLES:
-        setVariables((String)newValue);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM:
+        setArrivalRateMaximum((BigUnitValue)newValue);
+        return;
+      case StateSpecificationPackage.INPUT__OBSOLESCENCE:
+        setObsolescence((BigUnitValue)newValue);
         return;
       case StateSpecificationPackage.INPUT__REFERENCES:
         setReferences((String)newValue);
         return;
+      case StateSpecificationPackage.INPUT__APPEARS_IN:
+        setAppearsIn((String)newValue);
+        return;
+      case StateSpecificationPackage.INPUT__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
       case StateSpecificationPackage.INPUT__COMMENTS:
         setComments((String)newValue);
+        return;
+      case StateSpecificationPackage.INPUT__STRUCTURE:
+        setStructure((TriggerTable)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -551,32 +878,44 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.INPUT__LOWER:
-        setLower(LOWER_EDEFAULT);
+      case StateSpecificationPackage.INPUT__RANGE:
+        setRange((ValueRange)null);
         return;
-      case StateSpecificationPackage.INPUT__UPPER:
-        setUpper(UPPER_EDEFAULT);
+      case StateSpecificationPackage.INPUT__VALUE_LIST:
+        setValueList((ValueList)null);
         return;
-      case StateSpecificationPackage.INPUT__RANGE_TYPE:
-        setRangeType(RANGE_TYPE_EDEFAULT);
+      case StateSpecificationPackage.INPUT__VALUE_HANDLING:
+        setValueHandling(VALUE_HANDLING_EDEFAULT);
         return;
-      case StateSpecificationPackage.INPUT__RANGE_UNITS:
-        setRangeUnits(RANGE_UNITS_EDEFAULT);
+      case StateSpecificationPackage.INPUT__GRANULARITY:
+        setGranularity((BigUnitValue)null);
         return;
-      case StateSpecificationPackage.INPUT__VALUES:
-        getValues().clear();
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG:
+        setArrivalRateAvg((BigUnitValue)null);
         return;
-      case StateSpecificationPackage.INPUT__RATE:
-        setRate((BigUnitValue)null);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM:
+        setArrivalRateMinimum((BigUnitValue)null);
         return;
-      case StateSpecificationPackage.INPUT__VARIABLES:
-        setVariables(VARIABLES_EDEFAULT);
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM:
+        setArrivalRateMaximum((BigUnitValue)null);
+        return;
+      case StateSpecificationPackage.INPUT__OBSOLESCENCE:
+        setObsolescence((BigUnitValue)null);
         return;
       case StateSpecificationPackage.INPUT__REFERENCES:
         setReferences(REFERENCES_EDEFAULT);
         return;
+      case StateSpecificationPackage.INPUT__APPEARS_IN:
+        setAppearsIn(APPEARS_IN_EDEFAULT);
+        return;
+      case StateSpecificationPackage.INPUT__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
       case StateSpecificationPackage.INPUT__COMMENTS:
         setComments(COMMENTS_EDEFAULT);
+        return;
+      case StateSpecificationPackage.INPUT__STRUCTURE:
+        setStructure((TriggerTable)null);
         return;
     }
     super.eUnset(featureID);
@@ -592,24 +931,32 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.INPUT__LOWER:
-        return LOWER_EDEFAULT == null ? lower != null : !LOWER_EDEFAULT.equals(lower);
-      case StateSpecificationPackage.INPUT__UPPER:
-        return UPPER_EDEFAULT == null ? upper != null : !UPPER_EDEFAULT.equals(upper);
-      case StateSpecificationPackage.INPUT__RANGE_TYPE:
-        return RANGE_TYPE_EDEFAULT == null ? rangeType != null : !RANGE_TYPE_EDEFAULT.equals(rangeType);
-      case StateSpecificationPackage.INPUT__RANGE_UNITS:
-        return RANGE_UNITS_EDEFAULT == null ? rangeUnits != null : !RANGE_UNITS_EDEFAULT.equals(rangeUnits);
-      case StateSpecificationPackage.INPUT__VALUES:
-        return values != null && !values.isEmpty();
-      case StateSpecificationPackage.INPUT__RATE:
-        return rate != null;
-      case StateSpecificationPackage.INPUT__VARIABLES:
-        return VARIABLES_EDEFAULT == null ? variables != null : !VARIABLES_EDEFAULT.equals(variables);
+      case StateSpecificationPackage.INPUT__RANGE:
+        return range != null;
+      case StateSpecificationPackage.INPUT__VALUE_LIST:
+        return valueList != null;
+      case StateSpecificationPackage.INPUT__VALUE_HANDLING:
+        return VALUE_HANDLING_EDEFAULT == null ? valueHandling != null : !VALUE_HANDLING_EDEFAULT.equals(valueHandling);
+      case StateSpecificationPackage.INPUT__GRANULARITY:
+        return granularity != null;
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_AVG:
+        return arrivalRateAvg != null;
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MINIMUM:
+        return arrivalRateMinimum != null;
+      case StateSpecificationPackage.INPUT__ARRIVAL_RATE_MAXIMUM:
+        return arrivalRateMaximum != null;
+      case StateSpecificationPackage.INPUT__OBSOLESCENCE:
+        return obsolescence != null;
       case StateSpecificationPackage.INPUT__REFERENCES:
         return REFERENCES_EDEFAULT == null ? references != null : !REFERENCES_EDEFAULT.equals(references);
+      case StateSpecificationPackage.INPUT__APPEARS_IN:
+        return APPEARS_IN_EDEFAULT == null ? appearsIn != null : !APPEARS_IN_EDEFAULT.equals(appearsIn);
+      case StateSpecificationPackage.INPUT__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case StateSpecificationPackage.INPUT__COMMENTS:
         return COMMENTS_EDEFAULT == null ? comments != null : !COMMENTS_EDEFAULT.equals(comments);
+      case StateSpecificationPackage.INPUT__STRUCTURE:
+        return structure != null;
     }
     return super.eIsSet(featureID);
   }
@@ -625,20 +972,14 @@ public class InputImpl extends MinimalEObjectImpl.Container implements Input
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (lower: ");
-    result.append(lower);
-    result.append(", upper: ");
-    result.append(upper);
-    result.append(", rangeType: ");
-    result.append(rangeType);
-    result.append(", rangeUnits: ");
-    result.append(rangeUnits);
-    result.append(", values: ");
-    result.append(values);
-    result.append(", variables: ");
-    result.append(variables);
+    result.append(" (valueHandling: ");
+    result.append(valueHandling);
     result.append(", references: ");
     result.append(references);
+    result.append(", appearsIn: ");
+    result.append(appearsIn);
+    result.append(", description: ");
+    result.append(description);
     result.append(", comments: ");
     result.append(comments);
     result.append(')');

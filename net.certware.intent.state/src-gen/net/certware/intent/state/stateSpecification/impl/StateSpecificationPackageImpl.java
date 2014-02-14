@@ -25,6 +25,8 @@ import net.certware.intent.state.stateSpecification.StateValue;
 import net.certware.intent.state.stateSpecification.StateVariable;
 import net.certware.intent.state.stateSpecification.Trigger;
 import net.certware.intent.state.stateSpecification.TriggerTable;
+import net.certware.intent.state.stateSpecification.ValueList;
+import net.certware.intent.state.stateSpecification.ValueRange;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -173,6 +175,20 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * @generated
    */
   private EClass triggerTableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valueRangeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valueListEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -916,6 +932,76 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getValueRange()
+  {
+    return valueRangeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValueRange_Lower()
+  {
+    return (EAttribute)valueRangeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValueRange_Upper()
+  {
+    return (EAttribute)valueRangeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValueRange_RangeType()
+  {
+    return (EAttribute)valueRangeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValueRange_RangeUnits()
+  {
+    return (EAttribute)valueRangeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getValueList()
+  {
+    return valueListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getValueList_Values()
+  {
+    return (EAttribute)valueListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getOutput()
   {
     return outputEClass;
@@ -926,9 +1012,9 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOutput_Lower()
+  public EReference getOutput_Range()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(0);
+    return (EReference)outputEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -936,39 +1022,9 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOutput_Upper()
+  public EReference getOutput_ValueList()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOutput_RangeType()
-  {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOutput_RangeUnits()
-  {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOutput_Values()
-  {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(4);
+    return (EReference)outputEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -978,7 +1034,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EReference getOutput_Rate()
   {
-    return (EReference)outputEClass.getEStructuralFeatures().get(5);
+    return (EReference)outputEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -988,7 +1044,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EReference getOutput_Delay()
   {
-    return (EReference)outputEClass.getEStructuralFeatures().get(6);
+    return (EReference)outputEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -998,7 +1054,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EReference getOutput_Deadline()
   {
-    return (EReference)outputEClass.getEStructuralFeatures().get(7);
+    return (EReference)outputEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1008,7 +1064,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_CompletionHandling()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1018,7 +1074,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_Variables()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(9);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1028,7 +1084,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_Relationship()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(10);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1038,7 +1094,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EReference getOutput_MinResponse()
   {
-    return (EReference)outputEClass.getEStructuralFeatures().get(11);
+    return (EReference)outputEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -1048,7 +1104,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EReference getOutput_MaxResponse()
   {
-    return (EReference)outputEClass.getEStructuralFeatures().get(12);
+    return (EReference)outputEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1058,7 +1114,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_FeebackHandling()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(13);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -1068,7 +1124,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_Reversed()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(14);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -1078,7 +1134,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_References()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(15);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -1088,7 +1144,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_Comments()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(16);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(13);
   }
 
   /**
@@ -1098,7 +1154,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getOutput_Contents()
   {
-    return (EAttribute)outputEClass.getEStructuralFeatures().get(17);
+    return (EAttribute)outputEClass.getEStructuralFeatures().get(14);
   }
 
   /**
@@ -1108,7 +1164,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EReference getOutput_Table()
   {
-    return (EReference)outputEClass.getEStructuralFeatures().get(18);
+    return (EReference)outputEClass.getEStructuralFeatures().get(15);
   }
 
   /**
@@ -1126,9 +1182,9 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInput_Lower()
+  public EReference getInput_Range()
   {
-    return (EAttribute)inputEClass.getEStructuralFeatures().get(0);
+    return (EReference)inputEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1136,9 +1192,9 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInput_Upper()
+  public EReference getInput_ValueList()
   {
-    return (EAttribute)inputEClass.getEStructuralFeatures().get(1);
+    return (EReference)inputEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1146,7 +1202,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInput_RangeType()
+  public EAttribute getInput_ValueHandling()
   {
     return (EAttribute)inputEClass.getEStructuralFeatures().get(2);
   }
@@ -1156,9 +1212,9 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInput_RangeUnits()
+  public EReference getInput_Granularity()
   {
-    return (EAttribute)inputEClass.getEStructuralFeatures().get(3);
+    return (EReference)inputEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1166,9 +1222,9 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInput_Values()
+  public EReference getInput_ArrivalRateAvg()
   {
-    return (EAttribute)inputEClass.getEStructuralFeatures().get(4);
+    return (EReference)inputEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1176,7 +1232,7 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInput_Rate()
+  public EReference getInput_ArrivalRateMinimum()
   {
     return (EReference)inputEClass.getEStructuralFeatures().get(5);
   }
@@ -1186,9 +1242,19 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInput_Variables()
+  public EReference getInput_ArrivalRateMaximum()
   {
-    return (EAttribute)inputEClass.getEStructuralFeatures().get(6);
+    return (EReference)inputEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInput_Obsolescence()
+  {
+    return (EReference)inputEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1198,7 +1264,27 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getInput_References()
   {
-    return (EAttribute)inputEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)inputEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInput_AppearsIn()
+  {
+    return (EAttribute)inputEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInput_Description()
+  {
+    return (EAttribute)inputEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -1208,7 +1294,17 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
    */
   public EAttribute getInput_Comments()
   {
-    return (EAttribute)inputEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)inputEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInput_Structure()
+  {
+    return (EReference)inputEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -1326,12 +1422,18 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
     triggerTableEClass = createEClass(TRIGGER_TABLE);
     createEReference(triggerTableEClass, TRIGGER_TABLE__ROWS);
 
+    valueRangeEClass = createEClass(VALUE_RANGE);
+    createEAttribute(valueRangeEClass, VALUE_RANGE__LOWER);
+    createEAttribute(valueRangeEClass, VALUE_RANGE__UPPER);
+    createEAttribute(valueRangeEClass, VALUE_RANGE__RANGE_TYPE);
+    createEAttribute(valueRangeEClass, VALUE_RANGE__RANGE_UNITS);
+
+    valueListEClass = createEClass(VALUE_LIST);
+    createEAttribute(valueListEClass, VALUE_LIST__VALUES);
+
     outputEClass = createEClass(OUTPUT);
-    createEAttribute(outputEClass, OUTPUT__LOWER);
-    createEAttribute(outputEClass, OUTPUT__UPPER);
-    createEAttribute(outputEClass, OUTPUT__RANGE_TYPE);
-    createEAttribute(outputEClass, OUTPUT__RANGE_UNITS);
-    createEAttribute(outputEClass, OUTPUT__VALUES);
+    createEReference(outputEClass, OUTPUT__RANGE);
+    createEReference(outputEClass, OUTPUT__VALUE_LIST);
     createEReference(outputEClass, OUTPUT__RATE);
     createEReference(outputEClass, OUTPUT__DELAY);
     createEReference(outputEClass, OUTPUT__DEADLINE);
@@ -1348,15 +1450,19 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
     createEReference(outputEClass, OUTPUT__TABLE);
 
     inputEClass = createEClass(INPUT);
-    createEAttribute(inputEClass, INPUT__LOWER);
-    createEAttribute(inputEClass, INPUT__UPPER);
-    createEAttribute(inputEClass, INPUT__RANGE_TYPE);
-    createEAttribute(inputEClass, INPUT__RANGE_UNITS);
-    createEAttribute(inputEClass, INPUT__VALUES);
-    createEReference(inputEClass, INPUT__RATE);
-    createEAttribute(inputEClass, INPUT__VARIABLES);
+    createEReference(inputEClass, INPUT__RANGE);
+    createEReference(inputEClass, INPUT__VALUE_LIST);
+    createEAttribute(inputEClass, INPUT__VALUE_HANDLING);
+    createEReference(inputEClass, INPUT__GRANULARITY);
+    createEReference(inputEClass, INPUT__ARRIVAL_RATE_AVG);
+    createEReference(inputEClass, INPUT__ARRIVAL_RATE_MINIMUM);
+    createEReference(inputEClass, INPUT__ARRIVAL_RATE_MAXIMUM);
+    createEReference(inputEClass, INPUT__OBSOLESCENCE);
     createEAttribute(inputEClass, INPUT__REFERENCES);
+    createEAttribute(inputEClass, INPUT__APPEARS_IN);
+    createEAttribute(inputEClass, INPUT__DESCRIPTION);
     createEAttribute(inputEClass, INPUT__COMMENTS);
+    createEReference(inputEClass, INPUT__STRUCTURE);
   }
 
   /**
@@ -1475,12 +1581,18 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
     initEClass(triggerTableEClass, TriggerTable.class, "TriggerTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTriggerTable_Rows(), this.getTrigger(), null, "rows", null, 0, -1, TriggerTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(valueRangeEClass, ValueRange.class, "ValueRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getValueRange_Lower(), ecorePackage.getEBigDecimal(), "lower", null, 0, 1, ValueRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getValueRange_Upper(), ecorePackage.getEBigDecimal(), "upper", null, 0, 1, ValueRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getValueRange_RangeType(), ecorePackage.getEString(), "rangeType", null, 0, 1, ValueRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getValueRange_RangeUnits(), ecorePackage.getEString(), "rangeUnits", null, 0, 1, ValueRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valueListEClass, ValueList.class, "ValueList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getValueList_Values(), ecorePackage.getEString(), "values", null, 0, -1, ValueList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(outputEClass, Output.class, "Output", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOutput_Lower(), ecorePackage.getEBigDecimal(), "lower", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOutput_Upper(), ecorePackage.getEBigDecimal(), "upper", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOutput_RangeType(), ecorePackage.getEString(), "rangeType", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOutput_RangeUnits(), ecorePackage.getEString(), "rangeUnits", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOutput_Values(), ecorePackage.getEString(), "values", null, 0, -1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOutput_Range(), this.getValueRange(), null, "range", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOutput_ValueList(), this.getValueList(), null, "valueList", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOutput_Rate(), this.getBigUnitValue(), null, "rate", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOutput_Delay(), this.getBigUnitValue(), null, "delay", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOutput_Deadline(), this.getBigUnitValue(), null, "deadline", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1497,15 +1609,19 @@ public class StateSpecificationPackageImpl extends EPackageImpl implements State
     initEReference(getOutput_Table(), this.getTriggerTable(), null, "table", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInput_Lower(), ecorePackage.getEBigDecimal(), "lower", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInput_Upper(), ecorePackage.getEBigDecimal(), "upper", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInput_RangeType(), ecorePackage.getEString(), "rangeType", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInput_RangeUnits(), ecorePackage.getEString(), "rangeUnits", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInput_Values(), ecorePackage.getEString(), "values", null, 0, -1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInput_Rate(), this.getBigUnitValue(), null, "rate", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInput_Variables(), ecorePackage.getEString(), "variables", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_Range(), this.getValueRange(), null, "range", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_ValueList(), this.getValueList(), null, "valueList", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInput_ValueHandling(), ecorePackage.getEString(), "valueHandling", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_Granularity(), this.getBigUnitValue(), null, "granularity", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_ArrivalRateAvg(), this.getBigUnitValue(), null, "arrivalRateAvg", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_ArrivalRateMinimum(), this.getBigUnitValue(), null, "arrivalRateMinimum", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_ArrivalRateMaximum(), this.getBigUnitValue(), null, "arrivalRateMaximum", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_Obsolescence(), this.getBigUnitValue(), null, "obsolescence", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInput_References(), ecorePackage.getEString(), "references", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInput_AppearsIn(), ecorePackage.getEString(), "appearsIn", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInput_Description(), ecorePackage.getEString(), "description", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInput_Comments(), ecorePackage.getEString(), "comments", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInput_Structure(), this.getTriggerTable(), null, "structure", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

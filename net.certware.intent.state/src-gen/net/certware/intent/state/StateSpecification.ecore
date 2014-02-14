@@ -103,13 +103,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rows" upperBound="-1" eType="#//Trigger"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Output">
+  <eClassifiers xsi:type="ecore:EClass" name="ValueRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rangeType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rangeUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueList">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Output">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" eType="#//ValueRange"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueList" eType="#//ValueList"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//BigUnitValue"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//BigUnitValue"
@@ -132,16 +140,26 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Input">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rangeType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rangeUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rate" eType="#//BigUnitValue"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="range" eType="#//ValueRange"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variables" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueList" eType="#//ValueList"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueHandling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="granularity" eType="#//BigUnitValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrivalRateAvg" eType="#//BigUnitValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrivalRateMinimum" eType="#//BigUnitValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrivalRateMaximum" eType="#//BigUnitValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obsolescence" eType="#//BigUnitValue"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="references" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appearsIn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structure" eType="#//TriggerTable"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

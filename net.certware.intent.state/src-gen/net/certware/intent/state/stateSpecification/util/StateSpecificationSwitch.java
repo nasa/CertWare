@@ -205,6 +205,20 @@ public class StateSpecificationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case StateSpecificationPackage.VALUE_RANGE:
+      {
+        ValueRange valueRange = (ValueRange)theEObject;
+        T result = caseValueRange(valueRange);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case StateSpecificationPackage.VALUE_LIST:
+      {
+        ValueList valueList = (ValueList)theEObject;
+        T result = caseValueList(valueList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case StateSpecificationPackage.OUTPUT:
       {
         Output output = (Output)theEObject;
@@ -523,6 +537,38 @@ public class StateSpecificationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTriggerTable(TriggerTable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Value Range</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Value Range</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseValueRange(ValueRange object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Value List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Value List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseValueList(ValueList object)
   {
     return null;
   }

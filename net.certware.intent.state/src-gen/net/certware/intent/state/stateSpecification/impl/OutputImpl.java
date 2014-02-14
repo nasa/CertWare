@@ -2,27 +2,21 @@
  */
 package net.certware.intent.state.stateSpecification.impl;
 
-import java.math.BigDecimal;
-
-import java.util.Collection;
-
 import net.certware.intent.state.stateSpecification.BigUnitValue;
 import net.certware.intent.state.stateSpecification.Output;
 import net.certware.intent.state.stateSpecification.StateSpecificationPackage;
 import net.certware.intent.state.stateSpecification.TriggerTable;
+import net.certware.intent.state.stateSpecification.ValueList;
+import net.certware.intent.state.stateSpecification.ValueRange;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,11 +25,8 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getLower <em>Lower</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getUpper <em>Upper</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getRangeType <em>Range Type</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getRangeUnits <em>Range Units</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getRange <em>Range</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getValueList <em>Value List</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getRate <em>Rate</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getDelay <em>Delay</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.OutputImpl#getDeadline <em>Deadline</em>}</li>
@@ -58,94 +49,24 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class OutputImpl extends MinimalEObjectImpl.Container implements Output
 {
   /**
-   * The default value of the '{@link #getLower() <em>Lower</em>}' attribute.
+   * The cached value of the '{@link #getRange() <em>Range</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLower()
+   * @see #getRange()
    * @generated
    * @ordered
    */
-  protected static final BigDecimal LOWER_EDEFAULT = null;
+  protected ValueRange range;
 
   /**
-   * The cached value of the '{@link #getLower() <em>Lower</em>}' attribute.
+   * The cached value of the '{@link #getValueList() <em>Value List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLower()
+   * @see #getValueList()
    * @generated
    * @ordered
    */
-  protected BigDecimal lower = LOWER_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getUpper() <em>Upper</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUpper()
-   * @generated
-   * @ordered
-   */
-  protected static final BigDecimal UPPER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getUpper() <em>Upper</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUpper()
-   * @generated
-   * @ordered
-   */
-  protected BigDecimal upper = UPPER_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getRangeType() <em>Range Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRangeType()
-   * @generated
-   * @ordered
-   */
-  protected static final String RANGE_TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRangeType() <em>Range Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRangeType()
-   * @generated
-   * @ordered
-   */
-  protected String rangeType = RANGE_TYPE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getRangeUnits() <em>Range Units</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRangeUnits()
-   * @generated
-   * @ordered
-   */
-  protected static final String RANGE_UNITS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRangeUnits() <em>Range Units</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRangeUnits()
-   * @generated
-   * @ordered
-   */
-  protected String rangeUnits = RANGE_UNITS_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValues()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> values;
+  protected ValueList valueList;
 
   /**
    * The cached value of the '{@link #getRate() <em>Rate</em>}' containment reference.
@@ -393,9 +314,9 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
    * <!-- end-user-doc -->
    * @generated
    */
-  public BigDecimal getLower()
+  public ValueRange getRange()
   {
-    return lower;
+    return range;
   }
 
   /**
@@ -403,95 +324,85 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLower(BigDecimal newLower)
+  public NotificationChain basicSetRange(ValueRange newRange, NotificationChain msgs)
   {
-    BigDecimal oldLower = lower;
-    lower = newLower;
+    ValueRange oldRange = range;
+    range = newRange;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__LOWER, oldLower, lower));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BigDecimal getUpper()
-  {
-    return upper;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUpper(BigDecimal newUpper)
-  {
-    BigDecimal oldUpper = upper;
-    upper = newUpper;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__UPPER, oldUpper, upper));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getRangeType()
-  {
-    return rangeType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRangeType(String newRangeType)
-  {
-    String oldRangeType = rangeType;
-    rangeType = newRangeType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__RANGE_TYPE, oldRangeType, rangeType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getRangeUnits()
-  {
-    return rangeUnits;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRangeUnits(String newRangeUnits)
-  {
-    String oldRangeUnits = rangeUnits;
-    rangeUnits = newRangeUnits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__RANGE_UNITS, oldRangeUnits, rangeUnits));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getValues()
-  {
-    if (values == null)
     {
-      values = new EDataTypeEList<String>(String.class, this, StateSpecificationPackage.OUTPUT__VALUES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__RANGE, oldRange, newRange);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return values;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRange(ValueRange newRange)
+  {
+    if (newRange != range)
+    {
+      NotificationChain msgs = null;
+      if (range != null)
+        msgs = ((InternalEObject)range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.OUTPUT__RANGE, null, msgs);
+      if (newRange != null)
+        msgs = ((InternalEObject)newRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.OUTPUT__RANGE, null, msgs);
+      msgs = basicSetRange(newRange, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__RANGE, newRange, newRange));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValueList getValueList()
+  {
+    return valueList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetValueList(ValueList newValueList, NotificationChain msgs)
+  {
+    ValueList oldValueList = valueList;
+    valueList = newValueList;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__VALUE_LIST, oldValueList, newValueList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValueList(ValueList newValueList)
+  {
+    if (newValueList != valueList)
+    {
+      NotificationChain msgs = null;
+      if (valueList != null)
+        msgs = ((InternalEObject)valueList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.OUTPUT__VALUE_LIST, null, msgs);
+      if (newValueList != null)
+        msgs = ((InternalEObject)newValueList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateSpecificationPackage.OUTPUT__VALUE_LIST, null, msgs);
+      msgs = basicSetValueList(newValueList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateSpecificationPackage.OUTPUT__VALUE_LIST, newValueList, newValueList));
   }
 
   /**
@@ -976,6 +887,10 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
+      case StateSpecificationPackage.OUTPUT__RANGE:
+        return basicSetRange(null, msgs);
+      case StateSpecificationPackage.OUTPUT__VALUE_LIST:
+        return basicSetValueList(null, msgs);
       case StateSpecificationPackage.OUTPUT__RATE:
         return basicSetRate(null, msgs);
       case StateSpecificationPackage.OUTPUT__DELAY:
@@ -1002,16 +917,10 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.OUTPUT__LOWER:
-        return getLower();
-      case StateSpecificationPackage.OUTPUT__UPPER:
-        return getUpper();
-      case StateSpecificationPackage.OUTPUT__RANGE_TYPE:
-        return getRangeType();
-      case StateSpecificationPackage.OUTPUT__RANGE_UNITS:
-        return getRangeUnits();
-      case StateSpecificationPackage.OUTPUT__VALUES:
-        return getValues();
+      case StateSpecificationPackage.OUTPUT__RANGE:
+        return getRange();
+      case StateSpecificationPackage.OUTPUT__VALUE_LIST:
+        return getValueList();
       case StateSpecificationPackage.OUTPUT__RATE:
         return getRate();
       case StateSpecificationPackage.OUTPUT__DELAY:
@@ -1049,27 +958,16 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.OUTPUT__LOWER:
-        setLower((BigDecimal)newValue);
+      case StateSpecificationPackage.OUTPUT__RANGE:
+        setRange((ValueRange)newValue);
         return;
-      case StateSpecificationPackage.OUTPUT__UPPER:
-        setUpper((BigDecimal)newValue);
-        return;
-      case StateSpecificationPackage.OUTPUT__RANGE_TYPE:
-        setRangeType((String)newValue);
-        return;
-      case StateSpecificationPackage.OUTPUT__RANGE_UNITS:
-        setRangeUnits((String)newValue);
-        return;
-      case StateSpecificationPackage.OUTPUT__VALUES:
-        getValues().clear();
-        getValues().addAll((Collection<? extends String>)newValue);
+      case StateSpecificationPackage.OUTPUT__VALUE_LIST:
+        setValueList((ValueList)newValue);
         return;
       case StateSpecificationPackage.OUTPUT__RATE:
         setRate((BigUnitValue)newValue);
@@ -1127,20 +1025,11 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.OUTPUT__LOWER:
-        setLower(LOWER_EDEFAULT);
+      case StateSpecificationPackage.OUTPUT__RANGE:
+        setRange((ValueRange)null);
         return;
-      case StateSpecificationPackage.OUTPUT__UPPER:
-        setUpper(UPPER_EDEFAULT);
-        return;
-      case StateSpecificationPackage.OUTPUT__RANGE_TYPE:
-        setRangeType(RANGE_TYPE_EDEFAULT);
-        return;
-      case StateSpecificationPackage.OUTPUT__RANGE_UNITS:
-        setRangeUnits(RANGE_UNITS_EDEFAULT);
-        return;
-      case StateSpecificationPackage.OUTPUT__VALUES:
-        getValues().clear();
+      case StateSpecificationPackage.OUTPUT__VALUE_LIST:
+        setValueList((ValueList)null);
         return;
       case StateSpecificationPackage.OUTPUT__RATE:
         setRate((BigUnitValue)null);
@@ -1198,16 +1087,10 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
   {
     switch (featureID)
     {
-      case StateSpecificationPackage.OUTPUT__LOWER:
-        return LOWER_EDEFAULT == null ? lower != null : !LOWER_EDEFAULT.equals(lower);
-      case StateSpecificationPackage.OUTPUT__UPPER:
-        return UPPER_EDEFAULT == null ? upper != null : !UPPER_EDEFAULT.equals(upper);
-      case StateSpecificationPackage.OUTPUT__RANGE_TYPE:
-        return RANGE_TYPE_EDEFAULT == null ? rangeType != null : !RANGE_TYPE_EDEFAULT.equals(rangeType);
-      case StateSpecificationPackage.OUTPUT__RANGE_UNITS:
-        return RANGE_UNITS_EDEFAULT == null ? rangeUnits != null : !RANGE_UNITS_EDEFAULT.equals(rangeUnits);
-      case StateSpecificationPackage.OUTPUT__VALUES:
-        return values != null && !values.isEmpty();
+      case StateSpecificationPackage.OUTPUT__RANGE:
+        return range != null;
+      case StateSpecificationPackage.OUTPUT__VALUE_LIST:
+        return valueList != null;
       case StateSpecificationPackage.OUTPUT__RATE:
         return rate != null;
       case StateSpecificationPackage.OUTPUT__DELAY:
@@ -1251,17 +1134,7 @@ public class OutputImpl extends MinimalEObjectImpl.Container implements Output
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (lower: ");
-    result.append(lower);
-    result.append(", upper: ");
-    result.append(upper);
-    result.append(", rangeType: ");
-    result.append(rangeType);
-    result.append(", rangeUnits: ");
-    result.append(rangeUnits);
-    result.append(", values: ");
-    result.append(values);
-    result.append(", completionHandling: ");
+    result.append(" (completionHandling: ");
     result.append(completionHandling);
     result.append(", variables: ");
     result.append(variables);

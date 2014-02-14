@@ -2,10 +2,6 @@
  */
 package net.certware.intent.state.stateSpecification;
 
-import java.math.BigDecimal;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,11 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.certware.intent.state.stateSpecification.Output#getLower <em>Lower</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.Output#getUpper <em>Upper</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.Output#getRangeType <em>Range Type</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.Output#getRangeUnits <em>Range Units</em>}</li>
- *   <li>{@link net.certware.intent.state.stateSpecification.Output#getValues <em>Values</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.Output#getRange <em>Range</em>}</li>
+ *   <li>{@link net.certware.intent.state.stateSpecification.Output#getValueList <em>Value List</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Output#getRate <em>Rate</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Output#getDelay <em>Delay</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Output#getDeadline <em>Deadline</em>}</li>
@@ -45,124 +38,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface Output extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Lower</b></em>' attribute.
+   * Returns the value of the '<em><b>Range</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Lower</em>' attribute isn't clear,
+   * If the meaning of the '<em>Range</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Lower</em>' attribute.
-   * @see #setLower(BigDecimal)
-   * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getOutput_Lower()
-   * @model
+   * @return the value of the '<em>Range</em>' containment reference.
+   * @see #setRange(ValueRange)
+   * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getOutput_Range()
+   * @model containment="true"
    * @generated
    */
-  BigDecimal getLower();
+  ValueRange getRange();
 
   /**
-   * Sets the value of the '{@link net.certware.intent.state.stateSpecification.Output#getLower <em>Lower</em>}' attribute.
+   * Sets the value of the '{@link net.certware.intent.state.stateSpecification.Output#getRange <em>Range</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Lower</em>' attribute.
-   * @see #getLower()
+   * @param value the new value of the '<em>Range</em>' containment reference.
+   * @see #getRange()
    * @generated
    */
-  void setLower(BigDecimal value);
+  void setRange(ValueRange value);
 
   /**
-   * Returns the value of the '<em><b>Upper</b></em>' attribute.
+   * Returns the value of the '<em><b>Value List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Upper</em>' attribute isn't clear,
+   * If the meaning of the '<em>Value List</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Upper</em>' attribute.
-   * @see #setUpper(BigDecimal)
-   * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getOutput_Upper()
-   * @model
+   * @return the value of the '<em>Value List</em>' containment reference.
+   * @see #setValueList(ValueList)
+   * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getOutput_ValueList()
+   * @model containment="true"
    * @generated
    */
-  BigDecimal getUpper();
+  ValueList getValueList();
 
   /**
-   * Sets the value of the '{@link net.certware.intent.state.stateSpecification.Output#getUpper <em>Upper</em>}' attribute.
+   * Sets the value of the '{@link net.certware.intent.state.stateSpecification.Output#getValueList <em>Value List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Upper</em>' attribute.
-   * @see #getUpper()
+   * @param value the new value of the '<em>Value List</em>' containment reference.
+   * @see #getValueList()
    * @generated
    */
-  void setUpper(BigDecimal value);
-
-  /**
-   * Returns the value of the '<em><b>Range Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Range Type</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Range Type</em>' attribute.
-   * @see #setRangeType(String)
-   * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getOutput_RangeType()
-   * @model
-   * @generated
-   */
-  String getRangeType();
-
-  /**
-   * Sets the value of the '{@link net.certware.intent.state.stateSpecification.Output#getRangeType <em>Range Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Range Type</em>' attribute.
-   * @see #getRangeType()
-   * @generated
-   */
-  void setRangeType(String value);
-
-  /**
-   * Returns the value of the '<em><b>Range Units</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Range Units</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Range Units</em>' attribute.
-   * @see #setRangeUnits(String)
-   * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getOutput_RangeUnits()
-   * @model
-   * @generated
-   */
-  String getRangeUnits();
-
-  /**
-   * Sets the value of the '{@link net.certware.intent.state.stateSpecification.Output#getRangeUnits <em>Range Units</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Range Units</em>' attribute.
-   * @see #getRangeUnits()
-   * @generated
-   */
-  void setRangeUnits(String value);
-
-  /**
-   * Returns the value of the '<em><b>Values</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Values</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Values</em>' attribute list.
-   * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getOutput_Values()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getValues();
+  void setValueList(ValueList value);
 
   /**
    * Returns the value of the '<em><b>Rate</b></em>' containment reference.

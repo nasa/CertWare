@@ -25,6 +25,8 @@ import net.certware.intent.state.stateSpecification.StateValue;
 import net.certware.intent.state.stateSpecification.StateVariable;
 import net.certware.intent.state.stateSpecification.Trigger;
 import net.certware.intent.state.stateSpecification.TriggerTable;
+import net.certware.intent.state.stateSpecification.ValueList;
+import net.certware.intent.state.stateSpecification.ValueRange;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -171,6 +173,18 @@ public class StateSpecificationSemanticSequencer extends AbstractDelegatingSeman
 					return; 
 				}
 				else break;
+			case StateSpecificationPackage.VALUE_LIST:
+				if(context == grammarAccess.getValueListRule()) {
+					sequence_ValueList(context, (ValueList) semanticObject); 
+					return; 
+				}
+				else break;
+			case StateSpecificationPackage.VALUE_RANGE:
+				if(context == grammarAccess.getValueRangeRule()) {
+					sequence_ValueRange(context, (ValueRange) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -251,11 +265,19 @@ public class StateSpecificationSemanticSequencer extends AbstractDelegatingSeman
 	/**
 	 * Constraint:
 	 *     (
-	 *         ((lower=BigDecimalType upper=BigDecimalType rangeType=STRING rangeUnits=STRING) | values+=STRING*) 
-	 *         rate=BigUnitValue? 
-	 *         variables=STRING? 
+	 *         range=ValueRange? 
+	 *         valueList=ValueList? 
+	 *         valueHandling=STRING? 
+	 *         granularity=BigUnitValue? 
+	 *         arrivalRateAvg=BigUnitValue? 
+	 *         arrivalRateMinimum=BigUnitValue? 
+	 *         arrivalRateMaximum=BigUnitValue? 
+	 *         obsolescence=BigUnitValue? 
 	 *         references=STRING? 
-	 *         comments=STRING?
+	 *         appearsIn=STRING? 
+	 *         description=STRING? 
+	 *         comments=STRING? 
+	 *         structure=TriggerTable?
 	 *     )
 	 */
 	protected void sequence_Input(EObject context, Input semanticObject) {
@@ -302,7 +324,8 @@ public class StateSpecificationSemanticSequencer extends AbstractDelegatingSeman
 	/**
 	 * Constraint:
 	 *     (
-	 *         ((lower=BigDecimalType upper=BigDecimalType rangeType=STRING rangeUnits=STRING) | values+=STRING*) 
+	 *         range=ValueRange? 
+	 *         valueList=ValueList? 
 	 *         rate=BigUnitValue? 
 	 *         delay=BigUnitValue? 
 	 *         deadline=BigUnitValue? 
@@ -393,5 +416,39 @@ public class StateSpecificationSemanticSequencer extends AbstractDelegatingSeman
 	 */
 	protected void sequence_Trigger(EObject context, Trigger semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     values+=STRING+
+	 */
+	protected void sequence_ValueList(EObject context, ValueList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (lower=BigDecimalType upper=BigDecimalType rangeType=STRING rangeUnits=STRING)
+	 */
+	protected void sequence_ValueRange(EObject context, ValueRange semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__LOWER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__LOWER));
+			if(transientValues.isValueTransient(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__UPPER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__UPPER));
+			if(transientValues.isValueTransient(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__RANGE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__RANGE_TYPE));
+			if(transientValues.isValueTransient(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__RANGE_UNITS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateSpecificationPackage.Literals.VALUE_RANGE__RANGE_UNITS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getValueRangeAccess().getLowerBigDecimalTypeParserRuleCall_1_0(), semanticObject.getLower());
+		feeder.accept(grammarAccess.getValueRangeAccess().getUpperBigDecimalTypeParserRuleCall_3_0(), semanticObject.getUpper());
+		feeder.accept(grammarAccess.getValueRangeAccess().getRangeTypeSTRINGTerminalRuleCall_6_0(), semanticObject.getRangeType());
+		feeder.accept(grammarAccess.getValueRangeAccess().getRangeUnitsSTRINGTerminalRuleCall_8_0(), semanticObject.getRangeUnits());
+		feeder.finish();
 	}
 }

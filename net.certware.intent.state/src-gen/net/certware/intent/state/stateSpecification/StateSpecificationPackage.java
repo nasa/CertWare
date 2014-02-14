@@ -841,14 +841,14 @@ public interface StateSpecificationPackage extends EPackage
   int TRIGGER_TABLE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link net.certware.intent.state.stateSpecification.impl.OutputImpl <em>Output</em>}' class.
+   * The meta object id for the '{@link net.certware.intent.state.stateSpecification.impl.ValueRangeImpl <em>Value Range</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see net.certware.intent.state.stateSpecification.impl.OutputImpl
-   * @see net.certware.intent.state.stateSpecification.impl.StateSpecificationPackageImpl#getOutput()
+   * @see net.certware.intent.state.stateSpecification.impl.ValueRangeImpl
+   * @see net.certware.intent.state.stateSpecification.impl.StateSpecificationPackageImpl#getValueRange()
    * @generated
    */
-  int OUTPUT = 19;
+  int VALUE_RANGE = 19;
 
   /**
    * The feature id for the '<em><b>Lower</b></em>' attribute.
@@ -857,7 +857,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__LOWER = 0;
+  int VALUE_RANGE__LOWER = 0;
 
   /**
    * The feature id for the '<em><b>Upper</b></em>' attribute.
@@ -866,7 +866,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__UPPER = 1;
+  int VALUE_RANGE__UPPER = 1;
 
   /**
    * The feature id for the '<em><b>Range Type</b></em>' attribute.
@@ -875,7 +875,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__RANGE_TYPE = 2;
+  int VALUE_RANGE__RANGE_TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Range Units</b></em>' attribute.
@@ -884,7 +884,26 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__RANGE_UNITS = 3;
+  int VALUE_RANGE__RANGE_UNITS = 3;
+
+  /**
+   * The number of structural features of the '<em>Value Range</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_RANGE_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link net.certware.intent.state.stateSpecification.impl.ValueListImpl <em>Value List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.intent.state.stateSpecification.impl.ValueListImpl
+   * @see net.certware.intent.state.stateSpecification.impl.StateSpecificationPackageImpl#getValueList()
+   * @generated
+   */
+  int VALUE_LIST = 20;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -893,7 +912,44 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__VALUES = 4;
+  int VALUE_LIST__VALUES = 0;
+
+  /**
+   * The number of structural features of the '<em>Value List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link net.certware.intent.state.stateSpecification.impl.OutputImpl <em>Output</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.intent.state.stateSpecification.impl.OutputImpl
+   * @see net.certware.intent.state.stateSpecification.impl.StateSpecificationPackageImpl#getOutput()
+   * @generated
+   */
+  int OUTPUT = 21;
+
+  /**
+   * The feature id for the '<em><b>Range</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTPUT__RANGE = 0;
+
+  /**
+   * The feature id for the '<em><b>Value List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTPUT__VALUE_LIST = 1;
 
   /**
    * The feature id for the '<em><b>Rate</b></em>' containment reference.
@@ -902,7 +958,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__RATE = 5;
+  int OUTPUT__RATE = 2;
 
   /**
    * The feature id for the '<em><b>Delay</b></em>' containment reference.
@@ -911,7 +967,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__DELAY = 6;
+  int OUTPUT__DELAY = 3;
 
   /**
    * The feature id for the '<em><b>Deadline</b></em>' containment reference.
@@ -920,7 +976,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__DEADLINE = 7;
+  int OUTPUT__DEADLINE = 4;
 
   /**
    * The feature id for the '<em><b>Completion Handling</b></em>' attribute.
@@ -929,7 +985,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__COMPLETION_HANDLING = 8;
+  int OUTPUT__COMPLETION_HANDLING = 5;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' attribute.
@@ -938,7 +994,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__VARIABLES = 9;
+  int OUTPUT__VARIABLES = 6;
 
   /**
    * The feature id for the '<em><b>Relationship</b></em>' attribute.
@@ -947,7 +1003,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__RELATIONSHIP = 10;
+  int OUTPUT__RELATIONSHIP = 7;
 
   /**
    * The feature id for the '<em><b>Min Response</b></em>' containment reference.
@@ -956,7 +1012,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__MIN_RESPONSE = 11;
+  int OUTPUT__MIN_RESPONSE = 8;
 
   /**
    * The feature id for the '<em><b>Max Response</b></em>' containment reference.
@@ -965,7 +1021,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__MAX_RESPONSE = 12;
+  int OUTPUT__MAX_RESPONSE = 9;
 
   /**
    * The feature id for the '<em><b>Feeback Handling</b></em>' attribute.
@@ -974,7 +1030,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__FEEBACK_HANDLING = 13;
+  int OUTPUT__FEEBACK_HANDLING = 10;
 
   /**
    * The feature id for the '<em><b>Reversed</b></em>' attribute.
@@ -983,7 +1039,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__REVERSED = 14;
+  int OUTPUT__REVERSED = 11;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute.
@@ -992,7 +1048,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__REFERENCES = 15;
+  int OUTPUT__REFERENCES = 12;
 
   /**
    * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1001,7 +1057,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__COMMENTS = 16;
+  int OUTPUT__COMMENTS = 13;
 
   /**
    * The feature id for the '<em><b>Contents</b></em>' attribute.
@@ -1010,7 +1066,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__CONTENTS = 17;
+  int OUTPUT__CONTENTS = 14;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' containment reference.
@@ -1019,7 +1075,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT__TABLE = 18;
+  int OUTPUT__TABLE = 15;
 
   /**
    * The number of structural features of the '<em>Output</em>' class.
@@ -1028,7 +1084,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUTPUT_FEATURE_COUNT = 19;
+  int OUTPUT_FEATURE_COUNT = 16;
 
   /**
    * The meta object id for the '{@link net.certware.intent.state.stateSpecification.impl.InputImpl <em>Input</em>}' class.
@@ -1038,70 +1094,79 @@ public interface StateSpecificationPackage extends EPackage
    * @see net.certware.intent.state.stateSpecification.impl.StateSpecificationPackageImpl#getInput()
    * @generated
    */
-  int INPUT = 20;
+  int INPUT = 22;
 
   /**
-   * The feature id for the '<em><b>Lower</b></em>' attribute.
+   * The feature id for the '<em><b>Range</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__LOWER = 0;
+  int INPUT__RANGE = 0;
 
   /**
-   * The feature id for the '<em><b>Upper</b></em>' attribute.
+   * The feature id for the '<em><b>Value List</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__UPPER = 1;
+  int INPUT__VALUE_LIST = 1;
 
   /**
-   * The feature id for the '<em><b>Range Type</b></em>' attribute.
+   * The feature id for the '<em><b>Value Handling</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__RANGE_TYPE = 2;
+  int INPUT__VALUE_HANDLING = 2;
 
   /**
-   * The feature id for the '<em><b>Range Units</b></em>' attribute.
+   * The feature id for the '<em><b>Granularity</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__RANGE_UNITS = 3;
+  int INPUT__GRANULARITY = 3;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * The feature id for the '<em><b>Arrival Rate Avg</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__VALUES = 4;
+  int INPUT__ARRIVAL_RATE_AVG = 4;
 
   /**
-   * The feature id for the '<em><b>Rate</b></em>' containment reference.
+   * The feature id for the '<em><b>Arrival Rate Minimum</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__RATE = 5;
+  int INPUT__ARRIVAL_RATE_MINIMUM = 5;
 
   /**
-   * The feature id for the '<em><b>Variables</b></em>' attribute.
+   * The feature id for the '<em><b>Arrival Rate Maximum</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT__VARIABLES = 6;
+  int INPUT__ARRIVAL_RATE_MAXIMUM = 6;
+
+  /**
+   * The feature id for the '<em><b>Obsolescence</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INPUT__OBSOLESCENCE = 7;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute.
@@ -1110,7 +1175,25 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INPUT__REFERENCES = 7;
+  int INPUT__REFERENCES = 8;
+
+  /**
+   * The feature id for the '<em><b>Appears In</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INPUT__APPEARS_IN = 9;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INPUT__DESCRIPTION = 10;
 
   /**
    * The feature id for the '<em><b>Comments</b></em>' attribute.
@@ -1119,7 +1202,16 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INPUT__COMMENTS = 8;
+  int INPUT__COMMENTS = 11;
+
+  /**
+   * The feature id for the '<em><b>Structure</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INPUT__STRUCTURE = 12;
 
   /**
    * The number of structural features of the '<em>Input</em>' class.
@@ -1128,7 +1220,7 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INPUT_FEATURE_COUNT = 9;
+  int INPUT_FEATURE_COUNT = 13;
 
 
   /**
@@ -1839,6 +1931,81 @@ public interface StateSpecificationPackage extends EPackage
   EReference getTriggerTable_Rows();
 
   /**
+   * Returns the meta object for class '{@link net.certware.intent.state.stateSpecification.ValueRange <em>Value Range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Value Range</em>'.
+   * @see net.certware.intent.state.stateSpecification.ValueRange
+   * @generated
+   */
+  EClass getValueRange();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.ValueRange#getLower <em>Lower</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Lower</em>'.
+   * @see net.certware.intent.state.stateSpecification.ValueRange#getLower()
+   * @see #getValueRange()
+   * @generated
+   */
+  EAttribute getValueRange_Lower();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.ValueRange#getUpper <em>Upper</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Upper</em>'.
+   * @see net.certware.intent.state.stateSpecification.ValueRange#getUpper()
+   * @see #getValueRange()
+   * @generated
+   */
+  EAttribute getValueRange_Upper();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.ValueRange#getRangeType <em>Range Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Range Type</em>'.
+   * @see net.certware.intent.state.stateSpecification.ValueRange#getRangeType()
+   * @see #getValueRange()
+   * @generated
+   */
+  EAttribute getValueRange_RangeType();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.ValueRange#getRangeUnits <em>Range Units</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Range Units</em>'.
+   * @see net.certware.intent.state.stateSpecification.ValueRange#getRangeUnits()
+   * @see #getValueRange()
+   * @generated
+   */
+  EAttribute getValueRange_RangeUnits();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.intent.state.stateSpecification.ValueList <em>Value List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Value List</em>'.
+   * @see net.certware.intent.state.stateSpecification.ValueList
+   * @generated
+   */
+  EClass getValueList();
+
+  /**
+   * Returns the meta object for the attribute list '{@link net.certware.intent.state.stateSpecification.ValueList#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see net.certware.intent.state.stateSpecification.ValueList#getValues()
+   * @see #getValueList()
+   * @generated
+   */
+  EAttribute getValueList_Values();
+
+  /**
    * Returns the meta object for class '{@link net.certware.intent.state.stateSpecification.Output <em>Output</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1849,59 +2016,26 @@ public interface StateSpecificationPackage extends EPackage
   EClass getOutput();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Output#getLower <em>Lower</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Output#getRange <em>Range</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Lower</em>'.
-   * @see net.certware.intent.state.stateSpecification.Output#getLower()
+   * @return the meta object for the containment reference '<em>Range</em>'.
+   * @see net.certware.intent.state.stateSpecification.Output#getRange()
    * @see #getOutput()
    * @generated
    */
-  EAttribute getOutput_Lower();
+  EReference getOutput_Range();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Output#getUpper <em>Upper</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Output#getValueList <em>Value List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Upper</em>'.
-   * @see net.certware.intent.state.stateSpecification.Output#getUpper()
+   * @return the meta object for the containment reference '<em>Value List</em>'.
+   * @see net.certware.intent.state.stateSpecification.Output#getValueList()
    * @see #getOutput()
    * @generated
    */
-  EAttribute getOutput_Upper();
-
-  /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Output#getRangeType <em>Range Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Range Type</em>'.
-   * @see net.certware.intent.state.stateSpecification.Output#getRangeType()
-   * @see #getOutput()
-   * @generated
-   */
-  EAttribute getOutput_RangeType();
-
-  /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Output#getRangeUnits <em>Range Units</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Range Units</em>'.
-   * @see net.certware.intent.state.stateSpecification.Output#getRangeUnits()
-   * @see #getOutput()
-   * @generated
-   */
-  EAttribute getOutput_RangeUnits();
-
-  /**
-   * Returns the meta object for the attribute list '{@link net.certware.intent.state.stateSpecification.Output#getValues <em>Values</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
-   * @see net.certware.intent.state.stateSpecification.Output#getValues()
-   * @see #getOutput()
-   * @generated
-   */
-  EAttribute getOutput_Values();
+  EReference getOutput_ValueList();
 
   /**
    * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Output#getRate <em>Rate</em>}'.
@@ -2068,81 +2202,92 @@ public interface StateSpecificationPackage extends EPackage
   EClass getInput();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getLower <em>Lower</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getRange <em>Range</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Lower</em>'.
-   * @see net.certware.intent.state.stateSpecification.Input#getLower()
+   * @return the meta object for the containment reference '<em>Range</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getRange()
    * @see #getInput()
    * @generated
    */
-  EAttribute getInput_Lower();
+  EReference getInput_Range();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getUpper <em>Upper</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getValueList <em>Value List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Upper</em>'.
-   * @see net.certware.intent.state.stateSpecification.Input#getUpper()
+   * @return the meta object for the containment reference '<em>Value List</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getValueList()
    * @see #getInput()
    * @generated
    */
-  EAttribute getInput_Upper();
+  EReference getInput_ValueList();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getRangeType <em>Range Type</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getValueHandling <em>Value Handling</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Range Type</em>'.
-   * @see net.certware.intent.state.stateSpecification.Input#getRangeType()
+   * @return the meta object for the attribute '<em>Value Handling</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getValueHandling()
    * @see #getInput()
    * @generated
    */
-  EAttribute getInput_RangeType();
+  EAttribute getInput_ValueHandling();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getRangeUnits <em>Range Units</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getGranularity <em>Granularity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Range Units</em>'.
-   * @see net.certware.intent.state.stateSpecification.Input#getRangeUnits()
+   * @return the meta object for the containment reference '<em>Granularity</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getGranularity()
    * @see #getInput()
    * @generated
    */
-  EAttribute getInput_RangeUnits();
+  EReference getInput_Granularity();
 
   /**
-   * Returns the meta object for the attribute list '{@link net.certware.intent.state.stateSpecification.Input#getValues <em>Values</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getArrivalRateAvg <em>Arrival Rate Avg</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
-   * @see net.certware.intent.state.stateSpecification.Input#getValues()
+   * @return the meta object for the containment reference '<em>Arrival Rate Avg</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getArrivalRateAvg()
    * @see #getInput()
    * @generated
    */
-  EAttribute getInput_Values();
+  EReference getInput_ArrivalRateAvg();
 
   /**
-   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getRate <em>Rate</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getArrivalRateMinimum <em>Arrival Rate Minimum</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rate</em>'.
-   * @see net.certware.intent.state.stateSpecification.Input#getRate()
+   * @return the meta object for the containment reference '<em>Arrival Rate Minimum</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getArrivalRateMinimum()
    * @see #getInput()
    * @generated
    */
-  EReference getInput_Rate();
+  EReference getInput_ArrivalRateMinimum();
 
   /**
-   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getVariables <em>Variables</em>}'.
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getArrivalRateMaximum <em>Arrival Rate Maximum</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Variables</em>'.
-   * @see net.certware.intent.state.stateSpecification.Input#getVariables()
+   * @return the meta object for the containment reference '<em>Arrival Rate Maximum</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getArrivalRateMaximum()
    * @see #getInput()
    * @generated
    */
-  EAttribute getInput_Variables();
+  EReference getInput_ArrivalRateMaximum();
+
+  /**
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getObsolescence <em>Obsolescence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Obsolescence</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getObsolescence()
+   * @see #getInput()
+   * @generated
+   */
+  EReference getInput_Obsolescence();
 
   /**
    * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getReferences <em>References</em>}'.
@@ -2156,6 +2301,28 @@ public interface StateSpecificationPackage extends EPackage
   EAttribute getInput_References();
 
   /**
+   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getAppearsIn <em>Appears In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Appears In</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getAppearsIn()
+   * @see #getInput()
+   * @generated
+   */
+  EAttribute getInput_AppearsIn();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getDescription()
+   * @see #getInput()
+   * @generated
+   */
+  EAttribute getInput_Description();
+
+  /**
    * Returns the meta object for the attribute '{@link net.certware.intent.state.stateSpecification.Input#getComments <em>Comments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2165,6 +2332,17 @@ public interface StateSpecificationPackage extends EPackage
    * @generated
    */
   EAttribute getInput_Comments();
+
+  /**
+   * Returns the meta object for the containment reference '{@link net.certware.intent.state.stateSpecification.Input#getStructure <em>Structure</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Structure</em>'.
+   * @see net.certware.intent.state.stateSpecification.Input#getStructure()
+   * @see #getInput()
+   * @generated
+   */
+  EReference getInput_Structure();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2756,6 +2934,66 @@ public interface StateSpecificationPackage extends EPackage
     EReference TRIGGER_TABLE__ROWS = eINSTANCE.getTriggerTable_Rows();
 
     /**
+     * The meta object literal for the '{@link net.certware.intent.state.stateSpecification.impl.ValueRangeImpl <em>Value Range</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.intent.state.stateSpecification.impl.ValueRangeImpl
+     * @see net.certware.intent.state.stateSpecification.impl.StateSpecificationPackageImpl#getValueRange()
+     * @generated
+     */
+    EClass VALUE_RANGE = eINSTANCE.getValueRange();
+
+    /**
+     * The meta object literal for the '<em><b>Lower</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE_RANGE__LOWER = eINSTANCE.getValueRange_Lower();
+
+    /**
+     * The meta object literal for the '<em><b>Upper</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE_RANGE__UPPER = eINSTANCE.getValueRange_Upper();
+
+    /**
+     * The meta object literal for the '<em><b>Range Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE_RANGE__RANGE_TYPE = eINSTANCE.getValueRange_RangeType();
+
+    /**
+     * The meta object literal for the '<em><b>Range Units</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE_RANGE__RANGE_UNITS = eINSTANCE.getValueRange_RangeUnits();
+
+    /**
+     * The meta object literal for the '{@link net.certware.intent.state.stateSpecification.impl.ValueListImpl <em>Value List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.intent.state.stateSpecification.impl.ValueListImpl
+     * @see net.certware.intent.state.stateSpecification.impl.StateSpecificationPackageImpl#getValueList()
+     * @generated
+     */
+    EClass VALUE_LIST = eINSTANCE.getValueList();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE_LIST__VALUES = eINSTANCE.getValueList_Values();
+
+    /**
      * The meta object literal for the '{@link net.certware.intent.state.stateSpecification.impl.OutputImpl <em>Output</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2766,44 +3004,20 @@ public interface StateSpecificationPackage extends EPackage
     EClass OUTPUT = eINSTANCE.getOutput();
 
     /**
-     * The meta object literal for the '<em><b>Lower</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Range</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OUTPUT__LOWER = eINSTANCE.getOutput_Lower();
+    EReference OUTPUT__RANGE = eINSTANCE.getOutput_Range();
 
     /**
-     * The meta object literal for the '<em><b>Upper</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OUTPUT__UPPER = eINSTANCE.getOutput_Upper();
-
-    /**
-     * The meta object literal for the '<em><b>Range Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OUTPUT__RANGE_TYPE = eINSTANCE.getOutput_RangeType();
-
-    /**
-     * The meta object literal for the '<em><b>Range Units</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OUTPUT__RANGE_UNITS = eINSTANCE.getOutput_RangeUnits();
-
-    /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OUTPUT__VALUES = eINSTANCE.getOutput_Values();
+    EReference OUTPUT__VALUE_LIST = eINSTANCE.getOutput_ValueList();
 
     /**
      * The meta object literal for the '<em><b>Rate</b></em>' containment reference feature.
@@ -2928,60 +3142,68 @@ public interface StateSpecificationPackage extends EPackage
     EClass INPUT = eINSTANCE.getInput();
 
     /**
-     * The meta object literal for the '<em><b>Lower</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Range</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT__LOWER = eINSTANCE.getInput_Lower();
+    EReference INPUT__RANGE = eINSTANCE.getInput_Range();
 
     /**
-     * The meta object literal for the '<em><b>Upper</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT__UPPER = eINSTANCE.getInput_Upper();
+    EReference INPUT__VALUE_LIST = eINSTANCE.getInput_ValueList();
 
     /**
-     * The meta object literal for the '<em><b>Range Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value Handling</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT__RANGE_TYPE = eINSTANCE.getInput_RangeType();
+    EAttribute INPUT__VALUE_HANDLING = eINSTANCE.getInput_ValueHandling();
 
     /**
-     * The meta object literal for the '<em><b>Range Units</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Granularity</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT__RANGE_UNITS = eINSTANCE.getInput_RangeUnits();
+    EReference INPUT__GRANULARITY = eINSTANCE.getInput_Granularity();
 
     /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Arrival Rate Avg</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT__VALUES = eINSTANCE.getInput_Values();
+    EReference INPUT__ARRIVAL_RATE_AVG = eINSTANCE.getInput_ArrivalRateAvg();
 
     /**
-     * The meta object literal for the '<em><b>Rate</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Arrival Rate Minimum</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INPUT__RATE = eINSTANCE.getInput_Rate();
+    EReference INPUT__ARRIVAL_RATE_MINIMUM = eINSTANCE.getInput_ArrivalRateMinimum();
 
     /**
-     * The meta object literal for the '<em><b>Variables</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Arrival Rate Maximum</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INPUT__VARIABLES = eINSTANCE.getInput_Variables();
+    EReference INPUT__ARRIVAL_RATE_MAXIMUM = eINSTANCE.getInput_ArrivalRateMaximum();
+
+    /**
+     * The meta object literal for the '<em><b>Obsolescence</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INPUT__OBSOLESCENCE = eINSTANCE.getInput_Obsolescence();
 
     /**
      * The meta object literal for the '<em><b>References</b></em>' attribute feature.
@@ -2992,12 +3214,36 @@ public interface StateSpecificationPackage extends EPackage
     EAttribute INPUT__REFERENCES = eINSTANCE.getInput_References();
 
     /**
+     * The meta object literal for the '<em><b>Appears In</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INPUT__APPEARS_IN = eINSTANCE.getInput_AppearsIn();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INPUT__DESCRIPTION = eINSTANCE.getInput_Description();
+
+    /**
      * The meta object literal for the '<em><b>Comments</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute INPUT__COMMENTS = eINSTANCE.getInput_Comments();
+
+    /**
+     * The meta object literal for the '<em><b>Structure</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INPUT__STRUCTURE = eINSTANCE.getInput_Structure();
 
   }
 

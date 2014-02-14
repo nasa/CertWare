@@ -129,12 +129,19 @@ TriggerTable:
 	rows+=Trigger*
 ;
 
+ValueRange:
+	'{' lower=BigDecimalType '...' upper=BigDecimalType '}' 'type' rangeType=STRING 'units' rangeUnits=STRING '}'
+;
+
+
+ValueList:
+	'{' values+=STRING+ '}'
+;
+
 Output:
 	{Output}
-	(
-		('range' '{' lower=BigDecimalType '...' upper=BigDecimalType '}' 'type' rangeType=STRING 'units' rangeUnits=STRING) | 
-		('values' '{' values+=STRING* '}')
-	)
+	('range' range=ValueRange)?
+	('value-list' valueList=ValueList)?
 	('rate' rate=BigUnitValue)?
 	('initiation-delay' delay=BigUnitValue)?
 	('completion-deadline' deadline=BigUnitValue)?
@@ -153,12 +160,17 @@ Output:
 
 Input:
 	{Input}
-	(
-		('range' '{' lower=BigDecimalType '...' upper=BigDecimalType '}' 'type' rangeType=STRING 'units' rangeUnits=STRING) | 
-		('values' '{' values+=STRING* '}')
-	)
-	('rate' rate=BigUnitValue)?
-	('variables' variables=STRING)?
+	('range' range=ValueRange)?
+	('value-list' valueList=ValueList)?
+	('value-exception' valueHandling=STRING)?
+	('granularity' granularity=BigUnitValue)?
+	('arrival-rate-avg' arrivalRateAvg=BigUnitValue)?
+	('arrival-rate-minimum' arrivalRateMinimum=BigUnitValue)?
+	('arrival-rate-maximum' arrivalRateMaximum=BigUnitValue)?
+	('obsolescence' obsolescence=BigUnitValue)?
 	('references' references=STRING)?
+	('appears-in' appearsIn=STRING)?
+	('description' description=STRING)?
 	('comments' comments=STRING)?
+	('triggering' structure=TriggerTable)?
 ;

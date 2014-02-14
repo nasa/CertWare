@@ -170,6 +170,16 @@ public class StateSpecificationAdapterFactory extends AdapterFactoryImpl
         return createTriggerTableAdapter();
       }
       @Override
+      public Adapter caseValueRange(ValueRange object)
+      {
+        return createValueRangeAdapter();
+      }
+      @Override
+      public Adapter caseValueList(ValueList object)
+      {
+        return createValueListAdapter();
+      }
+      @Override
       public Adapter caseOutput(Output object)
       {
         return createOutputAdapter();
@@ -482,6 +492,36 @@ public class StateSpecificationAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTriggerTableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.intent.state.stateSpecification.ValueRange <em>Value Range</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.intent.state.stateSpecification.ValueRange
+   * @generated
+   */
+  public Adapter createValueRangeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.intent.state.stateSpecification.ValueList <em>Value List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.intent.state.stateSpecification.ValueList
+   * @generated
+   */
+  public Adapter createValueListAdapter()
   {
     return null;
   }

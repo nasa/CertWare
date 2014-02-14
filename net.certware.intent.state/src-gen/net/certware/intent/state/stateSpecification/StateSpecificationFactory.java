@@ -194,6 +194,24 @@ public interface StateSpecificationFactory extends EFactory
   TriggerTable createTriggerTable();
 
   /**
+   * Returns a new object of class '<em>Value Range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value Range</em>'.
+   * @generated
+   */
+  ValueRange createValueRange();
+
+  /**
+   * Returns a new object of class '<em>Value List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value List</em>'.
+   * @generated
+   */
+  ValueList createValueList();
+
+  /**
    * Returns a new object of class '<em>Output</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
