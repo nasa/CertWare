@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/net.certware.sacm.edit/src-gen" author="Kestrel Technology LLC" license="// Copyright (c) 2013 United States Government as represented by the National Aeronautics and Space Administration.  All rights reserved.">
+  <editionContexts basePackage="net.certware.sacm" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="SACM.components#_BYiJsGaDEeOpSffLa06xVw"/>
+  </editionContexts>
+  <editionContexts basePackage="net.certware.sacm.SACM" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="SACM.components#_BYjX4GaDEeOpSffLa06xVw"/>
+  </editionContexts>
+  <editionContexts basePackage="net.certware.sacm.SACM" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="SACM.components#_BYj-7GaDEeOpSffLa06xVw"/>
+  </editionContexts>
+  <viewsRepositories basePackage="net.certware.sacm.SACM" swtViews="true" formViews="true">
+    <viewsRepository href="SACM.components#_BYknXmaDEeOpSffLa06xVw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="net.certware.sacm.SACM.Evidence" swtViews="true" formViews="true">
+    <viewsRepository href="SACM.components#_BYlNFGaDEeOpSffLa06xVw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="net.certware.sacm.SACM.Argumentation" swtViews="true" formViews="true">
+    <viewsRepository href="SACM.components#_BYmbKmaDEeOpSffLa06xVw"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>
