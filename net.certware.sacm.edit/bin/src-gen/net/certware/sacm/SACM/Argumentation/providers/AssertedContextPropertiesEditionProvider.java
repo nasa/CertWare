@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Argumentation.ArgumentationPackage;
 import net.certware.sacm.SACM.Argumentation.AssertedContext;
 
+import net.certware.sacm.SACM.Argumentation.components.AssertedContextBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Argumentation.components.AssertedContextNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Argumentation.components.AssertedContextPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class AssertedContextPropertiesEditionProvider extends PropertiesEditingP
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof AssertedContext) && (AssertedContextPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof AssertedContext) && (AssertedContextBasePropertiesEditionComponent.BASE_PART.equals(part) || AssertedContextNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class AssertedContextPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AssertedContext) && (refinement == AssertedContextPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof AssertedContext) && (refinement == AssertedContextBasePropertiesEditionComponent.class || refinement == AssertedContextNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class AssertedContextPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AssertedContext) && ((AssertedContextPropertiesEditionComponent.BASE_PART.equals(part) && refinement == AssertedContextPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof AssertedContext) && ((AssertedContextBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AssertedContextBasePropertiesEditionComponent.class) || (AssertedContextNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == AssertedContextNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class AssertedContextPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof AssertedContext) {
-			if (AssertedContextPropertiesEditionComponent.BASE_PART.equals(part))
-				return new AssertedContextPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedContextBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new AssertedContextBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedContextNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new AssertedContextNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class AssertedContextPropertiesEditionProvider extends PropertiesEditingP
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof AssertedContext) {
-			if (AssertedContextPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == AssertedContextPropertiesEditionComponent.class)
-				return new AssertedContextPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedContextBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == AssertedContextBasePropertiesEditionComponent.class)
+				return new AssertedContextBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedContextNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == AssertedContextNotesPropertiesEditionComponent.class)
+				return new AssertedContextNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

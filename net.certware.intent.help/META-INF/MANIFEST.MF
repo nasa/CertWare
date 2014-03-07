@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare Intent Specification Model Help
+Bundle-SymbolicName: net.certware.intent.help;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Kestrel Technology LLC
+Require-Bundle: org.eclipse.help

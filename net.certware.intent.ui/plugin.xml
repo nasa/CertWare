@@ -351,7 +351,7 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="certware/org.eclipse.xtext.projectwiz"
+            category="net.certware.core.ui.newwizard.category"
             class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
             finalPerspective="net.certware.perspective"
             icon="icons/obj16/intent.gif"
@@ -414,6 +414,15 @@
             class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="intent">
     </provider>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="net.certware.perspective">
+        <newWizardShortcut
+              id="net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard">
+        </newWizardShortcut>
+     </perspectiveExtension>
   </extension>
 
 </plugin>

@@ -11,11 +11,12 @@
 
    <extension point="org.eclipse.ui.newWizards">
       <wizard
-            id="net.certware.measurement.smm.presentation.SmmModelWizardID"
-            name="%_UI_SmmModelWizard_label"
-            class="net.certware.measurement.smm.presentation.SmmModelWizard"
             category="net.certware.core.ui.newwizard.category"
-            icon="icons/full/obj16/measure.gif">
+            class="net.certware.measurement.smm.presentation.SmmModelWizard"
+            finalPerspective="net.certware.perspective"
+            icon="icons/full/obj16/measure.gif"
+            id="net.certware.measurement.smm.presentation.SmmModelWizardID"
+            name="%_UI_SmmModelWizard_label">
          <description>%_UI_SmmModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>

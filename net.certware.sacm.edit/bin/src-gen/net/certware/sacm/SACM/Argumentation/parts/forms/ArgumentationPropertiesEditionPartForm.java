@@ -7,58 +7,42 @@ import java.util.List;
 
 import net.certware.sacm.SACM.Argumentation.parts.ArgumentationPropertiesEditionPart;
 import net.certware.sacm.SACM.Argumentation.parts.ArgumentationViewsRepository;
-
 import net.certware.sacm.SACM.Argumentation.providers.ArgumentationMessages;
 
 import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-
 import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
-
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
-
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
-
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.ReferencesTable.ReferencesTableListener;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableContentProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
-
 import org.eclipse.jface.viewers.ViewerFilter;
-
 import org.eclipse.swt.SWT;
-
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.views.properties.tabbed.ISection;
 
 // End of user code
 
@@ -84,7 +68,7 @@ public class ArgumentationPropertiesEditionPartForm extends SectionPropertiesEdi
 	protected List<ViewerFilter> argumentElementBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> argumentElementFilters = new ArrayList<ViewerFilter>();
 
-
+	protected int invalid = -1;
 
 	/**
 	 * For {@link ISection} use only.
@@ -228,8 +212,8 @@ public class ArgumentationPropertiesEditionPartForm extends SectionPropertiesEdi
 		GridData taggedValueData = new GridData(GridData.FILL_HORIZONTAL);
 		taggedValueData.horizontalSpan = 3;
 		this.taggedValue.setLayoutData(taggedValueData);
-		this.taggedValue.setLowerBound(0);
-		this.taggedValue.setUpperBound(-1);
+		this.taggedValue.setLowerBound(invalid);
+		this.taggedValue.setUpperBound(invalid);
 		taggedValue.setID(ArgumentationViewsRepository.Argumentation_.Properties.taggedValue);
 		taggedValue.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createTaggedValueTableComposition
@@ -279,8 +263,8 @@ public class ArgumentationPropertiesEditionPartForm extends SectionPropertiesEdi
 		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
-		this.annotation.setLowerBound(0);
-		this.annotation.setUpperBound(-1);
+		this.annotation.setLowerBound(invalid);
+		this.annotation.setUpperBound(invalid);
 		annotation.setID(ArgumentationViewsRepository.Argumentation_.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createAnnotationTableComposition

@@ -1,0 +1,45 @@
+document[CertWare Intent Specification]
+
+authors[Certware Team, Nancy Leveson]
+
+codelanguage-def[intent]
+[
+	basic,
+	break,
+	condition,
+	constraint,
+	design,
+	enviroment,
+	figure,
+	function,
+	goal,
+	hazard,
+	implementation,
+	input,
+	macro,
+	mode,
+	model,
+	models,
+	operation,
+	operator,
+	output,
+	paragraph,
+	principles,
+	purpose,
+	refinement,
+	requirement,
+	section,
+	specification,
+	state,
+	system,
+	table,
+	verification
+]
+
+chapter-ref[Introduction]
+
+chapter-ref[GettingStarted]
+
+chapter-ref[RefinementExample]
+
+chapter-ref[Attic]

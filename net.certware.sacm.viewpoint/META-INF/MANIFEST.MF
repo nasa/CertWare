@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: net.certware.sacm.viewpoint
+Bundle-SymbolicName: net.certware.sacm.viewpoint;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: net.certware.sacm.viewpoint.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.sirius,
+ org.eclipse.sirius.common.acceleo.mtl
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

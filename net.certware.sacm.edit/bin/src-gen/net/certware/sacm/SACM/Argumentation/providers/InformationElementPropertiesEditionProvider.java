@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Argumentation.ArgumentationPackage;
 import net.certware.sacm.SACM.Argumentation.InformationElement;
 
+import net.certware.sacm.SACM.Argumentation.components.InformationElementBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Argumentation.components.InformationElementNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Argumentation.components.InformationElementPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class InformationElementPropertiesEditionProvider extends PropertiesEditi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof InformationElement) && (InformationElementPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof InformationElement) && (InformationElementBasePropertiesEditionComponent.BASE_PART.equals(part) || InformationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class InformationElementPropertiesEditionProvider extends PropertiesEditi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof InformationElement) && (refinement == InformationElementPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof InformationElement) && (refinement == InformationElementBasePropertiesEditionComponent.class || refinement == InformationElementNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class InformationElementPropertiesEditionProvider extends PropertiesEditi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof InformationElement) && ((InformationElementPropertiesEditionComponent.BASE_PART.equals(part) && refinement == InformationElementPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof InformationElement) && ((InformationElementBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == InformationElementBasePropertiesEditionComponent.class) || (InformationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == InformationElementNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class InformationElementPropertiesEditionProvider extends PropertiesEditi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof InformationElement) {
-			if (InformationElementPropertiesEditionComponent.BASE_PART.equals(part))
-				return new InformationElementPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (InformationElementBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new InformationElementBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (InformationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new InformationElementNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class InformationElementPropertiesEditionProvider extends PropertiesEditi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof InformationElement) {
-			if (InformationElementPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == InformationElementPropertiesEditionComponent.class)
-				return new InformationElementPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (InformationElementBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == InformationElementBasePropertiesEditionComponent.class)
+				return new InformationElementBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (InformationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == InformationElementNotesPropertiesEditionComponent.class)
+				return new InformationElementNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

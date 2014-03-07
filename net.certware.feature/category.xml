@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/net.certware.feature.aml_1.2.2.qualifier.jar" id="net.certware.feature.aml" version="1.2.2.qualifier">
-      <category name="certware_category"/>
-   </feature>
-   <feature url="features/net.certware.feature.arm_1.2.2.qualifier.jar" id="net.certware.feature.arm" version="1.2.2.qualifier">
-      <category name="certware_category"/>
-   </feature>
    <feature url="features/net.certware.feature.bayes_1.2.2.qualifier.jar" id="net.certware.feature.bayes" version="1.2.2.qualifier">
       <category name="certware_category"/>
    </feature>
-   <feature url="features/net.certware.feature.cae_1.2.2.qualifier.jar" id="net.certware.feature.cae" version="1.2.2.qualifier">
-      <category name="certware_category"/>
-   </feature>
    <feature url="features/net.certware.feature.check_1.2.2.qualifier.jar" id="net.certware.feature.check" version="1.2.2.qualifier">
-      <category name="certware_category"/>
-   </feature>
-   <feature url="features/net.certware.feature.eur_1.2.2.qualifier.jar" id="net.certware.feature.eur" version="1.2.2.qualifier">
-      <category name="certware_category"/>
-   </feature>
-   <feature url="features/net.certware.feature.gsn_1.2.2.qualifier.jar" id="net.certware.feature.gsn" version="1.2.2.qualifier">
       <category name="certware_category"/>
    </feature>
    <feature url="features/net.certware.feature.measure_1.2.2.qualifier.jar" id="net.certware.feature.measure" version="1.2.2.qualifier">
@@ -27,13 +12,19 @@
    <feature url="features/net.certware.feature.planning_1.2.2.qualifier.jar" id="net.certware.feature.planning" version="1.2.2.qualifier">
       <category name="certware_category"/>
    </feature>
-   <feature url="features/net.certware.feature.saem_1.2.2.qualifier.jar" id="net.certware.feature.saem" version="1.2.2.qualifier">
-      <category name="certware_category"/>
-   </feature>
    <feature url="features/net.certware.feature.sfp_1.2.2.qualifier.jar" id="net.certware.feature.sfp" version="1.2.2.qualifier">
       <category name="certware_category"/>
    </feature>
    <feature url="features/net.certware.feature_1.2.3.qualifier.jar" id="net.certware.feature" version="1.2.3.qualifier">
+      <category name="certware_category"/>
+   </feature>
+   <feature url="features/net.certware.feature.intent_1.0.0.qualifier.jar" id="net.certware.feature.intent" version="1.0.0.qualifier">
+      <category name="certware_category"/>
+   </feature>
+   <feature url="features/net.certware.feature.sacm_1.0.0.qualifier.jar" id="net.certware.feature.sacm" version="1.0.0.qualifier">
+      <category name="certware_category"/>
+   </feature>
+   <feature url="features/net.certware.feature.stpa_1.0.0.qualifier.jar" id="net.certware.feature.stpa" version="1.0.0.qualifier">
       <category name="certware_category"/>
    </feature>
    <category-def name="certware_category" label="CertWare Safety Case Workbench">

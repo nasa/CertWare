@@ -38,7 +38,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="SACM.ecore#//UtilityElement"/>
     <nestedGenPackages prefix="Argumentation" resource="XMI" disposableProviderFactory="true"
-        contentTypeIdentifier="" ecorePackage="SACM.ecore#//Argumentation">
+        generateExampleClass="false" contentTypeIdentifier="" ecorePackage="SACM.ecore#//Argumentation">
       <genClasses ecoreClass="SACM.ecore#//Argumentation/Argumentation">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/Argumentation/argumentation"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SACM.ecore#//Argumentation/Argumentation/argumentElement"/>
@@ -85,7 +85,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SACM.ecore#//Argumentation/ArgumentationElement/content"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Evidence" disposableProviderFactory="true" ecorePackage="SACM.ecore#//Evidence">
+    <nestedGenPackages prefix="Evidence" resource="XMI" disposableProviderFactory="true"
+        generateExampleClass="false" ecorePackage="SACM.ecore#//Evidence">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="SACM.ecore#//Evidence/ReliabilityLevel">
         <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/unknown"/>
         <genEnumLiterals ecoreEnumLiteral="SACM.ecore#//Evidence/ReliabilityLevel/unReliable"/>

@@ -80,7 +80,7 @@ public class ArgumentationPropertiesEditionPartImpl extends CompositePropertiesE
 	protected ReferencesTable argumentElement;
 	protected List<ViewerFilter> argumentElementBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> argumentElementFilters = new ArrayList<ViewerFilter>();
-
+	protected int invalid = -1;
 
 
 	/**
@@ -217,8 +217,8 @@ public class ArgumentationPropertiesEditionPartImpl extends CompositePropertiesE
 		GridData taggedValueData = new GridData(GridData.FILL_HORIZONTAL);
 		taggedValueData.horizontalSpan = 3;
 		this.taggedValue.setLayoutData(taggedValueData);
-		this.taggedValue.setLowerBound(0);
-		this.taggedValue.setUpperBound(-1);
+		this.taggedValue.setLowerBound(invalid);
+		this.taggedValue.setUpperBound(invalid);
 		taggedValue.setID(ArgumentationViewsRepository.Argumentation_.Properties.taggedValue);
 		taggedValue.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createTaggedValueAdvancedTableComposition
@@ -268,8 +268,8 @@ public class ArgumentationPropertiesEditionPartImpl extends CompositePropertiesE
 		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
-		this.annotation.setLowerBound(0);
-		this.annotation.setUpperBound(-1);
+		this.annotation.setLowerBound(invalid);
+		this.annotation.setUpperBound(invalid);
 		annotation.setID(ArgumentationViewsRepository.Argumentation_.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createAnnotationAdvancedTableComposition

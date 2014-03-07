@@ -89,7 +89,7 @@ public class AssertedChallengePropertiesEditionPartImpl extends CompositePropert
 	protected ReferencesTable target;
 	protected List<ViewerFilter> targetBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> targetFilters = new ArrayList<ViewerFilter>();
-
+	protected int invalid = -1;
 
 
 	/**
@@ -226,8 +226,8 @@ public class AssertedChallengePropertiesEditionPartImpl extends CompositePropert
 		GridData taggedValueData = new GridData(GridData.FILL_HORIZONTAL);
 		taggedValueData.horizontalSpan = 3;
 		this.taggedValue.setLayoutData(taggedValueData);
-		this.taggedValue.setLowerBound(0);
-		this.taggedValue.setUpperBound(-1);
+		this.taggedValue.setLowerBound(invalid);
+		this.taggedValue.setUpperBound(invalid);
 		taggedValue.setID(ArgumentationViewsRepository.AssertedChallenge.Properties.taggedValue);
 		taggedValue.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createTaggedValueAdvancedTableComposition
@@ -277,8 +277,8 @@ public class AssertedChallengePropertiesEditionPartImpl extends CompositePropert
 		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
-		this.annotation.setLowerBound(0);
-		this.annotation.setUpperBound(-1);
+		this.annotation.setLowerBound(invalid);
+		this.annotation.setUpperBound(invalid);
 		annotation.setID(ArgumentationViewsRepository.AssertedChallenge.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createAnnotationAdvancedTableComposition

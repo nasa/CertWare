@@ -10,7 +10,7 @@
               contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
               default="true"
               extensions="stpa"
-              icon="icons/full/obj16/hazardmodel.png"
+              icon="icons/obj16/hazardmodel.gif"
               id="net.certware.hazard.stpa.HazardAnalysis"
               name="STPA Hazard Analysis Editor">
         </editor>
@@ -106,7 +106,7 @@
             point="org.eclipse.ui.propertyPages">
         <page
               class="net.certware.hazard.stpa.ui.HazardAnalysisExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-              icon="icons/full/obj16/hazardmodel.png"
+              icon="icons/obj16/hazardmodel.gif"
               id="net.certware.hazard.stpa.HazardAnalysis"
               name="STPA Hazard Analysis">
             <keywordReference id="net.certware.hazard.stpa.ui.keyword_HazardAnalysis"/>
@@ -346,13 +346,23 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="net.certware.core.ui.newwizard.category/org.eclipse.xtext.projectwiz"
+            category="net.certware.core.ui.newwizard.category"
             class="net.certware.hazard.stpa.ui.HazardAnalysisExecutableExtensionFactory:net.certware.hazard.stpa.ui.wizard.HazardAnalysisNewProjectWizard"
             finalPerspective="net.certware.perspective"
-            icon="icons/full/obj16/hazardmodel.png"
+            icon="icons/obj16/hazardmodel.gif"
             id="net.certware.hazard.stpa.ui.wizard.HazardAnalysisNewProjectWizard"
             name="STPA Hazard Analysis Project"
             project="true">
+      </wizard>
+      <wizard
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.hazard.stpa.ui.wizard.NewSTPAFileWizard"
+            finalPerspective="net.certware.perspective"
+            hasPages="true"
+            icon="icons/obj16/hazardmodel.gif"
+            id="net.certware.hazard.stpa.ui.wizard.file"
+            name="STPA Hazard Analysis Model"
+            project="false">
       </wizard>
    </extension>
    	<!-- Rename Refactoring -->
@@ -407,6 +417,18 @@
             class="net.certware.hazard.stpa.ui.HazardAnalysisExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="stpa">
     </provider>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="net.certware.perspective">
+        <newWizardShortcut
+              id="net.certware.hazard.stpa.ui.wizard.HazardAnalysisNewProjectWizard">
+        </newWizardShortcut>
+        <newWizardShortcut
+              id="net.certware.hazard.stpa.ui.wizard.file">
+        </newWizardShortcut>
+     </perspectiveExtension>
   </extension>
 
 </plugin>

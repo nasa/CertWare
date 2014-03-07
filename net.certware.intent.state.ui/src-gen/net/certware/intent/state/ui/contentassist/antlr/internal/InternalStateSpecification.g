@@ -4301,7 +4301,6 @@ rule__ValueRange__Group__8
     }
 :
 	rule__ValueRange__Group__8__Impl
-	rule__ValueRange__Group__9
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -4322,38 +4321,6 @@ rule__ValueRange__Group__8__Impl
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-rule__ValueRange__Group__9
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ValueRange__Group__9__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ValueRange__Group__9__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getValueRangeAccess().getRightCurlyBracketKeyword_9()); }
-
-	'}' 
-
-{ after(grammarAccess.getValueRangeAccess().getRightCurlyBracketKeyword_9()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
 
 
 

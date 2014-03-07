@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: net.certware.hazard.stpa
+Bundle-Name: CertWare DSL for STPA
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: net.certware.hazard.stpa; singleton:=true

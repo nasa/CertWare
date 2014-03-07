@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: net.certware.intent.state.ui
-Bundle-Vendor: My Company
+Bundle-Name: CertWare Intention State Model Plugin
+Bundle-Vendor: Kestrel Technology LLC
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: net.certware.intent.state.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -22,7 +22,7 @@ Require-Bundle: net.certware.intent.state;visibility:=reexport,
  org.eclipse.compare
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.intent.state.ui.quickfix,
  net.certware.intent.state.ui.contentassist,
  net.certware.intent.state.ui.contentassist.antlr,

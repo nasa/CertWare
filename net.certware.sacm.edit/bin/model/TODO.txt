@@ -1,0 +1,2 @@
+Left off with no annotation or tagged values connected to model from tabs.  Put these properties back in the default
+lists then regenerate.  XML should be okay already. 

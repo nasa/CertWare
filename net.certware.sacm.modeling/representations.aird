@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EM="http://schema.omg.org/SACM/1.0/Evidence" xmlns:SACM="http://schema.omg.org/SACM/1.0" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://schema.omg.org/SACM/1.0 http://schema.omg.org/SACM/1.0/Evidence http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/description/style/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description/style" xmi:id="_1nHhEFbfEeOterSHipY2RA" selectedViews="_SfzjoFbgEeOterSHipY2RA" version="6.9.0.201309101020">
+  <models xmi:type="SACM:AssuranceCase" href="sample/AssuranceCase.sacm#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_HK0oYFbgEeOterSHipY2RA" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_SfzjoFbgEeOterSHipY2RA" initialized="true">
+    <ownedRepresentations xmi:type="viewpoint:DSemanticDiagram" xmi:id="_oCWfEFbgEeOterSHipY2RA" name="MyFlyCase">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_oCvgoFbgEeOterSHipY2RA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_oCvgoVbgEeOterSHipY2RA" type="Sirius" element="_oCWfEFbgEeOterSHipY2RA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_dMYSsFbuEeOterSHipY2RA" type="2001" element="_dMV2cFbuEeOterSHipY2RA">
+            <children xmi:type="notation:Node" xmi:id="_dMYSs1buEeOterSHipY2RA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dMYStFbuEeOterSHipY2RA" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_dMb9ElbuEeOterSHipY2RA" type="3013" element="_dMV2cVbuEeOterSHipY2RA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_dMb9E1buEeOterSHipY2RA" fontName="Lucida Grande"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMb9FFbuEeOterSHipY2RA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dMYSsVbuEeOterSHipY2RA" fontName="Lucida Grande" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMYSslbuEeOterSHipY2RA" x="84" y="52" width="198" height="34"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dMaH4FbuEeOterSHipY2RA" type="2001" element="_dMWdgFbuEeOterSHipY2RA">
+            <children xmi:type="notation:Node" xmi:id="_dMau8FbuEeOterSHipY2RA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dMau8VbuEeOterSHipY2RA" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_dMckIFbuEeOterSHipY2RA" type="3013" element="_dMWdgVbuEeOterSHipY2RA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_dMckIVbuEeOterSHipY2RA" fontName="Lucida Grande"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMckIlbuEeOterSHipY2RA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dMaH4VbuEeOterSHipY2RA" fontName="Lucida Grande" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMaH4lbuEeOterSHipY2RA" x="85" y="98" width="102" height="56"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dMau8lbuEeOterSHipY2RA" type="2001" element="_dMXEkFbuEeOterSHipY2RA">
+            <children xmi:type="notation:Node" xmi:id="_dMbWAFbuEeOterSHipY2RA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dMbWAVbuEeOterSHipY2RA" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_dMdLMFbuEeOterSHipY2RA" type="3013" element="_dMXEkVbuEeOterSHipY2RA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_dMdLMVbuEeOterSHipY2RA" fontName="Lucida Grande"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMdLMlbuEeOterSHipY2RA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dMau81buEeOterSHipY2RA" fontName="Lucida Grande" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMau9FbuEeOterSHipY2RA" x="193" y="97" width="146" height="57"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dMbWAlbuEeOterSHipY2RA" type="2001" element="_dMTaMFbuEeOterSHipY2RA">
+            <children xmi:type="notation:Node" xmi:id="_dMb9EFbuEeOterSHipY2RA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dMb9EVbuEeOterSHipY2RA" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_dMdLM1buEeOterSHipY2RA" type="3013" element="_dMUBQFbuEeOterSHipY2RA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_dMdLNFbuEeOterSHipY2RA" fontName="Lucida Grande"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMdLNVbuEeOterSHipY2RA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dMbWA1buEeOterSHipY2RA" fontName="Lucida Grande" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMbWBFbuEeOterSHipY2RA" x="358" y="98" width="146" height="56"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9FBR8GKkEeOpSffLa06xVw" type="2001" element="_9EyBYGKkEeOpSffLa06xVw">
+            <children xmi:type="notation:Node" xmi:id="_9FDuMGKkEeOpSffLa06xVw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_9FDuMWKkEeOpSffLa06xVw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9FGxgGKkEeOpSffLa06xVw" type="3003" element="_9EzPgGKkEeOpSffLa06xVw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_9FGxgWKkEeOpSffLa06xVw" fontName="Lucida Grande"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9FGxgmKkEeOpSffLa06xVw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9FBR8WKkEeOpSffLa06xVw" fontName="Lucida Grande" fontHeight="8" fillColor="12621752"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9FBR8mKkEeOpSffLa06xVw" x="55" y="274" width="210" height="30"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_N-rmoGK5EeOpSffLa06xVw" type="2001" element="_N-YEoGK5EeOpSffLa06xVw">
+            <children xmi:type="notation:Node" xmi:id="_N-sNsGK5EeOpSffLa06xVw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_N-sNsWK5EeOpSffLa06xVw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_N-uC4GK5EeOpSffLa06xVw" type="3003" element="_N-YEoWK5EeOpSffLa06xVw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_N-uC4WK5EeOpSffLa06xVw" fontName="Lucida Grande"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N-uC4mK5EeOpSffLa06xVw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_N-rmoWK5EeOpSffLa06xVw" fontName="Lucida Grande" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N-rmomK5EeOpSffLa06xVw" x="-103" y="-8" width="157" height="30"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_oCvgolbgEeOterSHipY2RA"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="viewpoint:DNode" xmi:id="_dMV2cFbuEeOterSHipY2RA" name="My first annotation" tooltipText="Case element annotation" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.0"/>
+        <semanticElements xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="viewpoint:Note" xmi:id="_dMV2cVbuEeOterSHipY2RA" labelSize="12" iconPath="net.certware.sacm.viewpoint/icons/obj16/annotate.gif" labelAlignment="LEFT" labelPosition="node">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_dMV2clbuEeOterSHipY2RA"/>
+          <description xmi:type="style:NoteDescription" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_dMV2c1buEeOterSHipY2RA"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_dMV2dFbuEeOterSHipY2RA" red="252" green="233" blue="79"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description:NodeMapping" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="viewpoint:DNode" xmi:id="_dMWdgFbuEeOterSHipY2RA" name="My second annotation" tooltipText="Case element annotation" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.1"/>
+        <semanticElements xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="viewpoint:Note" xmi:id="_dMWdgVbuEeOterSHipY2RA" labelSize="12" iconPath="net.certware.sacm.viewpoint/icons/obj16/annotate.gif" labelAlignment="LEFT" labelPosition="node">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_dMWdglbuEeOterSHipY2RA"/>
+          <description xmi:type="style:NoteDescription" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_dMWdg1buEeOterSHipY2RA"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_dMWdhFbuEeOterSHipY2RA" red="252" green="233" blue="79"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description:NodeMapping" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="viewpoint:DNode" xmi:id="_dMXEkFbuEeOterSHipY2RA" name="My third annotation" tooltipText="Case element annotation" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.2"/>
+        <semanticElements xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="viewpoint:Note" xmi:id="_dMXEkVbuEeOterSHipY2RA" labelSize="12" iconPath="net.certware.sacm.viewpoint/icons/obj16/annotate.gif" labelAlignment="LEFT" labelPosition="node">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_dMXEklbuEeOterSHipY2RA"/>
+          <description xmi:type="style:NoteDescription" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_dMXEk1buEeOterSHipY2RA"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_dMXElFbuEeOterSHipY2RA" red="252" green="233" blue="79"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description:NodeMapping" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="viewpoint:DNode" xmi:id="_dMTaMFbuEeOterSHipY2RA" name="My fourth annotation" tooltipText="Case element annotation" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.3"/>
+        <semanticElements xmi:type="SACM:Annotation" href="sample/AssuranceCase.sacm#//@annotation.3"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="viewpoint:Note" xmi:id="_dMUBQFbuEeOterSHipY2RA" labelSize="12" iconPath="net.certware.sacm.viewpoint/icons/obj16/annotate.gif" labelAlignment="LEFT" labelPosition="node">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_dMUBQVbuEeOterSHipY2RA"/>
+          <description xmi:type="style:NoteDescription" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_dMUBQlbuEeOterSHipY2RA"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_dMUBQ1buEeOterSHipY2RA" red="252" green="233" blue="79"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description:NodeMapping" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="viewpoint:DNode" xmi:id="_9EyBYGKkEeOpSffLa06xVw" name="EC1 Name" tooltipText="Evidence container" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="EM:EvidenceContainer" href="sample/AssuranceCase.sacm#//@evidence.0"/>
+        <semanticElements xmi:type="EM:EvidenceContainer" href="sample/AssuranceCase.sacm#//@evidence.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="viewpoint:Square" xmi:id="_9EzPgGKkEeOpSffLa06xVw" iconPath="net.certware.sacm.viewpoint/icons/obj16/evidence_container.gif">
+          <customFeatures>color</customFeatures>
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9Ez2kGKkEeOpSffLa06xVw"/>
+          <description xmi:type="style:SquareDescription" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='evidence_layer']/@nodeMappings[name='evidence_container_node']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9Ez2kWKkEeOpSffLa06xVw"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_FoknYGKlEeOpSffLa06xVw" red="184" green="151" blue="192"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description:NodeMapping" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='evidence_layer']/@nodeMappings[name='evidence_container_node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="viewpoint:DNode" xmi:id="_N-YEoGK5EeOpSffLa06xVw" tooltipText="Evidence container" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="EM:EvidenceContainer" href="sample/AssuranceCase.sacm#//@evidence.1"/>
+        <semanticElements xmi:type="EM:EvidenceContainer" href="sample/AssuranceCase.sacm#//@evidence.1"/>
+        <ownedStyle xmi:type="viewpoint:Square" xmi:id="_N-YEoWK5EeOpSffLa06xVw" iconPath="net.certware.sacm.viewpoint/icons/obj16/evidence_container.gif">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_N-YEomK5EeOpSffLa06xVw"/>
+          <description xmi:type="style:SquareDescription" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='evidence_layer']/@nodeMappings[name='evidence_container_node']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_N-YEo2K5EeOpSffLa06xVw"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_N-YEpGK5EeOpSffLa06xVw" red="217" green="196" blue="215"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description:NodeMapping" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='evidence_layer']/@nodeMappings[name='evidence_container_node']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description:DiagramDescription" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']"/>
+      <filterVariableHistory xmi:type="viewpoint:FilterVariableHistory" xmi:id="_oCWfEVbgEeOterSHipY2RA"/>
+      <activatedLayers xmi:type="description:Layer" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@defaultLayer"/>
+      <activatedLayers xmi:type="description:AdditionalLayer" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']"/>
+      <activatedLayers xmi:type="description:AdditionalLayer" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='tags_layer']"/>
+      <activatedLayers xmi:type="description:AdditionalLayer" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='evidence_layer']"/>
+      <activatedLayers xmi:type="description:AdditionalLayer" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='argumentation_layer']"/>
+      <target xmi:type="SACM:AssuranceCase" href="sample/AssuranceCase.sacm#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/net.certware.sacm.viewpoint/sacm.odesign#//@ownedViewpoints[name='sacm']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

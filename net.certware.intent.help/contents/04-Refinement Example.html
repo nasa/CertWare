@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >
+<title>Refinement Example</title>
+
+<link href="book.css" rel="stylesheet" type="text/css">
+<link href="code.css" rel="stylesheet" type="text/css">
+<link rel="home" href="00-Main.html" title="">
+</head>
+<body>
+<a name="RefinementExample"></a>
+<h1>Refinement Example</h1>
+<p>
+<div class="literallayout">
+<div class="incode">
+<p class="code">
+<span class="comment">/*&nbsp;intent&nbsp;spec&nbsp;following&nbsp;canonical&nbsp;model&nbsp;*/</span><br/>
+<br/>
+<span class="comment">/////&nbsp;Full&nbsp;specification<br/>
+</span><span class="keyword">specification</span>&nbsp;S1<br/>
+<br/>
+<span class="comment">/////&nbsp;Initial&nbsp;refinement<br/>
+</span><span class="keyword">refinement</span>&nbsp;R1&nbsp;<span class="string">"Initial&nbsp;model&nbsp;refinement"</span><br/>
+<br/>
+<span class="comment">/////&nbsp;Level&nbsp;0<br/>
+</span><span class="keyword">basic</span>&nbsp;B0&nbsp;<span class="string">"Level&nbsp;0BB"</span><br/>
+environment&nbsp;DE111&nbsp;&nbsp;<span class="string">"Project&nbsp;plans"</span><br/>
+{&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">paragraph</span>&nbsp;VIV2&nbsp;<span class="string">"vision"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">figure</span>&nbsp;F12&nbsp;<span class="string">"master&nbsp;schedule"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">paragraph</span>&nbsp;P12&nbsp;<span class="string">"statement&nbsp;of&nbsp;work"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">paragraph</span>&nbsp;C12&nbsp;<span class="string">"cm&nbsp;plan"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">table</span>&nbsp;A12&nbsp;<span class="string">"responsibility&nbsp;matrix"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+}&nbsp;<br/>
+<br/>
+<span class="comment">/////&nbsp;Level&nbsp;1<br/>
+</span><span class="keyword">purpose</span>&nbsp;P1&nbsp;<span class="string">"Level&nbsp;1BB&nbsp;System&nbsp;Purpose"</span><br/>
+environment&nbsp;E1&nbsp;<span class="string">"Assumptions&nbsp;and&nbsp;constraints"</span><br/>
+<span class="keyword">operator</span>&nbsp;O1&nbsp;<span class="string">"Responsibilities&nbsp;and&nbsp;requirements"</span><br/>
+<span class="keyword">system</span>&nbsp;S1&nbsp;<span class="string">"System&nbsp;goals,&nbsp;requirements,&nbsp;constraints"</span><br/>
+<span class="keyword">verification</span>&nbsp;V1&nbsp;<span class="string">"Hazard&nbsp;analysis"</span><br/>
+(&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">hazard</span>&nbsp;HDA&nbsp;<span class="string">"depressurized&nbsp;airlock"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">hazard</span>&nbsp;HDC&nbsp;<span class="string">"depressurized&nbsp;cabin"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">hazard</span>&nbsp;HDP&nbsp;<span class="string">"cabin&nbsp;atmosphere&nbsp;unbreathable"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">hazard</span>&nbsp;HES&nbsp;<span class="string">"overhead&nbsp;panel&nbsp;electrical&nbsp;short"</span>&nbsp;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">hazard</span>&nbsp;HTC&nbsp;<span class="string">"ammonia&nbsp;boiler&nbsp;concentration"</span>&nbsp;;<br/>
+)<br/>
+<br/>
+<span class="comment">/////&nbsp;Level&nbsp;2<br/>
+</span><span class="keyword">principles</span>&nbsp;P2&nbsp;<span class="string">"Level&nbsp;2&nbsp;System&nbsp;Principles"</span><br/>
+environment&nbsp;E2&nbsp;<span class="string">"External&nbsp;Interfaces"</span><br/>
+<span class="keyword">operator</span>&nbsp;O2&nbsp;<span class="string">"Task&nbsp;analysis,&nbsp;allocation,&nbsp;controls,&nbsp;displays"</span><br/>
+<span class="keyword">system</span>&nbsp;S2&nbsp;<span class="string">"Logic&nbsp;principles,&nbsp;control&nbsp;laws,&nbsp;functional&nbsp;decomposition"</span><br/>
+<span class="keyword">verification</span>&nbsp;V2&nbsp;<span class="string">"Validation&nbsp;plan&nbsp;and&nbsp;results"</span><br/>
+<br/>
+<span class="comment">/////&nbsp;Level&nbsp;3<br/>
+</span><span class="keyword">models</span>&nbsp;M3&nbsp;<span class="string">"Level&nbsp;3&nbsp;Blackbox&nbsp;models"</span><br/>
+environment&nbsp;E3&nbsp;<span class="string">"Environment&nbsp;models"</span><br/>
+<span class="keyword">operator</span>&nbsp;O3&nbsp;<span class="string">"Operator&nbsp;task&nbsp;models,&nbsp;HCI&nbsp;models"</span><br/>
+<span class="keyword">system</span>&nbsp;S3&nbsp;<span class="string">"Blackbox&nbsp;functional&nbsp;models,&nbsp;interface&nbsp;specifications"</span><br/>
+<span class="keyword">verification</span>&nbsp;V3&nbsp;<span class="string">"Analysis&nbsp;plans&nbsp;and&nbsp;results"</span><br/>
+<br/>
+<span class="comment">/////&nbsp;Level&nbsp;4<br/>
+</span><span class="keyword">design</span>&nbsp;D4&nbsp;<span class="string">"Level&nbsp;4&nbsp;Design&nbsp;Representation"</span><br/>
+<span class="keyword">operator</span>&nbsp;O4&nbsp;<span class="string">"HCI&nbsp;design"</span><br/>
+<span class="keyword">system</span>&nbsp;S4&nbsp;<span class="string">"Software&nbsp;and&nbsp;hardware&nbsp;design&nbsp;specs"</span><br/>
+<span class="keyword">verification</span>&nbsp;V4&nbsp;<span class="string">"Test&nbsp;plans&nbsp;and&nbsp;results"</span><br/>
+<br/>
+<span class="comment">/////&nbsp;Level&nbsp;5<br/>
+</span><span class="keyword">implementation</span>&nbsp;D5&nbsp;<span class="string">"Level&nbsp;5&nbsp;System&nbsp;Representation"</span><br/>
+<span class="keyword">operator</span>&nbsp;O5&nbsp;<span class="string">"GUI&nbsp;design,&nbsp;physical&nbsp;controls&nbsp;design"</span><br/>
+<span class="keyword">system</span>&nbsp;S5&nbsp;<span class="string">"Software&nbsp;code,&nbsp;hardware&nbsp;assembly&nbsp;instructions"</span><br/>
+<span class="keyword">verification</span>&nbsp;V5&nbsp;<span class="string">"Test&nbsp;plans&nbsp;and&nbsp;results"</span><br/>
+<br/>
+<span class="comment">/////&nbsp;Level&nbsp;6<br/>
+</span><span class="keyword">operation</span>&nbsp;O6&nbsp;<span class="string">"Level&nbsp;6&nbsp;Operations"</span><br/>
+environment&nbsp;E6&nbsp;<span class="string">"Audit&nbsp;procedures"</span><br/>
+<span class="keyword">operator</span>&nbsp;O6&nbsp;<span class="string">"Operator&nbsp;manuals,&nbsp;maintenance,&nbsp;training&nbsp;materials"</span><br/>
+<span class="keyword">system</span>&nbsp;S6&nbsp;<span class="string">"Error&nbsp;reports,&nbsp;change&nbsp;requests"</span><br/>
+<span class="keyword">verification</span>&nbsp;V6&nbsp;<span class="string">"Performance&nbsp;monitoring&nbsp;and&nbsp;results"</span><br/>
+<br/>
+<span class="comment">///&nbsp;end&nbsp;of&nbsp;refinement<br/>
+</span><br/>
+<br/>
+</p>
+</div>
+</div>
+</p>
+</body>
+</html>

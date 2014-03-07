@@ -3915,7 +3915,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleValueRange"
-    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1558:1: ruleValueRange returns [EObject current=null] : (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) otherlv_9= '}' ) ;
+    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1558:1: ruleValueRange returns [EObject current=null] : (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) ) ;
     public final EObject ruleValueRange() throws RecognitionException {
         EObject current = null;
 
@@ -3926,7 +3926,6 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
         Token lv_rangeType_6_0=null;
         Token otherlv_7=null;
         Token lv_rangeUnits_8_0=null;
-        Token otherlv_9=null;
         AntlrDatatypeRuleToken lv_lower_1_0 = null;
 
         AntlrDatatypeRuleToken lv_upper_3_0 = null;
@@ -3935,11 +3934,11 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1561:28: ( (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) otherlv_9= '}' ) )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1562:1: (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) otherlv_9= '}' )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1561:28: ( (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) ) )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1562:1: (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) )
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1562:1: (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) otherlv_9= '}' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1562:3: otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) otherlv_9= '}'
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1562:1: (otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) ) )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1562:3: otherlv_0= '{' ( (lv_lower_1_0= ruleBigDecimalType ) ) otherlv_2= '...' ( (lv_upper_3_0= ruleBigDecimalType ) ) otherlv_4= '}' otherlv_5= 'type' ( (lv_rangeType_6_0= RULE_STRING ) ) otherlv_7= 'units' ( (lv_rangeUnits_8_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleValueRange3371); 
 
@@ -4075,10 +4074,6 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_9=(Token)match(input,29,FOLLOW_29_in_ruleValueRange3517); 
-
-                	newLeafNode(otherlv_9, grammarAccess.getValueRangeAccess().getRightCurlyBracketKeyword_9());
-                
 
             }
 
@@ -4100,7 +4095,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleValueList"
-    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1666:1: entryRuleValueList returns [EObject current=null] : iv_ruleValueList= ruleValueList EOF ;
+    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1662:1: entryRuleValueList returns [EObject current=null] : iv_ruleValueList= ruleValueList EOF ;
     public final EObject entryRuleValueList() throws RecognitionException {
         EObject current = null;
 
@@ -4108,17 +4103,17 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1667:2: (iv_ruleValueList= ruleValueList EOF )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1668:2: iv_ruleValueList= ruleValueList EOF
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1663:2: (iv_ruleValueList= ruleValueList EOF )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1664:2: iv_ruleValueList= ruleValueList EOF
             {
              newCompositeNode(grammarAccess.getValueListRule()); 
-            pushFollow(FOLLOW_ruleValueList_in_entryRuleValueList3553);
+            pushFollow(FOLLOW_ruleValueList_in_entryRuleValueList3541);
             iv_ruleValueList=ruleValueList();
 
             state._fsp--;
 
              current =iv_ruleValueList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValueList3563); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValueList3551); 
 
             }
 
@@ -4136,7 +4131,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleValueList"
-    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1675:1: ruleValueList returns [EObject current=null] : (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' ) ;
+    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1671:1: ruleValueList returns [EObject current=null] : (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' ) ;
     public final EObject ruleValueList() throws RecognitionException {
         EObject current = null;
 
@@ -4147,17 +4142,17 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1678:28: ( (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' ) )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1679:1: (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1674:28: ( (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' ) )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1675:1: (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' )
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1679:1: (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1679:3: otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}'
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1675:1: (otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}' )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1675:3: otherlv_0= '{' ( (lv_values_1_0= RULE_STRING ) )+ otherlv_2= '}'
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleValueList3600); 
+            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleValueList3588); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getValueListAccess().getLeftCurlyBracketKeyword_0());
                 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1683:1: ( (lv_values_1_0= RULE_STRING ) )+
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1679:1: ( (lv_values_1_0= RULE_STRING ) )+
             int cnt35=0;
             loop35:
             do {
@@ -4171,12 +4166,12 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
                 switch (alt35) {
             	case 1 :
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1684:1: (lv_values_1_0= RULE_STRING )
+            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1680:1: (lv_values_1_0= RULE_STRING )
             	    {
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1684:1: (lv_values_1_0= RULE_STRING )
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1685:3: lv_values_1_0= RULE_STRING
+            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1680:1: (lv_values_1_0= RULE_STRING )
+            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1681:3: lv_values_1_0= RULE_STRING
             	    {
-            	    lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleValueList3617); 
+            	    lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleValueList3605); 
 
             	    			newLeafNode(lv_values_1_0, grammarAccess.getValueListAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
             	    		
@@ -4206,7 +4201,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
                 cnt35++;
             } while (true);
 
-            otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleValueList3635); 
+            otherlv_2=(Token)match(input,29,FOLLOW_29_in_ruleValueList3623); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getValueListAccess().getRightCurlyBracketKeyword_2());
                 
@@ -4231,7 +4226,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleOutput"
-    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1713:1: entryRuleOutput returns [EObject current=null] : iv_ruleOutput= ruleOutput EOF ;
+    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1709:1: entryRuleOutput returns [EObject current=null] : iv_ruleOutput= ruleOutput EOF ;
     public final EObject entryRuleOutput() throws RecognitionException {
         EObject current = null;
 
@@ -4239,17 +4234,17 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1714:2: (iv_ruleOutput= ruleOutput EOF )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1715:2: iv_ruleOutput= ruleOutput EOF
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1710:2: (iv_ruleOutput= ruleOutput EOF )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1711:2: iv_ruleOutput= ruleOutput EOF
             {
              newCompositeNode(grammarAccess.getOutputRule()); 
-            pushFollow(FOLLOW_ruleOutput_in_entryRuleOutput3671);
+            pushFollow(FOLLOW_ruleOutput_in_entryRuleOutput3659);
             iv_ruleOutput=ruleOutput();
 
             state._fsp--;
 
              current =iv_ruleOutput; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutput3681); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOutput3669); 
 
             }
 
@@ -4267,7 +4262,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleOutput"
-    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1722:1: ruleOutput returns [EObject current=null] : ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? ) ;
+    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1718:1: ruleOutput returns [EObject current=null] : ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? ) ;
     public final EObject ruleOutput() throws RecognitionException {
         EObject current = null;
 
@@ -4315,14 +4310,14 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1725:28: ( ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? ) )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1726:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1721:28: ( ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? ) )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1722:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? )
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1726:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1726:2: () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1722:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )? )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1722:2: () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )? (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )? (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )? (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )? (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )? (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )? (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )? (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )? (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )? (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )? (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )? (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )?
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1726:2: ()
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1727:5: 
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1722:2: ()
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1723:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4332,7 +4327,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1732:2: (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1728:2: (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )?
             int alt36=2;
             int LA36_0 = input.LA(1);
 
@@ -4341,22 +4336,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt36) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1732:4: otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1728:4: otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) )
                     {
-                    otherlv_1=(Token)match(input,45,FOLLOW_45_in_ruleOutput3728); 
+                    otherlv_1=(Token)match(input,45,FOLLOW_45_in_ruleOutput3716); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getOutputAccess().getRangeKeyword_1_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1736:1: ( (lv_range_2_0= ruleValueRange ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1737:1: (lv_range_2_0= ruleValueRange )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1732:1: ( (lv_range_2_0= ruleValueRange ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1733:1: (lv_range_2_0= ruleValueRange )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1737:1: (lv_range_2_0= ruleValueRange )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1738:3: lv_range_2_0= ruleValueRange
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1733:1: (lv_range_2_0= ruleValueRange )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1734:3: lv_range_2_0= ruleValueRange
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getRangeValueRangeParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueRange_in_ruleOutput3749);
+                    pushFollow(FOLLOW_ruleValueRange_in_ruleOutput3737);
                     lv_range_2_0=ruleValueRange();
 
                     state._fsp--;
@@ -4384,7 +4379,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1754:4: (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1750:4: (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -4393,22 +4388,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt37) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1754:6: otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1750:6: otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) )
                     {
-                    otherlv_3=(Token)match(input,46,FOLLOW_46_in_ruleOutput3764); 
+                    otherlv_3=(Token)match(input,46,FOLLOW_46_in_ruleOutput3752); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getOutputAccess().getValueListKeyword_2_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1758:1: ( (lv_valueList_4_0= ruleValueList ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1759:1: (lv_valueList_4_0= ruleValueList )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1754:1: ( (lv_valueList_4_0= ruleValueList ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1755:1: (lv_valueList_4_0= ruleValueList )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1759:1: (lv_valueList_4_0= ruleValueList )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1760:3: lv_valueList_4_0= ruleValueList
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1755:1: (lv_valueList_4_0= ruleValueList )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1756:3: lv_valueList_4_0= ruleValueList
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getValueListValueListParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueList_in_ruleOutput3785);
+                    pushFollow(FOLLOW_ruleValueList_in_ruleOutput3773);
                     lv_valueList_4_0=ruleValueList();
 
                     state._fsp--;
@@ -4436,7 +4431,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1776:4: (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1772:4: (otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) ) )?
             int alt38=2;
             int LA38_0 = input.LA(1);
 
@@ -4445,22 +4440,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt38) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1776:6: otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1772:6: otherlv_5= 'rate' ( (lv_rate_6_0= ruleBigUnitValue ) )
                     {
-                    otherlv_5=(Token)match(input,47,FOLLOW_47_in_ruleOutput3800); 
+                    otherlv_5=(Token)match(input,47,FOLLOW_47_in_ruleOutput3788); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getOutputAccess().getRateKeyword_3_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1780:1: ( (lv_rate_6_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1781:1: (lv_rate_6_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1776:1: ( (lv_rate_6_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1777:1: (lv_rate_6_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1781:1: (lv_rate_6_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1782:3: lv_rate_6_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1777:1: (lv_rate_6_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1778:3: lv_rate_6_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getRateBigUnitValueParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput3821);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput3809);
                     lv_rate_6_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -4488,7 +4483,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1798:4: (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1794:4: (otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) ) )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -4497,22 +4492,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt39) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1798:6: otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1794:6: otherlv_7= 'initiation-delay' ( (lv_delay_8_0= ruleBigUnitValue ) )
                     {
-                    otherlv_7=(Token)match(input,48,FOLLOW_48_in_ruleOutput3836); 
+                    otherlv_7=(Token)match(input,48,FOLLOW_48_in_ruleOutput3824); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getOutputAccess().getInitiationDelayKeyword_4_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1802:1: ( (lv_delay_8_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1803:1: (lv_delay_8_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1798:1: ( (lv_delay_8_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1799:1: (lv_delay_8_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1803:1: (lv_delay_8_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1804:3: lv_delay_8_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1799:1: (lv_delay_8_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1800:3: lv_delay_8_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getDelayBigUnitValueParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput3857);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput3845);
                     lv_delay_8_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -4540,7 +4535,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1820:4: (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1816:4: (otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) ) )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -4549,22 +4544,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt40) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1820:6: otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1816:6: otherlv_9= 'completion-deadline' ( (lv_deadline_10_0= ruleBigUnitValue ) )
                     {
-                    otherlv_9=(Token)match(input,49,FOLLOW_49_in_ruleOutput3872); 
+                    otherlv_9=(Token)match(input,49,FOLLOW_49_in_ruleOutput3860); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getOutputAccess().getCompletionDeadlineKeyword_5_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1824:1: ( (lv_deadline_10_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1825:1: (lv_deadline_10_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1820:1: ( (lv_deadline_10_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1821:1: (lv_deadline_10_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1825:1: (lv_deadline_10_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1826:3: lv_deadline_10_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1821:1: (lv_deadline_10_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1822:3: lv_deadline_10_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getDeadlineBigUnitValueParserRuleCall_5_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput3893);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput3881);
                     lv_deadline_10_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -4592,7 +4587,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1842:4: (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1838:4: (otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) ) )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -4601,19 +4596,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt41) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1842:6: otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1838:6: otherlv_11= 'completion-exception' ( (lv_completionHandling_12_0= RULE_STRING ) )
                     {
-                    otherlv_11=(Token)match(input,50,FOLLOW_50_in_ruleOutput3908); 
+                    otherlv_11=(Token)match(input,50,FOLLOW_50_in_ruleOutput3896); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getOutputAccess().getCompletionExceptionKeyword_6_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1846:1: ( (lv_completionHandling_12_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1847:1: (lv_completionHandling_12_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1842:1: ( (lv_completionHandling_12_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1843:1: (lv_completionHandling_12_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1847:1: (lv_completionHandling_12_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1848:3: lv_completionHandling_12_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1843:1: (lv_completionHandling_12_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1844:3: lv_completionHandling_12_0= RULE_STRING
                     {
-                    lv_completionHandling_12_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput3925); 
+                    lv_completionHandling_12_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput3913); 
 
                     			newLeafNode(lv_completionHandling_12_0, grammarAccess.getOutputAccess().getCompletionHandlingSTRINGTerminalRuleCall_6_1_0()); 
                     		
@@ -4639,7 +4634,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1864:4: (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1860:4: (otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) ) )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -4648,19 +4643,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt42) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1864:6: otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1860:6: otherlv_13= 'variables' ( (lv_variables_14_0= RULE_STRING ) )
                     {
-                    otherlv_13=(Token)match(input,51,FOLLOW_51_in_ruleOutput3945); 
+                    otherlv_13=(Token)match(input,51,FOLLOW_51_in_ruleOutput3933); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getOutputAccess().getVariablesKeyword_7_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1868:1: ( (lv_variables_14_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1869:1: (lv_variables_14_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1864:1: ( (lv_variables_14_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1865:1: (lv_variables_14_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1869:1: (lv_variables_14_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1870:3: lv_variables_14_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1865:1: (lv_variables_14_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1866:3: lv_variables_14_0= RULE_STRING
                     {
-                    lv_variables_14_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput3962); 
+                    lv_variables_14_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput3950); 
 
                     			newLeafNode(lv_variables_14_0, grammarAccess.getOutputAccess().getVariablesSTRINGTerminalRuleCall_7_1_0()); 
                     		
@@ -4686,7 +4681,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1886:4: (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1882:4: (otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) ) )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
@@ -4695,19 +4690,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt43) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1886:6: otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1882:6: otherlv_15= 'relationship' ( (lv_relationship_16_0= RULE_STRING ) )
                     {
-                    otherlv_15=(Token)match(input,52,FOLLOW_52_in_ruleOutput3982); 
+                    otherlv_15=(Token)match(input,52,FOLLOW_52_in_ruleOutput3970); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getOutputAccess().getRelationshipKeyword_8_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1890:1: ( (lv_relationship_16_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1891:1: (lv_relationship_16_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1886:1: ( (lv_relationship_16_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1887:1: (lv_relationship_16_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1891:1: (lv_relationship_16_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1892:3: lv_relationship_16_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1887:1: (lv_relationship_16_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1888:3: lv_relationship_16_0= RULE_STRING
                     {
-                    lv_relationship_16_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput3999); 
+                    lv_relationship_16_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput3987); 
 
                     			newLeafNode(lv_relationship_16_0, grammarAccess.getOutputAccess().getRelationshipSTRINGTerminalRuleCall_8_1_0()); 
                     		
@@ -4733,7 +4728,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1908:4: (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1904:4: (otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) ) )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -4742,22 +4737,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt44) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1908:6: otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1904:6: otherlv_17= 'min-response-time' ( (lv_minResponse_18_0= ruleBigUnitValue ) )
                     {
-                    otherlv_17=(Token)match(input,53,FOLLOW_53_in_ruleOutput4019); 
+                    otherlv_17=(Token)match(input,53,FOLLOW_53_in_ruleOutput4007); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getOutputAccess().getMinResponseTimeKeyword_9_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1912:1: ( (lv_minResponse_18_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1913:1: (lv_minResponse_18_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1908:1: ( (lv_minResponse_18_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1909:1: (lv_minResponse_18_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1913:1: (lv_minResponse_18_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1914:3: lv_minResponse_18_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1909:1: (lv_minResponse_18_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1910:3: lv_minResponse_18_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getMinResponseBigUnitValueParserRuleCall_9_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput4040);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput4028);
                     lv_minResponse_18_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -4785,7 +4780,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1930:4: (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1926:4: (otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) ) )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
@@ -4794,22 +4789,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt45) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1930:6: otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1926:6: otherlv_19= 'max-response-time' ( (lv_maxResponse_20_0= ruleBigUnitValue ) )
                     {
-                    otherlv_19=(Token)match(input,54,FOLLOW_54_in_ruleOutput4055); 
+                    otherlv_19=(Token)match(input,54,FOLLOW_54_in_ruleOutput4043); 
 
                         	newLeafNode(otherlv_19, grammarAccess.getOutputAccess().getMaxResponseTimeKeyword_10_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1934:1: ( (lv_maxResponse_20_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1935:1: (lv_maxResponse_20_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1930:1: ( (lv_maxResponse_20_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1931:1: (lv_maxResponse_20_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1935:1: (lv_maxResponse_20_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1936:3: lv_maxResponse_20_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1931:1: (lv_maxResponse_20_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1932:3: lv_maxResponse_20_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getMaxResponseBigUnitValueParserRuleCall_10_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput4076);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleOutput4064);
                     lv_maxResponse_20_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -4837,7 +4832,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1952:4: (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1948:4: (otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) ) )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -4846,19 +4841,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt46) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1952:6: otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1948:6: otherlv_21= 'feedback-exception' ( (lv_feebackHandling_22_0= RULE_STRING ) )
                     {
-                    otherlv_21=(Token)match(input,55,FOLLOW_55_in_ruleOutput4091); 
+                    otherlv_21=(Token)match(input,55,FOLLOW_55_in_ruleOutput4079); 
 
                         	newLeafNode(otherlv_21, grammarAccess.getOutputAccess().getFeedbackExceptionKeyword_11_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1956:1: ( (lv_feebackHandling_22_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1957:1: (lv_feebackHandling_22_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1952:1: ( (lv_feebackHandling_22_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1953:1: (lv_feebackHandling_22_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1957:1: (lv_feebackHandling_22_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1958:3: lv_feebackHandling_22_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1953:1: (lv_feebackHandling_22_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1954:3: lv_feebackHandling_22_0= RULE_STRING
                     {
-                    lv_feebackHandling_22_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4108); 
+                    lv_feebackHandling_22_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4096); 
 
                     			newLeafNode(lv_feebackHandling_22_0, grammarAccess.getOutputAccess().getFeebackHandlingSTRINGTerminalRuleCall_11_1_0()); 
                     		
@@ -4884,7 +4879,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1974:4: (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1970:4: (otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) ) )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -4893,19 +4888,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt47) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1974:6: otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1970:6: otherlv_23= 'reversed-by' ( (lv_reversed_24_0= RULE_STRING ) )
                     {
-                    otherlv_23=(Token)match(input,56,FOLLOW_56_in_ruleOutput4128); 
+                    otherlv_23=(Token)match(input,56,FOLLOW_56_in_ruleOutput4116); 
 
                         	newLeafNode(otherlv_23, grammarAccess.getOutputAccess().getReversedByKeyword_12_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1978:1: ( (lv_reversed_24_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1979:1: (lv_reversed_24_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1974:1: ( (lv_reversed_24_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1975:1: (lv_reversed_24_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1979:1: (lv_reversed_24_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1980:3: lv_reversed_24_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1975:1: (lv_reversed_24_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1976:3: lv_reversed_24_0= RULE_STRING
                     {
-                    lv_reversed_24_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4145); 
+                    lv_reversed_24_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4133); 
 
                     			newLeafNode(lv_reversed_24_0, grammarAccess.getOutputAccess().getReversedSTRINGTerminalRuleCall_12_1_0()); 
                     		
@@ -4931,7 +4926,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1996:4: (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1992:4: (otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) ) )?
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -4940,19 +4935,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt48) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1996:6: otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1992:6: otherlv_25= 'references' ( (lv_references_26_0= RULE_STRING ) )
                     {
-                    otherlv_25=(Token)match(input,57,FOLLOW_57_in_ruleOutput4165); 
+                    otherlv_25=(Token)match(input,57,FOLLOW_57_in_ruleOutput4153); 
 
                         	newLeafNode(otherlv_25, grammarAccess.getOutputAccess().getReferencesKeyword_13_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2000:1: ( (lv_references_26_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2001:1: (lv_references_26_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1996:1: ( (lv_references_26_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1997:1: (lv_references_26_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2001:1: (lv_references_26_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2002:3: lv_references_26_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1997:1: (lv_references_26_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1998:3: lv_references_26_0= RULE_STRING
                     {
-                    lv_references_26_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4182); 
+                    lv_references_26_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4170); 
 
                     			newLeafNode(lv_references_26_0, grammarAccess.getOutputAccess().getReferencesSTRINGTerminalRuleCall_13_1_0()); 
                     		
@@ -4978,7 +4973,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2018:4: (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2014:4: (otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) ) )?
             int alt49=2;
             int LA49_0 = input.LA(1);
 
@@ -4987,19 +4982,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt49) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2018:6: otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2014:6: otherlv_27= 'comments' ( (lv_comments_28_0= RULE_STRING ) )
                     {
-                    otherlv_27=(Token)match(input,58,FOLLOW_58_in_ruleOutput4202); 
+                    otherlv_27=(Token)match(input,58,FOLLOW_58_in_ruleOutput4190); 
 
                         	newLeafNode(otherlv_27, grammarAccess.getOutputAccess().getCommentsKeyword_14_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2022:1: ( (lv_comments_28_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2023:1: (lv_comments_28_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2018:1: ( (lv_comments_28_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2019:1: (lv_comments_28_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2023:1: (lv_comments_28_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2024:3: lv_comments_28_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2019:1: (lv_comments_28_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2020:3: lv_comments_28_0= RULE_STRING
                     {
-                    lv_comments_28_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4219); 
+                    lv_comments_28_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4207); 
 
                     			newLeafNode(lv_comments_28_0, grammarAccess.getOutputAccess().getCommentsSTRINGTerminalRuleCall_14_1_0()); 
                     		
@@ -5025,7 +5020,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2040:4: (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2036:4: (otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) ) )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -5034,19 +5029,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt50) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2040:6: otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2036:6: otherlv_29= 'contents' ( (lv_contents_30_0= RULE_STRING ) )
                     {
-                    otherlv_29=(Token)match(input,59,FOLLOW_59_in_ruleOutput4239); 
+                    otherlv_29=(Token)match(input,59,FOLLOW_59_in_ruleOutput4227); 
 
                         	newLeafNode(otherlv_29, grammarAccess.getOutputAccess().getContentsKeyword_15_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2044:1: ( (lv_contents_30_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2045:1: (lv_contents_30_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2040:1: ( (lv_contents_30_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2041:1: (lv_contents_30_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2045:1: (lv_contents_30_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2046:3: lv_contents_30_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2041:1: (lv_contents_30_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2042:3: lv_contents_30_0= RULE_STRING
                     {
-                    lv_contents_30_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4256); 
+                    lv_contents_30_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleOutput4244); 
 
                     			newLeafNode(lv_contents_30_0, grammarAccess.getOutputAccess().getContentsSTRINGTerminalRuleCall_15_1_0()); 
                     		
@@ -5072,7 +5067,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2062:4: (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2058:4: (otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) ) )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -5081,22 +5076,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt51) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2062:6: otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2058:6: otherlv_31= 'triggering' ( (lv_table_32_0= ruleTriggerTable ) )
                     {
-                    otherlv_31=(Token)match(input,60,FOLLOW_60_in_ruleOutput4276); 
+                    otherlv_31=(Token)match(input,60,FOLLOW_60_in_ruleOutput4264); 
 
                         	newLeafNode(otherlv_31, grammarAccess.getOutputAccess().getTriggeringKeyword_16_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2066:1: ( (lv_table_32_0= ruleTriggerTable ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2067:1: (lv_table_32_0= ruleTriggerTable )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2062:1: ( (lv_table_32_0= ruleTriggerTable ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2063:1: (lv_table_32_0= ruleTriggerTable )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2067:1: (lv_table_32_0= ruleTriggerTable )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2068:3: lv_table_32_0= ruleTriggerTable
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2063:1: (lv_table_32_0= ruleTriggerTable )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2064:3: lv_table_32_0= ruleTriggerTable
                     {
                      
                     	        newCompositeNode(grammarAccess.getOutputAccess().getTableTriggerTableParserRuleCall_16_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleTriggerTable_in_ruleOutput4297);
+                    pushFollow(FOLLOW_ruleTriggerTable_in_ruleOutput4285);
                     lv_table_32_0=ruleTriggerTable();
 
                     state._fsp--;
@@ -5145,7 +5140,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleInput"
-    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2092:1: entryRuleInput returns [EObject current=null] : iv_ruleInput= ruleInput EOF ;
+    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2088:1: entryRuleInput returns [EObject current=null] : iv_ruleInput= ruleInput EOF ;
     public final EObject entryRuleInput() throws RecognitionException {
         EObject current = null;
 
@@ -5153,17 +5148,17 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2093:2: (iv_ruleInput= ruleInput EOF )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2094:2: iv_ruleInput= ruleInput EOF
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2089:2: (iv_ruleInput= ruleInput EOF )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2090:2: iv_ruleInput= ruleInput EOF
             {
              newCompositeNode(grammarAccess.getInputRule()); 
-            pushFollow(FOLLOW_ruleInput_in_entryRuleInput4335);
+            pushFollow(FOLLOW_ruleInput_in_entryRuleInput4323);
             iv_ruleInput=ruleInput();
 
             state._fsp--;
 
              current =iv_ruleInput; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInput4345); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInput4333); 
 
             }
 
@@ -5181,7 +5176,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleInput"
-    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2101:1: ruleInput returns [EObject current=null] : ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? ) ;
+    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2097:1: ruleInput returns [EObject current=null] : ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? ) ;
     public final EObject ruleInput() throws RecognitionException {
         EObject current = null;
 
@@ -5223,14 +5218,14 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2104:28: ( ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? ) )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2105:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2100:28: ( ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? ) )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2101:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? )
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2105:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2105:2: () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2101:1: ( () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )? )
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2101:2: () (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )? (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )? (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )? (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )? (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )? (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )? (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )? (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )? (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )? (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )? (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )? (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )? (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )?
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2105:2: ()
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2106:5: 
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2101:2: ()
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2102:5: 
             {
 
                     current = forceCreateModelElement(
@@ -5240,7 +5235,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2111:2: (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2107:2: (otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) ) )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -5249,22 +5244,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt52) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2111:4: otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2107:4: otherlv_1= 'range' ( (lv_range_2_0= ruleValueRange ) )
                     {
-                    otherlv_1=(Token)match(input,45,FOLLOW_45_in_ruleInput4392); 
+                    otherlv_1=(Token)match(input,45,FOLLOW_45_in_ruleInput4380); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getInputAccess().getRangeKeyword_1_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2115:1: ( (lv_range_2_0= ruleValueRange ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2116:1: (lv_range_2_0= ruleValueRange )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2111:1: ( (lv_range_2_0= ruleValueRange ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2112:1: (lv_range_2_0= ruleValueRange )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2116:1: (lv_range_2_0= ruleValueRange )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2117:3: lv_range_2_0= ruleValueRange
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2112:1: (lv_range_2_0= ruleValueRange )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2113:3: lv_range_2_0= ruleValueRange
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getRangeValueRangeParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueRange_in_ruleInput4413);
+                    pushFollow(FOLLOW_ruleValueRange_in_ruleInput4401);
                     lv_range_2_0=ruleValueRange();
 
                     state._fsp--;
@@ -5292,7 +5287,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2133:4: (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2129:4: (otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) ) )?
             int alt53=2;
             int LA53_0 = input.LA(1);
 
@@ -5301,22 +5296,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt53) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2133:6: otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2129:6: otherlv_3= 'value-list' ( (lv_valueList_4_0= ruleValueList ) )
                     {
-                    otherlv_3=(Token)match(input,46,FOLLOW_46_in_ruleInput4428); 
+                    otherlv_3=(Token)match(input,46,FOLLOW_46_in_ruleInput4416); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getInputAccess().getValueListKeyword_2_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2137:1: ( (lv_valueList_4_0= ruleValueList ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2138:1: (lv_valueList_4_0= ruleValueList )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2133:1: ( (lv_valueList_4_0= ruleValueList ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2134:1: (lv_valueList_4_0= ruleValueList )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2138:1: (lv_valueList_4_0= ruleValueList )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2139:3: lv_valueList_4_0= ruleValueList
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2134:1: (lv_valueList_4_0= ruleValueList )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2135:3: lv_valueList_4_0= ruleValueList
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getValueListValueListParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueList_in_ruleInput4449);
+                    pushFollow(FOLLOW_ruleValueList_in_ruleInput4437);
                     lv_valueList_4_0=ruleValueList();
 
                     state._fsp--;
@@ -5344,7 +5339,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2155:4: (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2151:4: (otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) ) )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -5353,19 +5348,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt54) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2155:6: otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2151:6: otherlv_5= 'value-exception' ( (lv_valueHandling_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,61,FOLLOW_61_in_ruleInput4464); 
+                    otherlv_5=(Token)match(input,61,FOLLOW_61_in_ruleInput4452); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getInputAccess().getValueExceptionKeyword_3_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2159:1: ( (lv_valueHandling_6_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2160:1: (lv_valueHandling_6_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2155:1: ( (lv_valueHandling_6_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2156:1: (lv_valueHandling_6_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2160:1: (lv_valueHandling_6_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2161:3: lv_valueHandling_6_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2156:1: (lv_valueHandling_6_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2157:3: lv_valueHandling_6_0= RULE_STRING
                     {
-                    lv_valueHandling_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4481); 
+                    lv_valueHandling_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4469); 
 
                     			newLeafNode(lv_valueHandling_6_0, grammarAccess.getInputAccess().getValueHandlingSTRINGTerminalRuleCall_3_1_0()); 
                     		
@@ -5391,7 +5386,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2177:4: (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2173:4: (otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) ) )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -5400,22 +5395,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt55) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2177:6: otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2173:6: otherlv_7= 'granularity' ( (lv_granularity_8_0= ruleBigUnitValue ) )
                     {
-                    otherlv_7=(Token)match(input,62,FOLLOW_62_in_ruleInput4501); 
+                    otherlv_7=(Token)match(input,62,FOLLOW_62_in_ruleInput4489); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getInputAccess().getGranularityKeyword_4_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2181:1: ( (lv_granularity_8_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2182:1: (lv_granularity_8_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2177:1: ( (lv_granularity_8_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2178:1: (lv_granularity_8_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2182:1: (lv_granularity_8_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2183:3: lv_granularity_8_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2178:1: (lv_granularity_8_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2179:3: lv_granularity_8_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getGranularityBigUnitValueParserRuleCall_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4522);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4510);
                     lv_granularity_8_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -5443,7 +5438,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2199:4: (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2195:4: (otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) ) )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
@@ -5452,22 +5447,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt56) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2199:6: otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2195:6: otherlv_9= 'arrival-rate-avg' ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) )
                     {
-                    otherlv_9=(Token)match(input,63,FOLLOW_63_in_ruleInput4537); 
+                    otherlv_9=(Token)match(input,63,FOLLOW_63_in_ruleInput4525); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getInputAccess().getArrivalRateAvgKeyword_5_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2203:1: ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2204:1: (lv_arrivalRateAvg_10_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2199:1: ( (lv_arrivalRateAvg_10_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2200:1: (lv_arrivalRateAvg_10_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2204:1: (lv_arrivalRateAvg_10_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2205:3: lv_arrivalRateAvg_10_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2200:1: (lv_arrivalRateAvg_10_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2201:3: lv_arrivalRateAvg_10_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getArrivalRateAvgBigUnitValueParserRuleCall_5_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4558);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4546);
                     lv_arrivalRateAvg_10_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -5495,7 +5490,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2221:4: (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2217:4: (otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) ) )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
@@ -5504,22 +5499,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt57) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2221:6: otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2217:6: otherlv_11= 'arrival-rate-minimum' ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) )
                     {
-                    otherlv_11=(Token)match(input,64,FOLLOW_64_in_ruleInput4573); 
+                    otherlv_11=(Token)match(input,64,FOLLOW_64_in_ruleInput4561); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getInputAccess().getArrivalRateMinimumKeyword_6_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2225:1: ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2226:1: (lv_arrivalRateMinimum_12_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2221:1: ( (lv_arrivalRateMinimum_12_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2222:1: (lv_arrivalRateMinimum_12_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2226:1: (lv_arrivalRateMinimum_12_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2227:3: lv_arrivalRateMinimum_12_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2222:1: (lv_arrivalRateMinimum_12_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2223:3: lv_arrivalRateMinimum_12_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getArrivalRateMinimumBigUnitValueParserRuleCall_6_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4594);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4582);
                     lv_arrivalRateMinimum_12_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -5547,7 +5542,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2243:4: (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2239:4: (otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) ) )?
             int alt58=2;
             int LA58_0 = input.LA(1);
 
@@ -5556,22 +5551,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt58) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2243:6: otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2239:6: otherlv_13= 'arrival-rate-maximum' ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) )
                     {
-                    otherlv_13=(Token)match(input,65,FOLLOW_65_in_ruleInput4609); 
+                    otherlv_13=(Token)match(input,65,FOLLOW_65_in_ruleInput4597); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getInputAccess().getArrivalRateMaximumKeyword_7_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2247:1: ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2248:1: (lv_arrivalRateMaximum_14_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2243:1: ( (lv_arrivalRateMaximum_14_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2244:1: (lv_arrivalRateMaximum_14_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2248:1: (lv_arrivalRateMaximum_14_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2249:3: lv_arrivalRateMaximum_14_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2244:1: (lv_arrivalRateMaximum_14_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2245:3: lv_arrivalRateMaximum_14_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getArrivalRateMaximumBigUnitValueParserRuleCall_7_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4630);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4618);
                     lv_arrivalRateMaximum_14_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -5599,7 +5594,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2265:4: (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2261:4: (otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) ) )?
             int alt59=2;
             int LA59_0 = input.LA(1);
 
@@ -5608,22 +5603,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt59) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2265:6: otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2261:6: otherlv_15= 'obsolescence' ( (lv_obsolescence_16_0= ruleBigUnitValue ) )
                     {
-                    otherlv_15=(Token)match(input,66,FOLLOW_66_in_ruleInput4645); 
+                    otherlv_15=(Token)match(input,66,FOLLOW_66_in_ruleInput4633); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getInputAccess().getObsolescenceKeyword_8_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2269:1: ( (lv_obsolescence_16_0= ruleBigUnitValue ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2270:1: (lv_obsolescence_16_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2265:1: ( (lv_obsolescence_16_0= ruleBigUnitValue ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2266:1: (lv_obsolescence_16_0= ruleBigUnitValue )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2270:1: (lv_obsolescence_16_0= ruleBigUnitValue )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2271:3: lv_obsolescence_16_0= ruleBigUnitValue
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2266:1: (lv_obsolescence_16_0= ruleBigUnitValue )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2267:3: lv_obsolescence_16_0= ruleBigUnitValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getObsolescenceBigUnitValueParserRuleCall_8_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4666);
+                    pushFollow(FOLLOW_ruleBigUnitValue_in_ruleInput4654);
                     lv_obsolescence_16_0=ruleBigUnitValue();
 
                     state._fsp--;
@@ -5651,7 +5646,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2287:4: (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2283:4: (otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) ) )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -5660,19 +5655,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt60) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2287:6: otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2283:6: otherlv_17= 'references' ( (lv_references_18_0= RULE_STRING ) )
                     {
-                    otherlv_17=(Token)match(input,57,FOLLOW_57_in_ruleInput4681); 
+                    otherlv_17=(Token)match(input,57,FOLLOW_57_in_ruleInput4669); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getInputAccess().getReferencesKeyword_9_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2291:1: ( (lv_references_18_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2292:1: (lv_references_18_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2287:1: ( (lv_references_18_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2288:1: (lv_references_18_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2292:1: (lv_references_18_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2293:3: lv_references_18_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2288:1: (lv_references_18_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2289:3: lv_references_18_0= RULE_STRING
                     {
-                    lv_references_18_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4698); 
+                    lv_references_18_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4686); 
 
                     			newLeafNode(lv_references_18_0, grammarAccess.getInputAccess().getReferencesSTRINGTerminalRuleCall_9_1_0()); 
                     		
@@ -5698,7 +5693,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2309:4: (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2305:4: (otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) ) )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -5707,19 +5702,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt61) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2309:6: otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2305:6: otherlv_19= 'appears-in' ( (lv_appearsIn_20_0= RULE_STRING ) )
                     {
-                    otherlv_19=(Token)match(input,67,FOLLOW_67_in_ruleInput4718); 
+                    otherlv_19=(Token)match(input,67,FOLLOW_67_in_ruleInput4706); 
 
                         	newLeafNode(otherlv_19, grammarAccess.getInputAccess().getAppearsInKeyword_10_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2313:1: ( (lv_appearsIn_20_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2314:1: (lv_appearsIn_20_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2309:1: ( (lv_appearsIn_20_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2310:1: (lv_appearsIn_20_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2314:1: (lv_appearsIn_20_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2315:3: lv_appearsIn_20_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2310:1: (lv_appearsIn_20_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2311:3: lv_appearsIn_20_0= RULE_STRING
                     {
-                    lv_appearsIn_20_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4735); 
+                    lv_appearsIn_20_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4723); 
 
                     			newLeafNode(lv_appearsIn_20_0, grammarAccess.getInputAccess().getAppearsInSTRINGTerminalRuleCall_10_1_0()); 
                     		
@@ -5745,7 +5740,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2331:4: (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2327:4: (otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) ) )?
             int alt62=2;
             int LA62_0 = input.LA(1);
 
@@ -5754,19 +5749,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt62) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2331:6: otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2327:6: otherlv_21= 'description' ( (lv_description_22_0= RULE_STRING ) )
                     {
-                    otherlv_21=(Token)match(input,68,FOLLOW_68_in_ruleInput4755); 
+                    otherlv_21=(Token)match(input,68,FOLLOW_68_in_ruleInput4743); 
 
                         	newLeafNode(otherlv_21, grammarAccess.getInputAccess().getDescriptionKeyword_11_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2335:1: ( (lv_description_22_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2336:1: (lv_description_22_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2331:1: ( (lv_description_22_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2332:1: (lv_description_22_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2336:1: (lv_description_22_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2337:3: lv_description_22_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2332:1: (lv_description_22_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2333:3: lv_description_22_0= RULE_STRING
                     {
-                    lv_description_22_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4772); 
+                    lv_description_22_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4760); 
 
                     			newLeafNode(lv_description_22_0, grammarAccess.getInputAccess().getDescriptionSTRINGTerminalRuleCall_11_1_0()); 
                     		
@@ -5792,7 +5787,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2353:4: (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2349:4: (otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) ) )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
@@ -5801,19 +5796,19 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt63) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2353:6: otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2349:6: otherlv_23= 'comments' ( (lv_comments_24_0= RULE_STRING ) )
                     {
-                    otherlv_23=(Token)match(input,58,FOLLOW_58_in_ruleInput4792); 
+                    otherlv_23=(Token)match(input,58,FOLLOW_58_in_ruleInput4780); 
 
                         	newLeafNode(otherlv_23, grammarAccess.getInputAccess().getCommentsKeyword_12_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2357:1: ( (lv_comments_24_0= RULE_STRING ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2358:1: (lv_comments_24_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2353:1: ( (lv_comments_24_0= RULE_STRING ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2354:1: (lv_comments_24_0= RULE_STRING )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2358:1: (lv_comments_24_0= RULE_STRING )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2359:3: lv_comments_24_0= RULE_STRING
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2354:1: (lv_comments_24_0= RULE_STRING )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2355:3: lv_comments_24_0= RULE_STRING
                     {
-                    lv_comments_24_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4809); 
+                    lv_comments_24_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleInput4797); 
 
                     			newLeafNode(lv_comments_24_0, grammarAccess.getInputAccess().getCommentsSTRINGTerminalRuleCall_12_1_0()); 
                     		
@@ -5839,7 +5834,7 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2375:4: (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )?
+            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2371:4: (otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) ) )?
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -5848,22 +5843,22 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
             }
             switch (alt64) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2375:6: otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2371:6: otherlv_25= 'triggering' ( (lv_structure_26_0= ruleTriggerTable ) )
                     {
-                    otherlv_25=(Token)match(input,60,FOLLOW_60_in_ruleInput4829); 
+                    otherlv_25=(Token)match(input,60,FOLLOW_60_in_ruleInput4817); 
 
                         	newLeafNode(otherlv_25, grammarAccess.getInputAccess().getTriggeringKeyword_13_0());
                         
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2379:1: ( (lv_structure_26_0= ruleTriggerTable ) )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2380:1: (lv_structure_26_0= ruleTriggerTable )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2375:1: ( (lv_structure_26_0= ruleTriggerTable ) )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2376:1: (lv_structure_26_0= ruleTriggerTable )
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2380:1: (lv_structure_26_0= ruleTriggerTable )
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2381:3: lv_structure_26_0= ruleTriggerTable
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2376:1: (lv_structure_26_0= ruleTriggerTable )
+                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2377:3: lv_structure_26_0= ruleTriggerTable
                     {
                      
                     	        newCompositeNode(grammarAccess.getInputAccess().getStructureTriggerTableParserRuleCall_13_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleTriggerTable_in_ruleInput4850);
+                    pushFollow(FOLLOW_ruleTriggerTable_in_ruleInput4838);
                     lv_structure_26_0=ruleTriggerTable();
 
                     state._fsp--;
@@ -6060,74 +6055,73 @@ public class InternalStateSpecificationParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_44_in_ruleValueRange3449 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleValueRange3466 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_38_in_ruleValueRange3483 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleValueRange3500 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleValueRange3517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueList_in_entryRuleValueList3553 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValueList3563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleValueList3600 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleValueList3617 = new BitSet(new long[]{0x0000000020000040L});
-    public static final BitSet FOLLOW_29_in_ruleValueList3635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutput_in_entryRuleOutput3671 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutput3681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleOutput3728 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_ruleValueRange_in_ruleOutput3749 = new BitSet(new long[]{0x1FFFC00000000002L});
-    public static final BitSet FOLLOW_46_in_ruleOutput3764 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_ruleValueList_in_ruleOutput3785 = new BitSet(new long[]{0x1FFF800000000002L});
-    public static final BitSet FOLLOW_47_in_ruleOutput3800 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput3821 = new BitSet(new long[]{0x1FFF000000000002L});
-    public static final BitSet FOLLOW_48_in_ruleOutput3836 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput3857 = new BitSet(new long[]{0x1FFE000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleOutput3872 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput3893 = new BitSet(new long[]{0x1FFC000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleOutput3908 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput3925 = new BitSet(new long[]{0x1FF8000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleOutput3945 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput3962 = new BitSet(new long[]{0x1FF0000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleOutput3982 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput3999 = new BitSet(new long[]{0x1FE0000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleOutput4019 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput4040 = new BitSet(new long[]{0x1FC0000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleOutput4055 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput4076 = new BitSet(new long[]{0x1F80000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleOutput4091 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4108 = new BitSet(new long[]{0x1F00000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleOutput4128 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4145 = new BitSet(new long[]{0x1E00000000000002L});
-    public static final BitSet FOLLOW_57_in_ruleOutput4165 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4182 = new BitSet(new long[]{0x1C00000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleOutput4202 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4219 = new BitSet(new long[]{0x1800000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleOutput4239 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4256 = new BitSet(new long[]{0x1000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleOutput4276 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_ruleTriggerTable_in_ruleOutput4297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInput_in_entryRuleInput4335 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInput4345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleInput4392 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_ruleValueRange_in_ruleInput4413 = new BitSet(new long[]{0xF600400000000002L,0x000000000000001FL});
-    public static final BitSet FOLLOW_46_in_ruleInput4428 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_ruleValueList_in_ruleInput4449 = new BitSet(new long[]{0xF600000000000002L,0x000000000000001FL});
-    public static final BitSet FOLLOW_61_in_ruleInput4464 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4481 = new BitSet(new long[]{0xD600000000000002L,0x000000000000001FL});
-    public static final BitSet FOLLOW_62_in_ruleInput4501 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4522 = new BitSet(new long[]{0x9600000000000002L,0x000000000000001FL});
-    public static final BitSet FOLLOW_63_in_ruleInput4537 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4558 = new BitSet(new long[]{0x1600000000000002L,0x000000000000001FL});
-    public static final BitSet FOLLOW_64_in_ruleInput4573 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4594 = new BitSet(new long[]{0x1600000000000002L,0x000000000000001EL});
-    public static final BitSet FOLLOW_65_in_ruleInput4609 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4630 = new BitSet(new long[]{0x1600000000000002L,0x000000000000001CL});
-    public static final BitSet FOLLOW_66_in_ruleInput4645 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4666 = new BitSet(new long[]{0x1600000000000002L,0x0000000000000018L});
-    public static final BitSet FOLLOW_57_in_ruleInput4681 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4698 = new BitSet(new long[]{0x1400000000000002L,0x0000000000000018L});
-    public static final BitSet FOLLOW_67_in_ruleInput4718 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4735 = new BitSet(new long[]{0x1400000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_68_in_ruleInput4755 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4772 = new BitSet(new long[]{0x1400000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleInput4792 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4809 = new BitSet(new long[]{0x1000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleInput4829 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_ruleTriggerTable_in_ruleInput4850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleValueRange3500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueList_in_entryRuleValueList3541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValueList3551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleValueList3588 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleValueList3605 = new BitSet(new long[]{0x0000000020000040L});
+    public static final BitSet FOLLOW_29_in_ruleValueList3623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutput_in_entryRuleOutput3659 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOutput3669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleOutput3716 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_ruleValueRange_in_ruleOutput3737 = new BitSet(new long[]{0x1FFFC00000000002L});
+    public static final BitSet FOLLOW_46_in_ruleOutput3752 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_ruleValueList_in_ruleOutput3773 = new BitSet(new long[]{0x1FFF800000000002L});
+    public static final BitSet FOLLOW_47_in_ruleOutput3788 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput3809 = new BitSet(new long[]{0x1FFF000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleOutput3824 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput3845 = new BitSet(new long[]{0x1FFE000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleOutput3860 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput3881 = new BitSet(new long[]{0x1FFC000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleOutput3896 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput3913 = new BitSet(new long[]{0x1FF8000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleOutput3933 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput3950 = new BitSet(new long[]{0x1FF0000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleOutput3970 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput3987 = new BitSet(new long[]{0x1FE0000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleOutput4007 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput4028 = new BitSet(new long[]{0x1FC0000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleOutput4043 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleOutput4064 = new BitSet(new long[]{0x1F80000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleOutput4079 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4096 = new BitSet(new long[]{0x1F00000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleOutput4116 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4133 = new BitSet(new long[]{0x1E00000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleOutput4153 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4170 = new BitSet(new long[]{0x1C00000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleOutput4190 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4207 = new BitSet(new long[]{0x1800000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleOutput4227 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleOutput4244 = new BitSet(new long[]{0x1000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleOutput4264 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_ruleTriggerTable_in_ruleOutput4285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInput_in_entryRuleInput4323 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInput4333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleInput4380 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_ruleValueRange_in_ruleInput4401 = new BitSet(new long[]{0xF600400000000002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_46_in_ruleInput4416 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_ruleValueList_in_ruleInput4437 = new BitSet(new long[]{0xF600000000000002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_61_in_ruleInput4452 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4469 = new BitSet(new long[]{0xD600000000000002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_62_in_ruleInput4489 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4510 = new BitSet(new long[]{0x9600000000000002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_63_in_ruleInput4525 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4546 = new BitSet(new long[]{0x1600000000000002L,0x000000000000001FL});
+    public static final BitSet FOLLOW_64_in_ruleInput4561 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4582 = new BitSet(new long[]{0x1600000000000002L,0x000000000000001EL});
+    public static final BitSet FOLLOW_65_in_ruleInput4597 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4618 = new BitSet(new long[]{0x1600000000000002L,0x000000000000001CL});
+    public static final BitSet FOLLOW_66_in_ruleInput4633 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleBigUnitValue_in_ruleInput4654 = new BitSet(new long[]{0x1600000000000002L,0x0000000000000018L});
+    public static final BitSet FOLLOW_57_in_ruleInput4669 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4686 = new BitSet(new long[]{0x1400000000000002L,0x0000000000000018L});
+    public static final BitSet FOLLOW_67_in_ruleInput4706 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4723 = new BitSet(new long[]{0x1400000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_68_in_ruleInput4743 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4760 = new BitSet(new long[]{0x1400000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleInput4780 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleInput4797 = new BitSet(new long[]{0x1000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleInput4817 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_ruleTriggerTable_in_ruleInput4838 = new BitSet(new long[]{0x0000000000000002L});
 
 }

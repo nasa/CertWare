@@ -938,13 +938,12 @@ public class StateSpecificationGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cUnitsKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cRangeUnitsAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cRangeUnitsSTRINGTerminalRuleCall_8_0 = (RuleCall)cRangeUnitsAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//ValueRange:
-		//	"{" lower=BigDecimalType "..." upper=BigDecimalType "}" "type" rangeType=STRING "units" rangeUnits=STRING "}";
+		//	"{" lower=BigDecimalType "..." upper=BigDecimalType "}" "type" rangeType=STRING "units" rangeUnits=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//"{" lower=BigDecimalType "..." upper=BigDecimalType "}" "type" rangeType=STRING "units" rangeUnits=STRING "}"
+		//"{" lower=BigDecimalType "..." upper=BigDecimalType "}" "type" rangeType=STRING "units" rangeUnits=STRING
 		public Group getGroup() { return cGroup; }
 
 		//"{"
@@ -985,9 +984,6 @@ public class StateSpecificationGrammarAccess extends AbstractGrammarElementFinde
 
 		//STRING
 		public RuleCall getRangeUnitsSTRINGTerminalRuleCall_8_0() { return cRangeUnitsSTRINGTerminalRuleCall_8_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class ValueListElements extends AbstractParserRuleElementFinder {
@@ -1800,7 +1796,7 @@ public class StateSpecificationGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//ValueRange:
-	//	"{" lower=BigDecimalType "..." upper=BigDecimalType "}" "type" rangeType=STRING "units" rangeUnits=STRING "}";
+	//	"{" lower=BigDecimalType "..." upper=BigDecimalType "}" "type" rangeType=STRING "units" rangeUnits=STRING;
 	public ValueRangeElements getValueRangeAccess() {
 		return (pValueRange != null) ? pValueRange : (pValueRange = new ValueRangeElements());
 	}

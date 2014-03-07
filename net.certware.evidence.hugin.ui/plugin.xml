@@ -58,14 +58,14 @@
             <keywordReference id="net.certware.evidence.hugin.ui.keyword_NetDSL"/>
         </page>
         <page
-            category="net.certware.evidence.hugin.NetDSL"
+            category="certware"
             class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="net.certware.evidence.hugin.NetDSL.coloring"
             name="Syntax Coloring">
             <keywordReference id="net.certware.evidence.hugin.ui.keyword_NetDSL"/>
         </page>
         <page
-            category="net.certware.evidence.hugin.NetDSL"
+            category="certware"
             class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="net.certware.evidence.hugin.NetDSL.templates"
             name="Templates">

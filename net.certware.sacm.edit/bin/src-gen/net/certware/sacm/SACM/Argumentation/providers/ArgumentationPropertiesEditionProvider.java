@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Argumentation.Argumentation;
 import net.certware.sacm.SACM.Argumentation.ArgumentationPackage;
 
+import net.certware.sacm.SACM.Argumentation.components.ArgumentationBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Argumentation.components.ArgumentationNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Argumentation.components.ArgumentationPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ArgumentationPropertiesEditionProvider extends PropertiesEditingPro
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Argumentation) && (ArgumentationPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Argumentation) && (ArgumentationBasePropertiesEditionComponent.BASE_PART.equals(part) || ArgumentationNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ArgumentationPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Argumentation) && (refinement == ArgumentationPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Argumentation) && (refinement == ArgumentationBasePropertiesEditionComponent.class || refinement == ArgumentationNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ArgumentationPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Argumentation) && ((ArgumentationPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ArgumentationPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Argumentation) && ((ArgumentationBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ArgumentationBasePropertiesEditionComponent.class) || (ArgumentationNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ArgumentationNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ArgumentationPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Argumentation) {
-			if (ArgumentationPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ArgumentationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentationBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ArgumentationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentationNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ArgumentationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ArgumentationPropertiesEditionProvider extends PropertiesEditingPro
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Argumentation) {
-			if (ArgumentationPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ArgumentationPropertiesEditionComponent.class)
-				return new ArgumentationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentationBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ArgumentationBasePropertiesEditionComponent.class)
+				return new ArgumentationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentationNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ArgumentationNotesPropertiesEditionComponent.class)
+				return new ArgumentationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

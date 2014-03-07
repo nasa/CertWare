@@ -3,7 +3,8 @@
       id="net.certware.feature.bayes"
       label="CertWare Bayesian Reasoning Support"
       version="1.2.4.qualifier"
-      provider-name="Kestrel Technology LLC">
+      provider-name="Kestrel Technology LLC"
+      plugin="net.certware.branding">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare evidence support for Bayesian reasoning using Hugin models and Samiam inference engine.

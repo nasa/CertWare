@@ -26,14 +26,14 @@ public class FileSystemExporter extends AbstractFileSystemExporter implements IE
 		// destination files change result.xvt and result.xbo into result.xvt.docx and result.xbo.docx 
 		final IPath destinationWithExtension = destinationPath.addFileExtension(EXPORT_EXTENSION);
 		@SuppressWarnings("unused")
-		final String destinationFile = destinationWithExtension.toPortableString(); // $codepro.audit.disable variableUsage
+		final String destinationFile = destinationWithExtension.toPortableString(); 
 
 		// TODO redundant because wizard should have performed this filter
 		// if the file is the right type, open it and update the view
 		final String extension = file.getFileExtension();
 		if ( null != extension ) {
 			// create the generic document target
-			if ( ICertWareConstants.ARM_EXTENSION.equals(extension)) {
+			if ( ICertWareConstants.SACM_EXTENSION.equals(extension)) {
 				final EObject eo = readModel(file);
 				final ExportSACMJob ej = new ExportSACMJob("Export argument",eo);
 				return ej.produce(monitor);

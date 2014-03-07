@@ -1,0 +1,43 @@
+
+// accidents listed at top level
+Accident "Crash into plastic" {
+  Severity A24
+  Hazard "Hit the floor" {
+  	Severity S1
+  	Likelihood L3
+  	Risk {
+  		Exposure "Unprotected surfaces"
+  		Likelihood "Certain rash"
+  	}
+  	Constraint "Deploy signs" {
+  		Requirement "AR4" {
+  			Allocation "Equipment staff"
+  			Analysis "Inspection and physics model"
+  			Rationale "Requested by riders" 
+  			Note "See assignments";
+  			Note "For integration board";
+		}
+		Scenario "Cornering to the right" ;
+		Scenario "Cornering to the left" ;
+		Scenario "Straightaway in group";
+		Control "Warning to rider";
+  	}
+  }
+  Note "Checking syntax" ;
+}
+
+// incidents listed at top level
+Incident "Dodging plastic" {
+	Priority P0
+	Hazard "Hit another rider" {
+		Severity S0
+		Likelihood L1
+		Risk {
+			Exposure "Hooking bars"
+			Likelihood "Minimal"
+		}
+		Constraint "Communication" {
+			Note "Shouting by lead-out" ;
+		}
+	}
+}

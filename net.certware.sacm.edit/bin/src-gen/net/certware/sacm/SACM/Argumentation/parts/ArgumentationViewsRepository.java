@@ -155,12 +155,6 @@ public class ArgumentationViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Argumentation::Claim::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::Claim::properties::annotation";
-			
-			
 			public static String id = "Argumentation::Claim::properties::id";
 			
 			
@@ -339,6 +333,24 @@ public class ArgumentationViewsRepository {
 			
 			
 			public static String target = "Argumentation::AssertedCounterEvidence::properties::target";
+			
+	
+		}
+	
+	}
+
+	/**
+	 * Notes view descriptor
+	 * 
+	 */
+	public static class Notes {
+		public static class Properties {
+	
+			
+			public static String taggedValue = "Argumentation::Notes::properties::taggedValue";
+			
+			
+			public static String annotation = "Argumentation::Notes::properties::annotation";
 			
 	
 		}

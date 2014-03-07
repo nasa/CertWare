@@ -11,7 +11,7 @@
             default="true"
             extensions="sacmdsl"
             id="net.certware.sacm.dsl.SacmDsl"
-            name="SacmDsl Editor">
+            name="SACM DSL Editor">
         </editor>
     </extension>
     <extension
@@ -256,7 +256,7 @@
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            category="net.certware.sacm.dsl.SacmDsl"
+            category="certware"
             class="net.certware.sacm.dsl.ui.SacmDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="net.certware.sacm.dsl.SacmDsl.compiler.preferencePage"
             name="Compiler">
@@ -366,7 +366,7 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="net.certware.sacm.dsl.SacmDsl"
+	        category="certware"
 	        class="net.certware.sacm.dsl.ui.SacmDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
 	        id="net.certware.sacm.dsl.SacmDsl.refactoring"
 	        name="Refactoring">

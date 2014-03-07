@@ -58,14 +58,14 @@
             <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
         </page>
         <page
-            category="net.certware.planning.cpn.CpnDsl"
+            category="certware"
             class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="net.certware.planning.cpn.CpnDsl.coloring"
             name="Syntax Coloring">
             <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
         </page>
         <page
-            category="net.certware.planning.cpn.CpnDsl"
+            category="certware"
             class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="net.certware.planning.cpn.CpnDsl.templates"
             name="Templates">
@@ -206,10 +206,11 @@
             canFinishEarly="false"
             category="net.certware.core.ui.newwizard.category"
             class="net.certware.planning.cpn.ui.wizard.NewCpnFileWizard"
+            finalPerspective="net.certware.perspective"
             hasPages="true"
             icon="icons/cpn.gif"
             id="net.certware.planning.cpn.ui.wizard"
-            name="CPN File"
+            name="CertWare Planning Notation (CPN) File"
             project="false">
          <description>
             Creates a new CPN file in the selected container.  Initializes file with representative content.

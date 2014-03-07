@@ -53,11 +53,9 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         String typeName = _type.getTypeName();
         boolean _contains = visitedIntentTypeNames.contains(typeName);
         if (_contains) {
-          String _plus = ("duplicate intent type \'" + typeName);
-          String _plus_1 = (_plus + "\' in refinement");
           EReference _refinement_Intents = IntentSpecificationPackage.eINSTANCE.getRefinement_Intents();
           String _name = d.getName();
-          this.warning(_plus_1, _refinement_Intents, 
+          this.warning((("duplicate intent type \'" + typeName) + "\' in refinement"), _refinement_Intents, 
             IntentSpecificationValidator.UNIQUE_INTENTS_REFINEMENT, _name);
         }
         visitedIntentTypeNames.add(typeName);
@@ -82,11 +80,9 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         String typeName = _type.getTypeName();
         boolean _contains = visitedDecompositionTypeNames.contains(typeName);
         if (_contains) {
-          String _plus = ("duplicate decomposition type \'" + typeName);
-          String _plus_1 = (_plus + "\' in intent");
           EReference _intent_Decompositions = IntentSpecificationPackage.eINSTANCE.getIntent_Decompositions();
           String _name = d.getName();
-          this.warning(_plus_1, _intent_Decompositions, 
+          this.warning((("duplicate decomposition type \'" + typeName) + "\' in intent"), _intent_Decompositions, 
             IntentSpecificationValidator.UNIQUE_DECOMPOSITION_INTENT, _name);
         }
         visitedDecompositionTypeNames.add(typeName);

@@ -8,11 +8,27 @@ Bundle-Activator: net.certware.sacm.provider.SACMEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: net.certware.sacm.SACM.Argumentation.provider,
+Export-Package: net.certware.sacm.SACM.Argumentation.components,
+ net.certware.sacm.SACM.Argumentation.parts,
+ net.certware.sacm.SACM.Argumentation.parts.forms,
+ net.certware.sacm.SACM.Argumentation.parts.impl,
+ net.certware.sacm.SACM.Argumentation.provider,
+ net.certware.sacm.SACM.Argumentation.providers,
+ net.certware.sacm.SACM.Evidence.components,
+ net.certware.sacm.SACM.Evidence.parts,
+ net.certware.sacm.SACM.Evidence.parts.forms,
+ net.certware.sacm.SACM.Evidence.parts.impl,
  net.certware.sacm.SACM.Evidence.provider,
+ net.certware.sacm.SACM.Evidence.providers,
+ net.certware.sacm.SACM.components,
+ net.certware.sacm.SACM.parts,
+ net.certware.sacm.SACM.parts.forms,
+ net.certware.sacm.SACM.parts.impl,
  net.certware.sacm.SACM.provider,
+ net.certware.sacm.SACM.providers,
  net.certware.sacm.provider
 Require-Bundle: org.eclipse.core.runtime,
  net.certware.sacm;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.emf.eef.runtime;visibility:=reexport;bundle-version="1.2.0"
 Bundle-ActivationPolicy: lazy

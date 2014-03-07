@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Argumentation.ArgumentReasoning;
 import net.certware.sacm.SACM.Argumentation.ArgumentationPackage;
 
+import net.certware.sacm.SACM.Argumentation.components.ArgumentReasoningBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Argumentation.components.ArgumentReasoningNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Argumentation.components.ArgumentReasoningPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ArgumentReasoningPropertiesEditionProvider extends PropertiesEditin
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof ArgumentReasoning) && (ArgumentReasoningPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof ArgumentReasoning) && (ArgumentReasoningBasePropertiesEditionComponent.BASE_PART.equals(part) || ArgumentReasoningNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ArgumentReasoningPropertiesEditionProvider extends PropertiesEditin
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ArgumentReasoning) && (refinement == ArgumentReasoningPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof ArgumentReasoning) && (refinement == ArgumentReasoningBasePropertiesEditionComponent.class || refinement == ArgumentReasoningNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ArgumentReasoningPropertiesEditionProvider extends PropertiesEditin
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ArgumentReasoning) && ((ArgumentReasoningPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ArgumentReasoningPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof ArgumentReasoning) && ((ArgumentReasoningBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ArgumentReasoningBasePropertiesEditionComponent.class) || (ArgumentReasoningNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ArgumentReasoningNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ArgumentReasoningPropertiesEditionProvider extends PropertiesEditin
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof ArgumentReasoning) {
-			if (ArgumentReasoningPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ArgumentReasoningPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentReasoningBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ArgumentReasoningBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentReasoningNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ArgumentReasoningNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ArgumentReasoningPropertiesEditionProvider extends PropertiesEditin
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof ArgumentReasoning) {
-			if (ArgumentReasoningPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ArgumentReasoningPropertiesEditionComponent.class)
-				return new ArgumentReasoningPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentReasoningBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ArgumentReasoningBasePropertiesEditionComponent.class)
+				return new ArgumentReasoningBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ArgumentReasoningNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ArgumentReasoningNotesPropertiesEditionComponent.class)
+				return new ArgumentReasoningNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

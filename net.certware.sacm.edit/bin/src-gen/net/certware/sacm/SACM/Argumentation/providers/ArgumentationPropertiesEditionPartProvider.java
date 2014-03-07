@@ -13,6 +13,7 @@ import net.certware.sacm.SACM.Argumentation.parts.forms.AssertedInferencePropert
 import net.certware.sacm.SACM.Argumentation.parts.forms.CitationElementPropertiesEditionPartForm;
 import net.certware.sacm.SACM.Argumentation.parts.forms.ClaimPropertiesEditionPartForm;
 import net.certware.sacm.SACM.Argumentation.parts.forms.InformationElementPropertiesEditionPartForm;
+import net.certware.sacm.SACM.Argumentation.parts.forms.NotesPropertiesEditionPartForm;
 
 import net.certware.sacm.SACM.Argumentation.parts.impl.ArgumentReasoningPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Argumentation.parts.impl.ArgumentationPropertiesEditionPartImpl;
@@ -24,6 +25,7 @@ import net.certware.sacm.SACM.Argumentation.parts.impl.AssertedInferenceProperti
 import net.certware.sacm.SACM.Argumentation.parts.impl.CitationElementPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Argumentation.parts.impl.ClaimPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Argumentation.parts.impl.InformationElementPropertiesEditionPartImpl;
+import net.certware.sacm.SACM.Argumentation.parts.impl.NotesPropertiesEditionPartImpl;
 
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 
@@ -111,6 +113,12 @@ public class ArgumentationPropertiesEditionPartProvider implements IPropertiesEd
 				return new AssertedCounterEvidencePropertiesEditionPartImpl(component);
 			if (kind == ArgumentationViewsRepository.FORM_KIND)
 				return new AssertedCounterEvidencePropertiesEditionPartForm(component);
+		}
+		if (key == ArgumentationViewsRepository.Notes.class) {
+			if (kind == ArgumentationViewsRepository.SWT_KIND)
+				return new NotesPropertiesEditionPartImpl(component);
+			if (kind == ArgumentationViewsRepository.FORM_KIND)
+				return new NotesPropertiesEditionPartForm(component);
 		}
 		return null;
 	}

@@ -70,59 +70,48 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
       String typeName = type.getTypeName();
       boolean _equals = "basic".equals(typeName);
       if (_equals) {
-        String _plus = ("Basic" + " ");
         String _name = e.getName();
-        return (_plus + _name);
+        return (("Basic" + " ") + _name);
       }
       boolean _equals_1 = "purpose".equals(typeName);
       if (_equals_1) {
-        String _plus_1 = ("Purpose" + " ");
         String _name_1 = e.getName();
-        return (_plus_1 + _name_1);
+        return (("Purpose" + " ") + _name_1);
       }
       boolean _equals_2 = "principles".equals(typeName);
       if (_equals_2) {
-        String _plus_2 = ("Principles" + " ");
         String _name_2 = e.getName();
-        return (_plus_2 + _name_2);
+        return (("Principles" + " ") + _name_2);
       }
       boolean _equals_3 = "models".equals(typeName);
       if (_equals_3) {
-        String _plus_3 = ("Models" + " ");
         String _name_3 = e.getName();
-        return (_plus_3 + _name_3);
+        return (("Models" + " ") + _name_3);
       }
       boolean _equals_4 = "design".equals(typeName);
       if (_equals_4) {
-        String _plus_4 = ("Design" + " ");
         String _name_4 = e.getName();
-        return (_plus_4 + _name_4);
+        return (("Design" + " ") + _name_4);
       }
       boolean _equals_5 = "implementation".equals(typeName);
       if (_equals_5) {
-        String _plus_5 = ("Implementation" + " ");
         String _name_5 = e.getName();
-        return (_plus_5 + _name_5);
+        return (("Implementation" + " ") + _name_5);
       }
       boolean _equals_6 = "operation".equals(typeName);
       if (_equals_6) {
-        String _plus_6 = ("Operation" + " ");
         String _name_6 = e.getName();
-        return (_plus_6 + _name_6);
+        return (("Operation" + " ") + _name_6);
       }
-      String _plus_7 = ("Intent" + " ");
       String _name_7 = e.getName();
-      String _plus_8 = (_plus_7 + _name_7);
-      _xblockexpression = (_plus_8);
+      _xblockexpression = (("Intent" + " ") + _name_7);
     }
     return _xblockexpression;
   }
   
   public String text(final Refinement e) {
-    String _plus = ("Refinement" + " ");
     String _name = e.getName();
-    String _plus_1 = (_plus + _name);
-    return _plus_1;
+    return (("Refinement" + " ") + _name);
   }
   
   public String text(final Decomposition e) {
@@ -132,32 +121,26 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
       String typeName = type.getTypeName();
       boolean _equals = "environment".equals(typeName);
       if (_equals) {
-        String _plus = ("Environment" + " ");
         String _name = e.getName();
-        return (_plus + _name);
+        return (("Environment" + " ") + _name);
       }
       boolean _equals_1 = "operator".equals(typeName);
       if (_equals_1) {
-        String _plus_1 = ("Operator" + " ");
         String _name_1 = e.getName();
-        return (_plus_1 + _name_1);
+        return (("Operator" + " ") + _name_1);
       }
       boolean _equals_2 = "system".equals(typeName);
       if (_equals_2) {
-        String _plus_2 = ("System" + " ");
         String _name_2 = e.getName();
-        return (_plus_2 + _name_2);
+        return (("System" + " ") + _name_2);
       }
       boolean _equals_3 = "verification".equals(typeName);
       if (_equals_3) {
-        String _plus_3 = ("V&V" + " ");
         String _name_3 = e.getName();
-        return (_plus_3 + _name_3);
+        return (("V&V" + " ") + _name_3);
       }
-      String _plus_4 = ("Decomposition" + " ");
       String _name_4 = e.getName();
-      String _plus_5 = (_plus_4 + _name_4);
-      _xblockexpression = (_plus_5);
+      _xblockexpression = (("Decomposition" + " ") + _name_4);
     }
     return _xblockexpression;
   }
@@ -173,15 +156,13 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
       String typeName = type.getTypeName();
       boolean _equals = "condition".equals(typeName);
       if (_equals) {
-        String _plus = ("Condition" + " ");
         String _name = e.getName();
-        return (_plus + _name);
+        return (("Condition" + " ") + _name);
       }
       boolean _equals_1 = "figure".equals(typeName);
       if (_equals_1) {
-        String _plus_1 = ("Figure" + " ");
         String _name_1 = e.getName();
-        return (_plus_1 + _name_1);
+        return (("Figure" + " ") + _name_1);
       }
       boolean _equals_2 = "break".equals(typeName);
       if (_equals_2) {
@@ -189,32 +170,26 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
       }
       boolean _equals_3 = "model".equals(typeName);
       if (_equals_3) {
-        String _plus_2 = ("Model" + " ");
         String _name_2 = e.getName();
-        return (_plus_2 + _name_2);
+        return (("Model" + " ") + _name_2);
       }
       boolean _equals_4 = "paragraph".equals(typeName);
       if (_equals_4) {
-        String _plus_3 = ("Paragraph" + " ");
         String _name_3 = e.getName();
-        return (_plus_3 + _name_3);
+        return (("Paragraph" + " ") + _name_3);
       }
       boolean _equals_5 = "section".equals(typeName);
       if (_equals_5) {
-        String _plus_4 = ("Section" + " ");
         String _name_4 = e.getName();
-        return (_plus_4 + _name_4);
+        return (("Section" + " ") + _name_4);
       }
       boolean _equals_6 = "table".equals(typeName);
       if (_equals_6) {
-        String _plus_5 = ("Table" + " ");
         String _name_5 = e.getName();
-        return (_plus_5 + _name_5);
+        return (("Table" + " ") + _name_5);
       }
-      String _plus_6 = ("Item" + " ");
       String _name_6 = e.getName();
-      String _plus_7 = (_plus_6 + _name_6);
-      _xblockexpression = (_plus_7);
+      _xblockexpression = (("Item" + " ") + _name_6);
     }
     return _xblockexpression;
   }
@@ -226,44 +201,36 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
       String typeName = type.getTypeName();
       boolean _equals = "output".equals(typeName);
       if (_equals) {
-        String _plus = ("Output" + " ");
         String _name = e.getName();
-        return (_plus + _name);
+        return (("Output" + " ") + _name);
       }
       boolean _equals_1 = "mode".equals(typeName);
       if (_equals_1) {
-        String _plus_1 = ("Mode" + " ");
         String _name_1 = e.getName();
-        return (_plus_1 + _name_1);
+        return (("Mode" + " ") + _name_1);
       }
       boolean _equals_2 = "state".equals(typeName);
       if (_equals_2) {
-        String _plus_2 = ("State" + " ");
         String _name_2 = e.getName();
-        return (_plus_2 + _name_2);
+        return (("State" + " ") + _name_2);
       }
       boolean _equals_3 = "macro".equals(typeName);
       if (_equals_3) {
-        String _plus_3 = ("Macro" + " ");
         String _name_3 = e.getName();
-        return (_plus_3 + _name_3);
+        return (("Macro" + " ") + _name_3);
       }
       boolean _equals_4 = "function".equals(typeName);
       if (_equals_4) {
-        String _plus_4 = ("Function" + " ");
         String _name_4 = e.getName();
-        return (_plus_4 + _name_4);
+        return (("Function" + " ") + _name_4);
       }
       boolean _equals_5 = "input".equals(typeName);
       if (_equals_5) {
-        String _plus_5 = ("Input" + " ");
         String _name_5 = e.getName();
-        return (_plus_5 + _name_5);
+        return (("Input" + " ") + _name_5);
       }
-      String _plus_6 = ("Model" + " ");
       String _name_6 = e.getName();
-      String _plus_7 = (_plus_6 + _name_6);
-      _xblockexpression = (_plus_7);
+      _xblockexpression = (("Model" + " ") + _name_6);
     }
     return _xblockexpression;
   }
@@ -275,35 +242,29 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
       String _typeName = type.getTypeName();
       boolean _equals = "hazard".equals(_typeName);
       if (_equals) {
-        String _plus = ("Hazard" + " ");
         String _name = e.getName();
-        return (_plus + _name);
+        return (("Hazard" + " ") + _name);
       }
       String _typeName_1 = type.getTypeName();
       boolean _equals_1 = "requirement".equals(_typeName_1);
       if (_equals_1) {
-        String _plus_1 = ("Requirement" + " ");
         String _name_1 = e.getName();
-        return (_plus_1 + _name_1);
+        return (("Requirement" + " ") + _name_1);
       }
       String _typeName_2 = type.getTypeName();
       boolean _equals_2 = "goal".equals(_typeName_2);
       if (_equals_2) {
-        String _plus_2 = ("Goal" + " ");
         String _name_2 = e.getName();
-        return (_plus_2 + _name_2);
+        return (("Goal" + " ") + _name_2);
       }
       String _typeName_3 = type.getTypeName();
       boolean _equals_3 = "constraint".equals(_typeName_3);
       if (_equals_3) {
-        String _plus_3 = ("Constraint" + " ");
         String _name_3 = e.getName();
-        return (_plus_3 + _name_3);
+        return (("Constraint" + " ") + _name_3);
       }
-      String _plus_4 = ("List" + " ");
       String _name_4 = e.getName();
-      String _plus_5 = (_plus_4 + _name_4);
-      _xblockexpression = (_plus_5);
+      _xblockexpression = (("List" + " ") + _name_4);
     }
     return _xblockexpression;
   }

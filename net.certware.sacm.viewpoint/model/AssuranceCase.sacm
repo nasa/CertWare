@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SACM:AssuranceCase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation" xmlns:EM="http://schema.omg.org/SACM/1.0/Evidence" xmlns:SACM="http://schema.omg.org/SACM/1.0">
+  <taggedValue/>
+  <annotation/>
+  <argument>
+    <argumentation/>
+    <argumentation/>
+    <argumentElement xsi:type="ARM:ArgumentReasoning"/>
+    <argumentElement xsi:type="ARM:Claim"/>
+  </argument>
+  <evidence>
+    <evaluation xsi:type="EM:IsA">
+      <provenance xsi:type="EM:OwnedBy"/>
+      <provenance xsi:type="EM:PerformedBy"/>
+    </evaluation>
+    <property xsi:type="EM:DependsOn"/>
+  </evidence>
+</SACM:AssuranceCase>

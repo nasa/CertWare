@@ -1,0 +1,21 @@
+chapter:GettingStarted[Getting Started]
+
+section:Installation[Installation]
+
+The e[intent specification] feature contains several plugins supporting the intent specification model.
+You can install the feature into the workbench by referring the workbench software installer 
+to the CertWare update site.
+
+section:NewModel[Creating a New Model]
+
+section:EditTextual[Using the Text Editor]
+
+section:EditTree[Using the Tree Editor]
+
+section:TODO[TODO]
+
+todo[Add list completeness validations]
+todo[Add structure completeness validations]
+todo[Add update site reference]
+todo[Add embedded help links]
+todo[Add help registration category for CertWare]

@@ -130,7 +130,7 @@ TriggerTable:
 ;
 
 ValueRange:
-	'{' lower=BigDecimalType '...' upper=BigDecimalType '}' 'type' rangeType=STRING 'units' rangeUnits=STRING '}'
+	'{' lower=BigDecimalType '...' upper=BigDecimalType '}' 'type' rangeType=STRING 'units' rangeUnits=STRING
 ;
 
 

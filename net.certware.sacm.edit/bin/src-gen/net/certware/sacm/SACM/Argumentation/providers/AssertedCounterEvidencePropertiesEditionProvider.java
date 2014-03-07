@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Argumentation.ArgumentationPackage;
 import net.certware.sacm.SACM.Argumentation.AssertedCounterEvidence;
 
+import net.certware.sacm.SACM.Argumentation.components.AssertedCounterEvidenceBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Argumentation.components.AssertedCounterEvidenceNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Argumentation.components.AssertedCounterEvidencePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class AssertedCounterEvidencePropertiesEditionProvider extends Properties
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof AssertedCounterEvidence) && (AssertedCounterEvidencePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof AssertedCounterEvidence) && (AssertedCounterEvidenceBasePropertiesEditionComponent.BASE_PART.equals(part) || AssertedCounterEvidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class AssertedCounterEvidencePropertiesEditionProvider extends Properties
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AssertedCounterEvidence) && (refinement == AssertedCounterEvidencePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof AssertedCounterEvidence) && (refinement == AssertedCounterEvidenceBasePropertiesEditionComponent.class || refinement == AssertedCounterEvidenceNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class AssertedCounterEvidencePropertiesEditionProvider extends Properties
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AssertedCounterEvidence) && ((AssertedCounterEvidencePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AssertedCounterEvidencePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof AssertedCounterEvidence) && ((AssertedCounterEvidenceBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AssertedCounterEvidenceBasePropertiesEditionComponent.class) || (AssertedCounterEvidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == AssertedCounterEvidenceNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class AssertedCounterEvidencePropertiesEditionProvider extends Properties
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof AssertedCounterEvidence) {
-			if (AssertedCounterEvidencePropertiesEditionComponent.BASE_PART.equals(part))
-				return new AssertedCounterEvidencePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedCounterEvidenceBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new AssertedCounterEvidenceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedCounterEvidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new AssertedCounterEvidenceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class AssertedCounterEvidencePropertiesEditionProvider extends Properties
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof AssertedCounterEvidence) {
-			if (AssertedCounterEvidencePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == AssertedCounterEvidencePropertiesEditionComponent.class)
-				return new AssertedCounterEvidencePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedCounterEvidenceBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == AssertedCounterEvidenceBasePropertiesEditionComponent.class)
+				return new AssertedCounterEvidenceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssertedCounterEvidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == AssertedCounterEvidenceNotesPropertiesEditionComponent.class)
+				return new AssertedCounterEvidenceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

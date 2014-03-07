@@ -12,6 +12,7 @@ var runtimeProject = "../${projectName}"
 Workflow {
     bean = StandaloneSetup {
 		platformUri = "${runtimeProject}/.."
+		// registerGenModelFile = "${runtimeProject}/model/generated/SemiFormalProof.genmodel"
 	}
 
 	component = DirectoryCleaner {
@@ -38,7 +39,10 @@ Workflow {
 			//fragment = ecore.EcoreGeneratorFragment {
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
 			//}
-			fragment = ecore.EMFGeneratorFragment{}
+			//fragment = ecore.EcoreGeneratorFragment {
+			//	referencedGenModels = ""
+			//}
+
 
 			// the serialization component
 			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}

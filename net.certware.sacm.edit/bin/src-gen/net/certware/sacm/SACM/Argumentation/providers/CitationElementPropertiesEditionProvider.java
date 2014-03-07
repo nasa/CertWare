@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Argumentation.ArgumentationPackage;
 import net.certware.sacm.SACM.Argumentation.CitationElement;
 
+import net.certware.sacm.SACM.Argumentation.components.CitationElementBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Argumentation.components.CitationElementNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Argumentation.components.CitationElementPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class CitationElementPropertiesEditionProvider extends PropertiesEditingP
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof CitationElement) && (CitationElementPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof CitationElement) && (CitationElementBasePropertiesEditionComponent.BASE_PART.equals(part) || CitationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class CitationElementPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof CitationElement) && (refinement == CitationElementPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof CitationElement) && (refinement == CitationElementBasePropertiesEditionComponent.class || refinement == CitationElementNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class CitationElementPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof CitationElement) && ((CitationElementPropertiesEditionComponent.BASE_PART.equals(part) && refinement == CitationElementPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof CitationElement) && ((CitationElementBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == CitationElementBasePropertiesEditionComponent.class) || (CitationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == CitationElementNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class CitationElementPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof CitationElement) {
-			if (CitationElementPropertiesEditionComponent.BASE_PART.equals(part))
-				return new CitationElementPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CitationElementBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new CitationElementBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CitationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new CitationElementNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class CitationElementPropertiesEditionProvider extends PropertiesEditingP
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof CitationElement) {
-			if (CitationElementPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == CitationElementPropertiesEditionComponent.class)
-				return new CitationElementPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CitationElementBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == CitationElementBasePropertiesEditionComponent.class)
+				return new CitationElementBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CitationElementNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == CitationElementNotesPropertiesEditionComponent.class)
+				return new CitationElementNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

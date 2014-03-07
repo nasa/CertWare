@@ -27,7 +27,7 @@
       </commonFilter>
       <navigatorContent
             contentProvider="net.certware.sacm.navigator.ContentProvider"
-            icon="icons/obj16/sacm.gif"
+            icon="icons/obj16/sacm_sacm.png"
             id="net.certware.sacm.navigator.navigatorContent"
             labelProvider="net.certware.sacm.navigator.LabelProvider"
             name="SACM Model Content"

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.certware.feature.stpa"
+      label="CertWare STPA Support"
+      version="1.0.0.qualifier"
+      provider-name="Kestrel Technology LLC"
+      plugin="net.certware.branding"
+      license-feature="net.certware.feature"
+      license-feature-version="1.2.3.qualifier">
+
+   <description url="http://nasa.github.com/CertWare">
+      CertWare DSL support for the STPA method.
+   </description>
+
+   <copyright>
+      Copyright (c) 2014 United States Government as represented by
+the National Aeronautics and Space Administration.  All rights
+reserved.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
+      <discovery label="CertWare" url="http://github.com/nasa/CertWare/update"/>
+   </url>
+
+   <plugin
+         id="net.certware.hazard.stpa"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.hazard.stpa.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

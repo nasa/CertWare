@@ -15,7 +15,6 @@ import net.certware.sacm.SACM.Argumentation.AssertedContext;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -89,6 +88,7 @@ public class AssertedContextItemProvider
 	 * @param e argument element list
 	 * @return parenthesized and comma-delimited string or empty string
 	 */
+	@SuppressWarnings("unused")
 	private String listToString(EList<ArgumentElement> e) {
 		StringBuffer sb = new StringBuffer();
 		Iterator<ArgumentElement> i = e.iterator();

@@ -20,7 +20,7 @@
          point="org.eclipse.ui.intro">
       <introProductBinding
             introId="org.eclipse.ui.intro.universal"
-            productId="net.certware.product.CertWare">
+            productId="net.certware.product.product">
       </introProductBinding>
    </extension>
 </plugin>

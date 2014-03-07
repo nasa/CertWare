@@ -1,0 +1,76 @@
+chapter:RefinementExample[Refinement Example]
+
+code[intent][
+
+/* intent spec following canonical model */
+
+///// Full specification
+specification S1
+
+///// Initial refinement
+refinement R1 "Initial model refinement"
+
+///// Level 0
+basic B0 "Level 0BB"
+environment DE111  "Project plans"
+{ 
+	{
+		paragraph VIV2 "vision" ;
+		figure F12 "master schedule" ;
+		paragraph P12 "statement of work" ;
+		paragraph C12 "cm plan" ;
+		table A12 "responsibility matrix" ;
+	}
+} 
+
+///// Level 1
+purpose P1 "Level 1BB System Purpose"
+environment E1 "Assumptions and constraints"
+operator O1 "Responsibilities and requirements"
+system S1 "System goals, requirements, constraints"
+verification V1 "Hazard analysis"
+( 
+	hazard HDA "depressurized airlock" ;
+	hazard HDC "depressurized cabin" ;
+	hazard HDP "cabin atmosphere unbreathable" ;
+	hazard HES "overhead panel electrical short" ;
+	hazard HTC "ammonia boiler concentration" ;
+)
+
+///// Level 2
+principles P2 "Level 2 System Principles"
+environment E2 "External Interfaces"
+operator O2 "Task analysis, allocation, controls, displays"
+system S2 "Logic principles, control laws, functional decomposition"
+verification V2 "Validation plan and results"
+
+///// Level 3
+models M3 "Level 3 Blackbox models"
+environment E3 "Environment models"
+operator O3 "Operator task models, HCI models"
+system S3 "Blackbox functional models, interface specifications"
+verification V3 "Analysis plans and results"
+
+///// Level 4
+design D4 "Level 4 Design Representation"
+operator O4 "HCI design"
+system S4 "Software and hardware design specs"
+verification V4 "Test plans and results"
+
+///// Level 5
+implementation D5 "Level 5 System Representation"
+operator O5 "GUI design, physical controls design"
+system S5 "Software code, hardware assembly instructions"
+verification V5 "Test plans and results"
+
+///// Level 6
+operation O6 "Level 6 Operations"
+environment E6 "Audit procedures"
+operator O6 "Operator manuals, maintenance, training materials"
+system S6 "Error reports, change requests"
+verification V6 "Performance monitoring and results"
+
+/// end of refinement
+
+
+]

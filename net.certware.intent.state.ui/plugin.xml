@@ -6,12 +6,13 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-            default="true"
-            extensions="state"
-            id="net.certware.intent.state.StateSpecification"
-            name="StateSpecification Editor">
+              class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="state"
+              icon="icons/obj16/specification.gif"
+              id="net.certware.intent.state.StateSpecification"
+              name="State Specification Editor">
         </editor>
     </extension>
     <extension
@@ -80,20 +81,21 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="net.certware.intent.state.StateSpecification"
-            name="StateSpecification">
+              category="certware"
+              class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="net.certware.intent.state.StateSpecification"
+              name="State Specification">
             <keywordReference id="net.certware.intent.state.ui.keyword_StateSpecification"/>
         </page>
         <page
-            category="net.certware.intent.state.StateSpecification"
+            category="certware"
             class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="net.certware.intent.state.StateSpecification.coloring"
             name="Syntax Coloring">
             <keywordReference id="net.certware.intent.state.ui.keyword_StateSpecification"/>
         </page>
         <page
-            category="net.certware.intent.state.StateSpecification"
+            category="certware"
             class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="net.certware.intent.state.StateSpecification.templates"
             name="Templates">
@@ -256,7 +258,7 @@
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            category="net.certware.intent.state.StateSpecification"
+            category="certware"
             class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="net.certware.intent.state.StateSpecification.compiler.preferencePage"
             name="Compiler">
@@ -343,10 +345,12 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="org.eclipse.xtext.projectwiz"
+            category="net.certware.core.ui.newwizard.category"
             class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:net.certware.intent.state.ui.wizard.StateSpecificationNewProjectWizard"
+            finalPerspective="net.certware.perspective"
+            icon="icons/obj16/specification.gif"
             id="net.certware.intent.state.ui.wizard.StateSpecificationNewProjectWizard"
-            name="StateSpecification Project"
+            name="State Specification Project"
             project="true">
       </wizard>
    </extension>
@@ -377,7 +381,7 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="net.certware.intent.state.StateSpecification"
+	        category="certware"
 	        class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
 	        id="net.certware.intent.state.StateSpecification.refactoring"
 	        name="Refactoring">
@@ -402,6 +406,15 @@
             class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="state">
     </provider>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="net.certware.perspective">
+        <newWizardShortcut
+              id="net.certware.intent.state.ui.wizard.StateSpecificationNewProjectWizard">
+        </newWizardShortcut>
+     </perspectiveExtension>
   </extension>
 
 </plugin>

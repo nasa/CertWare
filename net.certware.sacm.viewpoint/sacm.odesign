@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="sacm" version="6.9.0.201308011200">
+  <ownedViewpoints name="sacm" label="SACM Viewpoint" modelFileExtension="sacm">
+    <ownedRepresentations xsi:type="description:DiagramDescription" name="sacm_diagram" label="Assurance Case Diagram" titleExpression="feature:name" showOnStartup="true" domainClass="SACM.AssuranceCase" enablePopupBars="true">
+      <metamodel href="../net.certware.sacm/model/SACM.ecore#/"/>
+      <metamodel href="../net.certware.sacm/model/SACM.ecore#//Argumentation"/>
+      <metamodel href="../net.certware.sacm/model/SACM.ecore#//Evidence"/>
+      <defaultLayer name="Default"/>
+      <additionalLayers name="argumentation_layer" label="Argumentation"/>
+      <additionalLayers name="evidence_layer" label="Evidence">
+        <nodeMappings name="evidence_container_node" label="Evidence Container" labelDirectEdit="//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='evidence_layer']/@toolSections.0/@ownedTools[name='evidence_container_edit_label']" semanticCandidatesExpression="[evidence/]" domainClass="Evidence.EvidenceContainer">
+          <style xsi:type="style:SquareDescription" iconPath="net.certware.sacm.viewpoint/icons/obj16/evidence_container.gif" tooltipExpression="Evidence container" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="evidence_section" label="Evidence Section" icon="net.certware.sacm.viewpoint/icons/obj16/evidence_container.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="create_evidence_container" label="Add evidence container" nodeMappings="//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='evidence_layer']/@nodeMappings[name='evidence_container_node']" iconPath="net.certware.sacm.viewpoint/icons/obj16/evidence_container.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="Evidence.EvidenceContainer" referenceName="evidence"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="evidence_container_edit_label" forceRefresh="true">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="Name" valueExpression="feature:name"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="annotation_layer" label="Annotations" icon="net.certware.sacm.viewpoint/icons/obj16/annotate.gif">
+        <nodeMappings name="annotation_node" label="Annotation" semanticCandidatesExpression="[annotation/]" domainClass="SACM.Annotation">
+          <style xsi:type="style:NoteDescription" labelSize="12" labelExpression="feature:content" iconPath="net.certware.sacm.viewpoint/icons/obj16/annotate.gif" labelAlignment="LEFT" tooltipExpression="Case element annotation" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <toolSections documentation="Palette section for annotation tools." name="annotation_section" label="Annotations" icon="net.certware.sacm.viewpoint/icons/obj16/annotate.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="create_annotation_note" label="Add annotation" nodeMappings="//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='annotation_layer']/@nodeMappings[name='annotation_node']" iconPath="net.certware.sacm.viewpoint/icons/obj16/annotate.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="SACM.Annotation" referenceName="annotation"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="tags_layer" label="Tags" icon="net.certware.sacm.viewpoint/icons/obj16/tag.png">
+        <nodeMappings name="tag_node" label="Tagged Value" preconditionExpression="true" semanticCandidatesExpression="taggedValue" synchronizationLock="true" domainClass="SACM.TaggedValue">
+          <style xsi:type="style:NoteDescription" labelExpression="feature:key" iconPath="net.certware.sacm.viewpoint/icons/obj16/tag.png" tooltipExpression="Key-value expression" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="tag_section" label="Tags" icon="net.certware.sacm.viewpoint/icons/obj16/tag.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Adds a key-value tag element to the model&#x9;" name="create_tag" label="Add Key-Value Tag" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='sacm']/@ownedRepresentations[name='sacm_diagram']/@additionalLayers[name='tags_layer']/@nodeMappings[name='tag_node']" iconPath="net.certware.sacm.viewpoint/icons/obj16/tag.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="SACM.TaggedValue" referenceName="create_tagged_value"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

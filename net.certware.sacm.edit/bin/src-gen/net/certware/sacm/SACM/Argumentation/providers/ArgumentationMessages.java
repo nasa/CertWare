@@ -41,6 +41,9 @@ public class ArgumentationMessages extends NLS {
 	
 	public static String AssertedCounterEvidencePropertiesEditionPart_PropertiesGroupLabel;
 
+	
+	public static String NotesPropertiesEditionPart_PropertiesGroupLabel;
+
 
 	
 	public static String Argumentation_ReadOnly;
@@ -101,6 +104,12 @@ public class ArgumentationMessages extends NLS {
 
 	
 	public static String AssertedCounterEvidence_Part_Title;
+
+	
+	public static String Notes_ReadOnly;
+
+	
+	public static String Notes_Part_Title;
 
 
 	
@@ -189,12 +198,6 @@ public class ArgumentationMessages extends NLS {
 
 	
 	public static String ArgumentReasoningPropertiesEditionPart_DescribedChallengeLabel;
-
-	
-	public static String ClaimPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ClaimPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ClaimPropertiesEditionPart_IdLabel;
@@ -315,6 +318,12 @@ public class ArgumentationMessages extends NLS {
 
 	
 	public static String AssertedCounterEvidencePropertiesEditionPart_TargetLabel;
+
+	
+	public static String NotesPropertiesEditionPart_TaggedValueLabel;
+
+	
+	public static String NotesPropertiesEditionPart_AnnotationLabel;
 
 
 	

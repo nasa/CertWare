@@ -57,14 +57,14 @@
             <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
         </page>
         <page
-            category="net.certware.argument.sfp.SemiFormalProof"
+            category="certware"
             class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="net.certware.argument.sfp.SemiFormalProof.coloring"
             name="%page.name.0">
             <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
         </page>
         <page
-            category="net.certware.argument.sfp.SemiFormalProof"
+            category="certware"
             class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="net.certware.argument.sfp.SemiFormalProof.templates"
             name="%page.name.1">
