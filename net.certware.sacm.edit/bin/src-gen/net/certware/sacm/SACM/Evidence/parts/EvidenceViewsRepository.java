@@ -20,12 +20,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Consistency::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Consistency::properties::annotation";
-			
-			
 			public static String id = "Evidence::Consistency::properties::id";
 			
 			
@@ -56,12 +50,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Completeness::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Completeness::properties::annotation";
-			
-			
 			public static String id = "Evidence::Completeness::properties::id";
 			
 			
@@ -91,12 +79,6 @@ public class EvidenceViewsRepository {
 	public static class Document {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Document::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Document::properties::annotation";
-			
 			
 			public static String id = "Evidence::Document::properties::id";
 			
@@ -140,12 +122,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Confidence::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Confidence::properties::annotation";
-			
-			
 			public static String id = "Evidence::Confidence::properties::id";
 			
 			
@@ -175,12 +151,6 @@ public class EvidenceViewsRepository {
 	public static class ApprovedBy {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::ApprovedBy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ApprovedBy::properties::annotation";
-			
 			
 			public static String id = "Evidence::ApprovedBy::properties::id";
 			
@@ -212,12 +182,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::CreatedBy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::CreatedBy::properties::annotation";
-			
-			
 			public static String id = "Evidence::CreatedBy::properties::id";
 			
 			
@@ -247,12 +211,6 @@ public class EvidenceViewsRepository {
 	public static class Tool {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Tool::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Tool::properties::annotation";
-			
 			
 			public static String id = "Evidence::Tool::properties::id";
 			
@@ -293,12 +251,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Method::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Method::properties::annotation";
-			
-			
 			public static String id = "Evidence::Method::properties::id";
 			
 			
@@ -335,12 +287,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsBasedOn::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsBasedOn::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsBasedOn::properties::id";
 			
 			
@@ -370,12 +316,6 @@ public class EvidenceViewsRepository {
 	public static class IsA {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::IsA::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsA::properties::annotation";
-			
 			
 			public static String id = "Evidence::IsA::properties::id";
 			
@@ -413,12 +353,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsCharacterizedBy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsCharacterizedBy::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsCharacterizedBy::properties::id";
 			
 			
@@ -455,12 +389,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Person::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Person::properties::annotation";
-			
-			
 			public static String id = "Evidence::Person::properties::id";
 			
 			
@@ -496,12 +424,6 @@ public class EvidenceViewsRepository {
 	public static class Organization {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Organization::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Organization::properties::annotation";
-			
 			
 			public static String id = "Evidence::Organization::properties::id";
 			
@@ -542,12 +464,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::EvidenceContainer::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::EvidenceContainer::properties::annotation";
-			
-			
 			public static String id = "Evidence::EvidenceContainer::properties::id";
 			
 			
@@ -584,12 +500,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::EndTime::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::EndTime::properties::annotation";
-			
-			
 			public static String id = "Evidence::EndTime::properties::id";
 			
 			
@@ -619,12 +529,6 @@ public class EvidenceViewsRepository {
 	public static class Assertion {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Assertion::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Assertion::properties::annotation";
-			
 			
 			public static String id = "Evidence::Assertion::properties::id";
 			
@@ -665,12 +569,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Object::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Object::properties::annotation";
-			
-			
 			public static String id = "Evidence::Object::properties::id";
 			
 			
@@ -706,12 +604,6 @@ public class EvidenceViewsRepository {
 	public static class CompositeObject {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::CompositeObject::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::CompositeObject::properties::annotation";
-			
 			
 			public static String id = "Evidence::CompositeObject::properties::id";
 			
@@ -764,12 +656,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::StartTime::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::StartTime::properties::annotation";
-			
-			
 			public static String id = "Evidence::StartTime::properties::id";
 			
 			
@@ -799,12 +685,6 @@ public class EvidenceViewsRepository {
 	public static class Relevance {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Relevance::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Relevance::properties::annotation";
-			
 			
 			public static String id = "Evidence::Relevance::properties::id";
 			
@@ -836,12 +716,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Significance::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Significance::properties::annotation";
-			
-			
 			public static String id = "Evidence::Significance::properties::id";
 			
 			
@@ -872,12 +746,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Accuracy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Accuracy::properties::annotation";
-			
-			
 			public static String id = "Evidence::Accuracy::properties::id";
 			
 			
@@ -907,12 +775,6 @@ public class EvidenceViewsRepository {
 	public static class HasRoleIn {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::HasRoleIn::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::HasRoleIn::properties::annotation";
-			
 			
 			public static String id = "Evidence::HasRoleIn::properties::id";
 			
@@ -946,12 +808,6 @@ public class EvidenceViewsRepository {
 	public static class IsScopedBy {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::IsScopedBy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsScopedBy::properties::annotation";
-			
 			
 			public static String id = "Evidence::IsScopedBy::properties::id";
 			
@@ -989,12 +845,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::AtTime::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::AtTime::properties::annotation";
-			
-			
 			public static String id = "Evidence::AtTime::properties::id";
 			
 			
@@ -1024,12 +874,6 @@ public class EvidenceViewsRepository {
 	public static class Originality {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Originality::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Originality::properties::annotation";
-			
 			
 			public static String id = "Evidence::Originality::properties::id";
 			
@@ -1061,12 +905,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Reporting::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Reporting::properties::annotation";
-			
-			
 			public static String id = "Evidence::Reporting::properties::id";
 			
 			
@@ -1097,12 +935,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Reliability::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Reliability::properties::annotation";
-			
-			
 			public static String id = "Evidence::Reliability::properties::id";
 			
 			
@@ -1132,12 +964,6 @@ public class EvidenceViewsRepository {
 	public static class Supports {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Supports::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Supports::properties::annotation";
-			
 			
 			public static String id = "Evidence::Supports::properties::id";
 			
@@ -1175,12 +1001,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsGeneratedAt::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsGeneratedAt::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsGeneratedAt::properties::id";
 			
 			
@@ -1207,12 +1027,6 @@ public class EvidenceViewsRepository {
 	public static class Support {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Support::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Support::properties::annotation";
-			
 			
 			public static String id = "Evidence::Support::properties::id";
 			
@@ -1243,12 +1057,6 @@ public class EvidenceViewsRepository {
 	public static class Conflicts {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Conflicts::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Conflicts::properties::annotation";
-			
 			
 			public static String id = "Evidence::Conflicts::properties::id";
 			
@@ -1286,12 +1094,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Refutes::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Refutes::properties::annotation";
-			
-			
 			public static String id = "Evidence::Refutes::properties::id";
 			
 			
@@ -1324,12 +1126,6 @@ public class EvidenceViewsRepository {
 	public static class Negates {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Negates::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Negates::properties::annotation";
-			
 			
 			public static String id = "Evidence::Negates::properties::id";
 			
@@ -1364,12 +1160,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::UnknownObject::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::UnknownObject::properties::annotation";
-			
-			
 			public static String id = "Evidence::UnknownObject::properties::id";
 			
 			
@@ -1399,12 +1189,6 @@ public class EvidenceViewsRepository {
 	public static class Resolves {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Resolves::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Resolves::properties::annotation";
-			
 			
 			public static String id = "Evidence::Resolves::properties::id";
 			
@@ -1438,12 +1222,6 @@ public class EvidenceViewsRepository {
 	public static class EvidenceRequest {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::EvidenceRequest::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::EvidenceRequest::properties::annotation";
-			
 			
 			public static String id = "Evidence::EvidenceRequest::properties::id";
 			
@@ -1484,12 +1262,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::ProjectObjective::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ProjectObjective::properties::annotation";
-			
-			
 			public static String id = "Evidence::ProjectObjective::properties::id";
 			
 			
@@ -1525,12 +1297,6 @@ public class EvidenceViewsRepository {
 	public static class Activity {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Activity::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Activity::properties::annotation";
-			
 			
 			public static String id = "Evidence::Activity::properties::id";
 			
@@ -1568,12 +1334,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::DependsOn::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::DependsOn::properties::annotation";
-			
-			
 			public static String id = "Evidence::DependsOn::properties::id";
 			
 			
@@ -1604,12 +1364,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Satisfies::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Satisfies::properties::annotation";
-			
-			
 			public static String id = "Evidence::Satisfies::properties::id";
 			
 			
@@ -1639,12 +1393,6 @@ public class EvidenceViewsRepository {
 	public static class ReferencedClaim {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::ReferencedClaim::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ReferencedClaim::properties::annotation";
-			
 			
 			public static String id = "Evidence::ReferencedClaim::properties::id";
 			
@@ -1721,12 +1469,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Amplifies::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Amplifies::properties::annotation";
-			
-			
 			public static String id = "Evidence::Amplifies::properties::id";
 			
 			
@@ -1762,12 +1504,6 @@ public class EvidenceViewsRepository {
 	public static class Challenges {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Challenges::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Challenges::properties::annotation";
-			
 			
 			public static String id = "Evidence::Challenges::properties::id";
 			
@@ -1805,12 +1541,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::Strength::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Strength::properties::annotation";
-			
-			
 			public static String id = "Evidence::Strength::properties::id";
 			
 			
@@ -1841,12 +1571,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsAcquiredAt::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsAcquiredAt::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsAcquiredAt::properties::id";
 			
 			
@@ -1874,12 +1598,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsTransferredTo::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsTransferredTo::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsTransferredTo::properties::id";
 			
 			
@@ -1906,12 +1624,6 @@ public class EvidenceViewsRepository {
 	public static class OwnedBy {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::OwnedBy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::OwnedBy::properties::annotation";
-			
 			
 			public static String id = "Evidence::OwnedBy::properties::id";
 			
@@ -1943,12 +1655,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsPartOf::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsPartOf::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsPartOf::properties::id";
 			
 			
@@ -1979,12 +1685,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsRevokedAt::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsRevokedAt::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsRevokedAt::properties::id";
 			
 			
@@ -2011,12 +1711,6 @@ public class EvidenceViewsRepository {
 	public static class ProvidesContext {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::ProvidesContext::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ProvidesContext::properties::annotation";
-			
 			
 			public static String id = "Evidence::ProvidesContext::properties::id";
 			
@@ -2054,12 +1748,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::MeansThat::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::MeansThat::properties::annotation";
-			
-			
 			public static String id = "Evidence::MeansThat::properties::id";
 			
 			
@@ -2096,12 +1784,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::CareOf::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::CareOf::properties::annotation";
-			
-			
 			public static String id = "Evidence::CareOf::properties::id";
 			
 			
@@ -2131,12 +1813,6 @@ public class EvidenceViewsRepository {
 	public static class AtLocation {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::AtLocation::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::AtLocation::properties::annotation";
-			
 			
 			public static String id = "Evidence::AtLocation::properties::id";
 			
@@ -2168,12 +1844,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsCreatedAt::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsCreatedAt::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsCreatedAt::properties::id";
 			
 			
@@ -2200,12 +1870,6 @@ public class EvidenceViewsRepository {
 	public static class RequiresContainer {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::RequiresContainer::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::RequiresContainer::properties::annotation";
-			
 			
 			public static String id = "Evidence::RequiresContainer::properties::id";
 			
@@ -2236,12 +1900,6 @@ public class EvidenceViewsRepository {
 	public static class Service {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Service::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Service::properties::annotation";
-			
 			
 			public static String id = "Evidence::Service::properties::id";
 			
@@ -2279,12 +1937,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::HasElectronicSource::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::HasElectronicSource::properties::annotation";
-			
-			
 			public static String id = "Evidence::HasElectronicSource::properties::id";
 			
 			
@@ -2321,12 +1973,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsExpressedInLanguage::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsExpressedInLanguage::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsExpressedInLanguage::properties::id";
 			
 			
@@ -2360,12 +2006,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::UsingProcess::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::UsingProcess::properties::annotation";
-			
-			
 			public static String id = "Evidence::UsingProcess::properties::id";
 			
 			
@@ -2395,12 +2035,6 @@ public class EvidenceViewsRepository {
 	public static class HasSecurityClassification {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::HasSecurityClassification::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::HasSecurityClassification::properties::annotation";
-			
 			
 			public static String id = "Evidence::HasSecurityClassification::properties::id";
 			
@@ -2432,12 +2066,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsReleaseableTo::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsReleaseableTo::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsReleaseableTo::properties::id";
 			
 			
@@ -2467,12 +2095,6 @@ public class EvidenceViewsRepository {
 	public static class EvidenceGroup {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::EvidenceGroup::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::EvidenceGroup::properties::annotation";
-			
 			
 			public static String id = "Evidence::EvidenceGroup::properties::id";
 			
@@ -2507,12 +2129,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::HasVersion::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::HasVersion::properties::annotation";
-			
-			
 			public static String id = "Evidence::HasVersion::properties::id";
 			
 			
@@ -2543,12 +2159,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::HasMedia::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::HasMedia::properties::annotation";
-			
-			
 			public static String id = "Evidence::HasMedia::properties::id";
 			
 			
@@ -2578,12 +2188,6 @@ public class EvidenceViewsRepository {
 	public static class Exhibit {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Exhibit::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Exhibit::properties::annotation";
-			
 			
 			public static String id = "Evidence::Exhibit::properties::id";
 			
@@ -2621,12 +2225,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::ExtendedEvidenceAttribute::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ExtendedEvidenceAttribute::properties::annotation";
-			
-			
 			public static String id = "Evidence::ExtendedEvidenceAttribute::properties::id";
 			
 			
@@ -2654,12 +2252,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::ExtendedDocumentProperty::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ExtendedDocumentProperty::properties::annotation";
-			
-			
 			public static String id = "Evidence::ExtendedDocumentProperty::properties::id";
 			
 			
@@ -2686,12 +2278,6 @@ public class EvidenceViewsRepository {
 	public static class Record {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::Record::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::Record::properties::annotation";
-			
 			
 			public static String id = "Evidence::Record::properties::id";
 			
@@ -2726,12 +2312,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::ObjectifiedAssertion::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ObjectifiedAssertion::properties::annotation";
-			
-			
 			public static String id = "Evidence::ObjectifiedAssertion::properties::id";
 			
 			
@@ -2765,12 +2345,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::IsModifiedBy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::IsModifiedBy::properties::annotation";
-			
-			
 			public static String id = "Evidence::IsModifiedBy::properties::id";
 			
 			
@@ -2797,12 +2371,6 @@ public class EvidenceViewsRepository {
 	public static class PerformedBy {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::PerformedBy::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::PerformedBy::properties::annotation";
-			
 			
 			public static String id = "Evidence::PerformedBy::properties::id";
 			
@@ -2834,12 +2402,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::ContainerConsistency::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ContainerConsistency::properties::annotation";
-			
-			
 			public static String id = "Evidence::ContainerConsistency::properties::id";
 			
 			
@@ -2869,12 +2431,6 @@ public class EvidenceViewsRepository {
 	public static class ContainerCompleteness {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::ContainerCompleteness::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ContainerCompleteness::properties::annotation";
-			
 			
 			public static String id = "Evidence::ContainerCompleteness::properties::id";
 			
@@ -2906,12 +2462,6 @@ public class EvidenceViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Evidence::CompliesTo::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::CompliesTo::properties::annotation";
-			
-			
 			public static String id = "Evidence::CompliesTo::properties::id";
 			
 			
@@ -2941,12 +2491,6 @@ public class EvidenceViewsRepository {
 	public static class ExtendedProjectProperty {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Evidence::ExtendedProjectProperty::properties::taggedValue";
-			
-			
-			public static String annotation = "Evidence::ExtendedProjectProperty::properties::annotation";
-			
 			
 			public static String id = "Evidence::ExtendedProjectProperty::properties::id";
 			

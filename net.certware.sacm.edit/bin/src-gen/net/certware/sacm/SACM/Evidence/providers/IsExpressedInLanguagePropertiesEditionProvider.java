@@ -8,7 +8,7 @@ import net.certware.sacm.SACM.Evidence.IsExpressedInLanguage;
 
 import net.certware.sacm.SACM.Evidence.components.IsExpressedInLanguageBasePropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsExpressedInLanguageNotesPropertiesEditionComponent;
-
+import net.certware.sacm.SACM.Evidence.components.IsExpressedInLanguagePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -82,6 +82,18 @@ public class IsExpressedInLanguagePropertiesEditionProvider extends PropertiesEd
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
 		return (editingContext.getEObject() instanceof IsExpressedInLanguage) && ((IsExpressedInLanguageBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsExpressedInLanguageBasePropertiesEditionComponent.class) || (IsExpressedInLanguageNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsExpressedInLanguageNotesPropertiesEditionComponent.class));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
+	 * 
+	 */
+	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
+		if (editingContext.getEObject() instanceof IsExpressedInLanguage) {
+			return new IsExpressedInLanguagePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+		}
+		return super.getPropertiesEditingComponent(editingContext, mode);
 	}
 
 	/**

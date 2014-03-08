@@ -74,12 +74,6 @@ import org.eclipse.swt.widgets.Text;
  */
 public class ObjectPropertiesEditionPartImpl extends CompositePropertiesEditionPart implements ISWTPropertiesEditionPart, ObjectPropertiesEditionPart {
 
-	protected ReferencesTable taggedValue;
-	protected List<ViewerFilter> taggedValueBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> taggedValueFilters = new ArrayList<ViewerFilter>();
-	protected ReferencesTable annotation;
-	protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
-	protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
 	protected Text id;
 	protected ReferencesTable timing;
 	protected List<ViewerFilter> timingBusinessFilters = new ArrayList<ViewerFilter>();
@@ -134,8 +128,6 @@ public class ObjectPropertiesEditionPartImpl extends CompositePropertiesEditionP
 	public void createControls(Composite view) { 
 		CompositionSequence objectStep = new BindingCompositionSequence(propertiesEditionComponent);
 		CompositionStep propertiesStep = objectStep.addStep(EvidenceViewsRepository.Object.Properties.class);
-		propertiesStep.addStep(EvidenceViewsRepository.Object.Properties.taggedValue);
-		propertiesStep.addStep(EvidenceViewsRepository.Object.Properties.annotation);
 		propertiesStep.addStep(EvidenceViewsRepository.Object.Properties.id);
 		propertiesStep.addStep(EvidenceViewsRepository.Object.Properties.timing);
 		propertiesStep.addStep(EvidenceViewsRepository.Object.Properties.custody);
@@ -152,12 +144,6 @@ public class ObjectPropertiesEditionPartImpl extends CompositePropertiesEditionP
 			public Composite addToPart(Composite parent, Object key) {
 				if (key == EvidenceViewsRepository.Object.Properties.class) {
 					return createPropertiesGroup(parent);
-				}
-				if (key == EvidenceViewsRepository.Object.Properties.taggedValue) {
-					return createTaggedValueAdvancedTableComposition(parent);
-				}
-				if (key == EvidenceViewsRepository.Object.Properties.annotation) {
-					return createAnnotationAdvancedTableComposition(parent);
 				}
 				if (key == EvidenceViewsRepository.Object.Properties.id) {
 					return createIdText(parent);
@@ -202,108 +188,6 @@ public class ObjectPropertiesEditionPartImpl extends CompositePropertiesEditionP
 		propertiesGroupLayout.numColumns = 3;
 		propertiesGroup.setLayout(propertiesGroupLayout);
 		return propertiesGroup;
-	}
-
-	/**
-	 * @param container
-	 * 
-	 */
-	protected Composite createTaggedValueAdvancedTableComposition(Composite parent) {
-		this.taggedValue = new ReferencesTable(getDescription(EvidenceViewsRepository.Object.Properties.taggedValue, EvidenceMessages.ObjectPropertiesEditionPart_TaggedValueLabel), new ReferencesTableListener() {
-			public void handleAdd() { 
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.taggedValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
-				taggedValue.refresh();
-			}
-			public void handleEdit(EObject element) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.taggedValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
-				taggedValue.refresh();
-			}
-			public void handleMove(EObject element, int oldIndex, int newIndex) { 
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.taggedValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
-				taggedValue.refresh();
-			}
-			public void handleRemove(EObject element) { 
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.taggedValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
-				taggedValue.refresh();
-			}
-			public void navigateTo(EObject element) { }
-		});
-		for (ViewerFilter filter : this.taggedValueFilters) {
-			this.taggedValue.addFilter(filter);
-		}
-		this.taggedValue.setHelpText(propertiesEditionComponent.getHelpContent(EvidenceViewsRepository.Object.Properties.taggedValue, EvidenceViewsRepository.SWT_KIND));
-		this.taggedValue.createControls(parent);
-		this.taggedValue.addSelectionListener(new SelectionAdapter() {
-			
-			public void widgetSelected(SelectionEvent e) {
-				if (e.item != null && e.item.getData() instanceof EObject) {
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.taggedValue, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
-				}
-			}
-			
-		});
-		GridData taggedValueData = new GridData(GridData.FILL_HORIZONTAL);
-		taggedValueData.horizontalSpan = 3;
-		this.taggedValue.setLayoutData(taggedValueData);
-		this.taggedValue.setLowerBound(0);
-		this.taggedValue.setUpperBound(-1);
-		taggedValue.setID(EvidenceViewsRepository.Object.Properties.taggedValue);
-		taggedValue.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-		// Start of user code for createTaggedValueAdvancedTableComposition
-
-		// End of user code
-		return parent;
-	}
-
-	/**
-	 * @param container
-	 * 
-	 */
-	protected Composite createAnnotationAdvancedTableComposition(Composite parent) {
-		this.annotation = new ReferencesTable(getDescription(EvidenceViewsRepository.Object.Properties.annotation, EvidenceMessages.ObjectPropertiesEditionPart_AnnotationLabel), new ReferencesTableListener() {
-			public void handleAdd() { 
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
-				annotation.refresh();
-			}
-			public void handleEdit(EObject element) {
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.EDIT, null, element));
-				annotation.refresh();
-			}
-			public void handleMove(EObject element, int oldIndex, int newIndex) { 
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.MOVE, element, newIndex));
-				annotation.refresh();
-			}
-			public void handleRemove(EObject element) { 
-				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.annotation, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.REMOVE, null, element));
-				annotation.refresh();
-			}
-			public void navigateTo(EObject element) { }
-		});
-		for (ViewerFilter filter : this.annotationFilters) {
-			this.annotation.addFilter(filter);
-		}
-		this.annotation.setHelpText(propertiesEditionComponent.getHelpContent(EvidenceViewsRepository.Object.Properties.annotation, EvidenceViewsRepository.SWT_KIND));
-		this.annotation.createControls(parent);
-		this.annotation.addSelectionListener(new SelectionAdapter() {
-			
-			public void widgetSelected(SelectionEvent e) {
-				if (e.item != null && e.item.getData() instanceof EObject) {
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ObjectPropertiesEditionPartImpl.this, EvidenceViewsRepository.Object.Properties.annotation, PropertiesEditionEvent.CHANGE, PropertiesEditionEvent.SELECTION_CHANGED, null, e.item.getData()));
-				}
-			}
-			
-		});
-		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
-		annotationData.horizontalSpan = 3;
-		this.annotation.setLayoutData(annotationData);
-		this.annotation.setLowerBound(0);
-		this.annotation.setUpperBound(-1);
-		annotation.setID(EvidenceViewsRepository.Object.Properties.annotation);
-		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
-		// Start of user code for createAnnotationAdvancedTableComposition
-
-		// End of user code
-		return parent;
 	}
 
 	
@@ -694,138 +578,6 @@ public class ObjectPropertiesEditionPartImpl extends CompositePropertiesEditionP
 		// Start of user code for tab synchronization
 		
 		// End of user code
-	}
-
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#initTaggedValue(EObject current, EReference containingFeature, EReference feature)
-	 */
-	public void initTaggedValue(ReferencesTableSettings settings) {
-		if (current.eResource() != null && current.eResource().getResourceSet() != null)
-			this.resourceSet = current.eResource().getResourceSet();
-		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
-		taggedValue.setContentProvider(contentProvider);
-		taggedValue.setInput(settings);
-		boolean eefElementEditorReadOnlyState = isReadOnly(EvidenceViewsRepository.Object.Properties.taggedValue);
-		if (eefElementEditorReadOnlyState && taggedValue.isEnabled()) {
-			taggedValue.setEnabled(false);
-			taggedValue.setToolTipText(EvidenceMessages.Object_ReadOnly);
-		} else if (!eefElementEditorReadOnlyState && !taggedValue.isEnabled()) {
-			taggedValue.setEnabled(true);
-		}	
-		
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#updateTaggedValue()
-	 * 
-	 */
-	public void updateTaggedValue() {
-	taggedValue.refresh();
-}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#addFilterTaggedValue(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToTaggedValue(ViewerFilter filter) {
-		taggedValueFilters.add(filter);
-		if (this.taggedValue != null) {
-			this.taggedValue.addFilter(filter);
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#addBusinessFilterTaggedValue(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToTaggedValue(ViewerFilter filter) {
-		taggedValueBusinessFilters.add(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#isContainedInTaggedValueTable(EObject element)
-	 * 
-	 */
-	public boolean isContainedInTaggedValueTable(EObject element) {
-		return ((ReferencesTableSettings)taggedValue.getInput()).contains(element);
-	}
-
-
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#initAnnotation(EObject current, EReference containingFeature, EReference feature)
-	 */
-	public void initAnnotation(ReferencesTableSettings settings) {
-		if (current.eResource() != null && current.eResource().getResourceSet() != null)
-			this.resourceSet = current.eResource().getResourceSet();
-		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
-		annotation.setContentProvider(contentProvider);
-		annotation.setInput(settings);
-		boolean eefElementEditorReadOnlyState = isReadOnly(EvidenceViewsRepository.Object.Properties.annotation);
-		if (eefElementEditorReadOnlyState && annotation.isEnabled()) {
-			annotation.setEnabled(false);
-			annotation.setToolTipText(EvidenceMessages.Object_ReadOnly);
-		} else if (!eefElementEditorReadOnlyState && !annotation.isEnabled()) {
-			annotation.setEnabled(true);
-		}	
-		
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#updateAnnotation()
-	 * 
-	 */
-	public void updateAnnotation() {
-	annotation.refresh();
-}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#addFilterAnnotation(ViewerFilter filter)
-	 * 
-	 */
-	public void addFilterToAnnotation(ViewerFilter filter) {
-		annotationFilters.add(filter);
-		if (this.annotation != null) {
-			this.annotation.addFilter(filter);
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#addBusinessFilterAnnotation(ViewerFilter filter)
-	 * 
-	 */
-	public void addBusinessFilterToAnnotation(ViewerFilter filter) {
-		annotationBusinessFilters.add(filter);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart#isContainedInAnnotationTable(EObject element)
-	 * 
-	 */
-	public boolean isContainedInAnnotationTable(EObject element) {
-		return ((ReferencesTableSettings)annotation.getInput()).contains(element);
 	}
 
 	/**

@@ -2,9 +2,7 @@
 package net.certware.sacm.SACM.Evidence.components;
 
 // Start of user code for imports
-import net.certware.sacm.SACM.Annotation;
 import net.certware.sacm.SACM.SACMPackage;
-import net.certware.sacm.SACM.TaggedValue;
 import net.certware.sacm.SACM.Evidence.CustodyProperty;
 import net.certware.sacm.SACM.Evidence.EvidenceEvent;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
@@ -177,7 +175,7 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
    *      org.eclipse.emf.ecore.resource.ResourceSet)
    * 
    */
-/*  
+  /*
   public void initPart(java.lang.Object key, int kind, EObject element, ResourceSet allResource) {
     if (key == EvidenceViewsRepository.Object.class) {
       super.initPart(key, kind, element, allResource);
@@ -186,7 +184,6 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
       super.initPart(key, kind, element, allResource);
     }
   }
-  TODO unknown effectiveness of fix
 */
 
   /**
@@ -194,7 +191,7 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * 
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
-	 * @generated NOT
+	 * @generated
 	 */
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
@@ -205,15 +202,6 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 			net.certware.sacm.SACM.Evidence.Object object = (net.certware.sacm.SACM.Evidence.Object) elt;
 					
 			final ObjectPropertiesEditionPart basePart = (ObjectPropertiesEditionPart)editingPart;
-			// init values
-			if (isAccessible(EvidenceViewsRepository.Object.Properties.taggedValue)) {
-				taggedValueSettings = new ReferencesTableSettings(object, SACMPackage.eINSTANCE.getModelElement_TaggedValue());
-				basePart.initTaggedValue(taggedValueSettings);
-			}
-			if (isAccessible(EvidenceViewsRepository.Object.Properties.annotation)) {
-				annotationSettings = new ReferencesTableSettings(object, SACMPackage.eINSTANCE.getModelElement_Annotation());
-				basePart.initAnnotation(annotationSettings);
-			}
 			if (isAccessible(EvidenceViewsRepository.Object.Properties.id))
 				basePart.setId(EEFConverterUtil.convertToString(SACMPackage.Literals.STRING, ((ObjectPropertiesEditionPart) object).getId()));
 			
@@ -245,37 +233,6 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 				basePart.initDefinition(definitionSettings);
 				// set the button mode
 				basePart.setDefinitionButtonMode(ButtonsModeEnum.BROWSE);
-			}
-			// init filters
-			if (isAccessible(EvidenceViewsRepository.Object.Properties.taggedValue)) {
-				basePart.addFilterToTaggedValue(new ViewerFilter() {
-					/**
-					 * {@inheritDoc}
-					 * 
-					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-					 */
-					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
-					}
-			
-				});
-				// Start of user code for additional businessfilters for taggedValue
-				// End of user code
-			}
-			if (isAccessible(EvidenceViewsRepository.Object.Properties.annotation)) {
-				basePart.addFilterToAnnotation(new ViewerFilter() {
-					/**
-					 * {@inheritDoc}
-					 * 
-					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-					 */
-					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return (element instanceof String && element.equals("")) || (element instanceof Annotation); //$NON-NLS-1$ 
-					}
-			
-				});
-				// Start of user code for additional businessfilters for annotation
-				// End of user code
 			}
 			
 			if (isAccessible(EvidenceViewsRepository.Object.Properties.timing)) {
@@ -381,12 +338,6 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
-		if (editorKey == EvidenceViewsRepository.Object.Properties.taggedValue) {
-			return SACMPackage.eINSTANCE.getModelElement_TaggedValue();
-		}
-		if (editorKey == EvidenceViewsRepository.Object.Properties.annotation) {
-			return SACMPackage.eINSTANCE.getModelElement_Annotation();
-		}
 		if (editorKey == EvidenceViewsRepository.Object.Properties.id) {
 			return SACMPackage.eINSTANCE.getModelElement_Id();
 		}
@@ -417,60 +368,10 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
-	 * @generated NOT
+	 * @generated
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Object object = (Object)semanticObject;
-		if (EvidenceViewsRepository.Object.Properties.taggedValue == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.ADD) {
-				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, taggedValueSettings, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy instanceof CreateEditingPolicy) {
-						policy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
-				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
-					if (editionPolicy != null) {
-						editionPolicy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
-				taggedValueSettings.removeFromReference((EObject) event.getNewValue());
-			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
-				taggedValueSettings.move(event.getNewIndex(), (TaggedValue) event.getNewValue());
-			}
-		}
-		if (EvidenceViewsRepository.Object.Properties.annotation == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.ADD) {
-				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, annotationSettings, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy instanceof CreateEditingPolicy) {
-						policy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
-				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
-					if (editionPolicy != null) {
-						editionPolicy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
-				annotationSettings.removeFromReference((EObject) event.getNewValue());
-			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
-				annotationSettings.move(event.getNewIndex(), (Annotation) event.getNewValue());
-			}
-		}
 		if (EvidenceViewsRepository.Object.Properties.id == event.getAffectedEditor()) {
 			((ObjectPropertiesEditionPart) object).setId((java.lang.String)EEFConverterUtil.createFromString(SACMPackage.Literals.STRING, (String)event.getNewValue()));
 		}
@@ -606,10 +507,6 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			ObjectPropertiesEditionPart basePart = (ObjectPropertiesEditionPart)editingPart;
-			if (SACMPackage.eINSTANCE.getModelElement_TaggedValue().equals(msg.getFeature()) && isAccessible(EvidenceViewsRepository.Object.Properties.taggedValue))
-				basePart.updateTaggedValue();
-			if (SACMPackage.eINSTANCE.getModelElement_Annotation().equals(msg.getFeature()) && isAccessible(EvidenceViewsRepository.Object.Properties.annotation))
-				basePart.updateAnnotation();
 			if (SACMPackage.eINSTANCE.getModelElement_Id().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(EvidenceViewsRepository.Object.Properties.id)) {
 				if (msg.getNewValue() != null) {
 					basePart.setId(EcoreUtil.convertToString(SACMPackage.Literals.STRING, msg.getNewValue()));

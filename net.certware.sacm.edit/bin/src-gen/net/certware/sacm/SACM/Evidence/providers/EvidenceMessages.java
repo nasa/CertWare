@@ -725,12 +725,6 @@ public class EvidenceMessages extends NLS {
 
 
 	
-	public static String ConsistencyPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ConsistencyPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ConsistencyPropertiesEditionPart_IdLabel;
 
 	
@@ -749,12 +743,6 @@ public class EvidenceMessages extends NLS {
 	public static String ConsistencyPropertiesEditionPart_ValueLabel;
 
 	
-	public static String CompletenessPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String CompletenessPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String CompletenessPropertiesEditionPart_IdLabel;
 
 	
@@ -771,12 +759,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String CompletenessPropertiesEditionPart_StatusLabel;
-
-	
-	public static String DocumentPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String DocumentPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String DocumentPropertiesEditionPart_IdLabel;
@@ -809,12 +791,6 @@ public class EvidenceMessages extends NLS {
 	public static String DocumentPropertiesEditionPart_CitationLabel;
 
 	
-	public static String ConfidencePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ConfidencePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ConfidencePropertiesEditionPart_IdLabel;
 
 	
@@ -831,12 +807,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ConfidencePropertiesEditionPart_ValueLabel;
-
-	
-	public static String ApprovedByPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ApprovedByPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ApprovedByPropertiesEditionPart_IdLabel;
@@ -857,12 +827,6 @@ public class EvidenceMessages extends NLS {
 	public static String ApprovedByPropertiesEditionPart_SupervisorLabel;
 
 	
-	public static String CreatedByPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String CreatedByPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String CreatedByPropertiesEditionPart_IdLabel;
 
 	
@@ -879,12 +843,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String CreatedByPropertiesEditionPart_SourceLabel;
-
-	
-	public static String ToolPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ToolPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ToolPropertiesEditionPart_IdLabel;
@@ -914,12 +872,6 @@ public class EvidenceMessages extends NLS {
 	public static String ToolPropertiesEditionPart_VersionLabel;
 
 	
-	public static String MethodPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String MethodPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String MethodPropertiesEditionPart_IdLabel;
 
 	
@@ -944,12 +896,6 @@ public class EvidenceMessages extends NLS {
 	public static String MethodPropertiesEditionPart_PropertyLabel;
 
 	
-	public static String IsBasedOnPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsBasedOnPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsBasedOnPropertiesEditionPart_IdLabel;
 
 	
@@ -966,12 +912,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String IsBasedOnPropertiesEditionPart_SourceLabel;
-
-	
-	public static String IsAPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsAPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String IsAPropertiesEditionPart_IdLabel;
@@ -998,12 +938,6 @@ public class EvidenceMessages extends NLS {
 	public static String IsAPropertiesEditionPart_DefinitionLabel;
 
 	
-	public static String IsCharacterizedByPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsCharacterizedByPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsCharacterizedByPropertiesEditionPart_IdLabel;
 
 	
@@ -1028,12 +962,6 @@ public class EvidenceMessages extends NLS {
 	public static String IsCharacterizedByPropertiesEditionPart_AssertionLabel;
 
 	
-	public static String PersonPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String PersonPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String PersonPropertiesEditionPart_IdLabel;
 
 	
@@ -1056,12 +984,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String PersonPropertiesEditionPart_PropertyLabel;
-
-	
-	public static String OrganizationPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String OrganizationPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String OrganizationPropertiesEditionPart_IdLabel;
@@ -1091,12 +1013,6 @@ public class EvidenceMessages extends NLS {
 	public static String OrganizationPropertiesEditionPart_AddressLabel;
 
 	
-	public static String EvidenceContainerPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String EvidenceContainerPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String EvidenceContainerPropertiesEditionPart_IdLabel;
 
 	
@@ -1121,12 +1037,6 @@ public class EvidenceMessages extends NLS {
 	public static String EvidenceContainerPropertiesEditionPart_ElementLabel;
 
 	
-	public static String EndTimePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String EndTimePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String EndTimePropertiesEditionPart_IdLabel;
 
 	
@@ -1143,12 +1053,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String EndTimePropertiesEditionPart_DatetimeLabel;
-
-	
-	public static String AssertionPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AssertionPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String AssertionPropertiesEditionPart_IdLabel;
@@ -1178,12 +1082,6 @@ public class EvidenceMessages extends NLS {
 	public static String AssertionPropertiesEditionPart_DefinitionLabel;
 
 	
-	public static String ObjectPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ObjectPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ObjectPropertiesEditionPart_IdLabel;
 
 	
@@ -1206,12 +1104,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ObjectPropertiesEditionPart_DefinitionLabel;
-
-	
-	public static String CompositeObjectPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String CompositeObjectPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String CompositeObjectPropertiesEditionPart_IdLabel;
@@ -1241,12 +1133,6 @@ public class EvidenceMessages extends NLS {
 	public static String RoleBindingPropertiesEditionPart_SubjectLabel;
 
 	
-	public static String StartTimePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String StartTimePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String StartTimePropertiesEditionPart_IdLabel;
 
 	
@@ -1263,12 +1149,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String StartTimePropertiesEditionPart_DatetimeLabel;
-
-	
-	public static String RelevancePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String RelevancePropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String RelevancePropertiesEditionPart_IdLabel;
@@ -1289,12 +1169,6 @@ public class EvidenceMessages extends NLS {
 	public static String RelevancePropertiesEditionPart_ValueLabel;
 
 	
-	public static String SignificancePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String SignificancePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String SignificancePropertiesEditionPart_IdLabel;
 
 	
@@ -1313,12 +1187,6 @@ public class EvidenceMessages extends NLS {
 	public static String SignificancePropertiesEditionPart_ValueLabel;
 
 	
-	public static String AccuracyPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AccuracyPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String AccuracyPropertiesEditionPart_IdLabel;
 
 	
@@ -1335,12 +1203,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String AccuracyPropertiesEditionPart_ValueLabel;
-
-	
-	public static String HasRoleInPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String HasRoleInPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String HasRoleInPropertiesEditionPart_IdLabel;
@@ -1362,12 +1224,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String HasRoleInPropertiesEditionPart_OrganizationLabel;
-
-	
-	public static String IsScopedByPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsScopedByPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String IsScopedByPropertiesEditionPart_IdLabel;
@@ -1394,12 +1250,6 @@ public class EvidenceMessages extends NLS {
 	public static String IsScopedByPropertiesEditionPart_ScopeLabel;
 
 	
-	public static String AtTimePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AtTimePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String AtTimePropertiesEditionPart_IdLabel;
 
 	
@@ -1416,12 +1266,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String AtTimePropertiesEditionPart_DateTtimeLabel;
-
-	
-	public static String OriginalityPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String OriginalityPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String OriginalityPropertiesEditionPart_IdLabel;
@@ -1442,12 +1286,6 @@ public class EvidenceMessages extends NLS {
 	public static String OriginalityPropertiesEditionPart_ValueLabel;
 
 	
-	public static String ReportingPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ReportingPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ReportingPropertiesEditionPart_IdLabel;
 
 	
@@ -1466,12 +1304,6 @@ public class EvidenceMessages extends NLS {
 	public static String ReportingPropertiesEditionPart_ValueLabel;
 
 	
-	public static String ReliabilityPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ReliabilityPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ReliabilityPropertiesEditionPart_IdLabel;
 
 	
@@ -1488,12 +1320,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ReliabilityPropertiesEditionPart_ValueLabel;
-
-	
-	public static String SupportsPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String SupportsPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String SupportsPropertiesEditionPart_IdLabel;
@@ -1520,12 +1346,6 @@ public class EvidenceMessages extends NLS {
 	public static String SupportsPropertiesEditionPart_SubjectLabel;
 
 	
-	public static String IsGeneratedAtPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsGeneratedAtPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsGeneratedAtPropertiesEditionPart_IdLabel;
 
 	
@@ -1539,12 +1359,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String IsGeneratedAtPropertiesEditionPart_EventLabel;
-
-	
-	public static String SupportPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String SupportPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String SupportPropertiesEditionPart_IdLabel;
@@ -1563,12 +1377,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String SupportPropertiesEditionPart_ValueLabel;
-
-	
-	public static String ConflictsPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ConflictsPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ConflictsPropertiesEditionPart_IdLabel;
@@ -1595,12 +1403,6 @@ public class EvidenceMessages extends NLS {
 	public static String ConflictsPropertiesEditionPart_SubjectLabel;
 
 	
-	public static String RefutesPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String RefutesPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String RefutesPropertiesEditionPart_IdLabel;
 
 	
@@ -1620,12 +1422,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String RefutesPropertiesEditionPart_ElementLabel;
-
-	
-	public static String NegatesPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String NegatesPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String NegatesPropertiesEditionPart_IdLabel;
@@ -1649,12 +1445,6 @@ public class EvidenceMessages extends NLS {
 	public static String NegatesPropertiesEditionPart_ElementLabel;
 
 	
-	public static String UnknownObjectPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String UnknownObjectPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String UnknownObjectPropertiesEditionPart_IdLabel;
 
 	
@@ -1671,12 +1461,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String UnknownObjectPropertiesEditionPart_NameLabel;
-
-	
-	public static String ResolvesPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ResolvesPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ResolvesPropertiesEditionPart_IdLabel;
@@ -1698,12 +1482,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ResolvesPropertiesEditionPart_ElementLabel;
-
-	
-	public static String EvidenceRequestPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String EvidenceRequestPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String EvidenceRequestPropertiesEditionPart_IdLabel;
@@ -1733,12 +1511,6 @@ public class EvidenceMessages extends NLS {
 	public static String EvidenceRequestPropertiesEditionPart_ItemLabel;
 
 	
-	public static String ProjectObjectivePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ProjectObjectivePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ProjectObjectivePropertiesEditionPart_IdLabel;
 
 	
@@ -1761,12 +1533,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ProjectObjectivePropertiesEditionPart_PropertyLabel;
-
-	
-	public static String ActivityPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ActivityPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ActivityPropertiesEditionPart_IdLabel;
@@ -1793,12 +1559,6 @@ public class EvidenceMessages extends NLS {
 	public static String ActivityPropertiesEditionPart_PropertyLabel;
 
 	
-	public static String DependsOnPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String DependsOnPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String DependsOnPropertiesEditionPart_IdLabel;
 
 	
@@ -1817,12 +1577,6 @@ public class EvidenceMessages extends NLS {
 	public static String DependsOnPropertiesEditionPart_ElementLabel;
 
 	
-	public static String SatisfiesPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String SatisfiesPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String SatisfiesPropertiesEditionPart_IdLabel;
 
 	
@@ -1839,12 +1593,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String SatisfiesPropertiesEditionPart_ElementLabel;
-
-	
-	public static String ReferencedClaimPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ReferencedClaimPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ReferencedClaimPropertiesEditionPart_IdLabel;
@@ -1898,12 +1646,6 @@ public class EvidenceMessages extends NLS {
 	public static String WeakensPropertiesEditionPart_RelationLabel;
 
 	
-	public static String AmplifiesPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AmplifiesPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String AmplifiesPropertiesEditionPart_IdLabel;
 
 	
@@ -1926,12 +1668,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String AmplifiesPropertiesEditionPart_RelationLabel;
-
-	
-	public static String ChallengesPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ChallengesPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ChallengesPropertiesEditionPart_IdLabel;
@@ -1958,12 +1694,6 @@ public class EvidenceMessages extends NLS {
 	public static String ChallengesPropertiesEditionPart_SubjectLabel;
 
 	
-	public static String StrengthPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String StrengthPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String StrengthPropertiesEditionPart_IdLabel;
 
 	
@@ -1982,12 +1712,6 @@ public class EvidenceMessages extends NLS {
 	public static String StrengthPropertiesEditionPart_ValueLabel;
 
 	
-	public static String IsAcquiredAtPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsAcquiredAtPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsAcquiredAtPropertiesEditionPart_IdLabel;
 
 	
@@ -2003,12 +1727,6 @@ public class EvidenceMessages extends NLS {
 	public static String IsAcquiredAtPropertiesEditionPart_EventLabel;
 
 	
-	public static String IsTransferredToPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsTransferredToPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsTransferredToPropertiesEditionPart_IdLabel;
 
 	
@@ -2022,12 +1740,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String IsTransferredToPropertiesEditionPart_EventLabel;
-
-	
-	public static String OwnedByPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String OwnedByPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String OwnedByPropertiesEditionPart_IdLabel;
@@ -2048,12 +1760,6 @@ public class EvidenceMessages extends NLS {
 	public static String OwnedByPropertiesEditionPart_OwnerLabel;
 
 	
-	public static String IsPartOfPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsPartOfPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsPartOfPropertiesEditionPart_IdLabel;
 
 	
@@ -2072,12 +1778,6 @@ public class EvidenceMessages extends NLS {
 	public static String IsPartOfPropertiesEditionPart_WholeLabel;
 
 	
-	public static String IsRevokedAtPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsRevokedAtPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsRevokedAtPropertiesEditionPart_IdLabel;
 
 	
@@ -2091,12 +1791,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String IsRevokedAtPropertiesEditionPart_EventLabel;
-
-	
-	public static String ProvidesContextPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ProvidesContextPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ProvidesContextPropertiesEditionPart_IdLabel;
@@ -2123,12 +1817,6 @@ public class EvidenceMessages extends NLS {
 	public static String ProvidesContextPropertiesEditionPart_ContextLabel;
 
 	
-	public static String MeansThatPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String MeansThatPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String MeansThatPropertiesEditionPart_IdLabel;
 
 	
@@ -2153,12 +1841,6 @@ public class EvidenceMessages extends NLS {
 	public static String MeansThatPropertiesEditionPart_MeaningLabel;
 
 	
-	public static String CareOfPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String CareOfPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String CareOfPropertiesEditionPart_IdLabel;
 
 	
@@ -2175,12 +1857,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String CareOfPropertiesEditionPart_CustodianLabel;
-
-	
-	public static String AtLocationPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AtLocationPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String AtLocationPropertiesEditionPart_IdLabel;
@@ -2201,12 +1877,6 @@ public class EvidenceMessages extends NLS {
 	public static String AtLocationPropertiesEditionPart_LocationLabel;
 
 	
-	public static String IsCreatedAtPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsCreatedAtPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsCreatedAtPropertiesEditionPart_IdLabel;
 
 	
@@ -2220,12 +1890,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String IsCreatedAtPropertiesEditionPart_EventLabel;
-
-	
-	public static String RequiresContainerPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String RequiresContainerPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String RequiresContainerPropertiesEditionPart_IdLabel;
@@ -2244,12 +1908,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String RequiresContainerPropertiesEditionPart_ContainerLabel;
-
-	
-	public static String ServicePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ServicePropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ServicePropertiesEditionPart_IdLabel;
@@ -2276,12 +1934,6 @@ public class EvidenceMessages extends NLS {
 	public static String ServicePropertiesEditionPart_PropertyLabel;
 
 	
-	public static String HasElectronicSourcePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String HasElectronicSourcePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String HasElectronicSourcePropertiesEditionPart_IdLabel;
 
 	
@@ -2306,12 +1958,6 @@ public class EvidenceMessages extends NLS {
 	public static String HasElectronicSourcePropertiesEditionPart_FileSizeLabel;
 
 	
-	public static String IsExpressedInLanguagePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsExpressedInLanguagePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsExpressedInLanguagePropertiesEditionPart_IdLabel;
 
 	
@@ -2333,12 +1979,6 @@ public class EvidenceMessages extends NLS {
 	public static String IsExpressedInLanguagePropertiesEditionPart_IsPrimaryLabel;
 
 	
-	public static String UsingProcessPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String UsingProcessPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String UsingProcessPropertiesEditionPart_IdLabel;
 
 	
@@ -2355,12 +1995,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String UsingProcessPropertiesEditionPart_MethodLabel;
-
-	
-	public static String HasSecurityClassificationPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String HasSecurityClassificationPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String HasSecurityClassificationPropertiesEditionPart_IdLabel;
@@ -2381,12 +2015,6 @@ public class EvidenceMessages extends NLS {
 	public static String HasSecurityClassificationPropertiesEditionPart_SecurityClassificationLabel;
 
 	
-	public static String IsReleaseableToPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsReleaseableToPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsReleaseableToPropertiesEditionPart_IdLabel;
 
 	
@@ -2403,12 +2031,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String IsReleaseableToPropertiesEditionPart_ReleasabilityLabel;
-
-	
-	public static String EvidenceGroupPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String EvidenceGroupPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String EvidenceGroupPropertiesEditionPart_IdLabel;
@@ -2432,12 +2054,6 @@ public class EvidenceMessages extends NLS {
 	public static String EvidenceGroupPropertiesEditionPart_ElementLabel;
 
 	
-	public static String HasVersionPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String HasVersionPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String HasVersionPropertiesEditionPart_IdLabel;
 
 	
@@ -2456,12 +2072,6 @@ public class EvidenceMessages extends NLS {
 	public static String HasVersionPropertiesEditionPart_VersionLabel;
 
 	
-	public static String HasMediaPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String HasMediaPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String HasMediaPropertiesEditionPart_IdLabel;
 
 	
@@ -2478,12 +2088,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String HasMediaPropertiesEditionPart_MediaLabel;
-
-	
-	public static String ExhibitPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ExhibitPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ExhibitPropertiesEditionPart_IdLabel;
@@ -2510,12 +2114,6 @@ public class EvidenceMessages extends NLS {
 	public static String ExhibitPropertiesEditionPart_PropertyLabel;
 
 	
-	public static String ExtendedEvidenceAttributePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ExtendedEvidenceAttributePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ExtendedEvidenceAttributePropertiesEditionPart_IdLabel;
 
 	
@@ -2531,12 +2129,6 @@ public class EvidenceMessages extends NLS {
 	public static String ExtendedEvidenceAttributePropertiesEditionPart_EventLabel;
 
 	
-	public static String ExtendedDocumentPropertyPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ExtendedDocumentPropertyPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ExtendedDocumentPropertyPropertiesEditionPart_IdLabel;
 
 	
@@ -2550,12 +2142,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ExtendedDocumentPropertyPropertiesEditionPart_EventLabel;
-
-	
-	public static String RecordPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String RecordPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String RecordPropertiesEditionPart_IdLabel;
@@ -2579,12 +2165,6 @@ public class EvidenceMessages extends NLS {
 	public static String RecordPropertiesEditionPart_ContentLabel;
 
 	
-	public static String ObjectifiedAssertionPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ObjectifiedAssertionPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ObjectifiedAssertionPropertiesEditionPart_IdLabel;
 
 	
@@ -2606,12 +2186,6 @@ public class EvidenceMessages extends NLS {
 	public static String ObjectifiedAssertionPropertiesEditionPart_AssertionLabel;
 
 	
-	public static String IsModifiedByPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String IsModifiedByPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String IsModifiedByPropertiesEditionPart_IdLabel;
 
 	
@@ -2625,12 +2199,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String IsModifiedByPropertiesEditionPart_EventLabel;
-
-	
-	public static String PerformedByPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String PerformedByPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String PerformedByPropertiesEditionPart_IdLabel;
@@ -2651,12 +2219,6 @@ public class EvidenceMessages extends NLS {
 	public static String PerformedByPropertiesEditionPart_ExecutorLabel;
 
 	
-	public static String ContainerConsistencyPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ContainerConsistencyPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ContainerConsistencyPropertiesEditionPart_IdLabel;
 
 	
@@ -2673,12 +2235,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ContainerConsistencyPropertiesEditionPart_ValueLabel;
-
-	
-	public static String ContainerCompletenessPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ContainerCompletenessPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ContainerCompletenessPropertiesEditionPart_IdLabel;
@@ -2699,12 +2255,6 @@ public class EvidenceMessages extends NLS {
 	public static String ContainerCompletenessPropertiesEditionPart_ValueLabel;
 
 	
-	public static String CompliesToPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String CompliesToPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String CompliesToPropertiesEditionPart_IdLabel;
 
 	
@@ -2721,12 +2271,6 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String CompliesToPropertiesEditionPart_CriteriaLabel;
-
-	
-	public static String ExtendedProjectPropertyPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ExtendedProjectPropertyPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ExtendedProjectPropertyPropertiesEditionPart_IdLabel;

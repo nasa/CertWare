@@ -190,7 +190,7 @@ public class NotesPropertiesEditionPartForm extends SectionPropertiesEditingPart
 		taggedValueData.horizontalSpan = 3;
 		this.taggedValue.setLayoutData(taggedValueData);
 		this.taggedValue.setLowerBound(0);
-		this.taggedValue.setUpperBound(1024);
+		this.taggedValue.setUpperBound(-1);
 		taggedValue.setID(EvidenceViewsRepository.Notes.Properties.taggedValue);
 		taggedValue.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createTaggedValueTableComposition
@@ -241,7 +241,7 @@ public class NotesPropertiesEditionPartForm extends SectionPropertiesEditingPart
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
 		this.annotation.setLowerBound(0);
-		this.annotation.setUpperBound(1024);
+		this.annotation.setUpperBound(-1);
 		annotation.setID(EvidenceViewsRepository.Notes.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createAnnotationTableComposition

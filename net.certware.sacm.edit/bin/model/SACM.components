@@ -301,10 +301,10 @@
   <eef-components:PropertiesEditionContext xmi:id="_BYj-7GaDEeOpSffLa06xVw" documentation="Edition Context for Evidence GenPackage">
     <categories xmi:id="_BYj-7WaDEeOpSffLa06xVw" name="Evidence">
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj-7maDEeOpSffLa06xVw" name="Consistency" views="_BYlNFmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj-72aDEeOpSffLa06xVw" name="taggedValue" views="_BYlNGGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj-72aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj-8GaDEeOpSffLa06xVw" name="annotation" views="_BYlNGWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj-8GaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj-8WaDEeOpSffLa06xVw" name="id" views="_BYlNGmaDEeOpSffLa06xVw">
@@ -328,10 +328,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Consistency"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj-92aDEeOpSffLa06xVw" name="Completeness" views="_BYlNIGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj--GaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNImaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj--GaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj--WaDEeOpSffLa06xVw" name="annotation" views="_BYlNI2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj--WaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj--maDEeOpSffLa06xVw" name="id" views="_BYlNJGaDEeOpSffLa06xVw">
@@ -355,10 +355,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Completeness"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_AGaDEeOpSffLa06xVw" name="Document" views="_BYlNKmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_AWaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNLGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_AWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_AmaDEeOpSffLa06xVw" name="annotation" views="_BYlNLWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_AmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_A2aDEeOpSffLa06xVw" name="id" views="_BYlNLmaDEeOpSffLa06xVw">
@@ -394,10 +394,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Document"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_DWaDEeOpSffLa06xVw" name="Confidence" views="_BYlNOGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_DmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNOmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_DmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_D2aDEeOpSffLa06xVw" name="annotation" views="_BYlNO2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_D2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_EGaDEeOpSffLa06xVw" name="id" views="_BYlNPGaDEeOpSffLa06xVw">
@@ -421,10 +421,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Confidence"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_FmaDEeOpSffLa06xVw" name="ApprovedBy" views="_BYlNQmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_F2aDEeOpSffLa06xVw" name="taggedValue" views="_BYlNRGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_F2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_GGaDEeOpSffLa06xVw" name="annotation" views="_BYlNRWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_GGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_GWaDEeOpSffLa06xVw" name="id" views="_BYlNRmaDEeOpSffLa06xVw">
@@ -448,10 +448,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ApprovedBy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_H2aDEeOpSffLa06xVw" name="CreatedBy" views="_BYlNTGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_IGaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNTmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_IGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_IWaDEeOpSffLa06xVw" name="annotation" views="_BYlNT2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_IWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_ImaDEeOpSffLa06xVw" name="id" views="_BYlNUGaDEeOpSffLa06xVw">
@@ -475,10 +475,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/CreatedBy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_KGaDEeOpSffLa06xVw" name="Tool" views="_BYlNVmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_KWaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNWGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_KWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_KmaDEeOpSffLa06xVw" name="annotation" views="_BYlNWWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_KmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_K2aDEeOpSffLa06xVw" name="id" views="_BYlNWmaDEeOpSffLa06xVw">
@@ -511,10 +511,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Tool"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_NGaDEeOpSffLa06xVw" name="Method" views="_BYlNY2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_NWaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNZWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_NWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_NmaDEeOpSffLa06xVw" name="annotation" views="_BYlNZmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_NmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_N2aDEeOpSffLa06xVw" name="id" views="_BYlNZ2aDEeOpSffLa06xVw">
@@ -544,10 +544,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Method"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_P2aDEeOpSffLa06xVw" name="IsBasedOn" views="_BYlNb2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_QGaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNcWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_QGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_QWaDEeOpSffLa06xVw" name="annotation" views="_BYlNcmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_QWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_QmaDEeOpSffLa06xVw" name="id" views="_BYlNc2aDEeOpSffLa06xVw">
@@ -571,10 +571,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsBasedOn"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_SGaDEeOpSffLa06xVw" name="IsA" views="_BYlNeWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_SWaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNe2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_SWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_SmaDEeOpSffLa06xVw" name="annotation" views="_BYlNfGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_SmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_S2aDEeOpSffLa06xVw" name="id" views="_BYlNfWaDEeOpSffLa06xVw">
@@ -604,10 +604,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsA"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_U2aDEeOpSffLa06xVw" name="IsCharacterizedBy" views="_BYlNhWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_VGaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNh2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_VGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_VWaDEeOpSffLa06xVw" name="annotation" views="_BYlNiGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_VWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_VmaDEeOpSffLa06xVw" name="id" views="_BYlNiWaDEeOpSffLa06xVw">
@@ -637,10 +637,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsCharacterizedBy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_XmaDEeOpSffLa06xVw" name="Person" views="_BYlNkWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_X2aDEeOpSffLa06xVw" name="taggedValue" views="_BYlNk2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_X2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_YGaDEeOpSffLa06xVw" name="annotation" views="_BYlNlGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_YGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_YWaDEeOpSffLa06xVw" name="id" views="_BYlNlWaDEeOpSffLa06xVw">
@@ -670,10 +670,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Person"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_aWaDEeOpSffLa06xVw" name="Organization" views="_BYlNnWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_amaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNn2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_amaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_a2aDEeOpSffLa06xVw" name="annotation" views="_BYlNoGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_a2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_bGaDEeOpSffLa06xVw" name="id" views="_BYlNoWaDEeOpSffLa06xVw">
@@ -706,10 +706,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Organization"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_dWaDEeOpSffLa06xVw" name="EvidenceContainer" views="_BYlNqmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_dmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNrGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_dmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_d2aDEeOpSffLa06xVw" name="annotation" views="_BYlNrWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_d2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_eGaDEeOpSffLa06xVw" name="id" views="_BYlNrmaDEeOpSffLa06xVw">
@@ -739,10 +739,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/EvidenceContainer"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_gGaDEeOpSffLa06xVw" name="EndTime" views="_BYlNtmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_gWaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNuGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_gWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_gmaDEeOpSffLa06xVw" name="annotation" views="_BYlNuWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_gmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_g2aDEeOpSffLa06xVw" name="id" views="_BYlNumaDEeOpSffLa06xVw">
@@ -766,10 +766,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/EndTime"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_iWaDEeOpSffLa06xVw" name="Assertion" views="_BYlNwGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_imaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNwmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_imaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_i2aDEeOpSffLa06xVw" name="annotation" views="_BYlNw2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_i2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_jGaDEeOpSffLa06xVw" name="id" views="_BYlNxGaDEeOpSffLa06xVw">
@@ -802,10 +802,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Assertion"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_lWaDEeOpSffLa06xVw" name="Object" views="_BYlNzWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_lmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlNz2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_lmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_l2aDEeOpSffLa06xVw" name="annotation" views="_BYlN0GaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_l2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_mGaDEeOpSffLa06xVw" name="id" views="_BYlN0WaDEeOpSffLa06xVw">
@@ -835,10 +835,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Object"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_oGaDEeOpSffLa06xVw" name="CompositeObject" views="_BYlN2WaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_oWaDEeOpSffLa06xVw" name="taggedValue" views="_BYlN22aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_oWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_omaDEeOpSffLa06xVw" name="annotation" views="_BYlN3GaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_omaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_o2aDEeOpSffLa06xVw" name="id" views="_BYlN3WaDEeOpSffLa06xVw">
@@ -874,10 +874,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/RoleBinding"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_rWaDEeOpSffLa06xVw" name="StartTime" views="_BYlN6GaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_rmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlN6maDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_rmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_r2aDEeOpSffLa06xVw" name="annotation" views="_BYlN62aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_r2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_sGaDEeOpSffLa06xVw" name="id" views="_BYlN7GaDEeOpSffLa06xVw">
@@ -901,10 +901,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/StartTime"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_tmaDEeOpSffLa06xVw" name="Relevance" views="_BYlN8maDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_t2aDEeOpSffLa06xVw" name="taggedValue" views="_BYlN9GaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_t2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_uGaDEeOpSffLa06xVw" name="annotation" views="_BYlN9WaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_uGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_uWaDEeOpSffLa06xVw" name="id" views="_BYlN9maDEeOpSffLa06xVw">
@@ -928,10 +928,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Relevance"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_v2aDEeOpSffLa06xVw" name="Significance" views="_BYlN_GaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_wGaDEeOpSffLa06xVw" name="taggedValue" views="_BYlN_maDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_wGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_wWaDEeOpSffLa06xVw" name="annotation" views="_BYlN_2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_wWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_wmaDEeOpSffLa06xVw" name="id" views="_BYlOAGaDEeOpSffLa06xVw">
@@ -955,10 +955,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Significance"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_yGaDEeOpSffLa06xVw" name="Accuracy" views="_BYlOBmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_yWaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOCGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_yWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_ymaDEeOpSffLa06xVw" name="annotation" views="_BYlOCWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_ymaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_y2aDEeOpSffLa06xVw" name="id" views="_BYlOCmaDEeOpSffLa06xVw">
@@ -982,10 +982,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Accuracy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_0WaDEeOpSffLa06xVw" name="HasRoleIn" views="_BYlOEGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_0maDEeOpSffLa06xVw" name="taggedValue" views="_BYlOEmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_0maDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_02aDEeOpSffLa06xVw" name="annotation" views="_BYlOE2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_02aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_1GaDEeOpSffLa06xVw" name="id" views="_BYlOFGaDEeOpSffLa06xVw">
@@ -1012,10 +1012,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/HasRoleIn"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_22aDEeOpSffLa06xVw" name="IsScopedBy" views="_BYlOG2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_3GaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOHWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_3GaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_3WaDEeOpSffLa06xVw" name="annotation" views="_BYlOHmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_3WaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_3maDEeOpSffLa06xVw" name="id" views="_BYlOH2aDEeOpSffLa06xVw">
@@ -1045,10 +1045,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsScopedBy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_5maDEeOpSffLa06xVw" name="AtTime" views="_BYlOJ2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_52aDEeOpSffLa06xVw" name="taggedValue" views="_BYlOKWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_52aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_6GaDEeOpSffLa06xVw" name="annotation" views="_BYlOKmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_6GaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_6WaDEeOpSffLa06xVw" name="id" views="_BYlOK2aDEeOpSffLa06xVw">
@@ -1072,10 +1072,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/AtTime"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_72aDEeOpSffLa06xVw" name="Originality" views="_BYlOMWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_8GaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOM2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_8GaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_8WaDEeOpSffLa06xVw" name="annotation" views="_BYlONGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_8WaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_8maDEeOpSffLa06xVw" name="id" views="_BYlONWaDEeOpSffLa06xVw">
@@ -1099,10 +1099,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Originality"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYj_-GaDEeOpSffLa06xVw" name="Reporting" views="_BYlOO2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_-WaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOPWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_-WaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_-maDEeOpSffLa06xVw" name="annotation" views="_BYlOPmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_-maDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYj_-2aDEeOpSffLa06xVw" name="id" views="_BYlOP2aDEeOpSffLa06xVw">
@@ -1126,10 +1126,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Reporting"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAAWaDEeOpSffLa06xVw" name="Reliability" views="_BYlORWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAAmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOR2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAAmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAA2aDEeOpSffLa06xVw" name="annotation" views="_BYlOSGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAA2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkABGaDEeOpSffLa06xVw" name="id" views="_BYlOSWaDEeOpSffLa06xVw">
@@ -1153,10 +1153,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Reliability"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkACmaDEeOpSffLa06xVw" name="Supports" views="_BYlOT2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAC2aDEeOpSffLa06xVw" name="taggedValue" views="_BYlOUWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAC2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkADGaDEeOpSffLa06xVw" name="annotation" views="_BYlOUmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkADGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkADWaDEeOpSffLa06xVw" name="id" views="_BYlOU2aDEeOpSffLa06xVw">
@@ -1186,10 +1186,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Supports"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAFWaDEeOpSffLa06xVw" name="IsGeneratedAt" views="_BYlOW2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAFmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOXWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAFmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAF2aDEeOpSffLa06xVw" name="annotation" views="_BYlOXmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAF2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAGGaDEeOpSffLa06xVw" name="id" views="_BYlOX2aDEeOpSffLa06xVw">
@@ -1210,10 +1210,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsGeneratedAt"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAHWaDEeOpSffLa06xVw" name="Support" views="_BYlOZGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAHmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOZmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAHmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAH2aDEeOpSffLa06xVw" name="annotation" views="_BYlOZ2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAH2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAIGaDEeOpSffLa06xVw" name="id" views="_BYlOaGaDEeOpSffLa06xVw">
@@ -1237,10 +1237,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Support"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAJmaDEeOpSffLa06xVw" name="Conflicts" views="_BYlObmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAJ2aDEeOpSffLa06xVw" name="taggedValue" views="_BYlOcGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAJ2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAKGaDEeOpSffLa06xVw" name="annotation" views="_BYlOcWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAKGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAKWaDEeOpSffLa06xVw" name="id" views="_BYlOcmaDEeOpSffLa06xVw">
@@ -1270,10 +1270,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Conflicts"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAMWaDEeOpSffLa06xVw" name="Refutes" views="_BYlOemaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAMmaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOfGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAMmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAM2aDEeOpSffLa06xVw" name="annotation" views="_BYlOfWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAM2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkANGaDEeOpSffLa06xVw" name="id" views="_BYlOfmaDEeOpSffLa06xVw">
@@ -1300,10 +1300,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Refutes"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAO2aDEeOpSffLa06xVw" name="Negates" views="_BYlOhWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAPGaDEeOpSffLa06xVw" name="taggedValue" views="_BYlOh2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAPGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAPWaDEeOpSffLa06xVw" name="annotation" views="_BYl0EGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAPWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAPmaDEeOpSffLa06xVw" name="id" views="_BYl0EWaDEeOpSffLa06xVw">
@@ -1330,10 +1330,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Negates"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkARWaDEeOpSffLa06xVw" name="UnknownObject" views="_BYl0GGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkARmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0GmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkARmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAR2aDEeOpSffLa06xVw" name="annotation" views="_BYl0G2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAR2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkASGaDEeOpSffLa06xVw" name="id" views="_BYl0HGaDEeOpSffLa06xVw">
@@ -1357,10 +1357,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/UnknownObject"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkATmaDEeOpSffLa06xVw" name="Resolves" views="_BYl0ImaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAT2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl0JGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAT2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAUGaDEeOpSffLa06xVw" name="annotation" views="_BYl0JWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAUGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAUWaDEeOpSffLa06xVw" name="id" views="_BYl0JmaDEeOpSffLa06xVw">
@@ -1387,10 +1387,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Resolves"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAWGaDEeOpSffLa06xVw" name="EvidenceRequest" views="_BYl0LWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAWWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0L2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAWWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAWmaDEeOpSffLa06xVw" name="annotation" views="_BYl0MGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAWmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAW2aDEeOpSffLa06xVw" name="id" views="_BYl0MWaDEeOpSffLa06xVw">
@@ -1423,10 +1423,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/EvidenceRequest"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkAZGaDEeOpSffLa06xVw" name="ProjectObjective" views="_BYl0OmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAZWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0PGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAZWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAZmaDEeOpSffLa06xVw" name="annotation" views="_BYl0PWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAZmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkAZ2aDEeOpSffLa06xVw" name="id" views="_BYl0PmaDEeOpSffLa06xVw">
@@ -1456,10 +1456,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ProjectObjective"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkl8GaDEeOpSffLa06xVw" name="Activity" views="_BYl0RmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl8WaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0SGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl8WaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl8maDEeOpSffLa06xVw" name="annotation" views="_BYl0SWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl8maDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl82aDEeOpSffLa06xVw" name="id" views="_BYl0SmaDEeOpSffLa06xVw">
@@ -1489,10 +1489,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Activity"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkl-2aDEeOpSffLa06xVw" name="DependsOn" views="_BYl0UmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl_GaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0VGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl_GaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl_WaDEeOpSffLa06xVw" name="annotation" views="_BYl0VWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl_WaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkl_maDEeOpSffLa06xVw" name="id" views="_BYl0VmaDEeOpSffLa06xVw">
@@ -1516,10 +1516,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/DependsOn"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmBGaDEeOpSffLa06xVw" name="Satisfies" views="_BYl0XGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmBWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0XmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmBWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmBmaDEeOpSffLa06xVw" name="annotation" views="_BYl0X2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmBmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmB2aDEeOpSffLa06xVw" name="id" views="_BYl0YGaDEeOpSffLa06xVw">
@@ -1543,10 +1543,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Satisfies"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmDWaDEeOpSffLa06xVw" name="ReferencedClaim" views="_BYl0ZmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmDmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0aGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmDmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmD2aDEeOpSffLa06xVw" name="annotation" views="_BYl0aWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmD2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmEGaDEeOpSffLa06xVw" name="id" views="_BYl0amaDEeOpSffLa06xVw">
@@ -1606,10 +1606,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Weakens"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmImaDEeOpSffLa06xVw" name="Amplifies" views="_BYl0fWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmI2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl0f2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmI2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmJGaDEeOpSffLa06xVw" name="annotation" views="_BYl0gGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmJGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmJWaDEeOpSffLa06xVw" name="id" views="_BYl0gWaDEeOpSffLa06xVw">
@@ -1639,10 +1639,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Amplifies"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmLWaDEeOpSffLa06xVw" name="Challenges" views="_BYl0iWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmLmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0i2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmLmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmL2aDEeOpSffLa06xVw" name="annotation" views="_BYl0jGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmL2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmMGaDEeOpSffLa06xVw" name="id" views="_BYl0jWaDEeOpSffLa06xVw">
@@ -1672,10 +1672,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Challenges"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmOGaDEeOpSffLa06xVw" name="Strength" views="_BYl0lWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmOWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0l2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmOWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmOmaDEeOpSffLa06xVw" name="annotation" views="_BYl0mGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmOmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmO2aDEeOpSffLa06xVw" name="id" views="_BYl0mWaDEeOpSffLa06xVw">
@@ -1699,10 +1699,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Strength"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmQWaDEeOpSffLa06xVw" name="IsAcquiredAt" views="_BYl0n2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmQmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0oWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmQmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmQ2aDEeOpSffLa06xVw" name="annotation" views="_BYl0omaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmQ2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmRGaDEeOpSffLa06xVw" name="id" views="_BYl0o2aDEeOpSffLa06xVw">
@@ -1723,10 +1723,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsAcquiredAt"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmSWaDEeOpSffLa06xVw" name="IsTransferredTo" views="_BYl0qGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmSmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0qmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmSmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmS2aDEeOpSffLa06xVw" name="annotation" views="_BYl0q2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmS2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmTGaDEeOpSffLa06xVw" name="id" views="_BYl0rGaDEeOpSffLa06xVw">
@@ -1747,10 +1747,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsTransferredTo"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmUWaDEeOpSffLa06xVw" name="OwnedBy" views="_BYl0sWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmUmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0s2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmUmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmU2aDEeOpSffLa06xVw" name="annotation" views="_BYl0tGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmU2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmVGaDEeOpSffLa06xVw" name="id" views="_BYl0tWaDEeOpSffLa06xVw">
@@ -1774,10 +1774,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/OwnedBy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmWmaDEeOpSffLa06xVw" name="IsPartOf" views="_BYl0u2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmW2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl0vWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmW2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmXGaDEeOpSffLa06xVw" name="annotation" views="_BYl0vmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmXGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmXWaDEeOpSffLa06xVw" name="id" views="_BYl0v2aDEeOpSffLa06xVw">
@@ -1801,10 +1801,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsPartOf"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmY2aDEeOpSffLa06xVw" name="IsRevokedAt" views="_BYl0xWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmZGaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0x2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmZGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmZWaDEeOpSffLa06xVw" name="annotation" views="_BYl0yGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmZWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmZmaDEeOpSffLa06xVw" name="id" views="_BYl0yWaDEeOpSffLa06xVw">
@@ -1825,10 +1825,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsRevokedAt"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkma2aDEeOpSffLa06xVw" name="ProvidesContext" views="_BYl0zmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmbGaDEeOpSffLa06xVw" name="taggedValue" views="_BYl00GaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmbGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmbWaDEeOpSffLa06xVw" name="annotation" views="_BYl00WaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmbWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmbmaDEeOpSffLa06xVw" name="id" views="_BYl00maDEeOpSffLa06xVw">
@@ -1858,10 +1858,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ProvidesContext"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmdmaDEeOpSffLa06xVw" name="MeansThat" views="_BYl02maDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmd2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl03GaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmd2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmeGaDEeOpSffLa06xVw" name="annotation" views="_BYl03WaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmeGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmeWaDEeOpSffLa06xVw" name="id" views="_BYl03maDEeOpSffLa06xVw">
@@ -1891,10 +1891,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/MeansThat"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmgWaDEeOpSffLa06xVw" name="CareOf" views="_BYl05maDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmgmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl06GaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmgmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmg2aDEeOpSffLa06xVw" name="annotation" views="_BYl06WaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmg2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmhGaDEeOpSffLa06xVw" name="id" views="_BYl06maDEeOpSffLa06xVw">
@@ -1918,10 +1918,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/CareOf"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmimaDEeOpSffLa06xVw" name="AtLocation" views="_BYl08GaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmi2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl08maDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmi2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmjGaDEeOpSffLa06xVw" name="annotation" views="_BYl082aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmjGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmjWaDEeOpSffLa06xVw" name="id" views="_BYl09GaDEeOpSffLa06xVw">
@@ -1945,10 +1945,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/AtLocation"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmk2aDEeOpSffLa06xVw" name="IsCreatedAt" views="_BYl0-maDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmlGaDEeOpSffLa06xVw" name="taggedValue" views="_BYl0_GaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmlGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmlWaDEeOpSffLa06xVw" name="annotation" views="_BYl0_WaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmlWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmlmaDEeOpSffLa06xVw" name="id" views="_BYl0_maDEeOpSffLa06xVw">
@@ -1969,10 +1969,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsCreatedAt"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmm2aDEeOpSffLa06xVw" name="RequiresContainer" views="_BYl1A2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmnGaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1BWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmnGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmnWaDEeOpSffLa06xVw" name="annotation" views="_BYl1BmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmnWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmnmaDEeOpSffLa06xVw" name="id" views="_BYl1B2aDEeOpSffLa06xVw">
@@ -1996,10 +1996,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/RequiresContainer"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmpGaDEeOpSffLa06xVw" name="Service" views="_BYl1DWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmpWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1D2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmpWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmpmaDEeOpSffLa06xVw" name="annotation" views="_BYl1EGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmpmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmp2aDEeOpSffLa06xVw" name="id" views="_BYl1EWaDEeOpSffLa06xVw">
@@ -2029,10 +2029,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Service"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmr2aDEeOpSffLa06xVw" name="HasElectronicSource" views="_BYl1GWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmsGaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1G2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmsGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmsWaDEeOpSffLa06xVw" name="annotation" views="_BYl1HGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmsWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmsmaDEeOpSffLa06xVw" name="id" views="_BYl1HWaDEeOpSffLa06xVw">
@@ -2062,10 +2062,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/HasElectronicSource"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmumaDEeOpSffLa06xVw" name="IsExpressedInLanguage" views="_BYl1JWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmu2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1J2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmu2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmvGaDEeOpSffLa06xVw" name="annotation" views="_BYl1KGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmvGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmvWaDEeOpSffLa06xVw" name="id" views="_BYl1KWaDEeOpSffLa06xVw">
@@ -2092,10 +2092,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsExpressedInLanguage"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmxGaDEeOpSffLa06xVw" name="UsingProcess" views="_BYl1MGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmxWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1MmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmxWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmxmaDEeOpSffLa06xVw" name="annotation" views="_BYl1M2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmxmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmx2aDEeOpSffLa06xVw" name="id" views="_BYl1NGaDEeOpSffLa06xVw">
@@ -2119,10 +2119,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/UsingProcess"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkmzWaDEeOpSffLa06xVw" name="HasSecurityClassification" views="_BYl1OmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmzmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1PGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmzmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmz2aDEeOpSffLa06xVw" name="annotation" views="_BYl1PWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkmz2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm0GaDEeOpSffLa06xVw" name="id" views="_BYl1PmaDEeOpSffLa06xVw">
@@ -2146,10 +2146,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/HasSecurityClassification"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkm1maDEeOpSffLa06xVw" name="IsReleaseableTo" views="_BYl1RGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm12aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1RmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm12aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm2GaDEeOpSffLa06xVw" name="annotation" views="_BYl1R2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm2GaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm2WaDEeOpSffLa06xVw" name="id" views="_BYl1SGaDEeOpSffLa06xVw">
@@ -2173,10 +2173,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsReleaseableTo"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkm32aDEeOpSffLa06xVw" name="EvidenceGroup" views="_BYl1TmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm4GaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1UGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm4GaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm4WaDEeOpSffLa06xVw" name="annotation" views="_BYl1UWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm4WaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm4maDEeOpSffLa06xVw" name="id" views="_BYl1UmaDEeOpSffLa06xVw">
@@ -2203,10 +2203,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/EvidenceGroup"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkm6WaDEeOpSffLa06xVw" name="HasVersion" views="_BYl1WWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm6maDEeOpSffLa06xVw" name="taggedValue" views="_BYl1W2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm6maDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm62aDEeOpSffLa06xVw" name="annotation" views="_BYl1XGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm62aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm7GaDEeOpSffLa06xVw" name="id" views="_BYl1XWaDEeOpSffLa06xVw">
@@ -2230,10 +2230,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/HasVersion"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkm8maDEeOpSffLa06xVw" name="HasMedia" views="_BYl1Y2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm82aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1ZWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm82aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm9GaDEeOpSffLa06xVw" name="annotation" views="_BYl1ZmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm9GaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm9WaDEeOpSffLa06xVw" name="id" views="_BYl1Z2aDEeOpSffLa06xVw">
@@ -2257,10 +2257,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/HasMedia"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYkm-2aDEeOpSffLa06xVw" name="Exhibit" views="_BYl1bWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm_GaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1b2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm_GaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm_WaDEeOpSffLa06xVw" name="annotation" views="_BYl1cGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm_WaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYkm_maDEeOpSffLa06xVw" name="id" views="_BYl1cWaDEeOpSffLa06xVw">
@@ -2290,10 +2290,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Exhibit"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknBmaDEeOpSffLa06xVw" name="ExtendedEvidenceAttribute" views="_BYl1eWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknB2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1e2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknB2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknCGaDEeOpSffLa06xVw" name="annotation" views="_BYl1fGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknCGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknCWaDEeOpSffLa06xVw" name="id" views="_BYl1fWaDEeOpSffLa06xVw">
@@ -2314,10 +2314,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ExtendedEvidenceAttribute"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknDmaDEeOpSffLa06xVw" name="ExtendedDocumentProperty" views="_BYl1gmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknD2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1hGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknD2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknEGaDEeOpSffLa06xVw" name="annotation" views="_BYl1hWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknEGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknEWaDEeOpSffLa06xVw" name="id" views="_BYl1hmaDEeOpSffLa06xVw">
@@ -2338,10 +2338,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ExtendedDocumentProperty"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknFmaDEeOpSffLa06xVw" name="Record" views="_BYl1i2aDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknF2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1jWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknF2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknGGaDEeOpSffLa06xVw" name="annotation" views="_BYl1jmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknGGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknGWaDEeOpSffLa06xVw" name="id" views="_BYl1j2aDEeOpSffLa06xVw">
@@ -2368,10 +2368,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/Record"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknIGaDEeOpSffLa06xVw" name="ObjectifiedAssertion" views="_BYl1lmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknIWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1mGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknIWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknImaDEeOpSffLa06xVw" name="annotation" views="_BYl1mWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknImaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknI2aDEeOpSffLa06xVw" name="id" views="_BYl1mmaDEeOpSffLa06xVw">
@@ -2398,10 +2398,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ObjectifiedAssertion"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknKmaDEeOpSffLa06xVw" name="IsModifiedBy" views="_BYl1oWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknK2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1o2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknK2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknLGaDEeOpSffLa06xVw" name="annotation" views="_BYl1pGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknLGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknLWaDEeOpSffLa06xVw" name="id" views="_BYl1pWaDEeOpSffLa06xVw">
@@ -2422,10 +2422,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/IsModifiedBy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknMmaDEeOpSffLa06xVw" name="PerformedBy" views="_BYl1qmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknM2aDEeOpSffLa06xVw" name="taggedValue" views="_BYl1rGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknM2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknNGaDEeOpSffLa06xVw" name="annotation" views="_BYl1rWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknNGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknNWaDEeOpSffLa06xVw" name="id" views="_BYl1rmaDEeOpSffLa06xVw">
@@ -2449,10 +2449,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/PerformedBy"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknO2aDEeOpSffLa06xVw" name="ContainerConsistency" views="_BYl1tGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknPGaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1tmaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknPGaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknPWaDEeOpSffLa06xVw" name="annotation" views="_BYl1t2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknPWaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknPmaDEeOpSffLa06xVw" name="id" views="_BYl1uGaDEeOpSffLa06xVw">
@@ -2476,10 +2476,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ContainerConsistency"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknRGaDEeOpSffLa06xVw" name="ContainerCompleteness" views="_BYl1vmaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknRWaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1wGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknRWaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknRmaDEeOpSffLa06xVw" name="annotation" views="_BYl1wWaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknRmaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknR2aDEeOpSffLa06xVw" name="id" views="_BYl1wmaDEeOpSffLa06xVw">
@@ -2503,10 +2503,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/ContainerCompleteness"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknTWaDEeOpSffLa06xVw" name="CompliesTo" views="_BYl1yGaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknTmaDEeOpSffLa06xVw" name="taggedValue" views="_BYl1ymaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknTmaDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknT2aDEeOpSffLa06xVw" name="annotation" views="_BYl1y2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknT2aDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknUGaDEeOpSffLa06xVw" name="id" views="_BYl1zGaDEeOpSffLa06xVw">
@@ -2530,10 +2530,10 @@
         <model xsi:type="ecore:EClass" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//Evidence/CompliesTo"/>
       </bindings>
       <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_BYknVmaDEeOpSffLa06xVw" name="ExtendedProjectProperty" views="_BYmbIWaDEeOpSffLa06xVw _oitI4KZaEeOYLaYfgyGfEw">
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknV2aDEeOpSffLa06xVw" name="taggedValue" views="_BYmbI2aDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknV2aDEeOpSffLa06xVw" name="taggedValue" views="_oitI4qZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/taggedValue"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknWGaDEeOpSffLa06xVw" name="annotation" views="_BYmbJGaDEeOpSffLa06xVw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknWGaDEeOpSffLa06xVw" name="annotation" views="_oitI46ZaEeOYLaYfgyGfEw">
           <model xsi:type="ecore:EReference" href="platform:/resource/net.certware.sacm/model/SACM.ecore#//ModelElement/annotation"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_BYknWWaDEeOpSffLa06xVw" name="id" views="_BYmbJWaDEeOpSffLa06xVw">
@@ -2627,12 +2627,6 @@
       <views xmi:id="_BYlNFmaDEeOpSffLa06xVw" name="Consistency">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNF2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNGGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNGWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNGmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2656,12 +2650,6 @@
       <views xmi:id="_BYlNIGaDEeOpSffLa06xVw" name="Completeness">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNIWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNImaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNI2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNJGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2685,12 +2673,6 @@
       <views xmi:id="_BYlNKmaDEeOpSffLa06xVw" name="Document">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNK2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNLGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNLWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNLmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2726,12 +2708,6 @@
       <views xmi:id="_BYlNOGaDEeOpSffLa06xVw" name="Confidence">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNOWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNOmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNO2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNPGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2755,12 +2731,6 @@
       <views xmi:id="_BYlNQmaDEeOpSffLa06xVw" name="ApprovedBy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNQ2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNRGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNRWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNRmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2784,12 +2754,6 @@
       <views xmi:id="_BYlNTGaDEeOpSffLa06xVw" name="CreatedBy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNTWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNTmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNT2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNUGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2813,12 +2777,6 @@
       <views xmi:id="_BYlNVmaDEeOpSffLa06xVw" name="Tool">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNV2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNWGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNWWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNWmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2851,12 +2809,6 @@
       <views xmi:id="_BYlNY2aDEeOpSffLa06xVw" name="Method">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNZGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNZWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNZmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNZ2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2886,12 +2838,6 @@
       <views xmi:id="_BYlNb2aDEeOpSffLa06xVw" name="IsBasedOn">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNcGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNcWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNcmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNc2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2915,12 +2861,6 @@
       <views xmi:id="_BYlNeWaDEeOpSffLa06xVw" name="IsA">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNemaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNe2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNfGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNfWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2950,12 +2890,6 @@
       <views xmi:id="_BYlNhWaDEeOpSffLa06xVw" name="IsCharacterizedBy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNhmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNh2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNiGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNiWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -2985,12 +2919,6 @@
       <views xmi:id="_BYlNkWaDEeOpSffLa06xVw" name="Person">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNkmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNk2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNlGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNlWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3020,12 +2948,6 @@
       <views xmi:id="_BYlNnWaDEeOpSffLa06xVw" name="Organization">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNnmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNn2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNoGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNoWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3058,12 +2980,6 @@
       <views xmi:id="_BYlNqmaDEeOpSffLa06xVw" name="EvidenceContainer">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNq2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNrGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNrWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNrmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3093,12 +3009,6 @@
       <views xmi:id="_BYlNtmaDEeOpSffLa06xVw" name="EndTime">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNt2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNuGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNuWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNumaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3122,12 +3032,6 @@
       <views xmi:id="_BYlNwGaDEeOpSffLa06xVw" name="Assertion">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNwWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNwmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNw2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNxGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3160,12 +3064,6 @@
       <views xmi:id="_BYlNzWaDEeOpSffLa06xVw" name="Object">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlNzmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlNz2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN0GaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN0WaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3195,12 +3093,6 @@
       <views xmi:id="_BYlN2WaDEeOpSffLa06xVw" name="CompositeObject">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlN2maDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN22aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN3GaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN3WaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3238,12 +3130,6 @@
       <views xmi:id="_BYlN6GaDEeOpSffLa06xVw" name="StartTime">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlN6WaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN6maDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN62aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN7GaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3267,12 +3153,6 @@
       <views xmi:id="_BYlN8maDEeOpSffLa06xVw" name="Relevance">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlN82aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN9GaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN9WaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN9maDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3296,12 +3176,6 @@
       <views xmi:id="_BYlN_GaDEeOpSffLa06xVw" name="Significance">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlN_WaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN_maDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlN_2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOAGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3325,12 +3199,6 @@
       <views xmi:id="_BYlOBmaDEeOpSffLa06xVw" name="Accuracy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOB2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOCGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOCWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOCmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3354,12 +3222,6 @@
       <views xmi:id="_BYlOEGaDEeOpSffLa06xVw" name="HasRoleIn">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOEWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOEmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOE2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOFGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3386,12 +3248,6 @@
       <views xmi:id="_BYlOG2aDEeOpSffLa06xVw" name="IsScopedBy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOHGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOHWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOHmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOH2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3421,12 +3277,6 @@
       <views xmi:id="_BYlOJ2aDEeOpSffLa06xVw" name="AtTime">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOKGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOKWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOKmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOK2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3450,12 +3300,6 @@
       <views xmi:id="_BYlOMWaDEeOpSffLa06xVw" name="Originality">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOMmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOM2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlONGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlONWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3479,12 +3323,6 @@
       <views xmi:id="_BYlOO2aDEeOpSffLa06xVw" name="Reporting">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOPGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOPWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOPmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOP2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3508,12 +3346,6 @@
       <views xmi:id="_BYlORWaDEeOpSffLa06xVw" name="Reliability">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlORmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOR2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOSGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOSWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3537,12 +3369,6 @@
       <views xmi:id="_BYlOT2aDEeOpSffLa06xVw" name="Supports">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOUGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOUWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOUmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOU2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3572,12 +3398,6 @@
       <views xmi:id="_BYlOW2aDEeOpSffLa06xVw" name="IsGeneratedAt">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOXGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOXWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOXmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOX2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3598,12 +3418,6 @@
       <views xmi:id="_BYlOZGaDEeOpSffLa06xVw" name="Support">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOZWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOZmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOZ2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOaGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3627,12 +3441,6 @@
       <views xmi:id="_BYlObmaDEeOpSffLa06xVw" name="Conflicts">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOb2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOcGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOcWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOcmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3662,12 +3470,6 @@
       <views xmi:id="_BYlOemaDEeOpSffLa06xVw" name="Refutes">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOe2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOfGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOfWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOfmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3694,12 +3496,6 @@
       <views xmi:id="_BYlOhWaDEeOpSffLa06xVw" name="Negates">
         <elements xsi:type="eef-views:Container" xmi:id="_BYlOhmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYlOh2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0EGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0EWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3726,12 +3522,6 @@
       <views xmi:id="_BYl0GGaDEeOpSffLa06xVw" name="UnknownObject">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0GWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0GmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0G2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0HGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3755,12 +3545,6 @@
       <views xmi:id="_BYl0ImaDEeOpSffLa06xVw" name="Resolves">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0I2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0JGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0JWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0JmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3787,12 +3571,6 @@
       <views xmi:id="_BYl0LWaDEeOpSffLa06xVw" name="EvidenceRequest">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0LmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0L2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0MGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0MWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3825,12 +3603,6 @@
       <views xmi:id="_BYl0OmaDEeOpSffLa06xVw" name="ProjectObjective">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0O2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0PGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0PWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0PmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3860,12 +3632,6 @@
       <views xmi:id="_BYl0RmaDEeOpSffLa06xVw" name="Activity">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0R2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0SGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0SWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0SmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3895,12 +3661,6 @@
       <views xmi:id="_BYl0UmaDEeOpSffLa06xVw" name="DependsOn">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0U2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0VGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0VWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0VmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3924,12 +3684,6 @@
       <views xmi:id="_BYl0XGaDEeOpSffLa06xVw" name="Satisfies">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0XWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0XmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0X2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0YGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -3953,12 +3707,6 @@
       <views xmi:id="_BYl0ZmaDEeOpSffLa06xVw" name="ReferencedClaim">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0Z2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0aGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0aWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0amaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4020,12 +3768,6 @@
       <views xmi:id="_BYl0fWaDEeOpSffLa06xVw" name="Amplifies">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0fmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0f2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0gGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0gWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4055,12 +3797,6 @@
       <views xmi:id="_BYl0iWaDEeOpSffLa06xVw" name="Challenges">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0imaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0i2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0jGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0jWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4090,12 +3826,6 @@
       <views xmi:id="_BYl0lWaDEeOpSffLa06xVw" name="Strength">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0lmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0l2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0mGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0mWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4119,12 +3849,6 @@
       <views xmi:id="_BYl0n2aDEeOpSffLa06xVw" name="IsAcquiredAt">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0oGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0oWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0omaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0o2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4145,12 +3869,6 @@
       <views xmi:id="_BYl0qGaDEeOpSffLa06xVw" name="IsTransferredTo">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0qWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0qmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0q2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0rGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4171,12 +3889,6 @@
       <views xmi:id="_BYl0sWaDEeOpSffLa06xVw" name="OwnedBy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0smaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0s2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0tGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0tWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4200,12 +3912,6 @@
       <views xmi:id="_BYl0u2aDEeOpSffLa06xVw" name="IsPartOf">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0vGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0vWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0vmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0v2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4229,12 +3935,6 @@
       <views xmi:id="_BYl0xWaDEeOpSffLa06xVw" name="IsRevokedAt">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0xmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0x2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0yGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0yWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4255,12 +3955,6 @@
       <views xmi:id="_BYl0zmaDEeOpSffLa06xVw" name="ProvidesContext">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0z2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl00GaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl00WaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl00maDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4290,12 +3984,6 @@
       <views xmi:id="_BYl02maDEeOpSffLa06xVw" name="MeansThat">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl022aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl03GaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl03WaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl03maDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4325,12 +4013,6 @@
       <views xmi:id="_BYl05maDEeOpSffLa06xVw" name="CareOf">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl052aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl06GaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl06WaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl06maDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4354,12 +4036,6 @@
       <views xmi:id="_BYl08GaDEeOpSffLa06xVw" name="AtLocation">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl08WaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl08maDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl082aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl09GaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4383,12 +4059,6 @@
       <views xmi:id="_BYl0-maDEeOpSffLa06xVw" name="IsCreatedAt">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl0-2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0_GaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0_WaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl0_maDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4409,12 +4079,6 @@
       <views xmi:id="_BYl1A2aDEeOpSffLa06xVw" name="RequiresContainer">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1BGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1BWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1BmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1B2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4438,12 +4102,6 @@
       <views xmi:id="_BYl1DWaDEeOpSffLa06xVw" name="Service">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1DmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1D2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1EGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1EWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4473,12 +4131,6 @@
       <views xmi:id="_BYl1GWaDEeOpSffLa06xVw" name="HasElectronicSource">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1GmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1G2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1HGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1HWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4508,12 +4160,6 @@
       <views xmi:id="_BYl1JWaDEeOpSffLa06xVw" name="IsExpressedInLanguage">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1JmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1J2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1KGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1KWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4540,12 +4186,6 @@
       <views xmi:id="_BYl1MGaDEeOpSffLa06xVw" name="UsingProcess">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1MWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1MmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1M2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1NGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4569,12 +4209,6 @@
       <views xmi:id="_BYl1OmaDEeOpSffLa06xVw" name="HasSecurityClassification">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1O2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1PGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1PWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1PmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4598,12 +4232,6 @@
       <views xmi:id="_BYl1RGaDEeOpSffLa06xVw" name="IsReleaseableTo">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1RWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1RmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1R2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1SGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4627,12 +4255,6 @@
       <views xmi:id="_BYl1TmaDEeOpSffLa06xVw" name="EvidenceGroup">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1T2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1UGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1UWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1UmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4659,12 +4281,6 @@
       <views xmi:id="_BYl1WWaDEeOpSffLa06xVw" name="HasVersion">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1WmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1W2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1XGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1XWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4688,12 +4304,6 @@
       <views xmi:id="_BYl1Y2aDEeOpSffLa06xVw" name="HasMedia">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1ZGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1ZWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1ZmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1Z2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4717,12 +4327,6 @@
       <views xmi:id="_BYl1bWaDEeOpSffLa06xVw" name="Exhibit">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1bmaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1b2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1cGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1cWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4752,12 +4356,6 @@
       <views xmi:id="_BYl1eWaDEeOpSffLa06xVw" name="ExtendedEvidenceAttribute">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1emaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1e2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1fGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1fWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4778,12 +4376,6 @@
       <views xmi:id="_BYl1gmaDEeOpSffLa06xVw" name="ExtendedDocumentProperty">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1g2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1hGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1hWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1hmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4804,12 +4396,6 @@
       <views xmi:id="_BYl1i2aDEeOpSffLa06xVw" name="Record">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1jGaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1jWaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1jmaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1j2aDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4836,12 +4422,6 @@
       <views xmi:id="_BYl1lmaDEeOpSffLa06xVw" name="ObjectifiedAssertion">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1l2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1mGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1mWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1mmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4868,12 +4448,6 @@
       <views xmi:id="_BYl1oWaDEeOpSffLa06xVw" name="IsModifiedBy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1omaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1o2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1pGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1pWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4894,12 +4468,6 @@
       <views xmi:id="_BYl1qmaDEeOpSffLa06xVw" name="PerformedBy">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1q2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1rGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1rWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1rmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4923,12 +4491,6 @@
       <views xmi:id="_BYl1tGaDEeOpSffLa06xVw" name="ContainerConsistency">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1tWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1tmaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1t2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1uGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4952,12 +4514,6 @@
       <views xmi:id="_BYl1vmaDEeOpSffLa06xVw" name="ContainerCompleteness">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1v2aDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1wGaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1wWaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1wmaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -4981,12 +4537,6 @@
       <views xmi:id="_BYl1yGaDEeOpSffLa06xVw" name="CompliesTo">
         <elements xsi:type="eef-views:Container" xmi:id="_BYl1yWaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1ymaDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1y2aDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYl1zGaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -5010,12 +4560,6 @@
       <views xmi:id="_BYmbIWaDEeOpSffLa06xVw" name="ExtendedProjectProperty">
         <elements xsi:type="eef-views:Container" xmi:id="_BYmbImaDEeOpSffLa06xVw" name="properties">
           <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYmbI2aDEeOpSffLa06xVw" name="taggedValue">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYmbJGaDEeOpSffLa06xVw" name="annotation">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_BYmbJWaDEeOpSffLa06xVw" name="id">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
