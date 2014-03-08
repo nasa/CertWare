@@ -1129,7 +1129,6 @@ public class SACMEditor
 		TabbedPropertySheetPage propertySheetPage = new TabbedPropertySheetPage(SACMEditor.this);
 		
 		propertySheetPages.add(propertySheetPage);
-		System.out.println("Got SACM property sheet page");
 		return propertySheetPage;
 	}
 
